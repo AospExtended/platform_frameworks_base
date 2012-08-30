@@ -55,6 +55,7 @@ import com.android.systemui.camera.CameraIntents;
 import com.android.systemui.dagger.qualifiers.DisplayId;
 import com.android.systemui.dagger.qualifiers.Main;
 import com.android.systemui.keyguard.WakefulnessLifecycle;
+import com.android.systemui.navigationbar.NavigationBarController;
 import com.android.systemui.qs.QSPanelController;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.DisableFlagsLogger;
@@ -486,6 +487,17 @@ public class StatusBarCommandQueueCallbacks implements CommandQueue.Callbacks {
         if (displayId != mDisplayId) {
             return;
         }
+
+        NavigationBarController.SystemUiVisibility mNavigationBarSystemUiVisibility
+                = mStatusBar.getNavigationBarSystemUiVisibility();
+        mNavigationBarSystemUiVisibility.displayId = displayId;
+        mNavigationBarSystemUiVisibility.appearance = appearance;
+        mNavigationBarSystemUiVisibility.appearanceRegions = appearanceRegions;
+        mNavigationBarSystemUiVisibility.navbarColorManagedByIme = navbarColorManagedByIme;
+        mNavigationBarSystemUiVisibility.behavior = behavior;
+        mNavigationBarSystemUiVisibility.requestedVisibilities = requestedVisibilities;
+        mNavigationBarSystemUiVisibility.packageName = packageName;
+
         boolean barModeChanged = mStatusBar.setAppearance(appearance);
 
         mLightBarController.onStatusBarAppearanceChanged(appearanceRegions, barModeChanged,
