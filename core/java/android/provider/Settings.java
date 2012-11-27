@@ -7255,6 +7255,12 @@ public final class Settings {
         @Deprecated
         public static final String NETWORK_PREFERENCE = Global.NETWORK_PREFERENCE;
 
+	/**
+         * Whether to display the ADB notification.
+         * @hide
+         */
+        public static final String ADB_NOTIFY = "adb_notify";
+
         /**
          * No longer supported.
          */
