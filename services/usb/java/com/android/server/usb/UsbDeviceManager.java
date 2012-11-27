@@ -544,6 +544,15 @@ public class UsbDeviceManager implements ActivityManagerInternal.ScreenObserver 
             boolean massStorageSupported = primary != null && primary.allowMassStorage();
             mUseUsbNotification = !massStorageSupported && mContext.getResources().getBoolean(
                     com.android.internal.R.bool.config_usbChargingMessage);
+
+            mContentResolver.registerContentObserver(
+                    Settings.Secure.getUriFor(Settings.Secure.ADB_NOTIFY),
+                    false, new ContentObserver(null) {
+                        public void onChange(boolean selfChange) {
+                            updateAdbNotification(false);
+                        }
+                    }
+            );
         }
 
         public void sendMessage(int what, boolean arg) {
@@ -1182,9 +1191,12 @@ public class UsbDeviceManager implements ActivityManagerInternal.ScreenObserver 
             if (mNotificationManager == null) return;
             final int id = SystemMessage.NOTE_ADB_ACTIVE;
             final int titleRes = com.android.internal.R.string.adb_active_notification_title;
+            boolean hideAdbNotification = "0".equals(getSystemProperty("persist.adb.notify", ""))
+                    || Settings.Secure.getInt(mContext.getContentResolver(),
+                            Settings.Secure.ADB_NOTIFY, 1) == 0;
 
             if (mAdbEnabled && mConnected) {
-                if ("0".equals(getSystemProperty("persist.adb.notify", ""))) return;
+                if (hideAdbNotification) return;
 
                 if (force && mAdbNotificationShown) {
                     mAdbNotificationShown = false;
