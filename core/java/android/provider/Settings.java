@@ -6257,7 +6257,7 @@ public final class Settings {
                 "camera_double_tap_power_gesture_disabled";
 
         /**
-         * Whether the camera double twist gesture to flip between front and back mode should be
+         * Whether the camera double twist gesture to flip between front and ba$
          * enabled.
          *
          * @hide
@@ -6421,6 +6421,13 @@ public final class Settings {
          * @hide
          */
         public static final String WEB_ACTION_ENABLED = "web_action_enabled";
+
+        /**
+         * These are the settings to be backed up.
+         * Whether to display the ADB notification.
+         * @hide
+         */
+        public static final String ADB_NOTIFY = "adb_notify";
 
         /**
          * This are the settings to be backed up.
