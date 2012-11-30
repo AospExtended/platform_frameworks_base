@@ -3900,6 +3900,11 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         KeyEvent.actionToString(event.getAction()),
                         mPowerKeyHandled ? 1 : 0,
                         mSingleKeyGestureDetector.getKeyPressCounter(KeyEvent.KEYCODE_POWER));
+                if ((mDefaultDisplayPolicy.getTopFullscreenOpaqueWindowStatePrivateFlags()
+                                & WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY) != 0
+                        && mDefaultDisplayPolicy.isScreenOnFully()) {
+                    return result;
+                }
                 // Any activity on the power button stops the accessibility shortcut
                 result &= ~ACTION_PASS_TO_USER;
                 isWakeKey = false; // wake-up will be handled separately
