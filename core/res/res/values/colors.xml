@@ -187,4 +187,8 @@
 
     <color name="resize_shadow_start_color">#2a000000</color>
     <color name="resize_shadow_end_color">#00000000</color>
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_preventpower">override power key</string>
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_preventpower">Allows an app to override the power key.</string>
 </resources>
