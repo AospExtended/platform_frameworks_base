@@ -6540,7 +6540,45 @@ public final class Settings {
                 "managed_profile_contact_remote_search";
 
         /**
-         * This are the settings to be backed up.
+         * Whether a notification should be shown if privacy guard is enabled
+         * @hide
+         */
+        public static final String PRIVACY_GUARD_NOTIFICATION = "privacy_guard_notification";
+
+        /**
+         * What happens when the user presses the Home button when the
+         * phone is ringing.<br/>
+         * <b>Values:</b><br/>
+         * 1 - Nothing happens. (Default behavior)<br/>
+         * 2 - The Home button answer the current call.<br/>
+         *
+         * @hide
+         */
+        public static final String RING_HOME_BUTTON_BEHAVIOR = "ring_home_button_behavior";
+
+        /**
+         * RING_HOME_BUTTON_BEHAVIOR value for "do nothing".
+         * @hide
+         */
+        public static final int RING_HOME_BUTTON_BEHAVIOR_DO_NOTHING = 0x1;
+
+        /**
+         * RING_HOME_BUTTON_BEHAVIOR value for "answer".
+         * @hide
+         */
+        public static final int RING_HOME_BUTTON_BEHAVIOR_ANSWER = 0x2;
+
+        /**
+         * RING_HOME_BUTTON_BEHAVIOR default value.
+         * @hide
+         */
+        public static final int RING_HOME_BUTTON_BEHAVIOR_DEFAULT =
+                RING_HOME_BUTTON_BEHAVIOR_DO_NOTHING;
+
+        /** endregion */
+
+        /**
+         * These are the settings to be backed up.
          *
          * NOTE: Settings are backed up and restored in the order they appear
          *       in this array. If you have one setting depending on another,
