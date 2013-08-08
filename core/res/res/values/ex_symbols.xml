@@ -255,6 +255,9 @@
   <java-symbol type="color" name="tooltip_text_light" />
   <java-symbol type="color" name="tooltip_text_dark" />
 
+  <!-- From SignalStrength -->
+  <java-symbol type="integer" name="config_LTE_antenna_bar_quantity_metric" />
+  <java-symbol type="integer" name="config_LTE_RSRP_threshold_type" />
 </resources>
 
 
