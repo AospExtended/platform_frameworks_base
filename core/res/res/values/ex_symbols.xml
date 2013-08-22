@@ -62,5 +62,9 @@
     <!-- Whether to allow process with media UID to access CameraServiceProxy -->
     <java-symbol type="bool" name="config_allowMediaUidForCameraServiceProxy" />
 
+    <!-- Button backlight -->
+    <java-symbol type="integer" name="config_buttonBrightnessSettingDefault" />
+    <java-symbol type="bool" name="config_deviceHasVariableButtonBrightness" />
+
     <java-symbol type="array" name="config_customPermissionsList" />
 </resources>
