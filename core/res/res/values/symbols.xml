@@ -2804,4 +2804,7 @@
   <java-symbol type="bool" name="config_softap_extention" />
 
   <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
+
+  <!-- Gesture Sensor -->
+  <java-symbol type="bool" name="config_enableGestureService" />
 </resources>
