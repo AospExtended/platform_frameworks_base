@@ -141,6 +141,7 @@ public class Clock extends TextView implements DemoMode, Tunable {
             if (action.equals(Intent.ACTION_TIMEZONE_CHANGED)) {
                 String tz = intent.getStringExtra("time-zone");
                 mCalendar = Calendar.getInstance(TimeZone.getTimeZone(tz));
+                TimeZone.setDefault(mCalendar.getTimeZone());
                 if (mClockFormat != null) {
                     mClockFormat.setTimeZone(mCalendar.getTimeZone());
                 }
