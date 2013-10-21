@@ -164,6 +164,7 @@ import android.os.RemoteException;
 import android.os.SystemClock;
 import android.os.UserHandle;
 import android.os.storage.StorageManager;
+import android.provider.Settings;
 import android.service.voice.IVoiceInteractionSession;
 import android.util.BoostFramework;
 import android.util.EventLog;
@@ -1904,6 +1905,34 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
             // the keyguard is not showing don't attempt to sleep. Otherwise the Activity will
             // pause and then resume again later, which will result in a double life-cycle event.
             stack.checkReadyForSleep();
+        }
+
+        service.mAppOpsService.handlePackageResumed(this.app.uid, this.packageName);
+        updatePrivacyGuardNotificationLocked();
+    }
+
+    private final void updatePrivacyGuardNotificationLocked() {
+        String privacyGuardPackageName = mStackSupervisor.mPrivacyGuardPackageName;
+        if (privacyGuardPackageName != null && privacyGuardPackageName.equals(this.packageName)) {
+            return;
+        }
+
+        boolean privacy = service.mAppOpsService.getPrivacyGuardSettingForPackage(
+                this.app.uid, this.packageName);
+        boolean privacyNotification = Settings.Secure.getInt(
+                service.mContext.getContentResolver(),
+                Settings.Secure.PRIVACY_GUARD_NOTIFICATION, 1) == 1;
+
+        if (privacyGuardPackageName != null && !privacy) {
+            Message msg = service.mHandler.obtainMessage(
+                    ActivityManagerService.CANCEL_PRIVACY_NOTIFICATION_MSG, this.userId);
+            msg.sendToTarget();
+            mStackSupervisor.mPrivacyGuardPackageName = null;
+        } else if (privacy && privacyNotification) {
+            Message msg = service.mHandler.obtainMessage(
+                    ActivityManagerService.POST_PRIVACY_NOTIFICATION_MSG, this);
+            msg.sendToTarget();
+            mStackSupervisor.mPrivacyGuardPackageName = this.packageName;
         }
     }
 
