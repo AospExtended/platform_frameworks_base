@@ -25,113 +25,131 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
+*/
+
 package com.android.server;
 
-import android.os.Message;
-import android.os.Handler;
-import android.widget.TextView;
-import android.widget.CheckBox;
-import android.view.WindowManager;
-import android.view.View;
-import android.content.res.Resources;
-import android.content.pm.PackageManager;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager.NameNotFoundException;
+import android.app.AppOpsManager;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.app.AppOpsManager;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
+import android.os.Handler;
+import android.os.Message;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.CheckBox;
+import android.widget.TextView;
 
 public class PermissionDialog extends BasePermissionDialog {
-    private final int mDef;
-    private final String inputPackage;
-    private final AppOpsService opsServ;
-    private final static String TAG = "PermInfo";
-    private View viewId;
-    private int inputId;
-    private CheckBox checkSta;
-    private Context contId;
+    private final static String TAG = "PermissionDialog";
+
+    private final AppOpsService mService;
+    private final String mPackageName;
+    private final int mCode;
+    private View  mView;
+    private CheckBox mChoice;
+    private int mUid;
     final CharSequence[] mOpLabels;
-    static final int IGNORED_REQ = 0x4;
-    static final int IGNORED_REQ_TIMEOUT = 0x8;
-    static final long TIMEOUT_WAIT = 15 * 1000;
-    static final int ALLOWED_REQ = 0x2;
+    private Context mContext;
 
-    public PermissionDialog(Context contextId, AppOpsService opsService,
-                            int defInf, int idInfo, String packageName) {
-        super(contextId);
-        opsServ = opsService;
-        inputPackage = packageName;
-        contId = contextId;
-        mDef = defInf;
-        Resources rId = contextId.getResources();
-        inputId = idInfo;
-        mOpLabels = rId.getTextArray(
-                com.android.internal.R.array.app_ops_labels);
+    // Event 'what' codes
+    static final int ACTION_ALLOWED = 0x2;
+    static final int ACTION_IGNORED = 0x4;
+    static final int ACTION_IGNORED_TIMEOUT = 0x8;
+
+    // 15s timeout, then we automatically dismiss the permission
+    // dialog. Otherwise, it may cause watchdog timeout sometimes.
+    static final long DISMISS_TIMEOUT = 1000 * 15 * 1;
+
+    public PermissionDialog(Context context, AppOpsService service,
+            int code, int uid, String packageName) {
+        super(context);
+
+        mContext = context;
+        Resources res = context.getResources();
+
+        mService = service;
+        mCode = code;
+        mPackageName = packageName;
+        mUid = uid;
+        mOpLabels = res.getTextArray(
+            com.android.internal.R.array.app_ops_labels);
+
         setCancelable(false);
-        setButton(DialogInterface.BUTTON_POSITIVE,
-                rId.getString(com.android.internal.R.string.allow_button),
-                myHandle.obtainMessage(ALLOWED_REQ));
-        setButton(DialogInterface.BUTTON_NEGATIVE,
-                rId.getString(com.android.internal.R.string.deny_button),
-                myHandle.obtainMessage(IGNORED_REQ));
-        setTitle(rId.getString(com.android.internal.R.string.permission_title));
-        WindowManager.LayoutParams paraDef = getWindow().getAttributes();
-        paraDef.setTitle("Permission: " + getAppName(inputPackage));
-        paraDef.privateFlags |= WindowManager.LayoutParams.PRIVATE_FLAG_SYSTEM_ERROR
-                | WindowManager.LayoutParams.PRIVATE_FLAG_SHOW_FOR_ALL_USERS;
-        getWindow().setAttributes(paraDef);
-        viewId = getLayoutInflater().inflate(
-                com.android.internal.R.layout.permission_confirmation_dialog, null);
-        TextView textId = (TextView) viewId.findViewById(
-                com.android.internal.R.id.permission_text);
-        checkSta = (CheckBox) viewId.findViewById(
-                com.android.internal.R.id.permission_remember_choice_checkbox);
-        TextView textRem = (TextView) viewId.findViewById(
-                com.android.internal.R.id.permission_remember_choice_text);
-        checkSta.setVisibility(View.INVISIBLE);
-        textRem.setVisibility(View.INVISIBLE);
 
-        String appName = getAppName(inputPackage);
-        if (appName == null)
-            appName = inputPackage;
-        textId.setText(appName + ": " + mOpLabels[mDef-64]);
-        setView(viewId);
-        myHandle.sendMessageDelayed(myHandle.obtainMessage(IGNORED_REQ_TIMEOUT), TIMEOUT_WAIT);
+        setButton(DialogInterface.BUTTON_POSITIVE,
+                  res.getString(com.android.internal.R.string.allow), mHandler.obtainMessage(ACTION_ALLOWED));
+
+        setButton(DialogInterface.BUTTON_NEGATIVE,
+                    res.getString(com.android.internal.R.string.deny), mHandler.obtainMessage(ACTION_IGNORED));
+
+        setTitle(res.getString(com.android.internal.R.string.privacy_guard_dialog_title));
+        WindowManager.LayoutParams attrs = getWindow().getAttributes();
+        attrs.setTitle("Permission info: " + getAppName(mPackageName));
+        attrs.privateFlags |= WindowManager.LayoutParams.PRIVATE_FLAG_SYSTEM_ERROR
+                | WindowManager.LayoutParams.PRIVATE_FLAG_SHOW_FOR_ALL_USERS;
+        getWindow().setAttributes(attrs);
+
+        mView = getLayoutInflater().inflate(
+             com.android.internal.R.layout.permission_confirmation_dialog,
+             null);
+        TextView tv = (TextView) mView.findViewById(
+            com.android.internal.R.id.permission_text);
+        mChoice = (CheckBox) mView.findViewById(
+            com.android.internal.R.id.permission_remember_choice_checkbox);
+        String name = getAppName(mPackageName);
+        if(name == null)
+            name = mPackageName;
+        tv.setText(mContext.getString(com.android.internal.R.string.privacy_guard_dialog_summary,
+                name, mOpLabels[mCode]));
+        setView(mView);
+
+        // After the timeout, pretend the user clicked the quit button
+        mHandler.sendMessageDelayed(
+                mHandler.obtainMessage(ACTION_IGNORED_TIMEOUT), DISMISS_TIMEOUT);
     }
 
-    private final Handler myHandle = new Handler() {
-        public void handleMessage(Message mess) {
-            int runSet;
-            boolean keepIt = checkSta.isChecked();
-            switch (mess.what) {
-                case ALLOWED_REQ:
-                    runSet = AppOpsManager.MODE_ALLOWED;
-                    break;
-                case IGNORED_REQ:
-                    runSet = AppOpsManager.MODE_IGNORED;
-                    break;
-                default:
-                    runSet = AppOpsManager.MODE_IGNORED;
-                    keepIt = false;
-            }
-            opsServ.notifyOperation(mDef, inputId, inputPackage, runSet, keepIt);
-            dismiss();
-        }
-    };
+    public void ignore() {
+        mHandler.sendMessage(mHandler.obtainMessage(ACTION_IGNORED_TIMEOUT));
+    }
 
-    private String getAppName(String inputName) {
-        PackageManager packMan = contId.getPackageManager();
-        ApplicationInfo runInfo = null;
+    private String getAppName(String packageName) {
+        ApplicationInfo appInfo = null;
+        PackageManager pm = mContext.getPackageManager();
         try {
-            runInfo = packMan.getApplicationInfo(inputName, PackageManager.GET_DISABLED_COMPONENTS
-                    | PackageManager.GET_UNINSTALLED_PACKAGES);
+            appInfo = pm.getApplicationInfo(packageName,
+                      PackageManager.GET_DISABLED_COMPONENTS
+                      | PackageManager.GET_UNINSTALLED_PACKAGES);
         } catch (final NameNotFoundException e) {
             return null;
         }
-        if (runInfo != null) {
-            return (String) packMan.getApplicationLabel(runInfo);
+        if(appInfo != null) {
+            return  (String)pm.getApplicationLabel(appInfo);
         }
         return null;
     }
+
+    private final Handler mHandler = new Handler() {
+        public void handleMessage(Message msg) {
+            int mode;
+            boolean remember = mChoice.isChecked();
+            switch(msg.what) {
+                case ACTION_ALLOWED:
+                    mode = AppOpsManager.MODE_ALLOWED;
+                    break;
+                case ACTION_IGNORED:
+                    mode = AppOpsManager.MODE_IGNORED;
+                    break;
+                default:
+                    mode = AppOpsManager.MODE_IGNORED;
+                    remember = false;
+            }
+            mService.notifyOperation(mCode, mUid, mPackageName, mode,
+                remember);
+            dismiss();
+        }
+    };
 }

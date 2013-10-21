@@ -24,4 +24,7 @@
     <string name="led_notification_title">Light settings</string>
     <string name="led_notification_text">LED light enabled by settings</string>
 
+    <!-- Content description of the Superuser tile -->
+    <string name="accessibility_su_active">Superuser session active</string>
+
 </resources>
