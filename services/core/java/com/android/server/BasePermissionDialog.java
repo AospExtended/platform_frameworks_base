@@ -1,31 +1,22 @@
 /*
- * Copyright (C) 2015-2016, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2013, The Linux Foundation. All rights reserved.
+ * Not a Contribution.
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are
- * met:
- *     * Redistributions of source code must retain the above copyright
- *       notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above
- *       copyright notice, this list of conditions and the following
- *       disclaimer in the documentation and/or other materials provided
- *       with the distribution.
- *     * Neither the name of The Linux Foundation nor the names of its
- *       contributors may be used to endorse or promote products derived
- *       from this software without specific prior written permission.
+ * Copyright (C) 2006 The Android Open Source Project
  *
- * THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
- * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
- * ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
- * BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
- * BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
- * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
- * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
- * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.android.server;
 
 import android.app.AlertDialog;
@@ -35,56 +26,59 @@ import android.os.Message;
 import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.widget.Button;
+
 import com.android.internal.R;
 
 public class BasePermissionDialog extends AlertDialog {
-    public BasePermissionDialog(Context dialogCon) {
-        super(dialogCon, com.android.internal.R.style.Theme_Dialog_AppError);
+    public BasePermissionDialog(Context context) {
+        super(context, com.android.internal.R.style.Theme_Dialog_AppError);
         getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM,
                 WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
-        WindowManager.LayoutParams permInfo = getWindow().getAttributes();
-        permInfo.setTitle("Permission Dialog");
-        getWindow().setAttributes(permInfo);
+        WindowManager.LayoutParams attrs = getWindow().getAttributes();
+        attrs.setTitle("Permission Dialog");
+        getWindow().setAttributes(attrs);
         setIconAttribute(R.attr.alertDialogIcon);
-    }
-
-    public boolean dispatchKeyEvent(KeyEvent event) {
-        if (mState) {
-            return true;
-        }
-        return super.dispatchKeyEvent(event);
     }
 
     public void onStart() {
         super.onStart();
         setEnabled(false);
-        mInfoHandler.sendMessage(mInfoHandler.obtainMessage(0));
+        mHandler.sendMessage(mHandler.obtainMessage(0));
     }
 
-    private Handler mInfoHandler = new Handler() {
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (mConsuming) {
+            // Slog.i(TAG, "Consuming: " + event);
+            return true;
+        }
+        // Slog.i(TAG, "Dispatching: " + event);
+        return super.dispatchKeyEvent(event);
+    }
+
+    private void setEnabled(boolean enabled) {
+        Button b = (Button) findViewById(R.id.button1);
+        if (b != null) {
+            b.setEnabled(enabled);
+        }
+        b = (Button) findViewById(R.id.button2);
+        if (b != null) {
+            b.setEnabled(enabled);
+        }
+        b = (Button) findViewById(R.id.button3);
+        if (b != null) {
+            b.setEnabled(enabled);
+        }
+    }
+
+    private Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
             if (msg.what == 0) {
-                mState = false;
+                mConsuming = false;
                 setEnabled(true);
             }
         }
     };
 
-    private void setEnabled(boolean setState) {
-        Button btn = (Button) findViewById(R.id.button1);
-        if (btn != null) {
-            btn.setEnabled(setState);
-        }
-        btn = (Button) findViewById(R.id.button2);
-        if (btn != null) {
-            btn.setEnabled(setState);
-        }
-        btn = (Button) findViewById(R.id.button3);
-        if (btn != null) {
-            btn.setEnabled(setState);
-        }
-    }
-
-    private boolean mState = true;
+    private boolean mConsuming = true;
 }
