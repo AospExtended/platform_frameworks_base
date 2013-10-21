@@ -57,6 +57,10 @@ interface IAppOpsService {
 
     void startWatchingModeWithFlags(int op, String packageName, int flags, IAppOpsCallback callback);
 
+    // Privacy guard methods
+    boolean getPrivacyGuardSettingForPackage(int uid, String packageName);
+    void setPrivacyGuardSettingForPackage(int uid, String packageName, boolean state);
+
     // AppOps accounting
     void resetCounters();
 }
