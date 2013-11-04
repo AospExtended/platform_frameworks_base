@@ -51,4 +51,9 @@
     <string name="permlab_fakePackageSignature">Spoof package signature</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_fakePackageSignature">Allows the app to pretend to be a different app. Malicious applications might be able to use this to access private application data. Grant this permission with caution only!</string>
+
+    <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">ADB over network enabled</string>
+    <string name="adb_both_active_notification_title">ADB over USB &amp; network enabled</string>
+    <string name="adb_active_generic_notification_message">Touch to disable debugging.</string>
 </resources>
