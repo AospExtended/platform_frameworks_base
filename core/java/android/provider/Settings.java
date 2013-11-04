@@ -4634,6 +4634,14 @@ public final class Settings {
          */
         public static final String FORCE_ALLOW_SYSTEM_THEMES = "force_allow_system_themes";
 
+        /** 
+         * Allow all rotations.
+         * @hide
+         */
+        public static final String ACCELEROMETER_ROTATION_ANGLES = "accelerometer_rotation_angles";
+        /** @hide */
+        private static final Validator ACCELEROMETER_ROTATION_ANGLES_VALIDATOR =
+                ANY_STRING_VALIDATOR;
         /**
          * Which component to use for Recents UI
          * 0 - Pie Recents (Quickstep)
@@ -4894,7 +4902,8 @@ public final class Settings {
             STATUSBAR_CLOCK_AM_PM_STYLE,
             STATUSBAR_CLOCK_DATE_DISPLAY,
             STATUSBAR_CLOCK_DATE_STYLE,
-            STATUSBAR_CLOCK_DATE_FORMAT
+            STATUSBAR_CLOCK_DATE_FORMAT,
+            ACCELEROMETER_ROTATION_ANGLES
         };
 
         /**
@@ -5056,6 +5065,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(CUSTOM_DEVICE_PROXI_CHECK_ENABLED);
             PRIVATE_SETTINGS.add(CUSTOM_DEVICE_GESTURE_FEEDBACK_ENABLED);
             PRIVATE_SETTINGS.add(CUSTOM_DEVICE_FEATURE_SETTINGS);
+            PRIVATE_SETTINGS.add(ACCELEROMETER_ROTATION_ANGLES);
         }
 
 
@@ -5174,6 +5184,7 @@ public final class Settings {
             VALIDATORS.put(CUSTOM_DEVICE_GESTURE_FEEDBACK_ENABLED, CUSTOM_DEVICE_GESTURE_FEEDBACK_ENABLED_VALIDATOR);
             VALIDATORS.put(CUSTOM_DEVICE_FEATURE_SETTINGS, CUSTOM_DEVICE_FEATURE_SETTINGS_VALIDATOR);
             VALIDATORS.put(WEATHER_LOCKSCREEN_UNIT, WEATHER_LOCKSCREEN_UNIT_VALIDATOR);
+            VALIDATORS.put(ACCELEROMETER_ROTATION_ANGLES, ACCELEROMETER_ROTATION_ANGLES_VALIDATOR);
         }
 
         /**
