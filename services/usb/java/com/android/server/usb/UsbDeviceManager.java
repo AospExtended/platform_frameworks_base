@@ -428,7 +428,7 @@ public class UsbDeviceManager {
         private boolean mCurrentFunctionsApplied;
         private UsbAccessory mCurrentAccessory;
         private int mUsbNotificationId;
-        private boolean mAdbNotificationShown;
+        private int mAdbNotificationTitleRes;
         private int mCurrentUser = UserHandle.USER_NULL;
         private boolean mUsbCharging;
         private String mCurrentOemFunctions;
@@ -481,10 +481,27 @@ public class UsbDeviceManager {
                 // register observer to listen for settings changes
                 mContentResolver.registerContentObserver(
                         Settings.Global.getUriFor(Settings.Global.ADB_ENABLED),
-                        false, mAdbSettingsObserver);
+
+                        false, new AdbSettingsObserver());
                 mContentResolver.registerContentObserver(
-                        Settings.Global.getUriFor(Settings.Global.USB_PARANOIA_CONNECT),
-                        false, mAdbSettingsObserver);
+                        Settings.Secure.getUriFor(Settings.Secure.ADB_NOTIFY),
+                                false, new ContentObserver(null) {
+                            public void onChange(boolean selfChange) {
+                                updateAdbNotification(true);
+                            }
+                        }
+                );
+
+                ContentObserver adbNotificationObserver = new ContentObserver(null) {
+                    @Override
+                    public void onChange(boolean selfChange) {
+                        updateAdbNotification(false);
+                    }
+                };
+
+                mContentResolver.registerContentObserver(
+                        Settings.Secure.getUriFor(Settings.Secure.ADB_PORT),
+                                false, adbNotificationObserver);
 
                 // Watch for USB configuration changes
                 mUEventObserver.startObserving(USB_STATE_MATCH);
@@ -1195,7 +1212,7 @@ public class UsbDeviceManager {
                                     .setDefaults(0)  // please be quiet
                                     .setColor(mContext.getColor(
                                             com.android.internal.R.color
-                                                    .system_notification_accent_color))
+                                            .system_notification_accent_color))
                                     .setContentTitle(title)
                                     .setContentText(message)
                                     .setContentIntent(pi)
@@ -1221,23 +1238,35 @@ public class UsbDeviceManager {
         private void updateAdbNotification(boolean force) {
             if (mNotificationManager == null) return;
             final int id = SystemMessage.NOTE_ADB_ACTIVE;
-            final int titleRes = com.android.internal.R.string.adb_active_notification_title;
-            boolean usbHasAdbFunction = UsbManager.containsFunction(mCurrentFunctions,
-                    UsbManager.USB_FUNCTION_ADB);
 
-            if (mAdbEnabled && mConnected && usbHasAdbFunction) {
-                if ("0".equals(SystemProperties.get("persist.adb.notify"))) return;
+            boolean usbAdbActive = mAdbEnabled && mConnected;
+            boolean netAdbActive = mAdbEnabled &&
+                    Settings.Secure.getInt(mContentResolver, Settings.Secure.ADB_PORT, -1) > 0;
+            final int titleRes;
+            boolean hideNotification = "0".equals(SystemProperties.get("persist.adb.notify"))
+                    || Settings.Secure.getInt(mContext.getContentResolver(),
+                            Settings.Secure.ADB_NOTIFY, 1) == 0;
+            if (hideNotification) {
+                titleRes = 0;
+            } else if (usbAdbActive && netAdbActive) {
+                titleRes = com.android.internal.R.string.adb_both_active_notification_title;
+            } else if (usbAdbActive) {
+                titleRes = com.android.internal.R.string.adb_active_notification_title;
+            } else if (netAdbActive) {
+                titleRes = com.android.internal.R.string.adb_net_active_notification_title;
+            } else {
+                titleRes = 0;
+            }
 
-                if (force && mAdbNotificationShown) {
-                    mAdbNotificationShown = false;
+            if (titleRes != mAdbNotificationTitleRes) {
+                if (mAdbNotificationTitleRes != 0) {
                     mNotificationManager.cancelAsUser(null, id, UserHandle.ALL);
                 }
-
-                if (!mAdbNotificationShown) {
+                if (titleRes != 0) {
                     Resources r = mContext.getResources();
                     CharSequence title = r.getText(titleRes);
                     CharSequence message = r.getText(
-                            com.android.internal.R.string.adb_active_notification_message);
+                            com.android.internal.R.string.adb_active_generic_notification_message);
 
                     Intent intent = new Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
@@ -1246,30 +1275,28 @@ public class UsbDeviceManager {
                             intent, 0, null, UserHandle.CURRENT);
 
                     Notification notification =
-                            new Notification.Builder(mContext, SystemNotificationChannels.DEVELOPER)
-                                    .setSmallIcon(com.android.internal.R.drawable.stat_sys_adb)
-                                    .setWhen(0)
-                                    .setOngoing(true)
-                                    .setTicker(title)
-                                    .setDefaults(0)  // please be quiet
+                        new Notification.Builder(mContext, SystemNotificationChannels.DEVELOPER)
+                            .setSmallIcon(com.android.internal.R.drawable.stat_sys_adb)
+                            .setWhen(0)
+                            .setOngoing(true)
+                            .setTicker(title)
+                            .setDefaults(0)  // please be quiet
                                     .setColor(mContext.getColor(
                                             com.android.internal.R.color
-                                                    .system_notification_accent_color))
-                                    .setContentTitle(title)
-                                    .setContentText(message)
-                                    .setContentIntent(pi)
-                                    .setVisibility(Notification.VISIBILITY_PUBLIC)
-                                    .extend(new Notification.TvExtender()
-                                            .setChannelId(ADB_NOTIFICATION_CHANNEL_ID_TV))
-                                    .build();
-                    mAdbNotificationShown = true;
+                                            .system_notification_accent_color))
+                            .setContentTitle(title)
+                            .setContentText(message)
+                            .setContentIntent(pi)
+                            .setVisibility(Notification.VISIBILITY_PUBLIC)
+                            .extend(new Notification.TvExtender()
+                                    .setChannelId(ADB_NOTIFICATION_CHANNEL_ID_TV))
+                            .build();
+
                     mNotificationManager.notifyAsUser(null, id, notification,
                             UserHandle.ALL);
                     if (DEBUG) Slog.d(TAG, "push adb notification");
                 }
-            } else if (mAdbNotificationShown) {
-                mAdbNotificationShown = false;
-                mNotificationManager.cancelAsUser(null, id, UserHandle.ALL);
+                mAdbNotificationTitleRes = titleRes;
             }
         }
 

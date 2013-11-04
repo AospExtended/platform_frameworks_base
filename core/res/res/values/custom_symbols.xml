@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2017 The LiquidRemix Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+
+    <!-- System clock rotation sensor -->
+    <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
+
+    <!-- Disabled components -->
+    <java-symbol type="array" name="config_disabledComponents" />
+
+    <!-- Force enabled components -->
+    <java-symbol type="array" name="config_forceEnabledComponents" />
+
+    <!-- Usb drive persistent notification -->
+    <java-symbol type="bool" name="config_persistUsbDriveNotification" />
+
+    <!-- Button brightness -->
+    <java-symbol type="integer" name="config_buttonBrightnessSettingDefault" />
+    <java-symbol type="bool" name="config_deviceHasVariableButtonBrightness" />
+
+    <!-- Advanced reboot -->
+    <java-symbol type="string" name="reboot_to_recovery_title" />
+    <java-symbol type="string" name="reboot_to_recovery_message" />
+    <java-symbol type="string" name="reboot_to_bootloader_title" />
+    <java-symbol type="string" name="reboot_to_bootloader_message" />
+    <java-symbol type="string" name="reboot_title" />
+    <java-symbol type="string" name="reboot_message" />
+
+    <!-- Vendor warning -->
+    <java-symbol type="string" name="system_error_vendorprint" />
+
+    <!-- IME selector notification -->
+    <java-symbol type="bool" name="config_show_cmIMESwitcher"/>
+
+    <!-- ADB notifications -->
+    <java-symbol type="string" name="adb_net_active_notification_title" />
+    <java-symbol type="string" name="adb_both_active_notification_title" />
+    <java-symbol type="string" name="adb_active_generic_notification_message" />
+
+</resources>
