@@ -2791,6 +2791,9 @@
   <!-- Proximity check timeout -->
   <java-symbol type="integer" name="config_proximityCheckTimeout" />
 
+  <!-- Samsung STK -->
+  <java-symbol type="bool" name="config_samsung_stk" />
+
   <!-- Proximity check on screen on default -->
   <java-symbol type="bool" name="config_proximityCheckOnWakeEnabledByDefault" />
 

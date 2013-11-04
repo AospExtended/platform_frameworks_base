@@ -2743,4 +2743,6 @@
     <integer name="config_proximityCheckTimeout">250</integer>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
 
+    <!-- Boolean to enable stk functionality on Samsung phones -->
+    <bool name="config_samsung_stk">false</bool>
 </resources>
