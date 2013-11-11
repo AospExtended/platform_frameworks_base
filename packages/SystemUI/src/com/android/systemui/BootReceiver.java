@@ -38,6 +38,10 @@ public class BootReceiver extends BroadcastReceiver {
             if (Settings.System.getInt(res, Settings.System.START_SCREEN_STATE_SERVICE, 0) != 0) {
                 Intent screenstate = new Intent(context, com.android.systemui.screenstate.ScreenStateService.class);
                 context.startService(screenstate);
+            // Start the cpu info overlay, if activated
+         }  else if (Settings.Global.getInt(res, Settings.Global.SHOW_CPU, 0) != 0) {
+                Intent cpuinfo = new Intent(context, com.android.systemui.CPUInfoService.class);
+                context.startService(cpuinfo);
             }
 
         } catch (Exception e) {
