@@ -120,6 +120,11 @@
     <!-- Path to the library that contains a alternative device specific key handler -->
     <string name="config_alternativeDeviceKeyHandlerLib" translatable="false"></string>
 
+    <!-- EdgeGesture service -->
+    <java-symbol type="dimen" name="edge_gesture_trigger_distance" />
+    <java-symbol type="dimen" name="edge_gesture_perpendicular_distance" />
+    <java-symbol type="dimen" name="edge_gesture_trigger_thickness" />
+
      <!-- Name of that alternative key handler class -->
     <string name="config_alternativeDeviceKeyHandlerClass" translatable="false"></string>
 
