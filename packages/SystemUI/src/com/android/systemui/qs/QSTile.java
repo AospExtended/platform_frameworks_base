@@ -578,6 +578,7 @@ public abstract class QSTile<TState extends State> {
 
     public static class State {
         public Icon icon;
+	public boolean visible;
         public CharSequence label;
         public CharSequence contentDescription;
         public CharSequence dualLabelContentDescription;
@@ -593,7 +594,8 @@ public abstract class QSTile<TState extends State> {
         public boolean copyTo(State other) {
             if (other == null) throw new IllegalArgumentException();
             if (!other.getClass().equals(getClass())) throw new IllegalArgumentException();
-            final boolean changed = !Objects.equals(other.icon, icon)
+            final boolean changed = other.visible != visible
+		    || !Objects.equals(other.icon, icon)
                     || !Objects.equals(other.label, label)
                     || !Objects.equals(other.value, value)
                     || !Objects.equals(other.contentDescription, contentDescription)
@@ -608,6 +610,7 @@ public abstract class QSTile<TState extends State> {
                     expandedAccessibilityClassName)
                     || !Objects.equals(other.disabledByPolicy, disabledByPolicy)
                     || !Objects.equals(other.enforcedAdmin, enforcedAdmin);
+	    other.visible = visible;
             other.icon = icon;
             other.label = label;
             other.value = value;
@@ -635,6 +638,7 @@ public abstract class QSTile<TState extends State> {
 
         protected StringBuilder toStringBuilder() {
             final StringBuilder sb = new StringBuilder(getClass().getSimpleName()).append('[');
+	    sb.append("visible=").append(visible);
             sb.append(",icon=").append(icon);
             sb.append(",label=").append(label);
             sb.append(",value=").append(value);
