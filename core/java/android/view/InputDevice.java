@@ -302,6 +302,15 @@ public final class InputDevice implements Parcelable {
     public static final int SOURCE_HDMI = 0x02000000 | SOURCE_CLASS_BUTTON;
 
     /**
+     * The input source is a custom virtual key event sent programmatically to emulate different events.
+     *
+     * The key requested is different from the actual key's event.
+     *
+     * @hide
+     */
+    public static final int SOURCE_CUSTOM = 0x08000000 | SOURCE_CLASS_BUTTON;
+
+    /**
      * The input source is a specific virtual event sent from navigation bar.
      *
      * @see com.android.systemui.statusbar.policy.KeyButtonView#sendEvent()
