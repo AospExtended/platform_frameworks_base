@@ -4279,6 +4279,14 @@ public final class Settings {
         public static final String SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
 
         /**
+         * Whether to mute annoying notifications
+         * @hide
+         */
+        public static final String MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD =
+                "mute_annoying_notifications_threshold";
+
+
+        /**
          * @hide
          */
         public static final String SHOW_BATTERY_IMAGE = "status_bar_show_battery_image";
