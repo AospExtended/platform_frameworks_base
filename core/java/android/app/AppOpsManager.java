@@ -244,7 +244,9 @@ public class AppOpsManager {
     /** @hide BLUETOOTH_ADMIN . */
     public static final int OP_BLUETOOTH_ADMIN = 65;
     /** @hide */
-    public static final int _NUM_OP = 66;
+    public static final int OP_BOOT_COMPLETED = 66;
+    /** @hide */  
+    public static final int _NUM_OP = 67;
 
     /** Access to coarse location information. */
     public static final String OPSTR_COARSE_LOCATION = "android:coarse_location";
@@ -348,6 +350,9 @@ public class AppOpsManager {
     /** @hide BLUETOOTH_ADMIN . */
     public static final String OPSTR_BLUETOOTH_ADMIN
             = "android:bluetooth_admin";
+    /** Required for start at boot **/
+    private static final String OPSTR_BOOT_COMPLETED =
+            "android:boot_completed";
 
     private static final int[] RUNTIME_PERMISSIONS_OPS = {
             // Contacts
@@ -461,6 +466,7 @@ public class AppOpsManager {
             OP_RUN_IN_BACKGROUND,
             OP_CHANGE_WIFI_STATE,
             OP_BLUETOOTH_ADMIN,
+            OP_BOOT_COMPLETED,
     };
 
     /**
@@ -534,6 +540,7 @@ public class AppOpsManager {
             null,
             OPSTR_CHANGE_WIFI_STATE,
             OPSTR_BLUETOOTH_ADMIN,
+            OPSTR_BOOT_COMPLETED,
     };
 
     /**
@@ -607,6 +614,7 @@ public class AppOpsManager {
             "RUN_IN_BACKGROUND",
             "CHANGE_WIFI_STATE",
             "BLUETOOTH_ADMIN",
+            "BOOT_COMPLETED",
     };
 
     /**
@@ -680,6 +688,7 @@ public class AppOpsManager {
             null, // no permission for running in background
             android.Manifest.permission.CHANGE_WIFI_STATE,
             android.Manifest.permission.BLUETOOTH_ADMIN,
+            Manifest.permission.RECEIVE_BOOT_COMPLETED,
     };
 
     /**
@@ -754,6 +763,7 @@ public class AppOpsManager {
             null, // RUN_IN_BACKGROUND
             null, // OP_CHANGE_WIFI_STATE
             null, // OP_BLUETOOTH_ADMIN
+            null, //BOOT_COMPLETED
     };
 
     /**
@@ -827,6 +837,7 @@ public class AppOpsManager {
             false, // RUN_IN_BACKGROUND
             false, // OP_CHANGE_WIFI_STATE
             false, // OP_BLUETOOTH_ADMIN
+            false, // BOOT_COMPLETED
     };
 
     /**
@@ -899,6 +910,7 @@ public class AppOpsManager {
             AppOpsManager.MODE_ALLOWED,  // OP_RUN_IN_BACKGROUND
             AppOpsManager.MODE_ALLOWED,  //OP_CHANGE_WIFI_STATE
             AppOpsManager.MODE_ALLOWED,  //OP_BLUETOOTH_ADMIN
+            AppOpsManager.MODE_ALLOWED, // OP_BOOT_COMPLETED
     };
 
     /**
@@ -975,6 +987,7 @@ public class AppOpsManager {
             false,
             false, //OP_CHANGE_WIFI_STATE
             false, //OP_BLUETOOTH_ADMIN
+            false,     // OP_BOOT_COMPLETED
     };
 
     /**

@@ -255,7 +255,7 @@ final class UserController {
                         | Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND);
                 mService.broadcastIntentLocked(null, null, intent, null, resultTo, 0, null, null,
                         new String[] { android.Manifest.permission.RECEIVE_BOOT_COMPLETED },
-                        AppOpsManager.OP_NONE, null, true, false, MY_PID, SYSTEM_UID, userId);
+                        AppOpsManager.OP_BOOT_COMPLETED, null, true, false, MY_PID, SYSTEM_UID, userId);
             }
 
             // We need to delay unlocking managed profiles until the parent user
@@ -434,7 +434,7 @@ final class UserController {
                     | Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND);
             mService.broadcastIntentLocked(null, null, bootIntent, null, null, 0, null, null,
                     new String[] { android.Manifest.permission.RECEIVE_BOOT_COMPLETED },
-                    AppOpsManager.OP_NONE, null, true, false, MY_PID, SYSTEM_UID, userId);
+                    AppOpsManager.OP_BOOT_COMPLETED, null, true, false, MY_PID, SYSTEM_UID, userId);
         }
     }
 
