@@ -78,6 +78,7 @@ public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
     private SimpleDateFormat mContentDescriptionFormat;
     private boolean mScreenOn = true;
     private Locale mLocale;
+    private boolean mScreenOn = true;
 
     public static final int AM_PM_STYLE_GONE    = 0;
     public static final int AM_PM_STYLE_SMALL   = 1;
