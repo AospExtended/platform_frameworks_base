@@ -2984,7 +2984,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         || attrs.hideTimeoutMilliseconds > TOAST_WINDOW_TIMEOUT) {
                     attrs.hideTimeoutMilliseconds = TOAST_WINDOW_TIMEOUT;
                 }
-                attrs.windowAnimations = com.android.internal.R.style.Animation_Toast;
+		attrs.windowAnimations = com.android.internal.R.style.Animation_Toast;
                 break;
         }
 
