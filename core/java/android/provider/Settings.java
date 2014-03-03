@@ -3992,6 +3992,13 @@ public final class Settings {
         public static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
 
         /**
+         * Toast animations
+         *
+         * @hide
+         */
+        public static final String TOAST_ANIMATION = "toast_animation";
+
+        /**
          * whether to enable or disable vibration on succesful fingerprint auth
          *
          * @hide
