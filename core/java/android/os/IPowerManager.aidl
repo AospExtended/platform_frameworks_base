@@ -75,7 +75,6 @@ interface IPowerManager
 
     void wakeUpWithProximityCheck(long time, String reason, String opPackageName);
 
-
     // blocked wakelock support
     String getSeenWakeLocks();
 }
