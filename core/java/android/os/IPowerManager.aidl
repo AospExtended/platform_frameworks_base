@@ -69,4 +69,6 @@ interface IPowerManager
     void updateBlockedUids(int uid, boolean isBlocked);
 
     oneway void cpuBoost(int duration);
+
+    void wakeUpWithProximityCheck(long time, String reason, String opPackageName);
 }
