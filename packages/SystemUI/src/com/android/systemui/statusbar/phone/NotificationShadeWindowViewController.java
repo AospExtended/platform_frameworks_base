@@ -495,4 +495,13 @@ public class NotificationShadeWindowViewController {
             mDragDownHelper.updateDoubleTapToSleep(doubleTapToSleepEnabled);
         }
     }
+
+    public void setStatusBarWindowViewOptions() {
+        int isQsQuickPulldown = Settings.System.getIntForUser(mView.getContext().getContentResolver(),
+                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
+        if (mNotificationPanelViewController != null) {
+            mNotificationPanelViewController.setQsQuickPulldown(isQsQuickPulldown);
+        }
+    }
+
 }
