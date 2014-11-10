@@ -448,6 +448,8 @@ public class NotificationPanelView extends PanelView implements
     private boolean mAllowExpandForSmallExpansion;
     private Runnable mExpandAfterLayoutRunnable;
 
+    private int mOneFingerQuickSettingsIntercept;
+
     /**
      * If face auth with bypass is running for the first time after you turn on the screen.
      * (From aod or screen off)
@@ -1390,7 +1392,22 @@ public class NotificationPanelView extends PanelView implements
                 && (event.isButtonPressed(MotionEvent.BUTTON_SECONDARY)
                 || event.isButtonPressed(MotionEvent.BUTTON_TERTIARY));
 
-        return twoFingerDrag || stylusButtonClickDrag || mouseButtonClickDrag;
+        final float w = getMeasuredWidth();
+        final float x = event.getX();
+        float region = w * 1.f / 4.f; // TODO overlay region fraction?
+        boolean showQsOverride = false;
+
+        switch (mOneFingerQuickSettingsIntercept) {
+            case 1: // Right side pulldown
+                showQsOverride = isLayoutRtl() ? x < region : w - region < x;
+                break;
+            case 2: // Left side pulldown
+                showQsOverride = isLayoutRtl() ? w - region < x : x < region;
+                break;
+        }
+        showQsOverride &= mBarState == StatusBarState.SHADE;
+
+        return twoFingerDrag || showQsOverride || stylusButtonClickDrag || mouseButtonClickDrag;
     }
 
     private void handleQsDown(MotionEvent event) {
@@ -3588,5 +3605,9 @@ public class NotificationPanelView extends PanelView implements
 
     public void updateDoubleTapToSleep(boolean doubleTapToSleepEnabled) {
         mDoubleTapToSleepEnabled = doubleTapToSleepEnabled;
+    }
+
+    public void setQsQuickPulldown(int mode) {
+        mOneFingerQuickSettingsIntercept = mode;
     }
 }
