@@ -535,6 +535,8 @@ public class NotificationPanelViewController extends PanelViewController {
     private boolean mAllowExpandForSmallExpansion;
     private Runnable mExpandAfterLayoutRunnable;
 
+    private int mOneFingerQuickSettingsIntercept;
+
     /**
      * The padding between the start of notifications and the qs boundary on the lockscreen.
      * On lockscreen, notifications aren't inset this extra amount, but we still want the
@@ -1921,7 +1923,22 @@ public class NotificationPanelViewController extends PanelViewController {
                         MotionEvent.BUTTON_SECONDARY) || event.isButtonPressed(
                         MotionEvent.BUTTON_TERTIARY));
 
-        return twoFingerDrag || stylusButtonClickDrag || mouseButtonClickDrag;
+        final float w = mView.getMeasuredWidth();
+        final float x = event.getX();
+        float region = w * 1.f / 4.f; // TODO overlay region fraction?
+        boolean showQsOverride = false;
+
+        switch (mOneFingerQuickSettingsIntercept) {
+            case 1: // Right side pulldown
+                showQsOverride = mView.isLayoutRtl() ? x < region : w - region < x;
+                break;
+            case 2: // Left side pulldown
+                showQsOverride = mView.isLayoutRtl() ? w - region < x : x < region;
+                break;
+        }
+        showQsOverride &= mBarState == StatusBarState.SHADE;
+
+        return twoFingerDrag || showQsOverride || stylusButtonClickDrag || mouseButtonClickDrag;
     }
 
     private void handleQsDown(MotionEvent event) {
@@ -3851,6 +3868,10 @@ public class NotificationPanelViewController extends PanelViewController {
 
     public void updateDoubleTapToSleep(boolean doubleTapToSleepEnabled) {
         mDoubleTapToSleepEnabled = doubleTapToSleepEnabled;
+    }
+
+    public void setQsQuickPulldown(int mode) {
+        mOneFingerQuickSettingsIntercept = mode;
     }
 
     public void setAlpha(float alpha) {
