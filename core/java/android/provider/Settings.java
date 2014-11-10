@@ -3661,6 +3661,12 @@ public final class Settings {
          */
         public static final String REMOVE_SETTINGS_TILE_SUMMARY = "remove_settings_tile_summary";
 
+        /** 
+         * Whether to allow one finger Quick Settings expansion on the right side of the status bar.
+         * @hide
+         */
+        public static final String STATUS_BAR_QUICK_QS_PULLDOWN = "status_bar_quick_qs_pulldown";
+
         /** endregion */
 
         /**
