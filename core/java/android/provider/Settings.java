@@ -3866,6 +3866,12 @@ public final class Settings {
         public static final String BATTERY_LOW_NOTIFICATION = "battery_low_notification";
 
         /**
+         * Enable/Disable screenshot sound
+         * @hide
+         */
+        public static final String SCREENSHOT_SOUND = "screenshot_sound";
+
+        /**
          * I am the lolrus.
          * <p>
          * Nonzero values indicate that the user has a bukkit.
