@@ -69,4 +69,9 @@
 
     <!-- Post reset runnable for all clients -->
     <java-symbol type="bool" name="config_fingerprintPostResetRunnableForAllClients" />
+
+    <!-- Notification light mappings -->
+    <java-symbol type="array" name="notification_light_package_mapping" />
+    <java-symbol type="integer" name="config_deviceLightCapabilities" />
+
 </resources>
