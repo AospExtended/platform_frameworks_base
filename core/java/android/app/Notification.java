@@ -1354,6 +1354,13 @@ public class Notification implements Parcelable
     private int mBadgeIcon = BADGE_ICON_NONE;
 
     /**
+     * Used by light picker in Settings to force
+     * notification lights on when screen is on
+     * @hide
+     */
+    public static final String EXTRA_FORCE_SHOW_LIGHTS = "android.forceShowLights";
+
+    /**
      * Determines whether the platform can generate contextual actions for a notification.
      */
     private boolean mAllowSystemGeneratedContextualActions = true;
