@@ -156,6 +156,7 @@ public class WindowManagerPolicyControl {
         }
     }
 
+
     public static void saveToSettings(Context context) {
         saveToSettings(context, Settings.Global.POLICY_CONTROL);
     }
@@ -254,11 +255,10 @@ public class WindowManagerPolicyControl {
             }
         }
     }
-    
+
     public static boolean isImmersiveFiltersActive() {
       return sImmersiveStatusFilter != null || sImmersiveNavigationFilter != null;
     }
-
 
     public static void dump(String prefix, PrintWriter pw) {
         dump("sImmersiveStatusFilter", sImmersiveStatusFilter, prefix, pw);
