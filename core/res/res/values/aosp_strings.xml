@@ -45,4 +45,7 @@
 
     <!-- Single hand mode -->
     <string name="singlehandmode_click_hint_message">Touch outside the screen to exit single hand mode</string>
+
+    <!-- Long-press back kill application -->
+    <string name="app_killed_message">Application killed</string>
 </resources>
