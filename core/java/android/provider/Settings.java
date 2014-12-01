@@ -10901,6 +10901,12 @@ public final class Settings {
         public static final String WIRED_RINGTONE_FOCUS_MODE = "wired_ringtone_focus_mode";
 
         /**
+         * Whether to wake the display when plugging or unplugging the charger
+         * @hide
+         */
+        public static final String WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -10934,7 +10940,8 @@ public final class Settings {
             CALL_AUTO_RETRY,
             DOCK_AUDIO_MEDIA_ENABLED,
             ENCODED_SURROUND_OUTPUT,
-            LOW_POWER_MODE_TRIGGER_LEVEL
+            LOW_POWER_MODE_TRIGGER_LEVEL,
+            WAKE_WHEN_PLUGGED_OR_UNPLUGGED
         };
 
         // Populated lazily, guarded by class object:
