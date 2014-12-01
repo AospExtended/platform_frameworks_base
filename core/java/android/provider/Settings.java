@@ -4751,6 +4751,13 @@ public final class Settings {
         private static final Validator HEADS_UP_BLACKLIST_VALUES_VALIDATOR =
                 ANY_STRING_VALIDATOR;
 
+       /**
+         * Whether to wake the display when plugging or unplugging the charger
+         *
+         * @hide
+         */
+        public static final String WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
+
         /**
          * Whether to enable status and navigation bar color in battery saver mode.
          * Heads up timeout configuration
