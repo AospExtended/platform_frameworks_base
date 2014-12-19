@@ -8950,6 +8950,17 @@ public final class Settings {
         public static final String DEVICE_DEMO_MODE = "device_demo_mode";
 
         /**
+         * Beginning of JDCTeam Global Settings Additions
+         * @hide
+         */
+
+        /**
+         * String to contain power menu actions
+         * @hide
+         */
+        public static final String POWER_MENU_ACTIONS = "power_menu_actions";
+
+        /**
          * Retail mode specific settings. This is encoded as a key=value list, separated by commas.
          * Ex: "user_inactivity_timeout_ms=30000,warning_dialog_timeout_ms=10000". The following
          * keys are supported:
