@@ -112,4 +112,9 @@
     <string name="app_ops_wifi_change">change WiFI state</string>
     <string name="app_ops_su">get Superuser access</string>
 
+    <!-- Global actions -->
+    <string name="global_action_screenshot">Screenshot</string>
+    <string name="global_action_search">Search</string>
+    <string name="global_action_voicesearch">Voice search</string>
+
 </resources>

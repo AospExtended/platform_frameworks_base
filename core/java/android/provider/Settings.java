@@ -9043,6 +9043,16 @@ public final class Settings {
          */
         public static final String SAFE_BOOT_DISALLOWED = "safe_boot_disallowed";
 
+        /** region Extensions Global Settings */
+
+        /**
+         * String to contain power menu actions
+         * @hide
+         */
+        public static final String POWER_MENU_ACTIONS = "power_menu_actions";
+
+        /** endregion */
+
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
