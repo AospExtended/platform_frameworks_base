@@ -37,6 +37,9 @@
   <java-symbol type="string" name="reboot_progress" />
   <java-symbol type="string" name="reboot_title" />
 
+  <!-- Intent chooser -->
+  <java-symbol type="id" name="filtered_item_container" />
+
   <!-- Power menu -->
   <java-symbol type="dimen" name="global_actions_avatar_size" />
   <java-symbol type="drawable" name="ic_lock_assist" />
