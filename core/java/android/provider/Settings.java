@@ -8500,6 +8500,12 @@ public final class Settings {
         public static final Validator STATUS_BAR_BATTERY_STYLE_VALIDATOR =
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 4);
 
+        /** Whether to vibrate when quick settings tile is pressed.
+          *
+          * @hide
+          */
+        public static final String QUICK_SETTINGS_TILES_VIBRATE = "quick_settings_vibrate";
+
         /**
          * This are the settings to be backed up.
          *
