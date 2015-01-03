@@ -2537,7 +2537,7 @@ public final class PowerManagerService extends SystemService
                 final long lastUserActivityTimeNoChangeLights =
                         mDisplayGroupPowerStateMapper.getLastUserActivityTimeNoChangeLightsLocked(
                                 groupId);
-                if (lastUserActivityTime >= mLastWakeTime) {
+                if (getWakefulnessLocked() == WAKEFULNESS_AWAKE && lastUserActivityTime >= mLastWakeTime) {
                     groupNextTimeout = lastUserActivityTime + screenOffTimeout - screenDimDuration;
                     if (now < groupNextTimeout) {
                         groupUserActivitySummary = USER_ACTIVITY_SCREEN_BRIGHT;
