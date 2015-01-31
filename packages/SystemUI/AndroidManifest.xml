@@ -243,6 +243,10 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
+    <!-- QS Tiles -->
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" 
+
     <!-- DayNight mode -->
     <uses-permission android:name="android.permission.MODIFY_DAY_NIGHT_MODE" />
 
