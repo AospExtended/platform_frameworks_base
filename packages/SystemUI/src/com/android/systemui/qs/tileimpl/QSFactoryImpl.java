@@ -53,6 +53,7 @@ import com.android.systemui.qs.tiles.RotationLockTile;
 import com.android.systemui.qs.tiles.SoundTile;
 import com.android.systemui.qs.tiles.ScreenshotTile;
 import com.android.systemui.qs.tiles.SoundSearchTile;
+import com.android.systemui.qs.tiles.SyncTile;
 import com.android.systemui.qs.tiles.UsbTetherTile;
 import com.android.systemui.qs.tiles.ThemeTile;
 import com.android.systemui.qs.tiles.SmartPixelsTile;
@@ -152,6 +153,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new AlwaysOnDisplayTile(mHost);
             case "music":
                 return new MusicTile(mHost);
+            case "sync":
+                return new SyncTile(mHost);
         }
 
         // Intent tiles.
