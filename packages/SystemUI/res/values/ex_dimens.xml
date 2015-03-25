@@ -28,4 +28,8 @@
 
     <!-- QS Panel -->
     <dimen name="qs_quick_header_panel_height_extra">140dp</dimen>
+
+    <!-- QS detail view scrolling -->
+    <dimen name="qs_detail_item_height_twoline">72dp</dimen>
+
 </resources>
