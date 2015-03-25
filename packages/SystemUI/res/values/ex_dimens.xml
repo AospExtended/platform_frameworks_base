@@ -46,6 +46,10 @@
     <dimen name="screenrecord_hint_size">48dp</dimen>
 
     <dimen name="status_bar_left_clock_end_padding">5dp</dimen>
+
+    <!-- QS detail view scrolling -->
+   <dimen name="qs_detail_item_height_twoline">72dp</dimen>
+
 </resources>
 
 
