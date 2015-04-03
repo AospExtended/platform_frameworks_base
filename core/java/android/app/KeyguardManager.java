@@ -881,9 +881,11 @@ public class KeyguardManager {
                 CharSequence pinStr = new String(password);
                 return LockscreenCredential.createPin(pinStr);
             case PATTERN:
+                LockPatternUtils lockPatternUtils = new LockPatternUtils(mContext);
+                byte patternSize = lockPatternUtils.getLockPatternSize(mContext.getUserId());
                 List<LockPatternView.Cell> pattern =
-                        LockPatternUtils.byteArrayToPattern(password);
-                return LockscreenCredential.createPattern(pattern);
+                        LockPatternUtils.byteArrayToPattern(password, patternSize);
+                return LockscreenCredential.createPattern(pattern, patternSize);
             default:
                 throw new IllegalArgumentException("Unknown lock type " + lockType);
         }
