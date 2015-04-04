@@ -4194,6 +4194,12 @@ public final class Settings {
         public static final Validator SHOW_BATTERY_PERCENT_VALIDATOR =
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
 
+	/**
+         * show the membar in recents
+         *  @hide
+         */
+        public static final String SYSTEMUI_RECENTS_MEM_DISPLAY = "systemui_recents_mem_display";
+
         /**
         * Whether to allow battery light
         * @hide
