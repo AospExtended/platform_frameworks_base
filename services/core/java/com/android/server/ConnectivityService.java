@@ -178,7 +178,7 @@ public class ConnectivityService extends IConnectivityManager.Stub
     public static final String DIAG_ARG = "--diag";
     public static final String SHORT_ARG = "--short";
 
-    private static final boolean DBG = true;
+    private static final boolean DBG = false;
     private static final boolean VDBG = false;
 
     private static final boolean LOGD_RULES = false;
