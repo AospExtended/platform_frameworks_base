@@ -60,4 +60,7 @@
     <java-symbol type="array" name="app_ops_labels" />
     <java-symbol type="string" name="status_bar_su" />
 
+    <!-- Hardware keys -->
+    <java-symbol type="bool" name="config_singleStageCameraKey" />
+
 </resources>
