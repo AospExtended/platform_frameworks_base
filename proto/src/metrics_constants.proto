@@ -6504,5 +6504,7 @@ message MetricsEvent {
 
     //Extensions
     EXTENSIONS = 1150;
+
+    CUSTOM_QUICK_TILES = 9000;
   }
 }
