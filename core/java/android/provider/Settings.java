@@ -4047,6 +4047,12 @@ public final class Settings {
         public static final String LISTVIEW_INTERPOLATOR = "listview_interpolator";
 
         /**
+         * Disabled Transition animations of the android system
+         * @hide
+         */
+        public static final String DISABLE_TRANSITION_ANIMATIONS = "disable_transition_animations";
+
+        /**
          * whether to enable or disable vibration on succesful fingerprint auth
          *
          * @hide
