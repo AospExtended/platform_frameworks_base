@@ -23,4 +23,13 @@
   <java-symbol type="string" name="reboot_confirm" />
   <java-symbol type="string" name="reboot_progress" />
   <java-symbol type="string" name="global_action_reboot" />
+  
+  
+    <!-- We don't want to publish private symbols in android.R as part of the
+         SDK.  Instead, put them here. -->
+    <private-symbols package="com.android.internal" />
+
+    <!-- LED pulse -->
+    <java-symbol type="bool" name="config_ledCanPulse" />
+    
 </resources>
