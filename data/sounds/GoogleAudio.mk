@@ -67,7 +67,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)material/ringtones/Oberon.ogg:system/media/audio/ringtones/Oberon.ogg \
     $(LOCAL_PATH)material/ringtones/Phobos.ogg:system/media/audio/ringtones/Phobos.ogg \
     $(LOCAL_PATH)material/ringtones/Pyxis.ogg:system/media/audio/ringtones/Pyxis.ogg \
+    $(LOCAL_PATH)material/ringtones/RobotsforEveryone.ogg:system/media/audio/ringtones/RobotsforEveryone.ogg \
     $(LOCAL_PATH)material/ringtones/Sedna.ogg:system/media/audio/ringtones/Sedna.ogg \
+    $(LOCAL_PATH)material/ringtones/SpagnolaOrchestration.ogg:system/media/audio/ringtones/SpagnolaOrchestration.ogg \
     $(LOCAL_PATH)material/ringtones/Titania.ogg:system/media/audio/ringtones/Titania.ogg \
     $(LOCAL_PATH)material/ringtones/Triton.ogg:system/media/audio/ringtones/Triton.ogg \
     $(LOCAL_PATH)material/ringtones/Umbriel.ogg:system/media/audio/ringtones/Umbriel.ogg \
