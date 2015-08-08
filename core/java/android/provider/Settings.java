@@ -4289,6 +4289,14 @@ public final class Settings {
          */
         public static final String POWERMENU_SCREENSHOT = "powermenu_screenshot";
 
+
+	/**
+         * Three Finger Gesture from Oppo
+	 *
+         * @hide
+         */
+        public static final String THREE_FINGER_GESTURE = "three_finger_gesture";
+
         /**
          * Whether to display settings in the power menu
          *
