@@ -358,6 +358,9 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         if (clockLocation == 1 && mCclock != null) {
             mCclock.setVisibility(visible ? (showClock ? View.VISIBLE : View.GONE) : View.GONE);
         }
+        if (clockLocation == 2 && mCclock != null) {
+            mCclock.setVisibility(visible ? (showClock ? View.VISIBLE : View.GONE) : View.GONE);
+        }
     }
 
     public void setClockAndDateStatus(int width, int mode, boolean enabled) {
