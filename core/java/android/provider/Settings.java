@@ -3635,6 +3635,13 @@ public final class Settings {
                 "notification_light_screen_on_enable";
 
         /**
+         * Contains the notifications light maximum brightness to use.
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL =
+                "notification_light_brightness_level";
+
+        /**
          * Whether the battery light should be enabled (if hardware supports it)
          * The value is boolean (1 or 0).
          * @hide
@@ -3727,8 +3734,7 @@ public final class Settings {
             RINGTONE,
             LOCK_TO_APP_ENABLED,
             NOTIFICATION_SOUND,
-            ACCELEROMETER_ROTATION,
-            NOTIFICATION_LIGHT_SCREEN_ON
+            ACCELEROMETER_ROTATION
         };
 
         /**
