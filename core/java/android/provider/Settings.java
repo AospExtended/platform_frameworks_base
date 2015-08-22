@@ -3642,6 +3642,13 @@ public final class Settings {
                 "notification_light_brightness_level";
 
         /**
+         * Whether to use the all the LEDs for the notifications or just one.
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE =
+                "notification_light_multiple_leds_enable";
+
+        /**
          * Whether the battery light should be enabled (if hardware supports it)
          * The value is boolean (1 or 0).
          * @hide
