@@ -24,14 +24,21 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:gravity="center_vertical"
-    android:maxWidth="@dimen/toast_width"
-    android:background="?android:attr/toastFrameBackground"
-    android:elevation="@dimen/toast_elevation"
+    android:maxWidth="@*android:dimen/toast_width"
+    android:background="@android:drawable/toast_frame"
+    android:elevation="@*android:dimen/toast_elevation"
     android:layout_marginEnd="16dp"
     android:layout_marginStart="16dp"
     android:paddingStart="16dp"
     android:paddingEnd="16dp">
 
+    <ImageView
+        android:id="@android:id/icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"/>
     <TextView
         android:id="@android:id/message"
         android:layout_width="wrap_content"
@@ -41,5 +48,5 @@
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:lineHeight="20sp"
-        android:textAppearance="@style/TextAppearance.Toast"/>
+        android:textAppearance="@*android:style/TextAppearance.Toast"/>
 </LinearLayout>
