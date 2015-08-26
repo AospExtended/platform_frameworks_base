@@ -22,8 +22,10 @@ import android.annotation.Nullable;
 import android.app.INotificationManager;
 import android.app.ITransientNotificationCallback;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.graphics.PixelFormat;
 import android.os.IBinder;
 import android.os.RemoteException;
@@ -203,6 +205,19 @@ public class ToastPresenter {
 
         adjustLayoutParams(mParams, windowToken, duration, gravity, xOffset, yOffset,
                 horizontalMargin, verticalMargin);
+
+        ImageView appIcon = (ImageView) mView.findViewById(android.R.id.icon);
+        if (appIcon != null) {
+            PackageManager pm = mContext.getPackageManager();
+            Drawable icon = null;
+            try {
+                icon = pm.getApplicationIcon(mPackageName);
+            } catch (PackageManager.NameNotFoundException e) {
+                // nothing to do
+            }
+            appIcon.setImageDrawable(icon);
+        }
+
         if (mView.getParent() != null) {
             mWindowManager.removeView(mView);
         }
