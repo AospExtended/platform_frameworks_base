@@ -1068,7 +1068,7 @@ public final class StrictMode {
 
         // For debug builds, log event loop stalls to dropbox for analysis.
         // Similar logic also appears in ActivityThread.java for system apps.
-        if (!doFlashes && (IS_USER_BUILD || suppress)) {
+        if ((!doFlashes && IS_USER_BUILD) || suppress) {
             setCloseGuardEnabled(false);
             return false;
         }
@@ -1331,6 +1331,11 @@ public final class StrictMode {
         // until the time the looper is idle again (right before
         // the next epoll_wait)
         void handleViolationWithTimingAttempt(final ViolationInfo info) {
+            final boolean suppress = SystemProperties.getBoolean(DISABLE_PROPERTY, false);
+            if (suppress) {
+                return;
+            }
+
             Looper looper = Looper.myLooper();
 
             // Without a Looper, we're unable to time how long the
@@ -1658,6 +1663,11 @@ public final class StrictMode {
      * @param policy the policy to put into place
      */
     public static void setVmPolicy(final VmPolicy policy) {
+        final boolean suppress = SystemProperties.getBoolean(DISABLE_PROPERTY, false);
+        if (suppress) {
+            return;
+        }
+
         synchronized (StrictMode.class) {
             sVmPolicy = policy;
             sVmPolicyMask = policy.mask;
@@ -1849,6 +1859,11 @@ public final class StrictMode {
      */
     public static void onVmPolicyViolation(String message, Throwable originStack,
             boolean forceDeath) {
+        final boolean suppress = SystemProperties.getBoolean(DISABLE_PROPERTY, false);
+        if (suppress) {
+            return;
+        }
+
         final boolean penaltyDropbox = (sVmPolicyMask & PENALTY_DROPBOX) != 0;
         final boolean penaltyDeath = ((sVmPolicyMask & PENALTY_DEATH) != 0) || forceDeath;
         final boolean penaltyLog = (sVmPolicyMask & PENALTY_LOG) != 0;
@@ -1954,6 +1969,11 @@ public final class StrictMode {
      * we here read back all the encoded violations.
      */
     /* package */ static void readAndHandleBinderCallViolations(Parcel p) {
+        final boolean suppress = SystemProperties.getBoolean(DISABLE_PROPERTY, false);
+        if (suppress) {
+            return;
+        }
+
         // Our own stack trace to append
         StringWriter sw = new StringWriter();
         PrintWriter pw = new FastPrintWriter(sw, false, 256);
