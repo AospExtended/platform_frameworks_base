@@ -3662,6 +3662,14 @@ public final class Settings {
                 "notification_light_multiple_leds_enable";
 
         /**
+         * Whether we automatically generate notification LED colors or just
+         * use the boring default.
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_COLOR_AUTO =
+                "notification_light_color_auto";
+
+        /**
          * Whether the battery light should be enabled (if hardware supports it)
          * The value is boolean (1 or 0).
          * @hide
