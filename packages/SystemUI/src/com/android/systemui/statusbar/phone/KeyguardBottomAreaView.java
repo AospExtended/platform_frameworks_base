@@ -312,7 +312,7 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
     }
 
     private void updateLeftAffordanceIcon() {
-        mLeftIsVoiceAssist = canLaunchVoiceAssist();
+        mLeftIsVoiceAssist = canLaunchVoiceAssist() && getResources().getBoolean(R.bool.config_keyguardShowVoiceAssistAffordance);
         int drawableId;
         int contentDescription;
         boolean visible = mUserSetupComplete;
