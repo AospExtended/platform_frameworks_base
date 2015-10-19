@@ -3922,8 +3922,20 @@ public final class Settings {
          public static final String LOCKSCREEN_BATTERY_INFO = "lockscreen_battery_info";
  
         /**
+         * Control the type of rotation which can be performed using the accelerometer
+         * if ACCELEROMETER_ROTATION is enabled.
+         * Value is a bitwise combination of
+         * 1 = 0 degrees (portrait)
+         * 2 = 90 degrees (left)
+         * 4 = 180 degrees (inverted portrait)
+         * 8 = 270 degrees (right)
+         * Setting to 0 is effectively orientation lock
+         * @hide
+         */
+        public static final String ACCELEROMETER_ROTATION_ANGLES = "accelerometer_rotation_angles";
+
+        /**
          * Whether to allow fullscreen screenshots or let the user select which area to screenshot
-         *
          */
         public static final String SCREENSHOT_TYPE = "screenshot_type";
 
