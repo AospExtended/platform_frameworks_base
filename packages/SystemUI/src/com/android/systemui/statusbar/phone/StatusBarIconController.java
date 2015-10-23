@@ -18,6 +18,7 @@ package com.android.systemui.statusbar.phone;
 
 import android.animation.ArgbEvaluator;
 import android.animation.ValueAnimator;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
@@ -28,6 +29,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.ArraySet;
 import android.util.TypedValue;
@@ -47,6 +49,7 @@ import com.android.systemui.statusbar.NotificationData;
 import com.android.systemui.statusbar.SignalClusterView;
 import com.android.systemui.statusbar.StatusBarIconView;
 import com.android.systemui.statusbar.policy.NetworkTraffic;
+import com.android.systemui.statusbar.policy.Clock;
 import com.android.systemui.tuner.TunerService;
 import com.android.systemui.tuner.TunerService.Tunable;
 
@@ -78,8 +81,13 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
 
     private BatteryMeterView mBatteryMeterView;
     private BatteryMeterView mBatteryMeterViewKeyguard;
-    private TextView mClock;
     private NetworkTraffic mNetworkTraffic;
+    private TextView mClock;
+    // Center clock
+    private LinearLayout mCenterClockLayout;
+    private TextView mCclock;
+    private boolean mShowClock;
+    private int mClockLocation;
 
     private int mIconSize;
     private int mIconHPadding;
@@ -137,8 +145,11 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         mBatteryMeterViewKeyguard = (BatteryMeterView) keyguardStatusBar.findViewById(R.id.battery);
         scaleBatteryMeterViews(context);
 
-        mClock = (TextView) statusBar.findViewById(R.id.clock);
         mNetworkTraffic = (NetworkTraffic) statusBar.findViewById(R.id.networkTraffic);
+
+        mClock = (TextView) statusBar.findViewById(R.id.clock);
+        mCenterClockLayout = (LinearLayout)statusBar.findViewById(R.id.center_clock_layout);
+        mClock = (TextView) statusBar.findViewById(R.id.center_clock);
         mDarkModeIconColorSingleTone = context.getColor(R.color.dark_mode_icon_color_single_tone);
         mLightModeIconColorSingleTone = context.getColor(R.color.light_mode_icon_color_single_tone);
         mHandler = new Handler();
@@ -317,10 +328,12 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
 
     public void hideSystemIconArea(boolean animate) {
         animateHide(mSystemIconArea, animate);
+        animateHide(mCenterClockLayout, animate);
     }
 
     public void showSystemIconArea(boolean animate) {
         animateShow(mSystemIconArea, animate);
+        animateShow(mCenterClockLayout, animate);
     }
 
     public void hideNotificationIconArea(boolean animate) {
@@ -332,7 +345,27 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
     }
 
     public void setClockVisibility(boolean visible) {
-        mClock.setVisibility(visible ? View.VISIBLE : View.GONE);
+        ContentResolver resolver = mContext.getContentResolver();
+        boolean showClock = (Settings.System.getIntForUser(
+                resolver, Settings.System.STATUS_BAR_CLOCK, 1,
+                UserHandle.USER_CURRENT) == 1);
+        int clockLocation = Settings.System.getIntForUser(
+                resolver, Settings.System.STATUSBAR_CLOCK_STYLE, 0,
+                UserHandle.USER_CURRENT);
+        if (clockLocation == 0 && mClock != null) {
+            mClock.setVisibility(visible ? (showClock ? View.VISIBLE : View.GONE) : View.GONE);
+        }
+        if (clockLocation == 1 && mCclock != null) {
+            mCclock.setVisibility(visible ? (showClock ? View.VISIBLE : View.GONE) : View.GONE);
+        }
+    }
+
+    public void setClockAndDateStatus(int width, int mode, boolean enabled) {
+        if (mNotificationIcons != null) {
+            mNotificationIcons.setClockAndDateStatus(width, mode, enabled);
+        }
+        mClockLocation = mode;
+        mShowClock = enabled;
     }
 
     public void dump(PrintWriter pw) {
