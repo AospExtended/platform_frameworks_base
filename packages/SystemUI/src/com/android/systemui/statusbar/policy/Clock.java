@@ -44,7 +44,6 @@ import android.widget.TextView;
 
 import com.android.systemui.DemoMode;
 import com.android.systemui.R;
-import com.android.systemui.statusbar.phone.StatusBarIconController;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -95,7 +94,6 @@ public class Clock extends TextView implements DemoMode {
     private int mAmPmStyle;
 
     private SettingsObserver mSettingsObserver;
-    private StatusBarIconController mIconController;
 
     protected class SettingsObserver extends ContentObserver {
         SettingsObserver(Handler handler) {
@@ -144,15 +142,6 @@ public class Clock extends TextView implements DemoMode {
 
     public Clock(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        TypedArray a = context.getTheme().obtainStyledAttributes(
-                attrs,
-                R.styleable.Clock,
-                0, 0);
-        try {
-            mAmPmStyle = a.getInt(R.styleable.Clock_amPmStyle, AM_PM_STYLE_NORMAL);
-        } finally {
-            a.recycle();
-        }
     }
 
     @Override
@@ -173,8 +162,6 @@ public class Clock extends TextView implements DemoMode {
 
             getContext().registerReceiverAsUser(mIntentReceiver, UserHandle.ALL, filter,
                     null, getHandler());
-            TunerService.get(getContext()).addTunable(this, CLOCK_SECONDS,
-                    StatusBarIconController.ICON_BLACKLIST);
         }
 
         // NOTE: It's safe to do these after registering the receiver since the receiver always runs
@@ -197,7 +184,6 @@ public class Clock extends TextView implements DemoMode {
             getContext().unregisterReceiver(mIntentReceiver);
             getContext().getContentResolver().unregisterContentObserver(mSettingsObserver);
             mAttached = false;
-            TunerService.get(getContext()).removeTunable(this);
         }
     }
 
@@ -234,44 +220,10 @@ public class Clock extends TextView implements DemoMode {
     };
 
     final void updateClock() {
-        if (mDemoMode) return;
+        if (mDemoMode || mCalendar == null) return;
         mCalendar.setTimeInMillis(System.currentTimeMillis());
         setText(getSmallTime());
         setContentDescription(mContentDescriptionFormat.format(mCalendar.getTime()));
-    }
-
-    @Override
-    public void onTuningChanged(String key, String newValue) {
-        if (CLOCK_SECONDS.equals(key)) {
-            mShowSeconds = newValue != null && Integer.parseInt(newValue) != 0;
-            updateShowSeconds();
-        } else if (StatusBarIconController.ICON_BLACKLIST.equals(key)) {
-            ArraySet<String> list = StatusBarIconController.getIconBlacklist(newValue);
-            setVisibility(list.contains("clock") ? View.GONE : View.VISIBLE);
-        }
-    }
-
-    private void updateShowSeconds() {
-        if (mShowSeconds) {
-            // Wait until we have a display to start trying to show seconds.
-            if (mSecondsHandler == null && getDisplay() != null) {
-                mSecondsHandler = new Handler();
-                if (getDisplay().getState() == Display.STATE_ON) {
-                    mSecondsHandler.postAtTime(mSecondTick,
-                            SystemClock.uptimeMillis() / 1000 * 1000 + 1000);
-                }
-                IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_OFF);
-                filter.addAction(Intent.ACTION_SCREEN_ON);
-                mContext.registerReceiver(mScreenReceiver, filter);
-            }
-        } else {
-            if (mSecondsHandler != null) {
-                mContext.unregisterReceiver(mScreenReceiver);
-                mSecondsHandler.removeCallbacks(mSecondTick);
-                mSecondsHandler = null;
-                updateClock();
-            }
-        }
     }
 
     private final CharSequence getSmallTime() {
@@ -283,9 +235,7 @@ public class Clock extends TextView implements DemoMode {
         final char MAGIC2 = '\uEF01';
 
         SimpleDateFormat sdf;
-        String format = mShowSeconds
-                ? is24 ? d.timeFormat_Hms : d.timeFormat_hms
-                : is24 ? d.timeFormat_Hm : d.timeFormat_hm;
+        String format = is24 ? d.timeFormat_Hm : d.timeFormat_hm;
         if (!format.equals(mClockFormatString)) {
             mContentDescriptionFormat = new SimpleDateFormat(format);
             /*
@@ -423,17 +373,11 @@ public class Clock extends TextView implements DemoMode {
         mClockDateStyle = Settings.System.getIntForUser(resolver,
                 Settings.System.STATUSBAR_CLOCK_DATE_STYLE, CLOCK_DATE_STYLE_REGULAR,
                 UserHandle.USER_CURRENT);
-        }
 
         if (mAttached) {
             updateClockVisibility();
             updateClock();
         }
-
-        if (mIconController != null) {
-            mIconController.setClockAndDateStatus(mClockAndDateWidth, mClockStyle, mShowClock);
-        }
-
     }
 
     protected void updateClockVisibility() {
@@ -475,45 +419,9 @@ public class Clock extends TextView implements DemoMode {
         }
     }
 
-    private final BroadcastReceiver mScreenReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (Intent.ACTION_SCREEN_OFF.equals(action)) {
-                if (mSecondsHandler != null) {
-                    mSecondsHandler.removeCallbacks(mSecondTick);
-                }
-            } else if (Intent.ACTION_SCREEN_ON.equals(action)) {
-                if (mSecondsHandler != null) {
-                    mSecondsHandler.postAtTime(mSecondTick,
-                            SystemClock.uptimeMillis() / 1000 * 1000 + 1000);
-                }
-            }
-        }
-    };
-
-    private final Runnable mSecondTick = new Runnable() {
-        @Override
-        public void run() {
-            if (mCalendar != null) {
-                updateClock();
-            }
-            mSecondsHandler.postAtTime(this, SystemClock.uptimeMillis() / 1000 * 1000 + 1000);
-        }
-    };
-}
-
-    public void setPhoneStatusBar(PhoneStatusBar statusBar) {
-        mStatusBar = statusBar;
+    public void setAmPmStyle(int style) {
+        mAmPmStyle = style;
+        mClockFormatString = "";
+        updateClock();
     }
-
-    @Override
-    protected void onSizeChanged(int xNew, int yNew, int xOld, int yOld){
-        super.onSizeChanged(xNew, yNew, xOld, yOld);
-        mClockAndDateWidth = xNew;
-        if (mIconController != null) {
-            mIconController.setClockAndDateStatus(mClockAndDateWidth, mClockStyle, mShowClock);
-        }
-    }
-
 }
