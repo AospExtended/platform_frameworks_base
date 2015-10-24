@@ -7976,6 +7976,15 @@ public final class Settings {
         private static final Validator WAKE_GESTURE_ENABLED_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
+         * Disable power menu on secure lock screens
+         *
+         * @hide
+         */
+        public static final String LOCK_POWER_MENU_DISABLED = "lockscreen_power_menu_disabled";
+
+        private static final Validator LOCK_POWER_MENU_DISABLED_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * Whether the device should doze if configured.
          * @hide
          */
@@ -9586,6 +9595,7 @@ public final class Settings {
             VALIDATORS.put(GLOBAL_ACTIONS_PANEL_ENABLED, GLOBAL_ACTIONS_PANEL_ENABLED_VALIDATOR);
             VALIDATORS.put(AWARE_LOCK_ENABLED, AWARE_LOCK_ENABLED_VALIDATOR);
             VALIDATORS.put(TORCH_POWER_BUTTON_GESTURE, TORCH_POWER_BUTTON_GESTURE_VALIDATOR);
+            VALIDATORS.put(LOCK_POWER_MENU_DISABLED, LOCK_POWER_MENU_DISABLED_VALIDATOR);
         }
 
         /**
