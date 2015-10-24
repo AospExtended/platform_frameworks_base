@@ -3947,6 +3947,12 @@ public final class Settings {
         public static final String QS_ROWS_PORTRAIT = "qs_rows_portrait";
 
         /**
+         * This preference enables showing the power menu on LockScreen.
+         * @hide
+         */
+        public static final String LOCKSCREEN_ENABLE_POWER_MENU = "lockscreen_enable_power_menu";
+
+        /**
          * Number of rows used for the Quick Settings (landscape)
          *
          * @hide
