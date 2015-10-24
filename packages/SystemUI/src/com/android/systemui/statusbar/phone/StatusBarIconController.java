@@ -75,6 +75,7 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
     private LinearLayout mStatusIcons;
     private SignalClusterView mSignalCluster;
     private LinearLayout mStatusIconsKeyguard;
+    private IconMerger mNotificationIcons;
 
     private NotificationIconAreaController mNotificationIconAreaController;
     private View mNotificationIconAreaInner;
@@ -86,6 +87,7 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
     // Center clock
     private LinearLayout mCenterClockLayout;
     private TextView mCclock;
+    private TextView mLeftClock;
     private boolean mShowClock;
     private int mClockLocation;
 
@@ -129,6 +131,7 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         mSystemIconArea = (LinearLayout) statusBar.findViewById(R.id.system_icon_area);
         mStatusIcons = (LinearLayout) statusBar.findViewById(R.id.statusIcons);
         mSignalCluster = (SignalClusterView) statusBar.findViewById(R.id.signal_cluster);
+        mNotificationIcons = (IconMerger) statusBar.findViewById(R.id.notificationIcons);
 
         mNotificationIconAreaController = SystemUIFactory.getInstance()
                 .createNotificationIconAreaController(context, phoneStatusBar);
@@ -149,7 +152,8 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
 
         mClock = (TextView) statusBar.findViewById(R.id.clock);
         mCenterClockLayout = (LinearLayout)statusBar.findViewById(R.id.center_clock_layout);
-        mClock = (TextView) statusBar.findViewById(R.id.center_clock);
+        mCclock = (TextView) statusBar.findViewById(R.id.center_clock);
+        mLeftClock = (TextView) statusBar.findViewById(R.id.left_clock);
         mDarkModeIconColorSingleTone = context.getColor(R.color.dark_mode_icon_color_single_tone);
         mLightModeIconColorSingleTone = context.getColor(R.color.light_mode_icon_color_single_tone);
         mHandler = new Handler();
@@ -358,8 +362,8 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         if (clockLocation == 1 && mCclock != null) {
             mCclock.setVisibility(visible ? (showClock ? View.VISIBLE : View.GONE) : View.GONE);
         }
-        if (clockLocation == 2 && mCclock != null) {
-            mCclock.setVisibility(visible ? (showClock ? View.VISIBLE : View.GONE) : View.GONE);
+        if (clockLocation == 2 && mLeftClock != null) {
+            mLeftClock.setVisibility(visible ? (showClock ? View.VISIBLE : View.GONE) : View.GONE);
         }
     }
 
