@@ -131,6 +131,7 @@ public class NotificationMediaManager implements Dumpable {
     private final DelayableExecutor mMainExecutor;
 
     private float mLockscreenMediaBlur;
+    private boolean mShowLockscreenMediaArt;
 
     private final Context mContext;
     private final MediaSessionManager mMediaSessionManager;
@@ -650,7 +651,7 @@ public class NotificationMediaManager implements Dumpable {
         }
 
         Bitmap artworkBitmap = null;
-        if (mediaMetadata != null && !mKeyguardBypassController.getBypassEnabled()) {
+        if (mShowLockscreenMediaArt && mediaMetadata != null && !mKeyguardBypassController.getBypassEnabled()) {
             artworkBitmap = mediaMetadata.getBitmap(MediaMetadata.METADATA_KEY_ART);
             if (artworkBitmap == null) {
                 artworkBitmap = mediaMetadata.getBitmap(MediaMetadata.METADATA_KEY_ALBUM_ART);
@@ -847,6 +848,12 @@ public class NotificationMediaManager implements Dumpable {
         mLockscreenMediaBlur = (float) Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.LOCKSCREEN_MEDIA_BLUR, 25,
                 UserHandle.USER_CURRENT);
+    }
+
+    public void setLockScreenMediaArt() {
+        mShowLockscreenMediaArt = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.SHOW_LOCKSCREEN_MEDIA_ART, 1,
+                UserHandle.USER_CURRENT) == 1;
     }
 
     @MainThread
