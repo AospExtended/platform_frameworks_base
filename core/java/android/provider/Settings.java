@@ -4127,6 +4127,7 @@ public final class Settings {
          * @deprecated
          * @hide
          */
+
         public static final String BUTTON_BRIGHTNESS = Secure.BUTTON_BRIGHTNESS;
 
         /**
@@ -4136,6 +4137,12 @@ public final class Settings {
          * @hide
          */
         public static final String BUTTON_BACKLIGHT_TIMEOUT = Secure.BUTTON_BACKLIGHT_TIMEOUT;
+
+        /**
+         * Whether to show media art on lockscreen
+         * @hide
+         */
+        public static final String LOCKSCREEN_MEDIA_METADATA = "lockscreen_media_metadata";
 
         /**
          * Disable dashboard conditions in Settings
