@@ -4949,6 +4949,16 @@ public final class Settings {
          */
         public static final String FULL_GESTURE_NAVBAR_DT2S = "full_gesture_navbar_dt2s";
 
+        /**
+         * Volume key controls ringtone or media sound stream
+         * @hide
+         */
+        public static final String VOLUME_KEYS_CONTROL_RING_TONE =
+                "volume_keys_control_ring_tone";
+
+        /** @hide */
+        private static final Validator VOLUME_KEYS_CONTROL_RING_TONE_VALIDATOR =
+               BOOLEAN_VALIDATOR;
 
         /**
          * Force an Ambient notification when a new media track is being played
@@ -5052,7 +5062,8 @@ public final class Settings {
             STATUSBAR_CLOCK_DATE_DISPLAY,
             STATUSBAR_CLOCK_DATE_STYLE,
             STATUSBAR_CLOCK_DATE_FORMAT,
-            ACCELEROMETER_ROTATION_ANGLES
+            ACCELEROMETER_ROTATION_ANGLES,
+            VOLUME_KEYS_CONTROL_RING_TONE
         };
 
         /**
@@ -5216,6 +5227,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(CUSTOM_DEVICE_GESTURE_FEEDBACK_ENABLED);
             PRIVATE_SETTINGS.add(CUSTOM_DEVICE_FEATURE_SETTINGS);
             PRIVATE_SETTINGS.add(ACCELEROMETER_ROTATION_ANGLES);
+            PRIVATE_SETTINGS.add(VOLUME_KEYS_CONTROL_RING_TONE);
         }
 
 
@@ -5336,6 +5348,7 @@ public final class Settings {
             VALIDATORS.put(CUSTOM_DEVICE_FEATURE_SETTINGS, CUSTOM_DEVICE_FEATURE_SETTINGS_VALIDATOR);
             VALIDATORS.put(WEATHER_LOCKSCREEN_UNIT, WEATHER_LOCKSCREEN_UNIT_VALIDATOR);
             VALIDATORS.put(ACCELEROMETER_ROTATION_ANGLES, ACCELEROMETER_ROTATION_ANGLES_VALIDATOR);
+            VALIDATORS.put(VOLUME_KEYS_CONTROL_RING_TONE,VOLUME_KEYS_CONTROL_RING_TONE_VALIDATOR);
         }
 
         /**
