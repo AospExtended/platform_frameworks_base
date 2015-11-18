@@ -29,4 +29,8 @@
   <java-symbol type="string" name="reboot_to_bootloader_title" />
   <java-symbol type="string" name="reboot_to_bootloader_message" />
 
+  <!-- Notification volume -->
+  <java-symbol type="drawable" name="ic_audio_notification_new" />
+  <java-symbol type="drawable" name="ic_audio_notification_mute_new" />
+
 </resources>
