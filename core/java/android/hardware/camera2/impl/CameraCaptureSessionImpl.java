@@ -395,6 +395,10 @@ public class CameraCaptureSessionImpl extends CameraCaptureSession
 
         // If no sequences are pending, fire #onClosed immediately
         mSequenceDrainer.beginDrain();
+
+        // Google Camera 3 workaround
+        // add delay while switch camera mode
+        android.os.SystemClock.sleep(100);
     }
 
     /**
