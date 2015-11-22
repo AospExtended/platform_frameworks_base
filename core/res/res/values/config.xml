@@ -2963,4 +2963,8 @@
 
     <!-- Allow SystemUI to show the shutdown dialog -->
     <bool name="config_showSysuiShutdown">true</bool>
+
+    <!-- Older rotation sensors are not setting event.timestamp correctly. Setting to
+         true will use SystemClock.elapsedRealtimeNanos() to set timestamp. -->
+    <bool name="config_useSystemClockforRotationSensor">false</bool>
 </resources>
