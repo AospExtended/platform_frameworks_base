@@ -30,4 +30,6 @@
 
    <java-symbol type="array" name="config_vendorPlatformSignatures" />
 
+   <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
+
 </resources>
