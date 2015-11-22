@@ -764,6 +764,20 @@ final class DefaultPermissionGrantPolicy {
                 grantRuntimePermissionsLPw(vendingPackage, SMS_PERMISSIONS, userId);
                 grantRuntimePermissionsLPw(vendingPackage, STORAGE_PERMISSIONS, userId);
             }
+<<<<<<< HEAD
+=======
+
+            // Project Fi
+            PackageParser.Package fiPackage = getDefaultProviderAuthorityPackageLPr(
+                    "com.google.android.apps.tycho", userId);
+            if (fiPackage != null) {
+                grantRuntimePermissionsLPw(fiPackage, CONTACTS_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(fiPackage, PHONE_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(fiPackage, MICROPHONE_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(fiPackage, LOCATION_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(fiPackage, SMS_PERMISSIONS, userId);
+            }
+>>>>>>> 4d871b1... Fix Fi permissions
             mService.mSettings.onDefaultRuntimePermissionsGrantedLPr(userId);
         }
     }
