@@ -845,6 +845,17 @@ final class DefaultPermissionGrantPolicy {
                 grantRuntimePermissionsLPw(vendingPackage, SMS_PERMISSIONS, userId);
                 grantRuntimePermissionsLPw(vendingPackage, STORAGE_PERMISSIONS, userId);
             }
+
+            // Project Fi
+            PackageParser.Package fiPackage = getDefaultProviderAuthorityPackageLPr(
+                    "com.google.android.apps.tycho", userId);
+            if (fiPackage != null) {
+                grantRuntimePermissionsLPw(fiPackage, CONTACTS_PERMISSIONS, true, userId);
+                grantRuntimePermissionsLPw(fiPackage, PHONE_PERMISSIONS, true, userId);
+                grantRuntimePermissionsLPw(fiPackage, MICROPHONE_PERMISSIONS, true, userId);
+                grantRuntimePermissionsLPw(fiPackage, LOCATION_PERMISSIONS, true, userId);
+                grantRuntimePermissionsLPw(fiPackage, SMS_PERMISSIONS, true, userId);
+            }
         }
     }
 
