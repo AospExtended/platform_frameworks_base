@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="resolver_list_bg">@color/white</color>
+    <color name="app_permission_icon_tint">@android:color/black</color>
 </resources>
