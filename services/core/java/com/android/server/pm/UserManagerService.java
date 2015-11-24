@@ -2907,7 +2907,7 @@ public class UserManagerService extends IUserManager.Stub {
                     userInfo.creationTime = getCreationTime();
                     userInfo.partial = true;
                     userInfo.preCreated = preCreate;
-                    userInfo.lastLoggedInFingerprint = Build.FINGERPRINT;
+                    userInfo.lastLoggedInFingerprint = Build.DATE;
                     if (isManagedProfile && parentId != UserHandle.USER_NULL) {
                         userInfo.profileBadge = getFreeProfileBadgeLU(parentId);
                     }
@@ -3681,7 +3681,7 @@ public class UserManagerService extends IUserManager.Stub {
         }
         final int userSerial = userInfo.serialNumber;
         // Migrate only if build fingerprints mismatch
-        boolean migrateAppsData = !Build.FINGERPRINT.equals(userInfo.lastLoggedInFingerprint);
+        boolean migrateAppsData = !Build.DATE.equals(userInfo.lastLoggedInFingerprint);
         mUserDataPreparer.prepareUserData(userId, userSerial, StorageManager.FLAG_STORAGE_DE);
         mPm.reconcileAppsData(userId, StorageManager.FLAG_STORAGE_DE, migrateAppsData);
 
@@ -3703,7 +3703,7 @@ public class UserManagerService extends IUserManager.Stub {
         }
         final int userSerial = userInfo.serialNumber;
         // Migrate only if build fingerprints mismatch
-        boolean migrateAppsData = !Build.FINGERPRINT.equals(userInfo.lastLoggedInFingerprint);
+        boolean migrateAppsData = !Build.DATE.equals(userInfo.lastLoggedInFingerprint);
         mUserDataPreparer.prepareUserData(userId, userSerial, StorageManager.FLAG_STORAGE_CE);
         mPm.reconcileAppsData(userId, StorageManager.FLAG_STORAGE_CE, migrateAppsData);
     }
@@ -3736,7 +3736,7 @@ public class UserManagerService extends IUserManager.Stub {
         if (now > EPOCH_PLUS_30_YEARS) {
             userData.info.lastLoggedInTime = now;
         }
-        userData.info.lastLoggedInFingerprint = Build.FINGERPRINT;
+        userData.info.lastLoggedInFingerprint = Build.DATE;
         scheduleWriteUser(userData);
     }
 
