@@ -64,4 +64,9 @@
 
   <!-- Single hand mode -->
   <java-symbol type="string" name="singlehandmode_click_hint_message" />
+
+  <!-- Unlink notification images -->
+  <java-symbol type="drawable" name="ic_audio_notification_new" />
+  <java-symbol type="drawable" name="ic_audio_notification_mute_new" />
+  <java-symbol type="drawable" name="ic_audio_notification_mute_alpha" />
 </resources>
