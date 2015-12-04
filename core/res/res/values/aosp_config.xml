@@ -25,4 +25,7 @@
 
     <!-- Is Advanced Reboot enabled? -->
     <bool name="config_advanced_reboot">true</bool>
+
+    <!-- If this is true, key chords can be used to take a screen record on the device. -->
+    <bool name="config_enableScreenrecordChord">true</bool>
 </resources>
