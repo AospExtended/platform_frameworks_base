@@ -55,4 +55,7 @@
   <java-symbol type="string" name="global_action_search" />
   <java-symbol type="string" name="global_action_torch" />
   <java-symbol type="string" name="global_action_voicesearch" />
+
+  <!-- Screen Recording -->
+  <java-symbol type="bool" name="config_enableScreenrecordChord" />
 </resources>
