@@ -3744,6 +3744,11 @@ status_t ResTable::add(ResTable* src, bool isSystemAsset)
 }
 
 status_t ResTable::addEmpty(const int32_t cookie) {
+    if (cookie >= 0 && cookieToHeaderIndex(cookie) >= 0) {
+        ALOGE("cookie %d already added to table", cookie);
+        return BAD_VALUE;
+    }
+
     Header* header = new Header(this);
     header->index = mHeaders.size();
     header->cookie = cookie;
@@ -3771,6 +3776,11 @@ status_t ResTable::addInternal(const void* data, size_t dataSize, const void* id
         ALOGE("Invalid data. Size(%d) is smaller than a ResTable_header(%d).",
                 (int) dataSize, (int) sizeof(ResTable_header));
         return UNKNOWN_ERROR;
+    }
+
+    if (cookie >= 0 && cookieToHeaderIndex(cookie) >= 0) {
+        ALOGE("cookie %d already added to table", cookie);
+        return BAD_VALUE;
     }
 
     Header* header = new Header(this);
@@ -5873,6 +5883,21 @@ void ResTable::getConfigurations(Vector<ResTable_config>* configs, bool ignoreMi
         }
     };
     forEachConfiguration(ignoreMipmap, ignoreAndroidPackage, includeSystemConfigs, func);
+}
+
+ssize_t ResTable::cookieToHeaderIndex(int32_t cookie) const
+{
+    if (cookie < 0) {
+        return -1;
+    }
+
+    const size_t N = mHeaders.size();
+    for (size_t i = 0; i < N; i++) {
+        if (mHeaders[i]->cookie == cookie) {
+            return mHeaders[i]->index;
+        }
+    }
+    return -1;
 }
 
 static bool compareString8AndCString(const String8& str, const char* cStr) {
