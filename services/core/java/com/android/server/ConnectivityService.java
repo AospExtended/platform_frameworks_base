@@ -142,6 +142,7 @@ import android.net.util.NetdService;
 import android.os.Binder;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.FileUtils;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
@@ -351,6 +352,8 @@ public class ConnectivityService extends IConnectivityManager.Stub
     private final Object mTNSLock = new Object();
 
     private String mCurrentTcpBufferSizes;
+    private int mCurrentTcpDelayedAckSegments;
+    private int mCurrentTcpUserCfg;
 
     private static final SparseArray<String> sMagicDecoderRing = MessageUtils.findMessageNames(
             new Class[] { AsyncChannel.class, ConnectivityService.class, NetworkAgent.class,
@@ -2462,6 +2465,35 @@ public class ConnectivityService extends IConnectivityManager.Stub
         final String sysctlKey = "sys.sysctl.tcp_def_init_rwnd";
         if (rwndValue != 0) {
             mSystemProperties.set(sysctlKey, rwndValue.toString());
+        }
+    }
+
+    private void updateTcpDelayedAck(NetworkAgentInfo nai) {
+        if (isDefaultNetwork(nai) == false) {
+            return;
+        }
+
+        int segments = nai.linkProperties.getTcpDelayedAckSegments();
+        int usercfg = nai.linkProperties.getTcpUserCfg();
+
+        if (segments != mCurrentTcpDelayedAckSegments) {
+            try {
+                FileUtils.stringToFile("/sys/kernel/ipv4/tcp_delack_seg",
+                        String.valueOf(segments));
+                mCurrentTcpDelayedAckSegments = segments;
+            } catch (IOException e) {
+                // optional
+            }
+        }
+
+        if (usercfg != mCurrentTcpUserCfg) {
+            try {
+                FileUtils.stringToFile("/sys/kernel/ipv4/tcp_use_usercfg",
+                        String.valueOf(usercfg));
+                mCurrentTcpUserCfg = usercfg;
+            } catch (IOException e) {
+                // optional
+            }
         }
     }
 
@@ -5988,7 +6020,7 @@ public class ConnectivityService extends IConnectivityManager.Stub
         if (isDefaultNetwork(networkAgent)) {
             updateTcpBufferSizes(newLp.getTcpBufferSizes());
         }
-
+        updateTcpDelayedAck(networkAgent);
         updateRoutes(newLp, oldLp, netId);
         updateDnses(newLp, oldLp, netId);
         // Make sure LinkProperties represents the latest private DNS status.
@@ -6712,6 +6744,7 @@ public class ConnectivityService extends IConnectivityManager.Stub
                 ? newNetwork.linkProperties.getHttpProxy() : null);
         updateTcpBufferSizes(null != newNetwork
                 ? newNetwork.linkProperties.getTcpBufferSizes() : null);
+        updateTcpDelayedAck(newNetwork != null ? newNetwork : null);
         mDnsManager.setDefaultDnsSystemProperties(null != newNetwork
                 ? newNetwork.linkProperties.getDnsServers() : Collections.EMPTY_LIST);
         notifyIfacesChangedForNetworkStats();

@@ -81,6 +81,9 @@ public final class LinkProperties implements Parcelable {
      */
     private final transient boolean mParcelSensitiveFields;
 
+    private int mTcpDelayedAckSegments = 1;
+    private int mTcpUserCfg = 0;
+
     private static final int MIN_MTU    = 68;
     /* package-visibility - Used in other files (such as Ikev2VpnProfile) as minimum iface MTU. */
     static final int MIN_MTU_V6 = 1280;
@@ -202,6 +205,8 @@ public final class LinkProperties implements Parcelable {
         mWakeOnLanSupported = source.mWakeOnLanSupported;
         mCaptivePortalApiUrl = source.mCaptivePortalApiUrl;
         mCaptivePortalData = source.mCaptivePortalData;
+        mTcpDelayedAckSegments = source.mTcpDelayedAckSegments;
+        mTcpUserCfg = source.mTcpUserCfg;
     }
 
     /**
@@ -681,6 +686,45 @@ public final class LinkProperties implements Parcelable {
         return mTcpBufferSizes;
     }
 
+    /**
+     * Number of full MSS to receive before Acking RFC2581
+     * @param segments The number of segments to receive
+     *
+     * @hide
+     */
+    public void setTcpDelayedAckSegments(int segments) {
+        mTcpDelayedAckSegments = segments;
+    }
+
+    /**
+     * Gets the number of segments before acking
+     *
+     * @hide
+     */
+    public int getTcpDelayedAckSegments() {
+        return mTcpDelayedAckSegments;
+    }
+
+    /**
+     * Sets the value for TCP usercfg
+     *
+     * @param value 0/1 currently to disable/enable
+     *
+     * @hide
+     */
+    public void setTcpUserCfg(int value) {
+        mTcpUserCfg = value;
+    }
+
+    /**
+     * Gets the value of TCP usercfg
+     *
+     * @hide
+     */
+    public int getTcpUserCfg() {
+        return mTcpUserCfg;
+    }
+
     private RouteInfo routeWithInterface(RouteInfo route) {
         return new RouteInfo(
             route.getDestination(),
@@ -904,6 +948,8 @@ public final class LinkProperties implements Parcelable {
         mWakeOnLanSupported = false;
         mCaptivePortalApiUrl = null;
         mCaptivePortalData = null;
+        mTcpDelayedAckSegments = 1;
+        mTcpUserCfg = 0;
     }
 
     /**
