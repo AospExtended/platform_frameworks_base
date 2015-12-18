@@ -1434,6 +1434,23 @@ public interface WindowManager extends ViewManager {
         public static final int PRIVATE_FLAG_ACQUIRES_SLEEP_TOKEN = 0x00200000;
 
         /**
+         * {@hide}
+         */
+        public static final int PRIVATE_FLAG_STATUS_HIDE_FORCED = 0x05000000;
+
+        /**
+         * {@hide}
+         */
+        public static final int PRIVATE_FLAG_NAV_HIDE_FORCED = 0x06000000;
+
+        /**
+         * The window had not set FULLSCREEN flag so don't handle it as fullscreen in layoutWindowLw
+         *
+         * {@hide}
+         */
+        public static final int PRIVATE_FLAG_WAS_NOT_FULLSCREEN = 0x07000000;
+
+        /**
          * Control flags that are private to the platform.
          * @hide
          */
