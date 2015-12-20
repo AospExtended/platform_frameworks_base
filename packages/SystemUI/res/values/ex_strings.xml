@@ -112,5 +112,8 @@
     <string name="screenrecord_notif_error">Unable to record screen</string>
     <string name="notification_channel_screenrecord">Screenrecords</string>
 
+    <!-- Screenrecord Tile -->
+    <string name="quick_settings_screenrecord">Screenrecord</string>
+
 </resources>
 
