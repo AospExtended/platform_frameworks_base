@@ -205,6 +205,9 @@
 
     <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
 
+    <!-- Show4G -->
+    <uses-permission android:name="android.permission.RESTART_UI" />
+
     <application
         android:name=".SystemUIApplication"
         android:persistent="true"
