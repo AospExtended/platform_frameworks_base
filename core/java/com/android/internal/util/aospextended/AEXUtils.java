@@ -17,6 +17,7 @@
 package com.android.internal.util.aospextended;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.input.InputManager;
@@ -31,6 +32,7 @@ import android.view.WindowManagerGlobal;
 import android.view.InputDevice;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
+import android.net.ConnectivityManager;
 
 import com.android.internal.statusbar.IStatusBarService;
 
@@ -47,6 +49,12 @@ public class AEXUtils {
         if (pm!= null) {
             pm.goToSleep(SystemClock.uptimeMillis());
         }
+    }
+
+    public static boolean isWifiOnly(Context context) {
+        ConnectivityManager cm = (ConnectivityManager)context.getSystemService(
+                Context.CONNECTIVITY_SERVICE);
+        return (cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE) == false);
     }
 
     public static boolean deviceHasFlashlight(Context ctx) {
