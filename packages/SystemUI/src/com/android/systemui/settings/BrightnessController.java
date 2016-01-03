@@ -39,6 +39,8 @@ import android.provider.Settings;
 import android.service.vr.IVrManager;
 import android.service.vr.IVrStateCallbacks;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.android.internal.logging.MetricsLogger;
@@ -51,7 +53,6 @@ import java.util.ArrayList;
 
 public class BrightnessController implements ToggleSlider.Listener {
     private static final String TAG = "StatusBar.BrightnessController";
-    private static final boolean SHOW_AUTOMATIC_ICON = false;
 
     private static final int SLIDER_ANIMATION_DURATION = 3000;
 
@@ -294,6 +295,18 @@ public class BrightnessController implements ToggleSlider.Listener {
         mDisplayManager = context.getSystemService(DisplayManager.class);
         mVrManager = IVrManager.Stub.asInterface(ServiceManager.getService(
                 Context.VR_SERVICE));
+
+       if (mIcon != null) {
+            if (mAutomaticAvailable) {
+                mIcon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int newMode = mAutomatic ? Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL : Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
+                        setMode(newMode);
+                    }
+                });
+            }
+        }
     }
 
     public void addStateChangedCallback(BrightnessStateChangeCallback cb) {
@@ -349,7 +362,7 @@ public class BrightnessController implements ToggleSlider.Listener {
     @Override
     public void onChanged(ToggleSlider toggleSlider, boolean tracking, boolean automatic,
             int value, boolean stopTracking) {
-        updateIcon(mAutomatic);
+        //updateIcon(mAutomatic);
         if (mExternalChange) return;
 
         if (mSliderAnimator != null) {
@@ -424,9 +437,9 @@ public class BrightnessController implements ToggleSlider.Listener {
 
     private void updateIcon(boolean automatic) {
         if (mIcon != null) {
-            mIcon.setImageResource(automatic && SHOW_AUTOMATIC_ICON ?
-                    com.android.systemui.R.drawable.ic_qs_brightness_auto_on :
-                    com.android.systemui.R.drawable.ic_qs_brightness_auto_off);
+            mIcon.setImageResource(automatic ?
+                    com.android.systemui.R.drawable.ic_qs_brightness_auto_on_new :
+                    com.android.systemui.R.drawable.ic_qs_brightness_auto_off_new);
         }
     }
 

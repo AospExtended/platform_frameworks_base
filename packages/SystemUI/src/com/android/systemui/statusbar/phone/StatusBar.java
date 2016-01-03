@@ -1005,7 +1005,8 @@ public class StatusBar extends SystemUI implements DemoMode,
                             .withDefault(this::createDefaultQSFragment)
                             .build());
 
-            mBrightnessMirrorController = new BrightnessMirrorController(mStatusBarWindow,
+            mBrightnessMirrorController = new BrightnessMirrorController(mContext, mStatusBarWindow,
+
                     (visible) -> {
                         mBrightnessMirrorVisible = visible;
                         updateScrimController();
