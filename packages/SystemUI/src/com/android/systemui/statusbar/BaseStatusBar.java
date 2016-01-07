@@ -1323,6 +1323,11 @@ public abstract class BaseStatusBar extends SystemUI implements
         mHandler.sendEmptyMessage(msg);
     }
 
+    @Override
+    public void screenPinningStateChanged(boolean enabled) {
+        Log.d(TAG, "StatusBar API screenPinningStateChanged = " + enabled);
+    }
+
     protected H createHandler() {
          return new H();
     }
