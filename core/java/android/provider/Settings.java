@@ -4813,6 +4813,16 @@ public final class Settings {
         public static final String SHOW_LOCKSCREEN_MEDIA_ART = "show_lockscreen_media_art";
 
         /**
+         * whether to enable or disable vibration on succesful fingerprint auth
+         *
+         * @hide
+         */
+        public static final String FP_SUCCESS_VIBRATE = "fingerprint_success_vib";
+        /** @hide */
+        private static final Validator FP_SUCCESS_VIBRATE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -4884,6 +4894,7 @@ public final class Settings {
             BACK_GESTURE_HEIGHT,
             HEADS_UP_STOPLIST_VALUES,
             HEADS_UP_BLACKLIST_VALUES,
+            FP_SUCCESS_VIBRATE,
         };
 
         /**
@@ -5019,6 +5030,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_FONT_SIZE);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_VIEW_LOCATION);
+            PRIVATE_SETTINGS.add(FP_SUCCESS_VIBRATE);
         }
 
 
@@ -5128,6 +5140,7 @@ public final class Settings {
             VALIDATORS.put(BACK_GESTURE_HEIGHT, BACK_GESTURE_HEIGHT_VALIDATOR);
             VALIDATORS.put(HEADS_UP_STOPLIST_VALUES, HEADS_UP_STOPLIST_VALUES_VALIDATOR);
             VALIDATORS.put(HEADS_UP_BLACKLIST_VALUES, HEADS_UP_BLACKLIST_VALUES_VALIDATOR);
+            VALIDATORS.put(FP_SUCCESS_VIBRATE, FP_SUCCESS_VIBRATE_VALIDATOR);
         }
 
         /**
