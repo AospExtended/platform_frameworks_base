@@ -4050,6 +4050,13 @@ public final class Settings {
          */
         public static final String CAMERA_WAKE_SCREEN = "camera_wake_screen";
 
+		
+        /**
+	 * whether to enable torch on lockscreen
+         * @hide
+         */
+        public static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
+
         /**
          * Whether or not to send device back to sleep if Camera button is released ("Peek")
          * 0 = 0ff, 1 = on
