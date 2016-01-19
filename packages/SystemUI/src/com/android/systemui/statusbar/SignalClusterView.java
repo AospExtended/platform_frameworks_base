@@ -251,9 +251,11 @@ public class SignalClusterView
         post(new Runnable() {
             @Override
             public void run() {
-                mVpnVisible = mSC.isVpnEnabled();
-                mVpnIconId = currentVpnIconId(mSC.isVpnBranded());
-                apply();
+                if (mSC != null) {
+                    mVpnVisible = mSC.isVpnEnabled();
+                    mVpnIconId = currentVpnIconId(mSC.isVpnBranded());
+                    apply();
+                }
             }
         });
     }
