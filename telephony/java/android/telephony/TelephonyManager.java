@@ -1832,7 +1832,7 @@ public class TelephonyManager {
      */
     @RequiresPermission(android.Manifest.permission.READ_PHONE_STATE)
     public int getDataNetworkType() {
-        return getDataNetworkType(getSubId(SubscriptionManager.getDefaultDataSubscriptionId()));
+        return getDataNetworkType(getDefaultDataSubscriptionId());
     }
 
     /**
@@ -4298,6 +4298,13 @@ public class TelephonyManager {
     }
 
     /**
+     * Returns Default Data subscription.
+     */
+    private static int getDefaultDataSubscriptionId() {
+        return SubscriptionManager.getDefaultDataSubscriptionId();
+    }
+
+    /**
      * Return an appropriate slot index for any situation.
      *
      * if this object has been created with {@link #createForSubscriptionId}, then the slot index
@@ -5633,7 +5640,7 @@ public class TelephonyManager {
      */
     @RequiresPermission(android.Manifest.permission.MODIFY_PHONE_STATE)
     public void setDataEnabled(boolean enable) {
-        setDataEnabled(getSubId(SubscriptionManager.getDefaultDataSubscriptionId()), enable);
+        setDataEnabled(getDefaultDataSubscriptionId(), enable);
     }
 
     /** @hide */
@@ -5682,7 +5689,7 @@ public class TelephonyManager {
      */
     @SuppressWarnings("deprecation")
     public boolean isDataEnabled() {
-        return getDataEnabled(getSubId(SubscriptionManager.getDefaultDataSubscriptionId()));
+        return getDataEnabled(getDefaultDataSubscriptionId());
     }
 
     /**
