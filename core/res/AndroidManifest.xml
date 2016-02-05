@@ -26,6 +26,7 @@
     <!-- ================================================ -->
     <eat-comment />
 
+    <protected-broadcast android:name="android.intent.action.SCREEN_CAMERA_GESTURE" />
     <protected-broadcast android:name="android.intent.action.SCREEN_OFF" />
     <protected-broadcast android:name="android.intent.action.SCREEN_ON" />
     <protected-broadcast android:name="android.intent.action.USER_PRESENT" />
