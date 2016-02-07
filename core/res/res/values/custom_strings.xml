@@ -96,4 +96,10 @@
     <string name="app_ops_wifi_change">change WiFI state</string>
     <string name="app_ops_su">get Superuser access</string>
 
+    <!-- Battery styles -->
+    <string name="battery_style_text">Text only</string>
+    <string name="battery_style_default">Default</string>
+    <string name="battery_style_meter_horizontal">Horizontal bar</string>
+    <string name="battery_style_circle">Circle</string>
+
 </resources>
