@@ -47,6 +47,8 @@ import com.android.keyguard.KeyguardStatusView;
 import com.android.systemui.BatteryMeterView;
 import com.android.systemui.FontSizeUtils;
 import com.android.systemui.R;
+import com.android.systemui.omni.AbstractBatteryView;
+import com.android.systemui.omni.BatteryViewManager;
 import com.android.systemui.qs.QSPanel;
 import com.android.systemui.qs.QSPanel.Callback;
 import com.android.systemui.qs.QSTile;
@@ -63,7 +65,7 @@ import java.text.NumberFormat;
  */
 public class StatusBarHeaderView extends BaseStatusBarHeader implements View.OnClickListener,
         BatteryController.BatteryStateChangeCallback, NextAlarmController.NextAlarmChangeCallback,
-        EmergencyListener {
+        EmergencyListener, BatteryViewManager.BatteryViewManagerObserver {
 
     private boolean mExpanded;
     private boolean mListening;
@@ -87,7 +89,6 @@ public class StatusBarHeaderView extends BaseStatusBarHeader implements View.OnC
     private Switch mQsDetailHeaderSwitch;
     private ImageView mQsDetailHeaderProgress;
     private TextView mEmergencyCallsOnly;
-    private TextView mBatteryLevel;
     private TextView mAlarmStatus;
 
     private boolean mShowEmergencyCallsOnly;
@@ -131,6 +132,7 @@ public class StatusBarHeaderView extends BaseStatusBarHeader implements View.OnC
     private float mCurrentT;
     private boolean mShowingDetail;
     private boolean mDetailTransitioning;
+    private BatteryViewManager mBatteryViewManager;
 
     private boolean mAllowExpand = true;
 
@@ -163,7 +165,6 @@ public class StatusBarHeaderView extends BaseStatusBarHeader implements View.OnC
         mQsDetailHeaderSwitch = (Switch) mQsDetailHeader.findViewById(android.R.id.toggle);
         mQsDetailHeaderProgress = (ImageView) findViewById(R.id.qs_detail_header_progress);
         mEmergencyCallsOnly = (TextView) findViewById(R.id.header_emergency_calls_only);
-        mBatteryLevel = (TextView) findViewById(R.id.battery_level);
         mAlarmStatus = (TextView) findViewById(R.id.alarm_status);
         mAlarmStatus.setOnClickListener(this);
         mSignalCluster = findViewById(R.id.signal_cluster);
@@ -199,6 +200,9 @@ public class StatusBarHeaderView extends BaseStatusBarHeader implements View.OnC
         ((RippleDrawable) getBackground()).setForceSoftware(true);
         ((RippleDrawable) mSettingsButton.getBackground()).setForceSoftware(true);
         ((RippleDrawable) mSystemIconsSuperContainer.getBackground()).setForceSoftware(true);
+
+        LinearLayout batteryContainer = (LinearLayout) findViewById(R.id.battery_container);
+        mBatteryViewManager = new BatteryViewManager(mContext, batteryContainer, null, this);
     }
 
     @Override
@@ -219,7 +223,7 @@ public class StatusBarHeaderView extends BaseStatusBarHeader implements View.OnC
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        FontSizeUtils.updateFontSize(mBatteryLevel, R.dimen.battery_level_text_size);
+        ////FontSizeUtils.updateFontSize(mBatteryLevel, R.dimen.battery_level_text_size);
         FontSizeUtils.updateFontSize(mEmergencyCallsOnly,
                 R.dimen.qs_emergency_calls_only_text_size);
         FontSizeUtils.updateFontSize(mDateCollapsed, R.dimen.qs_date_collapsed_size);
@@ -286,7 +290,7 @@ public class StatusBarHeaderView extends BaseStatusBarHeader implements View.OnC
 
     public void setBatteryController(BatteryController batteryController) {
         mBatteryController = batteryController;
-        ((BatteryMeterView) findViewById(R.id.battery)).setBatteryController(batteryController);
+        mBatteryViewManager.setBatteryController(mBatteryController);
     }
 
     public void setNextAlarmController(NextAlarmController nextAlarmController) {
@@ -330,6 +334,7 @@ public class StatusBarHeaderView extends BaseStatusBarHeader implements View.OnC
         updateAvatarScale();
         updateClockLp();
         requestCaptureValues();
+        mBatteryViewManager.update();
     }
 
     private void updateHeights() {
@@ -351,7 +356,7 @@ public class StatusBarHeaderView extends BaseStatusBarHeader implements View.OnC
             updateSignalClusterDetachment();
         }
         mEmergencyCallsOnly.setVisibility(mExpanded && mShowEmergencyCallsOnly ? VISIBLE : GONE);
-        mBatteryLevel.setVisibility(mExpanded ? View.VISIBLE : View.GONE);
+        //mBatteryLevel.setVisibility(mExpanded ? View.VISIBLE : View.GONE);
     }
 
     private void updateSignalClusterDetachment() {
@@ -419,7 +424,7 @@ public class StatusBarHeaderView extends BaseStatusBarHeader implements View.OnC
     @Override
     public void onBatteryLevelChanged(int level, boolean pluggedIn, boolean charging) {
         String percentage = NumberFormat.getPercentInstance().format((double) level / 100.0);
-        mBatteryLevel.setText(percentage);
+        //mBatteryLevel.setText(percentage);
     }
 
     @Override
@@ -609,7 +614,7 @@ public class StatusBarHeaderView extends BaseStatusBarHeader implements View.OnC
                     + mSystemIconsContainer.getLeft();
         }
         target.batteryY = mSystemIconsSuperContainer.getTop() + mSystemIconsContainer.getTop();
-        target.batteryLevelAlpha = getAlphaForVisibility(mBatteryLevel);
+        //target.batteryLevelAlpha = getAlphaForVisibility(mBatteryLevel);
         target.settingsAlpha = getAlphaForVisibility(mSettingsContainer);
         target.settingsTranslation = mExpanded
                 ? 0
@@ -677,7 +682,7 @@ public class StatusBarHeaderView extends BaseStatusBarHeader implements View.OnC
         }
         applyAlpha(mDateCollapsed, values.dateCollapsedAlpha);
         applyAlpha(mDateExpanded, values.dateExpandedAlpha);
-        applyAlpha(mBatteryLevel, values.batteryLevelAlpha);
+        //applyAlpha(mBatteryLevel, values.batteryLevelAlpha);
         applyAlpha(mSettingsContainer, values.settingsAlpha);
         applyAlpha(mSignalCluster, values.signalClusterAlpha);
         if (!mExpanded) {
@@ -845,4 +850,13 @@ public class StatusBarHeaderView extends BaseStatusBarHeader implements View.OnC
                     .start();
         }
     };
+
+    @Override
+    public void batteryStyleChanged(AbstractBatteryView batteryStyle) {
+    }
+
+    @Override
+    public boolean isExpandedBatteryView() {
+        return true;
+    }
 }
