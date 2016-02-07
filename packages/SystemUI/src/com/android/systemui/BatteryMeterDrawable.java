@@ -68,7 +68,6 @@ public class BatteryMeterDrawable extends Drawable implements
     private int mWidth;
     private String mWarningString;
     private final int mCriticalLevel;
-    private int mChargeColor;
     private final float[] mBoltPoints;
     private final Path mBoltPath = new Path();
     private final float[] mPlusPoints;
@@ -159,8 +158,6 @@ public class BatteryMeterDrawable extends Drawable implements
         font = Typeface.create("sans-serif", Typeface.BOLD);
         mWarningTextPaint.setTypeface(font);
         mWarningTextPaint.setTextAlign(Paint.Align.CENTER);
-
-        mChargeColor = context.getColor(R.color.batterymeter_charge_color);
 
         mBoltPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mBoltPaint.setColor(context.getColor(R.color.batterymeter_bolt_color));
@@ -328,7 +325,6 @@ public class BatteryMeterDrawable extends Drawable implements
         mIconTint = fillColor;
         mFramePaint.setColor(backgroundColor);
         mBoltPaint.setColor(fillColor);
-        mChargeColor = fillColor;
         invalidateSelf();
         mOldDarkIntensity = darkIntensity;
     }
@@ -382,7 +378,7 @@ public class BatteryMeterDrawable extends Drawable implements
         mFrame.bottom -= mSubpixelSmoothingRight;
 
         // set the battery charging color
-        mBatteryPaint.setColor(mPluggedIn ? mChargeColor : getColorForLevel(level));
+        mBatteryPaint.setColor(getColorForLevel(level));
 
         if (level >= FULL) {
             drawFrac = 1f;
