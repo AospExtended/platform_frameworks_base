@@ -841,7 +841,11 @@ public class Activity extends ContextThemeWrapper
 
     private static native String getDlWarning();
 
-    /** Return the activity handler instance. */
+    /**
+     * Return the activity handler instance.
+     *
+     * @hide
+     */
     public Handler getHandler() {
         return mHandler;
     }
