@@ -17,6 +17,7 @@
 package com.android.systemui.statusbar.phone;
 
 import android.content.Context;
+import android.database.ContentObserver;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.ContentObserver;
@@ -68,6 +69,9 @@ public class KeyguardStatusBarView extends RelativeLayout
     private ImageView mMultiUserAvatar;
     private TextView mBatteryLevel;
 
+    private TextView mKeyguardClock;
+    private int mShowKeyguardClock;
+
     private BatteryController mBatteryController;
     private KeyguardUserSwitcher mKeyguardUserSwitcher;
     private UserSwitcherController mUserSwitcherController;
@@ -79,6 +83,7 @@ public class KeyguardStatusBarView extends RelativeLayout
     private ContentObserver mObserver = new ContentObserver(new Handler()) {
         public void onChange(boolean selfChange, Uri uri) {
             showStatusBarCarrier();
+            showKeyguardClock();
             updateVisibilities();
         }
     };
@@ -92,11 +97,17 @@ public class KeyguardStatusBarView extends RelativeLayout
     public KeyguardStatusBarView(Context context, AttributeSet attrs) {
         super(context, attrs);
         showStatusBarCarrier();
+        showKeyguardClock();
     }
 
     private void showStatusBarCarrier() {
         mShowCarrierLabel = Settings.System.getIntForUser(getContext().getContentResolver(),
                 Settings.System.STATUS_BAR_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
+    }
+
+    private void showKeyguardClock() {
+        mShowKeyguardClock = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.KEYGUARD_SHOW_CLOCK, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -108,6 +119,7 @@ public class KeyguardStatusBarView extends RelativeLayout
         mMultiUserAvatar = (ImageView) findViewById(R.id.multi_user_avatar);
         mBatteryLevel = (TextView) findViewById(R.id.battery_level);
         mCarrierLabel = (TextView) findViewById(R.id.keyguard_carrier_text);
+        mKeyguardClock = (TextView) findViewById(R.id.keyguard_clock);
         loadDimens();
         updateUserSwitcher();
         updateVisibilities();
@@ -155,6 +167,9 @@ public class KeyguardStatusBarView extends RelativeLayout
                 mBatteryLevel.getPaddingBottom());
         mBatteryLevel.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                 getResources().getDimensionPixelSize(R.dimen.battery_level_text_size));
+        mKeyguardClock.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+                getResources().getDimensionPixelSize(
+                        com.android.internal.R.dimen.text_size_small_material));
 
         // Respect font size setting.
         mCarrierLabel.setTextSize(TypedValue.COMPLEX_UNIT_PX,
@@ -198,6 +213,13 @@ public class KeyguardStatusBarView extends RelativeLayout
             } else {
                 mMultiUserSwitch.setVisibility(View.GONE);
             }
+        }
+
+        if (Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.KEYGUARD_SHOW_CLOCK, 0) == 1) {
+            mKeyguardClock.setVisibility(View.VISIBLE);
+        } else {
+            mKeyguardClock.setVisibility(View.GONE);
         }
 
         if (mCarrierLabel != null) {
@@ -394,6 +416,8 @@ public class KeyguardStatusBarView extends RelativeLayout
         super.onAttachedToWindow();
         getContext().getContentResolver().registerContentObserver(Settings.System.getUriFor(
         Settings.System.STATUS_BAR_SHOW_CARRIER), false, mObserver);
+        getContext().getContentResolver().registerContentObserver(Settings.System.getUriFor(
+                "keyguard_show_clock"), false, mObserver);
     }
 
     @Override
