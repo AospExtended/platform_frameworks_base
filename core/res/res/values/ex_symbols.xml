@@ -61,4 +61,7 @@
 
     <java-symbol type="anim" name="du_app_in" />
     <java-symbol type="anim" name="du_app_out" />
+
+    <!-- Hardware key binding -->
+    <java-symbol type="integer" name="config_deviceHardwareKeys" />
 </resources>
