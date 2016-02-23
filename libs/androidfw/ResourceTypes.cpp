@@ -59,7 +59,7 @@ namespace android {
 #endif
 
 #define IDMAP_MAGIC             0x504D4449
-#define IDMAP_CURRENT_VERSION   0x00000002
+#define IDMAP_CURRENT_VERSION   0x00000003
 
 #define APP_PACKAGE_ID      0x7f
 #define SYS_PACKAGE_ID      0x01
@@ -6160,8 +6160,9 @@ status_t ResTable::parsePackage(const ResTable_package* const pkg,
 
     uint32_t id = dtohl(pkg->id);
     KeyedVector<uint8_t, IdmapEntries> idmapEntries;
+    const bool isOverlayPackage = header->resourceIDMap != NULL;
 
-    if (header->resourceIDMap != NULL) {
+    if (isOverlayPackage) {
         uint8_t targetPackageId = 0;
         status_t err = parseIdmap(header->resourceIDMap, header->resourceIDMapSize, &targetPackageId, &idmapEntries);
         if (err != NO_ERROR) {
@@ -6288,6 +6289,7 @@ status_t ResTable::parsePackage(const ResTable_package* const pkg,
             if (newEntryCount > 0) {
                 uint8_t typeIndex = typeSpec->id - 1;
                 ssize_t idmapIndex = idmapEntries.indexOfKey(typeSpec->id);
+                LOG_ALWAYS_FATAL_IF(isOverlayPackage && idmapIndex < 0);
                 if (idmapIndex >= 0) {
                     typeIndex = idmapEntries[idmapIndex].targetTypeId() - 1;
                 }
@@ -6356,6 +6358,7 @@ status_t ResTable::parsePackage(const ResTable_package* const pkg,
             if (newEntryCount > 0) {
                 uint8_t typeIndex = type->id - 1;
                 ssize_t idmapIndex = idmapEntries.indexOfKey(type->id);
+                LOG_ALWAYS_FATAL_IF(isOverlayPackage && idmapIndex < 0);
                 if (idmapIndex >= 0) {
                     typeIndex = idmapEntries[idmapIndex].targetTypeId() - 1;
                 }
@@ -6690,6 +6693,41 @@ status_t ResTable::createIdmap(const ResTable& overlay,
         return UNKNOWN_ERROR;
     }
 
+    // add an empty block for each type in the overlay package that doesn't
+    // have any matching entries; this ensures parsePackage gets a unique type
+    // ID for each type
+    for (size_t typeIndex = 0; typeIndex < overlay.mPackageGroups[0]->types.size(); ++typeIndex) {
+        const TypeList& typeList = overlay.mPackageGroups[0]->types[typeIndex];
+        if (typeList.isEmpty()) {
+            continue;
+        }
+        bool alreadyInIdmap = false;
+        for (size_t i = 0; i < map.size(); ++i) {
+            const IdmapTypeMap& type = map.valueAt(i);
+            if (type.overlayTypeId == static_cast<ssize_t>(typeIndex) + 1) {
+                alreadyInIdmap = true;
+                break;
+            }
+        }
+        if (!alreadyInIdmap) {
+            uint8_t unusedKey;
+            for (unusedKey = 0; unusedKey < 0xff; unusedKey++) {
+                if (map.indexOfKey(unusedKey) < 0) {
+                    IdmapTypeMap typeMap;
+                    typeMap.overlayTypeId = typeIndex + 1;
+                    typeMap.entryOffset = 0;
+                    map.add(unusedKey, typeMap);
+                    *outSize += 4 * sizeof(uint16_t);
+                    break;
+                }
+            }
+            if (unusedKey == 0xff) {
+                ALOGE("idmap: failed to find an unused key for type 0x%02zx", typeIndex);
+                return UNKNOWN_ERROR;
+            }
+        }
+    }
+
     if ((*outData = malloc(*outSize)) == NULL) {
         return NO_MEMORY;
     }
@@ -6706,7 +6744,7 @@ status_t ResTable::createIdmap(const ResTable& overlay,
         const char* path = paths[j];
         const size_t I = strlen(path);
         if (I > 255) {
-            ALOGV("path exceeds expected 255 characters: %s\n", path);
+            ALOGV("idmap: path exceeds expected 255 characters: %s\n", path);
             return UNKNOWN_ERROR;
         }
         for (size_t i = 0; i < 256; ++i) {
