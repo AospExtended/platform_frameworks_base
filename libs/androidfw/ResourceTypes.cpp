@@ -59,7 +59,7 @@ namespace android {
 #endif
 
 #define IDMAP_MAGIC             0x504D4449
-#define IDMAP_CURRENT_VERSION   0x00000001
+#define IDMAP_CURRENT_VERSION   0x00000003
 
 #define APP_PACKAGE_ID      0x7f
 #define SYS_PACKAGE_ID      0x01
@@ -6269,8 +6269,9 @@ status_t ResTable::parsePackage(const ResTable_package* const pkg,
 
     uint32_t id = dtohl(pkg->id);
     KeyedVector<uint8_t, IdmapEntries> idmapEntries;
+    const bool isOverlayPackage = header->resourceIDMap != NULL;
 
-    if (header->resourceIDMap != NULL) {
+    if (isOverlayPackage) {
         uint8_t targetPackageId = 0;
         status_t err = parseIdmap(header->resourceIDMap, header->resourceIDMapSize, &targetPackageId, &idmapEntries);
         if (err != NO_ERROR) {
@@ -6397,6 +6398,7 @@ status_t ResTable::parsePackage(const ResTable_package* const pkg,
             if (newEntryCount > 0) {
                 uint8_t typeIndex = typeSpec->id - 1;
                 ssize_t idmapIndex = idmapEntries.indexOfKey(typeSpec->id);
+                LOG_ALWAYS_FATAL_IF(isOverlayPackage && idmapIndex < 0);
                 if (idmapIndex >= 0) {
                     typeIndex = idmapEntries[idmapIndex].targetTypeId() - 1;
                 }
@@ -6465,6 +6467,7 @@ status_t ResTable::parsePackage(const ResTable_package* const pkg,
             if (newEntryCount > 0) {
                 uint8_t typeIndex = type->id - 1;
                 ssize_t idmapIndex = idmapEntries.indexOfKey(type->id);
+                LOG_ALWAYS_FATAL_IF(isOverlayPackage && idmapIndex < 0);
                 if (idmapIndex >= 0) {
                     typeIndex = idmapEntries[idmapIndex].targetTypeId() - 1;
                 }
@@ -6789,6 +6792,31 @@ status_t ResTable::createIdmap(const ResTable& overlay,
     if (map.isEmpty()) {
         ALOGW("idmap: no resources in overlay package present in base package");
         return UNKNOWN_ERROR;
+    }
+
+    // add an empty block for each type in the overlay package that doesn't
+    // have any matching entries; this ensures parsePackage gets a unique type
+    // ID for each type
+    for (size_t typeIndex = 0; typeIndex < overlay.mPackageGroups[0]->types.size(); ++typeIndex) {
+        const TypeList& typeList = overlay.mPackageGroups[0]->types[typeIndex];
+        if (typeList.isEmpty()) {
+            continue;
+        }
+        bool alreadyInIdmap = false;
+        for (size_t i = 0; i < map.size(); ++i) {
+            const IdmapTypeMap& type = map.valueAt(i);
+            if (type.overlayTypeId == static_cast<ssize_t>(typeIndex) + 1) {
+                alreadyInIdmap = true;
+                break;
+            }
+        }
+        if (!alreadyInIdmap) {
+            IdmapTypeMap typeMap;
+            typeMap.overlayTypeId = typeIndex + 1;
+            typeMap.entryOffset = 0;
+            map.add(map.size(), typeMap);
+            *outSize += 4 * sizeof(uint16_t);
+        }
     }
 
     if ((*outData = malloc(*outSize)) == NULL) {
