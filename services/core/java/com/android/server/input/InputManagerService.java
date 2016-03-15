@@ -136,6 +136,9 @@ public class InputManagerService extends IInputManager.Stub
     private static final int MSG_DELIVER_TABLET_MODE_CHANGED = 6;
     private static final int MSG_INPUT_METHOD_SUBTYPE_CHANGED = 7;
 
+    private static final int KEY_MASK_BACK = 0x02;
+    private static final int KEY_MASK_APP_SWITCH = 0x10;
+
     // Pointer to native input manager service object.
     private final long mPtr;
 
@@ -221,6 +224,7 @@ public class InputManagerService extends IInputManager.Stub
     private static native void nativeSetPointerSpeed(long ptr, int speed);
     private static native void nativeSetShowTouches(long ptr, boolean enabled);
     private static native void nativeSetVolumeKeysRotation(long ptr, int mode);
+    private static native void nativeSetSwapKeys(long ptr, boolean enabled);
     private static native void nativeSetInteractive(long ptr, boolean interactive);
     private static native void nativeReloadCalibration(long ptr);
     private static native void nativeVibrate(long ptr, int deviceId, long[] pattern,
@@ -339,6 +343,7 @@ public class InputManagerService extends IInputManager.Stub
         registerShowTouchesSettingObserver();
         registerAccessibilityLargePointerSettingObserver();
         registerVolumeKeysRotationSettingObserver();
+        registerSwapKeysSettingObserver();
 
         mContext.registerReceiver(new BroadcastReceiver() {
             @Override
@@ -347,6 +352,7 @@ public class InputManagerService extends IInputManager.Stub
                 updateShowTouchesFromSettings();
                 updateAccessibilityLargePointerFromSettings();
                 updateVolumeKeysRotationFromSettings();
+                updateSwapKeysSettings();
             }
         }, new IntentFilter(Intent.ACTION_USER_SWITCHED), null, mHandler);
 
@@ -354,6 +360,7 @@ public class InputManagerService extends IInputManager.Stub
         updateShowTouchesFromSettings();
         updateAccessibilityLargePointerFromSettings();
         updateVolumeKeysRotationFromSettings();
+        updateSwapKeysSettings();
     }
 
     // TODO(BT) Pass in paramter for bluetooth system
@@ -1721,6 +1728,39 @@ public class InputManagerService extends IInputManager.Stub
         try {
             result = Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, UserHandle.USER_CURRENT);
+        } catch (SettingNotFoundException snfe) {
+        }
+        return result;
+    }
+
+    public void updateSwapKeysSettings() {
+        int setting = getSwapKeysSetting(0);
+        nativeSetSwapKeys(mPtr, setting != 0);
+    }
+
+    private void registerSwapKeysSettingObserver() {
+        if (!canSwapKeys()) return;
+        mContext.getContentResolver().registerContentObserver(
+                Settings.System.getUriFor(Settings.System.SWAP_NAVIGATION_KEYS), true,
+                new ContentObserver(mHandler) {
+                    @Override
+                    public void onChange(boolean selfChange) {
+                        updateSwapKeysSettings();
+                    }
+                }, UserHandle.USER_ALL);
+    }
+
+    private boolean canSwapKeys() {
+        int deviceHardwareKeys = mContext.getResources()
+                .getInteger(com.android.internal.R.integer.config_deviceHardwareKeys);
+        return (deviceHardwareKeys & KEY_MASK_APP_SWITCH) != 0 && (deviceHardwareKeys & KEY_MASK_BACK) != 0;
+    }
+
+    private int getSwapKeysSetting(int defaultValue) {
+        int result = defaultValue;
+        try {
+            result = Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.SWAP_NAVIGATION_KEYS, UserHandle.USER_CURRENT);
         } catch (SettingNotFoundException snfe) {
         }
         return result;
