@@ -4503,6 +4503,14 @@ public final class Settings {
          */
         public static final String SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
 
+        /**
+         * Whether user can swap navigation lateral keys.
+         * <p>
+         * Type: int (0 for false, 1 for true)
+         * @hide
+         */
+        public static final String SWAP_NAVIGATION_KEYS = "swap_navigation_keys";
+
         /** @hide */
         private static final Validator SHOW_BATTERY_PERCENT_VALIDATOR = BOOLEAN_VALIDATOR;
 
