@@ -4528,6 +4528,14 @@ public final class Settings {
         };
 
         /**
+         * Whether user can swap navigation lateral keys.
+         * <p>
+         * Type: int (0 for false, 1 for true)
+         * @hide
+         */
+        public static final String SWAP_NAVIGATION_KEYS = "swap_navigation_keys";
+
+        /**
          * Screenshod sound enable, This is the noise made when taking a screesnhot
          * Defaults to 1 - sounds enabled
          * @hide
