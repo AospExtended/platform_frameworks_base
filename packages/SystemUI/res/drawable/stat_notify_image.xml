@@ -1,28 +1,22 @@
-<!--
-Copyright (C) 2016 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?>
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+<!--This icon is the property of The Paranoid Android project. 
 
-         http://www.apache.org/licenses/LICENSE-2.0
+All our assets including but not limited to images, are licensed under Creative Commons Attribution-NonCommercial 4.0 International, or CC BY-NC 4.0 for short. This means that you are allowed to modify the aforementioned assets in any way you want and you are free to share the originals and/or the modified work. However, you are not allowed to use the assets for commercial purposes and you must provide attribution at all times which means you have to include a short note about the license used (CC BY-NC 4.0), the original author/authors (Paranoid Android Project or AOSPA) and inform about any changes that have been made. A link to the website should usually be included as well.-->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
+
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:width="24dp"
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
 
     <path
-        android:fillColor="#FFFFFFFF"
-        android:pathData="M21,19V5c0-1.1-0.9-2-2-2H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14C20.1,21,21,20.1,21,19z
-M8.5,13.5l2.5,3l3.5-4.5l4.5,6H5 L8.5,13.5z" />
-    <path
-        android:pathData="M0,0h24v24H0V0z" />
+        android:name="Screenshot"
+        android:fillColor="#FFFFFF"
+        android:pathData="M21,19 L21,5 C21,3.9 20.1,3 19,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21
+L19,21 C20.1,21 21,20.1 21,19 L21,19 Z M8.5,13.5 L11,16.51 L14.5,12 L19,18 L5,18
+L8.5,13.5 L8.5,13.5 Z"/>
+
 </vector>
