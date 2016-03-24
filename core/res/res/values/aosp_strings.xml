@@ -35,5 +35,6 @@
     <string name="global_action_current_user">Current</string>
     <string name="global_action_screenshot">Screenshot</string>
     <string name="global_action_search">Search</string>
+    <string name="global_action_torch">Flashlight</string>
     <string name="global_action_voicesearch">Voice Search</string>
 </resources>
