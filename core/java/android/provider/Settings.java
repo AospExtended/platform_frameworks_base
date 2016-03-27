@@ -4326,6 +4326,12 @@ public final class Settings {
         /** @hide */ public static final int HEADS_UP_USER_ON = 1;
 
         /**
+         * Heads up timeout configuration
+         * @hide
+         */
+        public static final String HEADS_UP_TIMEOUT = "heads_up_timeout";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
