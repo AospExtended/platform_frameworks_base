@@ -18,8 +18,13 @@ package com.android.systemui.statusbar;
 
 import android.annotation.NonNull;
 import android.annotation.Nullable;
+import android.content.Context;
+import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.os.SystemClock;
 import android.util.ArrayMap;
 import android.util.ArraySet;
@@ -41,6 +46,8 @@ public abstract class AlertingNotificationManager implements NotificationLifetim
     private static final String TAG = "AlertNotifManager";
     protected final Clock mClock = new Clock();
     protected final ArrayMap<String, AlertEntry> mAlertEntries = new ArrayMap<>();
+
+    protected final Context mContext;
 
     /**
      * This is the list of entries that have already been removed from the
@@ -374,6 +381,10 @@ public abstract class AlertingNotificationManager implements NotificationLifetim
          * @return the finish time
          */
         protected long calculateFinishTime() {
+            mAutoDismissNotificationDecay = Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.HEADS_UP_TIMEOUT,
+                    mContext.getResources().getInteger(R.integer.heads_up_notification_decay),
+                    UserHandle.USER_CURRENT);
             return mPostTime + mAutoDismissNotificationDecay;
         }
     }
