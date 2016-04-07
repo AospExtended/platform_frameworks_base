@@ -18,4 +18,8 @@
     <color name="keyguard_default_primary_text_color">#ffffffff</color>
     <color name="keyguard_default_secondary_text_color">#b3ffffff</color>
     <color name="keyguard_default_icon_color">#ffffffff</color>
+
+    <!-- AmbientD battery colors -->
+    <color name="keyguard_default_primary_text_color">#ffffffff</color>
+    <color name="keyguard_default_icon_color">#ffffffff</color>
 </resources>
