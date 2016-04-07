@@ -30,6 +30,7 @@ import android.os.Handler;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.graphics.PorterDuff.Mode;
+import android.content.res.ColorStateList;
 import android.os.UserHandle;
 import android.provider.AlarmClock;
 import android.provider.Settings;
@@ -50,6 +51,7 @@ import com.android.internal.util.aospextended.WeatherControllerImpl;
 import com.android.internal.widget.LockPatternUtils;
 
 import java.util.Date;
+import java.text.NumberFormat;
 import java.util.Locale;
 
 public class KeyguardStatusView extends GridLayout implements
@@ -63,6 +65,7 @@ public class KeyguardStatusView extends GridLayout implements
     private TextView mAlarmStatusView;
     private TextClock mDateView;
     private TextClock mClockView;
+    private TextView mAmbientDisplayBatteryView;
     private TextView mOwnerInfo;
     private View mWeatherView;
     private TextView mWeatherCity;
@@ -89,6 +92,10 @@ public class KeyguardStatusView extends GridLayout implements
     //And onScreenTurnedOff will not get called if power off when keyguard is not started.
     //Set initial value to false to skip the above case.
     private boolean mEnableRefresh = false;
+
+    private final int mWarningColor = 0xfff4511e; // deep orange 600
+    private int mIconColor;
+    private int mPrimaryTextColor;
 
     private KeyguardUpdateMonitorCallback mInfoCallback = new KeyguardUpdateMonitorCallback() {
 
@@ -157,6 +164,7 @@ public class KeyguardStatusView extends GridLayout implements
         mClockView = (TextClock) findViewById(R.id.clock_view);
         mDateView.setShowCurrentUserTime(true);
         mClockView.setShowCurrentUserTime(true);
+        mAmbientDisplayBatteryView = (TextView) findViewById(R.id.ambient_display_battery_view);
         mOwnerInfo = (TextView) findViewById(R.id.owner_info);
         mWeatherView = findViewById(R.id.keyguard_weather_view);
         mWeatherCity = (TextView) findViewById(R.id.city);
@@ -465,6 +473,84 @@ public class KeyguardStatusView extends GridLayout implements
         Drawable weatherIcon = mWeatherConditionDrawable;
         mWeatherConditionImage.setImageDrawable(weatherIcon);
     }
+
+    private void refreshBatteryInfo() {
+        final Resources res = getContext().getResources();
+        KeyguardUpdateMonitor.BatteryStatus batteryStatus =
+                KeyguardUpdateMonitor.getInstance(mContext).getBatteryStatus();
+
+        mPrimaryTextColor =
+                res.getColor(R.color.keyguard_default_primary_text_color);
+        mIconColor =
+                res.getColor(R.color.keyguard_default_primary_text_color);
+
+        String percentage = "";
+        int resId = 0;
+        final int lowLevel = res.getInteger(
+                com.android.internal.R.integer.config_lowBatteryWarningLevel);
+        final boolean useWarningColor = batteryStatus == null || batteryStatus.status == 1
+                || (batteryStatus.level <= lowLevel && !batteryStatus.isPluggedIn());
+
+        if (batteryStatus != null) {
+            percentage = NumberFormat.getPercentInstance().format((double) batteryStatus.level / 100.0);
+        }
+        if (batteryStatus == null || batteryStatus.status == 1) {
+            resId = R.drawable.ic_battery_unknown;
+        } else {
+            if (batteryStatus.level >= 96) {
+                resId = batteryStatus.isPluggedIn()
+                        ? R.drawable.ic_battery_charging_full : R.drawable.ic_battery_full;
+            } else if (batteryStatus.level >= 90) {
+                resId = batteryStatus.isPluggedIn()
+                        ? R.drawable.ic_battery_charging_90 : R.drawable.ic_battery_90;
+            } else if (batteryStatus.level >= 80) {
+                resId = batteryStatus.isPluggedIn()
+                        ? R.drawable.ic_battery_charging_80 : R.drawable.ic_battery_80;
+            } else if (batteryStatus.level >= 60) {
+                resId = batteryStatus.isPluggedIn()
+                        ? R.drawable.ic_battery_charging_60 : R.drawable.ic_battery_60;
+            } else if (batteryStatus.level >= 50) {
+                resId = batteryStatus.isPluggedIn()
+                        ? R.drawable.ic_battery_charging_50 : R.drawable.ic_battery_50;
+            } else if (batteryStatus.level >= 30) {
+                resId = batteryStatus.isPluggedIn()
+                        ? R.drawable.ic_battery_charging_30 : R.drawable.ic_battery_30;
+            } else if (batteryStatus.level >= lowLevel) {
+                resId = batteryStatus.isPluggedIn()
+                        ? R.drawable.ic_battery_charging_20 : R.drawable.ic_battery_20;
+            } else {
+                resId = batteryStatus.isPluggedIn()
+                        ? R.drawable.ic_battery_charging_20 : R.drawable.ic_battery_alert;
+            }
+        }
+        Drawable icon = resId > 0 ? res.getDrawable(resId).mutate() : null;
+        if (icon != null) {
+            icon.setTintList(ColorStateList.valueOf(useWarningColor ? mWarningColor : mIconColor));
+        }
+
+        mAmbientDisplayBatteryView.setText(percentage);
+        mAmbientDisplayBatteryView.setTextColor(useWarningColor
+                ? mWarningColor : mPrimaryTextColor);
+        mAmbientDisplayBatteryView.setCompoundDrawablesRelativeWithIntrinsicBounds(icon, null, null, null);
+    }
+
+    public void setDozing(boolean dozing) {
+        if (dozing && showBattery()) {
+            refreshBatteryInfo();
+            if (mAmbientDisplayBatteryView.getVisibility() != View.VISIBLE) {
+                mAmbientDisplayBatteryView.setVisibility(View.VISIBLE);
+            }
+        } else {
+            if (mAmbientDisplayBatteryView.getVisibility() != View.GONE) {
+                mAmbientDisplayBatteryView.setVisibility(View.GONE);
+            }
+        }
+    }
+
+    private boolean showBattery() {
+        return Settings.System.getInt(getContext().getContentResolver(),
+                Settings.System.AMBIENT_DISPLAY_SHOW_BATTERY, 1) == 1;
+    } 
 
     // DateFormat.getBestDateTimePattern is extremely expensive, and refresh is called often.
     // This is an optimization to ensure we only recompute the patterns when the inputs change.

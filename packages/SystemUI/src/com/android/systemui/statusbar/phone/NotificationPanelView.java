@@ -49,6 +49,7 @@ import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowInsets;
+import android.view.GestureDetector;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
