@@ -22,6 +22,7 @@ import android.annotation.NonNull;
 import android.annotation.Nullable;
 import android.app.Notification;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.os.UserHandle;
@@ -29,6 +30,10 @@ import android.provider.Settings;
 import android.util.ArrayMap;
 import android.util.Log;
 import android.view.accessibility.AccessibilityManager;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.systemui.Dependency;
@@ -47,7 +52,6 @@ import java.util.HashSet;
  */
 public abstract class HeadsUpManager extends AlertingNotificationManager {
     private static final String TAG = "HeadsUpManager";
-    private static final String SETTING_HEADS_UP_SNOOZE_LENGTH_MS = "heads_up_snooze_length_ms";
 
     protected final HashSet<OnHeadsUpChangedListener> mListeners = new HashSet<>();
 
@@ -70,29 +74,21 @@ public abstract class HeadsUpManager extends AlertingNotificationManager {
                 Settings.System.HEADS_UP_TIMEOUT,
                 context.getResources().getInteger(R.integer.heads_up_notification_decay),
                 UserHandle.USER_CURRENT);
+        mSnoozeLengthMs = Settings.System.getIntForUser(context.getContentResolver(),
+                Settings.System.HEADS_UP_NOTIFICATION_SNOOZE,
+                context.getResources().getInteger(R.integer.heads_up_default_snooze_length_ms),
+                UserHandle.USER_CURRENT);
         mTouchAcceptanceDelay = resources.getInteger(R.integer.touch_acceptance_delay);
         mSnoozedPackages = new ArrayMap<>();
-        int defaultSnoozeLengthMs =
-                resources.getInteger(R.integer.heads_up_default_snooze_length_ms);
-
-        mSnoozeLengthMs = Settings.Global.getInt(context.getContentResolver(),
-                SETTING_HEADS_UP_SNOOZE_LENGTH_MS, defaultSnoozeLengthMs);
         ContentObserver settingsObserver = new ContentObserver(mHandler) {
             @Override
             public void onChange(boolean selfChange) {
-                final int packageSnoozeLengthMs = Settings.Global.getInt(
-                        context.getContentResolver(), SETTING_HEADS_UP_SNOOZE_LENGTH_MS, -1);
-                if (packageSnoozeLengthMs > -1 && packageSnoozeLengthMs != mSnoozeLengthMs) {
-                    mSnoozeLengthMs = packageSnoozeLengthMs;
-                    if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                        Log.v(TAG, "mSnoozeLengthMs = " + mSnoozeLengthMs);
-                    }
-                }
+                mSnoozedPackages.clear();
             }
         };
         context.getContentResolver().registerContentObserver(
-                Settings.Global.getUriFor(SETTING_HEADS_UP_SNOOZE_LENGTH_MS), false,
-                settingsObserver);
+                Settings.System.getUriFor(Settings.System.HEADS_UP_NOTIFICATION_SNOOZE), false,
+                settingsObserver, UserHandle.USER_ALL);
     }
 
     /**
@@ -213,6 +209,31 @@ public abstract class HeadsUpManager extends AlertingNotificationManager {
             String packageName = entry.mEntry.getSbn().getPackageName();
             mSnoozedPackages.put(snoozeKey(packageName, mUser),
                     mClock.currentTimeMillis() + mSnoozeLengthMs);
+            if (mSnoozeLengthMs != 0) {
+                String appName = null;
+                try {
+                    appName = (String) mContext.getPackageManager().getApplicationLabel(
+                        mContext.getPackageManager().getApplicationInfo(packageName,
+                            PackageManager.GET_META_DATA));
+                } catch (PackageManager.NameNotFoundException e) {
+                    appName = packageName;
+                }
+                if (mSnoozeLengthMs == 60000) {
+                    Toast toast = Toast.makeText(mContext,
+                    mContext.getString(R.string.heads_up_snooze_message_one_minute, appName),
+                            Toast.LENGTH_LONG);
+                    TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
+                    if( v != null) v.setGravity(Gravity.CENTER);
+                    toast.show();
+                } else {
+                    Toast toast = Toast.makeText(mContext,
+                    mContext.getString(R.string.heads_up_snooze_message, appName,
+                    mSnoozeLengthMs / 60 / 1000), Toast.LENGTH_LONG);
+                    TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
+                    if( v != null) v.setGravity(Gravity.CENTER);
+                    toast.show();
+                }
+            }
         }
     }
 
