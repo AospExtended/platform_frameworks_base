@@ -5032,6 +5032,12 @@ public final class Settings {
         public static final String HEADS_UP_TIMEOUT = "heads_up_timeout";
 
         /**
+         * Defines the global heads up notification snooze
+         * @hide
+         */
+        public static final String HEADS_UP_NOTIFICATION_SNOOZE = "heads_up_notification_snooze";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
