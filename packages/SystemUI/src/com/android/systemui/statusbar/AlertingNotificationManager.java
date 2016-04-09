@@ -281,7 +281,7 @@ public abstract class AlertingNotificationManager implements NotificationLifetim
         @Nullable public NotificationEntry mEntry;
         public long mPostTime;
         public long mEarliestRemovaltime;
-
+        
         @Nullable protected Runnable mRemoveAlertRunnable;
 
         public void setEntry(@NonNull final NotificationEntry entry) {
