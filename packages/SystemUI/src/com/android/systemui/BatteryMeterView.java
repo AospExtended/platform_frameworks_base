@@ -63,6 +63,10 @@ public class BatteryMeterView extends ImageView implements
                 com.android.internal.R.string.status_bar_battery);
         setImageDrawable(mDrawable);
 
+        // The BatteryMeterDrawable wants to use the clear xfermode,
+        // so use a separate layer to not make it clear the background with it.
+        setLayerType(View.LAYER_TYPE_HARDWARE, null);
+
         mContext = context;
         mFrameColor = frameColor;
     }
@@ -131,7 +135,7 @@ public class BatteryMeterView extends ImageView implements
                 setImageDrawable(null);
                 break;
             default:
-                mDrawable = new BatteryMeterDrawable(mContext, new Handler(), mFrameColor);
+                mDrawable = new BatteryMeterDrawable(mContext, new Handler(), mFrameColor, style);
                 setImageDrawable(mDrawable);
                 setVisibility(View.VISIBLE);
                 break;
