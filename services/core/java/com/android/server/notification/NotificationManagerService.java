@@ -327,6 +327,8 @@ public class NotificationManagerService extends SystemService {
     private ConditionProviders mConditionProviders;
     private NotificationUsageStats mUsageStats;
 
+    private boolean mMultiColorNotificationLed;
+
     private static final int MY_UID = Process.myUid();
     private static final int MY_PID = Process.myPid();
     private RankingHandler mRankingHandler;
@@ -1114,6 +1116,9 @@ public class NotificationManagerService extends SystemService {
                 R.integer.config_defaultNotificationLedOn);
         mDefaultNotificationLedOff = resources.getInteger(
                 R.integer.config_defaultNotificationLedOff);
+
+        mMultiColorNotificationLed = resources.getBoolean(
+                R.bool.config_multiColorNotificationLed);
 
         mNotificationPulseCustomLedValues = new ArrayMap<String, NotificationLedValues>();
 
@@ -3812,6 +3817,9 @@ public class NotificationManagerService extends SystemService {
 
     private int generateLedColorForNotification(NotificationRecord ledNotification) {
         if (!mAutoGenerateNotificationColor) {
+            return mDefaultNotificationColor;
+        }
+        if (!mMultiColorNotificationLed) {
             return mDefaultNotificationColor;
         }
         final String packageName = ledNotification.sbn.getPackageName();
