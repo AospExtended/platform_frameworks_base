@@ -24,10 +24,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)material/alarms/Oxygen.ogg:system/media/audio/alarms/Oxygen.ogg \
     $(LOCAL_PATH)material/alarms/Platinum.ogg:system/media/audio/alarms/Platinum.ogg \
     $(LOCAL_PATH)material/alarms/Timer.ogg:system/media/audio/alarms/Timer.ogg \
-    $(LOCAL_PATH)material/effects/audio_end.ogg:system/media/audio/ui/audio_end.ogg \
-    $(LOCAL_PATH)material/effects/audio_initiate.ogg:system/media/audio/ui/audio_initiate.ogg \
-    $(LOCAL_PATH)material/effects/camera_click.ogg:system/media/audio/ui/camera_click.ogg \
-    $(LOCAL_PATH)material/effects/camera_focus.ogg:system/media/audio/ui/camera_focus.ogg \
+    $(LOCAL_PATH)material/effects/Audio_End.ogg:system/media/audio/ui/Audio_End.ogg \
+    $(LOCAL_PATH)material/effects/Audio_Initiate.ogg:system/media/audio/ui/Audio_Initiate.ogg \
+    $(LOCAL_PATH)material/effects/Camera_Click.ogg:system/media/audio/ui/Camera_Click.ogg \
+    $(LOCAL_PATH)material/effects/Camera_Focus.ogg:system/media/audio/ui/Camera_Focus.ogg \
     $(LOCAL_PATH)material/effects/Dock.ogg:system/media/audio/ui/Dock.ogg \
     $(LOCAL_PATH)material/effects/Effect_Tick.ogg:system/media/audio/ui/Effect_Tick.ogg \
     $(LOCAL_PATH)material/effects/KeypressDelete.ogg:system/media/audio/ui/KeypressDelete.ogg \
