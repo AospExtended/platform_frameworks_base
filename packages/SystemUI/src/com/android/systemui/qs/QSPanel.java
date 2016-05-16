@@ -19,6 +19,10 @@ package com.android.systemui.qs;
 import static com.android.systemui.util.Utils.useQsMediaPlayer;
 
 import android.annotation.NonNull;
+import android.animation.Animator;
+import android.animation.Animator.AnimatorListener;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.annotation.Nullable;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -26,9 +30,19 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AnticipateInterpolator;
+import android.view.animation.AnticipateOvershootInterpolator;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.OvershootInterpolator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +55,7 @@ import com.android.internal.widget.RemeasuringLinearLayout;
 import com.android.systemui.R;
 import com.android.systemui.plugins.qs.DetailAdapter;
 import com.android.systemui.plugins.qs.QSTile;
+import com.android.systemui.plugins.qs.QSTileView;
 import com.android.systemui.settings.brightness.BrightnessSlider;
 import com.android.systemui.statusbar.policy.BrightnessMirrorController;
 import com.android.systemui.tuner.TunerService;
@@ -539,6 +554,7 @@ public class QSPanel extends LinearLayout implements Tunable {
 
         if (mTileLayout != null) {
             mTileLayout.addTile(tileRecord);
+            tileClickListener(tileRecord.tile, tileRecord.tileView);
         }
     }
 
@@ -796,5 +812,65 @@ public class QSPanel extends LinearLayout implements Tunable {
         }
         parent.removeView(child);
         parent.addView(child, index);
+    }
+
+    private void setAnimationTile(QSTileView v) {
+        ObjectAnimator animTile = null;
+        int animStyle = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.ANIM_TILE_STYLE, 0, UserHandle.USER_CURRENT);
+        int animDuration = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.ANIM_TILE_DURATION, 2000, UserHandle.USER_CURRENT);
+        int interpolatorType = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.ANIM_TILE_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
+        if (animStyle == 0) {
+            //No animation
+        }
+        if (animStyle == 1) {
+            animTile = ObjectAnimator.ofFloat(v, "rotationY", 0f, 360f);
+        }
+        if (animStyle == 2) {
+            animTile = ObjectAnimator.ofFloat(v, "rotation", 0f, 360f);
+        }
+        if (animTile != null) {
+            switch (interpolatorType) {
+                    case 0:
+                        animTile.setInterpolator(new LinearInterpolator());
+                        break;
+                    case 1:
+                        animTile.setInterpolator(new AccelerateInterpolator());
+                        break;
+                    case 2:
+                        animTile.setInterpolator(new DecelerateInterpolator());
+                        break;
+                    case 3:
+                        animTile.setInterpolator(new AccelerateDecelerateInterpolator());
+                        break;
+                    case 4:
+                        animTile.setInterpolator(new BounceInterpolator());
+                        break;
+                    case 5:
+                        animTile.setInterpolator(new OvershootInterpolator());
+                        break;
+                    case 6:
+                        animTile.setInterpolator(new AnticipateInterpolator());
+                        break;
+                    case 7:
+                        animTile.setInterpolator(new AnticipateOvershootInterpolator());
+                        break;
+                    default:
+                        break;
+            }
+            animTile.setDuration(animDuration);
+            animTile.start();
+        }
+    }
+
+    private void tileClickListener(QSTile t, QSTileView v) {
+        if (mTileLayout != null) {
+            v.setOnClickListener(view -> {
+                    t.click(view);
+                    setAnimationTile(v);
+            });
+        }
     }
 }
