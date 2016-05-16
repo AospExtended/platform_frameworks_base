@@ -3791,6 +3791,20 @@ public final class Settings {
          */
         public static final String TOAST_ICON = "toast_icon";
 
+		/**
+         * Change quick settings tiles animation style
+         *
+         * @hide
+         */
+        public static final String ANIM_TILE_STYLE = "anim_tile_style";
+
+		/**
+         * Change quick settings tiles animation duration
+         *
+         * @hide
+         */
+        public static final String ANIM_TILE_DURATION = "anim_tile_duration";
+
         /**
          *  Enable flashlight notification
          * @hide
