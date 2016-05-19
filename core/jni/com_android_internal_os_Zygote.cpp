@@ -544,6 +544,8 @@ static pid_t ForkAndSpecializeCommon(JNIEnv* env, uid_t uid, gid_t gid, jintArra
 
   ResetNicePriority(env);
 
+  ResetNicePriority(env);
+
   pid_t pid = fork();
 
   if (pid == 0) {
