@@ -35,4 +35,12 @@
     <dimen name="recent_header_width">120dp</dimen>
     <dimen name="recent_text_size">17dp</dimen>
     <dimen name="recent_thumbnail_bottom_padding">3dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="text_size_m">24sp</dimen>
+    <dimen name="text_size_s">17sp</dimen>
+    <dimen name="button_height">40dp</dimen>
+
+    <dimen name="crop_buttons">48dp</dimen>
+    <dimen name="crop_buttons_inlet">32dp</dimen>
 </resources>
