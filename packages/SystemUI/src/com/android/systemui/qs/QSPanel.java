@@ -36,6 +36,14 @@ import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AnticipateInterpolator;
+import android.view.animation.AnticipateOvershootInterpolator;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.OvershootInterpolator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -96,6 +104,10 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
     private BrightnessMirrorController mBrightnessMirrorController;
     private View mDivider;
+
+    private int mAnimStyle;
+    private int mAnimDuration;
+    private int mInterpolatorType;
 
     public QSPanel(Context context) {
         this(context, null);
@@ -708,24 +720,46 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     }
 
     private void setAnimationTile(QSTileView v) {
-        ObjectAnimator animTile = null;
-        int animStyle = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.ANIM_TILE_STYLE, 0, UserHandle.USER_CURRENT);
-        int animDuration = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.ANIM_TILE_DURATION, 2000, UserHandle.USER_CURRENT);
-        if (animStyle == 0) {
+        ObjectAnimator animTile;
+        if (mAnimStyle == 0) {
             //No animation
+            return;
         }
-        if (animStyle == 1) {
+        if (mAnimStyle == 1) {
             animTile = ObjectAnimator.ofFloat(v, "rotationY", 0f, 360f);
-        }
-        if (animStyle == 2) {
+        } else {
             animTile = ObjectAnimator.ofFloat(v, "rotation", 0f, 360f);
         }
-        if (animTile != null) {
-            animTile.setDuration(animDuration);
-            animTile.start();
+        switch (mInterpolatorType) {
+            case 0:
+                animTile.setInterpolator(new LinearInterpolator());
+                break;
+            case 1:
+                animTile.setInterpolator(new AccelerateInterpolator());
+                break;
+            case 2:
+                animTile.setInterpolator(new DecelerateInterpolator());
+                break;
+            case 3:
+                animTile.setInterpolator(new AccelerateDecelerateInterpolator());
+                break;
+            case 4:
+                animTile.setInterpolator(new BounceInterpolator());
+                break;
+            case 5:
+                animTile.setInterpolator(new OvershootInterpolator());
+                break;
+            case 6:
+                animTile.setInterpolator(new AnticipateInterpolator());
+                break;
+            case 7:
+                animTile.setInterpolator(new AnticipateOvershootInterpolator());
+                break;
+            default:
+                break;
         }
+        animTile.setDuration(mAnimDuration);
+        animTile.start();
     }
 
     private void configureTile(QSTile t, QSTileView v) {
@@ -787,5 +821,11 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
                 configureTile(r.tile, r.tileView);
             }
         }
+        mAnimStyle = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.ANIM_TILE_STYLE, 0, UserHandle.USER_CURRENT);
+        mAnimDuration = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.ANIM_TILE_DURATION, 2000, UserHandle.USER_CURRENT);
+        mInterpolatorType = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.ANIM_TILE_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
     }
 }

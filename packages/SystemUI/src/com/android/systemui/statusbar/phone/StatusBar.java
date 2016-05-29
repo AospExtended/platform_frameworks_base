@@ -6708,6 +6708,10 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.QS_FOOTER_WARNINGS))) {
                 setQsPanelOptions();
+            } else if (uri.equals(Settings.System.getUriFor(Settings.System.ANIM_TILE_STYLE)) ||
+                    uri.equals(Settings.System.getUriFor(Settings.System.ANIM_TILE_DURATION)) ||
+                    uri.equals(Settings.System.getUriFor(Settings.System.ANIM_TILE_INTERPOLATOR))) {
+                setQsPanelOptions();
             }
         }
 
