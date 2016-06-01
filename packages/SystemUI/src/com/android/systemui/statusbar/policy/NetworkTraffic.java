@@ -157,12 +157,12 @@ public class NetworkTraffic extends TextView {
             long speedTxKB = (long)(txData / (timeDelta / 1000f)) / KILOBYTE;
             long speedRxKB = (long)(rxData / (timeDelta / 1000f)) / KILOBYTE;
             int mState = 2;
-                return mAutoHide &&
+                return !getConnectAvailable() || (mAutoHide &&
                    (mState == MASK_DOWN && speedRxKB <= mAutoHideThreshold ||
                     mState == MASK_UP && speedTxKB <= mAutoHideThreshold ||
                     mState == MASK_UP + MASK_DOWN &&
                        speedRxKB <= mAutoHideThreshold &&
-                       speedTxKB <= mAutoHideThreshold);
+                       speedTxKB <= mAutoHideThreshold));
         }
     };
 
