@@ -263,8 +263,8 @@ public class Watchdog extends Thread {
     }
 
     public void processStarted(String name, int pid) {
-        synchronized (this) {
-            if ("com.android.phone".equals(name)) {
+        if ("com.android.phone".equals(name)) {
+            synchronized (this) {
                 mPhonePid = pid;
             }
         }
