@@ -3924,25 +3924,25 @@ public final class Settings {
          * Hide lockscreen date
          * @hide
          */
-        public static final String HIDE_LOCKSCREEN_DATE = "hide_lockscreen_date";
+        public static final String SHOW_LOCKSCREEN_DATE = "show_lockscreen_date";
 
         /**
          * Hide lockscreen clock
          * @hide
          */
-        public static final String HIDE_LOCKSCREEN_CLOCK = "hide_lockscreen_clock";
+        public static final String SHOW_LOCKSCREEN_CLOCK = "show_lockscreen_clock";
+
+        /**
+         * Hide lockscreen date
+         * @hide
+         */
+        public static final String SHOW_LOCKSCREEN_ALARM = "show_lockscreen_alarm";
 
         /**
          * Change the delay when a screenshot is taken
          * @hide
          */
         public static final String SCREENSHOT_DELAY = "screenshot_delay";
-
-        /**
-         * Hide lockscreen date
-         * @hide
-         */
-        public static final String HIDE_LOCKSCREEN_ALARM = "hide_lockscreen_alarm";
 
         /**
          * Network traffic indicator, goes from least to greatest significant bitwise
@@ -3977,6 +3977,12 @@ public final class Settings {
          * @hide
          */
         public static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";
+
+        /**
+         * Change fonts for the system lockscreen clock widget
+         * @hide
+         */
+        public static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
 
         /**
 	 * whether to enable torch on lockscreen
