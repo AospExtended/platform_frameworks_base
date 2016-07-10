@@ -137,5 +137,8 @@
 
     <!-- True if the notifications should tint the app name with the dynamic or the accent color -->
     <bool name="config_allowNotificationAppNameTextTinting">false</bool>
+
+    <!-- Whether device has dash charging support -->
+    <bool name="config_hasDashCharger">false</bool>
 </resources>
 
