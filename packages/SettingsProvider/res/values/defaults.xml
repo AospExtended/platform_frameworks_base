@@ -191,4 +191,7 @@
     <!-- Default for Settings.Global.TETHER_DUN_REQUIRED -->
     <integer name="def_tether_dun_required">0</integer>
 
+    <!-- Time format,default value is 24 : 24 format,other value is 12 format -->
+    <string name="def_time_format" translatable="false"></string>
+
 </resources>
