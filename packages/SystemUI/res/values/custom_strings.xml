@@ -88,4 +88,7 @@
     <string name="action_save_fault">Saving was unsuccessful</string>
     <string name="action_edit">Edit</string>
 
+    <string name="quick_settings_expanded_navigation_off">Hide navbar</string>
+    <string name="quick_settings_expanded_statusbar_off">Hide statusbar</string>
+
 </resources>
