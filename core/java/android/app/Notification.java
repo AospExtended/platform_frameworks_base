@@ -28,6 +28,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -45,6 +46,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.text.BidiFormatter;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -3873,7 +3875,7 @@ public class Notification implements Parcelable
         private void processSmallIconColor(Icon smallIcon, RemoteViews contentView) {
             boolean colorable = !isLegacy() || getColorUtil().isGrayscaleIcon(mContext, smallIcon);
             if (colorable) {
-                contentView.setDrawableParameters(R.id.icon, false, -1, resolveContrastColor(),
+                contentView.setDrawableParameters(R.id.icon, false, -1, resolveIconContrastColor(),
                         PorterDuff.Mode.SRC_ATOP, -1);
 
             }
@@ -3890,7 +3892,7 @@ public class Notification implements Parcelable
             if (largeIcon != null && isLegacy()
                     && getColorUtil().isGrayscaleIcon(mContext, largeIcon)) {
                 // resolve color will fall back to the default when legacy
-                contentView.setDrawableParameters(R.id.icon, false, -1, resolveContrastColor(),
+                contentView.setDrawableParameters(R.id.icon, false, -1, resolveIconContrastColor(),
                         PorterDuff.Mode.SRC_ATOP, -1);
             }
         }
@@ -3901,7 +3903,29 @@ public class Notification implements Parcelable
             }
         }
 
+        int getSenderTextColor() {
+            return mContext.getColor(R.color.sender_text_color);
+        }
+
+        int resolveIconContrastColor() {
+            boolean notificationTint = Settings.Secure.getInt(mContext.getContentResolver(),
+                Settings.Secure.NOTIFICATION_TITLE_TINT, 1) == 1;
+            if (!notificationTint || !Resources.getSystem().getBoolean(
+                R.bool.config_allowNotificationIconTextTinting)) {
+                return mContext.getColor(R.color.notification_icon_default_color);
+            } else {
+                return resolveContrastColor();
+            }
+        }
+
         int resolveContrastColor() {
+            boolean notificationTint = Settings.Secure.getInt(mContext.getContentResolver(),
+                Settings.Secure.NOTIFICATION_TITLE_TINT, 1) == 1;
+            if (!notificationTint || !Resources.getSystem().getBoolean(
+                R.bool.config_allowNotificationIconTextTinting)) {
+                return mContext.getColor(R.color.notification_text_default_color);
+            }
+
             if (mCachedContrastColorIsFor == mN.color && mCachedContrastColor != COLOR_INVALID) {
                 return mCachedContrastColor;
             }
@@ -4904,7 +4928,7 @@ public class Notification implements Parcelable
                         0 /* flags */);
             } else {
                 sb.append(bidi.unicodeWrap(m.mSender),
-                        makeFontColorSpan(Color.BLACK),
+                        makeFontColorSpan(mBuilder.getSenderTextColor()),
                         0 /* flags */);
             }
             CharSequence text = m.mText == null ? "" : m.mText;
