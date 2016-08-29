@@ -546,9 +546,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     boolean mVolBtnMusicControls;
     boolean mIsLongPress;
 
-    // Volume wake control flag
-    boolean mVolumeWakeScreen;
-
     PointerLocationView mPointerLocationView;
 
     // The current size of the screen; really; extends into the overscan area of
@@ -1994,6 +1991,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         final boolean hasAssist = (mDeviceHardwareKeys & KEY_MASK_ASSIST) != 0;
         final boolean hasAppSwitch = (mDeviceHardwareKeys & KEY_MASK_APP_SWITCH) != 0;
         final ContentResolver resolver = mContext.getContentResolver();
+        final Resources res = mContext.getResources();
 
         // Initialize all assignments to sane defaults.
         mPressOnMenuBehavior = KEY_ACTION_MENU;
@@ -2008,10 +2006,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         mPressOnAssistBehavior = KEY_ACTION_SEARCH;
         mLongPressOnAssistBehavior = KEY_ACTION_VOICE_SEARCH;
         mPressOnAppSwitchBehavior = KEY_ACTION_APP_SWITCH;
-        mLongPressOnAppSwitchBehavior = mContext.getResources().getInteger(
+        mLongPressOnAppSwitchBehavior = res.getInteger(
                 com.android.internal.R.integer.config_longPressOnAppSwitchBehavior);
 
-        mLongPressOnHomeBehavior = mContext.getResources().getInteger(
+        mLongPressOnHomeBehavior = res.getInteger(
                 com.android.internal.R.integer.config_longPressOnHomeBehavior);
         if (mLongPressOnHomeBehavior < KEY_ACTION_NOTHING ||
                 mLongPressOnHomeBehavior > KEY_ACTION_SLEEP) {
@@ -2185,10 +2183,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     Settings.System.END_BUTTON_BEHAVIOR,
                     Settings.System.END_BUTTON_BEHAVIOR_DEFAULT,
                     UserHandle.USER_CURRENT);
-            mIncallPowerBehavior = Settings.Secure.getIntForUser(resolver,
-                    Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR,
-                    Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR_DEFAULT,
-                    UserHandle.USER_CURRENT);
             mHomeWakeScreen = (Settings.System.getIntForUser(resolver,
                     Settings.System.HOME_WAKE_SCREEN, 1, UserHandle.USER_CURRENT) == 1) &&
                     ((mDeviceHardwareWakeKeys & KEY_MASK_HOME) != 0);
@@ -2268,11 +2262,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             if (mImmersiveModeConfirmation != null) {
                 mImmersiveModeConfirmation.loadSetting(mCurrentUserId);
             }
-
-            // Volume wake
-            mVolumeWakeScreen = (Settings.System.getIntForUser(resolver,
-                    Settings.System.VOLUME_WAKE_SCREEN, 0, UserHandle.USER_CURRENT) == 1);
-
         }
         synchronized (mWindowManagerFuncs.getWindowManagerLock()) {
             WindowManagerPolicyControl.reloadFromSetting(mContext);
@@ -4440,8 +4429,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             navVisible |= !canHideNavigationBar();
 
             boolean updateSysUiVisibility = layoutNavigationBar(displayWidth, displayHeight,
-                    displayRotation, uiMode, overscanRight, overscanBottom, dcf, navVisible, navTranslucent,
-                    navAllowedHidden, statusBarExpandedNotKeyguard);
+                    displayRotation, uiMode, overscanLeft, overscanRight, overscanBottom,
+                    dcf, navVisible, navTranslucent, navAllowedHidden, statusBarExpandedNotKeyguard);
             if (DEBUG_LAYOUT) Slog.i(TAG, String.format("mDock rect: (%d,%d - %d,%d)",
                     mDockLeft, mDockTop, mDockRight, mDockBottom));
             updateSysUiVisibility |= layoutStatusBar(pf, df, of, vf, dcf, sysui, isKeyguardShowing);
@@ -4519,8 +4508,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     }
 
     private boolean layoutNavigationBar(int displayWidth, int displayHeight, int displayRotation,
-            int uiMode, int overscanRight, int overscanBottom, Rect dcf, boolean navVisible,
-            boolean navTranslucent, boolean navAllowedHidden,
+            int uiMode, int overscanLeft, int overscanRight, int overscanBottom, Rect dcf,
+            boolean navVisible, boolean navTranslucent, boolean navAllowedHidden,
             boolean statusBarExpandedNotKeyguard) {
         if (mNavigationBar != null) {
             boolean transientNavBarShowing = mNavigationBarController.isTransientShowing();
