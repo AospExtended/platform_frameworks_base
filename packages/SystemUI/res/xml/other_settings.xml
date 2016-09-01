@@ -24,4 +24,9 @@
             android:title="@string/tuner_full_importance_settings"
             android:fragment="com.android.systemui.tuner.PowerNotificationControlsFragment"/>
 
+    <Preference
+            android:key="demo_mode"
+            android:title="@string/demo_mode"
+            android:fragment="com.android.systemui.tuner.DemoModeFragment" />
+
 </PreferenceScreen>
