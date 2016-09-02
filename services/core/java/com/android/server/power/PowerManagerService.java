@@ -72,6 +72,7 @@ import com.android.internal.app.IBatteryStats;
 import com.android.internal.os.BackgroundThread;
 import com.android.internal.util.ArrayUtils;
 import com.android.server.EventLogTags;
+import com.android.server.UiThread;
 import com.android.server.ServiceThread;
 import com.android.server.SystemService;
 import com.android.server.Watchdog;
@@ -2610,9 +2611,9 @@ public final class PowerManagerService extends SystemService
         };
 
         // ShutdownThread must run on a looper capable of displaying the UI.
-        Message msg = Message.obtain(mHandler, runnable);
+        Message msg = Message.obtain(UiThread.getHandler(), runnable);
         msg.setAsynchronous(true);
-        mHandler.sendMessage(msg);
+        UiThread.getHandler().sendMessage(msg);
 
         // PowerManager.reboot() is documented not to return so just wait for the inevitable.
         if (wait) {
