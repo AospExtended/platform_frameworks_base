@@ -19,7 +19,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnAttachStateChangeListener;
 import android.view.View.OnLayoutChangeListener;
-import android.widget.TextView;
 
 import com.android.systemui.qs.PagedTileLayout.PageListener;
 import com.android.systemui.qs.QSPanel.QSTileLayout;
@@ -163,7 +162,7 @@ public class QSAnimator implements Callback, PageListener, Listener, OnLayoutCha
 
         for (QSTile<?> tile : tiles) {
             QSTileBaseView tileView = mQsPanel.getTileView(tile);
-            final TextView label = ((QSTileView) tileView).getLabel();
+            final View label = ((QSTileView) tileView).getLabelParent();
             final View tileIcon = tileView.getIcon().getIconView();
             if (count < mNumQuickTiles && mAllowFancy) {
                 // Quick tiles.
