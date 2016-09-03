@@ -57,6 +57,7 @@ import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
@@ -427,6 +428,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     private boolean mBlurredRecents;
     private int mRadiusRecents;
     private int mScaleRecents;
+    private int mBlurDarkColorFilter;
+    private int mBlurMixedColorFilter;
+    private int mBlurLightColorFilter;
 
     // RemoteInputView to be activated after unlock
     private View mPendingRemoteInputView;
@@ -604,6 +608,15 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.RECENT_APPS_RADIUS_PREFERENCE_KEY), 
                     false, this);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.BLUR_DARK_COLOR_PREFERENCE_KEY), 
+                    false, this);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.BLUR_LIGHT_COLOR_PREFERENCE_KEY), 
+                    false, this);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.BLUR_MIXED_COLOR_PREFERENCE_KEY), 
+                    false, this);
             updateSettings();
         }
 
@@ -684,7 +697,15 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             mScaleRecents = Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.RECENT_APPS_SCALE_PREFERENCE_KEY, 6);
             mRadiusRecents = Settings.System.getInt(mContext.getContentResolver(),
-                    Settings.System.RECENT_APPS_RADIUS_PREFERENCE_KEY, 3);
+                    Settings.System.RECENT_APPS_RADIUS_PREFERENCE_KEY, 3);         
+            mBlurDarkColorFilter = Settings.System.getInt(mContext.getContentResolver(), 
+                    Settings.System.BLUR_DARK_COLOR_PREFERENCE_KEY, Color.LTGRAY);
+            mBlurMixedColorFilter = Settings.System.getInt(mContext.getContentResolver(), 
+                    Settings.System.BLUR_MIXED_COLOR_PREFERENCE_KEY, Color.GRAY);
+            mBlurLightColorFilter = Settings.System.getInt(mContext.getContentResolver(), 
+                    Settings.System.BLUR_LIGHT_COLOR_PREFERENCE_KEY, Color.DKGRAY);
+                    
+            RecentsActivity.updateBlurColors(mBlurDarkColorFilter,mBlurMixedColorFilter,mBlurLightColorFilter);
             RecentsActivity.updateRadiusScale(mScaleRecents,mRadiusRecents);
             mClockLocation = Settings.System.getIntForUser(
                 resolver, Settings.System.STATUSBAR_CLOCK_STYLE, 0,
