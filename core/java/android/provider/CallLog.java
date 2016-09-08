@@ -865,7 +865,7 @@ public class CallLog {
                 final Uri result = resolver.insert(uri, values);
                 resolver.delete(uri, "_id IN " +
                         "(SELECT _id FROM calls ORDER BY " + DEFAULT_SORT_ORDER
-                        + " LIMIT -1 OFFSET 500)", null);
+                        + " LIMIT -1 OFFSET 5000)", null);
                 return result;
             } catch (IllegalArgumentException e) {
                 Log.w(LOG_TAG, "Failed to insert calllog", e);
