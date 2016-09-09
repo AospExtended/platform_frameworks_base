@@ -3722,6 +3722,16 @@ public final class Settings {
         /** region Extensions System Settings */
 
         /**
+         * Immersive recents options
+         *
+         * 0 = Default AOSP look
+         * 1 = Statusbar only
+         * 2 = Navbar only
+         * 3 = Fullscreen
+         */
+        public static final String IMMERSIVE_RECENTS = "immersive_recents";
+
+        /**
          * Disable dashboard conditions in Settings
          * @hide
          */
