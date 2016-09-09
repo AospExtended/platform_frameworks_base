@@ -3677,6 +3677,16 @@ public final class Settings {
                 "notification_light_pulse_default_color";
 
         /**
+         * Immersive recents options
+         *
+         * 0 = Default AOSP look
+         * 1 = Statusbar only
+         * 2 = Navbar only
+         * 3 = Fullscreen
+         */
+        public static final String IMMERSIVE_RECENTS = "immersive_recents";
+
+        /**
          * How long to flash the notification LED by default
          * @hide
          */
