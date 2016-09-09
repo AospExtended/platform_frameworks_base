@@ -1443,7 +1443,7 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
 
     private void onAirplaneModeChanged() {
         // Let the service state callbacks handle the state.
-        if (mHasTelephony) return;
+        // if (mHasTelephony) return;
 
         boolean airplaneModeOn = Settings.Global.getInt(
                 mContext.getContentResolver(),
