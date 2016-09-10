@@ -23,8 +23,7 @@ LOCAL_SHARED_LIBRARIES := \
     libEGL \
     libGLESv1_CM \
     libgui \
-    libtinyalsa \
-    libregionalization
+    libtinyalsa
 
 LOCAL_MODULE:= bootanimation
 
