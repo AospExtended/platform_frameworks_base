@@ -5242,8 +5242,10 @@ public class DevicePolicyManagerService extends IDevicePolicyManager.Stub {
         }
 
         boolean legacyApp = false;
-        if (ai.targetSdkVersion <= Build.VERSION_CODES.M) {
-            legacyApp = true;
+        if (ai != null) {
+            if (ai.targetSdkVersion <= Build.VERSION_CODES.M) {
+                legacyApp = true;
+            }
         }
 
         final int rawStatus = getEncryptionStatus();
