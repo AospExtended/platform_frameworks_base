@@ -3650,6 +3650,14 @@ public final class Settings {
         /** region Extensions System Settings */
 
         /**
+         * Disable dashboard suggestions in Settings
+         * @hide
+         */
+        public static final String DISABLE_SETTINGS_SUGGESTIONS = "disable_settings_suggestions";
+
+        /** endregion */
+
+        /**
          * Swap volume buttons when the screen is rotated
          * 0 - Disabled
          * 1 - Enabled (screen is rotated by 90 or 180 degrees: phone, hybrid)
