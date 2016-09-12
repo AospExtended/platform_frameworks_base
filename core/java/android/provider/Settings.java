@@ -3871,6 +3871,12 @@ public final class Settings {
          */
         public static final String BUTTON_BACKLIGHT_TIMEOUT = Secure.BUTTON_BACKLIGHT_TIMEOUT;
 
+        /**
+         * Disable dashboard suggestions in Settings
+         * @hide
+         */
+        public static final String DISABLE_SETTINGS_SUGGESTIONS = "disable_settings_suggestions";
+
         /** endregion */
 
         /**
