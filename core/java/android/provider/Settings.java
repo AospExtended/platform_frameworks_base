@@ -3655,6 +3655,12 @@ public final class Settings {
          */
         public static final String DISABLE_SETTINGS_SUGGESTIONS = "disable_settings_suggestions";
 
+        /**
+         * Remove dashboard tile summaries in Settings
+         * @hide
+         */
+        public static final String REMOVE_SETTINGS_TILE_SUMMARY = "remove_settings_tile_summary";
+
         /** endregion */
 
         /**
