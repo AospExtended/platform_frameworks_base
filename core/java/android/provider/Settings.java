@@ -3644,6 +3644,12 @@ public final class Settings {
         };
 
         /**
+         * Disable dashboard conditions in Settings
+         * @hide
+         */
+        public static final String DISABLE_DASHBOARD_CONDITIONS = "disable_dashboard_conditions";
+
+        /**
          * Disable dashboard suggestions in Settings
          * @hide
          */
