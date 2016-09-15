@@ -621,6 +621,17 @@ final class DefaultPermissionGrantPolicy {
                 grantRuntimePermissionsLPw(elevenPackage, PHONE_PERMISSIONS, userId);
             }
 
+            // Gallery
+            PackageParser.Package gallerypackage = getSystemPackageLPr(
+                    "com.android.gallery3d");
+            if (gallerypackage != null && doesPackageSupportRuntimePermissions(gallerypackage)) {
+                grantRuntimePermissionsLPw(gallerypackage, CAMERA_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(gallerypackage, CONTACTS_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(gallerypackage, LOCATION_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(gallerypackage, MICROPHONE_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(gallerypackage, STORAGE_PERMISSIONS, userId);
+            }
+
             // Google Account
             PackageParser.Package googleaccountPackage = getDefaultProviderAuthorityPackageLPr(
                     "com.google.android.gsf.login", userId);
