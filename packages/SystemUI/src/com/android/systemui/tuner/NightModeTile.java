@@ -44,8 +44,7 @@ public class NightModeTile extends QSTile<QSTile.State> implements NightModeCont
 
     @Override
     public boolean isAvailable() {
-        return Prefs.getBoolean(mContext, Key.QS_NIGHT_ADDED, false)
-                && TunerService.isTunerEnabled(mContext);
+        return Prefs.getBoolean(mContext, Key.QS_NIGHT_ADDED, false);
     }
 
     @Override
