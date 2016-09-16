@@ -3613,6 +3613,8 @@ public final class Settings {
             }
         };
 
+        /** region Extensions System Settings */
+
         /**
          * Volume keys control cursor in text fields (default is 0)
          * 0 - Disabled
@@ -3631,7 +3633,7 @@ public final class Settings {
 
         /** endregion */
 
-        /*
+        /**
          * Swap volume buttons when the screen is rotated
          * 0 - Disabled
          * 1 - Enabled (screen is rotated by 90 or 180 degrees: phone, hybrid)
@@ -6367,6 +6369,14 @@ public final class Settings {
         public static final String MANAGED_PROFILE_CONTACT_REMOTE_SEARCH =
                 "managed_profile_contact_remote_search";
 
+        /** region Extensions Secure Settings */
+
+        /**
+         * Whether newly installed apps should run with privacy guard by default
+         * @hide
+         */
+        public static final String PRIVACY_GUARD_DEFAULT = "privacy_guard_default";
+
         /**
          * Whether or not the automatic storage manager is enabled and should run on the device.
          *
@@ -6374,6 +6384,8 @@ public final class Settings {
          */
         public static final String AUTOMATIC_STORAGE_MANAGER_ENABLED =
                 "automatic_storage_manager_enabled";
+
+        /** endregion */
 
         /**
          * How many days of information for the automatic storage manager to retain on the device.
@@ -6443,7 +6455,7 @@ public final class Settings {
         public static final String ADB_NOTIFY = "adb_notify";
 
         /**
-         * This are the settings to be backed up.
+         * These are the settings to be backed up.
          *
          * NOTE: Settings are backed up and restored in the order they appear
          *       in this array. If you have one setting depending on another,
