@@ -99,5 +99,12 @@
     <string name="qs_menu_item_titles">Show labels</string>
     <string name="qs_menu_item_qs_columns">Quickbar columns</string>
     <string name="qs_menu_item_columns_auto">Automatic</string>
+
+    <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Sound</string>
+    <string name="quick_settings_sound_ring">Ring</string>
+    <string name="quick_settings_sound_vibrate">Vibrate</string>
+    <string name="quick_settings_sound_dnd">Do not disturb</string>
+
 </resources>
 
