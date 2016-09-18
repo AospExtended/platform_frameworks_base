@@ -692,13 +692,13 @@ public final class PowerManagerService extends SystemService
             }
 
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.BUTTON_BRIGHTNESS),
+                    Settings.Secure.BUTTON_BRIGHTNESS),
                     false, mSettingsObserver, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.KEYBOARD_BRIGHTNESS),
+                    Settings.Secure.KEYBOARD_BRIGHTNESS),
                     false, mSettingsObserver, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.BUTTON_BACKLIGHT_TIMEOUT),
+                    Settings.Secure.BUTTON_BACKLIGHT_TIMEOUT),
                     false, mSettingsObserver, UserHandle.USER_ALL);
 
             // Go.
@@ -822,14 +822,14 @@ public final class PowerManagerService extends SystemService
         }
 
         mButtonTimeout = Settings.System.getIntForUser(resolver,
-                Settings.System.BUTTON_BACKLIGHT_TIMEOUT,
+                Settings.Secure.BUTTON_BACKLIGHT_TIMEOUT,
                 DEFAULT_BUTTON_ON_DURATION, UserHandle.USER_CURRENT);
 
         mButtonBrightness = Settings.System.getIntForUser(resolver,
-                Settings.System.BUTTON_BRIGHTNESS, mButtonBrightnessSettingDefault,
+                Settings.Secure.BUTTON_BRIGHTNESS, mButtonBrightnessSettingDefault,
                 UserHandle.USER_CURRENT);
         mKeyboardBrightness = Settings.System.getIntForUser(resolver,
-                Settings.System.KEYBOARD_BRIGHTNESS, mKeyboardBrightnessSettingDefault,
+                Settings.Secure.KEYBOARD_BRIGHTNESS, mKeyboardBrightnessSettingDefault,
                 UserHandle.USER_CURRENT);
 
         mDirty |= DIRTY_SETTINGS;
