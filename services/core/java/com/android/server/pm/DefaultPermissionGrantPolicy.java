@@ -302,6 +302,17 @@ final class DefaultPermissionGrantPolicy {
                 grantRuntimePermissionsLPw(setupPackage, CAMERA_PERMISSIONS, userId);
             }
 
+            // Browser
+            PackageParser.Package browserpackage = getSystemPackageLPr(
+                    "com.android.browser");
+            if (browserpackage != null && doesPackageSupportRuntimePermissions(browserpackage)) {
+                grantRuntimePermissionsLPw(browserpackage, CAMERA_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(browserpackage, CONTACTS_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(browserpackage, LOCATION_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(browserpackage, MICROPHONE_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(browserpackage, STORAGE_PERMISSIONS, userId);
+            }
+
             // Camera
             Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             PackageParser.Package cameraPackage = getDefaultSystemHandlerActivityPackageLPr(
@@ -313,11 +324,30 @@ final class DefaultPermissionGrantPolicy {
                 grantRuntimePermissionsLPw(cameraPackage, STORAGE_PERMISSIONS, userId);
             }
 
+
             // LockClock
             PackageParser.Package lockClock = getDefaultProviderAuthorityPackageLPr(
                     "com.cyanogenmod.lockclock", userId);
             if (lockClock != null) {
             grantRuntimePermissionsLPw(lockClock, LOCATION_PERMISSIONS, userId);
+           }
+
+            // Camera2
+            PackageParser.Package camera2package = getSystemPackageLPr(
+                    "com.android.camera2");
+            if (camera2package != null && doesPackageSupportRuntimePermissions(camera2package)) {
+                grantRuntimePermissionsLPw(camera2package, CAMERA_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(camera2package, LOCATION_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(camera2package, MICROPHONE_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(camera2package, STORAGE_PERMISSIONS, userId);
+            }
+
+            // Clock
+            PackageParser.Package deskclockpackage = getSystemPackageLPr(
+                    "com.android.deskclock");
+            if (deskclockpackage != null && doesPackageSupportRuntimePermissions(deskclockpackage)) {
+                grantRuntimePermissionsLPw(deskclockpackage, PHONE_PERMISSIONS, userId);
+                grantRuntimePermissionsLPw(deskclockpackage, STORAGE_PERMISSIONS, userId);
             }
 
             // Media provider
