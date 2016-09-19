@@ -143,7 +143,6 @@ import com.android.server.lights.LightsManager;
 import com.android.server.notification.ManagedServices.ManagedServiceInfo;
 import com.android.server.policy.PhoneWindowManager;
 import com.android.server.statusbar.StatusBarManagerInternal;
-import com.android.server.vr.VrManagerInternal;
 import com.android.server.notification.ManagedServices.UserProfiles;
 
 import libcore.io.IoUtils;
@@ -235,7 +234,6 @@ public class NotificationManagerService extends SystemService {
     AudioManagerInternal mAudioManagerInternal;
     @Nullable StatusBarManagerInternal mStatusBar;
     Vibrator mVibrator;
-    private VrManagerInternal mVrManagerInternal;
     private WindowManagerInternal mWindowManagerInternal;
 
     final IBinder mForegroundToken = new Binder();
@@ -1135,7 +1133,6 @@ public class NotificationManagerService extends SystemService {
             // Grab our optional AudioService
             mAudioManager = (AudioManager) getContext().getSystemService(Context.AUDIO_SERVICE);
             mAudioManagerInternal = getLocalService(AudioManagerInternal.class);
-            mVrManagerInternal = getLocalService(VrManagerInternal.class);
             mWindowManagerInternal = LocalServices.getService(WindowManagerInternal.class);
             mZenModeHelper.onSystemReady();
         } else if (phase == SystemService.PHASE_THIRD_PARTY_APPS_CAN_START) {
