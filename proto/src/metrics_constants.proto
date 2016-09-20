@@ -2216,10 +2216,11 @@ message MetricsEvent {
     // Add new aosp constants above this line.
     // END OF AOSP CONSTANTS
 
-
     // Devinfo
     DEVINFO = 420;
     ANIMATION_SETTINGS = 413;
 
+    // Extensions
+    EXTENSIONS = 420;
   }
 }
