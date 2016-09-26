@@ -184,4 +184,9 @@
     <string name="status_bar_aex_logo_title">AEX logo</string>
     <string name="status_bar_aex_logo_summary">Enable to show AEX logo on the left side of the statusbar</string>
 
+    <!-- ADB over network Tile -->
+    <string name="quick_settings_adb_network">ADB network</string>
+    <string name="quick_settings_network_adb_enabled_label">Enabled</string>
+    <string name="quick_settings_network_adb_disabled_label">Disabled</string>
+
 </resources>

@@ -40,6 +40,7 @@ import com.android.systemui.qs.QSTile;
 import com.android.systemui.qs.external.CustomTile;
 import com.android.systemui.qs.external.TileLifecycleManager;
 import com.android.systemui.qs.external.TileServices;
+import com.android.systemui.qs.tiles.AdbOverNetworkTile;
 import com.android.systemui.qs.tiles.AirplaneModeTile;
 import com.android.systemui.qs.tiles.AmbientDisplayTile;
 import com.android.systemui.qs.tiles.BatteryTile;
@@ -482,6 +483,7 @@ public class QSTileHost implements QSTile.Host, Tunable {
         else if (tileSpec.equals("weather")) return new WeatherTile(this);
         else if (tileSpec.equals("hwkeys")) return  new HWKeysTile(this);
         else if (tileSpec.equals("extensions")) return new ExtensionsTile(this);
+        else if (tileSpec.equals("adb_network")) return new AdbOverNetworkTile(this);
         // Intent tiles.
         else if (tileSpec.startsWith(IntentTile.PREFIX)) return IntentTile.create(this,tileSpec);
         else if (tileSpec.startsWith(CustomTile.PREFIX)) return CustomTile.create(this,tileSpec);
