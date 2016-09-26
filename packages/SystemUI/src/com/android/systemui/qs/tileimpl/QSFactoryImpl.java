@@ -32,6 +32,7 @@ import com.android.systemui.qs.tiles.CaffeineTile;
 import com.android.systemui.qs.tiles.ColorInversionTile;
 import com.android.systemui.qs.tiles.DataSaverTile;
 import com.android.systemui.qs.tiles.DndTile;
+import com.android.systemui.qs.tiles.ExpandedDesktopTile;
 import com.android.systemui.qs.tiles.FlashlightTile;
 import com.android.systemui.qs.tiles.HeadsUpTile;
 import com.android.systemui.qs.tiles.HotspotTile;
@@ -122,6 +123,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new HWKeysTile(mHost);
             case "theme":
                 return new ThemeTile(mHost);
+            case "expanded_desktop":
+                return new ExpandedDesktopTile(mHost);
         }
 
         // Intent tiles.
