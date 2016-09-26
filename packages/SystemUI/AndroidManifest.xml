@@ -216,6 +216,10 @@
     <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
 
+    <!-- Sync tile -->
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+
     <application
         android:name=".SystemUIApplication"
         android:persistent="true"
