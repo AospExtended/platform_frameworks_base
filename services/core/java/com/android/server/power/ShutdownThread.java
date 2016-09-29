@@ -62,6 +62,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import java.lang.reflect.Method;
+
 public final class ShutdownThread extends Thread {
     // constants
     private static final String TAG = "ShutdownThread";
@@ -525,6 +527,8 @@ public final class ShutdownThread extends Thread {
                     AlarmManager.POWER_OFF_ALARM_HANDLED);
         }
 
+        AlarmManager.writePowerOffAlarmFile(AlarmManager.POWER_OFF_ALARM_TIMEZONE_FILE,
+                SystemProperties.get("persist.sys.timezone"));
         rebootOrShutdown(mContext, mReboot, mReason);
     }
 
@@ -663,6 +667,33 @@ public final class ShutdownThread extends Thread {
     }
 
     /**
+     * OEM shutdown handler. This function will load the oem-services jar file
+     * and call into the rebootOrShutdown method defined there if present
+     */
+    private static void deviceRebootOrShutdown(boolean reboot, String reason)
+    {
+            Class<?> cl;
+            String deviceShutdownClassName = "com.qti.server.power.ShutdownOem";
+            String deviceShutdownMethodName = "rebootOrShutdown";
+            try {
+                    cl = Class.forName(deviceShutdownClassName);
+                    Method m;
+                    try {
+                        m = cl.getMethod(deviceShutdownMethodName, new Class[] {boolean.class, String.class});
+                        m.invoke(cl.newInstance(), reboot, reason);
+                    } catch (NoSuchMethodException ex) {
+                        Log.e(TAG, "Unable to find method " + deviceShutdownMethodName + " in class " + deviceShutdownClassName);
+                    } catch (Exception ex) {
+                        Log.e(TAG, "Unknown exception while trying to invoke " + deviceShutdownMethodName);
+                    }
+            } catch (ClassNotFoundException e) {
+                Log.e(TAG, "Unable to find class " + deviceShutdownClassName);
+            } catch (Exception e) {
+                Log.e(TAG, "Unknown exception while loading class " + deviceShutdownClassName);
+            }
+    }
+
+    /**
      * Do not call this directly. Use {@link #reboot(Context, String, boolean)}
      * or {@link #shutdown(Context, boolean)} instead.
      *
@@ -671,6 +702,8 @@ public final class ShutdownThread extends Thread {
      * @param reason reason for reboot/shutdown
      */
     public static void rebootOrShutdown(final Context context, boolean reboot, String reason) {
+        // Call oem shutdown handler
+        deviceRebootOrShutdown(reboot, reason);
         if (reboot) {
             Log.i(TAG, "Rebooting, reason: " + reason);
             PowerManagerService.lowLevelReboot(reason);
