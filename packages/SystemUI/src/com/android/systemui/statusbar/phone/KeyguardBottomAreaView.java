@@ -698,13 +698,4 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
         updateLeftAffordanceIcon();
         updateLeftPreview();
     }
-
-    private void updateEmergencyButton() {
-        if(mContext.getResources().getBoolean(R.bool.config_showEmergencyButton)){
-            if (mEmergencyButton != null) {
-                mEmergencyButton.updateEmergencyCallButton();
-            }
-        }
-        return label;
-    }
 }
