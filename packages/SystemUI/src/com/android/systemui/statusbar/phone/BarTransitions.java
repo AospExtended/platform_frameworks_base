@@ -77,6 +77,12 @@ public class BarTransitions {
 
     public void updateResources(NavbarOverlayResources resourceMap) {}
 
+    public void setWarningColor(int color) {
+        if (mBarBackground != null) {
+            mBarBackground.setWarningColor(color);
+        }
+    }
+
     /**
      * @param alwaysOpaque if {@code true}, the bar's background will always be opaque, regardless
      *         of what mode it is currently set to.
@@ -141,7 +147,7 @@ public class BarTransitions {
         private final int mOpaque;
         private final int mSemiTransparent;
         private final int mTransparent;
-        private final int mWarning;
+        private int mWarning;
         private final Drawable mGradient;
 
         private int mMode = -1;
@@ -209,6 +215,12 @@ public class BarTransitions {
         protected void onBoundsChange(Rect bounds) {
             super.onBoundsChange(bounds);
             mGradient.setBounds(bounds);
+        }
+
+        public void setWarningColor(int color) {
+            if (!DEBUG_COLORS) {
+                mWarning = color;
+            }
         }
 
         public void applyModeBackground(int oldMode, int newMode, boolean animate) {
