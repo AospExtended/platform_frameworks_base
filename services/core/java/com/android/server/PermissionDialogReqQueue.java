@@ -66,32 +66,26 @@ public class PermissionDialogReqQueue {
     }
 
     private PermissionDialog mDialog;
-    private List<PermissionDialogReq> resultList;
+    private List<PermissionDialogReq> mResultList;
 
     public PermissionDialogReqQueue() {
         mDialog = null;
-        resultList = new ArrayList<PermissionDialogReq>();
+        mResultList = new ArrayList<PermissionDialogReq>();
     }
 
     public void register(PermissionDialogReq res) {
         synchronized (this) {
-            resultList.add(res);
+            mResultList.add(res);
         }
     }
 
     public void notifyAll(int mode) {
         synchronized (this) {
-            while (resultList.size() != 0) {
-                PermissionDialogReq res = resultList.get(0);
+            while (mResultList.size() != 0) {
+                PermissionDialogReq res = mResultList.get(0);
                 res.set(mode);
-                resultList.remove(0);
+                mResultList.remove(0);
             }
-        }
-    }
-
-    public void ignore() {
-        if (mDialog != null) {
-            mDialog.ignore();
         }
     }
 }

@@ -48,7 +48,6 @@ import com.android.systemui.statusbar.policy.DataSaverController;
 import com.android.systemui.statusbar.policy.HotspotController;
 import com.android.systemui.statusbar.policy.RotationLockController;
 import com.android.systemui.statusbar.policy.UserInfoController;
-import com.android.systemui.statusbar.policy.SuController;
 
 /**
  * This class contains all of the policy about which icons are installed in the status
@@ -70,7 +69,6 @@ public class PhoneStatusBarPolicy implements Callback, RotationLockController.Ro
     private final String mSlotRotate;
     private final String mSlotHeadset;
     private final String mSlotDataSaver;
-    private final String mSlotSu;
 
     private final Context mContext;
     private final Handler mHandler = new Handler();
@@ -83,7 +81,6 @@ public class PhoneStatusBarPolicy implements Callback, RotationLockController.Ro
     private final RotationLockController mRotationLockController;
     private final DataSaverController mDataSaver;
     private StatusBarKeyguardViewManager mStatusBarKeyguardViewManager;
-    private final SuController mSuController;
 
     // Assume it's all good unless we hear otherwise.  We don't always seem
     // to get broadcasts that it *is* there.
@@ -104,7 +101,7 @@ public class PhoneStatusBarPolicy implements Callback, RotationLockController.Ro
     public PhoneStatusBarPolicy(Context context, StatusBarIconController iconController,
             CastController cast, HotspotController hotspot, UserInfoController userInfoController,
             BluetoothController bluetooth, RotationLockController rotationLockController,
-            DataSaverController dataSaver, SuController su) {
+            DataSaverController dataSaver) {
         mContext = context;
         mIconController = iconController;
         mCast = cast;
@@ -116,7 +113,6 @@ public class PhoneStatusBarPolicy implements Callback, RotationLockController.Ro
         mUserManager = (UserManager) mContext.getSystemService(Context.USER_SERVICE);
         mRotationLockController = rotationLockController;
         mDataSaver = dataSaver;
-        mSuController = su;
 
         mSlotCast = context.getString(com.android.internal.R.string.status_bar_cast);
         mSlotHotspot = context.getString(com.android.internal.R.string.status_bar_hotspot);
@@ -130,7 +126,7 @@ public class PhoneStatusBarPolicy implements Callback, RotationLockController.Ro
         mSlotRotate = context.getString(com.android.internal.R.string.status_bar_rotate);
         mSlotHeadset = context.getString(com.android.internal.R.string.status_bar_headset);
         mSlotDataSaver = context.getString(com.android.internal.R.string.status_bar_data_saver);
-        mSlotSu = context.getString(com.android.internal.R.string.status_bar_su);
+
         mRotationLockController.addRotationLockControllerCallback(this);
 
         // listen for broadcasts
@@ -183,11 +179,6 @@ public class PhoneStatusBarPolicy implements Callback, RotationLockController.Ro
                 mContext.getString(R.string.accessibility_status_bar_hotspot));
         mIconController.setIconVisibility(mSlotHotspot, mHotspot.isHotspotEnabled());
         mHotspot.addCallback(mHotspotCallback);
-
-        // su
-        mIconController.setIcon(mSlotSu, R.drawable.stat_sys_su, null);
-        mIconController.setIconVisibility(mSlotSu, false);
-        mSuController.addCallback(mSuCallback);
 
         // managed profile
         mIconController.setIcon(mSlotManagedProfile, R.drawable.stat_sys_managed_profile_status,
@@ -465,10 +456,6 @@ public class PhoneStatusBarPolicy implements Callback, RotationLockController.Ro
         }
     };
 
-    private void updateSu() {
-        mIconController.setIconVisibility(mSlotSu, mSuController.hasActiveSessions());
-    }
-
     private final CastController.Callback mCastCallback = new CastController.Callback() {
         @Override
         public void onCastDevicesChanged() {
@@ -560,12 +547,4 @@ public class PhoneStatusBarPolicy implements Callback, RotationLockController.Ro
             mIconController.setIconVisibility(mSlotCast, false);
         }
     };
-
-    private final SuController.Callback mSuCallback = new SuController.Callback() {
-        @Override
-        public void onSuSessionsChanged() {
-            updateSu();
-        }
-    };
-
 }
