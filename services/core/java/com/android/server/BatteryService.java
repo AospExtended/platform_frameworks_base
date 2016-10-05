@@ -346,8 +346,6 @@ public final class BatteryService extends SystemService {
             vbattNow =  vbattNow / 1000;
             br.close();
             fileReader.close();
-        } catch (FileNotFoundException e) {
-            Slog.e(TAG, "Failure in reading battery voltage", e);
         } catch (IOException e) {
             Slog.e(TAG, "Failure in reading battery voltage", e);
         }
