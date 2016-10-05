@@ -310,7 +310,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
-import android.os.SystemProperties;
 
 /**
  * Keep track of all those APKs everywhere.
@@ -1964,14 +1963,6 @@ public class PackageManagerService extends IPackageManager.Stub {
                     res.removedInfo.args.doPostDeleteLI(true);
                 }
             }
-            //Show permission control menu after installation
-            if(isStrictOpEnable()){
-                Intent intent = new Intent(Intent.ACTION_MANAGE_APP_PERMISSIONS);
-                intent.putExtra(Intent.EXTRA_PACKAGE_NAME, packageName);
-                intent.putExtra("hideInfoButton", true);// used by the start activity
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); //outside of Activity context need :FLAG_ACTIVITY_NEW_TASK .
-                mContext.startActivity(intent);
-            }
         }
 
         // If someone is watching installs - notify them
@@ -1984,10 +1975,6 @@ public class PackageManagerService extends IPackageManager.Stub {
                 Slog.i(TAG, "Observer no longer exists.");
             }
         }
-    }
-
-    private boolean isStrictOpEnable() {
-        return SystemProperties.getBoolean("persist.sys.strict_op_enable", false);
     }
 
     private void grantRuntimePermissionsGrantedToDisabledPrivSysPackageParentLPw(
