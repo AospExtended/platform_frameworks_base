@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.internal.util.turbo;
+package com.android.internal.util.aospextended;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

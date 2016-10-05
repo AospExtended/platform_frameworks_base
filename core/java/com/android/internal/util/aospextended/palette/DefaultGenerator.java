@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.android.internal.util.turbo.palette;
+package com.android.internal.util.aospextended.palette;
 
-import com.android.internal.util.turbo.palette.Palette.Swatch;
+import com.android.internal.util.aospextended.palette.Palette.Swatch;
 
 import java.util.List;
 

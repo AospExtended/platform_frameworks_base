@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.internal.util.turbo;
+package com.android.internal.util.aospextended;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -22,7 +22,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.MathUtils;
 
-import com.android.internal.util.turbo.palette.Palette;
+import com.android.internal.util.aospextended.palette.Palette;
 
 import java.util.Collections;
 import java.util.Comparator;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.internal.util.turbo.palette;
+package com.android.internal.util.aospextended.palette;
 
 import android.graphics.Color;
 import android.util.TimingLogger;
@@ -26,7 +26,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-import com.android.internal.util.turbo.palette.Palette.Swatch;
+import com.android.internal.util.aospextended.palette.Palette.Swatch;
 
 /**
  * An color quantizer based on the Median-cut algorithm, but optimized for picking out distinct
