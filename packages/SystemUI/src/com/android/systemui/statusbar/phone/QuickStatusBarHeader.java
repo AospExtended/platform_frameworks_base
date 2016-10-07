@@ -26,6 +26,7 @@ import android.graphics.drawable.RippleDrawable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -48,7 +49,7 @@ import com.android.systemui.statusbar.policy.UserInfoController;
 import com.android.systemui.statusbar.policy.UserInfoController.OnUserInfoChangedListener;
 
 public class QuickStatusBarHeader extends BaseStatusBarHeader implements
-        NextAlarmChangeCallback, OnClickListener, OnUserInfoChangedListener {
+        NextAlarmChangeCallback, OnClickListener, OnLongClickListener, OnUserInfoChangedListener {
 
     private static final String TAG = "QuickStatusBarHeader";
 
@@ -126,6 +127,7 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
         mSettingsButton = (SettingsButton) findViewById(R.id.settings_button);
         mSettingsContainer = findViewById(R.id.settings_button_container);
         mSettingsButton.setOnClickListener(this);
+        mSettingsButton.setOnLongClickListener(this);
 
         mAlarmStatusCollapsed = findViewById(R.id.alarm_status_collapsed);
         mAlarmStatus = (TextView) findViewById(R.id.alarm_status);
@@ -368,9 +370,24 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
         }
     }
 
+    @Override
+    public boolean onLongClick(View v) {
+        if (v == mSettingsButton) {
+            startExtensions();
+        }
+        return false;
+    }
+
     private void startSettingsActivity() {
         mActivityStarter.startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS),
                 true /* dismissShade */);
+    }
+
+    private void startExtensions() {
+        Intent extIntent = new Intent(Intent.ACTION_MAIN);
+        extIntent.setClassName("com.android.settings",
+            "com.android.settings.Settings$ExtensionsSettingsActivity");
+        mActivityStarter.startActivity(duIntent, true /* dismissShade */);
     }
 
     private void startCalendarActivity() {
