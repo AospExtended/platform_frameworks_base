@@ -542,6 +542,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_SHOW_TICKER),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.Secure.getUriFor(
+                    Settings.Secure.LOCK_QS_DISABLED),
+                    false, this, UserHandle.USER_ALL);
             updateSettings();
         }
 
@@ -563,14 +566,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             } else if (uri.equals(Settings.Secure.getUriFor(
                     Settings.Secure.QS_COLUMNS))) {
                     updateResources();
-            }
-            updateSettings();
-        }
-
-        @Override
-        public void onChange(boolean selfChange, Uri uri) {
-            super.onChange(selfChange, uri);
-            if (uri.equals(Settings.System.getUriFor(
+            } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_SHOW_TICKER))) {
                 mTickerEnabled = Settings.System.getIntForUser(
                         mContext.getContentResolver(),
@@ -578,6 +574,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                         mContext.getResources().getBoolean(R.bool.enable_ticker)
                         ? 1 : 1, UserHandle.USER_CURRENT) == 1;
                 initTickerView();
+            } else if (uri.equals(Settings.Secure.getUriFor(
+                    Settings.Secure.LOCK_QS_DISABLED))) {
+                updateQSLock();
             }
             updateSettings();
         }
@@ -2576,6 +2575,22 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         }
         mReportRejectedTouch.setVisibility(mState == StatusBarState.KEYGUARD
                 && mFalsingManager.isReportingEnabled() ? View.VISIBLE : View.INVISIBLE);
+    }
+
+    private void updateSettings() {
+        updateStatusBarLogoColor(false);
+    }
+
+    private void updateStatusBarLogoColor(boolean animate) {
+        if (mIconController != null) {
+            mIconController.updateLogoColor(animate);
+        }
+    }
+
+    private void updateQSLock() {
+        if (mNotificationPanel != null) {
+            mNotificationPanel .update();
+        }
     }
 
     protected int adjustDisableFlags(int state) {
