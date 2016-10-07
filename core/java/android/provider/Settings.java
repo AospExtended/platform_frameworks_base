@@ -4775,6 +4775,12 @@ public final class Settings {
          */
         public static final String DOZE_SCREEN_BRIGHTNESS = "doze_screen_brightness";
 
+        /**
+         * Whether to show the notification ticker on the status bar
+         * @hide
+         */
+        public static final String STATUS_BAR_SHOW_TICKER = "status_bar_show_ticker";
+
        /**
          * Require double tap instead of simple tap to wake from Doze pulse screen
          * @hide
