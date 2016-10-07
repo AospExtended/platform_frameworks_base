@@ -45,6 +45,7 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import android.os.UserHandle;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.service.media.CameraPrewarmService;
 import android.telecom.TelecomManager;
 import android.util.AttributeSet;
@@ -374,7 +375,8 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
             } else {
                 ResolveInfo resolved = resolveCameraIntent();
                 visible = !isCameraDisabledByDpm() && resolved != null
-                        && getResources().getBoolean(R.bool.config_keyguardShowCameraAffordance);
+                        && getResources().getBoolean(R.bool.config_keyguardShowCameraAffordance)
+                        && !hideShortcuts();
             }
         }
         mCameraImageView.setVisibility(visible ? View.VISIBLE : View.GONE);
@@ -384,7 +386,7 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
         Drawable drawable;
         String contentDescription;
         boolean shouldGrayScale = false;
-        boolean visible = mUserSetupComplete;
+        boolean visible = mUserSetupComplete && !hideShortcuts();
         if (mShortcutHelper.isTargetCustom(Shortcuts.LEFT_SHORTCUT)) {
             drawable = mShortcutHelper.getDrawableForTarget(Shortcuts.LEFT_SHORTCUT);
             shouldGrayScale = true;
@@ -866,5 +868,12 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
     @Override
     public void onChange() {
         updateCustomShortcuts();
+    }
+
+    private boolean hideShortcuts() {
+        boolean secure = mLockPatternUtils.isSecure(KeyguardUpdateMonitor.getCurrentUser());
+        return secure && Settings.Secure.getIntForUser(
+                mContext.getContentResolver(), Settings.Secure.LOCK_QS_DISABLED, 0,
+                KeyguardUpdateMonitor.getCurrentUser()) != 0;
     }
 }
