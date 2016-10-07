@@ -137,6 +137,7 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
         mSettingsButton = (SettingsButton) findViewById(R.id.settings_button);
         mSettingsContainer = findViewById(R.id.settings_button_container);
         mSettingsButton.setOnClickListener(this);
+        mSettingsButton.setOnLongClickListener(this);
 
         mAlarmStatusCollapsed = findViewById(R.id.alarm_status_collapsed);
         mAlarmStatus = (TextView) findViewById(R.id.alarm_status);
@@ -370,6 +371,14 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
         return false;
     }
 
+    @Override
+    public boolean onLongClick(View v) {
+        if (v == mSettingsButton) {
+            startExtensions();
+        }
+        return false;
+    }
+
     private void startSettingsActivity() {
         mActivityStarter.startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS),
                 true /* dismissShade */);
@@ -378,6 +387,13 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
     private void startClockActivity() {
         mActivityStarter.startActivity(new Intent(AlarmClock.ACTION_SHOW_ALARMS),
                 true /* dismissShade */);
+    }
+
+    private void startExtensions() {
+        Intent extIntent = new Intent(Intent.ACTION_MAIN);
+        extIntent.setClassName("com.android.settings",
+            "com.android.settings.Settings$ExtensionsSettingsActivity");
+        mActivityStarter.startActivity(duIntent, true /* dismissShade */);
     }
 
     private void startClockLongClickActivity() {
