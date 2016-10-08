@@ -18,6 +18,16 @@
     xmlns:sysui="http://schemas.android.com/apk/res-auto"
     android:title="@string/systemui_tuner_statusbar_title">
 
+        <SwitchPreference
+            android:key="show_lte_fourgee"
+            android:title="@string/show_lte_fourgee_title"
+            android:summary="@string/show_lte_fourgee_summary"
+            android:defaultValue="false" />
+
+        <PreferenceCategory
+            android:key="hide_statusbar_items"
+            android:title="@string/statusbar_tuner_category_title">
+
         <com.android.systemui.tuner.StatusBarSwitch
             android:key="rotate"
             android:title="@string/status_bar_settings_auto_rotation" />
@@ -69,5 +79,7 @@
         <com.android.systemui.tuner.StatusBarSwitch
             android:key="alarm_clock"
             android:title="@string/status_bar_alarm" />
+
+        </PreferenceCategory>
 
 </PreferenceScreen>
