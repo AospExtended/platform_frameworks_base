@@ -4989,6 +4989,12 @@ public final class Settings {
         public static final String NAVBAR_BUTTON_COLOR= "navbar_button_color";
 
         /**
+         * Statusbar AEX logo
+         * @hide
+         */
+        public static final String STATUS_BAR_AEX_LOGO = "status_bar_aex_logo";
+
+        /**
          * @hide
          */
         public static final String OMNIJAWS_WEATHER_ICON_PACK = "omnijaws_weather_icon_pack";

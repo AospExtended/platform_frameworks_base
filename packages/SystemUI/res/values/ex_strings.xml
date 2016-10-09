@@ -197,4 +197,8 @@
     <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
     <string name="quick_settings_hwkeys_label">HW keys</string>
 
+    <!-- AEX Logo -->
+    <string name="status_bar_aex_logo_title">AEX logo</string>
+    <string name="status_bar_aex_logo_summary">Enable to show AEX logo on the left side of the statusbar</string>
+
 </resources>

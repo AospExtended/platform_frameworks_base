@@ -455,6 +455,10 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
     boolean mExpandedVisible;
 
+    // AEX logo
+    private boolean mAexLogo;
+    private ImageView aexLogo;
+
     private int mNavigationBarWindowState = WINDOW_STATE_SHOWING;
 
     private int mStatusBarHeaderHeight;
@@ -627,6 +631,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                    Settings.System.STATUS_BAR_CUSTOM_HEADER),
                    false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_AEX_LOGO),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
                   Settings.System.QS_ROWS_PORTRAIT),
                   false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
@@ -730,6 +737,11 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                             Settings.System.SCREEN_BRIGHTNESS_MODE,
                             Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,
                             UserHandle.USER_CURRENT);
+
+            mAexLogo = Settings.System.getIntForUser(resolver,
+                    Settings.System.STATUS_BAR_AEX_LOGO, 0, mCurrentUserId) == 1;
+            showAexLogo(mAexLogo);
+
             mAutomaticBrightness = mode != Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
             mBrightnessControl = Settings.System.getIntForUser(
                     resolver, Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0,
@@ -4420,6 +4432,15 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             }
         }, cancelAction, afterKeyguardGone);
     }
+
+    public void showAexLogo(boolean show) {
+          if (mStatusBarView == null) return;
+          ContentResolver resolver = mContext.getContentResolver();
+          aexLogo = (ImageView) mStatusBarView.findViewById(R.id.aex_logo);
+          if (aexLogo != null) {
+              aexLogo.setVisibility(show ? (mAexLogo ? View.VISIBLE : View.GONE) : View.GONE);
+          }
+     }
 
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         @Override
