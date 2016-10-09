@@ -4228,6 +4228,59 @@ public final class Settings {
         public static final String STATUS_BAR_TICKER_FONT_SIZE = "status_bar_ticker_font_size";
 
         /**
+         * Whether to show the weather info on the lock screen
+         * @hide
+         */
+        public static final String LOCK_SCREEN_SHOW_WEATHER = "lock_screen_show_weather";
+
+        /**
+         * Whether to show the weather location lock screen
+         * @hide
+         */
+        public static final String LOCK_SCREEN_SHOW_WEATHER_LOCATION = "lock_screen_show_weather_location";
+
+        /**
+         * Whether to show the weather update timestamp on the lock screen
+         * @hide
+         */
+        public static final String LOCK_SCREEN_SHOW_WEATHER_TIMESTAMP = "lock_screen_show_weather_timestamp";
+
+        /**
+         * Weather condition icon on the lock screen
+         * 0: monochrome
+         * 1: colored
+         * 2: vclouds
+         * default: 0
+         * @hide
+         */
+        public static final String LOCK_SCREEN_WEATHER_CONDITION_ICON = "lock_screen_weather_condition_icon";
+
+        /**
+         * Whether to hide the weather panel when the notifications will reach the number of notifications
+         * @hide
+         */
+        public static final String LOCK_SCREEN_WEATHER_HIDE_PANEL = "lock_screen_weather_hide_panel";
+
+        /**
+         * Hide the weather panel when the visible lockscreen notifications will reach this number
+         * 1: 1 notification (always)
+         * 2: 2 notifications
+         * 3: 3 notifications
+         * 4: 4 notifications
+         * 5: 5 notifications
+         * 6: 6 notifications
+         * default: 4
+         * @hide
+         */
+        public static final String LOCK_SCREEN_WEATHER_NUMBER_OF_NOTIFICATIONS = "lock_screen_weather_number_of_notifications";
+
+        /**
+         * Number of notifications visible on the lockscreen including the overflow container
+         * @hide
+         */
+        public static final String LOCK_SCREEN_VISIBLE_NOTIFICATIONS = "lock_screen_visible_notifications";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
