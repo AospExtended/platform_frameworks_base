@@ -100,6 +100,9 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
     private TextView mWeatherTextView;
     private ImageView mWeatherImageView;
 
+    // AEX Logo
+    private ImageView mAexLogo;
+
     private int mIconSize;
     private int mIconHPadding;
 
@@ -164,6 +167,9 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         mNotificationTicker = (TickerView) statusBar.findViewById(R.id.tickerText);
 
         mClock = (Clock) statusBar.findViewById(R.id.clock);
+
+        mAexLogo = (ImageView) statusBar.findViewById(R.id.aex_logo);
+
         mCenterClockLayout = (LinearLayout)statusBar.findViewById(R.id.center_clock_layout);
         mCenterClock = (Clock) statusBar.findViewById(R.id.center_clock);
         mLeftClock = (Clock) statusBar.findViewById(R.id.left_clock);
@@ -369,11 +375,19 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
     public void hideNotificationIconArea(boolean animate) {
         animateHide(mNotificationIconAreaInner, animate);
         animateHide(mCenterClockLayout, animate);
+        if (Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.STATUS_BAR_AEX_LOGO, 0) == 1) {
+           animateHide(mAexLogo, animate);
+        }
     }
 
     public void showNotificationIconArea(boolean animate) {
         animateShow(mNotificationIconAreaInner, animate);
         animateShow(mCenterClockLayout, animate);
+        if (Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.STATUS_BAR_AEX_LOGO, 0) == 1) {
+           animateShow(mAexLogo, animate);
+        }
     }
 
     public void setClockVisibility(boolean visible) {
@@ -617,6 +631,7 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         mBatteryLevelView.setTextColor(getTint(mTintArea, mBatteryLevelView, mIconTint));
         mWeatherTextView.setTextColor(mIconTint);
         mWeatherImageView.setImageTintList(ColorStateList.valueOf(mIconTint));
+        mAexLogo.setImageTintList(ColorStateList.valueOf(mIconTint));
     }
 
     public void appTransitionPending() {
