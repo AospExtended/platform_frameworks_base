@@ -67,7 +67,7 @@ public class AutoTileManager {
         if (!Prefs.getBoolean(context, Key.QS_WORK_ADDED, false)) {
             host.getManagedProfileController().addCallback(mProfileCallback);
         }
-        if (!Prefs.getBoolean(context, Key.QS_NIGHT_ADDED, false)) {
+        if (!Prefs.getBoolean(context, Key.QS_NIGHT_ADDED, true)) {
             host.getNightModeController().addListener(mNightModeListener);
         }
     }

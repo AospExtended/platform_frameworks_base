@@ -250,6 +250,14 @@
                   android:exported="true">
         </activity>
 
+        <activity android:name=".tuner.NightModeActivity"
+                  android:theme="@style/TunerSettings"
+                  android:label="@string/systemui_tuner_nightmode_title"
+                  android:parentActivityName="org.aospextended.extensions.PartsFragment"
+                  android:process=":tuner"
+                  android:exported="true">
+        </activity>
+
         <activity-alias android:name=".DemoMode"
                   android:targetActivity=".tuner.TunerActivity"
                   android:icon="@drawable/tuner"
@@ -522,14 +530,6 @@
             android:exported="true"
             android:singleUser="true"
             android:permission="android.permission.BIND_DREAM_SERVICE" />
-
-        <receiver
-            android:name=".tuner.TunerService$ClearReceiver"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.android.systemui.action.CLEAR_TUNER" />
-            </intent-filter>
-        </receiver>
 
         <receiver
             android:name=".statusbar.KeyboardShortcutsReceiver">

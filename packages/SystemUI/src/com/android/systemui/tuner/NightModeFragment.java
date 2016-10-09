@@ -60,6 +60,7 @@ public class NightModeFragment extends PreferenceFragment implements Tunable,
         super.onCreate(savedInstanceState);
         mNightModeController = new NightModeController(getContext());
         mUiModeManager = getContext().getSystemService(UiModeManager.class);
+        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

@@ -56,6 +56,7 @@
 
     <!-- SystemUI Tuner Parts -->
     <string name="systemui_tuner_statusbar_title">Statusbar items</string>
+    <string name="systemui_tuner_nightmode_title">Night mode</string>
 
     <!-- Show lte/4g switch -->
     <string name="show_lte_fourgee_title">Show 4G instead of LTE</string>

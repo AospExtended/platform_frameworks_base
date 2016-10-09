@@ -52,12 +52,6 @@ import java.util.Set;
 
 public class TunerService extends SystemUI {
 
-    public static final String ACTION_CLEAR = "com.android.systemui.action.CLEAR_TUNER";
-
-    private static final String TUNER_VERSION = "sysui_tuner_version";
-
-    private static final int CURRENT_TUNER_VERSION = 1;
-
     private final Observer mObserver = new Observer();
     // Map of Uris we listen on to their settings keys.
     private final ArrayMap<Uri, String> mListeningUris = new ArrayMap<>();
@@ -72,12 +66,6 @@ public class TunerService extends SystemUI {
     public void start() {
         mContentResolver = mContext.getContentResolver();
 
-        for (UserInfo user : UserManager.get(mContext).getUsers()) {
-            mCurrentUser = user.getUserHandle().getIdentifier();
-            if (getValue(TUNER_VERSION, 0) != CURRENT_TUNER_VERSION) {
-                upgradeTuner(getValue(TUNER_VERSION, 0), CURRENT_TUNER_VERSION);
-            }
-        }
         putComponent(TunerService.class, this);
 
         mCurrentUser = ActivityManager.getCurrentUser();
@@ -90,24 +78,6 @@ public class TunerService extends SystemUI {
             }
         };
         mUserTracker.startTracking();
-    }
-
-    private void upgradeTuner(int oldVersion, int newVersion) {
-        if (oldVersion < 1) {
-            String blacklistStr = getValue(StatusBarIconController.ICON_BLACKLIST);
-            if (blacklistStr != null) {
-                ArraySet<String> iconBlacklist =
-                        StatusBarIconController.getIconBlacklist(blacklistStr);
-
-                iconBlacklist.add("rotate");
-                iconBlacklist.add("headset");
-
-                Settings.Secure.putStringForUser(mContentResolver,
-                        StatusBarIconController.ICON_BLACKLIST,
-                        TextUtils.join(",", iconBlacklist), mCurrentUser);
-            }
-        }
-        setValue(TUNER_VERSION, newVersion);
     }
 
     public String getValue(String setting) {
@@ -185,18 +155,6 @@ public class TunerService extends SystemUI {
         }
     }
 
-    public void clearAll() {
-        // A couple special cases.
-        Settings.Global.putString(mContentResolver, DemoMode.DEMO_MODE_ALLOWED, null);
-        Intent intent = new Intent(DemoMode.ACTION_DEMO);
-        intent.putExtra(DemoMode.EXTRA_COMMAND, DemoMode.COMMAND_EXIT);
-        mContext.sendBroadcast(intent);
-
-        for (String key : mTunableLookup.keySet()) {
-            Settings.Secure.putString(mContentResolver, key, null);
-        }
-    }
-
     // Only used in other processes, such as the tuner.
     private static TunerService sInstance;
 
@@ -223,42 +181,6 @@ public class TunerService extends SystemUI {
         return sInstance;
     }
 
-    public static final void showResetRequest(final Context context, final Runnable onDisabled) {
-        SystemUIDialog dialog = new SystemUIDialog(context);
-        dialog.setShowForAllUsers(true);
-        dialog.setMessage(R.string.remove_from_settings_prompt);
-        dialog.setButton(DialogInterface.BUTTON_NEGATIVE, context.getString(R.string.cancel),
-                (OnClickListener) null);
-        dialog.setButton(DialogInterface.BUTTON_POSITIVE,
-                context.getString(R.string.guest_exit_guest_dialog_remove), new OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // Tell the tuner (in main SysUI process) to clear all its settings.
-                context.sendBroadcast(new Intent(TunerService.ACTION_CLEAR));
-                // Disable access to tuner.
-                TunerService.setTunerEnabled(context, true);
-                if (onDisabled != null) {
-                    onDisabled.run();
-                }
-            }
-        });
-        dialog.show();
-    }
-
-    public static final void setTunerEnabled(Context context, boolean enabled) {
-        userContext(context).getPackageManager().setComponentEnabledSetting(
-                new ComponentName(context, TunerActivity.class),
-                enabled ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED
-                        : PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-                        PackageManager.DONT_KILL_APP);
-    }
-
-    public static final boolean isTunerEnabled(Context context) {
-        return userContext(context).getPackageManager().getComponentEnabledSetting(
-                new ComponentName(context, TunerActivity.class))
-                == PackageManager.COMPONENT_ENABLED_STATE_ENABLED;
-    }
-
     private static Context userContext(Context context) {
         try {
             return context.createPackageContextAsUser(context.getPackageName(), 0,
@@ -283,14 +205,5 @@ public class TunerService extends SystemUI {
 
     public interface Tunable {
         void onTuningChanged(String key, String newValue);
-    }
-
-    public static class ClearReceiver extends BroadcastReceiver {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (ACTION_CLEAR.equals(intent.getAction())) {
-                get(context).clearAll();
-            }
-        }
     }
 }
