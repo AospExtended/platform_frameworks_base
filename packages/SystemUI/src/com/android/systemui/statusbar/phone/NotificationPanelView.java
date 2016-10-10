@@ -217,8 +217,6 @@ public class NotificationPanelView extends PanelView implements
     };
     private NotificationGroupManager mGroupManager;
 
-    private Handler mHandler = new Handler();
-    private SettingsObserver mSettingsObserver;
 
     private boolean mDoubleTapToSleepEnabled;
     private int mStatusBarHeaderHeight;
@@ -383,15 +381,6 @@ public class NotificationPanelView extends PanelView implements
         updateMaxHeadsUpTranslation();
     }
 
-    @Override
-    public void onAttachedToWindow() {
-        mSettingsObserver.observe();
-    }
-
-    @Override
-    public void onDetachedFromWindow() {
-        mSettingsObserver.unobserve();
-    }
 
     private void startQsSizeChangeAnimation(int oldHeight, final int newHeight) {
         if (mQsSizeChangeAnimator != null) {
