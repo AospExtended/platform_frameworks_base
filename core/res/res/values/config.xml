@@ -4268,4 +4268,8 @@
     <!-- pdp data retry for cause 29, 33 and 55-->
     <bool name="config_pdp_retry_for_29_33_55_enabled">false</bool>
 
+    <!-- Decide whether to display 'No service' on status bar instead of 'Emergency calls only'
+         when SIM is unready. -->
+    <bool name="config_display_no_service_when_sim_unready">false</bool>
+
 </resources>
