@@ -28,6 +28,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Switch;
+import android.widget.TextView;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.systemui.R;
@@ -88,7 +89,12 @@ public class NightModeFragment extends PreferenceFragment implements Tunable,
         super.onViewCreated(view, savedInstanceState);
         View switchBar = view.findViewById(R.id.switch_bar);
         mSwitch = (Switch) switchBar.findViewById(android.R.id.switch_widget);
+        TextView mSwitchText = (TextView) switchBar.findViewById(R.id.switch_text);
         mSwitch.setChecked(mNightModeController.isEnabled());
+        mSwitchText.setText(mNightModeController.isEnabled()
+            ? getString(R.string.switch_bar_on)
+            : getString(R.string.switch_bar_off));
+
         switchBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +102,20 @@ public class NightModeFragment extends PreferenceFragment implements Tunable,
                 MetricsLogger.action(getContext(), MetricsEvent.ACTION_TUNER_NIGHT_MODE, newState);
                 mNightModeController.setNightMode(newState);
                 mSwitch.setChecked(newState);
+                mSwitchText.setText(newState
+                    ? getString(R.string.switch_bar_on)
+                    : getString(R.string.switch_bar_off));
+            }
+        });
+        mSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean newState = !mNightModeController.isEnabled();
+                MetricsLogger.action(getContext(), MetricsEvent.ACTION_TUNER_NIGHT_MODE, newState);
+                mNightModeController.setNightMode(newState);
+                mSwitchText.setText(newState
+                    ? getString(R.string.switch_bar_on)
+                    : getString(R.string.switch_bar_off));
             }
         });
     }
