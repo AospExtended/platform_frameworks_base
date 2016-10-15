@@ -904,6 +904,7 @@ public class NetworkControllerImpl extends BroadcastReceiver
         boolean alwaysShowCdmaRssi = false;
         boolean hideLtePlus = false;
         boolean hspaDataDistinguishable;
+        boolean hspapDataDistinguishable;
 
         static Config readConfig(Context context) {
             Config config = new Config();
@@ -922,8 +923,8 @@ public class NetworkControllerImpl extends BroadcastReceiver
     /**
      * Check the advanced data tile setting
      */
-    public boolean isAdvancedDataTileEnabled() {
+    public boolean isEasyToggleEnabled() {
         return Settings.Secure.getIntForUser(mContext.getContentResolver(),
-                Settings.Secure.QS_DATA_ADVANCED, 0, ActivityManager.getCurrentUser()) == 1;
+                Settings.Secure.QS_EASY_TOGGLE, 0, ActivityManager.getCurrentUser()) == 1;
     }
 }
