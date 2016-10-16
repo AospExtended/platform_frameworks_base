@@ -246,7 +246,7 @@
                   android:icon="@drawable/tuner"
                   android:theme="@style/TunerSettings"
                   android:label="@string/systemui_tuner_statusbar_title"
-                  android:parentActivityName="org.aospextended.extensions.Extensions"
+                  android:parentActivityName="org.aospextended.extensions.PartsFragment"
                   android:process=":tuner"
                   android:exported="true">
         </activity>
