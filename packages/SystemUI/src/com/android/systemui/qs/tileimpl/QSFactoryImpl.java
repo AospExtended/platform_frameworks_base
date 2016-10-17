@@ -45,6 +45,7 @@ import com.android.systemui.qs.tiles.FontTile;
 import com.android.systemui.qs.tiles.GamingModeTile;
 import com.android.systemui.qs.tiles.HotspotTile;
 import com.android.systemui.qs.tiles.HWKeysTile;
+import com.android.systemui.qs.tiles.NavigationBarTile;
 import com.android.systemui.qs.tiles.IntentTile;
 import com.android.systemui.qs.tiles.LocationTile;
 import com.android.systemui.qs.tiles.LteTile;
@@ -174,6 +175,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new GamingModeTile(mHost);
             case "vpn":
                 return new VpnTile(mHost);
+            case "navigation":
+                return new NavigationBarTile(mHost);
         }
 
         // Intent tiles.
