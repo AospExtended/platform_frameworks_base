@@ -42,7 +42,8 @@ public class BatteryMeterDrawable extends Drawable implements
 
     private static final float ASPECT_RATIO = 9.5f / 14.5f;
     public static final String TAG = BatteryMeterDrawable.class.getSimpleName();
-    public static final String SHOW_PERCENT_SETTING = "status_bar_show_battery_percent";
+    private static final String STATUS_BAR_SHOW_BATTERY_PERCENT =
+            Settings.Secure.STATUS_BAR_SHOW_BATTERY_PERCENT;
 
     private static final boolean SINGLE_DIGIT_PERCENT = false;
 
@@ -193,7 +194,8 @@ public class BatteryMeterDrawable extends Drawable implements
     public void startListening() {
         mListening = true;
         mContext.getContentResolver().registerContentObserver(
-                Settings.System.getUriFor(SHOW_PERCENT_SETTING), false, mSettingObserver);
+                Settings.Secure.getUriFor(Settings.Secure.STATUS_BAR_SHOW_BATTERY_PERCENT),
+                false, mSettingObserver);
         updateShowPercent();
         mBatteryController.addStateChangedCallback(this);
     }
@@ -292,8 +294,8 @@ public class BatteryMeterDrawable extends Drawable implements
     }
 
     private void updateShowPercent() {
-        mShowPercent = 0 != Settings.System.getInt(mContext.getContentResolver(),
-                SHOW_PERCENT_SETTING, 0);
+        mShowPercent = Settings.Secure.getInt(mContext.getContentResolver(),
+                Settings.Secure.STATUS_BAR_SHOW_BATTERY_PERCENT, 0) == 1;
     }
 
     private int getColorForLevel(int percent) {
