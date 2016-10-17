@@ -34,4 +34,7 @@
     <color name="external_qs_tile_tint_color">@android:color/white</color>
     <!-- Keyguard affordance circle background -->
     <color name="keyguard_affordance_circle_background">@android:color/white</color>
+
+    <!-- Status bar battery level text color -->
+    <color name="status_bar_battery_level_text_color">#ffffff</color>
 </resources>
