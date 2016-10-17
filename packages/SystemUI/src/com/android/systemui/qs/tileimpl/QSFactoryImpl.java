@@ -44,6 +44,7 @@ import com.android.systemui.qs.tiles.GamingModeTile;
 import com.android.systemui.qs.tiles.FontTile;
 import com.android.systemui.qs.tiles.HotspotTile;
 import com.android.systemui.qs.tiles.HWKeysTile;
+import com.android.systemui.qs.tiles.NavigationBarTile;
 import com.android.systemui.qs.tiles.IntentTile;
 import com.android.systemui.qs.tiles.LiveDisplayTile;
 import com.android.systemui.qs.tiles.LocationTile;
@@ -171,6 +172,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new ReadingModeTile(mHost);
             case "font":
                 return new FontTile(mHost);
+            case "navigation":
+                return new NavigationBarTile(mHost);
         }
 
         // Intent tiles.
