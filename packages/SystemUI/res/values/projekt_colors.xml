@@ -36,4 +36,6 @@
     <!-- QS edit button text color -->
     <color name="qs_edit_button_text_color">#64FFFFFF</color>
 
+    <!-- Status bar battery level text color -->
+    <color name="status_bar_battery_level_text_color">#ffffff</color>
 </resources>
