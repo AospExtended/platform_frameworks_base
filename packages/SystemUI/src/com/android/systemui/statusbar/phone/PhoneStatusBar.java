@@ -836,6 +836,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         if (mNavigationController == null) {
             mNavigationController = new NavigationController(mContext, mContext.getResources(), this);
         }
+        mPackageMonitor = new DUPackageMonitor();
+        mPackageMonitor.register(mContext, mHandler);
+        mPackageMonitor.addListener(mNavigationController);
 
         super.start(); // calls createAndAddWindows()
 
@@ -4265,6 +4268,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             mWindowManager.removeViewImmediate(mNavigationController.getBar().getBaseView());
             mNavigationController.destroy();
         }
+        mPackageMonitor.removeListener(mNavigationController);
+        mPackageMonitor.unregister();
+
         if (mHandlerThread != null) {
             mHandlerThread.quitSafely();
             mHandlerThread = null;
