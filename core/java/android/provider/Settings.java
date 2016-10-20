@@ -4815,6 +4815,12 @@ public final class Settings {
          */
         public static final String DOZE_SCREEN_BRIGHTNESS = "doze_screen_brightness";
 
+       /**
+         * Require double tap instead of simple tap to wake from Doze pulse screen
+         * @hide
+         */
+        public static final String DOUBLE_TAP_WAKE_DOZE = "double_tap_wake_doze";
+
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
