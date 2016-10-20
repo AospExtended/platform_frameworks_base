@@ -27,8 +27,15 @@
         android:singleLine="true"
         android:paddingEnd="@dimen/status_bar_clock_end_padding"
         android:gravity="center"
+        android:visibility="gone"/>
+    <com.android.systemui.aicp.carrierlabel.CarrierLabel
+        android:id="@+id/statusbar_carrier_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textAppearance="@style/TextAppearance.StatusBar.CarrierLabel"
         android:visibility="gone"
-        />
+        android:singleLine="true"/>
     <com.android.systemui.statusbar.StatusBarIconView
         android:id="@+id/moreIcon"
         android:layout_width="@dimen/status_bar_icon_size"

@@ -32,4 +32,6 @@
     <dimen name="omni_battery_level_text_size_small">12sp</dimen>
     <dimen name="omni_battery_level_text_size">14sp</dimen>
 
+    <!-- carrier label text height -->
+    <dimen name="status_bar_carrier_height">14dp</dimen>
 </resources>
