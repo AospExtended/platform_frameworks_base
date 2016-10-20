@@ -26,13 +26,13 @@ import android.media.audiofx.Visualizer;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.support.v7.graphics.Palette;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
 import com.android.systemui.aosip.UserContentObserver;
-import cyanogenmod.providers.CMSettings;
 
 public class VisualizerView extends View implements Palette.PaletteAsyncListener {
 
@@ -372,8 +372,8 @@ public class VisualizerView extends View implements Palette.PaletteAsyncListener
 
         @Override
         protected void update() {
-            mVisualizerEnabled = CMSettings.Secure.getInt(getContext().getContentResolver(),
-                    CMSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, 1) != 0;
+            mVisualizerEnabled = Settings.Secure.getInt(getContext().getContentResolver(),
+                    Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, 1) != 0;
             checkStateChanged();
             updateViewVisibility();
         }
@@ -382,7 +382,7 @@ public class VisualizerView extends View implements Palette.PaletteAsyncListener
         protected void observe() {
             super.observe();
             getContext().getContentResolver().registerContentObserver(
-                    CMSettings.Secure.getUriFor(CMSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED),
+                    Settings.System.getUriFor(Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED),
                     false, this, UserHandle.USER_CURRENT);
         }
 
