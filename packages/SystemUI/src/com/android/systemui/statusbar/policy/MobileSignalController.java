@@ -676,10 +676,10 @@ public class MobileSignalController extends SignalController<
                 + "/" + TelephonyManager.getNetworkTypeName(dataType));
 
         // Update data icon set
-        int chosenNetworkType = ((dataType == TelephonyManager.NETWORK_TYPE_UNKNOWN)
-                ? voiceType : dataType);
-        TelephonyIcons.updateDataType(slotId, chosenNetworkType, mConfig.showAtLeast3G,
-                mConfig.show4gForLte, mConfig.hspaDataDistinguishable, inet);
+       // int chosenNetworkType = ((dataType == TelephonyManager.NETWORK_TYPE_UNKNOWN)
+         //       ? voiceType : dataType);
+       // TelephonyIcons.updateDataType(slotId, chosenNetworkType, mConfig.showAtLeast3G,
+         //         mConfig.mShowLteFourGee, mConfig.hspaDataDistinguishable, inet);
 
         // Update signal strength icons
         singleSignalIcon = TelephonyIcons.getSignalStrengthIcon(slotId, inet, level, roaming);
