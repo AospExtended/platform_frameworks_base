@@ -393,7 +393,7 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
         Intent extIntent = new Intent(Intent.ACTION_MAIN);
         extIntent.setClassName("com.android.settings",
             "com.android.settings.Settings$ExtensionsSettingsActivity");
-        mActivityStarter.startActivity(duIntent, true /* dismissShade */);
+        mActivityStarter.startActivity(extIntent, true /* dismissShade */);
     }
 
     private void startClockLongClickActivity() {
