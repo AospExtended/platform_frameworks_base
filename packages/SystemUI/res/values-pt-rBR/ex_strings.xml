@@ -48,8 +48,8 @@
   <string name="systemui_tuner_statusbar_title">Itens da barra de status</string>
   <string name="systemui_tuner_nightmode_title">Modo noturno</string>
 
-    <!-- Show lte/4g switch -->
-    <string name="show_lte_fourgee_title">Mostrar 4G ao invés de LTE</string>
-    <string name="show_lte_fourgee_summary">Alterar indicador do LTE na bara de status pelo 4G</string>
-    <string name="statusbar_tuner_category_title">Ocultar items da barra de status</string>
+  <!-- Show lte/4g switch -->
+  <string name="show_lte_fourgee_title">Mostrar 4G ao invés de LTE</string>
+  <string name="show_lte_fourgee_summary">Alterar indicador do LTE na bara de status pelo 4G</string>
+  <string name="statusbar_tuner_category_title">Ocultar items da barra de status</string>
 </resources>
