@@ -21,19 +21,20 @@
     <string name="accessibility_notification_brightness">Brilho da luz</string>
 
     <!-- Lights settings, LED notification -->
-    <string name="led_notification_title">ConfiguraÁıes de luz</string>
-    <string name="led_notification_text">Luz LED ativado por configuraÁıes</string>
+    <string name="led_notification_title">Configura√ß√µes de luz</string>
+    <string name="led_notification_text">Luz LED ativado por configura√ß√µes</string>
 
     <!-- Content description of the Superuser tile -->
-    <string name="accessibility_su_active">Sess„o superusu·rio ativa</string>
+    <string name="accessibility_su_active">Sess√£o superusu√°rio ativa</string>
 
     <!-- Strings for lockscreen shortcut hints -->
     <string name="left_shortcut_hint">Deslize para a direita para %1$s</string>
     <string name="right_shortcut_hint">Deslize para a esquerda para %1$s</string>
-    <string name="lockscreen_message">Toque em um Ìcone ‡ esquerda ou ‡ direita para atribuir um atalho da tela de bloqueio.</string>
-    <string name="lockscreen_default_target">Padr„o</string>
+    <string name="lockscreen_message">Toque em um √≠cone √† esquerda ou √† direita para atribuir um atalho da tela de bloqueio.</string>
+    <string name="lockscreen_default_target">Padr√£o</string>
     <string name="select_application">Selecione um aplicativo</string>
-    <string name="lockscreen_choose_action_title">Escolher aÁ„o</string>
+    <string name="lockscreen_choose_action_title">Escolher a√ß√£o</string>
     <string name="lockscreen_none_target">Nenhum</string>
 
+     
 </resources>
