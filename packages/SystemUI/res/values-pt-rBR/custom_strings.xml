@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013-2014 The CyanogenMod Project
+     Copyright (C) 2016 The Turbo ROM Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Content description of the light brightness slider (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_notification_brightness">Brilho da luz</string>
+
+    <!-- Lights settings, LED notification -->
+    <string name="led_notification_title">Configurações de luz</string>
+    <string name="led_notification_text">Luz LED ativado por configurações</string>
+
+    <!-- Content description of the Superuser tile -->
+    <string name="accessibility_su_active">Sessão superusuário ativa</string>
+
+    <!-- Strings for lockscreen shortcut hints -->
+    <string name="left_shortcut_hint">Deslize para a direita para %1$s</string>
+    <string name="right_shortcut_hint">Deslize para a esquerda para %1$s</string>
+    <string name="lockscreen_message">Toque em um ícone à esquerda ou à direita para atribuir um atalho da tela de bloqueio.</string>
+    <string name="lockscreen_default_target">Padrão</string>
+    <string name="select_application">Selecione um aplicativo</string>
+    <string name="lockscreen_choose_action_title">Escolher ação</string>
+    <string name="lockscreen_none_target">Nenhum</string>
+
+     
+</resources>
