@@ -4004,6 +4004,15 @@ public final class Settings {
 
 
         /**
+         * Whether allowing pocket service to register sensors and dispatch informations.
+         *   0 = disabled
+         *   1 = enabled
+         * @author Carlo Savignano
+         * @hide
+         */
+        public static final String POCKET_JUDGE = "pocket_judge";
+
+        /**
         * Whether to allow battery light
         * @hide
         */
