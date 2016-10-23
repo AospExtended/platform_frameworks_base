@@ -31,7 +31,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">A sincronização foi ativada</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Reiniciar</string>
-  <string name="quick_settings_reboot_recovery_label">Recuperação			</string>
+  <string name="quick_settings_reboot_recovery_label">Recuperação</string>
   <string name="accessibility_quick_settings_usb_tether_off">Compartilhamento USB desligado</string>
   <string name="accessibility_quick_settings_usb_tether_on">Compartilhamento USB ligado</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">O compartilhamento USB foi desligado</string>
