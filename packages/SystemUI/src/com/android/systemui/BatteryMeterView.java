@@ -64,7 +64,6 @@ public class BatteryMeterView extends ImageView implements
         if (mBatteryController != null) {
             mBatteryController.addStateChangedCallback(this);
             mDrawable.startListening();
-            TunerService.get(getContext()).addTunable(this, StatusBarIconController.ICON_BLACKLIST);
         }
     }
 
@@ -74,7 +73,6 @@ public class BatteryMeterView extends ImageView implements
         if (mBatteryController != null) {
             mBatteryController.removeStateChangedCallback(this);
             mDrawable.stopListening();
-            TunerService.get(getContext()).removeTunable(this);
         }
     }
 
