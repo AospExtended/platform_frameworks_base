@@ -4855,6 +4855,15 @@ public final class Settings {
         public static final String PULSE_APPS_BLACKLIST = "pulse_apps_blacklist";
 
         /**
+         * Whether allowing pocket service to register sensors and dispatch informations.
+         *   0 = disabled
+         *   1 = enabled
+         * @author Carlo Savignano
+         * @hide
+         */
+        public static final String POCKET_JUDGE = "pocket_judge";
+
+        /**
          * 0 - fullscreen
          * 1 - partial
          * @hide
@@ -5650,6 +5659,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(DISPLAY_PICTURE_ADJUSTMENT);
             PRIVATE_SETTINGS.add(LIVE_DISPLAY_HINTED);
             PRIVATE_SETTINGS.add(THEME_AUTOMATIC_TIME_IS_NIGHT);
+            // Pocket mode handler.
+            PRIVATE_SETTINGS.add(POCKET_JUDGE);
         }
 
 
