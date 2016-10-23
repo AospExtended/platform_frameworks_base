@@ -85,6 +85,7 @@ import com.android.server.net.NetworkStatsService;
 import com.android.server.notification.NotificationManagerService;
 import com.android.server.om.OverlayManagerService;
 import com.android.server.os.SchedulingPolicyService;
+import com.android.server.pocket.PocketService;
 import com.android.server.pm.BackgroundDexOptService;
 import com.android.server.pm.Installer;
 import com.android.server.pm.LauncherAppsService;
@@ -1256,6 +1257,9 @@ public final class SystemServer {
             mSystemServiceManager.startService(ShortcutService.Lifecycle.class);
 
             mSystemServiceManager.startService(LauncherAppsService.class);
+
+            Slog.i(TAG, "Starting PocketService");
+            mSystemServiceManager.startService(PocketService.class);
         }
 
         if (!disableNonCoreServices && !disableMediaProjection) {
