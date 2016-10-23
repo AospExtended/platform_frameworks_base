@@ -47,6 +47,7 @@ public class CarrierLabel extends TextView {
     private Context mContext;
     private boolean mAttached;
     private static boolean isCN;
+    private int mCarrierFontSize = 14;
 
     Handler mHandler;
 

@@ -4066,6 +4066,8 @@ public final class PowerManagerService extends SystemService
             for(int i = 0; i < parts.length; i++){
                 mBlockedWakeLocks.add(parts[i]);
             }
+        }
+    }
 
     private void setButtonBrightnessOverrideFromWindowManagerInternal(int brightness) {
         synchronized (mLock) {
