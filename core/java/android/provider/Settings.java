@@ -4002,6 +4002,16 @@ public final class Settings {
          */
         public static final String QS_FOOTER_WARNINGS = "qs_footer_warnings";
 
+       /**
+        * Use with {@link #getSystemService} to retrieve a
+        * {@link android.os.PocketManager} for accessing and listening to device pocket state.
+        *
+        * @hide
+        * @see #getSystemService
+        * @see android.os.PocketManager
+        */
+        public static final String POCKET_SERVICE = "pocket";
+
 
         /**
         * Whether to allow battery light
