@@ -110,4 +110,10 @@
   <string name="global_action_screenshot">Capturar Tela</string>
   <string name="global_action_search">Pesquisar</string>
   <string name="global_action_voicesearch">Busca por voz</string>
+
+  <!-- Battery styles -->
+  <string name="battery_style_text">Apenas texto</string>
+  <string name="battery_style_default">Padrão</string>
+  <string name="battery_style_meter_horizontal">Barra horizontal</string>
+  <string name="battery_style_circle">Círculo</string>
 </resources>
