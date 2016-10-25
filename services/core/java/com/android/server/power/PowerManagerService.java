@@ -53,6 +53,7 @@ import android.os.SystemProperties;
 import android.os.Trace;
 import android.os.UserHandle;
 import android.os.WorkSource;
+import android.pocket.PocketManager;
 import android.provider.Settings;
 import android.provider.Settings.Secure;
 import android.provider.Settings.SettingNotFoundException;
@@ -1901,6 +1902,8 @@ public final class PowerManagerService extends SystemService
                 final int screenOffTimeout = getScreenOffTimeoutLocked(sleepTimeout);
                 final int screenDimDuration = getScreenDimDurationLocked(screenOffTimeout);
                 final boolean userInactiveOverride = mUserInactiveOverrideFromWindowManager;
+                final PocketManager pocketManager = (PocketManager) mContext.getSystemService(Context.POCKET_SERVICE);
+                final boolean isDeviceInPocket = pocketManager != null && pocketManager.isDeviceInPocket();
 
                 mUserActivitySummary = 0;
                 if (mWakefulness == WAKEFULNESS_AWAKE && mLastUserActivityTime >= mLastWakeTime) {
@@ -1931,7 +1934,7 @@ public final class PowerManagerService extends SystemService
                                     && now > mLastButtonActivityTime + mButtonTimeout) {
                                 mButtonsLight.setBrightness(0);
                             } else {
-                                if (!mButtonBacklightOnTouchOnly || mButtonPressed) {
+                                if ((!mButtonBacklightOnTouchOnly || mButtonPressed) && !isDeviceInPocket ) {
                                     mButtonsLight.setBrightness(buttonBrightness);
                                     mButtonPressed = false;
                                     if (buttonBrightness != 0 && mButtonTimeout != 0) {
