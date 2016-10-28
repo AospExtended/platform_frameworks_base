@@ -64,6 +64,8 @@ final class OverlayManagerShellCommand extends ShellCommand {
                 	return runDisableAll();
                 case "set-priority":
                     return runSetPriority();
+                case "refresh":
+                    return runRefresh();
                 default:
                     return handleDefaultCommands(cmd);
             }
@@ -100,6 +102,8 @@ final class OverlayManagerShellCommand extends ShellCommand {
         out.println("    'lowest', change priority of PACKAGE to the lowest priority.");
         out.println("    If PARENT is the special keyword 'highest', change priority of");
         out.println("    PACKAGE to the highest priority.");
+        out.println("  refresh [--user USER_ID]");
+        out.println("    Refresh all overlay packages.");
     }
 
     private int runList() throws RemoteException {
@@ -265,5 +269,29 @@ final class OverlayManagerShellCommand extends ShellCommand {
         } else {
             return mInterface.setPriority(packageName, newParentPackageName, userId) ? 0 : 1;
         }
+    }
+
+    private int runRefresh() {
+        int userId = UserHandle.USER_SYSTEM;
+        int ret = 1;
+        try {
+            String opt;
+            while ((opt = getNextOption()) != null) {
+                switch (opt) {
+                    case "--user":
+                        userId = UserHandle.parseUserArg(getNextArgRequired());
+                        break;
+                    default:
+                        System.err.println("Error: Unknown option: " + opt);
+                        return 1;
+                }
+            }
+            mInterface.refresh(userId);
+            ret = 0;
+        } catch(Exception e) {
+            e.printStackTrace();
+            ret = 1;
+        }
+        return ret;
     }
 }
