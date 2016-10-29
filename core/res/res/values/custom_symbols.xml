@@ -28,20 +28,6 @@
     <!-- We don't want to publish private symbols in android.R as part of the
          SDK.  Instead, put them here. -->
     <private-symbols package="com.android.internal" />
-
-    <!-- Notification and battery light -->
-    <java-symbol type="bool" name="config_adjustableNotificationLedBrightness" />
-    <java-symbol type="bool" name="config_intrusiveNotificationLed" />
-    <java-symbol type="bool" name="config_multiColorNotificationLed" />
-    <java-symbol type="bool" name="config_intrusiveBatteryLed" />
-    <java-symbol type="bool" name="config_multiColorBatteryLed" />
-    <java-symbol type="bool" name="config_useSegmentedBatteryLed" />
-    <java-symbol type="bool" name="config_multipleNotificationLeds" />
-    <java-symbol type="array" name="notification_light_package_mapping" />
-    <java-symbol type="array" name="config_notificationNoAlertsVibePattern" />
-
-    <!-- LED pulse -->
-    <java-symbol type="bool" name="config_ledCanPulse" />
  
     <!-- Hardware keys -->
     <java-symbol type="bool" name="config_singleStageCameraKey" />

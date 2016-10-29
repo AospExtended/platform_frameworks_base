@@ -17,13 +17,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Content description of the light brightness slider (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_notification_brightness">Light brightness</string>
-
-    <!-- Lights settings, LED notification -->
-    <string name="led_notification_title">Light settings</string>
-    <string name="led_notification_text">LED light enabled by settings</string>
-
     <!-- Content description of the Superuser tile -->
     <string name="accessibility_su_active">Superuser session active</string>
 

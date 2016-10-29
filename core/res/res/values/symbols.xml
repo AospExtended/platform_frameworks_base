@@ -1734,7 +1734,6 @@
   <java-symbol type="integer" name="config_networkPolicyDefaultWarning" />
   <java-symbol type="integer" name="config_networkTransitionTimeout" />
   <java-symbol type="integer" name="config_notificationsBatteryFullARGB" />
-  <java-symbol type="integer" name="config_notificationsBatteryReallyFullARGB" />
   <java-symbol type="integer" name="config_notificationsBatteryLedOff" />
   <java-symbol type="integer" name="config_notificationsBatteryLedOn" />
   <java-symbol type="integer" name="config_notificationsBatteryLowARGB" />
@@ -2725,6 +2724,7 @@
 
   <!-- Gesture Sensor -->
   <java-symbol type="bool" name="config_enableGestureService" />
+
 
   <!-- Config.xml entries -->
   <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
