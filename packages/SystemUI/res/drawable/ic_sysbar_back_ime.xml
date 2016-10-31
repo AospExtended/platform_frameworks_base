@@ -1,38 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     Copyright (c) 2015 SlimRoms
-
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
-
         http://www.apache.org/licenses/LICENSE-2.0
-
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="21.756dp"
-    android:height="16dp"
-    android:viewportWidth="21.756"
-    android:viewportHeight="16">
-
-    <path
-        android:fillColor="#fff"
-        android:pathData="M10.758
-15.994c-0.277-0.039-0.457-0.105-0.648-0.234-0.1694-0.115-0.1404-0.075-2.1527-2.978-1.0521-1.517-3.2289-4.6575-4.8385-6.9782-1.6096-2.3219-2.9495-4.2556-2.9761-4.2979-0.10158-0.156-0.1427-0.2951-0.1427-0.4825
-0-0.19711 0.041117-0.33013 0.156-0.50185 0.17414-0.26364 0.5055-0.45834
-0.8586-0.50429 0.0641-0.008468 3.2652-0.013305 9.8994-0.015724 9.455-0.0036278
-9.808-0.0024185 9.903 0.01814 0.396 0.087074 0.702 0.30595 0.849 0.60828 0.068
-0.13908 0.088 0.22736 0.09 0.38334 0 0.156-0.023 0.26-0.087 0.3894-0.025
-0.0484-1.73 2.5287-3.788 5.5121-2.059 2.9822-4.24 6.1422-4.847 7.0202-0.746
-1.082-1.127 1.625-1.181 1.683-0.187 0.197-0.438 0.32-0.749 0.368-0.103
-0.015-0.271 0.021-0.346 0.01zm1.981-5.733c1.004-1.4544 2.669-3.8658 3.698-5.3581
-1.029-1.4911 1.895-2.7452 1.924-2.7863l0.053-0.0738h-7.53c-6.291 0-7.5293
-0.0025-7.5245 0.0158 0.0036 0.0084 0.5176 0.7534 1.1416 1.6543 4.1649 6.0067
-6.2919 9.0741 6.3379 9.1401 0.03 0.041 0.058 0.07 0.063 0.065 0.005-0.006
-0.832-1.201 1.837-2.657z" />
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="21.755981dip" android:height="16.0dip"
+    android:viewportHeight="16.0" android:viewportWidth="21.756">
+    <path android:fillColor="#fff"
+        android:pathData="m10.914 0.0019531c-6.6341 0.002419-9.8362 0.007157-9.9003 0.015625-0.35313 0.04595-0.68331 0.24026-0.85745 0.5039-0.11488 0.17172-0.15625 0.30485-0.15625 0.50192 0 0.1874 0.040998 0.3265 0.14258 0.4825 0.0266 0.0423 1.3669 1.9769 2.9765 4.2988 1.6096 2.3207 3.7858 5.4593 4.8379 6.9763 2.0123 2.903 1.983 2.864 2.152 2.979 0.191 0.129 0.372 0.195 0.649 0.234 0.075 0.011 0.243 0.005 0.346-0.01 0.311-0.048 0.563-0.172 0.75-0.369 0.054-0.058 0.433-0.599 1.179-1.681 0.607-0.878 2.789-4.0397 4.848-7.0219 2.058-2.9834 3.764-5.4633 3.789-5.5117 0.064-0.1294 0.086-0.2327 0.086-0.3887-0.002-0.15596-0.022-0.24371-0.09-0.38279-0.147-0.30233-0.454-0.5223-0.85-0.60938-0.095-0.020557-0.447-0.021205-9.902-0.017577z" />
 </vector>
+
