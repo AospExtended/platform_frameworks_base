@@ -64,8 +64,6 @@ public class BrightnessMirrorController
                 R.id.notification_stack_scroller);
         mScrimController = scrimController;
         mIcon = (ImageView) statusBarWindow.findViewById(R.id.brightness_icon);
-        // enable the brightness icon
-        mIcon.setVisibility(View.VISIBLE);
     }
 
     public void showMirror() {
@@ -168,6 +166,12 @@ public class BrightnessMirrorController
     }
 
     private void updateIcon() {
+        // enable the brightness icon
+        boolean brightnessIconEnabled = Settings.System.getIntForUser(
+                mContext.getContentResolver(), Settings.System.QS_SHOW_BRIGHTNESS_ICON,
+                1, UserHandle.USER_CURRENT) == 1;
+        mIcon.setVisibility(brightnessIconEnabled? View.VISIBLE : View.GONE);
+
         if (mIcon != null) {
             boolean automatic = Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.SCREEN_BRIGHTNESS_MODE,
