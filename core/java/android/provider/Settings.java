@@ -3891,6 +3891,12 @@ public final class Settings {
         public static final String IMMERSIVE_RECENTS = "immersive_recents";
 
         /**
+         * Whether to allow fullscreen screenshots or let the user select which area to screenshot
+         *
+         */
+        public static final String SCREENSHOT_TYPE = "screenshot_type";
+
+        /**
          * Network traffic indicator, goes from least to greatest significant bitwise
          * 0 = Display up-stream traffic if set
          * 1 = Display down-stream traffic if set
