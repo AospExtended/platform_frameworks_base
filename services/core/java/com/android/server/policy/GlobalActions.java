@@ -134,6 +134,8 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
     // Power menu customizations
     String mActions;
 
+    private int mScreenshotDelay;
+
     /**
      * @param context everything needs a context :(
      */
@@ -208,6 +210,7 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
 
     private void handleShow() {
         awakenIfNecessary();
+        checkSettings();
         prepareDialog();
 
         // If we only have 1 item and it's a simple press action, just do this action.
@@ -756,7 +759,7 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
 
                         // Needs delay or else we'll be taking a screenshot of the dialog each time
                         try {
-                            Thread.sleep(1000);
+                            Thread.sleep(mScreenshotDelay);
                         } catch (InterruptedException ie) {
                             // Do nothing
                         }
@@ -1482,5 +1485,10 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
             }
             return super.onKeyUp(keyCode, event);
         }
+    }
+
+    private void checkSettings() {
+        mScreenshotDelay = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.SCREENSHOT_DELAY, 1000);
     }
 }
