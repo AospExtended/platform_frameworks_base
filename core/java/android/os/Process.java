@@ -285,6 +285,17 @@ public class Process {
     public static final int THREAD_PRIORITY_URGENT_AUDIO = -19;
 
     /**
+     * Real-time priority used for critical UI tasks
+     * This gets converted to be lined into the SCHED_RR queue.
+     * Applications can not normally change to this priority.
+     * Use with {@link #setThreadPriority(int)} and
+     * {@link #setThreadPriority(int, int)}, <b>not</b> with the normal
+     * {@link java.lang.Thread} class.
+     * @hide
+     */
+    public static final int THREAD_PRIORITY_REALTIME = -21;
+
+    /**
      * Minimum increment to make a priority more favorable.
      */
     public static final int THREAD_PRIORITY_MORE_FAVORABLE = -1;
