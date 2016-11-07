@@ -2128,9 +2128,9 @@ public class PackageManagerService extends IPackageManager.Stub {
 
         mProtectedPackages = new ProtectedPackages(mContext);
 
-        synchronized (mInstallLock) {
+//        synchronized (mInstallLock) {
         // writer
-        synchronized (mPackages) {
+//        synchronized (mPackages) {
             mHandlerThread = new ServiceThread(TAG,
                     Process.THREAD_PRIORITY_BACKGROUND, true /*allowIo*/);
             mHandlerThread.start();
