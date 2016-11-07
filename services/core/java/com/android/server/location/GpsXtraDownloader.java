@@ -23,8 +23,6 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import libcore.io.IoUtils;
-
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.IOException;
