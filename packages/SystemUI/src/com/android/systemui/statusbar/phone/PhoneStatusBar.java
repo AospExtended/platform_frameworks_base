@@ -5046,16 +5046,13 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         mKeyguardIndicationController.hideTransientIndicationDelayed(HINT_RESET_DELAY_MS);
     }
 
-    public void onVoiceAssistHintStarted() {
-        mFalsingManager.onLeftAffordanceHintStarted();
-        mKeyguardIndicationController.showTransientIndication(R.string.voice_hint);
-    }
-
     public void onCameraHintStarted(String hint) {
+        mFalsingManager.onCameraHintStarted();
         mKeyguardIndicationController.showTransientIndication(hint);
     }
 
     public void onLeftHintStarted(String hint) {
+        mFalsingManager.onLeftAffordanceHintStarted();
         mKeyguardIndicationController.showTransientIndication(hint);
     }
 
