@@ -448,14 +448,6 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
         public boolean showDuringKeyguard() {
             return true;
         }
-            public void onPress() {
-                if (Settings.System.getInt(mContext.getContentResolver(),
-                      Settings.System.SCREENSHOT_TYPE, 0) == 1) {
-                   takeScreenshot(mScreenshotSelectedRegion);
-                } else {
-                   takeScreenshot(mScreenshotFullscreen);
-                }
-            }
 
         @Override
         public boolean showBeforeProvisioning() {
@@ -480,7 +472,12 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
                 R.string.global_action_screenshot) {
 
             public void onPress() {
-                takeScreenshot();
+                if (Settings.System.getInt(mContext.getContentResolver(),
+                      Settings.System.SCREENSHOT_TYPE, 0) == 1) {
+                   takeScreenshot(mScreenshotSelectedRegion);
+                } else {
+                   takeScreenshot(mScreenshotFullscreen);
+                }
             }
 
             public boolean showDuringKeyguard() {
