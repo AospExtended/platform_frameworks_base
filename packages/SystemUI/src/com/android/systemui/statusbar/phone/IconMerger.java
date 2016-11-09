@@ -72,7 +72,7 @@ public class IconMerger extends LinearLayout {
         int width = getMeasuredWidth();
         if (mCenterClock) {
             final int totalWidth = mContext.getResources().getDisplayMetrics().widthPixels;
-            final int usableWidth = (totalWidth - mClockAndDateWidth - 2 * mIconWidth) / 2;
+            final int usableWidth = (totalWidth - mClockAndDateWidth - 2 * getFullIconWidth()) / 2;
             if (width > usableWidth) {
                 width = usableWidth;
             }
