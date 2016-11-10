@@ -1791,22 +1791,6 @@ public class Resources {
     }
 
     /**
-     * @hide
-     */
-    public static void updateSystemAssets(String[] assetPaths) {
-        if (mSystem != null) {
-            mSystem.updateAssets(assetPaths);
-        }
-    }
-
-    /**
-     * @hide
-     */
-    public void updateAssets(String[] assetPaths) {
-        mResourcesImpl.updateAssets(assetPaths);
-    }
-
-    /**
      * Return the current display metrics that are in effect for this resource 
      * object.  The returned object should be treated as read-only.
      * 

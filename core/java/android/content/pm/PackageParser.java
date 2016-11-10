@@ -663,9 +663,10 @@ public class PackageParser {
     public final static int PARSE_IS_SYSTEM_DIR = 1<<6;
     public final static int PARSE_IS_PRIVILEGED = 1<<7;
     public final static int PARSE_COLLECT_CERTIFICATES = 1<<8;
-    public final static int PARSE_ENFORCE_CODE = 1<<9;
-    public final static int PARSE_IS_EPHEMERAL = 1<<10;
-    public final static int PARSE_FORCE_SDK = 1<<11;
+    public final static int PARSE_TRUSTED_OVERLAY = 1<<9;
+    public final static int PARSE_ENFORCE_CODE = 1<<10;
+    public final static int PARSE_IS_EPHEMERAL = 1<<11;
+    public final static int PARSE_FORCE_SDK = 1<<12;
 
     private static final Comparator<String> sSplitNameComparator = new SplitNameComparator();
 
@@ -1800,6 +1801,9 @@ public class PackageParser {
                         com.android.internal.R.styleable.AndroidManifestResourceOverlay);
                 pkg.mOverlayTarget = sa.getString(
                         com.android.internal.R.styleable.AndroidManifestResourceOverlay_targetPackage);
+                pkg.mOverlayPriority = sa.getInt(
+                        com.android.internal.R.styleable.AndroidManifestResourceOverlay_priority,
+                        -1);
                 sa.recycle();
 
                 if (pkg.mOverlayTarget == null) {
@@ -1807,7 +1811,14 @@ public class PackageParser {
                     mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
                     return null;
                 }
+                if (pkg.mOverlayPriority < 0 || pkg.mOverlayPriority > 9999) {
+                    outError[0] = "<overlay> priority must be between 0 and 9999";
+                    mParseError =
+                        PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
+                    return null;
+                }
                 XmlUtils.skipCurrentTag(parser);
+
             } else if (tagName.equals(TAG_KEY_SETS)) {
                 if (!parseKeySets(pkg, res, parser, outError)) {
                     return null;
@@ -4871,6 +4882,8 @@ public class PackageParser {
         public String mRequiredAccountType;
 
         public String mOverlayTarget;
+        public int mOverlayPriority;
+        public boolean mTrustedOverlay;
 
         /**
          * Data used to feed the KeySetManagerService

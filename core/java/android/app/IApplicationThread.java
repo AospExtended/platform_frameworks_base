@@ -98,12 +98,11 @@ public interface IApplicationThread extends IInterface {
             IInstrumentationWatcher testWatcher, IUiAutomationConnection uiAutomationConnection,
             int debugMode, boolean enableBinderTracking, boolean trackAllocation,
             boolean restrictedBackupMode, boolean persistent, Configuration config,
-            CompatibilityInfo compatInfo, Map<String, IBinder> services, Bundle coreSettings, List<String[]> assetPaths)
+            CompatibilityInfo compatInfo, Map<String, IBinder> services, Bundle coreSettings)
             throws RemoteException;
     void scheduleExit() throws RemoteException;
     void scheduleSuicide() throws RemoteException;
     void scheduleConfigurationChanged(Configuration config) throws RemoteException;
-    void scheduleAssetsChanged(String[] assetPaths) throws RemoteException;
     void updateTimeZone() throws RemoteException;
     void clearDnsCache() throws RemoteException;
     void setHttpProxy(String proxy, String port, String exclList,
@@ -225,5 +224,4 @@ public interface IApplicationThread extends IInterface {
     int SCHEDULE_MULTI_WINDOW_CHANGED_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION+58;
     int SCHEDULE_PICTURE_IN_PICTURE_CHANGED_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION+59;
     int SCHEDULE_LOCAL_VOICE_INTERACTION_STARTED_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION+60;
-    int SCHEDULE_ASSETS_CHANGED_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION+61;
 }

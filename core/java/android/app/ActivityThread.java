@@ -48,7 +48,6 @@ import android.database.sqlite.SQLiteDebug;
 import android.database.sqlite.SQLiteDebug.DbStats;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Typeface;
 import android.hardware.display.DisplayManagerGlobal;
 import android.net.ConnectivityManager;
 import android.net.IConnectivityManager;
@@ -517,7 +516,6 @@ public final class ActivityThread {
         boolean persistent;
         Configuration config;
         CompatibilityInfo compatInfo;
-        List<String[]> assetPaths;
 
         /** Initial values for {@link Profiler}. */
         ProfilerInfo initProfilerInfo;
@@ -646,8 +644,6 @@ public final class ActivityThread {
         private static final String DB_INFO_FORMAT = "  %8s %8s %14s %14s  %s";
 
         private int mLastProcessState = -1;
-
-        private ArrayMap<String, Object> mAssetKeys = new ArrayMap<>(2);
 
         private void updatePendingConfiguration(Configuration config) {
             synchronized (mResourcesManager) {
@@ -854,8 +850,7 @@ public final class ActivityThread {
                 IUiAutomationConnection instrumentationUiConnection, int debugMode,
                 boolean enableBinderTracking, boolean trackAllocation,
                 boolean isRestrictedBackupMode, boolean persistent, Configuration config,
-                CompatibilityInfo compatInfo, Map<String, IBinder> services, Bundle coreSettings,
-                List <String[]> assetPaths) {
+                CompatibilityInfo compatInfo, Map<String, IBinder> services, Bundle coreSettings) {
 
             if (services != null) {
                 // Setup the service cache in the ServiceManager
@@ -879,7 +874,6 @@ public final class ActivityThread {
             data.persistent = persistent;
             data.config = config;
             data.compatInfo = compatInfo;
-            data.assetPaths = assetPaths;
             data.initProfilerInfo = profilerInfo;
             sendMessage(H.BIND_APPLICATION, data);
         }
@@ -895,31 +889,6 @@ public final class ActivityThread {
         public void scheduleConfigurationChanged(Configuration config) {
             updatePendingConfiguration(config);
             sendMessage(H.CONFIGURATION_CHANGED, config);
-        }
-
-        public void scheduleAssetsChanged(String[] assetPaths) {
-            if (assetPaths == null || assetPaths.length == 0) {
-                Slog.w(TAG, "Cannot update assets: array is " +
-                        assetPaths == null ? "null" : "empty");
-                return;
-            }
-            String targetPath = assetPaths[0];
-            if (!mAssetKeys.containsKey(targetPath)) {
-                mAssetKeys.put(targetPath, new Object());
-            }
-            Object key = mAssetKeys.get(targetPath);
-
-            Bundle b = new Bundle(1);
-            b.putStringArray("assetPaths", assetPaths);
-
-            Message m = Message.obtain();
-            m.what = H.ASSETS_CHANGED;
-            m.obj = key;
-            m.setData(b);
-
-            // remove any pending updates to the same asset path before posting this update
-            mH.removeMessages(H.ASSETS_CHANGED, key);
-            mH.sendMessage(m);
         }
 
         public void updateTimeZone() {
@@ -1419,7 +1388,6 @@ public final class ActivityThread {
         public static final int MULTI_WINDOW_MODE_CHANGED = 152;
         public static final int PICTURE_IN_PICTURE_MODE_CHANGED = 153;
         public static final int LOCAL_VOICE_INTERACTION_STARTED = 154;
-        public static final int ASSETS_CHANGED = 155;
 
         String codeToString(int code) {
             if (DEBUG_MESSAGES) {
@@ -1476,7 +1444,6 @@ public final class ActivityThread {
                     case MULTI_WINDOW_MODE_CHANGED: return "MULTI_WINDOW_MODE_CHANGED";
                     case PICTURE_IN_PICTURE_MODE_CHANGED: return "PICTURE_IN_PICTURE_MODE_CHANGED";
                     case LOCAL_VOICE_INTERACTION_STARTED: return "LOCAL_VOICE_INTERACTION_STARTED";
-                    case ASSETS_CHANGED: return "ASSETS_CHANGED";
                 }
             }
             return Integer.toString(code);
@@ -1730,10 +1697,6 @@ public final class ActivityThread {
                     handleLocalVoiceInteractionStarted((IBinder) ((SomeArgs) msg.obj).arg1,
                             (IVoiceInteractor) ((SomeArgs) msg.obj).arg2);
                     break;
-                case ASSETS_CHANGED:
-                    Bundle b = msg.getData();
-                    handleAssetsChanged(b.getStringArray("assetPaths"));
-                    break;
             }
             Object obj = msg.obj;
             if (obj instanceof SomeArgs) {
@@ -1878,10 +1841,10 @@ public final class ActivityThread {
      * Creates the top level resources for the given package. Will return an existing
      * Resources if one has already been created.
      */
-    Resources getTopLevelResources(String resDir, String[] splitResDirs, String[] libDirs,
-            int displayId, LoadedApk pkgInfo) {
-        return mResourcesManager.getResources(null, resDir, splitResDirs, libDirs, displayId,
-                null, pkgInfo.getCompatibilityInfo(), pkgInfo.getClassLoader());
+    Resources getTopLevelResources(String resDir, String[] splitResDirs, String[] overlayDirs,
+            String[] libDirs, int displayId, LoadedApk pkgInfo) {
+        return mResourcesManager.getResources(null, resDir, splitResDirs, overlayDirs, libDirs,
+                displayId, null, pkgInfo.getCompatibilityInfo(), pkgInfo.getClassLoader());
     }
 
     final Handler getHandler() {
@@ -4734,10 +4697,6 @@ public final class ActivityThread {
         return config;
     }
 
-    public final void applyAssetsChangedToResources(String[] assetPaths) {
-        handleAssetsChanged(assetPaths);
-    }
-
     final void handleConfigurationChanged(Configuration config, CompatibilityInfo compat) {
 
         int configDiff = 0;
@@ -4800,26 +4759,12 @@ public final class ActivityThread {
         }
     }
 
-    final void handleAssetsChanged(String[] assetPaths) {
-        synchronized (mResourcesManager) {
-            mResourcesManager.applyAssetsChangedLocked(assetPaths);
-        }
-
-        for (Map.Entry<IBinder, ActivityClientRecord> entry : mActivities.entrySet()) {
-            requestRelaunchActivity(entry.getKey(), null, null, 0, false, null, null, false, false);
-        }
-    }
-
     static void freeTextLayoutCachesIfNeeded(int configDiff) {
         if (configDiff != 0) {
             // Ask text layout engine to free its caches if there is a locale change
             boolean hasLocaleConfigChange = ((configDiff & ActivityInfo.CONFIG_LOCALE) != 0);
-            boolean hasFontConfigChange = ((configDiff & ActivityInfo.CONFIG_THEME_FONT) != 0);
-            if (hasLocaleConfigChange || hasFontConfigChange) {
+            if (hasLocaleConfigChange) {
                 Canvas.freeTextLayoutCaches();
-                if (hasFontConfigChange) {
-                    Typeface.recreateDefaults();
-                }
                 if (DEBUG_CONFIGURATION) Slog.v(TAG, "Cleared TextLayout Caches");
             }
         }
@@ -5176,11 +5121,6 @@ public final class ActivityThread {
 
             // This calls mResourcesManager so keep it within the synchronized block.
             applyCompatConfiguration(mCurDefaultDisplayDpi);
-
-            // Prepare the asset manager for any overlay packages to load
-            for (String[] paths : data.assetPaths) {
-                mResourcesManager.applyAssetsChangedLocked(paths);
-            }
         }
 
         data.info = getPackageInfoNoCheck(data.appInfo, data.compatInfo);
