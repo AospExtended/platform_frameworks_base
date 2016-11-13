@@ -94,7 +94,6 @@ import android.os.IInterface;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Parcelable;
-import android.os.PersistableBundle;
 import android.os.Process;
 import android.os.RemoteException;
 import android.os.SystemClock;
@@ -113,7 +112,6 @@ import android.service.notification.NotificationListenerService;
 import android.service.notification.NotificationRankingUpdate;
 import android.service.notification.StatusBarNotification;
 import android.service.notification.ZenModeConfig;
-import android.telephony.CarrierConfigManager;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -2823,7 +2821,117 @@ public class NotificationManagerService extends SystemService {
         // These are set inside the conditional if the notification is allowed to make noise.
         boolean hasValidVibrate = false;
         boolean hasValidSound = false;
+        if (disableEffects == null
+                && (record.getUserId() == UserHandle.USER_ALL ||
+                    record.getUserId() == currentUser ||
+                    mUserProfiles.isCurrentProfile(record.getUserId()))
+                && canInterrupt
+                && mSystemReady
+                && mAudioManager != null) {
+            if (DBG) Slog.v(TAG, "Interrupting!");
 
+            // should we use the default notification sound? (indicated either by
+            // DEFAULT_SOUND or because notification.sound is pointing at
+            // Settings.System.NOTIFICATION_SOUND)
+            final boolean useDefaultSound =
+                   (notification.defaults & Notification.DEFAULT_SOUND) != 0 ||
+                           Settings.System.DEFAULT_NOTIFICATION_URI
+                                   .equals(notification.sound);
+
+            Uri soundUri = null;
+            if (useDefaultSound) {
+                soundUri = Settings.System.DEFAULT_NOTIFICATION_URI;
+
+                // check to see if the default notification sound is silent
+                hasValidSound = mSystemNotificationSound != null;
+            } else if (notification.sound != null) {
+                soundUri = notification.sound;
+                hasValidSound = (soundUri != null);
+            }
+
+            // Does the notification want to specify its own vibration?
+            final boolean hasCustomVibrate = notification.vibrate != null;
+
+            // new in 4.2: if there was supposed to be a sound and we're in vibrate
+            // mode, and no other vibration is specified, we fall back to vibration
+            final boolean convertSoundToVibration =
+                    !hasCustomVibrate
+                            && hasValidSound
+                            && (mAudioManager.getRingerModeInternal() == AudioManager.RINGER_MODE_VIBRATE);
+
+            // The DEFAULT_VIBRATE flag trumps any custom vibration AND the fallback.
+            final boolean useDefaultVibrate =
+                    (notification.defaults & Notification.DEFAULT_VIBRATE) != 0;
+
+            hasValidVibrate = useDefaultVibrate || convertSoundToVibration ||
+                    hasCustomVibrate;
+
+            // We can alert, and we're allowed to alert, but if the developer asked us to only do
+            // it once, and we already have, then don't.
+            if (!(record.isUpdate
+                    && (notification.flags & Notification.FLAG_ONLY_ALERT_ONCE) != 0)) {
+
+                sendAccessibilityEvent(notification, record.sbn.getPackageName());
+
+                if (hasValidSound) {
+                    boolean looping =
+                            (notification.flags & Notification.FLAG_INSISTENT) != 0;
+                    AudioAttributes audioAttributes = audioAttributesForNotification(notification);
+                    mSoundNotificationKey = key;
+                    // do not play notifications if stream volume is 0 (typically because
+                    // ringer mode is silent) or if there is a user of exclusive audio focus
+                    if ((mAudioManager.getStreamVolume(
+                            AudioAttributes.toLegacyStreamType(audioAttributes)) != 0)
+                            && !mAudioManager.isAudioFocusExclusive()) {
+                        final long identity = Binder.clearCallingIdentity();
+                        try {
+                            final IRingtonePlayer player =
+                                    mAudioManager.getRingtonePlayer();
+                            if (player != null) {
+                                if (DBG) Slog.v(TAG, "Playing sound " + soundUri
+                                        + " with attributes " + audioAttributes);
+                                player.playAsync(soundUri, record.sbn.getUser(), looping,
+                                        audioAttributes);
+                                beep = true;
+                            }
+                        } catch (RemoteException e) {
+                        } finally {
+                            Binder.restoreCallingIdentity(identity);
+                        }
+                    }
+                }
+
+                if (hasValidVibrate && !(mAudioManager.getRingerModeInternal()
+                        == AudioManager.RINGER_MODE_SILENT)) {
+                    mVibrateNotificationKey = key;
+
+                    if (useDefaultVibrate || convertSoundToVibration) {
+                        // Escalate privileges so we can use the vibrator even if the
+                        // notifying app does not have the VIBRATE permission.
+                        long identity = Binder.clearCallingIdentity();
+                        try {
+                            mVibrator.vibrate(record.sbn.getUid(), record.sbn.getOpPkg(),
+                                    useDefaultVibrate ? mDefaultVibrationPattern
+                                            : mFallbackVibrationPattern,
+                                    ((notification.flags & Notification.FLAG_INSISTENT) != 0)
+                                            ? 0: -1, audioAttributesForNotification(notification));
+                            buzz = true;
+                        } finally {
+                            Binder.restoreCallingIdentity(identity);
+                        }
+                    } else if (notification.vibrate.length > 1) {
+                        // If you want your own vibration pattern, you need the VIBRATE
+                        // permission
+                        mVibrator.vibrate(record.sbn.getUid(), record.sbn.getOpPkg(),
+                                notification.vibrate,
+                                ((notification.flags & Notification.FLAG_INSISTENT) != 0)
+                                        ? 0: -1, audioAttributesForNotification(notification));
+                        buzz = true;
+                    }
+                }
+            }
+
+        }
         // If a notification is updated to remove the actively playing sound or vibrate,
         // cancel that feedback now
         if (wasBeep && !hasValidSound) {
