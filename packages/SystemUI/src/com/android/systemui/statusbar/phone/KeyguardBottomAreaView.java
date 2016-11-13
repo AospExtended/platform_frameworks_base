@@ -78,6 +78,7 @@ import com.android.systemui.plugins.ActivityStarter;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.KeyguardAffordanceView;
 import com.android.systemui.statusbar.KeyguardIndicationController;
+import com.android.systemui.statusbar.VisualizerViewWrapper;
 import com.android.systemui.statusbar.policy.AccessibilityController;
 import com.android.systemui.statusbar.policy.ExtensionController;
 import com.android.systemui.statusbar.policy.ExtensionController.Extension;
@@ -117,6 +118,10 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
     protected static final Intent PHONE_INTENT = new Intent(Intent.ACTION_DIAL);
     private static final int DOZE_ANIMATION_STAGGER_DELAY = 48;
     private static final int DOZE_ANIMATION_ELEMENT_DURATION = 250;
+    
+    public VisualizerViewWrapper mVisualizerView;
+    public boolean mVisualizerEnabled =
+            Settings.System.SHOW_LOCKSCREEN_VISUALIZER_DEFAULT == 0;
 
     private KeyguardAffordanceView mRightAffordanceView;
     private KeyguardAffordanceView mLeftAffordanceView;
@@ -759,6 +764,21 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
             });
         }
     };
+    
+    public final void onLockscreenVisualizerChange() {
+        mVisualizerEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.SHOW_LOCKSCREEN_VISUALIZER,
+                Settings.System.SHOW_LOCKSCREEN_VISUALIZER_DEFAULT,
+                UserHandle.USER_CURRENT) == 1;
+        if(mVisualizerEnabled && mVisualizerView == null) {
+            mVisualizerView = new VisualizerViewWrapper(getContext(), this);
+        } else if(!mVisualizerEnabled && mVisualizerView != null) {
+            synchronized(mVisualizerView) {
+                mVisualizerView.vanish();
+                mVisualizerView = null;
+            }
+        }
+    }
 
     private final KeyguardUpdateMonitorCallback mUpdateMonitorCallback =
             new KeyguardUpdateMonitorCallback() {
@@ -780,16 +800,22 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
                 @Override
                 public void onScreenTurnedOn() {
                     mLockIcon.setScreenOn(true);
+                    if(mVisualizerView != null)
+                       mVisualizerView.onScreenOn();
                 }
 
                 @Override
                 public void onScreenTurnedOff() {
                     mLockIcon.setScreenOn(false);
+                    if(mVisualizerView != null)
+                       mVisualizerView.onScreenOff();
                 }
 
                 @Override
                 public void onKeyguardVisibilityChanged(boolean showing) {
                     mLockIcon.update();
+                    if(mVisualizerView != null)
+                       mVisualizerView.setKeyguardShowing(showing);
                 }
 
                 @Override
