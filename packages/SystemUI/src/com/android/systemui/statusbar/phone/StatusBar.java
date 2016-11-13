@@ -670,6 +670,10 @@ public class StatusBar extends SystemUI implements DemoMode,
                 if (!isPlaybackActive(state.getState())) {
                     clearCurrentMediaNotification();
                     updateMediaMetaData(true, true);
+                if (getKeyguardBottomAreaView().mVisualizerView != null) {
+                    getKeyguardBottomAreaView().mVisualizerView
+                        .setPlaying(state.getState() == PlaybackState.STATE_PLAYING);
+                    }
                 }
 
                 setMediaPlaying();
@@ -1008,21 +1012,19 @@ public class StatusBar extends SystemUI implements DemoMode,
                 mLockscreenSettingsObserver,
                 UserHandle.USER_ALL);
         if (ENABLE_LOCK_SCREEN_ALLOW_REMOTE_INPUT) {
-            mContext.getContentResolver().registerContentObserver(
-                    Settings.Secure.getUriFor(Settings.Secure.LOCK_SCREEN_ALLOW_REMOTE_INPUT),
-                    false,
-                    mSettingsObserver,
-                    UserHandle.USER_ALL);
-        }
-
         mContext.getContentResolver().registerContentObserver(
-                Settings.Secure.getUriFor(Settings.Secure.LOCK_SCREEN_ALLOW_PRIVATE_NOTIFICATIONS),
-                true,
+                Settings.Secure.getUriFor(Settings.Secure.LOCK_SCREEN_ALLOW_REMOTE_INPUT), false,
+                mSettingsObserver,
+                UserHandle.USER_ALL);
+        }
+        mContext.getContentResolver().registerContentObserver(
+                Settings.Secure.getUriFor(Settings.Secure.LOCK_SCREEN_ALLOW_PRIVATE_NOTIFICATIONS), true,
                 mLockscreenSettingsObserver,
                 UserHandle.USER_ALL);
-
-        mContext.getContentResolver().registerContentObserver(Settings.Secure.getUriFor(
-                Settings.Secure.NAVIGATION_BAR_VISIBLE), false, mNavbarObserver, UserHandle.USER_ALL);
+        mContext.getContentResolver().registerContentObserver(
+                Settings.System.getUriFor(Settings.System.SHOW_LOCKSCREEN_VISUALIZER), false,
+                mSettingsObserver,
+                UserHandle.USER_ALL);
 
         mBarService = IStatusBarService.Stub.asInterface(
                 ServiceManager.getService(Context.STATUS_BAR_SERVICE));
@@ -1285,6 +1287,8 @@ public class StatusBar extends SystemUI implements DemoMode,
                 mNotificationPanel.getLockIcon());
         mNotificationPanel.setKeyguardIndicationController(mKeyguardIndicationController);
 
+        getKeyguardBottomAreaView().setKeyguardIndicationController(mKeyguardIndicationController);
+        getKeyguardBottomAreaView().onLockscreenVisualizerChange();
 
         mAmbientIndicationContainer = mStatusBarWindow.findViewById(
                 R.id.ambient_indication_container);
@@ -2767,6 +2771,23 @@ public class StatusBar extends SystemUI implements DemoMode,
                 && mStatusBarKeyguardViewManager.isOccluded();
 
         final boolean hasArtwork = artworkDrawable != null;
+
+        final boolean keyguardVisible = (mState != StatusBarState.SHADE);
+        if(getKeyguardBottomAreaView().mVisualizerView != null &&
+                !mKeyguardFadingAway && keyguardVisible) {
+            getKeyguardBottomAreaView().mVisualizerView.setPlaying(
+                mMediaController != null &&
+                mMediaController.getPlaybackState() != null &&
+                mMediaController.getPlaybackState()
+                    .getState() == PlaybackState.STATE_PLAYING);
+        }
+
+        if (getKeyguardBottomAreaView().mVisualizerView != null &&
+                keyguardVisible && hasArtwork &&
+                (artworkDrawable instanceof BitmapDrawable)) {
+            getKeyguardBottomAreaView().mVisualizerView
+                .setBitmap(((BitmapDrawable)artworkDrawable).getBitmap());
+        }
 
         if ((hasArtwork || DEBUG_MEDIA_FAKE_ARTWORK)
                 && (mState != StatusBarState.SHADE || allowWhenShade)
@@ -6541,6 +6562,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             setZenMode(mode);
 
             updateLockscreenNotificationSetting();
+            getKeyguardBottomAreaView().onLockscreenVisualizerChange();
         }
     };
 
