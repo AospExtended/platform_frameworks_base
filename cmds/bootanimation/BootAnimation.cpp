@@ -60,8 +60,6 @@
 #include "BootAnimation.h"
 #include "audioplay.h"
 
-#define THEME_BOOTANIMATION_FILE "/data/system/theme/bootanimation.zip"
-
 namespace android {
 
 static const char OEM_BOOTANIMATION_FILE[] = "/oem/media/bootanimation.zip";
@@ -310,9 +308,6 @@ status_t BootAnimation::readyToRun() {
 
     if (encryptedAnimation && (access(SYSTEM_ENCRYPTED_BOOTANIMATION_FILE, R_OK) == 0)) {
         mZipFileName = SYSTEM_ENCRYPTED_BOOTANIMATION_FILE;
-    }
-    else if (access(THEME_BOOTANIMATION_FILE, R_OK) == 0) {
-        mZipFileName = THEME_BOOTANIMATION_FILE;
     }
     else if (access(OEM_BOOTANIMATION_FILE, R_OK) == 0) {
         mZipFileName = OEM_BOOTANIMATION_FILE;

@@ -2041,6 +2041,7 @@ class ContextImpl extends Context {
                     || overrideConfiguration != null
                     || (compatInfo != null && compatInfo.applicationScale
                             != resources.getCompatibilityInfo().applicationScale)) {
+
                 if (container != null) {
                     // This is a nested Context, so it can't be a base Activity context.
                     // Just create a regular Resources object associated with the Activity.
@@ -2048,6 +2049,7 @@ class ContextImpl extends Context {
                             activityToken,
                             packageInfo.getResDir(),
                             packageInfo.getSplitResDirs(),
+                            packageInfo.getOverlayDirs(),
                             packageInfo.getApplicationInfo().sharedLibraryFiles,
                             displayId,
                             overrideConfiguration,
@@ -2060,6 +2062,7 @@ class ContextImpl extends Context {
                             activityToken,
                             packageInfo.getResDir(),
                             packageInfo.getSplitResDirs(),
+                            packageInfo.getOverlayDirs(),
                             packageInfo.getApplicationInfo().sharedLibraryFiles,
                             displayId,
                             overrideConfiguration,

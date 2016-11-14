@@ -32,6 +32,9 @@ public final class ResourcesKey {
     public final String[] mSplitResDirs;
 
     @Nullable
+    public final String[] mOverlayDirs;
+
+    @Nullable
     public final String[] mLibDirs;
 
     public final int mDisplayId;
@@ -46,12 +49,14 @@ public final class ResourcesKey {
 
     public ResourcesKey(@Nullable String resDir,
                         @Nullable String[] splitResDirs,
+                        @Nullable String[] overlayDirs,
                         @Nullable String[] libDirs,
                         int displayId,
                         @Nullable Configuration overrideConfig,
                         @Nullable CompatibilityInfo compatInfo) {
         mResDir = resDir;
         mSplitResDirs = splitResDirs;
+        mOverlayDirs = overlayDirs;
         mLibDirs = libDirs;
         mDisplayId = displayId;
         mOverrideConfiguration = overrideConfig != null ? overrideConfig : Configuration.EMPTY;
@@ -60,6 +65,7 @@ public final class ResourcesKey {
         int hash = 17;
         hash = 31 * hash + Objects.hashCode(mResDir);
         hash = 31 * hash + Arrays.hashCode(mSplitResDirs);
+        hash = 31 * hash + Arrays.hashCode(mOverlayDirs);
         hash = 31 * hash + Arrays.hashCode(mLibDirs);
         hash = 31 * hash + mDisplayId;
         hash = 31 * hash + Objects.hashCode(mOverrideConfiguration);
@@ -75,7 +81,8 @@ public final class ResourcesKey {
         if (mResDir != null && mResDir.startsWith(path)) {
             return true;
         } else {
-            return anyStartsWith(mSplitResDirs, path) || anyStartsWith(mLibDirs, path);
+            return anyStartsWith(mSplitResDirs, path) || anyStartsWith(mOverlayDirs, path)
+                    || anyStartsWith(mLibDirs, path);
         }
     }
 
@@ -113,6 +120,9 @@ public final class ResourcesKey {
         if (!Arrays.equals(mSplitResDirs, peer.mSplitResDirs)) {
             return false;
         }
+        if (!Arrays.equals(mOverlayDirs, peer.mOverlayDirs)) {
+            return false;
+        }
         if (!Arrays.equals(mLibDirs, peer.mLibDirs)) {
             return false;
         }
@@ -136,6 +146,11 @@ public final class ResourcesKey {
         builder.append(" mSplitDirs=[");
         if (mSplitResDirs != null) {
             builder.append(TextUtils.join(",", mSplitResDirs));
+        }
+        builder.append("]");
+        builder.append(" mOverlayDirs=[");
+        if (mOverlayDirs != null) {
+            builder.append(TextUtils.join(",", mOverlayDirs));
         }
         builder.append("]");
         builder.append(" mLibDirs=[");
