@@ -1160,7 +1160,7 @@ public final class PowerManagerService extends SystemService
         return -1;
     }
 
-    private void notifyWakeLockAcquiredLocked(WakeLock wakeLock) {
+    protected void notifyWakeLockAcquiredLocked(WakeLock wakeLock) {
         if (mSystemReady) {
             if (!wakeLock.isBlocked()){
                 mNotifier.onWakeLockAcquired(wakeLock.mFlags, wakeLock.mTag, wakeLock.mPackageName,
@@ -4053,9 +4053,6 @@ public final class PowerManagerService extends SystemService
             }
         }
 
-    }
-
-        @Override
         public String getSeenWakeLocks(){
             StringBuffer buffer = new StringBuffer();
             Iterator<String> nextWakeLock = mSeenWakeLocks.iterator();

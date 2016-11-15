@@ -580,9 +580,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                         Settings.System.STATUS_BAR_SHOW_TICKER,
                         0, UserHandle.USER_CURRENT) == 1;
                 initTickerView();
-            } else if (uri.equals(Settings.Secure.getUriFor(
-                    Settings.Secure.LOCK_QS_DISABLED))) {
-                updateQSLock();
             }
             updateSettings();
         }
@@ -602,8 +599,12 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             mClockLocation = Settings.System.getIntForUser(
                 resolver, Settings.System.STATUSBAR_CLOCK_STYLE, 0,
                 UserHandle.USER_CURRENT);
+            if (mNotificationPanel != null) {
+                mNotificationPanel.updateSettings();
+            }
     }
 
+  }
 
     // ensure quick settings is disabled until the current user makes it through the setup wizard
     private boolean mUserSetup = false;
@@ -2608,22 +2609,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         }
         mReportRejectedTouch.setVisibility(mState == StatusBarState.KEYGUARD
                 && mFalsingManager.isReportingEnabled() ? View.VISIBLE : View.INVISIBLE);
-    }
-
-    private void updateSettings() {
-        updateStatusBarLogoColor(false);
-    }
-
-    private void updateStatusBarLogoColor(boolean animate) {
-        if (mIconController != null) {
-            mIconController.updateLogoColor(animate);
-        }
-    }
-
-    private void updateQSLock() {
-        if (mNotificationPanel != null) {
-            mNotificationPanel .update();
-        }
     }
 
     protected int adjustDisableFlags(int state) {

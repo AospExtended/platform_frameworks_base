@@ -32,7 +32,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-import com.android.systemui.aosip.UserContentObserver;
+import com.android.systemui.cm.UserContentObserver;
 
 public class VisualizerView extends View implements Palette.PaletteAsyncListener {
 
@@ -382,7 +382,7 @@ public class VisualizerView extends View implements Palette.PaletteAsyncListener
         protected void observe() {
             super.observe();
             getContext().getContentResolver().registerContentObserver(
-                    Settings.System.getUriFor(Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED),
+                    Settings.Secure.getUriFor(Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED),
                     false, this, UserHandle.USER_CURRENT);
         }
 
