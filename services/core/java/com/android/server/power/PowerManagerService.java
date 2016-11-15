@@ -1106,7 +1106,7 @@ public final class PowerManagerService extends SystemService
         return -1;
     }
 
-    private void notifyWakeLockAcquiredLocked(WakeLock wakeLock) {
+    protected void notifyWakeLockAcquiredLocked(WakeLock wakeLock) {
         if (mSystemReady) {
             if (!wakeLock.isBlocked()){
                 mNotifier.onWakeLockAcquired(wakeLock.mFlags, wakeLock.mTag, wakeLock.mPackageName,
@@ -1125,7 +1125,7 @@ public final class PowerManagerService extends SystemService
         }
     }
 
-    private void notifyWakeLockReleasedLocked(WakeLock wakeLock) {
+    protected void notifyWakeLockReleasedLocked(WakeLock wakeLock) {
         if (mSystemReady) {
             if (!wakeLock.isBlocked()){
                 mNotifier.onWakeLockReleased(wakeLock.mFlags, wakeLock.mTag,
@@ -3833,18 +3833,6 @@ public final class PowerManagerService extends SystemService
                                                              mWakeLocks);
             }
         }
-    }
-
-    private void setButtonBrightnessOverrideFromWindowManagerInternal(int brightness) {
-        synchronized (mLock) {
-            if (mButtonBrightnessOverrideFromWindowManager != brightness) {
-                mButtonBrightnessOverrideFromWindowManager = brightness;
-                mDirty |= DIRTY_SETTINGS;
-                updatePowerStateLocked();
-            }
-        }
-
-        @Override
         public String getSeenWakeLocks(){
             StringBuffer buffer = new StringBuffer();
             Iterator<String> nextWakeLock = mSeenWakeLocks.iterator();
@@ -3866,6 +3854,16 @@ public final class PowerManagerService extends SystemService
             String[] parts = wakeLockTagsString.split("\\|");
             for(int i = 0; i < parts.length; i++){
                 mBlockedWakeLocks.add(parts[i]);
+            }
+        }
+    }
+
+    private void setButtonBrightnessOverrideFromWindowManagerInternal(int brightness) {
+        synchronized (mLock) {
+            if (mButtonBrightnessOverrideFromWindowManager != brightness) {
+                mButtonBrightnessOverrideFromWindowManager = brightness;
+                mDirty |= DIRTY_SETTINGS;
+                updatePowerStateLocked();
             }
         }
     }
