@@ -52,4 +52,16 @@
   <string name="show_lte_fourgee_title">Mostrar 4G ao invés de LTE</string>
   <string name="show_lte_fourgee_summary">Alterar indicador do LTE na bara de status pelo 4G</string>
   <string name="statusbar_tuner_category_title">Ocultar items da barra de status</string>
+     
+  <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Barra de navegação</string>
+  <string name="quick_settings_smartbar">SmartBar</string>
+  <string name="quick_settings_smartbar_off">SmartBar desligada</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_fling_off">Fling desligado</string>
+
+  <!-- Screenshot action -->
+  <string name="screenshot_abort_title">Nenhuma captura de tela tirada</string>
+  <string name="screenshot_abort_text">Operação abortada</string>
+
 </resources>
