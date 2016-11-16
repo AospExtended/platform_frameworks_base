@@ -670,4 +670,14 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
         p.height = getExpandedHeight();
         mBackgroundImage.setLayoutParams(p);
     }
+
+    @Override
+    public void updateSettings() {
+        if (mQsPanel != null) {
+            mQsPanel.updateSettings();
+        }
+        if (mHeaderQsPanel != null) {
+            mHeaderQsPanel.updateSettings();
+        }
+    }
 }
