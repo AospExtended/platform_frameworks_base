@@ -43,8 +43,8 @@ import android.net.NetworkRequest;
 import android.net.NetworkState;
 import android.net.NetworkUtils;
 import android.net.RouteInfo;
-import android.net.wifi.WifiManager;
 import android.net.wifi.WifiDevice;
+import android.net.wifi.WifiManager;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.INetworkManagementService;
@@ -62,6 +62,7 @@ import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.Log;
 import android.util.SparseArray;
+import com.android.internal.util.IState;
 
 import com.android.internal.telephony.IccCardConstants;
 import com.android.internal.telephony.TelephonyIntents;
@@ -305,7 +306,7 @@ public class Tethering extends BaseNetworkObserver implements IControlsTethering
         // Never called directly: only called from interfaceLinkStateChanged.
         // See NetlinkHandler.cpp:71.
         if (VDBG) Log.d(TAG, "interfaceStatusChanged " + iface + ", " + up);
-
+        WifiDevice device = new WifiDevice(iface);
         synchronized (mPublicSync) {
             int interfaceType = ifaceNameToType(iface);
             if (interfaceType == ConnectivityManager.TETHERING_INVALID) {
@@ -316,18 +317,14 @@ public class Tethering extends BaseNetworkObserver implements IControlsTethering
             if (up) {
                 if (tetherState == null) {
                     trackNewTetherableInterface(iface, interfaceType);
+                    mConnectedDeviceMap.put(device.deviceAddress, device);
                 }
             } else {
                 if (interfaceType == ConnectivityManager.TETHERING_BLUETOOTH) {
                     tetherState.mStateMachine.sendMessage(
                             TetherInterfaceStateMachine.CMD_INTERFACE_DOWN);
                     mTetherStates.remove(iface);
-                } else {
-                    // Ignore usb0 down after enabling RNDIS.
-                    // We will handle disconnect in interfaceRemoved.
-                    // Similarly, ignore interface down for WiFi.  We monitor WiFi AP status
-                    // through the WifiManager.WIFI_AP_STATE_CHANGED_ACTION intent.
-                    if (VDBG) Log.d(TAG, "ignore interface down for " + iface);
+                    mConnectedDeviceMap.remove(iface);
                 }
             }
         }
@@ -785,6 +782,7 @@ public class Tethering extends BaseNetworkObserver implements IControlsTethering
                     new DnsmasqThread(this, device,
                         DNSMASQ_POLLING_INTERVAL, DNSMASQ_POLLING_MAX_TIMES).start();
                 }
+	        //cancelInactivityTimeout();
             } else if (device.deviceState == WifiDevice.DISCONNECTED) {
                 mL2ConnectedDeviceMap.remove(device.deviceAddress);
                 mConnectedDeviceMap.remove(device.deviceAddress);
