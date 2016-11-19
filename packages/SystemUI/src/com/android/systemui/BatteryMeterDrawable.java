@@ -55,6 +55,7 @@ import com.android.systemui.statusbar.policy.BatteryController;
 public class BatteryMeterDrawable extends Drawable implements
         BatteryController.BatteryStateChangeCallback {
 
+    private static final float ASPECT_RATIO = 9.5f / 14.3f;
     public static final String TAG = BatteryMeterDrawable.class.getSimpleName();
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT =
             Settings.Secure.STATUS_BAR_SHOW_BATTERY_PERCENT;
