@@ -144,6 +144,8 @@ public class RuntimeInit {
 
         Build.adjustBuildTypeIfNeeded();
 
+        Build.adjustBuildTypeIfNeeded();
+
         /*
          * Install a TimezoneGetter subclass for ZoneInfo.db
          */
