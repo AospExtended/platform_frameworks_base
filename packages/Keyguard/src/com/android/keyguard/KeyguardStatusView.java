@@ -75,7 +75,7 @@ public class KeyguardStatusView extends GridLayout implements
     private TextView mWeatherTimestamp;
 
     private boolean mShowWeather;
-    private int mIconNameValue = 0;
+    private int mIconNameValue = -1;
 
     private WeatherController mWeatherController;
 
