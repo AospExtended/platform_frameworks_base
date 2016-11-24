@@ -61,4 +61,8 @@
 
    <!-- config softap extention feature -->
    <java-symbol type="bool" name="config_softap_extention" />
+
+  <!-- Single hand mode -->
+  <java-symbol type="string" name="singlehandmode_click_hint_message" />
+  <java-symbol type="string" name="singlehandmode_slide_hint_message" />
 </resources>
