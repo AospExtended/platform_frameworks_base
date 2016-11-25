@@ -42,4 +42,7 @@
     backgrounds (requires config_allowNotificationIconTextTinting to be true)-->
     <bool name="config_useDarkBgNotificationIconTextTinting">false</bool>
 
+    <!-- Quick settings tiles columns and rows config -->
+    <integer name="config_qs_num_rows_landscape_default">2</integer>
+
 </resources>
