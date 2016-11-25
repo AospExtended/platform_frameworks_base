@@ -60,4 +60,7 @@
     <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
     <java-symbol type="string" name="aex_system_error_manufacturer" />
 
+  <!-- Quick settings tiles columns and rows config -->
+  <java-symbol type="integer" name="config_qs_num_rows_landscape_default"/>
+
 </resources>
