@@ -4991,10 +4991,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         mStackScroller.setActivatedChild(view);
     }
 
-    public ButtonDispatcher getHomeButton() {
-        return mNavigationBarView.getHomeButton();
-    }
-
     /**
      * @param state The {@link StatusBarState} to set.
      */

@@ -69,7 +69,7 @@
             android:paddingLeft="@dimen/screen_pinning_request_nav_icon_padding"
             android:paddingTop="@dimen/screen_pinning_request_nav_side_padding"
             android:paddingBottom="@dimen/screen_pinning_request_nav_side_padding"
-            android:src="@drawable/ic_sysbar_home" />
+            android:src="@drawable/ic_sysbar_home_pixel" />
     </FrameLayout>
 
     <View
