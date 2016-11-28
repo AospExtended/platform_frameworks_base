@@ -4086,6 +4086,12 @@ public final class Settings {
         public static final String DISABLE_TRANSITION_ANIMATIONS = "disable_transition_animations";
 
         /**
+         * Whether to display qs tile titles in the qs panel
+         * @hide
+         */
+        public static final String QS_TILE_TITLE_VISIBILITY = "qs_tile_title_visibility";
+
+        /**
          * whether to enable or disable vibration on succesful fingerprint auth
          *
          * @hide
