@@ -3879,6 +3879,12 @@ public final class Settings {
          */
         public static final String IMMERSIVE_RECENTS = "immersive_recents";
 
+          /**
+          * Whether to show the negociated charger current in the lockscreen
+          * @hide
+          */
+         public static final String LOCKSCREEN_CHARGING_CURRENT = "lockscreen_charging_current";
+ 
         /**
          * Whether to allow fullscreen screenshots or let the user select which area to screenshot
          *
