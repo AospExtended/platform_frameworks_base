@@ -149,6 +149,7 @@ class FooterActionsView(context: Context?, attrs: AttributeSet?) : LinearLayout(
         val isDemo = UserManager.isDeviceInDemoMode(context)
         settingsButton.visibility = if (isDemo) INVISIBLE else VISIBLE
         runningServicesButton.visibility = if (isRunningServicesEnabled) VISIBLE else GONE
+        editTilesButton.visibility = if (isEditEnabled) VISIBLE else GONE
     }
 
     val isRunningServicesEnabled: Boolean
@@ -156,6 +157,13 @@ class FooterActionsView(context: Context?, attrs: AttributeSet?) : LinearLayout(
             mContext.getContentResolver(),
             Settings.System.QS_RUNNING_SERVICES_TOGGLE, 0
         ) === 1
+
+    val isEditEnabled: Boolean
+        get() = Settings.System.getInt(
+            mContext.getContentResolver(),
+            Settings.System.QS_EDIT_TOGGLE, 1
+        ) === 1
+
 
     fun onUserInfoChanged(picture: Drawable?, isGuestUser: Boolean) {
         var pictureToSet = picture
