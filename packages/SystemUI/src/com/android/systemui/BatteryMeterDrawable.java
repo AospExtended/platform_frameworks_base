@@ -208,6 +208,7 @@ public class BatteryMeterDrawable extends Drawable implements
             } else {
                 xferMode = PorterDuff.intToMode(a.getInt(1, PorterDuff.modeToInt(PorterDuff.Mode.XOR)));
             }
+            a.recycle();
         } else {
             mTextGravity = Gravity.CENTER;
         }
@@ -405,16 +406,17 @@ public class BatteryMeterDrawable extends Drawable implements
         } else {
             // If we are in power save mode, always use the normal color.
             if (mPowerSaveEnabled) {
-                return mColors[mColors.length-1];
+                return mColors[mColors.length - 1];
             }
-            int thresh, color = 0;
-            for (int i=0; i<mColors.length; i+=2) {
+            int thresh = 0;
+            int color = 0;
+            for (int i = 0; i < mColors.length; i += 2) {
                 thresh = mColors[i];
                 color = mColors[i+1];
                 if (percent <= thresh) {
 
                     // Respect tinting for "normal" level
-                    if (i == mColors.length-2) {
+                    if (i == mColors.length - 2) {
                         return mIconTint;
                     } else {
                         return color;
