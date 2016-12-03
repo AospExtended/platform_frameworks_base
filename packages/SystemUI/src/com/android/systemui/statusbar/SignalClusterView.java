@@ -26,6 +26,7 @@ import android.graphics.drawable.Animatable;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
 import android.telephony.SubscriptionInfo;
+import android.provider.Settings;
 import android.util.ArraySet;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -523,6 +524,13 @@ public class SignalClusterView
 
         mWifiActivity.setVisibility(mWifiActivityId != 0 ? View.VISIBLE : View.GONE);
 
+        if (Settings.System.getInt(mContext.getContentResolver(),
+             Settings.System.DATA_ACTIVITY_ARROWS, 0) == 1) {
+             mWifiActivity.setVisibility(mWifiActivityId != 0 ? View.VISIBLE : View.GONE);
+        } else {
+             mWifiActivity.setVisibility(View.GONE);
+        }
+
         boolean anyMobileVisible = false;
         int firstMobileTypeId = 0;
         for (PhoneState state : mPhoneStates) {
@@ -695,7 +703,13 @@ public class SignalClusterView
                         (mMobileVisible ? "VISIBLE" : "GONE"), mMobileStrengthId, mMobileTypeId));
 
             mMobileType.setVisibility(mMobileTypeId != 0 ? View.VISIBLE : View.GONE);
-            mMobileActivity.setVisibility(mMobileActivityId != 0 ? View.VISIBLE : View.GONE);
+
+            if (Settings.System.getInt(mContext.getContentResolver(),
+                 Settings.System.DATA_ACTIVITY_ARROWS, 0) == 1) {
+                 mMobileActivity.setVisibility(mMobileActivityId != 0 ? View.VISIBLE : View.GONE);
+            } else {
+                 mMobileActivity.setVisibility(View.GONE);
+            }
 
             return mMobileVisible;
         }
