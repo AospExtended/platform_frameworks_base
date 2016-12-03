@@ -39,8 +39,10 @@ public class TunerFragment extends PreferenceFragment {
     private static final String SHOW_LTE_FOURGEE = "show_lte_fourgee";
 
     private static final String KEY_BATTERY_PCT = "battery_pct";
+    private static final String DATA_WIFI_ACTIVITY_ARROWS = "data_activity_arrows";
 
     private SwitchPreference mShowLteFourGee;
+	private SwitchPreference mDataWifiActivityArrows;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,10 @@ public class TunerFragment extends PreferenceFragment {
         mShowLteFourGee.setChecked((Settings.System.getInt(resolver,
                 Settings.System.SHOW_LTE_FOURGEE, 0) == 1));
         }
+
+		mDataWifiActivityArrows = (SwitchPreference) findPreference(DATA_WIFI_ACTIVITY_ARROWS);
+        mDataWifiActivityArrows.setChecked((Settings.System.getInt(resolver,
+                Settings.System.DATA_ACTIVITY_ARROWS, 0) == 1));
     }
 
     @Override
@@ -91,6 +97,11 @@ public class TunerFragment extends PreferenceFragment {
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SHOW_LTE_FOURGEE, checked ? 1:0);
+            return true;
+	    } else if  (preference == mDataWifiActivityArrows) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DATA_ACTIVITY_ARROWS, checked ? 1:0);
             return true;
         }
         return super.onPreferenceTreeClick(preference);
