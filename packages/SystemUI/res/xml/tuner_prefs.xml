@@ -36,6 +36,11 @@
             android:key="headset"
             android:title="@string/headset" />
 
+	<SwitchPreference
+        android:key="data_activity_arrows"
+        android:title="@string/data_wifi_activity_arrows_title"
+        android:defaultValue="false" />
+
         <com.android.systemui.tuner.StatusBarSwitch
             android:key="managed_profile"
             android:title="@string/status_bar_work" />
