@@ -99,4 +99,7 @@
 
     <!-- Path data for circle battery -->
     <string name="battery_circle_path" translatable="false">M 12 3.5 C 16.6944203736 3.5 20.5 7.30557962644 20.5 12 C 20.5 16.6944203736 16.6944203736 20.5 12 20.5 C 7.30557962644 20.5 3.5 16.6944203736 3.5 12 C 3.5 7.30557962644 7.30557962644 3.5 12 3.5 Z</string>
+
+    <!-- Path data for big circle battery -->
+    <string name="battery_bigcircle_path" translatable="false">M 12,0.9999999 C 18.075132,0.9999999 23,5.9248678 23,12 23,18.075132 18.075132,23 12,23 5.9248675,23 0.99999975,18.075132 0.99999975,12 0.99999975,5.9248678 5.9248675,0.9999999 12,0.9999999 Z</string>
 </resources>
