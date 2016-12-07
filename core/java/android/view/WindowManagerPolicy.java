@@ -508,6 +508,14 @@ public interface WindowManagerPolicy {
          */
         void getStackBounds(int stackId, Rect outBounds);
 
+        /**
+         * Overrides all currently playing app animations with {@param a}.
+         */
+        void overridePlayingAppAnimationsLw(Animation a);
+
+        /**
+         * Expanded desktop feature
+         */
         void addSystemUIVisibilityFlag(int flags);
     }
 
@@ -1301,6 +1309,16 @@ public interface WindowManagerPolicy {
      * @return The new desired visibility.
      */
     public int adjustSystemUiVisibilityLw(int visibility);
+
+    /**
+     * Called by System UI to notify of changes to the visibility of Recents.
+     */
+    public void setRecentsVisibilityLw(boolean visible);
+
+    /**
+     * Called by System UI to notify of changes to the visibility of PIP.
+     */
+    public void setTvPipVisibilityLw(boolean visible);
 
     /**
      * Specifies whether there is an on-screen navigation bar separate from the status bar.

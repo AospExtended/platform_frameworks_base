@@ -266,7 +266,6 @@ class FileDescriptorInfo {
         return true;
       }
     }
-
     return false;
   }
 
