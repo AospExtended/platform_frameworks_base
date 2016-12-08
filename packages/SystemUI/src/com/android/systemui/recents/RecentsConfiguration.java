@@ -62,6 +62,9 @@ public class RecentsConfiguration {
     // Whether this product supports Grid-based Recents. If this is field is set to true, then
     // Recents will layout task views in a grid mode when there's enough space in the screen.
     public boolean isGridEnabled;
+    public int fabEnterAnimDuration;
+    public int fabEnterAnimDelay;
+    public int fabExitAnimDuration;
 
     public RecentsConfiguration(Context context) {
         // Load only resources that can not change after the first load either through developer
@@ -77,6 +80,13 @@ public class RecentsConfiguration {
         smallestWidth = ssp.getDeviceSmallestWidth();
         isLargeScreen = smallestWidth >= (int) (screenDensity * LARGE_SCREEN_MIN_DP);
         isXLargeScreen = smallestWidth >= (int) (screenDensity * XLARGE_SCREEN_MIN_DP);
+
+        fabEnterAnimDuration =
+                res.getInteger(R.integer.recents_animate_fab_enter_duration);
+        fabEnterAnimDelay =
+                res.getInteger(R.integer.recents_animate_fab_enter_delay);
+        fabExitAnimDuration =
+                res.getInteger(R.integer.recents_animate_fab_exit_duration);
     }
 
     /**

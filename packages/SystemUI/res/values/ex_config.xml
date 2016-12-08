@@ -19,4 +19,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Show voice assist affordance on Keyguard -->
     <bool name="config_keyguardShowVoiceAssistAffordance">false</bool>
+
+    <!-- The min animation duration for animating the fab in. -->
+    <integer name="recents_animate_fab_enter_duration">225</integer>
+    <!-- The animation delay for animating the fab in. This should roughly be the animation
+     duration of the transition in to recents. -->
+    <integer name="recents_animate_fab_enter_delay">275</integer>
+    <!-- The min animation duration for animating the fab out. -->
+    <integer name="recents_animate_fab_exit_duration">125</integer>
+
 </resources>
