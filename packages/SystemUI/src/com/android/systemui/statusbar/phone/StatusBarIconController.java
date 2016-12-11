@@ -556,6 +556,11 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         if (area.isEmpty()) {
             return true;
         }
+
+        if (view == null) {
+            return true;
+        }
+
         sTmpRect.set(area);
         view.getLocationOnScreen(sTmpInt2);
         int left = sTmpInt2[0];
