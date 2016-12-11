@@ -298,7 +298,7 @@ public class NavigationBarView extends LinearLayout {
             mBackAltIcon = ctx.getDrawable(R.drawable.ic_sysbar_back_ime);
             mBackAltLandIcon = mBackAltIcon;
 
-            mHomeDefaultIcon = ctx.getDrawable(R.drawable.ic_sysbar_home_pixel);
+            mHomeDefaultIcon = ctx.getDrawable(R.drawable.ic_sysbar_home);
             mRecentIcon = ctx.getDrawable(R.drawable.ic_sysbar_recent);
             mMenuIcon = ctx.getDrawable(R.drawable.ic_sysbar_menu);
             mImeIcon = ctx.getDrawable(R.drawable.ic_ime_switcher_default);
