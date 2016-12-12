@@ -382,7 +382,7 @@ public class KeyguardStatusBarView extends RelativeLayout
             mForceBatteryText = Settings.Secure.getInt(getContext().getContentResolver(),
                     Settings.Secure.STATUS_BAR_BATTERY_STYLE, 0) == 6 ? true : false;
             mForceChargeBatteryText = Settings.Secure.getInt(getContext().getContentResolver(),
-                    Settings.Secure.FORCE_CHARGE_BATTERY_TEXT, 1) == 1 ? true : false;
+                    Settings.Secure.FORCE_CHARGE_BATTERY_TEXT, 0) == 1 ? true : false;
             updateVisibilities();
         }
     }
