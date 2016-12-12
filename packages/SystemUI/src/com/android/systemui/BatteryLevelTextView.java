@@ -63,7 +63,7 @@ public class BatteryLevelTextView extends TextView implements
             mForceBatteryText = Settings.Secure.getInt(getContext().getContentResolver(),
                     STATUS_BAR_BATTERY_STYLE, 0) == 6 ? true : false;
             mForceChargeBatteryText = Settings.Secure.getInt(getContext().getContentResolver(),
-                    FORCE_CHARGE_BATTERY_TEXT, 1) == 1 ? true : false;
+                    FORCE_CHARGE_BATTERY_TEXT, 0) == 1 ? true : false;
             setVisibility((mBatteryCharging && mForceChargeBatteryText) || mRequestedVisibility || mForceBatteryText ? View.VISIBLE : View.GONE);
         }
     }
@@ -98,7 +98,7 @@ public class BatteryLevelTextView extends TextView implements
                 mForceBatteryText = Settings.Secure.getInt(getContext().getContentResolver(),
                         STATUS_BAR_BATTERY_STYLE, 0) == 6 ? true : false;
                 mForceChargeBatteryText = Settings.Secure.getInt(getContext().getContentResolver(),
-                        FORCE_CHARGE_BATTERY_TEXT, 1) == 1 ? true : false;
+                        FORCE_CHARGE_BATTERY_TEXT, 0) == 1 ? true : false;
                 setVisibility((mBatteryCharging && mForceChargeBatteryText) || mRequestedVisibility || mForceBatteryText ? View.VISIBLE : View.GONE);
                 break;
             case STATUS_BAR_BATTERY_STYLE:
@@ -107,7 +107,7 @@ public class BatteryLevelTextView extends TextView implements
                 mForceBatteryText = Settings.Secure.getInt(getContext().getContentResolver(),
                         STATUS_BAR_BATTERY_STYLE, 0) == 6 ? true : false;
                 mForceChargeBatteryText = Settings.Secure.getInt(getContext().getContentResolver(),
-                        FORCE_CHARGE_BATTERY_TEXT, 1) == 1 ? true : false;
+                        FORCE_CHARGE_BATTERY_TEXT, 0) == 1 ? true : false;
                 switch (value) {
                     case BatteryMeterDrawable.BATTERY_STYLE_TEXT:
                         setVisibility(View.VISIBLE);
@@ -122,7 +122,7 @@ public class BatteryLevelTextView extends TextView implements
                 break;
             case FORCE_CHARGE_BATTERY_TEXT:
                 mForceChargeBatteryText = Settings.Secure.getInt(getContext().getContentResolver(),
-                        FORCE_CHARGE_BATTERY_TEXT, 1) == 1 ? true : false;
+                        FORCE_CHARGE_BATTERY_TEXT, 0) == 1 ? true : false;
                 setVisibility((mBatteryCharging && mForceChargeBatteryText) || mRequestedVisibility || mForceBatteryText ? View.VISIBLE : View.GONE);
                 break;
             case TEXT_CHARGING_SYMBOL:
