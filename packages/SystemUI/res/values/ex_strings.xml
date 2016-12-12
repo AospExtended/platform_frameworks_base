@@ -29,6 +29,9 @@
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Screenshot deleted</string>
 
+    <!-- SystemUI Tuner Parts -->
+    <string name="systemui_tuner_pnc_title">Power notification controls</string>
+
     <!-- Quick Settings tiles -->
     <string name="quick_settings_screenshot_label">Screenshot</string>
     <string name="quick_settings_region_screenshot_label">Partial screenshot</string>
