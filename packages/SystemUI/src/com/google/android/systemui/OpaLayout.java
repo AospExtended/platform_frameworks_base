@@ -545,7 +545,7 @@ public class OpaLayout extends FrameLayout implements ButtonDispatcher.ButtonInt
     }
 
     public void setLandscape(boolean landscape) {
-        this.mIsLandscape = mIsLandscape;
+        this.mIsLandscape = landscape;
         if (this.mIsLandscape) {
             this.mTop = this.mGreen;
             this.mBottom = this.mBlue;
