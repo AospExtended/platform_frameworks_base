@@ -5186,6 +5186,15 @@ public final class Settings {
         public static final String QS_EDIT_TOGGLE = "qs_edit_toggle";
 
         /**
+         * enable or disable single handed mode
+         * @hide
+         */
+        public static final String ONE_HAND_MODE_ENABLED = "one_hand_mode_enabled";
+
+        /** @hide */
+        private static final Validator ONE_HAND_MODE_ENABLED_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -5268,7 +5277,8 @@ public final class Settings {
             VIBRATE_ON_DISCONNECT,
             VIBRATE_ON_CALLWAITING,
             NOTIFICATION_SOUND_VIB_SCREEN_ON,
-            MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD
+            MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD,
+            ONE_HAND_MODE_ENABLED,
         };
 
         /**
@@ -5438,6 +5448,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(VIBRATE_ON_CALLWAITING);
             PRIVATE_SETTINGS.add(NOTIFICATION_SOUND_VIB_SCREEN_ON);
             PRIVATE_SETTINGS.add(MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD);
+            PRIVATE_SETTINGS.add(ONE_HAND_MODE_ENABLED);
         }
 
 
@@ -5568,7 +5579,8 @@ public final class Settings {
             VALIDATORS.put(VIBRATE_ON_CALLWAITING, VIBRATE_ON_CALLWAITING_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_SOUND_VIB_SCREEN_ON, NOTIFICATION_SOUND_VIB_SCREEN_ON_VALIDATOR);
             VALIDATORS.put(MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD_VALIDATOR);
-       }
+            VALIDATORS.put(ONE_HAND_MODE_ENABLED, ONE_HAND_MODE_ENABLED_VALIDATOR);
+        }
 
         /**
          * These entries are considered common between the personal and the managed profile,
