@@ -23,6 +23,7 @@ import static android.view.WindowManager.LayoutParams.*;
 
 import android.app.ActivityManagerNative;
 import android.app.SearchManager;
+import android.database.ContentObserver;
 import android.os.UserHandle;
 
 import android.text.TextUtils;
@@ -2407,7 +2408,13 @@ public class PhoneWindow extends Window implements MenuBuilder.Callback {
             mStatusBarColor = a.getColor(R.styleable.Window_statusBarColor, 0xFF000000);
         }
         if (!mForcedNavigationBarColor) {
-            mNavigationBarColor = a.getColor(R.styleable.Window_navigationBarColor, 0xFF000000);
+        boolean isDynamic = Settings.System.getInt(getContext().getContentResolver(),
+            Settings.System.NAV_BAR_DYNAMIC, 0) == 1;
+            if (!isDynamic) {
+                mNavigationBarColor = a.getColor(R.styleable.Window_navigationBarColor, 0xFF000000);
+            } else {
+                mNavigationBarColor = a.getColor(R.styleable.Window_navigationBarColordynamic, 0xFF000000);
+            }
         }
 
         WindowManager.LayoutParams params = getAttributes();
