@@ -7266,6 +7266,12 @@ public final class Settings {
         public static final String DOZE_ENABLED = "doze_enabled";
 
         /**
+         * Wheter to automatically change brightness when enabling night mode tile
+         * @hide
+         */
+        public static final String QS_NIGHT_BRIGHTNESS_TOGGLE = "qs_night_brightness_toggle";
+
+        /**
          * Whether the device should pulse on pick up gesture.
          * @hide
          */
