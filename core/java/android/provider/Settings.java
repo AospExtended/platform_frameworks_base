@@ -3644,24 +3644,6 @@ public final class Settings {
         /** region Extensions System Settings */
 
         /**
-         * Volume keys control cursor in text fields (default is 0)
-         * 0 - Disabled
-         * 1 - Volume up/down moves cursor left/right
-         * 2 - Volume up/down moves cursor right/left
-         * @hide
-         */
-        public static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
-
-        /**
-         * Volume key controls ringtone or media sound stream
-         * @hide
-         */
-        public static final String VOLUME_KEYS_CONTROL_RING_STREAM =
-                "volume_keys_control_ring_stream";
-
-        /** endregion */
-
-        /**
          * Swap volume buttons when the screen is rotated
          * 0 - Disabled
          * 1 - Enabled (screen is rotated by 90 or 180 degrees: phone, hybrid)
@@ -3671,7 +3653,6 @@ public final class Settings {
         public static final String SWAP_VOLUME_KEYS_ON_ROTATION = "swap_volume_keys_on_rotation";
 
 
-        /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate

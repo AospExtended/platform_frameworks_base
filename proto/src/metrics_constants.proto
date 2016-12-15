@@ -2218,5 +2218,7 @@ message MetricsEvent {
 
     ANIMATION_SETTINGS = 413;
 
+    // Extensions
+    EXTENSIONS = 411;
   }
 }
