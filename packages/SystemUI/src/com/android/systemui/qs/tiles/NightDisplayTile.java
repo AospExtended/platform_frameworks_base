@@ -46,6 +46,9 @@ public class NightDisplayTile extends QSTile<QSTile.BooleanState>
                                                         Settings.System.SCREEN_BRIGHTNESS, 0,
                                                         UserHandle.USER_CURRENT);
     private boolean mAutomaticBrightness;
+    private int customVal;
+    private float autoVal;
+    private int manualVal;
 
     public NightDisplayTile(Host host) {
         super(host);
@@ -63,8 +66,6 @@ public class NightDisplayTile extends QSTile<QSTile.BooleanState>
     }
 
     private void setBrightness(boolean activated) {
-        final float autoVal = -0.3f; //available from -1 to 1
-        final int manualVal = 1; //available from 0 to 255
             if (activated) {
                 updateBrightnessModeValues();
             }
@@ -122,6 +123,23 @@ public class NightDisplayTile extends QSTile<QSTile.BooleanState>
                                 Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,
                                 UserHandle.USER_CURRENT);
         mAutomaticBrightness = mode != Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
+        customVal = Settings.Secure.getIntForUser(mContext.getContentResolver(),
+                                    Settings.Secure.QS_NIGHT_BRIGHTNESS_VALUE, 0,
+                                    UserHandle.USER_CURRENT);
+        switch (customVal) {
+            case 1:
+                autoVal = 0f;
+                manualVal = 100;
+                break;
+            case 2:
+                autoVal = -1f;
+                manualVal = 0;
+                break;
+            default:
+                autoVal = -0.33f;
+                manualVal = 40;
+                break;
+        }
     }
 
     public boolean isAutoNightTileEnabled() {
