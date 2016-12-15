@@ -27,11 +27,25 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.systemui.R;
 import com.android.systemui.qs.QSTile;
 
+import android.os.IPowerManager;
+import android.os.AsyncTask;
+import android.os.UserHandle;
+import android.os.RemoteException;
+import android.util.Log;
+import android.os.ServiceManager;
+
 public class NightDisplayTile extends QSTile<QSTile.BooleanState>
         implements NightDisplayController.Callback {
 
     private NightDisplayController mController;
     private boolean mIsListening;
+    private float userAutoVal = Settings.System.getFloatForUser(mContext.getContentResolver(),
+                                                        Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, 0,
+                                                        UserHandle.USER_CURRENT);
+    private int userManualVal = Settings.System.getIntForUser(mContext.getContentResolver(),
+                                                        Settings.System.SCREEN_BRIGHTNESS, 0,
+                                                        UserHandle.USER_CURRENT);
+    private boolean mAutomaticBrightness;
 
     public NightDisplayTile(Host host) {
         super(host);
@@ -48,11 +62,82 @@ public class NightDisplayTile extends QSTile<QSTile.BooleanState>
         return new BooleanState();
     }
 
+    private void setBrightness(boolean activated) {
+        final float autoVal = -0.3f; //available from -1 to 1
+        final int manualVal = 1; //available from 0 to 255
+            if (activated) {
+                updateBrightnessModeValues();
+            }
+            try {
+                IPowerManager power = IPowerManager.Stub.asInterface(
+                        ServiceManager.getService("power"));
+                if (power != null) {
+                    if (mAutomaticBrightness) {
+                        power.setTemporaryScreenAutoBrightnessAdjustmentSettingOverride(autoVal);
+                        AsyncTask.execute(new Runnable() {
+                            public void run() {
+                                if (activated) {
+                                    Settings.System.putFloatForUser(mContext.getContentResolver(),
+                                        Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, autoVal,
+                                        UserHandle.USER_CURRENT);
+                                } else {
+                                    Settings.System.putFloatForUser(mContext.getContentResolver(),
+                                        Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, userAutoVal,
+                                        UserHandle.USER_CURRENT);
+                                }
+                            }
+                        });
+                    } else {
+                        power.setTemporaryScreenBrightnessSettingOverride(manualVal);
+                        AsyncTask.execute(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (activated) {
+                                Settings.System.putIntForUser(mContext.getContentResolver(),
+                                        Settings.System.SCREEN_BRIGHTNESS, manualVal,
+                                        UserHandle.USER_CURRENT);
+                                } else {
+                                Settings.System.putIntForUser(mContext.getContentResolver(),
+                                        Settings.System.SCREEN_BRIGHTNESS, userManualVal,
+                                        UserHandle.USER_CURRENT);
+                                }
+                            }
+                        });
+                    }
+                }
+            } catch (RemoteException e) {
+                Log.w(TAG, "Setting Brightness failed: " + e);
+            }
+    }
+
+    public void updateBrightnessModeValues () {
+        userAutoVal = Settings.System.getFloatForUser(mContext.getContentResolver(),
+                                    Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, 0,
+                                    UserHandle.USER_CURRENT);
+        userManualVal = Settings.System.getIntForUser(mContext.getContentResolver(),
+                                    Settings.System.SCREEN_BRIGHTNESS, 0,
+                                    UserHandle.USER_CURRENT);
+        int mode = Settings.System.getIntForUser(mContext.getContentResolver(),
+                                Settings.System.SCREEN_BRIGHTNESS_MODE,
+                                Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,
+                                UserHandle.USER_CURRENT);
+        mAutomaticBrightness = mode != Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
+    }
+
+    public boolean isAutoNightTileEnabled() {
+        return Settings.Secure.getInt(mContext.getContentResolver(),
+            Settings.Secure.QS_NIGHT_BRIGHTNESS_TOGGLE, 0) == 1;
+    }
+
     @Override
     protected void handleClick() {
         final boolean activated = !mState.value;
         MetricsLogger.action(mContext, getMetricsCategory(), activated);
         mController.setActivated(activated);
+        boolean autoNightTile = isAutoNightTileEnabled();
+        if (autoNightTile) {
+            setBrightness(activated);
+        }
     }
 
     @Override
