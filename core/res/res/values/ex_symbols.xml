@@ -33,4 +33,7 @@
   <java-symbol type="drawable" name="ic_audio_notification_mute_new" />
   <java-symbol type="drawable" name="ic_audio_notification_mute_alpha" />
 
+  <!-- Dyanamic Navbar -->
+  <java-symbol type="color" name="input_method_navigation_guard_dynamic" />
+
 </resources>
