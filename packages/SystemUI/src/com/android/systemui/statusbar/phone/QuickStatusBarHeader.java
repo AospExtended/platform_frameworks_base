@@ -360,7 +360,9 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
 
     @Override
     public boolean onLongClick(View v) {
-        if (v == mClock) {
+        if (v == mSettingsButton) {
+            startExtensions();
+        } else if (v == mClock) {
             startClockLongClickActivity();
         } else if (v == mDate) {
             startDateLongClickActivity();
@@ -368,14 +370,6 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
             startUserLongClickActivity();
         }
         vibrateheader(20);
-        return false;
-    }
-
-    @Override
-    public boolean onLongClick(View v) {
-        if (v == mSettingsButton) {
-            startExtensions();
-        }
         return false;
     }
 

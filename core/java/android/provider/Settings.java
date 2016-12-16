@@ -4005,6 +4005,7 @@ public final class Settings {
         public static final String SWAP_VOLUME_KEYS_ON_ROTATION = "swap_volume_keys_on_rotation";
 
 
+        /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate
@@ -7287,6 +7288,12 @@ public final class Settings {
          * @hide
          */
         public static final String PRIVACY_GUARD_DEFAULT = "privacy_guard_default";
+
+         /**
+           * Whether a notification should be shown if privacy guard is enabled
+           * @hide
+           */
+          public static final String PRIVACY_GUARD_NOTIFICATION = "privacy_guard_notification";
 
         /**
          * Whether or not the automatic storage manager is enabled and should run on the device.
