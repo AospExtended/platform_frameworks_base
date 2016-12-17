@@ -1264,10 +1264,7 @@ class MountService extends IMountService.Stub
     }
 
     private void onVolumeCreatedLocked(VolumeInfo vol) {
-        // power off alarm need the access to external storage for audio files.
-        // So in power off alarm mode, primary storage need to be mounted.
-        boolean isAlarmBoot = SystemProperties.getBoolean("ro.alarm_boot", false);
-        if (mPms.isOnlyCoreApps() && !isAlarmBoot) {
+        if (mPms.isOnlyCoreApps()) {
             Slog.d(TAG, "System booted in core-only mode; ignoring volume " + vol.getId());
             return;
         }

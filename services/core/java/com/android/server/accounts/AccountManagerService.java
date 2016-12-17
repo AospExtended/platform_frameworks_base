@@ -83,7 +83,6 @@ import android.os.RemoteCallback;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemClock;
-import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.os.storage.StorageManager;
@@ -550,16 +549,6 @@ public class AccountManagerService
             Log.d(TAG, "validateAccountsInternal " + accounts.userId
                     + " isCeDatabaseAttached=" + accounts.openHelper.isCeDatabaseAttached()
                     + " userLocked=" + mLocalUnlockedUsers.get(accounts.userId));
-        }
-
-        // When OnUserUnlocked or onServiceChanged, this function will be
-        // called. It is not necessary to validate accounts during alarm boot as
-        // only power off alarm apps are installed. The applications with
-        // sync accounts may not be installed during alarm boot. If the applications
-        // are not installed, the AccountAuthenticators of these applications
-        // will not exist. Then the accounts of the applications will be removed.
-        if (SystemProperties.getBoolean("ro.alarm_boot", false)) {
-            return;
         }
 
         if (invalidateAuthenticatorCache) {

@@ -105,7 +105,6 @@ import android.annotation.NonNull;
 import android.annotation.Nullable;
 import android.app.ActivityManager;
 import android.app.ActivityManagerNative;
-import android.app.AlarmManager;
 import android.app.IActivityManager;
 import android.app.ResourcesManager;
 import android.app.admin.IDevicePolicyManager;
@@ -544,13 +543,11 @@ public class PackageManagerService extends IPackageManager.Stub {
     final Context mContext;
     final boolean mFactoryTest;
     final boolean mOnlyCore;
-    private boolean mOnlyPowerOffAlarm = false;
     final DisplayMetrics mMetrics;
     final int mDefParseFlags;
     final String[] mSeparateProcesses;
     final boolean mIsUpgrade;
     final boolean mIsPreNUpgrade;
-    final boolean mIsAlarmBoot;
     final boolean mIsPreNMR1Upgrade;
 
     @GuardedBy("mPackages")
@@ -2111,28 +2108,6 @@ public class PackageManagerService extends IPackageManager.Stub {
         mSettings.addSharedUserLPw("android.uid.shell", SHELL_UID,
                 ApplicationInfo.FLAG_SYSTEM, ApplicationInfo.PRIVATE_FLAG_PRIVILEGED);
 
-        File setFile = new File(AlarmManager.POWER_OFF_ALARM_SET_FILE);
-        File handleFile = new File(AlarmManager.POWER_OFF_ALARM_HANDLE_FILE);
-        mIsAlarmBoot = SystemProperties.getBoolean("ro.alarm_boot", false);
-        if (mIsAlarmBoot) {
-            mOnlyPowerOffAlarm = true;
-        } else if (setFile.exists() && handleFile.exists()) {
-            // if it is normal boot, check if power off alarm is handled. And set
-            // alarm properties for others to check.
-            if (!mOnlyCore && AlarmManager
-                    .readPowerOffAlarmFile(AlarmManager.POWER_OFF_ALARM_HANDLE_FILE)
-                    .equals(AlarmManager.POWER_OFF_ALARM_HANDLED)) {
-                SystemProperties.set("ro.alarm_handled", "true");
-                File instanceFile = new File(AlarmManager.POWER_OFF_ALARM_INSTANCE_FILE);
-                String instanceValue = AlarmManager
-                        .readPowerOffAlarmFile(AlarmManager.POWER_OFF_ALARM_INSTANCE_FILE);
-                SystemProperties.set("ro.alarm_instance", instanceValue);
-
-                AlarmManager.writePowerOffAlarmFile(AlarmManager.POWER_OFF_ALARM_HANDLE_FILE,
-                        AlarmManager.POWER_OFF_ALARM_NOT_HANDLED);
-            }
-        }
-
         String separateProcesses = SystemProperties.get("debug.separate_processes");
         if (separateProcesses != null && separateProcesses.length() > 0) {
             if ("*".equals(separateProcesses)) {
@@ -2749,11 +2724,7 @@ public class PackageManagerService extends IPackageManager.Stub {
                         PackageManager.SYSTEM_SHARED_LIBRARY_SHARED);
             } else {
                 mRequiredVerifierPackage = null;
-                if (mOnlyPowerOffAlarm) {
-                    mRequiredInstallerPackage = getRequiredInstallerLPr();
-                } else {
-                    mRequiredInstallerPackage = null;
-                }
+                mRequiredInstallerPackage = null;
                 mRequiredUninstallerPackage = null;
                 mIntentFilterVerifierComponent = null;
                 mIntentFilterVerifier = null;
@@ -6874,10 +6845,9 @@ public class PackageManagerService extends IPackageManager.Stub {
     private PackageParser.Package scanPackageLI(File scanFile, int parseFlags, int scanFlags,
             long currentTime, UserHandle user) throws PackageManagerException {
         if (DEBUG_INSTALL) Slog.d(TAG, "Parsing: " + scanFile);
-        PackageParser pp = new PackageParser(mContext);
+        PackageParser pp = new PackageParser();
         pp.setSeparateProcesses(mSeparateProcesses);
         pp.setOnlyCoreApps(mOnlyCore);
-        pp.setOnlyPowerOffAlarmApps(mOnlyPowerOffAlarm);
         pp.setDisplayMetrics(mMetrics);
 
         Trace.traceBegin(TRACE_TAG_PACKAGE_MANAGER, "parsePackage");
@@ -18255,34 +18225,32 @@ Slog.v(TAG, ":: stepped forward, applying functor at tag " + parser.getName());
         int[] grantPermissionsUserIds = EMPTY_INT_ARRAY;
 
         synchronized (mPackages) {
-            if (!mIsAlarmBoot) {
-                // Verify that all of the preferred activity components actually
-                // exist.  It is possible for applications to be updated and at
-                // that point remove a previously declared activity component that
-                // had been set as a preferred activity.  We try to clean this up
-                // the next time we encounter that preferred activity, but it is
-                // possible for the user flow to never be able to return to that
-                // situation so here we do a sanity check to make sure we haven't
-                // left any junk around.
-                ArrayList<PreferredActivity> removed = new ArrayList<PreferredActivity>();
-                for (int i=0; i<mSettings.mPreferredActivities.size(); i++) {
-                    PreferredIntentResolver pir = mSettings.mPreferredActivities.valueAt(i);
-                    removed.clear();
-                    for (PreferredActivity pa : pir.filterSet()) {
-                        if (mActivities.mActivities.get(pa.mPref.mComponent) == null) {
-                            removed.add(pa);
-                        }
+            // Verify that all of the preferred activity components actually
+            // exist.  It is possible for applications to be updated and at
+            // that point remove a previously declared activity component that
+            // had been set as a preferred activity.  We try to clean this up
+            // the next time we encounter that preferred activity, but it is
+            // possible for the user flow to never be able to return to that
+            // situation so here we do a sanity check to make sure we haven't
+            // left any junk around.
+            ArrayList<PreferredActivity> removed = new ArrayList<PreferredActivity>();
+            for (int i=0; i<mSettings.mPreferredActivities.size(); i++) {
+                PreferredIntentResolver pir = mSettings.mPreferredActivities.valueAt(i);
+                removed.clear();
+                for (PreferredActivity pa : pir.filterSet()) {
+                    if (mActivities.mActivities.get(pa.mPref.mComponent) == null) {
+                        removed.add(pa);
                     }
-                    if (removed.size() > 0) {
-                        for (int r=0; r<removed.size(); r++) {
-                            PreferredActivity pa = removed.get(r);
-                            Slog.w(TAG, "Removing dangling preferred activity: "
-                                    + pa.mPref.mComponent);
-                            pir.removeFilter(pa);
-                        }
-                        mSettings.writePackageRestrictionsLPr(
-                                mSettings.mPreferredActivities.keyAt(i));
+                }
+                if (removed.size() > 0) {
+                    for (int r=0; r<removed.size(); r++) {
+                        PreferredActivity pa = removed.get(r);
+                        Slog.w(TAG, "Removing dangling preferred activity: "
+                                + pa.mPref.mComponent);
+                        pir.removeFilter(pa);
                     }
+                    mSettings.writePackageRestrictionsLPr(
+                            mSettings.mPreferredActivities.keyAt(i));
                 }
             }
 
