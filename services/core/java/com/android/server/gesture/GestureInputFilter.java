@@ -49,10 +49,9 @@ public class GestureInputFilter implements IInputFilter, GestureDetector.OnGestu
 
     private GestureDetector mGestureDetector;
     private InputManager mInputManager;
-    private OrientationEventListener mOrientationListener;
     private final int mScreenWidth, mScreenHeight;
     private float mGesturePadWidth, mGesturePadHeight;
-    private int mTouchSlop, mOrientation;
+    private int mTouchSlop;
     private Context mContext;
     private PendingIntent mLongPressPendingIntent;
     private PendingIntent mDoubleClickPendingIntent;
@@ -77,15 +76,6 @@ public class GestureInputFilter implements IInputFilter, GestureDetector.OnGestu
         mScreenHeight = display.getHeight();
         mGestureDetector = new GestureDetector(context, this);
         mGestureDetector.setOnDoubleTapListener(this);
-        mOrientationListener = new OrientationEventListener(context) {
-            @Override
-            public void onOrientationChanged(int orientation) {
-                if (orientation == -1) {
-                    return;
-                }
-                mOrientation = (orientation + 45) / 90 * 90;
-            }
-        };
     }
 
     /**
@@ -125,7 +115,6 @@ public class GestureInputFilter implements IInputFilter, GestureDetector.OnGestu
             Slog.d(TAG, "Gesture input filter installed.");
         }
         mHost = host;
-        mOrientationListener.enable();
     }
 
     // called by the input dispatcher thread
@@ -134,7 +123,6 @@ public class GestureInputFilter implements IInputFilter, GestureDetector.OnGestu
             Slog.d(TAG, "Gesture input filter uninstalled.");
         }
         mHost = null;
-        mOrientationListener.disable();
         mContext = null;
     }
 
@@ -149,28 +137,6 @@ public class GestureInputFilter implements IInputFilter, GestureDetector.OnGestu
     }
 
     private boolean generateSwipe(MotionEvent e1, MotionEvent e2) {
-        switch (mOrientation) {
-        case 90:
-            Slog.d(TAG, "Adjusting motion for 90 degrees");
-            e1.setLocation(e1.getY(), e1.getX());
-            e2.setLocation(e2.getY(), e2.getX());
-            break;
-        case 180:
-            Slog.d(TAG, "Adjusting motion for 180 degrees");
-            e1.setLocation(mGesturePadWidth - e1.getX(),
-                    mGesturePadHeight - e1.getY());
-            e2.setLocation(mGesturePadWidth - e2.getX(),
-                    mGesturePadHeight - e2.getY());
-            break;
-        case 270:
-            Slog.d(TAG, "Adjusting motion for 270 degrees");
-            e1.setLocation(mGesturePadHeight - e1.getY(),
-                    e1.getX());
-            e2.setLocation(mGesturePadHeight - e2.getY(),
-                    e2.getX());
-            break;
-        }
-
         float deltaX = Math.abs(e1.getX() - e2.getX());
         float deltaY = Math.abs(e1.getY() - e2.getY());
 
