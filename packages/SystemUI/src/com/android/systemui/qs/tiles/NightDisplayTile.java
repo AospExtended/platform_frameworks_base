@@ -39,12 +39,8 @@ public class NightDisplayTile extends QSTile<QSTile.BooleanState>
 
     private NightDisplayController mController;
     private boolean mIsListening;
-    private float userAutoVal = Settings.System.getFloatForUser(mContext.getContentResolver(),
-                                                        Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, 0,
-                                                        UserHandle.USER_CURRENT);
-    private int userManualVal = Settings.System.getIntForUser(mContext.getContentResolver(),
-                                                        Settings.System.SCREEN_BRIGHTNESS, 0,
-                                                        UserHandle.USER_CURRENT);
+    private float userAutoVal;
+    private int userManualVal;
     private boolean mAutomaticBrightness;
     private int customVal;
     private float autoVal;
@@ -68,6 +64,9 @@ public class NightDisplayTile extends QSTile<QSTile.BooleanState>
     private void setBrightness(boolean activated) {
             if (activated) {
                 updateBrightnessModeValues();
+            }
+            if (customVal == 3) {
+                return;
             }
             try {
                 IPowerManager power = IPowerManager.Stub.asInterface(
@@ -135,6 +134,8 @@ public class NightDisplayTile extends QSTile<QSTile.BooleanState>
                 autoVal = -1f;
                 manualVal = 0;
                 break;
+            case 3:
+                break;
             default:
                 autoVal = -0.33f;
                 manualVal = 40;
@@ -142,20 +143,12 @@ public class NightDisplayTile extends QSTile<QSTile.BooleanState>
         }
     }
 
-    public boolean isAutoNightTileEnabled() {
-        return Settings.Secure.getInt(mContext.getContentResolver(),
-            Settings.Secure.QS_NIGHT_BRIGHTNESS_TOGGLE, 0) == 1;
-    }
-
     @Override
     protected void handleClick() {
         final boolean activated = !mState.value;
         MetricsLogger.action(mContext, getMetricsCategory(), activated);
         mController.setActivated(activated);
-        boolean autoNightTile = isAutoNightTileEnabled();
-        if (autoNightTile) {
-            setBrightness(activated);
-        }
+        setBrightness(activated);
     }
 
     @Override
