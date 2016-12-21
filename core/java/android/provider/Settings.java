@@ -4350,6 +4350,12 @@ public final class Settings {
         public static final String STATUS_BAR_CARRIER_FONT_SIZE = "status_bar_carrier_font_size";
 
         /**
+          * show the membar in recents
+          *  @hide
+          */
+        public static final String SYSTEMUI_RECENTS_MEM_DISPLAY = "systemui_recents_mem_display";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
