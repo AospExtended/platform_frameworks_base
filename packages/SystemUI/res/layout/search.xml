@@ -24,4 +24,3 @@
     android:scaleType="center"
     systemui:keyCode="84"
     android:contentDescription="@string/accessibility_key" />
-
