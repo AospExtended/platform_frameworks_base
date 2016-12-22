@@ -25,11 +25,13 @@ import android.widget.ImageView;
 
 import com.android.systemui.statusbar.phone.StatusBarIconController;
 import com.android.systemui.statusbar.policy.BatteryController;
+import com.android.systemui.tuner.TunerService;
 
 public class BatteryMeterView extends ImageView implements
-        BatteryController.BatteryStateChangeCallback {
+        BatteryController.BatteryStateChangeCallback, TunerService.Tunable {
 
     private final BatteryMeterDrawable mDrawable;
+    private final String mSlotBattery;
     private BatteryController mBatteryController;
 
     public BatteryMeterView(Context context) {
@@ -50,6 +52,8 @@ public class BatteryMeterView extends ImageView implements
         mDrawable = new BatteryMeterDrawable(context, new Handler(), frameColor);
         atts.recycle();
 
+        mSlotBattery = context.getString(
+                com.android.internal.R.string.status_bar_battery);
         setImageDrawable(mDrawable);
     }
 
@@ -59,21 +63,27 @@ public class BatteryMeterView extends ImageView implements
     }
 
     @Override
+    public void onTuningChanged(String key, String newValue) {
+        if (StatusBarIconController.ICON_BLACKLIST.equals(key)) {
+            ArraySet<String> icons = StatusBarIconController.getIconBlacklist(newValue);
+            setVisibility(icons.contains(mSlotBattery) ? View.GONE : View.VISIBLE);
+        }
+    }
+
+    @Override
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if (mBatteryController != null) {
-            mBatteryController.addStateChangedCallback(this);
-            mDrawable.startListening();
-        }
+        mBatteryController.addStateChangedCallback(this);
+        mDrawable.startListening();
+        TunerService.get(getContext()).addTunable(this, StatusBarIconController.ICON_BLACKLIST);
     }
 
     @Override
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        if (mBatteryController != null) {
-            mBatteryController.removeStateChangedCallback(this);
-            mDrawable.stopListening();
-        }
+        mBatteryController.removeStateChangedCallback(this);
+        mDrawable.stopListening();
+        TunerService.get(getContext()).removeTunable(this);
     }
 
     @Override

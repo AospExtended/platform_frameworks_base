@@ -16,10 +16,4 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Battery styles -->
-    <string name="battery_style_text">Text only</string>
-    <string name="battery_style_default">Default</string>
-    <string name="battery_style_meter_horizontal">Horizontal bar</string>
-    <string name="battery_style_circle">Circle</string>
-
 </resources>
