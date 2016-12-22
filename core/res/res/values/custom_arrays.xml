@@ -160,21 +160,6 @@
         <item>@string/app_ops_su</item>
     </string-array>
 
-    <!-- Battery styles -->
-    <string-array name="entries_battery_styles" translatable="false">
-        <item>@string/battery_style_default</item>
-        <item>@string/battery_style_meter_horizontal</item>
-        <item>@string/battery_style_circle</item>
-        <item>@string/battery_style_text</item>
-    </string-array>
-
-    <string-array name="values_battery_styles" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-
     <!-- Do not translate. Defines the mapping of notification package names
          from the actual triggering package to the user selectable package.
          E.g. GTalk notifications come via Google Services Framework

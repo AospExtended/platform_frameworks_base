@@ -3486,41 +3486,6 @@ public final class Settings {
 
         /** @hide */
         public static final Validator NOTIFICATION_LIGHT_PULSE_VALIDATOR = sBooleanValidator;
-        
-        /**
-         * Int value of the battery style 0 is default
-         *    
-         * @hide
-         */
-        public static final String STATUSBAR_BATTERY_STYLE = "statusbar_battery_style";
-
-        /**
-         * int value if the battery percent should be shown never/always/expanded
-         *
-         * @hide
-         */
-        public static final String STATUSBAR_BATTERY_PERCENT = "statusbar_battery_percent";
-
-        /**
-         * boolean value if the battery percent should be shown inside the image
-         *
-         * @hide
-         */
-        public static final String STATUSBAR_BATTERY_PERCENT_INSIDE = "statusbar_battery_percent_inside";
-
-        /**
-         * boolean value if the charging flash should be displayed
-         *
-         * @hide
-         */
-        public static final String STATUSBAR_BATTERY_CHARGING_IMAGE = "statusbar_battery_charging_image";
-
-        /**
-         * when to show battery - values are 0/none 1/always 2/expanded default is 1/always
-         *
-         * @hide
-         */
-        public static final String STATUSBAR_BATTERY_ENABLE = "statusbar_battery_enable";
 
         /**
          * What color to use for the notification LED by default

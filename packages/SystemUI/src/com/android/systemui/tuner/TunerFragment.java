@@ -38,6 +38,8 @@ public class TunerFragment extends PreferenceFragment {
 
     private static final String SHOW_LTE_FOURGEE = "show_lte_fourgee";
 
+    private static final String KEY_BATTERY_PCT = "battery_pct";
+
     private SwitchPreference mShowLteFourGee;
 
     @Override
