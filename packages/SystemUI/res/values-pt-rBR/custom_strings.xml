@@ -13,13 +13,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_hspap">HSPA+</string>
 
-    <!-- Content description of the light brightness slider (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_notification_brightness">Brilho da luz</string>
+    <!-- Screenrecord Notification Ticker -->
+    <string name="screenrecord_notif_ticker">A tela está sendo gravada.</string>
+    <!-- Screenrecord notification title -->
+    <string name="screenrecord_notif_title">Gravando tela</string>
+    <!-- Screenrecord notification action: Stop -->
+    <string name="screenrecord_notif_stop">Parar</string>
+    <!-- Screenrecord notification action: show/hide pointer -->
+    <string name="screenrecord_notif_pointer_on">Mostrar o ponteiro</string>
+    <string name="screenrecord_notif_pointer_off">Ocultar o ponteiro</string>
+    <!-- Screen record notification error title -->
+    <string name="screenrecord_notif_error">Não foi possível gravar a tela</string>
 
-    <!-- Lights settings, LED notification -->
-    <string name="led_notification_title">Configurações de luz</string>
-    <string name="led_notification_text">Luz LED ativado por configurações</string>
+    <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">A captura de tela foi excluída</string>
+
+    <!-- NavBar Tuner -->
+    <string name="menu_ime_always_show">Menu / Alternador de teclado (Sempre mostrar)</string>
+    <string name="search">Pesquisar</string>
 
     <!-- Content description of the Superuser tile -->
     <string name="accessibility_su_active">Sessão superusuário ativa</string>
@@ -33,5 +47,4 @@
     <string name="lockscreen_choose_action_title">Escolher ação</string>
     <string name="lockscreen_none_target">Nenhum</string>
 
-     
 </resources>
