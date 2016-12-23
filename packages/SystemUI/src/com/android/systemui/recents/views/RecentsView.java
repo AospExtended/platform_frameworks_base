@@ -339,6 +339,12 @@ public class RecentsView extends FrameLayout {
         if (mFloatingButton != null) {
             mFloatingButton.setVisibility(View.GONE);
         }
+        setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EventBus.getDefault().send(new ToggleRecentsEvent());
+            }
+        });
     }
 
     /**
@@ -379,6 +385,7 @@ public class RecentsView extends FrameLayout {
                 .setInterpolator(Interpolators.ALPHA_OUT)
                 .withLayer()
                 .start();
+        setOnClickListener(null);
     }
 
     @Override
