@@ -205,6 +205,7 @@
     <!-- Ambient Display Pixel-Like string -->
     <string name="ambientmusic_songinfo">%s by %s</string>
 
+    <string name="recents_free_ram">Free RAM: %1$d MB</string>
 </resources>
 
 
