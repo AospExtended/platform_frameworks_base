@@ -104,4 +104,8 @@
     <string name="battery_bigcircle_path" translatable="false">M 12,0.9999999 C 18.075132,0.9999999 23,5.9248678 23,12 23,18.075132 18.075132,23 12,23 5.9248675,23 0.99999975,18.075132 0.99999975,12 0.99999975,5.9248678 5.9248675,0.9999999 12,0.9999999 Z</string>
 	
 	<string name="recents_free_ram">Free RAM: %1$d MB</string>
+
+    <!-- Path data for circle battery -->
+    <string name="battery_circle_full" translatable="false">M 12 2 C 17.5228474983 2 22 6.47715250169 22 12 C 22 17.5228474983 17.5228474983 22 12 22 C 6.47715250169 22 2 17.5228474983 2 12 C 2 6.47715250169 6.47715250169 2 12 2 Z</string>
+    <string name="battery_circle_empty" translatable="false">M 12 12 C 12 12 12 12 12 12 C 12 12 12 12 12 12 C 12 12 12 12 12 12 C 12 12 12 12 12 12 Z</string>
 </resources>
