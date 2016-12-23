@@ -38,15 +38,19 @@
   <string name="accessibility_quick_settings_usb_tether_changed_on">O compartilhamento USB foi ligado</string>
   <string name="quick_settings_usb_tether_label">Compartilhamento USB</string>
   <string name="quick_settings_music_label">Música</string>
-  <string name="quick_settings_music_play">Play</string>
+  <string name="quick_settings_music_play">Tocar</string>
   <string name="quick_settings_music_pause">Pausar</string>
   <string name="quick_settings_ime_tile_label">Método de entrada</string>
   <string name="quick_settings_caffeine_label">Cafeína</string>
   <string name="accessibility_quick_settings_caffeine_off">Cafeína desligada</string>
   <string name="accessibility_quick_settings_caffeine_on">Cafeína ligada</string>
+  <string name="quick_settings_heads_up_label">Heads up</string>
+  <string name="accessibility_quick_settings_heads_up_off">Heads up desligado.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Heads up ligado.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Heads up foi desligado.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Heads up foi ligado.</string>
   <!-- SystemUI Tuner Parts -->
   <string name="systemui_tuner_statusbar_title">Itens da barra de status</string>
-  <string name="systemui_tuner_nightmode_title">Modo noturno</string>
 
   <!-- Show lte/4g switch -->
   <string name="show_lte_fourgee_title">Mostrar 4G ao invés de LTE</string>
@@ -63,5 +67,15 @@
   <!-- Screenshot action -->
   <string name="screenshot_abort_title">Nenhuma captura de tela tirada</string>
   <string name="screenshot_abort_text">Operação abortada</string>
+
+  <string name="quick_settings_expanded_desktop_label">Área de trabalho expandida</string>
+  <string name="quick_settings_expanded_desktop">Expandida</string>
+  <string name="quick_settings_expanded_desktop_off">Normal</string>
+
+  <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - As notificações estão dormindo durante 1 minuto.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - As notificações estão dormindo durante <xliff:g id="number">%d</xliff:g> minutos.</string>
+	
+  <string name="recents_free_ram">Memória RAM Livre: %1$d MB</string>
 
 </resources>
