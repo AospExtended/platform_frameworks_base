@@ -69,6 +69,7 @@ import android.util.Log;
 import android.util.Slog;
 import android.util.TimeUtils;
 import android.util.TypedValue;
+import android.util.BoostFramework;
 import android.view.Surface.OutOfResourcesException;
 import android.view.View.AttachInfo;
 import android.view.View.MeasureSpec;
@@ -407,6 +408,12 @@ public final class ViewRootImpl implements ViewParent,
     }
 
     private String mTag = TAG;
+    boolean mHaveMoveEvent = false;
+    boolean mIsPerfLockAcquired = false;
+    boolean mIsPreFlingBoostEnabled = false;
+    BoostFramework mPerf = null;
+    int mPreFlingBoostTimeOut = 0;
+    int mPreFlingBoostParamVal[];
 
     public ViewRootImpl(Context context, Display display) {
         mContext = context;
@@ -444,6 +451,15 @@ public final class ViewRootImpl implements ViewParent,
         mFallbackEventHandler = new PhoneFallbackEventHandler(context);
         mChoreographer = Choreographer.getInstance();
         mDisplayManager = (DisplayManager)context.getSystemService(Context.DISPLAY_SERVICE);
+        mIsPreFlingBoostEnabled = context.getResources().getBoolean(
+                com.android.internal.R.bool.config_enableCpuBoostForPreFling);
+        if (mIsPreFlingBoostEnabled) {
+            mPerf = new BoostFramework();
+            mPreFlingBoostTimeOut = context.getResources().getInteger(
+                    com.android.internal.R.integer.preflingboost_timeout_param);
+            mPreFlingBoostParamVal = context.getResources().getIntArray(
+                    com.android.internal.R.array.preflingboost_param_value);
+        }
         loadSystemProperties();
     }
 
@@ -2683,6 +2699,10 @@ public final class ViewRootImpl implements ViewParent,
         scrollToRectOrFocus(null, false);
 
         if (mAttachInfo.mViewScrollChanged) {
+            if (mHaveMoveEvent && !mIsPerfLockAcquired && mPerf != null) {
+                mIsPerfLockAcquired = true;
+                mPerf.perfLockAcquire(mPreFlingBoostTimeOut, mPreFlingBoostParamVal);
+            }
             mAttachInfo.mViewScrollChanged = false;
             mAttachInfo.mTreeObserver.dispatchOnScrollChanged();
         }
@@ -4442,6 +4462,13 @@ public final class ViewRootImpl implements ViewParent,
                             mCapturingView : mView;
             mAttachInfo.mHandlingPointerEvent = true;
             boolean handled = eventTarget.dispatchPointerEvent(event);
+            int action = event.getActionMasked();
+            if (action == MotionEvent.ACTION_MOVE) {
+                mHaveMoveEvent = true;
+            } else if (action == MotionEvent.ACTION_UP) {
+                mHaveMoveEvent = false;
+                mIsPerfLockAcquired = false;
+            }
             maybeUpdatePointerIcon(event);
             mAttachInfo.mHandlingPointerEvent = false;
             if (mAttachInfo.mUnbufferedDispatchRequested && !mUnbufferedInputDispatch) {
