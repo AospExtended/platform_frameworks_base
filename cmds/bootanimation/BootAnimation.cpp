@@ -401,32 +401,6 @@ status_t BootAnimation::readyToRun() {
         mZipFileName = SYSTEM_BOOTANIMATION_FILE;
     }
 
-#ifdef PRELOAD_BOOTANIMATION
-    // Preload the bootanimation zip on memory, so we don't stutter
-    // when showing the animation
-    FILE* fd;
-    if (encryptedAnimation && access(getAnimationFileName(IMG_ENC), R_OK) == 0)
-        fd = fopen(getAnimationFileName(IMG_ENC), "r");
-    else if (access(getAnimationFileName(IMG_OEM), R_OK) == 0)
-        fd = fopen(getAnimationFileName(IMG_OEM), "r");
-    else if (access(getAnimationFileName(IMG_SYS), R_OK) == 0)
-        fd = fopen(getAnimationFileName(IMG_SYS), "r");
-    else
-        return NO_ERROR;
-
-    if (fd != NULL) {
-        // Since including fcntl.h doesn't give us the wrapper, use the syscall.
-        // 32 bits takes LO/HI offset (we don't care about endianness of 0).
-#if defined(__aarch64__) || defined(__x86_64__)
-        if (syscall(__NR_readahead, fd, 0, INT_MAX))
-#else
-        if (syscall(__NR_readahead, fd, 0, 0, INT_MAX))
-#endif
-            ALOGW("Unable to cache the animation");
-        fclose(fd);
-    }
-#endif
-
     return NO_ERROR;
 }
 
