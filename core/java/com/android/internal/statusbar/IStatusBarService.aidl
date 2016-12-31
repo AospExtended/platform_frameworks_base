@@ -82,4 +82,5 @@ interface IStatusBarService
      * Aex
      */
     void toggleCameraFlash();
+    void restartUI();
 }
