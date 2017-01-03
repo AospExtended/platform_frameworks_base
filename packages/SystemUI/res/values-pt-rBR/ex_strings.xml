@@ -23,7 +23,7 @@
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">A captura de tela foi excluída</string>
   <!-- SystemUI Tuner Parts -->
-  <string name="systemui_tuner_pnc_title">Controles de notificação de energia</string>
+  <string name="systemui_tuner_pnc_title">Controles poderosos de notificação</string>
   <!-- Quick Settings tiles -->
   <string name="quick_settings_screenshot_label">Capturar Tela</string>
   <string name="quick_settings_sync_label">Sincronizar</string>
