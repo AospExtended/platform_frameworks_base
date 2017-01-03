@@ -6,7 +6,7 @@
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
 
-          http://www.apache.org/licenses/LICENSE-2.0
+            http://www.apache.org/licenses/LICENSE-2.0
 
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
@@ -95,5 +95,25 @@
     <string name="app_ops_run_in_background">executar em segundo plano</string>
     <string name="app_ops_wifi_change">mudar o estado do WiFi</string>
     <string name="app_ops_su">obter acesso root</string>
+
+    <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
+    <string name="system_error_vendorprint">Sua imagem de fornecedor não coincide com o sistema. Por favor faça o flash da imagem de fornecedor de <xliff:g id="string">%s </xliff:g> para o seu dispositivo</string>
+
+    <!-- AOKP custom system animations -->
+    <string name="animation_fade">Esmaecer</string>
+    <string name="animation_slide_right">Deslizar para direita</string>
+    <string name="animation_slide_left">Deslize para a esquerda</string>
+    <string name="animation_slide_right_no_fade">Deslize para direita (Sem desvanecer)</string>
+    <string name="animation_slide_left_no_fade">Deslize para esquerda(Sem desvanecer)</string>
+    <string name="animation_slide_up">Deslize para baixo</string>
+    <string name="animation_slide_down">Deslize para cima</string>
+    <string name="animation_default">Padrão</string>
+    <string name="animation_translucent">Translúcido</string>
+    <string name="animation_grow_shrink">Crescer no (Topo)</string>
+    <string name="animation_grow_shrink_center">Crescer no (Centro)</string>
+    <string name="animation_grow_shrink_bottom">Crescer na (Parte inferior)</string>
+    <string name="animation_grow_shrink_left">Crescer (À Esquerda)</string>
+    <string name="animation_grow_shrink_right">Crescer (À Direita)</string>
+    <string name="action_null">Em branco</string>
 
 </resources>
