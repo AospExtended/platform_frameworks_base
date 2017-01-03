@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016 AospExtended ROM Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+ 
+  <!-- Privacy Guard -->
+  <string name="permlab_changePrivacyGuardState">attiva o disattiva Privacy Guard</string>
+  <string name="permdesc_changePrivacyGuardState">Quando un\'app è avviata con Privacy Guard, non avrà accesso a dati personali come contatti, cronologia chiamate o messaggi.</string>
+  <string name="privacy_guard_notification">Privacy Guard attivo</string>
+  <string name="privacy_guard_notification_detail"><xliff:g id="app">%1$s</xliff:g> non potrà accedere ai dati personali</string>
+  <string name="privacy_guard_dialog_title">Privacy Guard</string>
+  <string name="privacy_guard_dialog_summary"><xliff:g id="app">%1$s</xliff:g> vorrebbe <xliff:g id="op">%2$s</xliff:g>.</string>
+
+  <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
+  <string name="permission_remember_choice">Ricorda</string>
+  <string name="permission">Autorizzazione</string>
+
+  <!-- App ops requests -->
+  <string name="app_ops_access_camera">accesso alla fotocamera</string>
+  <string name="app_ops_access_location">accesso alla posizione</string>
+  <string name="app_ops_access_notifications">lettura delle notifiche</string>
+  <string name="app_ops_activate_vpn">attivare una VPN</string>
+  <string name="app_ops_auto_start">avviarsi all\'accensione</string>
+  <string name="app_ops_delete_call_log">eliminazione del registro chiamate</string>
+  <string name="app_ops_delete_contacts">eliminazione di un contatto</string>
+  <string name="app_ops_delete_mms">eliminazione di un messaggio SMS</string>
+  <string name="app_ops_delete_sms">eliminazione di un messaggio SMS</string>
+  <string name="app_ops_draw_on_top">mantieni in primo piano</string>
+  <string name="app_ops_get_usage_stats">accedere alle statistiche d\'uso</string>
+  <string name="app_ops_keep_device_awake">mantieni attivo il dispositivo</string>
+  <string name="app_ops_make_phone_call">effettua una chiamata</string>
+  <string name="app_ops_modify_calendar">aggiornamento del calendario</string>
+  <string name="app_ops_modify_call_log">aggiornamento del registro chiamate</string>
+  <string name="app_ops_modify_clipboard">modifica degli appunti</string>
+  <string name="app_ops_modify_contacts">aggiornamento dei contatti</string>
+  <string name="app_ops_modify_settings">aggiornamento delle impostazioni di sistema</string>
+  <string name="app_ops_mute_unmute_microphone">attivare/disattivare il microfono</string>
+  <string name="app_ops_play_audio">riproduzione audio</string>
+  <string name="app_ops_post_notification">invio di una notifica</string>
+  <string name="app_ops_project_media">controllo multimediale</string>
+  <string name="app_ops_read_calendar">lettura del calendario</string>
+  <string name="app_ops_read_call_log">lettura del registro chiamate</string>
+  <string name="app_ops_read_clipboard">lettura degli appunti</string>
+  <string name="app_ops_read_contacts">lettura dei contatti</string>
+  <string name="app_ops_read_mms">lettura dei messaggi MMS</string>
+  <string name="app_ops_read_sms">lettura dei messaggi SMS</string>
+  <string name="app_ops_receive_sms">ricezione di un messaggio SMS</string>
+  <string name="app_ops_record_audio">registrazione audio</string>
+  <string name="app_ops_send_mms">invio di un messaggio MMS</string>
+  <string name="app_ops_send_sms">invio di un messaggio SMS</string>
+  <string name="app_ops_start_at_bootup">avvio all\'accensione</string>
+  <string name="app_ops_toast_window">controllo dei messaggi a comparsa</string>
+  <string name="app_ops_toggle_bluetooth">modifica stato del Bluetooth</string>
+  <string name="app_ops_toggle_mobile_data">modifica stato dei dati mobili</string>
+  <string name="app_ops_toggle_nfc">modifica stato NFC</string>
+  <string name="app_ops_toggle_wifi">modifica stato del Wi-Fi</string>
+  <string name="app_ops_use_alarm_volume">controllo del volume della sveglia</string>
+  <string name="app_ops_use_audio_focus">controllare il focus audio</string>
+  <string name="app_ops_use_bluetooth_volume">controllare il volume Bluetooth</string>
+  <string name="app_ops_use_master_volume">controllo del volume principale</string>
+  <string name="app_ops_use_media_buttons">uso dei pulsanti multimediali</string>
+  <string name="app_ops_use_media_volume">controllo del volume multimediale</string>
+  <string name="app_ops_use_notification_volume">controllo del volume delle notifiche</string>
+  <string name="app_ops_use_ring_volume">controllo del volume della suoneria</string>
+  <string name="app_ops_use_vibrate">uso del feedback aptico</string>
+  <string name="app_ops_use_voice_volume">controllo del volume in chiamata</string>
+  <string name="app_ops_write_mms">scrittura di un messaggio MMS</string>
+  <string name="app_ops_write_sms">scrittura di un messaggio SMS</string>
+  <string name="app_ops_use_fingerprint">utilizza le impronte digitali</string>
+  <string name="app_ops_add_voicemail">aggiungi un messaggio vocale</string>
+  <string name="app_ops_read_phone_state">stato di accesso al telefono</string>
+  <string name="app_ops_scan_wifi">Scansione reti WiFi</string>
+  <string name="app_ops_change_wallpaper">cambia lo sfondo</string>
+  <string name="app_ops_assist_structure">utilizzare la struttura di assistenza</string>
+  <string name="app_ops_assist_screenshot">effettua screenshot</string>
+  <string name="app_ops_use_body_sensors">utilizzare sensori di corpo</string>
+  <string name="app_ops_read_cell_broadcasts">leggere le trasmissioni delle cellule</string>
+  <string name="app_ops_mock_location">accesso alla posizione</string>
+  <string name="app_ops_read_external_storage">leggi memoria esterna</string>
+  <string name="app_ops_write_external_storage">scrivi su memoria esterna</string>
+  <string name="app_ops_turn_on_screen">accendi lo schermo</string>
+  <string name="app_ops_get_accounts">otteni gli account del dispositivo</string>
+  <string name="app_ops_run_in_background">eseguito in background</string>
+  <string name="app_ops_wifi_change">modifica lo stato Wi-Fi</string>
+  <string name="app_ops_su">ottenere permessi SU</string>
+
+  <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
+  <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the <xliff:g id="string">%s</xliff:g> vendor image for your device</string>
+  
+  <string name="animation_fade">Dissolvenza</string>
+  <string name="animation_slide_right">Scorri verso destra</string>
+  <string name="animation_slide_left">Scorri verso sinistra</string>
+  <string name="animation_slide_right_no_fade">Scorri verso destra (nessuna dissolvenza)</string>
+  <string name="animation_slide_left_no_fade">Scorri verso sinistra (nessuna dissolvenza)</string>
+  <string name="animation_slide_up">Scorri in basso</string>
+  <string name="animation_slide_down">Scorri in alto</string>
+  <string name="animation_default">Predefinito</string>
+  <string name="animation_translucent">Traslucido</string>
+  <string name="animation_grow_shrink">Espandi (dall\'alto)</string>
+  <string name="animation_grow_shrink_center">Espandi (dal centro)</string>
+  <string name="animation_grow_shrink_bottom">Espandi (dal basso)</string>
+  <string name="animation_grow_shrink_left">Espandi (da sinistra)</string>
+  <string name="animation_grow_shrink_right">Espandi (da destra)</string>
+  <string name="action_null">Vuoto</string>
+  
+</resources>
