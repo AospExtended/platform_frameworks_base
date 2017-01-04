@@ -29,6 +29,8 @@ import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.util.ArraySet;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -584,11 +586,14 @@ public class OpaLayout extends FrameLayout implements ButtonInterface {
     }
 
     public boolean getOpaEnabled() {
-        return true; //mOpaEnabled
+	final boolean opaToggle = Settings.System.getIntForUser(this.getContext().getContentResolver(),
+            Settings.System.PIXEL_NAV_ANIMATION, 1, UserHandle.USER_CURRENT) == 1;
+	if (opaToggle) return true;
+	return false;
     }
 
     public void setOpaEnabled(boolean enabled) {
-        mOpaEnabled = enabled;
+	mOpaEnabled = enabled;
         updateOpaLayout();
     }
 
