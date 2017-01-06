@@ -1532,4 +1532,16 @@ please see styles_device_defaults.xml.
         <item name="padding">16dp</item>
     </style>
 
+    <!-- Exposed manifest styles -->
+    <style name="HeavyWeightSwitcherActivityTheme" parent="Theme.DeviceDefault.Light.Dialog" />
+    <style name="ChooseAccountActivityTheme" parent="Theme.DeviceDefault.Light.Dialog" />
+    <style name="ChooseTypeAndAccountActivityTheme" parent="Theme.DeviceDefault.Light.Dialog" />
+    <style name="ChooseAccountTypeActivityTheme" parent="Theme.DeviceDefault.Light.Dialog" />
+    <style name="CantAddAccountActivityTheme" parent="Theme.DeviceDefault.Light.Dialog.NoActionBar" />
+    <style name="GrantCredentialsPermissionActivityTheme" parent="Theme.DeviceDefault.Light.DialogWhenLarge" />
+    <style name="SyncActivityTooManyDeletesTheme" parent="Theme.DeviceDefault.Light.Dialog" />
+    <style name="NetInitiatedActivityTheme" parent="Theme.DeviceDefault.Light.Dialog.Alert" />
+    <style name="ConfirmUserCreationActivityTheme" parent="Theme.DeviceDefault.Light.Dialog.Alert" />
+    <style name="UnlaunchableAppActivityTheme" parent="Theme.DeviceDefault.Light.Dialog.Alert" />
+
 </resources>
