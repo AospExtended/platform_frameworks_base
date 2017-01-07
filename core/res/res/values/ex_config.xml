@@ -66,4 +66,7 @@
     <string-array name="config_vendorPlatformSignatures">
     </string-array>
 
+    <!-- Whether to show emergency button in power menu -->
+    <bool name="config_showEmergencyButtonInPowerMenu">false</bool>
+
 </resources>
