@@ -62,4 +62,7 @@
     <java-symbol type="string" name="reboot_title" />
     <java-symbol type="string" name="reboot_message" />
 
+    <!-- Emergency button in power menu -->
+    <java-symbol type="bool" name="config_showEmergencyButtonInPowerMenu" />
+
 </resources>
