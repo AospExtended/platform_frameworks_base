@@ -408,7 +408,8 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
             addedKeys.add(actionKey);
         }
 
-        if (mEmergencyAffordanceManager.needsEmergencyAffordance()) {
+        if (mEmergencyAffordanceManager.needsEmergencyAffordance() && mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_showEmergencyButtonInPowerMenu)) {
             mItems.add(new EmergencyAffordanceAction());
         }
 
