@@ -123,6 +123,7 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
     protected Vibrator mVibrator;
     private SparseBooleanArray mRoamingsBySubId = new SparseBooleanArray();
     private boolean mIsRoaming;
+    private HorizontalScrollView mQuickQsPanelScroller;
 
     private boolean hasSettingsIcon;
     private boolean hasEdit;
@@ -171,6 +172,8 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
         mExpandIndicator = (ExpandableIndicator) findViewById(R.id.expand_indicator);
 
         mHeaderQsPanel = (QuickQSPanel) findViewById(R.id.quick_qs_panel);
+        mQuickQsPanelScroller = (HorizontalScrollView) findViewById(R.id.quick_qs_panel_scroll);
+        mQuickQsPanelScroller.setHorizontalScrollBarEnabled(false);
 
         mSettingsButton = (SettingsButton) findViewById(R.id.settings_button);
         mSettingsContainer = findViewById(R.id.settings_button_container);
@@ -689,6 +692,14 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
                 mBackgroundImage.setForeground(null);
             }
         }
+        if (mHeaderQsPanel != null) {
+            mHeaderQsPanel.updateSettings();
+        }
+    }
+
+    @Override
+    public void onClosingFinished() {
+        mQuickQsPanelScroller.scrollTo(0, 0);
     }
 
     private void setQsPanelOffset() {

@@ -47,4 +47,7 @@
     <!-- Qs visibility -->
     <dimen name="qs_tile_height_wo_label">48dp</dimen>
 
+    <!-- QS scroller -->
+    <dimen name="qs_scroller_margin">12dp</dimen>
+
 </resources>
