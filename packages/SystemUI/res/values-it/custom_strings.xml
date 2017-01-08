@@ -47,4 +47,16 @@
     <string name="lockscreen_choose_action_title">Scegli azione</string>
     <string name="lockscreen_none_target">Vuoto</string>
     
+     <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Suono</string>
+    <string name="quick_settings_sound_ring">Suoneria</string>
+    <string name="quick_settings_sound_vibrate">Vibrazione</string>
+    <string name="quick_settings_sound_dnd">Non disturbare</string>
+
+    <!-- Ambient Display QS tile -->
+    <string name="accessibility_quick_settings_ambient_display_off">Ambient Display spento</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Ambient Display acceso</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient Display disattivato</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient Display attivato</string>
+    <string name="quick_settings_ambient_display_label">Ambient Display</string>
 </resources>
