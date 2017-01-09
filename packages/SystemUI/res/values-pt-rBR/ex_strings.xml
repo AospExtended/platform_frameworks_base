@@ -51,6 +51,14 @@
   <string name="accessibility_quick_settings_heads_up_on">Heads up ligado.</string>
   <string name="accessibility_quick_settings_heads_up_changed_off">Heads up foi desligado.</string>
   <string name="accessibility_quick_settings_heads_up_changed_on">Heads up foi ligado.</string>
+  <string name="quick_settings_pulse_enabled">Pulse ativado</string>
+  <string name="quick_settings_pulse_disabled">Sem visualizador</string>
+  <string name="quick_settings_pulse_label">Visualizador da barra de navegação</string>
+  <string name="quick_settings_nfc_label">NFC</string>
+  <string name="accessibility_quick_settings_nfc_off">NFC desligado</string>
+  <string name="accessibility_quick_settings_nfc_on">NFC ligado</string>
+  <string name="accessibility_quick_settings_nfc_changed_off">NFC desligado</string>
+  <string name="accessibility_quick_settings_nfc_changed_on">NFC ligado</string>
   <!-- SystemUI Tuner Parts -->
   <string name="systemui_tuner_statusbar_title">Itens da barra de status</string>
 
