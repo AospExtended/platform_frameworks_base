@@ -80,4 +80,9 @@
 	
   <string name="recents_free_ram">Memória RAM Livre: %1$d MB</string>
 
+  <!-- Wi-Fi hotspot label when enabled -->
+  <plurals name="wifi_hotspot_connected_clients_label">
+        <item quantity="one">%1$d dispositivo</item>
+        <item quantity="other">%1$d dispositivos</item>
+  </plurals>
 </resources>
