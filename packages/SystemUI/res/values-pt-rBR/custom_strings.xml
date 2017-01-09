@@ -47,4 +47,17 @@
     <string name="lockscreen_choose_action_title">Escolher ação</string>
     <string name="lockscreen_none_target">Nenhum</string>
 
+    <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Som</string>
+    <string name="quick_settings_sound_ring">Tocar</string>
+    <string name="quick_settings_sound_vibrate">Vibrar</string>
+    <string name="quick_settings_sound_dnd">Não pertube</string>
+
+    <!-- Ambient Display QS tile -->
+    <string name="accessibility_quick_settings_ambient_display_off">Tela ambiente habilitada</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Tela ambiente desabilitada</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Tela ambiente foi desabilitada</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Tela ambiente foi habilitada</string>
+    <string name="quick_settings_ambient_display_label">Tela ambiente</string>
+
 </resources>
