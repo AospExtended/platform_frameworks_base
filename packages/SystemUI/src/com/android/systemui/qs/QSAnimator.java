@@ -122,11 +122,7 @@ public class QSAnimator implements Callback, PageListener, Listener, OnLayoutCha
     public void onTuningChanged(String key, String newValue) {
         if (ALLOW_FANCY_ANIMATION.equals(key)) {
             mAllowFancy = newValue == null || Integer.parseInt(newValue) != 0;
-            boolean notScrolledBackup = mNotScrolled;
-            notScrolled();
-            if (!mAllowFancy && mNotScrolled == notScrolledBackup) {
-                // If mNotScrolled != notScrolledBackup, clearAnimationState() was already called
-                // during notScrolled()
+            if (!mAllowFancy) {
                 clearAnimationState();
             }
         } else if (MOVE_FULL_ROWS.equals(key)) {
@@ -174,7 +170,7 @@ public class QSAnimator implements Callback, PageListener, Listener, OnLayoutCha
             }
             final View label = ((QSTileView) tileView).getLabelParent();
             final View tileIcon = tileView.getIcon().getIconView();
-            if (count < mQuickQsPanel.getNumVisibleQuickTiles() && allowFancy()) {
+            if (count < mQuickQsPanel.getNumVisibleQuickTiles() && allowFancy(false)) {
                 // Quick tiles.
                 QSTileBaseView quickTileView = mQuickQsPanel.getTileView(tile);
                 if (quickTileView != null) {
@@ -227,7 +223,7 @@ public class QSAnimator implements Callback, PageListener, Listener, OnLayoutCha
             mAllViews.add(label);
             count++;
         }
-        if (allowFancy()) {
+        if (allowFancy(false)) {
             // Make brightness appear static position and alpha in through second half.
             View brightness = mQsPanel.getBrightnessView();
             if (brightness != null) {
@@ -261,12 +257,6 @@ public class QSAnimator implements Callback, PageListener, Listener, OnLayoutCha
             translationYBuilder.setInterpolator(interpolatorBuilder.getYInterpolator());
             mTranslationXAnimator = translationXBuilder.build();
             mTranslationYAnimator = translationYBuilder.build();
-        } else {
-            mFirstPageAnimator = new TouchAnimator.Builder()
-                .addFloat(mQuickQsPanel, "alpha", 1, 0)
-                .setListener(mNonFirstPageListener)
-                .setEndDelay(.5f)
-                .build();
         }
         mNonfirstPageAnimator = new TouchAnimator.Builder()
                 .addFloat(mQuickQsPanel, "alpha", 1, 0)
@@ -306,7 +296,7 @@ public class QSAnimator implements Callback, PageListener, Listener, OnLayoutCha
             return;
         }
         mLastPosition = position;
-        if (mOnFirstPage && allowFancy()) {
+        if (mOnFirstPage && allowFancy(true)) {
             mQuickQsPanel.setAlpha(1);
             mFirstPageAnimator.setPosition(position);
             mFirstPageDelayedAnimator.setPosition(position);
@@ -394,18 +384,20 @@ public class QSAnimator implements Callback, PageListener, Listener, OnLayoutCha
         }
     };
 
-    private boolean allowFancy() {
-        return mAllowFancy && notScrolled();
+    private boolean allowFancy(boolean clearAnim) {
+        return mAllowFancy && notScrolled(clearAnim);
     }
 
     private boolean fullRows() {
-        return mFullRows && notScrolled();
+        return mFullRows && notScrolled(false);
     }
 
-    private boolean notScrolled() {
+    private boolean notScrolled(boolean clearAnim) {
         if ((mQuickQsPanelScroller.getScrollX() == 0) != mNotScrolled) {
             mNotScrolled = !mNotScrolled;
-            clearAnimationState();
+            if (clearAnim) {
+                clearAnimationState();
+            }
         }
         return mNotScrolled;
     }
