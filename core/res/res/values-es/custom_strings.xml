@@ -13,21 +13,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Reboot Dialog -->
-  <string name="global_action_reboot">Reiniciar</string>
-  <!-- Button to reboot the phone in reboot menu -->
-  <string name="reboot_reboot">Reiniciar</string>
-  <!-- Button to reboot the phone into recovery in reboot menu-->
-  <string name="reboot_recovery">Modo Recovery</string>
-  <!-- Button to reboot the phone into bootloader in reboot menu -->
-  <string name="reboot_bootloader">Modo Bootloader</string>
-  <!-- Button to soft reboot the device in reboot menu -->
-  <string name="reboot_soft">Reinicio rápido</string>
-  <!-- Reboot Confirmation Dialog. -->
-  <string name="reboot_confirm" product="tablet">Tu tablet se reiniciará.</string>
-  <string name="reboot_confirm" product="default">Tu teléfono se reiniciará.</string>
-  <!-- Reboot Progress Dialog. This is shown if the user chooses to reboot the phone. -->
-  <string name="reboot_progress">Reiniciando\u2026</string>
   <!-- Privacy Guard -->
   <string name="permlab_changePrivacyGuardState">habilitar o deshabilitar la Protección de Privacidad</string>
   <string name="permdesc_changePrivacyGuardState">Permite determinar que aplicaciones pueden cambiar el estado de la Protección de Privacidad de otra. Cuando una aplicación se ejecuta bajo la Protección de Privacidad no tendrá acceso a los datos personales tales como contactos, histórico de llamadas o mensajes.</string>
@@ -106,13 +91,26 @@
   <string name="app_ops_run_in_background">ejecutar en segundo plano</string>
   <string name="app_ops_wifi_change">cambiar el estado de Wifi</string>
   <string name="app_ops_su">obtener acceso administrativo (Root)</string>
+  <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
+  <string name="system_error_vendorprint">Tu imagen de proveedor no concuerda con el sistema. Por favor instala la <xliff:g id="string">%s</xliff:g> imagen de proveedor para tú dispositivo</string>   
   <!-- Global actions -->
   <string name="global_action_screenshot">Capturar pantalla</string>
   <string name="global_action_search">Búsqueda</string>
   <string name="global_action_voicesearch">Búsqueda por voz</string>
-  <!-- Battery styles -->
-  <string name="battery_style_text">Solo texto</string>
-  <string name="battery_style_default">Por defecto</string>
-  <string name="battery_style_meter_horizontal">Barras horizontales</string>
-  <string name="battery_style_circle">Circular</string>
+  <!-- AOKP custom system animations -->
+  <string name="animation_fade">Desvanecer</string>
+  <string name="animation_slide_right">Deslizar a la derecha</string>
+  <string name="animation_slide_left">Deslizar a la izquierda</string>
+  <string name="animation_slide_right_no_fade">Deslizar a la derecha (Sin desvanecer)</string>
+  <string name="animation_slide_left_no_fade">Deslizar a la izquierda (Sin desvanecer)</string>
+  <string name="animation_slide_up">Deslizar hacia abajo</string>
+  <string name="animation_slide_down">Deslizar hacia arriba</string>
+  <string name="animation_default">Por defecto</string>
+  <string name="animation_translucent">Traslúcido</string>
+  <string name="animation_grow_shrink">Crecer (Arriba)</string>
+  <string name="animation_grow_shrink_center">Crecer (Centro)</string>
+  <string name="animation_grow_shrink_bottom">Crecer (Abajo)</string>
+  <string name="animation_grow_shrink_left">Crecer (Izquierda)</string>
+  <string name="animation_grow_shrink_right">Crecer (Drecha)</string>
+  <string name="action_null">Blank</string>   
 </resources>
