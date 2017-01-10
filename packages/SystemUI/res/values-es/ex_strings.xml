@@ -44,6 +44,19 @@
   <string name="quick_settings_caffeine_label">Cafeína</string>
   <string name="accessibility_quick_settings_caffeine_off">Cafeína desactivada</string>
   <string name="accessibility_quick_settings_caffeine_on">Cafeína activada</string>
+  <string name="quick_settings_heads_up_label">Notificaciones emergentes</string>
+  <string name="accessibility_quick_settings_heads_up_off">Notificaciones emergentes apagadas.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Notificaciones emergentes encendidas.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Notificaciones emergentes apagadas.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Notificaciones emergentes encendidas.</string>
+  <string name="quick_settings_pulse_enabled">Pulse activado</string>
+  <string name="quick_settings_pulse_disabled">No visualizador</string>
+  <string name="quick_settings_pulse_label">Visualizador de barra de navegación</string>
+  <string name="quick_settings_nfc_label">NFC</string>
+  <string name="accessibility_quick_settings_nfc_off">NFC apagado.</string>
+  <string name="accessibility_quick_settings_nfc_on">NFC encendido.</string>
+  <string name="accessibility_quick_settings_nfc_changed_off">NFC apagado.</string>
+  <string name="accessibility_quick_settings_nfc_changed_on">NFC encendido.</string>   
   <!-- SystemUI Tuner Parts -->
   <string name="systemui_tuner_statusbar_title">Elementos de la barra de estado</string>
   <string name="systemui_tuner_nightmode_title">Modo noche</string>
@@ -61,4 +74,17 @@
   <!-- Screenshot action -->
   <string name="screenshot_abort_title">No se capturó la pantalla</string>
   <string name="screenshot_abort_text">Operación abortada</string>   
+  <string name="quick_settings_expanded_desktop_label">Expanded desktop</string>
+  <string name="quick_settings_expanded_desktop">Expandido</string>
+  <string name="quick_settings_expanded_desktop_off">Normal</string>
+
+  <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Las notificaciones están desactivadas por 1 minuto.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Las notificaciones están desactivadas por <xliff:g id="number">%d</xliff:g> minutos.</string>   
+  <string name="recents_free_ram">RAM libre: %1$d MB</string>
+  <!-- Wi-Fi hotspot label when enabled -->
+  <plurals name="wifi_hotspot_connected_clients_label">
+        <item quantity="one">%1$d cliente</item>
+        <item quantity="other">%1$d clientes</item>
+  </plurals>
 </resources>
