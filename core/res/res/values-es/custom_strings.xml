@@ -93,10 +93,6 @@
   <string name="app_ops_su">obtener acceso administrativo (Root)</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Tu imagen de proveedor no concuerda con el sistema. Por favor instala la <xliff:g id="string">%s</xliff:g> imagen de proveedor para tú dispositivo</string>   
-  <!-- Global actions -->
-  <string name="global_action_screenshot">Capturar pantalla</string>
-  <string name="global_action_search">Búsqueda</string>
-  <string name="global_action_voicesearch">Búsqueda por voz</string>
   <!-- AOKP custom system animations -->
   <string name="animation_fade">Desvanecer</string>
   <string name="animation_slide_right">Deslizar a la derecha</string>
