@@ -19,6 +19,7 @@
     android:layout_width="match_parent"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
+    android:paddingTop="18dp"
     style="@style/BrightnessDialogContainer">
 
     <ImageView
