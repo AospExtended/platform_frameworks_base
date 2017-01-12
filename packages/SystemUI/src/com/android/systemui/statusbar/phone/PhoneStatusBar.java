@@ -155,6 +155,7 @@ import com.android.systemui.classifier.FalsingLog;
 import com.android.systemui.classifier.FalsingManager;
 import com.android.systemui.doze.DozeHost;
 import com.android.systemui.doze.DozeLog;
+import com.android.systemui.du.headers.StatusBarHeaderMachine;
 import com.android.systemui.keyguard.KeyguardViewMediator;
 import com.android.systemui.navigation.NavigationController;
 import com.android.systemui.navigation.Navigator;
@@ -402,6 +403,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     // show lte/4g switch
     private boolean mShowLteFourGee;
 
+    // qs headers
+    private StatusBarHeaderMachine mStatusBarHeaderMachine;
+
     // top bar
     BaseStatusBarHeader mHeader;
     protected KeyguardStatusBarView mKeyguardStatusBar;
@@ -617,6 +621,12 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.BLUR_MIXED_COLOR_PREFERENCE_KEY), 
                     false, this);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                   Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW),
+                   false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                   Settings.System.STATUS_BAR_CUSTOM_HEADER),
+                   false, this, UserHandle.USER_ALL);
             updateSettings();
         }
 
@@ -1429,7 +1439,12 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         } catch (Exception e){
             Log.d("mango918", String.valueOf(e));
         }
-        
+
+        // qs headers
+        mStatusBarHeaderMachine = new StatusBarHeaderMachine(mContext);
+        mStatusBarHeaderMachine.addObserver((QuickStatusBarHeader) mHeader);
+        mStatusBarHeaderMachine.updateEnablement();
+
         return mStatusBarView;
     }
 
@@ -4377,6 +4392,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         mScrimController.setCurrentUser(newUserId);
         updateMediaMetaData(true, false);
         mOmniSettingsObserver.update();
+        mStatusBarHeaderMachine.updateEnablement();
     }
 
     private void setControllerUsers() {
