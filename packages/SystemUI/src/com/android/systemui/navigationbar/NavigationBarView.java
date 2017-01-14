@@ -187,6 +187,13 @@ public class NavigationBarView extends FrameLayout implements
 
     private boolean mBlockedGesturalNavigation;
 
+    private int mBasePaddingBottom;
+    private int mBasePaddingLeft;
+    private int mBasePaddingRight;
+    private int mBasePaddingTop;
+
+    private ViewGroup mNavigationBarContents;
+
     private class NavTransitionListener implements TransitionListener {
         private boolean mBackTransitioning;
         private boolean mHomeAppearing;
@@ -974,11 +981,30 @@ public class NavigationBarView extends FrameLayout implements
         mContextualButtonGroup.setButtonVisibility(R.id.accessibility_button, visible);
     }
 
+    public void swiftNavigationBarItems(int horizontalShift, int verticalShift) {
+        if (mNavigationBarContents == null) {
+            return;
+        }
+
+        mNavigationBarContents.setPaddingRelative(mBasePaddingLeft + horizontalShift,
+                                              mBasePaddingTop + verticalShift,
+                                              mBasePaddingRight + horizontalShift,
+                                              mBasePaddingBottom - verticalShift);
+        invalidate();
+    }
+
     @Override
     public void onFinishInflate() {
         super.onFinishInflate();
         mNavigationInflaterView = findViewById(R.id.navigation_inflater);
         mNavigationInflaterView.setButtonDispatchers(mButtonDispatchers);
+
+        mNavigationBarContents = (ViewGroup) findViewById(R.id.nav_buttons);
+
+        mBasePaddingLeft = mNavigationBarContents.getPaddingStart();
+        mBasePaddingTop = mNavigationBarContents.getPaddingTop();
+        mBasePaddingRight = mNavigationBarContents.getPaddingEnd();
+        mBasePaddingBottom = mNavigationBarContents.getPaddingBottom();
 
         updateOrientationViews();
         reloadNavIcons();

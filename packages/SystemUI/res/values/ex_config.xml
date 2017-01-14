@@ -29,4 +29,7 @@
     <!-- Udfps vendor code -->
     <integer name="config_udfps_vendor_code">0</integer>
 
+    <!-- Burn in protection -->
+    <bool name="config_statusBarBurnInProtection">true</bool>
+    <integer name="config_shift_interval">60</integer>
 </resources>

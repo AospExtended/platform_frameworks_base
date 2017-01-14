@@ -20,6 +20,7 @@ package com.android.systemui.statusbar.phone;
 import android.annotation.Nullable;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -45,6 +46,13 @@ import java.util.Objects;
 public class PhoneStatusBarView extends FrameLayout {
     private static final String TAG = "PhoneStatusBarView";
     private final StatusBarContentInsetsProvider mContentInsetsProvider;
+
+    private int mBasePaddingBottom;
+    private int mBasePaddingLeft;
+    private int mBasePaddingRight;
+    private int mBasePaddingTop;
+
+    private ViewGroup mStatusBarContents;
 
     private DarkReceiver mBattery;
     private DarkReceiver mClock;
@@ -75,6 +83,18 @@ public class PhoneStatusBarView extends FrameLayout {
         mTouchEventHandler = handler;
     }
 
+    public void swiftStatusBarItems(int horizontalShift, int verticalShift) {
+        if (mStatusBarContents == null) {
+            return;
+        }
+
+        mStatusBarContents.setPaddingRelative(mBasePaddingLeft + horizontalShift,
+                                              mBasePaddingTop + verticalShift,
+                                              mBasePaddingRight + horizontalShift,
+                                              mBasePaddingBottom - verticalShift);
+        invalidate();
+    }
+
     @Override
     public void onFinishInflate() {
         mBattery = findViewById(R.id.battery);
@@ -83,6 +103,12 @@ public class PhoneStatusBarView extends FrameLayout {
         mClockRight = findViewById(R.id.right_clock);
         mCutoutSpace = findViewById(R.id.cutout_space_view);
         mCenterIconSpace = findViewById(R.id.centered_icon_area);
+        mStatusBarContents = (ViewGroup) findViewById(R.id.status_bar_contents);
+
+        mBasePaddingLeft = mStatusBarContents.getPaddingStart();
+        mBasePaddingTop = mStatusBarContents.getPaddingTop();
+        mBasePaddingRight = mStatusBarContents.getPaddingEnd();
+        mBasePaddingBottom = mStatusBarContents.getPaddingBottom();
 
         updateResources();
     }
