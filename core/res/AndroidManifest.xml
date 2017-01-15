@@ -520,6 +520,7 @@
     <protected-broadcast android:name="com.android.server.retaildemo.ACTION_RESET_DEMO" />
 
     <protected-broadcast android:name="projekt.substratum.APP_CRASHED" />
+    <protected-broadcast android:name="masquerade.substratum.STATUS_CHANGED" />
 
     <!-- ====================================================================== -->
     <!--                          RUNTIME PERMISSIONS                           -->
