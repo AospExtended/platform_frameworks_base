@@ -24,10 +24,14 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.content.ContentResolver;
+import android.database.ContentObserver;
 import android.graphics.Paint;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.Handler;
 import android.os.SystemClock;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -100,6 +104,26 @@ public class OpaLayout extends FrameLayout implements ButtonInterface {
     private ImageView mWhiteCutout;
     private boolean mWindowVisible;
     private View mYellow;
+    private SettingsObserver mSettingsObserver;
+
+    protected class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+           ContentResolver resolver = mContext.getContentResolver();
+           resolver.registerContentObserver(Settings.System.getUriFor(
+                  Settings.System.PIXEL_NAV_ANIMATION),
+                  false, this, UserHandle.USER_CURRENT);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+           super.onChange(selfChange, uri);
+           setOpaEnabled();
+        }
+    }
 
     private final Runnable mCheckLongPress;
 
@@ -192,10 +216,18 @@ public class OpaLayout extends FrameLayout implements ButtonInterface {
 
     public OpaLayout(Context context) {
         this(context, null);
+        if (mSettingsObserver == null) {
+            mSettingsObserver = new SettingsObserver(new Handler());
+        }
+        mSettingsObserver.observe();
     }
 
     public OpaLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
+        if (mSettingsObserver == null) {
+            mSettingsObserver = new SettingsObserver(new Handler());
+        }
+        mSettingsObserver.observe();
     }
 
     public OpaLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
@@ -218,10 +250,18 @@ public class OpaLayout extends FrameLayout implements ButtonInterface {
         mOverviewProxyListener = new OverviewListener();
         mDiamondAnimation = new DiamondAnimationRunnable(this);
         mScrollTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+        if (mSettingsObserver == null) {
+            mSettingsObserver = new SettingsObserver(new Handler());
+        }
+        mSettingsObserver.observe();
     }
 
     public OpaLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         this(context, attrs, defStyleAttr, 0);
+        if (mSettingsObserver == null) {
+            mSettingsObserver = new SettingsObserver(new Handler());
+        }
+        mSettingsObserver.observe();
     }
 
     protected void onFinishInflate() {
@@ -592,8 +632,8 @@ public class OpaLayout extends FrameLayout implements ButtonInterface {
 	return false;
     }
 
-    public void setOpaEnabled(boolean enabled) {
-	mOpaEnabled = enabled;
+    public void setOpaEnabled() {
+	mOpaEnabled = getOpaEnabled();
         updateOpaLayout();
     }
 
