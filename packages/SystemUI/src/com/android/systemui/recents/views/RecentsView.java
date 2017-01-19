@@ -402,6 +402,7 @@ public class RecentsView extends FrameLayout {
         super.onAttachedToWindow();
 		mMemText = (TextView) ((View)getParent()).findViewById(R.id.recents_memory_text);
         mMemBar = (ProgressBar) ((View)getParent()).findViewById(R.id.recents_memory_bar);
+        super.onAttachedToWindow();
     }
 
     @Override
