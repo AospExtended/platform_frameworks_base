@@ -28,4 +28,11 @@
         <item>#FFE53935</item>
         <item>#FFFFFFFF</item>
     </array>
+
+    <!-- Advanced Location tile mode -->
+    <string-array name="location_mode_entries" translatable="false">
+        <item>@string/quick_settings_location_battery_saving_label</item>
+        <item>@string/quick_settings_location_gps_only_label</item>
+        <item>@string/quick_settings_location_high_accuracy_label</item>
+    </string-array>
 </resources>
