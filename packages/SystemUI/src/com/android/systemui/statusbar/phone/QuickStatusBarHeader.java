@@ -543,11 +543,8 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
             Settings.System.QS_DATE_TIME_CENTER, 0) == 1;
     }
 
-    @Override
     public void updateSettings() {
         if (mQsPanel != null) {
-            mQsPanel.updateSettings();
-
             // if header is active we want to push the qs panel a little bit further down
             // to have more space for the header image
             post(new Runnable() {
@@ -555,9 +552,6 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
                     setQsPanelOffset();
                 }
             });
-        }
-        if (mHeaderQsPanel != null) {
-            mHeaderQsPanel.updateSettings();
         }
         applyHeaderBackgroundShadow();
     }

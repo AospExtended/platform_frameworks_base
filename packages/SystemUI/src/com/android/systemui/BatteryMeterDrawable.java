@@ -109,17 +109,6 @@ public class BatteryMeterDrawable extends Drawable implements
     private boolean mForceChargeBatteryText;
     private int  mTextChargingSymbol;
     private boolean mListening;
-    private static final int ADD_LEVEL = 10;
-    private static final int ANIM_DURATION = 500;
-    private int mAnimOffset;
-    private boolean mCharging;
-
-    private final Runnable mInvalidate = new Runnable() {
-        @Override
-        public void run() {
-            invalidateSelf();
-        }
-    };
 
     private float mTextX, mTextY; // precalculated position for drawText() to appear centered
 
@@ -252,7 +241,12 @@ public class BatteryMeterDrawable extends Drawable implements
     }
 
     private void postInvalidate() {
-        mHandler.post(mInvalidate);
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                invalidateSelf();
+            }
+        });
     }
 
     public void setBatteryController(BatteryController batteryController) {
@@ -264,7 +258,6 @@ public class BatteryMeterDrawable extends Drawable implements
     public void onBatteryLevelChanged(int level, boolean pluggedIn, boolean charging) {
         mLevel = level;
         mPluggedIn = pluggedIn;
-        mCharging = charging;
 
         if (mStyle == BATTERY_STYLE_CIRCLE || mStyle == BATTERY_STYLE_FULL_CIRCLE || mStyle == BATTERY_STYLE_BIGCIRCLE) {
             animateCircleBattery(level, pluggedIn, charging);
@@ -280,26 +273,6 @@ public class BatteryMeterDrawable extends Drawable implements
     public void onPowerSaveChanged(boolean isPowerSave) {
         mPowerSaveEnabled = isPowerSave;
         invalidateSelf();
-    }
-
-    private int updateChargingAnimLevel() {
-        int curLevel = mLevel;
-        if (!mCharging) {
-            mAnimOffset = 0;
-            mHandler.removeCallbacks(mInvalidate);
-        } else {
-            curLevel += mAnimOffset;
-            if (curLevel >= FULL) {
-                curLevel = 100;
-                mAnimOffset = 0;
-            } else {
-                mAnimOffset += ADD_LEVEL;
-            }
-
-            mHandler.removeCallbacks(mInvalidate);
-            mHandler.postDelayed(mInvalidate, ANIM_DURATION);
-        }
-        return curLevel;
     }
 
     @Override
