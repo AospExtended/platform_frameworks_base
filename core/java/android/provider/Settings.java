@@ -4147,6 +4147,12 @@ public final class Settings {
         public static final String DASHBOARD_COLUMNS = "dashboard_columns";
 
         /**
+         * Whether to show dashboard summaries in a single line or not
+         * @hide
+         */
+        public static final String DASHBOARD_SUMMARY_DOUBLE_LINES = "dashboard_summary_double_lines";
+
+        /**
          * Swap volume buttons when the screen is rotated
          * 0 - Disabled
          * 1 - Enabled (screen is rotated by 90 or 180 degrees: phone, hybrid)
