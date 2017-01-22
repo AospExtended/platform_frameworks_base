@@ -4141,16 +4141,16 @@ public final class Settings {
         /** endregion */
 
         /**
-         * Dashboard columns in settings
+         * Dashboard portrait columns in settings
          * @hide
          */
-        public static final String DASHBOARD_COLUMNS = "dashboard_columns";
+        public static final String DASHBOARD_PORTRAIT_COLUMNS = "dashboard_portrait_columns";
 
         /**
-         * Whether to show dashboard summaries in a single line or not
+         * Dashboard landscape columns in settings
          * @hide
          */
-        public static final String DASHBOARD_SUMMARY_DOUBLE_LINES = "dashboard_summary_double_lines";
+        public static final String DASHBOARD_LANDSCAPE_COLUMNS = "dashboard_landscape_columns";
 
         /**
          * Swap volume buttons when the screen is rotated
