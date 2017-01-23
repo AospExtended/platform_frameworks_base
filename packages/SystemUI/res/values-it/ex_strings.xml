@@ -32,10 +32,10 @@
     <string name="quick_settings_screenshot_label">Screenshot</string>
     <string name="quick_settings_region_screenshot_label">Screenshot parziale</string>
     <string name="quick_settings_sync_label">Sync</string>
-    <string name="accessibility_quick_settings_sync_off">Sync off</string>
-    <string name="accessibility_quick_settings_sync_on">Sync on</string>
-    <string name="accessibility_quick_settings_sync_changed_off">Sync spento</string>
-    <string name="accessibility_quick_settings_sync_changed_on">Sync accese</string>
+    <string name="accessibility_quick_settings_sync_off">Sync spento</string>
+    <string name="accessibility_quick_settings_sync_on">Sync acceso</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Sync disattivato</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Sync attivato</string>
 
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Riavvio</string>
@@ -57,9 +57,29 @@
     <string name="accessibility_quick_settings_heads_up_on">Heads up on.</string>
     <string name="accessibility_quick_settings_heads_up_changed_off">Heads up spento.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Heads up acceso.</string>
+    <string name="quick_settings_pulse_enabled">Pulse abilitato</string>
+    <string name="quick_settings_pulse_disabled">Nessun visualizzatore</string>
+    <string name="quick_settings_pulse_label">Visualizzatore barra di navigazione</string>
+    <string name="quick_settings_nfc_label">NFC</string>
+    <string name="accessibility_quick_settings_nfc_off">NFC spento.</string>
+    <string name="accessibility_quick_settings_nfc_on">NFC acceso.</string>
+    <string name="accessibility_quick_settings_nfc_changed_off">NFC disattivato.</string>
+    <string name="accessibility_quick_settings_nfc_changed_on">NFC attivato.</string>
 
     <!-- SystemUI Tuner Parts -->
     <string name="systemui_tuner_statusbar_title">Elementi della barra di stato</string>
+     
+    <string name="accessibility_quick_settings_location_battery_saving">Geolocalizzazione: modalità risparmio batteria.</string>
+    <string name="accessibility_quick_settings_location_gps_only">Geolocalizzazione: modalità solo dispositivo.</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Geolocalizzazione: modalità alta precisione.</string>
+    <string name="accessibility_quick_settings_location_changed_battery_saving">Geolocalizzazione modificata in modalità risparmio batteria.</string>
+    <string name="accessibility_quick_settings_location_changed_gps_only">Geolocalizzazione modificata in modalità solo dispositivo.</string>
+    <string name="accessibility_quick_settings_location_changed_high_accuracy">Geolocalizzazione modificata in modalità ad alta precisione.</string>
+    <string name="quick_settings_location_detail_title">Modalità geolocalizzazione</string>
+    <string name="quick_settings_location_battery_saving_label">Risparmio batteria</string>
+    <string name="quick_settings_location_gps_only_label">Solo dispositivo</string>
+    <string name="quick_settings_location_high_accuracy_label">Alta precisione</string>
+    <string name="quick_settings_location_off_label">Geolocalizzazione disattivata</string>
 
     <!-- Show lte/4g switch -->
     <string name="show_lte_fourgee_title">Visualizza 4G invece di LTE</string>
