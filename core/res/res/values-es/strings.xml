@@ -1679,4 +1679,8 @@
     <string name="suspended_widget_accessibility" msgid="6712143096475264190">"<xliff:g id="LABEL">%1$s</xliff:g> inhabilitado"</string>
     <string name="global_action_reboot">"Reiniciar"</string>
     <string name="conference_call" msgid="3751093130790472426">"Conferencia"</string>
+    <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_restartUI">reiniciar la interfaz</string>
+    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_restartUI">Reiniciar el servicio de interfaz del sistema para así cargar los temas</string>
 </resources>
