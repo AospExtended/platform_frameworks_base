@@ -1902,11 +1902,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         if (mNavigationController.getBar() == null) return;
 
         prepareNavigationBarView();
-        try {
-          mWindowManager.addView(mNavigationController.getBar().getBaseView(), getNavigationBarLayoutParams());
-        } catch (Exception e) {
-          if (DEBUG) Log.e(TAG, "Unable to add window android.view.ViewRootImpl$W@5456577 -- another window of type 2019 already exists");
-        }
+
+        mWindowManager.addView(mNavigationController.getBar().getBaseView(), getNavigationBarLayoutParams());
     }
 
     protected void repositionNavigationBar() {
