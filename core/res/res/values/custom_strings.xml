@@ -115,5 +115,7 @@
     <string name="animation_grow_shrink_left">Grow in (Left)</string>
     <string name="animation_grow_shrink_right">Grow in (Right)</string>
     <string name="action_null">Blank</string>
-
+    
+    <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+    <string name="aex_system_error_manufacturer">A vendor image mismatch has been detected. Typically this means your vendor image is out of date. Please ensure your vendor image matches <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
 </resources>
