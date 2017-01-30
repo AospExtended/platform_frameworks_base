@@ -38,7 +38,4 @@
          config to 7. -->
     <integer name="config_deviceHardwareKeys">64</integer>
 
-    <!-- Automatic brightness enhancements -->
-    <integer name="config_autoBrightnessBrighteningLightFastDebounce">500</integer>
-    
 </resources>
