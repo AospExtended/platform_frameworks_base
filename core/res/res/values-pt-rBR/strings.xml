@@ -1682,4 +1682,6 @@
     <string name="audit_safemode_notification_details" msgid="1860601176690176413">"Toque para saber mais."</string>
     <string name="suspended_widget_accessibility" msgid="6712143096475264190">"Widget <xliff:g id="LABEL">%1$s</xliff:g> desativado"</string>
     <string name="conference_call" msgid="3751093130790472426">"Teleconferência"</string>
+    <string name="singlehandmode_click_hint_message">Toque fora da tela para sair do modo de tela pequeno</string>
+    <string name="singlehandmode_slide_hint_message">Deslize seu dedo através da barra de navegação para alternar entre os modos de exibição de tela padrão e pequeno</string>
 </resources>
