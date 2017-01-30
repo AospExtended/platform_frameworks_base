@@ -61,6 +61,17 @@
   <string name="accessibility_quick_settings_nfc_changed_on">NFC ligado</string>
   <!-- SystemUI Tuner Parts -->
   <string name="systemui_tuner_statusbar_title">Itens da barra de status</string>
+  <string name="accessibility_quick_settings_location_battery_saving">Modo de localização: economia de bateria.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Modo de localização: apenas no dispositivo.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Modo de localização: alta precisão.</string>
+  <string name="accessibility_quick_settings_location_changed_battery_saving">Modo de localização alterado para economia de bateria.</string>
+  <string name="accessibility_quick_settings_location_changed_gps_only">Modo de localização alterado para apenas no dispositivo.</string>
+  <string name="accessibility_quick_settings_location_changed_high_accuracy">Modo de localização alterado para alta precisão.</string>
+  <string name="quick_settings_location_detail_title">Modo de localização</string>
+  <string name="quick_settings_location_battery_saving_label">Economia de bateria</string>
+  <string name="quick_settings_location_gps_only_label">Apenas no dispositivo</string>
+  <string name="quick_settings_location_high_accuracy_label">Alta precisão</string>
+  <string name="quick_settings_location_off_label">Localização desativada</string>
 
   <!-- Show lte/4g switch -->
   <string name="show_lte_fourgee_title">Mostrar 4G ao invés de LTE</string>
