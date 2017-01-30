@@ -60,6 +60,18 @@
   <!-- SystemUI Tuner Parts -->
   <string name="systemui_tuner_statusbar_title">Elementos de la barra de estado</string>
   <string name="systemui_tuner_nightmode_title">Modo noche</string>
+     
+  <string name="accessibility_quick_settings_location_battery_saving">Modo de ubicación: ahorro de batería.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Modo de ubicación: solo en dispositivo.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Modo de ubicación: precisión alta.</string>
+  <string name="accessibility_quick_settings_location_changed_battery_saving">Modo de ubicación cambiado a ahorro de batería.</string>
+  <string name="accessibility_quick_settings_location_changed_gps_only">Modo de ubicación cambiado a solo en dispositivo.</string>
+  <string name="accessibility_quick_settings_location_changed_high_accuracy">Modo de ubicación cambiado a precisión alta.</string>
+  <string name="quick_settings_location_detail_title">Modo de ubicación</string>
+  <string name="quick_settings_location_battery_saving_label">Ahorro de batería</string>
+  <string name="quick_settings_location_gps_only_label">Solo en dispositivo</string>
+  <string name="quick_settings_location_high_accuracy_label">Alta precisión</string>
+  <string name="quick_settings_location_off_label">Ubicación desactivada</string>   
   <!-- Show lte/4g switch -->
   <string name="show_lte_fourgee_title">Mostrar 4G en lugar de LTE</string>
   <string name="show_lte_fourgee_summary">Reemplaza el indicador LTE de la barra de estado con 4G</string>
@@ -74,7 +86,7 @@
   <!-- Screenshot action -->
   <string name="screenshot_abort_title">No se capturó la pantalla</string>
   <string name="screenshot_abort_text">Operación abortada</string>   
-  <string name="quick_settings_expanded_desktop_label">Expanded desktop</string>
+  <string name="quick_settings_expanded_desktop_label">Escritorio expandido</string>
   <string name="quick_settings_expanded_desktop">Expandido</string>
   <string name="quick_settings_expanded_desktop_off">Normal</string>
 
