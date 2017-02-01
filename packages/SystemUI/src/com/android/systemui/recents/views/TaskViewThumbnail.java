@@ -176,9 +176,26 @@ public class TaskViewThumbnail extends View {
     void setThumbnail(Bitmap bm, ActivityManager.TaskThumbnailInfo thumbnailInfo) {
         if (bm != null) {
             bm.prepareToDraw();
-            mBitmapShader = new BitmapShader(bm, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+
+            float INITIAL_SCALE = 0.75f;
+            int h = bm.getHeight();
+            int w = bm.getWidth();
+            Bitmap cropped = null;
+
+            int mode = currentHandsMode();
+            if (mode == 1) {
+                cropped = Bitmap.createBitmap(bm, 0, (int)(h * (1-INITIAL_SCALE)),
+                        (int)(w * INITIAL_SCALE), (int)(h * INITIAL_SCALE));
+            } else if (mode == 2) {
+                cropped = Bitmap.createBitmap(bm, (int)(w * (1-INITIAL_SCALE)), (int)(h * (1-INITIAL_SCALE)),
+                        (int)(w * INITIAL_SCALE), (int)(h * INITIAL_SCALE));
+            }
+
+            mBitmapShader = new BitmapShader(mode != 0 ? cropped: bm,
+                    Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
             mDrawPaint.setShader(mBitmapShader);
-            mThumbnailRect.set(0, 0, bm.getWidth(), bm.getHeight());
+            mThumbnailRect.set(0, 0, mode != 0 ? cropped.getWidth() : w,
+                    mode != 0 ? cropped.getHeight() : h);
             mThumbnailInfo = thumbnailInfo;
             updateThumbnailScale();
         } else {
