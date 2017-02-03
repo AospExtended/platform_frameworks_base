@@ -75,7 +75,7 @@
     <string name="accessibility_quick_settings_caffeine_off">Caffeine off</string>
     <string name="accessibility_quick_settings_caffeine_on">Caffeine on</string>
 	
-	<!-- Ambient display QS tile -->
+    <!-- Ambient display QS tile -->
     <string name="quick_settings_ambient_display_label">Ambient display</string>
     <string name="accessibility_quick_settings_ambient_display_off">Ambient display off.</string>
     <string name="accessibility_quick_settings_ambient_display_on">Ambient display on.</string>
@@ -186,5 +186,9 @@
     <string name="quick_settings_compass_SW">SW</string>
     <string name="quick_settings_compass_W">W</string>
     <string name="quick_settings_compass_NW">NW</string>
+
+    <!-- Running service button -->
+    <string name="accessibility_quick_settings_running_services">Open Running Services screen.</string>
+
 </resources>
 

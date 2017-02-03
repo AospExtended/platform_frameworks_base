@@ -77,6 +77,8 @@ public class QSFooterViewController extends ViewController<QSFooterView> impleme
     private final GlobalActionsDialogLite mGlobalActionsDialog;
     private final UiEventLogger mUiEventLogger;
 
+    private View mRunningServicesButton;
+
     private final UserInfoController.OnUserInfoChangedListener mOnUserInfoChangedListener =
             new UserInfoController.OnUserInfoChangedListener() {
         @Override
@@ -109,6 +111,11 @@ public class QSFooterViewController extends ViewController<QSFooterView> impleme
             } else if (v == mPowerMenuLite) {
                 mUiEventLogger.log(GlobalActionsDialogLite.GlobalActionsEvent.GA_OPEN_QS);
                 mGlobalActionsDialog.showOrHideDialog(false, true);
+            } else if (v == mRunningServicesButton) {
+                mMetricsLogger.action(
+                        mExpanded ? MetricsProto.MetricsEvent.ACTION_QS_EXPANDED_SETTINGS_LAUNCH
+                                : MetricsProto.MetricsEvent.ACTION_QS_COLLAPSED_SETTINGS_LAUNCH);
+                startRunningServicesActivity();
             }
         }
     };
@@ -148,6 +155,8 @@ public class QSFooterViewController extends ViewController<QSFooterView> impleme
         mShowPMLiteButton = showPMLiteButton;
         mGlobalActionsDialog = globalActionsDialog;
         mUiEventLogger = uiEventLogger;
+
+        mRunningServicesButton = mView.findViewById(R.id.running_services_button);
     }
 
     @Override
@@ -194,6 +203,8 @@ public class QSFooterViewController extends ViewController<QSFooterView> impleme
             mActivityStarter.postQSRunnableDismissingKeyguard(() ->
                     mQsPanelController.showEdit(view));
         });
+
+        mRunningServicesButton.setOnClickListener(mSettingsOnClickListener);
 
         mQsPanelController.setFooterPageIndicator(mPageIndicator);
         mView.updateEverything(isTunerEnabled(), mMultiUserSwitchController.isMultiUserEnabled());
@@ -263,6 +274,17 @@ public class QSFooterViewController extends ViewController<QSFooterView> impleme
                         InteractionJankMonitor.CUJ_SHADE_APP_LAUNCH_FROM_SETTINGS_BUTTON) : null;
         mActivityStarter.startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS),
                 true /* dismissShade */, animationController);
+    }
+
+    private void startRunningServicesActivity() {
+        ActivityLaunchAnimator.Controller animationController =
+                mSettingsButtonContainer != null ? ActivityLaunchAnimator.Controller.fromView(
+                        mSettingsButtonContainer,
+                        InteractionJankMonitor.CUJ_SHADE_APP_LAUNCH_FROM_SETTINGS_BUTTON) : null;
+        Intent intent = new Intent();
+        intent.setClassName("com.android.settings",
+                "com.android.settings.Settings$DevRunningServicesActivity");
+        mActivityStarter.startActivity(intent, true /* dismissShade */, animationController);
     }
 
     private void startExtensionsActivity() {
