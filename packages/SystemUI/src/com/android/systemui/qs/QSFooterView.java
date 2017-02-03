@@ -78,6 +78,8 @@ public class QSFooterView extends FrameLayout {
 
     private OnClickListener mExpandClickListener;
 
+    private View mRunningServicesButton;
+
     private final ContentObserver mDeveloperSettingsObserver = new ContentObserver(
             new Handler(mContext.getMainLooper())) {
         @Override
@@ -108,10 +110,15 @@ public class QSFooterView extends FrameLayout {
         mBuildText = findViewById(R.id.build);
         mTunerIcon = requireViewById(R.id.tuner_icon);
 
+        mRunningServicesButton = findViewById(R.id.running_services_button);
+
         // RenderThread is doing more harm than good when touching the header (to expand quick
         // settings), so disable it for this view
         if (mSettingsButton.getBackground() instanceof RippleDrawable) {
             ((RippleDrawable) mSettingsButton.getBackground()).setForceSoftware(true);
+        }
+        if (mRunningServicesButton.getBackground() instanceof RippleDrawable) {
+            ((RippleDrawable) mRunningServicesButton.getBackground()).setForceSoftware(true);
         }
         updateResources();
 
@@ -272,6 +279,7 @@ public class QSFooterView extends FrameLayout {
         mSettingsButton.setVisibility(isDemo || !mExpanded ? View.INVISIBLE : View.VISIBLE);
 
         mBuildText.setVisibility(mExpanded && mShouldShowBuildText ? View.VISIBLE : View.INVISIBLE);
+        mRunningServicesButton.setVisibility(!isDemo && mExpanded ? View.VISIBLE : View.INVISIBLE);
     }
 
     private boolean showUserSwitcher(boolean multiUserEnabled) {
