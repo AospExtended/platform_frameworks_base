@@ -126,7 +126,7 @@ public class BoostFramework {
             try {
                 mAcquireFunc.invoke(mPerf, duration, list);
             } catch(Exception e) {
-                if (DEBUG) Log.e(TAG,"Exception " + e);
+                Log.e(TAG,"Exception " + e);
             }
         }).start();
     }
@@ -137,7 +137,7 @@ public class BoostFramework {
             try {
                 mReleaseFunc.invoke(mPerf);
             } catch(Exception e) {
-                if (DEBUG) Log.e(TAG,"Exception " + e);
+                Log.e(TAG,"Exception " + e);
             }
         }).start();
     }
@@ -189,7 +189,7 @@ public class BoostFramework {
             try {
                 mAcquireTouchFunc.invoke(mPerf, ev, metrics, duration, list);
             } catch(Exception e) {
-                if (DEBUG) Log.e(TAG,"Exception " + e);
+                Log.e(TAG,"Exception " + e);
             }
         }).start();
     }
