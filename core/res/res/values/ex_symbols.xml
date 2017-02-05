@@ -58,4 +58,6 @@
   <!-- Automatic brightness enhancements -->
   <java-symbol type="integer" name="config_autoBrightnessBrighteningLightFastDebounce"/>
 
+  <java-symbol type="bool" name="config_useDarkBgNotificationIconTextTinting" />
+
 </resources>
