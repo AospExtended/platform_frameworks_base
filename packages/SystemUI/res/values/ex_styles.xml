@@ -120,4 +120,8 @@
         <item name="android:padding">@dimen/card_expand_layout_padding</item>
     </style>
 
+    <style name="SlimRecentsCardOptionsButton">
+        <item name="android:padding">2dp</item>
+    </style>
+
 </resources>
