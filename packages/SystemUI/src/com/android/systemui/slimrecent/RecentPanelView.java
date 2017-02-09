@@ -565,11 +565,6 @@ public class RecentPanelView {
 
     protected void notifyDataSetChanged(boolean forceupdate) {
         if (forceupdate || !mController.isShowing()) {
-            // We want to have the list scrolled down before it is visible for the user.
-            // Whoever calls notifyDataSetChanged() first (not visible) do it now.
-            if (mCardRecyclerView != null) {
-               // mCardRecyclerView.setSelection(mCards.size() - 1);
-            }
             mCardAdapter.notifyDataSetChanged();
         }
     }
@@ -644,9 +639,11 @@ public class RecentPanelView {
      */
     private void tasksLoaded() {
         if (mOnTasksLoadedListener != null) {
-            setTasksLoaded(true);
             mIsLoading = false;
-            mOnTasksLoadedListener.onTasksLoaded();
+            if (!isCancelledByUser()) {
+                setTasksLoaded(true);
+                mOnTasksLoadedListener.onTasksLoaded();
+            }
         }
     }
 
@@ -714,8 +711,10 @@ public class RecentPanelView {
                     UserHandle.USER_CURRENT);
 
             final List<ActivityManager.RecentTaskInfo> recentTasks =
-                    am.getRecentTasksForUser(maxNumTasksToLoad,
+                    am.getRecentTasksForUser(ActivityManager.getMaxRecentTasksStatic(),
                     ActivityManager.RECENT_IGNORE_HOME_STACK_TASKS
+                            | ActivityManager.RECENT_INGORE_DOCKED_STACK_TOP_TASK
+                            | ActivityManager.RECENT_INGORE_PINNED_STACK_TASKS
                             | ActivityManager.RECENT_IGNORE_UNAVAILABLE
                             | ActivityManager.RECENT_INCLUDE_PROFILES,
                             UserHandle.CURRENT.getIdentifier());
@@ -777,6 +776,11 @@ public class RecentPanelView {
                         false, EXPANDED_STATE_UNKNOWN, recentInfo.taskDescription);
 
                 if (item != null) {
+                    // Remove any tasks after our max task limit to keep good ux
+                    if (i >= maxNumTasksToLoad) {
+                        am.removeTask(item.persistentTaskId);
+                        continue;
+                    }
                     for (String fav : favList) {
                         if (fav.equals(item.identifier)) {
                             item.setIsFavorite(true);
@@ -797,7 +801,7 @@ public class RecentPanelView {
                         } else {
                             // Skip the first task for our list but save it for later use.
                            mFirstTask = item;
-                           mCounter--;
+                           newSize--;
                         }
                     } else {
                         // FirstExpandedItems value forces to show always the app screenshot
@@ -836,7 +840,6 @@ public class RecentPanelView {
                         firstItems++;
                     }
                 }
-                mCounter++;
             }
 
             // Add now the non favorite tasks to the final task list.
@@ -860,7 +863,7 @@ public class RecentPanelView {
         private void addCard(TaskDescription task, int oldSize, boolean topTask) {
             RecentCard card = null;
 
-            // We may have allready constructed and inflated card.
+            // We may have already constructed and inflated card.
             // Let us reuse them and just update the content.
             if (mCounter < oldSize) {
                 card = (RecentCard) mCards.get(mCounter);
@@ -869,6 +872,7 @@ public class RecentPanelView {
                     card.updateCardContent(task, mScaleFactor);
                     card = assignListeners(card, task);
                 }
+                mCounter++;
             }
 
             // No old card was present to update....so add a new one.
