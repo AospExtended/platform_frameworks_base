@@ -31,7 +31,7 @@ import android.view.View;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.systemui.R;
-import com.android.systemui.omni.screenrecord.TakeScreenrecordService;
+import com.android.systemui.purenexus.screenrecord.TakeScreenrecordService;
 import com.android.systemui.qs.QSTile;
 
 /** Quick settings tile: Screenrecord **/
