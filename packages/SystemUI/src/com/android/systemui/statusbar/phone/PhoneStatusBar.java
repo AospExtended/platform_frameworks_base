@@ -685,7 +685,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                     mTickerEnabled = Settings.System.getIntForUser(
                             mContext.getContentResolver(),
                             Settings.System.STATUS_BAR_SHOW_TICKER,
-                            1, UserHandle.USER_CURRENT) == 1;
+                            0, UserHandle.USER_CURRENT) == 1;
                     initTickerView();
             }
             updateSettings();
@@ -708,17 +708,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
             mClockLocation = Settings.System.getIntForUser(resolver,
                     Settings.System.STATUSBAR_CLOCK_STYLE, 0, UserHandle.USER_CURRENT);
-
-            boolean headsUpEnabled = Settings.System.getIntForUser(resolver,
-                    Settings.System.HEADS_UP_USER_ENABLED, 0, UserHandle.USER_CURRENT) == 1;
-            if (headsUpEnabled) {
-                mTickerEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
-                        Settings.System.STATUS_BAR_SHOW_TICKER,
-                        mContext.getResources().getBoolean(R.bool.enable_ticker)
-                        ? 1 : 1, UserHandle.USER_CURRENT) == 1;
-                initTickerView();
-            }
-
 
             mBlurScale = Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.BLUR_SCALE_PREFERENCE_KEY, 10);
@@ -1267,15 +1256,11 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
         mCenterClock = (TextView) mStatusBarWindow.findViewById(R.id.center_clock);
 
-        boolean headsUpEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.HEADS_UP_USER_ENABLED, 0, UserHandle.USER_CURRENT) == 1;
-        if (headsUpEnabled) {
-            mTickerEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
-                    Settings.System.STATUS_BAR_SHOW_TICKER,
-                    mContext.getResources().getBoolean(R.bool.enable_ticker)
-                    ? 1 : 1, UserHandle.USER_CURRENT) == 1;
-            initTickerView();
-        }
+        mTickerEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.STATUS_BAR_SHOW_TICKER,
+                mContext.getResources().getBoolean(R.bool.enable_ticker)
+                        ? 1 : 1, UserHandle.USER_CURRENT) == 1;
+        initTickerView();
 
         // set the initial view visibility
         setAreThereNotifications();
