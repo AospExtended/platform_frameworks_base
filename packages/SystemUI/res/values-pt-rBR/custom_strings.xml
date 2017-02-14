@@ -30,6 +30,14 @@
 
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">A captura de tela foi excluída</string>
+    
+    <!-- Screenrecord QS tile -->
+    <string name="quick_settings_screenrecord">Gravação de tela</string>
+    <string name="quick_settings_screenrecord_on">Gravando...</string>
+  	
+    <!-- Language\Locale Tile -->
+    <string name="quick_settings_locale_label">Idioma</string>
+    <string name="quick_settings_locale_more_locales_toast">Por favor configure mais de um idioma para habilitar a função</string>
 
     <!-- NavBar Tuner -->
     <string name="menu_ime_always_show">Menu / Alternador de teclado (Sempre mostrar)</string>
