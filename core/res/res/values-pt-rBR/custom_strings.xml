@@ -96,4 +96,27 @@
     <string name="app_ops_wifi_change">mudar o estado do WiFi</string>
     <string name="app_ops_su">obter acesso root</string>
 
+    <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
+    <string name="system_error_vendorprint">Sua imagem de fornecedor não coincide com o sistema. Por favor faça o flash da imagem de fornecedor de <xliff:g id="string">%s </xliff:g> para o seu dispositivo</string>
+
+    <!-- AOKP custom system animations -->
+    <string name="animation_fade">Esmaecer</string>
+    <string name="animation_slide_right">Deslizar para direita</string>
+    <string name="animation_slide_left">Deslize para a esquerda</string>
+    <string name="animation_slide_right_no_fade">Deslize para direita (Sem desvanecer)</string>
+    <string name="animation_slide_left_no_fade">Deslize para esquerda(Sem desvanecer)</string>
+    <string name="animation_slide_up">Deslize para baixo</string>
+    <string name="animation_slide_down">Deslize para cima</string>
+    <string name="animation_default">Padrão</string>
+    <string name="animation_translucent">Translúcido</string>
+    <string name="animation_grow_shrink">Crescer no (Topo)</string>
+    <string name="animation_grow_shrink_center">Crescer no (Centro)</string>
+    <string name="animation_grow_shrink_bottom">Crescer na (Parte inferior)</string>
+    <string name="animation_grow_shrink_left">Crescer (À Esquerda)</string>
+    <string name="animation_grow_shrink_right">Crescer (À Direita)</string>
+    <string name="action_null">Em branco</string>
+    
+    <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+    <string name="aex_system_error_manufacturer">Foi detectada uma incompatibilidade de imagem do fornecedor. Normalmente isso significa que sua imagem de fornecedor está desatualizada. Por favor, certifique-se que sua imagem de fornecedor é igual a <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
+
 </resources>
