@@ -115,5 +115,8 @@
     <string name="animation_grow_shrink_left">Crescer (À Esquerda)</string>
     <string name="animation_grow_shrink_right">Crescer (À Direita)</string>
     <string name="action_null">Em branco</string>
+    
+    <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+    <string name="aex_system_error_manufacturer">Foi detectada uma incompatibilidade de imagem do fornecedor. Normalmente isso significa que sua imagem de fornecedor está desatualizada. Por favor, certifique-se que sua imagem de fornecedor é igual a <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
 
 </resources>
