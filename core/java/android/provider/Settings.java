@@ -4154,6 +4154,11 @@ public final class Settings {
         public static final String DISABLE_SETTINGS_SUGGESTIONS = "disable_settings_suggestions";
 
         /**
+         * @hide
+         */
+        public static final String FINGERPRINT_WAKE_UNLOCK = "fingerprint_wake_unlock";
+
+        /**
          * Remove dashboard tile summaries in Settings
          * @hide
          */
