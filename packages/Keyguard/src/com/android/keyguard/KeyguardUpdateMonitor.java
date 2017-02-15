@@ -212,6 +212,9 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
     private UserManager mUserManager;
     private int mFingerprintRunningState = FINGERPRINT_STATE_STOPPED;
 
+    // Omni additions
+    private boolean mFingerprintWakeUnlock; // for screen-off fingerprint unlock
+
     private final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -1062,6 +1065,8 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
         mAlarmManager = context.getSystemService(AlarmManager.class);
         mDeviceProvisioned = isDeviceProvisionedInSettingsDb();
         mStrongAuthTracker = new StrongAuthTracker(context);
+        mFingerprintWakeUnlock = mContext.getResources().getBoolean(
+                        com.android.keyguard.R.bool.config_fingerprintWakeAndUnlock);
 
         // Since device can't be un-provisioned, we only need to register a content observer
         // to update mDeviceProvisioned when we are...
@@ -1153,8 +1158,10 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
     private boolean shouldListenForFingerprint() {
         if (!mSwitchingUser && !mFingerprintAlreadyAuthenticated
                 && !isFingerprintDisabled(getCurrentUser())) {
-            if (mContext.getResources().getBoolean(
-                    com.android.keyguard.R.bool.config_fingerprintWakeAndUnlock)) {
+            if (Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.FINGERPRINT_WAKE_UNLOCK,
+                    mFingerprintWakeUnlock ? 1 : 0,
+                    UserHandle.USER_CURRENT) != 0) {
                 return mKeyguardIsVisible || !mDeviceInteractive || mBouncer || mGoingToSleep;
             } else {
                 return mDeviceInteractive && (mKeyguardIsVisible || mBouncer);
