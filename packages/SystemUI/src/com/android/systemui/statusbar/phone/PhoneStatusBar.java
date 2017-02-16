@@ -729,6 +729,13 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             }
             mShowCarrierLabel = Settings.System.getIntForUser(resolver,
                     Settings.System.STATUS_BAR_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
+
+            mQsLayoutColumns = Settings.System.getIntForUser(resolver,
+                    Settings.System.QS_LAYOUT_COLUMNS, 3, mCurrentUserId);
+
+            if (mHeader != null) {
+                mHeader.updateSettings();
+            }
     }
 
   }
@@ -804,12 +811,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
             update();
         }
-            mQsLayoutColumns = Settings.System.getIntForUser(resolver,
-                    Settings.System.QS_LAYOUT_COLUMNS, 3, mCurrentUserId);
-
-            if (mHeader != null) {
-                mHeader.updateSettings();
-            }
 
 
         @Override
