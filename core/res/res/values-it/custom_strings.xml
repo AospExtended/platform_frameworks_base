@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2016 AospExtended ROM Project
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
+
           http://www.apache.org/licenses/LICENSE-2.0
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -12,7 +15,22 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
- 
+  <!-- Reboot Dialog -->
+  <string name="global_action_reboot">Riavvio</string>
+  <!-- Button to reboot the phone in reboot menu -->
+  <string name="reboot_reboot">Riavvio</string>
+  <!-- Button to reboot the phone into recovery in reboot menu-->
+  <string name="reboot_recovery">Recovery</string>
+  <!-- Button to reboot the phone into bootloader in reboot menu -->
+  <string name="reboot_bootloader">Bootloader</string>
+  <!-- Button to soft reboot the device in reboot menu -->
+  <string name="reboot_soft">Riavvio veloce</string>
+  <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Il tablet si riavvia.</string>
+  <string name="reboot_confirm" product="default">Il telefono si riavvia.</string>
+  <!-- Reboot Progress Dialog. This is shown if the user chooses to reboot the phone. -->
+  <string name="reboot_progress">Riavvio\u2026</string>
+     
   <!-- Privacy Guard -->
   <string name="permlab_changePrivacyGuardState">attiva o disattiva Privacy Guard</string>
   <string name="permdesc_changePrivacyGuardState">Quando un\'app è avviata con Privacy Guard, non avrà accesso a dati personali come contatti, cronologia chiamate o messaggi.</string>
@@ -92,25 +110,17 @@
   <string name="app_ops_get_accounts">otteni gli account del dispositivo</string>
   <string name="app_ops_run_in_background">eseguito in background</string>
   <string name="app_ops_wifi_change">modifica lo stato Wi-Fi</string>
-  <string name="app_ops_su">ottenere permessi SU</string>
+  <string name="app_ops_su">ottieni l\'accesso Superuser</string>
 
-  <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the <xliff:g id="string">%s</xliff:g> vendor image for your device</string>
-  
-  <string name="animation_fade">Dissolvenza</string>
-  <string name="animation_slide_right">Scorri verso destra</string>
-  <string name="animation_slide_left">Scorri verso sinistra</string>
-  <string name="animation_slide_right_no_fade">Scorri verso destra (nessuna dissolvenza)</string>
-  <string name="animation_slide_left_no_fade">Scorri verso sinistra (nessuna dissolvenza)</string>
-  <string name="animation_slide_up">Scorri in basso</string>
-  <string name="animation_slide_down">Scorri in alto</string>
-  <string name="animation_default">Predefinito</string>
-  <string name="animation_translucent">Traslucido</string>
-  <string name="animation_grow_shrink">Espandi (dall\'alto)</string>
-  <string name="animation_grow_shrink_center">Espandi (dal centro)</string>
-  <string name="animation_grow_shrink_bottom">Espandi (dal basso)</string>
-  <string name="animation_grow_shrink_left">Espandi (da sinistra)</string>
-  <string name="animation_grow_shrink_right">Espandi (da destra)</string>
-  <string name="action_null">Vuoto</string>
+  <!-- Global actions -->
+  <string name="global_action_screenshot">Screenshot</string>
+  <string name="global_action_search">Ricerca</string>
+  <string name="global_action_voicesearch">Ricerca vocale</string>
+
+  <!-- Battery styles -->
+  <string name="battery_style_text">Solo testo</string>
+  <string name="battery_style_default">Predefinito</string>
+  <string name="battery_style_meter_horizontal">Barra orizzontale</string>
+  <string name="battery_style_circle">Cerchio</string>
   
 </resources>
