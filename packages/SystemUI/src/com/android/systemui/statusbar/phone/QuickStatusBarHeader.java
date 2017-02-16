@@ -49,6 +49,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.HorizontalScrollView;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.MetricsProto;
@@ -578,6 +579,8 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
 
     public void updateSettings() {
         if (mQsPanel != null) {
+            mQsPanel.updateSettings();
+
             // if header is active we want to push the qs panel a little bit further down
             // to have more space for the header image
             post(new Runnable() {
@@ -585,6 +588,9 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
                     setQsPanelOffset();
                 }
             });
+        }
+        if (mHeaderQsPanel != null) {
+            mHeaderQsPanel.updateSettings();
         }
         applyHeaderBackgroundShadow();
     }
@@ -674,15 +680,5 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
         LinearLayout.LayoutParams p = (LinearLayout.LayoutParams) mBackgroundImage.getLayoutParams();
         p.height = getExpandedHeight();
         mBackgroundImage.setLayoutParams(p);
-    }
-
-    @Override
-    public void updateSettings() {
-        if (mQsPanel != null) {
-            mQsPanel.updateSettings();
-        }
-        if (mHeaderQsPanel != null) {
-            mHeaderQsPanel.updateSettings();
-        }
     }
 }
