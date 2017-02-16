@@ -15,22 +15,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Reboot Dialog -->
-  <string name="global_action_reboot">Riavvio</string>
-  <!-- Button to reboot the phone in reboot menu -->
-  <string name="reboot_reboot">Riavvio</string>
-  <!-- Button to reboot the phone into recovery in reboot menu-->
-  <string name="reboot_recovery">Recovery</string>
-  <!-- Button to reboot the phone into bootloader in reboot menu -->
-  <string name="reboot_bootloader">Bootloader</string>
-  <!-- Button to soft reboot the device in reboot menu -->
-  <string name="reboot_soft">Riavvio veloce</string>
-  <!-- Reboot Confirmation Dialog. -->
-  <string name="reboot_confirm" product="tablet">Il tablet si riavvia.</string>
-  <string name="reboot_confirm" product="default">Il telefono si riavvia.</string>
-  <!-- Reboot Progress Dialog. This is shown if the user chooses to reboot the phone. -->
-  <string name="reboot_progress">Riavvio\u2026</string>
-     
+      
   <!-- Privacy Guard -->
   <string name="permlab_changePrivacyGuardState">attiva o disattiva Privacy Guard</string>
   <string name="permdesc_changePrivacyGuardState">Quando un\'app è avviata con Privacy Guard, non avrà accesso a dati personali come contatti, cronologia chiamate o messaggi.</string>
@@ -112,15 +97,27 @@
   <string name="app_ops_wifi_change">modifica lo stato Wi-Fi</string>
   <string name="app_ops_su">ottieni l\'accesso Superuser</string>
 
-  <!-- Global actions -->
-  <string name="global_action_screenshot">Screenshot</string>
-  <string name="global_action_search">Ricerca</string>
-  <string name="global_action_voicesearch">Ricerca vocale</string>
+  <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
+  <string name="system_error_vendorprint">L\'immagine del fornitore non corrisponde a quella del sistema. Riscrivi l\'immagine del fornitore <xliff:g id="string">%s </xliff:g> per il tuo dispositivo</string>
 
-  <!-- Battery styles -->
-  <string name="battery_style_text">Solo testo</string>
-  <string name="battery_style_default">Predefinito</string>
-  <string name="battery_style_meter_horizontal">Barra orizzontale</string>
-  <string name="battery_style_circle">Cerchio</string>
-  
+  <!-- AOKP custom system animations -->
+  <string name="animation_fade">Dissolvenza</string>
+  <string name="animation_slide_right">Scorri verso destra</string>
+  <string name="animation_slide_left">Scorri verso sinistra</string>
+  <string name="animation_slide_right_no_fade">Scorri verso destra (no dissolvenza)</string>
+  <string name="animation_slide_left_no_fade">Scorri verso sinistra (no dissolvenza)</string>
+  <string name="animation_slide_up">Scorri verso il basso</string>
+  <string name="animation_slide_down">Scorri verso l\'alto</string>
+  <string name="animation_default">Predefinita</string>
+  <string name="animation_translucent">Trasparenza</string>
+  <string name="animation_grow_shrink">Espandi (Dall\'alto)</string>
+  <string name="animation_grow_shrink_center">Espandi (Verso il centro)</string>
+  <string name="animation_grow_shrink_bottom">Espandi (Verso il basso)</string>
+  <string name="animation_grow_shrink_left">Espandi (Da sinistra)</string>
+  <string name="animation_grow_shrink_right">Espandi (Da destra)</string>
+  <string name="action_null">Vuoto</string>
+    
+  <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">E\' stato rilevato la mancata corrispondenza dell\'immagine del fornitore. Di solito questo significa che il vostro provider ha un\'immagine obsoleta. Si prega di fare in modo che l\'immagine del provider è uguale a <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
+
 </resources>
