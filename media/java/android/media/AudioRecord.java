@@ -982,6 +982,7 @@ public class AudioRecord implements AudioRouting
      */
     public void startRecording()
     throws IllegalStateException {
+        android.util.SeempLog.record(70);
         if (mState != STATE_INITIALIZED) {
             throw new IllegalStateException("startRecording() called on an "
                     + "uninitialized AudioRecord.");
@@ -1005,6 +1006,7 @@ public class AudioRecord implements AudioRouting
      */
     public void startRecording(MediaSyncEvent syncEvent)
     throws IllegalStateException {
+        android.util.SeempLog.record(70);
         if (mState != STATE_INITIALIZED) {
             throw new IllegalStateException("startRecording() called on an "
                     + "uninitialized AudioRecord.");
