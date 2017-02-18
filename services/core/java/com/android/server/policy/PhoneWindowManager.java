@@ -263,6 +263,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private static final int KEY_ACTION_SLEEP = 7;
     private static final int KEY_ACTION_LAST_APP = 8;
     private static final int KEY_ACTION_SPLIT_SCREEN = 9;
+    private static final int KEY_ACTION_SINGLE_HAND_LEFT = 10;
+    private static final int KEY_ACTION_SINGLE_HAND_RIGHT = 11;
 
     // Masks for checking presence of hardware keys.
     // Must match values in core/res/res/values/config.xml
@@ -1712,6 +1714,12 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 break;
             case KEY_ACTION_SPLIT_SCREEN:
                 toggleSplitScreen();
+                break;
+            case KEY_ACTION_SINGLE_HAND_LEFT:
+                toggleSingleHand(mContext, true);
+                break;
+            case KEY_ACTION_SINGLE_HAND_RIGHT:
+                toggleSingleHand(mContext, false);
                 break;
             default:
                 break;
@@ -8814,5 +8822,12 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
     public void freezeOrThawRotation(int rotation) {
         mDesiredRotation = rotation;
+    }
+
+    private void toggleSingleHand(Context context, boolean isLeft) {
+        Settings.Global.putString(context.getContentResolver(), Settings.Global.SINGLE_HAND_MODE,
+                Settings.Global.getString(context.getContentResolver(),
+                    Settings.Global.SINGLE_HAND_MODE).isEmpty() ?
+                    isLeft ? "left" : "right" : "");
     }
 }
