@@ -1,4 +1,4 @@
-package me.piebridge;
+package com.android.server.am;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -8,8 +8,6 @@ import android.net.Uri;
 import android.util.Log;
 
 import java.io.File;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Set;
 
 import dalvik.system.DexClassLoader;
@@ -26,12 +24,12 @@ public class PreventRunning implements PreventRunningHook {
     private PreventRunningHook mPreventRunning;
 
     private static String[] APKS = {
-            "/data/app/me.piebridge.forcestopgb-1/base.apk",
-            "/data/app/me.piebridge.forcestopgb-2/base.apk",
-            "/data/app/me.piebridge.forcestopgb-3/base.apk",
-            "/data/app/me.piebridge.forcestopgb-1.apk",
-            "/data/app/me.piebridge.forcestopgb-2.apk",
-            "/data/app/me.piebridge.forcestopgb-3.apk",
+            "/data/app/me.piebridge.prevent-1/base.apk",
+            "/data/app/me.piebridge.prevent-2/base.apk",
+            "/data/app/me.piebridge.prevent-3/base.apk",
+            "/data/app/me.piebridge.prevent-1.apk",
+            "/data/app/me.piebridge.prevent-2.apk",
+            "/data/app/me.piebridge.prevent-3.apk",
     };
 
     public PreventRunning() {
@@ -49,8 +47,8 @@ public class PreventRunning implements PreventRunningHook {
             ClassLoader classLoader = new DexClassLoader(apk.getAbsolutePath(), "/cache", null, currentClassLoader);
             Log.d(TAG, "loading PreventRunning(" + VERSION + ") from " + apk);
             mPreventRunning = (PreventRunningHook) classLoader.loadClass("me.piebridge.prevent.framework.PreventRunning").newInstance();
-            setVersion();
-            setMethod();
+            setVersion(VERSION);
+            setMethod("native");
             return true;
         } catch (ClassNotFoundException e) {
             Log.d(TAG, "cannot find class", e);
@@ -139,7 +137,6 @@ public class PreventRunning implements PreventRunningHook {
         return mPreventRunning == null || mPreventRunning.isExcludingStopped(action);
     }
 
-
     @Override
     public boolean hookStartProcessLocked(Context context, ApplicationInfo info, String hostingType, ComponentName hostingName) {
         return mPreventRunning == null || mPreventRunning.hookStartProcessLocked(context, info, hostingType, hostingName);
@@ -154,29 +151,32 @@ public class PreventRunning implements PreventRunningHook {
         }
     }
 
-    private void setVersion() {
-        try {
-            Method method = mPreventRunning.getClass().getMethod("setVersion", int.class);
-            method.invoke(mPreventRunning, VERSION);
-        } catch (NoSuchMethodException e) {
-            Log.d(TAG, "cannot find method", e);
-        } catch (InvocationTargetException e) {
-            Log.d(TAG, "cannot invoke target", e);
-        } catch (IllegalAccessException e) {
-            Log.d(TAG, "illegal access", e);
+    @Override
+    public void setVersion(int version) {
+        if (mPreventRunning != null) {
+            mPreventRunning.setVersion(version);
         }
     }
 
-    private void setMethod() {
-        try {
-            Method method = mPreventRunning.getClass().getMethod("setMethod", String.class);
-            method.invoke(mPreventRunning, "native");
-        } catch (NoSuchMethodException e) {
-            Log.d(TAG, "cannot find method", e);
-        } catch (InvocationTargetException e) {
-            Log.d(TAG, "cannot invoke target", e);
-        } catch (IllegalAccessException e) {
-            Log.d(TAG, "illegal access", e);
+    @Override
+    public void setMethod(String method) {
+        if (mPreventRunning != null) {
+            mPreventRunning.setMethod(method);
         }
     }
+
+    @Override
+    public boolean hookBindService(Intent service) {
+        return mPreventRunning == null || mPreventRunning.hookBindService(service);
+    }
+
+    @Override
+    public boolean hookStartService(Intent service) {
+        return mPreventRunning == null || mPreventRunning.hookStartService(service);
+    }
+
+    public boolean isActiviated() {
+        return mPreventRunning != null;
+    }
+
 }
