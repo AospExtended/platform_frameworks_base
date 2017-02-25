@@ -4574,5 +4574,7 @@ message MetricsEvent {
 
     //Extensions
     EXTENSIONS = 1150;
+    OMNI_QS_WEATHER = 1151;
+    OMNI_QS_WEATHER_DETAILS = 1152;
   }
 }
