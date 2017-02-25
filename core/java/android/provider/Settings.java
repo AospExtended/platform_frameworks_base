@@ -8031,6 +8031,12 @@ public final class Settings {
         public static final String QQS_COUNT = "sysui_qqs_count";
 
         /**
+         * Force authorize Substratum (or equivalent) frontend calling packages by Masquerade
+         * @hide
+         */
+        public static final String FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES = "force_authorize_substratum_packages";
+
+        /**
          * This are the settings to be backed up.
          *
          * NOTE: Settings are backed up and restored in the order they appear
