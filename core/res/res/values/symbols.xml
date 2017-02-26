@@ -2823,4 +2823,7 @@
   <!-- Last app switch animations -->
   <java-symbol type="anim" name="last_app_in" />
   <java-symbol type="anim" name="last_app_out" />
+
+  <!-- Allow devices to use wakelock for flashlight -->
+  <java-symbol type="bool" name="config_useWakeLockForFlashlight" />
 </resources>

@@ -24,8 +24,6 @@ import android.hardware.camera2.CameraManager;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Process;
-import android.os.PowerManager;
-import android.os.PowerManager.WakeLock;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -56,9 +54,6 @@ public class FlashlightController {
     /** Lock on mListeners when accessing */
     private final ArrayList<WeakReference<FlashlightListener>> mListeners = new ArrayList<>(1);
 
-    private final boolean mUseWakeLock;
-    private final WakeLock mWakeLock;
-
     /** Lock on {@code this} when accessing */
     private boolean mFlashlightEnabled;
 
@@ -68,10 +63,6 @@ public class FlashlightController {
     public FlashlightController(Context context) {
         mContext = context;
         mCameraManager = (CameraManager) mContext.getSystemService(Context.CAMERA_SERVICE);
-
-        PowerManager pm = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
-        mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
-        mUseWakeLock = mContext.getResources().getBoolean(R.bool.config_useWakelockForFlashlight);
 
         tryInitCamera();
     }
@@ -97,24 +88,12 @@ public class FlashlightController {
             if (mFlashlightEnabled != enabled) {
                 mFlashlightEnabled = enabled;
 
-                if (mUseWakeLock) {
-                    if (enabled) {
-                        if (!mWakeLock.isHeld()) mWakeLock.acquire();
-                    } else {
-                        if (mWakeLock.isHeld()) mWakeLock.release();
-                    }
-                }
-
                 try {
                     mCameraManager.setTorchMode(mCameraId, enabled);
                 } catch (CameraAccessException e) {
                     Log.e(TAG, "Couldn't set torch mode", e);
                     mFlashlightEnabled = false;
                     pendingError = true;
-
-                    if (mUseWakeLock && mWakeLock.isHeld()) {
-                        mWakeLock.release();
-                    }
                 }
             }
         }
@@ -242,10 +221,6 @@ public class FlashlightController {
             synchronized (FlashlightController.this) {
                 changed = mTorchAvailable != available;
                 mTorchAvailable = available;
-
-                if (mUseWakeLock && !available && mWakeLock.isHeld()) {
-                    mWakeLock.release();
-                }
             }
             if (changed) {
                 if (DEBUG) Log.d(TAG, "dispatchAvailabilityChanged(" + available + ")");
@@ -258,10 +233,6 @@ public class FlashlightController {
             synchronized (FlashlightController.this) {
                 changed = mFlashlightEnabled != enabled;
                 mFlashlightEnabled = enabled;
-
-                if (mUseWakeLock && !enabled && mWakeLock.isHeld()) {
-                    mWakeLock.release();
-                }
             }
             if (changed) {
                 if (DEBUG) Log.d(TAG, "dispatchModeChanged(" + enabled + ")");
