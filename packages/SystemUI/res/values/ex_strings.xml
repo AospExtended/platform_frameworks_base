@@ -146,4 +146,8 @@
 
     <!-- Data/Wifi activity arrows -->
     <string name="data_wifi_activity_arrows_title">Network activity</string>
+
+    <!-- AEX Logo -->
+    <string name="status_bar_aex_logo_title">AEX logo</string>
+    <string name="status_bar_aex_logo_summary">Enable to show AEX logo on the left side of the statusbar</string>
 </resources>
