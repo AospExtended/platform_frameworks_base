@@ -23,6 +23,7 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
@@ -48,7 +49,7 @@ public class WeatherTile extends QSTile<QSTile.BooleanState> implements OmniJaws
         super(host);
         mWeatherClient = new OmniJawsClient(mContext);
         mEnabled = mWeatherClient.isOmniJawsEnabled();
-        mWeatherImage = mWeatherClient.getDefaultWeatherConditionImage();
+        mWeatherImage = mContext.getResources().getDrawable(R.drawable.ic_qs_weather_default_off);
         mWeatherLabel = mContext.getResources().getString(R.string.omnijaws_label_default);
     }
 
@@ -101,6 +102,10 @@ public class WeatherTile extends QSTile<QSTile.BooleanState> implements OmniJaws
 
     @Override
     protected void handleClick() {
+        if (!mWeatherClient.isOmniJawsServiceInstalled()) {
+            Toast.makeText(mContext, R.string.omnijaws_package_not_available, Toast.LENGTH_SHORT).show();
+            return;
+        }
         mShowingDetail = true;
         if (!mState.value) {
             // service enablement is delayed so we keep the status
