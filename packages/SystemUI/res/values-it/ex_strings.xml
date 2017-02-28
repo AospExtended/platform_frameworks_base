@@ -107,4 +107,12 @@
 
     <string name="recents_free_ram">RAM libera: %1$d MB</string>
 
+     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Schermata dei servizi in esecuzione aperta.</string>
+
+    <!-- volte icon switch -->
+    <string name="status_bar_volte">VOLTE</string>
+
+    <!-- Data/Wifi activity arrows -->
+    <string name="data_wifi_activity_arrows_title">Attività di rete</string>
 </resources>
