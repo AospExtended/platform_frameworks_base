@@ -29,6 +29,8 @@ import android.os.PowerManager.WakeLock;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.android.systemui.R;
+
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.lang.ref.WeakReference;

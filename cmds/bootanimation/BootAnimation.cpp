@@ -58,12 +58,8 @@
 #include <EGL/eglext.h>
 
 #include "BootAnimation.h"
-#include "AudioPlayer.h"
 
-#define OEM_BOOTANIMATION_FILE "/oem/media/bootanimation.zip"
-#define SYSTEM_BOOTANIMATION_FILE "/system/media/bootanimation.zip"
-#define SYSTEM_ENCRYPTED_BOOTANIMATION_FILE "/system/media/bootanimation-encrypted.zip"
-#define EXIT_PROP_NAME "service.bootanim.exit"
+#include "audioplay.h"
 
 namespace android {
 

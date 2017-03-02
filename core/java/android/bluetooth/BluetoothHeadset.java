@@ -990,29 +990,6 @@ public final class BluetoothHeadset implements BluetoothProfile {
         return false;
     }
 
-    /**
-     * Send Headset the BIND response from AG to report change in the status of the
-     * HF indicators to the headset
-     *
-     * @param ind_id Assigned Number of the indicator (defined by SIG)
-     * @param ind_status
-     * possible values- false-Indicator is disabled, no value changes shall be sent for this indicator
-     *                  true-Indicator is enabled, value changes may be sent for this indicator
-     * @hide
-     */
-    public void bindResponse(int ind_id, boolean ind_status) {
-        if (mService != null && isEnabled()) {
-            try {
-                mService.bindResponse(ind_id, ind_status);
-            } catch (RemoteException e) {
-                Log.e(TAG, e.toString());
-            }
-        } else {
-            Log.w(TAG, "Proxy not attached to service");
-            if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        }
-    }
-
     private final IBluetoothProfileServiceConnection mConnection
             = new IBluetoothProfileServiceConnection.Stub()  {
         @Override

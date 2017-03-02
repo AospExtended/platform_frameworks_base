@@ -3510,21 +3510,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         mContext.sendOrderedBroadcastAsUser(intent, UserHandle.CURRENT,
                                 null, null, null, 0, null, null);
                         return -1;
-                    } else if (SHOW_PROCESSES_ON_ALT_MENU &&
-                            (metaState & KeyEvent.META_ALT_ON) == KeyEvent.META_ALT_ON) {
-                        Intent service = new Intent();
-                        service.setClassName(mContext, "com.android.server.LoadAverageService");
-                        ContentResolver res = mContext.getContentResolver();
-                        boolean shown = Settings.Global.getInt(
-                                res, Settings.Global.SHOW_PROCESSES, 0) != 0;
-                        if (!shown) {
-                            mContext.startService(service);
-                        } else {
-                            mContext.stopService(service);
-                        }
-                        Settings.Global.putInt(
-                                res, Settings.Global.SHOW_PROCESSES, shown ? 0 : 1);
-                        return -1;
                      }
                 } else if (longPress) {
                     if (!keyguardOn && mLongPressOnMenuBehavior != KEY_ACTION_NOTHING) {
