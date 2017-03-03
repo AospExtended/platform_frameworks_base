@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2016 The OmniROM Project
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <dimen name="qs_tile_height_wo_label">48dp</dimen>
+
+    <!-- Clear-All recents FAB -->
+    <dimen name="floating_action_button_height">56dp</dimen>
+    <dimen name="floating_action_button_width">56dp</dimen>
+    <dimen name="floating_action_button_translation_z">6dp</dimen>
+    <dimen name="floating_action_button_margin_side">54dp</dimen>
+    <dimen name="floating_action_button_margin_bottom">62dp</dimen>
+
+    <!-- Slim recent -->
+    <dimen name="recent_width">230dp</dimen>
+    <dimen name="slim_recents_elevation">20dp</dimen>
+    <dimen name="recent_app_icon_size">48dp</dimen>
+    <dimen name="recent_favorite_icon_size">18dp</dimen>
+    <dimen name="recent_thumbnail_width">190dp</dimen>
+    <dimen name="recent_thumbnail_height">140dp</dimen>
+    <dimen name="recent_header_width">120dp</dimen>
+    <dimen name="recent_text_size">17dp</dimen>
+    <dimen name="recent_thumbnail_bottom_padding">3dp</dimen>
+</resources>
