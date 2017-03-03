@@ -201,5 +201,9 @@
   <!-- Settings icon tint color -->
   <java-symbol type="color" name="settings_icon_tint_color" />
 
+  <!-- Keypress Boost -->
+  <java-symbol type="bool" name="config_enableKeypressBoost" />
+  <java-symbol type="array" name="keypressboost_strong_param_value" />
+  <java-symbol type="array" name="keypressboost_weak_param_value" /> 
 </resources>
 
