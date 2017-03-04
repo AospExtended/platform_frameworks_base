@@ -99,4 +99,6 @@
         <item quantity="one">%1$d cliente</item>
         <item quantity="other">%1$d clientes</item>
   </plurals>
+  <!-- Data/Wifi activity arrows -->
+  <string name="data_wifi_activity_arrows_title">Actividad de red</string>   
 </resources>
