@@ -1269,8 +1269,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
         mTickerEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.STATUS_BAR_SHOW_TICKER,
-                mContext.getResources().getBoolean(R.bool.enable_ticker)
-                        ? 1 : 1, UserHandle.USER_CURRENT) == 1;
+                0, UserHandle.USER_CURRENT) == 1;
         initTickerView();
 
         // set the initial view visibility
