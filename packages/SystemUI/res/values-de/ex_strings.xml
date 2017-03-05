@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+     Copyright (C) 2016 AospExtended Rom
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Notification which notifies user flashlight is enabled -->
+    <string name="quick_settings_tile_flashlight_not_title">Taschenlampe ist an</string>
+    <string name="quick_settings_tile_flashlight_not_summary">Tippen um auszuschalten</string>
+  
+    <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+    <string name="status_bar_notification_info_overflow" translatable="false">\u221E</string>
+
+    <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Bildschrimfoto gelöscht</string>
+
+    <!-- SystemUI Tuner Parts -->
+    <string name="systemui_tuner_pnc_title">Power notification controls</string>
+
+    <!-- Quick Settings tiles -->
+    <string name="quick_settings_screenshot_label">Bildschirmfoto</string>
+    <string name="quick_settings_region_screenshot_label">Partieller Screenshot</string>
+    <string name="quick_settings_sync_label">Synchronisation</string>
+    <string name="accessibility_quick_settings_sync_off">Synchronisation aus</string>
+    <string name="accessibility_quick_settings_sync_on">Synchronisation ein</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Synchronisation ausgeschaltet</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Synchronisation eingeschaltet</string>
+
+    <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Neustart</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+    <string name="accessibility_quick_settings_usb_tether_off">USB-Tethering aus</string>
+    <string name="accessibility_quick_settings_usb_tether_on">USB-Tethering an</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB Tethering ausgeschaltet</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">USB Tethering angeschaltet</string>
+    <string name="quick_settings_usb_tether_label">USB Tethering</string>
+    <string name="quick_settings_music_label">Musik</string>
+    <string name="quick_settings_music_play">Play</string>
+    <string name="quick_settings_music_pause">Pause</string>
+    <string name="quick_settings_ime_tile_label">Eingabemethode</string>
+    <string name="quick_settings_caffeine_label">Koffein</string>
+    <string name="accessibility_quick_settings_caffeine_off">Koffein aus</string>
+    <string name="accessibility_quick_settings_caffeine_on">Koffein an</string>
+    <string name="quick_settings_heads_up_label">Heads-Up</string>
+    <string name="accessibility_quick_settings_heads_up_off">Heads Up-Benachrichtigungen aus.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Heads Up-Benachrichtigungen an.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Heads Up-Benachrichtigungen ausgeschaltet.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Heads Up-Benachrichtigungen eingeschaltet.</string>
+    <string name="quick_settings_pulse_enabled">Pulse aktiviert</string>
+    <string name="quick_settings_pulse_disabled">Keine Visualisierung</string>
+    <string name="quick_settings_pulse_label">Pulse</string>
+    <string name="quick_settings_nfc_label">NFC</string>
+    <string name="accessibility_quick_settings_nfc_off">NFC aus.</string>
+    <string name="accessibility_quick_settings_nfc_on">NFC an.</string>
+    <string name="accessibility_quick_settings_nfc_changed_off">NFC ausgeschaltet.</string>
+    <string name="accessibility_quick_settings_nfc_changed_on">NFC eingeschaltet.</string>
+
+
+    <!-- SystemUI Tuner Parts -->
+    <string name="systemui_tuner_statusbar_title">Statusleisten-Symbole</string>
+
+    <string name="accessibility_quick_settings_location_battery_saving">Standortdienste: Energiesparmodus.</string>
+    <string name="accessibility_quick_settings_location_gps_only">Standortdienste: Nur Gerät.</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Standortdienste: Hohe Genauigkeit.</string>
+    <string name="accessibility_quick_settings_location_changed_battery_saving">Die Standortbestimmung wurde auf Energiesparmodus geändert.</string>
+    <string name="accessibility_quick_settings_location_changed_gps_only">Die Standortbestimmung wurde auf \"Nur Gerät\" geändert.</string>
+    <string name="accessibility_quick_settings_location_changed_high_accuracy">Die Standortbestimmung wurde auf \"Hohe Genauigkeit\</string>
+    <string name="quick_settings_location_detail_title">Standortmodus</string>
+    <string name="quick_settings_location_battery_saving_label">Energiesparmodus</string>
+    <string name="quick_settings_location_gps_only_label">Nur Gerät</string>
+    <string name="quick_settings_location_high_accuracy_label">Hohe Genauigkeit</string>
+    <string name="quick_settings_location_off_label">Standortbestimmung aus</string>
+
+    <!-- Show lte/4g switch -->
+    <string name="show_lte_fourgee_title">Zeige 4G anstatt LTE</string>
+    <string name="show_lte_fourgee_summary">Ersetzt das LTE Symbol mit einem 4G Symbol</string>
+    <string name="statusbar_tuner_category_title">Symbole verstecken</string>
+
+    <!-- Navigation bar Tile -->
+    <string name="quick_settings_navigation_bar">Navigationsleiste</string>
+    <string name="quick_settings_smartbar">SmartBar</string>
+    <string name="quick_settings_smartbar_off">SmartBar aus</string>
+    <string name="quick_settings_fling">Fling</string>
+    <string name="quick_settings_fling_off">Fling aus</string>
+
+    <!-- Screenshot action -->
+    <string name="screenshot_abort_title">Kein Bildschirmfoto gemacht</string>
+    <string name="screenshot_abort_text">Vorgang abgebrochen</string>
+
+    <string name="quick_settings_expanded_desktop_label">Erweiterter Desktop</string>
+    <string name="quick_settings_expanded_desktop">Erweitert</string>
+    <string name="quick_settings_expanded_desktop_off">Normal</string>
+
+    <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g>  • Heads-Up Benachrichtigung ist 1 Minute deaktiviert.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • Heads-Up Benachrichtigungen sind für <xliff:g id="number">%d </xliff:g> Minuten deaktiviert.</string>
+
+   <!-- Path data for portrait battery -->
+    <string name="battery_portrait_path_full" translatable="false">M 5 2 H 19 V 21 H 5 V 2 Z</string>
+    <string name="battery_portrait_path_empty" translatable="false">M 5 21 H 19 V 21 H 5 V 21 Z</string>
+    <string name="battery_portrait_clip_path" translatable="false">M6,21V4h3V2h6v2h3v17H6z</string>
+
+    <!-- Path data for landscape battery -->
+    <string name="battery_landscape_path_full" translatable="false">M 1 4 H 25 V 20 H 1 V 4 Z</string>
+    <string name="battery_landscape_path_empty" translatable="false">M 1 4 H 1 V 20 H 1 V 4 Z</string>
+    <string name="battery_landscape_clip_path" translatable="false">M25,16h-2v4H1V4h22v4h2V16z</string>
+
+    <!-- Path data for circle battery -->
+    <string name="battery_circle_path" translatable="false">M 12 3.5 C 16.6944203736 3.5 20.5 7.30557962644 20.5 12 C 20.5 16.6944203736 16.6944203736 20.5 12 20.5 C 7.30557962644 20.5 3.5 16.6944203736 3.5 12 C 3.5 7.30557962644 7.30557962644 3.5 12 3.5 Z</string>
+
+    <!-- Path data for big circle battery -->
+    <string name="battery_bigcircle_path" translatable="false">M 12,0.9999999 C 18.075132,0.9999999 23,5.9248678 23,12 23,18.075132 18.075132,23 12,23 5.9248675,23 0.99999975,18.075132 0.99999975,12 0.99999975,5.9248678 5.9248675,0.9999999 12,0.9999999 Z</string>
+	
+	<string name="recents_free_ram">Freier RAM: %1$d MB</string>
+
+    <!-- Path data for circle battery -->
+    <string name="battery_circle_full" translatable="false">M 12 2 C 17.5228474983 2 22 6.47715250169 22 12 C 22 17.5228474983 17.5228474983 22 12 22 C 6.47715250169 22 2 17.5228474983 2 12 C 2 6.47715250169 6.47715250169 2 12 2 Z</string>
+    <string name="battery_circle_empty" translatable="false">M 12 12 C 12 12 12 12 12 12 C 12 12 12 12 12 12 C 12 12 12 12 12 12 C 12 12 12 12 12 12 Z</string>
+
+    <!-- Wi-Fi hotspot label when enabled -->
+    <plurals name="wifi_hotspot_connected_clients_label">
+        <item quantity="one">%1$d client</item>
+        <item quantity="other">%1$d clients</item>
+    </plurals>
+
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Open Running Services screen.</string>
+
+    <!-- volte icon switch -->
+    <string name="status_bar_volte">VOLTE</string>
+
+    <!-- Data/Wifi activity arrows -->
+    <string name="data_wifi_activity_arrows_title">Netzwerk Aktivität</string>
+</resources>

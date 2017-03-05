@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016 The Pure Nexus Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_hspap">HSPA+</string>
+
+    <!-- Screenrecord Notification Ticker -->
+    <string name="screenrecord_notif_ticker">Bildschirm wird aufgenommen</string>
+    <!-- Screenrecord notification title -->
+    <string name="screenrecord_notif_title">Bildschirmaufzeichnung</string>
+    <!-- Screenrecord notification action: Stop -->
+    <string name="screenrecord_notif_stop">Stopp</string>
+    <!-- Screenrecord notification action: show/hide pointer -->
+    <string name="screenrecord_notif_pointer_on">Cursor anzeigen</string>
+    <string name="screenrecord_notif_pointer_off">Cursor ausblenden</string>
+    <!-- Screen record notification error title -->
+    <string name="screenrecord_notif_error">Bildschirmvideo konnte nicht aufgenommen werden</string>
+
+    <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Screenshot gelöscht</string>
+
+    <!-- Screenrecord QS tile -->
+    <string name="quick_settings_screenrecord">Bildschirmaufzeichnung</string>
+    <string name="quick_settings_screenrecord_on">Bildschirmaufzeichnung läuft</string>
+
+    <!-- Language\Locale Tile -->
+    <string name="quick_settings_locale_label">Sprache</string>
+    <string name="quick_settings_locale_more_locales_toast">Bitte richten Sie mehrere Sprachen ein, um die Umschaltfunktion zu aktivieren</string>
+
+    <!-- NavBar Tuner -->
+    <string name="menu_ime_always_show">Menu / Keyboard Switcher (always show)</string>
+    <string name="search">Suche</string>
+
+    <!-- Content description of the Superuser tile -->
+    <string name="accessibility_su_active">Superuser session active</string>
+
+    <!-- Strings for lockscreen shortcut hints -->
+    <string name="left_shortcut_hint">>Nach Rechts wischen für %1$s</string>
+    <string name="right_shortcut_hint">Nach Links wischen für %1$s</string>
+    <string name="lockscreen_message">Tippe auf ein Symbol links oder rechts, um eine Sperrbildschirm-Verknüpfung neu zuzuweisen.</string>
+    <string name="lockscreen_default_target">Standard</string>
+    <string name="select_application">App auswählen</string>
+    <string name="lockscreen_choose_action_title">Aktion auswählen</string>
+    <string name="lockscreen_none_target">Kein</string>
+
+    <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Töne</string>
+    <string name="quick_settings_sound_ring">Klingeln</string>
+    <string name="quick_settings_sound_vibrate">Vibrieren</string>
+    <string name="quick_settings_sound_dnd">Nicht stören</string>
+
+    <!-- Ambient Display QS tile -->
+    <string name="accessibility_quick_settings_ambient_display_off">Inaktivitätsbildschirm aus.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Inaktivitätsbildschirm an.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Inaktivitätsbildschirm ausgeschaltet</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Inaktivitätsbildschirm eingeschaltet</string>
+    <string name="quick_settings_ambient_display_label">Inaktivitätsdisplay</string>
+</resources>
