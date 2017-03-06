@@ -1279,8 +1279,12 @@ public class PackageParser {
             final List<ZipEntry> toVerify = new ArrayList<>();
             toVerify.add(manifestEntry);
 
-            // If we're parsing an untrusted package, verify all contents
-            if ((parseFlags & PARSE_IS_SYSTEM_DIR) == 0) {
+            // If we're parsing an untrusted package or a package that's not an overlay,
+            // verify all contents
+            if (pkg.mOverlayTarget == null &&
+                    (parseFlags & PARSE_IS_SYSTEM_DIR) == 0) {
+                Log.d("TEST", "you installed the normal user package \"" + pkg.packageName
+                        + "\" and V1 verification will take place");
                 final Iterator<ZipEntry> i = jarFile.iterator();
                 while (i.hasNext()) {
                     final ZipEntry entry = i.next();
@@ -1293,6 +1297,9 @@ public class PackageParser {
 
                     toVerify.add(entry);
                 }
+            } else {
+                Log.d("TEST", "you installed the overlay/trusted package \"" + pkg.packageName
+                        + "\", skipping V1 verification!");
             }
 
             // Verify that entries are signed consistently with the first entry
