@@ -23,4 +23,10 @@
     <string name="stream_title_alarm">Alarm</string>
     <string name="stream_title_notification">Notification</string>
     <string name="stream_title_bluetooth">Bluetooth</string>
+
+    <!-- Wi-Fi hotspot label when enabled -->
+    <plurals name="wifi_hotspot_connected_clients_label">
+        <item quantity="one">%1$d client</item>
+        <item quantity="other">%1$d clients</item>
+    </plurals>
 </resources>
