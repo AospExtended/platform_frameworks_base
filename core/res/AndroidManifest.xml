@@ -2723,11 +2723,11 @@
     <permission android:name="android.permission.BATTERY_STATS"
         android:protectionLevel="signature|privileged|development" />
 
-    <!-- @SystemApi Allows an application to reset the device battery statistics.
-    <p>Not for use by third-party applications.
-         @hide -->
+    <!-- @hide Allows an application to reset the device battery statistics -->
     <permission android:name="android.permission.RESET_BATTERY_STATS"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:label="@string/permlab_resetBatteryStats"
+        android:description="@string/permdesc_resetBatteryStats"
         android:protectionLevel="signature|system|development" />
 
     <!-- @SystemApi Allows an application to control the backup and restore process.
@@ -3154,7 +3154,8 @@
     <permission android:name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME"
                 android:protectionLevel="signature|privileged" />
 
-    <!-- Allows an application to make calls to OverlayManagerService.-->
+    <!-- Allows an application to make calls to OverlayManagerService.
+         @hide -->
     <permission android:name="android.permission.MODIFY_OVERLAYS"
         android:label="@string/permlab_modifyOverlays"
         android:description="@string/permdesc_modifyOverlays"

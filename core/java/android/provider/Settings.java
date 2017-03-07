@@ -4574,6 +4574,12 @@ public final class Settings {
         public static final String NAV_BAR_DYNAMIC = "nav_bar_dynamic";
 
         /**
+         * Statusbar AEX logo
+         * @hide
+         */
+        public static final String STATUS_BAR_AEX_LOGO = "status_bar_aex_logo";
+
+        /**
          * Status bar carrier label
          * 0: Hide
          * 1: Display on keyguard status bar
@@ -4785,6 +4791,42 @@ public final class Settings {
          * @hide
          */
         public static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
+
+        /**
+         * Enable/disable overwrite default value for ambient display
+         * @hide
+         */
+        public static final String DOZE_OVERWRITE_VALUE = "doze_overwrite_value";
+
+        /**
+         * Duration in for ambient display
+         * @hide
+         */
+        public static final String DOZE_PULSE_DURATION_IN = "doze_pulse_duration_in";
+
+        /**
+         * Duration out for ambient display
+         * @hide
+         */
+        public static final String DOZE_PULSE_DURATION_OUT = "doze_pulse_duration_out";
+
+        /**
+         * Duration visible for ambient display
+         * @hide
+         */
+        public static final String DOZE_PULSE_DURATION_VISIBLE = "doze_pulse_duration_visible";
+
+        /**
+         * custom screen brightness for doze mode
+         * @hide
+         */
+        public static final String DOZE_SCREEN_BRIGHTNESS = "doze_screen_brightness";
+
+       /**
+         * Require double tap instead of simple tap to wake from Doze pulse screen
+         * @hide
+         */
+        public static final String DOUBLE_TAP_WAKE_DOZE = "double_tap_wake_doze";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -8023,6 +8065,12 @@ public final class Settings {
          * @hide
          */
         public static final String QQS_COUNT = "sysui_qqs_count";
+
+        /**
+         * Force authorize Substratum (or equivalent) frontend calling packages by Masquerade
+         * @hide
+         */
+        public static final String FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES = "force_authorize_substratum_packages";
 
         /**
          * This are the settings to be backed up.
