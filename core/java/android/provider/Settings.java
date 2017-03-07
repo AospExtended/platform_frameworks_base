@@ -4574,12 +4574,6 @@ public final class Settings {
         public static final String NAV_BAR_DYNAMIC = "nav_bar_dynamic";
 
         /**
-         * Statusbar AEX logo
-         * @hide
-         */
-        public static final String STATUS_BAR_AEX_LOGO = "status_bar_aex_logo";
-
-        /**
          * Status bar carrier label
          * 0: Hide
          * 1: Display on keyguard status bar

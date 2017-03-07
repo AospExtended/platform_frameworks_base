@@ -451,10 +451,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
     boolean mExpandedVisible;
 
-    // AEX logo
-    private boolean mAexLogo;
-    private ImageView aexLogo;
-
     private int mNavigationBarWindowState = WINDOW_STATE_SHOWING;
 
     private int mStatusBarHeaderHeight;
@@ -582,9 +578,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.NAV_BAR_DYNAMIC),
                     false, this, UserHandle.USER_ALL);
-             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.STATUS_BAR_AEX_LOGO),
-                    false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                    Settings.System.STATUS_BAR_SHOW_CARRIER),
                    false, this, UserHandle.USER_ALL);
@@ -700,11 +693,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             ContentResolver resolver = mContext.getContentResolver();
             boolean mShowLteFourGee = Settings.System.getIntForUser(resolver,
                     Settings.System.SHOW_LTE_FOURGEE, 0, UserHandle.USER_CURRENT) == 1;
-
-            mAexLogo = Settings.System.getIntForUser(resolver,
-                    Settings.System.STATUS_BAR_AEX_LOGO, 0, mCurrentUserId) == 1;
-            showAexLogo(mAexLogo);
-
             boolean mDataWifiActivityArrows = Settings.System.getIntForUser(resolver,
                     Settings.System.DATA_ACTIVITY_ARROWS, 0, UserHandle.USER_CURRENT) == 1;
             int mode = Settings.System.getIntForUser(mContext.getContentResolver(),
@@ -4305,15 +4293,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             }
         }, cancelAction, afterKeyguardGone);
     }
-
-    public void showAexLogo(boolean show) {
-          if (mStatusBarView == null) return;
-          ContentResolver resolver = mContext.getContentResolver();
-          aexLogo = (ImageView) mStatusBarView.findViewById(R.id.aex_logo);
-          if (aexLogo != null) {
-              aexLogo.setVisibility(show ? (mAexLogo ? View.VISIBLE : View.GONE) : View.GONE);
-          }
-     }
 
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         @Override

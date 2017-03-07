@@ -37,14 +37,12 @@ public class TunerFragment extends PreferenceFragment {
     private static final String TAG = "TunerFragment";
 
     private static final String SHOW_LTE_FOURGEE = "show_lte_fourgee";
-    private static final String STATUS_BAR_AEX_LOGO = "status_bar_aex_logo";
 
     private static final String KEY_BATTERY_PCT = "battery_pct";
     private static final String DATA_WIFI_ACTIVITY_ARROWS = "data_activity_arrows";
 
     private SwitchPreference mShowLteFourGee;
-    private SwitchPreference mDataWifiActivityArrows;
-    private SwitchPreference mAexLogo;
+	private SwitchPreference mDataWifiActivityArrows;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,10 +63,6 @@ public class TunerFragment extends PreferenceFragment {
 		mDataWifiActivityArrows = (SwitchPreference) findPreference(DATA_WIFI_ACTIVITY_ARROWS);
         mDataWifiActivityArrows.setChecked((Settings.System.getInt(resolver,
                 Settings.System.DATA_ACTIVITY_ARROWS, 0) == 1));
-
-        mAexLogo = (SwitchPreference) findPreference(STATUS_BAR_AEX_LOGO);
-        mAexLogo.setChecked((Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_AEX_LOGO, 0) == 1));
     }
 
     @Override
@@ -109,12 +103,7 @@ public class TunerFragment extends PreferenceFragment {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.DATA_ACTIVITY_ARROWS, checked ? 1:0);
             return true;
-        } else if  (preference == mAexLogo) {
-            boolean checked = ((SwitchPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_AEX_LOGO, checked ? 1:0);
-            return true;
-          }
+        }
         return super.onPreferenceTreeClick(preference);
     }
 }
