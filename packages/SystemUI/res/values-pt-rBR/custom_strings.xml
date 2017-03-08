@@ -46,6 +46,11 @@
     <!-- Content description of the Superuser tile -->
     <string name="accessibility_su_active">Sessão superusuário ativa</string>
 
+    <!-- LTE QS tile -->
+    <string name="quick_settings_lte_label">4G</string>
+    <string name="lte_on">4G ligado</string>
+    <string name="lte_off">4G desligado</string>
+
     <!-- Strings for lockscreen shortcut hints -->
     <string name="left_shortcut_hint">Deslize para a direita para %1$s</string>
     <string name="right_shortcut_hint">Deslize para a esquerda para %1$s</string>
