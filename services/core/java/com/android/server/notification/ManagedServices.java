@@ -708,8 +708,7 @@ abstract public class ManagedServices {
         final int N = mServices.size();
         for (int i = N - 1; i >= 0; i--) {
             final ManagedServiceInfo info = mServices.get(i);
-            if (name.equals(info.component)
-                && info.userid == userid) {
+            if (name.equals(info.component) && info.userid == userid) {
                 removeServiceLocked(i);
                 if (info.connection != null) {
                     try {
@@ -720,6 +719,7 @@ abstract public class ManagedServices {
                         Slog.e(TAG, getCaption() + " " + name + " could not be unbound: " + ex);
                     }
                 }
+                return;
             }
         }
     }
@@ -731,19 +731,17 @@ abstract public class ManagedServices {
      */
     private ManagedServiceInfo removeServiceImpl(IInterface service, final int userid) {
         if (DEBUG) Slog.d(TAG, "removeServiceImpl service=" + service + " u=" + userid);
-        ManagedServiceInfo serviceInfo = null;
         synchronized (mMutex) {
             final int N = mServices.size();
             for (int i = N - 1; i >= 0; i--) {
                 final ManagedServiceInfo info = mServices.get(i);
-                if (info.service.asBinder() == service.asBinder()
-                        && info.userid == userid) {
+                if (info.service.asBinder() == service.asBinder() && info.userid == userid) {
                     if (DEBUG) Slog.d(TAG, "Removing active service " + info.component);
-                    serviceInfo = removeServiceLocked(i);
+                    return removeServiceLocked(i);
                 }
             }
         }
-        return serviceInfo;
+        return null;
     }
 
     private ManagedServiceInfo removeServiceLocked(int i) {

@@ -4175,8 +4175,7 @@ public class NotificationManagerService extends SystemService {
         @Override
         public void onUserSwitched(int user) {
             synchronized (mNotificationList) {
-                int i = mServices.size()-1;
-                while (i --> 0) {
+                for (int i = mServices.size() - 1; i >= 0; i--) {
                     final ManagedServiceInfo info = mServices.get(i);
                     unregisterService(info.service, info.userid);
                 }
