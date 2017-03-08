@@ -510,7 +510,7 @@ class GlobalScreenshot {
 
         // Setup the Screenshot sound
         mScreenshotSound= RingtoneManager.getRingtone(mContext,
-                    Uri.parse("file://" + "/system/media/audio/ui/camera_click.ogg"));
+                    Uri.parse("file://" + "/system/media/audio/ui/Camera_Click.ogg"));
     }
 
     /**
