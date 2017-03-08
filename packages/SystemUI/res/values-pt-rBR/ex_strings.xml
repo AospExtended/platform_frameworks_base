@@ -112,4 +112,11 @@
   <string name="status_bar_volte">VOLTE</string>
   <!-- Data/Wifi activity arrows -->
   <string name="data_wifi_activity_arrows_title">Atividade da rede</string>
+
+  <!-- OmniJaws -->
+  <string name="omnijaws_service_error">Erro</string>
+  <string name="omnijaws_service_unkown">Sem informações meteorológicas</string>
+  <string name="omnijaws_detail_header">Previsão do Tempo</string>
+  <string name="omnijaws_label_default">Previsão do Tempo</string>
+  <string name="omnijaws_current_text">Agora</string>
 </resources>

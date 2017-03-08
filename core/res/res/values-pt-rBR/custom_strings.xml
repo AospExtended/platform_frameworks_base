@@ -119,4 +119,8 @@
     <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
     <string name="aex_system_error_manufacturer">Foi detectada uma incompatibilidade de imagem do fornecedor. Normalmente isso significa que sua imagem de fornecedor está desatualizada. Por favor, certifique-se que sua imagem de fornecedor é igual a <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
 
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_resetBatteryStats">redefinir as estatísticas de bateria</string>
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_resetBatteryStats">Permite que um aplicativo redefina os dados de uso da bateria.</string>
 </resources>
