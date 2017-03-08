@@ -58,4 +58,8 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Pantalla ambiente desactivada</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Pantalla ambiente activada</string>
     <string name="quick_settings_ambient_display_label">Pantalla ambiente</string>
+    <!-- LTE QS tile -->
+    <string name="quick_settings_lte_label">LTE</string>
+    <string name="lte_on">LTE Encendido </string>
+    <string name="lte_off">LTE Apagado</string> 
 </resources>
