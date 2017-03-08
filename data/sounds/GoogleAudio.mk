@@ -15,6 +15,11 @@
 LOCAL_PATH := frameworks/base/data/sounds/
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)material/alarms/Alarm_Beep_01.ogg:system/media/audio/alarms/Alarm_Beep_01.ogg \
+    $(LOCAL_PATH)material/alarms/Alarm_Beep_02.ogg:system/media/audio/alarms/Alarm_Beep_02.ogg \
+    $(LOCAL_PATH)material/alarms/Alarm_Beep_03.ogg:system/media/audio/alarms/Alarm_Beep_03.ogg \
+    $(LOCAL_PATH)material/alarms/Alarm_Buzzer.ogg:system/media/audio/alarms/Alarm_Buzzer.ogg \
+    $(LOCAL_PATH)material/alarms/Rooster.ogg:system/media/audio/alarms/Rooster.ogg \
     $(LOCAL_PATH)material/alarms/Argon.ogg:system/media/audio/alarms/Argon.ogg \
     $(LOCAL_PATH)material/alarms/Bounce.ogg:system/media/audio/alarms/Bounce.ogg \
     $(LOCAL_PATH)material/alarms/Carbon.ogg:system/media/audio/alarms/Carbon.ogg \
