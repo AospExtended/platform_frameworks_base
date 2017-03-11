@@ -61,7 +61,7 @@ public class RecentExpandedCard extends CardExpand {
     private boolean mScaleFactorChanged;
 
     private int defaultCardBg;
-    private int cardColor;
+    //private int cardColor;
 
     private BitmapDownloaderTask mTask;
 
@@ -93,9 +93,6 @@ public class RecentExpandedCard extends CardExpand {
 
         defaultCardBg = mContext.getResources().getColor(
                 R.color.recents_task_bar_default_background_color);
-        cardColor = Settings.System.getIntForUser(
-                mContext.getContentResolver(), Settings.System.RECENT_CARD_BG_COLOR,
-                defaultCardBg, UserHandle.USER_CURRENT);
 
         initDimensions();
     }
@@ -203,12 +200,7 @@ public class RecentExpandedCard extends CardExpand {
             }
         }
 
-        // set custom background
-        if (cardColor != 0x00ffffff) {
-            parent.setBackgroundColor(cardColor);
-        } else {
-            parent.setBackgroundColor(getDefaultCardColorBg());
-        }
+        parent.setBackgroundColor(getDefaultCardColorBg());
     }
 
     static class ViewHolder {
@@ -260,9 +252,32 @@ public class RecentExpandedCard extends CardExpand {
         final int thumbnailHeight =
                 (int) (res.getDimensionPixelSize(
                         R.dimen.recent_thumbnail_height) * scaleFactor);
+        final float INITIAL_SCALE = 0.75f;
+        int h = source.getHeight();
+        int w = source.getWidth();
+        Bitmap cropped = null;
 
-        final int sourceWidth = source.getWidth();
-        final int sourceHeight = source.getHeight();
+        int mode = currentHandsMode(context);
+        try {
+            if (mode == 1) {
+                cropped = Bitmap.createBitmap(source, 0, (int)(h * (1-INITIAL_SCALE)),
+                        (int)(w * INITIAL_SCALE), (int)(h * INITIAL_SCALE));
+                source.recycle();
+                source = null;
+            } else if (mode == 2) {
+                cropped = Bitmap.createBitmap(source, (int)(w * (1-INITIAL_SCALE)), (int)(h * (1-INITIAL_SCALE)),
+                        (int)(w * INITIAL_SCALE), (int)(h * INITIAL_SCALE));
+                source.recycle();
+                source = null;
+            }
+        } catch (Exception e) {
+            cropped = source;
+            source.recycle();
+            source = null;
+        }
+
+        final int sourceWidth = mode != 0 ? cropped.getWidth() : w;
+        final int sourceHeight = mode != 0 ? cropped.getHeight() : h;
 
         // Compute the scaling factors to fit the new height and width, respectively.
         // To cover the final image, the final scaling will be the bigger
@@ -289,9 +304,23 @@ public class RecentExpandedCard extends CardExpand {
         // scaled bitmap onto it.
         final Bitmap dest = Bitmap.createBitmap(thumbnailWidth, thumbnailHeight, Config.ARGB_8888);
         final Canvas canvas = new Canvas(dest);
-        canvas.drawBitmap(source, null, targetRect, paint);
+        canvas.drawBitmap(mode != 0 ? cropped : source, null, targetRect, paint);
 
         return dest;
+    }
+
+    private static int currentHandsMode(Context context) {
+        int mode;
+        String str = Settings.Global.getString(context.getContentResolver(),
+                Settings.Global.SINGLE_HAND_MODE);
+        if (str != null && str.contains("left")) {
+            mode = 1;
+        } else if (str != null && str.contains("right")) {
+            mode = 2;
+        } else {
+            mode = 0;
+        }
+        return mode;
     }
 
     // AsyncTask loader for the task bitmap.
@@ -302,7 +331,7 @@ public class RecentExpandedCard extends CardExpand {
         private final WeakReference<RecentImageView> rImageViewReference;
         private final WeakReference<Context> rContext;
 
-        private int mOrigPri;
+        //private int mOrigPri;
         private float mScaleFactor;
 
         private String mLRUCacheKey;
@@ -318,10 +347,7 @@ public class RecentExpandedCard extends CardExpand {
         protected Bitmap doInBackground(Integer... params) {
             mLoaded = false;
             mLRUCacheKey = null;
-            // Save current thread priority and set it during the loading
-            // to background priority.
-            mOrigPri = Process.getThreadPriority(Process.myTid());
-            Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
+            Process.setThreadPriority(Process.THREAD_PRIORITY_FOREGROUND);
             if (isCancelled() || rContext == null) {
                 return null;
             }
@@ -335,8 +361,6 @@ public class RecentExpandedCard extends CardExpand {
             if (isCancelled()) {
                 bitmap = null;
             }
-            // Restore original thread priority.
-            Process.setThreadPriority(mOrigPri);
 
             // Assign image to the view.
             if (rImageViewReference != null) {

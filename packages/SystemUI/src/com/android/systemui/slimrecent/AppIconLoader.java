@@ -177,7 +177,7 @@ public class AppIconLoader {
         private final WeakReference<RecentImageView> rImageViewReference;
         private final WeakReference<Context> rContext;
 
-        private int mOrigPri;
+        //private int mOrigPri;
         private float mScaleFactor;
 
         private String mLRUCacheKey;
@@ -194,8 +194,8 @@ public class AppIconLoader {
         protected Drawable doInBackground(ResolveInfo... params) {
             // Save current thread priority and set it during the loading
             // to background priority.
-            mOrigPri = Process.getThreadPriority(Process.myTid());
-            Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
+            //mOrigPri = Process.getThreadPriority(Process.myTid());
+            Process.setThreadPriority(Process.THREAD_PRIORITY_FOREGROUND);
             if (isCancelled() || rContext == null) {
                 return null;
             }
@@ -209,7 +209,7 @@ public class AppIconLoader {
                 bitmap = null;
             }
             // Restore original thread priority.
-            Process.setThreadPriority(mOrigPri);
+            //Process.setThreadPriority(mOrigPri);
 
             final Context context;
             if (rContext != null) {
