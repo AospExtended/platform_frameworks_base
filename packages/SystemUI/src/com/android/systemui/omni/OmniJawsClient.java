@@ -186,11 +186,8 @@ public class OmniJawsClient {
     }
 
     public Intent getSettingsIntent() {
-        if (isOmniJawsServiceInstalled()) {
-            return new Intent(Intent.ACTION_MAIN)
-                    .setClassName("com.android.settings", "com.android.settings.Settings$QuickSettingsSettingsActivity");
-        }
-        return null;
+        return new Intent(Intent.ACTION_MAIN)
+                .setClassName("com.android.settings", "com.android.settings.Settings$QuickSettingsSettingsActivity");
     }
 
     public WeatherInfo getWeatherInfo() {
