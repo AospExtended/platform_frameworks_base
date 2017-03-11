@@ -651,6 +651,12 @@ public interface WindowManager extends ViewManager {
         public static final int TYPE_SCREENSHOT = FIRST_SYSTEM_WINDOW + 36;
 
         /**
+         * Window type: panel that slides out from the status bar
+         * In multiuser systems shows on all users' windows.
+         */
+        public static final int TYPE_SLIM_RECENTS      = FIRST_SYSTEM_WINDOW+37;
+
+        /**
          * End of types of system windows.
          */
         public static final int LAST_SYSTEM_WINDOW      = 2999;

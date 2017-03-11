@@ -152,7 +152,7 @@ public class CacheController {
         final Resources res = context.getResources();
 
         int maxNumTasksToLoad = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.RECENTS_MAX_APPS, ActivityManager.getMaxRecentTasksStatic(),
+                Settings.System.RECENTS_MAX_APPS, 15,
                 UserHandle.USER_CURRENT);
 
         // Gets the dimensions of the device's screen
