@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 
      Copyright (C) 2016 AospExtended Rom
-
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-
           http://www.apache.org/licenses/LICENSE-2.0
-
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,7 +15,7 @@
 
     <!-- Notification which notifies user flashlight is enabled -->
     <string name="quick_settings_tile_flashlight_not_title">Taschenlampe ist an</string>
-    <string name="quick_settings_tile_flashlight_not_summary">Tippen um auszuschalten</string>
+    <string name="quick_settings_tile_flashlight_not_summary">Tippen, um auszuschalten</string>
   
     <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
@@ -56,30 +53,30 @@
     <string name="quick_settings_caffeine_label">Koffein</string>
     <string name="accessibility_quick_settings_caffeine_off">Koffein aus</string>
     <string name="accessibility_quick_settings_caffeine_on">Koffein an</string>
-    <string name="quick_settings_heads_up_label">Heads-Up</string>
-    <string name="accessibility_quick_settings_heads_up_off">Heads Up-Benachrichtigungen aus.</string>
-    <string name="accessibility_quick_settings_heads_up_on">Heads Up-Benachrichtigungen an.</string>
-    <string name="accessibility_quick_settings_heads_up_changed_off">Heads Up-Benachrichtigungen ausgeschaltet.</string>
-    <string name="accessibility_quick_settings_heads_up_changed_on">Heads Up-Benachrichtigungen eingeschaltet.</string>
+    <string name="quick_settings_heads_up_label">Pop-Up</string>
+    <string name="accessibility_quick_settings_heads_up_off">Pop-Up Benachrichtigungen aus.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Pop-Up Benachrichtigungen an.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Pop-Up Benachrichtigungen ausgeschaltet.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Pop-Up Benachrichtigungen eingeschaltet.</string>
     <string name="quick_settings_pulse_enabled">Pulse aktiviert</string>
     <string name="quick_settings_pulse_disabled">Keine Visualisierung</string>
     <string name="quick_settings_pulse_label">Pulse</string>
     <string name="quick_settings_nfc_label">NFC</string>
-    <string name="accessibility_quick_settings_nfc_off">NFC aus.</string>
-    <string name="accessibility_quick_settings_nfc_on">NFC an.</string>
-    <string name="accessibility_quick_settings_nfc_changed_off">NFC ausgeschaltet.</string>
-    <string name="accessibility_quick_settings_nfc_changed_on">NFC eingeschaltet.</string>
+    <string name="accessibility_quick_settings_nfc_off">NFC aus</string>
+    <string name="accessibility_quick_settings_nfc_on">NFC an</string>
+    <string name="accessibility_quick_settings_nfc_changed_off">NFC ausgeschaltet</string>
+    <string name="accessibility_quick_settings_nfc_changed_on">NFC eingeschaltet</string>
 
 
     <!-- SystemUI Tuner Parts -->
     <string name="systemui_tuner_statusbar_title">Statusleisten-Symbole</string>
 
-    <string name="accessibility_quick_settings_location_battery_saving">Standortdienste: Energiesparmodus.</string>
-    <string name="accessibility_quick_settings_location_gps_only">Standortdienste: Nur Gerät.</string>
-    <string name="accessibility_quick_settings_location_high_accuracy">Standortdienste: Hohe Genauigkeit.</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Standortdienste: Energiesparmodus</string>
+    <string name="accessibility_quick_settings_location_gps_only">Standortdienste: Nur Gerät</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Standortdienste: Hohe Genauigkeit</string>
     <string name="accessibility_quick_settings_location_changed_battery_saving">Die Standortbestimmung wurde auf Energiesparmodus geändert.</string>
     <string name="accessibility_quick_settings_location_changed_gps_only">Die Standortbestimmung wurde auf \"Nur Gerät\" geändert.</string>
-    <string name="accessibility_quick_settings_location_changed_high_accuracy">Die Standortbestimmung wurde auf \"Hohe Genauigkeit\</string>
+    <string name="accessibility_quick_settings_location_changed_high_accuracy">Die Standortbestimmung wurde auf \"Hohe Genauigkeit\" geändert.</string>
     <string name="quick_settings_location_detail_title">Standortmodus</string>
     <string name="quick_settings_location_battery_saving_label">Energiesparmodus</string>
     <string name="quick_settings_location_gps_only_label">Nur Gerät</string>
@@ -107,8 +104,8 @@
     <string name="quick_settings_expanded_desktop_off">Normal</string>
 
     <!-- Heads up snooze toast -->
-    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g>  • Heads-Up Benachrichtigung ist 1 Minute deaktiviert.</string>
-    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • Heads-Up Benachrichtigungen sind für <xliff:g id="number">%d </xliff:g> Minuten deaktiviert.</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g>  • Pop-Up Benachrichtigungen sind 1 Minute deaktiviert.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • Pop-Up Benachrichtigungen sind für <xliff:g id="number">%d </xliff:g> Minuten deaktiviert.</string>
 
    <!-- Path data for portrait battery -->
     <string name="battery_portrait_path_full" translatable="false">M 5 2 H 19 V 21 H 5 V 2 Z</string>
@@ -134,12 +131,12 @@
 
     <!-- Wi-Fi hotspot label when enabled -->
     <plurals name="wifi_hotspot_connected_clients_label">
-        <item quantity="one">%1$d client</item>
-        <item quantity="other">%1$d clients</item>
+        <item quantity="one">%1$d Gerät</item>
+        <item quantity="other">%1$d Geräte</item>
     </plurals>
 
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_running_services">Open Running Services screen.</string>
+    <string name="accessibility_quick_settings_running_services">Öffne laufende Aktivitäten</string>
 
     <!-- volte icon switch -->
     <string name="status_bar_volte">VOLTE</string>
