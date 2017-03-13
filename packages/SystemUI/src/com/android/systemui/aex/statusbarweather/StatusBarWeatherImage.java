@@ -118,6 +118,7 @@ public class StatusBarWeatherImage extends ImageView implements
         if (mStatusBarWeatherEnabled == 1
                 || mStatusBarWeatherEnabled == 2
                 || mStatusBarWeatherEnabled == 5) {
+            mWeatherClient.setOmniJawsEnabled(true);
             queryAndUpdateWeather();
         } else {
             setVisibility(View.GONE);
