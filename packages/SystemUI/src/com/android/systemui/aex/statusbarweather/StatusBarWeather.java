@@ -32,6 +32,8 @@ import com.android.systemui.R;
 import com.android.systemui.omni.DetailedWeatherView;
 import com.android.systemui.omni.OmniJawsClient;
 
+import java.util.Arrays;
+
 public class StatusBarWeather extends TextView implements
         OmniJawsClient.OmniJawsObserver {
 
@@ -59,12 +61,12 @@ public class StatusBarWeather extends TextView implements
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP), false, this,
                     UserHandle.USER_ALL);
-            updateSettings();
+            updateSettings(false);
         }
 
         @Override
         public void onChange(boolean selfChange) {
-            updateSettings();
+            updateSettings(true);
         }
     }
 
@@ -108,15 +110,27 @@ public class StatusBarWeather extends TextView implements
         queryAndUpdateWeather();
     }
 
-    public void updateSettings() {
+    public void updateSettings(boolean onChange) {
         ContentResolver resolver = mContext.getContentResolver();
         mStatusBarWeatherEnabled = Settings.System.getIntForUser(
                 resolver, Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0,
                 UserHandle.USER_CURRENT);
         if (mStatusBarWeatherEnabled != 0 && mStatusBarWeatherEnabled != 5) {
+            mWeatherClient.setOmniJawsEnabled(true);
             queryAndUpdateWeather();
         } else {
             setVisibility(View.GONE);
+        }
+
+        if (onChange && mStatusBarWeatherEnabled == 0) {
+            // Disable OmniJaws if tile isn't used either
+            String[] tiles = Settings.Secure.getStringForUser(resolver,
+                    Settings.Secure.QS_TILES, UserHandle.USER_CURRENT).split(",");
+            boolean weatherTileEnabled = Arrays.asList(tiles).contains("weather");
+            Log.d(TAG, "Weather tile enabled " + weatherTileEnabled);
+            if (!weatherTileEnabled) {
+                mWeatherClient.setOmniJawsEnabled(false);
+            }
         }
     }
 
