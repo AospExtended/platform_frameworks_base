@@ -59,4 +59,7 @@
 
     <!-- Keyguard affordance circle background -->
     <color name="keyguard_affordance_circle_background">@android:color/white</color>
+
+    <!-- OmniJaws detailed view temperature text -->
+    <color name="omni_jaws_detailed_temperature_color">@android:color/white</color>
 </resources>
