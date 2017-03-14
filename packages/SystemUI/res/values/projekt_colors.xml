@@ -62,4 +62,6 @@
     <!-- External QS tile tint color -->
     <color name="external_qs_tile_tint_color">@android:color/white</color>
 
+    <!-- OmniJaws detailed view temperature text -->
+    <color name="omni_jaws_detailed_temperature_color">@android:color/white</color>
 </resources>
