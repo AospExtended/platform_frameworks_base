@@ -5007,6 +5007,16 @@ public final class Settings {
         public static final String STATUSBAR_BATTERY_BAR_BLEND_COLORS = "statusbar_battery_bar_blend_color";
 
         /**
+         * Disable expanding quick settings on secure lock screens
+         *
+         * @hide
+         */
+        public static final String LOCK_QS_DISABLED = "lockscreen_qs_disabled";
+
+        private static final Validator LOCK_QS_DISABLED_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
          * @hide
          */
         public static final String STATUSBAR_BATTERY_BAR_BLEND_COLORS_REVERSE =
@@ -5092,7 +5102,8 @@ public final class Settings {
             INCREASING_RING,
             INCREASING_RING_START_VOLUME,
             INCREASING_RING_RAMP_UP_TIME,
-            STATUS_BAR_BRIGHTNESS_CONTROL
+            STATUS_BAR_BRIGHTNESS_CONTROL,
+            LOCK_QS_DISABLED
         };
 
         /**
@@ -5260,6 +5271,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(INCREASING_RING_START_VOLUME);
             PRIVATE_SETTINGS.add(INCREASING_RING_RAMP_UP_TIME);
             PRIVATE_SETTINGS.add(STATUS_BAR_BRIGHTNESS_CONTROL);
+            PRIVATE_SETTINGS.add(LOCK_QS_DISABLED);
         }
 
 
@@ -5384,6 +5396,7 @@ public final class Settings {
             VALIDATORS.put(INCREASING_RING_START_VOLUME, INCREASING_RING_START_VOLUME_VALIDATOR);
             VALIDATORS.put(INCREASING_RING_RAMP_UP_TIME, INCREASING_RING_RAMP_UP_TIME_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_BRIGHTNESS_CONTROL, STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR);
+            VALIDATORS.put(LOCK_QS_DISABLED, LOCK_QS_DISABLED_VALIDATOR);
         }
 
         /**
