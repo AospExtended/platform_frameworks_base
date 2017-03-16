@@ -778,19 +778,6 @@ public final class Settings {
 
     /**
      * @hide
-     * Activity Action: Show the "app ops" details screen.
-     * <p>
-     * Input: The Intent's data URI specifies the application package name
-     * to be shown, with the "package" scheme.  That is "package:com.my.app".
-     * <p>
-     * Output: Nothing.
-     */
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_APP_OPS_DETAILS_SETTINGS =
-            "android.settings.APP_OPS_DETAILS_SETTINGS";
-
-    /**
-     * @hide
      * Activity Action: Show the "app ops" settings screen.
      * <p>
      * Input: Nothing.
@@ -3912,8 +3899,6 @@ public final class Settings {
             }
         };
 
-        /** region Extensions System Settings */
-
         /**
 	     * Enable blocking wakelock
 	     * @hide
@@ -4237,7 +4222,7 @@ public final class Settings {
          */
         public static final String LOCKSCREEN_ROTATION = "lockscreen_rotation";
 
-
+        /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate
@@ -7955,14 +7940,6 @@ public final class Settings {
         public static final String MANAGED_PROFILE_CONTACT_REMOTE_SEARCH =
                 "managed_profile_contact_remote_search";
 
-        /** region Extensions Secure Settings */
-
-        /**
-         * Whether newly installed apps should run with privacy guard by default
-         * @hide
-         */
-        public static final String PRIVACY_GUARD_DEFAULT = "privacy_guard_default";
-
         /**
          * Whether or not the automatic storage manager is enabled and should run on the device.
          *
@@ -7970,8 +7947,6 @@ public final class Settings {
          */
         public static final String AUTOMATIC_STORAGE_MANAGER_ENABLED =
                 "automatic_storage_manager_enabled";
-
-        /** endregion */
 
         /**
          * How many days of information for the automatic storage manager to retain on the device.

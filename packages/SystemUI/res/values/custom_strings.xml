@@ -45,9 +45,6 @@
     <string name="menu_ime_always_show">Menu / Keyboard Switcher (always show)</string>
     <string name="search">Search</string>
 
-    <!-- Content description of the Superuser tile -->
-    <string name="accessibility_su_active">Superuser session active</string>
-
     <!-- Strings for lockscreen shortcut hints -->
     <string name="left_shortcut_hint">Swipe right for %1$s</string>
     <string name="right_shortcut_hint">Swipe left for %1$s</string>

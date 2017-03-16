@@ -2236,8 +2236,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             }
 
 
-            updateKeyAssignments();
-
             boolean doShowNavbar = Settings.Secure.getIntForUser(resolver,
                     Settings.Secure.NAVIGATION_BAR_VISIBLE,
                     DUActionUtils.hasNavbarByDefault(mContext) ? 1 : 0,

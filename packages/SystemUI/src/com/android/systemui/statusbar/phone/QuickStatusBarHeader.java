@@ -447,7 +447,9 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
 
     @Override
     public boolean onLongClick(View v) {
-        if (v == mClock) {
+        if (v == mSettingsButton) {
+            startExtensions();
+        } else if (v == mClock) {
             startClockLongClickActivity();
         } else if (v == mDate) {
             startDateLongClickActivity();
@@ -458,13 +460,6 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
         return false;
     }
 
-    @Override
-    public boolean onLongClick(View v) {
-        if (v == mSettingsButton) {
-            startExtensions();
-        }
-        return false;
-    }
 
     private void startSettingsActivity() {
         mActivityStarter.startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS),
