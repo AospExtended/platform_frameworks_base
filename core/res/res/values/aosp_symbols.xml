@@ -26,9 +26,6 @@
   <java-symbol type="bool" name="config_forceAnalogCarDock" />
   <java-symbol type="bool" name="config_forceAnalogDeskDock" />
 
-  <java-symbol type="integer" name="config_longPressOnMenuBehavior" />
-  <java-symbol type="integer" name="config_longPressOnAppSwitchBehavior" />
-
   <!-- Reboot - Advanced Reboot -->
   <java-symbol type="array" name="shutdown_reboot_options" />
   <java-symbol type="array" name="shutdown_reboot_actions" />
@@ -61,7 +58,4 @@
 
    <!-- config softap extention feature -->
    <java-symbol type="bool" name="config_softap_extention" />
-
-  <!-- Single hand mode -->
-  <java-symbol type="string" name="singlehandmode_click_hint_message" />
 </resources>
