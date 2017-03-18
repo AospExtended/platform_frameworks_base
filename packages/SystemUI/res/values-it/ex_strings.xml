@@ -115,4 +115,12 @@
 
     <!-- Data/Wifi activity arrows -->
     <string name="data_wifi_activity_arrows_title">Attività di rete</string>
+     
+    <!-- OmniJaws -->
+    <string name="omnijaws_service_error">Errore</string>
+    <string name="omnijaws_service_unkown">Nessun dato meteo</string>
+    <string name="omnijaws_detail_header">Meteo</string>
+    <string name="omnijaws_label_default">Meteo</string>
+    <string name="omnijaws_current_text">Adesso</string>
+    <string name="omnijaws_package_not_available">OmniJaws non disponibile</string>
 </resources>
