@@ -66,11 +66,13 @@
 
     <com.android.systemui.aicp.carrierlabel.CarrierLabel
         android:id="@+id/keyguard_carrier_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/keyguard_carrier_text_margin"
+        android:layout_toStartOf="@id/system_icons_super_container"
+        android:gravity="center_vertical"
+        android:ellipsize="marquee"
         android:textAppearance="@style/TextAppearance.StatusBar.CarrierLabel"
-        android:visibility="gone"
         android:singleLine="true" />
 
 </com.android.systemui.statusbar.phone.KeyguardStatusBarView>
