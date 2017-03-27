@@ -31,12 +31,16 @@
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Schermata cancellato</string>
 
+      <!-- Screenrecord QS tile -->
+    <string name="quick_settings_screenrecord">Registra schermo</string>
+    <string name="quick_settings_screenrecord_on">Registrazione ...</string>
+
+    <!-- Language\Locale Tile -->
+    <string name="quick_settings_locale_label">Lingua</string>
+    <string name="quick_settings_locale_more_locales_toast">Si prega di configurare più lingue per attivare la funzionalità del toggle</string>
     <!-- NavBar Tuner -->
     <string name="menu_ime_always_show">Menù / interrittore tastiera (visualizza sempre)</string>
     <string name="search">Ricerca</string>
-
-    <!-- Content description of the Superuser tile -->
-    <string name="accessibility_su_active">Sessione Superuser attiva</string>
 
     <!-- Strings for lockscreen shortcut hints -->
     <string name="left_shortcut_hint">Scorri verso destra per %1$s</string>
@@ -47,4 +51,16 @@
     <string name="lockscreen_choose_action_title">Scegli azione</string>
     <string name="lockscreen_none_target">Vuoto</string>
     
+      <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Suono</string>
+    <string name="quick_settings_sound_ring">Suoneria</string>
+    <string name="quick_settings_sound_vibrate">Vibrazione</string>
+    <string name="quick_settings_sound_dnd">Non disturbare</string>
+
+    <!-- Ambient Display QS tile -->
+    <string name="accessibility_quick_settings_ambient_display_off">Ambient Display spento</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Ambient Display acceso</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient Display disattivato</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient Display attivato</string>
+    <string name="quick_settings_ambient_display_label">Ambient Display</string>
 </resources>
