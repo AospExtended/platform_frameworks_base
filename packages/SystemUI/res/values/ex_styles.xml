@@ -73,4 +73,7 @@
         <item name="android:layout_marginTop">5dp</item>
     </style>
 
+    <!-- Phyisical Keyboard Dialog style -->
+    <style name="KeyboardShortcutsDialog" parent="@*android:style/Theme.DeviceDefault.Light" />
+
 </resources>
