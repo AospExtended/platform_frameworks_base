@@ -30,6 +30,7 @@ import java.util.ArrayList;
 /**
  * Wraps an {@link AnimatedVectorDrawable} and provides methods for setting the temporal position
  * within the backing {@link AnimatorSet} of the wrapped {@link AnimatedVectorDrawable}.
+ * @hide
  */
 public class StopMotionVectorDrawable extends DrawableWrapper {
     private static final String TAG = StopMotionVectorDrawable.class.getSimpleName();

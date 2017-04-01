@@ -86,6 +86,13 @@
             android:key="alarm_clock"
             android:title="@string/status_bar_alarm" />
 
+        <PreferenceScreen
+            android:title="@string/battery_tuner_title"
+            android:key="battery_settings">
+            <intent
+                android:action="android.settings.jdc.fragments.BATTERY_SETTINGS" />
+            </PreferenceScreen>
+
         <!-- secure -->
 
         <com.android.systemui.tuner.ClockPreference
