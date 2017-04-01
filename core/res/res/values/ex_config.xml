@@ -133,25 +133,17 @@
 
     <!-- Extended Boosts for QPerformance -->
 
-    <!-- Whether cpu boost is enabled right after boot -->
-    <bool name="config_enableCpuBoostOnBoot">false</bool>
-
-    <!-- Duration of the boost in seconds, default is 30 -->
-    <integer name="onbootboost_duration">0</integer>
+    <!-- Duration of the boost in seconds -->
+    <integer name="onbootboost_duration">30</integer>
 
     <!-- Boost parameters which get passed to QPerformance -->
     <integer-array name="onbootboost_param_value"/>
 
-    <!-- Whether Keypress Boost is enabled -->
-    <bool name="config_enableKeypressBoost">false</bool>
-
     <!-- Boost parameters which get passed to QPerformance -->
-    <integer-array name="keypressboost_strong_param_value"/>
-    <integer-array name="keypressboost_weak_param_value"/>
+    <integer-array name="qboost_strong_param_value"/>
+    <integer-array name="qboost_weak_param_value"/>
 
-    <!-- Whether FP unlock Boost is enabled
-         Depends on Keypress Boost -->
-    <bool name="config_enableFPUnlockBoost">false</bool>
+    <!-- Defines the length of FP unlock boost -->
     <integer name="fpunlockboost_duration">1200</integer>
 
 </resources>

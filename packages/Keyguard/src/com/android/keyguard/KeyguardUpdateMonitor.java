@@ -1215,12 +1215,9 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
         }
 
         // Initialise FP unlock boost
-        lIsPerfBoostEnabled = mContext.getResources().getBoolean(
-                com.android.internal.R.bool.config_enableKeypressBoost) &&
-                mContext.getResources().getBoolean(
-                com.android.internal.R.bool.config_enableFPUnlockBoost);
         mBoostParamVal = mContext.getResources().getIntArray(
-                com.android.internal.R.array.keypressboost_strong_param_value);
+                com.android.internal.R.array.qboost_strong_param_value);
+        lIsPerfBoostEnabled = mBoostParamVal.length != 0;
         mBoostDuration = mContext.getResources().getInteger(
                 com.android.internal.R.integer.fpunlockboost_duration);
 
