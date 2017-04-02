@@ -144,11 +144,25 @@ static void nativeSetAutoSuspend(JNIEnv* /* env */, jclass /* clazz */, jboolean
     }
 }
 
+static bool isCustomHint(jint hintId) {
+    switch (hintId) {
+        case POWER_HINT_CPU_BOOST:
+        case POWER_HINT_SET_PROFILE:
+            return true;
+        default:
+            return false;
+    }
+}
+
 static void nativeSendPowerHint(JNIEnv *env, jclass clazz, jint hintId, jint data) {
     int data_param = data;
 
     if (gPowerModule && gPowerModule->powerHint) {
-        gPowerModule->powerHint(gPowerModule, (power_hint_t)hintId, &data_param);
+        if (data || isCustomHint(hintId)) {
+            gPowerModule->powerHint(gPowerModule, (power_hint_t)hintId, &data_param);
+        } else {
+            gPowerModule->powerHint(gPowerModule, (power_hint_t)hintId, NULL);
+        }
     }
 }
 
