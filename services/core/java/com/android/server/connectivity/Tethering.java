@@ -1108,6 +1108,15 @@ public class Tethering extends BaseNetworkObserver implements IControlsTethering
             return;
         }
 
+        // Hack for fix WIFI Tether on JF devices
+        final String jf = SystemProperties.get("ro.product.name");
+        if (jf.equals("jflte")) {
+            if(mTetherStates.get(chosenIface) == null) {
+                Log.e(TAG, "Adding non-existent Iface: " + chosenIface);
+                trackNewTetherableInterface(chosenIface, interfaceType);
+            }
+        }
+
         int result = (enable ? tether(chosenIface) : untether(chosenIface));
         if (result != ConnectivityManager.TETHER_ERROR_NO_ERROR) {
             Log.e(TAG, "unable start or stop tethering on iface " + chosenIface);
