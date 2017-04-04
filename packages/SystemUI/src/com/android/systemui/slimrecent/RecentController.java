@@ -32,6 +32,7 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
+import android.content.res.Configuration;
 import android.database.ContentObserver;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -96,6 +97,7 @@ public class RecentController implements RecentPanelView.OnExitListener,
 
     public static float DEFAULT_SCALE_FACTOR = 1.0f;
 
+    private Configuration mConfiguration;
     private Context mContext;
     private WindowManager mWindowManager;
     private IWindowManager mWindowManagerService;
@@ -161,6 +163,8 @@ public class RecentController implements RecentPanelView.OnExitListener,
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         mContext.registerReceiver(mBroadcastReceiver, filter);
+        mConfiguration = new Configuration();
+        mConfiguration.updateFrom(context.getResources().getConfiguration());
 
         mParentView = new FrameLayout(mContext);
 
@@ -680,6 +684,15 @@ public class RecentController implements RecentPanelView.OnExitListener,
                 Settings.System.SLIM_RECENTS_ICON_PACK);
             IconPackHelper.getInstance(mContext).updatePrefs(currentIconPack);
         }
+    }
+
+    public boolean onConfigurationChanged(Configuration newConfig) {
+        if (mConfiguration.densityDpi != newConfig.densityDpi) {
+            hideRecents(true);
+            rebuildRecentsScreen();
+        }
+        mConfiguration.updateFrom(newConfig);
+        return true;
     }
 
     /**
