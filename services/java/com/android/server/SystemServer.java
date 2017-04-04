@@ -169,6 +169,8 @@ public final class SystemServer {
             "com.google.android.clockwork.bluetooth.WearBluetoothService";
     private static final String WEAR_WIFI_MEDIATOR_SERVICE_CLASS =
             "com.google.android.clockwork.wifi.WearWifiMediatorService";
+    private static final String WEAR_CELLULAR_MEDIATOR_SERVICE_CLASS =
+            "com.google.android.clockwork.cellular.WearCellularMediatorService";
     private static final String WEAR_TIME_SERVICE_CLASS =
             "com.google.android.clockwork.time.WearTimeService";
     private static final String ACCOUNT_SERVICE_CLASS =
@@ -214,6 +216,7 @@ public final class SystemServer {
     private boolean mOnlyCore;
     private boolean mFirstBoot;
     private boolean mIsAlarmBoot;
+    private final boolean mRuntimeRestart;
 
     /**
      * Start the sensor service.
@@ -230,6 +233,8 @@ public final class SystemServer {
     public SystemServer() {
         // Check for factory test mode.
         mFactoryTestMode = FactoryTest.getMode();
+        // Remember if it's runtime restart(when sys.boot_completed is already set) or reboot
+        mRuntimeRestart = "1".equals(SystemProperties.get("sys.boot_completed"));
     }
 
     private void run() {
@@ -329,6 +334,7 @@ public final class SystemServer {
 
             // Create the system service manager.
             mSystemServiceManager = new SystemServiceManager(mSystemContext);
+            mSystemServiceManager.setRuntimeRestarted(mRuntimeRestart);
             LocalServices.addService(SystemServiceManager.class, mSystemServiceManager);
         } finally {
             Trace.traceEnd(Trace.TRACE_TAG_SYSTEM_SERVER);
@@ -570,10 +576,14 @@ public final class SystemServer {
                 false);
         boolean disableTrustManager = SystemProperties.getBoolean("config.disable_trustmanager",
                 false);
-        boolean disableTextServices = SystemProperties.getBoolean("config.disable_textservices", false);
+        boolean disableTextServices = SystemProperties.getBoolean("config.disable_textservices",
+                false);
         boolean disableSamplingProfiler = SystemProperties.getBoolean("config.disable_samplingprof",
                 false);
+        boolean disableConsumerIr = SystemProperties.getBoolean("config.disable_consumerir", false);
         boolean disableVrManager = SystemProperties.getBoolean("config.disable_vrmanager", false);
+        boolean disableCameraService = SystemProperties.getBoolean("config.disable_cameraservice",
+                false);
 
         boolean isEmulator = SystemProperties.get("ro.kernel.qemu").equals("1");
         boolean enableWigig = SystemProperties.getBoolean("persist.wigig.enable", false);
@@ -599,8 +609,10 @@ public final class SystemServer {
 
             mContentResolver = context.getContentResolver();
 
-            Slog.i(TAG, "Camera Service");
-            mSystemServiceManager.startService(CameraService.class);
+            if (!disableCameraService) {
+                Slog.i(TAG, "Camera Service");
+                mSystemServiceManager.startService(CameraService.class);
+            }
 
             // The AccountManager must come before the ContentService
             traceBeginAndSlog("StartAccountManagerService");
@@ -620,10 +632,12 @@ public final class SystemServer {
             ServiceManager.addService("vibrator", vibrator);
             Trace.traceEnd(Trace.TRACE_TAG_SYSTEM_SERVER);
 
-            traceBeginAndSlog("StartConsumerIrService");
-            consumerIr = new ConsumerIrService(context);
-            ServiceManager.addService(Context.CONSUMER_IR_SERVICE, consumerIr);
-            Trace.traceEnd(Trace.TRACE_TAG_SYSTEM_SERVER);
+            if (!disableConsumerIr) {
+                traceBeginAndSlog("StartConsumerIrService");
+                consumerIr = new ConsumerIrService(context);
+                ServiceManager.addService(Context.CONSUMER_IR_SERVICE, consumerIr);
+                Trace.traceEnd(Trace.TRACE_TAG_SYSTEM_SERVER);
+            }
 
             traceBeginAndSlog("StartAlarmManagerService");
             mSystemServiceManager.startService(AlarmManagerService.class);
@@ -1238,6 +1252,9 @@ public final class SystemServer {
             //#Fixme:mSystemServiceManager.startService(WEAR_BLUETOOTH_SERVICE_CLASS);
             mSystemServiceManager.startService(WEAR_BLUETOOTH_SERVICE_CLASS);
             mSystemServiceManager.startService(WEAR_WIFI_MEDIATOR_SERVICE_CLASS);
+            if (SystemProperties.getBoolean("config.enable_cellmediator", false)) {
+                mSystemServiceManager.startService(WEAR_CELLULAR_MEDIATOR_SERVICE_CLASS);
+            }
           if (!disableNonCoreServices) {
               mSystemServiceManager.startService(WEAR_TIME_SERVICE_CLASS);
           }
