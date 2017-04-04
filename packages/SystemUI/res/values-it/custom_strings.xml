@@ -63,4 +63,24 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient Display disattivato</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient Display attivato</string>
     <string name="quick_settings_ambient_display_label">Ambient Display</string>
+     
+     <!-- Screenshot Crop & Share -->
+    <string name="action_delete_success">Eliminazione</string>
+    <string name="action_delete_fault">Eliminazione non riuscita</string>
+    <string name="action_save_success">Salvataggio</string>
+    <string name="action_save_fault">Salvataggio non riuscito</string>
+    <string name="pref_action_color_title">Colore azione pulsanti</string>
+    <string name="pref_action_color_summary">Scegli il tuo colore preferito per le azioni dei pulsanti</string>
+    <string name="pref_category_main">Impostazioni principali</string>
+    <string name="pref_category_user">Impostazioni utente</string>
+    <string name="pref_crop_behavior_title">Comportamento ritaglio</string>
+    <string name="pref_crop_behavior_summary">Utilizza un\'immagine ritagliata anche se quella originale non è stata in realtà tagliata con l\'azione del ritaglio</string>
+    <string name="action_ok">OK</string>
+
+    <!-- Screenshot Crop & Share -->
+    <string name="action_delete_success">Eliminazione</string>
+    <string name="action_delete_fault">Eliminazione non riuscita</string>
+    <string name="action_save_success">Salvataggio</string>
+    <string name="action_save_fault">Salvataggio non riuscito</string>
+    <string name="action_edit">Modifica</string>
 </resources>
