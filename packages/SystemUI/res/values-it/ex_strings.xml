@@ -145,4 +145,20 @@
    <string name="recents_multiwin_warning">Una sessione multiwindow è già attiva.\nBasta toccare un\'applicazione, se si desidera ancorare ora.</string>
    <string name="recents_multiwin_nolastapp">Hai rimosso tutti i recenti, si prega di scegliere un\'app dalla schermata di avvio delle applicazioni o del drawer.</string>
 
+      <!-- On The Go -->
+    <string name="onthego_notif_ticker">On-The-Go attivato</string>
+    <string name="onthego_notif_title">On-The-Go è attivo</string>
+    <string name="onthego_notif_stop">Ferma</string>
+    <string name="onthego_notif_options">Opzioni</string>
+    <string name="onthego_notif_error">Impossibile avviare On-The-Go</string>
+    <string name="onthego_notif_restart">Riavvia On-The-Go</string>
+    <string name="onthego_notif_camera_changed">Modalità fotocamera cambiata</string>
+    <string name="onthego_transparency">Trasparenza</string>
+    <string name="onthego_front_camera">Usa la fotocamera frontale</string>
+    <string name="onthego_service_toggle">Riavvia automaticamente il servizio</string>
+
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Trattino ricarica (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
+    <string name="keyguard_plugged_in_dash_charging">Trattino ricarica</string>
+
 </resources>
