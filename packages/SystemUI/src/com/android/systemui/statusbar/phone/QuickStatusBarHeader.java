@@ -359,10 +359,16 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
         });
     }
 
+    private boolean isRoamingIconAllowed() {
+        return Settings.System.getIntForUser(mContext.getContentResolver(),
+            Settings.System.ROAMING_INDICATOR_ICON, 0,
+                UserHandle.USER_CURRENT) != 0;
+    }
+
     protected void updateVisibilities() {
         updateAlarmVisibilities();
         updateDateTimePosition();
-        mEmergencyOnly.setVisibility(mExpanded && (mShowEmergencyCallsOnly || mIsRoaming)
+        mEmergencyOnly.setVisibility(mExpanded && (mShowEmergencyCallsOnly || (mIsRoaming && isRoamingIconAllowed()))
                 ? View.VISIBLE : View.INVISIBLE);
 
         final boolean isDemo = UserManager.isDeviceInDemoMode(mContext);
@@ -387,7 +393,7 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
     }
 
     private void updateDateTimePosition() {
-        mDateTimeAlarmGroup.setTranslationY(mShowEmergencyCallsOnly || mIsRoaming
+        mDateTimeAlarmGroup.setTranslationY(mShowEmergencyCallsOnly || (mIsRoaming && isRoamingIconAllowed())
                 ? mExpansionAmount * mDateTimeTranslation : 0);
         updateDateTimeCenter();
     }

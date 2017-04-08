@@ -708,7 +708,13 @@ public class SignalClusterView
                         (mMobileVisible ? "VISIBLE" : "GONE"), mMobileStrengthId, mMobileTypeId));
 
             mMobileType.setVisibility(mMobileTypeId != 0 ? View.VISIBLE : View.GONE);
+
+            if (Settings.System.getInt(mContext.getContentResolver(),
+                 Settings.System.ROAMING_INDICATOR_ICON, 0) == 1) {
             mMobileRoaming.setVisibility(mRoaming ? View.VISIBLE : View.GONE);
+            } else {
+            mMobileRoaming.setVisibility(View.GONE);
+            }
 
             if (Settings.System.getInt(mContext.getContentResolver(),
                  Settings.System.DATA_ACTIVITY_ARROWS, 0) == 1) {
