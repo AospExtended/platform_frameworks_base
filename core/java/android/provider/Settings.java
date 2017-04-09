@@ -4823,10 +4823,10 @@ public final class Settings {
         public static final String STATUS_BAR_SHOW_WEATHER_TEMP = "status_bar_show_weather_temp";
 
         /**
-         * Whether to use slim recents
+         * Which recents style to use
          * @hide
          */
-        public static final String USE_SLIM_RECENTS = "use_slim_recents";
+        public static final String NAVIGATION_BAR_RECENTS = "navigation_bar_recents";
 
         /**
          * Whether to only show actually running tasks
