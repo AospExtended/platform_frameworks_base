@@ -19,9 +19,6 @@
   <java-symbol type="array" name="config_disabledComponents" />
   <java-symbol type="array" name="config_forceEnabledComponents" />
 
-  <!-- Automatic brightness enhancements -->
-  <java-symbol type="integer" name="config_autoBrightnessBrighteningLightFastDebounce"/>
-
   <!-- Support Samsung docks -->
   <java-symbol type="bool" name="config_forceAnalogCarDock" />
   <java-symbol type="bool" name="config_forceAnalogDeskDock" />
