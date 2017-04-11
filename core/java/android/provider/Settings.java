@@ -4534,6 +4534,13 @@ public final class Settings {
         public static final String RECENTS_ICON_PACK = "recents_icon_pack";
 
         /**
+         * Whether to show the heads up for dialer when heads up are disabled
+         * @hide
+         */
+        public static final String ALWAYS_HEADSUP_DIALER = "always_headsup_dialer";
+
+        /**
+         *
          * Whether to use slim recents
          * @hide
          */
