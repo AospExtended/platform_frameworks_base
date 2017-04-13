@@ -408,9 +408,12 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
     // show lte/4g switch
     private boolean mShowLteFourGee;
-	
-	// data/wifi activity arrows
+    
+    // data/wifi activity arrows
     private boolean mDataWifiActivityArrows;
+    
+    // data disabled icon
+    private boolean mDataDisabledIcon;
 
     // qs headers
     private StatusBarHeaderMachine mStatusBarHeaderMachine;
@@ -660,6 +663,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.NAVBAR_BUTTON_COLOR),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.DATA_DISABLED_ICON),
+                    false, this, UserHandle.USER_ALL);
             updateSettings();
         }
 
@@ -723,6 +729,13 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
            } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.NAVBAR_BUTTON_COLOR))) {
                     mNavigationController.updateNavbarOverlay(mContext.getResources());
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.DATA_DISABLED_ICON))) {
+                    mDataDisabledIcon = Settings.System.getIntForUser(
+                        mContext.getContentResolver(),
+                        Settings.System.DATA_DISABLED_ICON,
+                        1, UserHandle.USER_CURRENT) == 1;
+                    mNetworkController.onConfigurationChanged();
             }
             updateSettings();
         }
@@ -733,6 +746,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                     Settings.System.SHOW_LTE_FOURGEE, 0, UserHandle.USER_CURRENT) == 1;
             boolean mDataWifiActivityArrows = Settings.System.getIntForUser(resolver,
                     Settings.System.DATA_ACTIVITY_ARROWS, 0, UserHandle.USER_CURRENT) == 1;
+            boolean mDataDisabledIcon = Settings.System.getIntForUser(resolver,
+                    Settings.System.DATA_DISABLED_ICON, 1, UserHandle.USER_CURRENT) == 1;
             int mode = Settings.System.getIntForUser(mContext.getContentResolver(),
                             Settings.System.SCREEN_BRIGHTNESS_MODE,
                             Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,

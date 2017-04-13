@@ -4982,7 +4982,13 @@ public final class Settings {
          * @hide
          */
         public static final String NAVBAR_TINT_SWITCH = "navbar_tint_switch";
-        
+
+        /**
+         * Whether to display cross sign for a data disabled connection
+         * @hide
+         */
+        public static final String DATA_DISABLED_ICON = "data_disabled_icon";
+
          /**
          * Navbar Button Color
          * @hide
