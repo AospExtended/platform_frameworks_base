@@ -39,12 +39,14 @@ import android.util.SparseArray;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.telephony.TelephonyIntents;
 import com.android.internal.telephony.cdma.EriInfo;
+import com.android.systemui.Dependency;
 import com.android.systemui.R;
 import com.android.systemui.statusbar.phone.SignalDrawable;
 import com.android.systemui.statusbar.policy.NetworkController.IconState;
 import com.android.systemui.statusbar.policy.NetworkController.SignalCallback;
 import com.android.systemui.statusbar.policy.NetworkControllerImpl.Config;
 import com.android.systemui.statusbar.policy.NetworkControllerImpl.SubscriptionDefaults;
+import com.android.systemui.tuner.TunerService;
 
 import java.io.PrintWriter;
 import java.util.BitSet;
@@ -52,7 +54,8 @@ import java.util.Objects;
 import java.util.List;
 
 public class MobileSignalController extends SignalController<
-        MobileSignalController.MobileState, MobileSignalController.MobileIconGroup> {
+        MobileSignalController.MobileState, MobileSignalController.MobileIconGroup> 
+        implements TunerService.Tunable {
     private final TelephonyManager mPhone;
     private final SubscriptionDefaults mDefaults;
     private final String mNetworkNameDefault;
@@ -78,6 +81,10 @@ public class MobileSignalController extends SignalController<
 
     private boolean mRoamingIconAllowed;
     private boolean mShow4gForLte;
+    private boolean mDataDisabledIcon;
+
+    private static final String DATA_DISABLED_ICON =
+            "system:" + Settings.System.DATA_DISABLED_ICON;
 
     // TODO: Reduce number of vars passed in, if we have the NetworkController, probably don't
     // need listener lists anymore.
@@ -119,6 +126,8 @@ public class MobileSignalController extends SignalController<
         Handler mHandler = new Handler();
         SettingsObserver settingsObserver = new SettingsObserver(mHandler);
         settingsObserver.observe();
+        Dependency.get(TunerService.class).addTunable(this,
+                DATA_DISABLED_ICON);
     }
 
     class SettingsObserver extends ContentObserver {
@@ -143,6 +152,18 @@ public class MobileSignalController extends SignalController<
         @Override
         public void onChange(boolean selfChange) {
             updateSettings();
+        }
+    }
+
+    @Override
+    public void onTuningChanged(String key, String newValue) {
+        switch (key) {
+            case DATA_DISABLED_ICON:
+                     mDataDisabledIcon =
+                        newValue == null || Integer.parseInt(newValue) != 0;
+                     updateTelephony();
+            default:
+                break;
         }
     }
 
@@ -533,7 +554,7 @@ public class MobileSignalController extends SignalController<
         mCurrentState.roaming = isRoaming() && mRoamingIconAllowed;
         if (isCarrierNetworkChangeActive()) {
             mCurrentState.iconGroup = TelephonyIcons.CARRIER_NETWORK_CHANGE;
-        } else if (isDataDisabled()) {
+        } else if (isDataDisabled() && mDataDisabledIcon) {
             mCurrentState.iconGroup = TelephonyIcons.DATA_DISABLED;
         }
         if (isEmergencyOnly() != mCurrentState.isEmergency) {

@@ -4651,6 +4651,12 @@ public final class Settings {
                 new InclusiveIntegerRangeValidator(0, 1);
 
         /**
+         * Whether to display cross sign for a data disabled connection
+         * @hide
+         */
+        public static final String DATA_DISABLED_ICON = "data_disabled_icon";
+
+        /**
          * Whether to show seconds next to clock in status bar
          * 0 - hide (default)
          * 1 - show
