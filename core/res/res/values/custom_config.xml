@@ -16,4 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- call removeCient in cancelAuthentification after stop to
+        avoid 3s delay for certain fpc HALs -->
+    <bool name="config_fingerprintRemoveClientOnCancel">false</bool>
+
 </resources>
