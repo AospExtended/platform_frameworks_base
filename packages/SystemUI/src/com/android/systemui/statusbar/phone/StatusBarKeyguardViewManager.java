@@ -409,6 +409,20 @@ public class StatusBarKeyguardViewManager implements RemoteInputController.Callb
         mBouncer.hide(true /* destroyView */);
     }
 
+    public void hideNoAnimation() {
+        mShowing = false;
+        mStatusBar.setKeyguardFadingAway(SystemClock.uptimeMillis(), 0, 0);
+        mStatusBar.hideKeyguard();
+        mStatusBar.finishKeyguardFadingAway();
+        mStatusBarWindowManager.setKeyguardShowing(false);
+        mBouncer.hide(true /* destroyView */);
+        mViewMediatorCallback.keyguardGone();
+        mFingerprintUnlockController.finishKeyguardFadingAway();
+        updateStates();
+        WindowManagerGlobal.getInstance().trimMemory(
+                ComponentCallbacks2.TRIM_MEMORY_UI_HIDDEN);
+    }
+
     private void animateScrimControllerKeyguardFadingOut(long delay, long duration,
             boolean skipFirstFrame) {
         animateScrimControllerKeyguardFadingOut(delay, duration, null /* endRunnable */,
