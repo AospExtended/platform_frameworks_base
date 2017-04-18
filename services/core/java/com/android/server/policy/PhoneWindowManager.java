@@ -3524,8 +3524,12 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 if (mHomeDoubleTapPending) {
                     mHomeDoubleTapPending = false;
                     mHandler.removeCallbacks(mHomeDoubleTapTimeoutRunnable);
-                    handleDoubleTapOnHome();
-                } else if (mDoubleTapOnHomeBehavior == DOUBLE_TAP_HOME_RECENT_SYSTEM_UI) {
+                    performKeyAction(mDoubleTapOnHomeBehavior, event);
+                    if (mDoubleTapOnHomeBehavior != KEY_ACTION_SLEEP) {
+                        mHomeConsumed = true;
+                    }
+                } else if (mLongPressOnHomeBehavior == KEY_ACTION_APP_SWITCH
+                        || mDoubleTapOnHomeBehavior == KEY_ACTION_APP_SWITCH) {
                     preloadRecentApps();
                 }
             } else if ((event.getFlags() & KeyEvent.FLAG_LONG_PRESS) != 0) {
@@ -3534,10 +3538,13 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     if (interceptAccessibilityGestureTv()) {
                         return -1;
                     }
-                }
 
-                if (!keyguardOn) {
-                    handleLongPressOnHome(event.getDeviceId());
+                    mHomePressed = true;
+                    performHapticFeedbackLw(null, HapticFeedbackConstants.LONG_PRESS, false);
+                    performKeyAction(mLongPressOnHomeBehavior, event);
+                    if (mLongPressOnHomeBehavior != KEY_ACTION_SLEEP) {
+                        mHomeConsumed = true;
+                    }
                 }
             }
             return -1;
