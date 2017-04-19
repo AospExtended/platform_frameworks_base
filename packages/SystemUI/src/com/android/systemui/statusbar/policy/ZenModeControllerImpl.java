@@ -202,8 +202,12 @@ public class ZenModeControllerImpl implements ZenModeController {
     }
 
     private void fireConfigChanged(ZenModeConfig config) {
-        for (Callback cb : mCallbacks) {
-            cb.onConfigChanged(config);
+        try {
+            for (Callback cb : mCallbacks) {
+                cb.onConfigChanged(config);
+            }
+        } catch (Exception e) {
+            Log.d("TAG", "Caught exception" + e);
         }
     }
 
