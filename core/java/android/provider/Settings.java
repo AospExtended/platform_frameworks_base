@@ -4921,12 +4921,6 @@ public final class Settings {
         public static final String AMBIENT_DISPLAY_SHOW_BATTERY = "ambient_display_show_battery";
 
         /**
-         * Whether to display roaming indicator for roaming signal connection
-         * @hide
-         */
-        public static final String ROAMING_INDICATOR_ICON = "roaming_indicator_icon";
-
-        /**
          * If On-The-Go should be displayed at the power menu.
          *
          * @hide
