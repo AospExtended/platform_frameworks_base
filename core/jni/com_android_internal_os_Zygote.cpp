@@ -524,8 +524,6 @@ static pid_t ForkAndSpecializeCommon(JNIEnv* env, uid_t uid, gid_t gid, jintArra
 
   FDTWrapper fd_table(env, &debug_flags);
 
-  ResetNicePriority(env);
-
   pid_t pid = fork();
 
   if (pid == 0) {
