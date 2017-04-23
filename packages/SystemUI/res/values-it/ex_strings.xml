@@ -160,7 +160,12 @@
     <string name="onthego_service_toggle">Riavvia automaticamente il servizio</string>
 
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time">Trattino ricarica (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
-    <string name="keyguard_plugged_in_dash_charging">Trattino ricarica</string>
+    <string name="keyguard_indication_dash_charging_time">Trattino di ricarica (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> fino al completamento)</string>
+    <string name="keyguard_plugged_in_dash_charging">Trattino di ricarica</string>
+     
+    <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">Tasti Hardware attivati</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Tasti Hardware disattivati</string>
+    <string name="quick_settings_hwkeys_label">Tasti Hardware</string>
 
 </resources>
