@@ -4828,6 +4828,12 @@ public final class Settings {
          */
         public static final String NAVIGATION_BAR_RECENTS = "navigation_bar_recents";
 
+         /**
+         * Whether to use slim recents
+         * @hide
+         */
+        public static final String USE_SLIM_RECENTS = "use_slim_recents";
+
         /**
          * Whether to only show actually running tasks
          * @hide
