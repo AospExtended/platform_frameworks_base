@@ -361,6 +361,12 @@ public class KeyguardStatusView extends GridLayout implements
         queryAndUpdateWeather();
     }
 
+
+    @Override
+    public void weatherError() {
+        // Do nothing
+    }
+
     public void queryAndUpdateWeather() {
         try {
                 if (mWeatherEnabled) {
