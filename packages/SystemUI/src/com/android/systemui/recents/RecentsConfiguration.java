@@ -21,6 +21,7 @@ import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.graphics.Rect;
 
+import android.os.Handler;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -66,10 +67,37 @@ public class RecentsConfiguration {
 
     // Whether this product supports Grid-based Recents. If this is field is set to true, then
     // Recents will layout task views in a grid mode when there's enough space in the screen.
-    private boolean isGridEnabled;
     public int fabEnterAnimDuration;
     public int fabEnterAnimDelay;
     public int fabExitAnimDuration;
+    private boolean isGridEnabledDefault;
+    private boolean mIsGridEnabled;
+    private Handler mHandler = new Handler();
+    private SettingsObserver mSettingsObserver;
+
+    private class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.NAVIGATION_BAR_RECENTS),
+                    false, this);
+            update();
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            update();
+        }
+
+        public void update() {
+            mIsGridEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_RECENTS, isGridEnabledDefault ? 1 : 0,
+                    UserHandle.USER_CURRENT) == 1;
+        }
+    }
 
     public RecentsConfiguration(Context context) {
         // Load only resources that can not change after the first load either through developer
@@ -80,7 +108,7 @@ public class RecentsConfiguration {
         Resources res = appContext.getResources();
         fakeShadows = res.getBoolean(R.bool.config_recents_fake_shadows);
         svelteLevel = res.getInteger(R.integer.recents_svelte_level);
-        isGridEnabled = SystemProperties.getBoolean("ro.recents.grid", false);
+        isGridEnabledDefault = SystemProperties.getBoolean("ro.recents.grid", false);
 
         float screenDensity = context.getResources().getDisplayMetrics().density;
         smallestWidth = ssp.getDeviceSmallestWidth();
@@ -93,6 +121,9 @@ public class RecentsConfiguration {
                 res.getInteger(R.integer.recents_animate_fab_enter_delay);
         fabExitAnimDuration =
                 res.getInteger(R.integer.recents_animate_fab_exit_duration);
+
+        mSettingsObserver = new SettingsObserver(mHandler);
+        mSettingsObserver.observe();
     }
 
     /**
@@ -104,7 +135,6 @@ public class RecentsConfiguration {
     }
 
     public boolean isGridEnabled() {
-        return Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.NAVIGATION_BAR_RECENTS, isGridEnabled ? 2 : 0, UserHandle.USER_CURRENT) == 2;
+        return mIsGridEnabled;
     }
 }
