@@ -16,20 +16,28 @@ LOCAL_PATH := frameworks/base/data/sounds/
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)material/alarms/Argon.ogg:system/media/audio/alarms/Argon.ogg \
+    $(LOCAL_PATH)material/alarms/Awaken.ogg:system/media/audio/alarms/Awaken.ogg \
     $(LOCAL_PATH)material/alarms/Bounce.ogg:system/media/audio/alarms/Bounce.ogg \
     $(LOCAL_PATH)material/alarms/Carbon.ogg:system/media/audio/alarms/Carbon.ogg \
+    $(LOCAL_PATH)material/alarms/Drip.ogg:system/media/audio/alarms/Drip.ogg \
     $(LOCAL_PATH)material/alarms/Flow.ogg:system/media/audio/alarms/Flow.ogg \
+    $(LOCAL_PATH)material/alarms/Gallop.ogg:system/media/audio/alarms/Gallop.ogg \
     $(LOCAL_PATH)material/alarms/Helium.ogg:system/media/audio/alarms/Helium.ogg \
     $(LOCAL_PATH)material/alarms/Krypton.ogg:system/media/audio/alarms/Krypton.ogg \
     $(LOCAL_PATH)material/alarms/Neon.ogg:system/media/audio/alarms/Neon.ogg \
+    $(LOCAL_PATH)material/alarms/Nudge.ogg:system/media/audio/alarms/Nudge.ogg \
+    $(LOCAL_PATH)material/alarms/Orbit.ogg:system/media/audio/alarms/Orbit.ogg \
     $(LOCAL_PATH)material/alarms/Osmium.ogg:system/media/audio/alarms/Osmium.ogg \
     $(LOCAL_PATH)material/alarms/Oxygen.ogg:system/media/audio/alarms/Oxygen.ogg \
     $(LOCAL_PATH)material/alarms/Platinum.ogg:system/media/audio/alarms/Platinum.ogg \
+    $(LOCAL_PATH)material/alarms/Rise.ogg:system/media/audio/alarms/Rise.ogg \
+    $(LOCAL_PATH)material/alarms/Sway.ogg:system/media/audio/alarms/Sway.ogg \
     $(LOCAL_PATH)material/alarms/Timer.ogg:system/media/audio/alarms/Timer.ogg \
-    $(LOCAL_PATH)material/effects/Audio_End.ogg:system/media/audio/ui/Audio_End.ogg \
-    $(LOCAL_PATH)material/effects/Audio_Initiate.ogg:system/media/audio/ui/Audio_Initiate.ogg \
-    $(LOCAL_PATH)material/effects/Camera_Click.ogg:system/media/audio/ui/Camera_Click.ogg \
-    $(LOCAL_PATH)material/effects/Camera_Focus.ogg:system/media/audio/ui/Camera_Focus.ogg \
+    $(LOCAL_PATH)material/alarms/Wag.ogg:system/media/audio/alarms/Wag.ogg \
+    $(LOCAL_PATH)material/effects/audio_end.ogg:system/media/audio/ui/audio_end.ogg \
+    $(LOCAL_PATH)material/effects/audio_initiate.ogg:system/media/audio/ui/audio_initiate.ogg \
+    $(LOCAL_PATH)material/effects/camera_click.ogg:system/media/audio/ui/camera_click.ogg \
+    $(LOCAL_PATH)material/effects/camera_focus.ogg:system/media/audio/ui/camera_focus.ogg \
     $(LOCAL_PATH)material/effects/Dock.ogg:system/media/audio/ui/Dock.ogg \
     $(LOCAL_PATH)material/effects/Effect_Tick.ogg:system/media/audio/ui/Effect_Tick.ogg \
     $(LOCAL_PATH)material/effects/KeypressDelete.ogg:system/media/audio/ui/KeypressDelete.ogg \
@@ -81,11 +89,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)material/ringtones/Oberon.ogg:system/media/audio/ringtones/Oberon.ogg \
     $(LOCAL_PATH)material/ringtones/Phobos.ogg:system/media/audio/ringtones/Phobos.ogg \
     $(LOCAL_PATH)material/ringtones/Pyxis.ogg:system/media/audio/ringtones/Pyxis.ogg \
-    $(LOCAL_PATH)material/ringtones/RobotsforEveryone.ogg:system/media/audio/ringtones/RobotsforEveryone.ogg \
-    $(LOCAL_PATH)material/ringtones/Sedna.ogg:system/media/audio/ringtones/Sedna.ogg \
-    $(LOCAL_PATH)material/ringtones/SpagnolaOrchestration.ogg:system/media/audio/ringtones/SpagnolaOrchestration.ogg \
     $(LOCAL_PATH)material/ringtones/Romance.ogg:system/media/audio/ringtones/Romance.ogg \
     $(LOCAL_PATH)material/ringtones/Rrrring.ogg:system/media/audio/ringtones/Rrrring.ogg \
+    $(LOCAL_PATH)material/ringtones/Sedna.ogg:system/media/audio/ringtones/Sedna.ogg \
     $(LOCAL_PATH)material/ringtones/Shooting_star.ogg:system/media/audio/ringtones/Shooting_star.ogg \
     $(LOCAL_PATH)material/ringtones/Spaceship.ogg:system/media/audio/ringtones/Spaceship.ogg \
     $(LOCAL_PATH)material/ringtones/Summer_night.ogg:system/media/audio/ringtones/Summer_night.ogg \
