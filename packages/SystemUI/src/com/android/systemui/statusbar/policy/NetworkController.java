@@ -93,7 +93,7 @@ public interface NetworkController {
 
         public interface AccessPointCallback {
             void onAccessPointsChanged(List<AccessPoint> accessPoints);
-            void onSettingsActivityTriggered(Intent intent);
+            void onSettingsActivityTriggered(Intent settingsIntent);
         }
     }
 }
