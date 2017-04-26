@@ -4288,10 +4288,6 @@ public final class Settings {
          */
         public static final String MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
 
-        /**
-         * @hide
-         */
-        public static final String OMNIJAWS_WEATHER_ICON_PACK = "omnijaws_weather_icon_pack";
 
         /**
          * Change quick settings tiles animation style

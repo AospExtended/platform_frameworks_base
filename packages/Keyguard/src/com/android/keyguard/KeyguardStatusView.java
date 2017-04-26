@@ -82,7 +82,6 @@ public class KeyguardStatusView extends GridLayout implements
     private int currentVisibleNotifications;
     private int numberOfNotificationsToHide;
     private boolean showLocation;
-    private SettingsObserver mSettingsObserver;
 
     private SettingsObserver mSettingsObserver;
     private int mLockClockFont;
