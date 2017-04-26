@@ -540,7 +540,7 @@ class GlobalScreenshot {
 
         // Setup the Screenshot sound
         mScreenshotSound= RingtoneManager.getRingtone(mContext,
-                    Uri.parse("file://" + "/system/media/audio/ui/Camera_Click.ogg"));
+                    Uri.parse("file://" + "/system/media/audio/ui/camera_click.ogg"));
 
         // Load hardware rotation from prop
         mSfHwRotation = android.os.SystemProperties.getInt("ro.sf.hwrotation",0) / 90;
