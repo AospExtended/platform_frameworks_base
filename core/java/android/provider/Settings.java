@@ -2759,13 +2759,6 @@ public final class Settings {
             "lock_pattern_tactile_feedback_enabled";
 
         /**
-         * Whether to use the custom quick unlock screen control
-         * @hide
-         */
-        public static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL =
-                "lockscreen_quick_unlock_control";
-
-        /**
          * A formatted string of the next alarm that is set, or the empty string
          * if there is no alarm set.
          *
@@ -4277,12 +4270,6 @@ public final class Settings {
          */
         public static final String DATA_ACTIVITY_ARROWS = "data_activity_arrows";
 		 
-	/**
-         * Whether to scramble a pin unlock layout
-         * @hide
-         */
-        public static final String LOCKSCREEN_PIN_SCRAMBLE_LAYOUT = "lockscreen_scramble_pin_layout"; 
-
         /**
          * Forces formal text input.  1 to replace emoticon key with enter key.
          * @hide
