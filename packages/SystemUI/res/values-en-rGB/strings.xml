@@ -286,7 +286,7 @@
     <string name="quick_settings_location_off_label" msgid="7464544086507331459">"Location Off"</string>
     <string name="quick_settings_media_device_label" msgid="1302906836372603762">"Media device"</string>
     <string name="quick_settings_rssi_label" msgid="7725671335550695589">"RSSI"</string>
-    <string name="quick_settings_rssi_emergency_only" msgid="2713774041672886750">"Emergency Calls Only"</string>
+    <string name="quick_settings_rssi_emergency_only" msgid="2713774041672886750">"Emergency calls only"</string>
     <string name="quick_settings_settings_label" msgid="5326556592578065401">"Settings"</string>
     <string name="quick_settings_time_label" msgid="4635969182239736408">"Time"</string>
     <string name="quick_settings_user_label" msgid="5238995632130897840">"Me"</string>
