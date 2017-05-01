@@ -339,19 +339,19 @@ public class KeyguardStatusView extends GridLayout implements
         } else if (mLockClockFont == 17) {
             mClockView.setTypeface(Typeface.create("sans-serif-condensed-light", Typeface.ITALIC));
         } else if (mLockClockFont == 18) {
-            mClockView.setTypeface(Typeface.create("dancingscript", Typeface.NORMAL));
+            mClockView.setTypeface(Typeface.create("cursive", Typeface.NORMAL));
         } else if (mLockClockFont == 19) {
-            mClockView.setTypeface(Typeface.create("dancingscript", Typeface.BOLD));
+            mClockView.setTypeface(Typeface.create("cursive", Typeface.BOLD));
         } else if (mLockClockFont == 20) {
-            mClockView.setTypeface(Typeface.create("comingsoon", Typeface.NORMAL));
+            mClockView.setTypeface(Typeface.create("casual", Typeface.NORMAL));
         } else if (mLockClockFont == 21) {
-            mClockView.setTypeface(Typeface.create("notoserif", Typeface.NORMAL));
+            mClockView.setTypeface(Typeface.create("serif", Typeface.NORMAL));
         } else if (mLockClockFont == 22) {
-            mClockView.setTypeface(Typeface.create("notoserif", Typeface.ITALIC));
+            mClockView.setTypeface(Typeface.create("serif", Typeface.ITALIC));
         } else if (mLockClockFont == 23) {
-            mClockView.setTypeface(Typeface.create("notoserif", Typeface.BOLD));
+            mClockView.setTypeface(Typeface.create("serif", Typeface.BOLD));
         } else if (mLockClockFont == 24) {
-            mClockView.setTypeface(Typeface.create("notoserif", Typeface.BOLD_ITALIC));
+            mClockView.setTypeface(Typeface.create("serif", Typeface.BOLD_ITALIC));
         }
     }
 
