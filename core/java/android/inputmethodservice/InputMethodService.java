@@ -35,6 +35,7 @@ import android.database.ContentObserver;
 import android.graphics.Rect;
 import android.graphics.Region;
 import android.net.Uri;
+import android.os.UserHandle;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -2006,7 +2007,7 @@ public class InputMethodService extends AbstractInputMethodService {
             return false;
         }
         if (event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_UP) {
-            mVolumeKeyCursorControl = Settings.System.getInt(getContentResolver(),
+            mVolumeKeyCursorControl = Settings.System.getIntForUser(getContentResolver(),
                     Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0, UserHandle.USER_CURRENT_OR_SELF);
             if (isInputViewShown() && (mVolumeKeyCursorControl != VOLUME_CURSOR_OFF)) {
                 sendDownUpKeyEvents((mVolumeKeyCursorControl == VOLUME_CURSOR_ON_REVERSE)
@@ -2016,7 +2017,7 @@ public class InputMethodService extends AbstractInputMethodService {
             return false;
         }
         if (event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_DOWN) {
-            mVolumeKeyCursorControl = Settings.System.getInt(getContentResolver(),
+            mVolumeKeyCursorControl = Settings.System.getIntForUser(getContentResolver(),
                     Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0, UserHandle.USER_CURRENT_OR_SELF);
             if (isInputViewShown() && (mVolumeKeyCursorControl != VOLUME_CURSOR_OFF)) {
                 sendDownUpKeyEvents((mVolumeKeyCursorControl == VOLUME_CURSOR_ON_REVERSE)
@@ -2077,7 +2078,7 @@ public class InputMethodService extends AbstractInputMethodService {
         }
         if (event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_UP
                  || keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
-            mVolumeKeyCursorControl = Settings.System.getInt(getContentResolver(),
+            mVolumeKeyCursorControl = Settings.System.getIntForUser(getContentResolver(),
                     Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0, UserHandle.USER_CURRENT_OR_SELF);
             if (isInputViewShown() && (mVolumeKeyCursorControl != VOLUME_CURSOR_OFF)) {
                 return true;

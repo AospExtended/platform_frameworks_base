@@ -481,7 +481,7 @@ public class QSTileHost implements QSTile.Host, Tunable {
         else if (tileSpec.equals("compass")) return new CompassTile(this);
         else if (tileSpec.equals("weather")) return new WeatherTile(this);
         else if (tileSpec.equals("hwkeys")) return  new HWKeysTile(this);
-        else if (tileSpec.equals("extensions")) return new ExtensionsTile(this)
+        else if (tileSpec.equals("extensions")) return new ExtensionsTile(this);
         // Intent tiles.
         else if (tileSpec.startsWith(IntentTile.PREFIX)) return IntentTile.create(this,tileSpec);
         else if (tileSpec.startsWith(CustomTile.PREFIX)) return CustomTile.create(this,tileSpec);
