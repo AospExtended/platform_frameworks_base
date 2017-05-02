@@ -4,7 +4,9 @@
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
+
           http://www.apache.org/licenses/LICENSE-2.0
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -38,6 +40,7 @@
     <!-- Language\Locale Tile -->
     <string name="quick_settings_locale_label">Lingua</string>
     <string name="quick_settings_locale_more_locales_toast">Si prega di configurare più lingue per attivare la funzionalità del toggle</string>
+    
     <!-- NavBar Tuner -->
     <string name="menu_ime_always_show">Menù / interrittore tastiera (visualizza sempre)</string>
     <string name="search">Ricerca</string>
@@ -63,6 +66,7 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient Display disattivato</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient Display attivato</string>
     <string name="quick_settings_ambient_display_label">Ambient Display</string>
+    <string name="quick_settings_extensions">Estensioni</string>
      
      <!-- Screenshot Crop & Share -->
     <string name="action_delete_success">Eliminazione</string>
@@ -83,4 +87,5 @@
     <string name="action_save_success">Salvataggio</string>
     <string name="action_save_fault">Salvataggio non riuscito</string>
     <string name="action_edit">Modifica</string>
+     
 </resources>
