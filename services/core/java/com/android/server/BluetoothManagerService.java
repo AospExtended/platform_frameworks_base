@@ -144,6 +144,7 @@ class BluetoothManagerService extends IBluetoothManager.Stub {
     // used inside handler thread
     private boolean mQuietEnable = false;
     private boolean mEnable;
+    private boolean mEnableBrEdr = false;
 
     /**
      * Used for tracking apps that enabled / disabled Bluetooth.
@@ -268,11 +269,13 @@ class BluetoothManagerService extends IBluetoothManager.Stub {
                             // disable without persisting the setting
                             Slog.d(TAG, "Calling disable");
                             sendDisableMsg("airplane mode");
+                            mEnableBrEdr = false;
                         }
                     } else if (mEnableExternal) {
                         // enable without persisting the setting
                         Slog.d(TAG, "Calling enable");
                         sendEnableMsg(mQuietEnableExternal, "airplane mode");
+                        mEnableBrEdr = true;
                     }
                 }
             }
@@ -313,6 +316,7 @@ class BluetoothManagerService extends IBluetoothManager.Stub {
         loadStoredNameAndAddress();
         if (isBluetoothPersistedStateOn()) {
             mEnableExternal = true;
+            mEnableBrEdr = true;
         }
 
         int systemUiUid = -1;
@@ -641,7 +645,7 @@ class BluetoothManagerService extends IBluetoothManager.Stub {
                         BluetoothAdapter.nameForState(st));
                 return;
             }
-            if (isBluetoothPersistedStateOnBluetooth() || !isBleAppPresent()) {
+            if (isBluetoothPersistedStateOnBluetooth() || mEnableBrEdr) {
                 // This triggers transition to STATE_ON
                 mBluetooth.onLeServiceUp();
                 persistBluetoothSetting(BLUETOOTH_ON_BLUETOOTH);
@@ -743,6 +747,11 @@ class BluetoothManagerService extends IBluetoothManager.Stub {
                             BluetoothAdapter.ACTION_REQUEST_ENABLE)) {
                 return false;
             }
+        }
+
+        if((packageName == null || packageName.isEmpty()) && !isBleAppPresent()) {
+            Slog.w(TAG, "Set mEnableBrEdr for script enable request");
+            mEnableBrEdr = true;
         }
 
         if (DBG) {
@@ -1986,6 +1995,11 @@ class BluetoothManagerService extends IBluetoothManager.Stub {
             }
             mActiveLogs.add(new ActiveLog(packageName, enable, System.currentTimeMillis()));
         }
+    }
+
+
+    public void setBrEdrEnableStatus(boolean status) {
+        mEnableBrEdr = status;
     }
 
     private void recoverBluetoothServiceFromError(boolean clearBle) {
