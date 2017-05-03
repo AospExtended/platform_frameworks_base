@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016 The Pure Nexus Project
-     Copyright (C) 2016 The JDCTeam
+     Copyright (C) 2016 AospExtended ROM Project
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -13,30 +12,34 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Title of dialog to confirm restarting. -->
-    <string name="reboot_title">Reiniciar</string>
-    <!-- Button to reboot the phone in restart menu -->
-    <string name="reboot_reboot">Reiniciar</string>
-    <!-- Button to reboot the phone into recovery in restart menu-->
-    <string name="reboot_recovery">Recovery</string>
-    <!-- Button to reboot the phone into bootloader in restart menu -->
-    <string name="reboot_bootloader">Bootloader</string>
-    <!-- Button to soft reboot the device in restart menu -->
-    <string name="reboot_soft">Reinicio rápido</string>
-    <!-- Reboot Confirmation Dialog. -->
-    <string name="reboot_confirm" product="tablet">Tu tableta se reiniciará.</string>
-    <string name="reboot_confirm" product="default">Tu dispositivo se reiniciará.</string>
-    <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
-    <string name="reboot_progress">Reiniciando\u2026</string>
-    <!-- Global Actions -->
-    <string name="global_action_current_user">Actual</string>
-    <string name="global_action_screenshot">Captura de pantalla</string>
-    <string name="global_action_screen_record">Grabar pantalla</string>
-    <string name="global_action_search">Búsqueda</string>
-    <string name="global_action_torch">Linterna</string>
-    <string name="global_action_voicesearch">Búsqueda por voz</string>
+    <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
+    <string name="system_error_vendorprint">La imágen del vendedor no coincide con el sistema. Por favor instala la <xliff:g id="string">%s</xliff:g> imágen de vendedor para tu dispositivo</string>
 
-    <string name="permlab_preventpower">anular tecla de encendido</string>
-    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_preventpower">Permitir que las apps anulen la tecla de encendido.</string>
+    <!-- AOKP custom system animations -->
+    <string name="animation_fade">Desvanecer</string>
+    <string name="animation_slide_right">Deslizar a la derecha</string>
+    <string name="animation_slide_left">Deslizar a la izquierda</string>
+    <string name="animation_slide_right_no_fade">Deslizar a la derecha (Sin desvanecer)</string>
+    <string name="animation_slide_left_no_fade">Deslizar a la izquierda (Sin desvanecer)</string>
+    <string name="animation_slide_up">Deslizar hacia abajo</string>
+    <string name="animation_slide_down">Deslizar hacia arriba</string>
+    <string name="animation_default">Por defecto</string>
+    <string name="animation_translucent">Traslucido</string>
+    <string name="animation_grow_shrink">Crecer (Arriba)</string>
+    <string name="animation_grow_shrink_center">Crecer (Centro)</string>
+    <string name="animation_grow_shrink_bottom">Crecer (Abajo)</string>
+    <string name="animation_grow_shrink_left">Crecer (Izquierda)</string>
+    <string name="animation_grow_shrink_right">Crecer (Derecha)</string>
+    <string name="action_null">Ninguna</string>
+    
+    <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+    <string name="aex_system_error_manufacturer">Se detecto una incongruencia con la imágen de vendedor. Normalmente es debido a que la imágen no está actualizada. Por favor asegurate que la imágen coincide <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
+
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_resetBatteryStats">reiniciar las estadísticas de batería</string>
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_resetBatteryStats">Permitir que una aplicación borre las estadísticas de batería.</string>
+
+    <!-- On-The-Go -->
+    <string name="global_action_onthego">Modo On-The-Go</string>
 </resources>
