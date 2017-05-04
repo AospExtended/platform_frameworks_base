@@ -20,7 +20,7 @@
     <!-- Screenrecord notification title -->
     <string name="screenrecord_notif_title">Grabando pantalla</string>
     <!-- Screenrecord notification action: Stop -->
-    <string name="screenrecord_notif_stop">Parar</string>
+    <string name="screenrecord_notif_stop">Detener</string>
     <!-- Screenrecord notification action: show/hide pointer -->
     <string name="screenrecord_notif_pointer_on">Mostrar puntero</string>
     <string name="screenrecord_notif_pointer_off">Ocultar puntero</string>
@@ -28,27 +28,32 @@
     <string name="screenrecord_notif_error">No se pudo grabar la pantalla</string>
 
     <!-- Screenshot Delete Toast -->
-    <string name="delete_screenshot_toast">Captura borrada</string>
+    <string name="delete_screenshot_toast">Captura de pantalla borrada</string>
+
+    <!-- Screenrecord QS tile -->
+    <string name="quick_settings_screenrecord">Grabar pantalla</string>
+    <string name="quick_settings_screenrecord_on">Grabando...</string>
+
+    <!-- Language\Locale Tile -->
+    <string name="quick_settings_locale_label">Idioma</string>
+    <string name="quick_settings_locale_more_locales_toast">Por favor configura varios idiomas para usar esta función</string>
 
     <!-- NavBar Tuner -->
-    <string name="menu_ime_always_show">Menú / Cambio de teclado (mostrado siempre)</string>
-    <string name="search">Buscar</string>
-
-    <!-- Content description of the Superuser tile -->
-    <string name="accessibility_su_active">Sesión de superusuario activa</string>
+    <string name="menu_ime_always_show">Menú/Selector de teclado (mostrar siempre)</string>
+    <string name="search">Búsqueda</string>
 
     <!-- Strings for lockscreen shortcut hints -->
-    <string name="left_shortcut_hint">Desliza a la derecha para %1$s</string>
-    <string name="right_shortcut_hint">Desliza a la izquierda para %1$s</string>
-    <string name="lockscreen_message">Toca un icono para reasignar un acceso directo.</string>
+    <string name="left_shortcut_hint">Icono derecho para %1$s</string>
+    <string name="right_shortcut_hint">Icono izquierdo para %1$s</string>
+    <string name="lockscreen_message">Toca un icono de la izquierda o derecha para asignar una función.</string>
     <string name="lockscreen_default_target">Por defecto</string>
     <string name="select_application">Seleccionar aplicación</string>
-    <string name="lockscreen_choose_action_title">Seleccionar acción</string>
+    <string name="lockscreen_choose_action_title">Asignar función</string>
     <string name="lockscreen_none_target">Nada</string>
 
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Sonido</string>
-    <string name="quick_settings_sound_ring">Sonar</string>
+    <string name="quick_settings_sound_ring">Tono de llamada</string>
     <string name="quick_settings_sound_vibrate">Vibrar</string>
     <string name="quick_settings_sound_dnd">No molestar</string>
 
@@ -58,8 +63,22 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Pantalla ambiente desactivada</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Pantalla ambiente activada</string>
     <string name="quick_settings_ambient_display_label">Pantalla ambiente</string>
-    <!-- LTE QS tile -->
-    <string name="quick_settings_lte_label">LTE</string>
-    <string name="lte_on">LTE Encendido </string>
-    <string name="lte_off">LTE Apagado</string> 
+    <string name="quick_settings_extensions">Extensiones</string>
+
+    <!-- Screenshot Crop & Share -->
+    <string name="action_delete_success">Eliminada</string>
+    <string name="action_delete_fault">No se pudo eliminar</string>
+    <string name="action_save_success">Guardada</string>
+    <string name="action_save_fault">No se pudo guardar</string>
+    <string name="pref_action_color_title">Color de los botones de acción</string>
+    <string name="pref_action_color_summary">Elige tu color favorito para los botones de acción</string>
+    <string name="pref_category_main">Ajustes generales</string>
+    <string name="pref_category_user">Ajustes del usuario</string>
+    <string name="pref_crop_behavior_title">Comportamiendo de cortado</string>
+    <string name="pref_crop_behavior_summary">Usar la imágen recortada aunque la imágen no se recorto con la herramienta</string>
+    <string name="action_ok">OK</string>
+
+    <!-- Screenshot Crop & Share -->
+    <string name="action_edit">Editar</string>
+
 </resources>
