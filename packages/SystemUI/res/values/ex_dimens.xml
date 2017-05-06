@@ -31,7 +31,7 @@
     <dimen name="keyguard_shortcut_item_margin">10dp</dimen>
 
     <!-- carrier label text height -->
-    <dimen name="status_bar_carrier_height">14dp</dimen>
+    <dimen name="status_bar_carrier_height">14sp</dimen>
 
     <!-- Floating action button -->
     <dimen name="floating_action_button_height">54dp</dimen>
