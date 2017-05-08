@@ -15,7 +15,7 @@
 
     <!-- Notification which notifies user flashlight is enabled -->
     <string name="quick_settings_tile_flashlight_not_title">Torcia accesa</string>
-    <string name="quick_settings_tile_flashlight_not_summary">Toccare per spegnere</string>
+    <string name="quick_settings_tile_flashlight_not_summary">Tocca per spegnere</string>
   
     <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
@@ -50,11 +50,11 @@
     <string name="quick_settings_music_pause">Pausa</string>
     <string name="quick_settings_ime_tile_label">Metodo d\'ingresso</string>
     <string name="quick_settings_caffeine_label">Caffeine</string>
-    <string name="accessibility_quick_settings_caffeine_off">Caffeine off</string>
-    <string name="accessibility_quick_settings_caffeine_on">Caffeine on</string>
+    <string name="accessibility_quick_settings_caffeine_off">Caffeine spenta</string>
+    <string name="accessibility_quick_settings_caffeine_on">Caffeine accesa</string>
     <string name="quick_settings_heads_up_label">Heads up</string>
-    <string name="accessibility_quick_settings_heads_up_off">Heads up off.</string>
-    <string name="accessibility_quick_settings_heads_up_on">Heads up on.</string>
+    <string name="accessibility_quick_settings_heads_up_off">Heads up spento.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Heads up acceso.</string>
     <string name="accessibility_quick_settings_heads_up_changed_off">Heads up spento.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Heads up acceso.</string>
     <string name="quick_settings_pulse_enabled">Pulse abilitato</string>
@@ -79,7 +79,7 @@
     <string name="quick_settings_location_battery_saving_label">Risparmio batteria</string>
     <string name="quick_settings_location_gps_only_label">Solo dispositivo</string>
     <string name="quick_settings_location_high_accuracy_label">Alta precisione</string>
-    <string name="quick_settings_location_off_label">Geolocalizzazione disattivata</string>
+    <string name="quick_settings_location_off_label">Geolocalizzazione spenta</string>
 
     <!-- Show lte/4g switch -->
     <string name="show_lte_fourgee_title">Visualizza 4G invece di LTE</string>
@@ -89,9 +89,9 @@
     <!-- Navigation bar Tile -->
     <string name="quick_settings_navigation_bar">Barra di navigazione</string>
     <string name="quick_settings_smartbar">SmartBar</string>
-    <string name="quick_settings_smartbar_off">SmartBar off</string>
+    <string name="quick_settings_smartbar_off">SmartBar spenta</string>
     <string name="quick_settings_fling">Fling</string>
-    <string name="quick_settings_fling_off">Fling off</string>
+    <string name="quick_settings_fling_off">Fling spento</string>
 
     <!-- Screenshot action -->
     <string name="screenshot_abort_title">Nessun screenshot preso</string>
@@ -102,8 +102,8 @@
     <string name="quick_settings_expanded_desktop_off">Normale</string>
 
     <!-- Heads up snooze toast -->
-    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - la notifica è posticipata per 1 minuto.</string>
-    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - le notifiche saranno posticipate per <xliff:g id="number">%d</xliff:g> minuti.</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - La notifica è posticipata per 1 minuto.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Le notifiche saranno posticipate per <xliff:g id="number">%d</xliff:g> minuti.</string>
 
     <string name="recents_free_ram">RAM libera: %1$d MB</string>
 
@@ -119,6 +119,8 @@
     <!-- OmniJaws -->
     <string name="omnijaws_service_error">Errore</string>
     <string name="omnijaws_service_unkown">Nessun dato meteo</string>
+    <string name="omnijaws_service_error_long">Errore durante il caricamento dei dati meteo</string>
+    <string name="omnijaws_service_disabled">Servizio disabilitato</string>
     <string name="omnijaws_detail_header">Meteo</string>
     <string name="omnijaws_label_default">Meteo</string>
     <string name="omnijaws_current_text">Adesso</string>
@@ -142,8 +144,8 @@
     <string name="quick_settings_compass_NW">NW</string>
 
     <!-- Sim recents -->
-   <string name="recents_multiwin_warning">Una sessione multiwindow è già attiva.\nBasta toccare un\'applicazione, se si desidera ancorare ora.</string>
-   <string name="recents_multiwin_nolastapp">Hai rimosso tutti i recenti, si prega di scegliere un\'app dalla schermata di avvio delle applicazioni o del drawer.</string>
+   <string name="recents_multiwin_warning">Una sessione multiwindow è già attiva.\nBasta toccare un\'applicazione se si desidera ancorarla ora.</string>
+   <string name="recents_multiwin_nolastapp">Hai rimosso tutti i recenti, si prega di scegliere un\'applicazione dalla schermata di avvio o del drawer.</string>
 
       <!-- On The Go -->
     <string name="onthego_notif_ticker">On-The-Go attivato</string>
@@ -152,7 +154,7 @@
     <string name="onthego_notif_options">Opzioni</string>
     <string name="onthego_notif_error">Impossibile avviare On-The-Go</string>
     <string name="onthego_notif_restart">Riavvia On-The-Go</string>
-    <string name="onthego_notif_camera_changed">Modalità fotocamera cambiata</string>
+    <string name="onthego_notif_camera_changed">Modalità fotocamera modificata</string>
     <string name="onthego_transparency">Trasparenza</string>
     <string name="onthego_front_camera">Usa la fotocamera frontale</string>
     <string name="onthego_service_toggle">Riavvia automaticamente il servizio</string>
