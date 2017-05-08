@@ -40,9 +40,6 @@
     <!-- Separate QS text label tint from icon tint -->
     <color name="qs_tile_label_tint_unavailable">@color/qs_tile_tint_unavailable</color>
 
-    <!-- Status bar battery level text color -->
-    <color name="status_bar_battery_level_text_color">#ffffff</color>
-
     <!-- Battery charging color -->
     <color name="system_primary_color">@*android:color/material_blue_grey_900</color>
 
@@ -87,5 +84,4 @@
     <!-- Used by selector -->
     <color name="card_pressed">#7e3c3c3c</color>
 
-    <color name="batterymeter_frame_color_darkintensity">@color/dark_mode_icon_color_dual_tone_background</color>
 </resources>
