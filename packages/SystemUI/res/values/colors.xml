@@ -26,10 +26,6 @@
     <drawable name="status_bar_notification_row_background_color">#ff090909</drawable>
     <color name="notification_list_shadow_top">#80000000</color>
     <drawable name="heads_up_notification_bg_pressed">#ff33B5E5</drawable>
-    <color name="batterymeter_frame_color">@color/light_mode_icon_color_dual_tone_background</color><!-- 30% white -->
-    <color name="batterymeter_charge_color">#FFFFFFFF</color>
-    <color name="batterymeter_bolt_color">#FFFFFFFF</color>
-    <color name="qs_batterymeter_frame_color">#FF404040</color>
     <color name="system_warning_color">@*android:color/system_error</color>
     <color name="qs_text">#FFFFFFFF</color>
     <color name="qs_tile_divider">#29ffffff</color><!-- 16% white -->
@@ -157,4 +153,17 @@
     <color name="ksh_key_item_color">@color/material_grey_600</color>
     <color name="ksh_key_item_background">@color/material_grey_100</color>
 
+    <!-- Battery colors -->
+    <color name="batterymeter_frame_color">@color/light_mode_icon_color_dual_tone_background</color> <!-- statusbar battery frame color  -->
+    <color name="batterymeter_frame_color_darkintensity">@color/dark_mode_icon_color_dual_tone_background</color> <!-- statusbar battery frame color on white statusbar  -->
+    <color name="batterymeter_frame_color_tile">@color/light_mode_icon_color_dual_tone_background</color> <!-- tile battery frame color -->
+    <color name="batterymeter_bolt_color">#FFFFFFFF</color> <!--  statusbar battery bolt and plus color on no circle styles -->
+    <color name="batterymeter_circle_tile_bolt_plus_color">#FFFFFFFF</color> <!-- bolt and plus color for tile on circle battery style-->
+    <color name="batterymeter_tile_bolt_plus_color">@color/system_primary_color</color> <!-- bolt and plus color for tile on non circle battery styles - the qs panel background color -->
+    <color name="battery_charge_level_on_light_statusbar">@color/dark_mode_icon_color_dual_tone_fill</color> <!-- level color on white statusbar -->
+    <color name="battery_charge_level_on_normal_statusbar">@color/light_mode_icon_color_dual_tone_fill</color> <!-- level color on normal statusbar -->
+    <color name="battery_charge_level_low_level">#FFE53935</color> <!-- level color when <15 for statusbar battery -->
+    <color name="battery_normal_charge_level_tile">#ffffff</color> <!-- level color when >15 for the tile battery -->
+    <color name="battery_low_charge_level_tile">@color/battery_charge_level_low_level</color> <!-- level color when >15 for the tile battery -->
+    <color name="status_bar_battery_level_text_color">#ffffff</color> <!-- percentage text outside battery icon -->
 </resources>

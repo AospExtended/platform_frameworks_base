@@ -8062,13 +8062,6 @@ public final class Settings {
                 "camera_double_twist_to_flip_enabled";
 
         /**
-          * battery icon color when charging
-          *
-          * @hide
-          */
-         public static final String STATUS_BAR_CHARGE_COLOR = "status_bar_charge_color";
-
-        /**
          * Charging symbol near battery text percentage
          * 0: no symbol
          * 1: flash symbol

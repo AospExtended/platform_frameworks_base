@@ -33,8 +33,6 @@ public class BatteryMeterView extends ImageView implements
 
     private static final String STATUS_BAR_BATTERY_STYLE =
             Settings.Secure.STATUS_BAR_BATTERY_STYLE;
-    private static final String STATUS_BAR_CHARGE_COLOR =
-            Settings.Secure.STATUS_BAR_CHARGE_COLOR;
 
     private BatteryMeterDrawable mDrawable;
     private final String mSlotBattery;
@@ -74,8 +72,6 @@ public class BatteryMeterView extends ImageView implements
     public void onTuningChanged(String key, String newValue) {
         if (STATUS_BAR_BATTERY_STYLE.equals(key)) {
             updateBatteryStyle(newValue);
-        } else if (STATUS_BAR_CHARGE_COLOR.equals(key)) {
-            updateBoltColor();
         }
     }
 
@@ -85,7 +81,7 @@ public class BatteryMeterView extends ImageView implements
         mBatteryController.addStateChangedCallback(this);
         mDrawable.startListening();
         TunerService.get(getContext()).addTunable(this, StatusBarIconController.ICON_BLACKLIST,
-                STATUS_BAR_BATTERY_STYLE, STATUS_BAR_CHARGE_COLOR);
+                STATUS_BAR_BATTERY_STYLE);
     }
 
     @Override
@@ -135,19 +131,6 @@ public class BatteryMeterView extends ImageView implements
         }
         restoreDrawableAttributes();
         requestLayout();
-    }
-
-    private void updateBoltColor() {
-        final int style = Settings.Secure.getInt(getContext().getContentResolver(), STATUS_BAR_BATTERY_STYLE, 0);
-        if (style == BatteryMeterDrawable.BATTERY_STYLE_TEXT || style == BatteryMeterDrawable.BATTERY_STYLE_HIDDEN) {
-            return;
-        } else {
-        mDrawable = new BatteryMeterDrawable(mContext, new Handler(), style);
-        setImageDrawable(mDrawable);
-        setVisibility(View.VISIBLE);
-        restoreDrawableAttributes();
-        requestLayout();
-        }
     }
 
     private void restoreDrawableAttributes() {
