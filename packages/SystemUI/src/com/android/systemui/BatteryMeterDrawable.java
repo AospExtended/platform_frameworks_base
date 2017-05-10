@@ -162,9 +162,9 @@ public class BatteryMeterDrawable extends Drawable implements
         }
         /* the "for" above will give the following:
         mColors[0] = 15
-        mColors[1] = white color
+        mColors[1] = red color
         mColors[2] = 100
-        mColors[3] = red color
+        mColors[3] = white color
         */
         levels.recycle();
         colors.recycle();
