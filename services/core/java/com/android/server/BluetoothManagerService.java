@@ -612,7 +612,21 @@ class BluetoothManagerService extends IBluetoothManager.Stub {
         int appCount = mBleApps.size();
         if (DBG) Slog.d(TAG, appCount + " registered Ble Apps");
         if (appCount == 0 && mEnable) {
+            int st;
             disableBleScanMode();
+            try {
+                mBluetoothLock.readLock().lock();
+                if (mBluetooth != null) {
+                    st = mBluetooth.getState();
+                    if(st == BluetoothAdapter.STATE_BLE_ON) {
+                        sendBrEdrDownCallback();
+                    }
+                }
+            } catch (RemoteException e) {
+                Slog.e(TAG, "", e);
+            } finally {
+                mBluetoothLock.readLock().unlock();
+            }
         }
         return appCount;
     }
