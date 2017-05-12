@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background"
+        android:height="3sp">
+        <shape>
+            <solid
+                android:color="@color/recents_memory_progress_overall"
+            android:centerY="2.75" />
+        </shape>
+    </item>
+
+    <item
+        android:id="@android:id/progress"
+        android:height="3sp">
+        <clip>
+            <shape>
+                <solid
+                    android:color="@color/recents_memory_progress_free" />
+            </shape>
+        </clip>
+    </item>
+
+</layer-list>

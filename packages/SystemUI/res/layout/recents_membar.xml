@@ -33,6 +33,7 @@
         android:layout_marginTop="7dp"
         android:layout_marginRight="25dp"
         android:layout_marginLeft="25dp"
+        android:progressDrawable="@drawable/membar_progress"
         />
 
     <TextView android:id="@+id/recents_memory_text"
