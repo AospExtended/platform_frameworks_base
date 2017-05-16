@@ -171,7 +171,7 @@ public class QSAnimator implements Callback, PageListener, Listener, OnLayoutCha
             }
             final TextView label = ((QSTileView) tileView).getLabel();
             final View tileIcon = tileView.getIcon().getIconView();
-            if (count < mQuickQsPanel.getNumVisibleQuickTiles() && allowFancy(false)) {
+            if (count < mQuickQsPanel.getNumQuickTiles() && allowFancy(false)) {
                 // Quick tiles.
                 QSTileBaseView quickTileView = mQuickQsPanel.getTileView(tile);
                 if (quickTileView != null) {
@@ -271,7 +271,7 @@ public class QSAnimator implements Callback, PageListener, Listener, OnLayoutCha
             return false;
         }
         final int columnCount = mPagedLayout.getColumnCount();
-        return count < ((mQuickQsPanel.getNumVisibleQuickTiles() + columnCount - 1) / columnCount) * columnCount;
+        return count < ((mQuickQsPanel.getNumQuickTiles() + columnCount - 1) / columnCount) * columnCount;
     }
 
     private void getRelativePosition(int[] loc1, View view, View parent) {
