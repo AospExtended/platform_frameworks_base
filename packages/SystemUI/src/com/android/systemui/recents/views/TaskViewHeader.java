@@ -57,6 +57,7 @@ import com.android.systemui.recents.events.ui.ShowApplicationInfoEvent;
 import com.android.systemui.recents.misc.SystemServicesProxy;
 import com.android.systemui.recents.misc.Utilities;
 import com.android.systemui.recents.model.Task;
+import com.android.systemui.recents.RecentsConfiguration;
 
 import static android.app.ActivityManager.StackId.FREEFORM_WORKSPACE_STACK_ID;
 import static android.app.ActivityManager.StackId.FULLSCREEN_WORKSPACE_STACK_ID;
@@ -567,6 +568,11 @@ public class TaskViewHeader extends FrameLayout
         }
         if (Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.LOCK_TO_APP_ENABLED, 0) != 0) {
+	if (Recents.getConfiguration().isGridEnabled() && Settings.System.getInt(mContext.getContentResolver(),
+		Settings.System.GRID_RECENTS_PINNING, 1) == 0) {
+            mPinButton.setVisibility(View.GONE);
+            mPinButton.setClickable(false);
+	} else {
             mPinButton.setVisibility(View.VISIBLE);
             mPinButton.setClickable(true);
             if (mPinButton.getVisibility() == VISIBLE) {
@@ -578,6 +584,8 @@ public class TaskViewHeader extends FrameLayout
             } else {
                 mPinButton.setAlpha(1f);
             }
+	}
+
         } else  {
             mPinButton.setVisibility(View.GONE);
             mPinButton.setClickable(false);
@@ -609,10 +617,17 @@ public class TaskViewHeader extends FrameLayout
         //Pin button
         if (Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.LOCK_TO_APP_ENABLED, 0) != 0) {
+	//If grid style is enabled and show screen pinning is disabled,hide screen pinning icon
+        if (Recents.getConfiguration().isGridEnabled() && Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.GRID_RECENTS_PINNING, 1) == 0) {
+            mPinButton.setVisibility(View.GONE);
+            mPinButton.setClickable(false);
+        } else {
             mPinButton.setVisibility(View.VISIBLE);
             mPinButton.animate().cancel();
             mPinButton.setAlpha(1f);
             mPinButton.setClickable(true);
+	}
         } else  {
             mPinButton.setVisibility(View.GONE);
             mPinButton.setClickable(false);

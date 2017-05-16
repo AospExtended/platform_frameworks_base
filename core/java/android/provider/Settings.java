@@ -4834,6 +4834,12 @@ public final class Settings {
          */
         public static final String USE_SLIM_RECENTS = "use_slim_recents";
 
+         /**
+         * Whether to display screen pinning icon in grid recents layout
+         * @hide
+         */
+        public static final String GRID_RECENTS_PINNING = "grid_recents_pinning";
+
         /**
          * Whether to only show actually running tasks
          * @hide
