@@ -13,17 +13,17 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Volume stream title names -->
-    <string name="stream_title_call">Call</string>
-    <string name="stream_title_system">System</string>
-    <string name="stream_title_ring">Ring</string>
-    <string name="stream_title_media">Media</string>
-    <string name="stream_title_alarm">Alarm</string>
-    <string name="stream_title_notification">Notification</string>
+    <string name="stream_title_call">Вызов</string>
+    <string name="stream_title_system">Система</string>
+    <string name="stream_title_ring">Рингтон</string>
+    <string name="stream_title_media">Мультимедиа</string>
+    <string name="stream_title_alarm">Будильник</string>
+    <string name="stream_title_notification">Уведомления</string>
     <string name="stream_title_bluetooth">Bluetooth</string>
 
     <!-- Wi-Fi hotspot label when enabled -->
     <plurals name="wifi_hotspot_connected_clients_label">
-        <item quantity="one">%1$d client</item>
-        <item quantity="other">%1$d clients</item>
+        <item quantity="one">Клиенты %1$d</item>
+        <item quantity="other">Клиенты %1$d</item>
     </plurals>
 </resources>
