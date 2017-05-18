@@ -76,6 +76,7 @@ public class SettingsDrawerActivity extends Activity {
     private SettingsDrawerAdapter mDrawerAdapter;
     private FrameLayout mContentHeaderContainer;
     private DrawerLayout mDrawerLayout;
+    private boolean mOpenTileFromLeftDrawer;
     private boolean mShowingMenu;
     private UserManager mUserManager;
 
@@ -115,6 +116,7 @@ public class SettingsDrawerActivity extends Activity {
             public void onItemClick(android.widget.AdapterView<?> parent, View view, int position,
                     long id) {
                 position = position - 1;
+                mOpenTileFromLeftDrawer = true;
                 onTileClicked(mDrawerAdapter.getTile(position));
             }
         });
@@ -294,7 +296,13 @@ public class SettingsDrawerActivity extends Activity {
     }
 
     public boolean openTile(Tile tile) {
-        closeDrawer();
+        if (mOpenTileFromLeftDrawer) {
+            // if we open a tile from the left drawer, don't close/animate the drawer
+            // so it will go away with the old activity animation, avoiding lags
+            mOpenTileFromLeftDrawer = false;
+        } else {
+            closeDrawer();
+        }
         if (tile == null) {
             startActivity(new Intent(Settings.ACTION_SETTINGS).addFlags(
                     Intent.FLAG_ACTIVITY_CLEAR_TASK));
