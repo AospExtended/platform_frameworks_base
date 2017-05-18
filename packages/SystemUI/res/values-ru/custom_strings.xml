@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016 The Pure Nexus Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_hspap">HSPA+</string>
+
+    <!-- Screenrecord Notification Ticker -->
+    <string name="screenrecord_notif_ticker">Идёт запись экарана</string>
+    <!-- Screenrecord notification title -->
+    <string name="screenrecord_notif_title">Запись экрана</string>
+    <!-- Screenrecord notification action: Stop -->
+    <string name="screenrecord_notif_stop">Стоп</string>
+    <!-- Screenrecord notification action: show/hide pointer -->
+    <string name="screenrecord_notif_pointer_on">Показывать курсор</string>
+    <string name="screenrecord_notif_pointer_off">Не показывать курсор</string>
+    <!-- Screen record notification error title -->
+    <string name="screenrecord_notif_error">Не получилось записать экран</string>
+
+    <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Скриншот удалён</string>
+
+    <!-- Screenrecord QS tile -->
+    <string name="quick_settings_screenrecord">Запись экрана</string>
+    <string name="quick_settings_screenrecord_on">Запись ...</string>
+
+    <!-- Language\Locale Tile -->
+    <string name="quick_settings_locale_label">Язык</string>
+    <string name="quick_settings_locale_more_locales_toast">Пожалуйста, настройте несколько языков, чтобы активировать функцию</string>
+
+    <!-- NavBar Tuner -->
+    <string name="menu_ime_always_show">Menu / Keyboard Switcher (always show)</string>
+    <string name="search">Поиск</string>
+
+    <!-- Strings for lockscreen shortcut hints -->
+    <string name="left_shortcut_hint">Свайп вправо для %1$s</string>
+    <string name="right_shortcut_hint">Свайп влево для %1$s</string>
+    <string name="lockscreen_message">Нажмите на иконку слева или справа чтобы заменить ярылк.</string>
+    <string name="lockscreen_default_target">По умолчанию</string>
+    <string name="select_application">Выберите приложение</string>
+    <string name="lockscreen_choose_action_title">Выберите действие</string>
+    <string name="lockscreen_none_target">Ничего</string>
+
+    <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Звук</string>
+    <string name="quick_settings_sound_ring">Рингтон</string>
+    <string name="quick_settings_sound_vibrate">Вибрация</string>
+    <string name="quick_settings_sound_dnd">Не беспокоить</string>
+
+    <!-- Ambient Display QS tile -->
+    <string name="accessibility_quick_settings_ambient_display_off">Выключить Display</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Включить Ambient Display on</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient Display выключен</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient Display включен</string>
+    <string name="quick_settings_ambient_display_label">Ambient Display</string>
+    <string name="quick_settings_extensions">Расширения</string>
+
+    <!-- Screenshot Crop & Share -->
+    <string name="action_delete_success">Удалён</string>
+    <string name="action_delete_fault">Ошибка при удалении</string>
+    <string name="action_save_success">Сохранён</string>
+    <string name="action_save_fault">Ошибка при сохранении</string>
+    <string name="pref_action_color_title">Action buttons color</string>
+    <string name="pref_action_color_summary">Choose your favorite color for the action buttons</string>
+    <string name="pref_category_main">Main Settings</string>
+    <string name="pref_category_user">User Settings</string>
+    <string name="pref_crop_behavior_title">Crop behavior</string>
+    <string name="pref_crop_behavior_summary">Use the cropped image even if the original one hasn\'t actually been cropped with the crop action</string>
+    <string name="action_ok">OK</string>
+
+    <!-- Screenshot Crop & Share -->
+    <string name="action_delete_success">Удалён</string>
+    <string name="action_delete_fault">Ошибка при удалении</string>
+    <string name="action_save_success">Сохранён</string>
+    <string name="action_save_fault">Ошибка при сохранении</string>
+    <string name="action_edit">Редактировать</string>
+
+</resources>
