@@ -16,60 +16,60 @@
     <string name="accessibility_data_connection_hspap">HSPA+</string>
 
     <!-- Screenrecord Notification Ticker -->
-    <string name="screenrecord_notif_ticker">Screen is being recorded</string>
+    <string name="screenrecord_notif_ticker">Идёт запись экарана</string>
     <!-- Screenrecord notification title -->
-    <string name="screenrecord_notif_title">Recording screen</string>
+    <string name="screenrecord_notif_title">Запись экрана</string>
     <!-- Screenrecord notification action: Stop -->
-    <string name="screenrecord_notif_stop">Stop</string>
+    <string name="screenrecord_notif_stop">Стоп</string>
     <!-- Screenrecord notification action: show/hide pointer -->
-    <string name="screenrecord_notif_pointer_on">Show pointer</string>
-    <string name="screenrecord_notif_pointer_off">Hide pointer</string>
+    <string name="screenrecord_notif_pointer_on">Показывать курсор</string>
+    <string name="screenrecord_notif_pointer_off">Не показывать курсор</string>
     <!-- Screen record notification error title -->
-    <string name="screenrecord_notif_error">Unable to record screen</string>
+    <string name="screenrecord_notif_error">Не получилось записать экран</string>
 
     <!-- Screenshot Delete Toast -->
-    <string name="delete_screenshot_toast">Screenshot deleted</string>
+    <string name="delete_screenshot_toast">Скриншот удалён</string>
 
     <!-- Screenrecord QS tile -->
-    <string name="quick_settings_screenrecord">Screenrecord</string>
-    <string name="quick_settings_screenrecord_on">Recording ...</string>
+    <string name="quick_settings_screenrecord">Запись экрана</string>
+    <string name="quick_settings_screenrecord_on">Запись ...</string>
 
     <!-- Language\Locale Tile -->
-    <string name="quick_settings_locale_label">Language</string>
-    <string name="quick_settings_locale_more_locales_toast">Please configure multiple languages to enable toggle functionality</string>
+    <string name="quick_settings_locale_label">Язык</string>
+    <string name="quick_settings_locale_more_locales_toast">Пожалуйста, настройте несколько языков, чтобы активировать функцию</string>
 
     <!-- NavBar Tuner -->
     <string name="menu_ime_always_show">Menu / Keyboard Switcher (always show)</string>
-    <string name="search">Search</string>
+    <string name="search">Поиск</string>
 
     <!-- Strings for lockscreen shortcut hints -->
-    <string name="left_shortcut_hint">Swipe right for %1$s</string>
-    <string name="right_shortcut_hint">Swipe left for %1$s</string>
-    <string name="lockscreen_message">Tap an icon on the left or right to reassign a lock screen shortcut.</string>
-    <string name="lockscreen_default_target">Default</string>
-    <string name="select_application">Select application</string>
-    <string name="lockscreen_choose_action_title">Choose action</string>
-    <string name="lockscreen_none_target">None</string>
+    <string name="left_shortcut_hint">Свайп вправо для %1$s</string>
+    <string name="right_shortcut_hint">Свайп влево для %1$s</string>
+    <string name="lockscreen_message">Нажмите на иконку слева или справа чтобы заменить ярылк.</string>
+    <string name="lockscreen_default_target">По умолчанию</string>
+    <string name="select_application">Выберите приложение</string>
+    <string name="lockscreen_choose_action_title">Выберите действие</string>
+    <string name="lockscreen_none_target">Ничего</string>
 
     <!-- Sound QS Tile -->
-    <string name="quick_settings_sound_label">Sound</string>
-    <string name="quick_settings_sound_ring">Ring</string>
-    <string name="quick_settings_sound_vibrate">Vibrate</string>
-    <string name="quick_settings_sound_dnd">Do not disturb</string>
+    <string name="quick_settings_sound_label">Звук</string>
+    <string name="quick_settings_sound_ring">Рингтон</string>
+    <string name="quick_settings_sound_vibrate">Вибрация</string>
+    <string name="quick_settings_sound_dnd">Не беспокоить</string>
 
     <!-- Ambient Display QS tile -->
-    <string name="accessibility_quick_settings_ambient_display_off">Ambient Display off</string>
-    <string name="accessibility_quick_settings_ambient_display_on">Ambient Display on</string>
-    <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient Display turned off</string>
-    <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient Display turned on</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Выключить Display</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Включить Ambient Display on</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient Display выключен</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient Display включен</string>
     <string name="quick_settings_ambient_display_label">Ambient Display</string>
-    <string name="quick_settings_extensions">Extensions</string>
+    <string name="quick_settings_extensions">Расширения</string>
 
     <!-- Screenshot Crop & Share -->
-    <string name="action_delete_success">Deleted</string>
-    <string name="action_delete_fault">Deleting was unsuccessful</string>
-    <string name="action_save_success">Saved</string>
-    <string name="action_save_fault">Saving was unsuccessful</string>
+    <string name="action_delete_success">Удалён</string>
+    <string name="action_delete_fault">Ошибка при удалении</string>
+    <string name="action_save_success">Сохранён</string>
+    <string name="action_save_fault">Ошибка при сохранении</string>
     <string name="pref_action_color_title">Action buttons color</string>
     <string name="pref_action_color_summary">Choose your favorite color for the action buttons</string>
     <string name="pref_category_main">Main Settings</string>
@@ -79,10 +79,10 @@
     <string name="action_ok">OK</string>
 
     <!-- Screenshot Crop & Share -->
-    <string name="action_delete_success">Deleted</string>
-    <string name="action_delete_fault">Deleting was unsuccessful</string>
-    <string name="action_save_success">Saved</string>
-    <string name="action_save_fault">Saving was unsuccessful</string>
-    <string name="action_edit">Edit</string>
+    <string name="action_delete_success">Удалён</string>
+    <string name="action_delete_fault">Ошибка при удалении</string>
+    <string name="action_save_success">Сохранён</string>
+    <string name="action_save_fault">Ошибка при сохранении</string>
+    <string name="action_edit">Редактировать</string>
 
 </resources>
