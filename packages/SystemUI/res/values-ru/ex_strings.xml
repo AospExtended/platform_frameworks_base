@@ -24,33 +24,33 @@
     <string name="status_bar_notification_info_overflow" translatable="false">\u221E</string>
 
     <!-- Screenshot Delete Toast -->
-    <string name="delete_screenshot_toast">Screenshot deleted</string>
+    <string name="delete_screenshot_toast">Скриншот удалён</string>
 
     <!-- SystemUI Tuner Parts -->
     <string name="systemui_tuner_pnc_title">Power notification controls</string>
 
     <!-- Quick Settings tiles -->
-    <string name="quick_settings_screenshot_label">Screenshot</string>
-    <string name="quick_settings_region_screenshot_label">Partial screenshot</string>
-    <string name="quick_settings_sync_label">Sync</string>
-    <string name="accessibility_quick_settings_sync_off">Sync off</string>
-    <string name="accessibility_quick_settings_sync_on">Sync on</string>
-    <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
-    <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
+    <string name="quick_settings_screenshot_label">Скриншот</string>
+    <string name="quick_settings_region_screenshot_label">Частичный скриншот</string>
+    <string name="quick_settings_sync_label">Синхронизация</string>
+    <string name="accessibility_quick_settings_sync_off">Отключить синхронизацию</string>
+    <string name="accessibility_quick_settings_sync_on">Включить синхронизацию</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Синхронизация отключена</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Синхронизация включена</string>
 
     <!-- Reboot/Recovery QS Tile -->
-    <string name="quick_settings_reboot_label">Reboot</string>
-    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+    <string name="quick_settings_reboot_label">Перезагрузка</string>
+    <string name="quick_settings_reboot_recovery_label">Режим восстановления</string>
     <string name="accessibility_quick_settings_usb_tether_off">USB tethering off</string>
     <string name="accessibility_quick_settings_usb_tether_on">USB tethering on</string>
     <string name="accessibility_quick_settings_usb_tether_changed_off">USB tethering turned off</string>
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB tethering turned on</string>
     <string name="quick_settings_usb_tether_label">USB tethering</string>
-    <string name="quick_settings_music_label">Music</string>
-    <string name="quick_settings_music_play">Play</string>
-    <string name="quick_settings_music_pause">Pause</string>
-    <string name="quick_settings_ime_tile_label">Input method</string>
-    <string name="quick_settings_caffeine_label">Caffeine</string>
+    <string name="quick_settings_music_label">Музыка</string>
+    <string name="quick_settings_music_play">Воспроизведение</string>
+    <string name="quick_settings_music_pause">Пауза</string>
+    <string name="quick_settings_ime_tile_label">Метод ввода</string>
+    <string name="quick_settings_caffeine_label">Кофеин</string>
     <string name="accessibility_quick_settings_caffeine_off">Caffeine off</string>
     <string name="accessibility_quick_settings_caffeine_on">Caffeine on</string>
     <string name="quick_settings_heads_up_label">Heads up</string>
@@ -78,18 +78,18 @@
     <string name="accessibility_quick_settings_location_changed_gps_only">Location reporting changed to sensors only mode.</string>
     <string name="accessibility_quick_settings_location_changed_high_accuracy">Location reporting changed to high accuracy mode.</string>
     <string name="quick_settings_location_detail_title">Location mode</string>
-    <string name="quick_settings_location_battery_saving_label">Battery saving</string>
-    <string name="quick_settings_location_gps_only_label">Device only</string>
-    <string name="quick_settings_location_high_accuracy_label">High accuracy</string>
+    <string name="quick_settings_location_battery_saving_label">Энергосбережение</string>
+    <string name="quick_settings_location_gps_only_label">Только устройство</string>
+    <string name="quick_settings_location_high_accuracy_label">Высокая точность</string>
     <string name="quick_settings_location_off_label">Location off</string>
 
     <!-- Show lte/4g switch -->
-    <string name="show_lte_fourgee_title">Show 4G instead of LTE</string>
-    <string name="show_lte_fourgee_summary">Replaces LTE statusbar indicator with 4G</string>
-    <string name="statusbar_tuner_category_title">Hide items from statusbar</string>
+    <string name="show_lte_fourgee_title">Показывать 4G вместо LTE</string>
+    <string name="show_lte_fourgee_summary">Заменяет LTE индикатор в строке состояния на 4G</string>
+    <string name="statusbar_tuner_category_title">Скрыть элементы из строки состояния</string>
 
     <!-- Navigation bar Tile -->
-    <string name="quick_settings_navigation_bar">Navigation bar</string>
+    <string name="quick_settings_navigation_bar">Панель навигации</string>
     <string name="quick_settings_smartbar">SmartBar</string>
     <string name="quick_settings_smartbar_off">SmartBar off</string>
     <string name="quick_settings_fling">Fling</string>
@@ -99,9 +99,9 @@
     <string name="screenshot_abort_title">No screenshot taken</string>
     <string name="screenshot_abort_text">Operation aborted</string>
 
-    <string name="quick_settings_expanded_desktop_label">Expanded desktop</string>
-    <string name="quick_settings_expanded_desktop">Expanded</string>
-    <string name="quick_settings_expanded_desktop_off">Normal</string>
+    <string name="quick_settings_expanded_desktop_label">Расширенный экран</string>
+    <string name="quick_settings_expanded_desktop">Расширенный</string>
+    <string name="quick_settings_expanded_desktop_off">Обычный</string>
 
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
@@ -123,7 +123,7 @@
     <!-- Path data for big circle battery -->
     <string name="battery_bigcircle_path" translatable="false">M 12,0.9999999 C 18.075132,0.9999999 23,5.9248678 23,12 23,18.075132 18.075132,23 12,23 5.9248675,23 0.99999975,18.075132 0.99999975,12 0.99999975,5.9248678 5.9248675,0.9999999 12,0.9999999 Z</string>
 	
-	<string name="recents_free_ram">Free RAM: %1$d MB</string>
+	<string name="recents_free_ram">Свободная RAM: %1$d МБ</string>
 
     <!-- Path data for circle battery -->
     <string name="battery_circle_full" translatable="false">M 12 2 C 17.5228474983 2 22 6.47715250169 22 12 C 22 17.5228474983 17.5228474983 22 12 22 C 6.47715250169 22 2 17.5228474983 2 12 C 2 6.47715250169 6.47715250169 2 12 2 Z</string>
@@ -153,21 +153,21 @@
     <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
 
     <!-- Compass QS Tile -->
-    <string name="quick_settings_compass_label">Compass</string>
+    <string name="quick_settings_compass_label">Компас</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
     <string name="quick_settings_compass_init">Initializing\u2026</string>
     <string name="accessibility_quick_settings_compass_off">Compass off.</string>
     <string name="accessibility_quick_settings_compass_on">Compass on.</string>
     <string name="accessibility_quick_settings_compass_changed_off">Compass turned off.</string>
     <string name="accessibility_quick_settings_compass_changed_on">Compass turned on.</string>
-    <string name="quick_settings_compass_N">N</string>
-    <string name="quick_settings_compass_NE">NE</string>
-    <string name="quick_settings_compass_E">E</string>
-    <string name="quick_settings_compass_SE">SE</string>
-    <string name="quick_settings_compass_S">S</string>
-    <string name="quick_settings_compass_SW">SW</string>
-    <string name="quick_settings_compass_W">W</string>
-    <string name="quick_settings_compass_NW">NW</string>
+    <string name="quick_settings_compass_N">С</string>
+    <string name="quick_settings_compass_NE">СВ</string>
+    <string name="quick_settings_compass_E">В</string>
+    <string name="quick_settings_compass_SE">ЮВ</string>
+    <string name="quick_settings_compass_S">Ю</string>
+    <string name="quick_settings_compass_SW">ЮЗ</string>
+    <string name="quick_settings_compass_W">З</string>
+    <string name="quick_settings_compass_NW">СЗ</string>
 
     <!-- Sim recents -->
    <string name="recents_multiwin_warning">A multiwindow session is already active.\nJust tap an app if you want to dock it now.</string>
@@ -190,8 +190,8 @@
     <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
 
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">Аппаратные кнопки включены</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Аппаратные кнопки выключены</string>
+    <string name="quick_settings_hwkeys_label">Аппаратные кнопки</string>
 
 </resources>
