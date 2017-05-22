@@ -8,6 +8,6 @@
         android:id="@+id/aex_header"
         android:layout_width="match_parent"
         android:layout_height="175dp"
-        android:scaleType="fitXY"
+        android:scaleType="fitCenter"
         android:src="@drawable/aexlogo" />
 </LinearLayout>
