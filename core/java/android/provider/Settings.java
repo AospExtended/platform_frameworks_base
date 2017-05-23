@@ -8692,6 +8692,12 @@ public final class Settings {
                 "system_navigation_keys_enabled";
 
         /**
+         * Whether or not to allow quick settings expansion with one swipe on the fingerprint sensor.
+         * @hide
+         */
+        public static final String FP_QUICK_PULLDOWN_QS = "fp_quick_pulldown_qs";
+
+        /**
          * Wheter to dismiss notifications on fingerprint left and right swipe action
          * @hide
          */
