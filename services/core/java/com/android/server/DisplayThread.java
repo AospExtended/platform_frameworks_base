@@ -30,7 +30,7 @@ public final class DisplayThread extends ServiceThread {
     private static Handler sHandler;
 
     private DisplayThread() {
-        super("android.display", android.os.Process.THREAD_PRIORITY_REALTIME, false /*allowIo*/);
+        super("android.display", android.os.Process.THREAD_PRIORITY_DISPLAY, false /*allowIo*/);
     }
 
     private static void ensureThreadLocked() {

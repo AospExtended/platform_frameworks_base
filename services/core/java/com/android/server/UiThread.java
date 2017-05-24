@@ -21,16 +21,16 @@ import android.os.Process;
 import android.os.Trace;
 
 /**
- * Shared singleton thread for showing UI.  This is a realtime thread, and in
+ * Shared singleton thread for showing UI.  This is a foreground thread, and in
  * additional should not have operations that can take more than a few ms scheduled
- * on it to avoid impacting the runtime of other non-realtime processes.
+ * on it to avoid UI jank.
  */
 public final class UiThread extends ServiceThread {
     private static UiThread sInstance;
     private static Handler sHandler;
 
     private UiThread() {
-        super("android.ui", android.os.Process.THREAD_PRIORITY_REALTIME, false /*allowIo*/);
+        super("android.ui", Process.THREAD_PRIORITY_FOREGROUND, false /*allowIo*/);
         // Make sure UiThread is in the fg stune boost group
         Process.setThreadGroup(Process.myTid(), Process.THREAD_GROUP_TOP_APP);
     }
