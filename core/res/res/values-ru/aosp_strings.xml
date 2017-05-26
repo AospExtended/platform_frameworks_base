@@ -32,7 +32,7 @@
     <!-- Global Actions -->
     <string name="global_action_current_user">Текущий</string>
     <string name="global_action_screenshot">Скриншот</string>
-    <string name="global_action_screen_record">Запись экрна</string>
+    <string name="global_action_screen_record">Запись экрана</string>
     <string name="global_action_search">Поиск</string>
     <string name="global_action_torch">Фонарик</string>
     <string name="global_action_voicesearch">Голосовой поиск</string>
