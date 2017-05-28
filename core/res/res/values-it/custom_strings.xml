@@ -46,4 +46,9 @@
 
     <!-- On-The-Go -->
     <string name="global_action_onthego">Modalità On-The-Go</string>
+     
+    <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">Firma del pacchetto</string>
+    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">Consente all\'applicazione di fingere di essere un\'altra app. Le applicazioni dannose potrebbero essere in grado di utilizzarlo per accedere ai dati delle applicazioni private. Concedi queste autorizzazioni con attenzione!</string>
 </resources>
