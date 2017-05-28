@@ -202,8 +202,6 @@ public class PackageInstallerSession extends IPackageInstallerSession.Stub {
     private final Handler.Callback mHandlerCallback = new Handler.Callback() {
         @Override
         public boolean handleMessage(Message msg) {
-            int returnCode = INSTALL_SUCCEEDED;
-            String completeMsg = null;
             // Cache package manager data without the lock held
             final PackageInfo pkgInfo = mPm.getPackageInfo(
                     params.appPackageName, PackageManager.GET_SIGNATURES /*flags*/, userId);

@@ -197,7 +197,6 @@ public final class PowerManagerService extends SystemService
     private static final int HALT_MODE_REBOOT_SAFE_MODE = 2;
 
     private static final int BUTTON_ON_DURATION = 5 * 1000;
-    private static final float PROXIMITY_NEAR_THRESHOLD = 5.0f;
 
     private static final float PROXIMITY_NEAR_THRESHOLD = 5.0f;
 
@@ -569,16 +568,6 @@ public final class PowerManagerService extends SystemService
     private android.os.PowerManager.WakeLock mProximityWakeLock;
 
     private boolean mKeyboardVisible = false;
-    // Whether proximity check on wake is enabled by default
-    private boolean mProximityWakeEnabledByDefaultConfig;
-
-    private boolean mProximityWakeSupported;
-    private boolean mProximityWakeEnabled;
-    private int mProximityTimeOut;
-    private SensorManager mSensorManager;
-    private Sensor mProximitySensor;
-    private SensorEventListener mProximityListener;
-    private android.os.PowerManager.WakeLock mProximityWakeLock;
 
     public PowerManagerService(Context context) {
         super(context);
@@ -930,9 +919,6 @@ public final class PowerManagerService extends SystemService
         mKeyboardBrightness = Settings.System.getIntForUser(resolver,
                 Settings.System.KEYBOARD_BRIGHTNESS, mKeyboardBrightnessSettingDefault,
                 UserHandle.USER_CURRENT);
-        mProximityWakeEnabled = Settings.System.getInt(resolver,
-                Settings.System.PROXIMITY_ON_WAKE,
-                mProximityWakeEnabledByDefaultConfig ? 1 : 0) == 1;
 
         mProximityWakeEnabled = Settings.System.getInt(resolver,
                 Settings.System.PROXIMITY_ON_WAKE,
@@ -1901,7 +1887,7 @@ public final class PowerManagerService extends SystemService
                 final boolean userInactiveOverride = mUserInactiveOverrideFromWindowManager;
 
                 mUserActivitySummary = 0;
-                if (mLastUserActivityTime >= mLastWakeTime) {
+                if (mWakefulness == WAKEFULNESS_AWAKE && mLastUserActivityTime >= mLastWakeTime) {
                     nextTimeout = mLastUserActivityTime
                             + screenOffTimeout - screenDimDuration;
                     if (now < nextTimeout) {
