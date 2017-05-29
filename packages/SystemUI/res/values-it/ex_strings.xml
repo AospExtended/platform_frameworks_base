@@ -168,4 +168,7 @@
     <string name="accessibility_quick_settings_hwkeys_off">Tasti Hardware disattivati</string>
     <string name="quick_settings_hwkeys_label">Tasti Hardware</string>
 
+     <!-- AEX Logo -->
+    <string name="status_bar_aex_logo_title">Logo AEX</string>
+    <string name="status_bar_aex_logo_summary">Consente di visualizzare il logo AEX sul lato sinistro della barra di stato</string>
 </resources>
