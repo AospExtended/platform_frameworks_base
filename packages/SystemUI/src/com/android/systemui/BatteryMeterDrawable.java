@@ -455,7 +455,6 @@ public class BatteryMeterDrawable extends Drawable implements
             updateShowPercent();
             updateForceChargeBatteryText();
             updateCustomChargingSymbol();
-            updateBatterySaverWarningColor();
             postInvalidate();
         }
     }

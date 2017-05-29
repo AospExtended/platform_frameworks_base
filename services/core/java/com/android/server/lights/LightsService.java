@@ -130,7 +130,7 @@ public class LightsService extends SystemService {
             }
 
             if ((color != mColor || mode != mMode || onMS != mOnMS || offMS != mOffMS ||
-                    mBrightnessMode != brightnessMode || mReset))) {
+                    mBrightnessMode != brightnessMode || mReset)) {
                 if (DEBUG) Slog.v(TAG, "setLight #" + mId + ": color=#"
                         + Integer.toHexString(color) + ": brightnessMode=" + brightnessMode);
                 mLastColor = mColor;

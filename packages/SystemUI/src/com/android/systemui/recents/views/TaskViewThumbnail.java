@@ -31,6 +31,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Shader;
+import android.provider.Settings;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewDebug;
@@ -208,6 +209,20 @@ public class TaskViewThumbnail extends View {
             mThumbnailRect.setEmpty();
             mThumbnailInfo = null;
         }
+    }
+
+    private int currentHandsMode() {
+        int mode;
+        String str = Settings.Global.getString(getContext().getContentResolver(),
+                Settings.Global.SINGLE_HAND_MODE);
+        if (str != null && str.contains("left")) {
+            mode = 1;
+        } else if (str != null && str.contains("right")) {
+            mode = 2;
+        } else {
+            mode = 0;
+        }
+        return mode;
     }
 
     /** Updates the paint to draw the thumbnail. */

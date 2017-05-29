@@ -459,7 +459,9 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
 
     @Override
     public boolean onLongClick(View v) {
-        if (v == mClock) {
+        if (v == mSettingsButton) {
+            startExtensions();
+        } else if (v == mClock) {
             startClockLongClickActivity();
         } else if (v == mDate) {
             startDateLongClickActivity();
@@ -467,14 +469,6 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
             startUserLongClickActivity();
         }
         vibrateheader(20);
-        return false;
-    }
-
-    @Override
-    public boolean onLongClick(View v) {
-        if (v == mSettingsButton) {
-            startExtensions();
-        }
         return false;
     }
 
@@ -563,7 +557,7 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
     @Override
     public void setMobileDataIndicators(IconState statusIcon, IconState qsIcon, int statusType,
             int qsType, boolean activityIn, boolean activityOut, String typeContentDescription,
-            String description, boolean isWide, int subId, boolean roaming) {
+            String description, boolean isWide, int subId, boolean roaming, boolean isMobileIms) {
         mRoamingsBySubId.put(subId, roaming);
         boolean isRoaming = calculateRoaming();
         if (mIsRoaming != isRoaming) {
