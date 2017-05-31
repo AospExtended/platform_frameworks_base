@@ -345,6 +345,7 @@ public class RecentsView extends FrameLayout {
             @Override
             public void onClick(View view) {
                 EventBus.getDefault().send(new ToggleRecentsEvent());
+                updateMemoryStatus();
             }
         });
     }
@@ -399,6 +400,7 @@ public class RecentsView extends FrameLayout {
         mClearRecents.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             EventBus.getDefault().send(new DismissAllTaskViewsEvent());
+            updateMemoryStatus();
             }
         });
         super.onAttachedToWindow();
