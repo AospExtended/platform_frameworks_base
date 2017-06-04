@@ -95,7 +95,9 @@
   <string-array name="window_animation_scale_entries">
     <item msgid="8134156599370824081">"Animatsiya o‘chiq"</item>
     <item msgid="6624864048416710414">"Animatsiya (0,5x)"</item>
+    <item>"Animatsiya (0,75x)"</item>
     <item msgid="2219332261255416635">"Animatsiya (1x)"</item>
+    <item>"Animatsiya (1,25x)"</item>
     <item msgid="3544428804137048509">"Animatsiya (1,5x)"</item>
     <item msgid="3110710404225974514">"Animatsiya (2x)"</item>
     <item msgid="4402738611528318731">"Animatsiya (5x)"</item>
@@ -104,7 +106,9 @@
   <string-array name="transition_animation_scale_entries">
     <item msgid="8464255836173039442">"Animatsiya o‘chiq"</item>
     <item msgid="3375781541913316411">"Animatsiya (0,5x)"</item>
+    <item>"Animatsiya (0,75x)"</item>
     <item msgid="1991041427801869945">"Animatiya (1x)"</item>
+    <item>"Animatsiya (1,25x)"</item>
     <item msgid="4012689927622382874">"Animatsiya (1,5x)"</item>
     <item msgid="3289156759925947169">"Animatsiya (2x)"</item>
     <item msgid="7705857441213621835">"Animatsiya (5x)"</item>
@@ -113,7 +117,9 @@
   <string-array name="animator_duration_scale_entries">
     <item msgid="6039901060648228241">"Animatsiya o‘chiq"</item>
     <item msgid="1138649021950863198">"0,5x tezlik"</item>
+    <item>"0,75x tezlik"</item>
     <item msgid="4394388961370833040">"1x tezlik"</item>
+    <item>"1,25x tezlik"</item>
     <item msgid="8125427921655194973">"1,5x tezlik"</item>
     <item msgid="3334024790739189573">"2x tezlik"</item>
     <item msgid="3170120558236848008">"5x tezlik"</item>

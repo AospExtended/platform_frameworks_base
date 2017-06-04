@@ -95,7 +95,9 @@
   <string-array name="window_animation_scale_entries">
     <item msgid="8134156599370824081">"Isithombe esinyakazayo sivliwe"</item>
     <item msgid="6624864048416710414">"Isilinganiso sesithombe esinyakazayo ngu-05x"</item>
+    <item>"Isilinganiso sesithombe esinyakazayo ngu-075x"</item>
     <item msgid="2219332261255416635">"Isilinganiso sesithombe esinyakazayo ngu-1x"</item>
+    <item>"Isilinganiso sesithombe esinyakazayo ngu-1.25x"</item>
     <item msgid="3544428804137048509">"Isilinganiso sesithombe esinyakazayo"</item>
     <item msgid="3110710404225974514">"Isilinganiso sesithombe esinyakazayo ngu-2x"</item>
     <item msgid="4402738611528318731">"Isilinganiso sesithombe esinyakazayo"</item>
@@ -104,7 +106,9 @@
   <string-array name="transition_animation_scale_entries">
     <item msgid="8464255836173039442">"Isithombe esinyakazayo sivaliwe"</item>
     <item msgid="3375781541913316411">"Isilinganiso sesithombe esinyakazayo ngu-.5x"</item>
+    <item>"Isilinganiso sesithombe esinyakazayo ngu-075x"</item>
     <item msgid="1991041427801869945">"Isilinganiso sesithombe ngu-1x"</item>
+    <item>"Isilinganiso sesithombe esinyakazayo ngu-1.25x"</item>
     <item msgid="4012689927622382874">"Isilinganiso sesithombe esinyakazayo ngu-1.5x"</item>
     <item msgid="3289156759925947169">"Isilinganiso sesithombe esinyakazayo ngu-2x"</item>
     <item msgid="7705857441213621835">"Isilinganisi sesithombe esinyakazayo 5x"</item>
@@ -113,7 +117,9 @@
   <string-array name="animator_duration_scale_entries">
     <item msgid="6039901060648228241">"Isithombe esinyakazayo sivaliwe"</item>
     <item msgid="1138649021950863198">"Isilinganiso sesithombe esinyakazayo ngu-05x"</item>
+    <item>"Isilinganiso sesithombe esinyakazayo ngu-075x"</item>
     <item msgid="4394388961370833040">"Isilinganiso sesithombe esinyakazayo ngu-1x"</item>
+    <item>"Isilinganiso sesithombe esinyakazayo ngu-1.25x"</item>
     <item msgid="8125427921655194973">"Isilinganiso sesithombe esinyakazayo ngu-1.5x"</item>
     <item msgid="3334024790739189573">"Isilinganiso sesithombe esinyakazayo ngu-2x"</item>
     <item msgid="3170120558236848008">"Isilinganisi sesithombe esinyakazayo 5x"</item>

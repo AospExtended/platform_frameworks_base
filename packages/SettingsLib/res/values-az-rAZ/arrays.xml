@@ -95,7 +95,9 @@
   <string-array name="window_animation_scale_entries">
     <item msgid="8134156599370824081">"Animasiya deaktiv"</item>
     <item msgid="6624864048416710414">"Animasiya miqyası .5 x"</item>
+    <item>"Animasiya miqyası .75 x"</item>
     <item msgid="2219332261255416635">"Animasiya miqyası 1x"</item>
+    <item>"Animasiya miqyası 1.25 x"</item>
     <item msgid="3544428804137048509">"Animasiya miqyası 1.5x"</item>
     <item msgid="3110710404225974514">"2x miqyaslı animasiya"</item>
     <item msgid="4402738611528318731">"5x miqyaslı animasiya"</item>
@@ -104,7 +106,9 @@
   <string-array name="transition_animation_scale_entries">
     <item msgid="8464255836173039442">"Animasiya qapalıdır"</item>
     <item msgid="3375781541913316411">"Animasiya miqyası .5 x"</item>
+    <item>"Animasiya miqyası .75 x"</item>
     <item msgid="1991041427801869945">"Animasiya miqyası 1x"</item>
+    <item>"Animasiya miqyası 1.25 x"</item>
     <item msgid="4012689927622382874">"Animasiya miqyası 1.5x"</item>
     <item msgid="3289156759925947169">"2x miqyaslı animasiya"</item>
     <item msgid="7705857441213621835">"5x miqyaslı animasiya"</item>
@@ -113,7 +117,9 @@
   <string-array name="animator_duration_scale_entries">
     <item msgid="6039901060648228241">"Animasiya qapalıdır"</item>
     <item msgid="1138649021950863198">"Animasiya miqyası .5x"</item>
+    <item>"Animasiya miqyası .75 x"</item>
     <item msgid="4394388961370833040">"Animasiya miqyası 1x"</item>
+    <item>"Animasiya miqyası 1.25 x"</item>
     <item msgid="8125427921655194973">"Animasiya miqyası 1.5x"</item>
     <item msgid="3334024790739189573">"2x miqyaslı animasiya"</item>
     <item msgid="3170120558236848008">"Animasiya miqyası 1.5x"</item>
