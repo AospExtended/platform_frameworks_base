@@ -408,17 +408,16 @@ public class ViewConfiguration {
 
         mDoubleTapTouchSlop = mTouchSlop;
 
-        // Modification by xdevs23 for better responsiveness using
-        // system.prop
-        String minFlingVeloProp = "ro.min.fling_velocity", // Min fling prop
-               maxFlingVeloProp = "ro.max.fling_velocity"; // Max fling prop
+        String minFlingVeloProp = "ro.min.fling_velocity"; // Min fling prop
+        String maxFlingVeloProp = "ro.max.fling_velocity"; // Max fling prop
+
         // Get the properties
-        String minFlingVeloSysProp = SystemProperties.get(minFlingVeloProp),
-               maxFlingVeloSysProp = SystemProperties.get(maxFlingVeloProp);
-        boolean isMaxFlingVeloPredefined = false,
-                isMinFlingVeloPredefined = false;
-        int minFlingVeloTmp = 0,
-            maxFlingVeloTmp = 0;
+        String minFlingVeloSysProp = SystemProperties.get(minFlingVeloProp);
+        String maxFlingVeloSysProp = SystemProperties.get(maxFlingVeloProp);
+        boolean isMaxFlingVeloPredefined = false;
+        boolean isMinFlingVeloPredefined = false;
+        int minFlingVeloTmp = 0;
+        int maxFlingVeloTmp = 0;
 
         // Check whether the property values are valid
         if(minFlingVeloSysProp != null && (!minFlingVeloSysProp.isEmpty()) &&
