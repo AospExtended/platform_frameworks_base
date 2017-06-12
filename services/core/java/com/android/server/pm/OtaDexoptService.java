@@ -49,7 +49,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class OtaDexoptService extends IOtaDexopt.Stub {
     private final static String TAG = "OTADexopt";
-    private final static boolean DEBUG_DEXOPT = true;
+    private final static boolean DEBUG_DEXOPT = false;
 
     // The synthetic library dependencies denoting "no checks."
     private final static String[] NO_LIBRARIES = new String[] { "&" };
