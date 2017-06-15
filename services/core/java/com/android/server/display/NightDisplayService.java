@@ -121,15 +121,19 @@ public final class NightDisplayService extends SystemService
     private ContentObserver mUserSetupObserver;
     private boolean mBootCompleted;
 
+    private IPowerManager mPm;
     private NightDisplayController mController;
     private ValueAnimator mColorMatrixAnimator;
     private Boolean mIsActivated;
     private AutoMode mAutoMode;
 
-    private boolean mAutomaticBrightness;
-    private int customVal;
-    private float autoVal;
-    private int manualVal;
+    //Night Mode custom brightness
+    private boolean mIsAdaptiveBrightness;
+    private float mNightCustomAdaptiveBrightness;
+    private float mPreviousUserAdaptiveBrightness;
+    private int mNightModeBrightnessLevel;
+    private int mNightCustomManualBrightness;
+    private int mPreviousUserManualBrightness;
 
     public NightDisplayService(Context context) {
         super(context);
@@ -153,6 +157,7 @@ public final class NightDisplayService extends SystemService
                     Slog.e(TAG, "Failed to register VR mode state listener: " + e);
                 }
             }
+            mPm = IPowerManager.Stub.asInterface(ServiceManager.getService("power"));
         } else if (phase == PHASE_BOOT_COMPLETED) {
             mBootCompleted = true;
 
@@ -271,7 +276,7 @@ public final class NightDisplayService extends SystemService
         if (mIsActivated == null || mIsActivated != activated) {
             Slog.i(TAG, activated ? "Turning on night display" : "Turning off night display");
 
-            Boolean isReboot = mIsActivated;
+            boolean isReboot = mIsActivated == null;
 
             if (mAutoMode != null) {
                 mAutoMode.onActivated(activated);
@@ -327,100 +332,83 @@ public final class NightDisplayService extends SystemService
                 }
             });
             mColorMatrixAnimator.start();
-            if (isReboot != null) {
+            //don't do anything more if onActivated is called by the system
+            //after a reboot
+            if (!isReboot) {
                 setBrightness(mIsActivated);
             }
         }
     }
 
     private void setBrightness(boolean activated) {
-            if (activated) {
-                updateBrightnessModeValues();
-            }
-            if (customVal == 3) {
-                return;
-            }
-            try {
-                IPowerManager power = IPowerManager.Stub.asInterface(
-                        ServiceManager.getService("power"));
-                if (power != null) {
-                    if (mAutomaticBrightness) {
-                        power.setTemporaryScreenAutoBrightnessAdjustmentSettingOverride(autoVal);
-                        AsyncTask.execute(new Runnable() {
-                            public void run() {
-                                if (activated) {
-                                    Settings.System.putFloatForUser(getContext().getContentResolver(),
-                                        Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, autoVal,
-                                        UserHandle.USER_CURRENT);
-                                } else {
-                                    float userAutoVal = Settings.Secure.getFloatForUser(getContext().getContentResolver(),
-                                                Settings.Secure.NIGHT_AUTOBRIGHTNESS_USERVALUE, 0, UserHandle.USER_CURRENT);
-                                    Settings.System.putFloatForUser(getContext().getContentResolver(),
-                                        Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, userAutoVal,
-                                        UserHandle.USER_CURRENT);
-                                }
-                            }
-                        });
-                    } else {
-                        power.setTemporaryScreenBrightnessSettingOverride(manualVal);
-                        AsyncTask.execute(new Runnable() {
-                            @Override
-                            public void run() {
-                                if (activated) {
-                                Settings.System.putIntForUser(getContext().getContentResolver(),
-                                        Settings.System.SCREEN_BRIGHTNESS, manualVal,
-                                        UserHandle.USER_CURRENT);
-                                } else {
-                                int userManualVal = Settings.Secure.getIntForUser(getContext().getContentResolver(),
-                                            Settings.Secure.NIGHT_MANBRIGHTNESS_USERVALUE, 0, UserHandle.USER_CURRENT);
-                                Settings.System.putIntForUser(getContext().getContentResolver(),
-                                        Settings.System.SCREEN_BRIGHTNESS, userManualVal,
-                                        UserHandle.USER_CURRENT);
-                                }
-                            }
-                        });
-                    }
+        if (activated) {
+            updateBrightnessModeValues();
+        }
+        if (mNightModeBrightnessLevel == 0 || mPm == null) {
+            return;
+        }
+        final ContentResolver cr = getContext().getContentResolver();
+        try {
+            if (mIsAdaptiveBrightness) {
+                mPm.setTemporaryScreenAutoBrightnessAdjustmentSettingOverride(mNightCustomAdaptiveBrightness);
+                if (activated) {
+                    Settings.System.putFloatForUser(cr,
+                            Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, mNightCustomAdaptiveBrightness,
+                            mCurrentUser);
+                } else {
+                    Settings.System.putFloatForUser(cr,
+                            Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, mPreviousUserAdaptiveBrightness,
+                            mCurrentUser);
                 }
-            } catch (RemoteException e) {
-                Slog.w(TAG, "Setting Brightness failed: " + e);
+            } else {
+                mPm.setTemporaryScreenBrightnessSettingOverride(mNightCustomManualBrightness);
+                if (activated) {
+                    Settings.System.putIntForUser(cr,
+                            Settings.System.SCREEN_BRIGHTNESS, mNightCustomManualBrightness,
+                            mCurrentUser);
+                } else {
+                    Settings.System.putIntForUser(cr,
+                            Settings.System.SCREEN_BRIGHTNESS, mPreviousUserManualBrightness,
+                            mCurrentUser);
+                }
             }
+        } catch (RemoteException e) {
+            Slog.w(TAG, "Setting Brightness failed: " + e);
+        }
     }
 
     public void updateBrightnessModeValues() {
-        float getUserAutoVal = Settings.System.getFloatForUser(getContext().getContentResolver(),
-                                                    Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, 0,
-                                                    UserHandle.USER_CURRENT);
-        Settings.Secure.putFloatForUser(getContext().getContentResolver(),
-                Settings.Secure.NIGHT_AUTOBRIGHTNESS_USERVALUE, getUserAutoVal,
-                UserHandle.USER_CURRENT);
-        int getUserManualVal = Settings.System.getIntForUser(getContext().getContentResolver(),
-                                                    Settings.System.SCREEN_BRIGHTNESS, 0,
-                                                    UserHandle.USER_CURRENT);
-        Settings.Secure.putIntForUser(getContext().getContentResolver(),
-                Settings.Secure.NIGHT_MANBRIGHTNESS_USERVALUE, getUserManualVal,
-                UserHandle.USER_CURRENT);
-        int mode = Settings.System.getIntForUser(getContext().getContentResolver(),
-                                Settings.System.SCREEN_BRIGHTNESS_MODE,
-                                Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,
-                                UserHandle.USER_CURRENT);
-        mAutomaticBrightness = mode != Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
-        customVal = Settings.Secure.getIntForUser(getContext().getContentResolver(),
-                                    Settings.Secure.QS_NIGHT_BRIGHTNESS_VALUE, 0,
-                                    UserHandle.USER_CURRENT);
-        switch (customVal) {
-            case 1:
-                autoVal = 0f;
-                manualVal = 100;
+        final ContentResolver cr = getContext().getContentResolver();
+        //store current brightness user values to be able to restore them lately
+        mPreviousUserAdaptiveBrightness = Settings.System.getFloatForUser(cr,
+                Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, 0,
+                mCurrentUser);
+        mPreviousUserManualBrightness = Settings.System.getIntForUser(cr,
+                Settings.System.SCREEN_BRIGHTNESS, 0,
+                mCurrentUser);
+        //check the current brightness mode and the wanted brightness level on night mode to set
+        int currentBrightnessMode = Settings.System.getIntForUser(cr,
+                Settings.System.SCREEN_BRIGHTNESS_MODE,
+                Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,
+                mCurrentUser);
+        mIsAdaptiveBrightness = currentBrightnessMode != Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
+        mNightModeBrightnessLevel = Settings.Secure.getIntForUser(cr,
+                Settings.Secure.NIGHT_BRIGHTNESS_VALUE, 0,
+                mCurrentUser);
+        switch (mNightModeBrightnessLevel) {
+            case 1: //lower
+                mNightCustomAdaptiveBrightness = -1f;
+                mNightCustomManualBrightness = 0;
                 break;
-            case 2:
-                autoVal = -1f;
-                manualVal = 0;
+            case 2: //low
+                mNightCustomAdaptiveBrightness = -0.33f;
+                mNightCustomManualBrightness = 40;
                 break;
-            case 3:
+            case 3: //medium
+                mNightCustomAdaptiveBrightness = 0f;
+                mNightCustomManualBrightness = 100;
                 break;
-            default:
-                autoVal = -0.33f;
-                manualVal = 40;
+            default: //disabled
                 break;
         }
     }
