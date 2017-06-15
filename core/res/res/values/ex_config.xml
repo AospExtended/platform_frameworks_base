@@ -144,6 +144,6 @@
     <integer-array name="qboost_weak_param_value"/>
 
     <!-- Defines the length of FP unlock boost -->
-    <integer name="fpunlockboost_duration">1200</integer>
+    <integer name="fpunlockboost_duration">700</integer>
 
 </resources>
