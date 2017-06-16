@@ -44,7 +44,7 @@ import com.android.systemui.statusbar.stack.ViewState;
  */
 public class ScrimController implements ViewTreeObserver.OnPreDrawListener,
         OnHeadsUpChangedListener {
-    public static final long ANIMATION_DURATION = 220;
+    public static final long ANIMATION_DURATION = 200;
     public static final Interpolator KEYGUARD_FADE_OUT_INTERPOLATOR
             = new PathInterpolator(0f, 0, 0.7f, 1f);
     public static final Interpolator KEYGUARD_FADE_OUT_INTERPOLATOR_LOCKED
