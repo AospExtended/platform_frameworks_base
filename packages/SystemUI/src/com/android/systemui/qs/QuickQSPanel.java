@@ -69,13 +69,11 @@ public class QuickQSPanel extends QSPanel {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        TunerService.get(mContext).addTunable(mNumTiles, NUM_QUICK_TILES);
     }
 
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        TunerService.get(mContext).removeTunable(mNumTiles);
     }
 
     public void setQSPanelAndHeader(QSPanel fullPanel, View header) {
@@ -145,15 +143,6 @@ public class QuickQSPanel extends QSPanel {
         super.setTiles(quickTiles, true);
         ((HeaderTileLayout) mTileLayout).updateTileGaps(mHost.getTiles().size());
     }
-
-    private final Tunable mNumTiles = new Tunable() {
-        @Override
-        public void onTuningChanged(String key, String newValue) {
-            NUM_QUICK_TILES_DEFAULT = getNumQuickTiles(mContext);
-            ((HeaderTileLayout) mTileLayout).updateTileGaps(mHost.getTiles().size());
-            updateSettings();
-        }
-    };
 
     public int getNumQuickTiles() {
         return mMaxTiles;
