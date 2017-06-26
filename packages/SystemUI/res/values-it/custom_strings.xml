@@ -88,4 +88,6 @@
     <string name="action_save_fault">Salvataggio non riuscito</string>
     <string name="action_edit">Modifica</string>
      
+    <string name="quick_settings_expanded_navigation_off">Nascondi barra di naviganzione</string>
+    <string name="quick_settings_expanded_statusbar_off">Nascondi barra di stato</string>
 </resources>
