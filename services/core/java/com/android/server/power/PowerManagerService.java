@@ -225,6 +225,7 @@ public final class PowerManagerService extends SystemService
     private int mButtonBrightnessSettingDefault;
     private int mKeyboardBrightness;
     private int mKeyboardBrightnessSettingDefault;
+    private boolean mButtonPressed = false;
 
     private final Object mLock = new Object();
 
@@ -275,6 +276,7 @@ public final class PowerManagerService extends SystemService
     private long mLastSleepTime;
 
     // Timestamp of the last call to user activity.
+    private long mLastButtonActivityTime;
     private long mLastUserActivityTime;
     private long mLastUserActivityTimeNoChangeLights;
 
@@ -528,6 +530,9 @@ public final class PowerManagerService extends SystemService
     // overrule and disable brightness for buttons
     private boolean mHardwareKeysDisable = false;
 
+    // button on touch
+    private boolean mButtonBacklightOnTouchOnly;
+
     // Set of app ids that we will always respect the wake locks for.
     int[] mDeviceIdleWhitelist = new int[0];
 
@@ -717,6 +722,9 @@ public final class PowerManagerService extends SystemService
                     false, mSettingsObserver, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.Global.getUriFor(
                     Settings.Global.THEATER_MODE_ON),
+                    false, mSettingsObserver, UserHandle.USER_ALL);
+            resolver.registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.BUTTON_BACKLIGHT_ON_TOUCH_ONLY),
                     false, mSettingsObserver, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.Global.getUriFor(
                     Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED),
@@ -936,6 +944,9 @@ public final class PowerManagerService extends SystemService
         mHardwareKeysDisable = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.HARDWARE_KEYS_DISABLE, 0,
                 UserHandle.USER_CURRENT) != 0;
+        mButtonBacklightOnTouchOnly = Settings.System.getIntForUser(
+                mContext.getContentResolver(), Settings.System.BUTTON_BACKLIGHT_ON_TOUCH_ONLY,
+                0, UserHandle.USER_CURRENT) != 0;
 
         mDirty |= DIRTY_SETTINGS;
     }
@@ -1342,6 +1353,10 @@ public final class PowerManagerService extends SystemService
                 }
             } else {
                 if (eventTime > mLastUserActivityTime) {
+                    mButtonPressed = event == PowerManager.USER_ACTIVITY_EVENT_BUTTON;
+                    if (mButtonBacklightOnTouchOnly && mButtonPressed) {
+                        mLastButtonActivityTime = eventTime;
+                    }
                     mLastUserActivityTime = eventTime;
                     mDirty |= DIRTY_USER_ACTIVITY;
                     return true;
@@ -1910,13 +1925,18 @@ public final class PowerManagerService extends SystemService
 
                             mKeyboardLight.setBrightness(mKeyboardVisible ?
                                     keyboardBrightness : 0);
+                            mLastButtonActivityTime = mButtonBacklightOnTouchOnly ?
+                                    mLastButtonActivityTime : mLastUserActivityTime;
                             if (mButtonTimeout != 0
-                                    && now > mLastUserActivityTime + mButtonTimeout) {
+                                    && now > mLastButtonActivityTime + mButtonTimeout) {
                                 mButtonsLight.setBrightness(0);
                             } else {
-                                mButtonsLight.setBrightness(buttonBrightness);
-                                if (buttonBrightness != 0 && mButtonTimeout != 0) {
-                                    nextTimeout = now + mButtonTimeout;
+                                if (!mButtonBacklightOnTouchOnly || mButtonPressed) {
+                                    mButtonsLight.setBrightness(buttonBrightness);
+                                    mButtonPressed = false;
+                                    if (buttonBrightness != 0 && mButtonTimeout != 0) {
+                                        nextTimeout = now + mButtonTimeout;
+                                    }
                                 }
                             }
                         }
