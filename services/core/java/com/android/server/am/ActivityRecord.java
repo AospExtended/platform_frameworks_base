@@ -196,6 +196,7 @@ import com.android.server.wm.TaskWindowContainerController;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
+import android.util.BoostFramework;
 
 import java.io.File;
 import java.io.IOException;
@@ -206,6 +207,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import android.util.BoostFramework;
+
+import android.os.AsyncTask;
 import android.util.BoostFramework;
 
 /**
@@ -358,6 +362,8 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
     IVoiceInteractionSession voiceSession;  // Voice interaction session for this activity
 
     private BoostFramework mPerf = null;
+    public BoostFramework mUxPerf = new BoostFramework();
+    public BoostFramework mPerf_iop = null;
 
     // A hint to override the window specified rotation animation, or -1
     // to use the window specified value. We use this so that
@@ -799,6 +805,29 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
      */
     void setWillCloseOrEnterPip(boolean willCloseOrEnterPip) {
         getWindowContainerController().setWillCloseOrEnterPip(willCloseOrEnterPip);
+    }
+
+    private class PreferredAppsTask extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... params) {
+            String res = null;
+            if (mUxPerf != null) {
+                res = mUxPerf.perfUXEngine_trigger(BoostFramework.UXE_TRIGGER);
+                if (res == null)
+                    return null;
+                String[] p_apps = res.split("/");
+                if (p_apps.length != 0) {
+                    ArrayList<String> apps_l = new ArrayList(Arrays.asList(p_apps));
+                    Bundle bParams = new Bundle();
+                    if (bParams == null)
+                        return null;
+                    bParams.putStringArrayList("start_empty_apps", apps_l);
+                    service.startActivityAsUserEmpty(null, null, intent, null,
+                                  null, null, 0, 0, null, bParams, 0);
+                }
+            }
+            return null;
+        }
     }
 
     static class Token extends IApplicationToken.Stub {
@@ -1872,8 +1901,12 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
             if (app != null && app != service.mHomeProcess) {
                 service.mHomeProcess = app;
             }
+            try {
+                new PreferredAppsTask().execute();
+            } catch (Exception e) {
+                Log.v (TAG, "Exception: " + e);
+            }
         }
-
         if (nowVisible) {
             // We won't get a call to reportActivityVisibleLocked() so dismiss lockscreen now.
             mStackSupervisor.reportActivityVisibleLocked(this);
@@ -2072,8 +2105,24 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
                 sb.append(" (total ");
                 TimeUtils.formatDuration(totalTime, sb);
                 sb.append(")");
+                if (mUxPerf != null) {
+                    mUxPerf.perfUXEngine_events(BoostFramework.UXE_EVENT_DISPLAYED_ACT, 0, packageName, (int)totalTime);
+                }
+            } else {
+                if (mUxPerf != null) {
+                    mUxPerf.perfUXEngine_events(BoostFramework.UXE_EVENT_DISPLAYED_ACT, 0, packageName, (int)thisTime);
+                }
             }
             Log.i(TAG, sb.toString());
+        }
+        if (mPerf_iop == null) {
+            mPerf_iop = new BoostFramework();
+        }
+        if (mPerf_iop != null) {
+            if (app != null) {
+                String codePath = appInfo.sourceDir.substring(0, appInfo.sourceDir.lastIndexOf('/'));
+                mPerf_iop.perfIOPrefetchStart(app.pid, packageName, codePath);
+            }
         }
         mStackSupervisor.reportActivityLaunchedLocked(false, this, thisTime, totalTime);
         if (mPerfFirstDraw == null) {
