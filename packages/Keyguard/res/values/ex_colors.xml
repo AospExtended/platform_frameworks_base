@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright 2016 The Android Open Source illusion Project
+     Copyright (C) 2017 Aosp Extended
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,18 +14,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- Custom Carrier Label -->
-    <color name="status_bar_carrier_color">#FFFFFFFF</color>
-
-    <!-- Screenshot Crop & Share -->
-    <style name="CropDialogAnimations">
-        <item name="android:windowEnterAnimation">@anim/crop_in</item>
-        <item name="android:windowExitAnimation">@anim/crop_out</item>
-    </style>
-
-    <style name="ScreenshotEditorStyle" parent="@android:style/Theme.Material" >
-    </style>
-
+<resources>
+    <!-- Keyguard weather colors -->
+    <color name="keyguard_default_primary_text_color">#ffffffff</color>
+    <color name="keyguard_default_secondary_text_color">#b3ffffff</color>
+    <color name="keyguard_default_icon_color">#ffffffff</color>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016 Benzo Rom
+     Copyright (C) 2017 Aosp Extended
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -70,4 +70,11 @@
 
     <!-- Recents task locking button -->
     <dimen name="recents_task_view_header_lock_button_padding">44dp</dimen>
+	
+    <dimen name="text_size_m">24sp</dimen>
+    <dimen name="text_size_s">17sp</dimen>
+    <dimen name="button_height">40dp</dimen>
+
+    <dimen name="crop_buttons">48dp</dimen>
+    <dimen name="crop_buttons_inlet">32dp</dimen>
 </resources>

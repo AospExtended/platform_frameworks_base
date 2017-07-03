@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 
-     Copyright (C) 2016 AospExtended Rom
+<!--
+     Copyright (C) 2017 Aosp Extended
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
+
           http://www.apache.org/licenses/LICENSE-2.0
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -12,6 +15,96 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Volume stream title names -->
+    <string name="stream_title_call">Chiamata</string>
+    <string name="stream_title_system">Sistema</string>
+    <string name="stream_title_ring">Suoneria</string>
+    <string name="stream_title_media">Multimediale</string>
+    <string name="stream_title_alarm">Allarme</string>
+    <string name="stream_title_notification">Notifica</string>
+    <string name="stream_title_bluetooth">Bluetooth</string>
+
+    <!-- Wi-Fi hotspot label when enabled -->
+    <plurals name="wifi_hotspot_connected_clients_label">
+        <item quantity="one">%1$d client</item>
+        <item quantity="other">%1$d clients</item>
+    </plurals>
+
+    <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_hspap">HSPA+</string>
+
+    <!-- Screenrecord Notification Ticker -->
+    <string name="screenrecord_notif_ticker">Lo schermo è in fase di registrazione</string>
+    <!-- Screenrecord notification title -->
+    <string name="screenrecord_notif_title">Schermata di registrazione</string>
+    <!-- Screenrecord notification action: Stop -->
+    <string name="screenrecord_notif_stop">Stop</string>
+    <!-- Screenrecord notification action: show/hide pointer -->
+    <string name="screenrecord_notif_pointer_on">Visualizza puntatore</string>
+    <string name="screenrecord_notif_pointer_off">Nascondi puntatore</string>
+    <!-- Screen record notification error title -->
+    <string name="screenrecord_notif_error">Impossibile registrare lo schermo</string>
+
+    <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Schermata cancellato</string>
+
+      <!-- Screenrecord QS tile -->
+    <string name="quick_settings_screenrecord">Registra schermo</string>
+    <string name="quick_settings_screenrecord_on">Registrazione ...</string>
+
+    <!-- Language\Locale Tile -->
+    <string name="quick_settings_locale_label">Lingua</string>
+    <string name="quick_settings_locale_more_locales_toast">Si prega di configurare più lingue per attivare la funzionalità del toggle</string>
+    
+    <!-- NavBar Tuner -->
+    <string name="menu_ime_always_show">Menù / interrittore tastiera (visualizza sempre)</string>
+    <string name="search">Ricerca</string>
+
+    <!-- Strings for lockscreen shortcut hints -->
+    <string name="left_shortcut_hint">Scorri verso destra per %1$s</string>
+    <string name="right_shortcut_hint">Scorri verso sinistra per %1$s</string>
+    <string name="lockscreen_message">Toccare un\'icona a sinistra o a destra per assegnare una scorciatoia nella schermata di blocco.</string>
+    <string name="lockscreen_default_target">Predefinito</string>
+    <string name="select_application">Seleziona applicazione</string>
+    <string name="lockscreen_choose_action_title">Scegli azione</string>
+    <string name="lockscreen_none_target">Vuoto</string>
+    
+      <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Suono</string>
+    <string name="quick_settings_sound_ring">Suoneria</string>
+    <string name="quick_settings_sound_vibrate">Vibrazione</string>
+    <string name="quick_settings_sound_dnd">Non disturbare</string>
+
+    <!-- Ambient Display QS tile -->
+    <string name="accessibility_quick_settings_ambient_display_off">Ambient Display spento</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Ambient Display acceso</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient Display disattivato</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient Display attivato</string>
+    <string name="quick_settings_ambient_display_label">Ambient Display</string>
+    <string name="quick_settings_extensions">Estensioni</string>
+     
+     <!-- Screenshot Crop & Share -->
+    <string name="action_delete_success">Eliminazione</string>
+    <string name="action_delete_fault">Eliminazione non riuscita</string>
+    <string name="action_save_success">Salvataggio</string>
+    <string name="action_save_fault">Salvataggio non riuscito</string>
+    <string name="pref_action_color_title">Colore azione pulsanti</string>
+    <string name="pref_action_color_summary">Scegli il tuo colore preferito per le azioni dei pulsanti</string>
+    <string name="pref_category_main">Impostazioni principali</string>
+    <string name="pref_category_user">Impostazioni utente</string>
+    <string name="pref_crop_behavior_title">Comportamento ritaglio</string>
+    <string name="pref_crop_behavior_summary">Utilizza un\'immagine ritagliata anche se quella originale non è stata in realtà tagliata con l\'azione del ritaglio</string>
+    <string name="action_ok">OK</string>
+
+    <!-- Screenshot Crop & Share -->
+    <string name="action_delete_success">Eliminazione</string>
+    <string name="action_delete_fault">Eliminazione non riuscita</string>
+    <string name="action_save_success">Salvataggio</string>
+    <string name="action_save_fault">Salvataggio non riuscito</string>
+    <string name="action_edit">Modifica</string>
+     
+    <string name="quick_settings_expanded_navigation_off">Nascondi barra di naviganzione</string>
+    <string name="quick_settings_expanded_statusbar_off">Nascondi barra di stato</string>
 
     <!-- Notification which notifies user flashlight is enabled -->
     <string name="quick_settings_tile_flashlight_not_title">Torcia accesa</string>

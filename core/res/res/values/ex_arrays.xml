@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016 The Pure Nexus Project
-     Copyright (C) 2016 The JDCTeam
+     Copyright (C) 2017 Aosp Extended
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,6 +15,15 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Do not translate. Defines the mapping of notification package names
+         from the actual triggering package to the user selectable package.
+         E.g. GTalk notifications come via Google Services Framework
+         Format: [triggering package]|[user package] -->
+    <string-array name="notification_light_package_mapping" translatable="false">
+        <item>com.google.android.gsf|com.google.android.talk</item>
+    </string-array>
+
     <!-- Defines the shutdown options shown in the reboot dialog. -->
     <array name="shutdown_reboot_options" translatable="false">
         <item>@string/reboot_reboot</item>
@@ -33,4 +41,5 @@
         <item>bootloader</item>
         <item>systemui_reboot</item>
      </string-array>
+
 </resources>

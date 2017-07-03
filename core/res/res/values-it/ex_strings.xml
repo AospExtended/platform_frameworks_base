@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016 AospExtended ROM Project
+     Copyright (C) 2017 Aosp Extended
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,7 +15,34 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-     
+    <!-- Title of dialog to confirm restarting. -->
+    <string name="reboot_title">Riavvia</string>
+    <!-- Button to reboot the phone in restart menu -->
+    <string name="reboot_reboot">Riavvia</string>
+    <!-- Button to reboot the phone into recovery in restart menu-->
+    <string name="reboot_recovery">Recovery</string>
+    <!-- Button to reboot the phone into bootloader in restart menu -->
+    <string name="reboot_bootloader">Bootloader</string>
+    <!-- Button to soft reboot the device in restart menu -->
+    <string name="reboot_soft">Riavvio veloce</string>
+    <!-- Reboot Confirmation Dialog. -->
+    <string name="reboot_confirm" product="tablet">Il tuo tablet si riavvierà.</string>
+    <string name="reboot_confirm" product="default">Il tuo telefono si riavvierà.</string>
+    <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+    <string name="reboot_progress">Riavvio\u2026</string>
+    <string name="reboot_systemui">Riavvia SystemUI</string>
+    <!-- Global Actions -->
+    <string name="global_action_current_user">Corrente</string>
+    <string name="global_action_screenshot">Screenshot</string>
+    <string name="global_action_screen_record">Registra schermo</string>
+    <string name="global_action_search">Ricerca</string>
+    <string name="global_action_torch">Torcia</string>
+    <string name="global_action_voicesearch">Ricerca vocale</string>
+
+    <string name="permlab_preventpower">sovrapposizione tasto accensione</string>
+    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_preventpower">Consenti ad un\'applicazione di sovrapporsi al tasto accensione.</string>
+
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">L\'immagine del fornitore non corrisponde a quella del sistema. Riscrivi l\'immagine del fornitore <xliff:g id="string">%s </xliff:g> per il tuo dispositivo</string>
 

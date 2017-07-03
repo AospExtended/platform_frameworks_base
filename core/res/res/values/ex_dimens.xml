@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 The JDCTeam
+     Copyright (C) 2017 Aosp Extended
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,18 +15,6 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Base battery meter drawable style -->
-    <style name="BatteryMeterViewDrawable">
-        <!-- Gravity used for positioning text within the battery meter -->
-        <item name="android:gravity">center</item>
-        <item name="blendMode">clear</item>
-    </style>
-
-    <!-- Battery meter drawable styles -->
-    <style name="BatteryMeterViewDrawable.Portrait"/>
-    <style name="BatteryMeterViewDrawable.Landscape"/>
-    <style name="BatteryMeterViewDrawable.Solid"/>
-    <style name="BatteryMeterViewDrawable.Circle">
-        <item name="blendMode">overlay</item>
-    </style>
+     <!-- Largest size an avatar might need to be drawn in the power menu user picker -->
+     <dimen name="global_actions_avatar_size">40dp</dimen>
 </resources>

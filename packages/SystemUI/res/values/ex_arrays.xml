@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 The JDCTeam
+     Copyright (C) 2017 Aosp Extended
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,6 +15,16 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- those are dpi values! -->
+    <string-array name="crop_pen_size_entries" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+        <item>20</item>
+        <item>40</item>
+    </string-array>
     <!-- Volume stream name titles -->
     <string-array name="volume_stream_titles_new" trabslatable="false" >
         <item>@string/stream_title_call</item> <!-- STREAM_VOICE_CALL -->
@@ -40,4 +50,22 @@
         <item>@string/quick_settings_compass_W</item>  <!-- West -->
         <item>@string/quick_settings_compass_NW</item> <!-- North west -->
     </string-array>
+
+    <!-- BatteryMeterView parameters -->
+    <array name="batterymeter_color_levels">
+        <item>15</item>
+        <item>100</item>
+    </array>
+    <array name="batterymeter_color_values">
+        <item>@color/battery_charge_level_low_level</item>
+        <item>@color/battery_charge_level_on_normal_statusbar</item>
+    </array>
+
+    <!-- Advanced Location tile mode -->
+    <string-array name="location_mode_entries" translatable="false">
+        <item>@string/quick_settings_location_battery_saving_label</item>
+        <item>@string/quick_settings_location_gps_only_label</item>
+        <item>@string/quick_settings_location_high_accuracy_label</item>
+    </string-array>
+
 </resources>

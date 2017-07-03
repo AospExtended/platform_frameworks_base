@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016 AospExtended ROM Project
+     Copyright (C) 2017 Aosp Extended
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -123,4 +123,31 @@
     <string name="permlab_resetBatteryStats">redefinir as estatísticas de bateria</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_resetBatteryStats">Permite que um aplicativo redefina os dados de uso da bateria.</string>
+
+    <!-- Title of dialog to confirm restarting. -->
+    <string name="reboot_title">Reiniciar</string>
+    <!-- Button to reboot the phone in restart menu -->
+    <string name="reboot_reboot">Reiniciar</string>
+    <!-- Button to reboot the phone into recovery in restart menu-->
+    <string name="reboot_recovery">Recuperação</string>
+    <!-- Button to reboot the phone into bootloader in restart menu -->
+    <string name="reboot_bootloader">Bootloader</string>
+    <!-- Button to soft reboot the device in restart menu -->
+    <string name="reboot_soft">Reinício suave</string>
+    <!-- Reboot Confirmation Dialog. -->
+    <string name="reboot_confirm" product="tablet">Seu tablet irá reiniciar.</string>
+    <string name="reboot_confirm" product="default">Seu telefone vai reiniciar.</string>
+    <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+    <string name="reboot_progress">Reiniciando\u2026</string>
+    <!-- Global Actions -->
+    <string name="global_action_current_user">Atual</string>
+    <string name="global_action_screenshot">Captura de tela</string>
+    <string name="global_action_screen_record">Gravação de tela</string>
+    <string name="global_action_search">Pesquisa</string>
+    <string name="global_action_torch">Lanterna</string>
+    <string name="global_action_voicesearch">Pesquisa por voz</string>
+
+    <string name="permlab_preventpower">substituir botão de energia</string>
+    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_preventpower">Permite que um aplicativo substitua o botão liga / desliga</string>
 </resources>
