@@ -43,6 +43,7 @@
   <string name="quick_settings_locale_label">भाषा</string>
   <string name="quick_settings_locale_more_locales_toast">कृपया टॉगल कार्यक्षमता सक्षम करने के लिए एक से अधिक भाषाओं को कॉन्फ़िगर करें</string>
   <!-- NavBar Tuner -->
+  <string name="search">खोज</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">%1$s के लिए यहाँ से दाहिने स्वाइप करें</string>
   <string name="right_shortcut_hint">%1$s के लिए बाएं ओर स्वाइप करें</string>
@@ -88,6 +89,7 @@
   <string name="delete_screenshot_toast">स्क्रीनशॉट मिटा दिये</string>
   <!-- SystemUI Tuner Parts -->
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">स्क्रीनशॉट</string>
   <string name="quick_settings_region_screenshot_label">आंशिक स्क्रीनशॉट</string>
   <string name="quick_settings_sync_label">सिंक</string>
   <string name="accessibility_quick_settings_sync_off">सिंक बंद</string>
@@ -96,6 +98,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">Sync चालु कर दिया</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">रीबूट करें</string>
+  <string name="quick_settings_reboot_recovery_label">रिकवरी</string>
   <string name="accessibility_quick_settings_usb_tether_off">USB टेदरिंग बंद</string>
   <string name="accessibility_quick_settings_usb_tether_on">USB टेदरिंग चालू</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">USB टेदरिंग बंद है</string>

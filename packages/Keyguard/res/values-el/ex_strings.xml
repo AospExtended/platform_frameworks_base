@@ -16,5 +16,5 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="weather_info_not_available">Οι πληροφορίες καιρού δεν είναι διαθέσιμες</string>
+  <string name="weather_info_not_available">Πληροφορίες καιρού μη διαθέσιμες</string>
 </resources>

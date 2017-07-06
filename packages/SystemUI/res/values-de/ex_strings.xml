@@ -17,6 +17,13 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">Anruf</string>
+  <string name="stream_title_system">System</string>
+  <string name="stream_title_ring">Klingeln</string>
+  <string name="stream_title_media">Medien</string>
+  <string name="stream_title_alarm">Wecker</string>
+  <string name="stream_title_notification">Benachrichtigung</string>
+  <string name="stream_title_bluetooth">Bluetooth</string>
   <!-- Wi-Fi hotspot label when enabled -->
   <plurals name="wifi_hotspot_connected_clients_label">
     <item quantity="one">%1$d Gerät</item>
@@ -35,24 +42,24 @@
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Stopp</string>
   <!-- Screenrecord notification action: show/hide pointer -->
-  <string name="screenrecord_notif_pointer_on">Cursor anzeigen</string>
-  <string name="screenrecord_notif_pointer_off">Cursor ausblenden</string>
+  <string name="screenrecord_notif_pointer_on">Berührung anzeigen</string>
+  <string name="screenrecord_notif_pointer_off">Berührung ausblenden</string>
   <!-- Screen record notification error title -->
-  <string name="screenrecord_notif_error">Bildschirmkonnte nicht aufgenommen werden</string>
+  <string name="screenrecord_notif_error">Bildschirm konnte nicht aufgenommen werden</string>
   <!-- Screenshot Delete Toast -->
-  <string name="delete_screenshot_toast">Screenshot gelöscht</string>
+  <string name="delete_screenshot_toast">Bildschirmfoto gelöscht</string>
   <!-- Screenrecord QS tile -->
   <string name="quick_settings_screenrecord">Bildschirmaufnahme</string>
-  <string name="quick_settings_screenrecord_on">Aufnahme ...</string>
+  <string name="quick_settings_screenrecord_on">Bildschirmaufnahme läuft ...</string>
   <!-- Language\Locale Tile -->
   <string name="quick_settings_locale_label">Sprache</string>
   <string name="quick_settings_locale_more_locales_toast">Bitte richten Sie mehrere Sprachen ein, um die Umschaltfunktion zu aktivieren</string>
   <!-- NavBar Tuner -->
-  <string name="menu_ime_always_show">Menü/Tastatur Wechsler (immer anzeigen)</string>
+  <string name="menu_ime_always_show">Menü / Tastatur-Umschalter (immer anzeigen)</string>
   <string name="search">Suche</string>
   <!-- Strings for lockscreen shortcut hints -->
-  <string name="left_shortcut_hint">Nach Rechts wischen für %1$s</string>
-  <string name="right_shortcut_hint">Nach Links wischen für %1$s</string>
+  <string name="left_shortcut_hint">Nach rechts wischen für %1$s</string>
+  <string name="right_shortcut_hint">Nach links wischen für %1$s</string>
   <string name="lockscreen_message">Tippe auf ein Symbol links oder rechts, um eine Sperrbildschirm-Verknüpfung neu zuzuweisen.</string>
   <string name="lockscreen_default_target">Standard</string>
   <string name="select_application">App auswählen</string>
@@ -64,11 +71,12 @@
   <string name="quick_settings_sound_vibrate">Vibrieren</string>
   <string name="quick_settings_sound_dnd">Nicht stören</string>
   <!-- Ambient Display QS tile -->
-  <string name="accessibility_quick_settings_ambient_display_off">Inaktivitätsbildschirm aus.</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Inaktivitätsbildschirm aus</string>
   <string name="accessibility_quick_settings_ambient_display_on">Inaktivitätsbildschirm an</string>
   <string name="accessibility_quick_settings_ambient_display_changed_off">Inaktivitätsbildschirm ausgeschaltet</string>
   <string name="accessibility_quick_settings_ambient_display_changed_on">Inaktivitätsbildschirm eingeschaltet</string>
   <string name="quick_settings_ambient_display_label">Inaktivitätsbildschirm</string>
+  <string name="quick_settings_extensions">Erweiterungen</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">Gelöscht</string>
   <string name="action_delete_fault">Löschen war nicht erfolgreich</string>
@@ -78,7 +86,7 @@
   <string name="pref_action_color_summary">Wählen Sie Ihre Lieblingsfarbe für die Aktions-Tasten</string>
   <string name="pref_category_main">Haupteinstellungen</string>
   <string name="pref_category_user">Benutzereinstellungen</string>
-  <string name="pref_crop_behavior_title">Crop-Verhalten</string>
+  <string name="pref_crop_behavior_title">Zuschneide-Verhalten</string>
   <string name="pref_crop_behavior_summary">Das zugeschnittene Bild verwenden, auch wenn das ursprüngliche nicht zugeschnitten wurde</string>
   <string name="action_ok">OK</string>
   <!-- Screenshot Crop & Share -->
@@ -87,6 +95,8 @@
   <string name="action_save_success">Gespeichert</string>
   <string name="action_save_fault">Speichern war nicht erfolgreich</string>
   <string name="action_edit">Bearbeiten</string>
+  <string name="quick_settings_expanded_navigation_off">Navigationsleiste ausblenden</string>
+  <string name="quick_settings_expanded_statusbar_off">Statusleiste ausblenden</string>
   <!-- Notification which notifies user flashlight is enabled -->
   <string name="quick_settings_tile_flashlight_not_title">Taschenlampe ist an</string>
   <string name="quick_settings_tile_flashlight_not_summary">Tippen, um auszuschalten</string>
@@ -95,25 +105,25 @@
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
   <!-- Screenshot Delete Toast -->
-  <string name="delete_screenshot_toast">Screenshot gelöscht</string>
+  <string name="delete_screenshot_toast">Bildschirmfoto gelöscht</string>
   <!-- SystemUI Tuner Parts -->
-  <string name="systemui_tuner_pnc_title">Power notification controls</string>
+  <string name="systemui_tuner_pnc_title">Erweiterte Benachrichtigungseinstellungen</string>
   <!-- Quick Settings tiles -->
   <string name="quick_settings_screenshot_label">Bildschirmfoto</string>
   <string name="quick_settings_region_screenshot_label">Partieller Screenshot</string>
-  <string name="quick_settings_sync_label">Synchronisieren</string>
+  <string name="quick_settings_sync_label">Synchronisation</string>
   <string name="accessibility_quick_settings_sync_off">Synchronisation aus</string>
   <string name="accessibility_quick_settings_sync_on">Synchronisation an</string>
   <string name="accessibility_quick_settings_sync_changed_off">Synchronisation ausgeschaltet</string>
   <string name="accessibility_quick_settings_sync_changed_on">Synchronisation eingeschaltet</string>
   <!-- Reboot/Recovery QS Tile -->
-  <string name="quick_settings_reboot_label">Neustarten</string>
+  <string name="quick_settings_reboot_label">Neustart</string>
   <string name="quick_settings_reboot_recovery_label">Recovery</string>
   <string name="accessibility_quick_settings_usb_tether_off">USB-Tethering aus</string>
   <string name="accessibility_quick_settings_usb_tether_on">USB-Tethering an</string>
-  <string name="accessibility_quick_settings_usb_tether_changed_off">USB Tethering ausgeschaltet</string>
-  <string name="accessibility_quick_settings_usb_tether_changed_on">USB Tethering angeschaltet</string>
-  <string name="quick_settings_usb_tether_label">USB Tethering</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB-Tethering ausgeschaltet</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB-Tethering angeschaltet</string>
+  <string name="quick_settings_usb_tether_label">USB-Tethering</string>
   <string name="quick_settings_music_label">Musik</string>
   <string name="quick_settings_music_play">Wiedergabe</string>
   <string name="quick_settings_music_pause">Pause</string>
@@ -121,13 +131,13 @@
   <string name="quick_settings_caffeine_label">Koffein</string>
   <string name="accessibility_quick_settings_caffeine_off">Koffein aus</string>
   <string name="accessibility_quick_settings_caffeine_on">Koffein an</string>
-  <string name="quick_settings_heads_up_label">Heads-Up</string>
-  <string name="accessibility_quick_settings_heads_up_off">Heads Up-Benachrichtigungen aus</string>
-  <string name="accessibility_quick_settings_heads_up_on">Heads Up-Benachrichtigungen an</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">Heads Up-Benachrichtigungen ausgeschaltet</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">Heads Up-Benachrichtigungen eingeschaltet</string>
+  <string name="quick_settings_heads_up_label">Pop-Up</string>
+  <string name="accessibility_quick_settings_heads_up_off">Pop-Up Benachrichtigungen aus.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Pop-Up Benachrichtigungen an.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Pop-Up Benachrichtigungen ausgeschaltet.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Pop-Up Benachrichtigungen eingeschaltet.</string>
   <string name="quick_settings_pulse_enabled">Pulse aktiviert</string>
-  <string name="quick_settings_pulse_disabled">Keine Visualisierung</string>
+  <string name="quick_settings_pulse_disabled">Pulse deaktiviert</string>
   <string name="quick_settings_pulse_label">Navigationsleisten Visualisierung</string>
   <string name="quick_settings_nfc_label">NFC</string>
   <string name="accessibility_quick_settings_nfc_off">NFC aus</string>
@@ -139,8 +149,8 @@
   <string name="accessibility_quick_settings_location_battery_saving">Standortdienste: Energiesparmodus.</string>
   <string name="accessibility_quick_settings_location_gps_only">Standortdienste: Nur Gerät.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Standortdienste: Hohe Genauigkeit.</string>
-  <string name="accessibility_quick_settings_location_changed_battery_saving">Standortdienst wurde in Energiesparmodus geändert.</string>
-  <string name="accessibility_quick_settings_location_changed_gps_only">Standortdienst wurde auf \"Nur Gerät\" geändert.</string>
+  <string name="accessibility_quick_settings_location_changed_battery_saving">Die Standortbestimmung wurde auf Energiesparmodus geändert.</string>
+  <string name="accessibility_quick_settings_location_changed_gps_only">Die Standortbestimmung wurde auf \"Nur Gerät\" geändert.</string>
   <string name="accessibility_quick_settings_location_changed_high_accuracy">Die Standortbestimmung wurde auf \"Hohe Genauigkeit\" geändert.</string>
   <string name="quick_settings_location_detail_title">Standortmodus</string>
   <string name="quick_settings_location_battery_saving_label">Energiesparmodus</string>
@@ -149,23 +159,23 @@
   <string name="quick_settings_location_off_label">Standortbestimmung aus</string>
   <!-- Show lte/4g switch -->
   <string name="show_lte_fourgee_title">Zeige 4G anstatt LTE</string>
-  <string name="show_lte_fourgee_summary">Ersetzt das LTE Symbol mit einem 4G Symbol</string>
-  <string name="statusbar_tuner_category_title">Symbole verstecken</string>
+  <string name="show_lte_fourgee_summary">Ersetzt die LTE-Anzeige in der Statusleiste durch 4G</string>
+  <string name="statusbar_tuner_category_title">Symbole von der Statusleiste verbergen</string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">Navigationsleiste</string>
-  <string name="quick_settings_smartbar">Smart-Bar</string>
-  <string name="quick_settings_smartbar_off">Smart-Bar aus</string>
+  <string name="quick_settings_smartbar">SmartBar</string>
+  <string name="quick_settings_smartbar_off">SmartBar aus</string>
   <string name="quick_settings_fling">Fling</string>
   <string name="quick_settings_fling_off">Fling aus</string>
   <!-- Screenshot action -->
-  <string name="screenshot_abort_title">Kein Screenshot aufgenommen</string>
+  <string name="screenshot_abort_title">Kein Bildschirmfoto gemacht</string>
   <string name="screenshot_abort_text">Vorgang abgebrochen</string>
   <string name="quick_settings_expanded_desktop_label">Erweiterter Desktop</string>
   <string name="quick_settings_expanded_desktop">Erweitert</string>
   <string name="quick_settings_expanded_desktop_off">Normal</string>
   <!-- Heads up snooze toast -->
-  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s </xliff:g> • Heads-Up Benachrichtigung ist 1 Minute deaktiviert.</string>
-  <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> • Heads-Up Benachrichtigungen sind für <xliff:g id="number">%d </xliff:g> Minuten deaktiviert.</string>
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g>  • Pop-Up Benachrichtigungen sind für 1 Minute deaktiviert.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g>  • Pop-Up Benachrichtigungen sind für 1 Minute deaktiviert.</string>
   <!-- Path data for big circle battery -->
   <string name="recents_free_ram">Freier Arbeitsspeicher: %1$d MB</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
@@ -173,7 +183,7 @@
   <!-- volte icon switch -->
   <string name="status_bar_volte">VOLTE</string>
   <!-- Data/Wifi activity arrows -->
-  <string name="data_wifi_activity_arrows_title">Netzwerk Aktivität</string>
+  <string name="data_wifi_activity_arrows_title">Netzwerk-Aktivität</string>
   <!-- OmniJaws -->
   <string name="omnijaws_service_error">Fehler</string>
   <string name="omnijaws_service_unkown">Keine Wetterdaten</string>
@@ -184,7 +194,7 @@
   <string name="omnijaws_current_text">Jetzt</string>
   <string name="omnijaws_package_not_available">OmniJaws nicht verfügbar</string>
   <!-- Weather string format in expanded statusbar header -->
-  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g> <xliff:g id="condition">%2$s</xliff:g></string>
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Kompass</string>
   <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -211,18 +221,20 @@
   <string name="onthego_notif_options">Optionen</string>
   <string name="onthego_notif_error">On-The-Go Modus kann nicht gestartet werden</string>
   <string name="onthego_notif_restart">On-The-Go Modus neu starten</string>
-  <string name="onthego_notif_camera_changed">Kameramodus geändert</string>
+  <string name="onthego_notif_camera_changed">Kamera-Modus geändert</string>
   <string name="onthego_transparency">Transparenz</string>
   <string name="onthego_front_camera">Verwende Frontkamera</string>
   <string name="onthego_service_toggle">Dienst automatisch neu starten</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Wird schnell aufgeladen (voll in <xliff:g id="verbleibende_Aufladezeit" beispiel="4 Stunden und 2 Minuten">%s</xliff:g>)</string>
+  <string name="keyguard_indication_dash_charging_time">Dash Charging (voll in <xliff:g id="verbleibende_Aufladezeit" beispiel="4 Stunden und 2 Minuten">%s</xliff:g>)</string>
   <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
   <!-- HW Keys Tile -->
   <string name="accessibility_quick_settings_hwkeys_on">HW Tasten an</string>
   <string name="accessibility_quick_settings_hwkeys_off">HW Tasten aus</string>
   <string name="quick_settings_hwkeys_label">HW Tasten</string>
   <!-- AEX Logo -->
+  <string name="status_bar_aex_logo_title">AEX-Logo</string>
+  <string name="status_bar_aex_logo_summary">AEX-Logo auf der linken Seite der Statusleiste anzeigen</string>
   <!-- ADB over network Tile -->
   <string name="quick_settings_adb_network">ADB-Netzwerk</string>
   <string name="quick_settings_network_adb_enabled_label">Aktiviert</string>

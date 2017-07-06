@@ -17,16 +17,31 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Yeniden başlat</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Yeniden başlat</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Kurtarma modu (Recovery)</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Önyükleyici</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Yazılımsal yeniden başlatma</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Tabletiniz yeniden başlatılacak.</string>
+  <string name="reboot_confirm" product="default">Telefonunuz yeniden başlatılacak.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">Yeniden Başlatılıyor\u2026</string>
   <string name="reboot_systemui">Sistem arayüzünü yeniden başlat</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Mevcut</string>
+  <string name="global_action_screenshot">Ekran görüntüsü</string>
+  <string name="global_action_screen_record">Ekran Kaydı</string>
+  <string name="global_action_search">Ara</string>
   <string name="global_action_torch">El feneri</string>
+  <string name="global_action_voicesearch">Sesli Arama</string>
+  <string name="permlab_preventpower">güç tuşu işlevini değiştir</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Uygulamanın güç tuşunun işlevini değiştirmesine izin verir.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Üretici dosyanız sisteminiz ile eşleşmiyor. Cihazınız için lütfen <xliff:g id="string">%s</xliff:g> üretici dosyasını flaşlayın</string>
   <!-- AOKP custom system animations -->
@@ -46,6 +61,7 @@
   <string name="animation_grow_shrink_right">Yayılan (sağa)</string>
   <string name="action_null">Boş</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">Bir satıcı Görüntü uyumsuzluğu algılandı. Genellikle bu satıcı görüntü güncel değil anlamına gelir. Lütfen satıcı görüntü <xliff:g id="fingerprint">%1$s </xliff:g> eşleşen emin olun.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">pil istatistiklerini sıfırla</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -53,6 +69,11 @@
   <!-- On-The-Go -->
   <string name="global_action_onthego">Yürüme Modu</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Sahte paket imzası</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Uygulamanın farklı bir uygulama gibi davranmasına izin verir. Zararlı uygulamalar bu özelliği kullanarak özel içerikli bilgilere ulaşabilir. Bu izni verirken dikkatli olun!</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">Ağ üzerinden ADB etkinleştirildi</string>
+  <string name="adb_both_active_notification_title">USB &amp; Ağ üzerinden ADB etkin</string>
+  <string name="adb_active_generic_notification_message">Hata ayıklamayı devre dışı bırakmak için dokunun.</string>
 </resources>

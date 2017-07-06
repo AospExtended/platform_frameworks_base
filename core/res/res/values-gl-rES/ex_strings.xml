@@ -17,21 +17,63 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Reiniciar</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Reiniciar</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Recuperación</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Xestor de arranque</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Reinicio suave</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">A súa tableta vaise reiniciar.</string>
+  <string name="reboot_confirm" product="default">O seu teléfono vaise reiniciar.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">Reiniciando\u2026</string>
+  <string name="reboot_systemui">Reiniciar a Interface do sistema</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Actual</string>
+  <string name="global_action_screenshot">Captura de pantalla</string>
+  <string name="global_action_screen_record">Gravación da pantalla</string>
+  <string name="global_action_search">Procura</string>
+  <string name="global_action_torch">Lanterna</string>
+  <string name="global_action_voicesearch">Procurar con voz</string>
+  <string name="permlab_preventpower">Cambiar o botón de enerxía</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Permite que unha aplicación cambie o comportamento do boton de enerxía.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
+  <string name="system_error_vendorprint">A imaxe do proveedor non coincide co sistema. Por favor flashea o <xliff:g id="string">%s</xliff:g> imaxe para o teu dispositivo</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">Desvanecer</string>
+  <string name="animation_slide_right">Escorregar cara á dereita</string>
+  <string name="animation_slide_left">Escorregar cara á esquerda</string>
+  <string name="animation_slide_right_no_fade">Escorregar cara á dereita(Sen desvanecer)</string>
+  <string name="animation_slide_left_no_fade">Escorregar cara á esquerda(Sen desvanecer)</string>
+  <string name="animation_slide_up">Escorregar cara abaixo</string>
+  <string name="animation_slide_down">Escorregar cara arriba</string>
+  <string name="animation_default">Por defecto</string>
+  <string name="animation_translucent">Translúcido</string>
+  <string name="animation_grow_shrink">Medrar (Arriba)</string>
+  <string name="animation_grow_shrink_center">Medrar (Centro)</string>
+  <string name="animation_grow_shrink_bottom">Medrar (Abaixo)</string>
+  <string name="animation_grow_shrink_left">Medrar (Esquerda)</string>
+  <string name="animation_grow_shrink_right">Medrar (Dereita)</string>
+  <string name="action_null">En branco</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">Se ha detectado unha falta de coincidencia coa imaxe do proveedor. Polo xeral isto significa que dita imaxe está desactualizada. Asegúrese de que coincida con <xliff:g id="fingerprint">%1$s </xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_resetBatteryStats">Reestablecer as estatísticas da batería</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_resetBatteryStats">Permite que un aplicativo poida reiniciar os datos de uso actual de batería a baixo nivel.</string>
   <!-- On-The-Go -->
+  <string name="global_action_onthego">Modo On-The-Go</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Paquete de falsificación de sinatura</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Permite que o aplicativo se execute como outro aplicativo diferente. Aplicativos maliciosos poden usar isto para acceder aos datos privados de aplicativos. Conceda os permisos solo con precaución!</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">ADB sobre rede habilitado</string>
+  <string name="adb_both_active_notification_title">ADB sobre USB &amp; rede habilitado</string>
+  <string name="adb_active_generic_notification_message">Prema para deshabilitar a depuración.</string>
 </resources>

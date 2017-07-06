@@ -17,12 +17,24 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">Hívás</string>
+  <string name="stream_title_system">Rendszer</string>
+  <string name="stream_title_ring">Csengetés</string>
+  <string name="stream_title_media">Média</string>
+  <string name="stream_title_alarm">Ébresztő</string>
+  <string name="stream_title_notification">Értesítés</string>
+  <string name="stream_title_bluetooth">Bluetooth</string>
   <!-- Wi-Fi hotspot label when enabled -->
+  <plurals name="wifi_hotspot_connected_clients_label">
+    <item quantity="one">%1$d kliens</item>
+    <item quantity="other">%1$d kliensek</item>
+  </plurals>
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
   <!-- Path for battery solid -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Képernyőfelvétel folyamatban</string>
   <!-- Screenrecord notification title -->
@@ -43,6 +55,8 @@
   <string name="quick_settings_locale_label">Nyelv</string>
   <string name="quick_settings_locale_more_locales_toast">Kérjük, állítson be több nyelvet a váltás engedélyezéséhez</string>
   <!-- NavBar Tuner -->
+  <string name="menu_ime_always_show">Menü / Billentyűzetváltó (mindig mutat)</string>
+  <string name="search">Keresés</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">Csúsztasson jobbra ezért: %1$s</string>
   <string name="right_shortcut_hint">Csúsztasson balra ezért: %1$s</string>
@@ -53,6 +67,7 @@
   <string name="lockscreen_none_target">Semmi</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">Hangok</string>
+  <string name="quick_settings_sound_ring">Csengetés</string>
   <string name="quick_settings_sound_vibrate">Rezgés</string>
   <string name="quick_settings_sound_dnd">Ne zavarj</string>
   <!-- Ambient Display QS tile -->
@@ -61,6 +76,7 @@
   <string name="accessibility_quick_settings_ambient_display_changed_off">Környezeti kijelző kikapcsolva</string>
   <string name="accessibility_quick_settings_ambient_display_changed_on">Környezeti kijelző bekapcsolva</string>
   <string name="quick_settings_ambient_display_label">Környezeti kijelző</string>
+  <string name="quick_settings_extensions">Bővítmények</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">Törölve</string>
   <string name="action_delete_fault">Sikertelen törlés</string>
@@ -79,7 +95,11 @@
   <string name="action_save_success">Mentve</string>
   <string name="action_save_fault">Sikertelen mentés</string>
   <string name="action_edit">Szerkesztés</string>
+  <string name="quick_settings_expanded_navigation_off">Navigációs sáv elrejtése</string>
+  <string name="quick_settings_expanded_statusbar_off">Állapotsor elrejtése</string>
   <!-- Notification which notifies user flashlight is enabled -->
+  <string name="quick_settings_tile_flashlight_not_title">Zseblámpa bekapcsolva</string>
+  <string name="quick_settings_tile_flashlight_not_summary">Érintse meg kikapcsoláshoz</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
@@ -87,7 +107,9 @@
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Képernyőmentés törölve</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_pnc_title">Teljes körű értesítésvezérlők</string>
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">Képernyőkép</string>
   <string name="quick_settings_region_screenshot_label">Részleges képernyőmentés</string>
   <string name="quick_settings_sync_label">Szinkronizáció</string>
   <string name="accessibility_quick_settings_sync_off">Szinkronizálás ki</string>
@@ -96,6 +118,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">Szinkronizálás bekapcsolva</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Újraindítás</string>
+  <string name="quick_settings_reboot_recovery_label">Recovery</string>
   <string name="accessibility_quick_settings_usb_tether_off">USB internetmegosztás ki</string>
   <string name="accessibility_quick_settings_usb_tether_on">USB internetmegosztás be</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">USB internetmegosztás kikapcsolva</string>
@@ -117,7 +140,12 @@
   <string name="quick_settings_pulse_disabled">Vizualizáló ki</string>
   <string name="quick_settings_pulse_label">Navigációs sáv vizualizáló</string>
   <string name="quick_settings_nfc_label">NFC</string>
+  <string name="accessibility_quick_settings_nfc_off">NFC ki.</string>
+  <string name="accessibility_quick_settings_nfc_on">NFC be.</string>
+  <string name="accessibility_quick_settings_nfc_changed_off">NFC kikapcsolva.</string>
+  <string name="accessibility_quick_settings_nfc_changed_on">NFC bekapcsolva.</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_statusbar_title">Állapotsori elemek</string>
   <string name="accessibility_quick_settings_location_battery_saving">Helymeghatározás: energiatakarékos mód.</string>
   <string name="accessibility_quick_settings_location_gps_only">Helymeghatározás: csak GPS.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Helymeghatározás: nagy pontosságú.</string>
@@ -130,6 +158,9 @@
   <string name="quick_settings_location_high_accuracy_label">Nagy pontosság</string>
   <string name="quick_settings_location_off_label">Hely ki</string>
   <!-- Show lte/4g switch -->
+  <string name="show_lte_fourgee_title">4G mutatása LTE helyett</string>
+  <string name="show_lte_fourgee_summary">LTE hálozat ikon lecserélése 4G-re</string>
+  <string name="statusbar_tuner_category_title">Állapotsori elemek elrejtése</string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">Navigációs sáv</string>
   <string name="quick_settings_smartbar">Smart bar</string>
@@ -148,9 +179,11 @@
   <!-- Path data for big circle battery -->
   <string name="recents_free_ram">Szabad RAM: %1$d MB</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Futó szolgálatások megnyitása.</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">VOLTE</string>
   <!-- Data/Wifi activity arrows -->
+  <string name="data_wifi_activity_arrows_title">Hálózati tevékenységek</string>
   <!-- OmniJaws -->
   <string name="omnijaws_service_error">Hiba</string>
   <string name="omnijaws_service_unkown">Nincsenek időjárási adatok</string>
@@ -200,6 +233,8 @@
   <string name="accessibility_quick_settings_hwkeys_off">Hardveres gombok kikapcsolása</string>
   <string name="quick_settings_hwkeys_label">Hardveres gombok</string>
   <!-- AEX Logo -->
+  <string name="status_bar_aex_logo_title">AEX logó</string>
+  <string name="status_bar_aex_logo_summary">AEX logó megjelenítése az állapotsor bal oldalán</string>
   <!-- ADB over network Tile -->
   <string name="quick_settings_adb_network">ADB hálózat</string>
   <string name="quick_settings_network_adb_enabled_label">Engedélyezve</string>

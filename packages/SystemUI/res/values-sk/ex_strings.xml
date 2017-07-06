@@ -43,6 +43,7 @@
   <string name="quick_settings_locale_label">Jazyk</string>
   <string name="quick_settings_locale_more_locales_toast">Prosím nastavte prepínač umožňujúci viacej jazykov</string>
   <!-- NavBar Tuner -->
+  <string name="search">Hladať</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">Potiahnite doprava pre %1$s</string>
   <string name="right_shortcut_hint">Potiahnite doľava pre %1$s</string>
@@ -88,6 +89,7 @@
   <string name="delete_screenshot_toast">Snímok obrazovky bol vymazaný</string>
   <!-- SystemUI Tuner Parts -->
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">Snímka obrazovky</string>
   <string name="quick_settings_region_screenshot_label">Čiastočná snímka obrazovky</string>
   <string name="quick_settings_sync_label">Synchronizovať</string>
   <string name="accessibility_quick_settings_sync_off">Synch. vypnutá</string>

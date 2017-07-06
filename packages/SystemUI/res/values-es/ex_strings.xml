@@ -95,6 +95,8 @@
   <string name="action_save_success">Guardado</string>
   <string name="action_save_fault">La acción de guardado no ha tenido éxito</string>
   <string name="action_edit">Editar</string>
+  <string name="quick_settings_expanded_navigation_off">Ocultar barra de navegación</string>
+  <string name="quick_settings_expanded_statusbar_off">Ocultar barra de estado</string>
   <!-- Notification which notifies user flashlight is enabled -->
   <string name="quick_settings_tile_flashlight_not_title">La linterna está encendida</string>
   <string name="quick_settings_tile_flashlight_not_summary">Toca para apagarla</string>
@@ -231,6 +233,8 @@
   <string name="accessibility_quick_settings_hwkeys_off">Teclas de HW desactivadas</string>
   <string name="quick_settings_hwkeys_label">Teclas de HW</string>
   <!-- AEX Logo -->
+  <string name="status_bar_aex_logo_title">Logotipo de AEX</string>
+  <string name="status_bar_aex_logo_summary">Habilitar para mostrar el logotipo de AEX en la parte izquierda de la barra de estado</string>
   <!-- ADB over network Tile -->
   <string name="quick_settings_adb_network">ADB sobre RED</string>
   <string name="quick_settings_network_adb_enabled_label">Habilitado</string>

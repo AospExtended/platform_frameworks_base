@@ -17,15 +17,27 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">重新启动</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">重新启动</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">恢复模式</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">引导模式</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">软重启</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">您的平板电脑将会重启。</string>
+  <string name="reboot_confirm" product="default">您的手机将会重启。</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">正在重启\u2026</string>
   <string name="reboot_systemui">重启系统界面</string>
   <!-- Global Actions -->
+  <string name="global_action_screenshot">屏幕截图</string>
+  <string name="global_action_screen_record">录屏</string>
+  <string name="global_action_search">搜索</string>
   <string name="global_action_torch">手电筒</string>
+  <string name="global_action_voicesearch">语音搜索</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">您的初始设备制造商镜像与系统不匹配。请为您的设备刷入 <xliff:g id="string">%s </xliff:g> 初始设备制造商镜像</string>

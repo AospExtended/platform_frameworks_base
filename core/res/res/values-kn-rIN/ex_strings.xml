@@ -17,12 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">ಪುನರಾರಂಭಿಸಿ</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">ಪುನರಾರಂಭಿಸಿ</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">ರಿಕವರಿ</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">ಬೂಟ ಲೋಡರ್</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">ಮೃದು ಪುನರಾರಂಭ</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">ನಿಮ್ಮ ಡಿವೈಸ್ ಪುನರಾರಂಭ ಆಗುವುದು.</string>
+  <string name="reboot_confirm" product="default">ನಿಮ್ಮ ಡಿವೈಸ್ ಪುನರಾರಂಭ ಆಗುವುದು.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">ಪುನರಾರಂಭ ಆಗುತ್ತಿದೆ</string>
   <!-- Global Actions -->
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->

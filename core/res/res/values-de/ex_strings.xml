@@ -43,32 +43,37 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_preventpower">Erlaubt es einer App, die Powertaste zu konfigurieren.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">Dein Anbieter-Image stimmt nicht mit deinem System überein. Bitte flashe das <xliff:g id="string">%s</xliff:g> Anbieter-Image für dein Gerät</string>
+  <string name="system_error_vendorprint">Das Vendor-Image passt nicht zum System. Installiere bitte das <xliff:g id="string">%s</xliff:g> Vendor-Image für dein Gerät</string>
   <!-- AOKP custom system animations -->
-  <string name="animation_fade">Ausblenden</string>
-  <string name="animation_slide_right">Von rechts einblenden</string>
-  <string name="animation_slide_left">Von links einblenden</string>
-  <string name="animation_slide_right_no_fade">Von rechts einblenden (ohne Verblassen)</string>
-  <string name="animation_slide_left_no_fade">Von links einblenden (ohne Verblassen)</string>
-  <string name="animation_slide_up">Von unten hineingleiten</string>
-  <string name="animation_slide_down">Von oben einblenden</string>
+  <string name="animation_fade">Verblassen</string>
+  <string name="animation_slide_right">Von rechts reinschieben</string>
+  <string name="animation_slide_left">Von links reinschieben</string>
+  <string name="animation_slide_right_no_fade">Von rechts reinschieben (ohne verblassen)</string>
+  <string name="animation_slide_left_no_fade">Von links reinschieben (ohne verblassen)</string>
+  <string name="animation_slide_up">Von unten reinschieben</string>
+  <string name="animation_slide_down">Von oben reinschieben</string>
   <string name="animation_default">Standard</string>
   <string name="animation_translucent">Transparent</string>
   <string name="animation_grow_shrink">Von oben einblenden</string>
-  <string name="animation_grow_shrink_center">Mittig einblenden</string>
-  <string name="animation_grow_shrink_bottom">Von unten Einblenden</string>
-  <string name="animation_grow_shrink_left">Von links einblenden</string>
-  <string name="animation_grow_shrink_right">Von rechts einblenden</string>
+  <string name="animation_grow_shrink_center">Vergrößern (Mittig)</string>
+  <string name="animation_grow_shrink_bottom">Vergrößern (Unten)</string>
+  <string name="animation_grow_shrink_left">Vergrößern (links)</string>
+  <string name="animation_grow_shrink_right">Vergrößern (rechts)</string>
   <string name="action_null">Leer</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
   <string name="aex_system_error_manufacturer">Es wurde ein unpassendes Vendor-Image erkannt. Dies bedeutet in der Regel, dass es veraltet ist. Stellen Sie sicher, dass ihr Vendor-Image <xliff:g id="fingerprint">%1$s</xliff:g> entspricht.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_resetBatteryStats">Akku Statistik zurücksetzen</string>
+  <string name="permlab_resetBatteryStats">Setze Akkustatistiken zurück</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_resetBatteryStats">Ermöglicht einer Anwendung, die aktuellen Low-Level-Batterienutzungsdaten zurückzusetzen.</string>
+  <string name="permdesc_resetBatteryStats">Erlaubt es einer App, Deine Akkustatistiken zurückzusetzen.</string>
   <!-- On-The-Go -->
   <string name="global_action_onthego">On-The-Go Modus</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Signatur-Nachahmung</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Erlaubt einer App, eine andere zu imitieren. Böswillige Anwendungen erhalten möglicherweise ihre persönlichen Daten. Verteilen Sie diese Berechtigung vorsichtig!</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">ADB über Netzwerk aktiviert</string>
+  <string name="adb_both_active_notification_title">ADB über USB &amp; Netzwerk aktiviert</string>
+  <string name="adb_active_generic_notification_message">Antippen, um USB-Debugging zu deaktivieren.</string>
 </resources>

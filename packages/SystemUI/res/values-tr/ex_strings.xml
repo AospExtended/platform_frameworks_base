@@ -17,12 +17,24 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">Çağrı</string>
+  <string name="stream_title_system">Sistem</string>
+  <string name="stream_title_ring">Zil sesi</string>
+  <string name="stream_title_media">Ortam</string>
+  <string name="stream_title_alarm">Alarm</string>
+  <string name="stream_title_notification">Bildirim</string>
+  <string name="stream_title_bluetooth">Bluetooth</string>
   <!-- Wi-Fi hotspot label when enabled -->
+  <plurals name="wifi_hotspot_connected_clients_label">
+    <item quantity="one">%1$d istemci</item>
+    <item quantity="other">%1$d istemciler</item>
+  </plurals>
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
   <!-- Path for battery solid -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Ekran kaydediliyor</string>
   <!-- Screenrecord notification title -->
@@ -43,6 +55,8 @@
   <string name="quick_settings_locale_label">Dil</string>
   <string name="quick_settings_locale_more_locales_toast">Geçiş işlevselliğini etkinleştirmek için lütfen birden fazla dil yapılandırın</string>
   <!-- NavBar Tuner -->
+  <string name="menu_ime_always_show">Menü / Klavye Değiştirici (her zaman göster)</string>
+  <string name="search">Ara</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">%1$s için sağa kaydırın</string>
   <string name="right_shortcut_hint">%1$s için sola kaydırın</string>
@@ -53,6 +67,7 @@
   <string name="lockscreen_none_target">Hiçbiri</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">Ses</string>
+  <string name="quick_settings_sound_ring">Zil sesi</string>
   <string name="quick_settings_sound_vibrate">Titreşim</string>
   <string name="quick_settings_sound_dnd">Rahatsız etme</string>
   <!-- Ambient Display QS tile -->
@@ -61,6 +76,7 @@
   <string name="accessibility_quick_settings_ambient_display_changed_off">Ortam ekranı kapatıldı</string>
   <string name="accessibility_quick_settings_ambient_display_changed_on">Ortam ekranı açıldı</string>
   <string name="quick_settings_ambient_display_label">Ortam ekranı</string>
+  <string name="quick_settings_extensions">Eklentiler</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">Silindi</string>
   <string name="action_delete_fault">Silme işlemi başarısız</string>
@@ -79,7 +95,11 @@
   <string name="action_save_success">Kaydedildi</string>
   <string name="action_save_fault">Kaydetme işlemi başarısız</string>
   <string name="action_edit">Düzenle</string>
+  <string name="quick_settings_expanded_navigation_off">Gezinti çubuğu gizle</string>
+  <string name="quick_settings_expanded_statusbar_off">Durum çubuğunu gizle</string>
   <!-- Notification which notifies user flashlight is enabled -->
+  <string name="quick_settings_tile_flashlight_not_title">El feneri açık</string>
+  <string name="quick_settings_tile_flashlight_not_summary">Kapatmak için dokunun</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
@@ -87,7 +107,9 @@
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Ekran görüntüsü silindi</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_pnc_title">Güç bildirim kontrolleri</string>
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">Ekran görüntüsü</string>
   <string name="quick_settings_region_screenshot_label">Kısmi ekran görüntüsü</string>
   <string name="quick_settings_sync_label">Eşitleme</string>
   <string name="accessibility_quick_settings_sync_off">Eşitleme kapalı</string>
@@ -96,6 +118,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">Eşitleme açıldı</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Yeniden başlat</string>
+  <string name="quick_settings_reboot_recovery_label">Kurtarma modu (Recovery)</string>
   <string name="accessibility_quick_settings_usb_tether_off">USB internet paylaşımı kapalı</string>
   <string name="accessibility_quick_settings_usb_tether_on">USB internet paylaşımı açık</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">USB internet paylaşımı kapatıldı</string>
@@ -117,7 +140,12 @@
   <string name="quick_settings_pulse_disabled">Görselleştirme yok</string>
   <string name="quick_settings_pulse_label">Gezinme çubuğu görselleştirme</string>
   <string name="quick_settings_nfc_label">NFC</string>
+  <string name="accessibility_quick_settings_nfc_off">NFC kapalı.</string>
+  <string name="accessibility_quick_settings_nfc_on">NFC açık.</string>
+  <string name="accessibility_quick_settings_nfc_changed_off">NFC kapatıldı.</string>
+  <string name="accessibility_quick_settings_nfc_changed_on">NFC açıldı.</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_statusbar_title">Durum çubuğu öğeleri</string>
   <string name="accessibility_quick_settings_location_battery_saving">Konum bildirimi: pil tasarruf modu.</string>
   <string name="accessibility_quick_settings_location_gps_only">Konum bildirimi: sadece sensörler modu.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Konum bildirmi: yüksek doğruluk modu.</string>
@@ -130,6 +158,9 @@
   <string name="quick_settings_location_high_accuracy_label">Yüksek doğruluk</string>
   <string name="quick_settings_location_off_label">Konum kapalı</string>
   <!-- Show lte/4g switch -->
+  <string name="show_lte_fourgee_title">LTE yerine 4G göster</string>
+  <string name="show_lte_fourgee_summary">LTE durum çubuğu göstergesini 4G ile değiştirir</string>
+  <string name="statusbar_tuner_category_title">Durum çubuğunda öğeleri gizle</string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">Gezinme çubuğu</string>
   <string name="quick_settings_smartbar">Smart bar</string>
@@ -148,9 +179,11 @@
   <!-- Path data for big circle battery -->
   <string name="recents_free_ram">Boş RAM: %1$d MB</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Çalışan uygulamalar ekranını aç.</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">VOLTE</string>
   <!-- Data/Wifi activity arrows -->
+  <string name="data_wifi_activity_arrows_title">Ağ etkinliği</string>
   <!-- OmniJaws -->
   <string name="omnijaws_service_error">Hata</string>
   <string name="omnijaws_service_unkown">Hava durumu verisi yok</string>
@@ -200,6 +233,8 @@
   <string name="accessibility_quick_settings_hwkeys_off">Donanım tuşları kapalı</string>
   <string name="quick_settings_hwkeys_label">Donanım tuşları</string>
   <!-- AEX Logo -->
+  <string name="status_bar_aex_logo_title">AEX logosu</string>
+  <string name="status_bar_aex_logo_summary">Durum çubuğu sol tarafında AEX logo göstermek için etkinleştir</string>
   <!-- ADB over network Tile -->
   <string name="quick_settings_adb_network">ADB ağı</string>
   <string name="quick_settings_network_adb_enabled_label">Etkinleştirildi</string>

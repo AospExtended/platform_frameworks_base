@@ -36,7 +36,7 @@
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- Screenrecord Notification Ticker -->
-  <string name="screenrecord_notif_ticker">Schermo in fase di registrazione</string>
+  <string name="screenrecord_notif_ticker">Lo schermo è in fase di registrazione</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">Registrazione schermo in corso</string>
   <!-- Screenrecord notification action: Stop -->
@@ -45,17 +45,17 @@
   <string name="screenrecord_notif_pointer_on">Mostra puntatore</string>
   <string name="screenrecord_notif_pointer_off">Nascondi puntatore</string>
   <!-- Screen record notification error title -->
-  <string name="screenrecord_notif_error">Impossibile registrare schermo</string>
+  <string name="screenrecord_notif_error">Impossibile registrare lo schermo</string>
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Screenshot eliminato</string>
   <!-- Screenrecord QS tile -->
-  <string name="quick_settings_screenrecord">Registrazione Schermo</string>
+  <string name="quick_settings_screenrecord">Registra schermo</string>
   <string name="quick_settings_screenrecord_on">Registrazione...</string>
   <!-- Language\Locale Tile -->
   <string name="quick_settings_locale_label">Lingua</string>
   <string name="quick_settings_locale_more_locales_toast">Configura più lingue per abilitare la funzionalità toggle</string>
   <!-- NavBar Tuner -->
-  <string name="menu_ime_always_show">Menù / interrittore tastiera (visualizza sempre)</string>
+  <string name="menu_ime_always_show">Menù / interruttore tastiera (visualizza sempre)</string>
   <string name="search">Ricerca</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">Scorri a destra per %1$s</string>
@@ -68,7 +68,7 @@
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">Suono</string>
   <string name="quick_settings_sound_ring">Suoneria</string>
-  <string name="quick_settings_sound_vibrate">Vibra</string>
+  <string name="quick_settings_sound_vibrate">Vibrazione</string>
   <string name="quick_settings_sound_dnd">Non disturbare</string>
   <!-- Ambient Display QS tile -->
   <string name="accessibility_quick_settings_ambient_display_off">Ambient Display spento</string>
@@ -86,7 +86,7 @@
   <string name="pref_action_color_summary">Scegli un colore preferito per i pulsanti azione</string>
   <string name="pref_category_main">Impostazioni principali</string>
   <string name="pref_category_user">Impostazioni Utente</string>
-  <string name="pref_crop_behavior_title">Comportamento al taglio</string>
+  <string name="pref_crop_behavior_title">Comportamento ritaglio</string>
   <string name="pref_crop_behavior_summary">Usa l\'immagine ritagliata anche se quella originale non è stata ritagliata con l\'azione di ritaglio</string>
   <string name="action_ok">OK</string>
   <!-- Screenshot Crop & Share -->
@@ -107,7 +107,7 @@
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Screenshot eliminato</string>
   <!-- SystemUI Tuner Parts -->
-  <string name="systemui_tuner_pnc_title">Comandi di accensione notifica</string>
+  <string name="systemui_tuner_pnc_title">Controlli avanzati notifiche</string>
   <!-- Quick Settings tiles -->
   <string name="quick_settings_screenshot_label">Screenshot</string>
   <string name="quick_settings_region_screenshot_label">Screenshot parziale</string>
@@ -136,9 +136,9 @@
   <string name="accessibility_quick_settings_heads_up_on">Notifiche a comparsa attive</string>
   <string name="accessibility_quick_settings_heads_up_changed_off">Notifiche a comparsa disattivate</string>
   <string name="accessibility_quick_settings_heads_up_changed_on">Notifiche a comparsa attivate</string>
-  <string name="quick_settings_pulse_enabled">Lampeggio abilitato</string>
+  <string name="quick_settings_pulse_enabled">Pulse abilitato</string>
   <string name="quick_settings_pulse_disabled">Nessun visualizzatore</string>
-  <string name="quick_settings_pulse_label">Lampeggio</string>
+  <string name="quick_settings_pulse_label">Visualizzatore barra di navigazione</string>
   <string name="quick_settings_nfc_label">NFC</string>
   <string name="accessibility_quick_settings_nfc_off">NFC spento.</string>
   <string name="accessibility_quick_settings_nfc_on">NFC acceso.</string>
@@ -159,12 +159,12 @@
   <string name="quick_settings_location_off_label">Geolocalizzazione disattivata</string>
   <!-- Show lte/4g switch -->
   <string name="show_lte_fourgee_title">Visualizza 4G invece di LTE</string>
-  <string name="show_lte_fourgee_summary">Sostituisce l\'indicatore di stato LTE con 4G</string>
+  <string name="show_lte_fourgee_summary">Sostituisce l\'indicatore di stato LTE con l\'indicatore 4G</string>
   <string name="statusbar_tuner_category_title">Nascondi gli oggetti dalla barra di stato</string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">Barra di navigazione</string>
-  <string name="quick_settings_smartbar">Smart bar</string>
-  <string name="quick_settings_smartbar_off">Smart bar off</string>
+  <string name="quick_settings_smartbar">Smartbar</string>
+  <string name="quick_settings_smartbar_off">Smartbar off</string>
   <string name="quick_settings_fling">Fling</string>
   <string name="quick_settings_fling_off">Fling off</string>
   <!-- Screenshot action -->
@@ -177,7 +177,7 @@
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Notifica peeking posticipata per 1 minuto.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • Notifiche peeking posticipate per <xliff:g id="number">%d</xliff:g> minuti.</string>
   <!-- Path data for big circle battery -->
-  <string name="recents_free_ram">RAM LIBERA: %1$d MB</string>
+  <string name="recents_free_ram">RAM libera: %1$d MB</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <string name="accessibility_quick_settings_running_services">Schermata dei servizi in esecuzione aperta.</string>
   <!-- volte icon switch -->
@@ -230,9 +230,9 @@
   <string name="keyguard_indication_dash_charging_time">Ricarica rapida (<xliff:g id="charging_time_left" example="4 hours and 2 minutes"> %s</xliff:g> al termine)</string>
   <string name="keyguard_plugged_in_dash_charging">Ricarica rapida</string>
   <!-- HW Keys Tile -->
-  <string name="accessibility_quick_settings_hwkeys_on">Tasti HW attivi</string>
-  <string name="accessibility_quick_settings_hwkeys_off">Tasti HW disattivati</string>
-  <string name="quick_settings_hwkeys_label">Tasti HW</string>
+  <string name="accessibility_quick_settings_hwkeys_on">Tasti Hardware attivati</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Tasti Hardware disattivati</string>
+  <string name="quick_settings_hwkeys_label">Tasti hardware</string>
   <!-- AEX Logo -->
   <string name="status_bar_aex_logo_title">Logo AEX</string>
   <string name="status_bar_aex_logo_summary">Consente di visualizzare il logo AEX sul lato sinistro della barra di stato</string>

@@ -17,16 +17,31 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Reiniciar</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Reiniciar</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Recuperação</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Reiniciar suave</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">O seu tablet irá reiniciar.</string>
+  <string name="reboot_confirm" product="default">O seu telefone irá reiniciar.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">A reiniciar\u2026</string>
   <string name="reboot_systemui">Reiniciar a IU do sistema</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Atual</string>
+  <string name="global_action_screenshot">Captura de ecrã</string>
+  <string name="global_action_screen_record">Gravação de ecrã</string>
+  <string name="global_action_search">Pesquisar</string>
   <string name="global_action_torch">Lanterna</string>
+  <string name="global_action_voicesearch">Pesquisa de voz</string>
+  <string name="permlab_preventpower">substituir o botão de ligar</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Permite que uma aplicação substitua a ação do botão de ligar/desligar.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">A sua imagem de fornecedor não coincide com o sistema. Por favor, \"flasha\" a imagem do fornecedor de <xliff:g id="string">%s</xliff:g> para o seu dispositivo</string>
   <!-- AOKP custom system animations -->
@@ -46,6 +61,7 @@
   <string name="animation_grow_shrink_right">Crescer (Direita)</string>
   <string name="action_null">Em branco</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">Foi detetada uma imagem de fornecedor inválida. Normalmente isto significa que a sua imagem de fornecedor está desatualizada. Por favor, certifique-se que a sua imagem de fornecedor corresponde com <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">repor estatísticas da bateria</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -53,6 +69,11 @@
   <!-- On-The-Go -->
   <string name="global_action_onthego">Modo On-The-Go</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Replicar a assinatura de pacote</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Permite que a aplicação finja ser uma aplicação diferente. Aplicativos maliciosos podem ser capazes de usar isto para aceder a dados das aplicações. Conceda essa permissão com cautela!</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">ADB através da rede ativado</string>
+  <string name="adb_both_active_notification_title">ABD sobre USB e rede ativado</string>
+  <string name="adb_active_generic_notification_message">Toque para desativar a depuração.</string>
 </resources>

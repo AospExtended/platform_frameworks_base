@@ -17,7 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Començar Joc</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Començar Joc</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
   <!-- Button to reboot the phone into bootloader in restart menu -->
   <!-- Button to soft reboot the device in restart menu -->

@@ -17,18 +17,33 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Restartovat</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Restartovat</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Recovery</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Soft restart</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Váš tablet bude restartován.</string>
+  <string name="reboot_confirm" product="default">Váš telefon bude restartován.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">Restartování\u2026</string>
   <string name="reboot_systemui">Restartovat SystemUI</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Aktuální</string>
+  <string name="global_action_screenshot">Snímek obrazovky</string>
+  <string name="global_action_screen_record">Videozáznam obrazovky</string>
+  <string name="global_action_search">Hledat</string>
   <string name="global_action_torch">Svítilna</string>
+  <string name="global_action_voicesearch">Hlasové vyhledávání</string>
+  <string name="permlab_preventpower">přepsat funkci vypínacího tlačítka</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Umožní změnit chování tlačítka pro zapínání a vypínání.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">Váš dodavatel image se neshoduje se systémem. Prosím flash image <xliff:g id="string">%s </xliff:g> pro vaše zařízení</string>
+  <string name="system_error_vendorprint">Váš dodavatel obrazu se neshoduje se systémem. Prosím flashněte obraz pro vaše zařízení <xliff:g id="string">%s </xliff:g></string>
   <!-- AOKP custom system animations -->
   <string name="animation_fade">Slábnutí</string>
   <string name="animation_slide_right">Posunutí vpravo</string>
@@ -42,10 +57,11 @@
   <string name="animation_grow_shrink">Růst (nahoru)</string>
   <string name="animation_grow_shrink_center">Růst (uprostřed)</string>
   <string name="animation_grow_shrink_bottom">Růst (dole)</string>
-  <string name="animation_grow_shrink_left">Růst (zleva)</string>
-  <string name="animation_grow_shrink_right">Růst (zprava)</string>
-  <string name="action_null">Prázdný</string>
+  <string name="animation_grow_shrink_left">Růst (vlevo)</string>
+  <string name="animation_grow_shrink_right">Růst (vpravo)</string>
+  <string name="action_null">Prázdná</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">Byla zjištěna neshoda obrazu dodavatele. Obvykle to znamená, že obraz dodavatele je zastaralý. Zkontrolujte, zda že obraz dodavatele odpovídá „otisku“ <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">obnovení statistiky baterie</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -53,6 +69,11 @@
   <!-- On-The-Go -->
   <string name="global_action_onthego">Režim On-The-Go</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Napodobit podpis balíčku</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Umožňuje aplikaci předstírat, že je jinou aplikací. Škodlivé aplikace by mohly použít tuto možnost k přístupu k datům soukromých aplikací. Udělujte toto oprávnění s opatrností!</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">ABD přes síť povoleno</string>
+  <string name="adb_both_active_notification_title">ABD přes USB &amp; síť povoleno</string>
+  <string name="adb_active_generic_notification_message">Dotykem zakážete ladění.</string>
 </resources>

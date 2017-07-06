@@ -21,12 +21,23 @@
   <!-- Button to reboot the phone into recovery in restart menu-->
   <!-- Button to reboot the phone into bootloader in restart menu -->
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Soft reštart</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Váš tablet sa reštartuje.</string>
+  <string name="reboot_confirm" product="default">Váš telefón sa reštartuje.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">Reštartovanie\u2026</string>
   <string name="reboot_systemui">Reštartovať grafické rozhranie (SystemUI)</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Aktuálne</string>
+  <string name="global_action_screenshot">Snímka obrazovky</string>
+  <string name="global_action_screen_record">Záznam obrazovky</string>
+  <string name="global_action_search">Hladať</string>
   <string name="global_action_torch">Baterka</string>
+  <string name="global_action_voicesearch">Hlasové vyhľadávanie</string>
+  <string name="permlab_preventpower">zmeniť funkciu tlačidla Napájanie</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Umožní aplikácii zmeniť správanie tlačidla Napájanie.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Váš dodávateľ image sa nezhoduje so systémom. Prosím flash image <xliff:g id="string">%s</xliff:g> pre vaše zariadenie.</string>
   <!-- AOKP custom system animations -->
@@ -46,6 +57,7 @@
   <string name="animation_grow_shrink_right">Zväčšenie (sprava)</string>
   <string name="action_null">Prázdne</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">Bol zistený nesúlad v systémových ovládačoch. Zvyčajne to znamená že ovládače sú zastarané. Skontrolujte, či ovládače zodpovedajú <xliff:g id="fingerprint">%1$s </xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">obnoviť štatistiky batérie</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -55,4 +67,6 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">ADB cez sieť je povolené</string>
+  <string name="adb_active_generic_notification_message">Dotykom zakážate ladenie.</string>
 </resources>

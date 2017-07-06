@@ -17,9 +17,13 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">You</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">You</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Reboot_recovery</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
   <!-- Reboot Confirmation Dialog. -->
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->

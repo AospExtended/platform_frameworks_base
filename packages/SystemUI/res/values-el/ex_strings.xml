@@ -17,69 +17,89 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">Κλήση</string>
+  <string name="stream_title_system">Σύστημα</string>
+  <string name="stream_title_ring">Κουδούνισμα</string>
+  <string name="stream_title_media">Πολυμέσα</string>
+  <string name="stream_title_alarm">Ξυπνητήρι</string>
+  <string name="stream_title_notification">Ειδοποίηση</string>
+  <string name="stream_title_bluetooth">Bluetooth</string>
   <!-- Wi-Fi hotspot label when enabled -->
+  <plurals name="wifi_hotspot_connected_clients_label">
+    <item quantity="one">%1$d συνδεδεμένος</item>
+    <item quantity="other">%1$d συνδεδεμένοι</item>
+  </plurals>
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
   <!-- Path for battery solid -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- Screenrecord Notification Ticker -->
-  <string name="screenrecord_notif_ticker">Η οθόνη καταγράφεται</string>
+  <string name="screenrecord_notif_ticker">Πραγματοποιείται βιντεοσκόπηση της οθόνης</string>
   <!-- Screenrecord notification title -->
-  <string name="screenrecord_notif_title">Καταγραφή οθόνης</string>
+  <string name="screenrecord_notif_title">Βιντεοσκόπηση οθόνης</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Διακοπή</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Εμφάνιση δείκτη</string>
   <string name="screenrecord_notif_pointer_off">Απόκρυψη δείκτη</string>
   <!-- Screen record notification error title -->
-  <string name="screenrecord_notif_error">Δεν είναι δυνατή η καταγραφή οθόνης</string>
+  <string name="screenrecord_notif_error">Δεν είναι δυνατή η βιντεοσκόπηση της οθόνης</string>
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Το στιγμιότυπο οθόνης διαγράφηκε</string>
   <!-- Screenrecord QS tile -->
-  <string name="quick_settings_screenrecord">Εγγραφή οθόνης</string>
-  <string name="quick_settings_screenrecord_on">Εγγραφή ...</string>
+  <string name="quick_settings_screenrecord">Βιντεοσκόπηση οθόνης</string>
+  <string name="quick_settings_screenrecord_on">Βιντεοσκόπηση ...</string>
   <!-- Language\Locale Tile -->
   <string name="quick_settings_locale_label">Γλώσσα</string>
   <string name="quick_settings_locale_more_locales_toast">Παρακαλούμε ρυθμίστε πολλαπλές γλώσσες για να ενεργοποιήσετε τη λειτουργία εναλλαγής</string>
   <!-- NavBar Tuner -->
+  <string name="menu_ime_always_show">Εναλλαγή μενού/πληκτρολογίου (εμφάνιση πάντα)</string>
+  <string name="search">Αναζήτηση</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">Σύρετε προς τα δεξιά για %1$s</string>
   <string name="right_shortcut_hint">Σύρετε προς τα αριστερά για %1$s</string>
-  <string name="lockscreen_message">Πιέστε ένα εικονίδιο στα αριστερά ή στα δεξιά για να αντιστοιχίσετε μια συντόμευση οθόνης κλειδώματος.</string>
-  <string name="lockscreen_default_target">Προεπιλογή</string>
-  <string name="select_application">Επιλογή εφαρμογής</string>
+  <string name="lockscreen_message">Πιέστε ένα εικονίδιο στα αριστερά ή στα δεξιά για να αναθέσετε μια συντόμευση οθόνης κλειδώματος.</string>
+  <string name="lockscreen_default_target">Προεπιλεγμένο</string>
+  <string name="select_application">Επιλέξτε εφαρμογή</string>
   <string name="lockscreen_choose_action_title">Επιλέξτε ενέργεια</string>
   <string name="lockscreen_none_target">Καμιά</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">Ήχος</string>
+  <string name="quick_settings_sound_ring">Κουδούνισμα</string>
   <string name="quick_settings_sound_vibrate">Δόνηση</string>
   <string name="quick_settings_sound_dnd">Μην ενοχλείτε</string>
   <!-- Ambient Display QS tile -->
-  <string name="accessibility_quick_settings_ambient_display_off">Οθόνη ambient ανενεργή.</string>
-  <string name="accessibility_quick_settings_ambient_display_on">Οθόνη περιβάλλοντος ενεργοποιημένη</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_off">Η Οθόνη περιβάλλοντος είναι απενεργοποιημένη</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_on">Η Οθόνη περιβάλλοντος είναι ενεργοποιημένη</string>
-  <string name="quick_settings_ambient_display_label">Οθόνη ambient</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Οθόνη Ambient ανενεργή.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Οθόνη Ambient ενεργή</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Η Οθόνη Ambient απενεργοποιήθηκε</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Η Οθόνη Ambient ενεργοποιήθηκε</string>
+  <string name="quick_settings_ambient_display_label">Οθόνη Ambient</string>
+  <string name="quick_settings_extensions">Επεκτάσεις</string>
   <!-- Screenshot Crop & Share -->
-  <string name="action_delete_success">Διαγράφηκαν</string>
-  <string name="action_delete_fault">Η διαγραφή απέτυχε</string>
-  <string name="action_save_success">Αποθήκευση επιτυχής</string>
-  <string name="action_save_fault">Η αποθήκευση απέτυχε</string>
-  <string name="pref_action_color_title">Χρώμα κουμπιών δράσης</string>
-  <string name="pref_action_color_summary">Επέλεξε το αγαπημένο σου χρώμα για τα κουμπιά δράσης</string>
+  <string name="action_delete_success">Επιτυχής Διαγραφή</string>
+  <string name="action_delete_fault">Αποτυχία Διαγραφής</string>
+  <string name="action_save_success">Επιτυχής Αποθήκευση</string>
+  <string name="action_save_fault">Αποτυχία Αποθήκευσης</string>
+  <string name="pref_action_color_title">Χρώμα πλήκτρων ενεργειών</string>
+  <string name="pref_action_color_summary">Επιλέξτε το αγαπημένο σας χρώμα για τα πλήκτρα ενεργειών</string>
   <string name="pref_category_main">Βασικές Ρυθμίσεις</string>
-  <string name="pref_category_user">Ρυθμίσεις χρήστη</string>
+  <string name="pref_category_user">Ρυθμίσεις Χρήστη</string>
   <string name="pref_crop_behavior_title">Συμπεριφορά αποκοπής</string>
   <string name="pref_crop_behavior_summary">Χρήση της περικομμένης εικόνας, ακόμη και αν η αρχική δεν έχει περικοπεί με την ενέργεια περικοπής εικόνας</string>
-  <string name="action_ok">Αποδοχή</string>
+  <string name="action_ok">ΟΚ</string>
   <!-- Screenshot Crop & Share -->
-  <string name="action_delete_success">Διαγράφηκαν</string>
-  <string name="action_delete_fault">Η διαγραφή απέτυχε</string>
-  <string name="action_save_success">Αποθήκευση επιτυχής</string>
-  <string name="action_save_fault">Η αποθήκευση απέτυχε</string>
+  <string name="action_delete_success">Επιτυχής Διαγραφή</string>
+  <string name="action_delete_fault">Αποτυχία Διαγραφής</string>
+  <string name="action_save_success">Επιτυχής Αποθήκευση</string>
+  <string name="action_save_fault">Αποτυχία Αποθήκευσης</string>
   <string name="action_edit">Επεξεργασία</string>
+  <string name="quick_settings_expanded_navigation_off">Απόκρυψη γραμμής πλοήγησης</string>
+  <string name="quick_settings_expanded_statusbar_off">Απόκρυψη γραμμής κατάστασης</string>
   <!-- Notification which notifies user flashlight is enabled -->
+  <string name="quick_settings_tile_flashlight_not_title">Ο φακός είναι ενεργός</string>
+  <string name="quick_settings_tile_flashlight_not_summary">Πατήστε για απενεργοποίηση</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
@@ -87,7 +107,9 @@
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Το στιγμιότυπο οθόνης διαγράφηκε</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_pnc_title">Στοιχεία ελέγχου ειδοποίησης ισχύος</string>
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">Στιγμιότυπο οθόνης</string>
   <string name="quick_settings_region_screenshot_label">Μερικό στιγμιότυπο οθόνης</string>
   <string name="quick_settings_sync_label">Συγχρονισμός</string>
   <string name="accessibility_quick_settings_sync_off">Συγχρονισμός ανενεργός</string>
@@ -96,40 +118,49 @@
   <string name="accessibility_quick_settings_sync_changed_on">Ο συγχρονισμός ενεργοποιήθηκε</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Επανεκκίνηση</string>
-  <string name="accessibility_quick_settings_usb_tether_off">USB tethering ανενεργό</string>
-  <string name="accessibility_quick_settings_usb_tether_on">USB tethering ενεργό</string>
-  <string name="accessibility_quick_settings_usb_tether_changed_off">Το USB tethering απενεργοποιήθηκε</string>
-  <string name="accessibility_quick_settings_usb_tether_changed_on">Το USB tethering ενεργοποιήθηκε</string>
-  <string name="quick_settings_usb_tether_label">USB tethering</string>
+  <string name="quick_settings_reboot_recovery_label">Ανάκτηση / Recovery</string>
+  <string name="accessibility_quick_settings_usb_tether_off">Πρόσδεση USB ανενεργή</string>
+  <string name="accessibility_quick_settings_usb_tether_on">Πρόσδεση USB ενεργή</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">Η πρόσδεση USB απενεργοποιήθηκε</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">Η πρόσδεση USB ενεργοποιήθηκε</string>
+  <string name="quick_settings_usb_tether_label">Πρόσδεση USB</string>
   <string name="quick_settings_music_label">Μουσική</string>
   <string name="quick_settings_music_play">Αναπαραγωγή</string>
   <string name="quick_settings_music_pause">Παύση</string>
-  <string name="quick_settings_ime_tile_label">Μέθοδος εισόδου</string>
+  <string name="quick_settings_ime_tile_label">Μέθοδος εισαγωγής</string>
   <string name="quick_settings_caffeine_label">Καφεΐνη</string>
   <string name="accessibility_quick_settings_caffeine_off">Καφεΐνη ανενεργή</string>
   <string name="accessibility_quick_settings_caffeine_on">Καφεΐνη ενεργή</string>
   <string name="quick_settings_heads_up_label">Αναδυόμενες ειδοποιήσεις</string>
   <string name="accessibility_quick_settings_heads_up_off">Αναδυόμενες ειδοποιήσεις ανενεργές</string>
   <string name="accessibility_quick_settings_heads_up_on">Αναδυόμενες ειδοποιήσεις ενεργές</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">Οι Αναδυόμενες ειδοποιήσεις είναι ανενεργές</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">Οι Αναδυόμενες ειδοποιήσεις είναι ενεργές</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Οι Αναδυόμενες ειδοποιήσεις απενεργοποιήθηκαν.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Οι Αναδυόμενες ειδοποιήσεις ενεργοποιήθηκαν.</string>
   <string name="quick_settings_pulse_enabled">Παλμός ενεργός</string>
   <string name="quick_settings_pulse_disabled">Χωρίς οπτικοποίηση</string>
   <string name="quick_settings_pulse_label">Οπτικοποιητής γραμμής πλοήγησης</string>
   <string name="quick_settings_nfc_label">NFC</string>
+  <string name="accessibility_quick_settings_nfc_off">NFC ανενεργό</string>
+  <string name="accessibility_quick_settings_nfc_on">NFC ενεργό</string>
+  <string name="accessibility_quick_settings_nfc_changed_off">Το NFC απενεργοποιήθηκε</string>
+  <string name="accessibility_quick_settings_nfc_changed_on">Το NFC ενεργοποιήθηκε</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_statusbar_title">Στοιχεία γραμμής κατάστασης</string>
   <string name="accessibility_quick_settings_location_battery_saving">Αναφορά τοποθεσίας: λειτουργία εξοικονόμησης μπαταρίας.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Αναφορά τοποθεσίας: λειτουργία μόνο αισθητήρων.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Αναφορά τοποθεσίας: λειτουργία μόνο των αισθητήρων.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Αναφορά τοποθεσίας: λειτουργία υψηλής ακρίβειας.</string>
   <string name="accessibility_quick_settings_location_changed_battery_saving">Η αναφορά τοποθεσίας άλλαξε σε λειτουργία εξοικονόμησης μπαταρίας.</string>
-  <string name="accessibility_quick_settings_location_changed_gps_only">Η αναφορά τοποθεσίας άλλαξε σε λειτουργία μόνο αισθητήρων.</string>
+  <string name="accessibility_quick_settings_location_changed_gps_only">Η αναφορά τοποθεσίας άλλαξε σε λειτουργία μόνο των αισθητήρων.</string>
   <string name="accessibility_quick_settings_location_changed_high_accuracy">Η αναφορά τοποθεσίας άλλαξε σε λειτουργία υψηλής ακρίβειας.</string>
   <string name="quick_settings_location_detail_title">Λειτουργία τοποθεσίας</string>
   <string name="quick_settings_location_battery_saving_label">Εξοικονόμηση μπαταρίας</string>
-  <string name="quick_settings_location_gps_only_label">Συσκευή μόνο</string>
+  <string name="quick_settings_location_gps_only_label">Μόνο συσκευή</string>
   <string name="quick_settings_location_high_accuracy_label">Υψηλή ακρίβεια</string>
-  <string name="quick_settings_location_off_label">Τοποθεσία κλειστή</string>
+  <string name="quick_settings_location_off_label">Τοποθεσία ανενεργή</string>
   <!-- Show lte/4g switch -->
+  <string name="show_lte_fourgee_title">Εμφάνιση 4G αντί για LTE</string>
+  <string name="show_lte_fourgee_summary">Στην γραμμή κατάστασης αντικαθιστά την ένδειξη LTE με 4G</string>
+  <string name="statusbar_tuner_category_title">Απόκρυψη στοιχείων από την γραμμή κατάστασης</string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">Γραμμή πλοήγησης</string>
   <string name="quick_settings_smartbar">Έξυπνη μπάρα</string>
@@ -137,47 +168,49 @@
   <string name="quick_settings_fling">Ρίψιμο</string>
   <string name="quick_settings_fling_off">Ρίψιμο ανενεργό</string>
   <!-- Screenshot action -->
-  <string name="screenshot_abort_title">Δεν λήφθηκε στιγμιότυπο οθόνης</string>
+  <string name="screenshot_abort_title">Δεν ελήφθη στιγμιότυπο οθόνης</string>
   <string name="screenshot_abort_text">Η λειτουργία ματαιώθηκε</string>
-  <string name="quick_settings_expanded_desktop_label">Εκτεταμένη Επιφ. Εργασίας</string>
-  <string name="quick_settings_expanded_desktop">Επεκταμένο</string>
-  <string name="quick_settings_expanded_desktop_off">Κανονικό</string>
+  <string name="quick_settings_expanded_desktop_label">Εκτεταμένη Επιφάνεια Εργασίας</string>
+  <string name="quick_settings_expanded_desktop">Εκτεταμένη</string>
+  <string name="quick_settings_expanded_desktop_off">Κανονική</string>
   <!-- Heads up snooze toast -->
-  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Ή peeking ειδοποίηση αναβάλλεται για 1 λεπτό.</string>
-  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Ή peeking ειδοποιήσεις αναβάλλονται για <xliff:g id="number">%d</xliff:g> λεπτά.</string>
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Η σιωπηρή ειδοποίηση αναβάλλεται για 1 λεπτό.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Οι σιωπηρές ειδοποιήσεις αναβάλλονται για <xliff:g id="number">%d</xliff:g> λεπτά.</string>
   <!-- Path data for big circle battery -->
   <string name="recents_free_ram">Ελεύθερη μνήμη RAM: %1$d MB</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Άνοιγμα της οθόνης Εκτελούμενων Υπηρεσιών</string>
   <!-- volte icon switch -->
-  <string name="status_bar_volte">VOLTE</string>
+  <string name="status_bar_volte">VoLTE</string>
   <!-- Data/Wifi activity arrows -->
+  <string name="data_wifi_activity_arrows_title">Δραστηριότητα δικτύου</string>
   <!-- OmniJaws -->
   <string name="omnijaws_service_error">Σφάλμα</string>
   <string name="omnijaws_service_unkown">Δεν υπάρχουν δεδομένα καιρού</string>
   <string name="omnijaws_service_error_long">Σφάλμα κατά τη φόρτωση δεδομένων καιρού</string>
-  <string name="omnijaws_service_disabled">Η υπηρεσία απενεργοποιήθηκε</string>
+  <string name="omnijaws_service_disabled">Η υπηρεσία είναι ανενεργή</string>
   <string name="omnijaws_detail_header">Καιρός</string>
   <string name="omnijaws_label_default">Καιρός</string>
   <string name="omnijaws_current_text">Τώρα</string>
-  <string name="omnijaws_package_not_available">Τα OmniJaws δεν είναι διαθέσιμα</string>
+  <string name="omnijaws_package_not_available">Το OmniJaws δεν είναι διαθέσιμο</string>
   <!-- Weather string format in expanded statusbar header -->
   <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g> - <xliff:g id="condition">%2$s</xliff:g></string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Πυξίδα</string>
   <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
-  <string name="quick_settings_compass_init">Προετοιμασία\u2026</string>
+  <string name="quick_settings_compass_init">Προετοιμασία...</string>
   <string name="accessibility_quick_settings_compass_off">Πυξίδα ανενεργή.</string>
   <string name="accessibility_quick_settings_compass_on">Πυξίδα ενεργή.</string>
   <string name="accessibility_quick_settings_compass_changed_off">Η πυξίδα απενεργοποιήθηκε.</string>
   <string name="accessibility_quick_settings_compass_changed_on">Η πυξίδα ενεργοποιήθηκε.</string>
-  <string name="quick_settings_compass_N">N</string>
-  <string name="quick_settings_compass_NE">NE</string>
-  <string name="quick_settings_compass_E">E</string>
-  <string name="quick_settings_compass_SE">SE</string>
-  <string name="quick_settings_compass_S">S</string>
-  <string name="quick_settings_compass_SW">SW</string>
-  <string name="quick_settings_compass_W">W</string>
-  <string name="quick_settings_compass_NW">NW</string>
+  <string name="quick_settings_compass_N">Β</string>
+  <string name="quick_settings_compass_NE">ΒΑ</string>
+  <string name="quick_settings_compass_E">Α</string>
+  <string name="quick_settings_compass_SE">ΝΑ</string>
+  <string name="quick_settings_compass_S">Ν</string>
+  <string name="quick_settings_compass_SW">ΝΔ</string>
+  <string name="quick_settings_compass_W">Δ</string>
+  <string name="quick_settings_compass_NW">ΒΔ</string>
   <!-- Sim recents -->
   <string name="recents_multiwin_warning">Μια συνεδρία πολλαπλών παραθύρων είναι ήδη ενεργή. \nΑπλώς πατήστε μια εφαρμογή εάν θέλετε να τη συνδέσετε τώρα.</string>
   <string name="recents_multiwin_nolastapp">Έχετε καταργήσει όλα τα πρόσφατα, παρακαλούμε επιλέξτε μια εφαρμογή από τον εκκινητή ή το συρτάρι εφαρμογών.</string>
@@ -186,12 +219,12 @@
   <string name="onthego_notif_title">Η λειτουργία On-The-Go είναι ενεργή</string>
   <string name="onthego_notif_stop">Διακοπή</string>
   <string name="onthego_notif_options">Επιλογές</string>
-  <string name="onthego_notif_error">Αδυναμία εκκίνησης On the go</string>
-  <string name="onthego_notif_restart">Επανεκκίνηση On the go</string>
+  <string name="onthego_notif_error">Αδυναμία εκκίνησης On-The-Go</string>
+  <string name="onthego_notif_restart">Επανεκκίνηση On-The-Go</string>
   <string name="onthego_notif_camera_changed">Η λειτουργία κάμερας άλλαξε</string>
   <string name="onthego_transparency">Διαφάνεια</string>
-  <string name="onthego_front_camera">Χρησιμοποίησε τη μπροστινή κάμερα</string>
-  <string name="onthego_service_toggle">Αυτόματη επανεκκίνηση υπηρεσιών</string>
+  <string name="onthego_front_camera">Χρησιμοποίησε την μπροστινή κάμερα</string>
+  <string name="onthego_service_toggle">Αυτόματη επανεκκίνηση υπηρεσίας</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Ταχεία φόρτιση (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> για πλήρη φόρτιση)</string>
   <string name="keyguard_plugged_in_dash_charging">Ταχεία Φόρτιση</string>
@@ -200,8 +233,10 @@
   <string name="accessibility_quick_settings_hwkeys_off">Φυσικά πλήκτρα ανενεργά</string>
   <string name="quick_settings_hwkeys_label">Φυσικά πλήκτρα</string>
   <!-- AEX Logo -->
+  <string name="status_bar_aex_logo_title">Λογότυπος AEX</string>
+  <string name="status_bar_aex_logo_summary">Ενεργοποίηση για να εμφανίζεται ο λογότυπος AEX στην αριστερή πλευρά της γραμμής κατάστασης</string>
   <!-- ADB over network Tile -->
-  <string name="quick_settings_adb_network">Δίκτυο ADB</string>
-  <string name="quick_settings_network_adb_enabled_label">Ενεργοποιημένο</string>
-  <string name="quick_settings_network_adb_disabled_label">Απενεργοποιημένο</string>
+  <string name="quick_settings_adb_network">ADB μέσω δικτύου</string>
+  <string name="quick_settings_network_adb_enabled_label">Ενεργό</string>
+  <string name="quick_settings_network_adb_disabled_label">Ανενεργό</string>
 </resources>

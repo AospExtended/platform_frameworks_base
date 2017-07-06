@@ -17,16 +17,31 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">إعادة التشغيل</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">إعادة التشغيل</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">نظام الاسترجاع</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">محمل الاقلاع</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">إعادة تشغيل سريع</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">سيتم إعادة تشغيل جهازك اللوحي.</string>
+  <string name="reboot_confirm" product="default">سيتم إعادة تشغيل هاتفك.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">جارٍ إعادة التشغيل…</string>
   <string name="reboot_systemui">اعادة تشغيل واجهة النظام</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">الحالي</string>
+  <string name="global_action_screenshot">تصوير الشاشة</string>
+  <string name="global_action_screen_record">تسجيل فيديو للشاشة</string>
+  <string name="global_action_search">بحث</string>
   <string name="global_action_torch">الكشاف</string>
+  <string name="global_action_voicesearch">البحث الصوتي</string>
+  <string name="permlab_preventpower">تجاوز زر التشغيل</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">السماح لتطبيق ما بأن يقوم بتجاوز زر التشغيل.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">صورة المُصنِّع الخاصة بك لا تتطابق مع النظام، الرجاء شحن الـ <xliff:g id="string">%s</xliff:g> الصورة المصنعية الخاصة بجهازك</string>
   <!-- AOKP custom system animations -->
@@ -46,13 +61,19 @@
   <string name="animation_grow_shrink_right">النمو من (اليمين)</string>
   <string name="action_null">فارغ</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">تم اكتشاف صورة مورد غير مطابقة. عادةً هذا يعني أن صورة موردك غير محدثة. برجاء التأكد من تطابق صورة موردك <xliff:g id="fingerprint">%1$s </xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">إعادة تعيين إحصائيات البطارية</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_resetBatteryStats">السماح للتطبيق بإعادة تعيين بيانات استخدام بطارية ذات المستوى المنخفض الحالي.</string>
   <!-- On-The-Go -->
-  <string name="global_action_onthego">وضع على الذهاب</string>
+  <string name="global_action_onthego">وضع \'أثناء التنقل\'</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">تزييف التوقيع الرقمي للحزمة</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">يسمح للتطبيق بالتظاهر بأنه تطبيق آخر. يمكن للتطبيقات الخبيثة أن تستخدم البيانات الخاصة للتطبيق. توخٙ الحذر عند منح هذا الإذن!</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">تمكين ADB عبر الشبكة</string>
+  <string name="adb_both_active_notification_title">تمكين ADB عبر USB وعبر الشبكة</string>
+  <string name="adb_active_generic_notification_message">إلمس لتعطيل نظام التصحيح.</string>
 </resources>

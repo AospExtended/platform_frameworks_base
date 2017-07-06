@@ -17,21 +17,37 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">الاتصال</string>
+  <string name="stream_title_system">النظام</string>
+  <string name="stream_title_ring">الرنين</string>
+  <string name="stream_title_media">الوسائط</string>
+  <string name="stream_title_alarm">المنبه</string>
+  <string name="stream_title_notification">الإشعارات</string>
+  <string name="stream_title_bluetooth">البلوتوث</string>
   <!-- Wi-Fi hotspot label when enabled -->
+  <plurals name="wifi_hotspot_connected_clients_label">
+    <item quantity="zero">لا يوجد أجهزة متصلة</item>
+    <item quantity="one">%1$d جهاز متصل</item>
+    <item quantity="two">%1$d جهاز متصل</item>
+    <item quantity="few">%1$d جهاز متصل</item>
+    <item quantity="many">%1$d جهاز متصل</item>
+    <item quantity="other">%1$d جهاز متصل</item>
+  </plurals>
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
   <!-- Path for battery solid -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">+HSPA</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">يتم تسجيل الشاشة</string>
   <!-- Screenrecord notification title -->
-  <string name="screenrecord_notif_title">تسجيل الشاشة</string>
+  <string name="screenrecord_notif_title">جارٍ تسجيل الشاشة</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">إيقاف</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">اظهر المؤشر</string>
-  <string name="screenrecord_notif_pointer_off">اخفي المؤشر</string>
+  <string name="screenrecord_notif_pointer_off">اخفِ المؤشر</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">لا يمكن تسجيل الشاشة</string>
   <!-- Screenshot Delete Toast -->
@@ -41,19 +57,22 @@
   <string name="quick_settings_screenrecord_on">جار التسجيل...</string>
   <!-- Language\Locale Tile -->
   <string name="quick_settings_locale_label">اللغة</string>
-  <string name="quick_settings_locale_more_locales_toast">الرجاء إعداد تعدد اللغات لتمكين وظيفة مفتاح التبديل</string>
+  <string name="quick_settings_locale_more_locales_toast">قم بإعداد أكثر من لغة لتمكين مفتاح التبديل</string>
   <!-- NavBar Tuner -->
+  <string name="menu_ime_always_show">إظهار قائمة/مبدل لوحات المفاتيح (دائما)</string>
+  <string name="search">بحث</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">إسحب لليمين لـ %1$s</string>
   <string name="right_shortcut_hint">إسحب لليسار لـ %1$s</string>
-  <string name="lockscreen_message">انقر فوق الأيقونة على اليسار أو اليمين لإعادة تعيين اختصار قفل شاشة.</string>
+  <string name="lockscreen_message">انقر فوق الأيقونة على اليسار أو اليمين لإعادة تعيين اختصار شاشة القفل.</string>
   <string name="lockscreen_default_target">افتراضي</string>
   <string name="select_application">حدد التطبيق</string>
   <string name="lockscreen_choose_action_title">اختر الإجراء</string>
-  <string name="lockscreen_none_target">لاشيء</string>
+  <string name="lockscreen_none_target">لا شيء</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">الصوت</string>
-  <string name="quick_settings_sound_vibrate">هزاز</string>
+  <string name="quick_settings_sound_ring">الرنين</string>
+  <string name="quick_settings_sound_vibrate">اهتزاز</string>
   <string name="quick_settings_sound_dnd">عدم الإزعاج</string>
   <!-- Ambient Display QS tile -->
   <string name="accessibility_quick_settings_ambient_display_off">العرض المحيطي لا يعمل.</string>
@@ -61,6 +80,7 @@
   <string name="accessibility_quick_settings_ambient_display_changed_off">العرض المحيطي معطل</string>
   <string name="accessibility_quick_settings_ambient_display_changed_on">العرض المحيطي مغعل</string>
   <string name="quick_settings_ambient_display_label">العرض المحيطي</string>
+  <string name="quick_settings_extensions">الإضافات</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">تم الحذف</string>
   <string name="action_delete_fault">فشل الحذف</string>
@@ -79,7 +99,11 @@
   <string name="action_save_success">تم الحفظ</string>
   <string name="action_save_fault">الحفظ لم ينجح</string>
   <string name="action_edit">تحرير</string>
+  <string name="quick_settings_expanded_navigation_off">إخفاء شريط التنقل</string>
+  <string name="quick_settings_expanded_statusbar_off">إخفاء شريط الحالة</string>
   <!-- Notification which notifies user flashlight is enabled -->
+  <string name="quick_settings_tile_flashlight_not_title">الكشاف يعمل</string>
+  <string name="quick_settings_tile_flashlight_not_summary">انقر للإيقاف</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
@@ -87,7 +111,9 @@
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">تم حذف لقطة الشاشة</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_pnc_title">عناصر التحكم في الإشعارات</string>
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">تصوير الشاشة</string>
   <string name="quick_settings_region_screenshot_label">صورة جزئية للشاشة</string>
   <string name="quick_settings_sync_label">المزامنة</string>
   <string name="accessibility_quick_settings_sync_off">إيقاف المزامنة</string>
@@ -96,11 +122,12 @@
   <string name="accessibility_quick_settings_sync_changed_on">تم تشغيل المزامنة</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">إعادة التشغيل</string>
-  <string name="accessibility_quick_settings_usb_tether_off">ربط USB لا يعمل</string>
-  <string name="accessibility_quick_settings_usb_tether_on">ربط USB لا يعمل</string>
-  <string name="accessibility_quick_settings_usb_tether_changed_off">ربط USB معطل</string>
-  <string name="accessibility_quick_settings_usb_tether_changed_on">ربط USB مفعل</string>
-  <string name="quick_settings_usb_tether_label">ربط USB</string>
+  <string name="quick_settings_reboot_recovery_label">نظام الاسترجاع</string>
+  <string name="accessibility_quick_settings_usb_tether_off">الإنترنت عبر USB لا يعمل</string>
+  <string name="accessibility_quick_settings_usb_tether_on">الانترنت عبر USB يعمل</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">تم إيقاف الانترنت عبر USB</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">تم تشغيل الانترنت عبر USB</string>
+  <string name="quick_settings_usb_tether_label">الانترنت عبر USB</string>
   <string name="quick_settings_music_label">موسيقى</string>
   <string name="quick_settings_music_play">تشغيل</string>
   <string name="quick_settings_music_pause">إيقاف مؤقت</string>
@@ -111,16 +138,21 @@
   <string name="quick_settings_heads_up_label">الإشعارات العلوية</string>
   <string name="accessibility_quick_settings_heads_up_off">إيقاف الإشعارات العلوية</string>
   <string name="accessibility_quick_settings_heads_up_on">الإشعارات العلوية تعمل</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">الإشعارات العلوية معطلة</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">الإشعارات العلوية مغعلة</string>
-  <string name="quick_settings_pulse_enabled">النبض مفعل</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">تم تعطيل الإشعارات العلوية.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">تم تفعيل الإشعارات العلوية.</string>
+  <string name="quick_settings_pulse_enabled">خاصية Pulse تعمل</string>
   <string name="quick_settings_pulse_disabled">لا مؤثرات بصرية</string>
   <string name="quick_settings_pulse_label">المؤثرات البصرية لشريط التنقل</string>
   <string name="quick_settings_nfc_label">تقنية الاتصال قريب المدى (NFC)</string>
+  <string name="accessibility_quick_settings_nfc_off">NFC معطل.</string>
+  <string name="accessibility_quick_settings_nfc_on">NFC مفعّل.</string>
+  <string name="accessibility_quick_settings_nfc_changed_off">تم إيقاف NFC.</string>
+  <string name="accessibility_quick_settings_nfc_changed_on">تم تشغيل NFC.</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_statusbar_title">عناصر شريط الحالة</string>
   <string name="accessibility_quick_settings_location_battery_saving">تقرير الموقع: وضعية توفير الطاقة.</string>
   <string name="accessibility_quick_settings_location_gps_only">تقرير الموقع: وضعية الحساسات فقط.</string>
-  <string name="accessibility_quick_settings_location_high_accuracy">تقرير الموقع: وضعية وضعية الدقة العالية.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">تقرير الموقع: وضعية الدقة العالية.</string>
   <string name="accessibility_quick_settings_location_changed_battery_saving">تقرير الموقع: تغيّر لوضعية توفير البطارية.</string>
   <string name="accessibility_quick_settings_location_changed_gps_only">تقرير الموقع: تغيّر لوضعية الحساسات ففط.</string>
   <string name="accessibility_quick_settings_location_changed_high_accuracy">تقرير الموقع: تغيّر لوضعية الدقة العالية.</string>
@@ -130,6 +162,9 @@
   <string name="quick_settings_location_high_accuracy_label">دقة عالية</string>
   <string name="quick_settings_location_off_label">الموقع لا يعمل</string>
   <!-- Show lte/4g switch -->
+  <string name="show_lte_fourgee_title">إظهار 4G بدلاً من LTE</string>
+  <string name="show_lte_fourgee_summary">يستبدل مؤشر LTE في شريط الحالة بـ 4G</string>
+  <string name="statusbar_tuner_category_title">إخفاء عناصر من شريط الحالة</string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">شريط التنقل</string>
   <string name="quick_settings_smartbar">الشريط الذكي</string>
@@ -148,9 +183,11 @@
   <!-- Path data for big circle battery -->
   <string name="recents_free_ram">ذاكرة الوصول العشوائي الحرة: %1$d ميغابايت</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">فتح شاشة الخدمات المشغلة في الخلفية.</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">الصوت عبر شبكة الجيل الرابع</string>
   <!-- Data/Wifi activity arrows -->
+  <string name="data_wifi_activity_arrows_title">نشاط الشبكة</string>
   <!-- OmniJaws -->
   <string name="omnijaws_service_error">خطأ</string>
   <string name="omnijaws_service_unkown">لا يوجد بيانات طقس</string>
@@ -161,15 +198,15 @@
   <string name="omnijaws_current_text">الان</string>
   <string name="omnijaws_package_not_available">OmniJaws غير متاح</string>
   <!-- Weather string format in expanded statusbar header -->
-  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s </xliff:g>-<xliff:g id="condition">%2$s </xliff:g></string>
+  <string name="status_bar_weather_format"><xliff:g id="الحرارة">%1$s </xliff:g>-<xliff:g id="الحالة">%2$s </xliff:g></string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">البوصلة</string>
   <string name="quick_settings_compass_value"><xliff:g id="درجات">%1$.0f</xliff:g>\u00b0 <xliff:g id="الإتجاه">%2$s</xliff:g></string>
   <string name="quick_settings_compass_init">تهيئة/u2026</string>
   <string name="accessibility_quick_settings_compass_off">البوصلة لا تعمل.</string>
   <string name="accessibility_quick_settings_compass_on">البوصلة تعمل.</string>
-  <string name="accessibility_quick_settings_compass_changed_off">البوصلة معطلة.</string>
-  <string name="accessibility_quick_settings_compass_changed_on">البوصلة مفعلة.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">تم تعطيل البوصلة.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">تم تفعيل البوصلة.</string>
   <string name="quick_settings_compass_N">ش</string>
   <string name="quick_settings_compass_NE">ش ش</string>
   <string name="quick_settings_compass_E">ش</string>
@@ -180,7 +217,7 @@
   <string name="quick_settings_compass_NW">ش غ</string>
   <!-- Sim recents -->
   <string name="recents_multiwin_warning">جلسة نوافذ متعددة نشطة حالياً.\n قم بالضغط على أحد التطبيقات لإرساءه الآن.</string>
-  <string name="recents_multiwin_nolastapp">لقد قمت بمسح جميع الحديثة، الرجاء إختيار تطبيق من المُشغل أو من درج التطبيقات.</string>
+  <string name="recents_multiwin_nolastapp">لقد قمت بإغلاق كل التطبيقات الحديثة، الرجاء إختيار تطبيق من المُشغل أو من درج التطبيقات.</string>
   <!-- On The Go -->
   <string name="onthego_notif_ticker">وضع On-The-Go مفعل</string>
   <string name="onthego_notif_title">تم تفعيل وضع On-The-Go</string>
@@ -191,7 +228,7 @@
   <string name="onthego_notif_camera_changed">تم تغيير وضع الكاميرا</string>
   <string name="onthego_transparency">الشفافية</string>
   <string name="onthego_front_camera">استخدام الكاميرا الأمامية</string>
-  <string name="onthego_service_toggle">تلقائياً إعادة تشغيل الخدمة</string>
+  <string name="onthego_service_toggle">إعادة تشغيل الخدمة تلقائيا</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">الشحن السريع (<xliff:g id="charging_time_left" example="4 ساعة و 2 دقيقة">%s</xliff:g> حتى الإمتلاء)</string>
   <string name="keyguard_plugged_in_dash_charging">الشحن السريع</string>
@@ -200,8 +237,10 @@
   <string name="accessibility_quick_settings_hwkeys_off">الأزرار الملموسة لا تعمل</string>
   <string name="quick_settings_hwkeys_label">الأزرار الملموسة</string>
   <!-- AEX Logo -->
+  <string name="status_bar_aex_logo_title">شعار AEX</string>
+  <string name="status_bar_aex_logo_summary">تمكين إظهار الشعار AEX على الجانب الأيسر من شريط الحالة</string>
   <!-- ADB over network Tile -->
-  <string name="quick_settings_adb_network">شبكة ADB</string>
+  <string name="quick_settings_adb_network">ADB عبر الشبكة</string>
   <string name="quick_settings_network_adb_enabled_label">مفعل</string>
   <string name="quick_settings_network_adb_disabled_label">معطل</string>
 </resources>

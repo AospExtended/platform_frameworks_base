@@ -43,6 +43,7 @@
   <string name="quick_settings_locale_label">语言</string>
   <string name="quick_settings_locale_more_locales_toast">请配置多种语言以使用切换功能</string>
   <!-- NavBar Tuner -->
+  <string name="search">搜索</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">向右滑动以 %1$s</string>
   <string name="right_shortcut_hint">向左滑动以%1$s</string>
@@ -88,6 +89,7 @@
   <string name="delete_screenshot_toast">屏幕截图已删除</string>
   <!-- SystemUI Tuner Parts -->
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">屏幕截图</string>
   <string name="quick_settings_region_screenshot_label">局部截图</string>
   <string name="quick_settings_sync_label">同步</string>
   <string name="accessibility_quick_settings_sync_off">关闭同步</string>
@@ -96,6 +98,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">同步已开启</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">重新启动</string>
+  <string name="quick_settings_reboot_recovery_label">恢复模式</string>
   <string name="accessibility_quick_settings_usb_tether_off">USB 网络共享关闭</string>
   <string name="accessibility_quick_settings_usb_tether_on">USB 网络共享开启</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">USB 网络共享已关闭</string>

@@ -17,21 +17,59 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">റീസ്റ്റാർട്ട്</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">റീസ്റ്റാർട്ട്</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">റിക്കവറി</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">ബൂട്ലോഡർ</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">സോഫ്റ്റ് റീസ്റ്റാർട്ട്</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">നിങ്ങളുടെ ടാബ്‌ലെറ്റ് ഉടൻ റീസ്റ്റാർട്ട് ആകുന്നതാണ്.</string>
+  <string name="reboot_confirm" product="default">നിങ്ങളുടെ ഫോണ്‍ ഉടൻ റീസ്റ്റാർട്ട് ആകുന്നതാണ്.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">റീസ്റ്റാർട്ട് ആയിക്കൊണ്ടിരിക്കുന്നു</string>
+  <string name="reboot_systemui">റീസ്റ്റാർട്ട് സിസ്റ്റംയുഐ</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">നിലവിൽ</string>
+  <string name="global_action_screenshot">സ്ക്രീൻഷോട്ട്</string>
+  <string name="global_action_screen_record">സ്‌ക്രീൻ റെക്കോർഡ്</string>
+  <string name="global_action_search">അന്വേഷിക്കുക</string>
+  <string name="global_action_torch">ടോർച്ച്</string>
+  <string name="global_action_voicesearch">ശബ്ദം അന്വേഷിക്കുക</string>
+  <string name="permlab_preventpower">പവർ കീ അസാധുവാക്കുക</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">ഈ ആപ്പിനെ പവർ കീ അസാധുവാക്കാൻ അനുവദിക്കുന്നു.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
+  <string name="system_error_vendorprint">നിങ്ങളുടെ വെണ്ടർ ഇമേജ് സിസ്റ്റത്തിൽ മാച് ആകുന്നില്ല.ദയവ് ചെയ്തു നിങ്ങളുടെ ഡിവൈസിനുള്ള <xliff:g id="string">%s</xliff:g> വെണ്ടർ ഇമേജ് ഫ്ലാഷ് ചെയ്യുക</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">മാഞ്ഞു പോവുക</string>
+  <string name="animation_slide_right">വലത്തോട്ടു തഴുകുക</string>
+  <string name="animation_slide_left">ഇടത്തോട്ടു തഴുകുക</string>
+  <string name="animation_slide_right_no_fade">വലത്തോട്ടു തഴുകുക(മായുന്നില്ല)</string>
+  <string name="animation_slide_left_no_fade">ഇടത്തോട്ടു തഴുകുക( മായാതെ)</string>
+  <string name="animation_slide_up">അടിയിൽ തഴുകുക</string>
+  <string name="animation_slide_down">മുകളിൽ തഴുകുക</string>
+  <string name="animation_default">സാധാ ഗതിയിലേക്ക്</string>
+  <string name="animation_translucent">ട്രാൻക്ലൂസെന്റ്</string>
+  <string name="animation_grow_shrink">വിരിയുക(മുകളിൽ നിന്ന്)</string>
+  <string name="animation_grow_shrink_center">വിരിയുക(നടുവിൽ നിന്ന്)</string>
+  <string name="animation_grow_shrink_bottom">വിരിയുക(അടിയിൽ നിന്ന്)</string>
+  <string name="animation_grow_shrink_left">വിരിയുക(ഇടത് നിന്ന്)</string>
+  <string name="animation_grow_shrink_right">വിരിയുക (വലത് നിന്നു)</string>
+  <string name="action_null">ലേഖശൂന്യമാക്കുക</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">ഒരു വെണ്ടർ ഇമേജ് പൊരുത്തമില്ലായ്‌മ കണ്ടെത്തിയിരിക്കുന്നു.നിങ്ങളുടെ വെണ്ടർ ഇമേജിന്റെ തീയതി കഴിഞ്ഞതാകാം.ദയവ് ചെയ്തു നിങ്ങളുടെ വെണ്ടർ ഇമേജ് ചേരുന്നതാണോ എന്നു പരിശോധിക്കുക <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_resetBatteryStats">ബാറ്ററി വിവരങ്ങൾ പുനർ ആരംഭിക്കുക</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_resetBatteryStats">ഒരു ആപ്പിനെ ഇപ്പോഴത്തെ ലോ ലെവൽ ബാറ്ററി ഉപയോഗ വിവരങ്ങൾ പുനർ ആരംഭിക്കാൻ അനുവദിക്കുന്നു.</string>
   <!-- On-The-Go -->
+  <string name="global_action_onthego">ഓണ്‍-ദി-ഗോ മോഡ്</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">ശരിയല്ലാത്ത പാക്കേജ് സിഗ്നേച്ചർ</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- ADB over network -->
 </resources>

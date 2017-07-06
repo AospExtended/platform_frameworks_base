@@ -17,16 +17,31 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Перезавантаження</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Перезавантаження</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Режим відновлення</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Режим завантажувача</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Програмне перезавантаження</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Ваш планшет буде перезавантажено.</string>
+  <string name="reboot_confirm" product="default">Ваш смартфон буде перезавантажено.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
-  <string name="reboot_systemui">Перезапуститити SystemUI</string>
+  <string name="reboot_progress">Перезавантаження\u2026</string>
+  <string name="reboot_systemui">Перезапустити SystemUI</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Поточний</string>
+  <string name="global_action_screenshot">Знімок екрану</string>
+  <string name="global_action_screen_record">Запис екрану</string>
+  <string name="global_action_search">Пошук</string>
   <string name="global_action_torch">Ліхтарик</string>
+  <string name="global_action_voicesearch">Голосовий пошук</string>
+  <string name="permlab_preventpower">знехтувати кнопкою живлення</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Дозволити додатку нехтувати кнопкою живлення.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Ваш постачальник образу не відповідає системі. Будь ласка, прошийте <xliff:g id="string">%s</xliff:g> постачальника образу для вашого пристрою</string>
   <!-- AOKP custom system animations -->
@@ -46,6 +61,7 @@
   <string name="animation_grow_shrink_right">Збільшення (праворуч)</string>
   <string name="action_null">Порожньо</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">Було знайдено неспівпадіння образу vendor. Зазвичай це означає, що Ваш розділ vendor потребує оновлення. Будь ласка, перейонайтесь, що Ваш образ vendor такий <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">скинути статистику акумулятора</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -53,6 +69,11 @@
   <!-- On-The-Go -->
   <string name="global_action_onthego">Режим «На ходу»</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Підробити підпис пакета</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Дозволяє додатку видавати себе за інший додаток. Небезпечні додатки можуть отримати доступ до приватних даних. Будьте обережні під час надання цього дозволу!</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">Увімкнено функцію ADB по мережі</string>
+  <string name="adb_both_active_notification_title">Функцію ADB по USB &amp; мережі увімкнено</string>
+  <string name="adb_active_generic_notification_message">Торкніться, аби вимкнути налагодження.</string>
 </resources>
