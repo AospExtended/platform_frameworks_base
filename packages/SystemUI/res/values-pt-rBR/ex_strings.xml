@@ -159,7 +159,7 @@
   <string name="quick_settings_location_off_label">Localização desativada</string>
   <!-- Show lte/4g switch -->
   <string name="show_lte_fourgee_title">Mostrar 4G ao invés de LTE</string>
-  <string name="show_lte_fourgee_summary">Alterar indicador do LTE na bara de status pelo 4G</string>
+  <string name="show_lte_fourgee_summary">Substitui o indicador LTE por 4G na barra de status</string>
   <string name="statusbar_tuner_category_title">Ocultar items da barra de status</string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">Barra de Navegação</string>

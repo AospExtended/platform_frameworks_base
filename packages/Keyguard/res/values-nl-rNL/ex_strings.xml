@@ -16,5 +16,5 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="weather_info_not_available">A información do tempo non está dipoñíbel</string>
+  <string name="weather_info_not_available">Geen weergegevens beschikbaar</string>
 </resources>
