@@ -3921,16 +3921,6 @@ public final class Settings {
 	     */
 	   public static final String WAKELOCK_BLOCKING_LIST = "wakelock_blocking_list";
 
-        /**
-         * Immersive recents options
-         *
-         * 0 = Default AOSP look
-         * 1 = Statusbar only
-         * 2 = Navbar only
-         * 3 = Fullscreen
-         */
-        public static final String IMMERSIVE_RECENTS = "immersive_recents";
-
           /**
           * Whether to show the battery info on the lockscreen while charging
           * @hide
