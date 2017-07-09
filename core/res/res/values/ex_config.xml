@@ -107,4 +107,22 @@
 
     <!-- Boost parameters which get passed to QPerformance -->
     <integer-array name="onbootboost_param_value"/>
+
+    <!-- Any package that has one of the package names defined below will be prevented
+         from using specific sensors in order to stop battery drain -->
+    <string-array name="config_blockPackagesSensorDrain">
+        <item>com.whatsapp</item>
+        <item>com.gbwhatsapp</item>
+        <item>com.yowhatsapp</item>
+        <item>com.whatsapp.plus</item>
+        <item>org.telegram.messenger</item>
+        <item>org.telegram.messenger.plus</item>
+        <item>org.thunderdog.challegram</item>
+        <item>com.snapchat.android</item>
+        <item>com.facebook.orca</item>
+        <item>com.facebook.katana</item>
+        <item>com.Slack</item>
+        <item>com.snapchat.android</item>
+    </string-array>
 </resources>
+
