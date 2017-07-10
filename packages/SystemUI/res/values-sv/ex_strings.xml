@@ -17,12 +17,23 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">Ring</string>
+  <string name="stream_title_system">System</string>
+  <string name="stream_title_ring">Ring</string>
+  <string name="stream_title_media">Media</string>
+  <string name="stream_title_alarm">Alarm</string>
+  <string name="stream_title_bluetooth">Bluetooth</string>
   <!-- Wi-Fi hotspot label when enabled -->
+  <plurals name="wifi_hotspot_connected_clients_label">
+    <item quantity="one">%1$d klient</item>
+    <item quantity="other">%1$d klienter</item>
+  </plurals>
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
   <!-- Path for battery solid -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Skärmen spelas in</string>
   <!-- Screenrecord notification title -->
@@ -43,6 +54,7 @@
   <string name="quick_settings_locale_label">Språk</string>
   <string name="quick_settings_locale_more_locales_toast">Konfigurera flera språk om du vill växla mellan funktioner</string>
   <!-- NavBar Tuner -->
+  <string name="search">Sök</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">Svep åt höger för %1$s</string>
   <string name="right_shortcut_hint">Svep åt vänster för %1$s</string>
@@ -53,6 +65,7 @@
   <string name="lockscreen_none_target">Ingen</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">Ljud</string>
+  <string name="quick_settings_sound_ring">Ring</string>
   <string name="quick_settings_sound_vibrate">Vibrera</string>
   <string name="quick_settings_sound_dnd">Stör ej</string>
   <!-- Ambient Display QS tile -->
@@ -61,6 +74,7 @@
   <string name="accessibility_quick_settings_ambient_display_changed_off">Omgivande skärm avstängd</string>
   <string name="accessibility_quick_settings_ambient_display_changed_on">Omgivande Display påslagen</string>
   <string name="quick_settings_ambient_display_label">Omgivande Display</string>
+  <string name="quick_settings_extensions">Tillägg</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">Raderad</string>
   <string name="action_delete_fault">Borttagning misslyckades</string>
@@ -79,7 +93,9 @@
   <string name="action_save_success">Sparat</string>
   <string name="action_save_fault">Sparandet misslyckades</string>
   <string name="action_edit">Redigera</string>
+  <string name="quick_settings_expanded_statusbar_off">Dölj statusfält</string>
   <!-- Notification which notifies user flashlight is enabled -->
+  <string name="quick_settings_tile_flashlight_not_summary">Tryck för att stänga av</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
@@ -88,6 +104,7 @@
   <string name="delete_screenshot_toast">Skärmdump raderad</string>
   <!-- SystemUI Tuner Parts -->
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">Skärmbild</string>
   <string name="quick_settings_region_screenshot_label">Partiell skärmdump</string>
   <string name="quick_settings_sync_label">Synkronisera</string>
   <string name="accessibility_quick_settings_sync_off">Synk av</string>
@@ -96,6 +113,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">Synk påslagen</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Starta om</string>
+  <string name="quick_settings_reboot_recovery_label">Återställning</string>
   <string name="accessibility_quick_settings_usb_tether_off">USB sammanlänkning av</string>
   <string name="accessibility_quick_settings_usb_tether_on">USB sammanlänkning på</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">USB sammanlänkning avstängd</string>
@@ -117,6 +135,10 @@
   <string name="quick_settings_pulse_disabled">Ingen Visualizer</string>
   <string name="quick_settings_pulse_label">Navigationsfältet Visualizer</string>
   <string name="quick_settings_nfc_label">NFC</string>
+  <string name="accessibility_quick_settings_nfc_off">NFC av.</string>
+  <string name="accessibility_quick_settings_nfc_on">NFC på.</string>
+  <string name="accessibility_quick_settings_nfc_changed_off">NFC avstängt.</string>
+  <string name="accessibility_quick_settings_nfc_changed_on">NFC aktiverat.</string>
   <!-- SystemUI Tuner Parts -->
   <string name="accessibility_quick_settings_location_battery_saving">Platsrapportering: batterisparläge.</string>
   <string name="accessibility_quick_settings_location_gps_only">Platsrapportering: endast sensorer</string>
@@ -151,6 +173,7 @@
   <!-- volte icon switch -->
   <string name="status_bar_volte">VOLTE</string>
   <!-- Data/Wifi activity arrows -->
+  <string name="data_wifi_activity_arrows_title">Nätverksaktivitet</string>
   <!-- OmniJaws -->
   <string name="omnijaws_service_error">Error</string>
   <string name="omnijaws_service_unkown">Ingen väderinfo</string>
@@ -200,6 +223,7 @@
   <string name="accessibility_quick_settings_hwkeys_off">Hårdvaruknappar av</string>
   <string name="quick_settings_hwkeys_label">Hårdvaruknappar</string>
   <!-- AEX Logo -->
+  <string name="status_bar_aex_logo_title">AEX-logotyp</string>
   <!-- ADB over network Tile -->
   <string name="quick_settings_adb_network">ADB över nätverk</string>
   <string name="quick_settings_network_adb_enabled_label">Aktiverad</string>

@@ -17,16 +17,31 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Uruchom ponownie</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Uruchom ponownie</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Odzyskiwanie</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Miękki restart</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Twój tablet zostanie zrestartowany.</string>
+  <string name="reboot_confirm" product="default">Twój telefon zostanie zrestartowany.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">Restartowanie\u2026</string>
   <string name="reboot_systemui">Uruchom ponownie SystemUI</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Obecny</string>
+  <string name="global_action_screenshot">Zrzut ekranu</string>
+  <string name="global_action_screen_record">Nagrywanie Ekranu</string>
+  <string name="global_action_search">Szukaj</string>
   <string name="global_action_torch">Latarka</string>
+  <string name="global_action_voicesearch">Wyszukiwanie głosowe</string>
+  <string name="permlab_preventpower">zastąp klawisz zasilania</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Zezwól aplikacji zastąpić przycisk zasilania.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Twój obraz dostawcy nie jest zgodny z systemem. Zainstaluj obraz <xliff:g id="string">%s</xliff:g> który jest zgodny</string>
   <!-- AOKP custom system animations -->
@@ -39,13 +54,14 @@
   <string name="animation_slide_down">Przesunięcie w górę</string>
   <string name="animation_default">Domyślne</string>
   <string name="animation_translucent">Przezroczysty</string>
-  <string name="animation_grow_shrink">Wyrastanie (z góry)</string>
+  <string name="animation_grow_shrink">Powiększanie (z góry)</string>
   <string name="animation_grow_shrink_center">Powiększenie (do środka)</string>
   <string name="animation_grow_shrink_bottom">Powiększenie (od dołu)</string>
   <string name="animation_grow_shrink_left">Powiększenie (z lewej)</string>
   <string name="animation_grow_shrink_right">Powiększenie (z prawej)</string>
   <string name="action_null">Pusty</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">Wykryto niezgodność obrazu dostawcy. Zazwyczaj oznacza to, że obraz twojego dostawcy nie jest aktualny. Upewnij się, że obraz odpowiada <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">resetowanie statystyk baterii</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -53,6 +69,11 @@
   <!-- On-The-Go -->
   <string name="global_action_onthego">Tryb \"W ruchu\"</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Fałszowanie podpisu pakietu</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Pozwala aplikacji udawać że jest inna aplikacją. Złośliwe aplikacje mogą użyć tego aby uzyskać prywatne dane aplikacji. Przyznaj to uprawnienie z ostrożnością!</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">ADB po sieci włączone</string>
+  <string name="adb_both_active_notification_title">ADB po USB &amp; sieć włączona</string>
+  <string name="adb_active_generic_notification_message">Dotknij, aby wyłączyć debugowanie.</string>
 </resources>

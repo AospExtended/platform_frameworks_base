@@ -18,7 +18,14 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="profile_applist_title">Aplikácie</string>
+  <string name="picker_activities">Aktivity</string>
+  <string name="select_custom_app_title">Vybrať vlastnú aplikáciu</string>
+  <string name="select_custom_activity_title">Vybrať vlastnú aktivitu</string>
+  <string name="lockscreen_targets_message">Odkazy na obrazovke uzamknutia</string>
   <!-- Description for the screen zoom level that makes interface elements smaller. [CHAR LIMIT=24] -->
+  <string name="screen_zoom_summary_smaller">Menšie</string>
   <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->
+  <string name="screen_zoom_summary_smallest">Najmenšie</string>
   <!-- Regex used to parse the processor string from kernel -->
 </resources>

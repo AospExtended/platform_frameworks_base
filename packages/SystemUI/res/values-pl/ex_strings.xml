@@ -17,12 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">Rozmowa</string>
+  <string name="stream_title_system">System</string>
+  <string name="stream_title_ring">Dzwonek</string>
+  <string name="stream_title_media">Media</string>
+  <string name="stream_title_alarm">Alarm</string>
+  <string name="stream_title_notification">Powiadomienie</string>
+  <string name="stream_title_bluetooth">Bluetooth</string>
   <!-- Wi-Fi hotspot label when enabled -->
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
   <!-- Path for battery solid -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Ekran jest nagrywany</string>
   <!-- Screenrecord notification title -->
@@ -43,6 +51,8 @@
   <string name="quick_settings_locale_label">Język</string>
   <string name="quick_settings_locale_more_locales_toast">Proszę skonfigurować wiele języków, aby włączyć funkcję przełączania</string>
   <!-- NavBar Tuner -->
+  <string name="menu_ime_always_show">Przełącznik Menu / Klawiatury (zawsze pokazuj)</string>
+  <string name="search">Szukaj</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">Przesuń w prawo, aby %1$s</string>
   <string name="right_shortcut_hint">Przesuń w lewo, aby %1$s</string>
@@ -53,6 +63,7 @@
   <string name="lockscreen_none_target">Brak</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">Dźwięk</string>
+  <string name="quick_settings_sound_ring">Dzwonek</string>
   <string name="quick_settings_sound_vibrate">Wibracje</string>
   <string name="quick_settings_sound_dnd">Nie przeszkadzać</string>
   <!-- Ambient Display QS tile -->
@@ -61,6 +72,7 @@
   <string name="accessibility_quick_settings_ambient_display_changed_off">Ekran dostosowany do otoczenia wyłączony</string>
   <string name="accessibility_quick_settings_ambient_display_changed_on">Ekran dostosowany do otoczenia włączony</string>
   <string name="quick_settings_ambient_display_label">Ekran dostosowany do otoczenia</string>
+  <string name="quick_settings_extensions">Rozszerzenia</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">Usunięto</string>
   <string name="action_delete_fault">Usuwanie nie powiodło się</string>
@@ -79,7 +91,11 @@
   <string name="action_save_success">Zapisano</string>
   <string name="action_save_fault">Zapisywanie nie powiodło się</string>
   <string name="action_edit">Edytuj</string>
+  <string name="quick_settings_expanded_navigation_off">Ukryj pasek nawigacji</string>
+  <string name="quick_settings_expanded_statusbar_off">Ukryj pasek stanu</string>
   <!-- Notification which notifies user flashlight is enabled -->
+  <string name="quick_settings_tile_flashlight_not_title">Latarka włączona</string>
+  <string name="quick_settings_tile_flashlight_not_summary">Stuknij aby wyłączyć</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
@@ -87,7 +103,9 @@
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Zrzut ekranu usunięty</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_pnc_title">Przełącznik powiadomień zasilania</string>
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">Zrzut ekranu</string>
   <string name="quick_settings_region_screenshot_label">Częściowy zrzut ekranu</string>
   <string name="quick_settings_sync_label">Synchronizacja</string>
   <string name="accessibility_quick_settings_sync_off">Synchronizacja wyłączona</string>
@@ -96,6 +114,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">Synchronizacja włączona</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Uruchom ponownie</string>
+  <string name="quick_settings_reboot_recovery_label">Odzyskiwanie</string>
   <string name="accessibility_quick_settings_usb_tether_off">Tethering USB wyłączony</string>
   <string name="accessibility_quick_settings_usb_tether_on">Tethering USB włączony</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">Tethering USB wyłączony</string>
@@ -117,7 +136,12 @@
   <string name="quick_settings_pulse_disabled">Brak wizualizacji</string>
   <string name="quick_settings_pulse_label">Wizualizacja na pasku nawigacji</string>
   <string name="quick_settings_nfc_label">NFC</string>
+  <string name="accessibility_quick_settings_nfc_off">NFC wył.</string>
+  <string name="accessibility_quick_settings_nfc_on">NFC wł.</string>
+  <string name="accessibility_quick_settings_nfc_changed_off">NFC wyłączone.</string>
+  <string name="accessibility_quick_settings_nfc_changed_on">NFC włączone.</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_statusbar_title">Ikony paska stanu</string>
   <string name="accessibility_quick_settings_location_battery_saving">Usługa lokalizacji: tryb oszczędzania baterii.</string>
   <string name="accessibility_quick_settings_location_gps_only">Usługa lokalizacji: tylko czujniki.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Raportowanie lokalizacji: wysoka dokładność.</string>
@@ -130,6 +154,9 @@
   <string name="quick_settings_location_high_accuracy_label">Wysoka dokładność</string>
   <string name="quick_settings_location_off_label">Lokalizacja wyłączona</string>
   <!-- Show lte/4g switch -->
+  <string name="show_lte_fourgee_title">Pokaż 4G zamiast LTE</string>
+  <string name="show_lte_fourgee_summary">Zastępuje wskaźnik LTE jako 4G</string>
+  <string name="statusbar_tuner_category_title">Ukrywanie elementów paska stanu</string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">Pasek nawigacji</string>
   <string name="quick_settings_smartbar">Inteligentny pasek</string>
@@ -148,9 +175,11 @@
   <!-- Path data for big circle battery -->
   <string name="recents_free_ram">Wolna pamięć RAM: %1$d MB</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Otwórz ekran Działających Usług.</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">VoLTE</string>
   <!-- Data/Wifi activity arrows -->
+  <string name="data_wifi_activity_arrows_title">Aktywność sieci</string>
   <!-- OmniJaws -->
   <string name="omnijaws_service_error">Błąd</string>
   <string name="omnijaws_service_unkown">Brak danych o pogodzie</string>
@@ -200,6 +229,8 @@
   <string name="accessibility_quick_settings_hwkeys_off">Klawisze sprzętowe wyłączone</string>
   <string name="quick_settings_hwkeys_label">Klawisze sprzętowe</string>
   <!-- AEX Logo -->
+  <string name="status_bar_aex_logo_title">Logo AEX</string>
+  <string name="status_bar_aex_logo_summary">Włącz aby pokazać logo AEX po lewej stronie paska stanu</string>
   <!-- ADB over network Tile -->
   <string name="quick_settings_adb_network">Sieć ADB</string>
   <string name="quick_settings_network_adb_enabled_label">Włączona</string>

@@ -17,15 +17,28 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Starta om</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Starta om</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Återställning</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Lätt omstart</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Din surfplatta kommer att startas om.</string>
+  <string name="reboot_confirm" product="default">Din telefon startas om.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">Startar om\u2026</string>
   <string name="reboot_systemui">Starta om SystemUI</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Nuvarande</string>
+  <string name="global_action_screenshot">Skärmbild</string>
+  <string name="global_action_screen_record">Skärminspelning</string>
+  <string name="global_action_search">Sök</string>
   <string name="global_action_torch">Ficklampa</string>
+  <string name="global_action_voicesearch">Röstsökning</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Din leverantörs bild matchar inte systemets. Vänligen flasha <xliff:g id="string">%s </xliff:g> leverantörsbild för din enhet</string>

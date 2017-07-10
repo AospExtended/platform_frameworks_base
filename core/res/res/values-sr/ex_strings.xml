@@ -17,16 +17,31 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Поново покрени</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Поново покрени</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Опоравак</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Покретач система</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Брзи рестарт</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Таблет ће бити поново покренут.</string>
+  <string name="reboot_confirm" product="default">Телефон ће бити поново покренут.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">Поново покрећем\u2026</string>
   <string name="reboot_systemui">Рестартуј Системски Интерфејс</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Тренутно</string>
+  <string name="global_action_screenshot">Снимак екрана</string>
+  <string name="global_action_screen_record">Снимање екрана</string>
+  <string name="global_action_search">Претражи</string>
   <string name="global_action_torch">Лампа</string>
+  <string name="global_action_voicesearch">Гласовна претрага</string>
+  <string name="permlab_preventpower">премости дугме напајања</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Дозвољава апликацији да премости дугме напајања.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Ваш имиџ система добављача не одговара систему. Флешујте <xliff:g id="string">%s</xliff:g> имиџ добављача за ваш уређај</string>
   <!-- AOKP custom system animations -->
@@ -46,6 +61,7 @@
   <string name="animation_grow_shrink_right">Раст (удесно)</string>
   <string name="action_null">Празно</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">Откривено је неподударање слике добављача. Обично ово значи да је слици добављача истекао рок. Увери се да се слика добављача подудара са <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">ресетуј статистику батерије</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -53,6 +69,11 @@
   <!-- On-The-Go -->
   <string name="global_action_onthego">Режим у-покрету</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">имитира потпис пакета</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Дозвољава апликацији да се претвара као друга апликација. Злонамерне апликације ће можда моћи да користе ово да приступе приватним подацима апликација. Дозволите ово са опрезношћу!</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">ADB преко мреже је омогућен</string>
+  <string name="adb_both_active_notification_title">ADB преко USB &amp; мреже омогућен</string>
+  <string name="adb_active_generic_notification_message">Додирни да онемогућиш отклањање грешака.</string>
 </resources>

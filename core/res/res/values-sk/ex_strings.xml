@@ -17,20 +17,24 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Reštartovať</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Reštartovať</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Recovery</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
-  <string name="reboot_soft">Soft reštart</string>
+  <string name="reboot_soft">Mäkký reštart</string>
   <!-- Reboot Confirmation Dialog. -->
   <string name="reboot_confirm" product="tablet">Váš tablet sa reštartuje.</string>
   <string name="reboot_confirm" product="default">Váš telefón sa reštartuje.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
   <string name="reboot_progress">Reštartovanie\u2026</string>
-  <string name="reboot_systemui">Reštartovať grafické rozhranie (SystemUI)</string>
+  <string name="reboot_systemui">Reštartovať SystemUI</string>
   <!-- Global Actions -->
   <string name="global_action_current_user">Aktuálne</string>
-  <string name="global_action_screenshot">Snímka obrazovky</string>
+  <string name="global_action_screenshot">Fotografia obrazovky</string>
   <string name="global_action_screen_record">Záznam obrazovky</string>
   <string name="global_action_search">Hladať</string>
   <string name="global_action_torch">Baterka</string>
@@ -46,7 +50,7 @@
   <string name="animation_slide_left">Posunúť vľavo</string>
   <string name="animation_slide_right_no_fade">Posunúť vpravo (bez miznutia)</string>
   <string name="animation_slide_left_no_fade">Posunúť vľavo(bez miznutia)</string>
-  <string name="animation_slide_up">Posunúť dole</string>
+  <string name="animation_slide_up">Posunúť dolu</string>
   <string name="animation_slide_down">Posunúť nahor</string>
   <string name="animation_default">Predvolené</string>
   <string name="animation_translucent">Priehľadnosť</string>
@@ -65,8 +69,11 @@
   <!-- On-The-Go -->
   <string name="global_action_onthego">Režim na cestách</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Napodobniť podpis balíčku</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Umožňuje aplikácii vydávať sa sa inú aplikáciu. Škodlivé aplikácie by mohli použiť túto možnosť pre prístup k dátam súkromných aplikácií. Udeľujte toto oprávnenie s opatrnosťou!</string>
   <!-- ADB over network -->
   <string name="adb_net_active_notification_title">ADB cez sieť je povolené</string>
+  <string name="adb_both_active_notification_title">ADB cez USB a sieť povolené</string>
   <string name="adb_active_generic_notification_message">Dotykom zakážate ladenie.</string>
 </resources>

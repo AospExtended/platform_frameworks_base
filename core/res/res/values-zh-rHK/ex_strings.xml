@@ -17,16 +17,31 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">重新啟動</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">重新啟動</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">回復模式</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">開機載入器</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">軟重啟</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">你的平板即將重新啟動。</string>
+  <string name="reboot_confirm" product="default">你的手機即將重新啟動</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">重新啟動中\u2026</string>
   <string name="reboot_systemui">重新啟動系統使用者介面</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">目前</string>
+  <string name="global_action_screenshot">螢幕截圖</string>
+  <string name="global_action_screen_record">螢幕錄影</string>
+  <string name="global_action_search">搜尋</string>
   <string name="global_action_torch">手電筒</string>
+  <string name="global_action_voicesearch">語音搜尋</string>
+  <string name="permlab_preventpower">覆寫電源鍵</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">允許應用程式覆寫電源鍵。</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">供應商圖片與系統不相容。請為你的設備刷供應商 <xliff:g id="string">%s </xliff:g> 的圖片</string>
   <!-- AOKP custom system animations -->
@@ -46,6 +61,7 @@
   <string name="animation_grow_shrink_right">縮放 (右側)</string>
   <string name="action_null">空白</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">偵測到Vendor映像不符。一般來說這代表你的Vendor映像過期了。請確定你的Vendor映像符合<xliff:g id="fingerprint">%1$s</xliff:g></string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">重設電池統計資料</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -53,6 +69,11 @@
   <!-- On-The-Go -->
   <string name="global_action_onthego">On-The-Go 模式</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">模擬套件簽名</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">允許應用程式偽裝成不同的應用程式。有害的應用程式可能可以使用這個功能來存取私人的應用程式資料。授予此權限時請小心！</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">網絡 ADB 已啟用</string>
+  <string name="adb_both_active_notification_title">ADB 透過 USB 和網路已啟用</string>
+  <string name="adb_active_generic_notification_message">輕觸即可停用偵錯。</string>
 </resources>

@@ -17,16 +17,31 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Khởi động lại</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Khởi động lại</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Chế độ phục hồi</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Khởi động lại mềm</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Máy tính bảng của bạn sẽ khởi động lại.</string>
+  <string name="reboot_confirm" product="default">Điện thoại của bạn sẽ khởi động lại.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">Đang khởi động lại\u2026</string>
   <string name="reboot_systemui">Khởi động lại SystemUI</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Hiện tại</string>
+  <string name="global_action_screenshot">Chụp ảnh màn hình</string>
+  <string name="global_action_screen_record">Quay màn hình</string>
+  <string name="global_action_search">Tìm kiếm</string>
   <string name="global_action_torch">Đèn pin</string>
+  <string name="global_action_voicesearch">Tìm kiếm bằng giọng nói</string>
+  <string name="permlab_preventpower">thay thế phím nguồn</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Cho phép ứng dụng thay thế phím nguồn.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Vendor image không phù hợp với phiên bản hệ thống. Xin vui lòng flash <xliff:g id="string">%s</xliff:g> vendor image phù hợp</string>
   <!-- AOKP custom system animations -->
@@ -46,6 +61,7 @@
   <string name="animation_grow_shrink_right">Lớn dần (Bên phải)</string>
   <string name="action_null">Trống</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">Đã phát hiện một ảnh nhà cung cấp không phù hợp. Thông thường, điều này có nghĩa là ảnh nhà cung cấp của bạn đã cũ. Vui lòng đảm bảo rằng ảnh nhà cung cấp của bạn phù hợp <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">đặt lại thống kê pin</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -53,6 +69,11 @@
   <!-- On-The-Go -->
   <string name="global_action_onthego">Chế độ On-The-Go</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Giả mạo chữ ký gói</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Cho phép ứng dụng giả mạo là một ứng dụng khác. Ứng dụng độc hại có thể sử dụng để truy cập vào dữ liệu riêng của ứng dụng khác. Hãy cấp quyền truy cập một cách thận trọng!</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">Đã kích hoạt ADB qua mạng</string>
+  <string name="adb_both_active_notification_title">Đã kích hoạt ADB qua USB &amp; mạng</string>
+  <string name="adb_active_generic_notification_message">Chạm để tắt gỡ lỗi.</string>
 </resources>

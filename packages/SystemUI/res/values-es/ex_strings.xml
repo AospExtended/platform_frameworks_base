@@ -107,7 +107,7 @@
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Captura de pantalla eliminada</string>
   <!-- SystemUI Tuner Parts -->
-  <string name="systemui_tuner_pnc_title">Control de prioridades de notificaciones</string>
+  <string name="systemui_tuner_pnc_title">Controles de notificación de energía</string>
   <!-- Quick Settings tiles -->
   <string name="quick_settings_screenshot_label">Captura de pantalla</string>
   <string name="quick_settings_region_screenshot_label">Captura de pantalla parcial</string>
@@ -160,13 +160,13 @@
   <!-- Show lte/4g switch -->
   <string name="show_lte_fourgee_title">Mostrar 4G en lugar de LTE</string>
   <string name="show_lte_fourgee_summary">Reemplazar el icoco LTE con 4G</string>
-  <string name="statusbar_tuner_category_title">Ocultar elemendos en barra de estado</string>
+  <string name="statusbar_tuner_category_title">Ocultar elementos en barra de estado</string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">Barra de Navegación</string>
   <string name="quick_settings_smartbar">Barra de ajustes rápidos inteligente</string>
   <string name="quick_settings_smartbar_off">Barra de ajustes rápidos inteligente apagado</string>
-  <string name="quick_settings_fling">Fling</string>
-  <string name="quick_settings_fling_off">Apagar fling</string>
+  <string name="quick_settings_fling">Lanzador</string>
+  <string name="quick_settings_fling_off">Apagar Lanzador</string>
   <!-- Screenshot action -->
   <string name="screenshot_abort_title">No tomo la captura de pantalla</string>
   <string name="screenshot_abort_text">Operación abortada</string>
@@ -219,7 +219,7 @@
   <string name="onthego_notif_title">On-The-Go está activo</string>
   <string name="onthego_notif_stop">Detener</string>
   <string name="onthego_notif_options">Opciones</string>
-  <string name="onthego_notif_error">No a sido posible iniciar On-The-Go</string>
+  <string name="onthego_notif_error">No ha sido posible iniciar On-The-Go</string>
   <string name="onthego_notif_restart">Reiniciar On-The-Go</string>
   <string name="onthego_notif_camera_changed">Modo de cámara cambiado</string>
   <string name="onthego_transparency">Transparencia</string>

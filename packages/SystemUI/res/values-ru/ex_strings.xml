@@ -22,11 +22,11 @@
   <string name="stream_title_ring">Рингтон</string>
   <string name="stream_title_media">Мультимедиа</string>
   <string name="stream_title_alarm">Будильник</string>
-  <string name="stream_title_notification">Уведомления</string>
+  <string name="stream_title_notification">Уведомление</string>
   <string name="stream_title_bluetooth">Bluetooth</string>
   <!-- Wi-Fi hotspot label when enabled -->
   <plurals name="wifi_hotspot_connected_clients_label">
-    <item quantity="one">Клиенты %1$d</item>
+    <item quantity="one">Подключено %1$d устройство</item>
     <item quantity="few">Подключено %1$d устройства</item>
     <item quantity="other">Подключено %1$d устройств</item>
   </plurals>
@@ -46,7 +46,7 @@
   <string name="screenrecord_notif_pointer_on">Показать указатель</string>
   <string name="screenrecord_notif_pointer_off">Скрыть указатель</string>
   <!-- Screen record notification error title -->
-  <string name="screenrecord_notif_error">Невозможно записать экран</string>
+  <string name="screenrecord_notif_error">Запись экрана невозможна</string>
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Скриншот удалён</string>
   <!-- Screenrecord QS tile -->
@@ -68,7 +68,7 @@
   <string name="lockscreen_none_target">Не использовать</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">Звук</string>
-  <string name="quick_settings_sound_ring">Рингтон</string>
+  <string name="quick_settings_sound_ring">Мелодия вызова</string>
   <string name="quick_settings_sound_vibrate">Вибрация</string>
   <string name="quick_settings_sound_dnd">Не беспокоить</string>
   <!-- Ambient Display QS tile -->
@@ -119,7 +119,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">Синхронизация включена</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Перезагрузка</string>
-  <string name="quick_settings_reboot_recovery_label">Режим восстановления</string>
+  <string name="quick_settings_reboot_recovery_label">Восстановление</string>
   <string name="accessibility_quick_settings_usb_tether_off">USB-модем выкл.</string>
   <string name="accessibility_quick_settings_usb_tether_on">USB-модем вкл.</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">USB-модем выключен</string>
@@ -144,9 +144,9 @@
   <string name="accessibility_quick_settings_nfc_off">NFC выкл.</string>
   <string name="accessibility_quick_settings_nfc_on">NFC вкл.</string>
   <string name="accessibility_quick_settings_nfc_changed_off">NFC выключен</string>
-  <string name="accessibility_quick_settings_nfc_changed_on">NFC turned on.</string>
+  <string name="accessibility_quick_settings_nfc_changed_on">NFC включен</string>
   <!-- SystemUI Tuner Parts -->
-  <string name="systemui_tuner_statusbar_title">Statusbar items</string>
+  <string name="systemui_tuner_statusbar_title">Элементы строки состояния</string>
   <string name="accessibility_quick_settings_location_battery_saving">Определение местоположения: по координатам сети.</string>
   <string name="accessibility_quick_settings_location_gps_only">Определение местоположения: по спутникам GPS.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Определение местоположения: по всем источникам.</string>
@@ -191,7 +191,7 @@
   <string name="omnijaws_service_error_long">Ошибка при загрузке данных о погоде</string>
   <string name="omnijaws_service_disabled">Служба отключена</string>
   <string name="omnijaws_detail_header">Погода</string>
-  <string name="omnijaws_label_default">Weather</string>
+  <string name="omnijaws_label_default">Погода</string>
   <string name="omnijaws_current_text">Сейчас</string>
   <string name="omnijaws_package_not_available">OmniJaws недоступен</string>
   <!-- Weather string format in expanded statusbar header -->
@@ -218,7 +218,7 @@
   <!-- On The Go -->
   <string name="onthego_notif_ticker">Режим «На ходу» включен</string>
   <string name="onthego_notif_title">Режим «На ходу» активен</string>
-  <string name="onthego_notif_stop">Stop</string>
+  <string name="onthego_notif_stop">Стоп</string>
   <string name="onthego_notif_options">Опции</string>
   <string name="onthego_notif_error">Невозможно запустить режим «На ходу»</string>
   <string name="onthego_notif_restart">Перезапустить режим «На ходу»</string>
@@ -227,10 +227,10 @@
   <string name="onthego_front_camera">Использовать фронтальную камеру</string>
   <string name="onthego_service_toggle">Автоматически перезапускать службу</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Быстрая зарядка (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> до полной)</string>
+  <string name="keyguard_indication_dash_charging_time">Быстрая зарядка (осталось <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
   <string name="keyguard_plugged_in_dash_charging">Быстрая зарядка</string>
   <!-- HW Keys Tile -->
-  <string name="accessibility_quick_settings_hwkeys_on">Аппаратные кнопки включены</string>
+  <string name="accessibility_quick_settings_hwkeys_on">Аппаратные кнопки вкл.</string>
   <string name="accessibility_quick_settings_hwkeys_off">Аппаратные кнопки выкл.</string>
   <string name="quick_settings_hwkeys_label">Аппаратные кнопки</string>
   <!-- AEX Logo -->
@@ -239,5 +239,5 @@
   <!-- ADB over network Tile -->
   <string name="quick_settings_adb_network">ADB по сети</string>
   <string name="quick_settings_network_adb_enabled_label">Включено</string>
-  <string name="quick_settings_network_adb_disabled_label">Выключено</string>
+  <string name="quick_settings_network_adb_disabled_label">Отключено</string>
 </resources>

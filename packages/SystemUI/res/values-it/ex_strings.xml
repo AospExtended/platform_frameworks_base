@@ -53,7 +53,7 @@
   <string name="quick_settings_screenrecord_on">Registrazione...</string>
   <!-- Language\Locale Tile -->
   <string name="quick_settings_locale_label">Lingua</string>
-  <string name="quick_settings_locale_more_locales_toast">Configura più lingue per abilitare la funzionalità toggle</string>
+  <string name="quick_settings_locale_more_locales_toast">Configura più lingue per abilitare la funzionalità del toggle</string>
   <!-- NavBar Tuner -->
   <string name="menu_ime_always_show">Menù / interruttore tastiera (visualizza sempre)</string>
   <string name="search">Ricerca</string>
@@ -72,18 +72,18 @@
   <string name="quick_settings_sound_dnd">Non disturbare</string>
   <!-- Ambient Display QS tile -->
   <string name="accessibility_quick_settings_ambient_display_off">Ambient Display spento</string>
-  <string name="accessibility_quick_settings_ambient_display_on">Display ambient on</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_off">Display ambient disattivato</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_on">Display ambient attivato</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Ambient Display acceso</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient Display disattivato</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient Display attivato</string>
   <string name="quick_settings_ambient_display_label">Ambient Display</string>
   <string name="quick_settings_extensions">Estensioni</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">Eliminato</string>
   <string name="action_delete_fault">Eliminazione non riuscita</string>
-  <string name="action_save_success">Salvato</string>
+  <string name="action_save_success">Salvataggio</string>
   <string name="action_save_fault">Salvataggio non riuscito</string>
   <string name="pref_action_color_title">Colore pulsanti azione</string>
-  <string name="pref_action_color_summary">Scegli un colore preferito per i pulsanti azione</string>
+  <string name="pref_action_color_summary">Scegli un colore preferito per le azioni dei pulsanti</string>
   <string name="pref_category_main">Impostazioni principali</string>
   <string name="pref_category_user">Impostazioni Utente</string>
   <string name="pref_crop_behavior_title">Comportamento ritaglio</string>
@@ -92,7 +92,7 @@
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">Eliminato</string>
   <string name="action_delete_fault">Eliminazione non riuscita</string>
-  <string name="action_save_success">Salvato</string>
+  <string name="action_save_success">Salvataggio</string>
   <string name="action_save_fault">Salvataggio non riuscito</string>
   <string name="action_edit">Modifica</string>
   <string name="quick_settings_expanded_navigation_off">Nascondi barra di naviganzione</string>
@@ -156,7 +156,7 @@
   <string name="quick_settings_location_battery_saving_label">Risparmio batteria</string>
   <string name="quick_settings_location_gps_only_label">Solo dispositivo (GPS)</string>
   <string name="quick_settings_location_high_accuracy_label">Alta precisione</string>
-  <string name="quick_settings_location_off_label">Geolocalizzazione disattivata</string>
+  <string name="quick_settings_location_off_label">Geolocalizzazione spenta</string>
   <!-- Show lte/4g switch -->
   <string name="show_lte_fourgee_title">Visualizza 4G invece di LTE</string>
   <string name="show_lte_fourgee_summary">Sostituisce l\'indicatore di stato LTE con l\'indicatore 4G</string>
@@ -164,9 +164,9 @@
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">Barra di navigazione</string>
   <string name="quick_settings_smartbar">Smartbar</string>
-  <string name="quick_settings_smartbar_off">Smartbar off</string>
+  <string name="quick_settings_smartbar_off">Smartbar spenta</string>
   <string name="quick_settings_fling">Fling</string>
-  <string name="quick_settings_fling_off">Fling off</string>
+  <string name="quick_settings_fling_off">Fling spento</string>
   <!-- Screenshot action -->
   <string name="screenshot_abort_title">Nessuna schermata catturata</string>
   <string name="screenshot_abort_text">Operazione Interrotta</string>
@@ -174,14 +174,14 @@
   <string name="quick_settings_expanded_desktop">Esteso</string>
   <string name="quick_settings_expanded_desktop_off">Normale</string>
   <!-- Heads up snooze toast -->
-  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Notifica peeking posticipata per 1 minuto.</string>
-  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • Notifiche peeking posticipate per <xliff:g id="number">%d</xliff:g> minuti.</string>
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - La notifica è posticipata per 1 minuto.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Le notifiche saranno posticipate per <xliff:g id="number">%d</xliff:g> minuti.</string>
   <!-- Path data for big circle battery -->
   <string name="recents_free_ram">RAM libera: %1$d MB</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <string name="accessibility_quick_settings_running_services">Schermata dei servizi in esecuzione aperta.</string>
   <!-- volte icon switch -->
-  <string name="status_bar_volte">VoLTE</string>
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Data/Wifi activity arrows -->
   <string name="data_wifi_activity_arrows_title">Attività di rete</string>
   <!-- OmniJaws -->
@@ -230,8 +230,8 @@
   <string name="keyguard_indication_dash_charging_time">Ricarica rapida (<xliff:g id="charging_time_left" example="4 hours and 2 minutes"> %s</xliff:g> al termine)</string>
   <string name="keyguard_plugged_in_dash_charging">Ricarica rapida</string>
   <!-- HW Keys Tile -->
-  <string name="accessibility_quick_settings_hwkeys_on">Tasti Hardware attivati</string>
-  <string name="accessibility_quick_settings_hwkeys_off">Tasti Hardware disattivati</string>
+  <string name="accessibility_quick_settings_hwkeys_on">Tasti hardware attivati</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Tasti hardware disattivati</string>
   <string name="quick_settings_hwkeys_label">Tasti hardware</string>
   <!-- AEX Logo -->
   <string name="status_bar_aex_logo_title">Logo AEX</string>

@@ -43,6 +43,7 @@
   <string name="quick_settings_locale_label">Taal</string>
   <string name="quick_settings_locale_more_locales_toast">Configureer eerst meerdere talen om te kunnen wisselen</string>
   <!-- NavBar Tuner -->
+  <string name="search">Zoeken</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">Veeg rechts voor %1$s</string>
   <string name="right_shortcut_hint">Veeg links voor %1$s</string>
@@ -88,6 +89,7 @@
   <string name="delete_screenshot_toast">Schermafbeelding verwijderd</string>
   <!-- SystemUI Tuner Parts -->
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">Schermafdruk</string>
   <string name="quick_settings_region_screenshot_label">Gedeeltelijke schermafdruk</string>
   <string name="quick_settings_sync_label">Sync</string>
   <string name="accessibility_quick_settings_sync_off">Sync uit</string>
@@ -96,6 +98,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">Sync ingeschakeld</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Herstart</string>
+  <string name="quick_settings_reboot_recovery_label">Recovery</string>
   <string name="accessibility_quick_settings_usb_tether_off">USB tethering uit</string>
   <string name="accessibility_quick_settings_usb_tether_on">USB tethering aan</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">USB tethering uitgeschakeld</string>

@@ -17,16 +17,31 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Herstarten</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Herstarten</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Recovery</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Snelle Herstart</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Uw tablet wordt herstart.</string>
+  <string name="reboot_confirm" product="default">Uw telefoon wordt herstart.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">Opnieuw opstarten…</string>
   <string name="reboot_systemui">SystemUI herstarten</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Huidige</string>
+  <string name="global_action_screenshot">Schermafdruk</string>
+  <string name="global_action_screen_record">Schermopname</string>
+  <string name="global_action_search">Zoeken</string>
   <string name="global_action_torch">Zaklamp</string>
+  <string name="global_action_voicesearch">Spraak zoekopdracht</string>
+  <string name="permlab_preventpower">overschrijf aan/uit-knop</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Hiermee kan de app het gedrag van de aan/uit-knop overschrijven.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Je vendor image komt niet overeen met het systeem. Flash alsjeblieft de <xliff:g id="string">%s</xliff:g> vendor image passend bij je apparaat</string>
   <!-- AOKP custom system animations -->
