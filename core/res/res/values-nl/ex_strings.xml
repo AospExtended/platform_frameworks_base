@@ -70,4 +70,22 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">ADB over netwerk ingeschakeld</string>
+  <string name="adb_both_active_notification_title">ADB over USB &amp; netwerk ingeschakeld</string>
+  <string name="adb_active_generic_notification_message">Tik om foutopsporing uit te schakelen.</string>
+  <!-- Permissions -->
+  <string name="other_permissions">overige machtigingen</string>
+  <string name="permission_remember_choice">Onthouden</string>
+  <string name="permission_title">Toestemming</string>
+  <string name="allow_button">Toestaan</string>
+  <string name="deny_button">Weigeren</string>
+  <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">Geen verbonden apparaat</string>
+  <!-- Single hand mode -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">Staat de app toe om wijzigingen aan het thema te brengen met behulp van OverlayManagerService</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">herstart de systeembalken</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 </resources>

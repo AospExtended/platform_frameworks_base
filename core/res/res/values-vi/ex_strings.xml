@@ -76,4 +76,11 @@
   <string name="adb_net_active_notification_title">Đã kích hoạt ADB qua mạng</string>
   <string name="adb_both_active_notification_title">Đã kích hoạt ADB qua USB &amp; mạng</string>
   <string name="adb_active_generic_notification_message">Chạm để tắt gỡ lỗi.</string>
+  <!-- Permissions -->
+  <!-- Tethered notification -->
+  <!-- Single hand mode -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 </resources>

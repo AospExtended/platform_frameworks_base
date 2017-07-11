@@ -36,14 +36,14 @@
   <string name="global_action_current_user">Atual</string>
   <string name="global_action_screenshot">Captura de ecrã</string>
   <string name="global_action_screen_record">Gravação de ecrã</string>
-  <string name="global_action_search">Pesquisar</string>
+  <string name="global_action_search">Procurar</string>
   <string name="global_action_torch">Lanterna</string>
   <string name="global_action_voicesearch">Pesquisa de voz</string>
   <string name="permlab_preventpower">substituir o botão de ligar</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_preventpower">Permite que uma aplicação substitua a ação do botão de ligar/desligar.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">A sua imagem de fornecedor não coincide com o sistema. Por favor, \"flasha\" a imagem do fornecedor de <xliff:g id="string">%s</xliff:g> para o seu dispositivo</string>
+  <string name="system_error_vendorprint">A sua imagem de fornecedor não coincide com o sistema. Por favor, instale a imagem do fornecedor de <xliff:g id="string">%s</xliff:g> para o seu dispositivo</string>
   <!-- AOKP custom system animations -->
   <string name="animation_fade">Desvanecer</string>
   <string name="animation_slide_right">Deslizar para a direita</string>
@@ -71,9 +71,30 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_fakePackageSignature">Replicar a assinatura de pacote</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Permite que a aplicação finja ser uma aplicação diferente. Aplicativos maliciosos podem ser capazes de usar isto para aceder a dados das aplicações. Conceda essa permissão com cautela!</string>
+  <string name="permdesc_fakePackageSignature">Permite que a aplicação finja ser uma aplicação diferente. Aplicações maliciosas podem ser capazes de usar isto para aceder a dados das aplicações. Conceda essa permissão com cautela!</string>
   <!-- ADB over network -->
   <string name="adb_net_active_notification_title">ADB através da rede ativado</string>
   <string name="adb_both_active_notification_title">ABD sobre USB e rede ativado</string>
   <string name="adb_active_generic_notification_message">Toque para desativar a depuração.</string>
+  <!-- Permissions -->
+  <string name="other_permissions">outras permissões</string>
+  <string name="permission_remember_choice">Lembrar</string>
+  <string name="permission_title">Permissão</string>
+  <string name="allow_button">Permitir</string>
+  <string name="deny_button">Negar</string>
+  <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">Nenhum dispositivo conectado</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> dispositivo ligado</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> dispositivos ligados</string>
+  <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">Toque na área escurecida para sair do modo de uma mão</string>
+  <string name="singlehandmode_slide_hint_message">Deslize o dedo pela barra de navegação para alternar entre o modo normal e o modo de uma mão</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">modificar as sobreposições de tema</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">Permite que a aplicação faça modificações de sobreposições de tema usando OverlayManagerService</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">reiniciar as barras do sistema</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_restartUI">Reiniciar o SystemUIService para que as barras do sistema possam carregar recursos de temas</string>
 </resources>

@@ -17,49 +17,137 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">Skakel</string>
+  <string name="stream_title_system">Sisteem</string>
+  <string name="stream_title_ring">Lui</string>
+  <string name="stream_title_media">Media</string>
+  <string name="stream_title_alarm">Alarm</string>
+  <string name="stream_title_notification">Kennisgewing</string>
+  <string name="stream_title_bluetooth">Bluetooth</string>
   <!-- Wi-Fi hotspot label when enabled -->
+  <plurals name="wifi_hotspot_connected_clients_label">
+    <item quantity="one">%1$d kliënte</item>
+    <item quantity="other">%1$d kliënte</item>
+  </plurals>
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
   <!-- Path for battery solid -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Skerm word opgeneem</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Skerm word opgeneem</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Stop</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Vertoon wyser</string>
+  <string name="screenrecord_notif_pointer_off">Versteek wyser</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Kan nie skerm opneem nie</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Skermopname uitgevee</string>
   <!-- Screenrecord QS tile -->
+  <string name="quick_settings_screenrecord">Skermopneem</string>
+  <string name="quick_settings_screenrecord_on">Besig met opname...</string>
   <!-- Language\Locale Tile -->
+  <string name="quick_settings_locale_label">Taal</string>
   <!-- NavBar Tuner -->
+  <string name="search">Soek</string>
   <!-- Strings for lockscreen shortcut hints -->
+  <string name="lockscreen_default_target">Verstek</string>
+  <string name="select_application">Kies program</string>
+  <string name="lockscreen_choose_action_title">Kies aksie</string>
+  <string name="lockscreen_none_target">Geen</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Klank</string>
+  <string name="quick_settings_sound_ring">Lui</string>
+  <string name="quick_settings_sound_vibrate">Vibreer</string>
+  <string name="quick_settings_sound_dnd">Moenie steur nie</string>
   <!-- Ambient Display QS tile -->
+  <string name="accessibility_quick_settings_ambient_display_off">Omliggende Vertoon af</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Omliggende Vertoon aan</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Omliggende Vertoon afgeskakel</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Omliggende Vertoon aangeskakel</string>
+  <string name="quick_settings_ambient_display_label">Omliggende Vertoon</string>
+  <string name="quick_settings_extensions">Uitbreidings</string>
   <!-- Screenshot Crop & Share -->
+  <string name="action_delete_success">Uitgevee</string>
+  <string name="action_delete_fault">Uitvee was onsuksesvol</string>
+  <string name="action_save_success">Gestoor</string>
+  <string name="action_save_fault">Stoor was onsuksesvol</string>
+  <string name="pref_action_color_title">Aksie knoppies kleur</string>
+  <string name="pref_action_color_summary">Kies jou gunsteling kleur vir die aksie knoppies</string>
+  <string name="pref_category_main">Hoof Instellings</string>
+  <string name="pref_category_user">Gebruikers Instellings</string>
+  <string name="pref_crop_behavior_title">Redigeer/\"crop\" gedrag</string>
+  <string name="action_ok">OK</string>
   <!-- Screenshot Crop & Share -->
+  <string name="action_delete_success">Uitgevee</string>
+  <string name="action_delete_fault">Uitvee was onsuksesvol</string>
+  <string name="action_save_success">Gestoor</string>
+  <string name="action_save_fault">Stoor was onsuksesvol</string>
+  <string name="action_edit">Redigeer</string>
+  <string name="quick_settings_expanded_navigation_off">Versteek navigasie balk</string>
+  <string name="quick_settings_expanded_statusbar_off">Versteek status balk</string>
   <!-- Notification which notifies user flashlight is enabled -->
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Skermopname uitgevee</string>
   <!-- SystemUI Tuner Parts -->
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">Skermfoto</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_recovery_label">Herstel</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="quick_settings_location_gps_only_label">Toestel alleenlik</string>
+  <string name="quick_settings_location_high_accuracy_label">Hoë akkuraatheid</string>
+  <string name="quick_settings_location_off_label">Ligging af</string>
   <!-- Show lte/4g switch -->
+  <string name="show_lte_fourgee_title">Wys 4G in plaas van LTE</string>
+  <string name="show_lte_fourgee_summary">Vervang die LTE aanwyser met 4G</string>
+  <string name="statusbar_tuner_category_title">Versteek statusbalk items</string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Navigasie balk</string>
+  <string name="quick_settings_smartbar">Slimbalk</string>
+  <string name="quick_settings_smartbar_off">Slimbalk af</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_fling_off">Fling af</string>
   <!-- Screenshot action -->
+  <string name="screenshot_abort_title">Geen skermskoot geneem</string>
+  <string name="screenshot_abort_text">Operasie gestaak</string>
+  <string name="quick_settings_expanded_desktop_label">Uitgebreide werkskerm</string>
+  <string name="quick_settings_expanded_desktop">Uitgebreide</string>
+  <string name="quick_settings_expanded_desktop_off">Normaal</string>
   <!-- Heads up snooze toast -->
   <!-- Path data for big circle battery -->
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <!-- volte icon switch -->
   <!-- Data/Wifi activity arrows -->
   <!-- OmniJaws -->
+  <string name="omnijaws_service_error">Fout</string>
+  <string name="omnijaws_service_unkown">Geen weer data</string>
+  <string name="omnijaws_detail_header">Weer</string>
+  <string name="omnijaws_label_default">Weer</string>
+  <string name="omnijaws_current_text">Nou</string>
   <!-- Weather string format in expanded statusbar header -->
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_N">N</string>
+  <string name="quick_settings_compass_NE">NO</string>
+  <string name="quick_settings_compass_E">O</string>
+  <string name="quick_settings_compass_SE">SO</string>
+  <string name="quick_settings_compass_S">S</string>
+  <string name="quick_settings_compass_SW">SW</string>
+  <string name="quick_settings_compass_W">W</string>
+  <string name="quick_settings_compass_NW">NW</string>
   <!-- Sim recents -->
   <!-- On The Go -->
+  <string name="onthego_notif_stop">Stop</string>
+  <string name="onthego_notif_options">Opsies</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <!-- HW Keys Tile -->
   <!-- AEX Logo -->

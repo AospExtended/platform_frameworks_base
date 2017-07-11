@@ -33,12 +33,15 @@
   <string name="reboot_progress">正在重启\u2026</string>
   <string name="reboot_systemui">重启系统界面</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">当前</string>
   <string name="global_action_screenshot">屏幕截图</string>
   <string name="global_action_screen_record">录屏</string>
   <string name="global_action_search">搜索</string>
   <string name="global_action_torch">手电筒</string>
   <string name="global_action_voicesearch">语音搜索</string>
+  <string name="permlab_preventpower">覆盖电源键</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">允许应用程序控制电源键</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">您的初始设备制造商镜像与系统不匹配。请为您的设备刷入 <xliff:g id="string">%s </xliff:g> 初始设备制造商镜像</string>
   <!-- AOKP custom system animations -->
@@ -65,6 +68,32 @@
   <!-- On-The-Go -->
   <string name="global_action_onthego">行走模式</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">模仿软件包签名</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">允许程序伪装成其他程序。 请注意，恶意程序可能会利用此权限访问隐私数据。请谨慎授予此权限！</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">开启网络ADB调试</string>
+  <string name="adb_both_active_notification_title">USB 和网络 ADB 调试已启用</string>
+  <string name="adb_active_generic_notification_message">点击以禁用调试</string>
+  <!-- Permissions -->
+  <string name="other_permissions">其他权限</string>
+  <string name="permission_remember_choice">记住我的选择</string>
+  <string name="permission_title">权限</string>
+  <string name="allow_button">允许</string>
+  <string name="deny_button">拒绝</string>
+  <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">没有已连接的设备</string>
+  <string name="tethered_notification_one_device_message">\"<xliff:g id="count">%1$s</xliff:g>\"个设备已连接。</string>
+  <string name="tethered_notification_multi_device_message">\"<xliff:g id="count">%1$s</xliff:g>\"个设备已连接</string>
+  <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">点击窗口外部退出窗口模式</string>
+  <string name="singlehandmode_slide_hint_message">滑动导航栏切换标准模式及窗口模式</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">更改主题叠加层</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">允许应用程序使用OverlayManagerService修改主题</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">重启系统栏</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_restartUI">重启系统界面，以便系统栏加载主题资源</string>
 </resources>

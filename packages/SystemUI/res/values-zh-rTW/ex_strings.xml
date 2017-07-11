@@ -35,7 +35,7 @@
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <string name="accessibility_data_connection_hspap">HSPA +</string>
   <!-- Screenrecord Notification Ticker -->
-  <string name="screenrecord_notif_ticker">正在錄製螢幕</string>
+  <string name="screenrecord_notif_ticker">螢幕已在錄製</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">正在錄影螢幕</string>
   <!-- Screenrecord notification action: Stop -->

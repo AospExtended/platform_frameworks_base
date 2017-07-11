@@ -56,7 +56,7 @@
   <string name="quick_settings_locale_more_locales_toast">Configure vários idiomas para ativar a funcionalidade de troca</string>
   <!-- NavBar Tuner -->
   <string name="menu_ime_always_show">Alternador de Menu / Teclado (mostrar sempre)</string>
-  <string name="search">Pesquisar</string>
+  <string name="search">Procurar</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">Deslizar para a direita para %1$s</string>
   <string name="right_shortcut_hint">Deslizar para a esquerda para %1$s</string>
@@ -79,19 +79,19 @@
   <string name="quick_settings_extensions">Extensões</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">Eliminado</string>
-  <string name="action_delete_fault">A eliminação não teve sucesso</string>
+  <string name="action_delete_fault">A eliminação sem sucesso</string>
   <string name="action_save_success">Guardado</string>
   <string name="action_save_fault">Não foi guardado</string>
   <string name="pref_action_color_title">Cor dos botões de ação</string>
   <string name="pref_action_color_summary">Escolha sua cor favorita para os botões de ação</string>
   <string name="pref_category_main">Definições principais</string>
   <string name="pref_category_user">Definições do utilizador</string>
-  <string name="pref_crop_behavior_title">Comportamento de corte</string>
-  <string name="pref_crop_behavior_summary">Usar a imagem recortada, mesmo que a original não tenha sido cortada com a ferramenta de corte</string>
+  <string name="pref_crop_behavior_title">Comportamento de recorte</string>
+  <string name="pref_crop_behavior_summary">Usar a imagem recortada, mesmo que a original não tenha sido cortada com a ferramenta de recorte</string>
   <string name="action_ok">OK</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">Eliminado</string>
-  <string name="action_delete_fault">A eliminação não teve sucesso</string>
+  <string name="action_delete_fault">A eliminação sem sucesso</string>
   <string name="action_save_success">Guardado</string>
   <string name="action_save_fault">Não foi guardado</string>
   <string name="action_edit">Editar</string>
@@ -126,7 +126,7 @@
   <string name="quick_settings_usb_tether_label">Partilha de internet por USB</string>
   <string name="quick_settings_music_label">Música</string>
   <string name="quick_settings_music_play">Reproduzir</string>
-  <string name="quick_settings_music_pause">Pausar</string>
+  <string name="quick_settings_music_pause">Pausa</string>
   <string name="quick_settings_ime_tile_label">Método de entrada</string>
   <string name="quick_settings_caffeine_label">Cafeína</string>
   <string name="accessibility_quick_settings_caffeine_off">Cafeína desligada</string>
@@ -213,7 +213,7 @@
   <string name="quick_settings_compass_NW">NO</string>
   <!-- Sim recents -->
   <string name="recents_multiwin_warning">Já está ativada uma sessão multi-janelas.\nToque numa aplicação que deseja ancorá-la agora.</string>
-  <string name="recents_multiwin_nolastapp">Removeu todas as aplicações recentes. Por favor, escolha uma aplicação do lançador ou painel de aplicações.</string>
+  <string name="recents_multiwin_nolastapp">Removeu todas as aplicações recentes. Por favor, escolha uma aplicação do iniciador de aplicações ou painel de aplicações.</string>
   <!-- On The Go -->
   <string name="onthego_notif_ticker">On-The-Go ativado</string>
   <string name="onthego_notif_title">On-The-Go está ativo</string>
@@ -236,7 +236,7 @@
   <string name="status_bar_aex_logo_title">Logotipo da AEX</string>
   <string name="status_bar_aex_logo_summary">Ativar para mostrar o logótipo AEX no lado esquerdo da barra de estado</string>
   <!-- ADB over network Tile -->
-  <string name="quick_settings_adb_network">Rede ADB</string>
+  <string name="quick_settings_adb_network">ADB via rede</string>
   <string name="quick_settings_network_adb_enabled_label">Ativada</string>
   <string name="quick_settings_network_adb_disabled_label">Desativada</string>
 </resources>

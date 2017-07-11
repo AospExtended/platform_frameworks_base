@@ -95,7 +95,7 @@
   <string name="action_save_success">Salvataggio</string>
   <string name="action_save_fault">Salvataggio non riuscito</string>
   <string name="action_edit">Modifica</string>
-  <string name="quick_settings_expanded_navigation_off">Nascondi barra di naviganzione</string>
+  <string name="quick_settings_expanded_navigation_off">Nascondi barra di navigazione</string>
   <string name="quick_settings_expanded_statusbar_off">Nascondi barra di stato</string>
   <!-- Notification which notifies user flashlight is enabled -->
   <string name="quick_settings_tile_flashlight_not_title">Torcia accesa</string>
@@ -119,8 +119,8 @@
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Riavvia</string>
   <string name="quick_settings_reboot_recovery_label">Recovery</string>
-  <string name="accessibility_quick_settings_usb_tether_off">Tethering USB off</string>
-  <string name="accessibility_quick_settings_usb_tether_on">Tethering USB acceso</string>
+  <string name="accessibility_quick_settings_usb_tether_off">USB tethering spento</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USB tethering acceso</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">Tethering USB disattivato</string>
   <string name="accessibility_quick_settings_usb_tether_changed_on">Tethering USB attivato</string>
   <string name="quick_settings_usb_tether_label">Tethering USB</string>
@@ -129,8 +129,8 @@
   <string name="quick_settings_music_pause">Pausa</string>
   <string name="quick_settings_ime_tile_label">Metodo di inserimento</string>
   <string name="quick_settings_caffeine_label">Caffeina</string>
-  <string name="accessibility_quick_settings_caffeine_off">Caffeina off</string>
-  <string name="accessibility_quick_settings_caffeine_on">Caffeina on</string>
+  <string name="accessibility_quick_settings_caffeine_off">Caffeine spenta</string>
+  <string name="accessibility_quick_settings_caffeine_on">Caffeine accesa</string>
   <string name="quick_settings_heads_up_label">Notifiche a comparsa</string>
   <string name="accessibility_quick_settings_heads_up_off">Notifiche a comparsa non attive</string>
   <string name="accessibility_quick_settings_heads_up_on">Notifiche a comparsa attive</string>
@@ -186,7 +186,7 @@
   <string name="data_wifi_activity_arrows_title">Attività di rete</string>
   <!-- OmniJaws -->
   <string name="omnijaws_service_error">Errore</string>
-  <string name="omnijaws_service_unkown">Nessuna informazione meteo</string>
+  <string name="omnijaws_service_unkown">Nessun dato meteo</string>
   <string name="omnijaws_service_error_long">Errore durante il caricamento dei dati meteo</string>
   <string name="omnijaws_service_disabled">Servizio disabilitato</string>
   <string name="omnijaws_detail_header">Meteo</string>
@@ -201,7 +201,7 @@
   <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
   <string name="quick_settings_compass_init">Inizializzazione\u2026</string>
   <string name="accessibility_quick_settings_compass_off">Bussola spenta.</string>
-  <string name="accessibility_quick_settings_compass_on">Bussola On.</string>
+  <string name="accessibility_quick_settings_compass_on">Bussola accesa.</string>
   <string name="accessibility_quick_settings_compass_changed_off">Bussola disattivata.</string>
   <string name="accessibility_quick_settings_compass_changed_on">Bussola attivata.</string>
   <string name="quick_settings_compass_N">N</string>
@@ -214,7 +214,7 @@
   <string name="quick_settings_compass_NW">NW</string>
   <!-- Sim recents -->
   <string name="recents_multiwin_warning">Una sessione multiwindow è già attiva.\nScegli l\'applicazione che vuoi ancorare allo schermo.</string>
-  <string name="recents_multiwin_nolastapp">Tutte le applicazioni recenti sono state rimosse, apri un\'altra applicazione dal drawer.</string>
+  <string name="recents_multiwin_nolastapp">Hai rimosso tutti i recenti, si prega di scegliere un\'applicazione dalla schermata di avvio o del drawer.</string>
   <!-- On The Go -->
   <string name="onthego_notif_ticker">On-The-Go attivato</string>
   <string name="onthego_notif_title">On-The-Go è attivo</string>
@@ -222,9 +222,9 @@
   <string name="onthego_notif_options">Opzioni</string>
   <string name="onthego_notif_error">Impossibile avviare On-The-Go</string>
   <string name="onthego_notif_restart">Riavvia On-The-Go</string>
-  <string name="onthego_notif_camera_changed">Modalità fotocamera cambiata</string>
+  <string name="onthego_notif_camera_changed">Modalità fotocamera modificata</string>
   <string name="onthego_transparency">Trasparenza</string>
-  <string name="onthego_front_camera">Usa fotocamera anteriore</string>
+  <string name="onthego_front_camera">Usa la fotocamera frontale</string>
   <string name="onthego_service_toggle">Riavvia automaticamente il servizio</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Ricarica rapida (<xliff:g id="charging_time_left" example="4 hours and 2 minutes"> %s</xliff:g> al termine)</string>

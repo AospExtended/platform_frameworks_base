@@ -17,12 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">Bellen</string>
+  <string name="stream_title_system">Systeem</string>
+  <string name="stream_title_ring">Beltoon</string>
+  <string name="stream_title_media">Media</string>
+  <string name="stream_title_alarm">Alarm</string>
+  <string name="stream_title_notification">Notificatie</string>
+  <string name="stream_title_bluetooth">Bluetooth</string>
   <!-- Wi-Fi hotspot label when enabled -->
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
   <!-- Path for battery solid -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Scherm wordt opgenomen</string>
   <!-- Screenrecord notification title -->
@@ -54,6 +62,7 @@
   <string name="lockscreen_none_target">Geen</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">Geluid</string>
+  <string name="quick_settings_sound_ring">Beltoon</string>
   <string name="quick_settings_sound_vibrate">Trillen</string>
   <string name="quick_settings_sound_dnd">Niet storen</string>
   <!-- Ambient Display QS tile -->
@@ -62,6 +71,7 @@
   <string name="accessibility_quick_settings_ambient_display_changed_off">Actieve display uitgeschakeld</string>
   <string name="accessibility_quick_settings_ambient_display_changed_on">Actieve display ingeschakeld</string>
   <string name="quick_settings_ambient_display_label">Actieve display</string>
+  <string name="quick_settings_extensions">Extensies</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">Verwijderd</string>
   <string name="action_delete_fault">Verwijderen is mislukt</string>
@@ -80,7 +90,11 @@
   <string name="action_save_success">Opgeslagen</string>
   <string name="action_save_fault">Opslaan is mislukt</string>
   <string name="action_edit">Bewerken</string>
+  <string name="quick_settings_expanded_navigation_off">Verberg navbar</string>
+  <string name="quick_settings_expanded_statusbar_off">Statusbalk verbergen</string>
   <!-- Notification which notifies user flashlight is enabled -->
+  <string name="quick_settings_tile_flashlight_not_title">Zaklamp is aan</string>
+  <string name="quick_settings_tile_flashlight_not_summary">Tik om uit te schakelen</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
@@ -120,7 +134,12 @@
   <string name="quick_settings_pulse_disabled">Geen visualizer</string>
   <string name="quick_settings_pulse_label">Navigatiebalk visualizer</string>
   <string name="quick_settings_nfc_label">NFC</string>
+  <string name="accessibility_quick_settings_nfc_off">NFC uit.</string>
+  <string name="accessibility_quick_settings_nfc_on">NFC aan.</string>
+  <string name="accessibility_quick_settings_nfc_changed_off">NFC is uitgeschakeld.</string>
+  <string name="accessibility_quick_settings_nfc_changed_on">NFC is ingeschakeld.</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_statusbar_title">Statusbar Items</string>
   <string name="accessibility_quick_settings_location_battery_saving">Locatiebepaling: accu besparingsmodus.</string>
   <string name="accessibility_quick_settings_location_gps_only">Locatiebepaling: alleen apparaat.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Locatiebepaling: hoge nauwkeurigheid.</string>
@@ -133,6 +152,9 @@
   <string name="quick_settings_location_high_accuracy_label">Hoge nauwkeurigheid</string>
   <string name="quick_settings_location_off_label">Locatie uit</string>
   <!-- Show lte/4g switch -->
+  <string name="show_lte_fourgee_title">Toon 4G in plaats van LTE</string>
+  <string name="show_lte_fourgee_summary">Vervangt LTE statusbar indicator met 4G</string>
+  <string name="statusbar_tuner_category_title">Items in statusbalk verbergen</string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">Navigatiebalk</string>
   <string name="quick_settings_smartbar">Slimme balk</string>
@@ -154,6 +176,7 @@
   <!-- volte icon switch -->
   <string name="status_bar_volte">VoLTE</string>
   <!-- Data/Wifi activity arrows -->
+  <string name="data_wifi_activity_arrows_title">Netwerk activiteit</string>
   <!-- OmniJaws -->
   <string name="omnijaws_service_error">Fout</string>
   <string name="omnijaws_service_unkown">Geen weergegevens</string>

@@ -17,16 +17,48 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Begin oor</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Begin oor</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Herstel</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Aansitlaaier</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Sagte herlaai</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Jou tablet sal herlaai.</string>
+  <string name="reboot_confirm" product="default">Jou foon gaan herlaai.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">Herlaai\u2026</string>
+  <string name="reboot_systemui">Herlaai SisteemKV</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Huidige</string>
+  <string name="global_action_screenshot">Skermfoto</string>
+  <string name="global_action_screen_record">Skerm opneem</string>
+  <string name="global_action_search">Soek</string>
+  <string name="global_action_torch">Flitslig</string>
+  <string name="global_action_voicesearch">Stem Soek</string>
+  <string name="permlab_preventpower">ignoreer aansitknop</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Laat program toe om krag skakelaar te ignoreer.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">Verdof</string>
+  <string name="animation_slide_right">Gly in regs</string>
+  <string name="animation_slide_left">Gly in links</string>
+  <string name="animation_slide_right_no_fade">Gly in regs (Geen vervaag)</string>
+  <string name="animation_slide_left_no_fade">Gly links in (Geen vervaging)</string>
+  <string name="animation_slide_up">Gly in onder</string>
+  <string name="animation_slide_down">Gly in bo</string>
+  <string name="animation_default">Verstek</string>
+  <string name="animation_translucent">Deursigtige</string>
+  <string name="animation_grow_shrink">Groei in (Bo)</string>
+  <string name="animation_grow_shrink_center">Groei in (Middel)</string>
+  <string name="animation_grow_shrink_bottom">Groei in (Onder)</string>
+  <string name="animation_grow_shrink_left">Groei in (Links)</string>
+  <string name="animation_grow_shrink_right">Groei in (Regs)</string>
+  <string name="action_null">Blanko</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -34,4 +66,18 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- ADB over network -->
+  <!-- Permissions -->
+  <string name="permission_remember_choice">Onthou</string>
+  <string name="permission_title">Toestemming</string>
+  <string name="allow_button">Laat toe</string>
+  <string name="deny_button">Weier</string>
+  <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">Geen gekoppelde toestel</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> gekoppelde toestel</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> gekoppelde toestelle</string>
+  <!-- Single hand mode -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 </resources>

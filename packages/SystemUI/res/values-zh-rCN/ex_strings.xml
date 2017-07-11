@@ -17,12 +17,23 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">通话</string>
+  <string name="stream_title_system">系统</string>
+  <string name="stream_title_ring">铃声</string>
+  <string name="stream_title_media">媒体</string>
+  <string name="stream_title_alarm">闹钟</string>
+  <string name="stream_title_notification">通知</string>
+  <string name="stream_title_bluetooth">蓝牙</string>
   <!-- Wi-Fi hotspot label when enabled -->
+  <plurals name="wifi_hotspot_connected_clients_label">
+    <item quantity="other">%1$d 个用户</item>
+  </plurals>
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
   <!-- Path for battery solid -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">正在录制屏幕</string>
   <!-- Screenrecord notification title -->
@@ -43,6 +54,7 @@
   <string name="quick_settings_locale_label">语言</string>
   <string name="quick_settings_locale_more_locales_toast">请配置多种语言以使用切换功能</string>
   <!-- NavBar Tuner -->
+  <string name="menu_ime_always_show">菜单 / 键盘切换器 (始终显示)</string>
   <string name="search">搜索</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">向右滑动以 %1$s</string>
@@ -54,6 +66,7 @@
   <string name="lockscreen_none_target">无</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">声音</string>
+  <string name="quick_settings_sound_ring">铃声</string>
   <string name="quick_settings_sound_vibrate">震动</string>
   <string name="quick_settings_sound_dnd">请勿打扰</string>
   <!-- Ambient Display QS tile -->
@@ -62,6 +75,7 @@
   <string name="accessibility_quick_settings_ambient_display_changed_off">主动显示已关闭</string>
   <string name="accessibility_quick_settings_ambient_display_changed_on">主动显示已开启</string>
   <string name="quick_settings_ambient_display_label">主动显示</string>
+  <string name="quick_settings_extensions">扩展</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">已删除</string>
   <string name="action_delete_fault">删除失败</string>
@@ -80,7 +94,11 @@
   <string name="action_save_success">已保存</string>
   <string name="action_save_fault">保存失败</string>
   <string name="action_edit">编辑</string>
+  <string name="quick_settings_expanded_navigation_off">隐藏导航栏</string>
+  <string name="quick_settings_expanded_statusbar_off">隐藏状态栏</string>
   <!-- Notification which notifies user flashlight is enabled -->
+  <string name="quick_settings_tile_flashlight_not_title">手电筒已开启</string>
+  <string name="quick_settings_tile_flashlight_not_summary">点击以关闭</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
@@ -120,7 +138,12 @@
   <string name="quick_settings_pulse_disabled">没有可视化工具</string>
   <string name="quick_settings_pulse_label">导航栏音乐可视化</string>
   <string name="quick_settings_nfc_label">NFC</string>
+  <string name="accessibility_quick_settings_nfc_off">关闭NFC</string>
+  <string name="accessibility_quick_settings_nfc_on">开启NFC</string>
+  <string name="accessibility_quick_settings_nfc_changed_off">NFC 已关闭</string>
+  <string name="accessibility_quick_settings_nfc_changed_on">NFC 已开启</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_statusbar_title">状态栏项目</string>
   <string name="accessibility_quick_settings_location_battery_saving">位置报告：低耗电量</string>
   <string name="accessibility_quick_settings_location_gps_only">位置报告：仅限设备</string>
   <string name="accessibility_quick_settings_location_high_accuracy">位置报告：高精确度</string>
@@ -133,6 +156,9 @@
   <string name="quick_settings_location_high_accuracy_label">高精确度</string>
   <string name="quick_settings_location_off_label">关闭定位服务</string>
   <!-- Show lte/4g switch -->
+  <string name="show_lte_fourgee_title">显示4G，而不是LTE</string>
+  <string name="show_lte_fourgee_summary">显示4G，而不是LTE</string>
+  <string name="statusbar_tuner_category_title">隐藏状态栏项目</string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">导航栏</string>
   <string name="quick_settings_smartbar">Smart bar</string>
@@ -154,6 +180,7 @@
   <!-- volte icon switch -->
   <string name="status_bar_volte">VOLTE</string>
   <!-- Data/Wifi activity arrows -->
+  <string name="data_wifi_activity_arrows_title">网络活动</string>
   <!-- OmniJaws -->
   <string name="omnijaws_service_error">错误</string>
   <string name="omnijaws_service_unkown">没有天气数据</string>
@@ -203,6 +230,8 @@
   <string name="accessibility_quick_settings_hwkeys_off">实体按键关闭</string>
   <string name="quick_settings_hwkeys_label">实体按键</string>
   <!-- AEX Logo -->
+  <string name="status_bar_aex_logo_title">AEX图标</string>
+  <string name="status_bar_aex_logo_summary">开启以在状态栏左侧显示 AEX 标志</string>
   <!-- ADB over network Tile -->
   <string name="quick_settings_adb_network">ADB 网络</string>
   <string name="quick_settings_network_adb_enabled_label">启用</string>
