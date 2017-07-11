@@ -519,10 +519,6 @@
     <string name="permdesc_bindCarrierServices" msgid="1391552602551084192">"Permite que o proprietário use serviços de operadora. Não deve ser necessário para apps comuns."</string>
     <string name="permlab_access_notification_policy" msgid="4247510821662059671">"acessar \"Não perturbe\""</string>
     <string name="permdesc_access_notification_policy" msgid="3296832375218749580">"Permitir que o app leia e grave a configuração \"Não perturbe\"."</string>
-    <string name="permlab_modifyOverlays">modificar as sobreposições de tema</string>
-    <string name="permdesc_modifyOverlays">Permite que o aplicativo fazer modificações de sobreposições de tema usando OverlayManagerService</string>
-    <string name="permlab_restartUI">reiniciar as barras do sistema</string>
-    <string name="permdesc_restartUI">Reiniciar o SystemUI para que as barras de sistema possam carregar recursos do tema</string>
     <string name="policylab_limitPassword" msgid="4497420728857585791">"Definir regras para senha"</string>
     <string name="policydesc_limitPassword" msgid="2502021457917874968">"Controla o tamanho e os caracteres permitidos nos PINs e nas senhas do bloqueio de tela."</string>
     <string name="policylab_watchLogin" msgid="914130646942199503">"Monitorar tentativas de desbloqueio da tela"</string>
@@ -1689,6 +1685,4 @@
     <string name="audit_safemode_notification_details" msgid="1860601176690176413">"Toque para saber mais."</string>
     <string name="suspended_widget_accessibility" msgid="6712143096475264190">"Widget <xliff:g id="LABEL">%1$s</xliff:g> desativado"</string>
     <string name="conference_call" msgid="3751093130790472426">"Teleconferência"</string>
-    <string name="singlehandmode_click_hint_message">Toque fora da tela para sair do modo de tela pequeno</string>
-    <string name="singlehandmode_slide_hint_message">Deslize seu dedo através da barra de navegação para alternar entre os modos de exibição de tela padrão e pequeno</string>
 </resources>

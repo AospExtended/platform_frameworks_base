@@ -83,4 +83,31 @@
     <string name="adb_net_active_notification_title">ADB over network enabled</string>
     <string name="adb_both_active_notification_title">ADB over USB &amp; network enabled</string>
     <string name="adb_active_generic_notification_message">Touch to disable debugging.</string>
+
+    <!-- Permissions -->
+    <string name="other_permissions">other permissions</string>
+    <string name="permission_remember_choice">Remember</string>
+    <string name="permission_title">Permission</string>
+    <string name="allow_button">Allow</string>
+    <string name="deny_button">Deny</string>
+
+    <!-- Tethered notification -->
+    <string name="tethered_notification_no_device_message">No connected device</string>
+    <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> connected device</string>
+    <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> connected devices</string>
+
+    <!-- Single hand mode -->
+    <string name="singlehandmode_click_hint_message">Touch outside the screen to exit mini screen view</string>
+    <string name="singlehandmode_slide_hint_message">Slide your finger across the navigation bar to switch between the standard and mini screen views</string>
+
+    <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_modifyOverlays">modify theme overlays</string>
+    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_modifyOverlays">Allows the app to make modifications to theme overlays using OverlayManagerService</string>
+
+    <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_restartUI">restart the system bars</string>
+    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_restartUI">Restart SystemUIService so that system bars can load themed resources</string>
+
 </resources>

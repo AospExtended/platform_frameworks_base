@@ -1006,8 +1006,6 @@
     <string name="aerr_close" msgid="2991640326563991340">"关闭"</string>
     <string name="aerr_mute" msgid="1974781923723235953">"忽略（直到设备重启）"</string>
     <string name="aerr_wait" msgid="3199956902437040261">"等待"</string>
-    <string name="singlehandmode_click_hint_message">"点击屏幕外区域可退出小屏模式"</string>
-    <string name="singlehandmode_slide_hint_message">"在虚拟导航栏区域内左右滑动，可切换小屏模式和正常模式，方便单手使用"</string>
     <string name="aerr_close_app" msgid="3269334853724920302">"关闭应用"</string>
     <string name="anr_title" msgid="4351948481459135709"></string>
     <string name="anr_activity_application" msgid="8493290105678066167">"<xliff:g id="APPLICATION">%2$s</xliff:g>没有响应"</string>
@@ -1263,9 +1261,6 @@
     <string name="car_mode_disable_notification_message" msgid="6301524980144350051">"点按即可退出车载模式。"</string>
     <string name="tethered_notification_title" msgid="3146694234398202601">"网络共享或热点已启用"</string>
     <string name="tethered_notification_message" msgid="2113628520792055377">"点按即可进行设置。"</string>
-    <string name="tethered_notification_no_device_message">"没有设备已连接。"</string>
-    <string name="tethered_notification_one_device_message">""<xliff:g id="count">%1$s</xliff:g>"个设备已连接。"</string>
-    <string name="tethered_notification_multi_device_message">""<xliff:g id="count">%1$s</xliff:g>"个设备已连接。"</string>
     <string name="back_button_label" msgid="2300470004503343439">"上一步"</string>
     <string name="next_button_label" msgid="1080555104677992408">"下一步"</string>
     <string name="skip_button_label" msgid="1275362299471631819">"跳过"</string>
@@ -1690,10 +1685,5 @@
     <string name="audit_safemode_notification" msgid="6416076898350685856">"恢复出厂设置即可正常使用此设备，不受任何限制"</string>
     <string name="audit_safemode_notification_details" msgid="1860601176690176413">"触摸即可了解详情。"</string>
     <string name="suspended_widget_accessibility" msgid="6712143096475264190">"已停用的<xliff:g id="LABEL">%1$s</xliff:g>"</string>
-    <string name="other_permissions">其他权限</string>
-    <string name="permission_remember_choice">永远记住</string>
-    <string name="permission_title">权限</string>
-    <string name="allow_button">允许</string>
-    <string name="deny_button">拒绝</string>
     <string name="conference_call" msgid="3751093130790472426">"电话会议"</string>
 </resources>

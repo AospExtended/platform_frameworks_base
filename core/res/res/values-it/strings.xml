@@ -519,14 +519,6 @@
     <string name="permdesc_bindCarrierServices" msgid="1391552602551084192">"Consente al titolare di collegarsi a servizi dell\'operatore. Non dovrebbe mai essere necessaria per le normali app."</string>
     <string name="permlab_access_notification_policy" msgid="4247510821662059671">"accesso alla funzione Non disturbare"</string>
     <string name="permdesc_access_notification_policy" msgid="3296832375218749580">"Consente all\'app di leggere e modificare la configurazione della funzione Non disturbare."</string>
-    <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permlab_modifyOverlays">modifica sovrapposizioni del tema</string>
-    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_modifyOverlays">consente all\'applicazione di apportare modifiche alla sovrapposizione del tema utilizzando OverlayManagerService</string>
-    <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permlab_restartUI">riavviare le barre di sistema</string>
-    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_restartUI">Riavvia SystemUIService in modo che le barre di sistema possono caricare le risorse a tema</string>
     <string name="policylab_limitPassword" msgid="4497420728857585791">"Impostazione regole password"</string>
     <string name="policydesc_limitPassword" msgid="2502021457917874968">"Controlla la lunghezza e i caratteri ammessi nelle password e nei PIN del blocco schermo."</string>
     <string name="policylab_watchLogin" msgid="914130646942199503">"Controllo tentativi di sblocco dello schermo"</string>
