@@ -1674,7 +1674,7 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
     public void removeCallback(KeyguardUpdateMonitorCallback callback) {
         if (DEBUG) Log.v(TAG, "*** unregister callback for " + callback);
         for (int i = mCallbacks.size() - 1; i >= 0; i--) {
-            if (mCallbacks.get(i).get() == callback) {
+            if (mCallbacks.get(i) != null && mCallbacks.get(i).get() == callback) {
                 mCallbacks.remove(i);
             }
         }
