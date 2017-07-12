@@ -526,7 +526,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     boolean mIsLongPress;
 
     // Behavior of home wake
-    boolean mHomeWakeScreen;
+    boolean mHomeWakeScreen = false;
 
     // During wakeup by volume keys, we still need to capture subsequent events
     // until the key is released. This is required since the beep sound is produced
@@ -2366,7 +2366,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             mVolBtnMusicControls = (Settings.System.getIntForUser(resolver,
                     Settings.System.VOLUME_ROCKER_MUSIC_CONTROLS, 0, UserHandle.USER_CURRENT) == 1);
             mHomeWakeScreen = (Settings.System.getIntForUser(resolver,
-                    Settings.System.HOME_WAKE_SCREEN, 1, UserHandle.USER_CURRENT) == 1);
+                    Settings.System.HOME_WAKE_SCREEN, mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_homeCanWake) ? 1 : 0, UserHandle.USER_CURRENT) == 1);
 
             // Configure wake gesture.
             boolean wakeGestureEnabledSetting = Settings.Secure.getIntForUser(resolver,
