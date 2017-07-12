@@ -77,10 +77,24 @@
   <string name="adb_both_active_notification_title">ADB cez USB a sieť povolené</string>
   <string name="adb_active_generic_notification_message">Dotykom zakážate ladenie.</string>
   <!-- Permissions -->
+  <string name="other_permissions">ostatné oprávnenia</string>
+  <string name="permission_remember_choice">Zapamätať</string>
+  <string name="permission_title">Povolenie</string>
+  <string name="allow_button">Povoliť</string>
+  <string name="deny_button">Zakázať</string>
   <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">Žiadne pripojené zariadenie</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> pripojené zariadenie</string>
+  <string name="tethered_notification_multi_device_message">Pripojené zariadenia: <xliff:g id="count">%1$s</xliff:g></string>
   <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">Pred odchod z mini zobrazenia kliknite mimo obrazovku</string>
+  <string name="singlehandmode_slide_hint_message">Posunutím prsta po navigačnom paneli možno prepínať medzi štandardným a mini zobrazením</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">upraviť tématické prekrytia</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">Umožňuje aplikácii robiť zmeny tématických prekrytí pomocou služby OverlayManagerService</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">reštartovať systémové panely</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_restartUI">Reštartuje službu SystemUIService, pričom si systémové panely nahrajú zdroje z upravenej témy</string>
 </resources>
