@@ -32,7 +32,9 @@
   <!-- Screenrecord QS tile -->
   <!-- Language\Locale Tile -->
   <!-- NavBar Tuner -->
+  <string name="search">অনুসন্ধান</string>
   <!-- Strings for lockscreen shortcut hints -->
+  <string name="lockscreen_default_target">পূর্ব-নির্ধারিত</string>
   <!-- Sound QS Tile -->
   <!-- Ambient Display QS tile -->
   <!-- Screenshot Crop & Share -->
@@ -45,7 +47,9 @@
   <!-- Screenshot Delete Toast -->
   <!-- SystemUI Tuner Parts -->
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">স্ক্রীনসর্ট</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_recovery_label">পুনরুদ্ধার</string>
   <!-- SystemUI Tuner Parts -->
   <!-- Show lte/4g switch -->
   <!-- Navigation bar Tile -->

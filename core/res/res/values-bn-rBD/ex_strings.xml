@@ -17,26 +17,72 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">পুনরায় শুরু করুন</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">পুনরায় শুরু করুন</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">পুনরুদ্ধার</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">বুটলোডার</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">মৃদু রিস্টার্ট</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">আপনার ট্যাবলেট পুনরায় চালু হবে।</string>
+  <string name="reboot_confirm" product="default">আপনার ফোন পুনরায় চালু হবে।</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">পুনরায় শুরু হচ্ছে \u2026</string>
+  <string name="reboot_systemui">SystemUI পুনরায় শুরু করুন</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">বর্তমান</string>
+  <string name="global_action_screenshot">স্ক্রীনসর্ট</string>
+  <string name="global_action_screen_record">স্ক্রীন রেকর্ডার</string>
+  <string name="global_action_search">অনুসন্ধান</string>
+  <string name="global_action_torch">ফ্লাসলাইট</string>
+  <string name="global_action_voicesearch">কণ্ঠ দ্বারা অনুসন্ধান করুন</string>
+  <string name="permlab_preventpower">পাওয়ার কি অগ্রাহ্য করুন</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">অ্যাপটিকে পাওয়া্র কী অগ্রাহ্য করার অনুমতি প্রদান করুন</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">বিলিন হয়ে যাওয়া</string>
+  <string name="animation_slide_right">ডান দিকে স্লাইড করুন</string>
+  <string name="animation_slide_left">বাম দিকে স্লাইড করুন</string>
+  <string name="animation_slide_right_no_fade">ডান দিকে স্লাইড করুন (ফেড ছাড়া)</string>
+  <string name="animation_slide_left_no_fade">বাম দিকে স্লাইড করুন (ফেড ছাড়া)</string>
+  <string name="animation_slide_up">নিচের দিকে স্লাইড করুন </string>
+  <string name="animation_slide_down">উপর দিকে স্লাইড করুন</string>
+  <string name="animation_default">পূর্ব-নির্ধারিত</string>
+  <string name="animation_translucent">আলোক-ভেদ্য</string>
+  <string name="animation_grow_shrink">বৃদ্ধি (ওপর দিকে)</string>
+  <string name="animation_grow_shrink_center">বৃদ্ধি (মাঝখানে)</string>
+  <string name="animation_grow_shrink_bottom">বৃদ্ধি (নিচের দিকে)</string>
+  <string name="animation_grow_shrink_left">বৃদ্ধি (বাম দিকে)</string>
+  <string name="animation_grow_shrink_right">বৃদ্ধি (ডান দিকে)</string>
+  <string name="action_null">খালি</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_resetBatteryStats">ব্যাটারি পরিসংখ্যান পুনঃবিন্যাস করুন</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_resetBatteryStats">একটি অ্যাপ্লিকেশনকে ব্যাটারির বর্তমান নিম্নস্তরের তথ্য পুনঃবিন্যাস করার অনুমতি দিন।.</string>
   <!-- On-The-Go -->
+  <string name="global_action_onthego">যান মোড</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">ভুয়া প্যাকেজ স্বাক্ষর</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">নেটওয়ার্কের উপর এডিবি সক্রিয়</string>
+  <string name="adb_both_active_notification_title">এডিবি, ইউএসবি ও নেটওয়ার্ক এর উপর সক্রিয়</string>
+  <string name="adb_active_generic_notification_message">ডিবাগ নিষ্ক্রিয় করতে স্পর্শ করুন।</string>
   <!-- Permissions -->
+  <string name="other_permissions">অন্যান্য অনুমতি</string>
+  <string name="permission_remember_choice">মনে রাখুন</string>
+  <string name="permission_title">অনুমতি</string>
+  <string name="allow_button">অনুমোদন</string>
+  <string name="deny_button">প্রত্যাখ্যান</string>
   <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">কোনো ডিভাইস সংযুক্ত নেই</string>
   <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">একহাতে চালনা  মোডটি বন্ধ করার জন্য স্কিনের বাইরে টাচ করুন</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

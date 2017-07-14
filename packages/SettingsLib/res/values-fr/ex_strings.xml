@@ -28,4 +28,6 @@
   <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->
   <string name="screen_zoom_summary_smallest">Le plus petit possible</string>
   <!-- Regex used to parse the processor string from kernel -->
+  <!-- Text when wrong password entered for psk networks -->
+  <string name="wifi_auth_password_wrong">Le mot de passe est incorrect</string>
 </resources>

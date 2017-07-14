@@ -71,7 +71,7 @@
   <string name="quick_settings_sound_vibrate">Vibrar</string>
   <string name="quick_settings_sound_dnd">No molestar</string>
   <!-- Ambient Display QS tile -->
-  <string name="accessibility_quick_settings_ambient_display_off">Pantalla ambiente desactivada.</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Pantalla ambiente desactivada</string>
   <string name="accessibility_quick_settings_ambient_display_on">Pantalla ambiente activada</string>
   <string name="accessibility_quick_settings_ambient_display_changed_off">Pantalla ambiente se ha desactivado</string>
   <string name="accessibility_quick_settings_ambient_display_changed_on">Pantalla ambiente se ha activado</string>
