@@ -29,4 +29,7 @@
 
     <!-- Regex used to parse the processor string from kernel -->
     <string name="processor_regex" translatable="false">Hardware\\s*:\\s*(.*?)(?:\\(.*)?$</string>
+
+    <!-- Text when wrong password entered for psk networks -->
+    <string name="wifi_auth_password_wrong">Password may be incorrect</string>
 </resources>
