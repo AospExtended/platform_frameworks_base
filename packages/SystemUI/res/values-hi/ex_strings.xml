@@ -17,12 +17,24 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">कॉल</string>
+  <string name="stream_title_system">सिस्टम</string>
+  <string name="stream_title_ring">रिंग</string>
+  <string name="stream_title_media">मीडिया</string>
+  <string name="stream_title_alarm">अलार्म</string>
+  <string name="stream_title_notification">सूचना</string>
+  <string name="stream_title_bluetooth">ब्लूटूथ</string>
   <!-- Wi-Fi hotspot label when enabled -->
+  <plurals name="wifi_hotspot_connected_clients_label">
+    <item quantity="one">%1$d क्लाइंट्</item>
+    <item quantity="other">%1$d क्लाइंट्स</item>
+  </plurals>
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
   <!-- Path for battery solid -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">स्क्रीन रिकॉर्ड की जा रही है</string>
   <!-- Screenrecord notification title -->
@@ -43,6 +55,7 @@
   <string name="quick_settings_locale_label">भाषा</string>
   <string name="quick_settings_locale_more_locales_toast">कृपया टॉगल कार्यक्षमता सक्षम करने के लिए एक से अधिक भाषाओं को कॉन्फ़िगर करें</string>
   <!-- NavBar Tuner -->
+  <string name="menu_ime_always_show">मेनू / कुंजीपटल स्विचर (हमेशा दिखाएँ)</string>
   <string name="search">खोज</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">%1$s के लिए यहाँ से दाहिने स्वाइप करें</string>
@@ -54,6 +67,7 @@
   <string name="lockscreen_none_target">कोई नहीं</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">ध्वनि</string>
+  <string name="quick_settings_sound_ring">रिंग</string>
   <string name="quick_settings_sound_vibrate">कंपन</string>
   <string name="quick_settings_sound_dnd">परेशान ना करें</string>
   <!-- Ambient Display QS tile -->
@@ -62,6 +76,7 @@
   <string name="accessibility_quick_settings_ambient_display_changed_off">एम्बिएंट डिस्प्ले बंद कर दिया</string>
   <string name="accessibility_quick_settings_ambient_display_changed_on">एम्बिएंट डिस्प्ले चालु कर दिया</string>
   <string name="quick_settings_ambient_display_label">एम्बिएंट डिस्प्ले</string>
+  <string name="quick_settings_extensions">विस्तार</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">हटाए गए</string>
   <string name="action_delete_fault">हटाने का कार्य विफल रहा</string>
@@ -80,7 +95,11 @@
   <string name="action_save_success">सहेजा गया</string>
   <string name="action_save_fault">बचत असफल था</string>
   <string name="action_edit">संपादित करें</string>
+  <string name="quick_settings_expanded_navigation_off">नेविगेशन पट्टी छुपाएँ</string>
+  <string name="quick_settings_expanded_statusbar_off">स्थिति बार छुपाएँ</string>
   <!-- Notification which notifies user flashlight is enabled -->
+  <string name="quick_settings_tile_flashlight_not_title">टॉर्च चालू है</string>
+  <string name="quick_settings_tile_flashlight_not_summary">बंद करने के लिए दबाए</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
@@ -88,6 +107,7 @@
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">स्क्रीनशॉट मिटा दिये</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_pnc_title">अतिरिक्त सूचना नियंत्रण</string>
   <!-- Quick Settings tiles -->
   <string name="quick_settings_screenshot_label">स्क्रीनशॉट</string>
   <string name="quick_settings_region_screenshot_label">आंशिक स्क्रीनशॉट</string>
@@ -120,7 +140,12 @@
   <string name="quick_settings_pulse_disabled">विजुअलाइज़र बंद</string>
   <string name="quick_settings_pulse_label">नेविगेशनबार विजुअलाइज़र</string>
   <string name="quick_settings_nfc_label">NFC</string>
+  <string name="accessibility_quick_settings_nfc_off">NFC बंद</string>
+  <string name="accessibility_quick_settings_nfc_on">NFC शुरू</string>
+  <string name="accessibility_quick_settings_nfc_changed_off">NFC बंद कर दिया।</string>
+  <string name="accessibility_quick_settings_nfc_changed_on">NFC चालू।</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_statusbar_title">स्थिति बार आइटम</string>
   <string name="accessibility_quick_settings_location_battery_saving">स्थान रिपोर्टिंग: बैटरी बचत मोड।</string>
   <string name="accessibility_quick_settings_location_gps_only">स्थान रिपोर्टिंग: सेंसर मोड।</string>
   <string name="accessibility_quick_settings_location_high_accuracy">स्थान रिपोर्टिंग: उच्च सटीकता मोड।</string>
@@ -133,6 +158,9 @@
   <string name="quick_settings_location_high_accuracy_label">उच्च सटीकता</string>
   <string name="quick_settings_location_off_label">स्थान बंद</string>
   <!-- Show lte/4g switch -->
+  <string name="show_lte_fourgee_title">LTE के बजाय 4G दिखाएँ</string>
+  <string name="show_lte_fourgee_summary">LTE स्थिति बार सूचक के साथ 4 जी बदल</string>
+  <string name="statusbar_tuner_category_title">स्थिति पट्टी से चिह्न छुपाएँ</string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">नेविगेशन पट्टी</string>
   <string name="quick_settings_smartbar">स्मार्ट पट्टी</string>
@@ -151,9 +179,11 @@
   <!-- Path data for big circle battery -->
   <string name="recents_free_ram">नि: शुल्क राम: %1$d MB</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">सेवाओं स्क्रीन खोलते है</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">VoLTE</string>
   <!-- Data/Wifi activity arrows -->
+  <string name="data_wifi_activity_arrows_title">नेटवर्क गतिविधि</string>
   <!-- OmniJaws -->
   <string name="omnijaws_service_error">त्रुटि</string>
   <string name="omnijaws_service_unkown">मौसम के बारे में जानकारी उपलब्ध नहीं|</string>
@@ -196,12 +226,15 @@
   <string name="onthego_front_camera">फ्रंट कैमरा उपयोग</string>
   <string name="onthego_service_toggle">स्वचालित रूप से सेवा को पुनरारंभ करें</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">तेज़ चार्जिंग (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> पूर्ण होने तक)</string>
   <string name="keyguard_plugged_in_dash_charging">डैश चार्जिंग</string>
   <!-- HW Keys Tile -->
   <string name="accessibility_quick_settings_hwkeys_on">HW कुंजी चालू</string>
   <string name="accessibility_quick_settings_hwkeys_off">HW कुंजियाँ बंद</string>
   <string name="quick_settings_hwkeys_label">HW कुंजियाँ</string>
   <!-- AEX Logo -->
+  <string name="status_bar_aex_logo_title">AEX लोगो</string>
+  <string name="status_bar_aex_logo_summary">AEX लोगो statusbar के बाईं ओर पर दिखाने के लिए सक्षम करें</string>
   <!-- ADB over network Tile -->
   <string name="quick_settings_adb_network">ADB नेटवर्क</string>
   <string name="quick_settings_network_adb_enabled_label">सक्षम</string>

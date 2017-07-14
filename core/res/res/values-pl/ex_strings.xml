@@ -77,10 +77,24 @@
   <string name="adb_both_active_notification_title">ADB po USB &amp; sieć włączona</string>
   <string name="adb_active_generic_notification_message">Dotknij, aby wyłączyć debugowanie.</string>
   <!-- Permissions -->
+  <string name="other_permissions">inne uprawnienia</string>
+  <string name="permission_remember_choice">Zapamiętaj</string>
+  <string name="permission_title">Uprawnienie</string>
+  <string name="allow_button">Zezwól</string>
+  <string name="deny_button">Odmów</string>
   <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">Brak podłączonego urządzenia</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> podłączone urządzenie</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count"> %1$s </xliff:g> podłączonych urządzeń</string>
   <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">Dotknij obszar poza ekranem, by opuścić tryb obsługi mini ekranu</string>
+  <string name="singlehandmode_slide_hint_message">Przesuń palcem po pasku nawigacyjnym, aby przełączać się między trybem standardowym i małego ekranu</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">modyfikowanie tematu nakładek</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">Umożliwia aplikacji wprowadzenia zmian do tematu nakładek przy użyciu OverlayManagerService</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">uruchom ponownie paski systemowe</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_restartUI">Uruchom ponownie SystemUIService, tak że paski systemowe będą dopasowane do motywu</string>
 </resources>

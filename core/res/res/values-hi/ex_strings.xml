@@ -77,10 +77,24 @@
   <string name="adb_both_active_notification_title">यूएसबी और नेटवर्क पर एडीबी को सक्षम कर दिया गया</string>
   <string name="adb_active_generic_notification_message">डीबगिंग को अक्षम करने के लिए छुएँ।</string>
   <!-- Permissions -->
+  <string name="other_permissions">अन्य अनुमतियाँ</string>
+  <string name="permission_remember_choice">याद रखें</string>
+  <string name="permission_title">अनुमति</string>
+  <string name="allow_button">अनुमति दें</string>
+  <string name="deny_button">इनकार</string>
   <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">कोई जुड़ा हुआ उपकरण नहीं है</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> जुड़े हुए उपकरण</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> जुड़े हुए उपकरण</string>
   <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">एक हाथ मोड से बाहर निकलें करने के लिए स्क्रीन के बाहर स्पर्श करें</string>
+  <string name="singlehandmode_slide_hint_message">मानक और मिनी स्क्रीन दृश्य के बीच स्विच करने के लिए नेविगेशन पट्टी में अपनी उंगली स्लाइड करे</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">ओवरले के थीम को संशोधित करें</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">थीम ओवरले को संशोधन करने के लिए ओवरले प्रबंधक सर्विस एप्लिकेशन को अनुमति दे</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">सिस्टम पट्टी को पुनरारंभ करें</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_restartUI">सिस्टम प्रयोक्ता इंटरफ़ेस पुनरारंभ करें ताकि सिस्टम पट्टी थीमाधारित संसाधन लोड कर सके</string>
 </resources>
