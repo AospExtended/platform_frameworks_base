@@ -21,6 +21,7 @@ import static com.android.systemui.statusbar.phone.StatusBarIconHolder.TYPE_ICON
 import static com.android.systemui.statusbar.phone.StatusBarIconHolder.TYPE_MOBILE;
 import static com.android.systemui.statusbar.phone.StatusBarIconHolder.TYPE_NETWORK_TRAFFIC;
 import static com.android.systemui.statusbar.phone.StatusBarIconHolder.TYPE_WIFI;
+import static com.android.systemui.statusbar.phone.StatusBarIconHolder.TYPE_IMS;
 
 import android.content.Context;
 import android.content.ContentResolver;
@@ -48,11 +49,14 @@ import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.StatusBarIconView;
 import com.android.systemui.statusbar.StatusBarMobileView;
 import com.android.systemui.statusbar.StatusBarWifiView;
+import com.android.systemui.statusbar.StatusBarImsView;
 import com.android.systemui.statusbar.StatusIconDisplayable;
 import com.android.systemui.statusbar.phone.StatusBarSignalPolicy.MobileIconState;
 import com.android.systemui.statusbar.phone.StatusBarSignalPolicy.WifiIconState;
 import com.android.systemui.statusbar.policy.NetworkTrafficSB;
 import com.android.systemui.util.Utils.DisableStateTracker;
+
+import com.android.systemui.statusbar.policy.NetworkController.ImsIconState;
 
 import java.util.List;
 
@@ -72,6 +76,7 @@ public interface StatusBarIconController {
     public void setSignalIcon(String slot, WifiIconState state);
     public void setMobileIcons(String slot, List<MobileIconState> states);
     public void setIconVisibility(String slot, boolean b);
+    public void setImsIcon(String slot, ImsIconState state);
 
     /**
      * Sets the live region mode for the icon
@@ -270,6 +275,9 @@ public interface StatusBarIconController {
 
                 case TYPE_NETWORK_TRAFFIC:
                     return addNetworkTraffic(index, slot);
+                    
+                case TYPE_IMS:
+                    return addImsIcon(index, slot, holder.getImsState());
             }
 
             return null;
@@ -314,6 +322,13 @@ public interface StatusBarIconController {
             return view;
         }
 
+        protected StatusBarImsView addImsIcon(int index, String slot, ImsIconState state) {
+            StatusBarImsView view = onCreateStatusBarImsView(slot);
+            view.applyImsState(state);
+            mGroup.addView(view, index, onCreateLayoutParams());
+            return view;
+        }
+
         private StatusBarIconView onCreateStatusBarIconView(String slot, boolean blocked) {
             return new StatusBarIconView(mContext, slot, null, blocked);
         }
@@ -332,6 +347,11 @@ public interface StatusBarIconController {
             NetworkTrafficSB view = new NetworkTrafficSB(mContext);
             view.setPadding(4, 0, 4, 0);
             view.setGravity(Gravity.RIGHT | Gravity.CENTER_VERTICAL);
+            return view;            
+        }
+        
+        private StatusBarImsView onCreateStatusBarImsView(String slot) {
+            StatusBarImsView view = StatusBarImsView.fromContext(mContext, slot);
             return view;
         }
 
@@ -395,6 +415,10 @@ public interface StatusBarIconController {
                     return;
                 case TYPE_MOBILE:
                     onSetMobileIcon(viewIndex, holder.getMobileState());
+                    return;
+                case TYPE_IMS:
+                    onSetImsIcon(viewIndex, holder.getImsState());
+                    return;
                 default:
                     break;
             }
@@ -419,6 +443,13 @@ public interface StatusBarIconController {
 
             if (mIsInDemoMode) {
                 mDemoStatusIcons.updateMobileState(state);
+            }
+        }
+
+        public void onSetImsIcon(int viewIndex, ImsIconState state) {
+            StatusBarImsView view = (StatusBarImsView) mGroup.getChildAt(viewIndex);
+            if (view != null) {
+                view.applyImsState(state);
             }
         }
 
