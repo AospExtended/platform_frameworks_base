@@ -227,6 +227,9 @@
     <string name="applock_credential">&#160;to unlock</string>
     <string name="applock_unlock">Unlock</string>
 
+    <!-- Name of the volte/vowifi status bar icon. -->
+    <string name="status_bar_ims">VoLTE/VoWiFi</string>
+
     <!-- Anti flicker QS tile -->
     <string name="quick_settings_anti_flicker">Anti flicker</string>
 
