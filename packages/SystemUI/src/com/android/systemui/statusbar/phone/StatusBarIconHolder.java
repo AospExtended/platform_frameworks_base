@@ -24,6 +24,7 @@ import android.os.UserHandle;
 import com.android.internal.statusbar.StatusBarIcon;
 import com.android.systemui.statusbar.phone.StatusBarSignalPolicy.MobileIconState;
 import com.android.systemui.statusbar.phone.StatusBarSignalPolicy.WifiIconState;
+import com.android.systemui.statusbar.policy.NetworkController.ImsIconState;
 
 /**
  * Wraps {@link com.android.internal.statusbar.StatusBarIcon} so we can still have a uniform list
@@ -33,10 +34,12 @@ public class StatusBarIconHolder {
     public static final int TYPE_WIFI = 1;
     public static final int TYPE_MOBILE = 2;
     public static final int TYPE_NETWORK_TRAFFIC = 42;
+    public static final int TYPE_IMS = 3;
 
     private StatusBarIcon mIcon;
     private WifiIconState mWifiState;
     private MobileIconState mMobileState;
+    private ImsIconState mImsState;
     private int mType = TYPE_ICON;
     private int mTag = 0;
     private boolean mVisible = true;
@@ -76,6 +79,13 @@ public class StatusBarIconHolder {
         holder.mType = TYPE_NETWORK_TRAFFIC;
         return holder;
     }
+    
+    public static StatusBarIconHolder fromImsIconState(ImsIconState state) {
+        StatusBarIconHolder holder = new StatusBarIconHolder();
+        holder.mImsState = state;
+        holder.mType = TYPE_IMS;
+        return holder;
+    }
 
     public int getType() {
         return mType;
@@ -104,6 +114,14 @@ public class StatusBarIconHolder {
         mMobileState = state;
     }
 
+    public ImsIconState getImsState() {
+        return mImsState;
+    }
+
+    public void setImsState(ImsIconState state) {
+        mImsState = state;
+    }
+
     public boolean isVisible() {
         switch (mType) {
             case TYPE_ICON:
@@ -114,6 +132,8 @@ public class StatusBarIconHolder {
                 return mMobileState.visible;
             case TYPE_NETWORK_TRAFFIC:
                 return true;
+            case TYPE_IMS:
+                return mImsState.visible;
 
             default: return true;
         }
@@ -135,6 +155,10 @@ public class StatusBarIconHolder {
 
             case TYPE_MOBILE:
                 mMobileState.visible = visible;
+                break;
+
+            case TYPE_IMS:
+                mImsState.visible = visible;
                 break;
         }
     }

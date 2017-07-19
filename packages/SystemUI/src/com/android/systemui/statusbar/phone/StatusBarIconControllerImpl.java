@@ -38,6 +38,8 @@ import com.android.systemui.statusbar.policy.ConfigurationController.Configurati
 import com.android.systemui.tuner.TunerService;
 import com.android.systemui.tuner.TunerService.Tunable;
 
+import com.android.systemui.statusbar.policy.NetworkController.ImsIconState;
+
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -212,6 +214,26 @@ public class StatusBarIconControllerImpl extends StatusBarIconList implements Tu
                 holder.setMobileState(state);
                 handleSet(slotIndex, holder);
             }
+        }
+    }
+
+    @Override
+    public void setImsIcon(String slot, ImsIconState state) {
+
+        int index = getSlotIndex(slot);
+
+        if (state == null) {
+            removeIcon(index, 0);
+            return;
+        }
+
+        StatusBarIconHolder holder = getIcon(index, 0);
+        if (holder == null) {
+            holder = StatusBarIconHolder.fromImsIconState(state);
+            setIcon(index, holder);
+        } else {
+            holder.setImsState(state);
+            handleSet(index, holder);
         }
     }
 
