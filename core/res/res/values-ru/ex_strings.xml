@@ -41,7 +41,7 @@
   <string name="global_action_voicesearch">Голосовой поиск</string>
   <string name="permlab_preventpower">перехват кнопки питания</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_preventpower">Позволяет приложениям перехватывать кнопку питания.</string>
+  <string name="permdesc_preventpower">Позволять приложению переопределять кнопку питания.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Образ не соответствует системе. Пожалуйста прошейте образ <xliff:g id="string">%s</xliff:g> для вашего устройства</string>
   <!-- AOKP custom system animations -->
@@ -65,7 +65,7 @@
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">Cбросить статистику батареи</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_resetBatteryStats">Приложение сможет очищать данные об использовании батареи устройства.</string>
+  <string name="permdesc_resetBatteryStats">Приложение сможет очищать статистику использования батареи устройством.</string>
   <!-- On-The-Go -->
   <string name="global_action_onthego">Режим «На ходу»</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

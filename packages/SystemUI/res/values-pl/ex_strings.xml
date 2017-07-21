@@ -114,7 +114,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">Synchronizacja włączona</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Uruchom ponownie</string>
-  <string name="quick_settings_reboot_recovery_label">Odzyskiwanie</string>
+  <string name="quick_settings_reboot_recovery_label">Recovery</string>
   <string name="accessibility_quick_settings_usb_tether_off">Tethering USB wyłączony</string>
   <string name="accessibility_quick_settings_usb_tether_on">Tethering USB włączony</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">Tethering USB wyłączony</string>

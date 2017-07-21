@@ -65,7 +65,7 @@
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">réinitialiser les statistiques de la batterie</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_resetBatteryStats">Permet à une application de réinitialiser les données actuelles d\'utilisation de la batterie à faible niveau.</string>
+  <string name="permdesc_resetBatteryStats">Permet à une application de réinitialiser les données d\'utilisation de la batterie.</string>
   <!-- On-The-Go -->
   <string name="global_action_onthego">Mode On-the-Go</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

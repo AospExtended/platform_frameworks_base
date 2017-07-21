@@ -21,7 +21,7 @@
   <!-- Button to reboot the phone in restart menu -->
   <string name="reboot_reboot">Uruchom ponownie</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
-  <string name="reboot_recovery">Odzyskiwanie</string>
+  <string name="reboot_recovery">Recovery</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
   <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->

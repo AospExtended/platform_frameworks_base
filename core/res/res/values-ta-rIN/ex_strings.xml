@@ -17,25 +17,58 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">மறு தொடக்கம்</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">மறு தொடக்கம்</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">மீட்பு (ரெகவரி)</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">துவக்க ஏற்றி</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">மென் மறுதொடக்கம்</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">உங்கள் கைக்கணினி மீண்டும் துவக்கபடும்.</string>
+  <string name="reboot_confirm" product="default">உங்கள் கைப்பேசி மீண்டும் துவக்கபடும்.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">மீண்டும் துவக்கப்படுகிறது</string>
+  <string name="reboot_systemui">அமைப்புத்திரை மறுதொடக்கம்</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">நடப்பு</string>
+  <string name="global_action_screenshot">திரைப்பிடிப்பு</string>
+  <string name="global_action_screen_record">திரை பதிவேடு</string>
+  <string name="global_action_search">தேடு</string>
+  <string name="global_action_torch">விளக்கு</string>
+  <string name="global_action_voicesearch">குரல் தேடல்</string>
+  <string name="permlab_preventpower">ஆற்றல் விசைப்பயன் மாற்று</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">மென்பொருள் பயன்பாடுகளுக்கு ஆற்றல் விசைப்பயன் மாற்ற அனுமதி.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">மங்கு</string>
+  <string name="animation_default">இயல்புநிலை</string>
+  <string name="animation_translucent">வெளிப்படை</string>
+  <string name="animation_grow_shrink">(மேலே) உள்ள வளர</string>
+  <string name="animation_grow_shrink_center">(நடுவில்) உள்ள வளர</string>
+  <string name="animation_grow_shrink_bottom">(கீழே) வளர்ச்சிக்குக்</string>
+  <string name="animation_grow_shrink_left">(இடது) வளர்ச்சிக்குக்</string>
+  <string name="animation_grow_shrink_right">(வலது) வளர்ச்சிக்குக்</string>
+  <string name="action_null">வெற்று</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_resetBatteryStats">மின்கல புள்ளிவிவரம் படிக்க</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- On-The-Go -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- ADB over network -->
   <!-- Permissions -->
+  <string name="other_permissions">அனுமதிகள்</string>
+  <string name="permission_remember_choice">நினைவு கொள்</string>
+  <string name="permission_title">அனுமதி</string>
+  <string name="allow_button">அனுமதி</string>
+  <string name="deny_button">மறு</string>
   <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">சாதனம் இணைக்கப்படவில்லை</string>
   <!-- Single hand mode -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

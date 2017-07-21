@@ -69,6 +69,7 @@
   <!-- On-The-Go -->
   <string name="global_action_onthego">Mode On-The-Go</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Memalsukan paket yang sudah tertanda</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Ijinkan aplikasi untuk berlaku sebagai aplikasi yang berbeda. Kemungkinan aplikasi jahat dapat menggunakannya untuk mengakses data aplikasi. Hanya berikan perijinan jika anda paham!</string>
   <!-- ADB over network -->
@@ -76,10 +77,24 @@
   <string name="adb_both_active_notification_title">ADB melalui USB &amp; jaringan diijinkan</string>
   <string name="adb_active_generic_notification_message">Sentuh untuk menonaktifkan debugging.</string>
   <!-- Permissions -->
+  <string name="other_permissions">hak akses lainnya</string>
+  <string name="permission_remember_choice">Ingat</string>
+  <string name="permission_title">Hak akses</string>
+  <string name="allow_button">Izinkan</string>
+  <string name="deny_button">Ditolak</string>
   <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">Tidak ada perangkat yang terhubung</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g>perangkat terhubung</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g>perangkat yang terhubung</string>
   <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">Sentuh layar bagian luar untuk keluar dari mode satu tangan</string>
+  <string name="singlehandmode_slide_hint_message">Geser jari anda dibar navigasi untuk beralih antara tampilan layar standar dan mini</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">modifikasi overlay tema</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">Memungkinkan aplikasi membuat modifikasi overlays tema menggunakan OverlayManagerService</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">muat ulang bar sistem</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_restartUI">Memulai Ulang SystemUIService agar bar sistem dapat memuat tema</string>
 </resources>

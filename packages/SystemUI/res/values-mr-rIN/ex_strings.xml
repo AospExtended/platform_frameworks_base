@@ -45,6 +45,7 @@
   <!-- Screenshot Delete Toast -->
   <!-- SystemUI Tuner Parts -->
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">स्क्रीनशॉट</string>
   <!-- Reboot/Recovery QS Tile -->
   <!-- SystemUI Tuner Parts -->
   <!-- Show lte/4g switch -->

@@ -32,7 +32,9 @@
   <!-- Screenrecord QS tile -->
   <!-- Language\Locale Tile -->
   <!-- NavBar Tuner -->
+  <string name="search">தேடு</string>
   <!-- Strings for lockscreen shortcut hints -->
+  <string name="lockscreen_default_target">இயல்புநிலை</string>
   <!-- Sound QS Tile -->
   <!-- Ambient Display QS tile -->
   <!-- Screenshot Crop & Share -->
@@ -45,7 +47,9 @@
   <!-- Screenshot Delete Toast -->
   <!-- SystemUI Tuner Parts -->
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">திரைப்பிடிப்பு</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_recovery_label">மீட்பு (ரெகவரி)</string>
   <!-- SystemUI Tuner Parts -->
   <!-- Show lte/4g switch -->
   <!-- Navigation bar Tile -->

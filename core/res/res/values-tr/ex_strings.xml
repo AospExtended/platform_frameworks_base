@@ -77,7 +77,13 @@
   <string name="adb_both_active_notification_title">USB &amp; Ağ üzerinden ADB etkin</string>
   <string name="adb_active_generic_notification_message">Hata ayıklamayı devre dışı bırakmak için dokunun.</string>
   <!-- Permissions -->
+  <string name="other_permissions">Diğer İzinler</string>
+  <string name="permission_remember_choice">Beni Hatırla</string>
+  <string name="permission_title">İzin</string>
+  <string name="allow_button">Kabul Et</string>
+  <string name="deny_button">Reddet</string>
   <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">Bağlanmış Cihaz Yok</string>
   <!-- Single hand mode -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

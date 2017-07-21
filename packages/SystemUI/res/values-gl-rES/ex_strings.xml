@@ -20,7 +20,7 @@
   <string name="stream_title_call">Chamar</string>
   <string name="stream_title_system">Sistema</string>
   <string name="stream_title_ring">Soar</string>
-  <string name="stream_title_media">Arquivos multimedia</string>
+  <string name="stream_title_media">Multimedia</string>
   <string name="stream_title_alarm">Alarma</string>
   <string name="stream_title_notification">Notificación</string>
   <string name="stream_title_bluetooth">Bluetooth</string>
@@ -54,9 +54,9 @@
   <string name="menu_ime_always_show">Alternador Menú / Teclado (Amosar sempre)</string>
   <string name="search">Procura</string>
   <!-- Strings for lockscreen shortcut hints -->
-  <string name="left_shortcut_hint">Arrastra á dereita para %1$s</string>
-  <string name="right_shortcut_hint">Arrastra á esquerda para %1$s</string>
-  <string name="lockscreen_message">Toque nunha icona na esquerda ou na dereita para volver a asignar un atallo da pantalla de bloqueo.</string>
+  <string name="left_shortcut_hint">Arrastrar á dereita para %1$s</string>
+  <string name="right_shortcut_hint">Arrastrar á esquerda para %1$s</string>
+  <string name="lockscreen_message">Toque nunha icona na esquerda ou na dereita para volver a asignar un atallo da pantalla de broqueo.</string>
   <string name="lockscreen_default_target">Por defecto</string>
   <string name="select_application">Seleccionar aplicativo</string>
   <string name="lockscreen_choose_action_title">Escoller acción</string>

@@ -22,10 +22,12 @@
   <string name="reboot_reboot">पुन्हा सुरू करा</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">बूटलोडर</string>
   <!-- Button to soft reboot the device in restart menu -->
   <!-- Reboot Confirmation Dialog. -->
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
   <!-- Global Actions -->
+  <string name="global_action_screenshot">स्क्रीनशॉट</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <!-- AOKP custom system animations -->
