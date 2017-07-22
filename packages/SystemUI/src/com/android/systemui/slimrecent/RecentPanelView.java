@@ -1045,70 +1045,71 @@ public class RecentPanelView {
                         recentInfo.origActivity, recentInfo.description,
                         false, EXPANDED_STATE_UNKNOWN, recentInfo.taskDescription);
 
-                if (item != null) {
-                    // Remove any tasks after our max task limit to keep good ux
-                    if (i >= mMaxAppsToLoad) {
-                        am.removeTask(item.persistentTaskId);
-                        continue;
+                if (item == null) {
+                    continue; //skip this item and go to next iteration
+                }
+                // Remove any tasks after our max task limit to keep good ux
+                if (i >= mMaxAppsToLoad) {
+                    am.removeTask(item.persistentTaskId);
+                    continue;
+                }
+                for (String fav : favList) {
+                    if (fav.equals(item.identifier)) {
+                        item.setIsFavorite(true);
+                        break;
                     }
-                    for (String fav : favList) {
-                        if (fav.equals(item.identifier)) {
-                            item.setIsFavorite(true);
-                            break;
-                        }
-                    }
+                }
 
-                    if (topTask) {
-                        if (mShowTopTask || mIsScreenPinningEnabled) {
-                            // User want to see actual running task. Set it here
-                            int oldState = getExpandedState(item);
-                            if ((oldState & EXPANDED_STATE_TOPTASK) == 0) {
-                                oldState |= EXPANDED_STATE_TOPTASK;
-                            }
-                            item.setExpandedState(oldState);
-                            addCard(item, oldSize, true);
-                            mFirstTask = item;
-                        } else {
-                            // Skip the first task for our list but save it for later use.
-                           mFirstTask = item;
-                           newSize--;
-                        }
-                    } else {
-                        // FirstExpandedItems value forces to show always the app screenshot
-                        // if the old state is not known and the user has set expanded mode to auto.
-                        // On all other items we check if they were expanded from the user
-                        // in last known recent app list and restore the state. This counts as well
-                        // if expanded mode is always or never.
+                if (topTask) {
+                    if (mShowTopTask || mIsScreenPinningEnabled) {
+                        // User want to see actual running task. Set it here
                         int oldState = getExpandedState(item);
-                        if ((oldState & EXPANDED_STATE_BY_SYSTEM) != 0) {
-                            oldState &= ~EXPANDED_STATE_BY_SYSTEM;
+                        if ((oldState & EXPANDED_STATE_TOPTASK) == 0) {
+                            oldState |= EXPANDED_STATE_TOPTASK;
                         }
-                        if ((oldState & EXPANDED_STATE_TOPTASK) != 0) {
-                            oldState &= ~EXPANDED_STATE_TOPTASK;
+                        item.setExpandedState(oldState);
+                        addCard(item, oldSize, true);
+                        mFirstTask = item;
+                    } else {
+                        // Skip the first task for our list but save it for later use.
+                        mFirstTask = item;
+                        newSize--;
+                    }
+                } else {
+                    // FirstExpandedItems value forces to show always the app screenshot
+                    // if the old state is not known and the user has set expanded mode to auto.
+                    // On all other items we check if they were expanded from the user
+                    // in last known recent app list and restore the state. This counts as well
+                    // if expanded mode is always or never.
+                    int oldState = getExpandedState(item);
+                    if ((oldState & EXPANDED_STATE_BY_SYSTEM) != 0) {
+                        oldState &= ~EXPANDED_STATE_BY_SYSTEM;
+                    }
+                    if ((oldState & EXPANDED_STATE_TOPTASK) != 0) {
+                        oldState &= ~EXPANDED_STATE_TOPTASK;
+                    }
+                    if (DEBUG) Log.v(TAG, "old expanded state = " + oldState);
+                    if (firstItems < firstExpandedItems) {
+                        if (mExpandedMode != EXPANDED_MODE_NEVER) {
+                            oldState |= EXPANDED_STATE_BY_SYSTEM;
                         }
-                        if (DEBUG) Log.v(TAG, "old expanded state = " + oldState);
-                        if (firstItems < firstExpandedItems) {
-                            if (mExpandedMode != EXPANDED_MODE_NEVER) {
-                                oldState |= EXPANDED_STATE_BY_SYSTEM;
-                            }
-                            item.setExpandedState(oldState);
-                            // The first tasks are always added to the task list.
+                        item.setExpandedState(oldState);
+                        // The first tasks are always added to the task list.
+                        addCard(item, oldSize, false);
+                    } else {
+                        if (mExpandedMode == EXPANDED_MODE_ALWAYS) {
+                            oldState |= EXPANDED_STATE_BY_SYSTEM;
+                        }
+                        item.setExpandedState(oldState);
+                        // Favorite tasks are added next. Non favorite
+                        // we hold for a short time in an extra list.
+                        if (item.getIsFavorite()) {
                             addCard(item, oldSize, false);
                         } else {
-                            if (mExpandedMode == EXPANDED_MODE_ALWAYS) {
-                                oldState |= EXPANDED_STATE_BY_SYSTEM;
-                            }
-                            item.setExpandedState(oldState);
-                            // Favorite tasks are added next. Non favorite
-                            // we hold for a short time in an extra list.
-                            if (item.getIsFavorite()) {
-                                addCard(item, oldSize, false);
-                            } else {
-                                nonFavoriteTasks.add(item);
-                            }
+                            nonFavoriteTasks.add(item);
                         }
-                        firstItems++;
                     }
+                    firstItems++;
                 }
             }
 
