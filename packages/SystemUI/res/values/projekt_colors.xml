@@ -84,4 +84,7 @@
     <!-- Used by selector -->
     <color name="card_pressed">#7e3c3c3c</color>
 
+    <!-- Screen pinning layout -->
+    <color name="screen_pinning_background_color">@*android:color/accent_device_default_light</color>
+    <color name="screen_pinning_button_text">@android:color/white</color>
 </resources>
