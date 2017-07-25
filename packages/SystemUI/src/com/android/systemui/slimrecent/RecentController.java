@@ -119,6 +119,7 @@ public class RecentController implements RecentPanelView.OnExitListener,
     private int mMainGravity;
     private int mUserGravity;
     private int mPanelColor;
+    private int mWarningColor;
 
     private float mScaleFactor = DEFAULT_SCALE_FACTOR;
 
@@ -288,8 +289,7 @@ public class RecentController implements RecentPanelView.OnExitListener,
         mEmptyRecentView.setImageResource(0);
 
         // Set correct backgrounds based on calculated main gravity.
-        int warningColor = mContext.getResources().getColor(R.color.recent_warning_background);
-        mRecentWarningContent.setBackgroundColor(warningColor);
+        mRecentWarningContent.setBackgroundColor(mWarningColor);
 
         int tintColor = getEmptyRecentColor();
         int backgroundColor = mPanelColor;
@@ -615,6 +615,7 @@ public class RecentController implements RecentPanelView.OnExitListener,
             // Update colors in RecentPanelView
             mPanelColor = Settings.System.getIntForUser(resolver,
                     Settings.System.RECENT_PANEL_BG_COLOR, 0x763367d6, UserHandle.USER_CURRENT);
+            mWarningColor = (0xff000000 | mPanelColor);
 
             // Set main gravity and background images.
             setGravityAndImageResources();
