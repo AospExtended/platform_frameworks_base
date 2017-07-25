@@ -159,7 +159,9 @@ public class ExpandableCardAdapter extends RecyclerView.Adapter<ExpandableCardAd
             holder.optionsView.setBackgroundColor(ColorUtils.darkenColor(backgroundColor));
         }
         holder.optionsView.removeAllViewsInLayout();
-        for (final OptionsItem item : mCards.get(position).mOptions) {
+        //for (final OptionsItem item : mCards.get(position).mOptions) {
+        for (int i = 0; i < card.mOptions.size(); i++) {
+            OptionsItem item = card.mOptions.get(i);
             ImageView option = (ImageView) inflater.inflate(
                     R.layout.options_item, holder.optionsView, false);
             option.setImageDrawable(item.icon);
