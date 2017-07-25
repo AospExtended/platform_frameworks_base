@@ -458,6 +458,8 @@ public class RecentPanelView {
                             /*after we docked our main app, on the other side of the screen we
                             open the app we dragged the main app over*/
                             mController.openOnDraggedApptoOtherSide((finalPos > initPos) ? newTaskid : taskid);
+                            //now no need to keep the panel open, we already chose both top and bottom apps
+                            mController.closeRecents();
                         } catch (RemoteException e) {}
                     }
                 //if we disabled a running multiwindow mode, just wait a little bit before docking the new apps
