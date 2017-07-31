@@ -77,10 +77,24 @@
   <string name="adb_both_active_notification_title">ADB USB-n &amp; hálózaton keresztül engedélyezve</string>
   <string name="adb_active_generic_notification_message">Érintse meg a hibakeresés letiltásához.</string>
   <!-- Permissions -->
+  <string name="other_permissions">egyéb engedélyek</string>
+  <string name="permission_remember_choice">Megjegyzés</string>
+  <string name="permission_title">Engedély</string>
+  <string name="allow_button">Engedélyezés</string>
+  <string name="deny_button">Megtagadás</string>
   <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">Nincs csatlakoztatott eszköz</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> csatlakoztatott eszköz</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> csatlakoztatott eszköz</string>
   <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">Koppintson a képernyőn kívülre a mini képernyőnézetből való kilépéshez</string>
+  <string name="singlehandmode_slide_hint_message">Húzza végig ujját a navigációs sávon a normál és a mini képernyőnézetek közötti váltáshoz</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">téma fedvények módosítása</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">Lehetővé teszi az alkalmazás számára, hogy módosításokat hajtson végre a téma fedvényeken az OverlayManagerService használatával</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">rendszersávok újraindítása</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_restartUI">A SystemUIService újraindítása, hogy a rendszer be tudja tölteni a témázott erőforrásokat</string>
 </resources>

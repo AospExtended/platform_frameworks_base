@@ -31,7 +31,7 @@
   <string name="reboot_confirm" product="default">מכשירך יופעל מחדש.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
   <string name="reboot_progress">מפעיל מחדש\u2026</string>
-  <string name="reboot_systemui">אתחול SystemUI</string>
+  <string name="reboot_systemui">אתחול SystemUI (ממשק מערכת)</string>
   <!-- Global Actions -->
   <string name="global_action_current_user">נוכחי</string>
   <string name="global_action_screenshot">צילום מסך</string>

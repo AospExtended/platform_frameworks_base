@@ -106,6 +106,7 @@
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">屏幕截图已删除</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_pnc_title">电源通知控制</string>
   <!-- Quick Settings tiles -->
   <string name="quick_settings_screenshot_label">屏幕截图</string>
   <string name="quick_settings_region_screenshot_label">局部截图</string>
@@ -177,6 +178,7 @@
   <!-- Path data for big circle battery -->
   <string name="recents_free_ram">可用运存: %1$d MB</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">打开运行服务的屏幕。</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">VOLTE</string>
   <!-- Data/Wifi activity arrows -->

@@ -22,11 +22,11 @@
   <string name="stream_title_ring">Dering</string>
   <string name="stream_title_media">Media</string>
   <string name="stream_title_alarm">Alarm</string>
-  <string name="stream_title_notification">Pemberitahuan</string>
+  <string name="stream_title_notification">Notifikasi</string>
   <string name="stream_title_bluetooth">Bluetooth</string>
   <!-- Wi-Fi hotspot label when enabled -->
   <plurals name="wifi_hotspot_connected_clients_label">
-    <item quantity="other">%1$d Pengguna</item>
+    <item quantity="other">%1$d pengguna</item>
   </plurals>
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
@@ -42,7 +42,7 @@
   <string name="screenrecord_notif_stop">Hentikan</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Tampilkan pointer</string>
-  <string name="screenrecord_notif_pointer_off">Sembunyikan penanda</string>
+  <string name="screenrecord_notif_pointer_off">Sembunyikan pointer</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">Tidak dapat merekam layar</string>
   <!-- Screenshot Delete Toast -->
@@ -54,11 +54,11 @@
   <string name="quick_settings_locale_label">Bahasa</string>
   <string name="quick_settings_locale_more_locales_toast">Harap tentukan bahasa yang berbeda untuk menghidupkan fungsionalitas toggle</string>
   <!-- NavBar Tuner -->
-  <string name="menu_ime_always_show">Peralih Menu / Papan ketik (Selalu Muncul)</string>
-  <string name="search">Cari</string>
+  <string name="menu_ime_always_show">Menu / Keyboard Switcher (selalu terlihat)</string>
+  <string name="search">Pencarian</string>
   <!-- Strings for lockscreen shortcut hints -->
-  <string name="left_shortcut_hint">Usap ke kanan untuk %1$s</string>
-  <string name="right_shortcut_hint">Usap ke kiri untuk %1$s</string>
+  <string name="left_shortcut_hint">Geser ke kanan untuk %1$s</string>
+  <string name="right_shortcut_hint">Geser ke kiri untuk %1$s</string>
   <string name="lockscreen_message">Ketuk ikon di sebelah kiri atau kanan untuk mengatur pintasan kunci layar.</string>
   <string name="lockscreen_default_target">Bawaan</string>
   <string name="select_application">Pilih aplikasi</string>
@@ -70,10 +70,10 @@
   <string name="quick_settings_sound_vibrate">Getar</string>
   <string name="quick_settings_sound_dnd">Jangan ganggu</string>
   <!-- Ambient Display QS tile -->
-  <string name="accessibility_quick_settings_ambient_display_off">Tampilan Ambient nonaktif</string>
-  <string name="accessibility_quick_settings_ambient_display_on">Tampilan Ambient aktif</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_off">Tampilan Ambient dinonaktifkan</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_on">Tampilan Ambient diaktifkan</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Tampilan Ambient mati</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Tampilan Ambient hidup</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Tampilan ambient dimatikan</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Tampilan ambient dihidupkan</string>
   <string name="quick_settings_ambient_display_label">Tampilan Ambient</string>
   <string name="quick_settings_extensions">Ekstensi</string>
   <!-- Screenshot Crop & Share -->
@@ -83,10 +83,10 @@
   <string name="action_save_fault">Gagal menyimpan</string>
   <string name="pref_action_color_title">Warna tombol tindakan</string>
   <string name="pref_action_color_summary">Pilih warna favorit untuk tombol tindakan</string>
-  <string name="pref_category_main">Pengaturan Utama</string>
-  <string name="pref_category_user">Pengaturan pengguna</string>
+  <string name="pref_category_main">Setelan Utama</string>
+  <string name="pref_category_user">Setelan Pengguna</string>
   <string name="pref_crop_behavior_title">Perilaku pemotongan</string>
-  <string name="pref_crop_behavior_summary">Menggunakan foto yang dipotong, bahkan jika yang asli belum benar-benar dipotong dengan crop behavior</string>
+  <string name="pref_crop_behavior_summary">Gunakan gambar yang dipotong meskipun yang asli belum benar-benar dipotong dengan perilaku pemotongan</string>
   <string name="action_ok">Oke</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">Dihapus</string>
@@ -94,11 +94,11 @@
   <string name="action_save_success">Disimpan</string>
   <string name="action_save_fault">Gagal menyimpan</string>
   <string name="action_edit">Ubah</string>
-  <string name="quick_settings_expanded_navigation_off">Sembunyikan navbar</string>
+  <string name="quick_settings_expanded_navigation_off">Sembunyikan bar navigasi</string>
   <string name="quick_settings_expanded_statusbar_off">Sembunyikan statusbar</string>
   <!-- Notification which notifies user flashlight is enabled -->
-  <string name="quick_settings_tile_flashlight_not_title">Senter menyala</string>
-  <string name="quick_settings_tile_flashlight_not_summary">Tekan untuk mematikan</string>
+  <string name="quick_settings_tile_flashlight_not_title">Senter hidup</string>
+  <string name="quick_settings_tile_flashlight_not_summary">Ketuk untuk mematikan</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
@@ -106,20 +106,20 @@
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Tangkapan layar dihapus</string>
   <!-- SystemUI Tuner Parts -->
-  <string name="systemui_tuner_pnc_title">Kontrol pemberitahuan power</string>
+  <string name="systemui_tuner_pnc_title">Kontrol kekuatan notifikasi</string>
   <!-- Quick Settings tiles -->
-  <string name="quick_settings_screenshot_label">Tangkapan Layar</string>
+  <string name="quick_settings_screenshot_label">Tangkapan layar</string>
   <string name="quick_settings_region_screenshot_label">Tangkapan layar sebagian</string>
   <string name="quick_settings_sync_label">Sinkronisasi</string>
   <string name="accessibility_quick_settings_sync_off">Sinkronisasi mati</string>
-  <string name="accessibility_quick_settings_sync_on">Sinkronisasi aktif</string>
-  <string name="accessibility_quick_settings_sync_changed_off">Sinkronisasi dinonaktifkan</string>
-  <string name="accessibility_quick_settings_sync_changed_on">Sinkronisasi diaktifkan</string>
+  <string name="accessibility_quick_settings_sync_on">Sinkronisasi hidup</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Sinkronisasi dimatikan</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Sinkronisasi dihidupkan</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Mulai ulang</string>
-  <string name="quick_settings_reboot_recovery_label">Pemulihan</string>
+  <string name="quick_settings_reboot_recovery_label">Recovery</string>
   <string name="accessibility_quick_settings_usb_tether_off">Penambatan USB mati</string>
-  <string name="accessibility_quick_settings_usb_tether_on">Penambatan USB mati</string>
+  <string name="accessibility_quick_settings_usb_tether_on">Penambatan USB hidup</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">Penambatan USB dimatikan</string>
   <string name="accessibility_quick_settings_usb_tether_changed_on">Penambatan USB dihidupkan</string>
   <string name="quick_settings_usb_tether_label">Penambatan USB</string>
@@ -130,19 +130,19 @@
   <string name="quick_settings_caffeine_label">Kafein</string>
   <string name="accessibility_quick_settings_caffeine_off">Kafein mati</string>
   <string name="accessibility_quick_settings_caffeine_on">Kafein hidup</string>
-  <string name="quick_settings_heads_up_label">Tegak</string>
-  <string name="accessibility_quick_settings_heads_up_off">Heads up nonaktif.</string>
-  <string name="accessibility_quick_settings_heads_up_on">Heads up aktif.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">Heads up dinonaktifkan.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">Heads up diaktifkan.</string>
-  <string name="quick_settings_pulse_enabled">Pulse Diaktifkan</string>
+  <string name="quick_settings_heads_up_label">Heads up</string>
+  <string name="accessibility_quick_settings_heads_up_off">Heads up mati.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Heads up hidup</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Heads up dimatikan.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Heads up dihidupkan.</string>
+  <string name="quick_settings_pulse_enabled">Pulse Dihidupkan</string>
   <string name="quick_settings_pulse_disabled">Tidak ada Visualizer</string>
   <string name="quick_settings_pulse_label">Visualizer bar navigasi</string>
   <string name="quick_settings_nfc_label">NFC</string>
-  <string name="accessibility_quick_settings_nfc_off">NFC tidak aktif.</string>
-  <string name="accessibility_quick_settings_nfc_on">NFC aktif.</string>
+  <string name="accessibility_quick_settings_nfc_off">NFC mati.</string>
+  <string name="accessibility_quick_settings_nfc_on">NFC hidup.</string>
   <string name="accessibility_quick_settings_nfc_changed_off">NFC dimatikan.</string>
-  <string name="accessibility_quick_settings_nfc_changed_on">NFC diaktifkan.</string>
+  <string name="accessibility_quick_settings_nfc_changed_on">NFC dihidupkan.</string>
   <!-- SystemUI Tuner Parts -->
   <string name="systemui_tuner_statusbar_title">Item statusbar</string>
   <string name="accessibility_quick_settings_location_battery_saving">Laporan Lokasi: mode hemat baterai.</string>
@@ -155,9 +155,9 @@
   <string name="quick_settings_location_battery_saving_label">Hemat baterai</string>
   <string name="quick_settings_location_gps_only_label">Hanya perangkat</string>
   <string name="quick_settings_location_high_accuracy_label">Akurasi tinggi</string>
-  <string name="quick_settings_location_off_label">Lokasi nonaktif</string>
+  <string name="quick_settings_location_off_label">Lokasi mati</string>
   <!-- Show lte/4g switch -->
-  <string name="show_lte_fourgee_title">Tampilkan 4G menggantikan LTE</string>
+  <string name="show_lte_fourgee_title">Tampilkan 4G bukan LTE</string>
   <string name="show_lte_fourgee_summary">Ganti indikator LTE dengan 4G</string>
   <string name="statusbar_tuner_category_title">Sembunyikan item dari statusbar</string>
   <!-- Navigation bar Tile -->
@@ -167,7 +167,7 @@
   <string name="quick_settings_fling">Fling</string>
   <string name="quick_settings_fling_off">Fling mati</string>
   <!-- Screenshot action -->
-  <string name="screenshot_abort_title">Tidak ada gambar yang diambil</string>
+  <string name="screenshot_abort_title">Tidak ada tangkapan layar diambil</string>
   <string name="screenshot_abort_text">Operasi dibatalkan</string>
   <string name="quick_settings_expanded_desktop_label">Perluas desktop</string>
   <string name="quick_settings_expanded_desktop">Diperluas</string>
@@ -178,9 +178,9 @@
   <!-- Path data for big circle battery -->
   <string name="recents_free_ram">BEBAS: %1$d MB</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_running_services">Buka Layanan menjalankan layar.</string>
+  <string name="accessibility_quick_settings_running_services">Buka Layanan tugas yang berjalan.</string>
   <!-- volte icon switch -->
-  <string name="status_bar_volte">VOLTE</string>
+  <string name="status_bar_volte">VoLTE</string>
   <!-- Data/Wifi activity arrows -->
   <string name="data_wifi_activity_arrows_title">Aktivitas jaringan</string>
   <!-- OmniJaws -->
@@ -193,7 +193,7 @@
   <string name="omnijaws_current_text">Sekarang</string>
   <string name="omnijaws_package_not_available">OmniJaws tidak tersedia</string>
   <!-- Weather string format in expanded statusbar header -->
-  <string name="status_bar_weather_format"><xliff:g id="suhu">%1$s</xliff:g> - <xliff:g id="kondisi">%2$s</xliff:g></string>
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Kompas</string>
   <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -211,10 +211,10 @@
   <string name="quick_settings_compass_W">B</string>
   <string name="quick_settings_compass_NW">BL</string>
   <!-- Sim recents -->
-  <string name="recents_multiwin_warning">Sesi multi-window sudah aktif.\nTekan saja salah satu aplikasi jika Anda ingin mengaitkannya sekarang.</string>
-  <string name="recents_multiwin_nolastapp">Anda menghapus semua Recent, silakan pilih aplikasi dari launcher atau laci.</string>
+  <string name="recents_multiwin_warning">Sesi multi-window sudah aktif.\nTekan saja salah satu aplikasi jika anda ingin mengaitkannya sekarang.</string>
+  <string name="recents_multiwin_nolastapp">Anda mebersihkan semua tugas, silakan pilih aplikasi dari launcher atau laci.</string>
   <!-- On The Go -->
-  <string name="onthego_notif_ticker">On-The-Go diaktifkan</string>
+  <string name="onthego_notif_ticker">On-The-Go dihidupkan</string>
   <string name="onthego_notif_title">On-The-Go sudah aktif</string>
   <string name="onthego_notif_stop">Hentikan</string>
   <string name="onthego_notif_options">Pilihan</string>
@@ -225,7 +225,7 @@
   <string name="onthego_front_camera">Gunakan kamera depan</string>
   <string name="onthego_service_toggle">Otomatis mulai ulang layanan</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Pengisian Cepat (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> Sampai Penuh)</string>
+  <string name="keyguard_indication_dash_charging_time">Pengisian cepat (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> sampai penuh)</string>
   <string name="keyguard_plugged_in_dash_charging">Pengisian Cepat</string>
   <!-- HW Keys Tile -->
   <string name="accessibility_quick_settings_hwkeys_on">HW Keys Menyala</string>

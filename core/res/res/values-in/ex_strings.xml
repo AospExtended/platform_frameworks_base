@@ -17,77 +17,77 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
-  <string name="reboot_title">Mulai Ulang</string>
+  <string name="reboot_title">Mulai ulang</string>
   <!-- Button to reboot the phone in restart menu -->
-  <string name="reboot_reboot">Mulai Ulang</string>
+  <string name="reboot_reboot">Mulai ulang</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
-  <string name="reboot_recovery">Pemulihan</string>
+  <string name="reboot_recovery">Recovery</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
   <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
-  <string name="reboot_soft">Mulai Ulang Cepat</string>
+  <string name="reboot_soft">Mulai ulang cepat</string>
   <!-- Reboot Confirmation Dialog. -->
-  <string name="reboot_confirm" product="tablet">Tablet anda akan mulai ulang.</string>
-  <string name="reboot_confirm" product="default">Perangkat anda akan mulai ulang.</string>
+  <string name="reboot_confirm" product="tablet">Tablet anda akan dimulai ulang.</string>
+  <string name="reboot_confirm" product="default">Ponsel anda akan dimulai ulang.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
   <string name="reboot_progress">Memulai ulang\u2026</string>
   <string name="reboot_systemui">Mulai ulang SystemUI</string>
   <!-- Global Actions -->
-  <string name="global_action_current_user">Sekarang</string>
-  <string name="global_action_screenshot">Tangkapan Layar</string>
+  <string name="global_action_current_user">Saat ini</string>
+  <string name="global_action_screenshot">Tangkapan layar</string>
   <string name="global_action_screen_record">Perekam Layar</string>
-  <string name="global_action_search">Cari</string>
+  <string name="global_action_search">Pencarian</string>
   <string name="global_action_torch">Senter</string>
   <string name="global_action_voicesearch">Pencarian Suara</string>
-  <string name="permlab_preventpower">mengesampingkan tombol power</string>
+  <string name="permlab_preventpower">mengubah tombol daya</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_preventpower">Ijinkan aplikasi untuk mengabaikan tombol power.</string>
+  <string name="permdesc_preventpower">Memungkinkan aplikasi mengubah perilaku tombol daya.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">Vendor image Anda tidak cocok dengan sistem. Harap flash <xliff:g id="string">%s</xliff:g> vendor image untuk perangkat Anda</string>
+  <string name="system_error_vendorprint">Vendor image anda tidak cocok dengan sistem. Harap flash <xliff:g id="string">%s</xliff:g> vendor image untuk perangkat anda</string>
   <!-- AOKP custom system animations -->
-  <string name="animation_fade">Memudar</string>
-  <string name="animation_slide_right">Geser ke kanan</string>
-  <string name="animation_slide_left">Geser ke kiri</string>
-  <string name="animation_slide_right_no_fade">Geser ke kanan (Tanpa memudar)</string>
-  <string name="animation_slide_left_no_fade">Geser ke kiri (Tanpa memudar)</string>
+  <string name="animation_fade">Pudar</string>
+  <string name="animation_slide_right">Geser dari kanan</string>
+  <string name="animation_slide_left">Geser dari kiri</string>
+  <string name="animation_slide_right_no_fade">Geser dari kanan (tanpa memudar)</string>
+  <string name="animation_slide_left_no_fade">Geser dari kiri (tanpa memudar)</string>
   <string name="animation_slide_up">Geser dari bawah</string>
   <string name="animation_slide_down">Geser dari atas</string>
   <string name="animation_default">Bawaan</string>
-  <string name="animation_translucent">Transparan</string>
-  <string name="animation_grow_shrink">Menjadi di (atas)</string>
-  <string name="animation_grow_shrink_center">Membersil (Tengah)</string>
-  <string name="animation_grow_shrink_bottom">Membersil (Bawah)</string>
-  <string name="animation_grow_shrink_left">Membersil (Kiri)</string>
-  <string name="animation_grow_shrink_right">Membersil (Kanan)</string>
+  <string name="animation_translucent">Tembus</string>
+  <string name="animation_grow_shrink">Menciut ke (atas)</string>
+  <string name="animation_grow_shrink_center">Menciut ke (tengah)</string>
+  <string name="animation_grow_shrink_bottom">Menciut ke (bawah)</string>
+  <string name="animation_grow_shrink_left">Menciut ke (kiri)</string>
+  <string name="animation_grow_shrink_right">Menciut ke (kanan)</string>
   <string name="action_null">Kosong</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
-  <string name="aex_system_error_manufacturer">Ketidakcocokan image pabrik terdeteksi. Biasanya ini berarti image pabrik nda kedaluwarsa. Pastikan image pabrik anda sesuai.</string>
+  <string name="aex_system_error_manufacturer">Ketidakcocokan Vendor Image telah terdeteksi. Biasanya ini berarti Vendor Image anda sudah kadaluarsa. Pastikan Vendor Image anda cocok dengan <xliff:g id="fingerprint">%1$s </xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_resetBatteryStats">atur ulang statistik baterai</string>
+  <string name="permlab_resetBatteryStats">kembalikan statistik baterai</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_resetBatteryStats">Mengizinkan aplikasi untuk mengatur ulang data penggunaan baterai tingkat-rendah saat ini.</string>
+  <string name="permdesc_resetBatteryStats">Memungkinkan aplikasi untuk mengatur kembali data penggunaan baterai rendah saat ini.</string>
   <!-- On-The-Go -->
   <string name="global_action_onthego">Mode On-The-Go</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_fakePackageSignature">Memalsukan paket yang sudah tertanda</string>
+  <string name="permlab_fakePackageSignature">Tanda tangan paket tipuan</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Ijinkan aplikasi untuk berlaku sebagai aplikasi yang berbeda. Kemungkinan aplikasi jahat dapat menggunakannya untuk mengakses data aplikasi. Hanya berikan perijinan jika anda paham!</string>
+  <string name="permdesc_fakePackageSignature">Membolehkan aplikasi untuk berpura-pura sebagai aplikasi lain. Aplikasi jahat mungkin dapat menggunakan ini untuk mengakses data aplikasi. Bolehkan perizinan ini dengan hati-hati!</string>
   <!-- ADB over network -->
-  <string name="adb_net_active_notification_title">ADB melalui jaringan diijinkan</string>
-  <string name="adb_both_active_notification_title">ADB melalui USB &amp; jaringan diijinkan</string>
-  <string name="adb_active_generic_notification_message">Sentuh untuk menonaktifkan debugging.</string>
+  <string name="adb_net_active_notification_title">ADB melalui jaringan dihidupkan</string>
+  <string name="adb_both_active_notification_title">ADB melalui USB &amp; jaringan dihidupkan</string>
+  <string name="adb_active_generic_notification_message">Sentuh untuk mematikan debugging.</string>
   <!-- Permissions -->
-  <string name="other_permissions">hak akses lainnya</string>
+  <string name="other_permissions">perizinan lainnya</string>
   <string name="permission_remember_choice">Ingat</string>
-  <string name="permission_title">Hak akses</string>
+  <string name="permission_title">Perizinan</string>
   <string name="allow_button">Izinkan</string>
-  <string name="deny_button">Ditolak</string>
+  <string name="deny_button">Tolak</string>
   <!-- Tethered notification -->
-  <string name="tethered_notification_no_device_message">Tidak ada perangkat yang terhubung</string>
-  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g>perangkat terhubung</string>
-  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g>perangkat yang terhubung</string>
+  <string name="tethered_notification_no_device_message">Tidak ada perangkat terhubung</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> perangkat terhubung</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> perangkat terhubung</string>
   <!-- Single hand mode -->
-  <string name="singlehandmode_click_hint_message">Sentuh layar bagian luar untuk keluar dari mode satu tangan</string>
+  <string name="singlehandmode_click_hint_message">Sentuh bagian luar layar untuk keluar dari mode satu tangan</string>
   <string name="singlehandmode_slide_hint_message">Geser jari anda dibar navigasi untuk beralih antara tampilan layar standar dan mini</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_modifyOverlays">modifikasi overlay tema</string>

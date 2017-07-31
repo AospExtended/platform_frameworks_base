@@ -17,16 +17,31 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">รีสตาร์ท</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">รีสตาร์ท</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">กู้คืนระบบ</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">เริ่มระบบใหม่อย่างง่าย</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">แท็บเล็ตของคุณจะเริ่มระบบใหม่</string>
+  <string name="reboot_confirm" product="default">โทรศัพท์ของคุณจะรีสตาร์ท</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">กำลังเริ่มระบบใหม่\u2026</string>
   <string name="reboot_systemui">เริ่ม SystemUI ใหม่</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">ปัจจุบัน</string>
+  <string name="global_action_screenshot">ภาพหน้าจอ</string>
+  <string name="global_action_screen_record">บันทึกหน้าจอ</string>
+  <string name="global_action_search">ค้นหา</string>
   <string name="global_action_torch">ไฟฉาย</string>
+  <string name="global_action_voicesearch">ค้นหาด้วยเสียง</string>
+  <string name="permlab_preventpower">แทนที่ปุ่มเปิดปิด</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">อนุญาตให้แอปเริ่มต้นโดยกดจากปุ่มเพาเวอร์?</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">อิมเมจ vendor ของคุณไม่สัมพันธ์กับระบบ. กรุณาแฟลช <xliff:g id="string">%s</xliff:g> ที่เป็น อิมเมจเวนเดอร์ สำหรับอุปกรณ์ของคุณ</string>
   <!-- AOKP custom system animations -->
@@ -46,6 +61,7 @@
   <string name="animation_grow_shrink_right">ขยายเข้า (ขวา)</string>
   <string name="action_null">ว่างเปล่า</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">ตรวจพบผู้ขายภาพไม่ตรงกัน โดยทั่วไปนี้หมายถึง ภาพผู้ขายของคุณล้าสมัย กรุณาตรวจสอบภาพของคุณกับผู้จัดจำหน่ายตรงกับ <xliff:g id="fingerprint">%1$s</xliff:g></string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">รีเซทสถิติค่าแบตเตอรี่</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

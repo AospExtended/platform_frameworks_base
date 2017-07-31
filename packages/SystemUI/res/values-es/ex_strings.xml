@@ -38,12 +38,12 @@
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">La pantalla está siendo grabada</string>
   <!-- Screenrecord notification title -->
-  <string name="screenrecord_notif_title">Grabando pantalla</string>
+  <string name="screenrecord_notif_title">Grabando la pantalla</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Detener</string>
   <!-- Screenrecord notification action: show/hide pointer -->
-  <string name="screenrecord_notif_pointer_on">Mostrar toque</string>
-  <string name="screenrecord_notif_pointer_off">Ocultar toque</string>
+  <string name="screenrecord_notif_pointer_on">Mostrar puntero</string>
+  <string name="screenrecord_notif_pointer_off">Ocultar puntero</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">No se puede grabar la pantalla</string>
   <!-- Screenshot Delete Toast -->
@@ -79,10 +79,10 @@
   <string name="quick_settings_extensions">Extensiones</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">Eliminado</string>
-  <string name="action_delete_fault">La acción de borrado no ha tenido éxito</string>
+  <string name="action_delete_fault">La acción de eliminado no ha tenido éxito</string>
   <string name="action_save_success">Guardado</string>
   <string name="action_save_fault">La acción de guardado no ha tenido éxito</string>
-  <string name="pref_action_color_title">Color de botones de acción</string>
+  <string name="pref_action_color_title">Color de los botones de acción</string>
   <string name="pref_action_color_summary">Elige tu color favorito para los botones de acción</string>
   <string name="pref_category_main">Ajustes principales</string>
   <string name="pref_category_user">Ajustes del usuario</string>
@@ -91,7 +91,7 @@
   <string name="action_ok">Aceptar</string>
   <!-- Screenshot Crop & Share -->
   <string name="action_delete_success">Eliminado</string>
-  <string name="action_delete_fault">La acción de borrado no ha tenido éxito</string>
+  <string name="action_delete_fault">La acción de eliminado no ha tenido éxito</string>
   <string name="action_save_success">Guardado</string>
   <string name="action_save_fault">La acción de guardado no ha tenido éxito</string>
   <string name="action_edit">Editar</string>
@@ -111,7 +111,7 @@
   <!-- Quick Settings tiles -->
   <string name="quick_settings_screenshot_label">Captura de pantalla</string>
   <string name="quick_settings_region_screenshot_label">Captura de pantalla parcial</string>
-  <string name="quick_settings_sync_label">Sincronizar</string>
+  <string name="quick_settings_sync_label">Sincronización</string>
   <string name="accessibility_quick_settings_sync_off">Sincronización desactivada</string>
   <string name="accessibility_quick_settings_sync_on">Sincronización activada</string>
   <string name="accessibility_quick_settings_sync_changed_off">La sincronización ha sido deshabilitada</string>

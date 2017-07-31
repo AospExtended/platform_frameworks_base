@@ -29,5 +29,5 @@
   <string name="screen_zoom_summary_smallest">El más pequeño</string>
   <!-- Regex used to parse the processor string from kernel -->
   <!-- Text when wrong password entered for psk networks -->
-  <string name="wifi_auth_password_wrong">Contraseña ingresada incorrecta</string>
+  <string name="wifi_auth_password_wrong">La contraseña introducida puede ser incorrecta</string>
 </resources>

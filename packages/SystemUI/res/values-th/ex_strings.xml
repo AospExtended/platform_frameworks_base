@@ -43,6 +43,7 @@
   <string name="quick_settings_locale_label">ภาษา</string>
   <string name="quick_settings_locale_more_locales_toast">กรุณาตั้งค่าหลายภาษาเพื่อสามารถเปิดตัวสลับเป็นปกติ</string>
   <!-- NavBar Tuner -->
+  <string name="search">ค้นหา</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">กวาดจากขวาสำหรับ %1$s</string>
   <string name="right_shortcut_hint">กวาดจากซ้ายสำหรับ %1$s</string>
@@ -74,6 +75,7 @@
   <string name="delete_screenshot_toast">ลบภาพถ่ายหน้าจอ</string>
   <!-- SystemUI Tuner Parts -->
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">ภาพหน้าจอ</string>
   <string name="quick_settings_region_screenshot_label">บางส่วนของภาพหน้าจอ</string>
   <string name="quick_settings_sync_label">ซิงก์ข้อมูล</string>
   <string name="accessibility_quick_settings_sync_off">ปิดการซิงก์</string>
@@ -82,6 +84,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">เปิดการซิงก์</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">เริ่มระบบใหม่</string>
+  <string name="quick_settings_reboot_recovery_label">กู้คืนระบบ</string>
   <string name="accessibility_quick_settings_usb_tether_off">ปิดการกระจายสัญญาณผ่าน USB</string>
   <string name="accessibility_quick_settings_usb_tether_on">เปิดการกระจายสัญญาณผ่าน USB</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">การกระจายสัญญาณผ่าน USB ถูกปิด</string>

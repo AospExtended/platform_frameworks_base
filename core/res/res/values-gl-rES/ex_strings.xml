@@ -31,7 +31,7 @@
   <string name="reboot_confirm" product="default">O seu teléfono vaise reiniciar.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
   <string name="reboot_progress">Reiniciando\u2026</string>
-  <string name="reboot_systemui">Reiniciar a Interface do sistema</string>
+  <string name="reboot_systemui">Reiniciar a Interface de usuario do sistema</string>
   <!-- Global Actions -->
   <string name="global_action_current_user">Actual</string>
   <string name="global_action_screenshot">Captura de pantalla</string>

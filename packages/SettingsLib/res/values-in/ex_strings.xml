@@ -18,11 +18,11 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="profile_applist_title">Daftar aplikasi</string>
-  <string name="picker_activities">Aktifitas</string>
-  <string name="select_custom_app_title">Pilih aplikasi kustom</string>
-  <string name="select_custom_activity_title">Pilih aktifitas kustom</string>
-  <string name="lockscreen_targets_message">Pintasan layar kunci</string>
+  <string name="profile_applist_title">Aplikasi</string>
+  <string name="picker_activities">Aktivitas</string>
+  <string name="select_custom_app_title">Pilih kostum aplikasi</string>
+  <string name="select_custom_activity_title">Pilih aktivitas kostum</string>
+  <string name="lockscreen_targets_message">Pintasan kunci layar</string>
   <!-- Description for the screen zoom level that makes interface elements smaller. [CHAR LIMIT=24] -->
   <string name="screen_zoom_summary_smaller">Lebih kecil</string>
   <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->

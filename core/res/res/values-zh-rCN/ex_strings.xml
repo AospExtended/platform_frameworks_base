@@ -30,7 +30,7 @@
   <string name="reboot_confirm" product="tablet">您的平板电脑将会重启。</string>
   <string name="reboot_confirm" product="default">您的手机将会重启。</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
-  <string name="reboot_progress">正在重启\u2026</string>
+  <string name="reboot_progress">正在重新启动…</string>
   <string name="reboot_systemui">重启系统界面</string>
   <!-- Global Actions -->
   <string name="global_action_current_user">当前</string>
@@ -45,9 +45,9 @@
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">您的初始设备制造商镜像与系统不匹配。请为您的设备刷入 <xliff:g id="string">%s </xliff:g> 初始设备制造商镜像</string>
   <!-- AOKP custom system animations -->
-  <string name="animation_fade">渐变</string>
-  <string name="animation_slide_right">右侧滑入</string>
-  <string name="animation_slide_left">左侧滑入</string>
+  <string name="animation_fade">淡出淡入动画</string>
+  <string name="animation_slide_right">向右滑动</string>
+  <string name="animation_slide_left">向左滑动</string>
   <string name="animation_slide_right_no_fade">右侧滑入（无渐变）</string>
   <string name="animation_slide_left_no_fade">左侧滑入 (无渐变)</string>
   <string name="animation_slide_up">底部滑入</string>
@@ -61,6 +61,7 @@
   <string name="animation_grow_shrink_right">缩放(右侧)</string>
   <string name="action_null">空白</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">检测到供应商映像不匹配。这通常意味着您的供应商映像是过时的。请确保您的供应商映像匹配 <xliff:g id="fingerprint">%1$s</xliff:g>。</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">重置电池统计信息</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

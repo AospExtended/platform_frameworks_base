@@ -25,13 +25,13 @@
   <!-- Button to reboot the phone into bootloader in restart menu -->
   <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
-  <string name="reboot_soft">Reinicio rápido</string>
+  <string name="reboot_soft">Reinicio suave</string>
   <!-- Reboot Confirmation Dialog. -->
   <string name="reboot_confirm" product="tablet">Tu tableta se reiniciará.</string>
   <string name="reboot_confirm" product="default">Tu dispositivo se reiniciará.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
   <string name="reboot_progress">Reiniciando\u2026</string>
-  <string name="reboot_systemui">Reiniciar SistemaUI</string>
+  <string name="reboot_systemui">Reiniciar SystemUI</string>
   <!-- Global Actions -->
   <string name="global_action_current_user">Actual</string>
   <string name="global_action_screenshot">Captura de pantalla</string>
@@ -57,9 +57,9 @@
   <string name="animation_grow_shrink">Aparecer (por arriba)</string>
   <string name="animation_grow_shrink_center">Aparecer (por el centro)</string>
   <string name="animation_grow_shrink_bottom">Aparecer (por abajo)</string>
-  <string name="animation_grow_shrink_left">Aparecer (por izquierda)</string>
-  <string name="animation_grow_shrink_right">Aparecer (por derecha)</string>
-  <string name="action_null">Vacío</string>
+  <string name="animation_grow_shrink_left">Aparecer (por la izquierda)</string>
+  <string name="animation_grow_shrink_right">Aparecer (por la derecha)</string>
+  <string name="action_null">En blanco</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
   <string name="aex_system_error_manufacturer">Se detecto una incongruencia con la imágen de vendedor. Normalmente es debido a que la imágen no está actualizada. Por favor asegurate que la imágen coincide <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -78,12 +78,12 @@
   <string name="adb_active_generic_notification_message">Toca para deshabilitar la depuración.</string>
   <!-- Permissions -->
   <string name="other_permissions">otros permisos</string>
-  <string name="permission_remember_choice">Recuerdar</string>
+  <string name="permission_remember_choice">Recordar</string>
   <string name="permission_title">Permisos</string>
   <string name="allow_button">Permitir</string>
-  <string name="deny_button">Negar</string>
+  <string name="deny_button">Denegar</string>
   <!-- Tethered notification -->
-  <string name="tethered_notification_no_device_message">Disposicitivo no conectado</string>
+  <string name="tethered_notification_no_device_message">Dispositivo no conectado</string>
   <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> dispositivo conectado</string>
   <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> dispositivos conectados</string>
   <!-- Single hand mode -->
