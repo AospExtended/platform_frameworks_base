@@ -79,4 +79,5 @@ interface IStatusBarService
     // SystemUI Restart API for masquerade
     void restartUI();
     void toggleOrientationListener(boolean enable);
+    void leftInLandscapeChanged(boolean isLeft);
 }
