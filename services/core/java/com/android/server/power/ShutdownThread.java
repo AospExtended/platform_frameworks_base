@@ -86,7 +86,7 @@ public final class ShutdownThread extends Thread {
     private static final int VENDOR_SUBSYS_MAX_WAIT_MS = 10000;
 
     // length of vibration before shutting down
-    private static final int SHUTDOWN_VIBRATE_MS = 500;
+    private static final int SHUTDOWN_VIBRATE_MS = 250;
 
     // state tracking
     private static final Object sIsStartedGuard = new Object();
