@@ -16,6 +16,7 @@ package com.android.systemui;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.hardware.SensorManager;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
@@ -79,6 +80,7 @@ import com.android.systemui.statusbar.policy.ZenModeController;
 import com.android.systemui.statusbar.policy.ZenModeControllerImpl;
 import com.android.systemui.tuner.TunerService;
 import com.android.systemui.tuner.TunerServiceImpl;
+import com.android.systemui.util.AsyncSensorManager;
 import com.android.systemui.util.leak.GarbageMonitor;
 import com.android.systemui.util.leak.LeakDetector;
 import com.android.systemui.util.leak.LeakReporter;
@@ -149,6 +151,9 @@ public class Dependency extends SystemUI {
         mProviders.put(ActivityStarter.class, () -> new ActivityStarterDelegate());
         mProviders.put(ActivityStarterDelegate.class, () ->
                 getDependency(ActivityStarter.class));
+
+        mProviders.put(AsyncSensorManager.class, () ->
+                new AsyncSensorManager(mContext.getSystemService(SensorManager.class)));
 
         mProviders.put(BluetoothController.class, () ->
                 new BluetoothControllerImpl(mContext, getDependency(BG_LOOPER)));

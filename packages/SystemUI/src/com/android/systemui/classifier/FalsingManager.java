@@ -36,6 +36,7 @@ import com.android.systemui.UiOffloadThread;
 import com.android.systemui.analytics.DataCollector;
 import com.android.systemui.recents.misc.SystemServicesProxy;
 import com.android.systemui.statusbar.StatusBarState;
+import com.android.systemui.util.AsyncSensorManager;
 
 import java.io.PrintWriter;
 
@@ -87,7 +88,7 @@ public class FalsingManager implements SensorEventListener {
 
     private FalsingManager(Context context) {
         mContext = context;
-        mSensorManager = mContext.getSystemService(SensorManager.class);
+        mSensorManager = Dependency.get(AsyncSensorManager.class);
         mAccessibilityManager = context.getSystemService(AccessibilityManager.class);
         mDataCollector = DataCollector.getInstance(mContext);
         mHumanInteractionClassifier = HumanInteractionClassifier.getInstance(mContext);
