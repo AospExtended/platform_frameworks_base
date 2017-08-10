@@ -52,7 +52,6 @@ import android.media.AudioManager;
 import android.os.BatteryManager;
 import android.os.CancellationSignal;
 import android.os.Handler;
-import android.os.IBinder;
 import android.os.IRemoteCallback;
 import android.os.Message;
 import android.os.RemoteException;
@@ -60,8 +59,6 @@ import android.os.SystemClock;
 import android.os.Trace;
 import android.os.UserHandle;
 import android.os.UserManager;
-import android.pocket.IPocketCallback;
-import android.pocket.PocketManager;
 import android.provider.Settings;
 import android.telephony.ServiceState;
 import android.telephony.SubscriptionInfo;
@@ -145,9 +142,6 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
     private static final int MSG_DREAMING_STATE_CHANGED = 333;
     private static final int MSG_USER_UNLOCKED = 334;
 
-    // Additional messages should be 600+
-    private static final int MSG_POCKET_STATE_CHANGED = 600;
-
     /** Fingerprint state: Not listening to fingerprint. */
     private static final int FINGERPRINT_STATE_STOPPED = 0;
 
@@ -220,6 +214,7 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
     private UserManager mUserManager;
     private int mFingerprintRunningState = FINGERPRINT_STATE_STOPPED;
 
+
     // Omni additions
     private boolean mFingerprintWakeUnlock; // for screen-off fingerprint unlock
     private BoostFramework mPerf = null;
@@ -227,26 +222,7 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
     private int[] mBoostParamVal;
     private int mBoostDuration;
 
-    private PocketManager mPocketManager;
-    private boolean mIsDeviceInPocket;
-    private final IPocketCallback mPocketCallback = new IPocketCallback.Stub() {
-        @Override
-        public void onStateChanged(boolean isDeviceInPocket, int reason) {
-            boolean changed = false;
-            if (reason == PocketManager.REASON_SENSOR) {
-                if (isDeviceInPocket != mIsDeviceInPocket) {
-                    mIsDeviceInPocket = isDeviceInPocket;
-                    changed = true;
-                }
-            } else {
-                changed = isDeviceInPocket != mIsDeviceInPocket;
-                mIsDeviceInPocket = false;
-            }
-            if (changed) {
-                mHandler.sendEmptyMessage(MSG_POCKET_STATE_CHANGED);
-            }
-        }
-    };
+    
 
     private final Handler mHandler = new Handler() {
         @Override
@@ -332,9 +308,6 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
                     break;
                 case MSG_USER_UNLOCKED:
                     handleUserUnlocked();
-                    break;
-                case MSG_POCKET_STATE_CHANGED:
-                    updateFingerprintListeningState();
                     break;
             }
         }
@@ -1233,11 +1206,6 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
         mTrustManager.registerTrustListener(this);
         new LockPatternUtils(context).registerStrongAuthTracker(mStrongAuthTracker);
 
-        mPocketManager = (PocketManager) context.getSystemService(Context.POCKET_SERVICE);
-        if (mPocketManager != null) {
-            mPocketManager.addCallback(mPocketCallback);
-        }
-
         mFpm = (FingerprintManager) context.getSystemService(Context.FINGERPRINT_SERVICE);
         updateFingerprintListeningState();
         if (mFpm != null) {
@@ -1258,18 +1226,11 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
     }
 
     private boolean shouldListenForFingerprint() {
-        if (!mSwitchingUser && !mFingerprintAlreadyAuthenticated
-                && !isFingerprintDisabled(getCurrentUser()) && !mIsDeviceInPocket) {
-            if (Settings.System.getIntForUser(mContext.getContentResolver(),
-                    Settings.System.FINGERPRINT_WAKE_UNLOCK,
-                    mFingerprintWakeUnlock ? 1 : 0,
-                    UserHandle.USER_CURRENT) != 0) {
-                return mKeyguardIsVisible || !mDeviceInteractive || mBouncer || mGoingToSleep;
-            } else {
-                return mDeviceInteractive && (mKeyguardIsVisible || mBouncer);
-            }
-        }
-        return false;
+  
+      return (mKeyguardIsVisible || !mDeviceInteractive || mBouncer || mGoingToSleep)
+                && !mSwitchingUser && !mFingerprintAlreadyAuthenticated
+                && !isFingerprintDisabled(getCurrentUser());
+
     }
 
     private void startListeningForFingerprint() {
