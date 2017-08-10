@@ -374,6 +374,7 @@ applications that come with the platform
         <permission name="android.permission.MODIFY_AUDIO_SETTINGS"/>
         <permission name="android.permission.MODIFY_PHONE_STATE"/>
         <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+        <permission name="android.permission.ONE_HANDED_MODE"/>
         <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
         <permission name="android.permission.PACKAGE_USAGE_STATS"/>
         <permission name="android.permission.READ_DREAM_STATE"/>
