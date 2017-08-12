@@ -38,11 +38,13 @@ import static android.view.WindowManagerPolicy.WindowManagerFuncs.LID_ABSENT;
 import static android.view.WindowManagerPolicy.WindowManagerFuncs.LID_CLOSED;
 import static android.view.WindowManagerPolicy.WindowManagerFuncs.LID_OPEN;
 
+import android.Manifest;
 import android.app.ActivityManager;
 import android.app.ActivityManager.StackId;
 import android.app.ActivityManagerInternal;
 import android.app.ActivityManagerInternal.SleepToken;
 import android.app.ActivityManagerNative;
+import android.app.ActivityThread;
 import android.app.AppOpsManager;
 import android.app.IUiModeManager;
 import android.app.ProgressDialog;
@@ -160,7 +162,6 @@ import com.android.internal.util.gesture.EdgeGesturePosition;
 import com.android.internal.util.gesture.EdgeServiceConstants;
 import com.android.internal.util.ScreenShapeHelper;
 import com.android.internal.utils.du.ActionHandler;
-import com.android.internal.utils.du.DUSystemReceiver;
 import com.android.internal.widget.PointerLocationView;
 import com.android.server.GestureLauncherService;
 import com.android.server.LocalServices;
@@ -959,29 +960,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             }
         }
     }
-
-    private DUSystemReceiver mDUReceiver = new DUSystemReceiver() {
-        @Override
-        protected void onSecureReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (action == null)
-                return;
-            if (ActionHandler.INTENT_SHOW_POWER_MENU.equals(action)) {
-                mHandler.removeMessages(MSG_DISPATCH_SHOW_GLOBAL_ACTIONS);
-                mHandler.sendEmptyMessage(MSG_DISPATCH_SHOW_GLOBAL_ACTIONS);
-            } else if (ActionHandler.INTENT_SCREENSHOT.equals(action)) {
-                mHandler.removeCallbacks(mScreenshotRunnable);
-                checkSettings();
-                mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_FULLSCREEN);
-                mHandler.post(mScreenshotRunnable);
-            } else if (ActionHandler.INTENT_REGION_SCREENSHOT.equals(action)) {
-                mHandler.removeCallbacks(mScreenshotRunnable);
-                checkSettings();
-                mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_SELECTED_REGION);
-                mHandler.post(mScreenshotRunnable);
-            }
-        }
-    };
 
     private UEventObserver mHDMIObserver = new UEventObserver() {
         @Override
@@ -2187,13 +2165,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         // register for multiuser-relevant broadcasts
         filter = new IntentFilter(Intent.ACTION_USER_SWITCHED);
         context.registerReceiver(mMultiuserReceiver, filter);
-
-        // DU action handler
-        filter = new IntentFilter();
-        filter.addAction(ActionHandler.INTENT_SHOW_POWER_MENU);
-        filter.addAction(ActionHandler.INTENT_SCREENSHOT);
-        filter.addAction(ActionHandler.INTENT_REGION_SCREENSHOT);
-        context.registerReceiver(mDUReceiver, filter);
 
         // monitor for system gestures
         mSystemGestures = new SystemGesturesPointerEventListener(context,
@@ -9008,6 +8979,33 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     @Override
     public boolean needsNavigationBar() {
         return mHasNavigationBar;
+    }
+
+    @Override
+    public void sendCustomAction(Intent intent) {
+        String action = intent.getAction();
+        if (action != null) {
+            if (ActionHandler.INTENT_SHOW_POWER_MENU.equals(action)) {
+                mHandler.removeMessages(MSG_DISPATCH_SHOW_GLOBAL_ACTIONS);
+                mHandler.sendEmptyMessage(MSG_DISPATCH_SHOW_GLOBAL_ACTIONS);
+            } else if (ActionHandler.INTENT_SCREENSHOT.equals(action)) {
+                mContext.enforceCallingOrSelfPermission(Manifest.permission.ACCESS_SURFACE_FLINGER, TAG + "sendCustomAction permission denied");
+                mHandler.removeCallbacks(mScreenshotRunnable);
+                checkSettings();
+                mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_FULLSCREEN);
+                mHandler.post(mScreenshotRunnable);
+            } else if (ActionHandler.INTENT_REGION_SCREENSHOT.equals(action)) {
+                mContext.enforceCallingOrSelfPermission(Manifest.permission.ACCESS_SURFACE_FLINGER, TAG + "sendCustomAction permission denied");
+                mHandler.removeCallbacks(mScreenshotRunnable);
+                checkSettings();
+                mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_SELECTED_REGION);
+                mHandler.post(mScreenshotRunnable);
+            } else if (ActionHandler.INTENT_TOGGLE_SCREENRECORD.equals(action)) {
+                mContext.enforceCallingOrSelfPermission(Manifest.permission.ACCESS_SURFACE_FLINGER, TAG + "sendCustomAction permission denied");
+                mHandler.removeCallbacks(mScreenrecordRunnable);
+                mHandler.post(mScreenrecordRunnable);
+            }
+        }
     }
 
     @Override

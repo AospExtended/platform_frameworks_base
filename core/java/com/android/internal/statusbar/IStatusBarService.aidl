@@ -80,4 +80,5 @@ interface IStatusBarService
     void restartUI();
     void toggleOrientationListener(boolean enable);
     void leftInLandscapeChanged(boolean isLeft);
+    void toggleFlashlight();
 }

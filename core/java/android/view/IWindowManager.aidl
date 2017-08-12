@@ -22,6 +22,7 @@ import com.android.internal.view.IInputContext;
 import com.android.internal.view.IInputMethodClient;
 import com.android.internal.policy.IShortcutService;
 
+import android.content.Intent;
 import android.content.res.CompatibilityInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -329,6 +330,11 @@ interface IWindowManager
      * Called by the status bar to notify Views of changes to System UI visiblity.
      */
     oneway void statusBarVisibilityChanged(int visibility);
+
+    /**
+     * Send some ActionHandler commands to WindowManager.
+     */
+    void sendCustomAction(in Intent intent);
 
     /**
      * Called by System UI to notify of changes to the visibility of Recents.
