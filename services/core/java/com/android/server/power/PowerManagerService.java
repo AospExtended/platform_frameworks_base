@@ -227,6 +227,7 @@ public final class PowerManagerService extends SystemService
     private int mKeyboardBrightness;
     private int mKeyboardBrightnessSettingDefault;
     private boolean mButtonPressed = false;
+    private boolean mButtonOn = false;
 
     private final Object mLock = new Object();
 
@@ -1355,7 +1356,9 @@ public final class PowerManagerService extends SystemService
             } else {
                 if (eventTime > mLastUserActivityTime) {
                     mButtonPressed = event == PowerManager.USER_ACTIVITY_EVENT_BUTTON;
-                    if (mButtonBacklightOnTouchOnly && mButtonPressed) {
+                    if ((mButtonBacklightOnTouchOnly && mButtonPressed)
+                            || eventTime == mLastWakeTime) {
+                        mButtonPressed = true;
                         mLastButtonActivityTime = eventTime;
                     }
                     mLastUserActivityTime = eventTime;
@@ -1933,13 +1936,20 @@ public final class PowerManagerService extends SystemService
                             if (mButtonTimeout != 0
                                     && now > mLastButtonActivityTime + mButtonTimeout) {
                                 mButtonsLight.setBrightness(0);
+                                mButtonOn = false;
                             } else {
                                 if ((!mButtonBacklightOnTouchOnly || mButtonPressed) && !isDeviceInPocket ) {
                                     mButtonsLight.setBrightness(buttonBrightness);
                                     mButtonPressed = false;
                                     if (buttonBrightness != 0 && mButtonTimeout != 0) {
-                                        nextTimeout = now + mButtonTimeout;
+                                        mButtonOn = true;
+                                        if (now + mButtonTimeout < nextTimeout) {
+                                            nextTimeout = now + mButtonTimeout;
+                                        }
                                     }
+                                } else if (mButtonBacklightOnTouchOnly && mButtonOn &&
+                                        mLastButtonActivityTime + mButtonTimeout < nextTimeout) {
+                                    nextTimeout = mLastButtonActivityTime + mButtonTimeout;
                                 }
                             }
                         }
@@ -1950,6 +1960,7 @@ public final class PowerManagerService extends SystemService
                             if (mWakefulness == WAKEFULNESS_AWAKE) {
                                 mButtonsLight.setBrightness(0);
                                 mKeyboardLight.setBrightness(0);
+                                mButtonOn = false;
                             }
                         }
                     }
