@@ -205,4 +205,7 @@
   <string name="quick_settings_adb_network">ADB network</string>
   <string name="quick_settings_network_adb_enabled_label">有効</string>
   <string name="quick_settings_network_adb_disabled_label">無効</string>
+  <!-- Kill button in notification guts -->
+  <string name="dlg_ok">はい</string>
+  <!-- Pie controls -->
 </resources>

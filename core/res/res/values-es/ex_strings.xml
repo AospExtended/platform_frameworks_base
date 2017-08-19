@@ -65,11 +65,11 @@
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">reiniciar las estadísticas de la batería</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_resetBatteryStats">Permite a una aplicación reiniciar los actuales datos de nivel-bajo del uso de la batería.</string>
+  <string name="permdesc_resetBatteryStats">Permite a una aplicación reiniciar los actuales datos de nivel bajo del uso de la batería.</string>
   <!-- On-The-Go -->
   <string name="global_action_onthego">Modo On-The-Go</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_fakePackageSignature">Falsificación de firma</string>
+  <string name="permlab_fakePackageSignature">Paquete de falsificación de firma</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Permite que la aplicación se ejecute como una aplicación diferente. Las aplicaciones maliciosas pueden usar esto para acceder a datos personales. Conceda este permiso con cuidado!</string>
   <!-- ADB over network -->
@@ -87,8 +87,8 @@
   <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> dispositivo conectado</string>
   <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> dispositivos conectados</string>
   <!-- Single hand mode -->
-  <string name="singlehandmode_click_hint_message">Toque fuera de la pantalla para salir de la mini visualización de pantalla</string>
-  <string name="singlehandmode_slide_hint_message">Deslice el dedo por la barra de navegación para cambiar entre las vistas de pantalla estándar y mini</string>
+  <string name="singlehandmode_click_hint_message">Toque fuera de la pantalla para salir de la visualización de pantalla pequeña</string>
+  <string name="singlehandmode_slide_hint_message">Deslice el dedo por la barra de navegación para cambiar entre las vistas de pantalla estándar y pequeña</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_modifyOverlays">modificar las superposiciones de temas</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -96,5 +96,8 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_restartUI">resetear el sistema de barras</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_restartUI">Reinicie SystemUIService para que las barras del sistema puedan cargar recursos temáticos</string>
+  <string name="permdesc_restartUI">Reinicie el SystemUIService para que las barras del sistema puedan cargar los recursos de los temas</string>
+  <!-- Pocket Lock -->
+  <!-- Defines the sysfs attribute path used by pocket bridge
+        to communicate pocket state to the pocket judge kernel driver. -->
 </resources>

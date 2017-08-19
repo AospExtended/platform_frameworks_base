@@ -17,20 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
-  <string name="reboot_title">Перезавантаження</string>
+  <string name="reboot_title">Перезавантажити</string>
   <!-- Button to reboot the phone in restart menu -->
-  <string name="reboot_reboot">Перезавантаження</string>
+  <string name="reboot_reboot">Перезавантажити</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
-  <string name="reboot_recovery">Режим відновлення</string>
+  <string name="reboot_recovery">Рекавері</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
-  <string name="reboot_bootloader">Режим завантажувача</string>
+  <string name="reboot_bootloader">Перезавантажити у бутлоадер</string>
   <!-- Button to soft reboot the device in restart menu -->
-  <string name="reboot_soft">Програмне перезавантаження</string>
+  <string name="reboot_soft">Перезавантаження інтерфейсу</string>
   <!-- Reboot Confirmation Dialog. -->
-  <string name="reboot_confirm" product="tablet">Ваш планшет буде перезавантажено.</string>
-  <string name="reboot_confirm" product="default">Ваш смартфон буде перезавантажено.</string>
+  <string name="reboot_confirm" product="tablet">Ваш пристрій буде перезавантажено.</string>
+  <string name="reboot_confirm" product="default">Ваш телефон перезавантажиться.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
-  <string name="reboot_progress">Перезавантаження\u2026</string>
+  <string name="reboot_progress">Перезавантаження…</string>
   <string name="reboot_systemui">Перезапустити SystemUI</string>
   <!-- Global Actions -->
   <string name="global_action_current_user">Поточний</string>
@@ -97,4 +97,7 @@
   <string name="permlab_restartUI">перезавантажити інтерфейс системи</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_restartUI">Перезавантажувати SystemUIService, щоб системний інтерфейс міг завантажити ресурси з теми</string>
+  <!-- Pocket Lock -->
+  <!-- Defines the sysfs attribute path used by pocket bridge
+        to communicate pocket state to the pocket judge kernel driver. -->
 </resources>

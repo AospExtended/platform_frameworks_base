@@ -119,7 +119,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">Синхронізація увімкнута</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Перезавантажити</string>
-  <string name="quick_settings_reboot_recovery_label">Режим відновлення</string>
+  <string name="quick_settings_reboot_recovery_label">Рекавері</string>
   <string name="accessibility_quick_settings_usb_tether_off">USB-модем вимкнено</string>
   <string name="accessibility_quick_settings_usb_tether_on">USB-модем увімкнено</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">USB-модем вимкнено</string>
@@ -240,4 +240,8 @@
   <string name="quick_settings_adb_network">ADB через мережу</string>
   <string name="quick_settings_network_adb_enabled_label">Увімкнено</string>
   <string name="quick_settings_network_adb_disabled_label">Вимкнено</string>
+  <!-- Kill button in notification guts -->
+  <string name="dlg_ok">OK</string>
+  <string name="dlg_cancel">Скасувати</string>
+  <!-- Pie controls -->
 </resources>

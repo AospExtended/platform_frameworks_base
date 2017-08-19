@@ -239,4 +239,19 @@
   <string name="quick_settings_adb_network">ADB via Rede</string>
   <string name="quick_settings_network_adb_enabled_label">Habilitado</string>
   <string name="quick_settings_network_adb_disabled_label">Desabilitado</string>
+  <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Forçar parada?</string>
+  <string name="force_stop_dlg_text">Se você forçar a parada de um app, ele pode apresentar mau funcionamento.</string>
+  <string name="dlg_ok">Ok</string>
+  <string name="dlg_cancel">Cancelar</string>
+  <string name="kill">Fechar aplicativo</string>
+  <!-- Pie controls -->
+  <string name="pie_date_format">EEEE, dd MMMM yyyy</string>
+  <string name="pie_hour_format_12">hh:mm</string>
+  <string name="pie_hour_format_24">HH:mm</string>
+  <string name="pie_am_pm">a</string>
+  <string name="pie_state_name">Controles Pie</string>
+  <string name="pie_state_summary">Usar o controle pie durante o modo imersivo</string>
+  <string name="pie_battery_level">"NÍVEL DE BATERIA "</string>
+  <string name="quick_settings_pie">Pie</string>
 </resources>

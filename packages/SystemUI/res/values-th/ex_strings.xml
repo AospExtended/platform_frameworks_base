@@ -178,4 +178,6 @@
   <string name="quick_settings_adb_network">ADB บนเครือข่าย</string>
   <string name="quick_settings_network_adb_enabled_label">เปิดใช้งาน</string>
   <string name="quick_settings_network_adb_disabled_label">ปิดการใช้งาน</string>
+  <!-- Kill button in notification guts -->
+  <!-- Pie controls -->
 </resources>

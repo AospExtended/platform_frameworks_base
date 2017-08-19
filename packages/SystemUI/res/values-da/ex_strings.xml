@@ -100,4 +100,6 @@
   <string name="quick_settings_adb_network">ADB netværk</string>
   <string name="quick_settings_network_adb_enabled_label">Aktiveret</string>
   <string name="quick_settings_network_adb_disabled_label">Deaktiveret</string>
+  <!-- Kill button in notification guts -->
+  <!-- Pie controls -->
 </resources>

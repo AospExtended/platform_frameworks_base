@@ -21,9 +21,9 @@
   <!-- Button to reboot the phone in restart menu -->
   <string name="reboot_reboot">Reiniciar</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
-  <string name="reboot_recovery">Recuperación</string>
+  <string name="reboot_recovery">Recovery</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
-  <string name="reboot_bootloader">Xestor de arranque</string>
+  <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
   <string name="reboot_soft">Reinicio suave</string>
   <!-- Reboot Confirmation Dialog. -->
@@ -38,20 +38,20 @@
   <string name="global_action_screen_record">Gravación da pantalla</string>
   <string name="global_action_search">Procura</string>
   <string name="global_action_torch">Lanterna</string>
-  <string name="global_action_voicesearch">Procurar con voz</string>
-  <string name="permlab_preventpower">Cambiar o botón de enerxía</string>
+  <string name="global_action_voicesearch">Procura con voz</string>
+  <string name="permlab_preventpower">cambiar o botón de enerxía</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_preventpower">Permite que unha aplicación cambie o comportamento do boton de enerxía.</string>
+  <string name="permdesc_preventpower">Permite que un aplicativo cambie o comportamento do boton de enerxía.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">A imaxe do proveedor non coincide co sistema. Por favor flashea o <xliff:g id="string">%s</xliff:g> imaxe para o teu dispositivo</string>
   <!-- AOKP custom system animations -->
   <string name="animation_fade">Desvanecer</string>
-  <string name="animation_slide_right">Escorregar cara á dereita</string>
-  <string name="animation_slide_left">Escorregar cara á esquerda</string>
-  <string name="animation_slide_right_no_fade">Escorregar cara á dereita(Sen desvanecer)</string>
-  <string name="animation_slide_left_no_fade">Escorregar cara á esquerda(Sen desvanecer)</string>
-  <string name="animation_slide_up">Escorregar cara abaixo</string>
-  <string name="animation_slide_down">Escorregar cara arriba</string>
+  <string name="animation_slide_right">Escorregar dende a dereita</string>
+  <string name="animation_slide_left">Escorregar dende a esquerda</string>
+  <string name="animation_slide_right_no_fade">Escorregar dende a dereita(Sen desvanecer)</string>
+  <string name="animation_slide_left_no_fade">Escorregar dende a esquerda(Sen desvanecer)</string>
+  <string name="animation_slide_up">Escorregar dende abaixo</string>
+  <string name="animation_slide_down">Escorregar dende arriba</string>
   <string name="animation_default">Por defecto</string>
   <string name="animation_translucent">Translúcido</string>
   <string name="animation_grow_shrink">Medrar (Arriba)</string>
@@ -61,17 +61,17 @@
   <string name="animation_grow_shrink_right">Medrar (Dereita)</string>
   <string name="action_null">En branco</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
-  <string name="aex_system_error_manufacturer">Se ha detectado unha falta de coincidencia coa imaxe do proveedor. Polo xeral isto significa que dita imaxe está desactualizada. Asegúrese de que coincida con <xliff:g id="fingerprint">%1$s </xliff:g>.</string>
+  <string name="aex_system_error_manufacturer">Detectouse unha falta de coincidencia coa imaxe do proveedor. Polo xeral isto significa que dita imaxe está desactualizada. Asegúrese de que coincida con <xliff:g id="fingerprint">%1$s </xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">Reestablecer as estatísticas da batería</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_resetBatteryStats">Permite que un aplicativo poida reiniciar os datos de uso actual de batería a baixo nivel.</string>
+  <string name="permdesc_resetBatteryStats">Permite que un aplicativo poida restablecer os datos de uso actual de batería a baixo nivel.</string>
   <!-- On-The-Go -->
   <string name="global_action_onthego">Modo On-The-Go</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_fakePackageSignature">Paquete de falsificación de sinatura</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Permite que o aplicativo se execute como outro aplicativo diferente. Aplicativos maliciosos poden usar isto para acceder aos datos privados de aplicativos. Conceda os permisos solo con precaución!</string>
+  <string name="permdesc_fakePackageSignature">Permite que o aplicativo se execute como outro aplicativo diferente. Aplicativos maliciosos poden usar isto para acceder aos datos privados de aplicativos. Conceda os permisos só con precaución!</string>
   <!-- ADB over network -->
   <string name="adb_net_active_notification_title">ADB sobre rede habilitado</string>
   <string name="adb_both_active_notification_title">ADB sobre USB &amp; rede habilitado</string>
@@ -87,8 +87,8 @@
   <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> dispositivos conectados</string>
   <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> dispositivos conectados</string>
   <!-- Single hand mode -->
-  <string name="singlehandmode_click_hint_message">Toque fora da pantalla para saír da vista de pantalla mini</string>
-  <string name="singlehandmode_slide_hint_message">Escorrega o teu dedo cruzando a barra de navegación para trocar entre a vista estándar e a vista de pantalla mini</string>
+  <string name="singlehandmode_click_hint_message">Toque fora da pantalla para saír da vista de pantalla pequena</string>
+  <string name="singlehandmode_slide_hint_message">Escorrega teu dedo pola barra de navegación para cambiar entre a vista estándar e a vista pequena</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_modifyOverlays">Modificar as superposicións do tema</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -97,4 +97,7 @@
   <string name="permlab_restartUI">Reiniciar o sistema de barras</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_restartUI">Reiniciar o servizo da interface do sistema para que as barras do sistema poidan cargar os recursos do tema</string>
+  <!-- Pocket Lock -->
+  <!-- Defines the sysfs attribute path used by pocket bridge
+        to communicate pocket state to the pocket judge kernel driver. -->
 </resources>

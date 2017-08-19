@@ -56,7 +56,7 @@
   <string name="quick_settings_locale_more_locales_toast">Geçiş işlevselliğini etkinleştirmek için lütfen birden fazla dil yapılandırın</string>
   <!-- NavBar Tuner -->
   <string name="menu_ime_always_show">Menü / Klavye Değiştirici (her zaman göster)</string>
-  <string name="search">Ara</string>
+  <string name="search">Arama Yap</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">%1$s için sağa kaydırın</string>
   <string name="right_shortcut_hint">%1$s için sola kaydırın</string>
@@ -239,4 +239,8 @@
   <string name="quick_settings_adb_network">ADB ağı</string>
   <string name="quick_settings_network_adb_enabled_label">Etkinleştirildi</string>
   <string name="quick_settings_network_adb_disabled_label">Etkin Değil</string>
+  <!-- Kill button in notification guts -->
+  <string name="dlg_ok">TAMAM</string>
+  <string name="dlg_cancel">İptal</string>
+  <!-- Pie controls -->
 </resources>

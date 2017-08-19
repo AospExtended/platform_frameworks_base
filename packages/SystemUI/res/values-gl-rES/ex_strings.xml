@@ -25,6 +25,10 @@
   <string name="stream_title_notification">Notificación</string>
   <string name="stream_title_bluetooth">Bluetooth</string>
   <!-- Wi-Fi hotspot label when enabled -->
+  <plurals name="wifi_hotspot_connected_clients_label">
+    <item quantity="one">%1$d cliente</item>
+    <item quantity="other">%1$d clientes</item>
+  </plurals>
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
@@ -41,14 +45,14 @@
   <string name="screenrecord_notif_pointer_on">Amosar punteiro</string>
   <string name="screenrecord_notif_pointer_off">Ocultar punteiro</string>
   <!-- Screen record notification error title -->
-  <string name="screenrecord_notif_error">Non se puido gravar a pantalla</string>
+  <string name="screenrecord_notif_error">Incapaz de gravar a pantalla</string>
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Captura de pantalla eliminada</string>
   <!-- Screenrecord QS tile -->
   <string name="quick_settings_screenrecord">Gravación de pantalla</string>
   <string name="quick_settings_screenrecord_on">Gravando...</string>
   <!-- Language\Locale Tile -->
-  <string name="quick_settings_locale_label">Lingua</string>
+  <string name="quick_settings_locale_label">Linguaxe</string>
   <string name="quick_settings_locale_more_locales_toast">Por favor configure múltiples linguaxes para habilitar a función de alternar</string>
   <!-- NavBar Tuner -->
   <string name="menu_ime_always_show">Alternador Menú / Teclado (Amosar sempre)</string>
@@ -56,7 +60,7 @@
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">Arrastrar á dereita para %1$s</string>
   <string name="right_shortcut_hint">Arrastrar á esquerda para %1$s</string>
-  <string name="lockscreen_message">Toque nunha icona na esquerda ou na dereita para volver a asignar un atallo da pantalla de broqueo.</string>
+  <string name="lockscreen_message">Toque nunha icona na esquerda ou na dereita para volver a asignar un atallo da pantalla de bloqueo.</string>
   <string name="lockscreen_default_target">Por defecto</string>
   <string name="select_application">Seleccionar aplicativo</string>
   <string name="lockscreen_choose_action_title">Escoller acción</string>
@@ -70,7 +74,7 @@
   <string name="accessibility_quick_settings_ambient_display_off">Pantalla ambiente apagada</string>
   <string name="accessibility_quick_settings_ambient_display_on">Pantalla ambiente acendida</string>
   <string name="accessibility_quick_settings_ambient_display_changed_off">A pantalla ambiente apagouse</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_on">A pantalla ambiente acendeu</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">A pantalla ambiente acendida</string>
   <string name="quick_settings_ambient_display_label">Pantalla ambiente</string>
   <string name="quick_settings_extensions">Extensións</string>
   <!-- Screenshot Crop & Share -->
@@ -78,8 +82,8 @@
   <string name="action_delete_fault">O borrado non tivo éxito</string>
   <string name="action_save_success">Gardado</string>
   <string name="action_save_fault">O gardado non tivo éxito</string>
-  <string name="pref_action_color_title">Color dos botóns de acción</string>
-  <string name="pref_action_color_summary">Escolle o teu color favorito para os botóns de acción</string>
+  <string name="pref_action_color_title">Cor dos botóns de acción</string>
+  <string name="pref_action_color_summary">Escolle a túa cor favorita para os botóns de acción</string>
   <string name="pref_category_main">Axustes principais</string>
   <string name="pref_category_user">Axustes do usuario</string>
   <string name="pref_crop_behavior_title">Comportamento do corte</string>
@@ -103,7 +107,7 @@
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Captura de pantalla eliminada</string>
   <!-- SystemUI Tuner Parts -->
-  <string name="systemui_tuner_pnc_title">Controis dos axustes de enerxía</string>
+  <string name="systemui_tuner_pnc_title">Controis das notificacións de enerxía</string>
   <!-- Quick Settings tiles -->
   <string name="quick_settings_screenshot_label">Captura de pantalla</string>
   <string name="quick_settings_region_screenshot_label">Captura de pantalla parcial</string>
@@ -114,7 +118,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">A sincronización activouse</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Reiniciar</string>
-  <string name="quick_settings_reboot_recovery_label">Recuperación</string>
+  <string name="quick_settings_reboot_recovery_label">Recovery</string>
   <string name="accessibility_quick_settings_usb_tether_off">Anclaxe USB desactivado</string>
   <string name="accessibility_quick_settings_usb_tether_on">Anclaxe USB aceso</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">O anclaxe USB foi desactivado</string>
@@ -132,7 +136,7 @@
   <string name="accessibility_quick_settings_heads_up_on">Notificacións emerxentes activadas.</string>
   <string name="accessibility_quick_settings_heads_up_changed_off">As notificacións emerxentes foron desactivadas.</string>
   <string name="accessibility_quick_settings_heads_up_changed_on">As notificacións emerxentes foron activadas.</string>
-  <string name="quick_settings_pulse_enabled">Pulso activado</string>
+  <string name="quick_settings_pulse_enabled">Pulse habilitado</string>
   <string name="quick_settings_pulse_disabled">Sen visualizador</string>
   <string name="quick_settings_pulse_label">Visualizador da barra de navegación</string>
   <string name="quick_settings_nfc_label">NFC</string>
@@ -141,7 +145,7 @@
   <string name="accessibility_quick_settings_nfc_changed_off">O NFC foi desactivado.</string>
   <string name="accessibility_quick_settings_nfc_changed_on">O NFC foi activado.</string>
   <!-- SystemUI Tuner Parts -->
-  <string name="systemui_tuner_statusbar_title">Obxectos da barra de estado</string>
+  <string name="systemui_tuner_statusbar_title">Elementos da barra de estado</string>
   <string name="accessibility_quick_settings_location_battery_saving">Modo de localización: Modo aforro de batería.</string>
   <string name="accessibility_quick_settings_location_gps_only">Modo de localización: Só sensores.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Modo de localización: Alta precisión.</string>
@@ -161,13 +165,13 @@
   <string name="quick_settings_navigation_bar">Barra de navegación</string>
   <string name="quick_settings_smartbar">Barra intelixente de axustes rapidos</string>
   <string name="quick_settings_smartbar_off">Barra intelixente desactivada</string>
-  <string name="quick_settings_fling">Lanzar</string>
-  <string name="quick_settings_fling_off">Lanzar desactivado</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_fling_off">Fling desactivado</string>
   <!-- Screenshot action -->
   <string name="screenshot_abort_title">Non se fixo a captura de pantalla</string>
   <string name="screenshot_abort_text">Operación abortada</string>
-  <string name="quick_settings_expanded_desktop_label">Escritorio expandido</string>
-  <string name="quick_settings_expanded_desktop">Expandido</string>
+  <string name="quick_settings_expanded_desktop_label">Escritorio estendido</string>
+  <string name="quick_settings_expanded_desktop">Estendido</string>
   <string name="quick_settings_expanded_desktop_off">Normal</string>
   <!-- Heads up snooze toast -->
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - As notificacións flotantes serán adormecidas durante 1 minuto.</string>
@@ -181,7 +185,7 @@
   <!-- Data/Wifi activity arrows -->
   <string name="data_wifi_activity_arrows_title">Actividade de rede</string>
   <!-- OmniJaws -->
-  <string name="omnijaws_service_error">Error</string>
+  <string name="omnijaws_service_error">Erro</string>
   <string name="omnijaws_service_unkown">Sen datos do tempo</string>
   <string name="omnijaws_service_error_long">Erro na carga carga dos datos do tempo</string>
   <string name="omnijaws_service_disabled">Servizo deshabilitado</string>
@@ -205,11 +209,11 @@
   <string name="quick_settings_compass_SE">SL</string>
   <string name="quick_settings_compass_S">S</string>
   <string name="quick_settings_compass_SW">SO</string>
-  <string name="quick_settings_compass_W">Oeste</string>
+  <string name="quick_settings_compass_W">O</string>
   <string name="quick_settings_compass_NW">NO</string>
   <!-- Sim recents -->
-  <string name="recents_multiwin_warning">Xa hay unha sesión multixanela activa.\n Simplemente toque no aplicativo se quere ancoralo agora.</string>
-  <string name="recents_multiwin_nolastapp">Has borrado os recentes, por favor escolle un aplicativo do caixón de aplicativos.</string>
+  <string name="recents_multiwin_warning">Xa hay unha sesión multixanela activa.\n Simplemente toque no aplicativo se quere ancorar agora.</string>
+  <string name="recents_multiwin_nolastapp">Borraches os recentes, por favor escolle un aplicativo do caixón de aplicativos.</string>
   <!-- On The Go -->
   <string name="onthego_notif_ticker">On-The-Go activado</string>
   <string name="onthego_notif_title">On-The-Go está activo</string>
@@ -217,7 +221,7 @@
   <string name="onthego_notif_options">Opcións</string>
   <string name="onthego_notif_error">Non foi posíbel iniciar On-The-Go</string>
   <string name="onthego_notif_restart">Reiniciar On-The-Go</string>
-  <string name="onthego_notif_camera_changed">Modo de cámara cambiado</string>
+  <string name="onthego_notif_camera_changed">Modo de cámara trocado</string>
   <string name="onthego_transparency">Transparencia</string>
   <string name="onthego_front_camera">Usar a cámara frontal</string>
   <string name="onthego_service_toggle">Reiniciar automáticamente o servizo</string>
@@ -230,9 +234,13 @@
   <string name="quick_settings_hwkeys_label">Teclas HW</string>
   <!-- AEX Logo -->
   <string name="status_bar_aex_logo_title">Logo AEX</string>
-  <string name="status_bar_aex_logo_summary">Habilitar para mostrar o logo de AEX na parte esquerda da barra de estado</string>
+  <string name="status_bar_aex_logo_summary">Habilitar para amosar o logo de AEX na parte esquerda da barra de estado</string>
   <!-- ADB over network Tile -->
   <string name="quick_settings_adb_network">Rede ADB</string>
   <string name="quick_settings_network_adb_enabled_label">Habilitado</string>
   <string name="quick_settings_network_adb_disabled_label">Deshabilitado</string>
+  <!-- Kill button in notification guts -->
+  <string name="dlg_ok">Aceptar</string>
+  <string name="dlg_cancel">Cancelar</string>
+  <!-- Pie controls -->
 </resources>

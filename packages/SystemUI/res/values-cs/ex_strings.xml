@@ -240,4 +240,8 @@
   <string name="quick_settings_adb_network">ADB síť</string>
   <string name="quick_settings_network_adb_enabled_label">Povoleno</string>
   <string name="quick_settings_network_adb_disabled_label">Zakázáno</string>
+  <!-- Kill button in notification guts -->
+  <string name="dlg_ok">OK</string>
+  <string name="dlg_cancel">Zrušit</string>
+  <!-- Pie controls -->
 </resources>

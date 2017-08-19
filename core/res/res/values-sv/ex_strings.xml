@@ -91,4 +91,7 @@
   <string name="permlab_restartUI">starta om systembalkarna</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_restartUI">Starta om SystemUIService så att systemetbalkarna kan ladda temaresurser</string>
+  <!-- Pocket Lock -->
+  <!-- Defines the sysfs attribute path used by pocket bridge
+        to communicate pocket state to the pocket judge kernel driver. -->
 </resources>

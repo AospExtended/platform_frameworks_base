@@ -36,7 +36,7 @@
   <string name="global_action_current_user">Mevcut</string>
   <string name="global_action_screenshot">Ekran görüntüsü</string>
   <string name="global_action_screen_record">Ekran Kaydı</string>
-  <string name="global_action_search">Ara</string>
+  <string name="global_action_search">Arama Yap</string>
   <string name="global_action_torch">El feneri</string>
   <string name="global_action_voicesearch">Sesli Arama</string>
   <string name="permlab_preventpower">güç tuşu işlevini değiştir</string>
@@ -73,7 +73,7 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Uygulamanın farklı bir uygulama gibi davranmasına izin verir. Zararlı uygulamalar bu özelliği kullanarak özel içerikli bilgilere ulaşabilir. Bu izni verirken dikkatli olun!</string>
   <!-- ADB over network -->
-  <string name="adb_net_active_notification_title">Ağ üzerinden ADB etkinleştirildi</string>
+  <string name="adb_net_active_notification_title">Ağ etkinken ADB etkinleştirildi</string>
   <string name="adb_both_active_notification_title">USB &amp; Ağ üzerinden ADB etkin</string>
   <string name="adb_active_generic_notification_message">Hata ayıklamayı devre dışı bırakmak için dokunun.</string>
   <!-- Permissions -->
@@ -84,9 +84,17 @@
   <string name="deny_button">Reddet</string>
   <!-- Tethered notification -->
   <string name="tethered_notification_no_device_message">Bağlanmış Cihaz Yok</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> bağlı cihaz</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> bağlı cihazlar</string>
   <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">Küçük ekran görünümünden çıkmak için ekranın dışına dokunun</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">Tema katmanlarını düzenle</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">sistem çubuklarını yeniden başlat</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Pocket Lock -->
+  <!-- Defines the sysfs attribute path used by pocket bridge
+        to communicate pocket state to the pocket judge kernel driver. -->
 </resources>

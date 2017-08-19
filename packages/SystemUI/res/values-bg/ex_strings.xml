@@ -64,4 +64,7 @@
   <!-- HW Keys Tile -->
   <!-- AEX Logo -->
   <!-- ADB over network Tile -->
+  <!-- Kill button in notification guts -->
+  <string name="dlg_cancel">Отказ</string>
+  <!-- Pie controls -->
 </resources>

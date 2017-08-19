@@ -204,4 +204,7 @@
   <string name="quick_settings_adb_network">ADB mreža</string>
   <string name="quick_settings_network_adb_enabled_label">Omogućeno</string>
   <string name="quick_settings_network_adb_disabled_label">Onemogućeno</string>
+  <!-- Kill button in notification guts -->
+  <string name="dlg_ok">U redu</string>
+  <!-- Pie controls -->
 </resources>

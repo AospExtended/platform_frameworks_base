@@ -21,21 +21,21 @@
   <!-- Button to reboot the phone in restart menu -->
   <string name="reboot_reboot">重新啟動</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
-  <string name="reboot_recovery">回復模式</string>
+  <string name="reboot_recovery">Recovery 模式</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
-  <string name="reboot_bootloader">開機載入器</string>
+  <string name="reboot_bootloader">Bootloader 模式</string>
   <!-- Button to soft reboot the device in restart menu -->
-  <string name="reboot_soft">軟重啟</string>
+  <string name="reboot_soft">軟體重新啟動</string>
   <!-- Reboot Confirmation Dialog. -->
-  <string name="reboot_confirm" product="tablet">你的平板即將重新啟動。</string>
-  <string name="reboot_confirm" product="default">你的手機即將重新啟動。</string>
+  <string name="reboot_confirm" product="tablet">您的平板電腦將會重新啟動。</string>
+  <string name="reboot_confirm" product="default">您的手機將會重新啟動。</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
   <string name="reboot_progress">重新啟動中\u2026</string>
   <string name="reboot_systemui">重新啟動系統使用者介面</string>
   <!-- Global Actions -->
   <string name="global_action_current_user">目前</string>
   <string name="global_action_screenshot">螢幕截圖</string>
-  <string name="global_action_screen_record">螢幕錄影</string>
+  <string name="global_action_screen_record">螢幕錄製</string>
   <string name="global_action_search">搜尋</string>
   <string name="global_action_torch">手電筒</string>
   <string name="global_action_voicesearch">語音搜尋</string>
@@ -61,7 +61,7 @@
   <string name="animation_grow_shrink_right">縮放 (右側)</string>
   <string name="action_null">空白</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
-  <string name="aex_system_error_manufacturer">偵測到Vendor映像不符。一般來說這代表你的Vendor映像過期了。請確定你的Vendor映像符合<xliff:g id="fingerprint">%1$s</xliff:g></string>
+  <string name="aex_system_error_manufacturer">已檢測到供應者的映像檔案不符合。 通常這表示您的供應者的映像檔案已過期。 請確保您的供應者的映像檔案與 <xliff:g id="fingerprint">%1$s</xliff:g> 相符合。</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">重設電池統計資料</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -73,7 +73,7 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">允許應用程式偽裝成不同的應用程式。有害的應用程式可能可以使用這個功能來存取私人的應用程式資料。授予此權限時請小心！</string>
   <!-- ADB over network -->
-  <string name="adb_net_active_notification_title">網絡 ADB 已啟用</string>
+  <string name="adb_net_active_notification_title">網路 ADB 已啟用</string>
   <string name="adb_both_active_notification_title">ADB 透過 USB 和網路已啟用</string>
   <string name="adb_active_generic_notification_message">輕觸即可停用偵錯。</string>
   <!-- Permissions -->
@@ -88,13 +88,16 @@
   <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> 個已連接的裝置</string>
   <!-- Single hand mode -->
   <string name="singlehandmode_click_hint_message">觸控螢幕外部可退出迷你螢幕檢視</string>
-  <string name="singlehandmode_slide_hint_message">將手指滑過導航列以在標準和迷你螢幕檢視之間進行切換</string>
+  <string name="singlehandmode_slide_hint_message">在導航列上滑動手指以切換標準或單手模式</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_modifyOverlays">修改主題疊層</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_modifyOverlays">允許應用程式透過 OverlayManagerService 修改主題疊層</string>
+  <string name="permdesc_modifyOverlays">允許應用程式對主題重疊使用重疊管理員服務進行修改</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_restartUI">重新啟動系統列</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_restartUI">重新啟動 SystemUI服務，以便系統列載入主題資源</string>
+  <string name="permdesc_restartUI">重新啟動系統使用者介面服務，以便系統列載入主題資源</string>
+  <!-- Pocket Lock -->
+  <!-- Defines the sysfs attribute path used by pocket bridge
+        to communicate pocket state to the pocket judge kernel driver. -->
 </resources>

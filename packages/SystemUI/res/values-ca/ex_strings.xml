@@ -190,4 +190,7 @@
   <string name="quick_settings_adb_network">Xarxa ADB</string>
   <string name="quick_settings_network_adb_enabled_label">Habilitat</string>
   <string name="quick_settings_network_adb_disabled_label">Deshabilitat</string>
+  <!-- Kill button in notification guts -->
+  <string name="dlg_ok">Acceptar</string>
+  <!-- Pie controls -->
 </resources>

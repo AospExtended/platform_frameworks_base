@@ -240,4 +240,8 @@
   <string name="quick_settings_adb_network">ADB по сети</string>
   <string name="quick_settings_network_adb_enabled_label">Включено</string>
   <string name="quick_settings_network_adb_disabled_label">Отключено</string>
+  <!-- Kill button in notification guts -->
+  <string name="dlg_ok">ОК</string>
+  <string name="dlg_cancel">Отмена</string>
+  <!-- Pie controls -->
 </resources>

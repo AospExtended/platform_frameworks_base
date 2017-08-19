@@ -20,9 +20,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="profile_applist_title">應用程式</string>
   <string name="picker_activities">活動</string>
-  <string name="select_custom_app_title">選擇自訂應用</string>
+  <string name="select_custom_app_title">選擇自訂應用程式</string>
   <string name="select_custom_activity_title">選擇自訂活動</string>
-  <string name="lockscreen_targets_message">鎖定螢幕捷徑</string>
+  <string name="lockscreen_targets_message">鎖定畫面捷徑</string>
   <!-- Description for the screen zoom level that makes interface elements smaller. [CHAR LIMIT=24] -->
   <string name="screen_zoom_summary_smaller">較小</string>
   <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->

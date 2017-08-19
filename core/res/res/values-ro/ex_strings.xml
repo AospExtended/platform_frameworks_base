@@ -17,16 +17,31 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Repornire</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Repornire</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Recuperare</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Repornire soft</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Tableta dvs. va reporni.</string>
+  <string name="reboot_confirm" product="default">Telefonul dvs. va reporni.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">Repornire\u2026</string>
   <string name="reboot_systemui">Reporniţi SystemUI</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Actual</string>
+  <string name="global_action_screenshot">Captură de ecran</string>
+  <string name="global_action_screen_record">Înregistrare ecran</string>
+  <string name="global_action_search">Căutare</string>
   <string name="global_action_torch">Lanternă</string>
+  <string name="global_action_voicesearch">Căutare vocală</string>
+  <string name="permlab_preventpower">suprascrie butonul de pornire</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Permite unei aplicații să suprascrie butonul de pornire.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Imaginea dumneavoastră de furnizor nu corespunde cu cea a sistemului. Vă rugăm să dați flash la imaginea de furnizor <xliff:g id="string">%s </xliff:g> pentru aparatul dvs</string>
   <!-- AOKP custom system animations -->
@@ -46,20 +61,43 @@
   <string name="animation_grow_shrink_right">Mărește (spre dreapta)</string>
   <string name="action_null">Gol</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">S-a detectat o nepotrivire a imaginii furnizorului. În mod obișnuit, asta înseamnă că imaginea furnizorului este expirată. Vă rugăm să vă asigurați că imaginea furnizorului dvs. corespunde cu <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">Resetare statistici baterie</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_resetBatteryStats">Permite unei aplicații să reseteze datele de utilizare curente la nivelul de bază ale bateriei.</string>
   <!-- On-The-Go -->
-  <string name="global_action_onthego">Mod \"On-The-Go\"</string>
+  <string name="global_action_onthego">Mod \"În mişcare\"</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Falsifică semnătura pachetului</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Permite aplicației să pretindă că este o aplicație diferită. Aplicațiile rău-intenționate ar putea să utilizeze aceasta pentru a accesa datele aplicațiilor private. Acordați această permisiune numai cu prudență!</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">Depanare prin rețea pornită</string>
+  <string name="adb_both_active_notification_title">Depanare prin USB și rețea pornită</string>
+  <string name="adb_active_generic_notification_message">Atingeți pentru a dezactiva depanarea.</string>
   <!-- Permissions -->
+  <string name="other_permissions">alte permisiuni</string>
+  <string name="permission_remember_choice">Memorează</string>
+  <string name="permission_title">Permisiune</string>
+  <string name="allow_button">Permiteţi</string>
+  <string name="deny_button">Refuzaţi</string>
   <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">Niciun dispozitiv conectat</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s </xliff:g> dispozitiv conectat</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s </xliff:g> dispozitive conectate</string>
   <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">Apăsați în afara ecranului pentru a ieşi din modul cu o singură mână</string>
+  <string name="singlehandmode_slide_hint_message">Glisaţi degetul peste bara de navigare pentru a schimba între vizualizările standard și ecran mic</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">modifică suprapunerile temelor</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">Permite aplicațiilor să aducă modificări temelor folosind OverlayManagerService</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">repornire bare de sistem</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_restartUI">Repornire SystemUIService astfel încât barele de sistem să poată încărca resursele din temă</string>
+  <!-- Pocket Lock -->
+  <!-- Defines the sysfs attribute path used by pocket bridge
+        to communicate pocket state to the pocket judge kernel driver. -->
 </resources>

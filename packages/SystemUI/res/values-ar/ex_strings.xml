@@ -243,4 +243,8 @@
   <string name="quick_settings_adb_network">ADB عبر الشبكة</string>
   <string name="quick_settings_network_adb_enabled_label">مفعل</string>
   <string name="quick_settings_network_adb_disabled_label">معطل</string>
+  <!-- Kill button in notification guts -->
+  <string name="dlg_ok">حسناً</string>
+  <string name="dlg_cancel">إلغاء</string>
+  <!-- Pie controls -->
 </resources>

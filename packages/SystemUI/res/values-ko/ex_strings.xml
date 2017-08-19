@@ -204,4 +204,7 @@
   <string name="quick_settings_adb_network">ADB 네트워크</string>
   <string name="quick_settings_network_adb_enabled_label">활성화됨</string>
   <string name="quick_settings_network_adb_disabled_label">비활성화됨</string>
+  <!-- Kill button in notification guts -->
+  <string name="dlg_ok">확인</string>
+  <!-- Pie controls -->
 </resources>

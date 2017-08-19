@@ -238,4 +238,8 @@
   <string name="quick_settings_adb_network">Jaringan ADB</string>
   <string name="quick_settings_network_adb_enabled_label">Diaktifkan</string>
   <string name="quick_settings_network_adb_disabled_label">Tidak non aktifkan</string>
+  <!-- Kill button in notification guts -->
+  <string name="dlg_ok">Oke</string>
+  <string name="dlg_cancel">Batal</string>
+  <!-- Pie controls -->
 </resources>

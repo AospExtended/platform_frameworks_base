@@ -18,8 +18,16 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="profile_applist_title">Aplicaţii</string>
+  <string name="picker_activities">Activități</string>
+  <string name="select_custom_app_title">Selectați o aplicație personalizată</string>
+  <string name="select_custom_activity_title">Selectați o activitate personalizată</string>
+  <string name="lockscreen_targets_message">Comenzi rapide ale ecranului de blocare</string>
   <!-- Description for the screen zoom level that makes interface elements smaller. [CHAR LIMIT=24] -->
+  <string name="screen_zoom_summary_smaller">Mai mic</string>
   <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->
+  <string name="screen_zoom_summary_smallest">Cel mai mic</string>
   <!-- Regex used to parse the processor string from kernel -->
   <!-- Text when wrong password entered for psk networks -->
+  <string name="wifi_auth_password_wrong">Parola poate fi incorectă</string>
 </resources>

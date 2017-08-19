@@ -205,4 +205,7 @@
   <string name="quick_settings_adb_network">ADB şəbəkə</string>
   <string name="quick_settings_network_adb_enabled_label">Aktivləşdirildi</string>
   <string name="quick_settings_network_adb_disabled_label">Aktiv deyil</string>
+  <!-- Kill button in notification guts -->
+  <string name="dlg_ok">TAMAM</string>
+  <!-- Pie controls -->
 </resources>
