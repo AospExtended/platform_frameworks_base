@@ -17,15 +17,27 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">再起動</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">再起動</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">リカバリー</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">ブートローダー</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">ソフトリブート</string>
   <!-- Reboot Confirmation Dialog. -->
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">再起動中...</string>
   <string name="reboot_systemui">システムUIの再起動</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">現在</string>
+  <string name="global_action_screenshot">スクリーンショット</string>
+  <string name="global_action_screen_record">画面の録画</string>
+  <string name="global_action_search">検索</string>
   <string name="global_action_torch">トーチ</string>
+  <string name="global_action_voicesearch">音声検索</string>
+  <string name="permlab_preventpower">電源ボタンを優先する</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">vendor イメージがシステムと一致しません。お使いの端末に <xliff:g id="string">%s</xliff:g> vendor イメージを導入してください。</string>
@@ -56,7 +68,10 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- ADB over network -->
   <!-- Permissions -->
+  <string name="allow_button">許可</string>
+  <string name="deny_button">拒否</string>
   <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">接続しているデバイスはありません</string>
   <!-- Single hand mode -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

@@ -18,8 +18,12 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="profile_applist_title">アプリ</string>
+  <string name="picker_activities">アクティビティ</string>
+  <string name="lockscreen_targets_message">ロック画面のショートカット</string>
   <!-- Description for the screen zoom level that makes interface elements smaller. [CHAR LIMIT=24] -->
   <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->
   <!-- Regex used to parse the processor string from kernel -->
   <!-- Text when wrong password entered for psk networks -->
+  <string name="wifi_auth_password_wrong">パスワードが正しくない可能性があります</string>
 </resources>

@@ -239,7 +239,18 @@
   <string name="quick_settings_network_adb_enabled_label">启用</string>
   <string name="quick_settings_network_adb_disabled_label">禁用</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">要强行停止吗？</string>
+  <string name="force_stop_dlg_text">强行停止某个应用可能导致其出现异常。</string>
   <string name="dlg_ok">确定</string>
   <string name="dlg_cancel">取消</string>
+  <string name="kill">终止程序</string>
   <!-- Pie controls -->
+  <string name="pie_date_format">星期, 日 月 年</string>
+  <string name="pie_hour_format_12">小时：分钟</string>
+  <string name="pie_hour_format_24">小时：分钟</string>
+  <string name="pie_am_pm">上午/下午</string>
+  <string name="pie_state_name">Pie 控制</string>
+  <string name="pie_state_summary">在沉浸模式时使用 Pie 控制</string>
+  <string name="pie_battery_level">"电池电量 "</string>
+  <string name="quick_settings_pie">Pie</string>
 </resources>

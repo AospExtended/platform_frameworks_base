@@ -43,6 +43,7 @@
   <string name="quick_settings_locale_label">言語</string>
   <string name="quick_settings_locale_more_locales_toast">切り替え機能を有効にするので複数の言語を設定してください。</string>
   <!-- NavBar Tuner -->
+  <string name="search">検索</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">右にスワイプして%1$s</string>
   <string name="right_shortcut_hint">左にスワイプして%1$s</string>
@@ -88,6 +89,7 @@
   <string name="delete_screenshot_toast">スクリーンショットを削除しました</string>
   <!-- SystemUI Tuner Parts -->
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">スクリーンショット</string>
   <string name="quick_settings_region_screenshot_label">範囲選択してスクリーンショット</string>
   <string name="quick_settings_sync_label">同期</string>
   <string name="accessibility_quick_settings_sync_off">同期OFF</string>
@@ -96,6 +98,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">同期をオンにします</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">再起動</string>
+  <string name="quick_settings_reboot_recovery_label">リカバリー</string>
   <string name="accessibility_quick_settings_usb_tether_off">USBテザリングOFF</string>
   <string name="accessibility_quick_settings_usb_tether_on">USBテザリングON</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">USBテザリングをOFFにしました</string>
@@ -207,5 +210,6 @@
   <string name="quick_settings_network_adb_disabled_label">無効</string>
   <!-- Kill button in notification guts -->
   <string name="dlg_ok">はい</string>
+  <string name="dlg_cancel">キャンセル</string>
   <!-- Pie controls -->
 </resources>

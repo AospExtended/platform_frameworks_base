@@ -84,10 +84,10 @@
   <string name="action_save_success">Salvat</string>
   <string name="action_save_fault">Salvarea nu a reușit</string>
   <string name="pref_action_color_title">Culoare butoane</string>
-  <string name="pref_action_color_summary">Alege culoarea ta preferată pentru butoane</string>
+  <string name="pref_action_color_summary">Alegeţi culoarea preferată pentru butoane</string>
   <string name="pref_category_main">Setări principale</string>
   <string name="pref_category_user">Setări utilizator</string>
-  <string name="pref_crop_behavior_title">Tipar decupare</string>
+  <string name="pref_crop_behavior_title">Comportament decupare</string>
   <string name="pref_crop_behavior_summary">Utilizați imaginea decupată chiar dacă originalul nu a fost decupat</string>
   <string name="action_ok">OK</string>
   <!-- Screenshot Crop & Share -->
@@ -95,7 +95,7 @@
   <string name="action_delete_fault">Ştergerea nu a reușit</string>
   <string name="action_save_success">Salvat</string>
   <string name="action_save_fault">Salvarea nu a reușit</string>
-  <string name="action_edit">Editează</string>
+  <string name="action_edit">Editaţi</string>
   <string name="quick_settings_expanded_navigation_off">Ascundeţi bara de navigare</string>
   <string name="quick_settings_expanded_statusbar_off">Ascundeţi bara de stare</string>
   <!-- Notification which notifies user flashlight is enabled -->
@@ -112,7 +112,7 @@
   <!-- Quick Settings tiles -->
   <string name="quick_settings_screenshot_label">Captură de ecran</string>
   <string name="quick_settings_region_screenshot_label">Captură parțială de ecran</string>
-  <string name="quick_settings_sync_label">Sincronizează</string>
+  <string name="quick_settings_sync_label">Sincronizare</string>
   <string name="accessibility_quick_settings_sync_off">Sincronizare oprită</string>
   <string name="accessibility_quick_settings_sync_on">Sincronizare pornită</string>
   <string name="accessibility_quick_settings_sync_changed_off">Sincronizarea este dezactivată</string>
@@ -126,9 +126,9 @@
   <string name="accessibility_quick_settings_usb_tether_changed_on">TetheringulUSB este activat</string>
   <string name="quick_settings_usb_tether_label">Tethering prin USB</string>
   <string name="quick_settings_music_label">Muzică</string>
-  <string name="quick_settings_music_play">Redaţi</string>
+  <string name="quick_settings_music_play">Redare</string>
   <string name="quick_settings_music_pause">Pauză</string>
-  <string name="quick_settings_ime_tile_label">Metoda de introducere</string>
+  <string name="quick_settings_ime_tile_label">Metodă de introducere</string>
   <string name="quick_settings_caffeine_label">Cofeină</string>
   <string name="accessibility_quick_settings_caffeine_off">Cofeina este oprită</string>
   <string name="accessibility_quick_settings_caffeine_on">Cofeina este pornită</string>
@@ -137,8 +137,8 @@
   <string name="accessibility_quick_settings_heads_up_on">Atenționări activate</string>
   <string name="accessibility_quick_settings_heads_up_changed_off">Atenționările au fost oprite</string>
   <string name="accessibility_quick_settings_heads_up_changed_on">Atenționările au fost activate</string>
-  <string name="quick_settings_pulse_enabled">Pulse este activat</string>
-  <string name="quick_settings_pulse_disabled">Fără Vizualizator</string>
+  <string name="quick_settings_pulse_enabled">Pulsare activată</string>
+  <string name="quick_settings_pulse_disabled">Fără vizualizator</string>
   <string name="quick_settings_pulse_label">Vizualizator pe bara de navigare</string>
   <string name="quick_settings_nfc_label">NFC</string>
   <string name="accessibility_quick_settings_nfc_off">NFC oprit.</string>
@@ -188,17 +188,17 @@
   <!-- OmniJaws -->
   <string name="omnijaws_service_error">Eroare</string>
   <string name="omnijaws_service_unkown">Date meteo indisponibile</string>
-  <string name="omnijaws_service_error_long">Eroare la încărcarea datelor despre vreme</string>
+  <string name="omnijaws_service_error_long">Eroare la încărcarea datelor meteo</string>
   <string name="omnijaws_service_disabled">Serviciu dezactivat</string>
   <string name="omnijaws_detail_header">Meteo</string>
   <string name="omnijaws_label_default">Meteo</string>
   <string name="omnijaws_current_text">Acum</string>
   <string name="omnijaws_package_not_available">OmniJaws nu este disponibil</string>
   <!-- Weather string format in expanded statusbar header -->
-  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g> - <xliff:g id="condition">%2$s</xliff:g></string>
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Busolă</string>
-  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f </xliff:g> \u00b0 <xliff:g id="direction">%2$s </xliff:g></string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
   <string name="quick_settings_compass_init">Inițializare\u2026</string>
   <string name="accessibility_quick_settings_compass_off">Busolă inactivă</string>
   <string name="accessibility_quick_settings_compass_on">Busolă activă</string>
@@ -210,18 +210,18 @@
   <string name="quick_settings_compass_SE">SE</string>
   <string name="quick_settings_compass_S">S</string>
   <string name="quick_settings_compass_SW">SV</string>
-  <string name="quick_settings_compass_W">Mie</string>
+  <string name="quick_settings_compass_W">V</string>
   <string name="quick_settings_compass_NW">NV</string>
   <!-- Sim recents -->
   <string name="recents_multiwin_warning">O sesiune de ferestre multiple este deja activă.\nApăsați pe o aplicație dacă doriți să o andocați.</string>
   <string name="recents_multiwin_nolastapp">Ați golit lista de aplicații recente, vă rugăm alegeți o aplicație din launcher sau lista de aplicații.</string>
   <!-- On The Go -->
-  <string name="onthego_notif_ticker">Mod \"On-The-Go\" activat</string>
-  <string name="onthego_notif_title">Modul \"On-The-Go\" este activ</string>
+  <string name="onthego_notif_ticker">Mod \"În mişcare\" activat</string>
+  <string name="onthego_notif_title">Modul \"În mişcare\" este activ</string>
   <string name="onthego_notif_stop">Oprire</string>
   <string name="onthego_notif_options">Opțiuni</string>
-  <string name="onthego_notif_error">Pornirea \"On-The-Go\" a eșuat</string>
-  <string name="onthego_notif_restart">Se repornește \"On-The-Go\"</string>
+  <string name="onthego_notif_error">Pornirea \"În mişcare\" a eșuat</string>
+  <string name="onthego_notif_restart">Repornire \"În mişcare\"</string>
   <string name="onthego_notif_camera_changed">Mod cameră schimbat</string>
   <string name="onthego_transparency">Transparenţă</string>
   <string name="onthego_front_camera">Utilizare cameră frontală</string>
@@ -241,7 +241,18 @@
   <string name="quick_settings_network_adb_enabled_label">Activat</string>
   <string name="quick_settings_network_adb_disabled_label">Dezactivat</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Opriți forţat?</string>
+  <string name="force_stop_dlg_text">Dacă forţaţi oprirea unei aplicații, aceasta se poate comporta necorespunzător.</string>
   <string name="dlg_ok">OK</string>
   <string name="dlg_cancel">Anulaţi</string>
+  <string name="kill">Opriți aplicația</string>
   <!-- Pie controls -->
+  <string name="pie_date_format">EEEE, dd MMMM yyyy</string>
+  <string name="pie_hour_format_12">hh:mm</string>
+  <string name="pie_hour_format_24">HH:mm</string>
+  <string name="pie_am_pm">a</string>
+  <string name="pie_state_name">Control Evantai</string>
+  <string name="pie_state_summary">Utilizaţi controale evantai în modul imersiv</string>
+  <string name="pie_battery_level">"NIVELUL BATERIEI "</string>
+  <string name="quick_settings_pie">Evantai</string>
 </resources>

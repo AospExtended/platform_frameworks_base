@@ -23,7 +23,7 @@
   <!-- Button to reboot the phone into recovery in restart menu-->
   <string name="reboot_recovery">റിക്കവറി</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
-  <string name="reboot_bootloader">ബൂട്ലോഡർ</string>
+  <string name="reboot_bootloader">ബൂട്ട് ലോഡർ </string>
   <!-- Button to soft reboot the device in restart menu -->
   <string name="reboot_soft">സോഫ്റ്റ് റീസ്റ്റാർട്ട്</string>
   <!-- Reboot Confirmation Dialog. -->
@@ -36,14 +36,14 @@
   <string name="global_action_current_user">നിലവിൽ</string>
   <string name="global_action_screenshot">സ്ക്രീൻഷോട്ട്</string>
   <string name="global_action_screen_record">സ്‌ക്രീൻ റെക്കോർഡ്</string>
-  <string name="global_action_search">അന്വേഷിക്കുക</string>
+  <string name="global_action_search">തിരയുക</string>
   <string name="global_action_torch">ടോർച്ച്</string>
-  <string name="global_action_voicesearch">ശബ്ദം അന്വേഷിക്കുക</string>
+  <string name="global_action_voicesearch">ശബ്‌ദം ഉപയോഗിച്ചുള്ള തിരയൽ </string>
   <string name="permlab_preventpower">പവർ കീ അസാധുവാക്കുക</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_preventpower">ഈ ആപ്പിനെ പവർ കീ അസാധുവാക്കാൻ അനുവദിക്കുന്നു.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">നിങ്ങളുടെ വെണ്ടർ ഇമേജ് സിസ്റ്റത്തിൽ മാച് ആകുന്നില്ല.ദയവ് ചെയ്തു നിങ്ങളുടെ ഡിവൈസിനുള്ള <xliff:g id="string">%s</xliff:g> വെണ്ടർ ഇമേജ് ഫ്ലാഷ് ചെയ്യുക</string>
+  <string name="system_error_vendorprint">നിങ്ങളുടെ വെണ്ടർ ഇമേജ് സിസ്റ്റത്തിൽ പൊരുത്തപ്പെടുന്നില്ല.ദയവ് ചെയ്തു നിങ്ങളുടെ ഡിവൈസിനുള്ള <xliff:g id="string">%s</xliff:g> വെണ്ടർ ഇമേജ് ഫ്ലാഷ് ചെയ്യുക</string>
   <!-- AOKP custom system animations -->
   <string name="animation_fade">മാഞ്ഞു പോവുക</string>
   <string name="animation_slide_right">വലത്തോട്ടു തഴുകുക</string>
@@ -71,15 +71,34 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_fakePackageSignature">ശരിയല്ലാത്ത പാക്കേജ് സിഗ്നേച്ചർ</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">മറ്റൊരു അപ്ലിക്കേഷനായി ഭാവിക്കാൻ ഒരു അപ്ലിക്കേഷനെ അനുവദിക്കുന്നു. ക്ഷുദ്രകരമായ അപ്ലിക്കേഷനുകൾ ഇത് സ്വകാര്യ അപ്ലിക്കേഷൻ ഡാറ്റ ആക്സസ് ചെയ്യാൻ ഉപയോഗിച്ചേക്കാം. ഈ അനുവാദം ജാഗ്രതയോടെ മാത്രം നൽകൂക!</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">നെറ്റ്‌വർക്കിലൂടെയുള്ള ADB പ്രാപ്തമാക്കി</string>
+  <string name="adb_both_active_notification_title">USB &amp; നെറ്റ്‌വർക്കിലൂടെയുള്ള ADB പ്രാപ്തമാക്കി</string>
+  <string name="adb_active_generic_notification_message">ഡീബഗ്ഗിംഗ് അപ്രാപ്തമാക്കാൻ സ്‌പർശിക്കുക.</string>
   <!-- Permissions -->
+  <string name="other_permissions">മറ്റ് അനുമതികൾ</string>
+  <string name="permission_remember_choice">ഓര്‍ക്കുക</string>
+  <string name="permission_title">അനുമതി</string>
+  <string name="allow_button">അനുവദിക്കുക</string>
+  <string name="deny_button">നിരാകരിക്കുക</string>
   <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">ബന്ധിപ്പിച്ച ഉപകരണം ഇല്ല</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> ബന്ധിപ്പിച്ച ഉപകരണങ്ങൾ</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> ബന്ധിപ്പിച്ച ഉപകരണങ്ങൾ</string>
   <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">മിനി സ്ക്രീൻ കാഴ്ചയിൽ നിന്ന് പുറത്തുകടക്കാൻ സ്ക്രീനിന് പുറത്ത് സ്പർശിക്കുക</string>
+  <string name="singlehandmode_slide_hint_message">മിനി സ്ക്രീൻ കാഴ്ചയുടെ സ്ഥിതി മാറാൻ നാവിഗേഷൻ ബാറിൽ നിങ്ങളുടെ വിരൽ സ്ലൈഡുചെയ്യുക</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">തീം ഓവർലേകൾ പരിഷ്ക്കരിക്കുക</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">ഓവർലേമാനേജർസർവീസ് ഉപയോഗിച്ച് തീം ഓവർലേകളിലേക്ക് പരിഷ്ക്കരണം നടത്താൻ അപ്ലിക്കേഷനെ അനുവദിക്കുന്നു</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">സിസ്റ്റം ബാറുകൾ റീസ്റ്റാർട്ട് ചെയ്യുക</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_restartUI">സിസ്റ്റംയുഐസർവീസ് റീസ്റ്റാർട്ട് ചെയ്യുക, അങ്ങനെ സിസ്റ്റം ബാറുകൾക്ക് അവശ്യമായ തീം ചെയ്ത റിസോഴ്സുകൾ ലോഡുചെയ്യാൻ സാധിക്കും</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">ആശയവിനിമയം ചെയ്യാൻ പവർ ബട്ടൺ ദീർഘനേരം അമർത്തിപ്പിടിക്കുക</string>
   <!-- Defines the sysfs attribute path used by pocket bridge
         to communicate pocket state to the pocket judge kernel driver. -->
 </resources>

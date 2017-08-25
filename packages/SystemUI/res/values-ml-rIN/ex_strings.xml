@@ -17,25 +17,39 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">വിളിക്കുക</string>
+  <string name="stream_title_system">സിസ്റ്റം</string>
+  <string name="stream_title_ring">മണിനാദമുണ്ടാക്കുക</string>
+  <string name="stream_title_media">മീഡിയ</string>
+  <string name="stream_title_alarm">അലാറം</string>
+  <string name="stream_title_bluetooth">ബ്ലൂടൂത്ത്</string>
   <!-- Wi-Fi hotspot label when enabled -->
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
   <!-- Path for battery solid -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">സ്ക്രീൻ റെക്കോർഡ് ചെയ്യപ്പെട്ടുകൊണ്ടിരിക്കുന്നു</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">റെക്കോർഡിംഗ് സ്ക്രീൻ</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">നിര്‍ത്തുക</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">പോയിന്റർ കാണിക്കുക</string>
+  <string name="screenrecord_notif_pointer_off">പോയിന്റർ മറയ്ക്കൂക</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">സ്ക്രീൻ റെക്കോർഡ് ചെയ്യാനാകുന്നില്ല</string>
   <!-- Screenshot Delete Toast -->
   <!-- Screenrecord QS tile -->
   <!-- Language\Locale Tile -->
   <!-- NavBar Tuner -->
-  <string name="search">അന്വേഷിക്കുക</string>
+  <string name="search">തിരയുക</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="lockscreen_default_target">സാധാ ഗതിയിലേക്ക്</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_ring">മണിനാദമുണ്ടാക്കുക</string>
   <!-- Ambient Display QS tile -->
   <!-- Screenshot Crop & Share -->
   <!-- Screenshot Crop & Share -->
@@ -64,6 +78,7 @@
   <!-- Compass QS Tile -->
   <!-- Sim recents -->
   <!-- On The Go -->
+  <string name="onthego_notif_stop">നിര്‍ത്തുക</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <!-- HW Keys Tile -->
   <!-- AEX Logo -->

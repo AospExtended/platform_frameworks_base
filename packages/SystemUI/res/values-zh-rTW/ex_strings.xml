@@ -239,7 +239,18 @@
   <string name="quick_settings_network_adb_enabled_label">已啟用</string>
   <string name="quick_settings_network_adb_disabled_label">已停用</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">您要強制停止嗎？</string>
+  <string name="force_stop_dlg_text">如果您強制停止應用程式，應用程式可能無法正常運作。</string>
   <string name="dlg_ok">確定</string>
   <string name="dlg_cancel">取消</string>
+  <string name="kill">強制結束應用程式</string>
   <!-- Pie controls -->
+  <string name="pie_date_format">yyyy MMMM dd, EEEE</string>
+  <string name="pie_hour_format_12">小時(12小時制):分鐘</string>
+  <string name="pie_hour_format_24">HH:mm</string>
+  <string name="pie_am_pm">上午</string>
+  <string name="pie_state_name">扇形控制項</string>
+  <string name="pie_state_summary">在全螢幕模式中使用扇形控制項</string>
+  <string name="pie_battery_level">"電池計量水準"</string>
+  <string name="quick_settings_pie">扇形</string>
 </resources>

@@ -17,31 +17,88 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Перазапусціць</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Перазапусціць</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Рэжым аднаўлення</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Загрузчык</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Мяккі перезапуск</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Ваш планшэт будзе перазапушчаны.</string>
+  <string name="reboot_confirm" product="default">Ваш тэлефон будзе перазапушчаны.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">Перазапуск\u2026</string>
+  <string name="reboot_systemui">Перазапусціць графічны інтэрфейс</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Бягучы</string>
+  <string name="global_action_screenshot">Скрыншот</string>
+  <string name="global_action_screen_record">Запіс экрана</string>
+  <string name="global_action_search">Пошук</string>
+  <string name="global_action_torch">Ліхтарык</string>
+  <string name="global_action_voicesearch">Галасавы пошук</string>
+  <string name="permlab_preventpower">перавызначыць клавішу сілкавання</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Дазваляе праграме перавызначаць кнопку сілкавання.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
+  <string name="system_error_vendorprint">Вобраз не адпавядае сістэме. Калі ласка адштабнуйце вобраз<xliff:g id="string">%s</xliff:g> для вашай прылады</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">Згасанне</string>
+  <string name="animation_slide_right">Зрух управа</string>
+  <string name="animation_slide_left">Зрух улева</string>
+  <string name="animation_slide_right_no_fade">Зрух управа (без згасання)</string>
+  <string name="animation_slide_left_no_fade">Зрух улева (без згасання)</string>
+  <string name="animation_slide_up">Зрух уніз</string>
+  <string name="animation_slide_down">Зрух уверх</string>
+  <string name="animation_default">Па змаўчанні</string>
+  <string name="animation_translucent">Напаўпразрысты</string>
+  <string name="animation_grow_shrink">Павелічэнне (уверх)</string>
+  <string name="animation_grow_shrink_center">Павелічэнне (па цэнтры)</string>
+  <string name="animation_grow_shrink_bottom">Павелічэнне (уніз)</string>
+  <string name="animation_grow_shrink_left">Павелічэнне (улева)</string>
+  <string name="animation_grow_shrink_right">Павелічэнне (управа)</string>
+  <string name="action_null">Пуста</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">Несумяшчальны вобраз Пз вытворцы прылады. Як правіла, гэта азначае, што неабходна ўсталяваць абноўленую прашыўку раздзела vendor. Пераканайцеся, што яе версія будзе адпавядаць <xliff:g id="fingerprint">%1$s</xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_resetBatteryStats">скінуць статыстыку батарэі</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_resetBatteryStats">Дазволіць праграме скінуць дадзеныя аб выкарыстанні батарэі прылады.</string>
   <!-- On-The-Go -->
+  <string name="global_action_onthego">Рэжым «На хаду»</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Дазволіць падмену подпісу</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Дазваляць праграмам абыходзіць сістэму бяспекі, выдаючы сябе за іншыя праграмы. Шкоднасныя праграмы могуць выкарыстоўваць гэта для доступу да прыватных дадзеных. На свой страх і рызыку!</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">ADB праз сетку ўключана</string>
+  <string name="adb_both_active_notification_title">ADB праз USB і сетку ўключана</string>
+  <string name="adb_active_generic_notification_message">Націснуць для выключэння наладкі.</string>
   <!-- Permissions -->
+  <string name="other_permissions">іншыя дазволы</string>
+  <string name="permission_remember_choice">Запомніць</string>
+  <string name="permission_title">Дазволы</string>
+  <string name="allow_button">Дазваляць</string>
+  <string name="deny_button">Забараніць</string>
   <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">Няма падлучаных прылад</string>
+  <string name="tethered_notification_one_device_message">Падлучана прылад: <xliff:g id="count">%1$s</xliff:g></string>
+  <string name="tethered_notification_multi_device_message">Падлучана прылад: <xliff:g id="count">%1$s</xliff:g></string>
   <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">Націсніце за межамі экрана, каб выйсці з рэжыму кіравання адной рукой</string>
+  <string name="singlehandmode_slide_hint_message">Правядзіце пальцам па панэлі навігацыі для пераключэння паміж звычайным рэжымам і рэжымам «Кіраванне адной рукой»</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">змяніць пласты тэмы</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">Дазволіць праграме змяняць пласты тэмы выкарыстоўваючы OverlayManagerService</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">перазагрузіць інтэрфейс сістэмы</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_restartUI">Перазагружаць SystemUIService, каб сістэмны інтэрфейс мог загрузіць рэсурсы па тэме</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">Націсніце і ўтрымлівайце кнопку сілкавання для ўзаемадзеяння</string>
   <!-- Defines the sysfs attribute path used by pocket bridge
         to communicate pocket state to the pocket judge kernel driver. -->
 </resources>

@@ -71,7 +71,7 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_fakePackageSignature">Fałszowanie podpisu pakietu</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Pozwala aplikacji udawać że jest inna aplikacją. Złośliwe aplikacje mogą użyć tego aby uzyskać prywatne dane aplikacji. Przyznaj to uprawnienie z ostrożnością!</string>
+  <string name="permdesc_fakePackageSignature">Pozwala aplikacji udawać że jest inną aplikacją. Złośliwe aplikacje mogą użyć tego aby uzyskać prywatne dane aplikacji. Przyznaj to uprawnienie z ostrożnością!</string>
   <!-- ADB over network -->
   <string name="adb_net_active_notification_title">ADB po sieci włączone</string>
   <string name="adb_both_active_notification_title">ADB po USB &amp; sieć włączona</string>
@@ -98,6 +98,7 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_restartUI">Uruchom ponownie SystemUIService, tak że paski systemowe będą dopasowane do motywu</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">Przytrzymaj przycisk zasilania w celu interakcji</string>
   <!-- Defines the sysfs attribute path used by pocket bridge
         to communicate pocket state to the pocket judge kernel driver. -->
 </resources>

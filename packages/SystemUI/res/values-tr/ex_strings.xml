@@ -240,7 +240,18 @@
   <string name="quick_settings_network_adb_enabled_label">Etkinleştirildi</string>
   <string name="quick_settings_network_adb_disabled_label">Etkin Değil</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Durdurmaya zorla?</string>
+  <string name="force_stop_dlg_text">Uygulamayı zorla durdurursanız, kararsızlaşabilir.</string>
   <string name="dlg_ok">TAMAM</string>
   <string name="dlg_cancel">İptal</string>
+  <string name="kill">Uygulamayı Sonlandır</string>
   <!-- Pie controls -->
+  <string name="pie_date_format">EEEE, dd MMMM yyyy</string>
+  <string name="pie_hour_format_12">ss:dd</string>
+  <string name="pie_hour_format_24">SS:dd</string>
+  <string name="pie_am_pm">a</string>
+  <string name="pie_state_name">Pie kontrolleri</string>
+  <string name="pie_state_summary">Tam ekran modundayken pie kontrollerini kullanın</string>
+  <string name="pie_battery_level">"PİL SEVİYESİ "</string>
+  <string name="quick_settings_pie">Pie</string>
 </resources>

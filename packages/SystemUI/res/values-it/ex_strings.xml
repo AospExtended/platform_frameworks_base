@@ -241,7 +241,18 @@
   <string name="quick_settings_network_adb_enabled_label">Abilitato</string>
   <string name="quick_settings_network_adb_disabled_label">Disabilitato</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Forzare la chiusura?</string>
+  <string name="force_stop_dlg_text">Se forzi l\'interruzione di un\'applicazione, tale applicazione potrebbe funzionare in modo anomalo.</string>
   <string name="dlg_ok">OK</string>
   <string name="dlg_cancel">Annulla</string>
+  <string name="kill">Termina applicazione</string>
   <!-- Pie controls -->
+  <string name="pie_date_format">EEEE, dd MMMM yyyy</string>
+  <string name="pie_hour_format_12">hh:mm</string>
+  <string name="pie_hour_format_24">HH:mm</string>
+  <string name="pie_am_pm">un</string>
+  <string name="pie_state_name">Controlli a torta</string>
+  <string name="pie_state_summary">Utilizza i controlli a torta mentre sei in modalità immersiva</string>
+  <string name="pie_battery_level">"LIVELLO BATTERIA "</string>
+  <string name="quick_settings_pie">Controlli a torta</string>
 </resources>

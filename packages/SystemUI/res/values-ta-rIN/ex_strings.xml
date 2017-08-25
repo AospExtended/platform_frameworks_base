@@ -17,38 +17,74 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">அழை</string>
+  <string name="stream_title_system">முறைமை</string>
+  <string name="stream_title_ring">ஒலி</string>
+  <string name="stream_title_media">ஊடகம்</string>
+  <string name="stream_title_alarm">அலறி</string>
+  <string name="stream_title_notification">அறிவிக்கை</string>
+  <string name="stream_title_bluetooth">புளூடூத்</string>
   <!-- Wi-Fi hotspot label when enabled -->
+  <plurals name="wifi_hotspot_connected_clients_label">
+    <item quantity="one">%1$d கிளையண்ட்</item>
+    <item quantity="other">%1$d கிளையண்ட்ஸ்</item>
+  </plurals>
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
   <!-- Path for battery solid -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA +</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">திரை பதிவெடுக்கப்படுகிறது</string>
   <!-- Screenrecord notification title -->
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">நிறுத்து</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">குறிப்பான் காண்பி</string>
+  <string name="screenrecord_notif_pointer_off">குறிப்பான் மறை</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">திரை பதிவெடுக்க இயலவில்லை</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">திரைச்சொட்டு அழிக்கப்பட்டது</string>
   <!-- Screenrecord QS tile -->
+  <string name="quick_settings_screenrecord">திரைபதிவு</string>
   <!-- Language\Locale Tile -->
   <!-- NavBar Tuner -->
   <string name="search">தேடு</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="lockscreen_default_target">இயல்புநிலை</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_ring">ஒலி</string>
   <!-- Ambient Display QS tile -->
   <!-- Screenshot Crop & Share -->
+  <string name="pref_category_user">பயனர் அமைப்புகள்</string>
+  <string name="pref_crop_behavior_title">நறுக்கு நடத்தை</string>
+  <string name="action_ok">சரி</string>
   <!-- Screenshot Crop & Share -->
+  <string name="action_edit">திருத்தம்</string>
+  <string name="quick_settings_expanded_navigation_off">Navbarஐ மறை</string>
+  <string name="quick_settings_expanded_statusbar_off">நிலைமைப்பட்டையை மறை</string>
   <!-- Notification which notifies user flashlight is enabled -->
+  <string name="quick_settings_tile_flashlight_not_summary">ஆஃப் செய்ய தட்டவும்</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">திரைச்சொட்டு அழிக்கப்பட்டது</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_pnc_title">மின்சக்தி அறிவிக்கை கட்டுப்பாடுகள்</string>
   <!-- Quick Settings tiles -->
   <string name="quick_settings_screenshot_label">திரைப்பிடிப்பு</string>
+  <string name="quick_settings_region_screenshot_label">பகுதி திரைச்சொட்டு</string>
+  <string name="quick_settings_sync_label">ஒத்திசை</string>
+  <string name="accessibility_quick_settings_sync_off">ஒத்திசைவு முடக்கம்</string>
+  <string name="accessibility_quick_settings_sync_on">ஒத்திசைவு இயக்கு</string>
+  <string name="accessibility_quick_settings_sync_changed_off">ஒத்திசைவு அணைக்கப்பட்டுள்ளது</string>
+  <string name="accessibility_quick_settings_sync_changed_on">ஒத்திசைவு இயக்கத்தில்</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">மறுதொடக்கம்</string>
   <string name="quick_settings_reboot_recovery_label">மீட்பு (ரெகவரி)</string>
   <!-- SystemUI Tuner Parts -->
   <!-- Show lte/4g switch -->
@@ -64,10 +100,12 @@
   <!-- Compass QS Tile -->
   <!-- Sim recents -->
   <!-- On The Go -->
+  <string name="onthego_notif_stop">நிறுத்து</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <!-- HW Keys Tile -->
   <!-- AEX Logo -->
   <!-- ADB over network Tile -->
   <!-- Kill button in notification guts -->
+  <string name="dlg_ok">சரி</string>
   <!-- Pie controls -->
 </resources>

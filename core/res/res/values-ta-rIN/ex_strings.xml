@@ -45,6 +45,8 @@
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <!-- AOKP custom system animations -->
   <string name="animation_fade">மங்கு</string>
+  <string name="animation_slide_right">வலது ஸ்லைடு</string>
+  <string name="animation_slide_left">இடது ஸ்லைடு</string>
   <string name="animation_default">இயல்புநிலை</string>
   <string name="animation_translucent">வெளிப்படை</string>
   <string name="animation_grow_shrink">(மேலே) உள்ள வளர</string>

@@ -18,8 +18,16 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="profile_applist_title">ആപ്പുകൾ</string>
+  <string name="picker_activities">പ്രവര്‍ത്തികള്‍</string>
+  <string name="select_custom_app_title">ഇഷ്ടാനുസൃത അപ്ലിക്കേഷൻ തിരഞ്ഞെടുക്കുക</string>
+  <string name="select_custom_activity_title">ഇഷ്ടാനുസൃത പ്രവര്‍ത്തി തിരഞ്ഞെടുക്കുക</string>
+  <string name="lockscreen_targets_message">ലോക്ക് സ്ക്രീൻ കുറുക്കുവഴികൾ</string>
   <!-- Description for the screen zoom level that makes interface elements smaller. [CHAR LIMIT=24] -->
+  <string name="screen_zoom_summary_smaller">ചെറുത്</string>
   <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->
+  <string name="screen_zoom_summary_smallest">ഏറ്റവും ചെറുത്</string>
   <!-- Regex used to parse the processor string from kernel -->
   <!-- Text when wrong password entered for psk networks -->
+  <string name="wifi_auth_password_wrong">പാസ്സ്‌വേർഡ് തെറ്റാകാം</string>
 </resources>

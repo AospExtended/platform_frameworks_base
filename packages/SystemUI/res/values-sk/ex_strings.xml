@@ -241,7 +241,18 @@
   <string name="quick_settings_network_adb_enabled_label">Zapnuté</string>
   <string name="quick_settings_network_adb_disabled_label">Vypnuté</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Vynútiť zastavenie?</string>
+  <string name="force_stop_dlg_text">Ak vynútite zastavenie aplikácie, môže sa správať zvláštne.</string>
   <string name="dlg_ok">OK</string>
   <string name="dlg_cancel">Zrušiť</string>
+  <string name="kill">Ukončiť aplikáciu</string>
   <!-- Pie controls -->
+  <string name="pie_date_format">EEEE, dd MMMM yyyy</string>
+  <string name="pie_hour_format_12">hh:mm</string>
+  <string name="pie_hour_format_24">HH:mm</string>
+  <string name="pie_am_pm">a</string>
+  <string name="pie_state_name">Kruhové ovládanie</string>
+  <string name="pie_state_summary">Použiť kruhové ovládacie prvky v pohlcujúcom režime</string>
+  <string name="pie_battery_level">"ÚROVEŇ NABITIA BATÉRIE "</string>
+  <string name="quick_settings_pie">Kruhový ovládač</string>
 </resources>

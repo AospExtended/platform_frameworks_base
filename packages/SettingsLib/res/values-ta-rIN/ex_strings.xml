@@ -18,8 +18,16 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="profile_applist_title">பயன்பாடுகள்</string>
+  <string name="picker_activities">செயற்பாடுகள்</string>
+  <string name="select_custom_app_title">விருப்ப பயன்பாட்டு தேர்ந்தெடு</string>
+  <string name="select_custom_activity_title">விருப்ப செயற்பாட்டை தேர்ந்தெடு</string>
+  <string name="lockscreen_targets_message">பூட்டு திரை குறுக்குவழிகள்</string>
   <!-- Description for the screen zoom level that makes interface elements smaller. [CHAR LIMIT=24] -->
+  <string name="screen_zoom_summary_smaller">சிறிய</string>
   <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->
+  <string name="screen_zoom_summary_smallest">மிகச்சிறிய</string>
   <!-- Regex used to parse the processor string from kernel -->
   <!-- Text when wrong password entered for psk networks -->
+  <string name="wifi_auth_password_wrong">கடவுச்சொல் தவறானதாக இருக்கலாம்</string>
 </resources>
