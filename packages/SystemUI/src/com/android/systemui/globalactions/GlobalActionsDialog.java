@@ -43,6 +43,8 @@ import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.os.Messenger;
+import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
@@ -135,6 +137,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
     private static final String GLOBAL_ACTION_KEY_LOGOUT = "logout";
     private static final String GLOBAL_ACTION_KEY_EMERGENCY = "emergency";
     private static final String GLOBAL_ACTION_KEY_SCREENSHOT = "screenshot";
+    private static final String GLOBAL_ACTION_KEY_RESTART_RECOVERY = "recovery";
 
     private final Context mContext;
     private final GlobalActionsManager mWindowManagerFuncs;
@@ -394,6 +397,8 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
                 if (!mEmergencyAffordanceManager.needsEmergencyAffordance()) {
                     mItems.add(new EmergencyDialerAction());
                 }
+            } else if (GLOBAL_ACTION_KEY_RESTART_RECOVERY.equals(actionKey)) {
+                mItems.add(new AdvancedRestartAction());
             } else {
                 Log.e(TAG, "Invalid global action key " + actionKey);
             }
@@ -638,6 +643,33 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
                 onPress();
             }
             return true;
+        }
+    }
+
+    private final class AdvancedRestartAction extends SinglePressAction implements LongPressAction {
+        private AdvancedRestartAction() {
+            super(com.android.systemui.R.drawable.ic_restart_advanced, com.android.systemui.R.string.global_action_restart_advanced);
+        }
+
+        @Override
+        public boolean onLongPress() {
+            mWindowManagerFuncs.advancedReboot(PowerManager.REBOOT_BOOTLOADER);
+            return true;
+        }
+
+        @Override
+        public boolean showDuringKeyguard() {
+            return true;
+        }
+
+        @Override
+        public boolean showBeforeProvisioning() {
+            return true;
+        }
+
+        @Override
+        public void onPress() {
+            mWindowManagerFuncs.advancedReboot(PowerManager.REBOOT_RECOVERY);
         }
     }
 
