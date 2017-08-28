@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-/* Copyright 2012, The Android Open Source Project
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -15,18 +17,9 @@
 ** limitations under the License.
 */
 -->
-<resources>
-
-  <!-- PlatLogo -->
-  <java-symbol type="drawable" name="platlogo_aex" />
-
-  <java-symbol type="bool" name="config_intrusiveBatteryLed" />
-  <java-symbol type="bool" name="config_multiColorBatteryLed" />
-  <java-symbol type="bool" name="config_ledCanPulse" />
-
-  <java-symbol type="string" name="reboot_to_recovery_title" />
-  <java-symbol type="string" name="reboot_to_recovery_message" />
-  <java-symbol type="string" name="reboot_to_bootloader_title" />
-  <java-symbol type="string" name="reboot_to_bootloader_message" />
-
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="reboot_to_recovery_title" translatable="false">Recovery</string>
+    <string name="reboot_to_recovery_message" translatable="false">Rebooting to recovery</string>
+    <string name="reboot_to_bootloader_title" translatable="false">Bootloader</string>
+    <string name="reboot_to_bootloader_message" translatable="false">Rebooting to bootloader</string>
 </resources>
