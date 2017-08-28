@@ -20,6 +20,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)material/alarms/Bounce.ogg:system/media/audio/alarms/Bounce.ogg \
     $(LOCAL_PATH)material/alarms/Carbon.ogg:system/media/audio/alarms/Carbon.ogg \
     $(LOCAL_PATH)material/alarms/Drip.ogg:system/media/audio/alarms/Drip.ogg \
+    $(LOCAL_PATH)material/alarms/Flow.ogg:system/media/audio/alarms/Flow.ogg \
     $(LOCAL_PATH)material/alarms/Gallop.ogg:system/media/audio/alarms/Gallop.ogg \
     $(LOCAL_PATH)material/alarms/Helium.ogg:system/media/audio/alarms/Helium.ogg \
     $(LOCAL_PATH)material/alarms/Krypton.ogg:system/media/audio/alarms/Krypton.ogg \
@@ -68,6 +69,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)material/notifications/Salacia.ogg:system/media/audio/notifications/Salacia.ogg \
     $(LOCAL_PATH)material/notifications/Tethys.ogg:system/media/audio/notifications/Tethys.ogg \
     $(LOCAL_PATH)material/notifications/Titan.ogg:system/media/audio/notifications/Titan.ogg \
+    $(LOCAL_PATH)material/notifications/Birdsong.ogg:system/media/audio/notifications/Birdsong.ogg \
+    $(LOCAL_PATH)material/notifications/Chime.ogg:system/media/audio/notifications/Chime.ogg \
+    $(LOCAL_PATH)material/notifications/Clink.ogg:system/media/audio/notifications/Clink.ogg \
+    $(LOCAL_PATH)material/notifications/Flick.ogg:system/media/audio/notifications/Flick.ogg \
+    $(LOCAL_PATH)material/notifications/Hey.ogg:system/media/audio/notifications/Hey.ogg \
+    $(LOCAL_PATH)material/notifications/Note.ogg:system/media/audio/notifications/Note.ogg \
+    $(LOCAL_PATH)material/notifications/Strum.ogg:system/media/audio/notifications/Strum.ogg \
+    $(LOCAL_PATH)material/notifications/Trill.ogg:system/media/audio/notifications/Trill.ogg \
     $(LOCAL_PATH)material/ringtones/Atria.ogg:system/media/audio/ringtones/Atria.ogg \
     $(LOCAL_PATH)material/ringtones/Callisto.ogg:system/media/audio/ringtones/Callisto.ogg \
     $(LOCAL_PATH)material/ringtones/Dione.ogg:system/media/audio/ringtones/Dione.ogg \
@@ -80,3 +89,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)material/ringtones/Titania.ogg:system/media/audio/ringtones/Titania.ogg \
     $(LOCAL_PATH)material/ringtones/Triton.ogg:system/media/audio/ringtones/Triton.ogg \
     $(LOCAL_PATH)material/ringtones/Umbriel.ogg:system/media/audio/ringtones/Umbriel.ogg \
+    $(LOCAL_PATH)material/ringtones/Beats.ogg:system/media/audio/ringtones/Beats.ogg \
+    $(LOCAL_PATH)material/ringtones/Dance_party.ogg:system/media/audio/ringtones/Dance_party.ogg \
+    $(LOCAL_PATH)material/ringtones/Early_bird.ogg:system/media/audio/ringtones/Early_bird.ogg \
+    $(LOCAL_PATH)material/ringtones/Hey_hey.ogg:system/media/audio/ringtones/Hey_hey.ogg \
+    $(LOCAL_PATH)material/ringtones/Romance.ogg:system/media/audio/ringtones/Romance.ogg \
+    $(LOCAL_PATH)material/ringtones/Rrrring.ogg:system/media/audio/ringtones/Rrrring.ogg \
+    $(LOCAL_PATH)material/ringtones/Shooting_star.ogg:system/media/audio/ringtones/Shooting_star.ogg \
+    $(LOCAL_PATH)material/ringtones/Spaceship.ogg:system/media/audio/ringtones/Spaceship.ogg \
+    $(LOCAL_PATH)material/ringtones/Summer_night.ogg:system/media/audio/ringtones/Summer_night.ogg \
+    $(LOCAL_PATH)material/ringtones/Zen.ogg:system/media/audio/ringtones/Zen.ogg
