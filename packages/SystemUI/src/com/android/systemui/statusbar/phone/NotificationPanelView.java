@@ -351,8 +351,10 @@ public class NotificationPanelView extends PanelView implements
     private KeyguardIndicationController mKeyguardIndicationController;
     private Consumer<Boolean> mAffordanceLaunchListener;
 
-    private GestureDetector mLockscreenDoubleTapToSleep;
+    private GestureDetector mDoubleTapToSleepGesture;
     private boolean mIsLockscreenDoubleTapEnabled;
+
+    private int mStatusBarHeaderHeight;
 
     @Inject
     public NotificationPanelView(@Named(VIEW_CONTEXT) Context context, AttributeSet attrs,
@@ -384,7 +386,7 @@ public class NotificationPanelView extends PanelView implements
         mBottomAreaShadeAlphaAnimator.setDuration(160);
         mBottomAreaShadeAlphaAnimator.setInterpolator(Interpolators.ALPHA_OUT);
 
-        mLockscreenDoubleTapToSleep = new GestureDetector(context,
+        mDoubleTapToSleepGesture = new GestureDetector(context,
                 new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onDoubleTap(MotionEvent e) {
@@ -475,6 +477,8 @@ public class NotificationPanelView extends PanelView implements
                 R.dimen.keyguard_indication_bottom_padding);
         mQsNotificationTopPadding = getResources().getDimensionPixelSize(
                 R.dimen.qs_notification_padding);
+        mStatusBarHeaderHeight = getResources().getDimensionPixelSize(
+                R.dimen.status_bar_height);
     }
 
     /**
@@ -1072,9 +1076,11 @@ public class NotificationPanelView extends PanelView implements
             return false;
         }
 
-        if (mIsLockscreenDoubleTapEnabled
-                && mStatusBarState == StatusBarState.KEYGUARD) {
-            mLockscreenDoubleTapToSleep.onTouchEvent(event);
+        if ((mIsLockscreenDoubleTapEnabled
+                && mBarState == StatusBarState.KEYGUARD) ||
+                (!mQsExpanded && mDoubleTapToSleepEnabled
+                && event.getY() < mStatusBarHeaderHeight)) {
+            mDoubleTapToSleepGesture.onTouchEvent(event);
         }
         initDownStates(event);
         // Make sure the next touch won't the blocked after the current ends.
@@ -3185,5 +3191,9 @@ public class NotificationPanelView extends PanelView implements
          * @param expansion 0 when collapsed, 1 when expanded.
          */
         void onQsExpansionChanged(float expansion);
+    }
+
+    public void updateDoubleTapToSleep(boolean doubleTapToSleepEnabled) {
+        mDoubleTapToSleepEnabled = doubleTapToSleepEnabled;
     }
 }
