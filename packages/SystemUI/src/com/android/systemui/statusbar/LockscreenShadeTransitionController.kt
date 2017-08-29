@@ -13,6 +13,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewConfiguration
 import androidx.annotation.VisibleForTesting
+import com.android.internal.util.aospextended.AEXUtils
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent
 import com.android.systemui.ExpandHelper
 import com.android.systemui.Gefingerpoken
@@ -573,6 +574,13 @@ class DragDownHelper(
     private var draggedFarEnough = false
     private var startingChild: ExpandableView? = null
     private var lastHeight = 0f
+
+    private var doubleTapToSleepEnabled = false
+    private var statusBarHeaderHeight = 0
+    private var lastDownEvent = -1
+    private var doubleTapTimeout = -1
+    private var goToSleep: Runnable? = null
+
     var isDraggingDown = false
         private set
 
@@ -598,6 +606,12 @@ class DragDownHelper(
         val configuration = ViewConfiguration.get(context)
         touchSlop = configuration.scaledTouchSlop.toFloat()
         slopMultiplier = configuration.scaledAmbiguousGestureMultiplier
+        doubleTapTimeout = ViewConfiguration.getDoubleTapTimeout()
+        statusBarHeaderHeight = context
+                .resources.getDimensionPixelSize(R.dimen.status_bar_header_height_keyguard)
+        goToSleep = Runnable {
+            AEXUtils.switchScreenOff(context)
+        }
     }
 
     override fun onInterceptTouchEvent(event: MotionEvent): Boolean {
@@ -610,6 +624,19 @@ class DragDownHelper(
                 startingChild = null
                 initialTouchY = y
                 initialTouchX = x
+                if (doubleTapToSleepEnabled && y < statusBarHeaderHeight) {
+                    val eventTime  = event.getEventTime().toInt()
+                    if (lastDownEvent != -1) {
+                        val diff = eventTime - lastDownEvent
+
+                        if (diff < doubleTapTimeout) {
+                            goToSleep?.run()
+                        }
+                        lastDownEvent = -1
+                    } else {
+                        lastDownEvent = eventTime
+                    }
+                }
             }
             MotionEvent.ACTION_MOVE -> {
                 val h = y - initialTouchY
@@ -744,5 +771,9 @@ class DragDownHelper(
     private fun findView(x: Float, y: Float): ExpandableView? {
         host.getLocationOnScreen(temp2)
         return expandCallback.getChildAtRawPosition(x + temp2[0], y + temp2[1])
+    }
+
+    public fun updateDoubleTapToSleep(updateDoubleTapToSleep: Boolean) {
+        doubleTapToSleepEnabled = updateDoubleTapToSleep
     }
 }
