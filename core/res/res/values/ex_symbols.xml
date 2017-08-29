@@ -265,6 +265,13 @@
   <java-symbol type="string" name="config_rat_3g" />
   <java-symbol type="string" name="config_rat_4g" />
 
+
+    <!-- Hardware key binding -->
+    <java-symbol type="integer" name="config_deviceHardwareKeys" />
+  
+  <!-- Button brightness -->
+  <java-symbol type="integer" name="config_buttonBrightnessSettingDefault" />
+  <java-symbol type="bool" name="config_deviceHasVariableButtonBrightness" />
 </resources>
 
 

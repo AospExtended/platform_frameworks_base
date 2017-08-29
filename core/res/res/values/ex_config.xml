@@ -83,6 +83,7 @@
          config to 7. -->
     <integer name="config_deviceHardwareKeys">64</integer>
 
+
     <!-- True if the notification's dynamic app icon/title tint should be optimised for dark
     backgrounds (requires config_allowNotificationIconTextTinting to be true)-->
     <bool name="config_useDarkBgNotificationIconTextTinting">false</bool>
@@ -159,6 +160,10 @@
     <string name="config_rat_2g" translatable="false">2G</string>
     <string name="config_rat_3g" translatable="false">3G</string>
     <string name="config_rat_4g" translatable="false">4G</string>
+
+    <!-- Button Brightness -->
+    <integer name="config_buttonBrightnessSettingDefault">255</integer>
+    <bool name="config_deviceHasVariableButtonBrightness">false</bool>
 
 </resources>
 
