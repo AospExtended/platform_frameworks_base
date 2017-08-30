@@ -254,7 +254,11 @@
   <!-- Tooltip text colors -->
   <java-symbol type="color" name="tooltip_text_light" />
   <java-symbol type="color" name="tooltip_text_dark" />
-
+  
+  <!-- Omni switch -->
+  <java-symbol type="anim" name="last_app_in" /> 
+  <java-symbol type="anim" name="last_app_out" />
+  
 </resources>
 
 

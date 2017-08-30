@@ -755,6 +755,7 @@ final class TaskRecord extends ConfigurationContainer implements TaskWindowConta
         boolean successful = (preferredStackId == stackId);
         if (successful && stackId == DOCKED_STACK_ID) {
             // If task moved to docked stack - show recents if needed.
+            // MWE - WAAAAAA
             mService.mWindowManager.showRecentApps(false /* fromHome */);
         }
         return successful;
