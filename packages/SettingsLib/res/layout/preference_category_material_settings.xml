@@ -17,20 +17,27 @@
 
 <!-- Based off frameworks/base/core/res/res/layout/preference_category_material.xml
      except that this supports icon -->
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
-    android:paddingStart="?android:attr/listPreferredItemPaddingStart" >
+    android:minHeight="?android:attr/listPreferredItemHeightSmall"
+    android:gravity="center_vertical"
+    android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+    android:background="?android:attr/selectableItemBackground"
+    android:clipToPadding="false" >
 
     <LinearLayout
-        android:id="@+id/icon_container"
+        android:id="@+id/icon_frame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minWidth="56dp"
         android:gravity="start|center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingEnd="12dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
         <com.android.internal.widget.PreferenceImageView
             android:id="@android:id/icon"
             android:layout_width="wrap_content"
@@ -40,11 +47,11 @@
             android:maxHeight="18dp"/>
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="56dp"
-        android:orientation="vertical">
+        android:layout_weight="1" >
+
         <TextView
             android:id="@android:id/title"
             android:layout_marginTop="16dp"
@@ -58,10 +65,11 @@
             android:id="@android:id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@android:id/title"
+            android:layout_alignStart="@android:id/title"
             android:textAppearance="?android:attr/textAppearanceListItemSecondary"
             android:textColor="?android:attr/textColorSecondary"
             android:ellipsize="end"
             android:singleLine="true" />
-    </LinearLayout>
-
-</FrameLayout>
+    </RelativeLayout>
+</LinearLayout>
