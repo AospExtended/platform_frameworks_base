@@ -177,13 +177,13 @@ static void SetGids(JNIEnv* env, jintArray javaGids) {
 
   ScopedIntArrayRO gids(env, javaGids);
   if (gids.get() == NULL) {
-    RuntimeAbort(env, __LINE__, "Getting gids int array failed");
+//    RuntimeAbort(env, __LINE__, "Getting gids int array failed");
   }
   int rc = setgroups(gids.size(), reinterpret_cast<const gid_t*>(&gids[0]));
   if (rc == -1) {
     std::ostringstream oss;
     oss << "setgroups failed: " << strerror(errno) << ", gids.size=" << gids.size();
-    RuntimeAbort(env, __LINE__, oss.str().c_str());
+//    RuntimeAbort(env, __LINE__, oss.str().c_str());
   }
 }
 
