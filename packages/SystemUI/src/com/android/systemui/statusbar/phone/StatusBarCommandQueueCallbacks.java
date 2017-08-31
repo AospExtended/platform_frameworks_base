@@ -639,4 +639,14 @@ public class StatusBarCommandQueueCallbacks implements CommandQueue.Callbacks {
         }
         return VibrationEffect.createWaveform(timings, /* repeat= */ -1);
     }
+
+    @Override
+    public void toggleCameraFlash() {
+        if (StatusBar.DEBUG) {
+            Log.d(StatusBar.TAG, "Toggling camera flashlight");
+        }
+        if (StatusBar.mFlashlightController.isAvailable()) {
+            StatusBar.mFlashlightController.setFlashlight(!StatusBar.mFlashlightController.isEnabled());
+        }
+    }
 }
