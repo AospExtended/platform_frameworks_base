@@ -5389,6 +5389,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.SHOW_FOURG),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.DOUBLE_TAP_SLEEP_NAVBAR),
+                    false, this, UserHandle.USER_ALL);
             update();
         }
 
@@ -5406,6 +5409,9 @@ public class StatusBar extends SystemUI implements DemoMode,
                             updateRowStates();
                             updateClearAll();
                             updateEmptyShadeView();
+            } else  if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.DOUBLE_TAP_SLEEP_NAVBAR))) {
+                    setDoubleTapNavbar();
             }
         }
 
@@ -5413,7 +5419,14 @@ public class StatusBar extends SystemUI implements DemoMode,
             ContentResolver resolver = mContext.getContentResolver();
             boolean mShow4G = Settings.System.getIntForUser(resolver,
                     Settings.System.SHOW_FOURG, 0, UserHandle.USER_CURRENT) == 1;
+            setDoubleTapNavbar();
         }
+    }
+
+    private void setDoubleTapNavbar() {
+        if (mNavigationBar != null) {
+            mNavigationBar.setDoubleTapToSleep();
+       }
     }
 
     private RemoteViews.OnClickHandler mOnClickHandler = new RemoteViews.OnClickHandler() {
