@@ -35,6 +35,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.SystemClock;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.util.AttributeSet;
 import android.view.ActionMode;
 import android.view.InputDevice;
@@ -745,5 +747,12 @@ public class StatusBarWindowView extends FrameLayout {
         }
     };
 
+    public void setLockscreenDoubleTapToSleep() {
+        boolean isDoubleTapEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN, 1, UserHandle.USER_CURRENT) == 1;
+        if (mNotificationPanel != null) {
+            mNotificationPanel.setLockscreenDoubleTapToSleep(isDoubleTapEnabled);
+        }
+    }
 }
 
