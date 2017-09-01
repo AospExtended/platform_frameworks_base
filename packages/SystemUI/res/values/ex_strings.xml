@@ -165,6 +165,9 @@
     <string name="qs_menu_item_rows_four">4</string>
     <string name="qs_menu_item_qs_columns">Quickbar columns</string>
     <string name="qs_menu_item_columns_auto">Automatic</string>
+
+    <string name="screenshot_abort_title">No screenshot taken</string>
+    <string name="screenshot_abort_text">Operation aborted.</string>
 </resources>
 
 
