@@ -242,6 +242,7 @@ import com.android.systemui.statusbar.policy.DarkIconDispatcher;
 import com.android.systemui.statusbar.policy.DeviceProvisionedController;
 import com.android.systemui.statusbar.policy.FlashlightController;
 import com.android.systemui.statusbar.policy.DeviceProvisionedController.DeviceProvisionedListener;
+import com.android.internal.util.aospextended.AEXUtils;
 import com.android.systemui.statusbar.policy.HeadsUpManager;
 import com.android.systemui.statusbar.policy.KeyguardMonitor;
 import com.android.systemui.statusbar.policy.KeyguardMonitorImpl;
@@ -1334,6 +1335,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         filter.addAction(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction(DevicePolicyManager.ACTION_SHOW_DEVICE_MONITORING_DIALOG);
+        filter.addAction(AEXUtils.ACTION_DISMISS_KEYGUARD);
         context.registerReceiverAsUser(mBroadcastReceiver, UserHandle.ALL, filter, null, null);
 
         IntentFilter demoFilter = new IntentFilter();
@@ -4077,6 +4079,12 @@ public class StatusBar extends SystemUI implements DemoMode,
             }
             else if (DevicePolicyManager.ACTION_SHOW_DEVICE_MONITORING_DIALOG.equals(action)) {
                 mQSPanel.showDeviceMonitoringDialog();
+            }
+            else if (AEXUtils.ACTION_DISMISS_KEYGUARD.equals(action)) {
+                if (intent.hasExtra(AEXUtils.DISMISS_KEYGUARD_EXTRA_INTENT)) {
+                    Intent launchIntent = (Intent) intent.getParcelableExtra(AEXUtils.DISMISS_KEYGUARD_EXTRA_INTENT);
+                    startActivityDismissingKeyguard(launchIntent, true, true);
+                }
             }
         }
     };

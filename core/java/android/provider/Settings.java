@@ -4217,6 +4217,13 @@ public final class Settings {
           */
          public static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
 
+        /** some devices have a extra hw button e.g. n3 on the back on the
+         * fingerprint sensor. allow mapping button to key
+         *
+         * @hide
+         */
+        public static final String BUTTON_EXTRA_KEY_MAPPING = "button_extra_mapping";
+
         /**
          * Whether to wake the screen with the volume keys, the value is boolean.
          * @hide
