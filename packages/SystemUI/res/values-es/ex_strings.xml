@@ -240,7 +240,18 @@
   <string name="quick_settings_network_adb_enabled_label">Habilitado</string>
   <string name="quick_settings_network_adb_disabled_label">Deshabilitado</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">¿Forzar detención?</string>
+  <string name="force_stop_dlg_text">Si fuerzas la detención de una aplicación, es posible que funcione incorrectamente.</string>
   <string name="dlg_ok">Aceptar</string>
   <string name="dlg_cancel">Cancelar</string>
+  <string name="kill">Matar Aplicación</string>
   <!-- Pie controls -->
+  <string name="pie_date_format">EEEE, dd MMMM yyyy</string>
+  <string name="pie_hour_format_12">hh:mm</string>
+  <string name="pie_hour_format_24">HH:mm</string>
+  <string name="pie_am_pm">a</string>
+  <string name="pie_state_name">Controles Pie</string>
+  <string name="pie_state_summary">Usar los controles pie en modo inmersivo</string>
+  <string name="pie_battery_level">"NIVEL DE BATERÍA "</string>
+  <string name="quick_settings_pie">Pie</string>
 </resources>

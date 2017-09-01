@@ -67,14 +67,23 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">ネットワーク経由のADBが有効です</string>
+  <string name="adb_both_active_notification_title">USBとネットワーク経由のADBが有効です</string>
+  <string name="adb_active_generic_notification_message">タップしてデバッグを無効にします。</string>
   <!-- Permissions -->
   <string name="allow_button">許可</string>
   <string name="deny_button">拒否</string>
   <!-- Tethered notification -->
   <string name="tethered_notification_no_device_message">接続しているデバイスはありません</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g>台のデバイスが接続しています</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g>台のデバイスが接続しています</string>
   <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">スクリーンの外側をタップしてミニスクリーン表示を終了する</string>
+  <string name="singlehandmode_slide_hint_message">ナビゲーションバーの上を横にスライドしてミニスクリーン表示を切り替える</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">テーマのオーバーレイを変更</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">OverlayManagerServiceを使用してテーマのオーバーレイを変更することをアプリに許可します</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Pocket Lock -->

@@ -242,5 +242,6 @@
   <!-- Kill button in notification guts -->
   <string name="dlg_ok">ठीक है</string>
   <string name="dlg_cancel">रद्द करें</string>
+  <string name="kill">ऐप रुकाए</string>
   <!-- Pie controls -->
 </resources>

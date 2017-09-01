@@ -17,14 +17,31 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Mula semula</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Mula semula</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Mod Pemulihan</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Mula Semula Lembut</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Tablet anda akan mula semula.</string>
+  <string name="reboot_confirm" product="default">Fon anda akan mula semula.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">Memula semula</string>
+  <string name="reboot_systemui">Mula semula SistemUI</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Semasa</string>
+  <string name="global_action_screenshot">Screenshot</string>
+  <string name="global_action_screen_record">Rakaman skrin</string>
+  <string name="global_action_search">Cari</string>
+  <string name="global_action_torch">Lampu suluh</string>
+  <string name="global_action_voicesearch">Pencarian Suara</string>
+  <string name="permlab_preventpower">Menimpa kunci kuasa</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Membenarkan apl untuk mengatasi kekunci kuasa</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <!-- AOKP custom system animations -->
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->

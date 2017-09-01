@@ -28,7 +28,7 @@
   <string name="reboot_soft">Miękki restart</string>
   <!-- Reboot Confirmation Dialog. -->
   <string name="reboot_confirm" product="tablet">Twój tablet zostanie zrestartowany.</string>
-  <string name="reboot_confirm" product="default">Twój telefon zostanie zrestartowany.</string>
+  <string name="reboot_confirm" product="default">Telefon zostanie uruchomiony ponownie.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
   <string name="reboot_progress">Restartowanie\u2026</string>
   <string name="reboot_systemui">Uruchom ponownie SystemUI</string>
