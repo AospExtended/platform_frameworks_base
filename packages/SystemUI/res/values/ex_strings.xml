@@ -21,4 +21,7 @@
     <string name="global_action_restart_advanced">Advanced reboot</string>
     <string name="global_action_restart_recovery">Go to recovery</string>
     <string name="global_action_restart_bootloader">Go to bootloader</string>
+
+    <string name="summary_empty" translatable="false"></string>
+
 </resources>
