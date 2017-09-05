@@ -76,5 +76,9 @@
 
     <!-- Custom Carrier Label -->
     <color name="status_bar_carrier_color">#FFFFFFFF</color>
+
+    <!-- Floating action button -->
+    <color name="fab_color">@*android:color/accent_device_default_light</color>
+    <color name="floating_action_button_icon_color">@android:color/white</color>
 </resources>
 
