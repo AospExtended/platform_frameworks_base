@@ -177,6 +177,11 @@
     <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
     <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
 
+    <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE ON </string>
+    <string name="lte_off">LTE OFF</string>
+
     <!-- USB Tethering tile -->
     <string name="accessibility_quick_settings_usb_tether_off">USB tethering off</string>
     <string name="accessibility_quick_settings_usb_tether_on">USB tethering on</string>
