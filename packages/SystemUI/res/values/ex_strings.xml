@@ -216,4 +216,9 @@
 
     <!-- ADB over network QS tile -->
     <string name="quick_settings_network_adb_label">ADB-Over-Network</string>
+
+    <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE On</string>
+    <string name="lte_off">LTE Off</string>
 </resources>
