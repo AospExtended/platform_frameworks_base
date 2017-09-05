@@ -285,14 +285,8 @@ public class RecentsView extends FrameLayout {
         // Update the top level view's visibilities
         if (stack.getTaskCount() > 0) {
             hideEmptyView();
-            if (mFloatingButton != null) {
-                mFloatingButton.setVisibility(View.VISIBLE);
-            }
         } else {
             showEmptyView(R.string.recents_empty_message);
-            if (mFloatingButton != null) {
-                mFloatingButton.setVisibility(View.GONE);
-            }
         }
     }
 
@@ -418,6 +412,9 @@ public class RecentsView extends FrameLayout {
         if (RecentsDebugFlags.Static.EnableStackActionButton) {
             mStackActionButton.bringToFront();
         }
+        if (mFloatingButton != null) {
+            mFloatingButton.setVisibility(View.GONE);
+        }
         setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -435,6 +432,9 @@ public class RecentsView extends FrameLayout {
         mTaskStackView.bringToFront();
         if (RecentsDebugFlags.Static.EnableStackActionButton) {
             mStackActionButton.bringToFront();
+        }
+        if (mFloatingButton != null) {
+            mFloatingButton.setVisibility(View.VISIBLE);
         }
         setOnClickListener(null);
     }
@@ -480,7 +480,6 @@ public class RecentsView extends FrameLayout {
     protected void onAttachedToWindow() {
         EventBus.getDefault().register(this, RecentsActivity.EVENT_BUS_PRIORITY + 1);
         EventBus.getDefault().register(mTouchHandler, RecentsActivity.EVENT_BUS_PRIORITY + 2);
-        super.onAttachedToWindow();
         mSettingsObserver.observe();
         mClearRecents.setVisibility(View.VISIBLE);
         mClearRecents.setOnClickListener(new View.OnClickListener() {
@@ -488,6 +487,7 @@ public class RecentsView extends FrameLayout {
             EventBus.getDefault().send(new DismissAllTaskViewsEvent());
             }
         });
+        super.onAttachedToWindow();
     }
 
     @Override
