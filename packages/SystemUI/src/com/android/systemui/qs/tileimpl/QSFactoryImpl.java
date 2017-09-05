@@ -45,6 +45,7 @@ import com.android.systemui.qs.tiles.LocaleTile;
 import com.android.systemui.qs.tiles.LocationTile;
 import com.android.systemui.qs.tiles.MusicTile;
 import com.android.systemui.qs.tiles.NavigationBarTile;
+import com.android.systemui.qs.tiles.LteTile;
 import com.android.systemui.qs.tiles.NfcTile;
 import com.android.systemui.qs.tiles.NightDisplayTile;
 import com.android.systemui.qs.tiles.PictureInPictureTile;
@@ -88,6 +89,7 @@ public class QSFactoryImpl implements QSFactory {
         else if (tileSpec.equals("rotation")) return new RotationLockTile(mHost);
         else if (tileSpec.equals("flashlight")) return new FlashlightTile(mHost);
         else if (tileSpec.equals("location")) return new LocationTile(mHost);
+        else if (tileSpec.equals("lte")) return new LteTile(mHost);
         else if (tileSpec.equals("cast")) return new CastTile(mHost);
         else if (tileSpec.equals("hotspot")) return new HotspotTile(mHost);
         else if (tileSpec.equals("user")) return new UserTile(mHost);
