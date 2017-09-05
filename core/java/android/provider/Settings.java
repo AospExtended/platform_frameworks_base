@@ -5106,7 +5106,6 @@ public final class Settings {
          * @hide
          */
         public static final String QS_EDIT_TOGGLE = "qs_edit_toggle";
-
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
@@ -9508,6 +9507,21 @@ public final class Settings {
         /** @hide */
         public static final Validator STATUSBAR_CLOCK_DATE_POSITION_VALIDATOR =
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 1);
+        /**
+         * Whether the phone vibrates on call connect
+         * @hide
+         */
+        public static final String VIBRATE_ON_CONNECT = "vibrate_on_connect";
+         /**
+         * Whether the phone vibrates on call waiting
+         * @hide
+         */
+        public static final String VIBRATE_ON_CALLWAITING = "vibrate_on_callwaiting";
+         /**
+         * Whether the phone vibrates on disconnect
+         * @hide
+         */
+        public static final String VIBRATE_ON_DISCONNECT = "vibrate_on_disconnect";
 
         /**
          * This are the settings to be backed up.
