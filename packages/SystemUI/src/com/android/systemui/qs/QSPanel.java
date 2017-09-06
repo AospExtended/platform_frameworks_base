@@ -241,6 +241,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
     protected void addSecurityFooter() {
         mSecurityFooter = new QSSecurityFooter(this, mContext);
+        mSecurityFooter.updateSettings();
     }
 
     protected void addViewsAboveTiles() {
@@ -1304,6 +1305,9 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
             for (TileRecord r : mRecords) {
                 tileClickListener(r.tile, r.tileView);
             }
+        }
+        if (mSecurityFooter != null) {
+            mSecurityFooter.updateSettings();
         }
     }
 
