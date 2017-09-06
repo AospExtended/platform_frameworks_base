@@ -3983,6 +3983,13 @@ public final class Settings {
          */
 
         /**
+         * Whether to show Qs panel footer warnings like for active VPN
+         * @hide
+         */
+        public static final String QS_FOOTER_WARNINGS = "qs_footer_warnings";
+
+
+        /**
         * Whether to allow battery light
         * @hide
         */
