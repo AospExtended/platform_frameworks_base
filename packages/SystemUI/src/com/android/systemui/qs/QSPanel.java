@@ -157,6 +157,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
         mFooter = new QSSecurityFooter(this, context);
         addView(mFooter.getView());
+        mFooter.updateSettings();
 
         updateResources();
 
@@ -862,6 +863,10 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     }
 
     public void updateSettings() {
+        if (mFooter != null) {
+            mFooter.updateSettings();
+        }
+
         if (mTileLayout != null) {
             mTileLayout.updateSettings();
 
