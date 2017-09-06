@@ -241,6 +241,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
     protected void addSecurityFooter() {
         mSecurityFooter = new QSSecurityFooter(this, mContext);
+        mSecurityFooter.updateSettings();
     }
 
     protected void addViewsAboveTiles() {
@@ -258,7 +259,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         }
         return mRegularTileLayout;
     }
-
 
     protected QSTileLayout createHorizontalTileLayout() {
         return createRegularTileLayout();
@@ -1319,6 +1319,9 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
             for (TileRecord r : mRecords) {
                 configureTile(r.tile, r.tileView);
             }
+        }
+        if (mSecurityFooter != null) {
+            mSecurityFooter.updateSettings();
         }
         // Refresh QS Panel views
         switchTileLayout(true);
