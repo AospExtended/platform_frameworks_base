@@ -4362,6 +4362,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.SHOW_LOCKSCREEN_MEDIA_ART),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QS_FOOTER_WARNINGS),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -4382,6 +4385,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             }  else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.SHOW_LOCKSCREEN_MEDIA_ART))) {
                 setLockScreenMediaArt();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.QS_FOOTER_WARNINGS))) {
+                setQsPanelOptions();
             }
             update();
         }
@@ -4392,7 +4398,8 @@ public class StatusBar extends SystemUI implements DemoMode,
             setHeadsUpBlacklist();
             setStatusBarWindowViewOptions();
             setLockScreenMediaBlurLevel();
-            setLockScreenMediaArt();         
+            setLockScreenMediaArt();
+            setQsPanelOptions();
         }
     }
 
@@ -4415,6 +4422,12 @@ public class StatusBar extends SystemUI implements DemoMode,
     private void setStatusBarWindowViewOptions() {
         if (mStatusBarWindow != null) {
             mStatusBarWindow.setStatusBarWindowViewOptions();
+        }
+    }
+
+    private void setQsPanelOptions() {
+        if (mQSPanel != null) {
+            mQSPanel.updateSettings();
         }
     }
 
