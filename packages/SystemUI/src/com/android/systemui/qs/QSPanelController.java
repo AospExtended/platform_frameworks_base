@@ -240,6 +240,10 @@ public class QSPanelController extends QSPanelControllerBase<QSPanel> {
         mView.updateResources();
     }
 
+    public void updateSettings() {
+        mQsSecurityFooter.updateSettings();
+    }
+
     /** Update state of all tiles. */
     public void refreshAllTiles() {
         mBrightnessController.checkRestrictionAndSetEnabled();
