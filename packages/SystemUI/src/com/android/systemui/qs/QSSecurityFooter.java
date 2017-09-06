@@ -35,6 +35,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.UserManager;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.SpannableStringBuilder;
 import android.text.method.LinkMovementMethod;
@@ -85,6 +86,7 @@ class QSSecurityFooter implements OnClickListener, DialogInterface.OnClickListen
     protected H mHandler;
 
     private boolean mIsVisible;
+    private boolean mShowWarnings;
     private CharSequence mFooterTextContent = null;
     private int mFooterIconId;
     private Drawable mPrimaryFooterIconDrawable;
@@ -189,12 +191,12 @@ class QSSecurityFooter implements OnClickListener, DialogInterface.OnClickListen
         final boolean hasDisclosableWorkProfilePolicy = hasCACertsInWorkProfile
                 || vpnNameWorkProfile != null || (hasWorkProfile && isNetworkLoggingEnabled);
         // Update visibility of footer
-        mIsVisible = (isDeviceManaged && !isDemoDevice)
+        mIsVisible = mShowWarnings && ((isDeviceManaged && !isDemoDevice)
                 || hasCACerts
                 || vpnName != null
                 || isProfileOwnerOfOrganizationOwnedDevice
                 || isParentalControlsEnabled
-                || (hasDisclosableWorkProfilePolicy && isWorkProfileOn);
+                || (hasDisclosableWorkProfilePolicy && isWorkProfileOn));
         // Update the view to be untappable if the device is an organization-owned device with a
         // managed profile and there is either:
         // a) no policy set which requires a privacy disclosure.
@@ -670,5 +672,11 @@ class QSSecurityFooter implements OnClickListener, DialogInterface.OnClickListen
         public int hashCode() {
             return 314159257; // prime
         }
+    }
+
+    public void updateSettings() {
+        mShowWarnings = Settings.System.getIntForUser(
+                mContext.getContentResolver(), Settings.System.QS_FOOTER_WARNINGS, 1,
+                UserHandle.USER_CURRENT) == 1;
     }
 }
