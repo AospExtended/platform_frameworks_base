@@ -69,6 +69,12 @@
                 android:layout_below="@id/clock_view" />
         </RelativeLayout>
 
+        <include layout="@layout/keyguard_weather_view"
+            android:id="@+id/keyguard_weather_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/keyguard_status_area" />
+
         <TextView
             android:id="@+id/owner_info"
             android:layout_marginLeft="16dp"

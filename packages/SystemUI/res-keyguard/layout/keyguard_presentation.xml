@@ -50,6 +50,7 @@
                 android:layout_marginBottom="@dimen/bottom_text_spacing_digital" />
 
             <include layout="@layout/keyguard_status_area" />
+            <include layout="@layout/keyguard_weather_view" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
