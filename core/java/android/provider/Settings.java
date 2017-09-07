@@ -4018,6 +4018,12 @@ public final class Settings {
 
 
         /**
+         * Disable dashboard conditions in settings
+         * @hide
+         */
+        public static final String ENABLE_CONDITIONS = "enable_conditions";
+
+        /**
          * Whether to display sound panel in the power menu
          *
          * @hide
