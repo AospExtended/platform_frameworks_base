@@ -33,5 +33,7 @@
     <!-- USB tethering QS tile -->
     <string name="quick_settings_usb_tether_label">USB tethering</string>
 
+    <string name="statusbar_items_title">Statusbar icon</string>
+
 </resources>
 
