@@ -323,6 +323,14 @@
                   android:exported="true">
         </activity>
 
+        <activity android:name=".tuner.NavBarActivity"
+                  android:theme="@style/ExTunerSettings"
+                  android:label="@string/nav_bar"
+                  android:process=":tuner"
+                  android:parentActivityName="org.aospextended.extensions.Extensions"
+                  android:exported="true">
+        </activity>
+
         <!-- Service used by secondary users to register themselves with the system user. -->
         <service android:name=".recents.RecentsSystemUserService"
             android:exported="false"
