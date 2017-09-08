@@ -96,10 +96,6 @@ public class TunerFragment extends PreferenceFragment {
         MetricsLogger.visibility(getContext(), MetricsEvent.TUNER, false);
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.add(Menu.NONE, MENU_REMOVE, Menu.NONE, R.string.remove_from_settings);
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -107,17 +103,7 @@ public class TunerFragment extends PreferenceFragment {
             case android.R.id.home:
                 getActivity().finish();
                 return true;
-            case MENU_REMOVE:
-                TunerService.showResetRequest(getContext(), new Runnable() {
-                    @Override
-                    public void run() {
-                        if (getActivity() != null) {
-                            getActivity().finish();
-                        }
-                    }
-                });
-                return true;
-        }
+         }
         return super.onOptionsItemSelected(item);
     }
 
