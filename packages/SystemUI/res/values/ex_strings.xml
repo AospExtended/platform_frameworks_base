@@ -42,4 +42,6 @@
     <string name="accessibility_quick_settings_caffeine_off">Caffeine off</string>
     <string name="accessibility_quick_settings_caffeine_on">Caffeine on</string>
 
+    <string name="statusbar_items_title">Statusbar items</string>
+
 </resources>
