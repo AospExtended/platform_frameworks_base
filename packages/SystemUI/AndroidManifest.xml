@@ -382,6 +382,14 @@
             </intent-filter>
         </activity-alias>
 
+        <activity android:name=".tuner.StatusbarItemsActivity"
+                  android:theme="@style/ExTunerSettings"
+                  android:label="@string/statusbar_items_title"
+                  android:process=":tuner"
+                  android:parentActivityName="org.aospextended.extensions.Extensions"
+                  android:exported="true">
+        </activity>
+
         <activity
             android:name=".stackdivider.ForcedResizableInfoActivity"
             android:theme="@style/ForcedResizableTheme"
