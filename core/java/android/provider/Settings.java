@@ -4445,6 +4445,30 @@ public final class Settings {
         public static final String FORCE_ALLOW_SYSTEM_THEMES = "force_allow_system_themes";
 
         /**
+         * How many rows to show in the qs panel when in portrait
+         * @hide
+         */
+        public static final String QS_ROWS_PORTRAIT = "qs_rows_portrait";
+
+        /**
+         * How many rows to show in the qs panel when in landscape
+         * @hide
+         */
+        public static final String QS_ROWS_LANDSCAPE = "qs_rows_landscape";
+
+        /**
+         * How many columns to show in the qs panel when in portrait
+         * @hide
+         */
+        public static final String QS_COLUMNS_PORTRAIT = "qs_columns_portrait";
+
+        /**
+         * How many columns to show in the qs panel when in landscape
+         * @hide
+         */
+        public static final String QS_COLUMNS_LANDSCAPE = "qs_columns_landscape";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -4637,6 +4661,10 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_REALLYFULL_COLOR);
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_LOW_BLINKING);
             PRIVATE_SETTINGS.add(SYSTEM_THEME_STYLE);
+            PRIVATE_SETTINGS.add(QS_ROWS_PORTRAIT);
+            PRIVATE_SETTINGS.add(QS_ROWS_LANDSCAPE);
+            PRIVATE_SETTINGS.add(QS_COLUMNS_PORTRAIT);
+            PRIVATE_SETTINGS.add(QS_COLUMNS_LANDSCAPE);
         }
 
 
