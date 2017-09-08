@@ -25,4 +25,6 @@
     <string name="global_action_restart_ui">SystemUI</string>
     <string name="global_action_restart_soft">Soft Reboot</string>
 
+    <string name="statusbar_items_title">Statusbar icon</string>
+
 </resources>
