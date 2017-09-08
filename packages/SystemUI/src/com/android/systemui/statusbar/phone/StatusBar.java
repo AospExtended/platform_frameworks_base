@@ -4527,6 +4527,18 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.Secure.getUriFor(
                     Settings.Secure.SYSUI_ROUNDED_FWVALS),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QS_ROWS_PORTRAIT),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QS_ROWS_LANDSCAPE),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QS_COLUMNS_PORTRAIT),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QS_COLUMNS_LANDSCAPE),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -4559,6 +4571,11 @@ public class StatusBar extends SystemUI implements DemoMode,
                 handleCutout(null);
             } else if (uri.equals(Settings.Secure.getUriFor(Settings.Secure.SYSUI_ROUNDED_FWVALS))) {
                 updateCorners();
+            } else if (uri.equals(Settings.System.getUriFor(Settings.System.QS_ROWS_PORTRAIT)) ||
+                    uri.equals(Settings.System.getUriFor(Settings.System.QS_ROWS_LANDSCAPE)) ||
+                    uri.equals(Settings.System.getUriFor(Settings.System.QS_COLUMNS_PORTRAIT)) ||
+                    uri.equals(Settings.System.getUriFor(Settings.System.QS_COLUMNS_LANDSCAPE))) {
+                setQsRowsColumns();                
             }
             update();
         }
@@ -4577,9 +4594,16 @@ public class StatusBar extends SystemUI implements DemoMode,
             setGamingMode();
             handleCutout(null);
             updateCorners();
+            setQsRowsColumns();                     
         }
     }
 
+    private void setQsRowsColumns() {
+        if (mQSPanel != null) {
+            mQSPanel.updateResources();
+        }
+    }
+        
     private void updateCorners() {
         mSysuiRoundedFwvals = Settings.Secure.getIntForUser(mContext.getContentResolver(),
                 Settings.Secure.SYSUI_ROUNDED_FWVALS, 1,
@@ -4638,7 +4662,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     private void setQsPanelOptions() {
         if (mQSPanel != null) {
-            mQSPanel.updateSettings();
+            mQSPanel.updateResources();
         }
     }
 
