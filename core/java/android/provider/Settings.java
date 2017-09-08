@@ -5828,10 +5828,11 @@ public final class Settings {
          * @hide
          */
         public static final String AOD_NOTIFICATION_PULSE = "ambient_notification_light_enabled";
-
+        
         /**
          * Whether to hide everything on aod when ambient lights are enabled
          * @hide
+
          */
         public static final String AOD_NOTIFICATION_PULSE_CLEAR = "ambient_notification_light_hide_aod";
 
@@ -5887,6 +5888,30 @@ public final class Settings {
          * @hide
          */
         public static final String NOTIFICATION_PULSE_DURATION = "ambient_notification_light_duration";
+
+        /**
+         * How many rows to show in the qs panel when in portrait
+         * @hide
+         */
+        public static final String QS_ROWS_PORTRAIT = "qs_rows_portrait";
+
+        /**
+         * How many rows to show in the qs panel when in landscape
+         * @hide
+         */
+        public static final String QS_ROWS_LANDSCAPE = "qs_rows_landscape";
+
+        /**
+         * How many columns to show in the qs panel when in portrait
+         * @hide
+         */
+        public static final String QS_COLUMNS_PORTRAIT = "qs_columns_portrait";
+
+        /**
+         * How many columns to show in the qs panel when in landscape
+         * @hide
+         */
+        public static final String QS_COLUMNS_LANDSCAPE = "qs_columns_landscape";
 
         /**
          * Keys we no longer back up under the current schema, but want to continue to
