@@ -150,6 +150,19 @@ class FooterActionsController @Inject constructor(
                 true /* dismissShade */, animationController)
     }
 
+    private fun startExtensionsActivity() {
+        val animationController = settingsButtonContainer?.let {
+            ActivityLaunchAnimator.Controller.fromView(
+                    it,
+                    InteractionJankMonitor.CUJ_SHADE_APP_LAUNCH_FROM_SETTINGS_BUTTON)
+            }
+        val nIntent = Intent(Intent.ACTION_MAIN)
+        nIntent.setClassName("com.android.settings",
+            "com.android.settings.Settings\$ExtensionsSettingsActivity")
+        activityStarter.startActivity(nIntent,
+                true /* dismissShade */, animationController)
+    }
+
     @VisibleForTesting
     public override fun onViewAttached() {
         if (showPMLiteButton) {
@@ -159,6 +172,10 @@ class FooterActionsController @Inject constructor(
             powerMenuLite.visibility = View.GONE
         }
         settingsButton.setOnClickListener(onClickListener)
+        settingsButton.setOnLongClickListener{ v ->
+            startExtensionsActivity()
+            true
+        }
         editButton.setOnClickListener(View.OnClickListener { view: View? ->
             if (falsingManager.isFalseTap(FalsingManager.LOW_PENALTY)) {
                 return@OnClickListener
