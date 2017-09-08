@@ -66,6 +66,9 @@ public class WifiEnterpriseConfig implements Parcelable {
     public static final String OPP_KEY_CACHING     = "proactive_key_caching";
     /** @hide */
     public static final String EAP_ERP             = "eap_erp";
+    /** @hide */
+    public static final String KEY_SIMNUM          = "sim_num";
+
     /**
      * String representing the keystore OpenSSL ENGINE's ID.
      * @hide
@@ -445,6 +448,15 @@ public class WifiEnterpriseConfig implements Parcelable {
         }
     }
 
+    /** @hide */
+    public void setSimNum(int SIMNum) {
+         setFieldValue(KEY_SIMNUM, Integer.toString(SIMNum));
+    }
+
+    /** @hide */
+    public String getSimNum() {
+        return getFieldValue(KEY_SIMNUM);
+    }
     /**
      * Get the eap method.
      * @return eap method configured
