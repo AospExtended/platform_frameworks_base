@@ -298,6 +298,14 @@
                   android:exported="true">
         </activity>
 
+        <activity android:name=".tuner.PowerActivity"
+                  android:theme="@style/ExTunerSettings"
+                  android:label="@string/tuner_full_importance_settings"
+                  android:process=":tuner"
+                  android:parentActivityName="org.aospextended.extensions.PartsFragment"
+                  android:exported="true">
+        </activity>
+
         <!-- Service used by secondary users to register themselves with the system user. -->
         <service android:name=".recents.RecentsSystemUserService"
             android:exported="false"
