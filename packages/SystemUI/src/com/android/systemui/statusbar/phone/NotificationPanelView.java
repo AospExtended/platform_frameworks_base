@@ -865,8 +865,11 @@ public class NotificationPanelView extends PanelView implements
         if (mBlockTouches || (mQs != null && mQs.isCustomizing())) {
             return false;
         }
+        final int h = getMeasuredHeight();
         if ((mIsLockscreenDoubleTapEnabled
-                && mStatusBarState == StatusBarState.KEYGUARD) ||
+                && mStatusBarState == StatusBarState.KEYGUARD
+                && (event.getY() < (h / 3) ||
+                event.getY() > (h - mStatusBarHeaderHeight))) ||
                 (!mQsExpanded && mDoubleTapToSleepEnabled
                 && event.getY() < mStatusBarHeaderHeight)) {
             mDoubleTapToSleepGesture.onTouchEvent(event);
