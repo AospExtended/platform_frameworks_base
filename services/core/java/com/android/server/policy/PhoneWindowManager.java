@@ -6064,7 +6064,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         int result;
         boolean isWakeKey = (policyFlags & WindowManagerPolicy.FLAG_WAKE) != 0
                 || event.isWakeKey()
-                || isCustomWakeKey(keyCode);
+                || mVolumeMusicControlActive ? isCustomWakeKey(keyCode) && !isMusicActive() : isCustomWakeKey(keyCode);
         if (interactive || (isInjected && !isWakeKey)) {
             // When the device is interactive or the key is injected pass the
             // key to the application.
@@ -6527,6 +6527,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
      * is always considered a wake key.
      */
     private boolean isWakeKeyWhenScreenOff(int keyCode) {
+        if (mVolumeMusicControl && isMusicActive()){
+            return false;
+        }
+
         if (isCustomWakeKey(keyCode)){
             return true;
         }
