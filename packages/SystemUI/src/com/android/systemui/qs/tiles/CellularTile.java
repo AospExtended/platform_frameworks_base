@@ -40,6 +40,7 @@ import com.android.systemui.qs.CellTileView.SignalIcon;
 import com.android.systemui.qs.QSHost;
 import com.android.systemui.qs.SignalTileView;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
+import com.android.systemui.statusbar.policy.KeyguardMonitor;
 import com.android.systemui.statusbar.policy.NetworkController;
 import com.android.systemui.statusbar.policy.NetworkController.IconState;
 import com.android.systemui.statusbar.policy.NetworkController.SignalCallback;
@@ -52,6 +53,8 @@ public class CellularTile extends QSTileImpl<SignalState> {
     private final NetworkController mController;
     private final DataUsageController mDataController;
     private final CellularDetailAdapter mDetailAdapter;
+    private final KeyguardMonitor mKeyguard;
+    private final Callback mCallback = new Callback();
 
     private final CellSignalCallback mSignalCallback = new CellSignalCallback();
     private final ActivityStarter mActivityStarter;
@@ -62,6 +65,7 @@ public class CellularTile extends QSTileImpl<SignalState> {
         mActivityStarter = Dependency.get(ActivityStarter.class);
         mDataController = mController.getMobileDataController();
         mDetailAdapter = new CellularDetailAdapter();
+        mKeyguard = Dependency.get(KeyguardMonitor.class);
     }
 
     @Override
@@ -78,8 +82,10 @@ public class CellularTile extends QSTileImpl<SignalState> {
     public void setListening(boolean listening) {
         if (listening) {
             mController.addCallback(mSignalCallback);
+            mKeyguard.addCallback(mCallback);
         } else {
             mController.removeCallback(mSignalCallback);
+            mKeyguard.removeCallback(mCallback);
         }
     }
 
@@ -95,6 +101,13 @@ public class CellularTile extends QSTileImpl<SignalState> {
 
     @Override
     protected void handleClick() {
+        if (mKeyguard.isSecure() && mKeyguard.isShowing()) {
+            mActivityStarter.postQSRunnableDismissingKeyguard(() -> {
+                mHost.openPanels();
+                mDataController.setMobileDataEnabled(!mDataController.isMobileDataEnabled());
+            });
+            return;
+        }
         mDataController.setMobileDataEnabled(!mDataController.isMobileDataEnabled());
     }
 
@@ -288,4 +301,11 @@ public class CellularTile extends QSTileImpl<SignalState> {
             fireToggleStateChanged(enabled);
         }
     }
+
+    private final class Callback implements KeyguardMonitor.Callback {
+        @Override
+        public void onKeyguardShowingChanged() {
+            refreshState();
+        }
+    };
 }
