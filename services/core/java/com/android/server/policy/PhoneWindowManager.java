@@ -759,6 +759,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     // Whether system navigation keys are enabled
     boolean mSystemNavigationKeysEnabled;
 
+    // The volume key answer
+    boolean mVolumeAnswer;
+
     Display mDisplay;
 
     int mLandscapeRotation = 0;  // default landscape rotation
@@ -1098,7 +1101,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT), false, this,
                     UserHandle.USER_ALL);
-
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER), false, this,
+                    UserHandle.USER_ALL);
             updateSettings();
         }
 
@@ -2694,6 +2699,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             mVolumeMusicControl = Settings.System.getIntForUser(resolver,
                     Settings.System.VOLUME_BUTTON_MUSIC_CONTROL, 0,
                     UserHandle.USER_CURRENT) != 0;
+
+            mVolumeAnswer = (Settings.System.getIntForUser(resolver,
+                    Settings.System.ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER, 0, UserHandle.USER_CURRENT) == 1);
+
         }
         synchronized (mWindowManagerFuncs.getWindowManagerLock()) {
             PolicyControl.reloadFromSetting(mContext);
@@ -6428,6 +6437,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         // When {@link #mHandleVolumeKeysInWM} is set, volume key events
                         // should be dispatched to WM.
                         if (telecomManager.isRinging()) {
+                            // The volume key answer
+                            if (mVolumeAnswer) {
+                                 telecomManager.acceptRingingCall();
+                            }
                             // If an incoming call is ringing, either VOLUME key means
                             // "silence ringer".  We handle these keys here, rather than
                             // in the InCallScreen, to make sure we'll respond to them
