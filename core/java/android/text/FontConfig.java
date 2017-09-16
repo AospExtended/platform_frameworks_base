@@ -32,8 +32,8 @@ import java.lang.annotation.Retention;
  * @hide
  */
 public final class FontConfig {
-    private final @NonNull Family[] mFamilies;
-    private final @NonNull Alias[] mAliases;
+    public final @NonNull Family[] mFamilies;
+    public final @NonNull Alias[] mAliases;
 
     public FontConfig(@NonNull Family[] families, @NonNull Alias[] aliases) {
         mFamilies = families;
@@ -58,12 +58,12 @@ public final class FontConfig {
      * Class that holds information about a Font.
      */
     public static final class Font {
-        private final @NonNull String mFontName;
-        private final int mTtcIndex;
-        private final @NonNull FontVariationAxis[] mAxes;
-        private final int mWeight;
-        private final boolean mIsItalic;
-        private Uri mUri;
+        public final @NonNull String mFontName;
+        public final int mTtcIndex;
+        public final @NonNull FontVariationAxis[] mAxes;
+        public final int mWeight;
+        public final boolean mIsItalic;
+        public Uri mUri;
 
         /**
          * @hide
@@ -131,9 +131,9 @@ public final class FontConfig {
      * Class that holds information about a Font alias.
      */
     public static final class Alias {
-        private final @NonNull String mName;
-        private final @NonNull String mToName;
-        private final int mWeight;
+        public final @NonNull String mName;
+        public final @NonNull String mToName;
+        public final int mWeight;
 
         public Alias(@NonNull String name, @NonNull String toName, int weight) {
             mName = name;
@@ -167,9 +167,9 @@ public final class FontConfig {
      * Class that holds information about a Font family.
      */
     public static final class Family {
-        private final @NonNull String mName;
-        private final @NonNull Font[] mFonts;
-        private final @NonNull String mLanguage;
+        public final @NonNull String mName;
+        public final @NonNull Font[] mFonts;
+        public final @NonNull String mLanguage;
 
         /** @hide */
         @Retention(SOURCE)
@@ -201,7 +201,7 @@ public final class FontConfig {
 
         // Must be same with Minikin's variant values.
         // See frameworks/minikin/include/minikin/FontFamily.h
-        private final @Variant int mVariant;
+        public final @Variant int mVariant;
 
         public Family(@NonNull String name, @NonNull Font[] fonts, @NonNull String language,
                 @Variant int variant) {

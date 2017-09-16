@@ -559,6 +559,7 @@ public class ActivityManagerService extends IActivityManager.Stub
 
     // How many bytes to write into the dropbox log before truncating
     static final int DROPBOX_MAX_SIZE = 192 * 1024;
+    static final String PROP_REFRESH_THEME = "sys.refresh_theme";
     // Assumes logcat entries average around 100 bytes; that's not perfect stack traces count
     // as one line, but close enough for now.
     static final int RESERVED_BYTES_PER_LOGCAT_LINE = 100;
@@ -3850,6 +3851,14 @@ public class ActivityManagerService extends IActivityManager.Stub
             if ("1".equals(SystemProperties.get("debug.assert"))) {
                 debugFlags |= Zygote.DEBUG_ENABLE_ASSERT;
             }
+
+            //Check if zygote should refresh its fonts
+            boolean refreshTheme = false;
+            if (SystemProperties.getBoolean(PROP_REFRESH_THEME, false)) {
+				SystemProperties.set(PROP_REFRESH_THEME, "false");
+				refreshTheme = true;
+			}
+
             if (mNativeDebuggingApp != null && mNativeDebuggingApp.equals(app.processName)) {
                 // Enable all debug flags required by the native debugger.
                 debugFlags |= Zygote.DEBUG_ALWAYS_JIT;          // Don't interpret anything
@@ -3911,7 +3920,7 @@ public class ActivityManagerService extends IActivityManager.Stub
                 startResult = Process.start(entryPoint,
                         app.processName, uid, uid, gids, debugFlags, mountExternal,
                         app.info.targetSdkVersion, seInfo, requiredAbi, instructionSet,
-                        app.info.dataDir, invokeWith, entryPointArgs);
+                        app.info.dataDir,  invokeWith, entryPointArgs);
             }
             checkTime(startTime, "startProcess: returned from zygote!");
             Trace.traceEnd(Trace.TRACE_TAG_ACTIVITY_MANAGER);
