@@ -49,4 +49,7 @@
     <string name="quick_settings_region_screenshot_label">Partial screenshot</string>
 
     <string name="recents_free_ram">Free RAM: %1$d MB</string>
+
+    <!-- volte icon switch -->
+    <string name="status_bar_volte">VOLTE</string>
 </resources>
