@@ -59,6 +59,7 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
         mRecords.add(tile);
         tile.tile.setListening(this, mListening);
         addView(tile.tileView);
+        tile.tileView.textVisibility();
     }
 
     @Override
@@ -103,12 +104,11 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
         for (TileRecord record : mRecords) {
             record.tileView.textVisibility();
         }
-
         if (mColumns != columns) {
             mColumns = columns;
-            requestLayout();
             return true;
         }
+        requestLayout();
         return false;
     }
 
