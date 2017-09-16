@@ -134,10 +134,8 @@ public class QSTileView extends QSTileBaseView {
                 Settings.System.QS_TILE_TITLE_VISIBILITY, 0,
                 UserHandle.USER_CURRENT) == 1) {
            mLabel.setVisibility(View.VISIBLE);
-           requestLayout();
         } else {
            mLabel.setVisibility(View.GONE);
-           requestLayout();
         }
     }
 }
