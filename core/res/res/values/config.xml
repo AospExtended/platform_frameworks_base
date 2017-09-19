@@ -2241,8 +2241,12 @@
         <item>power</item>
         <item>restart</item>
         <item>recovery</item>
-        <item>bugreport</item>
+        <item>screenshot</item>
+        <item>airplane</item>
+        <item>settings</item>
+        <item>lockdown</item>
         <item>users</item>
+        <item>silent</item>
     </string-array>
 
     <!-- Number of milliseconds to hold a wake lock to ensure that drawing is fully
