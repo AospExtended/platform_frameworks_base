@@ -4356,6 +4356,13 @@ public final class Settings {
 
 
         /**
+         * Whether to display the torch option in the power menu
+         *
+         * @hide
+         */
+        public static final String POWERMENU_TORCH = "powermenu_torch";
+
+        /**
          * These are all public system settings
          *
          * All settings in {@link SETTINGS_TO_BACKUP} array *must* have a non-null validator,
