@@ -4054,6 +4054,14 @@ public final class Settings {
         public static final String POWERMENU_USERS = "powermenu_users";
 
         /**
+         * Whether to display the torch option in the power menu
+         *
+         * @hide
+         */
+        public static final String POWERMENU_TORCH = "powermenu_torch";
+
+
+        /**
          * show clear all recents button
          * @hide
          */
