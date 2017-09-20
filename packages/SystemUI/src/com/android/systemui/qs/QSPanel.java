@@ -46,6 +46,7 @@ import android.view.animation.BounceInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -219,13 +220,13 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
             initMediaHostState();
         }
         addSecurityFooter();
+        updateSettings();
         if (mRegularTileLayout instanceof PagedTileLayout) {
             mQsTileRevealController = new QSTileRevealController(mContext, this,
                     (PagedTileLayout) mRegularTileLayout);
         }
         mQSLogger.logAllTilesChangeListening(mListening, getDumpableTag(), mCachedSpecs);
         updateResources();
-        updateSettings();
     }
 
     protected void onMediaVisibilityChanged(Boolean visible) {
@@ -898,7 +899,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
         if (mTileLayout != null) {
             mTileLayout.addTile(r);
-            tileClickListener(r.tile, r.tileView);
+            configureTile(r.tile, r.tileView);
         }
 
         return r;
@@ -1203,6 +1204,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
         boolean updateResources();
         void updateSettings();
+        int getNumColumns();
+        boolean isShowTitles();
 
         void setListening(boolean listening);
 
@@ -1282,18 +1285,36 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         }
     }
 
-    private void tileClickListener(QSTile t, QSTileView v) {
+    private void configureTile(QSTile t, QSTileView v) {
         if (mTileLayout != null) {
             v.setOnClickListener(view -> {
                     t.click();
                     setAnimationTile(v);
             });
+            v.setHideLabel(!mTileLayout.isShowTitles());
+            if (t.isDualTarget()) {
+                if (!mTileLayout.isShowTitles()) {
+                    v.setOnLongClickListener(view -> {
+                        t.secondaryClick();
+                        return true;
+                    });
+                } else {
+                    v.setOnLongClickListener(view -> {
+                        t.longClick();
+                        return true;
+                    });
+                }
+            }
         }
     }
 
     public void updateSettings() {
         if (mTileLayout != null) {
             mTileLayout.updateSettings();
+
+            for (TileRecord r : mRecords) {
+                configureTile(r.tile, r.tileView);
+            }
         }
     }
 }
