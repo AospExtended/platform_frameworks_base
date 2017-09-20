@@ -163,6 +163,7 @@ public final class NotificationRecord {
     private boolean mShowBadge;
     private boolean mAllowBubble;
     private Light mLight;
+    private boolean mLightOnZen;
     /**
      * This list contains system generated smart actions from NAS, app-generated smart actions are
      * stored in Notification.actions with isContextual() set to true.
@@ -210,6 +211,7 @@ public final class NotificationRecord {
         mAttributes = calculateAttributes();
         mImportance = calculateInitialImportance();
         mLight = calculateLights();
+        mLightOnZen = calculateLightOnZen();
         mAdjustments = new ArrayList<>();
         mStats = new NotificationStats();
         calculateUserSentiment();
@@ -284,6 +286,10 @@ public final class NotificationRecord {
             }
         }
         return light;
+    }
+
+    private boolean calculateLightOnZen() {
+        return getChannel().shouldLightOnZen();
     }
 
     private long[] calculateVibration() {
@@ -999,6 +1005,10 @@ public final class NotificationRecord {
 
     public Light getLight() {
         return mLight;
+    }
+
+    public boolean shouldLightOnZen() {
+        return mLightOnZen;
     }
 
     public Uri getSound() {
