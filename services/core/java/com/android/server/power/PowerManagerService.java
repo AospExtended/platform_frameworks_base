@@ -2091,6 +2091,18 @@ public final class PowerManagerService extends SystemService
                     }
                 }
 
+                if (mUserActivitySummary == 0
+                        && mLastUserActivityTimeNoChangeLights >= mLastWakeTime) {
+                    nextTimeout = mLastUserActivityTimeNoChangeLights + screenOffTimeout;
+                    if (now < nextTimeout) {
+                        if (mDisplayPowerRequest.policy == DisplayPowerRequest.POLICY_BRIGHT) {
+                            mUserActivitySummary = USER_ACTIVITY_SCREEN_BRIGHT;
+                        } else if (mDisplayPowerRequest.policy == DisplayPowerRequest.POLICY_DIM) {
+                            mUserActivitySummary = USER_ACTIVITY_SCREEN_DIM;
+                        }
+                    }
+                }
+
                 if (mUserActivitySummary == 0) {
                     if (sleepTimeout >= 0) {
                         final long anyUserActivity = Math.max(mLastUserActivityTime,
