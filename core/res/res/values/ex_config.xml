@@ -61,6 +61,7 @@
     <!-- Whether device ignores the RSSNR signal implementation -->
     <bool name="config_ignoreRssnrSignalLevel">false</bool>
 
+     <!-- Custom Permissions List -->
     <string-array translatable="false" name="config_customPermissionsList">
         <item>com.google.android.apps.wellbeing</item>
     </string-array>
@@ -68,4 +69,20 @@
     <!-- Whether to show a custom view for FOD -->
     <bool name="config_needCustomFODView">false</bool>
 
+   <!-- Whether to allow process with media UID to access CameraServiceProxy -->
+    <bool name="config_allowMediaUidForCameraServiceProxy">false</bool>
+
+    <!-- Hardware keys present on the device, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+            32 - Camera
+            64 - Volume rocker
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+    <integer name="config_deviceHardwareKeys">64</integer>
 </resources>
