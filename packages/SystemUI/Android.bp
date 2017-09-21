@@ -39,6 +39,7 @@ android_library {
     resource_dirs: [
         "res-keyguard",
         "res",
+        "res-hwkeys",
     ],
     static_libs: [
         "SystemUIPluginLib",
