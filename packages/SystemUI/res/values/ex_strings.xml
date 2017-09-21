@@ -115,5 +115,6 @@
     <!-- Screenrecord Tile -->
     <string name="quick_settings_screenrecord">Screenrecord</string>
 
+    <string name="systemui_tuner_navbar_title">Stock settings</string>
 </resources>
 
