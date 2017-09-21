@@ -40,6 +40,7 @@ android_library {
         "res-product",
         "res-keyguard",
         "res",
+        "res-hwkeys",
     ],
     static_libs: [
         "WindowManager-Shell",
