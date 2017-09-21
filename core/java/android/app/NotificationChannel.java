@@ -139,7 +139,7 @@ public final class NotificationChannel implements Parcelable {
             USER_LOCKED_ALLOW_BUBBLE
     };
 
-    private static final int DEFAULT_LIGHT_COLOR = 0;
+    private static final int DEFAULT_LIGHT_COLOR = 0x00FFFFFF;
     private static final int DEFAULT_ON_TIME = 0;
     private static final int DEFAULT_OFF_TIME = 0;
     private static final int DEFAULT_VISIBILITY =
@@ -1049,7 +1049,7 @@ public final class NotificationChannel implements Parcelable {
                 && mLights == that.mLights
                 && getLightColor() == that.getLightColor()
                 && getLightOnTime() == that.getLightOnTime()
-                && getLightColor() == that.getLightColor()
+                && getLightOffTime() == that.getLightOffTime()
                 && getUserLockedFields() == that.getUserLockedFields()
                 && isFgServiceShown() == that.isFgServiceShown()
                 && mVibrationEnabled == that.mVibrationEnabled
