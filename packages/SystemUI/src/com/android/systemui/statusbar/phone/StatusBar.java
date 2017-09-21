@@ -82,6 +82,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Process;
 import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
@@ -136,6 +137,12 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.statusbar.IStatusBarService;
 import com.android.internal.statusbar.RegisterStatusBarResult;
 import com.android.internal.view.AppearanceRegion;
+import com.android.internal.util.hwkeys.ActionConstants;
+import com.android.internal.util.hwkeys.ActionUtils;
+import com.android.internal.util.hwkeys.PackageMonitor;
+import com.android.internal.util.hwkeys.PackageMonitor.PackageChangedListener;
+import com.android.internal.util.hwkeys.PackageMonitor.PackageState;
+import com.android.internal.util.aospextended.AEXUtils;
 import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.keyguard.KeyguardUpdateMonitorCallback;
 import com.android.keyguard.ViewMediatorCallback;
@@ -275,7 +282,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         ColorExtractor.OnColorsChangedListener, ConfigurationListener,
         StatusBarStateController.StateListener,
         LifecycleOwner, BatteryController.BatteryStateChangeCallback,
-        ActivityLaunchAnimator.Callback {
+        ActivityLaunchAnimator.Callback, PackageChangedListener {
     public static final boolean MULTIUSER_DEBUG = false;
 
     protected static final int MSG_HIDE_RECENT_APPS = 1020;
@@ -486,6 +493,8 @@ public class StatusBar extends SystemUI implements DemoMode,
     private boolean mTransientShown;
 
     private final DisplayMetrics mDisplayMetrics;
+
+    private PackageMonitor mPackageMonitor;
 
     // XXX: gesture research
     private final GestureRecorder mGestureRec = DEBUG_GESTURES
@@ -945,6 +954,10 @@ public class StatusBar extends SystemUI implements DemoMode,
         mDisplay = mWindowManager.getDefaultDisplay();
         mDisplayId = mDisplay.getDisplayId();
         updateDisplaySize();
+
+        mPackageMonitor = new PackageMonitor();
+        mPackageMonitor.register(mContext, mHandler);
+        mPackageMonitor.addListener(this);
 
         mVibrateOnOpening = mContext.getResources().getBoolean(
                 R.bool.config_vibrateOnIconAnimation);
@@ -3410,6 +3423,26 @@ public class StatusBar extends SystemUI implements DemoMode,
         s.add(DemoMode.COMMAND_CLOCK);
         s.add(DemoMode.COMMAND_OPERATOR);
         return s;
+    }
+
+    @Override
+    public void onPackageChanged(String pkg, PackageState state) {
+        if (state == PackageState.PACKAGE_REMOVED
+                || state == PackageState.PACKAGE_CHANGED) {
+            final Context ctx = mContext;
+            final Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    if (!ActionUtils.hasNavbarByDefault(ctx)) {
+                        ActionUtils.resolveAndUpdateButtonActions(ctx,
+                                ActionConstants
+                                        .getDefaults(ActionConstants.HWKEYS));
+                    }
+                }
+            });
+            thread.setPriority(Process.THREAD_PRIORITY_BACKGROUND);
+            thread.start();
+        }
     }
 
     @Override
