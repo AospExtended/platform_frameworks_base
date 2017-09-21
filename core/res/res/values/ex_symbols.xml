@@ -62,5 +62,11 @@
     <!-- Whether to allow process with media UID to access CameraServiceProxy -->
     <java-symbol type="bool" name="config_allowMediaUidForCameraServiceProxy" />
 
+    <!-- Custom Permissions List -->
     <java-symbol type="array" name="config_customPermissionsList" />
+
+    <!-- HW keys binding -->
+    <java-symbol type="anim" name="custom_app_in" />
+    <java-symbol type="anim" name="custom_app_out" />
+    <java-symbol type="integer" name="config_deviceHardwareKeys" />
 </resources>
