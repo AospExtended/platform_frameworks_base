@@ -516,6 +516,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
         if (mTileLayout != null) {
             mTileLayout.addTile(r);
+            configureTile(r.tile, r.tileView);
         }
 
         return r;
@@ -698,6 +699,26 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         boolean updateResources();
 
         void setListening(boolean listening);
+
+        boolean isShowTitles();
+    }
+
+    private void configureTile(QSTile t, QSTileView v) {
+        if (mTileLayout != null) {
+            if (t.isDualTarget()) {
+                if (!mTileLayout.isShowTitles()) {
+                    v.setOnLongClickListener(view -> {
+                        t.secondaryClick();
+                        return true;
+                    });
+                } else {
+                    v.setOnLongClickListener(view -> {
+                        t.longClick();
+                        return true;
+                    });
+                }
+            }
+        }
     }
 
     static boolean isAdaptiveBrightness(Context context) {
@@ -730,6 +751,11 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     public void updateSettings() {
         if (mFooter != null) {
             mFooter.updateSettings();
+        }
+        if (mTileLayout != null) {
+            for (TileRecord r : mRecords) {
+                configureTile(r.tile, r.tileView);
+            }
         }
     }
 }
