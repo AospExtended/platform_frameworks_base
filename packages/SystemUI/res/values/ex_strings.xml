@@ -26,5 +26,7 @@
     <string name="global_action_restart_soft">Soft Reboot</string>
 
     <string name="statusbar_items_title">Statusbar icon</string>
+    <string name="lockscreen_default">Default</string>
+    <string name="lockscreen_hidden">None</string>
 
 </resources>
