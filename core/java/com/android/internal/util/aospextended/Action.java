@@ -44,6 +44,8 @@ import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.WindowManagerGlobal;
 
+import com.android.internal.policy.IKeyguardDismissCallback;
+
 import java.net.URISyntaxException;
 
 public class Action {
@@ -105,10 +107,12 @@ public class Action {
                     for (final String cameraId : cameraManager.getCameraIdList()) {
                         CameraCharacteristics characteristics =
                             cameraManager.getCameraCharacteristics(cameraId);
+                        Boolean flashAvailable = characteristics.get(CameraCharacteristics.FLASH_INFO_AVAILABLE);
                         int orient = characteristics.get(CameraCharacteristics.LENS_FACING);
-                        if (orient == CameraCharacteristics.LENS_FACING_BACK) {
+                        if (flashAvailable != null && flashAvailable && orient == CameraCharacteristics.LENS_FACING_BACK) {
                             cameraManager.setTorchMode(cameraId, !sTorchEnabled);
                             sTorchEnabled = !sTorchEnabled;
+                            break;
                         }
                     }
                 } catch (CameraAccessException e) {
@@ -253,6 +257,11 @@ public class Action {
     private static void startActivity(Context context, Intent intent) {
         if (intent == null) {
             return;
+        }
+        try {
+            WindowManagerGlobal.getWindowManagerService().dismissKeyguard(null /* callback */);
+        } catch (RemoteException e) {
+            Log.w("Action", "Error dismissing keyguard", e);
         }
         intent.addFlags(
                 Intent.FLAG_ACTIVITY_NEW_TASK
