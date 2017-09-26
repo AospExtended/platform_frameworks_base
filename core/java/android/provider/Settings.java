@@ -4262,8 +4262,16 @@ public final class Settings {
          * @hide
          */
         public static final String HEADS_UP_STOPLIST_VALUES = "heads_up_stoplist_values";
-         /**
-         * Which applications to disable heads up notifications for
+
+        /**
+         * Indicates whether ANBI (Accidental navigation button interaction) is enabled.
+         *
+         * @hide
+         */
+        public static final String ANBI_ENABLED_OPTION = "anbi_enabled_option";
+
+        /**
+         * Which applications to disable heads up notifications fo
          *
          * @hide
          */
