@@ -28,6 +28,7 @@ import com.android.systemui.qs.tiles.AdbOverNetworkTile;
 import com.android.systemui.qs.tiles.AirplaneModeTile;
 import com.android.systemui.qs.tiles.AlwaysOnDisplayTile;
 import com.android.systemui.qs.tiles.AmbientDisplayTile;
+import com.android.systemui.qs.tiles.ANBITile;
 import com.android.systemui.qs.tiles.BatterySaverTile;
 import com.android.systemui.qs.tiles.BluetoothTile;
 import com.android.systemui.qs.tiles.CastTile;
@@ -171,6 +172,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new ReadingModeTile(mHost);
             case "font":
                 return new FontTile(mHost);
+            case "anbi":
+                return new ANBITile(mHost);
         }
 
         // Intent tiles.

@@ -2256,4 +2256,9 @@
          app for debugging. Will not be seen by users. [CHAR LIMIT=20] -->
     <string name="heap_dump_tile_name">Dump SysUI Heap</string>
 
+    <!-- ANBI Tile -->
+    <string name="quick_settings_anbi_label">Accidental touch</string>
+    <string name="accessibility_quick_settings_anbi_changed_off">Accidental touch turned off</string>
+    <string name="accessibility_quick_settings_anbi_changed_on">Accidental touch turned on</string>
+
 </resources>
