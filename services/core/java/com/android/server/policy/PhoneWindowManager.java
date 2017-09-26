@@ -453,6 +453,11 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     AccessibilityManager mAccessibilityManager;
     BurnInProtectionHelper mBurnInProtectionHelper;
     AppOpsManager mAppOpsManager;
+
+    ANBIHandler mANBIHandler;
+
+    private boolean mANBIEnabled;
+
     private boolean mHasFeatureWatch;
     private boolean mHasFeatureLeanback;
 
@@ -1192,8 +1197,11 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.ACCELEROMETER_ROTATION_ANGLES), false, this,
                     UserHandle.USER_ALL);
-	        resolver.registerContentObserver(Settings.System.getUriFor(
+	    resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.THREE_FINGER_GESTURE), false, this,
+                    UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.ANBI_ENABLED), false, this,
                     UserHandle.USER_ALL);
             updateSettings();
         }
@@ -2734,6 +2742,20 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                             MSG_ENABLE_POINTER_LOCATION : MSG_DISABLE_POINTER_LOCATION);
                 }
             }
+
+            final boolean ANBIEnabled = Settings.System.getIntForUser(resolver,
+                    Settings.System.ANBI_ENABLED, 0, UserHandle.USER_CURRENT) == 1;
+            if (mANBIHandler != null) {
+                if (mANBIEnabled != ANBIEnabled) {
+                    mANBIEnabled = ANBIEnabled;
+                    if (mANBIEnabled) {
+                        mWindowManagerFuncs.registerPointerEventListener(mANBIHandler);
+                    } else {
+                        mWindowManagerFuncs.unregisterPointerEventListener(mANBIHandler);
+                    }
+                }
+            }
+
             // use screen off timeout setting as the timeout for the lockscreen
             mLockScreenTimeout = Settings.System.getIntForUser(resolver,
                     Settings.System.SCREEN_OFF_TIMEOUT, 0, UserHandle.USER_CURRENT);
@@ -6625,6 +6647,13 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         final boolean isInjected = (policyFlags & WindowManagerPolicy.FLAG_INJECTED) != 0;
         final boolean longPress = (flags & KeyEvent.FLAG_LONG_PRESS) != 0;
 
+        final int source = event.getSource();
+        final boolean navBarKey = source == InputDevice.SOURCE_NAVIGATION_BAR;
+        final boolean appSwitchKey = keyCode == KeyEvent.KEYCODE_APP_SWITCH;
+        final boolean homeKey = keyCode == KeyEvent.KEYCODE_HOME;
+        final boolean menuKey = keyCode == KeyEvent.KEYCODE_MENU;
+        final boolean backKey = keyCode == KeyEvent.KEYCODE_BACK;
+
         // If screen is off then we treat the case where the keyguard is open but hidden
         // the same as if it were open and in front.
         // This will prevent any keys other than the power button from waking the screen
@@ -6658,6 +6687,11 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 }
                 dispatchKeypressBoost(keyCode);
             }
+        }
+
+        if (mANBIHandler != null && mANBIEnabled && mANBIHandler.isScreenTouched()
+                && !navBarKey && (appSwitchKey || homeKey || menuKey || backKey)) {
+            return 0;
         }
 
         // Basic policy based on interactive state.
@@ -8190,6 +8224,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         if (mVrManagerInternal != null) {
             mVrManagerInternal.addPersistentVrModeStateListener(mPersistentVrModeListener);
         }
+
+        mANBIHandler = new ANBIHandler(mContext);
 
         readCameraLensCoverState();
         updateUiMode();
