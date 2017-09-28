@@ -615,7 +615,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     private boolean mVibrateOnOpening;
     private VibratorHelper mVibratorHelper;
     private ActivityLaunchAnimator mActivityLaunchAnimator;
-    protected StatusBarNotificationPresenter mPresenter;
+    protected NotificationPresenter mPresenter;
     private NotificationActivityStarter mNotificationActivityStarter;
     private boolean mPulsing;
     protected BubbleController mBubbleController;
@@ -3824,6 +3824,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     };
 
+
     public int getWakefulnessState() {
         return mWakefulnessLifecycle.getWakefulness();
     }
@@ -4339,6 +4340,12 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.DOUBLE_TAP_SLEEP_GESTURE),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_STOPLIST_VALUES), 
+                    false, this);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_BLACKLIST_VALUES),
+                    false, this);
         }
 
         @Override
@@ -4350,11 +4357,25 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.DOUBLE_TAP_SLEEP_GESTURE))) {
                 setLockscreenDoubleTapToSleep();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_STOPLIST_VALUES))) {
+                if (mPresenter != null) {
+                  mPresenter.setHeadsUpStoplist();
+                }
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_BLACKLIST_VALUES))) {
+                if (mPresenter != null) {
+                  mPresenter.setHeadsUpBlacklist();
+                }
             }
         }
 
         public void update() {
             setLockscreenDoubleTapToSleep();
+            if (mPresenter != null) {
+              mPresenter.setHeadsUpStoplist();
+              mPresenter.setHeadsUpBlacklist();
+            }
         }
     }
 
