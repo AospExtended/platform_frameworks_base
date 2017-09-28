@@ -20,13 +20,18 @@ import static com.android.systemui.statusbar.phone.StatusBar.MULTIUSER_DEBUG;
 import static com.android.systemui.statusbar.phone.StatusBar.SPEW;
 
 import android.annotation.Nullable;
+import android.app.ActivityManager;
 import android.app.KeyguardManager;
+import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.provider.Settings;
 import android.service.notification.StatusBarNotification;
 import android.service.vr.IVrManager;
 import android.service.vr.IVrStateCallbacks;
+import android.text.TextUtils;
 import android.util.Log;
 import android.util.Slog;
 import android.view.View;
@@ -76,6 +81,7 @@ import com.android.systemui.statusbar.phone.LockscreenGestureLogger.LockscreenUi
 import com.android.systemui.statusbar.policy.ConfigurationController;
 import com.android.systemui.statusbar.policy.KeyguardStateController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StatusBarNotificationPresenter implements NotificationPresenter,
@@ -129,6 +135,10 @@ public class StatusBarNotificationPresenter implements NotificationPresenter,
     protected boolean mVrMode;
     private int mMaxKeyguardNotifications;
 
+    ActivityManager mAm;
+    private ArrayList<String> mStoplist = new ArrayList<String>();
+    private ArrayList<String> mBlacklist = new ArrayList<String>();
+
     public StatusBarNotificationPresenter(Context context,
             NotificationPanelViewController panel,
             HeadsUpManagerPhone headsUp,
@@ -167,6 +177,7 @@ public class StatusBarNotificationPresenter implements NotificationPresenter,
                 R.integer.keyguard_max_notification_count);
         mBarService = IStatusBarService.Stub.asInterface(
                 ServiceManager.getService(Context.STATUS_BAR_SERVICE));
+        mAm = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
 
         if (MULTIUSER_DEBUG) {
             mNotificationPanelDebugText = mNotificationPanel.getHeaderDebugInfo();
@@ -333,6 +344,42 @@ public class StatusBarNotificationPresenter implements NotificationPresenter,
         return mEntryManager.hasVisibleNotifications();
     }
 
+    private boolean isPackageInStoplist(String packageName) {
+        return mStoplist.contains(packageName);
+    }
+     private boolean isPackageBlacklisted(String packageName) {
+        return mBlacklist.contains(packageName);
+    }
+     private boolean isDialerApp(String packageName) {
+        return packageName.equals("com.android.dialer")
+            || packageName.equals("com.google.android.dialer");
+    }
+     private void splitAndAddToArrayList(ArrayList<String> arrayList,
+            String baseString, String separator) {
+        // clear first
+        arrayList.clear();
+        if (baseString != null) {
+            final String[] array = TextUtils.split(baseString, separator);
+            for (String item : array) {
+                arrayList.add(item.trim());
+            }
+        }
+    }
+
+    @Override
+    public void setHeadsUpStoplist() {
+        final String stopString = Settings.System.getString(mContext.getContentResolver(),
+                    Settings.System.HEADS_UP_STOPLIST_VALUES);
+        splitAndAddToArrayList(mStoplist, stopString, "\\|");
+    }
+
+    @Override
+    public void setHeadsUpBlacklist() {
+        final String blackString = Settings.System.getString(mContext.getContentResolver(),
+                    Settings.System.HEADS_UP_BLACKLIST_VALUES);
+        splitAndAddToArrayList(mBlacklist, blackString, "\\|");
+    }
+
     @Override
     public void onUserSwitched(int newUserId) {
         // Begin old BaseStatusBar.userSwitched
@@ -482,6 +529,20 @@ public class StatusBarNotificationPresenter implements NotificationPresenter,
         @Override
         public boolean suppressAwakeHeadsUp(NotificationEntry entry) {
             final StatusBarNotification sbn = entry.getSbn();
+           // get the info from the currently running task
+            List<ActivityManager.RunningTaskInfo> taskInfo = mAm.getRunningTasks(1);
+            if(taskInfo != null && !taskInfo.isEmpty()) {
+                ComponentName componentInfo = taskInfo.get(0).topActivity;
+                if(isPackageInStoplist(componentInfo.getPackageName())
+                    && !isDialerApp(sbn.getPackageName())) {
+                    return false;
+                }
+            }
+
+            if(isPackageBlacklisted(sbn.getPackageName())) {
+                return false;
+            }
+
             if (mStatusBar.isOccluded()) {
                 boolean devicePublic = mLockscreenUserManager
                         .isLockscreenPublicMode(mLockscreenUserManager.getCurrentUserId());
