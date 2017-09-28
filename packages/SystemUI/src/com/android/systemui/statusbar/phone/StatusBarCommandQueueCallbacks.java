@@ -369,7 +369,7 @@ public class StatusBarCommandQueueCallbacks implements CommandQueue.Callbacks {
             mStatusBar.setLaunchCameraOnFinishedGoingToSleep(true);
             return;
         }
-        if (!mNotificationPanelViewController.canCameraGestureBeLaunched()) {
+        if (!mNotificationPanelViewController.canCameraGestureBeLaunched(source)) {
             if (StatusBar.DEBUG_CAMERA_LIFT) {
                 Slog.d(StatusBar.TAG, "Can't launch camera right now");
             }
