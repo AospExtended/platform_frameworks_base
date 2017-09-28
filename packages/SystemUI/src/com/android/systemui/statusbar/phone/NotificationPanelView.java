@@ -25,6 +25,7 @@ import android.app.Fragment;
 import android.app.StatusBarManager;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.database.ContentObserver;
@@ -2047,12 +2048,20 @@ public class NotificationPanelView extends PanelView implements
         });
         rightIcon = getLayoutDirection() == LAYOUT_DIRECTION_RTL ? !rightIcon : rightIcon;
         if (rightIcon) {
-            mStatusBar.onCameraHintStarted();
+            Intent intent = mKeyguardBottomArea.getRightIntent();
+            if (intent == KeyguardBottomAreaView.INSECURE_CAMERA_INTENT
+                    || intent == KeyguardBottomAreaView.SECURE_CAMERA_INTENT) {
+                mStatusBar.onCameraHintStarted();
+            } else {
+                mStatusBar.onCustomHintStarted();
+            }
         } else {
             if (mKeyguardBottomArea.isLeftVoiceAssist()) {
                 mStatusBar.onVoiceAssistHintStarted();
-            } else {
+            } else if (mKeyguardBottomArea.getLeftIntent() == KeyguardBottomAreaView.PHONE_INTENT) {
                 mStatusBar.onPhoneHintStarted();
+            } else {
+                mStatusBar.onCustomHintStarted();
             }
         }
     }
@@ -2457,7 +2466,8 @@ public class NotificationPanelView extends PanelView implements
         // If we are launching it when we are occluded already we don't want it to animate,
         // nor setting these flags, since the occluded state doesn't change anymore, hence it's
         // never reset.
-        if (!isFullyCollapsed()) {
+        if (!isFullyCollapsed() && mLastCameraLaunchSource ==
+                KeyguardBottomAreaView.CAMERA_LAUNCH_SOURCE_AFFORDANCE) {
             mLaunchingAffordance = true;
             setLaunchingAffordance(true);
         } else {
@@ -2512,8 +2522,8 @@ public class NotificationPanelView extends PanelView implements
      *
      * @param keyguardIsShowing whether keyguard is being shown
      */
-    public boolean canCameraGestureBeLaunched(boolean keyguardIsShowing) {
-        ResolveInfo resolveInfo = mKeyguardBottomArea.resolveCameraIntent();
+    public boolean canCameraGestureBeLaunched(boolean keyguardIsShowing, int source) {
+        ResolveInfo resolveInfo = mKeyguardBottomArea.resolveCameraIntent(source);
         String packageToLaunch = (resolveInfo == null || resolveInfo.activityInfo == null)
                 ? null : resolveInfo.activityInfo.packageName;
         return packageToLaunch != null &&
