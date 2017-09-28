@@ -100,7 +100,7 @@ public class SoundTile extends QSTileImpl<BooleanState> {
                 break;
             case AudioManager.RINGER_MODE_VIBRATE:
                 newState = AudioManager.RINGER_MODE_SILENT;
-                mZenController.setZen(Global.ZEN_MODE_NO_INTERRUPTIONS, null, TAG);
+                mZenController.setZen(Global.ZEN_MODE_ALARMS, null, TAG);
                 break;
             case AudioManager.RINGER_MODE_SILENT:
                 newState = AudioManager.RINGER_MODE_NORMAL;
