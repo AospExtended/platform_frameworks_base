@@ -54,6 +54,9 @@
     <!-- QS detail view scrolling -->
    <dimen name="qs_detail_item_height_twoline">72dp</dimen>
 
+    <!-- Quick QS scroller -->
+    <dimen name="qs_scroller_margin">8dp</dimen>
+
 </resources>
 
 
