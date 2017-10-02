@@ -1092,7 +1092,7 @@ public class ActivityManagerService extends IActivityManager.Stub
 
         public void onChange() {
             final boolean enabled = Settings.Global.getInt(mContext.getContentResolver(),
-                    Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, Build.IS_ENG ? 1 : 0) != 0;
+                    Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 1) != 0;
             mContext.getPackageManager().setComponentEnabledSetting(mBugreportStorageProvider,
                     enabled ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED
                             : PackageManager.COMPONENT_ENABLED_STATE_DEFAULT,
