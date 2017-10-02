@@ -168,7 +168,7 @@ public class LocalePicker extends ListFragment {
     public static ArrayAdapter<LocaleInfo> constructAdapter(Context context,
             final int layoutId, final int fieldId) {
         boolean isInDeveloperMode = Settings.Global.getInt(context.getContentResolver(),
-                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0;
+                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 1) != 0;
         final List<LocaleInfo> localeInfos = getAllAssetLocales(context, isInDeveloperMode);
 
         final LayoutInflater inflater =

@@ -269,7 +269,7 @@ public class LocaleStore {
         Set<String> simCountries = getSimCountries(context);
 
         final boolean isInDeveloperMode = Settings.Global.getInt(context.getContentResolver(),
-                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0;
+                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 1) != 0;
         for (String localeId : LocalePicker.getSupportedLocales(context)) {
             if (localeId.isEmpty()) {
                 throw new IllformedLocaleException("Bad locale entry in locale_config.xml");
