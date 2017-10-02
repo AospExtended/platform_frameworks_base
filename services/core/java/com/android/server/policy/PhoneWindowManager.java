@@ -3275,7 +3275,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private void requestFullBugreport() {
         if ("1".equals(SystemProperties.get("ro.debuggable"))
                 || Settings.Global.getInt(mContext.getContentResolver(),
-                        Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) == 1) {
+                        Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 1) == 1) {
             try {
                 ActivityManager.getService()
                         .requestBugReport(ActivityManager.BUGREPORT_OPTION_FULL);
