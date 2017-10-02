@@ -138,7 +138,7 @@ final class AppErrorDialog extends BaseErrorDialog implements View.OnClickListen
         appInfo.setOnClickListener(this);
 
         boolean showMute = !Build.IS_USER && Settings.Global.getInt(context.getContentResolver(),
-                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0
+                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 1) != 0
                 && Settings.Global.getInt(context.getContentResolver(),
                 Settings.Global.SHOW_MUTE_IN_CRASH_DIALOG, 0) != 0;
         final TextView mute = findViewById(com.android.internal.R.id.aerr_mute);

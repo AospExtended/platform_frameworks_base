@@ -42,8 +42,7 @@ public class DevelopmentSettingsEnabler {
     public static boolean isDevelopmentSettingsEnabled(Context context) {
         final UserManager um = (UserManager) context.getSystemService(Context.USER_SERVICE);
         final boolean settingEnabled = Settings.Global.getInt(context.getContentResolver(),
-                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED,
-                Build.TYPE.equals("eng") ? 1 : 0) != 0;
+                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 1) != 0;
         final boolean hasRestriction = um.hasUserRestriction(
                 UserManager.DISALLOW_DEBUGGING_FEATURES);
         final boolean isAdmin = um.isAdminUser();

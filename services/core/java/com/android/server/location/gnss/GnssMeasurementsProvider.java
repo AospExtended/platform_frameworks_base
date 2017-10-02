@@ -72,7 +72,7 @@ public abstract class GnssMeasurementsProvider
 
     private boolean getMergedFullTracking() {
         int devOptions = Settings.Secure.getInt(mContext.getContentResolver(),
-                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0);
+                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 1);
         int enableFullTracking = Settings.Global.getInt(mContext.getContentResolver(),
                 Settings.Global.ENABLE_GNSS_RAW_MEAS_FULL_TRACKING, 0);
         boolean enableFullTrackingBySetting = (devOptions == 1 /* Developer Mode enabled */)
