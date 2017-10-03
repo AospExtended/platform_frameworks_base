@@ -4255,6 +4255,11 @@ public final class Settings {
         public static final String SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
 
         /**
+         * @hide
+         */
+        public static final String SHOW_BATTERY_IMAGE = "status_bar_show_battery_image";
+
+        /**
          * Volume key controls ringtone or media sound stream
          * @hide
          */
