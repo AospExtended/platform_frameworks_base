@@ -2614,7 +2614,7 @@ public class PermissionManagerService extends IPermissionManager.Stub {
     }
 
     public static boolean isSpecialRuntimePermission(final String permission) {
-        return false;
+        return Manifest.permission.OTHER_SENSORS.equals(permission);
     }
 
     /**
