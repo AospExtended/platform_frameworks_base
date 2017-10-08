@@ -75,9 +75,4 @@
         android:title="@string/tuner_time"
         android:summary="%s"
         android:entries="@array/clock_options" />
-
-    <com.android.systemui.tuner.BatteryPreference
-        android:title="@string/battery"
-        android:summary="%s"
-        android:entries="@array/battery_options" />
 </PreferenceScreen>
