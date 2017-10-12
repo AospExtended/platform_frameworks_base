@@ -7814,11 +7814,15 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         // get the info from the currently running task
         List<ActivityManager.RunningTaskInfo> taskInfo = mAm.getRunningTasks(1);
-        ComponentName componentInfo = taskInfo.get(0).topActivity;
+        if(taskInfo != null && !taskInfo.isEmpty()) {
+            ComponentName componentInfo = taskInfo.get(0).topActivity;
+            if(isPackageInStoplist(componentInfo.getPackageName())
+                && !isDialerApp(sbn.getPackageName())) {
+                return false;
+            }
+        }
 
-        if(isPackageBlacklisted(sbn.getPackageName())
-                || (isPackageInStoplist(componentInfo.getPackageName())
-                && !isDialerApp(sbn.getPackageName()))) {
+        if(isPackageBlacklisted(sbn.getPackageName())) {
             return false;
         }
 
