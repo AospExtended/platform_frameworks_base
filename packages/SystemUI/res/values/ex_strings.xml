@@ -175,6 +175,9 @@
     <string name="battery_level_good_title">Optimal battery level</string>
     <string name="battery_level_good_sound" translatable="false">/system/media/audio/ui/GoodBattery.ogg</string>
     <string name="notification_channel_charge_alert">Optimal battery charge level</string>
+
+    <!-- Logo -->
+    <string name="status_bar_logo_title">AEX logo</string>
 </resources>
 
 
