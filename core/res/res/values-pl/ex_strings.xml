@@ -25,12 +25,12 @@
   <!-- Button to reboot the phone into bootloader in restart menu -->
   <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
-  <string name="reboot_soft">Miękki restart</string>
+  <string name="reboot_soft">Szybki restart</string>
   <!-- Reboot Confirmation Dialog. -->
   <string name="reboot_confirm" product="tablet">Twój tablet zostanie zrestartowany.</string>
   <string name="reboot_confirm" product="default">Telefon zostanie uruchomiony ponownie.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
-  <string name="reboot_progress">Restartowanie\u2026</string>
+  <string name="reboot_progress">Ponowne uruchamianie\u2026</string>
   <string name="reboot_systemui">Uruchom ponownie SystemUI</string>
   <!-- Global Actions -->
   <string name="global_action_current_user">Obecny</string>
@@ -43,7 +43,7 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_preventpower">Zezwól aplikacji zastąpić przycisk zasilania.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">Twój obraz dostawcy nie jest zgodny z systemem. Zainstaluj obraz <xliff:g id="string">%s</xliff:g> który jest zgodny</string>
+  <string name="system_error_vendorprint">Twój obraz dostawcy nie jest zgodny z systemem. Zainstaluj obraz <xliff:g id="string">%s</xliff:g> który jest zgodny z Twoim urządzeniem</string>
   <!-- AOKP custom system animations -->
   <string name="animation_fade">Zanikanie</string>
   <string name="animation_slide_right">Przesunięcie w prawo</string>
@@ -90,9 +90,9 @@
   <string name="singlehandmode_click_hint_message">Dotknij obszar poza ekranem, by opuścić tryb obsługi mini ekranu</string>
   <string name="singlehandmode_slide_hint_message">Przesuń palcem po pasku nawigacyjnym, aby przełączać się między trybem standardowym i małego ekranu</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_modifyOverlays">modyfikowanie tematu nakładek</string>
+  <string name="permlab_modifyOverlays">modyfikowanie motywu nakładek</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_modifyOverlays">Umożliwia aplikacji wprowadzenia zmian do tematu nakładek przy użyciu OverlayManagerService</string>
+  <string name="permdesc_modifyOverlays">Umożliwia aplikacji wprowadzenia zmian do motywu nakładek przy użyciu OverlayManagerService</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_restartUI">uruchom ponownie paski systemowe</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

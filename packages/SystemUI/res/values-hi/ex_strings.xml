@@ -240,8 +240,18 @@
   <string name="quick_settings_network_adb_enabled_label">सक्षम</string>
   <string name="quick_settings_network_adb_disabled_label">अक्षम</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">बलपूर्वक रोकें?</string>
+  <string name="force_stop_dlg_text">यदि आप कोई ऍप जबरदस्ती बंद करते हे, तो वो दुर्व्यवहार कर सकता हे|</string>
   <string name="dlg_ok">ठीक है</string>
   <string name="dlg_cancel">रद्द करें</string>
   <string name="kill">ऐप रुकाए</string>
   <!-- Pie controls -->
+  <string name="pie_date_format">, दिन महीना वर्ष</string>
+  <string name="pie_hour_format_12">hh:mm</string>
+  <string name="pie_hour_format_24">Hh:mm</string>
+  <string name="pie_am_pm">एक</string>
+  <string name="pie_state_name">पाइ नियंत्रण</string>
+  <string name="pie_state_summary">इमर्सिव मोड मे होने पर पाई कंट्रोल्स का उपयोग करें</string>
+  <string name="pie_battery_level">"बैटरी स्तर "</string>
+  <string name="quick_settings_pie">पाई</string>
 </resources>

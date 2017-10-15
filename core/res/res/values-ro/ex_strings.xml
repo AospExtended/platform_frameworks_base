@@ -25,10 +25,10 @@
   <!-- Button to reboot the phone into bootloader in restart menu -->
   <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in restart menu -->
-  <string name="reboot_soft">Repornire soft</string>
+  <string name="reboot_soft">Repornire rapidă</string>
   <!-- Reboot Confirmation Dialog. -->
-  <string name="reboot_confirm" product="tablet">Tableta dvs. va reporni.</string>
-  <string name="reboot_confirm" product="default">Telefonul dvs. va reporni.</string>
+  <string name="reboot_confirm" product="tablet">Tableta dvs. se repornește.</string>
+  <string name="reboot_confirm" product="default">Telefonul dvs. se repornește.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
   <string name="reboot_progress">Repornire\u2026</string>
   <string name="reboot_systemui">Reporniţi SystemUI</string>

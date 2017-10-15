@@ -39,6 +39,7 @@
   <string name="global_action_voicesearch">音声検索</string>
   <string name="permlab_preventpower">電源ボタンを優先する</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">アプリが電源ボタンの機能を置き換えることを許可します</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">vendor イメージがシステムと一致しません。お使いの端末に <xliff:g id="string">%s</xliff:g> vendor イメージを導入してください。</string>
   <!-- AOKP custom system animations -->
@@ -58,6 +59,7 @@
   <string name="animation_grow_shrink_right">拡大(右)</string>
   <string name="action_null">なし</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">ベンダーイメージの不一致を検出しました。ベンダーイメージが最新でない可能性があります。ベンダーイメージが<xliff:g id="fingerprint">%1$s</xliff:g>と一致しているか確認してください。</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">電池統計情報のリセット</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -65,7 +67,9 @@
   <!-- On-The-Go -->
   <string name="global_action_onthego">On-The-Go モード</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">パッケージ署名を偽装</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">アプリが別のアプリになりすます事を許可します。 悪意のあるアプリケーションがこれを利用してアプリケーションの個人情報にアクセスする可能性があります。 慎重にこの許可を与えてください！</string>
   <!-- ADB over network -->
   <string name="adb_net_active_notification_title">ネットワーク経由のADBが有効です</string>
   <string name="adb_both_active_notification_title">USBとネットワーク経由のADBが有効です</string>
@@ -85,7 +89,9 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_modifyOverlays">OverlayManagerServiceを使用してテーマのオーバーレイを変更することをアプリに許可します</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">システムバーを再起動</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_restartUI">システムUI を再起動してシステムバー関連のテーマリソースを読み込めるようにします</string>
   <!-- Pocket Lock -->
   <!-- Defines the sysfs attribute path used by pocket bridge
         to communicate pocket state to the pocket judge kernel driver. -->

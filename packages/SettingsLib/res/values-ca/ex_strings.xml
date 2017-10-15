@@ -18,8 +18,14 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="profile_applist_title">Aplicacions</string>
+  <string name="picker_activities">Activitats</string>
+  <string name="select_custom_app_title">Seleccioneu una aplicació personalitzada</string>
+  <string name="select_custom_activity_title">Selecciona una activitat personalitzada</string>
+  <string name="lockscreen_targets_message">Dreceres de la pantalla de bloqueig</string>
   <!-- Description for the screen zoom level that makes interface elements smaller. [CHAR LIMIT=24] -->
   <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->
   <!-- Regex used to parse the processor string from kernel -->
   <!-- Text when wrong password entered for psk networks -->
+  <string name="wifi_auth_password_wrong">La contrasenya podria ser incorrecta</string>
 </resources>

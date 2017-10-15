@@ -17,15 +17,26 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">কল</string>
+  <string name="stream_title_system">সিস্টেম</string>
+  <string name="stream_title_ring">রিং</string>
+  <string name="stream_title_media">মিডিয়া</string>
+  <string name="stream_title_alarm">এলার্ম</string>
+  <string name="stream_title_notification">বিজ্ঞপ্তি</string>
+  <string name="stream_title_bluetooth">ব্লুতুথ</string>
   <!-- Wi-Fi hotspot label when enabled -->
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
   <!-- Path for battery solid -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA +</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">স্ক্রিন রেকর্ড করা হচ্ছে</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">রেকর্ডিং পর্দা</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">বন্ধ</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <!-- Screen record notification error title -->
   <!-- Screenshot Delete Toast -->
@@ -36,6 +47,7 @@
   <!-- Strings for lockscreen shortcut hints -->
   <string name="lockscreen_default_target">পূর্ব-নির্ধারিত</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_ring">রিং</string>
   <!-- Ambient Display QS tile -->
   <!-- Screenshot Crop & Share -->
   <!-- Screenshot Crop & Share -->
@@ -47,7 +59,7 @@
   <!-- Screenshot Delete Toast -->
   <!-- SystemUI Tuner Parts -->
   <!-- Quick Settings tiles -->
-  <string name="quick_settings_screenshot_label">স্ক্রীনসর্ট</string>
+  <string name="quick_settings_screenshot_label">স্ক্রিনশট</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_recovery_label">পুনরুদ্ধার</string>
   <!-- SystemUI Tuner Parts -->
@@ -64,6 +76,7 @@
   <!-- Compass QS Tile -->
   <!-- Sim recents -->
   <!-- On The Go -->
+  <string name="onthego_notif_stop">বন্ধ</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <!-- HW Keys Tile -->
   <!-- AEX Logo -->

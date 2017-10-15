@@ -228,16 +228,16 @@
   <string name="keyguard_indication_dash_charging_time">Pengisian cepat (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> sampai penuh)</string>
   <string name="keyguard_plugged_in_dash_charging">Pengisian Cepat</string>
   <!-- HW Keys Tile -->
-  <string name="accessibility_quick_settings_hwkeys_on">HW Keys Menyala</string>
-  <string name="accessibility_quick_settings_hwkeys_off">HW keys Mati</string>
-  <string name="quick_settings_hwkeys_label">HW keys</string>
+  <string name="accessibility_quick_settings_hwkeys_on">Tombol fisik hidup</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Tombol fisik mati</string>
+  <string name="quick_settings_hwkeys_label">Tombol fisik</string>
   <!-- AEX Logo -->
-  <string name="status_bar_aex_logo_title">AEX logo</string>
-  <string name="status_bar_aex_logo_summary">Mengaktifkan untuk menunjukkan AEX logo pada sisi kiri statusbar</string>
+  <string name="status_bar_aex_logo_title">Logo AEX</string>
+  <string name="status_bar_aex_logo_summary">Hidupkan untuk menampilkan logo AEX di sisi kiri statusbar</string>
   <!-- ADB over network Tile -->
   <string name="quick_settings_adb_network">Jaringan ADB</string>
-  <string name="quick_settings_network_adb_enabled_label">Diaktifkan</string>
-  <string name="quick_settings_network_adb_disabled_label">Tidak non aktifkan</string>
+  <string name="quick_settings_network_adb_enabled_label">Dihidupkan</string>
+  <string name="quick_settings_network_adb_disabled_label">Dimatikan</string>
   <!-- Kill button in notification guts -->
   <string name="force_stop_dlg_title">Paksa berhenti?</string>
   <string name="force_stop_dlg_text">Jika anda memaksa berhenti aplikasi, itu mungkin berperilaku buruk.</string>

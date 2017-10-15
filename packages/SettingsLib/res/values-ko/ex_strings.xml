@@ -18,8 +18,16 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="profile_applist_title">앱</string>
+  <string name="picker_activities">활동</string>
+  <string name="select_custom_app_title">사용자 정의 앱 선택</string>
+  <string name="select_custom_activity_title">사용자 지정 활동 선택</string>
+  <string name="lockscreen_targets_message">잠금 화면 바로 가기</string>
   <!-- Description for the screen zoom level that makes interface elements smaller. [CHAR LIMIT=24] -->
+  <string name="screen_zoom_summary_smaller">작게</string>
   <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->
+  <string name="screen_zoom_summary_smallest">아주 작게</string>
   <!-- Regex used to parse the processor string from kernel -->
   <!-- Text when wrong password entered for psk networks -->
+  <string name="wifi_auth_password_wrong">암호가 맞지 않습니다</string>
 </resources>

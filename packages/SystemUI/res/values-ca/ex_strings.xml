@@ -17,6 +17,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">Truca</string>
+  <string name="stream_title_system">Sistema</string>
+  <string name="stream_title_alarm">Alarma</string>
+  <string name="stream_title_notification">Notificació</string>
+  <string name="stream_title_bluetooth">Bluetooth</string>
   <!-- Wi-Fi hotspot label when enabled -->
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
@@ -43,6 +48,7 @@
   <string name="quick_settings_locale_label">Idioma</string>
   <string name="quick_settings_locale_more_locales_toast">Per favor, configuri diversos idiomes per habilitar la funció d\'alternar entre ells</string>
   <!-- NavBar Tuner -->
+  <string name="search">Cerca</string>
   <!-- Strings for lockscreen shortcut hints -->
   <string name="left_shortcut_hint">Llisca a la dreta per %1$s</string>
   <string name="right_shortcut_hint">Feu lliscar a l\'esquerra per %1$s</string>
@@ -88,6 +94,7 @@
   <string name="delete_screenshot_toast">Captura de pantalla eliminada</string>
   <!-- SystemUI Tuner Parts -->
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">Captura de pantalla</string>
   <string name="quick_settings_region_screenshot_label">Captura de pantalla parcial</string>
   <string name="quick_settings_sync_label">Sincronització</string>
   <string name="accessibility_quick_settings_sync_off">Sincronització aturada</string>
@@ -96,6 +103,7 @@
   <string name="accessibility_quick_settings_sync_changed_on">Sincronització activada</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Reinicia</string>
+  <string name="quick_settings_reboot_recovery_label">Recuperació</string>
   <string name="accessibility_quick_settings_usb_tether_off">Ancoratge USB desactivat</string>
   <string name="accessibility_quick_settings_usb_tether_on">Ancoratge USB activat</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">Ancoratge USB apagat</string>
@@ -149,8 +157,18 @@
   <string name="recents_free_ram">RAM lliure: %1$d MB</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Data/Wifi activity arrows -->
+  <string name="data_wifi_activity_arrows_title">Activitat de la xarxa</string>
   <!-- OmniJaws -->
+  <string name="omnijaws_service_error">Error</string>
+  <string name="omnijaws_service_unkown">Sense informació sobre el temps</string>
+  <string name="omnijaws_service_error_long">Error carregant la informació del temps</string>
+  <string name="omnijaws_service_disabled">Servei deshabilitat</string>
+  <string name="omnijaws_detail_header">Temps</string>
+  <string name="omnijaws_label_default">Temps</string>
+  <string name="omnijaws_current_text">Ara</string>
+  <string name="omnijaws_package_not_available">OmniJaws no disponible</string>
   <!-- Weather string format in expanded statusbar header -->
   <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g> - <xliff:g id="condition">%2$s</xliff:g></string>
   <!-- Compass QS Tile -->
@@ -184,13 +202,18 @@
   <string name="onthego_front_camera">Utilitzar la càmera frontal</string>
   <string name="onthego_service_toggle">Reinicia automàticament el servei</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Càrrega Dash (<xliff:g id="charging_time_left" example="4 hores i 2 minuts">%s</xliff:g> fins càrrega completa)</string>
+  <string name="keyguard_plugged_in_dash_charging">Càrrega Dash</string>
   <!-- HW Keys Tile -->
   <!-- AEX Logo -->
+  <string name="status_bar_aex_logo_title">Logotip AEX</string>
+  <string name="status_bar_aex_logo_summary">Activa per mostrar el logo AEX a la part esquerra de la pantalla</string>
   <!-- ADB over network Tile -->
   <string name="quick_settings_adb_network">Xarxa ADB</string>
   <string name="quick_settings_network_adb_enabled_label">Habilitat</string>
   <string name="quick_settings_network_adb_disabled_label">Deshabilitat</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Força l\'aturada?</string>
   <string name="dlg_ok">Acceptar</string>
   <!-- Pie controls -->
 </resources>

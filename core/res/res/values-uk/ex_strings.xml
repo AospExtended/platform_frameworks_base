@@ -87,7 +87,7 @@
   <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g> підключений пристрій</string>
   <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g> підключених пристроїв</string>
   <!-- Single hand mode -->
-  <string name="singlehandmode_click_hint_message">Торкніться поза межами екрана, щоб вийти з одноручного перегляду</string>
+  <string name="singlehandmode_click_hint_message">Торкніться поза межами екрану, щоб вийти зі зменшеного режиму</string>
   <string name="singlehandmode_slide_hint_message">Проведіть пальцем по панелі навігації (або кнопці) для переключення між стандартним та зменшеним екраном</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_modifyOverlays">змінити накладання теми</string>
@@ -98,6 +98,7 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_restartUI">Перезавантажувати SystemUIService, щоб системний інтерфейс міг завантажити ресурси з теми</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">Тривале натискання кнопки живлення для взаємодії</string>
   <!-- Defines the sysfs attribute path used by pocket bridge
         to communicate pocket state to the pocket judge kernel driver. -->
 </resources>

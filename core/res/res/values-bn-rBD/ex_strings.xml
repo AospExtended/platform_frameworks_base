@@ -34,15 +34,16 @@
   <string name="reboot_systemui">SystemUI পুনরায় শুরু করুন</string>
   <!-- Global Actions -->
   <string name="global_action_current_user">বর্তমান</string>
-  <string name="global_action_screenshot">স্ক্রীনসর্ট</string>
-  <string name="global_action_screen_record">স্ক্রীন রেকর্ডার</string>
+  <string name="global_action_screenshot">স্ক্রিনশট</string>
+  <string name="global_action_screen_record">স্ক্রীন রেকর্ড</string>
   <string name="global_action_search">অনুসন্ধান</string>
-  <string name="global_action_torch">ফ্লাসলাইট</string>
+  <string name="global_action_torch">ফ্ল্যাশলাইট</string>
   <string name="global_action_voicesearch">কণ্ঠ দ্বারা অনুসন্ধান করুন</string>
-  <string name="permlab_preventpower">পাওয়ার কি অগ্রাহ্য করুন</string>
+  <string name="permlab_preventpower">পাওয়ার কি-এর অগ্রাধিকার করুন</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_preventpower">অ্যাপটিকে পাওয়া্র কী অগ্রাহ্য করার অনুমতি প্রদান করুন</string>
+  <string name="permdesc_preventpower">অ্যাপটিকে পাওয়া্র কী-এর অগ্রাধিকার নেওয়ার অনুমতি প্রদান করুন.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
+  <string name="system_error_vendorprint">আপনার বিক্রেতার ছবি সিস্টেমের সাথে মিলছে না। অনুগ্রহ করে আপনার ডিভাইসের <xliff:g id="string">%s </xliff:g> বিক্রেতার ছবি ফ্ল্যাশ করুন।</string>
   <!-- AOKP custom system animations -->
   <string name="animation_fade">বিলিন হয়ে যাওয়া</string>
   <string name="animation_slide_right">ডান দিকে স্লাইড করুন</string>
@@ -65,13 +66,14 @@
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_resetBatteryStats">একটি অ্যাপ্লিকেশনকে ব্যাটারির বর্তমান নিম্নস্তরের তথ্য পুনঃবিন্যাস করার অনুমতি দিন।.</string>
   <!-- On-The-Go -->
-  <string name="global_action_onthego">যান মোড</string>
+  <string name="global_action_onthego">চলমান মোড</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_fakePackageSignature">ভুয়া প্যাকেজ স্বাক্ষর</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">এই অ্যাপ্লিকেশনটি একটি ভিন্ন অ্যাপ্লিকেশন হবার ভান করতে দেয়, ব্যক্তিগত অ্যাপ্লিকেশন ডেটা অ্যাক্সেস করতে ক্ষতিকারক অ্যাপ্লিকেশানগুলি এটি ব্যবহার করতে সক্ষম হতে পারে। এই অনুমতি শুধুমাত্র সাবধানতা সঙ্গে অনুমোদন!</string>
   <!-- ADB over network -->
   <string name="adb_net_active_notification_title">নেটওয়ার্কের উপর এডিবি সক্রিয়</string>
-  <string name="adb_both_active_notification_title">এডিবি, ইউএসবি ও নেটওয়ার্ক এর উপর সক্রিয়</string>
+  <string name="adb_both_active_notification_title">এডিবির উপর ইউএসবি এবং নেটওয়ার্ক সক্রিয়</string>
   <string name="adb_active_generic_notification_message">ডিবাগ নিষ্ক্রিয় করতে স্পর্শ করুন।</string>
   <!-- Permissions -->
   <string name="other_permissions">অন্যান্য অনুমতি</string>
@@ -83,11 +85,18 @@
   <string name="tethered_notification_no_device_message">কোনো ডিভাইস সংযুক্ত নেই</string>
   <!-- Single hand mode -->
   <string name="singlehandmode_click_hint_message">একহাতে চালনা  মোডটি বন্ধ করার জন্য স্কিনের বাইরে টাচ করুন</string>
+  <string name="singlehandmode_slide_hint_message">আদর্শ এবং ছোট পর্দার দৃশ্যগুলির মধ্যে পরিবর্তন করার জন্য ন্যাভিগেশন বার জুড়ে আপনার আঙুল স্লাইড করুন</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">থিম ওভারলেগুলি পরিবর্তন করুন</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">OverlayManagerService ব্যবহার করে থিম ওভারলেগুলিতে পরিবর্তন করতে অ্যাপ্লিকেশানটিকে মঞ্জুরি 
+দিন</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">সিস্টেম বার পুনরায় শুরু করুন</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_restartUI">SystemUservice পুনঃসূচনা করুন যাতে সিস্টেম বারগুলি থিমেড রিসোর্স লোড করতে পারে</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">ইন্টারেক্ট করার জন্য পাওয়ার বাটনটি অনেক্ষন টিপুন</string>
   <!-- Defines the sysfs attribute path used by pocket bridge
         to communicate pocket state to the pocket judge kernel driver. -->
 </resources>

@@ -17,9 +17,17 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">通話</string>
+  <string name="stream_title_system">システム</string>
+  <string name="stream_title_ring">着信</string>
   <string name="stream_title_media">メディア</string>
+  <string name="stream_title_alarm">アラーム</string>
+  <string name="stream_title_notification">通知</string>
   <string name="stream_title_bluetooth">Bluetooth</string>
   <!-- Wi-Fi hotspot label when enabled -->
+  <plurals name="wifi_hotspot_connected_clients_label">
+    <item quantity="other">%1$d台</item>
+  </plurals>
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
@@ -58,8 +66,9 @@
   <string name="lockscreen_none_target">なし</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">サウンド</string>
-  <string name="quick_settings_sound_vibrate">マナーモード</string>
-  <string name="quick_settings_sound_dnd">通知不要アプリ</string>
+  <string name="quick_settings_sound_ring">着信</string>
+  <string name="quick_settings_sound_vibrate">バイブレーション</string>
+  <string name="quick_settings_sound_dnd">マナーモード</string>
   <!-- Ambient Display QS tile -->
   <string name="accessibility_quick_settings_ambient_display_off">アンビエント表示はオフです</string>
   <string name="accessibility_quick_settings_ambient_display_on">アンビエント表示はオンです</string>
@@ -232,6 +241,8 @@
   <string name="dlg_cancel">キャンセル</string>
   <string name="kill">アプリを終了</string>
   <!-- Pie controls -->
+  <string name="pie_am_pm">a</string>
   <string name="pie_state_name">Pie コントロール</string>
+  <string name="pie_battery_level">"バッテリーレベル "</string>
   <string name="quick_settings_pie">Pie</string>
 </resources>

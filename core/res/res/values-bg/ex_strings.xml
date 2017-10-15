@@ -17,31 +17,88 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">Рестарт</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">Рестарт</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">Режим на възстановяване</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">Буутлоудър</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">Софтуерно рестартиране</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">Таблетът ще се рестартира.</string>
+  <string name="reboot_confirm" product="default">Телефонът ще се рестартира.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
+  <string name="reboot_progress">Рестартиране\u2026</string>
+  <string name="reboot_systemui">Рестартирайте системния интерфейс</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">Текуща</string>
+  <string name="global_action_screenshot">Екранна снимка</string>
+  <string name="global_action_screen_record">Записване на екрана</string>
+  <string name="global_action_search">Търсене</string>
+  <string name="global_action_torch">Фенерче</string>
+  <string name="global_action_voicesearch">Гласово търсене</string>
+  <string name="permlab_preventpower">замени клавиш за захранване</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Позволява на приложението да замени клавиша за включване.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
+  <string name="system_error_vendorprint">Образът не съответства със системата. Моля поставете образ <xliff:g id="string">%s</xliff:g> за вашето устройство</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">Плавен преход</string>
+  <string name="animation_slide_right">Приплъзване вдясно</string>
+  <string name="animation_slide_left">Приплъзване вляво</string>
+  <string name="animation_slide_right_no_fade">Приплъзване вдясно (Без избледняване)</string>
+  <string name="animation_slide_left_no_fade">Приплъзване вляво (Без избледняване)</string>
+  <string name="animation_slide_up">Приплъзване надолу</string>
+  <string name="animation_slide_down">Приплъзване нагоре</string>
+  <string name="animation_default">По подразбиране</string>
+  <string name="animation_translucent">Прозрачен</string>
+  <string name="animation_grow_shrink">Растеж (нагоре)</string>
+  <string name="animation_grow_shrink_center">Растеж (в средата)</string>
+  <string name="animation_grow_shrink_bottom">Растат в (отдолу)</string>
+  <string name="animation_grow_shrink_left">Растеж (наляво)</string>
+  <string name="animation_grow_shrink_right">Растеж (надясно)</string>
+  <string name="action_null">Празно</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">Открито е несъответствие. Обикновено това означава, че изображението е остаряло. Проверете дали вашето изображение съвпада с <xliff:g id="fingerprint">%1$s </xliff:g>.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_resetBatteryStats">изчистване на статистиката на батерията</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_resetBatteryStats">Позволява на приложението да изчисти текущият нисък-левел за използване на батерията.</string>
   <!-- On-The-Go -->
+  <string name="global_action_onthego">On-The-Go режим</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Мним подпис на пакета</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Позволява на приложението да се представи като друго. Вредни приложения може да използват това, за да получат достъп до лична информация от приложения. Дайте разрешение с повишено внимание!</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">ADB през мрежата е активиран</string>
+  <string name="adb_both_active_notification_title">ADB през USB &amp; мрежата е активирана</string>
+  <string name="adb_active_generic_notification_message">Докоснете, за да деактивирате отстраняване на грешки.</string>
   <!-- Permissions -->
+  <string name="other_permissions">други разрешения</string>
+  <string name="permission_remember_choice">Запомни</string>
+  <string name="permission_title">Разрешение</string>
+  <string name="allow_button">Позволи</string>
+  <string name="deny_button">Забрани</string>
   <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">Няма свързано устройство</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s </xliff:g> устройството е свързано</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s </xliff:g> устройствата са свързани</string>
   <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">Докосни извън екрана за да излезете от мини екран изглед</string>
+  <string name="singlehandmode_slide_hint_message">Плъзнете пръста по лентата за навигация, за да превключите между изгледите: стандартен и мини екран</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">промени слоeвeтe на темата</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">Позволява приложението да прави промени в слоeвeтe на темите, използващи OverlayManagerService</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">рестартирайте системните барове</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_restartUI">Рестартирайте SystemUIService, така че системните барове да заредят тематични ресурси</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">Продължително натискане на бутона за включване, за да продължите</string>
   <!-- Defines the sysfs attribute path used by pocket bridge
         to communicate pocket state to the pocket judge kernel driver. -->
 </resources>

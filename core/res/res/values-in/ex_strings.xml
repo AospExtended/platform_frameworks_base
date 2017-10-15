@@ -92,11 +92,11 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_modifyOverlays">modifikasi overlay tema</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_modifyOverlays">Memungkinkan aplikasi membuat modifikasi overlays tema menggunakan OverlayManagerService</string>
+  <string name="permdesc_modifyOverlays">Memungkinkan apl membuat modifikasi pada hamparan tema menggunakan OverlayManagerService</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_restartUI">muat ulang bar sistem</string>
+  <string name="permlab_restartUI">mulai ulang bar sistem</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_restartUI">Memulai Ulang SystemUIService agar bar sistem dapat memuat tema</string>
+  <string name="permdesc_restartUI">Mulai ulang layanan SystemUI agar sistem bar dapat memuat tema</string>
   <!-- Pocket Lock -->
   <string name="pocket_lock_message_long_press">Tekan lama tombol daya untuk berinteraksi</string>
   <!-- Defines the sysfs attribute path used by pocket bridge

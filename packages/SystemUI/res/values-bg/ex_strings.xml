@@ -17,54 +17,219 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Volume stream title names -->
+  <string name="stream_title_call">Повикване</string>
+  <string name="stream_title_system">Система</string>
+  <string name="stream_title_ring">Звук</string>
+  <string name="stream_title_media">Медия</string>
+  <string name="stream_title_alarm">Аларма</string>
+  <string name="stream_title_notification">Известие</string>
+  <string name="stream_title_bluetooth">Блутуут</string>
   <!-- Wi-Fi hotspot label when enabled -->
+  <plurals name="wifi_hotspot_connected_clients_label">
+    <item quantity="one">%1$d клиент</item>
+    <item quantity="other">%1$d клиенти</item>
+  </plurals>
   <!-- Path data for portrait battery -->
   <!-- Path data for landscape battery -->
   <!-- Path data for circle battery -->
   <!-- Path for battery solid -->
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Екрана се записва</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Записване на екрана</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Спри</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Покажи показалец</string>
+  <string name="screenrecord_notif_pointer_off">Скрий показалеца</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Екрана не може да бъде записан</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Снимката на екрана е изтрита</string>
   <!-- Screenrecord QS tile -->
+  <string name="quick_settings_screenrecord">Записване на екрана</string>
+  <string name="quick_settings_screenrecord_on">Запис...</string>
   <!-- Language\Locale Tile -->
+  <string name="quick_settings_locale_label">Език</string>
+  <string name="quick_settings_locale_more_locales_toast">Моля, конфигурирате няколко езика да разрешите функцията за превключване</string>
   <!-- NavBar Tuner -->
+  <string name="menu_ime_always_show">Меню / Превключване на клавиатура (винаги показвай)</string>
+  <string name="search">Търсене</string>
   <!-- Strings for lockscreen shortcut hints -->
+  <string name="left_shortcut_hint">Плъзнете надясно за %1$s</string>
+  <string name="right_shortcut_hint">Плъзнете наляво за %1$s</string>
+  <string name="lockscreen_message">Докоснете иконата в ляво или дясно, за да присвоите команда за бърз достъп при заключен на екран.</string>
+  <string name="lockscreen_default_target">По подразбиране</string>
+  <string name="select_application">Изберете приложение</string>
+  <string name="lockscreen_choose_action_title">Изберете действие</string>
+  <string name="lockscreen_none_target">Нищо</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Звук</string>
+  <string name="quick_settings_sound_ring">Звук</string>
+  <string name="quick_settings_sound_vibrate">Вибрация</string>
+  <string name="quick_settings_sound_dnd">Не безпокойте</string>
   <!-- Ambient Display QS tile -->
+  <string name="accessibility_quick_settings_ambient_display_off">Активен дисплей изключване</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Активен дисплей включване</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Активен дисплей изключен</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Активен дисплей включен</string>
+  <string name="quick_settings_ambient_display_label">Активен дисплей</string>
+  <string name="quick_settings_extensions">Разширения</string>
   <!-- Screenshot Crop & Share -->
+  <string name="action_delete_success">Изтрито</string>
+  <string name="action_delete_fault">Изтриването беше неуспешно</string>
+  <string name="action_save_success">Записано</string>
+  <string name="action_save_fault">Записването беше неуспешно</string>
+  <string name="pref_action_color_title">Цвят на бутон за действие</string>
+  <string name="pref_action_color_summary">Изберете вашия любим цвят за бутони за действие</string>
+  <string name="pref_category_main">Основни настройки</string>
+  <string name="pref_category_user">Настройки на потребителя</string>
+  <string name="pref_crop_behavior_title">Поведение на поздрязване</string>
+  <string name="pref_crop_behavior_summary">Използвайте подрязаното изображение ако оригиналът не е бил подрязан с функцията за подрязване</string>
+  <string name="action_ok">Да</string>
   <!-- Screenshot Crop & Share -->
+  <string name="action_delete_success">Изтрито</string>
+  <string name="action_delete_fault">Изтриването беше неуспешно</string>
+  <string name="action_save_success">Записано</string>
+  <string name="action_save_fault">Записването беше неуспешно</string>
+  <string name="action_edit">Редактиране</string>
+  <string name="quick_settings_expanded_navigation_off">Скрий навигационна лента</string>
+  <string name="quick_settings_expanded_statusbar_off">Скрий лентата на състоянието</string>
   <!-- Notification which notifies user flashlight is enabled -->
+  <string name="quick_settings_tile_flashlight_not_title">Фенерчето е включено</string>
+  <string name="quick_settings_tile_flashlight_not_summary">Натиснете, за да изключите</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Снимката на екрана е изтрита</string>
   <!-- SystemUI Tuner Parts -->
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">Екранна снимка</string>
+  <string name="quick_settings_region_screenshot_label">Частична екранна снимка</string>
+  <string name="quick_settings_sync_label">Синхронизация</string>
+  <string name="accessibility_quick_settings_sync_off">Синхронизация изключена</string>
+  <string name="accessibility_quick_settings_sync_on">Синхронизация включена</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Синхронизацията е изключена</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Синхронизацията е включена</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Рестартиране</string>
+  <string name="quick_settings_reboot_recovery_label">Режим на възстановяване</string>
+  <string name="accessibility_quick_settings_usb_tether_off">USB Тетъринг изключен</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USB Тетъринг включен</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB Тетъринг е изключен</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB Тетъринг е включен</string>
+  <string name="quick_settings_usb_tether_label">USB Тетъринг</string>
+  <string name="quick_settings_music_label">Музика</string>
+  <string name="quick_settings_music_play">Пусни</string>
+  <string name="quick_settings_music_pause">Пауза</string>
+  <string name="quick_settings_ime_tile_label">Метод на въвеждане</string>
+  <string name="quick_settings_caffeine_label">Кофеин</string>
+  <string name="accessibility_quick_settings_caffeine_off">Кофеин изключен</string>
+  <string name="accessibility_quick_settings_caffeine_on">Кофеин включен</string>
+  <string name="quick_settings_heads_up_label">Изскачащи известия</string>
+  <string name="accessibility_quick_settings_heads_up_off">Изскачащи известия изключени.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Изскачащи известия включени.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Изскачащите известия са изключени.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Изскачащите известия са включени.</string>
+  <string name="quick_settings_pulse_enabled">Пулсиране Разрешено</string>
+  <string name="quick_settings_pulse_disabled">Няма визуализатор</string>
+  <string name="quick_settings_pulse_label">Визуализатор в навигационната лента</string>
+  <string name="quick_settings_nfc_label">NFC</string>
+  <string name="accessibility_quick_settings_nfc_off">NFC изключен.</string>
+  <string name="accessibility_quick_settings_nfc_on">NFC включен.</string>
+  <string name="accessibility_quick_settings_nfc_changed_off">NFC е изключен.</string>
+  <string name="accessibility_quick_settings_nfc_changed_on">NFC е включен.</string>
   <!-- SystemUI Tuner Parts -->
+  <string name="systemui_tuner_statusbar_title">Елементи на лентата на състоянието</string>
+  <string name="accessibility_quick_settings_location_battery_saving">Отчитане на местоположение: икономичен режим.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Отчитане на местоположение: само Gps.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Отчитане на местоположение: режим на висока точност.</string>
+  <string name="quick_settings_location_detail_title">Режим на местоположение</string>
+  <string name="quick_settings_location_battery_saving_label">Пестене на батерия</string>
+  <string name="quick_settings_location_gps_only_label">Само по Gps</string>
+  <string name="quick_settings_location_high_accuracy_label">Висока точност</string>
+  <string name="quick_settings_location_off_label">Местоположение изключено</string>
   <!-- Show lte/4g switch -->
+  <string name="show_lte_fourgee_title">Покажи 4G вместо LTE</string>
+  <string name="show_lte_fourgee_summary">Замества LTE индикатора с 4G</string>
+  <string name="statusbar_tuner_category_title">Скрий елементите от лентата на състоянието</string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Навигационна лента</string>
+  <string name="quick_settings_smartbar">Умна лента</string>
+  <string name="quick_settings_smartbar_off">Умна лента изключена</string>
   <!-- Screenshot action -->
+  <string name="screenshot_abort_title">Не е направена снимка на екрана</string>
+  <string name="screenshot_abort_text">Операцията е прекратена</string>
+  <string name="quick_settings_expanded_desktop_label">Разширен екран</string>
+  <string name="quick_settings_expanded_desktop">Разширен</string>
+  <string name="quick_settings_expanded_desktop_off">Нормален</string>
   <!-- Heads up snooze toast -->
   <!-- Path data for big circle battery -->
+  <string name="recents_free_ram">Свободна RAM: %1$d MB</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Отвори екрана на изпълняваните услуги.</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Data/Wifi activity arrows -->
+  <string name="data_wifi_activity_arrows_title">Мрежова активност</string>
   <!-- OmniJaws -->
+  <string name="omnijaws_service_error">Грешка</string>
+  <string name="omnijaws_service_unkown">Няма информация за времето</string>
+  <string name="omnijaws_service_error_long">Грешка при зареждане на данни за времето</string>
+  <string name="omnijaws_service_disabled">Услуга с забранена</string>
+  <string name="omnijaws_detail_header">Времето</string>
+  <string name="omnijaws_label_default">Времето</string>
+  <string name="omnijaws_current_text">Сега</string>
+  <string name="omnijaws_package_not_available">OmniJaws не е наличен</string>
   <!-- Weather string format in expanded statusbar header -->
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Компас</string>
+  <string name="quick_settings_compass_init">Подготвяне\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Компас изключване.</string>
+  <string name="accessibility_quick_settings_compass_on">Компас включване.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Компасът е изключен.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Компасът е включен.</string>
+  <string name="quick_settings_compass_N">Север</string>
+  <string name="quick_settings_compass_NE">Североизток</string>
+  <string name="quick_settings_compass_E">Изток</string>
+  <string name="quick_settings_compass_SE">Юг-изток</string>
+  <string name="quick_settings_compass_S">Юг</string>
+  <string name="quick_settings_compass_SW">Югозападен</string>
+  <string name="quick_settings_compass_W">Запад</string>
+  <string name="quick_settings_compass_NW">Северозапад</string>
   <!-- Sim recents -->
+  <string name="recents_multiwin_nolastapp">Няма последни приложения, моля изберете от нач. екран или чекмеджето.</string>
   <!-- On The Go -->
+  <string name="onthego_notif_stop">Спри</string>
+  <string name="onthego_notif_options">Опции</string>
+  <string name="onthego_notif_camera_changed">Променен режим на камера</string>
+  <string name="onthego_transparency">Прозрачност</string>
+  <string name="onthego_front_camera">Използвайте предната камера</string>
+  <string name="onthego_service_toggle">Автоматично рестартирайте услугата</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">Хардуерни бутони вкл</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Хардуерни бутони изк</string>
+  <string name="quick_settings_hwkeys_label">Хардуерни бутони</string>
   <!-- AEX Logo -->
+  <string name="status_bar_aex_logo_title">AEX лого</string>
+  <string name="status_bar_aex_logo_summary">Позволи да покаже AEX логото от лявата страна на лентата на състоянието</string>
   <!-- ADB over network Tile -->
+  <string name="quick_settings_adb_network">ADB мрежа</string>
+  <string name="quick_settings_network_adb_enabled_label">Активирано</string>
+  <string name="quick_settings_network_adb_disabled_label">Деактивирано</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Принудително спиране?</string>
+  <string name="dlg_ok">Да</string>
   <string name="dlg_cancel">Отказ</string>
+  <string name="kill">Убий приложението</string>
   <!-- Pie controls -->
+  <string name="pie_date_format">EEEE дд ММММ гггг</string>
+  <string name="pie_hour_format_12">чч:мм</string>
+  <string name="pie_hour_format_24">Чч:мм</string>
+  <string name="pie_battery_level">"НИВО НА БАТЕРИЯТА "</string>
 </resources>

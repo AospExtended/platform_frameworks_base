@@ -17,16 +17,31 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Title of dialog to confirm restarting. -->
+  <string name="reboot_title">재시작</string>
   <!-- Button to reboot the phone in restart menu -->
+  <string name="reboot_reboot">재시작</string>
   <!-- Button to reboot the phone into recovery in restart menu-->
+  <string name="reboot_recovery">복구모드</string>
   <!-- Button to reboot the phone into bootloader in restart menu -->
+  <string name="reboot_bootloader">부트로더</string>
   <!-- Button to soft reboot the device in restart menu -->
+  <string name="reboot_soft">빠른 재시작</string>
   <!-- Reboot Confirmation Dialog. -->
+  <string name="reboot_confirm" product="tablet">태블릿이 다시 시작됩니다.</string>
+  <string name="reboot_confirm" product="default">휴대전화가 다시 시작됩니다.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to restart the phone. -->
-  <string name="reboot_systemui">시스템 UI 다시 시작</string>
+  <string name="reboot_progress">다시 시작하는 중...</string>
+  <string name="reboot_systemui">시스템UI 재시작</string>
   <!-- Global Actions -->
+  <string name="global_action_current_user">현재</string>
+  <string name="global_action_screenshot">화면저장</string>
+  <string name="global_action_screen_record">화면 녹화</string>
+  <string name="global_action_search">검색</string>
   <string name="global_action_torch">손전등</string>
+  <string name="global_action_voicesearch">음성 검색</string>
+  <string name="permlab_preventpower">전원 버튼 재정의</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">앱이 전원버튼을 재정의하는 것을 허용합니다.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">제조사 이미지가 시스템과 일치하지 않습니다. 해당 기기에 맞는 <xliff:g id="string">%s</xliff:g> 제조사 이미지를 플래싱해 주십시오.</string>
   <!-- AOKP custom system animations -->
@@ -46,6 +61,7 @@
   <string name="animation_grow_shrink_right">커지기 (오른쪽에서)</string>
   <string name="action_null">비어 있음</string>
   <!-- Message to show the user when their vendor image doesn't match the build's fingerprint. -->
+  <string name="aex_system_error_manufacturer">제조사 이미지가 일치하지 않습니다. 일반적으로 이것은 당신의 제조사 이미지가 오래되었음을 의미합니다. 제조사 이미지가 <xliff:g id="fingerprint">%1$s</xliff:g>과 일치하는지 확인하십시오.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_resetBatteryStats">배터리 통계 다시 설정</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -53,16 +69,36 @@
   <!-- On-The-Go -->
   <string name="global_action_onthego">On-The-Go 모드</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">패키지 서명 흉내</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">앱이 다른 앱인 것처럼 흉내내는 것을 허용합니다. 악성 앱들이 이 권한을 사용하여 사적인 앱 정보에 접근할 수 있으니 주의하세요.</string>
   <!-- ADB over network -->
+  <string name="adb_net_active_notification_title">네트워크로 ADB 사용</string>
+  <string name="adb_both_active_notification_title">USB 및 네트워크 ADB 사용</string>
+  <string name="adb_active_generic_notification_message">디버깅을 사용하지 않으려면 터치하세요.</string>
   <!-- Permissions -->
+  <string name="other_permissions">다른 권한</string>
+  <string name="permission_remember_choice">저장</string>
+  <string name="permission_title">권한</string>
+  <string name="allow_button">허용</string>
+  <string name="deny_button">거부</string>
   <!-- Tethered notification -->
+  <string name="tethered_notification_no_device_message">연결된 기기 없음</string>
+  <string name="tethered_notification_one_device_message"><xliff:g id="count">%1$s</xliff:g>대의 기기가 연결되어 있습니다</string>
+  <string name="tethered_notification_multi_device_message"><xliff:g id="count">%1$s</xliff:g>대의 기기가 연결되어 있습니다</string>
   <!-- Single hand mode -->
+  <string name="singlehandmode_click_hint_message">화면 바깥 쪽을 터치하여 미니 화면보기를 종료합니다</string>
+  <string name="singlehandmode_slide_hint_message">내비게이션 바 위로 손가락을 슬라이드하여 표준화면과 미니화면을 전환할 수 있습니다.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_modifyOverlays">테마 오버레이 수정</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_modifyOverlays">OverlayManagerService를 사용하여 테마 오버레이를 수정하는 것을 허용</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_restartUI">시스템 바 재시작</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_restartUI">시스템바가 테마리소스를 로드하기 위하여 SystemUI서비스를 재시작합니다.</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">전원 버튼을 길게 눌러 사용</string>
   <!-- Defines the sysfs attribute path used by pocket bridge
         to communicate pocket state to the pocket judge kernel driver. -->
 </resources>

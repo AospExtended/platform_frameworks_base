@@ -24,9 +24,9 @@
   <string name="select_custom_activity_title">Wybierz niestandardową aktywność</string>
   <string name="lockscreen_targets_message">Skróty ekranu blokady</string>
   <!-- Description for the screen zoom level that makes interface elements smaller. [CHAR LIMIT=24] -->
-  <string name="screen_zoom_summary_smaller">Mniejsze</string>
+  <string name="screen_zoom_summary_smaller">Mniejszy</string>
   <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->
-  <string name="screen_zoom_summary_smallest">Najmniejsze</string>
+  <string name="screen_zoom_summary_smallest">Najmniejszy</string>
   <!-- Regex used to parse the processor string from kernel -->
   <!-- Text when wrong password entered for psk networks -->
   <string name="wifi_auth_password_wrong">Nieprawidłowe hasło</string>
