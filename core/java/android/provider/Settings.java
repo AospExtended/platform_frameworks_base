@@ -4868,6 +4868,15 @@ public final class Settings {
         public static final String STATUS_BAR_SHOW_CARRIER = "status_bar_show_carrier";
 
         /**
+         * Status bar brightness control.
+         * @hide
+         */
+        public static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * custom carrier label. The value is
          * String.
          * @hide
@@ -5026,7 +5035,8 @@ public final class Settings {
             VOLUME_KEYS_CONTROL_RING_TONE,
             INCREASING_RING,
             INCREASING_RING_START_VOLUME,
-            INCREASING_RING_RAMP_UP_TIME
+            INCREASING_RING_RAMP_UP_TIME,
+            STATUS_BAR_BRIGHTNESS_CONTROL
         };
 
         /**
@@ -5193,6 +5203,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(INCREASING_RING);
             PRIVATE_SETTINGS.add(INCREASING_RING_START_VOLUME);
             PRIVATE_SETTINGS.add(INCREASING_RING_RAMP_UP_TIME);
+            PRIVATE_SETTINGS.add(STATUS_BAR_BRIGHTNESS_CONTROL);
         }
 
 
@@ -5316,6 +5327,7 @@ public final class Settings {
             VALIDATORS.put(INCREASING_RING, INCREASING_RING_VALIDATOR);
             VALIDATORS.put(INCREASING_RING_START_VOLUME, INCREASING_RING_START_VOLUME_VALIDATOR);
             VALIDATORS.put(INCREASING_RING_RAMP_UP_TIME, INCREASING_RING_RAMP_UP_TIME_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_BRIGHTNESS_CONTROL, STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR);
         }
 
         /**
