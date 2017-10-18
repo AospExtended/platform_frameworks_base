@@ -40,6 +40,8 @@ public interface BatteryController extends DemoMode, Dumpable,
      */
     boolean isPowerSave();
 
+    boolean isBatterySaverWarningColor();
+
     /**
      * A listener that will be notified whenever a change in battery level or power save mode
      * has occurred.
