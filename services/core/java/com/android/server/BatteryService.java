@@ -998,7 +998,7 @@ public final class BatteryService extends SystemService {
                 mBatteryLight.turnOff();
             } else if (mBatteryLightEnabled && mIsDndActive && !mAllowBatteryLightOnDnd) {
                 mBatteryLight.turnOff();
-            } else if (level < mLowBatteryWarningLevel) {
+            } else if (level <= mLowBatteryWarningLevel) {
                 if (status == BatteryManager.BATTERY_STATUS_CHARGING) {
                     // Battery is charging and low
                     mBatteryLight.setColor(mBatteryLowARGB);
