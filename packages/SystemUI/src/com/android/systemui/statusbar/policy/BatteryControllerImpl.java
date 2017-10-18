@@ -24,6 +24,8 @@ import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.util.Log;
 import com.android.systemui.DemoMode;
 
@@ -52,6 +54,7 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
     protected boolean mCharging;
     protected boolean mCharged;
     protected boolean mPowerSave;
+    protected boolean mBatterySaverWarningColor;
     private boolean mTestmode = false;
     private boolean mHasReceivedBattery = false;
 
@@ -164,6 +167,16 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
     @Override
     public boolean isPowerSave() {
         return mPowerSave;
+    }
+
+    @Override
+    public boolean isBatterySaverWarningColor() {
+        mBatterySaverWarningColor = Settings.System.getIntForUser(
+            mContext.getContentResolver(),
+            Settings.System.BATTERY_SAVER_MODE_COLOR, 0,
+            UserHandle.USER_CURRENT) == 1;
+
+        return mBatterySaverWarningColor;
     }
 
     private void updatePowerSave() {
