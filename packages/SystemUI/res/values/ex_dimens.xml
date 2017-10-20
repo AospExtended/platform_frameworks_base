@@ -33,4 +33,11 @@
     <dimen name="ticker_icon_end_margin">4dp</dimen>
     <dimen name="ticker_text_top_padding">2dp</dimen>
     <dimen name="ticker_text_end_padding">10dp</dimen>
+
+    <!-- QS Brightness control padding -->
+    <dimen name="qs_brightness_footer_padding">12dp</dimen>
+    <dimen name="qs_footer_padding_top">0dp</dimen>
+    <dimen name="qs_page_indicator_margin_bottom">12dp</dimen>
+    <dimen name="qs_paged_tile_layout_padding_bottom">4dp</dimen>
+
 </resources>
