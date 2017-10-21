@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2017 Benzo Rom
+<!-- Copyright (C) 2006 The Android Open Source Project
+        Copyright (C) 2017 AospExtended ROM
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,11 +14,11 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Description for the screen zoom level that makes interface elements smaller. [CHAR LIMIT=24] -->
-    <string name="screen_zoom_summary_smaller">Smaller</string>
-    <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->
-    <string name="screen_zoom_summary_smallest">Smallest</string>
-
+<resources>
+    <!-- Slim recent app screen animation -->
+    <style name="Animation.SlimRecentScreen">
+        <item name="android:windowEnterAnimation">@anim/recent_enter</item>
+        <item name="android:windowExitAnimation">@anim/recent_exit</item>
+    </style>
 </resources>
