@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 Benzo Rom
+     Copyright (C) 2017 AospExtended ROM
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,4 +21,6 @@
     <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->
     <string name="screen_zoom_summary_smallest">Smallest</string>
 
+    <!-- The duration (in milliseconds) of recent app screen animation. -->
+    <integer name="config_recentDefaultDur">150</integer>
 </resources>
