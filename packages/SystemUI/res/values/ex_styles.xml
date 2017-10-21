@@ -61,4 +61,8 @@
     <style name="CustomTunerSettings.SwitchPreferenceStyle" parent="@style/CustomTunerSettings.PreferenceStyle">
         <item name="widgetLayout">@*android:layout/preference_widget_switch</item>
     </style>
+
+    <!-- <style name="ContainerActivityTheme"
+        parent="@android:style/Theme.Translucent.NoTitleBar">
+    </style>-->
 </resources>
