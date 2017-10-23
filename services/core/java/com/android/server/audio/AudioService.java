@@ -2945,6 +2945,7 @@ public class AudioService extends IAudioService.Stub {
                 return;
             }
             mForcedUseForComm = AudioSystem.FORCE_BT_SCO;
+            AudioSystem.setParameters("BT_SCO=on");
             synchronized(mScoClients) {
                 if ((mBluetoothHeadset != null) &&
                     (mBluetoothHeadset.getAudioState(mBluetoothHeadsetDevice)
@@ -2953,6 +2954,7 @@ public class AudioService extends IAudioService.Stub {
                 }
             }
         } else if (mForcedUseForComm == AudioSystem.FORCE_BT_SCO) {
+            AudioSystem.setParameters("BT_SCO=off");
             mForcedUseForComm = AudioSystem.FORCE_NONE;
         }
 
