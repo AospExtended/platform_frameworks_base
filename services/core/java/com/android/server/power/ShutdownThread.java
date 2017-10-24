@@ -49,6 +49,7 @@ import android.system.ErrnoException;
 import android.system.Os;
 
 import com.android.internal.telephony.ITelephony;
+import com.android.internal.util.aospextended.Helpers;
 import com.android.server.pm.PackageManagerService;
 
 import android.util.Log;
@@ -221,6 +222,38 @@ public final class ShutdownThread extends Thread {
         mReason = reason;
         shutdownInner(context, confirm);
     }
+
+    /**
+     * Request for Soft reboot or SystemUI restart.  Must be called from a Looper thread in which its UI
+     * is shown.
+     *
+     * @param context Context used by SystemUI restart helper method. This must be a context
+     *                suitable for displaying UI (aka Themable).
+     */
+    public static void advancedReboot(final Context context, String reason) {
+        mReason = reason;
+        if (mReason != null && mReason.equals(PowerManager.REBOOT_SOFT)) {
+            doSoftReboot();
+        } else if (mReason != null && mReason.equals(PowerManager.REBOOT_SYSTEMUI)) {
+            doSystemUIReboot(context);
+        }
+    }
+
+    private static void doSoftReboot() {
+        try {
+            final IActivityManager am =
+                  IActivityManager.Stub.asInterface(ServiceManager.checkService("activity"));
+            if (am != null) {
+                am.restart();
+            }
+        } catch (RemoteException e) {
+            Log.e(TAG, "failure trying to perform soft reboot", e);
+        }
+    }
+
+    private static void doSystemUIReboot(Context context) {
+        Helpers.restartSystemUI(context);
+      }
 
     /**
      * Request a reboot into safe mode.  Must be called from a Looper thread in which its UI
