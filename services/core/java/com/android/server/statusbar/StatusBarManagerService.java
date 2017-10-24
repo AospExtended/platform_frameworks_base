@@ -824,11 +824,11 @@ public class StatusBarManagerService extends IStatusBarService.Stub {
         enforceStatusBarService();
         long identity = Binder.clearCallingIdentity();
         try {
-            mHandler.post(() -> {
-                // ShutdownThread displays UI, so give it a UI context.
-                    ShutdownThread.reboot(getUiContext(),
-                            mode, false/*don't ask for confirmation*/);
-            });
+             mHandler.post(() -> {
+                 // ShutdownThread displays UI, so give it a UI context.
+                     ShutdownThread.reboot(getUiContext(),
+                             mode, false/*don't ask for confirmation*/);
+             });
         } finally {
             Binder.restoreCallingIdentity(identity);
         }

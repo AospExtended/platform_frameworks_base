@@ -49,6 +49,7 @@ import android.system.ErrnoException;
 import android.system.Os;
 
 import com.android.internal.telephony.ITelephony;
+import com.android.internal.util.aospextended.Helpers;
 import com.android.server.pm.PackageManagerService;
 
 import android.util.Log;
@@ -308,6 +309,8 @@ public final class ShutdownThread extends Thread {
             pd.setMessage(context.getText(
                         com.android.internal.R.string.reboot_to_bootloader_message));
             pd.setIndeterminate(true);
+        } else if (mReason != null && mReason.equals(PowerManager.REBOOT_SYSTEMUI)) {
+            doSystemUIReboot(context);
         } else if (mReboot) {
             pd.setTitle(context.getText(com.android.internal.R.string.reboot_title));
             pd.setMessage(context.getText(com.android.internal.R.string.reboot_message));
@@ -357,6 +360,10 @@ public final class ShutdownThread extends Thread {
         };
         sInstance.start();
     }
+
+    private static void doSystemUIReboot(Context context) {
+        Helpers.restartSystemUI(context);
+      }
 
     void actionDone() {
         synchronized (mActionDoneSync) {
