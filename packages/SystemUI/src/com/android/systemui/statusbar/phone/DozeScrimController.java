@@ -28,6 +28,7 @@ import android.view.animation.Interpolator;
 import com.android.systemui.Interpolators;
 import com.android.systemui.doze.DozeHost;
 import com.android.systemui.doze.DozeLog;
+import com.android.systemui.statusbar.VisualizerViewWrapper;
 
 /**
  * Controller which handles all the doze animations of the scrims.
@@ -39,6 +40,7 @@ public class DozeScrimController {
     private final DozeParameters mDozeParameters;
     private final Handler mHandler = new Handler();
     private final ScrimController mScrimController;
+    private final VisualizerViewWrapper mVisualizerView;
 
     private final Context mContext;
 
@@ -56,10 +58,13 @@ public class DozeScrimController {
     private float mAodFrontScrimOpacity = 0;
     private Runnable mSetDozeInFrontAlphaDelayed;
 
-    public DozeScrimController(ScrimController scrimController, Context context) {
+    public DozeScrimController(
+            ScrimController scrimController, Context context,
+            VisualizerViewWrapper visualizerView) {
         mContext = context;
         mScrimController = scrimController;
         mDozeParameters = new DozeParameters(context);
+        mVisualizerView = visualizerView;
     }
 
     public void setDozing(boolean dozing, boolean animate) {
@@ -69,21 +74,27 @@ public class DozeScrimController {
         if (mDozing) {
             mDozingAborted = false;
             abortAnimations();
+        if (mDozeParameters.getAlwaysOn()) {
+            mVisualizerView.onAlwaysOn(true);
+        }
             mScrimController.setDozeBehindAlpha(1f);
             setDozeInFrontAlpha(mDozeParameters.getAlwaysOn() ? mAodFrontScrimOpacity : 1f);
         } else {
             cancelPulsing();
             if (animate) {
                 startScrimAnimation(false /* inFront */, 0f /* target */,
-                        NotificationPanelView.DOZE_ANIMATION_DURATION,
-                        Interpolators.LINEAR_OUT_SLOW_IN);
+                    NotificationPanelView.DOZE_ANIMATION_DURATION,
+                    Interpolators.LINEAR_OUT_SLOW_IN);
                 startScrimAnimation(true /* inFront */, 0f /* target */,
-                        NotificationPanelView.DOZE_ANIMATION_DURATION,
-                        Interpolators.LINEAR_OUT_SLOW_IN);
+                    NotificationPanelView.DOZE_ANIMATION_DURATION,
+                    Interpolators.LINEAR_OUT_SLOW_IN);
             } else {
                 abortAnimations();
                 mScrimController.setDozeBehindAlpha(0f);
                 setDozeInFrontAlpha(0f);
+            }
+            if (mDozeParameters.getAlwaysOn()) {
+                mVisualizerView.onAlwaysOn(false);
             }
         }
     }
