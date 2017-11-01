@@ -164,6 +164,7 @@ public class VisualizerViewWrapper {
     }
 
     public synchronized void onScreenOn() {
+        if (state.mIsAlwaysOn) return;
         setScreenOn(true);
         checkState();
     }
@@ -171,6 +172,16 @@ public class VisualizerViewWrapper {
     public synchronized void onScreenOff() {
         setScreenOn(false);
         checkState();
+    }
+
+    public synchronized void onAlwaysOn(boolean on) {
+        if (on) {
+            state.mIsAlwaysOn = true;
+            onScreenOff();
+        } else {
+            state.mIsAlwaysOn = false;
+            onScreenOn();
+        }
     }
 
     static final class StateHolder {
@@ -184,6 +195,7 @@ public class VisualizerViewWrapper {
         public boolean mScreenOnInternal;
         public boolean mKeyguardVisible;
         public boolean mHaveInstance;
+        public boolean mIsAlwaysOn;
 
         public int mColor = Color.TRANSPARENT;
 
