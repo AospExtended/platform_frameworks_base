@@ -1263,7 +1263,7 @@ public class AudioService extends IAudioService.Stub
                 + ", volControlStream=" + mVolumeControlStream
                 + ", userSelect=" + mUserSelectedVolumeControlStream);
         final int streamType;
-        if (mUserSelectedVolumeControlStream) { // implies mVolumeControlStream != -1
+        if (mUserSelectedVolumeControlStream && (mVolumeControlStream != -1)) { // implies mVolumeControlStream != -1
             streamType = mVolumeControlStream;
         } else {
             final int maybeActiveStreamType = getActiveStreamType(suggestedStreamType);
