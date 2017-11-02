@@ -337,6 +337,8 @@ class ResourceFileFlattener {
 
   bool Flatten(ResourceTable* table, IArchiveWriter* archive_writer);
 
+  bool HasError() { return error_; }
+
  private:
   struct FileOperation {
     ConfigDescription config;
@@ -363,11 +365,12 @@ class ResourceFileFlattener {
   IAaptContext* context_;
   proguard::KeepSet* keep_set_;
   XmlCompatVersioner::Rules rules_;
+  bool error_;
 };
 
 ResourceFileFlattener::ResourceFileFlattener(const ResourceFileFlattenerOptions& options,
                                              IAaptContext* context, proguard::KeepSet* keep_set)
-    : options_(options), context_(context), keep_set_(keep_set) {
+    : options_(options), context_(context), keep_set_(keep_set), error_(false) {
   SymbolTable* symm = context_->GetExternalSymbols();
 
   // Build up the rules for degrading newer attributes to older ones.
@@ -462,6 +465,7 @@ std::vector<std::unique_ptr<xml::XmlResource>> ResourceFileFlattener::LinkAndVer
 
   XmlReferenceLinker xml_linker;
   if (!xml_linker.Consume(context_, doc)) {
+    error_ |= true;
     return {};
   }
 
@@ -574,6 +578,7 @@ bool ResourceFileFlattener::Flatten(ResourceTable* table, IArchiveWriter* archiv
         if (file_op.xml_to_flatten) {
           std::vector<std::unique_ptr<xml::XmlResource>> versioned_docs =
               LinkAndVersionXmlFile(table, &file_op);
+          error |= error_;
           for (std::unique_ptr<xml::XmlResource>& doc : versioned_docs) {
             std::string dst_path = file_op.dst_path;
             if (doc->file.config != file_op.config) {
