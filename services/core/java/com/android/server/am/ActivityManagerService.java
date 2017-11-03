@@ -1543,6 +1543,10 @@ public class ActivityManagerService extends IActivityManager.Stub
 
     long mLastMemUsageReportTime = 0;
 
+    // Process in same process Group keep in same cgroup
+    boolean mEnableProcessGroupCgroupFollow =
+            SystemProperties.getBoolean("ro.vendor.qti.cgroup_follow.enable",false);
+
     /**
      * Flag whether the current user is a "monkey", i.e. whether
      * the UI is driven by a UI automation tool.
