@@ -244,6 +244,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <!-- QS Tiles -->
+    <uses-permission android:name="lineageos.permission.MANAGE_LIVEDISPLAY" />
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
 
