@@ -28,6 +28,7 @@ import android.animation.ObjectAnimator;
 import android.annotation.Nullable;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.ContentResolver;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.PointF;
@@ -244,6 +245,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     }
 
     protected void addViewsAboveTiles() {
+        final ContentResolver resolver = mContext.getContentResolver();
+
         mBrightnessView = LayoutInflater.from(mContext).inflate(
             R.layout.quick_settings_brightness_dialog, this, false);
 
@@ -251,17 +254,22 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         mMinBrightness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkAutoBrightness(context)) {
-                    int currentValue = android.provider.Settings.System.getInt(context.getContentResolver(), android.provider.Settings.System.SCREEN_BRIGHTNESS, -1);
-
+                boolean adaptive = isAdaptiveBrightness(context);
+                if (adaptive) {
+                    float currentValue = Settings.System.getFloat(resolver,
+                            Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, 0f);
+                    float brightness = currentValue - 0.04f;
+                    if (currentValue != -1.0f) {
+                        Settings.System.putFloat(resolver,
+                                Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, Math.max(-1.0f, brightness));
+                    }
+                } else {
+                    int currentValue = Settings.System.getInt(resolver,
+                            Settings.System.SCREEN_BRIGHTNESS, 0);
                     int brightness = currentValue - 10;
-
                     if (currentValue != 0) {
-                        try {
-                            Settings.System.putInt(context.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
-                        } catch (Exception e) {
-                            Log.d(TAG, "Caught exception with Low Brightness", e);
-                        }
+                        Settings.System.putInt(resolver,
+                                Settings.System.SCREEN_BRIGHTNESS, Math.max(0, brightness));
                     }
                 }
             }
@@ -269,11 +277,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         mMinBrightness.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                if (checkAutoBrightness(context)) {
-                    setBrightnessMin(context);
-                } else {
-                    turnOffAutoBrightness(context);
-                }
+                setBrightnessMin(context, isAdaptiveBrightness(context));
                 return false;
             }
         });
@@ -282,17 +286,22 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         mMaxBrightness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkAutoBrightness(context)) {
-                    int currentValue = android.provider.Settings.System.getInt(context.getContentResolver(), android.provider.Settings.System.SCREEN_BRIGHTNESS, -1);
-
+                boolean adaptive = isAdaptiveBrightness(context);
+                if (adaptive) {
+                    float currentValue = Settings.System.getFloat(resolver,
+                            Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, 0f);
+                    float brightness = currentValue + 0.04f;
+                    if (currentValue != 1.0f) {
+                        Settings.System.putFloat(resolver,
+                                Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, Math.min(1.0f, brightness));
+                    }
+                } else {
+                    int currentValue = Settings.System.getInt(resolver,
+                            Settings.System.SCREEN_BRIGHTNESS, 0);
                     int brightness = currentValue + 10;
-
                     if (currentValue != 255) {
-                        try {
-                            Settings.System.putInt(context.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
-                        } catch (Exception e) {
-                            Log.d(TAG, "Caught exception with Max Brightness", e);
-                        }
+                        Settings.System.putInt(resolver,
+                                Settings.System.SCREEN_BRIGHTNESS, Math.min(255, brightness));
                     }
                 }
             }
@@ -300,11 +309,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         mMaxBrightness.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                if (checkAutoBrightness(context)) {
-                    setBrightnessMax(context);
-                } else {
-                    turnOffAutoBrightness(context);
-                }
+                setBrightnessMax(context, isAdaptiveBrightness(context));
                 return false;
             }
         });
@@ -1412,20 +1417,30 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         return mTileLayout.getNumColumns();
     }
 
-    static boolean checkAutoBrightness(Context context) {
-        Settings.System.putInt(context.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_MANUAL);
-        return true;
+    static boolean isAdaptiveBrightness(Context context) {
+        int currentBrightnessMode = Settings.System.getInt(context.getContentResolver(),
+                Settings.System.SCREEN_BRIGHTNESS_MODE,
+                SCREEN_BRIGHTNESS_MODE_MANUAL);
+        return currentBrightnessMode != Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
     }
 
-    static void turnOffAutoBrightness(Context context) {
-        Settings.System.putInt(context.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_MANUAL);
+    static void setBrightnessMin(Context context, boolean isAdaptive) {
+        if (isAdaptive) {
+            Settings.System.putFloat(context.getContentResolver(),
+            Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, -1.0f);
+        } else {
+            Settings.System.putInt(context.getContentResolver(),
+            Settings.System.SCREEN_BRIGHTNESS, 0);
+        }
     }
 
-    static void setBrightnessMin(Context context) {
-        Settings.System.putInt(context.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, 0);
-    }
-
-    static void setBrightnessMax(Context context) {
-        Settings.System.putInt(context.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, 255);
+    static void setBrightnessMax(Context context, boolean isAdaptive) {
+        if (isAdaptive) {
+            Settings.System.putFloat(context.getContentResolver(),
+            Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, 1.0f);
+        } else {
+            Settings.System.putInt(context.getContentResolver(),
+            Settings.System.SCREEN_BRIGHTNESS, 255);
+        }
     }
 }
