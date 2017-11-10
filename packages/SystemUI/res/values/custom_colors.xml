@@ -28,4 +28,6 @@
     <color name="icon_color_split_screen_dark">@android:color/black</color>
     <color name="icon_color_home_dark">@android:color/black</color>
     <color name="icon_color_overview_dark">@android:color/black</color>
+
+    <color name="battery_level_good_color">#ff319111</color><!-- green -->
 </resources>
