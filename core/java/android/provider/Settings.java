@@ -4479,6 +4479,12 @@ public final class Settings {
          */
         public static final String SHOW_FOURG_ICON = "show_fourg_icon";
 
+        /**
+         * Whether to show a notification when the battery is charged at the set level and screen is off
+         * @hide
+         */
+        public static final String ALERT_ON_CHARGED_LEVEL = "alert_on_charged_level";
+
        /**
          * Whether to vibrate on power connection or disconnection
          * @hide
