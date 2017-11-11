@@ -92,7 +92,6 @@ import android.os.IBinder;
 import android.os.IPowerManager;
 import android.os.Message;
 import android.os.PowerManager;
-import android.os.Process;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemClock;
@@ -6770,12 +6769,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         int msg = MSG_TOGGLE_KEYBOARD_SHORTCUTS_MENU;
         mHandler.removeMessages(msg);
         mHandler.obtainMessage(msg, deviceId, 0).sendToTarget();
-    }
-
-    @Override
-    public void restartUI() {
-        Log.d(TAG, "StatusBar API restartUI! Commiting suicide! Goodbye cruel world!");
-        Process.killProcess(Process.myPid());
     }
 
     protected void sendCloseSystemWindows(String reason) {
