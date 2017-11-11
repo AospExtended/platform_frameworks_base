@@ -18,12 +18,6 @@
     xmlns:sysui="http://schemas.android.com/apk/res-auto"
     android:title="@string/statusbar_items_title">
 
-    <SwitchPreference
-        android:key="show_fourg"
-        android:title="@string/show_fourg_title"
-        android:summary="@string/show_fourg_summary"
-        android:defaultValue="false" />
-
     <com.android.systemui.tuner.StatusBarSwitch
         android:key="airplane"
         android:title="@string/status_bar_airplane" />

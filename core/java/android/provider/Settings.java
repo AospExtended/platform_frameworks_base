@@ -4197,12 +4197,6 @@ public final class Settings {
         public static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
 
         /**
-         * Show four g instead of lte
-         * @hide
-         */
-        public static final String SHOW_FOURG = "show_fourg";
-
-        /**
          * Double tap on lockscreen to sleep
          * @hide
          */

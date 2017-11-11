@@ -474,9 +474,6 @@ public class StatusBar extends SystemUI implements DemoMode,
     private QSPanel mQSPanel;
     private int mBatterySaverWarningColor;
 
-    // 4G instead of LTE
-    private boolean mShow4G;
-
     private boolean mAutomaticBrightness;
     private boolean mBrightnessControl;
     private boolean mBrightnessChanged;
@@ -972,6 +969,8 @@ public class StatusBar extends SystemUI implements DemoMode,
         createAndAddWindows();
 
         mSettingsObserver.onChange(false); // set up
+        mSbSettingsObserver.observe();
+        mSbSettingsObserver.update();
         mCommandQueue.disable(switches[0], switches[6], false /* animate */);
         setSystemUiVisibility(switches[1], switches[7], switches[8], 0xffffffff,
                 fullscreenStackBounds, dockedStackBounds);
@@ -1046,9 +1045,6 @@ public class StatusBar extends SystemUI implements DemoMode,
                 = (MediaSessionManager) mContext.getSystemService(Context.MEDIA_SESSION_SERVICE);
         // TODO: use MediaSessionManager.SessionListener to hook us up to future updates
         // in session state
-
-        mSbSettingsObserver.observe();
-        mSbSettingsObserver.update();
 
         // Lastly, call to the icon policy to install/update all the icons.
         mIconPolicy = new PhoneStatusBarPolicy(mContext, mIconController);
@@ -6233,9 +6229,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         void observe() {
             ContentResolver resolver = mContext.getContentResolver();
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.SHOW_FOURG),
-                    false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.DOUBLE_TAP_SLEEP_NAVBAR),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
@@ -6278,24 +6271,12 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.RECENTS_ICON_PACK),
                     false, this, UserHandle.USER_ALL);
-            update();
         }
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
             super.onChange(selfChange, uri);
-            update();
             if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.SHOW_FOURG))) {
-                    mShow4G = Settings.System.getIntForUser(
-                            mContext.getContentResolver(),
-                            Settings.System.SHOW_FOURG,
-                            0, UserHandle.USER_CURRENT) == 1;
-                            mCommandQueue.restartUI();
-                            updateRowStates();
-                            updateClearAll();
-                            updateEmptyShadeView();
-            } else  if (uri.equals(Settings.System.getUriFor(
                     Settings.System.DOUBLE_TAP_SLEEP_NAVBAR))) {
                     setDoubleTapNavbar();
             } else if (uri.equals(Settings.System.getUriFor(
@@ -6347,9 +6328,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
 
         public void update() {
-            ContentResolver resolver = mContext.getContentResolver();
-            boolean mShow4G = Settings.System.getIntForUser(resolver,
-                    Settings.System.SHOW_FOURG, 0, UserHandle.USER_CURRENT) == 1;
             setDoubleTapNavbar();
             setLockscreenDoubleTapToSleep();
             setBrightnessSlider();
