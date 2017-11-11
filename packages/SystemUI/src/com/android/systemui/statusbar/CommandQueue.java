@@ -80,8 +80,7 @@ public class CommandQueue extends IStatusBar.Stub {
     private static final int MSG_HANDLE_SYSNAV_KEY             = 33 << MSG_SHIFT;
     private static final int MSG_SHOW_GLOBAL_ACTIONS           = 34 << MSG_SHIFT;
     private static final int MSG_TOGGLE_CAMERA_FLASH           = 35 << MSG_SHIFT;
-    private static final int MSG_RESTART_UI                    = 36 << MSG_SHIFT;
-    private static final int MSG_TOGGLE_NAVIGATION_BAR           = 37 << MSG_SHIFT;
+    private static final int MSG_TOGGLE_NAVIGATION_BAR           = 36 << MSG_SHIFT;
 
     public static final int FLAG_EXCLUDE_NONE = 0;
     public static final int FLAG_EXCLUDE_SEARCH_PANEL = 1 << 0;
@@ -141,7 +140,6 @@ public class CommandQueue extends IStatusBar.Stub {
         default void handleShowGlobalActionsMenu() { }
 
         default void toggleCameraFlash() { }
-        default void restartUI() { }
 
         default void toggleNavigationBar(boolean enable) { }
     }
@@ -444,14 +442,6 @@ public class CommandQueue extends IStatusBar.Stub {
         }
     }
 
-    @Override
-    public void restartUI() {
-        synchronized (mLock) {
-            mHandler.removeMessages(MSG_RESTART_UI);
-            mHandler.obtainMessage(MSG_RESTART_UI).sendToTarget();
-        }
-    }
-
     public void toggleNavigationBar(boolean enable) {
         synchronized (mLock) {
             mHandler.removeMessages(MSG_TOGGLE_NAVIGATION_BAR);
@@ -643,11 +633,6 @@ public class CommandQueue extends IStatusBar.Stub {
                 case MSG_TOGGLE_CAMERA_FLASH:
                     for (int i = 0; i < mCallbacks.size(); i++) {
                         mCallbacks.get(i).toggleCameraFlash();
-                    }
-                    break;
-                case MSG_RESTART_UI:
-                    for (int i = 0; i < mCallbacks.size(); i++) {
-                        mCallbacks.get(i).restartUI();
                     }
                     break;
                 case MSG_TOGGLE_NAVIGATION_BAR:
