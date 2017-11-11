@@ -65,4 +65,6 @@
     <!-- Emergency button in power menu -->
     <java-symbol type="bool" name="config_showEmergencyButtonInPowerMenu" />
 
+    <!-- Whether device supports an alt. ambient display -->
+    <java-symbol type="bool" name="config_alt_ambient_display"/>
 </resources>
