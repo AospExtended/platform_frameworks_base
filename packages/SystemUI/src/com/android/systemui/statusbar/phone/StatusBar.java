@@ -99,7 +99,6 @@ import android.os.IBinder;
 import android.os.IPowerManager;
 import android.os.Message;
 import android.os.PowerManager;
-import android.os.Process;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemClock;
@@ -7278,12 +7277,6 @@ public class StatusBar extends SystemUI implements DemoMode,
             recomputeDisableFlags(true);
         }
         updateHideIconsForBouncer(true /* animate */);
-    }
-
-    @Override
-    public void restartUI() {
-        Log.d(TAG, "StatusBar API restartUI! Commiting suicide! Goodbye cruel world!");
-        Process.killProcess(Process.myPid());
     }
 
     protected void sendCloseSystemWindows(String reason) {

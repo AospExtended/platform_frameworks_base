@@ -83,8 +83,7 @@ public class CommandQueue extends IStatusBar.Stub {
     private static final int MSG_SHOW_SHUTDOWN_UI              = 36 << MSG_SHIFT;
     private static final int MSG_SET_TOP_APP_HIDES_STATUS_BAR  = 37 << MSG_SHIFT;
     private static final int MSG_TOGGLE_CAMERA_FLASH           = 38 << MSG_SHIFT;
-    private static final int MSG_RESTART_UI                    = 39 << MSG_SHIFT;
-    private static final int MSG_TOGGLE_NAVIGATION_BAR           = 40 << MSG_SHIFT;
+    private static final int MSG_TOGGLE_NAVIGATION_BAR           = 39 << MSG_SHIFT;
 
     public static final int FLAG_EXCLUDE_NONE = 0;
     public static final int FLAG_EXCLUDE_SEARCH_PANEL = 1 << 0;
@@ -147,7 +146,6 @@ public class CommandQueue extends IStatusBar.Stub {
         default void handleShowShutdownUi(boolean isReboot, String reason) { }
 
         default void toggleCameraFlash() { }
-        default void restartUI() { }
 
         default void toggleNavigationBar(boolean enable) { }
     }
@@ -473,14 +471,6 @@ public class CommandQueue extends IStatusBar.Stub {
         }
     }
 
-    @Override
-    public void restartUI() {
-        synchronized (mLock) {
-            mHandler.removeMessages(MSG_RESTART_UI);
-            mHandler.obtainMessage(MSG_RESTART_UI).sendToTarget();
-        }
-    }
-
     public void toggleNavigationBar(boolean enable) {
         synchronized (mLock) {
             mHandler.removeMessages(MSG_TOGGLE_NAVIGATION_BAR);
@@ -687,11 +677,6 @@ public class CommandQueue extends IStatusBar.Stub {
                 case MSG_TOGGLE_CAMERA_FLASH:
                     for (int i = 0; i < mCallbacks.size(); i++) {
                         mCallbacks.get(i).toggleCameraFlash();
-                    }
-                    break;
-                case MSG_RESTART_UI:
-                    for (int i = 0; i < mCallbacks.size(); i++) {
-                        mCallbacks.get(i).restartUI();
                     }
                     break;
                 case MSG_TOGGLE_NAVIGATION_BAR:

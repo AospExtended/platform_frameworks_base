@@ -3559,12 +3559,6 @@
     <permission android:name="android.permission.INSTANT_APP_FOREGROUND_SERVICE"
         android:protectionLevel="signature|development|instant|appop" />
 
-    <!-- Allows an application to restart the SystemUI process.-->
-    <permission android:name="android.permission.RESTART_UI"
-        android:label="@string/permlab_restartUI"
-        android:description="@string/permdesc_restartUI"
-        android:protectionLevel="signature" />
-
     <application android:process="system"
                  android:persistent="true"
                  android:hasCode="false"
