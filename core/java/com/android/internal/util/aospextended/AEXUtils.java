@@ -19,7 +19,6 @@ package com.android.internal.util.aospextended;
 import android.Manifest;
 import android.app.ActivityManager;
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
