@@ -48,4 +48,8 @@
     <string name="global_action_restart_ui">SystemUI</string>
 
     <string name="status_bar_vpn">VPN</string>
+
+    <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Screenshot deleted</string>
+
 </resources>
