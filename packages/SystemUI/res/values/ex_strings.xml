@@ -151,4 +151,8 @@
     <!-- Always on display QS tile -->
     <string name="quick_settings_aod_label">Always on display</string>
 
+    <!-- Reboot/Recovery QS tile -->
+    <string name="quick_settings_reboot_label">Reboot</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+    
 </resources>
