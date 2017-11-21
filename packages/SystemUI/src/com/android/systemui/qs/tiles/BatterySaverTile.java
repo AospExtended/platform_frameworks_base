@@ -72,6 +72,11 @@ public class BatterySaverTile extends QSTileImpl<BooleanState> implements
     }
 
     @Override
+    public DetailAdapter getDetailAdapter() {
+        return mBatteryDetail;
+    }
+
+    @Override
     public BooleanState newTileState() {
         return new BooleanState();
     }
@@ -105,7 +110,18 @@ public class BatterySaverTile extends QSTileImpl<BooleanState> implements
 
     @Override
     protected void handleClick() {
-        mBatteryController.setPowerSaveMode(!mPowerSave);
+        mHasDashCharger = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_hasDashCharger);
+        mDashCharger = mHasDashCharger && isDashCharger();
+
+        if (!mDashCharger && !mCharging) {
+            mBatteryController.setPowerSaveMode(!mPowerSave);
+        }
+    }
+
+    @Override
+    protected void handleSecondaryClick() {
+        showDetail(true);
     }
 
     @Override
@@ -115,13 +131,13 @@ public class BatterySaverTile extends QSTileImpl<BooleanState> implements
 
     @Override
     protected void handleUpdateState(BooleanState state, Object arg) {
+        state.dualTarget = true;
+        state.state = mPowerSave ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE;
 
         mHasDashCharger = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_hasDashCharger);
         mDashCharger = mHasDashCharger && isDashCharger();
 
-        state.state = mCharging ? Tile.STATE_UNAVAILABLE
-                : mPowerSave ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE;
         if (mCharging) {
             state.icon = ResourceIcon.get(R.drawable.ic_qs_battery_saver_charging);
             state.label = mContext.getString(R.string.keyguard_plugged_in);
@@ -132,7 +148,7 @@ public class BatterySaverTile extends QSTileImpl<BooleanState> implements
         }
         if (!mDashCharger && !mCharging) {
             state.icon = ResourceIcon.get(R.drawable.ic_qs_battery_saver);
-            state.label = mContext.getString(R.string.battery_detail_switch_title);
+            state.label = mLevel + "%";
         }
         state.contentDescription = state.label;
         state.value = mPowerSave;
