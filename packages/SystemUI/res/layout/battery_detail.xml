@@ -68,6 +68,8 @@
             android:layout_height="24dp"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"
+            android:src="@drawable/ic_qs_battery_saver"
+            android:tint="?android:attr/colorAccent"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:layout_marginStart="16dp"
