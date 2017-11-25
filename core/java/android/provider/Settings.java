@@ -3936,13 +3936,6 @@ public final class Settings {
          * the setting value. See an example above.
          */
 
-        // AEX custom system settings
-        /**
-         * Double tap on navbar to sleep
-         * @hide
-         */
-        public static final String DOUBLE_TAP_SLEEP_NAVBAR = "double_tap_sleep_navbar";
-
         /**
         * Whether to allow battery light
         * @hide
@@ -4580,7 +4573,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
             PRIVATE_SETTINGS.add(TOAST_ICON);
             PRIVATE_SETTINGS.add(VOLUME_LINK_NOTIFICATION);
-            PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_NAVBAR);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_LOCKSCREEN);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
             PRIVATE_SETTINGS.add(LOCKSCREEN_MEDIA_METADATA);
@@ -7508,12 +7500,6 @@ public final class Settings {
          * @hide
          */
         public static final String NOTIFICATION_BADGING = "notification_badging";
-
-        /**
-         * Whether to enable navigation bar
-         * @hide
-         */
-        public static final String NAVIGATION_BAR_ENABLED = "navigation_bar_enabled";
 
         /**
          * Whether to set a lower brightness level when enabling night mode
