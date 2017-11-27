@@ -224,6 +224,7 @@ public class QSAnimator implements Callback, PageListener, Listener, OnLayoutCha
             mAllViews.add(tileView);
             count++;
         }
+        View brightness = mQsPanel.getBrightnessView();
         if (mAllowFancy) {
             // Make brightness appear static position and alpha in through second half.
             /*View brightness = mQsPanel.getBrightnessView();
@@ -247,7 +248,6 @@ public class QSAnimator implements Callback, PageListener, Listener, OnLayoutCha
                     .addFloat(mQsPanel.getPageIndicator(), "alpha", 0, 1)
                     .addFloat(mQsPanel.getDivider(), "alpha", 0, 1)
                     .addFloat(mQsPanel.getFooter().getView(), "alpha", 0, 1);
-            View brightness = mQsPanel.getBrightnessView();
             if (brightness != null) {
                 builder.addFloat(mQsPanel.getBrightnessView(), "alpha", 0, 1);
             }
@@ -271,13 +271,16 @@ public class QSAnimator implements Callback, PageListener, Listener, OnLayoutCha
             mTranslationXAnimator = translationXBuilder.build();
             mTranslationYAnimator = translationYBuilder.build();
         }
-        mNonfirstPageAnimator = new TouchAnimator.Builder()
+        TouchAnimator.Builder builder = new TouchAnimator.Builder()
                 .addFloat(mQuickQsPanel, "alpha", 1, 0)
                 .addFloat(mQsPanel.getPageIndicator(), "alpha", 0, 1)
                 .addFloat(mQsPanel.getDivider(), "alpha", 0, 1)
                 .setListener(mNonFirstPageListener)
-                .setEndDelay(.5f)
-                .build();
+                .setEndDelay(.5f);
+        if (brightness != null) {
+            builder.addFloat(mQsPanel.getBrightnessView(), "alpha", 0, 1);
+        }
+        mNonfirstPageAnimator = builder.build();
     }
 
     private boolean isIconInAnimatedRow(int count) {
