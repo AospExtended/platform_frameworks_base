@@ -4545,6 +4545,38 @@ public final class Settings {
         public static final String VIBRATION_ON_CHARGE_STATE_CHANGED = "vibration_on_charge_state_changed";
 
         /**
+         * Custom button brightness value for manual mode
+         *
+         * @hide
+         */
+        public static final String CUSTOM_BUTTON_BRIGHTNESS = "custom_button_brightness";
+
+        /**
+         * use same value for buttons as for screen (manual and auto mode)
+         *
+         * @hide
+         */
+        public static final String CUSTOM_BUTTON_USE_SCREEN_BRIGHTNESS = "custom_button_use_screen_brightness";
+
+        /**
+         * disable all button brightness (manual and auto mode)
+         *
+         * @hide
+         */
+        public static final String BUTTON_BACKLIGHT_ENABLE = "button_backlight_enable";
+
+        /**
+         * Timeout value for button lights. 0 = disabled
+         * @hide
+         */
+        public static final String BUTTON_BACKLIGHT_TIMEOUT = "button_backlight_timeout";
+
+        /**
+         * @hide
+         */
+        public static final String BUTTON_BACKLIGHT_ON_TOUCH_ONLY = "button_backlight_on_touch_only";
+
+        /**
          * 0 - wallpaper based
          * 1 - force light
          * 2 - force dark
@@ -5002,6 +5034,11 @@ public final class Settings {
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_DISPLAY);
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_STYLE);
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_FORMAT);
+            PRIVATE_SETTINGS.add(CUSTOM_BUTTON_BRIGHTNESS);
+            PRIVATE_SETTINGS.add(CUSTOM_BUTTON_USE_SCREEN_BRIGHTNESS);
+            PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ENABLE);
+            PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_TIMEOUT);
+            PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
         }
 
         /**
