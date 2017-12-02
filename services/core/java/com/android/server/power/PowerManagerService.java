@@ -160,6 +160,8 @@ public final class PowerManagerService extends SystemService
     // Message: Sent when waking up with proximity check.
     private static final int MSG_WAKE_UP = 6;
 
+    private static final int MSG_BUTTON_TIMEOUT = 7;
+
     // Dirty bit: mWakeLocks changed
     private static final int DIRTY_WAKE_LOCKS = 1 << 0;
     // Dirty bit: mWakefulness changed
@@ -727,6 +729,23 @@ public final class PowerManagerService extends SystemService
         }
     }
 
+    // button brightness suppport enablement
+    private boolean mButtonBrightnessSupport = false;
+    private int mCurrentButtonBrightness = 0;
+    // value to use in manual mode
+    // if -1 screen brightness will be used
+    private int mCustomButtonBrightness = -1;
+    // always use screen brightness also for buttons
+    private boolean mButtonUseScreenBrightness = true;
+    // overrule and disable brightness for buttons
+    private boolean mButtonBacklightEnable = true;
+    // button on touch
+    private boolean mButtonBacklightOnTouchOnly;
+    // timeout for button backlight automatic turning off
+    private int mButtonTimeout;
+    private boolean mButtonTimeoutEnabled;
+    private int mEvent;
+
     /**
      * All times are in milliseconds. These constants are kept synchronized with the system
      * global Settings. Any access to this class or its fields should be done while
@@ -1282,6 +1301,27 @@ public final class PowerManagerService extends SystemService
         filter = new IntentFilter();
         filter.addAction(Intent.ACTION_DOCK_EVENT);
         mContext.registerReceiver(new DockReceiver(), filter, null, mHandler);
+
+        if (mButtonBrightnessSupport){
+            resolver.registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.CUSTOM_BUTTON_BRIGHTNESS),
+                    false, mSettingsObserver, UserHandle.USER_ALL);
+            resolver.registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.CUSTOM_BUTTON_USE_SCREEN_BRIGHTNESS),
+                    false, mSettingsObserver, UserHandle.USER_ALL);
+            resolver.registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.BUTTON_BACKLIGHT_ENABLE),
+                    false, mSettingsObserver, UserHandle.USER_ALL);
+            resolver.registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.HARDWARE_KEYS_DISABLE),
+                    false, mSettingsObserver, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.BUTTON_BACKLIGHT_TIMEOUT),
+                    false, mSettingsObserver, UserHandle.USER_ALL);
+            resolver.registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.BUTTON_BACKLIGHT_ON_TOUCH_ONLY),
+                    false, mSettingsObserver, UserHandle.USER_ALL);
+        }
     }
 
     @VisibleForTesting
@@ -1338,6 +1378,10 @@ public final class PowerManagerService extends SystemService
             mProximityWakeLock = mContext.getSystemService(PowerManager.class)
                     .newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "ProximityWakeLock");
         }
+        mButtonBrightnessSupport = resources.getBoolean(
+                com.android.internal.R.bool.config_button_brightness_support);
+        mCustomButtonBrightness = resources.getInteger(
+                com.android.internal.R.integer.config_button_brightness_default);
     }
 
     private void updateSettingsLocked() {
@@ -1397,6 +1441,7 @@ public final class PowerManagerService extends SystemService
                 Settings.System.PROXIMITY_ON_WAKE,
                 mProximityWakeEnabledByDefaultConfig ? 1 : 0) == 1;
 
+        updateButtonLightSettings();
         mDirty |= DIRTY_SETTINGS;
     }
 
@@ -1787,6 +1832,7 @@ public final class PowerManagerService extends SystemService
 
         Trace.traceBegin(Trace.TRACE_TAG_POWER, "userActivity");
         try {
+            mEvent = event;
             if (eventTime > mLastInteractivePowerHintTime) {
                 setPowerBoostInternal(Boost.INTERACTION, 0);
                 mLastInteractivePowerHintTime = eventTime;
@@ -2566,6 +2612,16 @@ public final class PowerManagerService extends SystemService
                 | DIRTY_USER_ACTIVITY | DIRTY_WAKEFULNESS | DIRTY_SETTINGS)) == 0) {
             return;
         }
+
+        boolean wakeLocksValue = (dirty & DIRTY_WAKE_LOCKS) != 0;
+        boolean userActivityValue = (dirty & DIRTY_USER_ACTIVITY) != 0;
+        boolean wakefullnessValue = (dirty & DIRTY_WAKEFULNESS) != 0;
+        boolean settingsValue = (dirty & DIRTY_SETTINGS) != 0;
+
+        if (DEBUG) {
+            Slog.d(TAG, "DIRTY_WAKE_LOCKS=" + wakeLocksValue + " DIRTY_USER_ACTIVITY=" + userActivityValue + " DIRTY_WAKEFULNESS=" + wakefullnessValue + " DIRTY_SETTINGS=" + settingsValue);
+        }
+
         mHandler.removeMessages(MSG_USER_ACTIVITY_TIMEOUT);
 
         final long attentiveTimeout = getAttentiveTimeoutLocked();
@@ -2590,6 +2646,17 @@ public final class PowerManagerService extends SystemService
                 if (getWakefulnessLocked() == WAKEFULNESS_AWAKE && lastUserActivityTime >= mLastWakeTime) {
                     groupNextTimeout = lastUserActivityTime + screenOffTimeout - screenDimDuration;
                     if (now < groupNextTimeout) {
+                        if (mButtonTimeoutEnabled && (userActivityValue || settingsValue)){
+                            final boolean buttonPressed = mEvent
+                                    == PowerManager.USER_ACTIVITY_EVENT_BUTTON;
+                            if (mButtonBacklightOnTouchOnly) {
+                                if (buttonPressed) {
+                                    triggerButtonTimeoutEvent(now);
+                                }
+                            } else {
+                                triggerButtonTimeoutEvent(now);
+                            }
+                        }
                         groupUserActivitySummary = USER_ACTIVITY_SCREEN_BRIGHT;
                     } else {
                         groupNextTimeout = lastUserActivityTime + screenOffTimeout;
@@ -3236,6 +3303,13 @@ public final class PowerManagerService extends SystemService
                     displayPowerRequest.dozeScreenState = Display.STATE_UNKNOWN;
                     displayPowerRequest.dozeScreenBrightness =
                             PowerManager.BRIGHTNESS_INVALID_FLOAT;
+                }
+
+                if (mButtonBrightnessSupport) {
+                    if ((dirty & ( DIRTY_USER_ACTIVITY | DIRTY_SETTINGS
+                            | DIRTY_ACTUAL_DISPLAY_POWER_STATE_UPDATED)) != 0) {
+                        updateButtonLight(false);
+                    }
                 }
 
                 final boolean ready = mDisplayManagerInternal.requestPowerState(groupId,
@@ -4101,6 +4175,12 @@ public final class PowerManagerService extends SystemService
         }
     }
 
+    private void setTemporaryButtonBrightnessSettingOverrideInternal(int brightness) {
+        if (mButtonBrightnessSupport){
+            mLightsManager.getLight(LightsManager.LIGHT_ID_BUTTONS).setBrightness(brightnessIntToFloat(brightness));
+        }
+    }
+
     /**
      * Low-level function turn the device off immediately, without trying
      * to be clean.  Most people should use {@link ShutdownThread} for a clean shutdown.
@@ -4866,6 +4946,12 @@ public final class PowerManagerService extends SystemService
                 case MSG_WAKE_UP:
                     cleanupProximity();
                     ((Runnable) msg.obj).run();
+                    break;
+                case MSG_BUTTON_TIMEOUT:
+                    if (DEBUG) {
+                        Slog.d(TAG, "button timeout triggered");
+                    }
+                    updateButtonLight(true);
                     break;
             }
 
@@ -6035,6 +6121,29 @@ public final class PowerManagerService extends SystemService
                 Binder.restoreCallingIdentity(ident);
             }
         }
+
+        /**
+         * Used by the settings application and brightness control widgets to
+         * temporarily override the current button brightness setting so that the
+         * user can observe the effect of an intended settings change without applying
+         * it immediately.
+         *
+         * The override will be canceled when the setting value is next updated.
+         *
+         * @param brightness The overridden brightness.
+         */
+        @Override // Binder call
+        public void setTemporaryButtonBrightnessSettingOverride(int brightness) {
+            mContext.enforceCallingOrSelfPermission(
+                    android.Manifest.permission.DEVICE_POWER, null);
+
+            final long ident = Binder.clearCallingIdentity();
+            try {
+                setTemporaryButtonBrightnessSettingOverrideInternal(brightness);
+            } finally {
+                Binder.restoreCallingIdentity(ident);
+            }
+        }
     }
 
     @VisibleForTesting
@@ -6317,5 +6426,116 @@ public final class PowerManagerService extends SystemService
             mSensorManager.registerListener(mProximityListener,
                    mProximitySensor, SensorManager.SENSOR_DELAY_FASTEST);
         }
+    }
+
+    private void updateButtonLightSettings() {
+        final ContentResolver resolver = mContext.getContentResolver();
+        if (mButtonBrightnessSupport){
+            mCustomButtonBrightness = Settings.System.getIntForUser(
+                    mContext.getContentResolver(), Settings.System.CUSTOM_BUTTON_BRIGHTNESS,
+                    mCustomButtonBrightness, UserHandle.USER_CURRENT);
+            mButtonUseScreenBrightness = Settings.System.getIntForUser(
+                    mContext.getContentResolver(), Settings.System.CUSTOM_BUTTON_USE_SCREEN_BRIGHTNESS,
+                    0, UserHandle.USER_CURRENT) != 0;
+            mButtonBacklightEnable = Settings.System.getIntForUser(
+                    mContext.getContentResolver(), Settings.System.BUTTON_BACKLIGHT_ENABLE,
+                    1, UserHandle.USER_CURRENT) != 0;
+
+            boolean hardwareKeysDisable = Settings.System.getIntForUser(
+                    mContext.getContentResolver(), Settings.System.HARDWARE_KEYS_DISABLE,
+                    0, UserHandle.USER_CURRENT) != 0;
+
+            mButtonBacklightEnable = mButtonBacklightEnable && !hardwareKeysDisable;
+            mButtonBacklightOnTouchOnly = Settings.System.getIntForUser(
+                    mContext.getContentResolver(), Settings.System.BUTTON_BACKLIGHT_ON_TOUCH_ONLY,
+                    0, UserHandle.USER_CURRENT) != 0;
+            mButtonTimeout = Settings.System.getIntForUser(resolver,
+                    Settings.System.BUTTON_BACKLIGHT_TIMEOUT,
+                    0, UserHandle.USER_CURRENT) * 1000;
+
+            mButtonTimeoutEnabled = mButtonTimeout != 0 && mButtonBacklightEnable;
+            // prevent remaining timout to be triggered
+            mHandler.removeMessages(MSG_BUTTON_TIMEOUT);
+            // force it off - it will come back if needed later
+            updateButtonLight(true);
+        }
+    }
+
+    private void updateButtonLight(boolean timeoutEvent) {
+        for (final int groupId : mDisplayGroupPowerStateMapper.getDisplayGroupIdsLocked()) {
+            final DisplayPowerRequest displayPowerRequest =
+                   mDisplayGroupPowerStateMapper.getPowerRequestLocked(groupId);
+            if (displayPowerRequest == null){
+                return;
+            }
+
+            if (!mButtonBacklightEnable){
+                mCurrentButtonBrightness = 0;
+                mLightsManager.getLight(LightsManager.LIGHT_ID_BUTTONS).setBrightness(brightnessIntToFloat(mCurrentButtonBrightness));
+                return;
+            }
+
+            if (timeoutEvent) {
+                if (DEBUG) {
+                    Slog.d(TAG, "button timeout handled");
+                }
+                mCurrentButtonBrightness = 0;
+                mLightsManager.getLight(LightsManager.LIGHT_ID_BUTTONS).setBrightness(brightnessIntToFloat(mCurrentButtonBrightness));
+                return;
+            }
+
+            final boolean buttonPressed = mEvent == PowerManager.USER_ACTIVITY_EVENT_BUTTON;
+            boolean buttonlight_on =  displayPowerRequest.policy == DisplayPowerRequest.POLICY_BRIGHT;
+            int currentButtonBrightness = 0;
+
+            if (buttonlight_on){
+                if (mButtonBacklightOnTouchOnly && mButtonTimeoutEnabled) {
+                    if (buttonPressed) {
+                        currentButtonBrightness = calcButtonLight();
+                    } else {
+                        currentButtonBrightness = mCurrentButtonBrightness;
+                    }
+                } else {
+                    currentButtonBrightness = calcButtonLight();
+                }
+            } else {
+                currentButtonBrightness = 0;
+            }
+            mCurrentButtonBrightness = currentButtonBrightness;
+
+            if (DEBUG) {
+                Slog.d(TAG, "mCurrentButtonBrightness="+mCurrentButtonBrightness);
+            }
+
+            mLightsManager.getLight(LightsManager.LIGHT_ID_BUTTONS).setBrightness(brightnessIntToFloat(mCurrentButtonBrightness));
+        }
+    }
+
+    private int calcButtonLight() {
+        int buttonBrightness = 0;
+
+        if (mCustomButtonBrightness == -1 || mButtonUseScreenBrightness){
+                    // use same value as screen
+                    buttonBrightness = Settings.System.getInt(mContext.getContentResolver(),
+                            Settings.System.SCREEN_BRIGHTNESS, 60);
+        } else {
+            buttonBrightness = mCustomButtonBrightness;
+        }
+        return buttonBrightness;
+    }
+
+    private void triggerButtonTimeoutEvent(long now) {
+        mHandler.removeMessages(MSG_BUTTON_TIMEOUT);
+        if (DEBUG) {
+            Slog.d(TAG, "button timeout set to " + (now + mButtonTimeout));
+        }
+        Message msg = mHandler.obtainMessage(MSG_BUTTON_TIMEOUT);
+        msg.setAsynchronous(true);
+        mHandler.sendMessageAtTime(msg, now + mButtonTimeout);
+    }
+
+
+    private float brightnessIntToFloat(int brightness) {
+        return BrightnessSynchronizer.brightnessIntToFloat(brightness);
     }
 }
