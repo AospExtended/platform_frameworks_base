@@ -1545,15 +1545,6 @@ public final class PowerManager {
     }
 
     /**
-     * Gets the default button brightness value.
-     * @hide
-     */
-    public int getDefaultButtonBrightness() {
-        return mContext.getResources().getInteger(
-                com.android.internal.R.integer.config_buttonBrightnessSettingDefault);
-    }
-
-    /**
      *  powerHint used by some Nvidia devices
      *  Ignores any bytes of data beyond the first
      *  @hide
