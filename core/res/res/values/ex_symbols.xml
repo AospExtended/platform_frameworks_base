@@ -273,6 +273,9 @@
   <java-symbol type="integer" name="config_sms_authorization_timeout_ms" />
   <java-symbol type="bool" name="config_sms_authorization_enabled" />
 
+
+  <java-symbol type="array" name="config_vendorPlatformSignatures" />
+
 </resources>
 
 
