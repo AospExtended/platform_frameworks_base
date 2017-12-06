@@ -1413,6 +1413,8 @@ public class PackageManagerService extends IPackageManager.Stub
     private final PackageUsage mPackageUsage = new PackageUsage();
     private final CompilerStats mCompilerStats = new CompilerStats();
 
+    private final Signature[] mVendorPlatformSignatures;
+
     class PackageHandler extends Handler {
         private boolean mBound = false;
         final ArrayList<HandlerParams> mPendingInstalls =
@@ -2406,6 +2408,14 @@ public class PackageManagerService extends IPackageManager.Stub
         }
     }
 
+    private static Signature[] createSignatures(String[] hexBytes) {
+        Signature[] sigs = new Signature[hexBytes.length];
+        for (int i = 0; i < sigs.length; i++) {
+            sigs[i] = new Signature(hexBytes[i]);
+        }
+        return sigs;
+    }
+
     public PackageManagerService(Context context, Installer installer,
             boolean factoryTest, boolean onlyCore) {
         LockGuard.installLock(mPackages, LockGuard.INDEX_PACKAGES);
@@ -2421,6 +2431,9 @@ public class PackageManagerService extends IPackageManager.Stub
 
         mPermissionReviewRequired = context.getResources().getBoolean(
                 R.bool.config_permissionReviewRequired);
+
+        mVendorPlatformSignatures = createSignatures(context.getResources().getStringArray(
+                    com.android.internal.R.array.config_vendorPlatformSignatures));
 
         mFactoryTest = factoryTest;
         mOnlyCore = onlyCore;
@@ -9283,6 +9296,13 @@ public class PackageManagerService extends IPackageManager.Stub
         try {
             Trace.traceBegin(TRACE_TAG_PACKAGE_MANAGER, "collectCertificates");
             PackageParser.collectCertificates(pkg, policyFlags);
+            if (compareSignatures(pkg.mSignatures,
+                  mVendorPlatformSignatures) == PackageManager.SIGNATURE_MATCH) {
+                // Overwrite package signature with our platform signature
+                // if the signature is the vendor's platform signature
+                pkg.mSignatures = mPlatformPackage.mSignatures;
+                SELinuxMMAC.assignSeInfoValue(pkg);
+            }
         } catch (PackageParserException e) {
             throw PackageManagerException.from(e);
         } finally {
@@ -13408,6 +13428,8 @@ public class PackageManagerService extends IPackageManager.Stub
                 bp.packageSetting.signatures.mSignatures, pkg.mSignatures)
                         == PackageManager.SIGNATURE_MATCH)
                 || (compareSignatures(mPlatformPackage.mSignatures, pkg.mSignatures)
+                        == PackageManager.SIGNATURE_MATCH)
+                || (compareSignatures(mVendorPlatformSignatures, pkg.mSignatures)
                         == PackageManager.SIGNATURE_MATCH);
         if (!allowed && privilegedPermission) {
             if (isSystemApp(pkg)) {
