@@ -914,8 +914,7 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener,
         public View getView(int position, View convertView, ViewGroup parent) {
             Action action = getItem(position);
             View view = action.create(mContext, convertView, parent, LayoutInflater.from(mContext));
-            // Everything but screenshot, the last item, gets white background.
-            if (position == getCount() - 1) {
+            if (position == getCount()) {
                 HardwareUiLayout.get(parent).setDivisionView(view);
             }
             return view;
