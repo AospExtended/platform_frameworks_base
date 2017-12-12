@@ -72,6 +72,7 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
     private boolean mHideEthernet;
     private boolean mActivityEnabled;
     private boolean mForceHideWifi;
+    private boolean mHideVpn;
 
     // Track as little state as possible, and only for padding purposes
     private boolean mIsAirplaneMode = false;
@@ -125,12 +126,16 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
     }
 
     private void updateVpn() {
-        boolean vpnVisible = mSecurityController.isVpnEnabled();
+        boolean vpnVisible = mSecurityController.isVpnEnabled() && !mHideVpn;
         int vpnIconId = currentVpnIconId(mSecurityController.isVpnBranded());
 
-        mIconController.setIcon(mSlotVpn, vpnIconId,
+        if (vpnVisible && vpnIconId > 0) {
+            mIconController.setIcon(mSlotVpn, vpnIconId,
                 mContext.getResources().getString(R.string.accessibility_vpn_on));
-        mIconController.setIconVisibility(mSlotVpn, vpnVisible);
+            mIconController.setIconVisibility(mSlotVpn, true);
+        } else {
+            mIconController.setIconVisibility(mSlotVpn, false);
+        }
     }
 
     private int currentVpnIconId(boolean isBranded) {
@@ -155,13 +160,16 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
         boolean hideMobile = hideList.contains(mSlotMobile);
         boolean hideWifi = hideList.contains(mSlotWifi);
         boolean hideEthernet = hideList.contains(mSlotEthernet);
+        boolean hideVpn = hideList.contains(mSlotVpn);
 
         if (hideAirplane != mHideAirplane || hideMobile != mHideMobile
-                || hideEthernet != mHideEthernet || hideWifi != mHideWifi) {
+                || hideEthernet != mHideEthernet || hideWifi != mHideWifi
+                || hideVpn != mHideVpn) {
             mHideAirplane = hideAirplane;
             mHideMobile = hideMobile;
             mHideEthernet = hideEthernet;
             mHideWifi = hideWifi || mForceHideWifi;
+            mHideVpn = hideVpn;
             // Re-register to get new callbacks.
             mNetworkController.removeCallback(this);
             mNetworkController.addCallback(this);
