@@ -26,5 +26,7 @@
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
     <string name="custom_hint">Swipe from icon to launch</string>
 
+    <!-- VPN -->
+    <string name="status_bar_vpn">VPN</string>
 </resources>
 
