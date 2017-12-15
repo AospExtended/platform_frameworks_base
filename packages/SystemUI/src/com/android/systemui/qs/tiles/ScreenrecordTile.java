@@ -66,7 +66,7 @@ public class ScreenrecordTile extends QSTileImpl<BooleanState> {
         mHost.collapsePanels();
         /* wait for the panel to close */
         try {
-             Thread.sleep(2000);
+             Thread.sleep(1000);
         } catch (InterruptedException ie) {
              // Do nothing
         }

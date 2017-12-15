@@ -245,6 +245,12 @@ public class AEXUtils {
     }
 
     public static void takeScreenshot(boolean full) {
+        /* wait for the dialog box to close */
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ie) {
+            // Do nothing
+        }
         IWindowManager wm = WindowManagerGlobal.getWindowManagerService();
         try {
             wm.sendCustomAction(new Intent(full? INTENT_SCREENSHOT : INTENT_REGION_SCREENSHOT));
