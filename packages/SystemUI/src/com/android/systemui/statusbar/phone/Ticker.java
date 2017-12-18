@@ -194,20 +194,6 @@ public abstract class Ticker implements DarkReceiver {
         mAnimationOut.setInterpolator(interpolatorOut);
         mAnimationOut.setDuration(350);
 
-        mIconSwitcher = (ImageSwitcher) tickerLayout.findViewById(R.id.tickerIcon);
-        mIconSwitcher.setInAnimation(mAnimationIn);
-        mIconSwitcher.setOutAnimation(mAnimationOut);
-        mIconSwitcher.setScaleX(mIconScale);
-        mIconSwitcher.setScaleY(mIconScale);
-
-        mTextSwitcher = (TextSwitcher) tickerLayout.findViewById(R.id.tickerText);
-        mTextSwitcher.setInAnimation(mAnimationIn);
-        mTextSwitcher.setOutAnimation(mAnimationOut);
-
-        // Copy the paint style of one of the TextSwitchers children to use later for measuring
-        TextView text = (TextView) mTextSwitcher.getChildAt(0);
-        mPaint = text.getPaint();
-
         mNotificationColorUtil = NotificationColorUtil.getInstance(mContext);
 
         Dependency.get(DarkIconDispatcher.class).addDarkReceiver(this);
@@ -307,18 +293,19 @@ public abstract class Ticker implements DarkReceiver {
         tickerHalting();
     }
 
-    public void setStatusBarView(View sbv) {
-        mIconSwitcher = null;
-        mIconSwitcher = (ImageSwitcher) sbv.findViewById(R.id.tickerIcon);
+    public void setViews(TextSwitcher ts, ImageSwitcher is) {
+        mTextSwitcher = ts;
+        mTextSwitcher.setInAnimation(mAnimationIn);
+        mTextSwitcher.setOutAnimation(mAnimationOut);
+        // Copy the paint style of one of the TextSwitchers children to use later for measuring
+        TextView text = (TextView) mTextSwitcher.getChildAt(0);
+        mPaint = text.getPaint();
+
+        mIconSwitcher = is;
         mIconSwitcher.setInAnimation(mAnimationIn);
         mIconSwitcher.setOutAnimation(mAnimationOut);
         mIconSwitcher.setScaleX(mIconScale);
         mIconSwitcher.setScaleY(mIconScale);
-
-        mTextSwitcher = null;
-        mTextSwitcher = (TextSwitcher) sbv.findViewById(R.id.tickerText);
-        mTextSwitcher.setInAnimation(mAnimationIn);
-        mTextSwitcher.setOutAnimation(mAnimationOut);
     }
 
     public void reflowText() {
