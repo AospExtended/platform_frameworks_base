@@ -36,6 +36,7 @@ import com.android.systemui.qs.tiles.ExpandedDesktopTile;
 import com.android.systemui.qs.tiles.FlashlightTile;
 import com.android.systemui.qs.tiles.HeadsUpTile;
 import com.android.systemui.qs.tiles.HotspotTile;
+import com.android.systemui.qs.tiles.HWKeysTile;
 import com.android.systemui.qs.tiles.IntentTile;
 import com.android.systemui.qs.tiles.LocationTile;
 import com.android.systemui.qs.tiles.NfcTile;
@@ -122,6 +123,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new ThemeTile(mHost);
             case "expanded_desktop":
                 return new ExpandedDesktopTile(mHost);
+            case "hwkeys":
+                return new HWKeysTile(mHost);
         }
 
         // Intent tiles.
