@@ -33,6 +33,7 @@ import com.android.systemui.qs.tiles.BatterySaverTile;
 import com.android.systemui.qs.tiles.BluetoothTile;
 import com.android.systemui.qs.tiles.CastTile;
 import com.android.systemui.qs.tiles.CellularTile;
+import com.android.systemui.qs.tiles.CPUInfoTile;
 import com.android.systemui.qs.tiles.ColorInversionTile;
 import com.android.systemui.qs.tiles.DataSaverTile;
 import com.android.systemui.qs.tiles.DataSwitchTile;
@@ -105,6 +106,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<VpnTile> mVpnTileProvider;
     private final Provider<AODTile> mAODTileProvider;
     private final Provider<DataSwitchTile> mDataSwitchTileProvider;
+    private final Provider<CPUInfoTile> mCPUInfoTileProvider;
 
     private final Lazy<QSHost> mQsHostLazy;
 
@@ -143,6 +145,7 @@ public class QSFactoryImpl implements QSFactory {
             Provider<VpnTile> vpnTileProvider,
             Provider<AODTile> aodTileProvider,
             Provider<DataSwitchTile> dataSwitchTileProvider,
+            Provider<CPUInfoTile> cpuInfoTileProvider) {
         mQsHostLazy = qsHostLazy;
         mWifiTileProvider = wifiTileProvider;
         mBluetoothTileProvider = bluetoothTileProvider;
@@ -177,6 +180,7 @@ public class QSFactoryImpl implements QSFactory {
         mVpnTileProvider = vpnTileProvider;
         mAODTileProvider = aodTileProvider;
         mDataSwitchTileProvider = dataSwitchTileProvider;
+        mCPUInfoTileProvider = cpuInfoTileProvider;
     }
 
     public QSTile createTile(String tileSpec) {
@@ -230,17 +234,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mScreenRecordTileProvider.get();
             case "caffeine":
                 return mCaffeineTileProvider.get();
-<<<<<<< HEAD
             case "ambient_display":
                 return mAmbientDisplayTileProvider.get();
-=======
-            case "dataswitch":
-                return mDataSwitchTileProvider.get();
-            case "heads_up":
-                return mHeadsUpTileProvider.get();
-            case "sync":
-                return mSyncTileProvider.get();
->>>>>>> 2260152d4a8... SystemUI: Introduce DataSwitchTile
             case "usb_tether":
                 return mUsbTetherTileProvider.get();
             case "sync":
@@ -261,6 +256,10 @@ public class QSFactoryImpl implements QSFactory {
                 return mVpnTileProvider.get();
             case "aod":
                 return mAODTileProvider.get();
+            case "cpuinfo":
+                return mCPUInfoTileProvider.get();
+            case "dataswitch":
+                return mDataSwitchTileProvider.get();
         }
 
         // Custom tiles
