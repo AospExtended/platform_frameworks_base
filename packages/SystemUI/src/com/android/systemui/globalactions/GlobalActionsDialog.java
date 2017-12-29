@@ -37,6 +37,8 @@ import com.android.systemui.volume.VolumeDialogMotion.LogDecelerateInterpolator;
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.app.ActivityManager;
+import android.app.IActivityManager;
+import android.app.ActivityManagerNative;
 import android.app.Dialog;
 import android.app.WallpaperManager;
 import android.content.BroadcastReceiver;
@@ -136,7 +138,8 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
     private static final int SHOW_TOGGLES_BUTTON = 1;
     private static final int RESTART_RECOVERY_BUTTON = 2;
     private static final int RESTART_BOOTLOADER_BUTTON = 3;
-    private static final int RESTART_UI_BUTTON = 4;
+    private static final int RESTART_SOFT_BUTTON = 4;
+    private static final int RESTART_UI_BUTTON = 5;
 
     private final Context mContext;
     private final GlobalActionsManager mWindowManagerFuncs;
@@ -153,6 +156,7 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
     private AdvancedAction mShowAdvancedToggles;
     private AdvancedAction mRestartRecovery;
     private AdvancedAction mRestartBootloader;
+    private AdvancedAction mRestartSoft;
     private AdvancedAction mRestartSystemUI;
 
     private MyAdapter mAdapter;
@@ -401,6 +405,21 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
                 RESTART_BOOTLOADER_BUTTON,
                 com.android.systemui.R.drawable.ic_restart_bootloader,
                 com.android.systemui.R.string.global_action_restart_bootloader,
+                mWindowManagerFuncs, mHandler) {
+
+            public boolean showDuringKeyguard() {
+                return true;
+            }
+
+            public boolean showBeforeProvisioning() {
+                return true;
+            }
+        };
+
+        mRestartSoft = new AdvancedAction(
+                RESTART_SOFT_BUTTON,
+                com.android.systemui.R.drawable.ic_restart_soft,
+                com.android.systemui.R.string.global_action_restart_soft,
                 mWindowManagerFuncs, mHandler) {
 
             public boolean showDuringKeyguard() {
@@ -1440,6 +1459,10 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
                 h.sendEmptyMessage(MESSAGE_DISMISS);
                 funcs.advancedReboot(PowerManager.REBOOT_BOOTLOADER);
                 break;
+            case RESTART_SOFT_BUTTON:
+                h.sendEmptyMessage(MESSAGE_DISMISS);
+                doSoftReboot();
+                break;
             case RESTART_UI_BUTTON:
                 /* no time and need to dismiss the dialog here, just kill systemui straight after telling to
                 policy/GlobalActions that we hid the dialog within the kill action itself so its onStatusBarConnectedChanged
@@ -1626,6 +1649,7 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
         mItems.clear();
         mItems.add(mRestartRecovery);
         mItems.add(mRestartBootloader);
+        mItems.add(mRestartSoft);
         mItems.add(mRestartSystemUI);
     }
 
@@ -1813,6 +1837,18 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
 
     public static void restartSystemUI(Context ctx) {
         Process.killProcess(Process.myPid());
+    }
+
+    private static void doSoftReboot() {
+        try {
+            final IActivityManager am =
+                  IActivityManager.Stub.asInterface(ServiceManager.checkService("activity"));
+            if (am != null) {
+                am.restart();
+            }
+        } catch (RemoteException e) {
+            Log.e(TAG, "failure trying to perform soft reboot", e);
+        }
     }
 
 }
