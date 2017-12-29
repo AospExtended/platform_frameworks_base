@@ -979,18 +979,11 @@ public class StatusBarManagerService extends IStatusBarService.Stub {
         enforceStatusBarService();
         long identity = Binder.clearCallingIdentity();
         try {
-            if(mode != null && (mode.equals(PowerManager.REBOOT_SOFT) || mode.equals(PowerManager.REBOOT_SYSTEMUI))) {
-                   mHandler.post(() -> {
-                       // ShutdownThread displays UI, so give it a UI context.
-                            ShutdownThread.advancedReboot(getUiContext(), mode);
-                   });
-            } else {
-                   mHandler.post(() -> {
-                       // ShutdownThread displays UI, so give it a UI context.
-                             ShutdownThread.reboot(getUiContext(),
-                                      mode, false/*don't ask for confirmation*/);
-                   });
-            }
+            mHandler.post(() -> {
+                // ShutdownThread displays UI, so give it a UI context.
+                    ShutdownThread.reboot(getUiContext(),
+                            mode, false/*don't ask for confirmation*/);
+            });
         } finally {
             Binder.restoreCallingIdentity(identity);
         }

@@ -359,14 +359,10 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
 
         mRestartAdvancedAction = new ToggleRestartAdvancedAction(
                 com.android.systemui.R.drawable.ic_restart_advanced,
-                com.android.systemui.R.drawable.ic_restart_bootloader,
-                com.android.systemui.R.drawable.ic_restart_soft,
-                com.android.systemui.R.drawable.ic_restart_systemui,
+                com.android.systemui.R.drawable.ic_restart_advanced,
                 com.android.systemui.R.string.global_action_restart_advanced,
                 com.android.systemui.R.string.global_action_restart_recovery,
                 com.android.systemui.R.string.global_action_restart_bootloader,
-                com.android.systemui.R.string.global_action_restart_soft,
-                com.android.systemui.R.string.global_action_restart_systemui,
                 mWindowManagerFuncs, mHandler) {
 
             public boolean showDuringKeyguard() {
@@ -1305,45 +1301,31 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
 
         enum State {
             Recovery,
-            Bootloader,
-            SoftReboot,
-            SystemUI;
+            Bootloader;
         }
 
         protected State mState = State.Recovery;
 
         protected int mRecoveryIconResid;
         protected int mBootloaderIconResid;
-        protected int mSoftRebootIconResid;
-        protected int mSystemUIIconResid;
         protected int mMessageResId;
         protected int mRecoveryMessageResId;
         protected int mBootloaderMessageResId;
-        protected int mSoftRebootMessageResId;
-        protected int mSystemUIMessageResId;
         protected GlobalActionsManager mWmFuncs;
         protected Handler mRefresh;
 
         public ToggleRestartAdvancedAction(int recoveryIconResid,
                 int bootloaderIconResid,
-                int softRebootIconResid,
-                int systemuiIconResid,
                 int message,
                 int recoveryMessageResId,
                 int bootloaderMessageResId,
-                int softRebootMessageResId,
-                int systemuiMessageResId,
                 GlobalActionsManager funcs,
                 Handler handler) {
             mRecoveryIconResid = recoveryIconResid;
             mBootloaderIconResid = bootloaderIconResid;
-            mSoftRebootIconResid = softRebootIconResid;
-            mSystemUIIconResid = systemuiIconResid;
             mMessageResId = message;
             mRecoveryMessageResId = recoveryMessageResId;
             mBootloaderMessageResId = bootloaderMessageResId;
-            mSoftRebootMessageResId = softRebootMessageResId;
-            mSystemUIMessageResId = systemuiMessageResId;
             mWmFuncs = funcs;
             mRefresh = handler;
         }
@@ -1366,95 +1348,36 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
                 statusView.setVisibility(View.GONE);
             }
 
+            boolean bootloader = (mState == State.Bootloader);
             TextView messageView = (TextView) v.findViewById(R.id.message);
+            if (messageView != null) {
+                messageView.setText(bootloader ? mBootloaderMessageResId : mRecoveryMessageResId);
+            }
             ImageView icon = (ImageView) v.findViewById(R.id.icon);
-            switch (mState) {
-            case Recovery:
-                 if (messageView != null) {
-                     messageView.setText(mRecoveryMessageResId);
-                 }
-                 if (icon != null) {
-                     icon.setImageDrawable(context.getDrawable(mRecoveryIconResid));
-                 }
-                 break;
-            case Bootloader:
-                 if (messageView != null) {
-                     messageView.setText(mBootloaderMessageResId);
-                 }
-                 if (icon != null) {
-                     icon.setImageDrawable(context.getDrawable(mBootloaderIconResid));
-                 }
-                 break;
-            case SoftReboot:
-                 if (messageView != null) {
-                     messageView.setText(mSoftRebootMessageResId);
-                 }
-                 if (icon != null) {
-                     icon.setImageDrawable(context.getDrawable(mSoftRebootIconResid));
-                 }
-                 break;
-            case SystemUI:
-                 if (messageView != null) {
-                     messageView.setText(mSystemUIMessageResId);
-                 }
-                 if (icon != null) {
-                     icon.setImageDrawable(context.getDrawable(mSystemUIIconResid));
-                 }
-                 break;
-            default:
-                 if (messageView != null) {
-                     messageView.setText(mRecoveryMessageResId);
-                 }
-                 if (icon != null) {
-                     icon.setImageDrawable(context.getDrawable(mRecoveryIconResid));
-                 }
-                 break;
+            if (icon != null) {
+                icon.setImageDrawable(context.getDrawable(
+                        (bootloader ? mBootloaderIconResid : mRecoveryIconResid)));
             }
 
-                 return v;
+            return v;
         }
 
         @Override
         public final void onPress() {
-            switch (mState) {
-            case Recovery:
-                 mState = State.Bootloader;
-                 break;
-            case Bootloader:
-                 mState = State.SoftReboot;
-                 break;
-            case SoftReboot:
-                 mState = State.SystemUI;
-                 break;
-            case SystemUI:
-                 mState = State.Recovery;
-                 break;
-            default:
-                 mState = State.Recovery;
-                 break;
+            if (mState == State.Recovery) {
+                mState = State.Bootloader;
+            } else {
+                mState = State.Recovery;
             }
-
             mRefresh.sendEmptyMessage(MESSAGE_REFRESH_ADVANCED_REBOOT);
         }
 
         @Override
         public boolean onLongPress() {
             mRefresh.sendEmptyMessage(MESSAGE_DISMISS);
-            switch (mState) {
-            case Recovery:
-                 mWmFuncs.advancedReboot(PowerManager.REBOOT_RECOVERY);
-                 break;
-            case Bootloader:
-                 mWmFuncs.advancedReboot(PowerManager.REBOOT_BOOTLOADER);
-                 break;
-            case SoftReboot:
-                 mWmFuncs.advancedReboot(PowerManager.REBOOT_SOFT);
-                 break;
-            case SystemUI:
-                 mWmFuncs.advancedReboot(PowerManager.REBOOT_SYSTEMUI);
-                 break;
-            }
-
+            boolean bootloader = (mState == State.Bootloader);
+            mWmFuncs.advancedReboot(bootloader ? PowerManager.REBOOT_BOOTLOADER
+                    : PowerManager.REBOOT_RECOVERY);
             return true;
         }
 
