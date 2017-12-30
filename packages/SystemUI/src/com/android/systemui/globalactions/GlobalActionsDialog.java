@@ -1282,6 +1282,7 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
          * @param disabledIconResid          The icon for when this action is off.
          * @param message                    The general information message, e.g 'Silent Mode'
          */
+
         public ToggleAction(int enabledIconResId, int disabledIconResid, int message) {
             mEnabledIconResId = enabledIconResId;
             mDisabledIconResid = disabledIconResid;
