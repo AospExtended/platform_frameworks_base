@@ -100,7 +100,7 @@ public class UsbDebuggingActivity extends AlertActivity
 
         // adding touch listener on affirmative button - checks if window is obscured
         // if obscured, do not let user give permissions (could be tapjacking involved)
-        final View.OnTouchListener filterTouchListener = (View v, MotionEvent event) -> {
+        /*final View.OnTouchListener filterTouchListener = (View v, MotionEvent event) -> {
             // Filter obscured touches by consuming them.
             if (!mSmartPixels) {
                 if (((event.getFlags() & MotionEvent.FLAG_WINDOW_IS_OBSCURED) != 0)
@@ -116,7 +116,7 @@ public class UsbDebuggingActivity extends AlertActivity
             }
             return false;
         };
-        mAlert.getButton(BUTTON_POSITIVE).setOnTouchListener(filterTouchListener);
+        mAlert.getButton(BUTTON_POSITIVE).setOnTouchListener(filterTouchListener);*/
 
     }
 
