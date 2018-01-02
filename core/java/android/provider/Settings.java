@@ -10300,6 +10300,18 @@ public final class Settings {
         public static final String TETHERING_ALLOW_VPN_UPSTREAMS = "tethering_allow_vpn_upstreams";
 
         /**
+         * Setting to allow setting rounded corner size and content padding
+         * @hide
+         */
+        public static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
+
+        /**
+         * Setting to disable rounded corner preferences and use frameworks values instead
+         * @hide
+         */
+        public static final String SYSUI_ROUNDED_FWVALS = "sysui_rounded_fwvals";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
