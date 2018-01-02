@@ -2295,6 +2295,35 @@ public class StatusBar extends SystemUI implements DemoMode,
         ThemeAccentUtils.unfuckBlackWhiteAccent(mOverlayManager, mLockscreenUserManager.getCurrentUserId());
     }*/
 
+    public boolean isCurrentRoundedSameAsFw() {
+        Resources res = null;
+        try {
+            res = mContext.getPackageManager().getResourcesForApplication("com.android.systemui");
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+            // If we can't get resources, return true so that updateTheme doesn't attempt to
+            // set corner values
+            return true;
+        }
+
+        float displayDensity = res.getDisplayMetrics().density;
+
+        // Resource IDs for framework properties
+        int resourceIdRadius = res.getIdentifier("com.android.systemui:dimen/rounded_corner_radius", null, null);
+        int resourceIdPadding = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null, null);
+
+        // Values on framework resources
+        int cornerRadiusRes = (int) (res.getDimension(resourceIdRadius)/displayDensity);
+        int contentPaddingRes = (int) (res.getDimension(resourceIdPadding)/displayDensity);
+
+        // Values in Settings DBs
+        int cornerRadius = Settings.Secure.getInt(mContext.getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_SIZE, cornerRadiusRes);
+        int contentPadding = Settings.Secure.getInt(mContext.getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, contentPaddingRes);
+        return (cornerRadiusRes == cornerRadius) && (contentPaddingRes == contentPadding);
+    }
+
     @Nullable
     public View getAmbientIndicationContainer() {
         return mAmbientIndicationContainer;
@@ -4231,6 +4260,27 @@ public class StatusBar extends SystemUI implements DemoMode,
             // Make sure we have the correct navbar/statusbar colors.
             mStatusBarWindowManager.setKeyguardDark(useDarkText);
         }
+
+        boolean sysuiRoundedFwvals = Settings.Secure.getIntForUser(mContext.getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_FWVALS, 1, mLockscreenUserManager.getCurrentUserId()) == 1;
+        if (sysuiRoundedFwvals && !isCurrentRoundedSameAsFw()) {
+            Resources res = null;
+            try {
+                res = mContext.getPackageManager().getResourcesForApplication("com.android.systemui");
+            } catch (NameNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            float displayDensity = res.getDisplayMetrics().density;
+            if (res != null) {
+                int resourceIdRadius = res.getIdentifier("com.android.systemui:dimen/rounded_corner_radius", null, null);
+                Settings.Secure.putInt(mContext.getContentResolver(),
+                        Settings.Secure.SYSUI_ROUNDED_SIZE, (int) (res.getDimension(resourceIdRadius)/displayDensity));
+                int resourceIdPadding = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null, null);
+                Settings.Secure.putInt(mContext.getContentResolver(),
+                        Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, (int) (res.getDimension(resourceIdPadding)/displayDensity));
+            }
+        }
     }
 
     // Switches theme accent from to another or back to stock
@@ -5491,6 +5541,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.FORCE_AMBIENT_FOR_MEDIA),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.Secure.SYSUI_ROUNDED_FWVALS),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5509,7 +5562,8 @@ public class StatusBar extends SystemUI implements DemoMode,
                     Settings.System.HEADS_UP_BLACKLIST_VALUES))) {
                 setHeadsUpBlacklist();
             } else if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.SYSTEM_THEME_STYLE))) {
+                    Settings.System.SYSTEM_THEME_STYLE)) || uri.equals(Settings.Secure.getUriFor(
+                    Settings.Secure.SYSUI_ROUNDED_FWVALS))) {
                 getCurrentThemeSetting();
                 updateTheme();
             } else if (uri.equals(Settings.System.getUriFor(
