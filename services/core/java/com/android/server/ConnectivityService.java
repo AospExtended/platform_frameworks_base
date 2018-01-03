@@ -3052,6 +3052,12 @@ public class ConnectivityService extends IConnectivityManager.Stub
     // becomes CONNECTED, whichever happens first.  The timer is started by the
     // first caller and not restarted by subsequent callers.
     private void ensureNetworkTransitionWakelock(String forWhom) {
+        // ensure atomic behavior of this function w.r.t. mNetTransitionWakeLockTimeout
+        int wakelockTimeout = mNetTransitionWakeLockTimeout;
+        if (wakelockTimeout <= 0) {
+            return;
+        }
+
         synchronized (this) {
             if (mNetTransitionWakeLock.isHeld()) {
                 return;
@@ -3062,7 +3068,7 @@ public class ConnectivityService extends IConnectivityManager.Stub
         }
         mWakelockLogs.log("ACQUIRE for " + forWhom);
         Message msg = mHandler.obtainMessage(EVENT_EXPIRE_NET_TRANSITION_WAKELOCK);
-        mHandler.sendMessageDelayed(msg, mNetTransitionWakeLockTimeout);
+        mHandler.sendMessageDelayed(msg, wakelockTimeout);
     }
 
     // Called when we gain a new default network to release the network transition wakelock in a
