@@ -151,6 +151,8 @@
   	 this value will apply on Launcher3 quickstep view and also the normal recents -->
     <dimen name="recents_task_view_rounded_corners_radius">2.0dip</dimen>
 
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_enableSmartPixels">false</bool>
 </resources>
 
 
