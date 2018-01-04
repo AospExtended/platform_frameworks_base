@@ -254,4 +254,7 @@
        this value will apply on Launcher3 quickstep view and also the normal recents -->
   <java-symbol type="dimen" name="recents_task_view_rounded_corners_radius" />
 
+  <!-- Whether the device supports Smart Pixels -->
+  <java-symbol type="bool" name="config_enableSmartPixels" />
+
 </resources>
