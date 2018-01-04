@@ -218,7 +218,11 @@
   <java-symbol type="id" name="pocket_hint_container" />
   <java-symbol type="id" name="pocket_hint_image" />
   <java-symbol type="id" name="pocket_hint_message" />
+
+  <!-- Whether the device supports Smart Pixels -->
+  <java-symbol type="bool" name="config_enableSmartPixels" />
 </resources>
+
 
 
 

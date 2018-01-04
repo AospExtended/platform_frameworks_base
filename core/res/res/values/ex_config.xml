@@ -124,5 +124,8 @@
         <item>com.Slack</item>
         <item>com.snapchat.android</item>
     </string-array>
+
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_enableSmartPixels">false</bool>
 </resources>
 
