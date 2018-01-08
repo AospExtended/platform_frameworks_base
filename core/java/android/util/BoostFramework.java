@@ -42,6 +42,7 @@ import android.content.Context;
 /** @hide */
 public class BoostFramework {
 
+    private static final boolean DEBUG = false;
     private static final String TAG = "BoostFramework";
     private static final String PERFORMANCE_JAR = "/system/framework/QPerformance.jar";
     private static final String PERFORMANCE_CLASS = "com.qualcomm.qti.Performance";
@@ -93,7 +94,7 @@ public class BoostFramework {
                     mIsLoaded = true;
                 }
                 catch(Exception e) {
-                    Log.e(TAG,"BoostFramework() : Exception_1 = " + e);
+                    if (DEBUG) Log.e(TAG,"BoostFramework() : Exception_1 = " + e);
                 }
             }
         }
@@ -104,7 +105,7 @@ public class BoostFramework {
             }
         }
         catch(Exception e) {
-            Log.e(TAG,"BoostFramework() : Exception_2 = " + e);
+            if (DEBUG) Log.e(TAG,"BoostFramework() : Exception_2 = " + e);
         }
     }
 
@@ -125,7 +126,7 @@ public class BoostFramework {
             try {
                 mAcquireFunc.invoke(mPerf, duration, list);
             } catch(Exception e) {
-                Log.e(TAG,"Exception " + e);
+                if (DEBUG) Log.e(TAG,"Exception " + e);
             }
         }).start();
     }
@@ -136,7 +137,7 @@ public class BoostFramework {
             try {
                 mReleaseFunc.invoke(mPerf);
             } catch(Exception e) {
-                Log.e(TAG,"Exception " + e);
+                if (DEBUG) Log.e(TAG,"Exception " + e);
             }
         }).start();
     }
@@ -188,7 +189,7 @@ public class BoostFramework {
             try {
                 mAcquireTouchFunc.invoke(mPerf, ev, metrics, duration, list);
             } catch(Exception e) {
-                Log.e(TAG,"Exception " + e);
+                if (DEBUG) Log.e(TAG,"Exception " + e);
             }
         }).start();
     }
@@ -201,7 +202,7 @@ public class BoostFramework {
             Object retVal = mIOPStart.invoke(mPerf,pid,pkg_name);
             ret = (int)retVal;
         } catch(Exception e) {
-            Log.e(TAG,"Exception " + e);
+            if (DEBUG) Log.e(TAG,"Exception " + e);
         }
         return ret;
     }
@@ -214,7 +215,7 @@ public class BoostFramework {
              Object retVal = mIOPStop.invoke(mPerf);
              ret = (int)retVal;
          } catch(Exception e) {
-             Log.e(TAG,"Exception " + e);
+             if (DEBUG) Log.e(TAG,"Exception " + e);
          }
          return ret;
     }
