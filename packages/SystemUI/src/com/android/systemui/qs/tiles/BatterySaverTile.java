@@ -85,11 +85,7 @@ public class BatterySaverTile extends QSTileImpl<BooleanState> implements
         BatterySaverIcon bsi = new BatterySaverIcon();
         bsi.mState = state.state;
         state.icon = bsi;
-        if (mCharging) {
-            state.label = mContext.getString(R.string.accessibility_ambient_display_charging);
-        } else {
-            state.label = mContext.getString(R.string.battery_detail_switch_title);
-        }
+        state.label = mContext.getString(R.string.battery_detail_switch_title);
         state.contentDescription = state.label;
         state.value = mPowerSave;
         state.expandedAccessibilityClassName = Switch.class.getName();
