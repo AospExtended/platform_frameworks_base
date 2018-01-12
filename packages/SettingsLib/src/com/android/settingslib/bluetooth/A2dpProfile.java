@@ -1,8 +1,4 @@
 /*
- * Copyright (C) 2017, The Linux Foundation. All rights reserved.
- * Not a Contribution.
- */
-/*
  * Copyright (C) 2011 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -140,6 +136,7 @@ public class A2dpProfile implements LocalBluetoothProfile {
                     Log.w(TAG, "Connecting to device " + device + " : disconnect skipped");
                     continue;
                 }
+                mService.disconnect(sink);
             }
         }
         return mService.connect(device);
@@ -147,36 +144,18 @@ public class A2dpProfile implements LocalBluetoothProfile {
 
     public boolean disconnect(BluetoothDevice device) {
         if (mService == null) return false;
-        List<BluetoothDevice> deviceList = mService.getConnectedDevices();
-        if (!deviceList.isEmpty()) {
-            for (BluetoothDevice dev : deviceList) {
-                if (dev.equals(device)) {
-                    if (V) Log.d(TAG,"Downgrade priority as user" +
-                            "is disconnecting the headset");
-                    //Downgrade priority as user is disconnecting the headset.
-                    if (mService.getPriority(device) > BluetoothProfile.PRIORITY_ON) {
-                        mService.setPriority(device, BluetoothProfile.PRIORITY_ON);
-                    }
-                    return mService.disconnect(device);
-                }
-            }
+        // Downgrade priority as user is disconnecting the headset.
+        if (mService.getPriority(device) > BluetoothProfile.PRIORITY_ON){
+            mService.setPriority(device, BluetoothProfile.PRIORITY_ON);
         }
-        return false;
+        return mService.disconnect(device);
     }
 
     public int getConnectionStatus(BluetoothDevice device) {
         if (mService == null) {
             return BluetoothProfile.STATE_DISCONNECTED;
         }
-        List<BluetoothDevice> deviceList = mService.getConnectedDevices();
-        if (!deviceList.isEmpty()) {
-            for (BluetoothDevice dev : deviceList) {
-                if (dev.equals(device)) {
-                    return mService.getConnectionState(device);
-                }
-            }
-        }
-        return BluetoothProfile.STATE_DISCONNECTED;
+        return mService.getConnectionState(device);
     }
 
     public boolean isPreferred(BluetoothDevice device) {

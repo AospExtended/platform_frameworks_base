@@ -1832,12 +1832,7 @@ public class InputMethodManagerService extends IInputMethodManager.Stub
             }
         }
 
-        try {
-            return startInputInnerLocked();
-        } catch (RuntimeException e) {
-            Slog.w(TAG, "Unexpected exception", e);
-            return null;
-        }
+        return startInputInnerLocked();
     }
 
     InputBindResult startInputInnerLocked() {
