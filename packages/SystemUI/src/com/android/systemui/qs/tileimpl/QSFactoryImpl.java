@@ -25,6 +25,7 @@ import com.android.systemui.plugins.qs.QSTileView;
 import com.android.systemui.qs.external.CustomTile;
 import com.android.systemui.qs.tiles.AdbOverNetworkTile;
 import com.android.systemui.qs.tiles.AirplaneModeTile;
+import com.android.systemui.qs.tiles.AlwaysOnDisplayTile;
 import com.android.systemui.qs.tiles.BatterySaverTile;
 import com.android.systemui.qs.tiles.BluetoothTile;
 import com.android.systemui.qs.tiles.CastTile;
@@ -146,6 +147,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new OneHandTile(mHost);
             case "soundsearch":
                 return new SoundSearchTile(mHost);
+            case "always_on_display":
+                return new AlwaysOnDisplayTile(mHost);
         }
 
         // Intent tiles.
