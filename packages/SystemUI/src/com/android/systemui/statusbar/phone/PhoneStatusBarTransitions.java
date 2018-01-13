@@ -35,6 +35,7 @@ public final class PhoneStatusBarTransitions extends BarTransitions {
     private View mLeftSide, mStatusIcons, mBattery, mClock, mCenterClock, mRightClock;;
 
     private Animator mCurrentAnimation;
+    private View mBatteryBar;
 
     public PhoneStatusBarTransitions(PhoneStatusBarView view) {
         super(view, R.drawable.status_background);
@@ -50,6 +51,7 @@ public final class PhoneStatusBarTransitions extends BarTransitions {
         mClock = mView.findViewById(R.id.clock);
         mCenterClock = mView.findViewById(R.id.center_clock);
         mRightClock = mView.findViewById(R.id.right_clock);
+        mBatteryBar = mView.findViewById(R.id.battery_bar);
         applyModeBackground(-1, getMode(), false /*animate*/);
         applyMode(getMode(), false /*animate*/);
     }
@@ -92,6 +94,7 @@ public final class PhoneStatusBarTransitions extends BarTransitions {
             anims.playTogether(
                     animateTransitionTo(mLeftSide, newAlpha),
                     animateTransitionTo(mStatusIcons, newAlpha),
+                    animateTransitionTo(mBatteryBar, newAlphaBC),
                     animateTransitionTo(mBattery, newAlphaBC),
                     animateTransitionTo(mClock, newAlphaBC),
                     animateTransitionTo(mCenterClock, newAlphaBC),
@@ -105,6 +108,7 @@ public final class PhoneStatusBarTransitions extends BarTransitions {
         } else {
             mLeftSide.setAlpha(newAlpha);
             mStatusIcons.setAlpha(newAlpha);
+            mBatteryBar.setAlpha(newAlphaBC);
             mBattery.setAlpha(newAlphaBC);
             mClock.setAlpha(newAlphaBC);
             mCenterClock.setAlpha(newAlphaBC);

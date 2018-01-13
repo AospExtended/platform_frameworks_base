@@ -76,6 +76,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     // custom carrier label
     private View mCustomCarrierLabel;
     private int mShowCarrierLabel;
+    private View mBatteryBar;
 
     private class SettingsObserver extends ContentObserver {
        SettingsObserver(Handler handler) {
@@ -132,6 +133,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         Dependency.get(StatusBarIconController.class).addIconGroup(mDarkIconManager);
         mSystemIconArea = mStatusBar.findViewById(R.id.system_icon_area);
         mClockView = mStatusBar.findViewById(R.id.clock);
+        mBatteryBar = mStatusBar.findViewById(R.id.battery_bar);
         mCenterClockLayout = (LinearLayout) mStatusBar.findViewById(R.id.center_clock_layout);
         mRightClock = mStatusBar.findViewById(R.id.right_clock);
         mCustomCarrierLabel = mStatusBar.findViewById(R.id.statusbar_carrier_text);
@@ -246,6 +248,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         if (mClockStyle == 2) {
             animateHide(mRightClock, animate, true);
         }
+        animateHide(mBatteryBar, animate, false);
+        animateHide(mSystemIconArea, animate, true);
     }
 
     public void showSystemIconArea(boolean animate) {
@@ -254,6 +258,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         if (mClockStyle == 2) {
             animateShow(mRightClock, animate);
         }
+        animateShow(mBatteryBar, animate);
+        animateShow(mSystemIconArea, animate);
     }
 
     public void hideNotificationIconArea(boolean animate) {
