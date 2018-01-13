@@ -251,4 +251,7 @@
     
     <!--Google sound search tile -->
     <string name="quick_settings_sound_search">Sound search</string>
+
+    <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Always on display</string>
 </resources>
