@@ -94,6 +94,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     // AEX Status Logo
     private ImageView mAEXLogo;
     private boolean mShowLogo;
+    private View mBatteryBar;
 
     private SignalCallback mSignalCallback = new SignalCallback() {
         @Override
@@ -201,6 +202,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mDarkIconManager = new DarkIconManager(view.findViewById(R.id.statusIcons));
         Dependency.get(StatusBarIconController.class).addIconGroup(mDarkIconManager);
         mSystemIconArea = mStatusBar.findViewById(R.id.system_icon_area);
+        mBatteryBar = mStatusBar.findViewById(R.id.battery_bar);
         mSignalClusterView = mStatusBar.findViewById(R.id.signal_cluster);
         mClock = mStatusBar.findViewById(R.id.clock);
         mLeftClock = mStatusBar.findViewById(R.id.left_clock);
@@ -319,17 +321,19 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     }
 
     public void hideSystemIconArea(boolean animate) {
-        animateHide(mSystemIconArea, animate, true);
+        animateHide(mBatteryBar, animate);
         if (((Clock)mCenterClock).isEnabled()) {
         animateHide(mCenterClockLayout, animate,false);
         }
+        animateHide(mSystemIconArea, animate, true);
     }
 
     public void showSystemIconArea(boolean animate) {
-        animateShow(mSystemIconArea, animate);
+        animateShow(mBatteryBar, animate);
         if (((Clock)mCenterClock).isEnabled()) {
         animateShow(mCenterClockLayout, animate);
         }
+        animateShow(mSystemIconArea, animate);
     }
 
     public void hideNotificationIconArea(boolean animate) {
