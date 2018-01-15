@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2006 The Android Open Source Project
+ * Copyright (C) 2015-2019 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -878,25 +879,28 @@ public class CallLog {
                 // spam the call log with its own entries, causing entries from Telephony to be
                 // removed.
                 final Uri result = resolver.insert(uri, values);
-                if (values.containsKey(PHONE_ACCOUNT_ID)
-                        && !TextUtils.isEmpty(values.getAsString(PHONE_ACCOUNT_ID))
-                        && values.containsKey(PHONE_ACCOUNT_COMPONENT_NAME)
-                        && !TextUtils.isEmpty(values.getAsString(PHONE_ACCOUNT_COMPONENT_NAME))) {
-                    // Only purge entries for the same phone account.
-                    resolver.delete(uri, "_id IN " +
-                            "(SELECT _id FROM calls"
-                            + " WHERE " + PHONE_ACCOUNT_COMPONENT_NAME + " = ?"
-                            + " AND " + PHONE_ACCOUNT_ID + " = ?"
-                            + " ORDER BY " + DEFAULT_SORT_ORDER
-                            + " LIMIT -1 OFFSET 500)", new String[] {
-                            values.getAsString(PHONE_ACCOUNT_COMPONENT_NAME),
-                            values.getAsString(PHONE_ACCOUNT_ID)
-                    });
-                } else {
-                    // No valid phone account specified, so default to the old behavior.
-                    resolver.delete(uri, "_id IN " +
-                            "(SELECT _id FROM calls ORDER BY " + DEFAULT_SORT_ORDER
-                            + " LIMIT -1 OFFSET 500)", null);
+                int limit = Settings.System.getInt(resolver, Settings.System.CALL_LOG_DELETE_LIMIT, 500);
+                if (limit != 0) {
+                    if (values.containsKey(PHONE_ACCOUNT_ID)
+                            && !TextUtils.isEmpty(values.getAsString(PHONE_ACCOUNT_ID))
+                            && values.containsKey(PHONE_ACCOUNT_COMPONENT_NAME)
+                            && !TextUtils.isEmpty(values.getAsString(PHONE_ACCOUNT_COMPONENT_NAME))) {
+                        // Only purge entries for the same phone account.
+                        resolver.delete(uri, "_id IN " +
+                                "(SELECT _id FROM calls"
+                                + " WHERE " + PHONE_ACCOUNT_COMPONENT_NAME + " = ?"
+                                + " AND " + PHONE_ACCOUNT_ID + " = ?"
+                                + " ORDER BY " + DEFAULT_SORT_ORDER
+                                + " LIMIT -1 OFFSET " + limit +")", new String[] {
+                                values.getAsString(PHONE_ACCOUNT_COMPONENT_NAME),
+                                values.getAsString(PHONE_ACCOUNT_ID)
+                        });
+                    } else {
+                        // No valid phone account specified, so default to the old behavior.
+                        resolver.delete(uri, "_id IN " +
+                                "(SELECT _id FROM calls ORDER BY " + DEFAULT_SORT_ORDER
+                                + " LIMIT -1 OFFSET " + limit +")", null);
+                    }
                 }
 
                 return result;
