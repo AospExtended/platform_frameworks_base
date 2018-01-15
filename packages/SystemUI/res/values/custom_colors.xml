@@ -23,11 +23,11 @@
     <color name="icon_color_split_screen">@android:color/white</color>
     <color name="icon_color_home">@android:color/white</color>
     <color name="icon_color_overview">@android:color/white</color>
-    <color name="icon_color_back_dark">@android:color/black</color>
-    <color name="icon_color_ime_switcher_dark">@android:color/black</color>
-    <color name="icon_color_split_screen_dark">@android:color/black</color>
-    <color name="icon_color_home_dark">@android:color/black</color>
-    <color name="icon_color_overview_dark">@android:color/black</color>
+    <color name="icon_color_back_dark">#99000000</color>
+    <color name="icon_color_ime_switcher_dark">#99000000</color>
+    <color name="icon_color_split_screen_dark">#99000000</color>
+    <color name="icon_color_home_dark">#99000000</color>
+    <color name="icon_color_overview_dark">#99000000</color>
 
     <color name="battery_level_good_color">#ff319111</color><!-- green -->
 </resources>
