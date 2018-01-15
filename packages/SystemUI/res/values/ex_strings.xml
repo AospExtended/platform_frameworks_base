@@ -186,6 +186,7 @@
     <string name="battery_level_good_title">Optimal battery level</string>
     <string name="battery_level_good_sound" translatable="false">/system/media/audio/ui/GoodBattery.ogg</string>
     <string name="notification_channel_charge_alert">Optimal battery charge level</string>
+
+    <!-- QS customizer -->
+    <string name="drag_or_tap_to_add_tiles">Drag or tap to add tiles</string>
 </resources>
-
-
