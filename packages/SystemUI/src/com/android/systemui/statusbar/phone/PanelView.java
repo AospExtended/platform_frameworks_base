@@ -1132,8 +1132,8 @@ public abstract class PanelView extends FrameLayout {
         setAnimator(animator);
 
         View[] viewsToAnimate = {
-                mKeyguardBottomArea.getIndicationArea(),
-                mStatusBar.getAmbientIndicationContainer()};
+                mKeyguardBottomArea.getIndicationArea()/*,
+                mStatusBar.getAmbientIndicationContainer()*/};
         for (View v : viewsToAnimate) {
             if (v == null) {
                 continue;

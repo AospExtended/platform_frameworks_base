@@ -162,4 +162,8 @@
   <!-- Button brightness -->
   <java-symbol type="bool" name="config_button_brightness_support" />
   <java-symbol type="integer" name="config_button_brightness_default" />
+
+  <!-- Ambient display music ticker -->
+  <java-symbol type="bool" name="config_canForceDozeNotifications" />
+
 </resources>
