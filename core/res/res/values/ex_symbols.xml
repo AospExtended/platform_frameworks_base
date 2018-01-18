@@ -162,4 +162,7 @@
   <java-symbol type="string" name="url_copy_success" />
   <java-symbol type="string" name="url_copy_failed" />
 
+  <!-- Ambient display music ticker -->
+  <java-symbol type="bool" name="config_canForceDozeNotifications" />
+
 </resources>
