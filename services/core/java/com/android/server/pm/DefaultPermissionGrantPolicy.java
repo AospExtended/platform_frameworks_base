@@ -819,6 +819,15 @@ final class DefaultPermissionGrantPolicy {
                 grantRuntimePermissionsLPw(setupwizardPackage, CAMERA_PERMISSIONS, true, userId);
             }
 
+            // Google dialer
+            PackageParser.Package googledialerPackage = getSystemPackageLPr(
+                    "com.google.android.dialer");
+            if (googledialerPackage != null && doesPackageSupportRuntimePermissions(googledialerPackage)) {
+                grantRuntimePermissionsLPw(googledialerPackage, PHONE_PERMISSIONS, true, userId);
+                grantRuntimePermissionsLPw(googledialerPackage, CONTACTS_PERMISSIONS, true, userId);
+                grantRuntimePermissionsLPw(googledialerPackage, SMS_PERMISSIONS, userId);
+            }
+
             // Google Play Store
             PackageParser.Package vendingPackage = getSystemPackageLPr(
                     "com.android.vending");
@@ -840,6 +849,7 @@ final class DefaultPermissionGrantPolicy {
                 grantRuntimePermissionsLPw(fiPackage, LOCATION_PERMISSIONS, true, userId);
                 grantRuntimePermissionsLPw(fiPackage, SMS_PERMISSIONS, true, userId);
             }
+
             // ContactsProvider2
             PackageParser.Package conpro2Package = getDefaultProviderAuthorityPackageLPr(
                     "com.android.providers.contacts.ContactsProvider2", userId);
