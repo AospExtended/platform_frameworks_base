@@ -21,9 +21,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="global_action_restart_advanced">高级</string>
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">高级选项</string>
   <string name="global_action_restart_recovery">恢复模式</string>
-  <string name="global_action_restart_bootloader">引导模式</string>
+  <string name="global_action_restart_bootloader">启动加载模式</string>
+  <string name="global_action_restart_ui">用户界面</string>
   <string name="global_action_restart_soft">软重启</string>
   <string name="global_action_screenrecord">屏幕录像</string>
   <!-- Advance location quick setting tile -->
@@ -34,6 +36,10 @@
   <string name="quick_settings_pip_label">画中画</string>
   <string name="quick_settings_pip_tile_app_na">此应用程序不支持画中画模式</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">保持亮屏</string>
+  <string name="accessibility_quick_settings_caffeine_off">关闭保持亮屏</string>
+  <string name="accessibility_quick_settings_caffeine_on">开启保持亮屏</string>
+  <string name="statusbar_items_title">状态栏项目</string>
   <!-- Screenshot QS tile -->
   <string name="quick_settings_screenshot_label">屏幕截图</string>
   <string name="quick_settings_region_screenshot_label">局部截图</string>
@@ -42,6 +48,8 @@
   <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">指南针</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">正在初始化\u2026</string>
   <string name="accessibility_quick_settings_compass_off">关闭指南针</string>
   <string name="accessibility_quick_settings_compass_on">开启指南针</string>
   <string name="accessibility_quick_settings_compass_changed_off">指南针已关闭</string>
@@ -55,28 +63,85 @@
   <string name="quick_settings_compass_W">西</string>
   <string name="quick_settings_compass_NW">西北</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">声音</string>
+  <string name="quick_settings_sound_ring">响铃</string>
+  <string name="quick_settings_sound_vibrate">震动</string>
+  <string name="quick_settings_sound_dnd">勿扰</string>
   <string name="lockscreen_default">默认</string>
   <string name="lockscreen_hidden">无</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <string name="custom_hint">滑动图标以启动</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">浮动通知</string>
+  <string name="accessibility_quick_settings_heads_up_off">关闭浮动通知。</string>
+  <string name="accessibility_quick_settings_heads_up_on">开启浮动通知。</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">浮动通知已关闭。</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">浮动通知已开启。</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 浮动通知暂停1分钟。</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - 浮动通知暂停 <xliff:g id="number">%d</xliff:g> 分钟。</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">正在快速充电 (还需<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> 充满)</string>
+  <string name="keyguard_plugged_in_dash_charging">正在快速充电</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">正在录制屏幕</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">正在录制屏幕</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">停止</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">显示触摸操作</string>
+  <string name="screenrecord_notif_pointer_off">隐藏触摸操作</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">无法录制屏幕</string>
+  <string name="notification_channel_screenrecord">屏幕录像</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord">屏幕录像</string>
+  <string name="systemui_tuner_navbar_title">初始设置</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">底部快捷方式</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">屏幕截图已删除</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">重新启动</string>
+  <string name="quick_settings_reboot_recovery_label">恢复模式</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">音量</string>
+  <string name="quick_settings_volume_panel_label">音量</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">覆写电源键功能</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">允许应用程序覆写电源键功能</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">启用</string>
+  <string name="quick_settings_network_adb_disabled_label">禁用</string>
+  <string name="quick_settings_network_adb_label">网络 ADB 调试</string>
+  <string name="quick_settings_network_adb_toast">未启用 USB 调试</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">同步</string>
+  <string name="accessibility_quick_settings_sync_off">关闭同步</string>
+  <string name="accessibility_quick_settings_sync_on">开启同步</string>
+  <string name="accessibility_quick_settings_sync_changed_off">同步已关闭</string>
+  <string name="accessibility_quick_settings_sync_changed_on">同步已开启</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">关闭 USB 网络共享</string>
+  <string name="accessibility_quick_settings_usb_tether_on">开启 USB 网络共享</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB 网络共享已关闭</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB 网络共享已开启</string>
+  <string name="quick_settings_usb_tether_label">USB 网络共享</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">语言</string>
+  <string name="quick_settings_locale_more_locales_toast">请配置多种语言以使用切换功能</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">音乐</string>
+  <string name="quick_settings_music_play">播放</string>
+  <string name="quick_settings_music_pause">暂停</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">扩展桌面</string>
+  <string name="quick_settings_expanded_desktop">扩展</string>
+  <string name="quick_settings_expanded_desktop_off">正常</string>
+  <string name="quick_settings_expanded_navigation_off">隐藏导航栏</string>
+  <string name="quick_settings_expanded_statusbar_off">隐藏状态栏</string>
+  <string name="alert_on_charged_level">您可以断开充电器 (\"&gt;\" <xliff:g id="percentage">%s </xliff:g>)</string>
+  <string name="battery_level_good_title">最佳电量</string>
+  <string name="notification_channel_charge_alert">最佳充电量</string>
 </resources>

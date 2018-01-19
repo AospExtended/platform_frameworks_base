@@ -21,32 +21,81 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">Lisavalikud</string>
+  <string name="global_action_restart_recovery">Taastus</string>
+  <string name="global_action_restart_ui">SystemUI</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Asukoha teatamine: aku säästmise režiim.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Asukoha teatamine: ainult andurite režiim.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Asukoha teatamine: kõrge täpsusega režiim.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">Pilt-pildis</string>
+  <string name="quick_settings_pip_tile_app_na">Äpp ei toeta pilt-pildis funktsiooni</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Kofeiin</string>
+  <string name="accessibility_quick_settings_caffeine_off">Kofeiin väljas</string>
+  <string name="accessibility_quick_settings_caffeine_on">Kofeiin sees</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Kuvatõmmis</string>
+  <string name="quick_settings_region_screenshot_label">Osaline kuvatõmmis</string>
+  <string name="recents_free_ram">Vaba muutmälu: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Kompass</string>
+  <string name="accessibility_quick_settings_compass_off">Kompass väljas.</string>
+  <string name="accessibility_quick_settings_compass_on">Kompass sees.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Kompass on välja lülitatud.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Kompass on sisse lülitatud.</string>
+  <string name="quick_settings_compass_N">Põhi</string>
+  <string name="quick_settings_compass_E">Ida</string>
+  <string name="quick_settings_compass_S">Lõuna</string>
+  <string name="quick_settings_compass_W">Lääs</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Heli</string>
+  <string name="quick_settings_sound_vibrate">Vibreeri</string>
+  <string name="lockscreen_default">Vaikimisi</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <!-- Heads Up QS Tile -->
   <!-- Heads up snooze toast -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Kiire laadimine (<xliff:g id="charging_time_left" example="4 tundi ja 2 minutit">%s</xliff:g> kuni aku on täis)</string>
+  <string name="keyguard_plugged_in_dash_charging">Kiir laadimine</string>
   <!-- Screenrecord Notification Ticker -->
   <!-- Screenrecord notification title -->
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Peata</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Näita kursorit</string>
+  <string name="screenrecord_notif_pointer_off">Peida kursor</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Ei saa salvestada ekraani</string>
   <!-- Screenrecord Tile -->
+  <string name="systemui_tuner_navbar_title">Tehase seaded</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Kuvatõmmis kustutatud</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Taaskäivita</string>
   <!-- Volume QS Tile -->
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- ADB over network QS tile -->
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Sünkroniseeri</string>
+  <string name="accessibility_quick_settings_sync_off">Sünk. väljas</string>
+  <string name="accessibility_quick_settings_sync_on">Sünk. sees</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Sünkroniseerimine välja lülitatud</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Sünkroniseerimine sisse lülitatud</string>
   <!-- USB Tethering tile -->
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Keel</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Muusika</string>
+  <string name="quick_settings_music_play">Esita</string>
+  <string name="quick_settings_music_pause">Peata</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="alert_on_charged_level">Te võite laadija lahti ühendada (\"&gt;\" <xliff:g id="percentage">%s </xliff:g>)</string>
+  <string name="battery_level_good_title">Optimaalne aku tase</string>
+  <string name="notification_channel_charge_alert">Optimaalne aku laadimis tase</string>
 </resources>

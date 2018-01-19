@@ -21,6 +21,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
   <string name="global_action_restart_advanced">Erweitert</string>
   <string name="global_action_restart_recovery">Recovery</string>
   <string name="global_action_restart_bootloader">Bootloader</string>
@@ -42,6 +43,7 @@
   <string name="quick_settings_region_screenshot_label">Partielles Bildschirmfoto</string>
   <string name="recents_free_ram">Freier RAM: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VoLTE</string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Kompass</string>
   <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0<xliff:g id="direction">%2$s</xliff:g></string>
@@ -78,20 +80,62 @@
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Schnellladen (<xliff:g id="charging_time_left" example="4 Stunden und 2 Minuten">%s</xliff:g> bis das Gerät voll ist)</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Bildschirm wird aufgenommen</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Bildschirmaufzeichnung</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Stopp</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Cursor anzeigen</string>
+  <string name="screenrecord_notif_pointer_off">Cursor ausblenden</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Bildschirmaufnahme nicht möglich</string>
+  <string name="notification_channel_screenrecord">Bildschirmaufnahmen</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord">Bildschirmaufnahme</string>
+  <string name="systemui_tuner_navbar_title">Standard-Einstellungen</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Untere Verknüpfungen</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Bildschirmfoto gelöscht</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Neustart</string>
+  <string name="quick_settings_reboot_recovery_label">Wiederherstellung</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">Lautstärke</string>
+  <string name="quick_settings_volume_panel_label">Lautstärke</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">Ein/Aus-Taste andere Funktion zuweisen</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Ermöglicht einer App, der Ein/Aus-Taste eine andere Funktion zuzuweisen.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">Aktiviert</string>
+  <string name="quick_settings_network_adb_disabled_label">Deaktiviert</string>
+  <string name="quick_settings_network_adb_label">ADB über Netzwerk</string>
+  <string name="quick_settings_network_adb_toast">USB-debugging ist nicht aktiviert</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Synchronisation</string>
+  <string name="accessibility_quick_settings_sync_off">Synchronisation aus</string>
+  <string name="accessibility_quick_settings_sync_on">Synchronisation an</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Synchronisation ausgeschaltet</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Synchronisation eingeschaltet</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">USB-Tethering aus</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USB-Tethering an</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB-Tethering ausgeschaltet</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB-Tethering eingeschaltet</string>
+  <string name="quick_settings_usb_tether_label">USB-Tethering</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Sprache</string>
+  <string name="quick_settings_locale_more_locales_toast">Bitte richten Sie mehrere Sprachen ein, um die Umschaltfunktion zu aktivieren</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Musik</string>
+  <string name="quick_settings_music_play">Wiedergabe</string>
+  <string name="quick_settings_music_pause">Pause</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Erweiterter Desktop</string>
+  <string name="quick_settings_expanded_desktop">Erweitert</string>
+  <string name="quick_settings_expanded_desktop_off">Normal</string>
+  <string name="quick_settings_expanded_navigation_off">Navigationsleiste ausblenden</string>
+  <string name="quick_settings_expanded_statusbar_off">Statusleiste ausblenden</string>
+  <string name="alert_on_charged_level">Sie können das Ladegerät abstecken ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
 </resources>
