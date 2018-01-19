@@ -531,7 +531,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     private Ticker mTicker;
     private boolean mTicking;
 
-    private boolean mAmbientMediaPlaying;
+    private int mAmbientMediaPlaying;
 
     // Tracking finger for opening/closing.
     boolean mTracking;
@@ -729,7 +729,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     }
 
     public void triggerAmbientForMedia() {
-        if (mAmbientMediaPlaying) {
+        if (mAmbientMediaPlaying != 0) {
             mDozeServiceHost.fireNotificationMedia();
         }
     }
@@ -6153,12 +6153,14 @@ public class StatusBar extends SystemUI implements DemoMode,
                         // Otherwise just show the always-on screen.
                         setPulsing(pulsingEntries);
                     }
+                    setForcedMediaPulse(mAmbientMediaPlaying == 2 ? reason : -1);
                 }
 
                 @Override
                 public void onPulseFinished() {
                     callback.onPulseFinished();
                     setPulsing(null);
+                    setForcedMediaPulse(-1);
                 }
 
                 private void setPulsing(Collection<HeadsUpManager.HeadsUpEntry> pulsing) {
@@ -6166,6 +6168,14 @@ public class StatusBar extends SystemUI implements DemoMode,
                     mNotificationPanel.setPulsing(pulsing != null);
                     mVisualStabilityManager.setPulsing(pulsing != null);
                     mIgnoreTouchWhilePulsing = false;
+                }
+
+                private void setForcedMediaPulse(int reason) {
+                    mNotificationPanel.setForcedMediaPulse(reason);
+                    mNotificationShelf.setForcedMediaPulse(reason);
+                    if (mAmbientIndicationContainer != null) {
+                        ((AmbientIndicationContainer)mAmbientIndicationContainer).setForcedMediaPulse(reason);
+                    }
                 }
             }, reason);
         }
@@ -6652,7 +6662,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     private void setForceAmbient() {
         mAmbientMediaPlaying = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.FORCE_AMBIENT_FOR_MEDIA, 0,
-                UserHandle.USER_CURRENT) == 1;
+                UserHandle.USER_CURRENT);
     }
 
     protected final ContentObserver mNavbarObserver = new ContentObserver(mHandler) {

@@ -4509,6 +4509,9 @@ public final class Settings {
 
         /**
          * Force an Ambient notification when a new media track is being played
+         * 0 - disabled
+         * 1 - enabled and keep showing clock and notification icons
+         * 2 - enabled and hide clock and notification icons
          * @hide
          */
         public static final String FORCE_AMBIENT_FOR_MEDIA = "force_ambient_for_media";
