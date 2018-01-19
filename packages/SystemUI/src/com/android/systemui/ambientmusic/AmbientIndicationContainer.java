@@ -5,13 +5,17 @@ import android.graphics.Color;
 import android.media.MediaMetadata;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.systemui.AutoReinflateContainer;
 import com.android.systemui.doze.DozeReceiver;
 import com.android.systemui.R;
+import com.android.systemui.doze.DozeLog;
 import com.android.systemui.statusbar.phone.StatusBar;
 
 import com.android.systemui.ambientmusic.AmbientIndicationInflateListener;
@@ -25,6 +29,7 @@ public class AmbientIndicationContainer extends AutoReinflateContainer implement
     private TextView mText;
     private Context mContext;
     private MediaMetadata mMediaMetaData;
+    private boolean mForcedMediaDoze;
 
     public AmbientIndicationContainer(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -51,6 +56,19 @@ public class AmbientIndicationContainer extends AutoReinflateContainer implement
     public void setDozing(boolean dozing) {
         mDozing = dozing;
         setVisibility(dozing ? View.VISIBLE : View.INVISIBLE);
+        updatePosition();
+    }
+
+    public void setForcedMediaPulse(int reason) {
+        mForcedMediaDoze =
+                reason == DozeLog.PULSE_REASON_FORCED_MEDIA_NOTIFICATION;
+        updatePosition();
+    }
+
+    public void updatePosition() {
+        FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) this.getLayoutParams();
+        lp.gravity = mForcedMediaDoze ? Gravity.CENTER : Gravity.BOTTOM;
+        this.setLayoutParams(lp);
     }
 
     public void setIndication(MediaMetadata mediaMetaData) {
