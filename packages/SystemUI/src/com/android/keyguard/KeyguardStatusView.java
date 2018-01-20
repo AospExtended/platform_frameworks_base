@@ -365,7 +365,7 @@ public class KeyguardStatusView extends GridLayout {
         mPulsing = pulsing;
     }
 
-    public void setForcedMediaPulse(int reason) {
+    public void setCleanLayout(int reason) {
         mForcedMediaDoze =
                 reason == DozeLog.PULSE_REASON_FORCED_MEDIA_NOTIFICATION;
         updateDozeVisibleViews();
