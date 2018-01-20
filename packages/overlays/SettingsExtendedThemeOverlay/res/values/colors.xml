@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="condition_card_background">#ff332d4f</color>
-    <color name="suggestion_condition_background">#ff332d4f</color>
-    <color name="suggestion_tile_background">#ff332d4f</color>
+    <color name="condition_card_background">#242038</color>
+    <color name="suggestion_condition_background">#332d4f</color>
+    <color name="suggestion_tile_background">#242038</color>
 </resources>

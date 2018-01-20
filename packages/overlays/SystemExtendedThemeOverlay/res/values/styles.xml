@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.DeviceDefault.QuickSettings" parent="@*android:style/Theme.DeviceDefault">
-        <item name="android:colorPrimary">#FF242038</item>
-        <item name="android:colorPrimaryDark">#FF242038</item>
-        <item name="android:colorSecondary">#FF242038</item>
+        <item name="android:colorPrimary">#242038</item>
+        <item name="android:colorPrimaryDark">#242038</item>
+        <item name="android:colorSecondary">#242038</item>
         <item name="android:colorAccent">@*android:color/accent_device_default_dark</item>
         <item name="android:colorControlNormal">?android:attr/textColorPrimary</item>
-        <item name="android:colorBackgroundFloating">#FF242038</item>
+        <item name="android:colorBackgroundFloating">#242038</item>
     </style>
     <style name="Theme.DeviceDefault.Settings" parent="@*android:style/Theme.Material">
         <item name="android:actionBarTheme">@*android:style/ThemeOverlay.DeviceDefault.ActionBar.Accent</item>
-        <item name="android:colorBackground">#FF242038</item>
-        <item name="android:colorPrimary">#FF242038</item>
-        <item name="android:colorPrimaryDark">#FF242038</item>
+        <item name="android:colorBackground">#242038</item>
+        <item name="android:colorPrimary">#242038</item>
+        <item name="android:colorPrimaryDark">#242038</item>
         <item name="android:colorAccent">@*android:color/accent_device_default_dark</item>
         <item name="android:colorEdgeEffect">#ffffffff</item>
-        <item name="android:colorSecondary">#FF242038</item>
+        <item name="android:colorSecondary">#242038</item>
         <item name="android:colorControlNormal">@*android:color/accent_device_default_dark</item>
-        <item name="android:navigationBarColor">#FF242038</item>
-        <item name="android:textColorPrimaryInverse">#FF242038</item>
+        <item name="android:navigationBarColor">#242038</item>
+        <item name="android:textColorPrimaryInverse">#242038</item>
     </style>
     <style name="Theme.DeviceDefault.SearchBar" parent="@*android:style/Theme.Material.SearchBar">
-        <item name="android:colorPrimary">#FF352f50</item>
-        <item name="android:colorPrimaryDark">#FF352f50</item>
+        <item name="android:colorPrimary">#352f50</item>
+        <item name="android:colorPrimaryDark">#352f50</item>
         <item name="android:colorAccent">@*android:color/accent_device_default_dark</item>
     </style>
     <style name="Theme.Material.Settings.BaseDialog" parent="@*android:style/Theme.Material.BaseDialog">
-        <item name="android:colorPrimary">#FF242038</item>
-        <item name="android:colorPrimaryDark">#FF242038</item>
+        <item name="android:colorPrimary">#242038</item>
+        <item name="android:colorPrimaryDark">#242038</item>
         <item name="android:colorAccent">@*android:color/accent_device_default_dark</item>
-        <item name="android:colorBackground">#FF242038</item>
+        <item name="android:colorBackground">#242038</item>
     </style>
     <style name="Theme.Material.Settings.CompactMenu" parent="@*android:style/Theme.Material.CompactMenu">
-        <item name="android:colorPrimary">#FF242038</item>
-        <item name="android:colorPrimaryDark">#FF242038</item>
+        <item name="android:colorPrimary">#242038</item>
+        <item name="android:colorPrimaryDark">#242038</item>
         <item name="android:colorAccent">@*android:color/accent_device_default_dark</item>
-        <item name="android:colorBackground">#FF242038</item>
+        <item name="android:colorBackground">#242038</item>
     </style>
     <style name="Theme.Material.Settings.Dialog.BaseAlert" parent="@*android:style/Theme.Material.Dialog.BaseAlert">
-        <item name="android:colorPrimary">#FF242038</item>
-        <item name="android:colorPrimaryDark">#FF242038</item>
+        <item name="android:colorPrimary">#242038</item>
+        <item name="android:colorPrimaryDark">#242038</item>
         <item name="android:colorAccent">@*android:color/accent_device_default_dark</item>
-        <item name="android:colorBackground">#FF242038</item>
+        <item name="android:colorBackground">#242038</item>
     </style>
     <style name="Theme.Material.Settings.DialogWhenLarge" parent="@*android:style/Theme.Material.DialogWhenLarge">
-        <item name="android:colorPrimary">#FF242038</item>
-        <item name="android:colorPrimaryDark">#FF242038</item>
+        <item name="android:colorPrimary">#242038</item>
+        <item name="android:colorPrimaryDark">#242038</item>
         <item name="android:colorAccent">@*android:color/accent_device_default_dark</item>
-        <item name="android:colorBackground">#FF242038</item>
+        <item name="android:colorBackground">#242038</item>
     </style>
     <style name="Theme.Material.Settings.DialogWhenLarge.NoActionBar" parent="@*android:style/Theme.Material.DialogWhenLarge.NoActionBar">
-        <item name="android:colorPrimary">#FF242038</item>
-        <item name="android:colorPrimaryDark">#FF242038</item>
+        <item name="android:colorPrimary">#242038</item>
+        <item name="android:colorPrimaryDark">#242038</item>
         <item name="android:colorAccent">@*android:color/accent_device_default_dark</item>
-        <item name="android:colorBackground">#FF242038</item>
+        <item name="android:colorBackground">#242038</item>
     </style>
     <style name="Theme.Material.Settings.Dialog.Presentation" parent="@*android:style/Theme.Material.Dialog.Presentation">
-        <item name="android:colorPrimary">#FF242038</item>
-        <item name="android:colorPrimaryDark">#FF242038</item>
+        <item name="android:colorPrimary">#242038</item>
+        <item name="android:colorPrimaryDark">#242038</item>
         <item name="android:colorAccent">@*android:color/accent_device_default_dark</item>
-        <item name="android:colorBackground">#FF242038</item>
+        <item name="android:colorBackground">#242038</item>
     </style>
 </resources>
