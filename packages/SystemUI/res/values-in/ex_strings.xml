@@ -78,7 +78,7 @@
   <string name="accessibility_quick_settings_heads_up_changed_off">Notifikasi mengambang dimatikan.</string>
   <string name="accessibility_quick_settings_heads_up_changed_on">Notifikasi mengambang dihidupkan.</string>
   <!-- Heads up snooze toast -->
-  <string name="heads_up_snooze_message_one_minute"><xliff: g id = "string"> % s </ xliff: g> - Pemberitahuan tertunda selama 1 menit.</string>
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Pemberitahuan tertunda selama 1 menit.</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <!-- Screenrecord Notification Ticker -->
   <!-- Screenrecord notification title -->
