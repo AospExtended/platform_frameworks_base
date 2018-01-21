@@ -56,6 +56,10 @@ public class AmbientDisplayConfiguration {
         return enabled && ambientDisplayAvailable();
     }
 
+    public boolean canForceDozeNotifications() {
+        return mContext.getResources().getBoolean(R.bool.config_canForceDozeNotifications);
+    }
+
     public boolean pulseOnNotificationAvailable() {
         return ambientDisplayAvailable();
     }

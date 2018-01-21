@@ -100,7 +100,7 @@ public class DozeTriggers implements DozeMachine.Part {
     private void onNotificationForced() {
         if (DozeMachine.DEBUG) Log.d(TAG, "requestNotificationPulse");
         mNotificationPulseTime = SystemClock.elapsedRealtime();
-        if (!mConfig.pulseOnNotificationAvailable()) return;
+        if (!mConfig.pulseOnNotificationAvailable() && !mConfig.canForceDozeNotifications()) return;
         requestPulse(DozeLog.PULSE_REASON_FORCED_MEDIA_NOTIFICATION, false /* performedProxCheck */);
         DozeLog.traceNotificationPulse(mContext);
     }

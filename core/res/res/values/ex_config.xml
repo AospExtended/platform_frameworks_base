@@ -69,5 +69,7 @@
     <bool name="config_deviceHasVariableButtonBrightness">false</bool>
 
     <integer name="config_flashlightProximityTimeout">300</integer>
+
+    <bool name="config_canForceDozeNotifications">true</bool>
 </resources>
 

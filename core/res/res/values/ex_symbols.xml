@@ -87,6 +87,8 @@
   <java-symbol type="bool" name="config_deviceHasVariableButtonBrightness" />
 
   <java-symbol type="integer" name="config_flashlightProximityTimeout" />
+
+  <java-symbol type="bool" name="config_canForceDozeNotifications" />
 </resources>
 
 
