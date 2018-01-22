@@ -393,12 +393,6 @@ public class KeyguardStatusView extends GridLayout implements
 
         View weatherPanel = findViewById(R.id.weather_panel);
         TextView noWeatherInfo = (TextView) findViewById(R.id.no_weather_info_text);
-        int primaryTextColor =
-                res.getColor(R.color.keyguard_default_primary_text_color);
-        // primaryTextColor with a transparency of 70%
-        int secondaryTextColor = (179 << 24) | (primaryTextColor & 0x00ffffff);
-        int defaultIconColor =
-                res.getColor(R.color.keyguard_default_icon_color);
 
         if (!isDozeMode()) {
             mClockView.setVisibility(showClock ? View.VISIBLE : View.GONE);
@@ -421,7 +415,6 @@ public class KeyguardStatusView extends GridLayout implements
                 View.VISIBLE : View.GONE);
         }
         if (noWeatherInfo != null) {
-            noWeatherInfo.setTextColor(primaryTextColor);
             noWeatherInfo.setVisibility(forceHide ?
                 View.VISIBLE : View.GONE);
         }
@@ -430,7 +423,6 @@ public class KeyguardStatusView extends GridLayout implements
                 View.GONE : View.VISIBLE);
         }
         if (mWeatherConditionText != null) {
-            mWeatherConditionText.setTextColor(primaryTextColor);
             mWeatherConditionText.setVisibility(forceHide ?
                 View.GONE : View.VISIBLE);
         }
@@ -443,12 +435,10 @@ public class KeyguardStatusView extends GridLayout implements
             }
         }
         if (mWeatherCurrentTemp != null) {
-            mWeatherCurrentTemp.setTextColor(primaryTextColor);
             mWeatherCurrentTemp.setVisibility(forceHide ?
                 View.GONE : View.VISIBLE);
         }
         if (mWeatherCity != null) {
-            mWeatherCity.setTextColor(primaryTextColor);
             if (mShowLocation) {
                 mWeatherCity.setVisibility(forceHide ?
                     View.GONE : View.VISIBLE);
