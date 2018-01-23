@@ -6118,6 +6118,13 @@ public final class Settings {
         public static final String FLING_TRAILS_COLOR = "fling_trails_color";
 
         /**
+         * Pulse accent color
+         *
+         * @hide
+         */
+        public static final String PULSE_ACCENT_COLOR_ENABLED = "pulse_accent_color_enabled";
+
+        /**
          * Fling pulse lavalamp psychedelic colors
          *
          * @hide
