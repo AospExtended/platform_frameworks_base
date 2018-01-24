@@ -23,16 +23,18 @@
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <string name="accessibility_data_connection_hspap">HSPA+</string>
   <string name="global_action_restart_advanced">Erweitert</string>
-  <string name="global_action_restart_recovery">Recovery</string>
+  <string name="global_action_restart_recovery">Wiederherstellen</string>
   <string name="global_action_restart_bootloader">Bootloader</string>
   <string name="global_action_restart_ui">SystemUI neustarten</string>
-  <string name="global_action_restart_soft">Warmstart</string>
-  <string name="global_action_screenrecord">Bildschirmaufnahme</string>
+  <string name="global_action_restart_soft">Schneller Neustart</string>
+  <string name="global_action_screenrecord">Bildschirm aufnehmen</string>
   <!-- Advance location quick setting tile -->
   <string name="accessibility_quick_settings_location_battery_saving">Standortdienste: Energiesparmodus.</string>
   <string name="accessibility_quick_settings_location_gps_only">Standortdienste: nur Gerät.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Standortdienste: hohe Genauigkeit.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">PiP</string>
+  <string name="quick_settings_pip_tile_app_na">Die App unterstützt kein PiP</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Koffein</string>
   <string name="accessibility_quick_settings_caffeine_off">Koffein aus</string>
@@ -68,6 +70,7 @@
   <string name="lockscreen_default">Standart</string>
   <string name="lockscreen_hidden">Keiner</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Zum Öffnen vom Symbol wischen</string>
   <!-- Heads Up QS Tile -->
   <string name="quick_settings_heads_up_label">Popup</string>
   <string name="accessibility_quick_settings_heads_up_off">Popup aus.</string>
@@ -77,8 +80,10 @@
   <!-- Heads up snooze toast -->
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Popup-Benachrichtigungen sind für eine Minute deaktiviert.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Popup-Benachrichtigungen sind für <xliff:g id="number">%d</xliff:g> Minuten deaktiviert.</string>
+  <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Schnellladen (<xliff:g id="charging_time_left" example="4 Stunden und 2 Minuten">%s</xliff:g> bis das Gerät voll ist)</string>
+  <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Bildschirm wird aufgenommen</string>
   <!-- Screenrecord notification title -->
@@ -92,7 +97,6 @@
   <string name="screenrecord_notif_error">Bildschirmaufnahme nicht möglich</string>
   <string name="notification_channel_screenrecord">Bildschirmaufnahmen</string>
   <!-- Screenrecord Tile -->
-  <string name="quick_settings_screenrecord">Bildschirmaufnahme</string>
   <string name="systemui_tuner_navbar_title">Standard-Einstellungen</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Untere Verknüpfungen</string>
   <!-- Screenshot Delete Toast -->
@@ -138,4 +142,6 @@
   <string name="quick_settings_expanded_navigation_off">Navigationsleiste ausblenden</string>
   <string name="quick_settings_expanded_statusbar_off">Statusleiste ausblenden</string>
   <string name="alert_on_charged_level">Sie können das Ladegerät abstecken ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
+  <string name="battery_level_good_title">Optimalen Ladezustand</string>
+  <string name="notification_channel_charge_alert">Der Akku wurde vollständig geladen</string>
 </resources>

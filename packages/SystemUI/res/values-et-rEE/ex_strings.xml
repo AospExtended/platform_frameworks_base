@@ -49,9 +49,13 @@
   <string name="accessibility_quick_settings_compass_changed_off">Kompass on välja lülitatud.</string>
   <string name="accessibility_quick_settings_compass_changed_on">Kompass on sisse lülitatud.</string>
   <string name="quick_settings_compass_N">Põhi</string>
+  <string name="quick_settings_compass_NE">Kirre</string>
   <string name="quick_settings_compass_E">Ida</string>
+  <string name="quick_settings_compass_SE">Kagu</string>
   <string name="quick_settings_compass_S">Lõuna</string>
+  <string name="quick_settings_compass_SW">Edel</string>
   <string name="quick_settings_compass_W">Lääs</string>
+  <string name="quick_settings_compass_NW">Loe</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">Heli</string>
   <string name="quick_settings_sound_vibrate">Vibreeri</string>
@@ -59,11 +63,13 @@
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <!-- Heads Up QS Tile -->
   <!-- Heads up snooze toast -->
+  <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Kiire laadimine (<xliff:g id="charging_time_left" example="4 tundi ja 2 minutit">%s</xliff:g> kuni aku on täis)</string>
   <string name="keyguard_plugged_in_dash_charging">Kiir laadimine</string>
   <!-- Screenrecord Notification Ticker -->
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Ekraani salvestatakse</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Peata</string>
   <!-- Screenrecord notification action: show/hide pointer -->

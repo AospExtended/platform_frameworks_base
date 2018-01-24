@@ -21,16 +21,37 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">Разширени</string>
+  <string name="global_action_restart_recovery">Режим на възстановяване</string>
+  <string name="global_action_restart_bootloader">Буутлоудър</string>
+  <string name="global_action_restart_soft">Софт рестарт</string>
+  <string name="global_action_screenrecord">Записване на екрана</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Отчитане на местоположение: икономичен режим.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Отчитане на местоположение: само по Gps.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Отчитане на местоположение: режим на висока точност.</string>
   <!-- PiP Tile -->
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Кофеин</string>
+  <string name="accessibility_quick_settings_caffeine_off">Кофеин изключен</string>
+  <string name="accessibility_quick_settings_caffeine_on">Кофеин включен</string>
+  <string name="statusbar_items_title">Елементи на лентата на състоянието</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Снимка на екрана</string>
+  <string name="quick_settings_region_screenshot_label">Частична екранна снимка</string>
+  <string name="recents_free_ram">Свободна RAM: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Компас</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Компасът е изключен.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Компасът е включен.</string>
   <!-- Sound QS Tile -->
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <!-- Heads Up QS Tile -->
   <!-- Heads up snooze toast -->
+  <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <!-- Screenrecord Notification Ticker -->
   <!-- Screenrecord notification title -->

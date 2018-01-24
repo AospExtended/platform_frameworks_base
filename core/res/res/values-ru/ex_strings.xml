@@ -21,7 +21,7 @@
   <string name="reboot_title">Перезагрузка</string>
   <string name="reboot_message">Перезагрузка системы</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_toggleNavigationEditor">редактор панели навигации</string>
+  <string name="permlab_toggleNavigationEditor">Управление редактором панели навигации</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_toggleNavigationEditor">Позволяет приложению редактировать панель навигации.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

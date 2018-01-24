@@ -18,10 +18,14 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="reboot_title">रीबूट करें</string>
+  <string name="reboot_title">वापिस चालू करें</string>
+  <string name="reboot_message">एंड्राइड वापिस चालू हो रहा है</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_toggleNavigationEditor">प्रारंभिक नेविगेशन संपादक</string>
+  <string name="permlab_toggleNavigationEditor">नेविगेशन बदलावकारक को संभाले</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">दूसरे एप्लीकेशन को नेविगेशन बार में बदलाव करने की छूट</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">चकमा देने वाला पैकेज हस्ताक्षर</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">ये चालू करने से एक एप्लीकेशन दूसरा जैसा बर्ताव कर सकता है। हानिकारक एप्लीकेशन इसके फायदा उठा कर आप सीमित माहिती को पढ़ सकेंगे। इसकी परवानगी सावधानी से दे!।</string>
 </resources>

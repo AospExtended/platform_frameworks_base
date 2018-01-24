@@ -21,32 +21,127 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">Дадаткова</string>
+  <string name="global_action_restart_recovery">Рэжым аднаўлення</string>
+  <string name="global_action_restart_bootloader">Загрузчык</string>
+  <string name="global_action_restart_ui">Сістэмны інтэрфейс</string>
+  <string name="global_action_restart_soft">Хуткая перазагрузка</string>
+  <string name="global_action_screenrecord">Запіс экрана</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Вызначэнне месцазнаходжання: рэжым эканоміі батарэі.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Вызначэнне месцазнаходжання: рэжым толькі датчыкі.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Вызначэнне месцазнаходжання: па ўсіх крыніцах.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">PiP</string>
+  <string name="quick_settings_pip_tile_app_na">Праграма не падтрымлівае рэжым \"Карцінка ў карцінцы\"</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Забарона сну</string>
+  <string name="accessibility_quick_settings_caffeine_off">Забарона сну адкл.</string>
+  <string name="accessibility_quick_settings_caffeine_on">Забарона сну ўкл.</string>
+  <string name="statusbar_items_title">Значкі радку стану</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Здымак экрану</string>
+  <string name="quick_settings_region_screenshot_label">Скрыншот абранай вобласці экрана</string>
+  <string name="recents_free_ram">Вольна памяці: %1$d MБ</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Компас</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">Ініцыялізацыя\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Компас адкл.</string>
+  <string name="accessibility_quick_settings_compass_on">Компас укл.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Компас адключаны.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Компас уключаны.</string>
+  <string name="quick_settings_compass_N">Пн</string>
+  <string name="quick_settings_compass_NE">ПнУсх</string>
+  <string name="quick_settings_compass_E">Усх</string>
+  <string name="quick_settings_compass_SE">ПдУсх</string>
+  <string name="quick_settings_compass_S">Пд</string>
+  <string name="quick_settings_compass_SW">ПдЗх</string>
+  <string name="quick_settings_compass_W">Зх</string>
+  <string name="quick_settings_compass_NW">ПнЗх</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Гук</string>
+  <string name="quick_settings_sound_ring">Званок</string>
+  <string name="quick_settings_sound_vibrate">Вібрацыя</string>
+  <string name="quick_settings_sound_dnd">Не турбаваць</string>
+  <string name="lockscreen_default">Па змаўчанні</string>
+  <string name="lockscreen_hidden">Ніводны</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Правядзіце ад значка для запуску</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">Усплывальныя апавяшчэнні</string>
+  <string name="accessibility_quick_settings_heads_up_off">Усплывальныя апавяшчэння адкл.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Усплывальныя апавяшчэння укл.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Усплывальныя паведамленні адключаны.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Усплывальныя паведамленні ўключаны.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> Усплывальныя апавяшчэння выключаны на адну хвіліну.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Усплывальныя апавяшчэнні выключаны на <xliff:g id="number">%d</xliff:g> хвілін.</string>
+  <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Хуткая зарадка (засталося <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
+  <string name="keyguard_plugged_in_dash_charging">Хуткая зарадка</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Ідзе запіс экрана</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Запіс экрана</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Спыніць</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Паказаць паказальнік</string>
+  <string name="screenrecord_notif_pointer_off">Схаваць паказальнік</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Запіс экрана немагчымы</string>
+  <string name="notification_channel_screenrecord">Запіс экрана</string>
   <!-- Screenrecord Tile -->
+  <string name="systemui_tuner_navbar_title">Налады па змаўчанні</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Цэтлікі ў ніжніх кутах</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Скрыншот выдалены</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Перазагрузка</string>
+  <string name="quick_settings_reboot_recovery_label">Рэжым аднаўлення</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">Гучнасць</string>
+  <string name="quick_settings_volume_panel_label">Гучнасць</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">перавызначыць клавішу сілкавання</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Дазваляе праграме перавызначаць кнопку сілкавання.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">Уключана</string>
+  <string name="quick_settings_network_adb_disabled_label">Адключана</string>
+  <string name="quick_settings_network_adb_label">Адладка па сетцы</string>
+  <string name="quick_settings_network_adb_toast">Адладка па USB забароненая</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Сінхранізацыя</string>
+  <string name="accessibility_quick_settings_sync_off">Сінхранізацыя адкл.</string>
+  <string name="accessibility_quick_settings_sync_on">Сінхранізацыя ўкл.</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Сінхранізацыя адключана</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Сінхранізацыя ўключана</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">USB-мадэм адкл.</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USB-мадэм укл.</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB-мадэм адключаны</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB-мадэм уключаны</string>
+  <string name="quick_settings_usb_tether_label">USB-мадэм</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Мова</string>
+  <string name="quick_settings_locale_more_locales_toast">Наладзьце некалькі моў, каб уключыць функцыю пераключэння</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Музыка</string>
+  <string name="quick_settings_music_play">Прайграць</string>
+  <string name="quick_settings_music_pause">Паўза</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Рэжым пашыранага экрану</string>
+  <string name="quick_settings_expanded_desktop">Пашыраны</string>
+  <string name="quick_settings_expanded_desktop_off">Звычайны</string>
+  <string name="quick_settings_expanded_navigation_off">Схаваць панэль навігацыі</string>
+  <string name="quick_settings_expanded_statusbar_off">Схаваць радок стану</string>
+  <string name="alert_on_charged_level">Вы можаце адключыць прыладу сілкавання («&gt;» <xliff:g id="percentage">%s </xliff:g>)</string>
+  <string name="battery_level_good_title">Аптымальны ўзровень батарэі</string>
+  <string name="notification_channel_charge_alert">Аптымальны ўзровень зарада батарэі</string>
 </resources>

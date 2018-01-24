@@ -18,8 +18,14 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="reboot_title">റി-ബൂട്ട്‌</string>
+  <string name="reboot_message">റിബൂട്ടിങ്ങ് സിസ്റ്റം</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">കൺട്രോൾ നാവിഗേഷൻ എഡിറ്റർ</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">നാവ് ബാർ നിയന്ത്രണത്തിന് അപ് നെ അനുവദിക്കുന്നു.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">പാക്കേജ് സൈൻ ഫെയ്ക് ചെയ്യുക</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">മറ്റൊരു അപ്ലിക്കേഷനായി ഭാവിക്കാൻ ഒരു അപ്ലിക്കേഷനെ അനുവദിക്കുന്നു. ക്ഷുദ്രകരമായ അപ്ലിക്കേഷനുകൾ ഇത് സ്വകാര്യ അപ്ലിക്കേഷൻ ഡാറ്റ ആക്സസ് ചെയ്യാൻ ഉപയോഗിച്ചേക്കാം. ഈ അനുവാദം ജാഗ്രതയോടെ മാത്രം നൽകൂക!</string>
 </resources>

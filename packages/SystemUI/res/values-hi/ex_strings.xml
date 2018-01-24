@@ -21,30 +21,103 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">एडवांस्ड</string>
+  <string name="global_action_restart_recovery">रिकवरी</string>
+  <string name="global_action_restart_bootloader">बूटलोडर</string>
+  <string name="global_action_restart_ui">सिस्टम यूई</string>
+  <string name="global_action_restart_soft">सॉफ्टवेयर वापिस चालू करे</string>
+  <string name="global_action_screenrecord">स्क्रीन को रिकॉर्ड करे</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">लोकेशन मोड: बैटरी बचत मोड</string>
+  <string name="accessibility_quick_settings_location_gps_only">लोकेशन मोड: सिर्फ सेंसर मोड़</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">लोकेशन मोड: उच्च सटीकता मोड</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">पी आई पी</string>
+  <string name="quick_settings_pip_tile_app_na">ये एप्पलीकेशन पी आई पी मोड में नही चल सकता</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">कैफीन</string>
+  <string name="accessibility_quick_settings_caffeine_off">कैफीन बंद</string>
+  <string name="accessibility_quick_settings_caffeine_on">कैफीन चालू</string>
+  <string name="statusbar_items_title">स्टेटस बार की चीज़ें</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">स्क्रीनशॉट</string>
+  <string name="quick_settings_region_screenshot_label">अधूरा स्क्रीनशॉट</string>
+  <string name="recents_free_ram">बची हुई RAM: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">वोल्टी</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">कम्पास</string>
+  <string name="quick_settings_compass_value"><xliff:g id="डिग्रीज">%1$.0f</xliff:g>\u00b0 <xliff:g id="दिशा">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">चालू हो रहा है\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">कंपास बैंड करे</string>
+  <string name="accessibility_quick_settings_compass_on">कंपास चालू करे</string>
+  <string name="accessibility_quick_settings_compass_changed_off">कंपास बैंड है</string>
+  <string name="accessibility_quick_settings_compass_changed_on">कंपास चालू करे</string>
+  <string name="quick_settings_compass_N">उत्तर</string>
+  <string name="quick_settings_compass_NE">ईशान</string>
+  <string name="quick_settings_compass_E">पूर्व</string>
+  <string name="quick_settings_compass_SE">नैरुठी</string>
+  <string name="quick_settings_compass_S">दक्षिण</string>
+  <string name="quick_settings_compass_SW">नैरुठी</string>
+  <string name="quick_settings_compass_W">पश्चिम</string>
+  <string name="quick_settings_compass_NW">वायव्य</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">आवाज</string>
+  <string name="quick_settings_sound_ring">घंटी</string>
+  <string name="quick_settings_sound_vibrate">कंपन</string>
+  <string name="quick_settings_sound_dnd">परेशान ना करें</string>
+  <string name="lockscreen_default">पूर्व निर्धारित</string>
+  <string name="lockscreen_hidden">कुछ नहीं</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">लॉन्च करने के लिए चिह्न से स्वाइप करें</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">संकेत</string>
+  <string name="accessibility_quick_settings_heads_up_off">संकेत बंद</string>
+  <string name="accessibility_quick_settings_heads_up_on">संकेत चालु</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">संकेत बंद कर दिया</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">संकेत चालु कर दिया</string>
   <!-- Heads up snooze toast -->
+  <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_plugged_in_dash_charging">शीघ्र चार्जिंग</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">स्क्रीन रिकॉर्ड की जा रही है</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">स्क्रीन रिकॉर्ड की जा रही है</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">रोके</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">सूचक दिखाएँ</string>
+  <string name="screenrecord_notif_pointer_off">सूचक छुपाएँ</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">स्क्रीन रिकॉर्ड करने में असमर्थ</string>
+  <string name="notification_channel_screenrecord">स्क्रीन रिकॉर्ड</string>
   <!-- Screenrecord Tile -->
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">नीचे शॉर्टकट</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">स्क्रीनशॉट मिटा दिया!</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">वापिस चालू करें</string>
+  <string name="quick_settings_reboot_recovery_label">रिकवरी</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">आवाज़</string>
+  <string name="quick_settings_volume_panel_label">आवाज़</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">पॉवर कुंजी को ओवरराइड करें</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">पॉवर कुंजी को ओवरराइड करने के लिए ऐप को अनुमति दे</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">सक्षम</string>
+  <string name="quick_settings_network_adb_disabled_label">असक्षम</string>
+  <string name="quick_settings_network_adb_label">नेटवर्क पर एडीबी</string>
+  <string name="quick_settings_network_adb_toast">USB डिबगिंग सक्षम नहीं है</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">समकालीन</string>
+  <string name="accessibility_quick_settings_sync_off">समकालीन बंद</string>
+  <string name="accessibility_quick_settings_sync_on">समकालीन चालु</string>
+  <string name="accessibility_quick_settings_sync_changed_off">समकालीन बंद कर दिया।</string>
+  <string name="accessibility_quick_settings_sync_changed_on">समकालीन चालु कर दिया</string>
   <!-- USB Tethering tile -->
   <!-- Language toggle tile -->
   <!-- Music tile -->

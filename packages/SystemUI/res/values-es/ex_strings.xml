@@ -29,16 +29,16 @@
   <string name="global_action_restart_soft">Reinicio rápido</string>
   <string name="global_action_screenrecord">Grabación de pantalla</string>
   <!-- Advance location quick setting tile -->
-  <string name="accessibility_quick_settings_location_battery_saving">Reporte de localización: modo de ahorro de energía.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Reporte de localización: modo de solo sensores.</string>
-  <string name="accessibility_quick_settings_location_high_accuracy">Reporte de localización: modo de alta precisión.</string>
+  <string name="accessibility_quick_settings_location_battery_saving">Reporte de ubicación: modo de ahorro de energía.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Reporte de ubicación: modo de sólo sensores.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Reporte de ubicación: modo de alta precisión.</string>
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">La aplicación no soporta PiP</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Cafeína</string>
-  <string name="accessibility_quick_settings_caffeine_off">Cafeína deshabilitado</string>
-  <string name="accessibility_quick_settings_caffeine_on">Cafeína habilitado</string>
+  <string name="accessibility_quick_settings_caffeine_off">Cafeína desactivada</string>
+  <string name="accessibility_quick_settings_caffeine_on">Cafeína activada</string>
   <string name="statusbar_items_title">Elementos de la barra de estado</string>
   <!-- Screenshot QS tile -->
   <string name="quick_settings_screenshot_label">Captura de pantalla</string>
@@ -70,16 +70,17 @@
   <string name="lockscreen_default">Por defecto</string>
   <string name="lockscreen_hidden">Ninguno</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
-  <string name="custom_hint">Desliza desde el icono para abrir</string>
+  <string name="custom_hint">Desliza desde el ícono para abrir</string>
   <!-- Heads Up QS Tile -->
-  <string name="quick_settings_heads_up_label">Notificación flotante</string>
+  <string name="quick_settings_heads_up_label">Notificaciones emergentes</string>
   <string name="accessibility_quick_settings_heads_up_off">Notificaciones emergentes desactivadas.</string>
   <string name="accessibility_quick_settings_heads_up_on">Notificaciones emergentes activadas.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">Notificaciones emergentes desactivadas.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">Notificaciones emergentes activadas.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Notificaciones emergentes han sido desactivadas.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Notificaciones emergentes han sido activadas.</string>
   <!-- Heads up snooze toast -->
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Las notificaciones flotantes estaran pospuestas por 1 minuto.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> - Las notificaciones flotantes estan pospuestas <xliff:g id="number">%d </xliff:g> minutos.</string>
+  <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Carga rápida (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> hasta completar)</string>
   <string name="keyguard_plugged_in_dash_charging">Carga Rápida</string>
@@ -96,7 +97,6 @@
   <string name="screenrecord_notif_error">No se puede grabar la pantalla</string>
   <string name="notification_channel_screenrecord">Grabaciones de pantalla</string>
   <!-- Screenrecord Tile -->
-  <string name="quick_settings_screenrecord">Grabación de pantalla</string>
   <string name="systemui_tuner_navbar_title">Configuración predeterminada</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Accesos directos inferiores</string>
   <!-- Screenshot Delete Toast -->

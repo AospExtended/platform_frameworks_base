@@ -27,5 +27,5 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_fakePackageSignature">Falsificação de assinatura</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Permite que o aplicativo pretenda ser um aplicativo diferente. Os aplicativos maliciosos podem ser capazes de usar isso para acessar dados de aplicativos particulares. Conceda esta permissão com cuidado!</string>
+  <string name="permdesc_fakePackageSignature">Permite que o aplicativo finja ser um aplicativo diferente. Aplicativos maliciosos podem usar isso para acessar dados privados de aplicativos. Somente conceda esta permissão com cuidado!</string>
 </resources>

@@ -21,32 +21,127 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">സാങ്കേതികം</string>
+  <string name="global_action_restart_recovery">റിക്കവറി</string>
+  <string name="global_action_restart_bootloader">ബൂട്ട്ലോഡര്‍</string>
+  <string name="global_action_restart_ui">സിസ്റ്റം യൂസർ ഇന്റർഫേസ്</string>
+  <string name="global_action_restart_soft">സോഫ്റ്റ് റീബുട്</string>
+  <string name="global_action_screenrecord">സ്ക്രീൻ റെക്കോർഡ്</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">സ്ഥാനം റിപ്പോർട്ടിംഗ്: ബാറ്ററി ലാഭിക്കല്‍ മോഡ്.</string>
+  <string name="accessibility_quick_settings_location_gps_only">സ്ഥാനം റിപ്പോർട്ടിംഗ്: ബാറ്ററി ലാഭിക്കല്‍ മോഡ്.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">സ്ഥാനം റിപ്പോർട്ടിംഗ്: ഉയർന്ന കൃത്യതാ മോഡ്.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">PiP</string>
+  <string name="quick_settings_pip_tile_app_na">ഇൗ ആപ് PiP സപ്പോർട്ട് ചെയ്യുന്നില്ല</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">കഫീൻ</string>
+  <string name="accessibility_quick_settings_caffeine_off">കഫീൻ ഓഫ്</string>
+  <string name="accessibility_quick_settings_caffeine_on">കഫീൻ ഓൺ</string>
+  <string name="statusbar_items_title">സ്റ്റാറ്റസ് ബാർ ഐറ്റംസ്</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">സ്ക്രീൻഷോട്ട്</string>
+  <string name="quick_settings_region_screenshot_label">ഭാകികമായ സ്ക്രീൻഷോട്ട്‌</string>
+  <string name="recents_free_ram">ഫ്രീ റാം %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VoLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">കോമ്പസ്</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">Initializing\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">കോമ്പസ് ഓഫ്.</string>
+  <string name="accessibility_quick_settings_compass_on">കോമ്പസ് ഓൺ.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">കോമ്പസ് ഓഫ് ആക്കിയിരിക്കുന്നു.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">കോമ്പസ് ഓൺ ആക്കിയിരിക്കുന്നു.</string>
+  <string name="quick_settings_compass_N">N</string>
+  <string name="quick_settings_compass_NE">NE</string>
+  <string name="quick_settings_compass_E">E</string>
+  <string name="quick_settings_compass_SE">SE</string>
+  <string name="quick_settings_compass_S">S</string>
+  <string name="quick_settings_compass_SW">SW</string>
+  <string name="quick_settings_compass_W">W</string>
+  <string name="quick_settings_compass_NW">NW</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">ശബ്‌ദം</string>
+  <string name="quick_settings_sound_ring">റിങ്ങ്</string>
+  <string name="quick_settings_sound_vibrate">വൈബ്രേറ്റ്‌</string>
+  <string name="quick_settings_sound_dnd">ശല്യം ചെയ്യാതിരിക്കുക</string>
+  <string name="lockscreen_default">സാധാ ഗതിയിലേക്ക്</string>
+  <string name="lockscreen_hidden">ഒന്നുമില്ല</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">ലോഞ്ച് ചെയ്യാനായി ഐക്കണിൽ നിന്നും സ്വൈപ്പ് ചെയ്യുക</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">മുന്നറിയിപ്പ്</string>
+  <string name="accessibility_quick_settings_heads_up_off">ഹെഡ്സ് അപ്പ് ഓഫ്.</string>
+  <string name="accessibility_quick_settings_heads_up_on">ഹെഡ്സ് അപ്പ് ഓണ്‍.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">ഹെഡ്സ് അപ്പ് ഓഫ് ചെയ്തു.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">ഹെഡ്സ് അപ്പ് ഓണ്‍ ചെയ്തു.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Peeking notifications are snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
+  <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
+  <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">സ്ക്രീൻ റെക്കോർഡ് ചെയ്യപ്പെട്ടുകൊണ്ടിരിക്കുന്നു</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">റെക്കോർഡിംഗ് സ്ക്രീൻ</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">നിര്‍ത്തുക</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">പോയിന്റർ കാണിക്കുക</string>
+  <string name="screenrecord_notif_pointer_off">പോയിന്റർ മറയ്ക്കൂക</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">സ്ക്രീൻ റെക്കോർഡ് ചെയ്യാനാകുന്നില്ല</string>
+  <string name="notification_channel_screenrecord">സ്ക്രീൻ റെക്കോർഡ്</string>
   <!-- Screenrecord Tile -->
+  <string name="systemui_tuner_navbar_title">സാധാരണ ക്രമീകരണങ്ങൾ</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">താഴ്‌ഭാഗ ഷോർട്ട്കട്ട്</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">സ്ക്രീൻഷോട്ട് ഡിലീറ്റ് ചെയതു</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">റിബൂട്ട്‌</string>
+  <string name="quick_settings_reboot_recovery_label">റിക്കവറി</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">ശബ്ദം</string>
+  <string name="quick_settings_volume_panel_label">ശബ്ദം</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">പവർ കീ അസാധുവാക്കുക</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">ഈ ആപ്പിനെ പവർ കീ അസാധുവാക്കാൻ അനുവദിക്കുന്നു.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">സജ്ജമാക്കുക</string>
+  <string name="quick_settings_network_adb_disabled_label">ദുർബലമാക്കുക</string>
+  <string name="quick_settings_network_adb_label">നെറ്റ്‌വർക്കിൽ ADB</string>
+  <string name="quick_settings_network_adb_toast">യുഎസ്ബി ഡ്ബഗ്ഗ് ഓൺ അല്ല</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Sync Now</string>
+  <string name="accessibility_quick_settings_sync_off">Sync ഓഫ്</string>
+  <string name="accessibility_quick_settings_sync_on">Sync a</string>
+  <string name="accessibility_quick_settings_sync_changed_off">പൊരുത്തപ്പെടൽ ഓഫ് ചെയ്തു</string>
+  <string name="accessibility_quick_settings_sync_changed_on">പൊരുത്തപ്പെടൽ ഓണ്‍ ചെയ്തു</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">USB ടെതറിംഗ് ഓഫ്</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USB ടെതറിംഗ് on</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB ടെതറിംഗ് ഓഫ്</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB ടെതറിംഗ് on</string>
+  <string name="quick_settings_usb_tether_label">USB ടെതറിംഗ്</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Languages (ഭാഷ)</string>
+  <string name="quick_settings_locale_more_locales_toast">ഇൗ സൗകര്യം ലഭ്യമാക്കാൻ ഒന്നിൽ കൂടുതൽ ഭാഷകൾ ക്രമീകരിക്കുക</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">സംഗീതം</string>
+  <string name="quick_settings_music_play">പ്ലേ</string>
+  <string name="quick_settings_music_pause">തല്‍ക്കാലം നിര്‍ത്തുക</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Expanded desktop</string>
+  <string name="quick_settings_expanded_desktop">വ്യാപിപ്പിക്കുക</string>
+  <string name="quick_settings_expanded_desktop_off">സ്വാഭാവികം</string>
+  <string name="quick_settings_expanded_navigation_off">നാവ് ബാർ മറയ്ക്കുക</string>
+  <string name="quick_settings_expanded_statusbar_off">സ്റ്റാറ്റസ് ബാർ മറയ്ക്കുക</string>
+  <string name="alert_on_charged_level">You can disconnect the charger ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
+  <string name="battery_level_good_title">സന്തുലിത ബാറ്ററി ലെവൽ</string>
+  <string name="notification_channel_charge_alert">സന്തുലിത ബാറ്ററി ചാർജ് ലെവൽ</string>
 </resources>

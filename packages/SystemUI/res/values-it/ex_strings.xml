@@ -37,8 +37,8 @@
   <string name="quick_settings_pip_tile_app_na">L\'app non supporta PiP</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Caffeina</string>
-  <string name="accessibility_quick_settings_caffeine_off">Caffeina disattivata</string>
-  <string name="accessibility_quick_settings_caffeine_on">Caffeina attivata</string>
+  <string name="accessibility_quick_settings_caffeine_off">Caffeina spenta</string>
+  <string name="accessibility_quick_settings_caffeine_on">Caffeina accesa</string>
   <string name="statusbar_items_title">Elementi barra di stato</string>
   <!-- Screenshot QS tile -->
   <string name="quick_settings_screenshot_label">Screenshot</string>
@@ -64,7 +64,7 @@
   <string name="quick_settings_compass_NW">NO</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">Suono</string>
-  <string name="quick_settings_sound_ring">Suona</string>
+  <string name="quick_settings_sound_ring">Suoneria</string>
   <string name="quick_settings_sound_vibrate">Vibrazione</string>
   <string name="quick_settings_sound_dnd">Non disturbare</string>
   <string name="lockscreen_default">Predefinito</string>
@@ -80,11 +80,12 @@
   <!-- Heads up snooze toast -->
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - La notifica è posticipata per 1 minuto.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Le notifiche saranno posticipate per <xliff:g id="number">%d</xliff:g> minuti.</string>
+  <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Ricarica rapida (<xliff:g id="charging_time_left" example="4 hours and 2 minutes"> %s</xliff:g> al termine)</string>
   <string name="keyguard_plugged_in_dash_charging">Ricarica Rapida</string>
   <!-- Screenrecord Notification Ticker -->
-  <string name="screenrecord_notif_ticker">Lo schermo sta venendo registrato</string>
+  <string name="screenrecord_notif_ticker">Lo schermo è in fase di registrazione</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">Registrazione schermo in corso</string>
   <!-- Screenrecord notification action: Stop -->
@@ -96,7 +97,6 @@
   <string name="screenrecord_notif_error">Impossibile registrare lo schermo</string>
   <string name="notification_channel_screenrecord">Registrazioni schermo</string>
   <!-- Screenrecord Tile -->
-  <string name="quick_settings_screenrecord">Registra schermo</string>
   <string name="systemui_tuner_navbar_title">Impostazioni predefinite</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Scorciatoie in basso</string>
   <!-- Screenshot Delete Toast -->
@@ -123,8 +123,8 @@
   <string name="accessibility_quick_settings_sync_changed_off">Sincronizzazione disattivata</string>
   <string name="accessibility_quick_settings_sync_changed_on">Sincronizzazione attivata</string>
   <!-- USB Tethering tile -->
-  <string name="accessibility_quick_settings_usb_tether_off">Tethering USB non attivo</string>
-  <string name="accessibility_quick_settings_usb_tether_on">Tethering USB attivo</string>
+  <string name="accessibility_quick_settings_usb_tether_off">Tethering USB spento</string>
+  <string name="accessibility_quick_settings_usb_tether_on">Tethering USB acceso</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">Tethering USB disattivato</string>
   <string name="accessibility_quick_settings_usb_tether_changed_on">Tethering USB attivato</string>
   <string name="quick_settings_usb_tether_label">Tethering USB</string>

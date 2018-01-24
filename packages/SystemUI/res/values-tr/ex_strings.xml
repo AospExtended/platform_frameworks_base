@@ -36,29 +36,112 @@
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">Uygulama PiP\'i desteklemiyor</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Kafein</string>
+  <string name="accessibility_quick_settings_caffeine_off">Kafein kapalı</string>
+  <string name="accessibility_quick_settings_caffeine_on">Kafein açık</string>
+  <string name="statusbar_items_title">Durum çubuğu öğeleri</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Ekran görüntüsü</string>
+  <string name="quick_settings_region_screenshot_label">Kısmi ekran görüntüsü</string>
+  <string name="recents_free_ram">Boş RAM: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Pusula</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">Başlatılıyor\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Pusula kapalı.</string>
+  <string name="accessibility_quick_settings_compass_on">Pusula açık.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Pusula kapatıldı.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Pusula açıldı.</string>
+  <string name="quick_settings_compass_N">K</string>
+  <string name="quick_settings_compass_NE">KD</string>
+  <string name="quick_settings_compass_E">D</string>
+  <string name="quick_settings_compass_SE">GD</string>
+  <string name="quick_settings_compass_S">G</string>
+  <string name="quick_settings_compass_SW">GB</string>
+  <string name="quick_settings_compass_W">B</string>
+  <string name="quick_settings_compass_NW">KB</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Ses</string>
+  <string name="quick_settings_sound_ring">Zil sesi</string>
+  <string name="quick_settings_sound_vibrate">Titreşim</string>
+  <string name="quick_settings_sound_dnd">Rahatsız etmeyin</string>
+  <string name="lockscreen_default">Sıfırla</string>
+  <string name="lockscreen_hidden">Yok</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Başlatmak için simgeyi kaydırın</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">Bildirim penceresi</string>
+  <string name="accessibility_quick_settings_heads_up_off">Üst bildirimler kapalı.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Üst bildirimler açık.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Bildirim pencereleri kapatıldı.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Bildirim pencereleri açıldı.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> • Gözatma bildirimi 1 dakika erteleniyor.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • Gözatma bildirimi <xliff:g id="number">%d</xliff:g> dakika erteleniyor.</string>
+  <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Hızlı Şarj aktif (tam doluma <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> kaldı)</string>
+  <string name="keyguard_plugged_in_dash_charging">Hızlı şarj oluyor</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Ekran kaydediliyor</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Ekran kaydediliyor</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Durdur</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">İşaretçiyi göster</string>
+  <string name="screenrecord_notif_pointer_off">İşaretçiyi gizle</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Ekran kaydedilemiyor</string>
+  <string name="notification_channel_screenrecord">Ekran kayıtları</string>
   <!-- Screenrecord Tile -->
+  <string name="systemui_tuner_navbar_title">Varsayılan ayarlar</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Alt kısayollar</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Ekran görüntüsü silindi</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Yeniden başlat</string>
+  <string name="quick_settings_reboot_recovery_label">Kurtarma modu</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">Ses</string>
+  <string name="quick_settings_volume_panel_label">Ses</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">güç tuşu işlevini değiştir</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Uygulamanın güç tuşunun işlevini değiştirmesine izin verir.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">Etkinleştirildi</string>
+  <string name="quick_settings_network_adb_disabled_label">Etkin Değil</string>
+  <string name="quick_settings_network_adb_label">Ağ üzerinden ADB</string>
+  <string name="quick_settings_network_adb_toast">USB hata ayıklama etkin değil</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Eşitleme</string>
+  <string name="accessibility_quick_settings_sync_off">Eşitleme kapalı</string>
+  <string name="accessibility_quick_settings_sync_on">Eşitleme açık</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Eşitleme kapatıldı</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Eşitleme açıldı</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">USB internet paylaşımı kapalı</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USB internet paylaşımı açık</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB internet paylaşımı kapatıldı</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB internet paylaşımı açıldı</string>
+  <string name="quick_settings_usb_tether_label">USB internet paylaşımı</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Dil</string>
+  <string name="quick_settings_locale_more_locales_toast">Geçiş işlevselliğini etkinleştirmek için lütfen birden fazla dil yapılandırın</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Müzik</string>
+  <string name="quick_settings_music_play">Oynat</string>
+  <string name="quick_settings_music_pause">Duraklat</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Genişletilmiş masaüstü</string>
+  <string name="quick_settings_expanded_desktop">Genişletilmiş</string>
+  <string name="quick_settings_expanded_desktop_off">Standart</string>
+  <string name="quick_settings_expanded_navigation_off">Gezinti çubuğunu gizle</string>
+  <string name="quick_settings_expanded_statusbar_off">Durum çubuğunu gizle</string>
+  <string name="alert_on_charged_level">Şarj cihazını çıkarabilirsin ( &gt;<xliff:g id="percentage">%s</xliff:g> )</string>
+  <string name="battery_level_good_title">Pil ömrü en iyi hale getir</string>
+  <string name="notification_channel_charge_alert">Batarya şarj seviyesi uygun</string>
 </resources>

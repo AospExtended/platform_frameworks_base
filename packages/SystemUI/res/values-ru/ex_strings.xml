@@ -23,14 +23,14 @@
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <string name="accessibility_data_connection_hspap">HSPA+</string>
   <string name="global_action_restart_advanced">Дополнительно</string>
-  <string name="global_action_restart_recovery">Меню восстановления</string>
+  <string name="global_action_restart_recovery">Режим восстановления</string>
   <string name="global_action_restart_bootloader">Перезагрузка в Загрузчик</string>
   <string name="global_action_restart_ui">Интерфейс системы</string>
   <string name="global_action_restart_soft">Мягкая Перезагрузка</string>
   <string name="global_action_screenrecord">Запись экрана</string>
   <!-- Advance location quick setting tile -->
-  <string name="accessibility_quick_settings_location_battery_saving">Энергосбережение батареи.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Определение местоположения: по спутникам Gps.</string>
+  <string name="accessibility_quick_settings_location_battery_saving">Отчет о местоположении: режим экономии батареи.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Определение местоположения: Отчет о местоположении: режим только датчики.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Определение местоположения: по всем источникам.</string>
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">Картинка в картинке (PiP)</string>
@@ -38,12 +38,12 @@
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Запрет сна</string>
   <string name="accessibility_quick_settings_caffeine_off">Запрет сна выкл</string>
-  <string name="accessibility_quick_settings_caffeine_on">Запрет сна вкл.</string>
+  <string name="accessibility_quick_settings_caffeine_on">Запрет сна вкл</string>
   <string name="statusbar_items_title">Значки строки состояния</string>
   <!-- Screenshot QS tile -->
   <string name="quick_settings_screenshot_label">Скриншот</string>
   <string name="quick_settings_region_screenshot_label">Скриншот выбранной области экрана</string>
-  <string name="recents_free_ram">Свободно памяти: %1$d MB</string>
+  <string name="recents_free_ram">Свободно памяти: %1$d MБ</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">VoLTE</string>
   <!-- Compass QS Tile -->
@@ -80,6 +80,7 @@
   <!-- Heads up snooze toast -->
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> Всплывающие уведомления выключены на одну минуту.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Всплывающие уведомления выключены на <xliff:g id="number">%d</xliff:g> минут.</string>
+  <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Быстрая зарядка (осталось <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
   <string name="keyguard_plugged_in_dash_charging">Быстрая зарядка</string>
@@ -96,7 +97,6 @@
   <string name="screenrecord_notif_error">Запись экрана невозможна</string>
   <string name="notification_channel_screenrecord">Записи экрана</string>
   <!-- Screenrecord Tile -->
-  <string name="quick_settings_screenrecord">Запись экрана</string>
   <string name="systemui_tuner_navbar_title">Настройки по умолчанию</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Ярлыки в нижних углах</string>
   <!-- Screenshot Delete Toast -->

@@ -21,32 +21,127 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">Розширений режим</string>
+  <string name="global_action_restart_recovery">Режим рекавері</string>
+  <string name="global_action_restart_bootloader">Режим завантажувача</string>
+  <string name="global_action_restart_ui">Перезапустити SystemUI</string>
+  <string name="global_action_restart_soft">Перезапуск інтерфейсу</string>
+  <string name="global_action_screenrecord">Запис з екрану</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Визначення місцезнаходження: режим економії енергії.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Визначення місцезнаходження: тільки GPS.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Визначення місцезнаходження: режим високої точності.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">Картинка в картинці (PiP)</string>
+  <string name="quick_settings_pip_tile_app_na">Застосунок не підтримує режим \"Картинка в картинці\"</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Заборона сну</string>
+  <string name="accessibility_quick_settings_caffeine_off">Заборона сну вимк</string>
+  <string name="accessibility_quick_settings_caffeine_on">Заборона сну увімк</string>
+  <string name="statusbar_items_title">Значки рядку стану</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Знімки екрана</string>
+  <string name="quick_settings_region_screenshot_label">Частковий скріншот</string>
+  <string name="recents_free_ram">Вільно ОЗП: %1$d Мб</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VoLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Компас</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">Ініціалізація\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Компас вимк.</string>
+  <string name="accessibility_quick_settings_compass_on">Компас ввімк.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Компас вимкнено.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Компас ввімкнено.</string>
+  <string name="quick_settings_compass_N">Пн</string>
+  <string name="quick_settings_compass_NE">ПнСх</string>
+  <string name="quick_settings_compass_E">Сх</string>
+  <string name="quick_settings_compass_SE">ПдСх</string>
+  <string name="quick_settings_compass_S">Пд</string>
+  <string name="quick_settings_compass_SW">ПдЗх</string>
+  <string name="quick_settings_compass_W">Зх</string>
+  <string name="quick_settings_compass_NW">ПнЗх</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Звук</string>
+  <string name="quick_settings_sound_ring">Дзвінок</string>
+  <string name="quick_settings_sound_vibrate">Вібросигнал</string>
+  <string name="quick_settings_sound_dnd">Не турбувати</string>
+  <string name="lockscreen_default">За замовчуванням</string>
+  <string name="lockscreen_hidden">Жоден</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Проведіть від іконки для запуску</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">Спливаючі сповіщення</string>
+  <string name="accessibility_quick_settings_heads_up_off">Спливаючі сповіщення вимк.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Спливаючі сповіщення увімк.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Спливаючі сповіщення вимкнено.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Спливаючі сповіщення увімкнено.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> Спливаючі сповіщення вимкнені на одну хвилину.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Спливаючі сповіщення вимкнені на <xliff:g id="number">%d</xliff:g> хвилин.</string>
+  <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Швидке заряджання (<xliff:g id="charging_time_left" example="4 год. 2 хв.">%s</xliff:g> до повної зарядки)</string>
+  <string name="keyguard_plugged_in_dash_charging">Швидке заряджання</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Триває запис з екрану</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Запис екрану</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Стоп</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Показувати вказівник</string>
+  <string name="screenrecord_notif_pointer_off">Приховати вказівник</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Неможливо записати екран</string>
+  <string name="notification_channel_screenrecord">Записи з екрану</string>
   <!-- Screenrecord Tile -->
+  <string name="systemui_tuner_navbar_title">Заводські налаштування</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Ярлики в нижніх кутах</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Знімок екрану видалено</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Перезавантажити</string>
+  <string name="quick_settings_reboot_recovery_label">Рекавері</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">Гучність</string>
+  <string name="quick_settings_volume_panel_label">Гучність</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">перевизначити клавішу живлення</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Дозволяє програмі перевизначити клавішу живлення.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">Увімкнено</string>
+  <string name="quick_settings_network_adb_disabled_label">Вимкнено</string>
+  <string name="quick_settings_network_adb_label">ADB по мережі</string>
+  <string name="quick_settings_network_adb_toast">Налагодження USB не увімкнуто</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Синхронізація</string>
+  <string name="accessibility_quick_settings_sync_off">Синхронізація вимк.</string>
+  <string name="accessibility_quick_settings_sync_on">Синхронізація увімк.</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Синхронізацію вимкнено</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Синхронізацію увімкнено</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">USB-модем вимк.</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USB-модем увімк.</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB-модем вимкнено</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB-модем увімкнуто</string>
+  <string name="quick_settings_usb_tether_label">USB-модем</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Мова</string>
+  <string name="quick_settings_locale_more_locales_toast">Будь ласка, налаштуйте декілька мов для активації функціоналу</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Музика</string>
+  <string name="quick_settings_music_play">Відтв.</string>
+  <string name="quick_settings_music_pause">Пауза</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Розширений робочий стіл</string>
+  <string name="quick_settings_expanded_desktop">Розширений</string>
+  <string name="quick_settings_expanded_desktop_off">Нормальний</string>
+  <string name="quick_settings_expanded_navigation_off">Приховати навігаційну панель</string>
+  <string name="quick_settings_expanded_statusbar_off">Приховати рядок стану</string>
+  <string name="alert_on_charged_level">Ви можете від\'єднати зарядний пристрій (\"&gt;\" <xliff:g id="percentage">%s </xliff:g>)</string>
+  <string name="battery_level_good_title">Оптимальний рівень батареї</string>
+  <string name="notification_channel_charge_alert">Оптимальний рівень заряду батареї</string>
 </resources>

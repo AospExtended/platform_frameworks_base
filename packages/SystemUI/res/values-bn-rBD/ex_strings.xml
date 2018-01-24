@@ -21,7 +21,16 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">এইচএসপিএ+</string>
+  <string name="global_action_restart_advanced">উন্নত</string>
+  <string name="global_action_restart_recovery">উদ্ধার</string>
+  <string name="global_action_restart_bootloader">বুট-লোডার</string>
+  <string name="global_action_restart_ui">সিস্টেমUI</string>
+  <string name="global_action_restart_soft">নরম পুনোরাই চালু</string>
+  <string name="global_action_screenrecord">স্ক্রিনরেকর্ড</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">ব্যাটারি সুরক্ষা মোড.</string>
+  <string name="accessibility_quick_settings_location_gps_only">শুধু সেন্সর মোড.</string>
   <!-- PiP Tile -->
   <!-- Caffeine QS Tile -->
   <!-- Screenshot QS tile -->
@@ -31,6 +40,7 @@
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <!-- Heads Up QS Tile -->
   <!-- Heads up snooze toast -->
+  <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <!-- Screenrecord Notification Ticker -->
   <!-- Screenrecord notification title -->

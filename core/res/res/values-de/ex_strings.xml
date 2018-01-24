@@ -25,6 +25,7 @@
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_toggleNavigationEditor">Erlaube einer Applikation die Kontrolle über den Navigationsleisteneditor.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Signatur-Nachahmung</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Erlaube der Applikation sich als eine andere auszugeben. Bösartige Anwendungen könnten hierdurch Daten stehlen. Verteilen sie diese Berechtigung mit Vorsicht!</string>
 </resources>

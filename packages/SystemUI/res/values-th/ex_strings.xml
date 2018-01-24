@@ -27,10 +27,22 @@
   <!-- Screenshot QS tile -->
   <!-- volte icon switch -->
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_N">เหนือ</string>
+  <string name="quick_settings_compass_NE">ตะวันออกเฉียงเหนือ</string>
+  <string name="quick_settings_compass_E">ตะวันออก</string>
+  <string name="quick_settings_compass_SE">ตะวันออกเฉียงใต้</string>
+  <string name="quick_settings_compass_S">ใต้</string>
+  <string name="quick_settings_compass_SW">ตะวันตกเฉียงใต้</string>
+  <string name="quick_settings_compass_W">ตะวันตก</string>
+  <string name="quick_settings_compass_NW">ตะวันตกเฉียงเหนือ</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">เสียง</string>
+  <string name="quick_settings_sound_ring">เสียงเรียกเข้า</string>
+  <string name="quick_settings_sound_vibrate">สั่น</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <!-- Heads Up QS Tile -->
   <!-- Heads up snooze toast -->
+  <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <!-- Screenrecord Notification Ticker -->
   <!-- Screenrecord notification title -->

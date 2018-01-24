@@ -18,12 +18,12 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="reboot_title">重启手机</string>
-  <string name="reboot_message">正在重启系统</string>
+  <string name="reboot_title">重新启动</string>
+  <string name="reboot_message">正在重启</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_toggleNavigationEditor">操控导航栏编辑器</string>
+  <string name="permlab_toggleNavigationEditor">导航栏设置</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_toggleNavigationEditor">允许一个应用程序控制导航栏编辑器。</string>
+  <string name="permdesc_toggleNavigationEditor">允许应用程序修改导航栏设置</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_fakePackageSignature">模仿安装包签名</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
