@@ -79,26 +79,6 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private View mCustomCarrierLabel;
     private int mShowCarrierLabel;
 
-    private final Handler mHandler = new Handler();
-
-    private class SettingsObserver extends ContentObserver {
-        SettingsObserver(Handler handler) {
-            super(handler);
-        }
-
-        void observe() {
-            getContext().getContentResolver().registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.STATUS_BAR_CARRIER),
-                    false, this, UserHandle.USER_ALL);
-        }
-
-        @Override
-        public void onChange(boolean selfChange) {
-            updateSettings(true);
-        }
-    }
-    private SettingsObserver mSettingsObserver = new SettingsObserver(mHandler);
-
     private SignalCallback mSignalCallback = new SignalCallback() {
         @Override
         public void setIsAirplaneMode(NetworkController.IconState icon) {
@@ -114,7 +94,6 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mNetworkController = Dependency.get(NetworkController.class);
         mStatusBarComponent = SysUiServiceProvider.getComponent(getContext(), StatusBar.class);
         mTickerObserver = new TickerObserver(new Handler());
-        mSettingsObserver.observe();
     }
 
     class TickerObserver extends UserContentObserver {
@@ -131,8 +110,11 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         protected void observe() {
             super.observe();
             getContext().getContentResolver().registerContentObserver(
-                    Settings.System.getUriFor(Settings.System.STATUS_BAR_SHOW_TICKER), false, this,
-                    UserHandle.USER_ALL);
+                    Settings.System.getUriFor(Settings.System.STATUS_BAR_SHOW_TICKER),
+                    false, this, UserHandle.USER_ALL);
+            getContext().getContentResolver().registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.STATUS_BAR_CARRIER),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -141,7 +123,15 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                     Settings.System.STATUS_BAR_SHOW_TICKER, 1,
                     UserHandle.USER_CURRENT);
             initTickerView();
+            updateSettings(true);
         }
+    }
+
+    public void updateSettings(boolean animate) {
+        mShowCarrierLabel = Settings.System.getIntForUser(
+                getContext().getContentResolver(), Settings.System.STATUS_BAR_CARRIER, 1,
+                UserHandle.USER_CURRENT);
+        setCarrierLabel(animate);
     }
 
     @Override
@@ -371,13 +361,6 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         } else {
             mStatusBarComponent.disableTicker();
         }
-    }
-
-    public void updateSettings(boolean animate) {
-        mShowCarrierLabel = Settings.System.getIntForUser(
-                getContext().getContentResolver(), Settings.System.STATUS_BAR_CARRIER, 1,
-                UserHandle.USER_CURRENT);
-        setCarrierLabel(animate);
     }
 
     private void setCarrierLabel(boolean animate) {
