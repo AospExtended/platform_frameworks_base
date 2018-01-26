@@ -698,6 +698,8 @@ public class StatusBar extends SystemUI implements DemoMode,
                 if (currentPkg.contains(packageName)) {
                     return;
                 }
+            }
+            if (mNavigationBar != null) {
                 mNavigationBar.setMediaPlaying(true);
             }
         } else {
