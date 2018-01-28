@@ -418,7 +418,7 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
 
         mRestartSoft = new AdvancedAction(
                 RESTART_SOFT_BUTTON,
-                com.android.systemui.R.drawable.ic_restart_soft,
+                com.android.systemui.R.drawable.ic_restart_hot,
                 com.android.systemui.R.string.global_action_restart_soft,
                 mWindowManagerFuncs, mHandler) {
 
