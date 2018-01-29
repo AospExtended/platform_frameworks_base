@@ -25,6 +25,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.service.quicksettings.Tile;
 import android.widget.Toast;
 
 import com.android.internal.logging.MetricsLogger;
@@ -39,8 +40,11 @@ import java.net.InetAddress;
 
 public class AdbOverNetworkTile extends QSTileImpl<BooleanState> {
 
+
     private boolean mActive = false;
     private boolean mListening;
+
+    private final Icon mIcon = ResourceIcon.get(R.drawable.ic_qs_network_adb_on);
 
     public AdbOverNetworkTile(QSHost host) {
         super(host);
@@ -76,14 +80,12 @@ public class AdbOverNetworkTile extends QSTileImpl<BooleanState> {
 
     @Override
     protected void handleUpdateState(BooleanState state, Object arg) {
-        mActive = isAdbEnabled();
-        if (!mActive) {
-            state.icon = ResourceIcon.get(R.drawable.ic_qs_network_adb_off);
-            state.label = mContext.getString(R.string.quick_settings_network_adb_label);
-            return;
+        if (state.slash == null) {
+            state.slash = new SlashState();
         }
-        mActive = isAdbNetworkEnabled();
-        if (mActive) {
+        state.icon = mIcon;
+        state.value = isAdbNetworkEnabled();
+        if (state.value) {
             WifiManager wifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
             WifiInfo wifiInfo = wifiManager.getConnectionInfo();
 
@@ -95,13 +97,13 @@ public class AdbOverNetworkTile extends QSTileImpl<BooleanState> {
                 // if wifiInfo is null, set the label without host address
                 state.label = mContext.getString(R.string.quick_settings_network_adb_label);
             }
-            state.icon = ResourceIcon.get(R.drawable.ic_qs_network_adb_on);
-            state.value = true;
+            state.slash.isSlashed = false;
+            state.state = Tile.STATE_ACTIVE;
         } else {
-            // Otherwise set the disabled label and icon
-            state.label = mContext.getString(R.string.quick_settings_network_adb_label);
-            state.icon = ResourceIcon.get(R.drawable.ic_qs_network_adb_off);
-            state.value = false;
+            // Otherwise set the label and disabled icon
+            state.label = mContext.getString(R.string.quick_settings_network_adb_disabled_label);
+            state.slash.isSlashed = true;
+            state.state = Tile.STATE_INACTIVE;
         }
     }
 
