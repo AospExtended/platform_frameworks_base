@@ -31,14 +31,52 @@
   <!-- Advance location quick setting tile -->
   <string name="accessibility_quick_settings_location_battery_saving">Tuairisciú suímh: modh coigilt ceallraí.</string>
   <string name="accessibility_quick_settings_location_gps_only">Tuairisciú suímh: modh braiteoirí amháin.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Tuairisciú suímh: modh ardchruinneas.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">PiP</string>
+  <string name="quick_settings_pip_tile_app_na">Ní thacaíonn an t-iarratas PiP</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Caiféin</string>
+  <string name="accessibility_quick_settings_caffeine_off">Caiféin as</string>
+  <string name="accessibility_quick_settings_caffeine_on">Caiféin ar</string>
+  <string name="statusbar_items_title">Míreanna Stádas Barra</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Gabháil</string>
+  <string name="quick_settings_region_screenshot_label">Scáileán páirteach</string>
+  <string name="recents_free_ram">RAM saor in aisce: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Compás</string>
+  <string name="quick_settings_compass_value"><xliff:g id="céimeanna">%1$.0f</xliff:g>\u00b0 <xliff:g id="treo">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">Ag tosú\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Compás as.</string>
+  <string name="accessibility_quick_settings_compass_on">Compás ar.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Diúltaigh Compás.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Iompaigh an Compás ar.</string>
+  <string name="quick_settings_compass_N">N</string>
+  <string name="quick_settings_compass_NE">NE</string>
+  <string name="quick_settings_compass_E">E</string>
+  <string name="quick_settings_compass_SE">SE</string>
+  <string name="quick_settings_compass_S">S</string>
+  <string name="quick_settings_compass_SW">SW</string>
+  <string name="quick_settings_compass_W">W</string>
+  <string name="quick_settings_compass_NW">NW</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Fuaime</string>
+  <string name="quick_settings_sound_ring">Glaoigh</string>
+  <string name="quick_settings_sound_vibrate">Crith</string>
+  <string name="quick_settings_sound_dnd">Ná cur as</string>
+  <string name="lockscreen_default">Réamhshocraithe</string>
+  <string name="lockscreen_hidden">Faic</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Bogadh ó icon a sheoladh</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">Cinnirí suas</string>
+  <string name="accessibility_quick_settings_heads_up_off">Téann suas as.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Téann suas ar aghaidh.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Tosaíonn na cinn suas.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Tosaíonn suas ar aghaidh.</string>
   <!-- Heads up snooze toast -->
   <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
@@ -59,4 +97,5 @@
   <!-- Language toggle tile -->
   <!-- Music tile -->
   <!-- Expanded Desktop QS Tile -->
+  <!-- QS customizer -->
 </resources>

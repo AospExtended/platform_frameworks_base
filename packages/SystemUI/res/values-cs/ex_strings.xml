@@ -81,22 +81,32 @@
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> • Plovoucí oznámení bylo odloženo po dobu 1 minuty.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> • Plovoucí oznámení jsou odložena po dobu <xliff:g id="number">%d </xliff:g> minut.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Plně nabito</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">DASH nabíjení (plně nabito za <xliff:g id="CHARGING_TIME_LEFT">%s</xliff:g>)</string>
   <string name="keyguard_plugged_in_dash_charging">DASH nabíjení</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Obrazovka je zaznamenávána</string>
+  <string name="screenrecord_notif_final_ticker">Obrazovka byla úspěšně zaznamenána</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">Nahrávání obrazovky</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Ukončit</string>
+  <string name="screenrecord_notif_completed">Obrazovka byla úspěšně zaznamenána</string>
+  <string name="screenrecord_notif_duration">Celkem:</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Zobrazit ukazatel</string>
   <string name="screenrecord_notif_pointer_off">Skrýt ukazatel</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">Nahrávání obrazovky není možné</string>
   <string name="notification_channel_screenrecord">Záznamy obrazovky</string>
+  <string name="screenrecord_hide_hint">Skrýt nápovědu</string>
+  <string name="screenrecord_show_hint">Zobrazit nápovědu</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Záznam obrazovky</string>
+  <string name="quick_settings_screenrecord_lq_label">Záznam obrazovky 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Záznam obrazovky 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Záznam obrazovky 720p+</string>
   <string name="systemui_tuner_navbar_title">Výchozí nastavení</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Dolní zkratky</string>
   <!-- Screenshot Delete Toast -->
@@ -144,4 +154,5 @@
   <string name="alert_on_charged_level">Můžete odpojit nabíječku ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
   <string name="battery_level_good_title">Optimální úroveň baterie</string>
   <string name="notification_channel_charge_alert">Optimální úroveň nabití baterie</string>
+  <!-- QS customizer -->
 </resources>

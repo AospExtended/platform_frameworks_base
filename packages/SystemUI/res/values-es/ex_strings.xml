@@ -23,11 +23,11 @@
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <string name="accessibility_data_connection_hspap">HSPA+</string>
   <string name="global_action_restart_advanced">Avanzado</string>
-  <string name="global_action_restart_recovery">Recovery</string>
-  <string name="global_action_restart_bootloader">Bootloader</string>
-  <string name="global_action_restart_ui">SystemUI</string>
+  <string name="global_action_restart_recovery">Modo Recuperación</string>
+  <string name="global_action_restart_bootloader">Gestor de arranque</string>
+  <string name="global_action_restart_ui">Interfaz de sistema</string>
   <string name="global_action_restart_soft">Reinicio rápido</string>
-  <string name="global_action_screenrecord">Grabación de pantalla</string>
+  <string name="global_action_screenrecord">Grabar pantalla</string>
   <!-- Advance location quick setting tile -->
   <string name="accessibility_quick_settings_location_battery_saving">Reporte de ubicación: modo de ahorro de energía.</string>
   <string name="accessibility_quick_settings_location_gps_only">Reporte de ubicación: modo de sólo sensores.</string>
@@ -52,8 +52,8 @@
   <string name="quick_settings_compass_init">Iniciando\u2026</string>
   <string name="accessibility_quick_settings_compass_off">Brújula deshabilitada.</string>
   <string name="accessibility_quick_settings_compass_on">Brújula habilitada.</string>
-  <string name="accessibility_quick_settings_compass_changed_off">La brújula ha sido deshabilitada.</string>
-  <string name="accessibility_quick_settings_compass_changed_on">La brújula ha sido habilitada.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Brújula apagada.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Brujula encendida.</string>
   <string name="quick_settings_compass_N">N</string>
   <string name="quick_settings_compass_NE">NE</string>
   <string name="quick_settings_compass_E">E</string>
@@ -64,7 +64,7 @@
   <string name="quick_settings_compass_NW">NO</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">Sonido</string>
-  <string name="quick_settings_sound_ring">Tono de llamada</string>
+  <string name="quick_settings_sound_ring">Timbre</string>
   <string name="quick_settings_sound_vibrate">Vibrar</string>
   <string name="quick_settings_sound_dnd">No molestar</string>
   <string name="lockscreen_default">Por defecto</string>
@@ -81,29 +81,39 @@
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Las notificaciones flotantes estaran pospuestas por 1 minuto.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> - Las notificaciones flotantes estan pospuestas <xliff:g id="number">%d </xliff:g> minutos.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Carga completa</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Carga rápida (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> hasta completar)</string>
   <string name="keyguard_plugged_in_dash_charging">Carga Rápida</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">La pantalla está siendo grabada</string>
+  <string name="screenrecord_notif_final_ticker">Grabación de pantalla realizada con éxito</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">Grabando la pantalla</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Detener</string>
+  <string name="screenrecord_notif_completed">Grabación de pantalla realizada con éxito</string>
+  <string name="screenrecord_notif_duration">Total:</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Mostrar puntero</string>
   <string name="screenrecord_notif_pointer_off">Ocultar puntero</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">No se puede grabar la pantalla</string>
   <string name="notification_channel_screenrecord">Grabaciones de pantalla</string>
+  <string name="screenrecord_hide_hint">Ocultar pista</string>
+  <string name="screenrecord_show_hint">Mostrar pista</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Grabación de pantalla</string>
+  <string name="quick_settings_screenrecord_lq_label">Grabación a 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Grabación a 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Grabación a 720p+</string>
   <string name="systemui_tuner_navbar_title">Configuración predeterminada</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Accesos directos inferiores</string>
   <!-- Screenshot Delete Toast -->
-  <string name="delete_screenshot_toast">Captura de pantalla eliminada</string>
+  <string name="delete_screenshot_toast">Captura borrada</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Reiniciar</string>
-  <string name="quick_settings_reboot_recovery_label">Recovery</string>
+  <string name="quick_settings_reboot_recovery_label">Modo Recuperación</string>
   <!-- Volume QS Tile -->
   <string name="accessibility_quick_settings_volume_panel">Volumen</string>
   <string name="quick_settings_volume_panel_label">Volumen</string>
@@ -123,8 +133,8 @@
   <string name="accessibility_quick_settings_sync_changed_off">La sincronización ha sido deshabilitada</string>
   <string name="accessibility_quick_settings_sync_changed_on">La sincronización ha sido habilitada</string>
   <!-- USB Tethering tile -->
-  <string name="accessibility_quick_settings_usb_tether_off">Anclaje USB deshabilitado</string>
-  <string name="accessibility_quick_settings_usb_tether_on">Anclaje USB habilitado</string>
+  <string name="accessibility_quick_settings_usb_tether_off">Anclaje USB desactivado</string>
+  <string name="accessibility_quick_settings_usb_tether_on">Anclaje USB activado</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">El anclaje USB ha sido desactivado</string>
   <string name="accessibility_quick_settings_usb_tether_changed_on">El anclaje USB ha sido habilitado</string>
   <string name="quick_settings_usb_tether_label">Anclaje USB</string>
@@ -144,4 +154,5 @@
   <string name="alert_on_charged_level">Puede desconectar el cargador ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
   <string name="battery_level_good_title">Nivel óptimo de la batería</string>
   <string name="notification_channel_charge_alert">Nivel óptimo de carga de la batería</string>
+  <!-- QS customizer -->
 </resources>

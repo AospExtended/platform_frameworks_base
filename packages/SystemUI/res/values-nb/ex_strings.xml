@@ -21,14 +21,41 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA</string>
+  <string name="global_action_restart_advanced">Avansert</string>
+  <string name="global_action_restart_recovery">Gjenoppretting</string>
+  <string name="global_action_restart_bootloader">Bootloader</string>
+  <string name="global_action_restart_soft">Myk omstart</string>
   <!-- Advance location quick setting tile -->
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">Bilde i Bilde</string>
   <!-- Caffeine QS Tile -->
+  <string name="statusbar_items_title">Statusbar elementer</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Skjermdump</string>
   <!-- volte icon switch -->
   <!-- Compass QS Tile -->
+  <string name="accessibility_quick_settings_compass_off">Kompass av.</string>
+  <string name="accessibility_quick_settings_compass_on">Kompass på.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Kompass deaktivert.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Kompass aktivert.</string>
+  <string name="quick_settings_compass_N">N</string>
+  <string name="quick_settings_compass_NE">NØ</string>
+  <string name="quick_settings_compass_E">Ø</string>
+  <string name="quick_settings_compass_SE">SØ</string>
+  <string name="quick_settings_compass_S">S</string>
+  <string name="quick_settings_compass_SW">SV</string>
+  <string name="quick_settings_compass_W">V</string>
+  <string name="quick_settings_compass_NW">NV</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Lyd</string>
+  <string name="quick_settings_sound_ring">Ring</string>
+  <string name="quick_settings_sound_vibrate">Vibrere</string>
+  <string name="quick_settings_sound_dnd">Ikke forstyr</string>
+  <string name="lockscreen_default">Standard</string>
+  <string name="lockscreen_hidden">Ingen</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Dra ifra ikonet for å starte</string>
   <!-- Heads Up QS Tile -->
   <!-- Heads up snooze toast -->
   <!-- Battery saver tile -->
@@ -50,4 +77,5 @@
   <!-- Language toggle tile -->
   <!-- Music tile -->
   <!-- Expanded Desktop QS Tile -->
+  <!-- QS customizer -->
 </resources>

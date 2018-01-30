@@ -144,4 +144,5 @@
   <string name="alert_on_charged_level">Sie können das Ladegerät abstecken ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
   <string name="battery_level_good_title">Optimalen Ladezustand</string>
   <string name="notification_channel_charge_alert">Der Akku wurde vollständig geladen</string>
+  <!-- QS customizer -->
 </resources>

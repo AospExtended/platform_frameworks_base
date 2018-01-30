@@ -23,14 +23,14 @@
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <string name="accessibility_data_connection_hspap">HSPA+</string>
   <string name="global_action_restart_advanced">Gelişmiş</string>
-  <string name="global_action_restart_recovery">Kurtarma modu</string>
-  <string name="global_action_restart_bootloader">Önyükleyici</string>
-  <string name="global_action_restart_ui">Sistem arayüzü</string>
+  <string name="global_action_restart_recovery">Kurtarma</string>
+  <string name="global_action_restart_bootloader">Önyükleme</string>
+  <string name="global_action_restart_ui">Arayüz</string>
   <string name="global_action_restart_soft">Yazılımsal yeniden başlatma</string>
   <string name="global_action_screenrecord">Ekran kaydı</string>
   <!-- Advance location quick setting tile -->
   <string name="accessibility_quick_settings_location_battery_saving">Konum bildirimi: pil tasarruf modu.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Konum bildirimi: yalnızca sensörler modu.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Konum bildirimi: yalnızca sensör modu.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Konum bildirimi: yüksek doğruluk modu.</string>
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
@@ -75,28 +75,38 @@
   <string name="quick_settings_heads_up_label">Bildirim penceresi</string>
   <string name="accessibility_quick_settings_heads_up_off">Üst bildirimler kapalı.</string>
   <string name="accessibility_quick_settings_heads_up_on">Üst bildirimler açık.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">Bildirim pencereleri kapatıldı.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">Bildirim pencereleri açıldı.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Bildirim penceresi kapatıldı.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Bildirim penceresi açıldı.</string>
   <!-- Heads up snooze toast -->
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> • Gözatma bildirimi 1 dakika erteleniyor.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • Gözatma bildirimi <xliff:g id="number">%d</xliff:g> dakika erteleniyor.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Tamamen şarj edildi</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Hızlı Şarj aktif (tam doluma <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> kaldı)</string>
+  <string name="keyguard_indication_dash_charging_time">Hızlı Şarj oluyor (tam dolmasına <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> kaldı)</string>
   <string name="keyguard_plugged_in_dash_charging">Hızlı şarj oluyor</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Ekran kaydediliyor</string>
+  <string name="screenrecord_notif_final_ticker">Ekran başarıyla kaydedildi</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">Ekran kaydediliyor</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Durdur</string>
+  <string name="screenrecord_notif_completed">Ekran başarıyla kaydedildi</string>
+  <string name="screenrecord_notif_duration">Toplam:</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">İşaretçiyi göster</string>
   <string name="screenrecord_notif_pointer_off">İşaretçiyi gizle</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">Ekran kaydedilemiyor</string>
   <string name="notification_channel_screenrecord">Ekran kayıtları</string>
+  <string name="screenrecord_hide_hint">İpuçlarını gizle</string>
+  <string name="screenrecord_show_hint">İpuçlarını göster</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Ekran kaydı</string>
+  <string name="quick_settings_screenrecord_lq_label">Ekran Kaydı 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Ekran Kaydı 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Ekran Kaydı 720p+</string>
   <string name="systemui_tuner_navbar_title">Varsayılan ayarlar</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Alt kısayollar</string>
   <!-- Screenshot Delete Toast -->
@@ -112,8 +122,8 @@
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_preventpower">Uygulamanın güç tuşunun işlevini değiştirmesine izin verir.</string>
   <!-- ADB over network QS tile -->
-  <string name="quick_settings_network_adb_enabled_label">Etkinleştirildi</string>
-  <string name="quick_settings_network_adb_disabled_label">Etkin Değil</string>
+  <string name="quick_settings_network_adb_enabled_label">Etkin</string>
+  <string name="quick_settings_network_adb_disabled_label">Devre dışı</string>
   <string name="quick_settings_network_adb_label">Ağ üzerinden ADB</string>
   <string name="quick_settings_network_adb_toast">USB hata ayıklama etkin değil</string>
   <!-- Sync QS Tile -->
@@ -142,6 +152,7 @@
   <string name="quick_settings_expanded_navigation_off">Gezinti çubuğunu gizle</string>
   <string name="quick_settings_expanded_statusbar_off">Durum çubuğunu gizle</string>
   <string name="alert_on_charged_level">Şarj cihazını çıkarabilirsin ( &gt;<xliff:g id="percentage">%s</xliff:g> )</string>
-  <string name="battery_level_good_title">Pil ömrü en iyi hale getir</string>
-  <string name="notification_channel_charge_alert">Batarya şarj seviyesi uygun</string>
+  <string name="battery_level_good_title">Optimum pil düzeyi</string>
+  <string name="notification_channel_charge_alert">Optimum pil şarj seviyesi</string>
+  <!-- QS customizer -->
 </resources>

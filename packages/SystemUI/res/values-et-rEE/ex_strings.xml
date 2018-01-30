@@ -104,4 +104,5 @@
   <string name="alert_on_charged_level">Te võite laadija lahti ühendada (\"&gt;\" <xliff:g id="percentage">%s </xliff:g>)</string>
   <string name="battery_level_good_title">Optimaalne aku tase</string>
   <string name="notification_channel_charge_alert">Optimaalne aku laadimis tase</string>
+  <!-- QS customizer -->
 </resources>

@@ -81,22 +81,32 @@
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s </xliff:g> • As notificações flutuantes foram silenciadas por 1 minuto.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • As notificações estão silenciadas por <xliff:g id="number">%d</xliff:g> minutos.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Totalmente carregado</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Carregamento Rápido (<xliff:g id="charging_time_left">%s</xliff:g> até concluir)</string>
   <string name="keyguard_plugged_in_dash_charging">Carregamento Rápido</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">A tela está sendo gravada</string>
+  <string name="screenrecord_notif_final_ticker">Tela gravada com sucesso</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">Gravando a tela</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Parar</string>
+  <string name="screenrecord_notif_completed">Tela gravada com sucesso</string>
+  <string name="screenrecord_notif_duration">Total:</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Mostrar ponteiro</string>
   <string name="screenrecord_notif_pointer_off">Ocultar ponteiro</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">Não foi possível gravar tela</string>
   <string name="notification_channel_screenrecord">Gravação de tela</string>
+  <string name="screenrecord_hide_hint">Esconder dicas</string>
+  <string name="screenrecord_show_hint">Mostrar dica</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Gravação de tela</string>
+  <string name="quick_settings_screenrecord_lq_label">Gravação de tela 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Gravação de tela 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Gravação de tela 720p+</string>
   <string name="systemui_tuner_navbar_title">Configurações padrão</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Atalhos inferiores</string>
   <!-- Screenshot Delete Toast -->
@@ -144,4 +154,5 @@
   <string name="alert_on_charged_level">Você pode desconectar o carregador (\"&gt;\" <xliff:g id="percentage">%s </xliff:g>)</string>
   <string name="battery_level_good_title">Nível de bateria otimizado</string>
   <string name="notification_channel_charge_alert">Nível de carga ideal da bateria</string>
+  <!-- QS customizer -->
 </resources>

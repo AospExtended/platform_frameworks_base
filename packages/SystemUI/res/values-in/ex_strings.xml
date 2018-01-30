@@ -82,7 +82,7 @@
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Pemberitahuan mengintip tertunda untuk <xliff:g id="number">%d</xliff:g> menit.</string>
   <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Pengisian cepat ( <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> sampai penuh)</string>
+  <string name="keyguard_indication_dash_charging_time">Pengisian cepat (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> sampai penuh)</string>
   <string name="keyguard_plugged_in_dash_charging">Pengisian Cepat</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Layar sedang direkam</string>
@@ -144,4 +144,5 @@
   <string name="alert_on_charged_level">Anda dapat mencabut pengisi baterai (\"&gt;\" <xliff:g id="percentage">%s </xliff:g>)</string>
   <string name="battery_level_good_title">Tingkat optimal baterai</string>
   <string name="notification_channel_charge_alert">Tingkat optimal pengisian baterai</string>
+  <!-- QS customizer -->
 </resources>

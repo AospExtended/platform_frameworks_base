@@ -21,33 +21,138 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">Ətraflı</string>
+  <string name="global_action_restart_recovery">Recovery(Qurtarma)</string>
+  <string name="global_action_restart_bootloader">Önyükləyici(Bootloader)</string>
+  <string name="global_action_restart_ui">Sistem interfeysi</string>
+  <string name="global_action_restart_soft">Sadə yenidən başlatma</string>
+  <string name="global_action_screenrecord">Ekran çəkimi</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Lokasiya bildirişi: batareyaya qənaət modu.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Lokasiya bildirişi: sadəcə sensor modu.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Lokasiya bildirişi: yüksək dəqiqlik modu.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">PiP</string>
+  <string name="quick_settings_pip_tile_app_na">Proqram PiP\'i dəstəkləmir</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Kofein</string>
+  <string name="accessibility_quick_settings_caffeine_off">Kofein qapalı</string>
+  <string name="accessibility_quick_settings_caffeine_on">Kofein açıq</string>
+  <string name="statusbar_items_title">Status paneli elementləri</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Erkan şəkli</string>
+  <string name="quick_settings_region_screenshot_label">Qismi ekran şəkli</string>
+  <string name="recents_free_ram">Boş RAM: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VoLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Kompas</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">Başladılır\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Kompas qapalı.</string>
+  <string name="accessibility_quick_settings_compass_on">Kompas açıq.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Kompas söndürülüb.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Kompas yandırılıb.</string>
+  <string name="quick_settings_compass_N">Şm</string>
+  <string name="quick_settings_compass_NE">ŞmŞ</string>
+  <string name="quick_settings_compass_E">Ş</string>
+  <string name="quick_settings_compass_SE">CŞ</string>
+  <string name="quick_settings_compass_S">C</string>
+  <string name="quick_settings_compass_SW">CQ</string>
+  <string name="quick_settings_compass_W">Q</string>
+  <string name="quick_settings_compass_NW">ŞmQ</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Səs</string>
+  <string name="quick_settings_sound_ring">Zəng</string>
+  <string name="quick_settings_sound_vibrate">Titrəşim</string>
+  <string name="quick_settings_sound_dnd">Narahat etməyin</string>
+  <string name="lockscreen_default">Adi</string>
+  <string name="lockscreen_hidden">Heç biri</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Başlatmaq üçün simgədən sürüşdürün</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">Bildiriş pəncərəsi</string>
+  <string name="accessibility_quick_settings_heads_up_off">Bildiriş pəncərəsi bağlıdır.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Bildiriş pəncərəsi açıqdır.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Bildiriş pəncərəsi söndürüldü.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Bildiriş pəncərəsi yandırıldı.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Gözatma bildirişi 1 dəqiqəliyinə gecikdirilir.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Gözatma bildirişi <xliff:g id="number">%d</xliff:g> dəqiqəliyinə gecikdirilir.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Tam şarj edildi</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Sürətli şarj olunur (tam doldurulmaya <xliff:g id="charging_time_left" example="4 saat 2 dəqiqə">%s</xliff:g>)</string>
+  <string name="keyguard_plugged_in_dash_charging">Sürətli şarj</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Ekran çəkilimi gedir</string>
+  <string name="screenrecord_notif_final_ticker">Ekran müvəffəqiyyətlə çəkildi</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Ekran çəkimi</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Dur</string>
+  <string name="screenrecord_notif_completed">Ekran müvəffəqiyyətlə çəkildi</string>
+  <string name="screenrecord_notif_duration">Cəmi:</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Göstəriciyi göstər</string>
+  <string name="screenrecord_notif_pointer_off">Göstəriciyi gizlət</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Ekran çəkilə bilinmir</string>
+  <string name="notification_channel_screenrecord">Ekran çəkimləri</string>
+  <string name="screenrecord_hide_hint">İpucuları gizlət</string>
+  <string name="screenrecord_show_hint">İpucuları göstər</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Ekran çəkimi</string>
+  <string name="quick_settings_screenrecord_lq_label">Ekran çəkimi 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Ekran çəkimi 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Ekran çəkimi 720p+</string>
+  <string name="systemui_tuner_navbar_title">Zavod ayarları</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Alt qısayollar</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Erkan şəkli silindi</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Yenidən başlat</string>
+  <string name="quick_settings_reboot_recovery_label">Recovery(Qurtarma)</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">Səs</string>
+  <string name="quick_settings_volume_panel_label">Səs</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">güc düyməsi funksiyasını dəyişdir</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Proqrama güc düyməsinin dəyişdirilməsinə icazə ver.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">Aktiv</string>
+  <string name="quick_settings_network_adb_disabled_label">Deaktiv</string>
+  <string name="quick_settings_network_adb_label">Şəbəkə üzərindən ADB</string>
+  <string name="quick_settings_network_adb_toast">USB debug yandırılmayıb</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Sinxronizasiya</string>
+  <string name="accessibility_quick_settings_sync_off">Sinxronizasiya qapalı</string>
+  <string name="accessibility_quick_settings_sync_on">Sinxronizasiya açıq</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Sinxronizasiya söndürüldü</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Sinxronizasiya yandırıldı</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">USB internet paylaşımı qapalı</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USB internet paylaşımı açıq</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB internet paylaşımı söndürüldü</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB internet paylaşımı yandırıldı</string>
+  <string name="quick_settings_usb_tether_label">USB internet paylaşımı</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Dil</string>
+  <string name="quick_settings_locale_more_locales_toast">Dəyişdirmə funksiyasını işə salmaq üçün zəhmət olmasa birdən çox dil seçin</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Musiqi</string>
+  <string name="quick_settings_music_play">Oynat</string>
+  <string name="quick_settings_music_pause">Dayandır</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Genişlədilmiş masaüstü</string>
+  <string name="quick_settings_expanded_desktop">Genişlədilmiş</string>
+  <string name="quick_settings_expanded_desktop_off">Normal</string>
+  <string name="quick_settings_expanded_navigation_off">Naviqasiya panelini gizlət</string>
+  <string name="quick_settings_expanded_statusbar_off">Status panelini gizlət</string>
+  <string name="alert_on_charged_level">Şarj cizahızını çıxarda bilərsiniz ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
+  <string name="battery_level_good_title">Optimal batareya səviyyəsi</string>
+  <string name="notification_channel_charge_alert">Optimal şarj səviyyəsi</string>
+  <!-- QS customizer -->
 </resources>

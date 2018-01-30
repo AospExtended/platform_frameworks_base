@@ -95,5 +95,14 @@
   <!-- USB Tethering tile -->
   <!-- Language toggle tile -->
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Muziek</string>
+  <string name="quick_settings_music_play">Afspelen</string>
+  <string name="quick_settings_music_pause">Pauze</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_navigation_off">Verberg navbar</string>
+  <string name="quick_settings_expanded_statusbar_off">Statusbalk verbergen</string>
+  <string name="alert_on_charged_level">U kunt de oplader loskoppelen (\"&gt;\" <xliff:g id="percentage">%s </xliff:g>)</string>
+  <string name="battery_level_good_title">Optimale batterijniveau</string>
+  <string name="notification_channel_charge_alert">Optimale batterij oplaadniveau</string>
+  <!-- QS customizer -->
 </resources>
