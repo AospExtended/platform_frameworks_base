@@ -21,7 +21,14 @@
   <string name="reboot_title">Рестартиране</string>
   <string name="reboot_message">Рестартиране на системата</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">контрол навигация редактор</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">
+
+
+
+
+</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_fakePackageSignature">Мним подпис на пакета</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

@@ -144,4 +144,5 @@
   <string name="alert_on_charged_level">You can disconnect the charger ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
   <string name="battery_level_good_title">സന്തുലിത ബാറ്ററി ലെവൽ</string>
   <string name="notification_channel_charge_alert">സന്തുലിത ബാറ്ററി ചാർജ് ലെവൽ</string>
+  <!-- QS customizer -->
 </resources>

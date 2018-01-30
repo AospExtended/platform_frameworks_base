@@ -21,10 +21,29 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">Adbanse</string>
+  <string name="global_action_restart_recovery">Pag-rekaber</string>
+  <string name="global_action_restart_bootloader">Bootloader</string>
+  <string name="global_action_restart_ui">SystemUI</string>
+  <string name="global_action_restart_soft">Malambot na Pagreboot</string>
+  <string name="global_action_screenrecord">Screenrecord</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Lokasyon sa pag-uulat: mode ng pag-save sa baterya.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Lokasyon sa pag-uulat: mode ng pag-sensor lamang.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Lokasyon sa pag-uulat: mode ng mataas na kawastuhan.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">PiP</string>
+  <string name="quick_settings_pip_tile_app_na">Ang App ay hindi sumusporta ng PiP</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Caffeine</string>
+  <string name="accessibility_quick_settings_caffeine_off">Pag-off ng Caffeine</string>
+  <string name="accessibility_quick_settings_caffeine_on">Pag-on ng Caffeine</string>
+  <string name="statusbar_items_title">Mga item sa statusbar</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Kuha ng screen</string>
+  <string name="quick_settings_region_screenshot_label">Bahagyang pagkuha ng screen</string>
+  <string name="recents_free_ram">Libreng RAM: %1$d MB</string>
   <!-- volte icon switch -->
   <!-- Compass QS Tile -->
   <!-- Sound QS Tile -->
@@ -50,4 +69,5 @@
   <!-- Language toggle tile -->
   <!-- Music tile -->
   <!-- Expanded Desktop QS Tile -->
+  <!-- QS customizer -->
 </resources>

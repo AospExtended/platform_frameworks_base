@@ -18,8 +18,14 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="reboot_title">Pag-reboot</string>
+  <string name="reboot_message">Nagrere-boot ng sistema</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">editor sa pagkontrol ng nabigasyon</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">Nagpapahintulot ng aplikasyon na kontrolin ang editor sa bar pangnabigasyon.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Pagspoof ng package signature</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Nagpapahintulot ng app na magkunwaring maging ibang app. Ang mga malisyosong aplikasyon ay maaring makagamit nito upang mapasok ang mga datos ng aplikasyon. Ipagkaloob lamang ang permisyon ng pag-iingat lamang!</string>
 </resources>

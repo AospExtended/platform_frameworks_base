@@ -21,6 +21,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="global_action_restart_advanced">Για προχωρημένους</string>
+  <string name="global_action_restart_recovery">Ανάκτηση / Recovery</string>
+  <string name="global_action_restart_ui">SystemUI</string>
+  <string name="global_action_restart_soft">Γρήγορη επανεκκίνηση</string>
+  <string name="global_action_screenrecord">Εγγραφή οθόνης</string>
   <!-- Advance location quick setting tile -->
   <!-- PiP Tile -->
   <!-- Caffeine QS Tile -->
@@ -28,6 +33,7 @@
   <!-- volte icon switch -->
   <!-- Compass QS Tile -->
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_dnd">Μην ενοχλείτε</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <!-- Heads Up QS Tile -->
   <!-- Heads up snooze toast -->
@@ -50,4 +56,5 @@
   <!-- Language toggle tile -->
   <!-- Music tile -->
   <!-- Expanded Desktop QS Tile -->
+  <!-- QS customizer -->
 </resources>

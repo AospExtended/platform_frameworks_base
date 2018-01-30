@@ -81,22 +81,32 @@
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> • 顯示預覽通知會暫停 1 分鐘。</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • 顯示預覽通知會暫停 <xliff:g id="number">%d</xliff:g> 分鐘。</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">充電完成</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">快速充電中 (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> 後充滿)</string>
   <string name="keyguard_plugged_in_dash_charging">快速充電中</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">正在錄製螢幕</string>
+  <string name="screenrecord_notif_final_ticker">螢幕錄製成功</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">螢幕錄影中</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">停止</string>
+  <string name="screenrecord_notif_completed">螢幕錄製成功</string>
+  <string name="screenrecord_notif_duration">總計：</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">顯示觸控指標</string>
   <string name="screenrecord_notif_pointer_off">隱藏觸控指標</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">無法錄製螢幕</string>
   <string name="notification_channel_screenrecord">螢幕錄製</string>
+  <string name="screenrecord_hide_hint">隱藏提示</string>
+  <string name="screenrecord_show_hint">顯示提示</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">螢幕錄製</string>
+  <string name="quick_settings_screenrecord_lq_label">螢幕錄製：480P</string>
+  <string name="quick_settings_screenrecord_mq_label">螢幕錄製：720P</string>
+  <string name="quick_settings_screenrecord_hq_label">螢幕錄製：720P+</string>
   <string name="systemui_tuner_navbar_title">原始設定</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">底部捷徑</string>
   <!-- Screenshot Delete Toast -->
@@ -144,4 +154,5 @@
   <string name="alert_on_charged_level">您可以拔除充電器 ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
   <string name="battery_level_good_title">最佳電池電量</string>
   <string name="notification_channel_charge_alert">最佳的電池充電水準</string>
+  <!-- QS customizer -->
 </resources>

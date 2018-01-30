@@ -81,22 +81,32 @@
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> Всплывающие уведомления выключены на одну минуту.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Всплывающие уведомления выключены на <xliff:g id="number">%d</xliff:g> минут.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Полностью заряжена</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Быстрая зарядка (осталось <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
   <string name="keyguard_plugged_in_dash_charging">Быстрая зарядка</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Идёт запись экрана</string>
+  <string name="screenrecord_notif_final_ticker">Экран записан успешно</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">Запись экрана</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Стоп</string>
+  <string name="screenrecord_notif_completed">Экран записан успешно</string>
+  <string name="screenrecord_notif_duration">Всего:</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Показать указатель</string>
   <string name="screenrecord_notif_pointer_off">Скрыть указатель</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">Запись экрана невозможна</string>
   <string name="notification_channel_screenrecord">Записи экрана</string>
+  <string name="screenrecord_hide_hint">Скрыть подсказки</string>
+  <string name="screenrecord_show_hint">Показать подсказки</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Запись экрана</string>
+  <string name="quick_settings_screenrecord_lq_label">Запись экрана 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Запись экрана 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Запись экрана 720p+</string>
   <string name="systemui_tuner_navbar_title">Настройки по умолчанию</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Ярлыки в нижних углах</string>
   <!-- Screenshot Delete Toast -->
@@ -144,4 +154,5 @@
   <string name="alert_on_charged_level">Вы можете отключить зарядное устройство («&gt;» <xliff:g id="percentage">%s </xliff:g>)</string>
   <string name="battery_level_good_title">Оптимальный уровень батареи</string>
   <string name="notification_channel_charge_alert">Оптимальный уровень заряда батареи</string>
+  <!-- QS customizer -->
 </resources>

@@ -81,22 +81,32 @@
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Notification furtive désactivée pendant 1 minute.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Notification furtive désactivé pendant <xliff:g id="number">%d</xliff:g> minutes.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Charge Complète</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Chargement rapide (<xliff:g id="charging_time_left" example="4 heures et 2 minutes">%s</xliff:g> jusqu\'à la charge complète)</string>
   <string name="keyguard_plugged_in_dash_charging">Charge rapide</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">L\'écran est en cours d\'enregistrement</string>
+  <string name="screenrecord_notif_final_ticker">Écran enregistré avec succès</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">Enregistrement de l\'écran</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Arrêter</string>
+  <string name="screenrecord_notif_completed">Écran enregistré avec succès</string>
+  <string name="screenrecord_notif_duration">Total:</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Afficher le pointeur</string>
   <string name="screenrecord_notif_pointer_off">Masquer le pointeur</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">Impossible d\'enregistrer l\'écran</string>
   <string name="notification_channel_screenrecord">Capture vidéo</string>
+  <string name="screenrecord_hide_hint">Masquer le conseil</string>
+  <string name="screenrecord_show_hint">Montrer le conseil</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Enregistrement d\'écran</string>
+  <string name="quick_settings_screenrecord_lq_label">Enregistrement d\'écran 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Enregistrement d\'écran 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Enregistrement d\'écran 720p+</string>
   <string name="systemui_tuner_navbar_title">Paramètres d\'origine</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Raccourcis du bas</string>
   <!-- Screenshot Delete Toast -->
@@ -144,4 +154,5 @@
   <string name="alert_on_charged_level">Vous pouvez débrancher le chargeur ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
   <string name="battery_level_good_title">Niveau optimal de la batterie</string>
   <string name="notification_channel_charge_alert">Niveau de charge optimal de la batterie</string>
+  <!-- QS customizer -->
 </resources>

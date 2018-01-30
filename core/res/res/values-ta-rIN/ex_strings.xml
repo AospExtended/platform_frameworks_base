@@ -18,29 +18,8 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="reboot_title">மறுதொடக்கம்</string>
-  <string name="reboot_message">கணினி மீண்டும் துவங்குகிறது
-
-reboot_message
-கோப்பு: ex_strings. xml</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_toggleNavigationEditor">கட்டுப்பாட்டு ஊடுருவல் ஆசிரியர்
-
-permlab_toggleNavigationEditor
-[Char Limit = None] பயன்பாட்டு அனுமதிப்பத்திரத்தின் தலைப்பு, பயனரால் இதை செய்ய அனுமதிக்க வேண்டுமா என்பதை தேர்வு செய்யலாம்.
-கோப்பு: ex_strings. xml</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_toggleNavigationEditor">வழிசெலுத்தல் பட்டி பதிப்பை கட்டுப்படுத்த பயன்பாட்டை அனுமதிக்கிறது.
-
-permdesc_toggleNavigationEditor
-[Char Limit = None] பயன்பாட்டு அனுமதிப்பத்திரத்தின் விவரத்தை குறிப்பிடுவதால், பயன்பாட்டிற்கு இதை அனுமதிக்க வேண்டுமா எனத் தேர்வு செய்யலாம்.
-கோப்பு: ex_strings. xml.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_fakePackageSignature">ஸ்பூஃப் தொகுப்பு கையொப்பம்
-
-permlab_fakePackageSignature
-பயன்பாட்டு அனுமதியின் தலைப்பு, பட்டியலிடப்பட்டால், பயன்பாட்டை அனுமதிக்க வேண்டுமா என்பதை பயனர் தேர்வு செய்யலாம்.
-கோப்பு: ex_strings. xml</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Allows the app to pretend to be a different app. Malicious applications might be able to use this to access private application data. Grant this permission with caution only!</string>
 </resources>

@@ -81,22 +81,32 @@
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 浮动通知暂停1分钟</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - 浮动通知暂停 <xliff:g id="number">%d</xliff:g> 分钟</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">充电完成</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">正在快速充电 (还需<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> 充满)</string>
   <string name="keyguard_plugged_in_dash_charging">正在快速充电</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">正在录制屏幕</string>
+  <string name="screenrecord_notif_final_ticker">屏幕录制成功</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">正在录制屏幕</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">停止</string>
+  <string name="screenrecord_notif_completed">屏幕录制完成</string>
+  <string name="screenrecord_notif_duration">文件大小</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">显示触摸操作</string>
   <string name="screenrecord_notif_pointer_off">隐藏触摸操作</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">无法录制屏幕</string>
   <string name="notification_channel_screenrecord">屏幕录像</string>
+  <string name="screenrecord_hide_hint">隐藏提示</string>
+  <string name="screenrecord_show_hint">显示提示</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">屏幕录像</string>
+  <string name="quick_settings_screenrecord_lq_label">清晰度 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">清晰度 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">清晰度 720p +</string>
   <string name="systemui_tuner_navbar_title">初始设置</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">底部快捷方式</string>
   <!-- Screenshot Delete Toast -->
@@ -144,4 +154,5 @@
   <string name="alert_on_charged_level">您可以断开充电器 (\"&gt;\" <xliff:g id="percentage">%s </xliff:g>)</string>
   <string name="battery_level_good_title">最佳电量</string>
   <string name="notification_channel_charge_alert">最佳充电量</string>
+  <!-- QS customizer -->
 </resources>

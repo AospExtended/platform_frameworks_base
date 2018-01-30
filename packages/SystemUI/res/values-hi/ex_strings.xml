@@ -78,6 +78,7 @@
   <string name="accessibility_quick_settings_heads_up_changed_off">संकेत बंद कर दिया</string>
   <string name="accessibility_quick_settings_heads_up_changed_on">संकेत चालु कर दिया</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> सूचना देखना 1 मिनट के लिए स्थगित करने हैं।</string>
   <!-- Battery saver tile -->
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_plugged_in_dash_charging">शीघ्र चार्जिंग</string>
@@ -122,4 +123,5 @@
   <!-- Language toggle tile -->
   <!-- Music tile -->
   <!-- Expanded Desktop QS Tile -->
+  <!-- QS customizer -->
 </resources>

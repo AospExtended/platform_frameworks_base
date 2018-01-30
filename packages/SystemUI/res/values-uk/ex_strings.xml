@@ -81,22 +81,32 @@
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> Спливаючі сповіщення вимкнені на одну хвилину.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Спливаючі сповіщення вимкнені на <xliff:g id="number">%d</xliff:g> хвилин.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Повністю заряджений</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Швидке заряджання (<xliff:g id="charging_time_left" example="4 год. 2 хв.">%s</xliff:g> до повної зарядки)</string>
   <string name="keyguard_plugged_in_dash_charging">Швидке заряджання</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Триває запис з екрану</string>
+  <string name="screenrecord_notif_final_ticker">Екран успішно записано</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">Запис екрану</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Стоп</string>
+  <string name="screenrecord_notif_completed">Екран успішно записано</string>
+  <string name="screenrecord_notif_duration">Всього:</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Показувати вказівник</string>
   <string name="screenrecord_notif_pointer_off">Приховати вказівник</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">Неможливо записати екран</string>
   <string name="notification_channel_screenrecord">Записи з екрану</string>
+  <string name="screenrecord_hide_hint">Приховати підказки</string>
+  <string name="screenrecord_show_hint">Показати підказку</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Запис з екрану</string>
+  <string name="quick_settings_screenrecord_lq_label">Запис з екрану 480р</string>
+  <string name="quick_settings_screenrecord_mq_label">Запис з екрану 720р</string>
+  <string name="quick_settings_screenrecord_hq_label">Запис з екрану 720р+</string>
   <string name="systemui_tuner_navbar_title">Заводські налаштування</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Ярлики в нижніх кутах</string>
   <!-- Screenshot Delete Toast -->
@@ -144,4 +154,5 @@
   <string name="alert_on_charged_level">Ви можете від\'єднати зарядний пристрій (\"&gt;\" <xliff:g id="percentage">%s </xliff:g>)</string>
   <string name="battery_level_good_title">Оптимальний рівень батареї</string>
   <string name="notification_channel_charge_alert">Оптимальний рівень заряду батареї</string>
+  <!-- QS customizer -->
 </resources>

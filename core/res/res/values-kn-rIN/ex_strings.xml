@@ -18,8 +18,14 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="reboot_title">ರಿಬೂಟ್</string>
+  <string name="reboot_message">ಸಿಸ್ಟಮ್ ಅನ್ನು ರೀಬೂಟ್ ಮಾಡಲಾಗುತ್ತಿದೆ</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">ಸಂಚರಣೆ ಸಂಪಾದಕವನ್ನು ನಿಯಂತ್ರಿಸು</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">ಸಂಚರಣೆ ಸಂಪಾದಕವನ್ನು ನಿಯಂತ್ರಿಸಲು ಅಪ್ಪ್ಲಿಕೇಷನ್ನಿಗೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">ಸ್ಪೂಫ್ ಪ್ಯಾಕೇಜಿನ ಸಹಿ</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">ಅಪ್ಲಿಕೇಶನ್ ಬೇರೆ ಅಪ್ಲಿಕೇಶನ್ ಆಗಿ ನಟಿಸಲು ಅನುಮತಿಸುತ್ತದೆ. ದುರುದ್ದೇಶಪೂರಿತ ಅಪ್ಲಿಕೇಶನ್ಗಳು ಇದನ್ನು ಖಾಸಗಿ ಅಪ್ಲಿಕೇಶನ್ ಡೇಟಾವನ್ನು ಪ್ರವೇಶಿಸಲು ಬಳಸಬಹುದು. ಎಚ್ಚರಿಕೆಯಿಂದ ಮಾತ್ರ ಈ ಅನುಮತಿಯನ್ನು ನೀಡಿರಿ!</string>
 </resources>
