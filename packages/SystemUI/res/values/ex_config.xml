@@ -28,4 +28,6 @@
     <!-- The min animation duration for animating the fab out. -->
     <integer name="recents_animate_fab_exit_duration">125</integer>
 
+    <!-- Use wakelock for flashlight -->
+    <bool name="config_useWakeLockForFlashlight">false</bool>
 </resources>
