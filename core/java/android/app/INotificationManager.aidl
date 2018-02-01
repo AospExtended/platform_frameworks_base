@@ -233,4 +233,7 @@ interface INotificationManager
     void migrateNotificationFilter(in INotificationListener token, int defaultTypes, in List<String> disallowedPkgs);
 
     void setToastRateLimitingEnabled(boolean enable);
+
+    void forceShowLedLight(int color);
+    void forcePulseLedLight(int color, int onTime, int offTime);
 }
