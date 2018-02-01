@@ -3055,6 +3055,16 @@ public class NotificationManagerService extends SystemService {
         public void setMediaPlaying(boolean playing) {
             mIsMediaPlaying = playing;
         }
+
+        @Override
+        public void forceShowLedLight(int color) {
+            forceShowLed(color);
+        }
+
+        @Override
+        public void forcePulseLedLight(int color, int onTime, int offTime) {
+            forcePulseLed(color, onTime, offTime);
+        }
     };
 
     private void applyAdjustment(NotificationRecord r, Adjustment adjustment) {
@@ -4133,6 +4143,22 @@ public class NotificationManagerService extends SystemService {
                     .setType(MetricsEvent.TYPE_OPEN)
                     .setSubtype((buzz ? 1 : 0) | (beep ? 2 : 0) | (blink ? 4 : 0)));
             EventLogTags.writeNotificationAlert(key, buzz ? 1 : 0, beep ? 1 : 0, blink ? 1 : 0);
+        }
+    }
+
+    private void forceShowLed(int color) {
+        if (color != -1) {
+            mNotificationLight.setColor(color);
+        } else {
+            mNotificationLight.turnOff();
+        }
+    }
+
+    private void forcePulseLed(int color, int onTime, int offTime) {
+        if (color != -1) {
+            mNotificationLight.setFlashing(color, Light.LIGHT_FLASH_TIMED, onTime, offTime);
+        } else {
+            mNotificationLight.turnOff();
         }
     }
 
