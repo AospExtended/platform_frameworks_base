@@ -39,6 +39,7 @@
     <string name="custom_hint">Swipe from icon to launch</string>
 
     <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_data_saver">Data saver</string>
 
 </resources>
 
