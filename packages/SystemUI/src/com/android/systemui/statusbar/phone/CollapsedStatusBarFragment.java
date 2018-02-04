@@ -80,6 +80,10 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private View mCustomCarrierLabel;
     private int mShowCarrierLabel;
 
+    // AEX Status Logo
+    private View mAEXLogo;
+    private boolean mShowLogo;
+
     private SignalCallback mSignalCallback = new SignalCallback() {
         @Override
         public void setIsAirplaneMode(NetworkController.IconState icon) {
@@ -116,6 +120,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             getContext().getContentResolver().registerContentObserver(
                     Settings.System.getUriFor(Settings.System.STATUS_BAR_CARRIER),
                     false, this, UserHandle.USER_ALL);
+            getContext().getContentResolver().registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_LOGO),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -126,13 +133,6 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             initTickerView();
             updateSettings(true);
         }
-    }
-
-    public void updateSettings(boolean animate) {
-        mShowCarrierLabel = Settings.System.getIntForUser(
-                getContext().getContentResolver(), Settings.System.STATUS_BAR_CARRIER, 1,
-                UserHandle.USER_CURRENT);
-        setCarrierLabel(animate);
     }
 
     @Override
@@ -155,6 +155,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mCenterClockLayout = (LinearLayout) mStatusBar.findViewById(R.id.center_clock_layout);
         Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mSignalClusterView);
         mCustomCarrierLabel = mStatusBar.findViewById(R.id.statusbar_carrier_text);
+        mAEXLogo = mStatusBar.findViewById(R.id.status_bar_logo);
         updateSettings(false);
         // Default to showing until we know otherwise.
         showSystemIconArea(false);
@@ -270,14 +271,20 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         animateShow(mCenterClockLayout, animate);
     }
 
-     public void hideNotificationIconArea(boolean animate) {
+    public void hideNotificationIconArea(boolean animate) {
         animateHide(mNotificationIconAreaInner, animate, true);
         animateHide(mCenterClockLayout, animate, true);
+        if (mShowLogo) {
+            animateHide(mAEXLogo, animate, true);
+        }
     }
 
     public void showNotificationIconArea(boolean animate) {
         animateShow(mNotificationIconAreaInner, animate);
         animateShow(mCenterClockLayout, animate);
+        if (mShowLogo) {
+            animateShow(mAEXLogo, animate);
+        }
     }
 
     public void hideCarrierName(boolean animate) {
@@ -366,6 +373,25 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                     mTickerEnabled, getContext(), mStatusBar, tickerView, tickerIcon, mTickerViewFromStub);
         } else {
             mStatusBarComponent.disableTicker();
+            }
+        }
+
+    public void updateSettings(boolean animate) {
+        mShowCarrierLabel = Settings.System.getIntForUser(
+                getContext().getContentResolver(), Settings.System.STATUS_BAR_CARRIER, 1,
+                UserHandle.USER_CURRENT);
+        setCarrierLabel(animate);
+        mShowLogo = Settings.System.getIntForUser(
+                getContext().getContentResolver(), Settings.System.STATUS_BAR_LOGO, 0,
+                UserHandle.USER_CURRENT) == 1;
+        if (mNotificationIconAreaInner != null) {
+            if (mShowLogo) {
+                if (mNotificationIconAreaInner.getVisibility() == View.VISIBLE) {
+                    animateShow(mAEXLogo, animate);
+                }
+            } else {
+                animateHide(mAEXLogo, animate, false);
+            }
         }
     }
 
