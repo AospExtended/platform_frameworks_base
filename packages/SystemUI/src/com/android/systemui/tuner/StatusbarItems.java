@@ -15,13 +15,49 @@
 package com.android.systemui.tuner;
 
 import android.os.Bundle;
+import android.content.ContentResolver;
+import android.provider.Settings;
+import android.support.v14.preference.SwitchPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceScreen;
 import android.support.v14.preference.PreferenceFragment;
 import com.android.systemui.R;
 
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+
 public class StatusbarItems extends PreferenceFragment {
+
+    private static final String KEY_STATUS_BAR_LOGO = "status_bar_logo";
+
+    private SwitchPreference mShowAEXLogo;
+
+     @Override
+     public void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+ 
+         PreferenceScreen prefSet = getPreferenceScreen();
+ 
+         final ContentResolver resolver = getActivity().getContentResolver();
+
+        mShowAEXLogo = (SwitchPreference) findPreference(KEY_STATUS_BAR_LOGO);
+        mShowAEXLogo.setChecked((Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_LOGO, 0) == 1));
+     }
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.statusbar_items);
+
     }
+
+     @Override
+     public boolean onPreferenceTreeClick(Preference preference) {
+        if  (preference == mShowAEXLogo) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_LOGO, checked ? 1:0);
+            return true;
+         }
+         return super.onPreferenceTreeClick(preference);
+     }
 }
