@@ -23,6 +23,13 @@
         android:title="@string/show_brightness"
         sysui:defValue="true" />
 
+    <SwitchPreference
+        android:key="status_bar_logo"
+        android:title="@string/aex_logo_title"
+        android:summary="@string/aex_logo_summary"
+        android:defaultValue="false" />
+
+
     <PreferenceScreen
         android:key="status_bar"
         android:title="@string/status_bar" >
