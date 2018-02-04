@@ -4581,7 +4581,7 @@ public final class Settings {
         public static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
 
         /**
-         * Wheter to play notification sound and vibration if screen is ON
+         * Whether to play notification sound and vibration if screen is ON
          * 0 - never
          * 1 - always
          * 2 - if media playing
@@ -4674,6 +4674,12 @@ public final class Settings {
          * @hide
          */
         public static final String SCREENRECORD_QUALITY_MODE = "screenrecord_quality_mode";
+
+        /**
+         * Whether to display our du logo in the statusbar for extra swag
+         * @hide
+         */
+        public static final String STATUS_BAR_LOGO = "status_bar_logo";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -4883,6 +4889,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_DISPLAY);
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_STYLE);
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_FORMAT);
+            PRIVATE_SETTINGS.add(STATUS_BAR_LOGO);
         }
 
         /**

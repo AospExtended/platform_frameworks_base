@@ -188,4 +188,8 @@
 
     <!-- QS customizer -->
     <string name="drag_or_tap_to_add_tiles">Drag or tap to add tiles</string>
+
+    <!-- AEX logo -->
+    <string name="aex_logo_title">AEX logo</string>
+    <string name="aex_logo_summary">Let everyone know that you\'re using AEX when they see your screen</string>
 </resources>
