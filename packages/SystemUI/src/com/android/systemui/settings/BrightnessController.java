@@ -441,6 +441,7 @@ public class BrightnessController implements ToggleSlider.Listener {
                     com.android.systemui.R.drawable.ic_qs_brightness_auto_on :
                     com.android.systemui.R.drawable.ic_qs_brightness_auto_off);
         }
+        mControl.setAutoBrightness(mAutomatic);
     }
 
     private void updateVrMode(boolean isEnabled) {
