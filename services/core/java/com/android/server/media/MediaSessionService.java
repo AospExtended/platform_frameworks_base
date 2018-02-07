@@ -1242,7 +1242,7 @@ public class MediaSessionService extends SystemService implements Monitor {
                     final int rotation = windowService.getDefaultDisplay().getRotation();
                     final Configuration config = getContext().getResources().getConfiguration();
                     final boolean swapKeys = Settings.System.getIntForUser(getContext().getContentResolver(),
-                            Settings.System.SWAP_VOLUME_BUTTONS, 1, UserHandle.USER_CURRENT) == 1;
+                            Settings.System.SWAP_VOLUME_BUTTONS, 0, UserHandle.USER_CURRENT) == 1;
 
                     if (swapKeys
                             && (rotation == Surface.ROTATION_90 || rotation == Surface.ROTATION_180)
