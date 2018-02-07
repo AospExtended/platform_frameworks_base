@@ -129,7 +129,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         @Override
         protected void update() {
             mTickerEnabled = Settings.System.getIntForUser(mContentResolver,
-                    Settings.System.STATUS_BAR_SHOW_TICKER, 1,
+                    Settings.System.STATUS_BAR_SHOW_TICKER, 0,
                     UserHandle.USER_CURRENT);
             initTickerView();
             updateSettings(true);
