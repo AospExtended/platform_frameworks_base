@@ -312,7 +312,7 @@ public class Ringtone {
 
     private int getRingtoneFocusMode() {
         int mode = Settings.Global.getInt(mContext.getContentResolver(),
-                Settings.Global.RINGTONE_FOCUS_MODE, 0);
+                Settings.Global.RINGTONE_FOCUS_MODE, 1);
         return mode;
     }
 
