@@ -100,6 +100,9 @@
   <!-- Notification sender text color -->
   <java-symbol type="color" name="sender_text_color" />
 
+  <!-- Enable full screen DT2S in lockscreen -->
+  <java-symbol type="bool" name="fullScreenDT2S" />
+
 </resources>
 
 
