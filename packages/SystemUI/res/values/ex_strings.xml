@@ -225,8 +225,6 @@
     <string name="quick_settings_fling">Fling</string>
     <string name="quick_settings_navigation_default">Stock</string>
     <string name="quick_settings_navigation_disabled">Disabled</string>
+
+    <string name="quick_settings_sound_search">Sound search</string>
 </resources>
-
-
-
-
