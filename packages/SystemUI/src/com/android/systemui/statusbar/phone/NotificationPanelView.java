@@ -867,14 +867,24 @@ public class NotificationPanelView extends PanelView implements
             return false;
         }
         final int h = getMeasuredHeight();
-        if ((mIsLockscreenDoubleTapEnabled
-                && mStatusBarState == StatusBarState.KEYGUARD
-                && (event.getY() < (h / 3) ||
-                event.getY() > (h - mStatusBarHeaderHeight))) ||
-                (!mQsExpanded && mDoubleTapToSleepEnabled
-                && event.getY() < mStatusBarHeaderHeight)) {
-            mDoubleTapToSleepGesture.onTouchEvent(event);
-        }
+
+        if(!getResources().getBoolean(com.android.internal.R.bool.fullScreenDT2S)) {
+	        if ((mIsLockscreenDoubleTapEnabled
+        	        && mStatusBarState == StatusBarState.KEYGUARD
+        	        && (event.getY() < (h / 3) ||
+        	        event.getY() > (h - mStatusBarHeaderHeight))) ||
+        	        (!mQsExpanded && mDoubleTapToSleepEnabled
+        	        && event.getY() < mStatusBarHeaderHeight)) {
+        	    mDoubleTapToSleepGesture.onTouchEvent(event);
+        	}
+	} else {
+	        if ((mIsLockscreenDoubleTapEnabled
+	                && mStatusBarState == StatusBarState.KEYGUARD) ||
+        	        (!mQsExpanded && mDoubleTapToSleepEnabled
+        	        && event.getY() < mStatusBarHeaderHeight)) {
+        	    mDoubleTapToSleepGesture.onTouchEvent(event);
+        	}
+	}
         initDownStates(event);
         if (mListenForHeadsUp && !mHeadsUpTouchHelper.isTrackingHeadsUp()
                 && mHeadsUpTouchHelper.onInterceptTouchEvent(event)) {
