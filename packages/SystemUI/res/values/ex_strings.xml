@@ -248,4 +248,7 @@
 
     <!-- OneHand mode QS tile -->
     <string name="qs_onehand_label">OneHand mode</string>
+    
+    <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Sound search</string>
 </resources>
