@@ -41,11 +41,6 @@ public class ClockLeft extends Clock {
         super(context, attrs, defStyle);
     }
 
-    public void setClockVisibleByUser(boolean visible) {
-        mClockVisibleByUser = visible;
-        updateClockVisibility();
-    }
-
     public void setClockVisibilityByPolicy(boolean visible) {
         mClockVisibleByPolicy = visible;
         updateClockVisibility();
@@ -55,8 +50,13 @@ public class ClockLeft extends Clock {
         boolean visible = mClockStyle == STYLE_CLOCK_LEFT && mShowClock
                 && mClockVisibleByPolicy && mClockVisibleByUser;
         Dependency.get(IconLogger.class).onIconVisibility("left_clock", visible);
-        int visibility = visible ? View.VISIBLE : View.GONE;
-        setVisibility(visibility);
+        setVisibility(visible ? View.VISIBLE : View.GONE);
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return mClockStyle == STYLE_CLOCK_LEFT && mShowClock
+                && mClockVisibleByPolicy && mClockVisibleByUser;
     }
 
     @Override

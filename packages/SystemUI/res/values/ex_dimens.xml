@@ -44,4 +44,6 @@
     <dimen name="qs_tile_height_wo_label">48dp</dimen>
 
     <dimen name="screenrecord_hint_size">48dp</dimen>
+
+    <dimen name="status_bar_left_clock_end_padding">5dp</dimen>
 </resources>
