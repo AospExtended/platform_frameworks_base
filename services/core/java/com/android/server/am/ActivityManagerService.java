@@ -393,6 +393,8 @@ import android.view.RemoteAnimationAdapter;
 import android.view.RemoteAnimationDefinition;
 import android.view.View;
 import android.view.WindowManager;
+import android.util.BoostFramework;
+
 import android.view.autofill.AutofillManagerInternal;
 
 import com.android.internal.R;
@@ -675,6 +677,11 @@ public class ActivityManagerService extends IActivityManager.Stub
     private static final int MAX_BUGREPORT_TITLE_SIZE = 50;
 
     private static final int NATIVE_DUMP_TIMEOUT_MS = 2000; // 2 seconds;
+
+    /* Freq Aggr boost objects */
+    public static BoostFramework mPerf = null;
+    public static BoostFramework mPerfServiceStartHint = null;
+    public static boolean mIsPerfLockAcquired = false;
 
     /** All system services */
     SystemServiceManager mSystemServiceManager;
@@ -4488,13 +4495,32 @@ public class ActivityManagerService extends IActivityManager.Stub
                         app.info.targetSdkVersion, seInfo, requiredAbi, instructionSet,
                         app.info.dataDir, null,
                         new String[] {PROC_START_SEQ_IDENT + app.startSeq});
-            } else {
+            }
+            else {
                 startResult = Process.start(entryPoint,
                         app.processName, uid, uid, gids, runtimeFlags, mountExternal,
                         app.info.targetSdkVersion, seInfo, requiredAbi, instructionSet,
                         app.info.dataDir, invokeWith,
                         new String[] {PROC_START_SEQ_IDENT + app.startSeq});
             }
+
+            if(hostingType.equals("activity")) {
+                if (mPerf == null) {
+                    mPerf = new BoostFramework();
+                }
+
+                if (mPerf != null) {
+                    mPerf.perfHint(BoostFramework.VENDOR_HINT_FIRST_LAUNCH_BOOST, app.processName, -1, BoostFramework.Launch.BOOST_V3);
+                }
+            }
+
+            if (mPerfServiceStartHint == null) {
+                mPerfServiceStartHint = new BoostFramework();
+            }
+            if (mPerfServiceStartHint != null) {
+                mPerfServiceStartHint.perfHint(BoostFramework.VENDOR_HINT_FIRST_LAUNCH_BOOST, app.processName, -1, BoostFramework.Launch.TYPE_SERVICE_START);
+            }
+
             checkTime(startTime, "startProcess: returned from zygote!");
             return startResult;
         } finally {

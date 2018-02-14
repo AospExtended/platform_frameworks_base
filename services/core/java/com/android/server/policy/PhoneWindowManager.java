@@ -233,6 +233,7 @@ import android.service.dreams.IDreamManager;
 import android.service.vr.IPersistentVrStateCallbacks;
 import android.speech.RecognizerIntent;
 import android.telecom.TelecomManager;
+import android.util.BoostFramework;
 import android.util.ArraySet;
 import android.util.DisplayMetrics;
 import android.util.EventLog;
@@ -471,6 +472,11 @@ public class PhoneWindowManager implements WindowManagerPolicy {
      * where the window manager is calling in with its own lock held.)
      */
     private final Object mLock = new Object();
+
+    /*
+     * @hide
+     */
+    BoostFramework mPerfBoost = null;
 
     Context mContext;
     IWindowManager mWindowManager;
@@ -2375,6 +2381,24 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                                     PowerHint.INTERACTION, duration);
                         }
                     }
+                    @Override
+                    public void onScroll(boolean started) {
+                        if (mPerfBoost == null) {
+                            mPerfBoost = new BoostFramework();
+                        }
+
+                        if (mPerfBoost == null) {
+                            Slog.e(TAG, "Error: boost object null");
+                            return;
+                        }
+                        if (started) {
+                            mPerfBoost.perfHint(BoostFramework.VENDOR_HINT_DRAG_BOOST,
+                                                "", -1, 1);
+                        } else {
+                            mPerfBoost.perfLockRelease();
+                        }
+                    }
+
                     @Override
                     public void onDebug() {
                         // no-op
