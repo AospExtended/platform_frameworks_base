@@ -22,6 +22,7 @@ import android.os.Build;
 import android.view.ViewConfiguration;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
+import android.util.BoostFramework;
 
 
 /**
@@ -62,6 +63,7 @@ import android.view.animation.Interpolator;
 public class Scroller  {
     private final Interpolator mInterpolator;
 
+    private Context mContext;
     private int mMode;
 
     private int mStartX;
@@ -107,6 +109,13 @@ public class Scroller  {
 
     private float mDeceleration;
     private final float mPpi;
+
+    /*
+    * Perf boost related variables
+    * Enabled/Disabled using config_enableCpuBoostForScroller
+    * true value turns it on, by default will be turned off
+    */
+    private BoostFramework mPerf = null;
 
     // A context-specific coefficient adjusted to physical values.
     private float mPhysicalCoeff;
@@ -168,6 +177,7 @@ public class Scroller  {
      */
     public Scroller(Context context, Interpolator interpolator, boolean flywheel) {
         mFinished = true;
+        mContext = context;
         if (interpolator == null) {
             mInterpolator = new ViscousFluidInterpolator();
         } else {
@@ -178,6 +188,10 @@ public class Scroller  {
         mFlywheel = flywheel;
 
         mPhysicalCoeff = computeDeceleration(0.84f); // look and feel tuning
+
+        if (mPerf == null) {
+            mPerf = new BoostFramework();
+        }
     }
 
     /**
@@ -395,6 +409,11 @@ public class Scroller  {
         mDeltaX = dx;
         mDeltaY = dy;
         mDurationReciprocal = 1.0f / (float) mDuration;
+
+        if ((mPerf != null) && (duration != 0)) {
+            String currentPackage = mContext.getPackageName();
+            mPerf.perfHint(BoostFramework.VENDOR_HINT_SCROLL_BOOST, currentPackage, mDuration, BoostFramework.Scroll.HORIZONTAL);
+        }
     }
 
     /**
