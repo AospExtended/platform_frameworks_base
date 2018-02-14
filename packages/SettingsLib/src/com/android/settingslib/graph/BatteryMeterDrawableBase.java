@@ -647,7 +647,7 @@ public class BatteryMeterDrawableBase extends Drawable {
     public void setAlpha(int alpha) {
     }
 
-    public void showPercentInCircleIcon(boolean show) {
+    public void showPercentInsideCircle(boolean show) {
         mCircleShowPercentInside = show;
     }
 
