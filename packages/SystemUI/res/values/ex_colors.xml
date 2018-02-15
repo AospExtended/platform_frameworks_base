@@ -23,4 +23,8 @@
      <!-- Recents Memory bar -->
     <color name="recents_memory_progress_overall">@*android:color/resize_shadow_start_color</color>
     <color name="recents_memory_progress_free">@*android:color/accent_device_default_light</color>
+
+    <!-- Zen QS panel -->
+    <color name="zen_qs_panel_close_button_color">@android:color/white</color>
 </resources>
+
