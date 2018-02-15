@@ -2135,6 +2135,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         updateTheme();
     }
 
+    // Check for the dark system theme
     public boolean isUsingDarkTheme() {
         OverlayInfo themeInfo = null;
         try {
@@ -2144,6 +2145,35 @@ public class StatusBar extends SystemUI implements DemoMode,
             e.printStackTrace();
         }
         return themeInfo != null && themeInfo.isEnabled();
+    }
+
+
+    // Check for black and white accent overlays
+    public void unfuckBlackWhiteAccent() {
+        OverlayInfo themeInfo = null;
+        try {
+            if (isUsingDarkTheme()) {
+                themeInfo = mOverlayManager.getOverlayInfo("com.accents.black",
+                        mLockscreenUserManager.getCurrentUserId());
+                if (themeInfo != null && themeInfo.isEnabled()) {
+                    mOverlayManager.setEnabled("com.accents.black",
+                            false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+                    mOverlayManager.setEnabled("com.accents.white",
+                            true, mLockscreenUserManager.getCurrentUserId());
+                }
+            } else {
+                themeInfo = mOverlayManager.getOverlayInfo("com.accents.white",
+                        mLockscreenUserManager.getCurrentUserId());
+                if (themeInfo != null && themeInfo.isEnabled()) {
+                    mOverlayManager.setEnabled("com.accents.white",
+                            false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+                    mOverlayManager.setEnabled("com.accents.black",
+                            true, mLockscreenUserManager.getCurrentUserId());
+                }
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     @Nullable
@@ -3977,6 +4007,10 @@ public class StatusBar extends SystemUI implements DemoMode,
                 .getWallpaperColors(WallpaperManager.FLAG_SYSTEM);
         final boolean useDarkTheme = systemColors != null
                 && (systemColors.getColorHints() & WallpaperColors.HINT_SUPPORTS_DARK_THEME) != 0;
+            // Check for black and white accent so we don't end up
+            // with white on white or black on black
+            unfuckBlackWhiteAccent();
+
         if (isUsingDarkTheme() != useDarkTheme) {
             mUiOffloadThread.submit(() -> {
                 try {
@@ -3986,6 +4020,9 @@ public class StatusBar extends SystemUI implements DemoMode,
                             useDarkTheme, mLockscreenUserManager.getCurrentUserId());
                     mOverlayManager.setEnabled("com.android.settings.theme.dark",
                             useDarkTheme, mLockscreenUserManager.getCurrentUserId());
+                    // Check for black and white accent so we don't end up
+                    // with white on white or black on black
+                    unfuckBlackWhiteAccent();
                 } catch (RemoteException e) {
                     Log.w(TAG, "Can't change theme", e);
                 }
@@ -4017,6 +4054,212 @@ public class StatusBar extends SystemUI implements DemoMode,
 
             // Make sure we have the correct navbar/statusbar colors.
             mStatusBarWindowManager.setKeyguardDark(useDarkText);
+        }
+    }
+
+    // Switches theme accent from to another or back to stock
+    public void updateAccents() {
+        int accentSetting = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.ACCENT_PICKER, 0, mLockscreenUserManager.getCurrentUserId());
+        if (accentSetting == 0) {
+            unloadAccents();
+        } else if (accentSetting == 1) {
+            try {
+                mOverlayManager.setEnabled("com.accents.red",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 2) {
+            try {
+                mOverlayManager.setEnabled("com.accents.pink",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 3) {
+            try {
+                mOverlayManager.setEnabled("com.accents.purple",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 4) {
+            try {
+                mOverlayManager.setEnabled("com.accents.deeppurple",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 5) {
+            try {
+                mOverlayManager.setEnabled("com.accents.indigo",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 6) {
+            try {
+                mOverlayManager.setEnabled("com.accents.blue",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 7) {
+            try {
+                mOverlayManager.setEnabled("com.accents.lightblue",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 8) {
+            try {
+                mOverlayManager.setEnabled("com.accents.cyan",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 9) {
+            try {
+                mOverlayManager.setEnabled("com.accents.teal",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 10) {
+            try {
+                mOverlayManager.setEnabled("com.accents.green",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 11) {
+            try {
+                mOverlayManager.setEnabled("com.accents.lightgreen",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 12) {
+            try {
+                mOverlayManager.setEnabled("com.accents.lime",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 13) {
+            try {
+                mOverlayManager.setEnabled("com.accents.yellow",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 14) {
+            try {
+                mOverlayManager.setEnabled("com.accents.amber",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 15) {
+            try {
+                mOverlayManager.setEnabled("com.accents.orange",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 16) {
+            try {
+                mOverlayManager.setEnabled("com.accents.deeporange",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 17) {
+            try {
+                mOverlayManager.setEnabled("com.accents.brown",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 18) {
+            try {
+                mOverlayManager.setEnabled("com.accents.grey",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 19) {
+            try {
+                mOverlayManager.setEnabled("com.accents.bluegrey",
+                        true, mLockscreenUserManager.getCurrentUserId());
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        } else if (accentSetting == 20) {
+            try {
+                // If using a dark theme we use the white accent, otherwise use the black accent
+                if (isUsingDarkTheme()) {
+                    mOverlayManager.setEnabled("com.accents.white",
+                            true, mLockscreenUserManager.getCurrentUserId());
+                } else {
+                    mOverlayManager.setEnabled("com.accents.black",
+                            true, mLockscreenUserManager.getCurrentUserId());
+                }
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+        }
+    }
+
+    // Unload all the theme accents
+    public void unloadAccents() {
+        OverlayInfo themeInfo = null;
+        try {
+            mOverlayManager.setEnabled("com.accents.red",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.pink",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.purple",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.deeppurple",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.indigo",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.blue",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.lightblue",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.cyan",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.teal",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.green",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.lightgreen",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.lime",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.yellow",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.amber",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.orange",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.deeporange",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.brown",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.grey",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.bluegrey",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.black",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+            mOverlayManager.setEnabled("com.accents.white",
+                    false /*disable*/, mLockscreenUserManager.getCurrentUserId());
+        } catch (RemoteException e) {
+            e.printStackTrace();
         }
     }
 
@@ -4670,7 +4913,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     };
 
-
     public int getWakefulnessState() {
         return mWakefulnessLifecycle.getWakefulness();
     }
@@ -5194,6 +5436,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.HEADS_UP_BLACKLIST_VALUES),
                     false, this);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.ACCENT_PICKER),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5214,7 +5459,14 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.HEADS_UP_BLACKLIST_VALUES))) {
                 setHeadsUpBlacklist();
-            }
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.ACCENT_PICKER))) {
+                // Unload the accents and update the accent only when the user asks.
+                // Keeps us from overloading the system by performing these tasks every time.
+                unloadAccents();
+                updateAccents();
+            } 
+            update();
         }
 
         public void update() {
