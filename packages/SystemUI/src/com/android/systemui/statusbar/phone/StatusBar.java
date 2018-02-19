@@ -6654,6 +6654,11 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     }
 
+    public void updateQsbhClock() {
+        if (mQuickStatusBarHeader != null) {
+            mQuickStatusBarHeader.updateQsbhClock();
+        }
+    }
 
     private void setLockscreenDoubleTapToSleep() {
         if (mStatusBarWindow != null) {
