@@ -86,6 +86,7 @@ public class BatteryMeterView extends LinearLayout implements
 
     private boolean mAttached;
 
+    private boolean mClockEnabled;
     private int mClockStyle = STYLE_CLOCK_RIGHT;
     public static final int STYLE_CLOCK_RIGHT = 0;
     public static final int STYLE_CLOCK_LEFT = 1;
@@ -217,7 +218,7 @@ public class BatteryMeterView extends LinearLayout implements
     }
 
     private boolean isRightClock() {
-        return mClockStyle == STYLE_CLOCK_RIGHT;
+        return mClockEnabled && mClockStyle == STYLE_CLOCK_RIGHT;
     }
 
     @Override
@@ -296,7 +297,7 @@ public class BatteryMeterView extends LinearLayout implements
 
         LinearLayout.LayoutParams scaledLayoutParams = new LinearLayout.LayoutParams(
                 (int) (batteryWidth * iconScaleFactor), (int) (batteryHeight * iconScaleFactor));
-        scaledLayoutParams.setMargins(0, 0, isCircleBattery() && (isRightClock() || mQsHeaderOrKeyguard)
+        scaledLayoutParams.setMargins(0, 0, isCircleBattery() && isRightClock()
                 ? mEndPadding : 0, marginBottom);
 
         if (mBatteryIconView != null) {
@@ -393,6 +394,8 @@ public class BatteryMeterView extends LinearLayout implements
                 STATUS_BAR_BATTERY_STYLE, BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT, mUser);
         mClockStyle = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.STATUSBAR_CLOCK_STYLE, STYLE_CLOCK_RIGHT, mUser);
+        mClockEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.STATUS_BAR_CLOCK, 1, mUser) == 1;
         if (fromObserver && mAttached) {
             updateBatteryStyle();
         }
