@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Resolver -->
+    <color name="resolver_list_bg">@*android:color/background_material_dark</color>
+
+</resources>
+
