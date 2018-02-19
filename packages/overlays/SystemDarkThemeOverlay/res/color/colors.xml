@@ -4,5 +4,9 @@
     <!-- Resolver -->
     <color name="resolver_list_bg">@*android:color/background_material_dark</color>
 
+    <!-- Immersive cling -->
+    <color name="immersive_cling_bg_color">@*android:color/background_material_dark</color>
+    <color name="immersive_cling_text_color">@android:color/white</color>
+    <color name="immersive_cling_button_text_color">@android:color/white</color>
 </resources>
 
