@@ -4303,11 +4303,6 @@ public final class Settings {
 
 
         /**
-         * @hide
-         */
-        public static final String SHOW_BATTERY_IMAGE = "status_bar_show_battery_image";
-
-        /**
          * Volume key controls ringtone or media sound stream
          * @hide
          */
