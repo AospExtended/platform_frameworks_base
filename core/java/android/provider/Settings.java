@@ -11684,6 +11684,11 @@ public final class Settings {
                 "location_settings_link_to_permissions_enabled";
 
         /**
+         * @hide
+         */
+        public static final String USB_DEFAULT_CONFIGURATION = "usb_default_configuration";
+
+        /**
          * Flag to enable use of RefactoredBackupManagerService.
          *
          * @hide
