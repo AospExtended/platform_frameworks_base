@@ -47,8 +47,13 @@
     <string name="permdesc_accessFontManager">Allows an application to access the font manager.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
     <string name="fontservice_incompatible_font">The font package you\'ve installed is not compatible due to missing fonts.xml on their files. Please contact the package developer for support.</string>
+
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
     <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
+
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">TurboPower connected (<xliff:g id="charging_time_left">%s</xliff:g> until full)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">TurboPower connected</string>
 
 </resources>
