@@ -6193,7 +6193,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 && (policyFlags & WindowManagerPolicy.FLAG_VIRTUAL) != 0
                 && (!isNavBarVirtKey || mNavBarVirtualKeyHapticFeedbackEnabled)
                 && event.getRepeatCount() == 0
-                && !isHwKeysDisabled();
+                && !isHwKeysDisabled()
+                && !keyguardOn();
 
         // Specific device key handling
         if (dispatchKeyToKeyHandlers(event)) {
