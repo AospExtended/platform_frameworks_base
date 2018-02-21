@@ -31,7 +31,6 @@ import static com.android.systemui.statusbar.phone.BarTransitions.MODE_SEMI_TRAN
 import static com.android.systemui.statusbar.phone.BarTransitions.MODE_TRANSLUCENT;
 import static com.android.systemui.statusbar.phone.BarTransitions.MODE_TRANSPARENT;
 import static com.android.systemui.statusbar.phone.BarTransitions.MODE_WARNING;
-import static com.android.systemui.statusbar.phone.BarTransitions.MODE_POWERSAVE_WARNING;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -3788,7 +3787,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         final boolean anim = !mNoAnimationOnNextBarModeChange && mDeviceInteractive
                 && windowState != WINDOW_STATE_HIDDEN && !powerSave;
         if (powerSave && getBarState() == StatusBarState.SHADE) {
-            mode = MODE_POWERSAVE_WARNING;
+            mode = MODE_WARNING;
         }
         if (mode == MODE_WARNING) {
             transitions.setWarningColor(mBatterySaverWarningColor);
@@ -6581,7 +6580,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                             Settings.System.BATTERY_SAVER_MODE_COLOR, 0,
                             UserHandle.USER_CURRENT);
                     if (mBatterySaverWarningColor != 0) {
-                        mBatterySaverWarningColor = Utils.getColorAttr(mContext, android.R.attr.colorError);
+                        mBatterySaverWarningColor = context.getColor(R.color.powersave_warning_color);
                     }
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.LOCKSCREEN_MEDIA_METADATA))) {
@@ -8344,7 +8343,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 Settings.System.BATTERY_SAVER_MODE_COLOR, 0,
                 UserHandle.USER_CURRENT);
         if (mBatterySaverWarningColor != 0) {
-            mBatterySaverWarningColor = Utils.getColorAttr(mContext, android.R.attr.colorError);
+            mBatterySaverWarningColor = context.getColor(R.color.powersave_warning_color);;
          }
 
         setAreThereNotifications();
