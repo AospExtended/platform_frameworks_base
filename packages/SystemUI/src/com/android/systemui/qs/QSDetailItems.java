@@ -266,6 +266,8 @@ public class QSDetailItems extends FrameLayout {
         public Object tag;
         public boolean canDisconnect;
         public int icon2 = -1;
+        public boolean doDisableTint;
+        public boolean doDisableFocus;
     }
 
     public interface Callback {
