@@ -138,5 +138,40 @@
     <string name="navigation_bar_inverse_summary">Swap the order of recents and back buttons</string>
     <string name="navigation_bar_accessibility_dpad_left">Cursor left</string>
     <string name="navigation_bar_accessibility_dpad_right">Cursor right</string>
+
+    <!-- Theme tile -->
+    <string name="system_theme_style_title">Theme</string>
+    <string name="system_theme_style_light">Light</string>
+    <string name="system_theme_style_dark">Dark</string>
+    <string name="quick_settings_theme_tile_title">Accent</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Select accent</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Select theme</string>
+    <string name="quick_settings_theme_tile_color_default">Default</string>
+    <string name="quick_settings_theme_tile_color_space">Space</string>
+    <string name="quick_settings_theme_tile_color_purple">Purple</string>
+    <string name="quick_settings_theme_tile_color_orchid">Orchid</string>
+    <string name="quick_settings_theme_tile_color_ocean">Ocean</string>
+    <string name="quick_settings_theme_tile_color_green">Green</string>
+    <string name="quick_settings_theme_tile_color_cinnamon">Cinnamon</string>
+    <string name="quick_settings_theme_tile_color_amber">Amber</string>
+    <string name="quick_settings_theme_tile_color_blue">Blue</string>
+    <string name="quick_settings_theme_tile_color_bluegrey">Blue Grey</string>
+    <string name="quick_settings_theme_tile_color_brown">Brown</string>
+    <string name="quick_settings_theme_tile_color_cyan">Cyan</string>
+    <string name="quick_settings_theme_tile_color_deeporange">Deep Orange</string>
+    <string name="quick_settings_theme_tile_color_deeppurple">Deep Purple</string>
+    <string name="quick_settings_theme_tile_color_grey">Grey</string>
+    <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
+    <string name="quick_settings_theme_tile_color_lightblue">Light Blue</string>
+    <string name="quick_settings_theme_tile_color_lightgreen">Light Green</string>
+    <string name="quick_settings_theme_tile_color_lime">Lime</string>
+    <string name="quick_settings_theme_tile_color_orange">Orange</string>
+    <string name="quick_settings_theme_tile_color_pink">Pink</string>
+    <string name="quick_settings_theme_tile_color_red">Red</string>
+    <string name="quick_settings_theme_tile_color_teal">Teal</string>
+    <string name="quick_settings_theme_tile_color_yellow">Yellow</string>
+    <string name="quick_settings_theme_tile_color_extendedgreen">Extended Green</string>
+    <string name="quick_settings_theme_tile_color_elegantgreen">Elegant Green</string>
+
 </resources>
 
