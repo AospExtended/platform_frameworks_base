@@ -113,9 +113,20 @@ public class QSDetailItemsList extends LinearLayout {
             view.setClickable(false); // let list view handle this
 
             final QSDetailItems.Item item = getItem(position);
+            if (item.doDisableFocus) {
+                view.setFocusable(false);
+            }
 
             final ImageView iv = (ImageView) view.findViewById(android.R.id.icon);
-            iv.setImageResource(item.icon);
+            if (item.doDisableTint) {
+                iv.setColorFilter(null);
+                iv.setImageTintList(null);
+            }
+            if (item.icon != null) {
+                iv.setImageDrawable(item.icon.getDrawable(iv.getContext()));
+            } else {
+                iv.setImageResource(item.iconResId);
+            }
             iv.getOverlay().clear();
             if (item.overlay != null) {
                 item.overlay.setBounds(0, 0, item.overlay.getIntrinsicWidth(),
