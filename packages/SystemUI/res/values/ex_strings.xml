@@ -239,5 +239,39 @@
     <string name="keyguard_indication_turbo_power_time">TurboPower connected (<xliff:g id="charging_time_left">%s</xliff:g> until full)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower connected</string>
     <string name="keyguard_plugged_in_turbo_charging">Turbo Charging</string>
+
+    <!-- Theme tile -->
+    <string name="systemui_theme_style_title">UI style</string>
+    <string name="systemui_theme_style_auto">Automatic</string>
+    <string name="systemui_theme_style_light">Light UI</string>
+    <string name="systemui_theme_style_dark">Dark UI</string>
+    <string name="systemui_theme_style_black">Black UI</string>
+    <string name="systemui_theme_style_extended">Extended UI</string>
+    <string name="quick_settings_theme_tile_title">Accent</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Select color</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Select style</string>
+    <string name="quick_settings_theme_tile_color_default">Default</string>
+    <string name="quick_settings_theme_tile_color_red">Red</string>
+    <string name="quick_settings_theme_tile_color_pink">Pink</string>
+    <string name="quick_settings_theme_tile_color_purple">Purple</string>
+    <string name="quick_settings_theme_tile_color_deep_purple">Deep purple</string>
+    <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
+    <string name="quick_settings_theme_tile_color_blue">Blue</string>
+    <string name="quick_settings_theme_tile_color_light_blue">Light blue</string>
+    <string name="quick_settings_theme_tile_color_cyan">Cyan</string>
+    <string name="quick_settings_theme_tile_color_teal">Teal</string>
+    <string name="quick_settings_theme_tile_color_green">Green</string>
+    <string name="quick_settings_theme_tile_color_light_green">Light green</string>
+    <string name="quick_settings_theme_tile_color_lime">Lime</string>
+    <string name="quick_settings_theme_tile_color_yellow">Yellow</string>
+    <string name="quick_settings_theme_tile_color_amber">Amber</string>
+    <string name="quick_settings_theme_tile_color_orange">Orange</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">Deep orange</string>
+    <string name="quick_settings_theme_tile_color_brown">Brown</string>
+    <string name="quick_settings_theme_tile_color_grey">Grey</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">Blue grey</string>
+    <string name="quick_settings_theme_tile_color_black">Black</string>
+    <string name="quick_settings_theme_tile_color_white">White</string>
 </resources>
+
 
