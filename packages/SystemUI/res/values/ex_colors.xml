@@ -17,4 +17,29 @@
 <resources>
     <!-- Color of the FOD view -->
     <color name="config_fodColor">#00ff00</color>
+
+    <!-- Theme tile -->
+    <color name="quick_settings_theme_tile_default">#4285F4</color>
+    <color name="quick_settings_theme_tile_red">#FF5252</color>
+    <color name="quick_settings_theme_tile_pink">#FF4081</color>
+    <color name="quick_settings_theme_tile_purple">#E040FB</color>
+    <color name="quick_settings_theme_tile_deep_purple">#7C4DFF</color>
+    <color name="quick_settings_theme_tile_indigo">#536DFE</color>
+    <color name="quick_settings_theme_tile_blue">#448AFF</color>
+    <color name="quick_settings_theme_tile_light_blue">#03A9F4</color>
+    <color name="quick_settings_theme_tile_cyan">#00BCD4</color>
+    <color name="quick_settings_theme_tile_teal">#009688</color>
+    <color name="quick_settings_theme_tile_green">#4CAF50</color>
+    <color name="quick_settings_theme_tile_light_green">#8BC34A</color>
+    <color name="quick_settings_theme_tile_lime">#CDDC39</color>
+    <color name="quick_settings_theme_tile_yellow">#FFEB3B</color>
+    <color name="quick_settings_theme_tile_amber">#FFC107</color>
+    <color name="quick_settings_theme_tile_orange">#FF9800</color>
+    <color name="quick_settings_theme_tile_deep_orange">#FF5722</color>
+    <color name="quick_settings_theme_tile_brown">#795548</color>
+    <color name="quick_settings_theme_tile_grey">#9E9E9E</color>
+    <color name="quick_settings_theme_tile_blue_grey">#607D8B</color>
+    <color name="quick_settings_theme_tile_black">#000000</color>
+    <color name="quick_settings_theme_tile_white">#ffffff</color>
+
 </resources>
