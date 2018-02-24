@@ -18,10 +18,10 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="reboot_title">Restart</string>
-  <string name="reboot_message">Sistemul se restartează</string>
+  <string name="reboot_title">Repornire</string>
+  <string name="reboot_message">Repornire sistem</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_toggleNavigationEditor">editorul de control al navigației</string>
+  <string name="permlab_toggleNavigationEditor">control editare bară de navigare</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_toggleNavigationEditor">Permite unei aplicații sa controleze editorul barei de navigare.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

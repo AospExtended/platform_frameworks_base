@@ -76,33 +76,93 @@
   <string name="accessibility_quick_settings_heads_up_off">Heads-up uit.</string>
   <string name="accessibility_quick_settings_heads_up_on">Heads-up aan.</string>
   <string name="accessibility_quick_settings_heads_up_changed_off">Heads-up uitgeschakeld.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Heads up ingeschakeld.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s </xliff:g> - Heads up notificaties zijn gedempt voor 1 minuut.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> - Heads up notificaties zijn gedempt voor <xliff:g id="number">%d </xliff:g> minuten.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Volledig opgeladen</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Opladen middels Dash (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s </xliff:g> resterend)</string>
+  <string name="keyguard_plugged_in_dash_charging">Opladen middels Dash</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Scherm wordt opgenomen</string>
+  <string name="screenrecord_notif_final_ticker">Schermopname succesvol</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Scherm aan het opnemen</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Stoppen</string>
+  <string name="screenrecord_notif_completed">Schermopname succesvol</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Toon aanwijzer</string>
+  <string name="screenrecord_notif_pointer_off">Verberg aanwijzer</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Kan scherm niet opnemen</string>
+  <string name="notification_channel_screenrecord">Schermopname</string>
+  <string name="screenrecord_hide_hint">Verberg tip</string>
+  <string name="screenrecord_show_hint">Toon tip</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Schermopname</string>
+  <string name="quick_settings_screenrecord_lq_label">Schermopname LQ</string>
+  <string name="quick_settings_screenrecord_mq_label">Schermopname HQ</string>
+  <string name="quick_settings_screenrecord_hq_label">Schermopname HQ+</string>
+  <string name="systemui_tuner_navbar_title">Standaard instellingen</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Onderste sneltoetsen</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Schermafbeelding verwijderd</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Herstart</string>
+  <string name="quick_settings_reboot_recovery_label">Herstelmodus</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">Volume</string>
+  <string name="quick_settings_volume_panel_label">Volume</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">overschrijf aan/uit-knop</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Hiermee kan de app het gedrag van de aan/uit-knop overschrijven.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">Ingeschakeld</string>
+  <string name="quick_settings_network_adb_disabled_label">Uitgeschakeld</string>
+  <string name="quick_settings_network_adb_label">ADB over netwerk</string>
+  <string name="quick_settings_network_adb_toast">USB-foutopsporing niet toegestaan</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Sync</string>
+  <string name="accessibility_quick_settings_sync_off">Sync uit</string>
+  <string name="accessibility_quick_settings_sync_on">Sync aan</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Sync uitgeschakeld</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Sync ingeschakeld</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">USB tethering uit</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USB tethering aan</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB tethering uitgeschakeld</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB tethering ingeschakeld</string>
+  <string name="quick_settings_usb_tether_label">USB tethering</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Taal</string>
+  <string name="quick_settings_locale_more_locales_toast">Configureer eerst meerdere talen om te kunnen wisselen</string>
   <!-- Music tile -->
   <string name="quick_settings_music_label">Muziek</string>
   <string name="quick_settings_music_play">Afspelen</string>
   <string name="quick_settings_music_pause">Pauze</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Uitgebreid bureaublad</string>
+  <string name="quick_settings_expanded_desktop">Uitgebreid</string>
+  <string name="quick_settings_expanded_desktop_off">Normaal</string>
   <string name="quick_settings_expanded_navigation_off">Verberg navbar</string>
   <string name="quick_settings_expanded_statusbar_off">Statusbalk verbergen</string>
   <string name="alert_on_charged_level">U kunt de oplader loskoppelen (\"&gt;\" <xliff:g id="percentage">%s </xliff:g>)</string>
-  <string name="battery_level_good_title">Optimale batterijniveau</string>
-  <string name="notification_channel_charge_alert">Optimale batterij oplaadniveau</string>
+  <string name="battery_level_good_title">Optimaal batterijniveau</string>
+  <string name="notification_channel_charge_alert">Optimaal batterij oplaadniveau</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">Sleep of tik om tegels toe te voegen</string>
+  <!-- AEX logo -->
+  <string name="aex_logo_title">AEX logo</string>
+  <string name="aex_logo_summary">Laat iedereen weten dat je AEX gebruikt wanner ze je scherm zien</string>
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>

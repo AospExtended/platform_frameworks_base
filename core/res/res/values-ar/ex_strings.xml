@@ -18,8 +18,14 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="reboot_title">إعادة التشغيل</string>
+  <string name="reboot_message">إعادة تشغيل النظام</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">التحكم فى محرر التنقل</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">يسمح لتطبيق بالتحكم في محرر شريط التنقل.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">تزييف التوقيع الرقمي للحزمة</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">يسمح للتطبيق بالتظاهر بأنه تطبيق آخر. يمكن للتطبيقات الخبيثة أن تستخدم البيانات الخاصة للتطبيق. توخٙ الحذر عند منح هذا الإذن!</string>
 </resources>

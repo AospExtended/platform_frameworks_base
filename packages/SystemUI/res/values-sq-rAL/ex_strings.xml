@@ -21,34 +21,149 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">E avancuar</string>
+  <string name="global_action_restart_recovery">Recovery</string>
+  <string name="global_action_restart_bootloader">Bootloader</string>
+  <string name="global_action_restart_ui">SystemUI</string>
+  <string name="global_action_restart_soft">Ristart i shpejte</string>
+  <string name="global_action_screenrecord">Regjistro ekranin</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Vendndodhja e raporteve: menyre efikase e baterise.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Vendndodhja e raporteve: vetem sensoret.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Vendndodhja e raporteve: saktesi e larte.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">PiP</string>
+  <string name="quick_settings_pip_tile_app_na">Programi nuk e perdor PiP</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Kafeine</string>
+  <string name="accessibility_quick_settings_caffeine_off">Jo kafeine</string>
+  <string name="accessibility_quick_settings_caffeine_on">Lejo Kafeine</string>
+  <string name="statusbar_items_title">Objektet e statutit</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Foto e ekranit</string>
+  <string name="quick_settings_region_screenshot_label">Fotot pjeserisht te ekranit</string>
+  <string name="recents_free_ram">Ram i lire: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Kompasti</string>
+  <string name="quick_settings_compass_value"><xliff:g id="grade">%1$.0f</xliff:g>\u00b0 
+<xliff:g id="drejtimi">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">Nis\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Jo kompastit.</string>
+  <string name="accessibility_quick_settings_compass_on">Aktivizo kompastin.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Kompasti eshte caktivizuar.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Kompasti i aktivizuar.</string>
+  <string name="quick_settings_compass_N">V</string>
+  <string name="quick_settings_compass_NE">VL</string>
+  <string name="quick_settings_compass_E">L</string>
+  <string name="quick_settings_compass_SE">JL</string>
+  <string name="quick_settings_compass_S">J</string>
+  <string name="quick_settings_compass_SW">JP</string>
+  <string name="quick_settings_compass_W">P</string>
+  <string name="quick_settings_compass_NW">VP</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Melodia</string>
+  <string name="quick_settings_sound_ring">Zile</string>
+  <string name="quick_settings_sound_vibrate">Dridhje</string>
+  <string name="quick_settings_sound_dnd">Mos me shqeteso</string>
+  <string name="lockscreen_default">Zakonshem</string>
+  <string name="lockscreen_hidden">Asnje</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Luaj ikonen per tu hapur</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">Lart</string>
+  <string name="accessibility_quick_settings_heads_up_off">Jo lart.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Po lart.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Cuarja lart eshte fikur.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Cuarja lart eshte aktivizuar.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Shtyj njoftimet per 1 minute.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Njoftimet jane shtuar per <xliff:g id="number">%d</xliff:g> minuta.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Karikuar plotesisht</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="charging_time_left" example="4 ore e 2 minuta">%s</xliff:g> deri ne karikim te plote)</string>
+  <string name="keyguard_plugged_in_dash_charging">Karikim te shpejte</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Ekrani eshte duke e regjistruar</string>
+  <string name="screenrecord_notif_final_ticker">Regjistrimi ekranit me sukses</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Regjistruesi ekranit</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Ndalo</string>
+  <string name="screenrecord_notif_completed">Regjistrimi ekranit me sukses</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Shfaq pikat</string>
+  <string name="screenrecord_notif_pointer_off">Fshih pikat</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Nuk mundet me u regjistruar ekrani</string>
+  <string name="notification_channel_screenrecord">Regjistrues ekrani</string>
+  <string name="screenrecord_hide_hint">Fshih keshillat</string>
+  <string name="screenrecord_show_hint">Shfaq keshillat</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Regjistrues ekrani</string>
+  <string name="quick_settings_screenrecord_lq_label">Regjistrues ekrani 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Regjistrim ekrani 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Regjistrim ekrani 720p+</string>
+  <string name="systemui_tuner_navbar_title">Konfigurimi filestar</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Lidhjet e poshtme</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Foto e ekranit e fshire</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Rindiz</string>
+  <string name="quick_settings_reboot_recovery_label">Recovery</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">Volumi</string>
+  <string name="quick_settings_volume_panel_label">Volumi</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">anashkalo butonin e ndezjes</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Lejo programin te anashkaloje butonin e ndezjes.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">Aktiv</string>
+  <string name="quick_settings_network_adb_disabled_label">Jo aktiv</string>
+  <string name="quick_settings_network_adb_label">ADB ne rrjet</string>
+  <string name="quick_settings_network_adb_toast">USB debugging nuk eshte aktiv</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Sinkronizo</string>
+  <string name="accessibility_quick_settings_sync_off">Sinkronizimi jo aktiv</string>
+  <string name="accessibility_quick_settings_sync_on">Sinkronizimi aktiv</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Sinkronizimi u caktivizua</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Sinkronizimi u aktivizua</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">Lidhesi USB jo aktiv</string>
+  <string name="accessibility_quick_settings_usb_tether_on">Lidhesi USB aktiv</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">Lidhesi USB u be jo aktiv</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">Lidhesi USB u aktivizua</string>
+  <string name="quick_settings_usb_tether_label">USB tethering</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Gjuha</string>
+  <string name="quick_settings_locale_more_locales_toast">Lutemi konfiguroni shume gjuhe per te aktivizuar funksionet e perbashketa</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Muzike</string>
+  <string name="quick_settings_music_play">Luaj</string>
+  <string name="quick_settings_music_pause">Pusho</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Zmalloje desktopin</string>
+  <string name="quick_settings_expanded_desktop">Zmalloje</string>
+  <string name="quick_settings_expanded_desktop_off">Normal</string>
+  <string name="quick_settings_expanded_navigation_off">Fshih navbar</string>
+  <string name="quick_settings_expanded_statusbar_off">Fshih statusbar</string>
+  <string name="alert_on_charged_level">Ju mund ta shkeputni nga karikimi ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
+  <string name="battery_level_good_title">Niveli optimal i baterise</string>
+  <string name="notification_channel_charge_alert">Niveli optimal i karikimit te baterise</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">Rreshqit ose kliko per te shtuar ikone</string>
+  <!-- AEX logo -->
+  <string name="aex_logo_title">Logo AEX</string>
+  <string name="aex_logo_summary">Njofto te tjeret qe po perdor AEX kur te shikojne ekranin tuaj</string>
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>

@@ -81,22 +81,31 @@
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Popup-Benachrichtigungen sind für eine Minute deaktiviert.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Popup-Benachrichtigungen sind für <xliff:g id="number">%d</xliff:g> Minuten deaktiviert.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Vollständig Aufgeladen</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Schnellladen (<xliff:g id="charging_time_left" example="4 Stunden und 2 Minuten">%s</xliff:g> bis das Gerät voll ist)</string>
   <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Bildschirm wird aufgenommen</string>
+  <string name="screenrecord_notif_final_ticker">Bildschirmaufnahme erfolgreich</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">Bildschirmaufzeichnung</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Stopp</string>
+  <string name="screenrecord_notif_completed">Bildschirmaufnahme erfolgreich</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Cursor anzeigen</string>
   <string name="screenrecord_notif_pointer_off">Cursor ausblenden</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">Bildschirmaufnahme nicht möglich</string>
   <string name="notification_channel_screenrecord">Bildschirmaufnahmen</string>
+  <string name="screenrecord_hide_hint">Hinweis ausblenden</string>
+  <string name="screenrecord_show_hint">Hinweis anzeigen</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Bildschirmaufnahme</string>
+  <string name="quick_settings_screenrecord_lq_label">Bildschirmaufnahme 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Bildschirmaufnahme 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Bildschirmaufnahme 720p+</string>
   <string name="systemui_tuner_navbar_title">Standard-Einstellungen</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Untere Verknüpfungen</string>
   <!-- Screenshot Delete Toast -->
@@ -145,4 +154,15 @@
   <string name="battery_level_good_title">Optimalen Ladezustand</string>
   <string name="notification_channel_charge_alert">Der Akku wurde vollständig geladen</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">Ziehe und tippe, um Kacheln hinzuzufügen</string>
+  <!-- AEX logo -->
+  <string name="aex_logo_title">AEX-Logo</string>
+  <string name="aex_logo_summary">Lass alle wissen, dass Sie AEX verwenden, wenn sie Ihren Bildschirm sehen</string>
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>

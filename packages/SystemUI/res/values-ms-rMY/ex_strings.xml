@@ -21,34 +21,148 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">Lanjutan</string>
+  <string name="global_action_restart_recovery">Pemulihan</string>
+  <string name="global_action_restart_bootloader">Pemuat but</string>
+  <string name="global_action_restart_ui">SystemUI</string>
+  <string name="global_action_restart_soft">But semula lembut</string>
+  <string name="global_action_screenrecord">Rekod Skrin</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Pelaporan lokasi: mod penjimatan bateri.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Pelaporan lokasi: mod penderia sahaja.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Pelaporan lokasi: mod ketepatan tinggi.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">PiP</string>
+  <string name="quick_settings_pip_tile_app_na">Apl tidak menyokong PiP</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Kafein</string>
+  <string name="accessibility_quick_settings_caffeine_off">Kafein mati</string>
+  <string name="accessibility_quick_settings_caffeine_on">Kafein hidup</string>
+  <string name="statusbar_items_title">Item Bar Status</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Tangkapan skrin</string>
+  <string name="quick_settings_region_screenshot_label">Tangkapan skrin separa</string>
+  <string name="recents_free_ram">RAM Percuma: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Kompas</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0<xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">Inisialisasi\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Kompas mati.</string>
+  <string name="accessibility_quick_settings_compass_on">Kompas hidup.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Kompas dimatikan.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Kompas dihidupkan.</string>
+  <string name="quick_settings_compass_N">N</string>
+  <string name="quick_settings_compass_NE">NE</string>
+  <string name="quick_settings_compass_E">E</string>
+  <string name="quick_settings_compass_SE">SE</string>
+  <string name="quick_settings_compass_S">S</string>
+  <string name="quick_settings_compass_SW">SW</string>
+  <string name="quick_settings_compass_W">W</string>
+  <string name="quick_settings_compass_NW">NW</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Bunyi</string>
+  <string name="quick_settings_sound_ring">Dering</string>
+  <string name="quick_settings_sound_vibrate">Getar</string>
+  <string name="quick_settings_sound_dnd">Jangan Ganggu</string>
+  <string name="lockscreen_default">Asal</string>
+  <string name="lockscreen_hidden">Tiada</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Leret dari ikon untuk dilancarkan</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">Heads up</string>
+  <string name="accessibility_quick_settings_heads_up_off">Heads up mati.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Heads up hidup.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Heads up dimatikan.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Heads up dihidupkan.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Pemberitahuan ejekan menunggang selama 1 minit.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Pemberitahuan yang sedang menunggu bersembunyi <xliff:g id="number">%d</xliff:g> minit.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Dicas sepenuhnya</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Mengecas dengan Dash (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> hingga penuh)</string>
+  <string name="keyguard_plugged_in_dash_charging">Mengecas dengan Dasc\h</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Skrin sedang dirakam</string>
+  <string name="screenrecord_notif_final_ticker">Skrin berjaya dirakam</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Skrin dirakam</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Henti</string>
+  <string name="screenrecord_notif_completed">Skrin berjaya dirakam</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Tunjukkan penunjuk</string>
+  <string name="screenrecord_notif_pointer_off">Sembunyikan penunjuk</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Tidak dapat merakam skrin</string>
+  <string name="notification_channel_screenrecord">Rakam skrin</string>
+  <string name="screenrecord_hide_hint">Sembunyikan petunjuk</string>
+  <string name="screenrecord_show_hint">Tunjukkan petunjuk</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Rekod Skrin</string>
+  <string name="quick_settings_screenrecord_lq_label">Rekod skrin 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Rekod skrin 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Rekod skrin 720p+</string>
+  <string name="systemui_tuner_navbar_title">Tetapan stok</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Pintasan bawah</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Tangkapan skrin Dipadam</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Mula semula</string>
+  <string name="quick_settings_reboot_recovery_label">Pemulihan</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">Lantang</string>
+  <string name="quick_settings_volume_panel_label">Lantang</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">mengatasi kekunci kuasa</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Membenarkan apl mengatasi kekunci kuasa.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">Dibolehkan</string>
+  <string name="quick_settings_network_adb_disabled_label">Dimatikan</string>
+  <string name="quick_settings_network_adb_label">ADB melalui rangkaian</string>
+  <string name="quick_settings_network_adb_toast">Debugging USB tidak didayakan</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Sinkronisasi</string>
+  <string name="accessibility_quick_settings_sync_off">Sinkronisasi mati</string>
+  <string name="accessibility_quick_settings_sync_on">Sinkronisasi hidup</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Sinkronisasi dimatikan</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Sinkronisasi dihidupkan</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">Penambatan USB Mati</string>
+  <string name="accessibility_quick_settings_usb_tether_on">Penambatan USB Hidup</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">Penambatan USB dimatikan</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">Penambatan USB dihidupkan</string>
+  <string name="quick_settings_usb_tether_label">Penambatan USB</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Bahasa</string>
+  <string name="quick_settings_locale_more_locales_toast">Sila konfigurasi pelbagai bahasa untuk membolehkan fungsi toggle</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Muzik</string>
+  <string name="quick_settings_music_play">Main</string>
+  <string name="quick_settings_music_pause">Jeda</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Desktop diperluaskan</string>
+  <string name="quick_settings_expanded_desktop">Diperluaskan</string>
+  <string name="quick_settings_expanded_desktop_off">Biasa</string>
+  <string name="quick_settings_expanded_navigation_off">Sembunyikan navbar</string>
+  <string name="quick_settings_expanded_statusbar_off">Sembunyikan statusbar</string>
+  <string name="alert_on_charged_level">Anda boleh mencabut pengecas ( \'\'&gt;\'\'<xliff:g id="percentage">%s</xliff:g> )</string>
+  <string name="battery_level_good_title">Tahap bateri optimum</string>
+  <string name="notification_channel_charge_alert">Tahap pengecasan bateri optimum</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">Seret atau tekan untuk menambah jubin</string>
+  <!-- AEX logo -->
+  <string name="aex_logo_title">AEX logo</string>
+  <string name="aex_logo_summary">Biar semua orang tahu bahawa anda menggunakan AEX apabila mereka melihat skrin anda</string>
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>

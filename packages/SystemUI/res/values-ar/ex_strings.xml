@@ -21,34 +21,147 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">+HSPA</string>
+  <string name="global_action_restart_advanced">خيارات متقدمة</string>
+  <string name="global_action_restart_recovery">نظام الاسترجاع</string>
+  <string name="global_action_restart_bootloader">محمل الاقلاع</string>
+  <string name="global_action_restart_ui">نظام الواجهة</string>
+  <string name="global_action_restart_soft">إعادة تشغيل سريع</string>
+  <string name="global_action_screenrecord">تسجيل الشاشة</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">تقرير الموقع: وضعية توفير الطاقة.</string>
+  <string name="accessibility_quick_settings_location_gps_only">تحديد الموقع: وضع المستشعرات فقط.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">الإبلاغ عن موقع: وضع دقة عالية.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">PiP</string>
+  <string name="quick_settings_pip_tile_app_na">التطبيق لا يدعم PiP</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">كافيين</string>
+  <string name="accessibility_quick_settings_caffeine_off">كافيين لا يعمل</string>
+  <string name="accessibility_quick_settings_caffeine_on">كافيين يعمل</string>
+  <string name="statusbar_items_title">عناصر شريط الحالة</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">أخذ لقطة للشاشة</string>
+  <string name="quick_settings_region_screenshot_label">صورة جزئية للشاشة</string>
+  <string name="recents_free_ram">ذاكرة الوصول العشوائي الحرة: %1$d ميغابايت</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">الصوت عبر شبكة الجيل الرابع</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">البوصلة</string>
+  <string name="quick_settings_compass_value"><xliff:g id="درجات">%1$.0f</xliff:g>\u00b0 <xliff:g id="الإتجاه">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">تهيئة/u2026</string>
+  <string name="accessibility_quick_settings_compass_off">البوصلة مغلقة.</string>
+  <string name="accessibility_quick_settings_compass_on">البوصلة تعمل.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">تم تعطيل البوصلة.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">تم تفعيل البوصلة.</string>
+  <string name="quick_settings_compass_N">شمال</string>
+  <string name="quick_settings_compass_NE">شمال شرق</string>
+  <string name="quick_settings_compass_E">شرق</string>
+  <string name="quick_settings_compass_SE">جنوب. شرق</string>
+  <string name="quick_settings_compass_S">جنوب</string>
+  <string name="quick_settings_compass_SW">جنوب غرب</string>
+  <string name="quick_settings_compass_W">غرب</string>
+  <string name="quick_settings_compass_NW">شمال غرب</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">الصوت</string>
+  <string name="quick_settings_sound_ring">الرنين</string>
+  <string name="quick_settings_sound_vibrate">اهتزاز</string>
+  <string name="quick_settings_sound_dnd">عدم الإزعاج</string>
+  <string name="lockscreen_default">الافتراضي</string>
+  <string name="lockscreen_hidden">لاشيء</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">حرك الأيقونة لتشغيل التطبيق</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">الإشعارات العلوية</string>
+  <string name="accessibility_quick_settings_heads_up_off">إيقاف الإشعارات العلوية.</string>
+  <string name="accessibility_quick_settings_heads_up_on">الإشعارات العلوية تعمل.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">تم تعطيل الإشعارات العلوية.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">تم تشغيل الإشعارات المنبثقة.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> • التنبيهات الخاطفة غافية لدقيقة واحدة.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • التنبيهات الخاطفة غافية ل <xliff:g id="number">%d</xliff:g> دقائق.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">مشحونة بالكامل</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">الشحن السريع (<xliff:g id="charging_time_left" example="4 ساعة و 2 دقيقة">%s</xliff:g> حتى الإمتلاء)</string>
+  <string name="keyguard_plugged_in_dash_charging">الشحن السريع</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">يتم تسجيل الشاشة</string>
+  <string name="screenrecord_notif_final_ticker">تم تسجيل الشاشة بنجاح</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">جارٍ تسجيل الشاشة</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">إيقاف</string>
+  <string name="screenrecord_notif_completed">تم تسجيل الشاشة بنجاح</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">اظهر المؤشر</string>
+  <string name="screenrecord_notif_pointer_off">إخفاء المؤشر</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">لا يمكن تسجيل الشاشة</string>
+  <string name="notification_channel_screenrecord">تسجيل الشاشة</string>
+  <string name="screenrecord_hide_hint">إخفاء التلميح</string>
+  <string name="screenrecord_show_hint">إظهار التلميح</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">تسجيل الشاشة</string>
+  <string name="quick_settings_screenrecord_lq_label">تسجيل الشاشة بجودة 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">تسجيل الشاشة بجودة 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">تسجيل الشاشة بجودة 720p+</string>
+  <string name="systemui_tuner_navbar_title">الإعدادات الإفتراضية</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">إختصارات سفلية</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">تم حذف لقطة الشاشة</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">إعادة التشغيل</string>
+  <string name="quick_settings_reboot_recovery_label">الإسترداد</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">مستوى الصوت</string>
+  <string name="quick_settings_volume_panel_label">مستوى الصوت</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">تجاوز زر التشغيل</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">السماح لتطبيق ما بأن يقوم بتجاوز زر التشغيل.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">مفعل</string>
+  <string name="quick_settings_network_adb_disabled_label">معطل</string>
+  <string name="quick_settings_network_adb_label">وضع ADB عبر الشبكة</string>
+  <string name="quick_settings_network_adb_toast">لم يتم تمكين تصحيح أخطاء USB</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">مزامنة</string>
+  <string name="accessibility_quick_settings_sync_off">إيقاف المزامنة</string>
+  <string name="accessibility_quick_settings_sync_on">تفعيل المزامنة</string>
+  <string name="accessibility_quick_settings_sync_changed_off">تم إيقاف المزامنة</string>
+  <string name="accessibility_quick_settings_sync_changed_on">تم تشغيل المزامنة</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">الإنترنت عبر USB لا يعمل</string>
+  <string name="accessibility_quick_settings_usb_tether_on">الانترنت عبر USB يعمل</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">تم إيقاف الانترنت عبر USB</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">تم تشغيل الانترنت عبر USB</string>
+  <string name="quick_settings_usb_tether_label">الانترنت عبر USB</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">اللغة</string>
+  <string name="quick_settings_locale_more_locales_toast">قم بإعداد أكثر من لغة لتمكين مفتاح التبديل</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">الموسيقى</string>
+  <string name="quick_settings_music_play">تشغيل</string>
+  <string name="quick_settings_music_pause">إيقاف</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">سطح المكتب الموسع</string>
+  <string name="quick_settings_expanded_desktop">موسع</string>
+  <string name="quick_settings_expanded_desktop_off">عادي</string>
+  <string name="quick_settings_expanded_navigation_off">إخفاء شريط التنقل</string>
+  <string name="quick_settings_expanded_statusbar_off">إخفاء شريط الحالة</string>
+  <string name="alert_on_charged_level">يمكنك فصل الشاحن (\"&gt;\" <xliff:g id="percentage">%s</xliff:g>)</string>
+  <string name="battery_level_good_title">افضل عمر البطارية</string>
+  <string name="notification_channel_charge_alert">أفضل شحن للبطارية</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">اسحب أو انقر لإضافة مربعات</string>
+  <!-- AEX logo -->
+  <string name="aex_logo_title">شعار AEX</string>
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>

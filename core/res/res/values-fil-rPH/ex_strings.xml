@@ -18,14 +18,14 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="reboot_title">Pag-reboot</string>
-  <string name="reboot_message">Nag-rereboot ng sistema</string>
+  <string name="reboot_title">Ang rebot</string>
+  <string name="reboot_message">Nag-rerebot ang system</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_toggleNavigationEditor">kontrolin ang editor pangnabigasyon</string>
+  <string name="permlab_toggleNavigationEditor">ang editor nabigasyon ay kontrolin</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_toggleNavigationEditor">Nagpapahintulot sa isang aplikasyon na kontrolin ang editor ng bar pangnabigasyon.</string>
+  <string name="permdesc_toggleNavigationEditor">Ang aplikasyon ay pina hihintulutan na kontrolin ang nabigasyon bar editor.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_fakePackageSignature">Pag-spoof ng package signature</string>
+  <string name="permlab_fakePackageSignature">Ang Pag-spoof ng package signature</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Nagpapahintulot sa app na magkunwaring maging ibang app. Ang mga malisyosong aplikasyon ay maaring makagamit nito upang pasukin ang mga pribadong mga datos sa aplikasyon. Pagkalooban ito ng permisyon ng pag-iingat lamang!</string>
+  <string name="permdesc_fakePackageSignature">Ang app ay pinahihintulutan na mag pangap bilang isang app. Ang nakakahamak na aplikasyon ay maaaring gamitin upang ma-acces ang pribadong datos. Ipagkaloob ang pahintulot ng may pag pag-iingat lamang!</string>
 </resources>
