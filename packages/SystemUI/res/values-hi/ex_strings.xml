@@ -79,22 +79,34 @@
   <string name="accessibility_quick_settings_heads_up_changed_on">संकेत चालु कर दिया</string>
   <!-- Heads up snooze toast -->
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> सूचना देखना 1 मिनट के लिए स्थगित करने हैं।</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> • सूचनाएँ <xliff:g id="number">%d </xliff:g> मिनट के लिए स्थगित हैं।</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">पूरी तरह चार्ज</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">डैश चार्जिंग (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> पूर्ण होने में)</string>
   <string name="keyguard_plugged_in_dash_charging">शीघ्र चार्जिंग</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">स्क्रीन रिकॉर्ड की जा रही है</string>
+  <string name="screenrecord_notif_final_ticker">स्क्रीन सफलतापूर्वक रिकॉर्ड किया गया</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">स्क्रीन रिकॉर्ड की जा रही है</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">रोके</string>
+  <string name="screenrecord_notif_completed">स्क्रीन सफलतापूर्वक रिकॉर्ड किया गया</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">सूचक दिखाएँ</string>
   <string name="screenrecord_notif_pointer_off">सूचक छुपाएँ</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">स्क्रीन रिकॉर्ड करने में असमर्थ</string>
   <string name="notification_channel_screenrecord">स्क्रीन रिकॉर्ड</string>
+  <string name="screenrecord_hide_hint">संकेत छुपाएं</string>
+  <string name="screenrecord_show_hint">संकेत दिखाएँ</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">स्क्रीन रिकॉर्ड</string>
+  <string name="quick_settings_screenrecord_lq_label">स्क्रीन रिकॉर्ड 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">स्क्रीन रिकॉर्ड 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">स्क्रीन रिकॉर्ड 720p+</string>
+  <string name="systemui_tuner_navbar_title">स्टॉक सेटिंग्स</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">नीचे शॉर्टकट</string>
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">स्क्रीनशॉट मिटा दिया!</string>
@@ -120,8 +132,37 @@
   <string name="accessibility_quick_settings_sync_changed_off">समकालीन बंद कर दिया।</string>
   <string name="accessibility_quick_settings_sync_changed_on">समकालीन चालु कर दिया</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">फ़ोन का इंटरनेट उपयोग कंप्यूटर पर बंद</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USB टेदरिंग चालू</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB टेदरिंग बंद कर दिया</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB टेदरिंग चालू कर दिया</string>
+  <string name="quick_settings_usb_tether_label">यूएसबी टेदरिंग</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">भाषा</string>
+  <string name="quick_settings_locale_more_locales_toast">कृपया टॉगल कार्यक्षमता सक्षम करने के लिए एक से अधिक भाषाओं को कॉन्फ़िगर करें</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">संगीत</string>
+  <string name="quick_settings_music_play">चलायें</string>
+  <string name="quick_settings_music_pause">विराम दें</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">विस्तारित डेस्कटॉप</string>
+  <string name="quick_settings_expanded_desktop">विस्तारित</string>
+  <string name="quick_settings_expanded_desktop_off">सामान्य</string>
+  <string name="quick_settings_expanded_navigation_off">नेविगेशन पट्टी छुपाएँ</string>
+  <string name="quick_settings_expanded_statusbar_off">स्टेटस बार छुपाएँ</string>
+  <string name="alert_on_charged_level">आप चार्जर को डिस्कनेक्ट कर सकते हैं ( \"&gt;\" <xliff:g id="percentage">%s</xliff:g> )</string>
+  <string name="battery_level_good_title">इष्टतम बैटरी स्तर</string>
+  <string name="notification_channel_charge_alert">इष्टतम बैटरी स्तर</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">टाइल जोड़ने के लिए दबाएँ या दबा कर खींचें</string>
+  <!-- AEX logo -->
+  <string name="aex_logo_title">AEX लोगो</string>
+  <string name="aex_logo_summary">हर किसी को पता chale कि आप AEX का उपयोग कर रहे हैं जब वे अपनी स्क्रीन देखते हैं</string>
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>

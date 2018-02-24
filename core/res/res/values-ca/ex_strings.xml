@@ -18,8 +18,14 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="reboot_title">Reiniciar</string>
+  <string name="reboot_message">Reinicianty</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">Editor del control de navegació</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">Permet una aplicació controlar l\'editor de barra de navegació.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Signatura del paquet falsificada</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Permet que l\'aplicació s\'executi com una aplicació diferent. Les aplicacions malicioses poden utilitzar això per accedir a dades personals. Concediu aquest permís amb compte!</string>
 </resources>

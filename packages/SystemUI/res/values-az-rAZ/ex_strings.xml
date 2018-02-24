@@ -41,7 +41,7 @@
   <string name="accessibility_quick_settings_caffeine_on">Kofein açıq</string>
   <string name="statusbar_items_title">Status paneli elementləri</string>
   <!-- Screenshot QS tile -->
-  <string name="quick_settings_screenshot_label">Erkan şəkli</string>
+  <string name="quick_settings_screenshot_label">Ekran şəkli</string>
   <string name="quick_settings_region_screenshot_label">Qismi ekran şəkli</string>
   <string name="recents_free_ram">Boş RAM: %1$d MB</string>
   <!-- volte icon switch -->
@@ -93,7 +93,6 @@
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Dur</string>
   <string name="screenrecord_notif_completed">Ekran müvəffəqiyyətlə çəkildi</string>
-  <string name="screenrecord_notif_duration">Cəmi:</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Göstəriciyi göstər</string>
   <string name="screenrecord_notif_pointer_off">Göstəriciyi gizlət</string>
@@ -155,4 +154,13 @@
   <string name="battery_level_good_title">Optimal batareya səviyyəsi</string>
   <string name="notification_channel_charge_alert">Optimal şarj səviyyəsi</string>
   <!-- QS customizer -->
+  <!-- AEX logo -->
+  <string name="aex_logo_title">AEX loqosu</string>
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>

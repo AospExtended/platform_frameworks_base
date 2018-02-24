@@ -21,34 +21,146 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">Haladó</string>
+  <string name="global_action_restart_recovery">Recovery</string>
+  <string name="global_action_restart_bootloader">Bootloader</string>
+  <string name="global_action_restart_ui">Rendszer UI</string>
+  <string name="global_action_restart_soft">Lágy újraindítás</string>
+  <string name="global_action_screenrecord">Képernyőfelvétel</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Helymeghatározás: energiatakarékos mód.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Helymeghatározás: csak GPS.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Helymeghatározás: nagy pontosságú.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">PiP</string>
+  <string name="quick_settings_pip_tile_app_na">Az alkalmazás nem támogatja a kép a képben (PiP) módot</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Koffein</string>
+  <string name="accessibility_quick_settings_caffeine_off">Koffein ki</string>
+  <string name="accessibility_quick_settings_caffeine_on">Koffein be</string>
+  <string name="statusbar_items_title">Állapotsori elemek</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Képernyőkép</string>
+  <string name="quick_settings_region_screenshot_label">Részleges képernyőkép</string>
+  <string name="recents_free_ram">Szabad RAM: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VoLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Iránytű</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">Inicializálás\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Iránytű ki.</string>
+  <string name="accessibility_quick_settings_compass_on">Iránytű be.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Iránytű kikapcsolva.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Iránytű bekapcsolva.</string>
+  <string name="quick_settings_compass_N">É</string>
+  <string name="quick_settings_compass_NE">ÉK</string>
+  <string name="quick_settings_compass_E">K</string>
+  <string name="quick_settings_compass_SE">DK</string>
+  <string name="quick_settings_compass_S">D</string>
+  <string name="quick_settings_compass_SW">DNy</string>
+  <string name="quick_settings_compass_W">Ny</string>
+  <string name="quick_settings_compass_NW">ÉNy</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Hangok</string>
+  <string name="quick_settings_sound_ring">Csengetés</string>
+  <string name="quick_settings_sound_vibrate">Rezgés</string>
+  <string name="quick_settings_sound_dnd">Ne zavarjanak</string>
+  <string name="lockscreen_default">Alapértelmezett</string>
+  <string name="lockscreen_hidden">Semmi</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Indításhoz csúsztasson az ikonról</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">Lebegő értesítések</string>
+  <string name="accessibility_quick_settings_heads_up_off">Lebegő értesítések ki.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Lebegő értesítések be.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Lebegő értesítések kikapcsolva.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Lebegő értesítések bekapcsolva.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> lebegő értesítései 1 percig szüneteltetve.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> lebegő értesítései <xliff:g id="number">%d</xliff:g> percig szüneteltetve.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Teljesen feltöltve</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Dash töltés (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> a teljes töltöttségig)</string>
+  <string name="keyguard_plugged_in_dash_charging">Dash töltés</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Képernyőfelvétel folyamatban</string>
+  <string name="screenrecord_notif_final_ticker">Képernyőfelvétel elkészítve</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Képernyő felvétele</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Leállítás</string>
+  <string name="screenrecord_notif_completed">Képernyőfelvétel elkészítve</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Mutató megjelenítése</string>
+  <string name="screenrecord_notif_pointer_off">Mutató elrejtése</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Képernyő felvétele nem lehetséges</string>
+  <string name="notification_channel_screenrecord">Képernyőfelvételek</string>
+  <string name="screenrecord_hide_hint">Tipp elrejtése</string>
+  <string name="screenrecord_show_hint">Tipp megjelenítése</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Képernyőfelvétel</string>
+  <string name="quick_settings_screenrecord_lq_label">Képernyőfelvétel 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Képernyőfelvétel 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Képernyőfelvétel 720p+</string>
+  <string name="systemui_tuner_navbar_title">Gyári beállítások</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Alsó hivatkozások</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Képernyőkép törölve</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Újraindítás</string>
+  <string name="quick_settings_reboot_recovery_label">Recovery</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">Hangerő</string>
+  <string name="quick_settings_volume_panel_label">Hangerő</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">kikapcsológomb felülírása</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Lehetővé teszi egy alkalmazás számára a kikapcsológomb felülbírálatát.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">Engedélyezve</string>
+  <string name="quick_settings_network_adb_disabled_label">Letiltva</string>
+  <string name="quick_settings_network_adb_label">ADB hálózaton keresztül</string>
+  <string name="quick_settings_network_adb_toast">Az USB hibakeresés nem engedélyezett</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Szinkronizálás</string>
+  <string name="accessibility_quick_settings_sync_off">Szinkronizálás ki</string>
+  <string name="accessibility_quick_settings_sync_on">Szinkronizálás be</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Szinkronizálás kikapcsolva</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Szinkronizálás bekapcsolva</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">USB internetmegosztás ki</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USB internetmegosztás be</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB internetmegosztás kikapcsolva</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB internetmegosztás bekapcsolva</string>
+  <string name="quick_settings_usb_tether_label">USB internetmegosztás</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Nyelv</string>
+  <string name="quick_settings_locale_more_locales_toast">Kérjük, állítson be több nyelvet a váltás engedélyezéséhez</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Zene</string>
+  <string name="quick_settings_music_play">Lejátszás</string>
+  <string name="quick_settings_music_pause">Szünet</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Kiterjesztett képernyő</string>
+  <string name="quick_settings_expanded_desktop">Kiterjesztett</string>
+  <string name="quick_settings_expanded_desktop_off">Normál</string>
+  <string name="quick_settings_expanded_navigation_off">Navigációs sáv elrejtése</string>
+  <string name="quick_settings_expanded_statusbar_off">Állapotsor elrejtése</string>
+  <string name="alert_on_charged_level">Eltávolítja a töltőt ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
+  <string name="battery_level_good_title">Optimális akkumulátorszint</string>
+  <string name="notification_channel_charge_alert">Optimális akkumulátortöltési szint</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">Húzza, vagy érintse meg csempe hozzáadáshoz</string>
+  <!-- AEX logo -->
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>

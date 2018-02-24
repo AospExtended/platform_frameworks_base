@@ -93,7 +93,6 @@
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Стоп</string>
   <string name="screenrecord_notif_completed">Екран успішно записано</string>
-  <string name="screenrecord_notif_duration">Всього:</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Показувати вказівник</string>
   <string name="screenrecord_notif_pointer_off">Приховати вказівник</string>
@@ -155,4 +154,15 @@
   <string name="battery_level_good_title">Оптимальний рівень батареї</string>
   <string name="notification_channel_charge_alert">Оптимальний рівень заряду батареї</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">Перетягніть або торкніться, щоб додати плитки</string>
+  <!-- AEX logo -->
+  <string name="aex_logo_title">Лого АЕХ</string>
+  <string name="aex_logo_summary">Нехай всі знають, що ви використовуєте AEX, коли вони бачать ваш екран</string>
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>
