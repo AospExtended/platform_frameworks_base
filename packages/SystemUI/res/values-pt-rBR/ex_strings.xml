@@ -93,7 +93,6 @@
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Parar</string>
   <string name="screenrecord_notif_completed">Tela gravada com sucesso</string>
-  <string name="screenrecord_notif_duration">Total:</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Mostrar ponteiro</string>
   <string name="screenrecord_notif_pointer_off">Ocultar ponteiro</string>
@@ -155,4 +154,15 @@
   <string name="battery_level_good_title">Nível de bateria otimizado</string>
   <string name="notification_channel_charge_alert">Nível de carga ideal da bateria</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">Arraste ou toque para adicionar blocos</string>
+  <!-- AEX logo -->
+  <string name="aex_logo_title">Logo AEX</string>
+  <string name="aex_logo_summary">Permita a quem ver sua tela saber que você está usando o AEX</string>
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>

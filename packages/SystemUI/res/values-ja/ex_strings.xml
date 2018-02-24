@@ -21,13 +21,48 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_recovery">リカバリー</string>
+  <string name="global_action_restart_bootloader">ブートローダー</string>
+  <string name="global_action_restart_ui">ｼｽﾃﾑｲﾝﾀﾌｪｰｽ</string>
+  <string name="global_action_restart_soft">ソフトリブート</string>
+  <string name="global_action_screenrecord">画面の録画</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">位置情報レポート: バッテリー節約モード</string>
+  <string name="accessibility_quick_settings_location_gps_only">位置情報レポート: センサーのみ</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">位置情報レポート: 高精度モードです。</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">PiP</string>
+  <string name="quick_settings_pip_tile_app_na">このアプリは PiP に対応していません</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">カフェイン</string>
+  <string name="accessibility_quick_settings_caffeine_off">カフェインをOFF</string>
+  <string name="accessibility_quick_settings_caffeine_on">カフェインをON</string>
+  <string name="statusbar_items_title">ステータスバーの項目</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">スクリーンショット</string>
+  <string name="quick_settings_region_screenshot_label">範囲選択してスクリーンショット</string>
+  <string name="recents_free_ram">空きメモリ: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">コンパス</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">初期化中 \u2026</string>
+  <string name="accessibility_quick_settings_compass_off">コンパス オフ</string>
+  <string name="accessibility_quick_settings_compass_on">コンパス オン</string>
+  <string name="accessibility_quick_settings_compass_changed_off">コンパスがオフになりました</string>
+  <string name="accessibility_quick_settings_compass_changed_on">コンパスがオンになりました</string>
+  <string name="quick_settings_compass_N">北</string>
+  <string name="quick_settings_compass_NE">北東</string>
+  <string name="quick_settings_compass_E">東</string>
+  <string name="quick_settings_compass_SE">南東</string>
+  <string name="quick_settings_compass_S">南</string>
+  <string name="quick_settings_compass_SW">南西</string>
+  <string name="quick_settings_compass_W">西</string>
+  <string name="quick_settings_compass_NW">北西</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">音</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <!-- Heads Up QS Tile -->
   <!-- Heads up snooze toast -->
@@ -51,4 +86,12 @@
   <!-- Music tile -->
   <!-- Expanded Desktop QS Tile -->
   <!-- QS customizer -->
+  <!-- AEX logo -->
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>

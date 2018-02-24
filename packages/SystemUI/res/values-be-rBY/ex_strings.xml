@@ -33,7 +33,7 @@
   <string name="accessibility_quick_settings_location_gps_only">Вызначэнне месцазнаходжання: рэжым толькі датчыкі.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Вызначэнне месцазнаходжання: па ўсіх крыніцах.</string>
   <!-- PiP Tile -->
-  <string name="quick_settings_pip_label">PiP</string>
+  <string name="quick_settings_pip_label">Карцінка ў карцінцы (PiP)</string>
   <string name="quick_settings_pip_tile_app_na">Праграма не падтрымлівае рэжым \"Карцінка ў карцінцы\"</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Забарона сну</string>
@@ -93,7 +93,6 @@
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Спыніць</string>
   <string name="screenrecord_notif_completed">Экран запісаны паспяхова</string>
-  <string name="screenrecord_notif_duration">Усяго:</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Паказаць паказальнік</string>
   <string name="screenrecord_notif_pointer_off">Схаваць паказальнік</string>
@@ -155,4 +154,15 @@
   <string name="battery_level_good_title">Аптымальны ўзровень батарэі</string>
   <string name="notification_channel_charge_alert">Аптымальны ўзровень зарада батарэі</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">Перацягніце або націсніце, каб дадаць пліткі</string>
+  <!-- AEX logo -->
+  <string name="aex_logo_title">Лагатып AEX</string>
+  <string name="aex_logo_summary">Няхай усе ведаюць, што вы карыстаецеся AEX, калі яны бачаць ваш экран</string>
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>

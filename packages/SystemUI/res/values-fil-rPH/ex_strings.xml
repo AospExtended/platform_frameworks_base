@@ -21,53 +21,148 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_data_connection_hspap">HSPA+</string>
-  <string name="global_action_restart_advanced">Adbanse</string>
-  <string name="global_action_restart_recovery">Pag-rekaber</string>
-  <string name="global_action_restart_bootloader">Bootloader</string>
-  <string name="global_action_restart_ui">SystemUI</string>
-  <string name="global_action_restart_soft">Malambot na Pagreboot</string>
-  <string name="global_action_screenrecord">Screenrecord</string>
+  <string name="accessibility_data_connection_hspap">Ang HSPA+</string>
+  <string name="global_action_restart_advanced">Ang nangunguna</string>
+  <string name="global_action_restart_recovery">Ang pagbawi</string>
+  <string name="global_action_restart_bootloader">Ang Bootloader</string>
+  <string name="global_action_restart_ui">Ang SystemUI</string>
+  <string name="global_action_restart_soft">Ang malambot napag-reboot</string>
+  <string name="global_action_screenrecord">Ang screenrecord</string>
   <!-- Advance location quick setting tile -->
-  <string name="accessibility_quick_settings_location_battery_saving">Lokasyon sa pag-uulat: mode ng pag-save sa baterya.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Lokasyon sa pag-uulat: mode ng pag-sensor lamang.</string>
-  <string name="accessibility_quick_settings_location_high_accuracy">Lokasyon sa pag-uulat: mode ng mataas na kawastuhan.</string>
+  <string name="accessibility_quick_settings_location_battery_saving">Ang pag-uulat ng lokasyon: ang saving mode ng baterya.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Ang pag-uulat ng lokasyon: i-mode ang mga sensor lamang.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Ang pag-uulat ng lokasyon: ang mataas na katumpakan na mode.</string>
   <!-- PiP Tile -->
-  <string name="quick_settings_pip_label">PiP</string>
-  <string name="quick_settings_pip_tile_app_na">Ang App ay hindi sumusporta ng PiP</string>
+  <string name="quick_settings_pip_label">Ang PiP</string>
+  <string name="quick_settings_pip_tile_app_na">Hindi sumusuporta ang app sa PiP</string>
   <!-- Caffeine QS Tile -->
-  <string name="quick_settings_caffeine_label">Caffeine</string>
-  <string name="accessibility_quick_settings_caffeine_off">Pag-off ng Caffeine</string>
-  <string name="accessibility_quick_settings_caffeine_on">Pag-on ng Caffeine</string>
-  <string name="statusbar_items_title">Mga item sa statusbar</string>
+  <string name="quick_settings_caffeine_label">Ang Caffeine</string>
+  <string name="accessibility_quick_settings_caffeine_off">Ang caffeine ay naka-off</string>
+  <string name="accessibility_quick_settings_caffeine_on">Ang caffeine ay naka-on</string>
+  <string name="statusbar_items_title">Ang Statusbar ng mga item</string>
   <!-- Screenshot QS tile -->
-  <string name="quick_settings_screenshot_label">Kuha ng screen</string>
-  <string name="quick_settings_region_screenshot_label">Parsyal na kuha ng screen</string>
-  <string name="recents_free_ram">Libreng RAM: %1$d MB</string>
+  <string name="quick_settings_screenshot_label">I-screenshot</string>
+  <string name="quick_settings_region_screenshot_label">Ang bahagyang screenshot</string>
+  <string name="recents_free_ram">Ang libreng RAM:%1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">Ang VOLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Ang Kompass</string>
+  <string name="quick_settings_compass_value">ang <xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">I-Initializing\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Ang kompas ay nakapatay.</string>
+  <string name="accessibility_quick_settings_compass_on">Ang kompas ay naka-on.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Ang Compass ay Naka-off.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Ang kompas ay pinagana.</string>
+  <string name="quick_settings_compass_N">Ang N</string>
+  <string name="quick_settings_compass_NE">Ang NE</string>
+  <string name="quick_settings_compass_E">Ang E</string>
+  <string name="quick_settings_compass_SE">Ang SE</string>
+  <string name="quick_settings_compass_S">Ang S</string>
+  <string name="quick_settings_compass_SW">Ang SW</string>
+  <string name="quick_settings_compass_W">Ang W</string>
+  <string name="quick_settings_compass_NW">Ang NW</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Ang Tunog</string>
+  <string name="quick_settings_sound_ring">Ang Singsing</string>
+  <string name="quick_settings_sound_vibrate">Ang vibrate</string>
+  <string name="quick_settings_sound_dnd">Huwag Istorbuhin</string>
+  <string name="lockscreen_default">I-default</string>
+  <string name="lockscreen_hidden">Wala</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Mag-swipe mula sa icon upang ilunsad</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">Ang mga ulo sa itaas</string>
+  <string name="accessibility_quick_settings_heads_up_off">Ang mga ulo sa itaas ay nakapatay.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Ang mga ulo sa itaas ay nakabukas.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Ang nasa itaas ay naka patay.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Ang nasa itaas ay naka bukas.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Ang pag papatupad ng abiso ay mag i-snoozing ng 1 minoto.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Ang pag papatupad ng abiso ay mag i-snoozing para sa <xliff:g id="number">%d</xliff:g> ng mga minoto.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Ang karga ay lubusan na</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Ang nagcha-charge (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> Hangang sa ito ay mapuno)</string>
+  <string name="keyguard_plugged_in_dash_charging">Nag-charge ang dash</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Ang screen ay nanatiling nakatala</string>
+  <string name="screenrecord_notif_final_ticker">Ang pagtatala ng screen ay matagumpay</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Ang pag tatala ng screen</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Ang huminto</string>
+  <string name="screenrecord_notif_completed">Ang pagtatala sa screen ay matagumpay</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Ipakita ang panuro</string>
+  <string name="screenrecord_notif_pointer_off">Itago ang panuro</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Hindi maitala sa screen</string>
+  <string name="notification_channel_screenrecord">Ang mga tala sa screen</string>
+  <string name="screenrecord_hide_hint">Ang pahiwatig ay itago</string>
+  <string name="screenrecord_show_hint">Ang pahiwatig at ipakita</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Ang nakatala sa screen</string>
+  <string name="quick_settings_screenrecord_lq_label">Ang nakatala sa screen 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Ang nakatala sa screen 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Ang nakatala sa screen 720p+</string>
+  <string name="systemui_tuner_navbar_title">Ang mga stocks settings</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Ang mga bottom shortcut</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Ang screenshot ay burado</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Ang reboot</string>
+  <string name="quick_settings_reboot_recovery_label">Ang pagbawi</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">Ang dami</string>
+  <string name="quick_settings_volume_panel_label">Ang dami</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">i-overide ang lakas ng key</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Pahintulutan ang app para i-overide ang lakas ng key.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">I-enable</string>
+  <string name="quick_settings_network_adb_disabled_label">I-disable</string>
+  <string name="quick_settings_network_adb_label">Ang ADV sa itaas ng ng network</string>
+  <string name="quick_settings_network_adb_toast">Hindi gumagana ang USB debugging</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Ang Sync</string>
+  <string name="accessibility_quick_settings_sync_off">Nakapatay ang Sync</string>
+  <string name="accessibility_quick_settings_sync_on">Ang Sync ay nakabukas</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Ang Sync ay namatay</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Ang Sync ay bumukas</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">Ang USB tethering ay nakapatay</string>
+  <string name="accessibility_quick_settings_usb_tether_on">Ang USB tethering ay nakabukas</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">Ang USB tethering at nakapatay</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">Ang USBtethering ay nakabukas</string>
+  <string name="quick_settings_usb_tether_label">Ang USB tethering</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Ang wika</string>
+  <string name="quick_settings_locale_more_locales_toast">Pakiusap i-configure ang iba\'t ibang wika upang paganahin na i-toggle ang pag-andar</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Ang musika</string>
+  <string name="quick_settings_music_play">Ang pagandar</string>
+  <string name="quick_settings_music_pause">I-pause</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Ang pinalawak na desktop</string>
+  <string name="quick_settings_expanded_desktop">Ang pinalawak</string>
+  <string name="quick_settings_expanded_desktop_off">Ang karaniwan</string>
+  <string name="quick_settings_expanded_navigation_off">Ang navbar ay itago</string>
+  <string name="quick_settings_expanded_statusbar_off">Ang statusbar ay itago</string>
+  <string name="alert_on_charged_level">Maaari mong i-diskonek ang charger (\"&gt;\"<xliff:g id="percentage">%s</xliff:g>)</string>
+  <string name="battery_level_good_title">Ang pinakamainam na sukat ng baterya</string>
+  <string name="notification_channel_charge_alert">Ang pinakamainam na sukat ng karga sa baterya</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">I-drag o i-tap upang maidagdag sa mga tiles</string>
+  <!-- AEX logo -->
+  <string name="aex_logo_title">Ang AEX logo</string>
+  <string name="aex_logo_summary">Ipaalam natin sa lahat na ikaw ay gumagamit ng AEX kapag makita nila ang iyong screen</string>
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>

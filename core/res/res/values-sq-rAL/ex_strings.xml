@@ -18,8 +18,14 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="reboot_title">Ristarto</string>
+  <string name="reboot_message">Ristarto sistemin</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">modifiko butonat e navigimit</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">Lejo programin per te ndryshuar menyne e navigimit.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Kontrollo firmen dixhitale</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Lejo programin qe te pretendoje qe te jete si tjeter program. Programe virusesh mund te perdorin kete gje per tu mundesuar zonat private te programeve. Lejoje kete gje me kujdes!</string>
 </resources>

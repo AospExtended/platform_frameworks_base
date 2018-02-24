@@ -93,7 +93,6 @@
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">停止</string>
   <string name="screenrecord_notif_completed">螢幕錄製成功</string>
-  <string name="screenrecord_notif_duration">總計：</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">顯示觸控指標</string>
   <string name="screenrecord_notif_pointer_off">隱藏觸控指標</string>
@@ -155,4 +154,15 @@
   <string name="battery_level_good_title">最佳電池電量</string>
   <string name="notification_channel_charge_alert">最佳的電池充電水準</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">拖曳或輕觸以新增圖塊</string>
+  <!-- AEX logo -->
+  <string name="aex_logo_title">AEX 標誌</string>
+  <string name="aex_logo_summary">讓每個看到你的螢幕的人都知道你正在使用 AEX </string>
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>

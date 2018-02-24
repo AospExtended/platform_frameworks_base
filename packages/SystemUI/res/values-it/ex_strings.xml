@@ -93,7 +93,6 @@
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Interrompi</string>
   <string name="screenrecord_notif_completed">Schermo registrato con successo</string>
-  <string name="screenrecord_notif_duration">Totale:</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Mostra puntatore</string>
   <string name="screenrecord_notif_pointer_off">Nascondi puntatore</string>
@@ -108,7 +107,7 @@
   <string name="quick_settings_screenrecord_mq_label">Registra schermo 720p</string>
   <string name="quick_settings_screenrecord_hq_label">Registra schermo 720p+</string>
   <string name="systemui_tuner_navbar_title">Impostazioni predefinite</string>
-  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Scorciatoie in basso</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Scorciatoie inferiori</string>
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Screenshot eliminato</string>
   <!-- Reboot/Recovery QS Tile -->
@@ -133,8 +132,8 @@
   <string name="accessibility_quick_settings_sync_changed_off">Sincronizzazione disattivata</string>
   <string name="accessibility_quick_settings_sync_changed_on">Sincronizzazione attivata</string>
   <!-- USB Tethering tile -->
-  <string name="accessibility_quick_settings_usb_tether_off">Tethering USB spento</string>
-  <string name="accessibility_quick_settings_usb_tether_on">Tethering USB acceso</string>
+  <string name="accessibility_quick_settings_usb_tether_off">Tethering USB disattivato</string>
+  <string name="accessibility_quick_settings_usb_tether_on">Tethering USB attivato</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">Tethering USB disattivato</string>
   <string name="accessibility_quick_settings_usb_tether_changed_on">Tethering USB attivato</string>
   <string name="quick_settings_usb_tether_label">Tethering USB</string>
@@ -155,4 +154,15 @@
   <string name="battery_level_good_title">Livello batteria ottimale</string>
   <string name="notification_channel_charge_alert">Livello ottimale per la carica della batteria</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">Trascina o tocca per aggiungere i tile</string>
+  <!-- AEX logo -->
+  <string name="aex_logo_title">Logo AEX</string>
+  <string name="aex_logo_summary">Fai sapere a tutti che stai utilizzando AEX quando vedono il tuo schermo</string>
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>

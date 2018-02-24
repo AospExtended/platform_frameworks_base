@@ -18,8 +18,13 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="reboot_title">再起動</string>
+  <string name="reboot_message">システムを再起動</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">ナビゲーションバーエディター</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">パッケージ署名を偽装</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">アプリが別のアプリになりすます事を許可します。 悪意のあるアプリケーションがこれを利用してアプリケーションの個人情報にアクセスする可能性があります。 慎重にこの許可を与えてください！</string>
 </resources>

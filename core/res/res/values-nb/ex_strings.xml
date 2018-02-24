@@ -21,7 +21,11 @@
   <string name="reboot_title">Omstart</string>
   <string name="reboot_message">Gjenstarte systemet</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">kontroll navigasjonsredaktør</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">Tillater et program å styre navigasjonslinjeditoren.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Falske pakkensignatur</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Lar appen å utgi seg for å være en annen app. Skadelige apper kan bruke dette til å få tilgang til private application data. Gi denne tillatelsen med forsiktighet!</string>
 </resources>

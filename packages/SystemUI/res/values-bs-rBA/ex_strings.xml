@@ -21,13 +21,24 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="global_action_restart_advanced">Prošireno</string>
+  <string name="global_action_screenrecord">Snimanje Ekrana</string>
   <!-- Advance location quick setting tile -->
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">Slika u slici</string>
+  <string name="quick_settings_pip_tile_app_na">Aplikacija ne dozvoljava slika u slici</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Kofeina</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Slikaj Ekrana</string>
   <!-- volte icon switch -->
   <!-- Compass QS Tile -->
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Zvuk</string>
+  <string name="quick_settings_sound_vibrate">Vibracija</string>
+  <string name="quick_settings_sound_dnd">Ne smetaj</string>
+  <string name="lockscreen_default">Normalno</string>
+  <string name="lockscreen_hidden">Nijedan</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <!-- Heads Up QS Tile -->
   <!-- Heads up snooze toast -->
@@ -38,7 +49,10 @@
   <!-- Screenrecord notification action: Stop -->
   <!-- Screenrecord notification action: show/hide pointer -->
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Nemoguce da se snima ekran</string>
+  <string name="notification_channel_screenrecord">Snimci Ekrana</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Snimanje Ekrana</string>
   <!-- Screenshot Delete Toast -->
   <!-- Reboot/Recovery QS Tile -->
   <!-- Volume QS Tile -->
@@ -51,4 +65,12 @@
   <!-- Music tile -->
   <!-- Expanded Desktop QS Tile -->
   <!-- QS customizer -->
+  <!-- AEX logo -->
+  <!-- HW Keys Tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
+  <!-- Weather string format in expanded statusbar header -->
+  <!-- Navigation bar Tile -->
 </resources>
