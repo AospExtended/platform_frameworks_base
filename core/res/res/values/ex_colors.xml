@@ -13,6 +13,21 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Power menu items -->
+    <color name="power_menu_power_off">#ff202020</color>
+    <color name="power_menu_restart">#ff202020</color>
+    <color name="power_menu_restart_advanced">#ff202020</color>
+    <color name="power_menu_hot_reboot">#ff202020</color>
+    <color name="power_menu_advanced_bootloader">#ff202020</color>
+    <color name="power_menu_advanced_recovery">#ff202020</color>
+    <color name="power_menu_advanced_system_restart_ui">#ff202020</color>
+    <color name="power_menu_screenshot">#ff202020</color>
+    <color name="power_menu_airplane">#ff202020</color>
+    <color name="power_menu_screenrecord">#ff202020</color>
+    <color name="power_menu_torch">#ff202020</color>
+    <color name="power_menu_settings">#ff202020</color>
+    <color name="power_menu_lock">#ff202020</color>
+
     <!-- Notification sender text color -->
     <color name="sender_text_color">@android:color/black</color>
 

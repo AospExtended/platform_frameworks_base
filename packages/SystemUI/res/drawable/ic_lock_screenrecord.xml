@@ -3,7 +3,7 @@
     android:height="24dp"
     android:viewportWidth="24.0"
     android:viewportHeight="24.0"
-    android:tint="?android:attr/colorControlNormal">
+    android:tint="@*android:color/power_menu_screenrecord">
 
     <path
         android:fillColor="#FF000000"
