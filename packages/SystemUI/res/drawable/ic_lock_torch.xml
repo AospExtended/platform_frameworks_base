@@ -19,7 +19,7 @@
     android:height="32dp"
     android:viewportWidth="48"
     android:viewportHeight="48"
-    android:tint="?android:attr/colorControlNormal">
+    android:tint="@*android:color/power_menu_torch">
 
     <path
         android:fillColor="#FF000000"

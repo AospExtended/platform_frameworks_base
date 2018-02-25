@@ -176,6 +176,20 @@
   <java-symbol type="bool" name="config_button_brightness_support" />
   <java-symbol type="integer" name="config_button_brightness_default" />
 
+  <!-- Power menu items -->
+  <java-symbol type="color" name="power_menu_power_off" />
+  <java-symbol type="color" name="power_menu_restart" />
+  <java-symbol type="color" name="power_menu_restart_advanced" />
+  <java-symbol type="color" name="power_menu_hot_reboot" />
+  <java-symbol type="color" name="power_menu_advanced_bootloader" />
+  <java-symbol type="color" name="power_menu_advanced_recovery" />
+  <java-symbol type="color" name="power_menu_advanced_system_restart_ui" />
+  <java-symbol type="color" name="power_menu_screenshot" />
+  <java-symbol type="color" name="power_menu_screenrecord" />
+  <java-symbol type="color" name="power_menu_torch" />
+  <java-symbol type="color" name="power_menu_settings" />
+  <java-symbol type="color" name="power_menu_lock" />
+
 </resources>
 
 
