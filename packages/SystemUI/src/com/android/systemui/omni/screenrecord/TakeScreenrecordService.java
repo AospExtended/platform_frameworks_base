@@ -105,7 +105,7 @@ public class TakeScreenrecordService extends Service {
                             Settings.System.SHOW_TOUCHES, 0, UserHandle.USER_CURRENT);
                 Settings.System.putIntForUser(getContentResolver(), Settings.System.SHOW_TOUCHES,
                             1 - currentStatus, UserHandle.USER_CURRENT);
-                mScreenrecord.updateNotification(-1);
+                mScreenrecord.updateNotification();
             } else if (intent.getAction().equals(ACTION_TOGGLE_HINT)) {
                 mScreenrecord.toggleHint();
             }
