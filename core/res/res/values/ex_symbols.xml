@@ -85,6 +85,20 @@
   <java-symbol type="color" name="toast_bg_color" />
   <java-symbol type="color" name="toast_text_color" />
 
+  <!-- Power menu items -->
+  <java-symbol type="color" name="power_menu_power_off" />
+  <java-symbol type="color" name="power_menu_restart" />
+  <java-symbol type="color" name="power_menu_restart_advanced" />
+  <java-symbol type="color" name="power_menu_hot_reboot" />
+  <java-symbol type="color" name="power_menu_advanced_bootloader" />
+  <java-symbol type="color" name="power_menu_advanced_recovery" />
+  <java-symbol type="color" name="power_menu_advanced_system_restart_ui" />
+  <java-symbol type="color" name="power_menu_screenshot" />
+  <java-symbol type="color" name="power_menu_screenrecord" />
+  <java-symbol type="color" name="power_menu_torch" />
+  <java-symbol type="color" name="power_menu_settings" />
+  <java-symbol type="color" name="power_menu_lock" />
+
   <!-- Auto fill -->
   <java-symbol type="color" name="autofill_save_title_color" />
   <java-symbol type="color" name="autofill_autofill_save_custom_subtitle_color" />

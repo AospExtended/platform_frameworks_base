@@ -19,7 +19,7 @@
         android:height="24.0dp"
         android:viewportHeight="24.0"
         android:viewportWidth="24.0"
-        android:tint="?android:attr/colorControlNormal">
+        android:tint="@*android:color/power_menu_restart_advanced">
     <path
         android:fillColor="#FF000000"
         android:pathData="m 12,4 0,-3 0.0089,5.0067283 L 12,9 12.007813,6.0078125 C 15.907812,6.0078125 19,9.1 19,13 c 0,3.9 -3.1,7 -7,7 l 0,2 c 5,0 9,-4 9,-9 0,-5 -4,-9 -9,-9 z"/>
