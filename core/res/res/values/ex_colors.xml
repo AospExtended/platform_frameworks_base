@@ -21,5 +21,8 @@
     <!-- Resolver -->
     <color name="resolver_list_bg">@android:color/white</color>
 
+    <!-- Notification info -->
+    <color name="notification_info_button_text">@color/accent_device_default_light</color>
+
 </resources>
 
