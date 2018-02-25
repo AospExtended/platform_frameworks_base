@@ -63,6 +63,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.android.systemui.R;
+import com.android.systemui.SystemUI;
 import com.android.systemui.util.NotificationChannels;
 
 import java.io.BufferedReader;
@@ -243,37 +244,20 @@ class GlobalScreenrecord {
         mCaptureThread.start();
 
         showHint();
-        updateNotification(mode);
+        updateNotification();
     }
 
-    public void updateNotification(int mode) {
+    public void updateNotification() {
         final Resources r = mContext.getResources();
-        final String base = r.getString(R.string.screenrecord_notif_title);
-        switch (mode) {
-            case WindowManager.SCREEN_RECORD_LOW_QUALITY:
-                mNotifContent = base + " - 480x800 @1.5Mbps";
-                mRecordingStartTime = System.currentTimeMillis();
-                break;
-            case WindowManager.SCREEN_RECORD_MID_QUALITY:
-                mNotifContent = base + " - 720x1280 @4Mbps";
-                mRecordingStartTime = System.currentTimeMillis();
-                break;
-            case WindowManager.SCREEN_RECORD_HIGH_QUALITY:
-                mNotifContent = base + " - 720x1280 @8Mbps";
-                mRecordingStartTime = System.currentTimeMillis();
-                break;
-            case -1:
-                // updating current notification
-                mNotifContent = mNotifContent;
-        }
-        // Display a notification
         Notification.Builder builder = new Notification.Builder(mContext, NotificationChannels.SCREENRECORDS)
             .setTicker(r.getString(R.string.screenrecord_notif_ticker))
-            .setContentTitle(mNotifContent)
+            .setContentTitle(r.getString(R.string.screenrecord_notif_title))
             .setSmallIcon(R.drawable.ic_capture_video)
-            .setWhen(mRecordingStartTime)
+            .setWhen(System.currentTimeMillis())
             .setOngoing(true)
-            .setUsesChronometer(true);
+            .setUsesChronometer(true)
+            .setColor(r.getColor(com.android.internal.R.color.system_notification_accent_color));
+        SystemUI.overrideNotificationAppName(mContext, builder);
 
         Intent stopIntent = new Intent(mContext, TakeScreenrecordService.class)
             .setAction(TakeScreenrecordService.ACTION_STOP);
@@ -371,7 +355,7 @@ class GlobalScreenrecord {
             hint.setImageAlpha(0);
             hint.setAnimation(null);
         }
-        updateNotification(-1);
+        updateNotification();
     }
 
     private Animation getHintAnimation() {
@@ -540,11 +524,14 @@ class GlobalScreenrecord {
 
         Notification.Builder builder = new Notification.Builder(mContext, NotificationChannels.SCREENRECORDS)
             .setTicker(r.getString(R.string.screenrecord_notif_final_ticker))
-            .setContentTitle(r.getString(R.string.screenrecord_notif_completed) + " ("
-                    + totalTime + ", " + size + "MB" + ")")
+            .setContentTitle(r.getString(R.string.screenrecord_notif_completed))
+            .setContentText(r.getString(R.string.screenrecord_notif_description))
             .setSmallIcon(R.drawable.ic_capture_video)
             .setWhen(System.currentTimeMillis())
-            .setAutoCancel(true);
+            .setShowWhen(true)
+            .setAutoCancel(true)
+            .setColor(r.getColor(com.android.internal.R.color.system_notification_accent_color));
+        SystemUI.overrideNotificationAppName(mContext, builder);
         builder
             .addAction(R.drawable.ic_screenshot_share,
                 r.getString(com.android.internal.R.string.share), shareAction)
