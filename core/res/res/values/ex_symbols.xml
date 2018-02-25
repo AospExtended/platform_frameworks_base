@@ -108,6 +108,10 @@
   platform signatures, specifically for use on devices with a vendor partition. -->
   <java-symbol type="array" name="config_vendorPlatformSignatures" />
 
+  <!-- Notification info -->
+  <java-symbol type="color" name="notification_info_button_text" />
+
 </resources>
+
 
 
