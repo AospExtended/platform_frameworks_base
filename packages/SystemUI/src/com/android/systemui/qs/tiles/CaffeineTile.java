@@ -88,6 +88,11 @@ public class CaffeineTile extends QSTileImpl<BooleanState> {
     }
 
     @Override
+    protected void handleLongClick(@Nullable View view) {
+        handleClick(view);
+    }
+
+    @Override
     public CharSequence getTileLabel() {
         return mContext.getString(R.string.quick_settings_caffeine_label);
     }
