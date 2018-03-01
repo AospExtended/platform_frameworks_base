@@ -175,7 +175,10 @@
   <java-symbol type="anim" name="slide_in_left_no_fade" />
   <java-symbol type="anim" name="slide_out_right_no_fade" />
 
+  <java-symbol type="color" name="updater_snackbar_text_color" />
+
 </resources>
+
 
 
 
