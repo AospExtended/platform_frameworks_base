@@ -658,7 +658,7 @@ public class OverScroller {
                     * 0.84f; // look and feel tuning
 
             if (mPerf == null) {
-                mPerf = new BoostFramework();
+                mPerf = new BoostFramework(context);
             }
         }
 

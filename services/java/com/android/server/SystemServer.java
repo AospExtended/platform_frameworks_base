@@ -37,6 +37,7 @@ import android.os.Environment;
 import android.os.FactoryTest;
 import android.os.FileUtils;
 import android.os.IIncidentManager;
+import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Parcel;
@@ -232,6 +233,8 @@ public final class SystemServer {
             "com.android.server.slice.SliceManagerService$Lifecycle";
     private static final String CAR_SERVICE_HELPER_SERVICE_CLASS =
             "com.android.internal.car.CarServiceHelperService";
+    private static final String PERF_SERVICE_CLASS =
+            "com.qualcomm.qti.PerfService";
 
     private static final String PERSISTENT_DATA_BLOCK_PROP = "ro.frp.pst";
 
@@ -755,6 +758,8 @@ public final class SystemServer {
         ConsumerIrService consumerIr = null;
         MmsServiceBroker mmsService = null;
         HardwarePropertiesManagerService hardwarePropertiesService = null;
+        Object perfService = null;
+        Class<?> perfServiceClass = null;
 
         boolean disableSystemTextClassifier = SystemProperties.getBoolean(
                 "config.disable_systemtextclassifier", false);
@@ -767,6 +772,7 @@ public final class SystemServer {
 
         boolean isWatch = context.getPackageManager().hasSystemFeature(
                 PackageManager.FEATURE_WATCH);
+        boolean disablePerfService = SystemProperties.getBoolean("persist.vendor.perfservice.disable", false);
 
         // For debugging RescueParty
         if (Build.IS_DEBUGGABLE && SystemProperties.getBoolean("debug.crash_system", false)) {
@@ -1012,6 +1018,23 @@ public final class SystemServer {
         traceBeginAndSlog("StartUiModeManager");
         mSystemServiceManager.startService(UiModeManagerService.class);
         traceEnd();
+
+        if (!disablePerfService) {
+            try {
+                Slog.i(TAG, "Perf Service");
+                perfServiceClass = Class.forName(PERF_SERVICE_CLASS);
+                if (perfServiceClass != null) {
+                    perfService = perfServiceClass.newInstance();
+                }
+                if (perfService != null) {
+                    Slog.i(TAG, "Successfully get PerfService instance.");
+                    ServiceManager.addService("vendor.perfservice", (IBinder) perfService);
+                } else
+                    Slog.e(TAG, "Failed to get PerfService instance.");
+            } catch (Throwable e) {
+                reportWtf("starting PerfService", e);
+            }
+        }
 
         if (!mOnlyCore) {
             traceBeginAndSlog("UpdatePackagesIfNeeded");

@@ -30,13 +30,8 @@
 package android.util;
 
 import android.util.Log;
-import dalvik.system.PathClassLoader;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
-import java.lang.System;
-import android.view.MotionEvent;
-import android.util.DisplayMetrics;
-import android.os.SystemProperties;
 import android.content.Context;
 
 /** @hide */
@@ -47,13 +42,12 @@ public class BoostFramework {
     private static final String PERFORMANCE_CLASS = "com.qualcomm.qti.Performance";
 
 /** @hide */
-    private static boolean mIsLoaded = false;
-    private static Class<?> mPerfClass = null;
-    private static Method mAcquireFunc = null;
-    private static Method mPerfHintFunc = null;
-    private static Method mReleaseFunc = null;
-    private static Method mReleaseHandlerFunc = null;
-    private static Constructor<Class> mConstructor = null;
+    private static boolean sIsLoaded = false;
+    private static Class<?> sPerfClass = null;
+    private static Method sAcquireFunc = null;
+    private static Method sPerfHintFunc = null;
+    private static Method sReleaseFunc = null;
+    private static Method sReleaseHandlerFunc = null;
 
 /** @hide */
     private Object mPerf = null;
@@ -91,34 +85,11 @@ public class BoostFramework {
 
 /** @hide */
     public BoostFramework() {
-        synchronized(BoostFramework.class) {
-            if (mIsLoaded == false) {
-                try {
-                    mPerfClass = Class.forName(PERFORMANCE_CLASS);
-
-                    Class[] argClasses = new Class[] {int.class, int[].class};
-                    mAcquireFunc = mPerfClass.getMethod("perfLockAcquire", argClasses);
-
-                    argClasses = new Class[] {int.class, String.class, int.class, int.class};
-                    mPerfHintFunc = mPerfClass.getMethod("perfHint", argClasses);
-
-                    argClasses = new Class[] {};
-                    mReleaseFunc = mPerfClass.getMethod("perfLockRelease", argClasses);
-
-                    argClasses = new Class[] {int.class};
-                    mReleaseHandlerFunc = mPerfClass.getDeclaredMethod("perfLockReleaseHandler", argClasses);
-
-                    mIsLoaded = true;
-                }
-                catch(Exception e) {
-                    Log.e(TAG,"BoostFramework() : Exception_1 = " + e);
-                }
-            }
-        }
+        initFunctions();
 
         try {
-            if (mPerfClass != null) {
-                mPerf = mPerfClass.newInstance();
+            if (sPerfClass != null) {
+                mPerf = sPerfClass.newInstance();
             }
         }
         catch(Exception e) {
@@ -127,11 +98,56 @@ public class BoostFramework {
     }
 
 /** @hide */
+    public BoostFramework(Context context) {
+        initFunctions();
+
+        try {
+            if (sPerfClass != null) {
+                Constructor cons = sPerfClass.getConstructor(Context.class);
+                if (cons != null)
+                    mPerf = cons.newInstance(context);
+            }
+        }
+        catch(Exception e) {
+            Log.e(TAG,"BoostFramework() : Exception_3 = " + e);
+        }
+    }
+
+    private void initFunctions () {
+        synchronized(BoostFramework.class) {
+            if (sIsLoaded == false) {
+                try {
+                    sPerfClass = Class.forName(PERFORMANCE_CLASS);
+
+                    Class[] argClasses = new Class[] {int.class, int[].class};
+                    sAcquireFunc = sPerfClass.getMethod("perfLockAcquire", argClasses);
+
+                    argClasses = new Class[] {int.class, String.class, int.class, int.class};
+                    sPerfHintFunc = sPerfClass.getMethod("perfHint", argClasses);
+
+                    argClasses = new Class[] {};
+                    sReleaseFunc = sPerfClass.getMethod("perfLockRelease", argClasses);
+
+                    argClasses = new Class[] {int.class};
+                    sReleaseHandlerFunc = sPerfClass.getDeclaredMethod("perfLockReleaseHandler", argClasses);
+
+                    sIsLoaded = true;
+                }
+                catch(Exception e) {
+                    Log.e(TAG,"BoostFramework() : Exception_1 = " + e);
+                }
+            }
+        }
+    }
+
+/** @hide */
     public int perfLockAcquire(int duration, int... list) {
         int ret = -1;
         try {
-            Object retVal = mAcquireFunc.invoke(mPerf, duration, list);
-            ret = (int)retVal;
+            if (sAcquireFunc != null) {
+                Object retVal = sAcquireFunc.invoke(mPerf, duration, list);
+                ret = (int)retVal;
+            }
         } catch(Exception e) {
             Log.e(TAG,"Exception " + e);
         }
@@ -142,8 +158,10 @@ public class BoostFramework {
     public int perfLockRelease() {
         int ret = -1;
         try {
-            Object retVal = mReleaseFunc.invoke(mPerf);
-            ret = (int)retVal;
+            if (sReleaseFunc != null) {
+                Object retVal = sReleaseFunc.invoke(mPerf);
+                ret = (int)retVal;
+            }
         } catch(Exception e) {
             Log.e(TAG,"Exception " + e);
         }
@@ -154,8 +172,10 @@ public class BoostFramework {
     public int perfLockReleaseHandler(int handle) {
         int ret = -1;
         try {
-            Object retVal = mReleaseHandlerFunc.invoke(mPerf, handle);
-            ret = (int)retVal;
+            if (sReleaseHandlerFunc != null) {
+                Object retVal = sReleaseHandlerFunc.invoke(mPerf, handle);
+                ret = (int)retVal;
+            }
         } catch(Exception e) {
             Log.e(TAG,"Exception " + e);
         }
@@ -176,8 +196,10 @@ public class BoostFramework {
     public int perfHint(int hint, String userDataStr, int userData1, int userData2) {
         int ret = -1;
         try {
-            Object retVal = mPerfHintFunc.invoke(mPerf, hint, userDataStr, userData1, userData2);
-            ret = (int)retVal;
+            if (sPerfHintFunc != null) {
+                Object retVal = sPerfHintFunc.invoke(mPerf, hint, userDataStr, userData1, userData2);
+                ret = (int)retVal;
+            }
         } catch(Exception e) {
             Log.e(TAG,"Exception " + e);
         }
