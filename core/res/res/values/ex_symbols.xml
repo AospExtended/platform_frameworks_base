@@ -107,6 +107,10 @@
   <!-- Enable full screen DT2S in lockscreen -->
   <java-symbol type="bool" name="fullScreenDT2S" />
 
+  <!-- The list of vendor package signatures that should also be considered
+  platform signatures, specifically for use on devices with a vendor partition. -->
+  <java-symbol type="array" name="config_vendorPlatformSignatures" />
+
 </resources>
 
 
