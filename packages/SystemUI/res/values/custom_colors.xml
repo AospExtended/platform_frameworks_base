@@ -30,4 +30,6 @@
     <color name="icon_color_overview_dark">#99000000</color>
 
     <color name="battery_level_good_color">#ff319111</color><!-- green -->
+
+    <color name="legacy_icon_background">#FFFFFF</color>
 </resources>

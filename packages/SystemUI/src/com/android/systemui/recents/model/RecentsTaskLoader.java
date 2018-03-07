@@ -38,7 +38,7 @@ import com.android.systemui.recents.Recents;
 import com.android.systemui.recents.RecentsConfiguration;
 import com.android.systemui.recents.RecentsDebugFlags;
 import com.android.systemui.recents.events.activity.PackagesChangedEvent;
-import com.android.systemui.recents.misc.IconPackHelper;
+import com.android.systemui.slimrecent.icons.IconsHandler;
 import com.android.systemui.recents.misc.SystemServicesProxy;
 
 import java.io.PrintWriter;
@@ -209,11 +209,9 @@ class BackgroundTaskLoader implements Runnable {
             if (cachedIcon == null) {
                 ActivityInfo info = ssp.getActivityInfo(
                         t.key.getComponent(), t.key.userId);
-                if (info != null && IconPackHelper.getInstance(mContext).isIconPackLoaded()) {
-                    int iconId = IconPackHelper.getInstance(mContext).getResourceIdForActivityIcon(info);
-                    if (iconId != 0) {
-                        cachedIcon = IconPackHelper.getInstance(mContext).getIconPackResources().getDrawable(iconId);
-                    }
+                if (info != null) {
+                    cachedIcon = IconsHandler.getInstance(mContext).getIconFromHandler(mContext, info,
+                            /*scaleFactor*/1.0f, R.dimen.recents_task_view_header_height_tablet_land);
                 }
 
                 if (cachedIcon == null) {
@@ -543,10 +541,10 @@ public class RecentsTaskLoader {
             ActivityInfo activityInfo = getAndUpdateActivityInfo(taskKey);
 
             // Return and cache the icon package icon for this app, if available
-            if (activityInfo != null && IconPackHelper.getInstance(context).isIconPackLoaded()) {
-                int iconId = IconPackHelper.getInstance(context).getResourceIdForActivityIcon(activityInfo);
-                if (iconId != 0) {
-                    icon = IconPackHelper.getInstance(context).getIconPackResources().getDrawable(iconId);
+            if (activityInfo != null) {
+                icon = IconsHandler.getInstance(context).getIconFromHandler(context, activityInfo,
+                        /*scaleFactor*/1.0f, R.dimen.recents_task_view_header_height_tablet_land);
+                if (icon != null) {
                     mIconCache.put(taskKey, icon);
                     return icon;
                 }
