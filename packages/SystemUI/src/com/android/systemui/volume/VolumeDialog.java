@@ -430,16 +430,13 @@ public class VolumeDialog implements TunerService.Tunable {
                         if (hasVibrator) {
                             mController.setRingerMode(AudioManager.RINGER_MODE_VIBRATE, false);
                         } else {
-                           mController.setRingerMode(AudioManager.RINGER_MODE_SILENT, false);
+                            final boolean wasZero = row.ss.level == 0;
+                            mController.setStreamVolume(stream, wasZero ? row.lastAudibleLevel : 0);
                         }
-                    } else if (mState.ringerModeInternal == AudioManager.RINGER_MODE_VIBRATE) {
-                       mController.setRingerMode(AudioManager.RINGER_MODE_SILENT, false);
                     } else {
                         mController.setRingerMode(AudioManager.RINGER_MODE_NORMAL, false);
                         if (row.ss.level == 0) {
                             mController.setStreamVolume(stream, 1);
-                        } else {
-                            mController.setStreamVolume(stream, row.lastAudibleLevel); 
                         }
                     }
                 } else if (row.stream == AudioManager.STREAM_NOTIFICATION) {
@@ -791,8 +788,7 @@ public class VolumeDialog implements TunerService.Tunable {
         row.icon.setAlpha(iconEnabled ? 1 : 0.5f);
         final int iconRes =
                 isRingVibrate ? R.drawable.ic_volume_ringer_vibrate
-		: isRingSilent ? R.drawable.ic_volume_ringer_mute
-		: zenMuted ? row.cachedIconRes
+                : zenMuted ? row.cachedIconRes
                 : ss.routedToBluetooth ?
                         (ss.muted ? R.drawable.ic_volume_media_bt_mute
                                 : R.drawable.ic_volume_media_bt)
