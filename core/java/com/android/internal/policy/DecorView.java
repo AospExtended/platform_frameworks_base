@@ -260,8 +260,6 @@ public class DecorView extends FrameLayout implements RootViewSurfaceTaker, Wind
     private final Paint mVerticalResizeShadowPaint = new Paint();
     private final Paint mHorizontalResizeShadowPaint = new Paint();
 
-    private boolean mIsAddedToWindow = false;
-
     DecorView(Context context, int featureId, PhoneWindow window,
             WindowManager.LayoutParams params) {
         super(context);
@@ -2554,18 +2552,5 @@ public class DecorView extends FrameLayout implements RootViewSurfaceTaker, Wind
                 super.onGetContentRect(mode, view, outRect);
             }
         }
-    }
-
-    public static void setAddedToWindow(View v) {
-        if (v instanceof DecorView) {
-            ((DecorView) v).mIsAddedToWindow = true;
-        }
-    }
-
-    public static boolean isAddedToWindow(View v) {
-        if (v instanceof DecorView) {
-            return ((DecorView) v).mIsAddedToWindow;
-        }
-        return false;
     }
 }

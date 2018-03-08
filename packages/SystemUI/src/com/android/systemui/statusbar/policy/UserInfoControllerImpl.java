@@ -111,12 +111,7 @@ public class UserInfoControllerImpl implements UserInfoController {
             mUserInfoTask.cancel(false);
             mUserInfoTask = null;
         }
-
-        try {
-            queryForUserInformation();
-        } catch (Exception e) {
-            Log.e(TAG, "Couldn't query user info", e);
-        }
+        queryForUserInformation();
     }
 
     private void queryForUserInformation() {
