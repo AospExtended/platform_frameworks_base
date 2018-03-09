@@ -18,7 +18,7 @@
         android:height="24.0dp"
         android:viewportWidth="24.0"
         android:viewportHeight="24.0"
-        android:tint="@*android:color/accent_device_default_light">
+        android:tint="?attr/colorControlNormal">
     <path
         android:fillColor="#FF000000"
         android:pathData="M12.0,3.0c-0.6,0.0 -1.0,0.4 -1.0,1.0l0.0,8.0c0.0,0.6 0.4,1.0 1.0,1.0s1.0,-0.4 1.0,-1.0L13.0,4.0c0.0,-0.6 -0.4,-1.0 -1.0,-1.0z"/>
