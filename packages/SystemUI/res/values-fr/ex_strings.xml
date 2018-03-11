@@ -81,7 +81,7 @@
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Notification furtive désactivée pendant 1 minute.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Notification furtive désactivé pendant <xliff:g id="number">%d</xliff:g> minutes.</string>
   <!-- Battery saver tile -->
-  <string name="battery_saver_qs_tile_fully_charged">Complètement chargé</string>
+  <string name="battery_saver_qs_tile_fully_charged">Charge Complète</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Chargement rapide (<xliff:g id="charging_time_left" example="4 heures et 2 minutes">%s</xliff:g> jusqu\'à la charge complète)</string>
   <string name="keyguard_plugged_in_dash_charging">Charge rapide</string>
@@ -133,10 +133,10 @@
   <string name="accessibility_quick_settings_sync_changed_on">Synchronisation activée</string>
   <!-- USB Tethering tile -->
   <string name="accessibility_quick_settings_usb_tether_off">Partage de connexion USB désactivé</string>
-  <string name="accessibility_quick_settings_usb_tether_on">Partage de connexion USB activé</string>
+  <string name="accessibility_quick_settings_usb_tether_on">Partage de connexion par USB activé</string>
   <string name="accessibility_quick_settings_usb_tether_changed_off">Partage de fichiers USB désactivé</string>
-  <string name="accessibility_quick_settings_usb_tether_changed_on">Partage de connexion USB a été activé</string>
-  <string name="quick_settings_usb_tether_label">Partage de connexion USB</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">Le partage de connexion par USB a été activé</string>
+  <string name="quick_settings_usb_tether_label">Partage de connexion par USB</string>
   <!-- Language toggle tile -->
   <string name="quick_settings_locale_label">Langue</string>
   <string name="quick_settings_locale_more_locales_toast">Configurez, s\'il vous plaît, les langages multiples pour pouvoir basculer</string>
@@ -159,10 +159,32 @@
   <string name="aex_logo_title">Logo AEX</string>
   <string name="aex_logo_summary">Que chacun sache que vous utilisez AEX quand ils voient votre écran</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">Boutons physiques activés</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Boutons physiques désactivés</string>
+  <string name="quick_settings_hwkeys_label">Boutons physiques</string>
+  <string name="status_bar_data_saver">Économiseur de données</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">Erreur</string>
+  <string name="omnijaws_service_unkown">Pas de données météo</string>
+  <string name="omnijaws_service_error_long">Erreur lors du chargement des données météo</string>
+  <string name="omnijaws_service_disabled">Service désactivé</string>
+  <string name="omnijaws_detail_header">Météo</string>
+  <string name="omnijaws_label_default">Météo</string>
+  <string name="omnijaws_current_text">Actuellement</string>
+  <string name="omnijaws_package_not_available">OmniJaws indisponible</string>
+  <string name="omnijaws_service_last_update">Dernière mise à jour :</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Barre de navigation</string>
+  <string name="quick_settings_smartbar">Barre intelligente</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_navigation_default">Stock</string>
+  <string name="quick_settings_navigation_disabled">Désactivé</string>
+  <string name="quick_settings_sound_search">Recherche audio</string>
+  <!-- Kill button in notification guts -->
+  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
 </resources>

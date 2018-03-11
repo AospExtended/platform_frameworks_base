@@ -18,8 +18,14 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="reboot_title">రీబూట్</string>
+  <string name="reboot_message">సిస్టమ్ రీబూట్ అవుతోంది</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">నియంత్రణ నావిగేషన్ ఎడిటర్</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">నావిగేషన్ బార్ ఎడిటర్ని నియంత్రించడానికి అనువర్తనాన్ని అనుమతిస్తుంది.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">స్పూఫ్ ప్యాకేజీ సంతకం</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">మరొక అనువర్తనం వలె నటించడానికి అనువర్తనాన్ని అనుమతిస్తుంది. ప్రైవేట్ అనువర్తన డేటాను ప్రాప్యత చేయడానికి హానికరమైన అనువర్తనాలు దీన్ని ఉపయోగించగలవు. ఈ అనుమతిని జాగ్రత్తతో మాత్రమే ఇవ్వండి!</string>
 </resources>

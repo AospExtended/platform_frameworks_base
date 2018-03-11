@@ -21,9 +21,11 @@
   <string name="reboot_title">Genstart</string>
   <string name="reboot_message">Genstarter system</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">Kontroller navigations redigeringsværktøj</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">Tillader en applikation at kontrollere navigationsbarens redigeringsværktøj.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_fakePackageSignature">Spoof pakke signatur</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Tillader app\'en at udgive sig for en anden app. Ondsindede apps kan muligvis bruge dette til at tilgå privat data. Vær forsigtig med denne tilladdelse!</string>
+  <string name="permdesc_fakePackageSignature">Tillader app\'en at udgive sig for en anden app. Ondsindede apps kan muligvis bruge dette til at tilgå privat data. Vær forsigtig med denne tilladelse!</string>
 </resources>

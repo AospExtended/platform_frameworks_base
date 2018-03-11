@@ -24,7 +24,7 @@
   <string name="accessibility_data_connection_hspap">HSPA+</string>
   <string name="global_action_restart_advanced">Gelişmiş</string>
   <string name="global_action_restart_recovery">Kurtarma</string>
-  <string name="global_action_restart_bootloader">Önyükleme</string>
+  <string name="global_action_restart_bootloader">Ön yükleyici</string>
   <string name="global_action_restart_ui">Arayüz</string>
   <string name="global_action_restart_soft">Yazılımsal yeniden başlatma</string>
   <string name="global_action_screenrecord">Ekran kaydı</string>
@@ -72,19 +72,19 @@
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <string name="custom_hint">Başlatmak için simgeyi kaydırın</string>
   <!-- Heads Up QS Tile -->
-  <string name="quick_settings_heads_up_label">Bildirim penceresi</string>
+  <string name="quick_settings_heads_up_label">Bildirim pencereleri</string>
   <string name="accessibility_quick_settings_heads_up_off">Bildirim pencereleri kapalı.</string>
   <string name="accessibility_quick_settings_heads_up_on">Bildirim pencereleri açık.</string>
   <string name="accessibility_quick_settings_heads_up_changed_off">Bildirim pencereleri kapatıldı.</string>
   <string name="accessibility_quick_settings_heads_up_changed_on">Bildirim pencereleri açıldı.</string>
   <!-- Heads up snooze toast -->
-  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> • Gözatma bildirimi 1 dakika erteleniyor.</string>
-  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • Gözatma bildirimi <xliff:g id="number">%d</xliff:g> dakika erteleniyor.</string>
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Göz atma bildirimi 1 dakikalığına erteleniyor.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Gözatma bildirimi <xliff:g id="number">%d</xliff:g> dakika kadar erteleniyor.</string>
   <!-- Battery saver tile -->
-  <string name="battery_saver_qs_tile_fully_charged">Tamamen şarj edildi</string>
+  <string name="battery_saver_qs_tile_fully_charged">Pil tam dolu</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Hızlı Şarj oluyor (tam dolmasına <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> kaldı)</string>
-  <string name="keyguard_plugged_in_dash_charging">Hızlı şarj oluyor</string>
+  <string name="keyguard_plugged_in_dash_charging">Hızlı Şarj oluyor</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Ekran kaydediliyor</string>
   <string name="screenrecord_notif_final_ticker">Ekran başarıyla kaydedildi</string>
@@ -115,11 +115,11 @@
   <string name="quick_settings_reboot_recovery_label">Kurtarma modu</string>
   <!-- Volume QS Tile -->
   <string name="accessibility_quick_settings_volume_panel">Ses</string>
-  <string name="quick_settings_volume_panel_label">Ses</string>
+  <string name="quick_settings_volume_panel_label">Ses seviyesi</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_preventpower">güç tuşunu geçersiz kıl</string>
+  <string name="permlab_preventpower">güç tuşu işlevini değiştir</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_preventpower">Uygulamaya güç tuşunu geçersiz kılma izni verir.</string>
+  <string name="permdesc_preventpower">Uygulamanın güç tuşunun işlevini değiştirmesine izin verir.</string>
   <!-- ADB over network QS tile -->
   <string name="quick_settings_network_adb_enabled_label">Etkin</string>
   <string name="quick_settings_network_adb_disabled_label">Devre dışı</string>
@@ -159,10 +159,32 @@
   <string name="aex_logo_title">AEX logo</string>
   <string name="aex_logo_summary">Herkes ekranınızı gördüğünde AEX\'i kullandığınızı öğrensin</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">Donanım tuşları açık</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Donanım tuşları kapalı</string>
+  <string name="quick_settings_hwkeys_label">Donanım tuşları</string>
+  <string name="status_bar_data_saver">Veri tasarrufu</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">Hata</string>
+  <string name="omnijaws_service_unkown">Hava durumu verisi yok</string>
+  <string name="omnijaws_service_error_long">Hava durumu verileri yüklenirken hata oluştu</string>
+  <string name="omnijaws_service_disabled">Servis devre dışı</string>
+  <string name="omnijaws_detail_header">Hava durumu</string>
+  <string name="omnijaws_label_default">Hava durumu</string>
+  <string name="omnijaws_current_text">Şimdi</string>
+  <string name="omnijaws_package_not_available">OmniJaws mevcut değil</string>
+  <string name="omnijaws_service_last_update">Son güncelleme:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Gezinti çubuğu</string>
+  <string name="quick_settings_smartbar">Akıllı çubuk</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_navigation_default">Varsayılan</string>
+  <string name="quick_settings_navigation_disabled">Devde dışı</string>
+  <string name="quick_settings_sound_search">Sesle arama</string>
+  <!-- Kill button in notification guts -->
+  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
 </resources>

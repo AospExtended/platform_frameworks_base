@@ -159,10 +159,32 @@
   <string name="aex_logo_title">AEX 標誌</string>
   <string name="aex_logo_summary">讓每個看到你的螢幕的人都知道你正在使用 AEX </string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">開啟實體按鍵</string>
+  <string name="accessibility_quick_settings_hwkeys_off">關閉實體按鍵</string>
+  <string name="quick_settings_hwkeys_label">實體按鍵</string>
+  <string name="status_bar_data_saver">數據節省模式</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">錯誤</string>
+  <string name="omnijaws_service_unkown">沒有天氣資料</string>
+  <string name="omnijaws_service_error_long">載入天氣資料錯誤</string>
+  <string name="omnijaws_service_disabled">服務已停用</string>
+  <string name="omnijaws_detail_header">天氣</string>
+  <string name="omnijaws_label_default">天氣</string>
+  <string name="omnijaws_current_text">現在</string>
+  <string name="omnijaws_package_not_available">OmniJaws 不可用</string>
+  <string name="omnijaws_service_last_update">上次更新：</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">導航列</string>
+  <string name="quick_settings_smartbar">智慧列</string>
+  <string name="quick_settings_fling">滑動手勢</string>
+  <string name="quick_settings_navigation_default">原始</string>
+  <string name="quick_settings_navigation_disabled">已停用</string>
+  <string name="quick_settings_sound_search">語音搜尋</string>
+  <!-- Kill button in notification guts -->
+  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
 </resources>

@@ -19,13 +19,13 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="reboot_title">Mulai ulang</string>
-  <string name="reboot_message">Menyalalan ulang sistem</string>
+  <string name="reboot_message">Memulai ulang sistem</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_toggleNavigationEditor">mengontrol navigasi editor</string>
+  <string name="permlab_toggleNavigationEditor">kontrol navigasi editor</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_toggleNavigationEditor">Mengizinkan aplikasi untuk mengontrol editor bar navigasi.</string>
+  <string name="permdesc_toggleNavigationEditor">Izinkan aplikasi mengontrol navigasi bar editor.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_fakePackageSignature">Tanda tangan paket tipuan</string>
+  <string name="permlab_fakePackageSignature">Palsukan tanda tangan paket</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Membolehkan aplikasi untuk berpura-pura sebagai aplikasi lain. Aplikasi jahat mungkin dapat menggunakan ini untuk mengakses data aplikasi. Bolehkan perizinan ini dengan hati-hati!</string>
+  <string name="permdesc_fakePackageSignature">Izinkan aplikasi untuk berpura-pura sebagai aplikasi lain. Aplikasi jahat mungkin dapat menggunakan ini untuk mengakses data aplikasi. Perbolehkan ini dengan hati-hati!</string>
 </resources>

@@ -24,13 +24,13 @@
   <string name="accessibility_data_connection_hspap">HSPA+</string>
   <string name="global_action_restart_advanced">Дополнительно</string>
   <string name="global_action_restart_recovery">Режим восстановления</string>
-  <string name="global_action_restart_bootloader">Перезагрузка в Загрузчик</string>
+  <string name="global_action_restart_bootloader">Загрузчик</string>
   <string name="global_action_restart_ui">Интерфейс системы</string>
-  <string name="global_action_restart_soft">Мягкая Перезагрузка</string>
+  <string name="global_action_restart_soft">Мягкая перезагрузка</string>
   <string name="global_action_screenrecord">Запись экрана</string>
   <!-- Advance location quick setting tile -->
-  <string name="accessibility_quick_settings_location_battery_saving">Отчет о местоположении: режим экономии батареи.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Определение местоположения: Отчет о местоположении: режим только датчики.</string>
+  <string name="accessibility_quick_settings_location_battery_saving">Определение местоположения: режим экономии батареи.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Определение местоположения: только по спутникам.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Определение местоположения: по всем источникам.</string>
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">Картинка в картинке (PiP)</string>
@@ -38,7 +38,7 @@
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Запрет сна</string>
   <string name="accessibility_quick_settings_caffeine_off">Запрет сна выкл</string>
-  <string name="accessibility_quick_settings_caffeine_on">Запрет сна вкл</string>
+  <string name="accessibility_quick_settings_caffeine_on">Запрет сна вкл.</string>
   <string name="statusbar_items_title">Значки строки состояния</string>
   <!-- Screenshot QS tile -->
   <string name="quick_settings_screenshot_label">Скриншот</string>
@@ -83,7 +83,7 @@
   <!-- Battery saver tile -->
   <string name="battery_saver_qs_tile_fully_charged">Полностью заряжена</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Быстрая зарядка (осталось <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
+  <string name="keyguard_indication_dash_charging_time">Быстрая зарядка (<xliff:g id="charging_time_left" example="4 часа и 2 минуты">%s</xliff:g> до полной зарядки)</string>
   <string name="keyguard_plugged_in_dash_charging">Быстрая зарядка</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Идёт запись экрана</string>
@@ -139,10 +139,10 @@
   <string name="quick_settings_usb_tether_label">USB-модем</string>
   <!-- Language toggle tile -->
   <string name="quick_settings_locale_label">Язык</string>
-  <string name="quick_settings_locale_more_locales_toast">Пожалуйста, настройте несколько языков, чтобы активировать функцию</string>
+  <string name="quick_settings_locale_more_locales_toast">Пожалуйста, настройте несколько языков, чтобы активировать эту функцию</string>
   <!-- Music tile -->
   <string name="quick_settings_music_label">Музыка</string>
-  <string name="quick_settings_music_play">Играть</string>
+  <string name="quick_settings_music_play">Воспроизвести</string>
   <string name="quick_settings_music_pause">Пауза</string>
   <!-- Expanded Desktop QS Tile -->
   <string name="quick_settings_expanded_desktop_label">Расширенный рабочий стол</string>
@@ -159,10 +159,32 @@
   <string name="aex_logo_title">Логотип AEX</string>
   <string name="aex_logo_summary">Пусть все знают, что вы используете AEX, когда они видят ваш экран</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">Аппаратные кнопки включены</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Аппаратные кнопки выключены</string>
+  <string name="quick_settings_hwkeys_label">Аппаратные кнопки</string>
+  <string name="status_bar_data_saver">Экономия трафика</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">Ошибка</string>
+  <string name="omnijaws_service_unkown">Нет данных о погоде</string>
+  <string name="omnijaws_service_error_long">Ошибка при загрузке данных о погоде</string>
+  <string name="omnijaws_service_disabled">Служба отключена</string>
+  <string name="omnijaws_detail_header">Погода</string>
+  <string name="omnijaws_label_default">Погода</string>
+  <string name="omnijaws_current_text">Только что</string>
+  <string name="omnijaws_package_not_available">OmniJaws недоступен</string>
+  <string name="omnijaws_service_last_update">Последнее обновление:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Панель навигации</string>
+  <string name="quick_settings_smartbar">Умная панель</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_navigation_default">По умолчанию</string>
+  <string name="quick_settings_navigation_disabled">Не отображать</string>
+  <string name="quick_settings_sound_search">Голосовой поиск</string>
+  <!-- Kill button in notification guts -->
+  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
 </resources>

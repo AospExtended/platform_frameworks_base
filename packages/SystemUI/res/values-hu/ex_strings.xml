@@ -156,11 +156,35 @@
   <!-- QS customizer -->
   <string name="drag_or_tap_to_add_tiles">Húzza, vagy érintse meg csempe hozzáadáshoz</string>
   <!-- AEX logo -->
+  <string name="aex_logo_title">AEX logó</string>
+  <string name="aex_logo_summary">Engedje, hogy mindenki láthassa, ha ránéz a képernyőjére, hogy AEX-et használ</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">Hardvergombok bekapcsolva</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Hardvergombok kikapcsolva</string>
+  <string name="quick_settings_hwkeys_label">Hardvergombok</string>
+  <string name="status_bar_data_saver">Adatforgalom-csökkentő</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">Hiba</string>
+  <string name="omnijaws_service_unkown">Nincsenek időjárási adatok</string>
+  <string name="omnijaws_service_error_long">Hiba az időjárási adatok betöltésekor</string>
+  <string name="omnijaws_service_disabled">Szolgáltatás letiltva</string>
+  <string name="omnijaws_detail_header">Időjárás</string>
+  <string name="omnijaws_label_default">Időjárás</string>
+  <string name="omnijaws_current_text">Most</string>
+  <string name="omnijaws_package_not_available">Az OmniJaws nem elérhető</string>
+  <string name="omnijaws_service_last_update">Legutóbbi frissítés:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Navigációs sáv</string>
+  <string name="quick_settings_smartbar">Okos sáv</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_navigation_default">Gyári</string>
+  <string name="quick_settings_navigation_disabled">Letiltva</string>
+  <string name="quick_settings_sound_search">Hangalapú keresés</string>
+  <!-- Kill button in notification guts -->
+  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
 </resources>

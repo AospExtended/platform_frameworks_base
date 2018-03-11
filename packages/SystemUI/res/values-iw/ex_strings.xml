@@ -21,10 +21,23 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="global_action_restart_advanced">אפשרויות מתקדמות</string>
+  <string name="global_action_restart_recovery">ריקברי</string>
+  <string name="global_action_restart_bootloader">בוטלואדר</string>
+  <string name="global_action_restart_soft">הפעלה מחדש מהירה</string>
+  <string name="global_action_screenrecord">הקלטת מסך</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">מצב דיווח מיקום שונה למצב חסכון סוללה.</string>
+  <string name="accessibility_quick_settings_location_gps_only">מצב דיווח מיקום שונה למצב חיישן בלבד.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">מצב דיווח מיקום שונה למצב מיקום מדויק.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_tile_app_na">היישום אינו תומך בPiP</string>
   <!-- Caffeine QS Tile -->
+  <string name="statusbar_items_title">פריטים בשורת המצב</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">צילום מסך</string>
+  <string name="quick_settings_region_screenshot_label">צילום מסך חלקי</string>
+  <string name="recents_free_ram">%1$d MB זכרון RAM פנוי</string>
   <!-- volte icon switch -->
   <!-- Compass QS Tile -->
   <!-- Sound QS Tile -->
@@ -59,4 +72,6 @@
          [CHAR LIMIT=4] -->
   <!-- Weather string format in expanded statusbar header -->
   <!-- Navigation bar Tile -->
+  <!-- Kill button in notification guts -->
+  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
 </resources>

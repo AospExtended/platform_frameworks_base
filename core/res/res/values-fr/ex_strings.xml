@@ -19,13 +19,13 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="reboot_title">Redémarrer</string>
-  <string name="reboot_message">Redémarre le système</string>
+  <string name="reboot_message">Redémarrage du système</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_toggleNavigationEditor">éditeur de navigation de contrôle</string>
+  <string name="permlab_toggleNavigationEditor">contrôle de l\'éditeur de navigation</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_toggleNavigationEditor">Permet à une application de contrôler l\'éditeur de la barre de navigation.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_fakePackageSignature">Falsifier la signature du paquet</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Autoriser l\'application à prétendre être une autre application. Des applications malveillantes peuvent être capable de l\'utiliser pour accéder aux données d\'applications privées. Accordez cette autorisation avec prudence!</string>
+  <string name="permdesc_fakePackageSignature">Autoriser l\'application à prétendre être une autre application. Des applications malveillantes peuvent l\'utiliser pour accéder aux données d\'applications privées. Accordez cette autorisation avec prudence!</string>
 </resources>

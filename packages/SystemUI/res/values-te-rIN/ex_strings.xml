@@ -21,42 +21,170 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">ఆధునిక</string>
+  <string name="global_action_restart_recovery">రికవరీ</string>
+  <string name="global_action_restart_bootloader">బూట్లోడర్</string>
+  <string name="global_action_restart_ui">సిస్టమ్ వినియోగదారు ఇంటర్ఫేస్</string>
+  <string name="global_action_restart_soft">సాఫ్ట్ రీబూట్</string>
+  <string name="global_action_screenrecord">రికార్డ్ స్క్రీన్</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">స్థాన నివేదన: బ్యాటరీ ఆదా మోడ్.</string>
+  <string name="accessibility_quick_settings_location_gps_only">స్థాన నివేదన: సెన్సార్లు మాత్రమే మోడ్.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">స్థాన నివేదన: అధిక ఖచ్చితత్వం మోడ్.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">పిప్</string>
+  <string name="quick_settings_pip_tile_app_na">అనువర్తనం PiP కి మద్దతు ఇవ్వదు</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">కాఫిన్</string>
+  <string name="accessibility_quick_settings_caffeine_off">కాఫిన్ ఆఫ్</string>
+  <string name="accessibility_quick_settings_caffeine_on">కాఫిన్ ఆన్</string>
+  <string name="statusbar_items_title">స్థితి బార్ అంశాలు</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">స్క్రీన్షాట్</string>
+  <string name="quick_settings_region_screenshot_label">పాక్షిక స్క్రీన్షాట్</string>
+  <string name="recents_free_ram">ఉచిత రాండమ్ యాక్సెస్ మెమరీ: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VoLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">కంపాస్</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0<xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">ప్రారంభమవుతోంది\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">కంపాస్ ఆఫ్.</string>
+  <string name="accessibility_quick_settings_compass_on">కంపాస్ ఆఫ్.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">కంపాస్ ఆపివేయబడింది.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">కంపాస్ ఆన్ చేయబడింది.</string>
+  <string name="quick_settings_compass_N">ఉత్తర</string>
+  <string name="quick_settings_compass_NE">ఈశా</string>
+  <string name="quick_settings_compass_E">తూర్పు</string>
+  <string name="quick_settings_compass_SE">సౌత్ ఈస్ట్</string>
+  <string name="quick_settings_compass_S">దక్షిణ</string>
+  <string name="quick_settings_compass_SW">సౌత్ వెస్ట్</string>
+  <string name="quick_settings_compass_W">వెస్ట్</string>
+  <string name="quick_settings_compass_NW">వాయువ్యం</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">సౌండ్</string>
+  <string name="quick_settings_sound_ring">రింగ్</string>
+  <string name="quick_settings_sound_vibrate">ప్రకంపన</string>
+  <string name="quick_settings_sound_dnd">డిస్టర్బ్ చేయకు</string>
+  <string name="lockscreen_default">డిఫాల్ట్</string>
+  <string name="lockscreen_hidden">గమనిక</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">చిహ్నం నుండి స్వైప్ ప్రారంభించండి</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">హెడ్స్ నోటిఫికేషన్ అప్</string>
+  <string name="accessibility_quick_settings_heads_up_off">Heads up off.</string>
+  <string name="accessibility_quick_settings_heads_up_on">నోటిఫికేషన్లను హెచ్చరించండి.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">హెచ్చరికల హెచ్చరికలు నిలిపివేయబడ్డాయి.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">హెచ్చరికల హెచ్చరికలు ఆన్ చేయబడ్డాయి.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 1 నిమిషం పాటు తాత్కాలిక నోటిఫికేషన్ తాత్కాలికంగా ఆపివేయబడుతుంది.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - పీకింగ్ నోటిఫికేషన్లు <xliff:g id="number">%d</xliff:g> నిమిషం పాటు తాత్కాలికంగా ఆపివేయబడుతున్నాయి.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">పూర్తిగా ఛార్జ్ చేయబడింది</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">డాష్ ఛార్జింగ్ (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> పూర్తి వరకు)</string>
+  <string name="keyguard_plugged_in_dash_charging">డాష్ ఛార్జింగ్</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">స్క్రీన్ రికార్డ్ చేయబడుతోంది</string>
+  <string name="screenrecord_notif_final_ticker">స్క్రీన్ విజయవంతంగా రికార్డ్ చేయబడింది</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">స్క్రీన్ రికార్డింగ్ చేస్తోంది</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">ఆపు</string>
+  <string name="screenrecord_notif_completed">స్క్రీన్ విజయవంతంగా రికార్డ్ చేయబడింది</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">పాయింటర్ చూపించు</string>
+  <string name="screenrecord_notif_pointer_off">పాయింటర్ను దాచు</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">స్క్రీన్ను రికార్డ్ చేయడం సాధ్యపడలేదు</string>
+  <string name="notification_channel_screenrecord">రికార్డ్ స్క్రీన్</string>
+  <string name="screenrecord_hide_hint">సూచనను దాచు</string>
+  <string name="screenrecord_show_hint">సూచన చూపించు</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">రికార్డ్ స్క్రీన్</string>
+  <string name="quick_settings_screenrecord_lq_label">రికార్డ్ స్క్రీన్ 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">రికార్డ్ స్క్రీన్ 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">రికార్డ్ స్క్రీన్ 720p+</string>
+  <string name="systemui_tuner_navbar_title">స్టాక్ సెట్టింగులు</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">దిగువ సత్వరమార్గాలు</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">స్క్రీన్షాట్ తొలగించబడింది</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">రీబూట్</string>
+  <string name="quick_settings_reboot_recovery_label">రికవరీ</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">వాల్యూమ్</string>
+  <string name="quick_settings_volume_panel_label">వాల్యూమ్</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">పవర్ కీని ఓవర్రైడ్ చేయండి</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">శక్తి కీని భర్తీ చేయడానికి అనువర్తనాన్ని అనుమతిస్తుంది.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">ప్రారంభించబడ్డ</string>
+  <string name="quick_settings_network_adb_disabled_label">డిసేబుల్</string>
+  <string name="quick_settings_network_adb_label">నెట్వర్క్ మీద ADB</string>
+  <string name="quick_settings_network_adb_toast">USB డీబగ్గింగ్ ప్రారంభించబడలేదు</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">సమకాలీకరణ</string>
+  <string name="accessibility_quick_settings_sync_off">సమకాలీకరించండి</string>
+  <string name="accessibility_quick_settings_sync_on">సమకాలీకరణను ఆన్ చేయండి</string>
+  <string name="accessibility_quick_settings_sync_changed_off">సమకాలీకరణ నిలిపివేయబడింది</string>
+  <string name="accessibility_quick_settings_sync_changed_on">సమకాలీకరణ ఆన్ చేయబడింది</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">USB టేప్హీరింగ్ ఆఫ్</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USB టెటెర్రింగ్ ఆన్</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB టెథరింగ్ నిలిపివేయబడింది</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB టెటెర్రింగ్ ఆన్ చేయబడింది</string>
+  <string name="quick_settings_usb_tether_label">USB టెథరింగ్</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">భాషా</string>
+  <string name="quick_settings_locale_more_locales_toast">దయచేసి టోగుల్ కార్యాచరణను ప్రారంభించడానికి బహుళ భాషలను కాన్ఫిగర్ చేయండి</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">సంగీతం</string>
+  <string name="quick_settings_music_play">ప్లే</string>
+  <string name="quick_settings_music_pause">పాజ్</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">విస్తరించిన డెస్క్టాప్</string>
+  <string name="quick_settings_expanded_desktop">విస్తారిత</string>
+  <string name="quick_settings_expanded_desktop_off">సాధారణ</string>
+  <string name="quick_settings_expanded_navigation_off">నావిగేషన్ బార్ని దాచు</string>
+  <string name="quick_settings_expanded_statusbar_off">స్థితి బార్ను దాచు</string>
+  <string name="alert_on_charged_level">మీరు ఛార్జర్ను డిస్కనెక్ట్ చేయవచ్చు ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
+  <string name="battery_level_good_title">సరైన బ్యాటరీ స్థాయి</string>
+  <string name="notification_channel_charge_alert">సరైన బ్యాటరీ ఛార్జ్ స్థాయి</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">పలకలను జోడించడానికి లాగండి లేదా నొక్కండి</string>
   <!-- AEX logo -->
+  <string name="aex_logo_title">AEX లోగో</string>
+  <string name="aex_logo_summary">మీ తెరను చూసినప్పుడు మీరు AEX ను ఉపయోగిస్తున్నారని ప్రతి ఒక్కరికీ తెలియజేయండి</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">హార్డ్వేర్ కీలు ఆన్</string>
+  <string name="accessibility_quick_settings_hwkeys_off">హార్డ్వేర్ కీలు ఆఫ్</string>
+  <string name="quick_settings_hwkeys_label">హార్డ్వేర్ కీలు</string>
+  <string name="status_bar_data_saver">డేటా సేవర్</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">లోపం</string>
+  <string name="omnijaws_service_unkown">వాతావరణ డేటా లేదు</string>
+  <string name="omnijaws_service_error_long">వాతావరణ డేటాను లోడ్ చేయడంలో లోపం</string>
+  <string name="omnijaws_service_disabled">సేవ నిలిపివేయబడింది</string>
+  <string name="omnijaws_detail_header">వాతావరణ</string>
+  <string name="omnijaws_label_default">వాతావరణ</string>
+  <string name="omnijaws_current_text">ఇప్పుడు</string>
+  <string name="omnijaws_package_not_available">ఓమ్నిజాస్ అందుబాటులో లేదు</string>
+  <string name="omnijaws_service_last_update">చివరి నవీకరణ:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">నావిగేషన్ బార్</string>
+  <string name="quick_settings_smartbar">స్మార్ట్ బార్</string>
+  <string name="quick_settings_fling">ఫ్లింగ్</string>
+  <string name="quick_settings_navigation_default">స్టాక్</string>
+  <string name="quick_settings_navigation_disabled">డిసేబుల్</string>
+  <string name="quick_settings_sound_search">ధ్వని శోధన</string>
+  <!-- Kill button in notification guts -->
+  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
 </resources>

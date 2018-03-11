@@ -159,10 +159,32 @@
   <string name="aex_logo_title">Logo AEX</string>
   <string name="aex_logo_summary">Fai sapere a tutti che stai utilizzando AEX quando vedono il tuo schermo</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">Tasti fisici attivati</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Tasti fisici disattivati</string>
+  <string name="quick_settings_hwkeys_label">Tasti fisici</string>
+  <string name="status_bar_data_saver">Risparmio dati</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">Errore</string>
+  <string name="omnijaws_service_unkown">Nessuna informazione meteo</string>
+  <string name="omnijaws_service_error_long">Errore durante il caricamento dei dati meteo</string>
+  <string name="omnijaws_service_disabled">Servizio disabilitato</string>
+  <string name="omnijaws_detail_header">Opzioni Meteo</string>
+  <string name="omnijaws_label_default">Meteo</string>
+  <string name="omnijaws_current_text">Adesso</string>
+  <string name="omnijaws_package_not_available">OmniJaws non disponibile</string>
+  <string name="omnijaws_service_last_update">Ultima modifica:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Barra di navigazione</string>
+  <string name="quick_settings_smartbar">SmartBar</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_navigation_default">Predefinito</string>
+  <string name="quick_settings_navigation_disabled">Disattivata</string>
+  <string name="quick_settings_sound_search">Ricerca audio</string>
+  <!-- Kill button in notification guts -->
+  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
 </resources>

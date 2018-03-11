@@ -25,6 +25,7 @@
   <string name="global_action_restart_advanced">Разширени</string>
   <string name="global_action_restart_recovery">Режим на възстановяване</string>
   <string name="global_action_restart_bootloader">Буутлоудър</string>
+  <string name="global_action_restart_ui">Системен UI</string>
   <string name="global_action_restart_soft">Софт рестарт</string>
   <string name="global_action_screenrecord">Записване на екрана</string>
   <!-- Advance location quick setting tile -->
@@ -32,6 +33,8 @@
   <string name="accessibility_quick_settings_location_gps_only">Отчитане на местоположение: само по Gps.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Отчитане на местоположение: режим на висока точност.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">КвК</string>
+  <string name="quick_settings_pip_tile_app_na">Приложението не поддържа КвК</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Кофеин</string>
   <string name="accessibility_quick_settings_caffeine_off">Кофеин изключен</string>
@@ -45,38 +48,134 @@
   <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Компас</string>
+  <string name="quick_settings_compass_init">Подготвяне\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Компас изкл.</string>
+  <string name="accessibility_quick_settings_compass_on">Компас вкл.</string>
   <string name="accessibility_quick_settings_compass_changed_off">Компасът е изключен.</string>
   <string name="accessibility_quick_settings_compass_changed_on">Компасът е включен.</string>
+  <string name="quick_settings_compass_N">Север</string>
+  <string name="quick_settings_compass_NE">Североизток</string>
+  <string name="quick_settings_compass_E">Изток</string>
+  <string name="quick_settings_compass_SE">Юг-изток</string>
+  <string name="quick_settings_compass_S">Юг</string>
+  <string name="quick_settings_compass_SW">Югозападен</string>
+  <string name="quick_settings_compass_W">Запад</string>
+  <string name="quick_settings_compass_NW">Северозапад</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Звук</string>
+  <string name="quick_settings_sound_ring">Позвъняване</string>
+  <string name="quick_settings_sound_vibrate">Вибрация</string>
+  <string name="quick_settings_sound_dnd">Не безпокойте</string>
+  <string name="lockscreen_default">По подразбиране</string>
+  <string name="lockscreen_hidden">Нищо</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Плъзнете от иконата за стартиране</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">Изскачащи известия</string>
+  <string name="accessibility_quick_settings_heads_up_off">Изскачащи известия изключени.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Изскачащи известия включени.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Изскачащите известия са изключени.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Изскачащите известия са включени.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Изкачащите известия са отложени за 1 минута.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Изкачащите известия са отложени за <xliff:g id="number">%d</xliff:g> минута.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Напълно заредена</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Бързо зареждане (<xliff:g id="charging_time_left" example="4 часа и 2 минути">%s</xliff:g> до пълно зареждане)</string>
+  <string name="keyguard_plugged_in_dash_charging">Бързо зареждане</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Екрана се записва</string>
+  <string name="screenrecord_notif_final_ticker">Екаранът е записан успешно</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Записване на екрана</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Спри</string>
+  <string name="screenrecord_notif_completed">Екаранът е записан успешно</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Покажи показалец</string>
+  <string name="screenrecord_notif_pointer_off">Скрий показалеца</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Екрана не може да бъде записан</string>
+  <string name="notification_channel_screenrecord">Записи на екрана</string>
+  <string name="screenrecord_hide_hint">Скриване на съвети</string>
+  <string name="screenrecord_show_hint">Показване Съвети</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Записване на екрана</string>
+  <string name="quick_settings_screenrecord_lq_label">Записване на екрана 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Записване на екрана 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Записване на екрана 720p+</string>
+  <string name="systemui_tuner_navbar_title">Фабрични настройки</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Преки пътища в долната част</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Снимката на екрана е изтрита</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Рестартиране</string>
+  <string name="quick_settings_reboot_recovery_label">Режим на възстановяване</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">Сила на звука</string>
+  <string name="quick_settings_volume_panel_label">Сила на звука</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">замени клавиш за захранване</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Позволява на приложението да замени клавиша за включване.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">Активирано</string>
+  <string name="quick_settings_network_adb_disabled_label">Деактивирано</string>
+  <string name="quick_settings_network_adb_label">ADB през мрежата</string>
+  <string name="quick_settings_network_adb_toast">USB отстраняване на грешки не е включено</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Синхронизация</string>
+  <string name="accessibility_quick_settings_sync_off">Синхронизация изключена</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">USB Тетъринг изключен</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USB Тетъринг включен</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB Тетъринг е изключен</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB Тетъринг е включен</string>
+  <string name="quick_settings_usb_tether_label">USB Тетъринг</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Език</string>
+  <string name="quick_settings_locale_more_locales_toast">Моля, конфигурирате няколко езика да разрешите функцията за превключване</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Музика</string>
+  <string name="quick_settings_music_play">Пусни</string>
+  <string name="quick_settings_music_pause">Пауза</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Разширен екран</string>
+  <string name="quick_settings_expanded_desktop">Разширен</string>
+  <string name="quick_settings_expanded_desktop_off">Нормален</string>
+  <string name="quick_settings_expanded_navigation_off">Скрий навигационна лента</string>
+  <string name="quick_settings_expanded_statusbar_off">Скрий лентата на състоянието</string>
+  <string name="battery_level_good_title">Оптимално ниво на батерията</string>
+  <string name="notification_channel_charge_alert">Оптимален заряд на зареждане</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">Плъзнете или натиснете, за да добавите плочки</string>
   <!-- AEX logo -->
+  <string name="aex_logo_title">AEX лого</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">Хардуерни бутони вкл</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Хардуерни бутони изкл.</string>
+  <string name="quick_settings_hwkeys_label">Хардуерни бутони</string>
+  <string name="status_bar_data_saver">Икономия на данни</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">Грешка</string>
+  <string name="omnijaws_service_unkown">Няма информация за времето</string>
+  <string name="omnijaws_service_error_long">Грешка при зареждане на данни за времето</string>
+  <string name="omnijaws_service_disabled">Услуга е забранена</string>
+  <string name="omnijaws_detail_header">Времето</string>
+  <string name="omnijaws_label_default">Времето</string>
+  <string name="omnijaws_current_text">Сега</string>
+  <string name="omnijaws_package_not_available">OmniJaws не е наличен</string>
+  <string name="omnijaws_service_last_update">Последно обновяване:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s е </xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Навигационна лента</string>
+  <string name="quick_settings_smartbar">Умна лента</string>
+  <string name="quick_settings_navigation_disabled">Деактивирано</string>
+  <!-- Kill button in notification guts -->
+  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
 </resources>

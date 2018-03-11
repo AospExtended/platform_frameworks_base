@@ -18,8 +18,14 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="reboot_title">הפעלה מחדש</string>
+  <string name="reboot_message">מפעיל מחדש את המערכת</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">שולט במערכת הניווט</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">אפשר ליישום לשלוט בשורת הניווט.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">אפשר/י ליישום להעמיד פנים שהוא יישום אחר.
+יישומים זדוניים יוכלו להשתמש בפיצ\'ר זה בכדי לקבל גישה למידע פרטי של יישומים. הענק/י אישור זה בזהירות!</string>
 </resources>

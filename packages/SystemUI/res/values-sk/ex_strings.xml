@@ -83,8 +83,8 @@
   <!-- Battery saver tile -->
   <string name="battery_saver_qs_tile_fully_charged">Úplne nabitá</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Rýchle nabíjanie (úplne nabité za <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
-  <string name="keyguard_plugged_in_dash_charging">Rýchle nabíjanie</string>
+  <string name="keyguard_indication_dash_charging_time">Dash nabíjanie (úplne nabité za <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
+  <string name="keyguard_plugged_in_dash_charging">Dash nabíjanie</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Obrazovka sa nahráva</string>
   <string name="screenrecord_notif_final_ticker">Obrazovka bola úspešne nahraná</string>
@@ -159,10 +159,32 @@
   <string name="aex_logo_title">Logo AEX</string>
   <string name="aex_logo_summary">Nech všetci vedia, že používate AEX, keď uvidia vašu obrazovku</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">Hardvérové tlačidlá zapnuté</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Hardvérové tlačidlá vypnuté</string>
+  <string name="quick_settings_hwkeys_label">Hardvérové tlačidlá</string>
+  <string name="status_bar_data_saver">Šetrič dát</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">Chyba</string>
+  <string name="omnijaws_service_unkown">Žiadne údaje o počasí</string>
+  <string name="omnijaws_service_error_long">Chyba pri načítavaní údajov o počasí</string>
+  <string name="omnijaws_service_disabled">Služba je vypnutá</string>
+  <string name="omnijaws_detail_header">Počasie</string>
+  <string name="omnijaws_label_default">Počasie</string>
+  <string name="omnijaws_current_text">Teraz</string>
+  <string name="omnijaws_package_not_available">OmniJaws nie je k dispozícii</string>
+  <string name="omnijaws_service_last_update">Posledná aktualizácia:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Navigačný panel</string>
+  <string name="quick_settings_smartbar">Smartbar</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_navigation_default">Stock</string>
+  <string name="quick_settings_navigation_disabled">Vypnuté</string>
+  <string name="quick_settings_sound_search">Zvukové vyhľadávanie</string>
+  <!-- Kill button in notification guts -->
+  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
 </resources>

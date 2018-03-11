@@ -48,11 +48,40 @@
   <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Brúixola</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">Inicialitznt\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Brúixola deshabilitada.</string>
+  <string name="accessibility_quick_settings_compass_on">Brúixola habilitada.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">La brúixola s\'ha deshabilitat.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">La brúixola s\'ha habilitat.</string>
+  <string name="quick_settings_compass_N">N</string>
+  <string name="quick_settings_compass_NE">NE</string>
+  <string name="quick_settings_compass_E">E</string>
+  <string name="quick_settings_compass_SE">SE</string>
+  <string name="quick_settings_compass_S">S</string>
+  <string name="quick_settings_compass_SW">SO</string>
+  <string name="quick_settings_compass_W">O</string>
+  <string name="quick_settings_compass_NW">NO</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">So</string>
+  <string name="quick_settings_sound_ring">Timbre</string>
+  <string name="quick_settings_sound_vibrate">Vibració</string>
+  <string name="quick_settings_sound_dnd">No molestar</string>
+  <string name="lockscreen_default">Per defecte</string>
+  <string name="lockscreen_hidden">Cap</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Llisca des de la icona per obrir</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">Notif. emergents</string>
+  <string name="accessibility_quick_settings_heads_up_off">Notif. emergents desact.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Notif. emergents act.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Les notif. emergents s\'han desactivat.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Les notif. emergents s\'han activat.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s </xliff:g> • notificació flotant posposada 1 minut.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> - notificacions flotants posposades <xliff:g id="number">%d </xliff:g> minuts.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Càrrega completa</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <!-- Screenrecord Notification Ticker -->
   <!-- Screenrecord notification title -->
@@ -80,4 +109,6 @@
          [CHAR LIMIT=4] -->
   <!-- Weather string format in expanded statusbar header -->
   <!-- Navigation bar Tile -->
+  <!-- Kill button in notification guts -->
+  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
 </resources>

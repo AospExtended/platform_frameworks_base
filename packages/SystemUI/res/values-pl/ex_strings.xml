@@ -23,15 +23,15 @@
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <string name="accessibility_data_connection_hspap">HSPA+</string>
   <string name="global_action_restart_advanced">Zaawansowane</string>
-  <string name="global_action_restart_recovery">Odzyskiwanie</string>
+  <string name="global_action_restart_recovery">Recovery</string>
   <string name="global_action_restart_bootloader">Bootloader</string>
   <string name="global_action_restart_ui">SystemUI</string>
-  <string name="global_action_restart_soft">Miękki reset</string>
+  <string name="global_action_restart_soft">Miękki restart</string>
   <string name="global_action_screenrecord">Nagrywanie ekranu</string>
   <!-- Advance location quick setting tile -->
-  <string name="accessibility_quick_settings_location_battery_saving">Usługa lokalizacji: tryb oszczędzania baterii.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Usługa lokalizacji: tylko czujniki.</string>
-  <string name="accessibility_quick_settings_location_high_accuracy">Usługa lokalizacji: wysoka dokładność.</string>
+  <string name="accessibility_quick_settings_location_battery_saving">Raportowanie lokalizacji: tryb oszczędzania baterii</string>
+  <string name="accessibility_quick_settings_location_gps_only">Raportowanie lokalizacji: tylko urządzenie</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Raportowanie lokalizacji: wysoka dokładność</string>
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">Aplikacja nie obsługuje PiP</string>
@@ -48,20 +48,20 @@
   <string name="status_bar_volte">VoLTE</string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Kompas</string>
-  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_value"><xliff:g id="stopnie">%1$.0f</xliff:g>\u00b0 <xliff:g id="kierunek">%2$s</xliff:g></string>
   <string name="quick_settings_compass_init">Inicjowanie\u2026</string>
   <string name="accessibility_quick_settings_compass_off">Kompas wył.</string>
   <string name="accessibility_quick_settings_compass_on">Kompas wł.</string>
-  <string name="accessibility_quick_settings_compass_changed_off">Kompas został wył.</string>
-  <string name="accessibility_quick_settings_compass_changed_on">Kompas został wł.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Kompas został wyłączony</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Kompas został włączony</string>
   <string name="quick_settings_compass_N">Pn.</string>
-  <string name="quick_settings_compass_NE">Pn.-Wsch.</string>
+  <string name="quick_settings_compass_NE">Pn. - Wsch.</string>
   <string name="quick_settings_compass_E">Wsch.</string>
-  <string name="quick_settings_compass_SE">Pd.-Wsch.</string>
+  <string name="quick_settings_compass_SE">Pd. - Wsch.</string>
   <string name="quick_settings_compass_S">Pd.</string>
-  <string name="quick_settings_compass_SW">Pd.-Zach.</string>
+  <string name="quick_settings_compass_SW">Pd. - Zach.</string>
   <string name="quick_settings_compass_W">Zach.</string>
-  <string name="quick_settings_compass_NW">Pn.-Zach.</string>
+  <string name="quick_settings_compass_NW">Pn. - Zach.</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">Dźwięk</string>
   <string name="quick_settings_sound_ring">Dzwonek</string>
@@ -73,18 +73,18 @@
   <string name="custom_hint">Przesuń palcem od ikony aby uruchomić</string>
   <!-- Heads Up QS Tile -->
   <string name="quick_settings_heads_up_label">Wyskakujące powiadomienia</string>
-  <string name="accessibility_quick_settings_heads_up_off">Wyłącz wyskakujące powiadomienia.</string>
-  <string name="accessibility_quick_settings_heads_up_on">Włącz wyskakujące powiadomienia.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">Wyskakujące powiadomienia zostały wyłączone.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">Wyskakujące powiadomienia zostały włączone.</string>
+  <string name="accessibility_quick_settings_heads_up_off">Wyłącz wyskakujące powiadomienia</string>
+  <string name="accessibility_quick_settings_heads_up_on">Włącz wyskakujące powiadomienia</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Wyskakujące powiadomienia zostały wyłączone</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Wyskakujące powiadomienia zostały włączone</string>
   <!-- Heads up snooze toast -->
-  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s </xliff:g> • Powiadomienia z podglądem w trybie drzemki przez 1 minutę.</string>
-  <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> • Powiadomienia z podglądem są uśpione na <xliff:g id="number">%d </xliff:g> minut.</string>
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s </xliff:g> - Powiadomienia z podglądem są uśpione przez 1 minutę</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> - Powiadomienia z podglądem są uśpione na <xliff:g id="number">%d </xliff:g> minut</string>
   <!-- Battery saver tile -->
   <string name="battery_saver_qs_tile_fully_charged">Bateria w pełni naładowana</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> do końca)</string>
-  <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
+  <string name="keyguard_indication_dash_charging_time">Szybkie ładowanie (<xliff:g id="pozostały_czas" example="4 godziny i 2 minuty">%s</xliff:g> do pełnego naładowania)</string>
+  <string name="keyguard_plugged_in_dash_charging">Szybkie ładowanie</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Ekran jest nagrywany</string>
   <string name="screenrecord_notif_final_ticker">Nagrywanie ekranu zakończone powodzeniem</string>
@@ -119,7 +119,7 @@
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_preventpower">zastąp przycisk zasilania</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_preventpower">Zezwól aplikacji zastąpić przycisk zasilania.</string>
+  <string name="permdesc_preventpower">Zezwól aplikacji zastąpić przycisk zasilania</string>
   <!-- ADB over network QS tile -->
   <string name="quick_settings_network_adb_enabled_label">Włączone</string>
   <string name="quick_settings_network_adb_disabled_label">Wyłączone</string>
@@ -127,16 +127,16 @@
   <string name="quick_settings_network_adb_toast">Debugowanie USB jest wyłączone</string>
   <!-- Sync QS Tile -->
   <string name="quick_settings_sync_label">Synchronizacja</string>
-  <string name="accessibility_quick_settings_sync_off">Wyłącz synchronizację</string>
-  <string name="accessibility_quick_settings_sync_on">Włącz synchronizację</string>
+  <string name="accessibility_quick_settings_sync_off">Synchronizacja wył.</string>
+  <string name="accessibility_quick_settings_sync_on">Synchronizacja wł.</string>
   <string name="accessibility_quick_settings_sync_changed_off">Synchronizacja wyłączona</string>
   <string name="accessibility_quick_settings_sync_changed_on">Synchronizacja włączona</string>
   <!-- USB Tethering tile -->
-  <string name="accessibility_quick_settings_usb_tether_off">Wyłącz Tethering przez USB</string>
-  <string name="accessibility_quick_settings_usb_tether_on">Włącz Tethering przez USB</string>
-  <string name="accessibility_quick_settings_usb_tether_changed_off">Tethering przez USB wyłączony</string>
-  <string name="accessibility_quick_settings_usb_tether_changed_on">Tethering przez USB włączony</string>
-  <string name="quick_settings_usb_tether_label">Tethering przez USB</string>
+  <string name="accessibility_quick_settings_usb_tether_off">Tethering USB wył.</string>
+  <string name="accessibility_quick_settings_usb_tether_on">Tethering USB wł.</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">Tethering USB wyłączony</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">Tethering USB włączony</string>
+  <string name="quick_settings_usb_tether_label">Tethering USB</string>
   <!-- Language toggle tile -->
   <string name="quick_settings_locale_label">Język</string>
   <string name="quick_settings_locale_more_locales_toast">Proszę skonfigurować wiele języków, aby włączyć funkcję przełączania</string>
@@ -149,8 +149,8 @@
   <string name="quick_settings_expanded_desktop">Rozszerzony</string>
   <string name="quick_settings_expanded_desktop_off">Normalny</string>
   <string name="quick_settings_expanded_navigation_off">Ukryj pasek nawigacji</string>
-  <string name="quick_settings_expanded_statusbar_off">Ukryj pasek stanu</string>
-  <string name="alert_on_charged_level">Można odłączyć ładowarkę (\"&gt;\" <xliff:g id="percentage">%s </xliff:g>)</string>
+  <string name="quick_settings_expanded_statusbar_off">Ukryj pasek statusu</string>
+  <string name="alert_on_charged_level">Można odłączyć ładowarkę (\"&gt;\" <xliff:g id="procent">%s </xliff:g>)</string>
   <string name="battery_level_good_title">Optymalny poziom baterii</string>
   <string name="notification_channel_charge_alert">Optymalny poziom ładowania baterii</string>
   <!-- QS customizer -->
@@ -159,10 +159,32 @@
   <string name="aex_logo_title">Logo AEX</string>
   <string name="aex_logo_summary">Niech wszyscy wiedzą, że używasz AEX, gdy zobaczą twój ekran</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">Przyciski sprzętowe wł.</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Przyciski sprzętowe wył.</string>
+  <string name="quick_settings_hwkeys_label">Przyciski sprzętowe</string>
+  <string name="status_bar_data_saver">Oszczędzanie danych</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">Błąd</string>
+  <string name="omnijaws_service_unkown">Brak danych o pogodzie</string>
+  <string name="omnijaws_service_error_long">Błąd podczas ładowania danych o pogodzie</string>
+  <string name="omnijaws_service_disabled">Usługa wyłączona</string>
+  <string name="omnijaws_detail_header">Pogoda</string>
+  <string name="omnijaws_label_default">Pogoda</string>
+  <string name="omnijaws_current_text">Teraz</string>
+  <string name="omnijaws_package_not_available">OmniJaws nie jest dostępny</string>
+  <string name="omnijaws_service_last_update">Ostania aktualizacja:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Pasek nawigacji</string>
+  <string name="quick_settings_smartbar">Inteligentny pasek</string>
+  <string name="quick_settings_fling">Gesty</string>
+  <string name="quick_settings_navigation_default">Standardowe</string>
+  <string name="quick_settings_navigation_disabled">Wyłączono</string>
+  <string name="quick_settings_sound_search">Wybieranie głosowe</string>
+  <!-- Kill button in notification guts -->
+  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
 </resources>
