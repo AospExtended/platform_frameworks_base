@@ -16,27 +16,8 @@
 
 package com.android.systemui.qs.tiles;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import com.android.internal.logging.MetricsLogger;
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.systemui.plugins.qs.DetailAdapter;
-import com.android.systemui.plugins.qs.QSTile;
-import com.android.systemui.plugins.qs.QSTile.BooleanState;
-import com.android.systemui.qs.QSDetailItems;
-import com.android.systemui.qs.QSDetailItems.Item;
-import com.android.systemui.qs.QSDetailItemsList;
-import com.android.systemui.qs.QSHost;
-import com.android.systemui.qs.tileimpl.QSTileImpl;
-import com.android.systemui.R;
-
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.om.IOverlayManager;
 import android.content.om.OverlayInfo;
@@ -53,6 +34,29 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.android.internal.logging.MetricsLogger;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+
+import com.android.systemui.Prefs;
+import com.android.systemui.R;
+import com.android.systemui.plugins.qs.DetailAdapter;
+import com.android.systemui.plugins.qs.QSTile;
+import com.android.systemui.plugins.qs.QSTile.BooleanState;
+import com.android.systemui.qs.QSDetailItems;
+import com.android.systemui.qs.QSDetailItems.Item;
+import com.android.systemui.qs.QSDetailItemsList;
+import com.android.systemui.qs.QSHost;
+import com.android.systemui.qs.tileimpl.QSTileImpl;
+import com.android.systemui.statusbar.phone.SystemUIDialog;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class ThemeTile extends QSTileImpl<BooleanState> {
 
@@ -337,7 +341,23 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
 
     @Override
     protected void handleClick() {
-        showDetail(true);
+        if (Prefs.getBoolean(mContext, Prefs.Key.QS_THEME_DIALOG_SHOWN, false)) {
+            showDetail(true);
+            return;
+        }
+        SystemUIDialog dialog = new SystemUIDialog(mContext);
+        dialog.setTitle(R.string.theme_info_title);
+        dialog.setMessage(R.string.theme_info_message);
+        dialog.setPositiveButton(com.android.internal.R.string.ok,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        showDetail(true);
+                        Prefs.putBoolean(mContext, Prefs.Key.QS_THEME_DIALOG_SHOWN, true);
+                    }
+                });
+        dialog.setShowForAllUsers(true);
+        dialog.show();
     }
 
     @Override
@@ -382,12 +402,10 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
     @Override
     protected void handleSetListening(boolean listening) {
         // TODO Auto-generated method stub
-
     }
 
     @Override
     public CharSequence getTileLabel() {
         return mContext.getString(R.string.quick_settings_theme_tile_title);
     }
-
 }

@@ -46,6 +46,7 @@ public final class Prefs {
             Key.QS_DATA_SAVER_ADDED,
             Key.QS_DATA_SAVER_DIALOG_SHOWN,
             Key.QS_INVERT_COLORS_ADDED,
+            Key.QS_THEME_DIALOG_SHOWN,
             Key.QS_WORK_ADDED,
             Key.QS_NIGHTDISPLAY_ADDED,
             Key.QS_LONG_PRESS_TOOLTIP_SHOWN_COUNT,
@@ -80,6 +81,7 @@ public final class Prefs {
         String QS_DATA_SAVER_ADDED = "QsDataSaverAdded";
         @Deprecated
         String QS_INVERT_COLORS_ADDED = "QsInvertColorsAdded";
+        String QS_THEME_DIALOG_SHOWN = "QsThemeDialogShown";
         @Deprecated
         String QS_WORK_ADDED = "QsWorkAdded";
         @Deprecated
