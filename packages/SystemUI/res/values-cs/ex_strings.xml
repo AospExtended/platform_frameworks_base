@@ -247,10 +247,6 @@
   <string name="dlg_cancel">Zrušit</string>
   <string name="kill">Ukončit aplikaci</string>
   <!-- Pie controls -->
-  <string name="pie_date_format">EEEE, dd MMMM yyyy</string>
-  <string name="pie_hour_format_12">hh:mm</string>
-  <string name="pie_hour_format_24">HH:mm</string>
-  <string name="pie_am_pm">a</string>
   <string name="pie_state_name">Pie ovládání</string>
   <string name="pie_state_summary">Použít prvky Pie v pohlcujícím režimu</string>
   <string name="pie_battery_level">"ÚROVEŇ NABITÍ BATERIE "</string>

@@ -245,10 +245,6 @@
   <string name="dlg_cancel">取消</string>
   <string name="kill">強制結束應用程式</string>
   <!-- Pie controls -->
-  <string name="pie_date_format">yyyy MMMM dd, EEEE</string>
-  <string name="pie_hour_format_12">小時(12小時制):分鐘</string>
-  <string name="pie_hour_format_24">HH:mm</string>
-  <string name="pie_am_pm">上午</string>
   <string name="pie_state_name">扇形控制項</string>
   <string name="pie_state_summary">在全螢幕模式中使用扇形控制項</string>
   <string name="pie_battery_level">"電池計量水準"</string>

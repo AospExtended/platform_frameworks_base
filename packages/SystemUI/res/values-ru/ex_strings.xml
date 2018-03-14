@@ -247,10 +247,6 @@
   <string name="dlg_cancel">Отмена</string>
   <string name="kill">Закрыть приложение</string>
   <!-- Pie controls -->
-  <string name="pie_date_format">EEEE, dd MMMM yyyy</string>
-  <string name="pie_hour_format_12">hh:mm</string>
-  <string name="pie_hour_format_24">HH:mm</string>
-  <string name="pie_am_pm">a</string>
   <string name="pie_state_name">Панель PIE</string>
   <string name="pie_state_summary">Использовать панель PIE в полноэкранном режиме</string>
   <string name="pie_battery_level">"ЗАРЯД БАТАРЕИ "</string>

@@ -241,7 +241,6 @@
   <string name="dlg_cancel">キャンセル</string>
   <string name="kill">アプリを終了</string>
   <!-- Pie controls -->
-  <string name="pie_am_pm">a</string>
   <string name="pie_state_name">Pie コントロール</string>
   <string name="pie_battery_level">"バッテリーレベル "</string>
   <string name="quick_settings_pie">Pie</string>

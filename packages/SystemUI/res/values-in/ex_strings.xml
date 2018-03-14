@@ -245,10 +245,6 @@
   <string name="dlg_cancel">Batal</string>
   <string name="kill">Tutup Apl</string>
   <!-- Pie controls -->
-  <string name="pie_date_format">EEEE, dd MMMM yyyy</string>
-  <string name="pie_hour_format_12">hh:mm</string>
-  <string name="pie_hour_format_24">HH:mm</string>
-  <string name="pie_am_pm">am</string>
   <string name="pie_state_name">Kontrol Pie</string>
   <string name="pie_state_summary">Gunakan kontrol pie ketika dalam mode immersive</string>
   <string name="pie_battery_level">"TINGKAT BATERAI "</string>

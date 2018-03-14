@@ -247,10 +247,6 @@
   <string name="dlg_cancel">Скасувати</string>
   <string name="kill">Завершити додаток</string>
   <!-- Pie controls -->
-  <string name="pie_date_format">EEEE, dd MMMM yyyy</string>
-  <string name="pie_hour_format_12">hh:mm</string>
-  <string name="pie_hour_format_24">HH:mm</string>
-  <string name="pie_am_pm">a</string>
   <string name="pie_state_name">Управління PIE</string>
   <string name="pie_state_summary">Використовувати керування PIE в повноекранному режимі</string>
   <string name="pie_battery_level">"Заряд батареї"</string>

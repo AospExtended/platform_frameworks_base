@@ -228,8 +228,5 @@
   <string name="dlg_cancel">Отказ</string>
   <string name="kill">Убий приложението</string>
   <!-- Pie controls -->
-  <string name="pie_date_format">EEEE дд ММММ гггг</string>
-  <string name="pie_hour_format_12">чч:мм</string>
-  <string name="pie_hour_format_24">Чч:мм</string>
   <string name="pie_battery_level">"НИВО НА БАТЕРИЯТА "</string>
 </resources>
