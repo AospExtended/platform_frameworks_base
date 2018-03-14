@@ -330,6 +330,10 @@ public class RecentsTaskLoader {
                 mHighResThumbnailLoader::setTaskLoadQueueIdle);
     }
 
+    public IconsHandler getIconsHandler() {
+        return mIconsHandler;
+    }
+
     /** Returns the size of the app icon cache. */
     public int getIconCacheSize() {
         return mMaxIconCacheSize;
