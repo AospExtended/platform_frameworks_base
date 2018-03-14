@@ -245,7 +245,7 @@
   <string name="dlg_cancel">取消</string>
   <string name="kill">终止程序</string>
   <!-- Pie controls -->
-  <string name="pie_date_format">星期, 日 月 年</string>
+  <string name="pie_date_format">yyyy年 MMMM dd日, EEEE</string>
   <string name="pie_hour_format_12">小时：分钟</string>
   <string name="pie_hour_format_24">小时：分钟</string>
   <string name="pie_am_pm">上午/下午</string>
