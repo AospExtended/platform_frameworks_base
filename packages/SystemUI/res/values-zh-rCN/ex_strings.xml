@@ -57,7 +57,7 @@
   <string name="menu_ime_always_show">菜单 / 键盘切换器 (始终显示)</string>
   <string name="search">搜索</string>
   <!-- Strings for lockscreen shortcut hints -->
-  <string name="left_shortcut_hint">向右滑动以 %1$s</string>
+  <string name="left_shortcut_hint">向右滑动以%1$s</string>
   <string name="right_shortcut_hint">向左滑动以%1$s</string>
   <string name="lockscreen_message">轻触左边或右边的图标来重新分配锁屏快捷方式。</string>
   <string name="lockscreen_default_target">默认</string>
@@ -68,7 +68,7 @@
   <string name="quick_settings_sound_label">声音</string>
   <string name="quick_settings_sound_ring">铃声</string>
   <string name="quick_settings_sound_vibrate">震动</string>
-  <string name="quick_settings_sound_dnd">请勿打扰</string>
+  <string name="quick_settings_sound_dnd">勿扰</string>
   <!-- Ambient Display QS tile -->
   <string name="accessibility_quick_settings_ambient_display_off">主动显示已关闭</string>
   <string name="accessibility_quick_settings_ambient_display_on">主动显示已开启</string>
@@ -157,8 +157,8 @@
   <string name="quick_settings_location_high_accuracy_label">高精确度</string>
   <string name="quick_settings_location_off_label">关闭定位服务</string>
   <!-- Show lte/4g switch -->
-  <string name="show_lte_fourgee_title">显示4G，而不是LTE</string>
-  <string name="show_lte_fourgee_summary">显示4G，而不是LTE</string>
+  <string name="show_lte_fourgee_title">显示 4G，而不是 LTE</string>
+  <string name="show_lte_fourgee_summary">用 4G 标识来代替 LTE</string>
   <string name="statusbar_tuner_category_title">隐藏状态栏项目</string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">导航栏</string>
@@ -178,7 +178,7 @@
   <!-- Path data for big circle battery -->
   <string name="recents_free_ram">可用运存: %1$d MB</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_running_services">打开运行服务的屏幕。</string>
+  <string name="accessibility_quick_settings_running_services">打开正在运行的服务界面</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">VOLTE</string>
   <!-- Data/Wifi activity arrows -->
