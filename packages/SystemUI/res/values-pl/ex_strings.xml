@@ -242,10 +242,6 @@
   <string name="dlg_cancel">Anuluj</string>
   <string name="kill">Zabij aplikacje</string>
   <!-- Pie controls -->
-  <string name="pie_date_format">EEEE, dd MMMM yyyy</string>
-  <string name="pie_hour_format_12">hh:mm</string>
-  <string name="pie_hour_format_24">HH:mm</string>
-  <string name="pie_am_pm">rano</string>
   <string name="pie_state_name">Sterowanie Pie</string>
   <string name="pie_state_summary">Używaj interfejsu Pie w trybie pełnoekranowym</string>
   <string name="pie_battery_level">"POZIOM NAŁADOWANIA BATERII "</string>

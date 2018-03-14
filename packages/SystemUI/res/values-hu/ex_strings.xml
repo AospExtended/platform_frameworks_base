@@ -246,9 +246,6 @@
   <string name="dlg_cancel">Mégse</string>
   <string name="kill">Alkalmazás leállítása</string>
   <!-- Pie controls -->
-  <string name="pie_date_format">yyyy. MMMM dd., EEEE</string>
-  <string name="pie_hour_format_12">hh:mm</string>
-  <string name="pie_hour_format_24">HH:mm</string>
   <string name="pie_state_name">Pie vezérlő</string>
   <string name="pie_state_summary">Pie vezérlő használata teljes képernyős üzemmódban</string>
   <string name="pie_battery_level">"AKKUMULÁTOR SZINTJE "</string>
