@@ -4742,6 +4742,13 @@ public final class Settings {
          */
         public static final String STATUSBAR_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
 
+
+        /**
+         * Configure the app to be used to edit screenshots with
+         * @hide
+         */
+        public static final String SCREENSHOT_EDIT_USER_APP = "screenshot_edit_user_app";
+
         /**
          * Whether to display cross sign for a data disabled connection
          * @hide
