@@ -304,7 +304,7 @@
     <string name="kill">Kill App</string>
 
     <!-- Pie controls -->
-    <string name="pie_date_format" translatable="false">EEEE, dd MMMM yyyy</string>
+    <string name="pie_date_format">EEEE, dd MMMM yyyy</string>
     <string name="pie_hour_format_12" translatable="false">hh:mm</string>
     <string name="pie_hour_format_24" translatable="false">HH:mm</string>
     <string name="pie_am_pm" translatable="false">a</string>
