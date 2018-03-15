@@ -8557,18 +8557,20 @@ public class PackageManagerService extends IPackageManager.Stub
                   mVendorPlatformSignatures) == PackageManager.SIGNATURE_MATCH) {
                 // Overwrite package signature with our platform signature
                 // if the signature is the vendor's platform signature
-                pkg.mSigningDetails = new SigningDetails(mPlatformPackage.mSigningDetails.signatures,
-                            pkg.mSigningDetails.signatureSchemeVersion,
-                            pkg.mSigningDetails.publicKeys,
-                            pkg.mSigningDetails.pastSigningCertificates,
-                            pkg.mSigningDetails.pastSigningCertificatesFlags);
+                if (mPlatformPackage != null) {
+                    pkg.mSigningDetails = new SigningDetails(mPlatformPackage.mSigningDetails.signatures,
+                                pkg.mSigningDetails.signatureSchemeVersion,
+                                pkg.mSigningDetails.publicKeys,
+                                pkg.mSigningDetails.pastSigningCertificates,
+                                pkg.mSigningDetails.pastSigningCertificatesFlags);
 
-                final int targetSdkVersion = pkg.applicationInfo.targetSdkVersion;
-                final int targetSandboxVersion = pkg.applicationInfo.targetSandboxVersion;
-                final boolean isPrivileged = pkg.isPrivileged();
+                    final int targetSdkVersion = pkg.applicationInfo.targetSdkVersion;
+                    final int targetSandboxVersion = pkg.applicationInfo.targetSandboxVersion;
+                    final boolean isPrivileged = pkg.isPrivileged();
 
-                pkg.applicationInfo.seInfo = SELinuxMMAC.getSeInfo(pkg, isPrivileged,
-                            targetSandboxVersion, targetSdkVersion);
+                    pkg.applicationInfo.seInfo = SELinuxMMAC.getSeInfo(pkg, isPrivileged,
+                                targetSandboxVersion, targetSdkVersion);
+                }
             }
         } catch (PackageParserException e) {
             throw PackageManagerException.from(e);
