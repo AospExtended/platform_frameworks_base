@@ -9264,8 +9264,10 @@ public class PackageManagerService extends IPackageManager.Stub
                   mVendorPlatformSignatures) == PackageManager.SIGNATURE_MATCH) {
                 // Overwrite package signature with our platform signature
                 // if the signature is the vendor's platform signature
-                pkg.mSignatures = mPlatformPackage.mSignatures;
-                SELinuxMMAC.assignSeInfoValue(pkg);
+                if (mPlatformPackage != null) {
+                    pkg.mSignatures = mPlatformPackage.mSignatures;
+                    SELinuxMMAC.assignSeInfoValue(pkg);
+                }
             }
         } catch (PackageParserException e) {
             throw PackageManagerException.from(e);
