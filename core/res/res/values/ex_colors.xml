@@ -13,6 +13,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Auto fill -->
+    <color name="autofill_save_title_color">@color/primary_text_default_material_light</color>
+    <color name="autofill_autofill_save_custom_subtitle_color">@color/primary_text_default_material_light</color>
+
     <!-- Power menu items -->
     <color name="power_menu_power_off">#ff202020</color>
     <color name="power_menu_restart">#ff202020</color>
