@@ -153,6 +153,19 @@ public class WifiManager {
     public static final String EXTRA_SCAN_AVAILABLE = "scan_enabled";
 
     /**
+    *
+    *
+    * @hide
+    **/
+    public static final String  WIFI_DATA_STALL = "android.net.wifi.WIFI_DATA_STALL";
+
+    /**
+    *
+    * see data stall reason code
+    * @hide
+    **/
+    public static final String  EXTRA_WIFI_DATA_STALL_REASON = "data_stall_reasoncode";
+    /**
      * Broadcast intent action indicating that the credential of a Wi-Fi network
      * has been changed. One extra provides the ssid of the network. Another
      * extra provides the event type, whether the credential is saved or forgot.
