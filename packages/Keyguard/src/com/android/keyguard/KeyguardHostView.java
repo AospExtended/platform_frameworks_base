@@ -46,6 +46,7 @@ import java.io.File;
  * Handles intercepting of media keys that still work when the keyguard is
  * showing.
  */
+
 public class KeyguardHostView extends FrameLayout implements SecurityCallback {
 
     public interface OnDismissAction {
@@ -61,6 +62,7 @@ public class KeyguardHostView extends FrameLayout implements SecurityCallback {
     protected LockPatternUtils mLockPatternUtils;
     private OnDismissAction mDismissAction;
     private Runnable mCancelAction;
+    private KeyguardUpdateMonitor mKeyguardUpdateMonitor;
 
     private final KeyguardUpdateMonitorCallback mUpdateCallback =
             new KeyguardUpdateMonitorCallback() {
@@ -69,6 +71,15 @@ public class KeyguardHostView extends FrameLayout implements SecurityCallback {
         public void onUserSwitchComplete(int userId) {
             getSecurityContainer().showPrimarySecurityScreen(false /* turning off */);
         }
+
+       @Override
+        public void onTrustChanged(int userId) {
+            if (userId != KeyguardUpdateMonitor.getCurrentUser()) return;
+            if (mKeyguardUpdateMonitor.getUserCanSkipBouncer(userId) && mKeyguardUpdateMonitor.getUserHasTrust(userId)){
+                dismiss(false);
+            }
+        }
+
 
         @Override
         public void onTrustGrantedWithFlags(int flags, int userId) {
@@ -83,7 +94,8 @@ public class KeyguardHostView extends FrameLayout implements SecurityCallback {
             if (initiatedByUser || dismissKeyguard) {
                 if (mViewMediatorCallback.isScreenOn() && (bouncerVisible || dismissKeyguard)) {
                     if (!bouncerVisible) {
-                        // The trust agent dismissed the keyguard without the user proving
+
+                         // The trust agent dismissed the keyguard without the user proving
                         // that they are present (by swiping up to show the bouncer). That's fine if
                         // the user proved presence via some other way to the trust agent.
                         Log.i(TAG, "TrustAgent dismissed Keyguard.");
@@ -94,8 +106,9 @@ public class KeyguardHostView extends FrameLayout implements SecurityCallback {
                 }
             }
         }
-    };
 
+
+    };
     // Whether the volume keys should be handled by keyguard. If true, then
     // they will be handled here for specific media types such as music, otherwise
     // the audio service will bring up the volume dialog.
@@ -111,6 +124,7 @@ public class KeyguardHostView extends FrameLayout implements SecurityCallback {
 
     public KeyguardHostView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        mKeyguardUpdateMonitor = KeyguardUpdateMonitor.getInstance(context);
         KeyguardUpdateMonitor.getInstance(context).registerCallback(mUpdateCallback);
     }
 
