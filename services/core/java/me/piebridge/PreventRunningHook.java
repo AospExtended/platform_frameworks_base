@@ -1,4 +1,4 @@
-package com.android.server.am;
+package me.piebridge;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -38,13 +38,5 @@ public interface PreventRunningHook {
     boolean hookStartProcessLocked(Context context, ApplicationInfo info, String hostingType, ComponentName hostingName);
 
     int match(int match, Object filter, String action, String type, String scheme, Uri data, Set<String> categories);
-
-    void setVersion(int version);
-
-    void setMethod(String method);
-
-    boolean hookBindService(Intent service);
-
-    boolean hookStartService(Intent service);
 
 }
