@@ -1153,7 +1153,6 @@ final class ActivityStack {
                 mService.updateUsageStats(prev, false);
                 prev.app.thread.schedulePauseActivity(prev.appToken, prev.finishing,
                         userLeaving, prev.configChangeFlags, dontWait);
-                PreventRunningUtils.onUserLeavingActivity(prev, userLeaving);
             } catch (Exception e) {
                 // Ignore exception, if process died other code will cleanup.
                 Slog.w(TAG, "Exception thrown during pause", e);
@@ -2549,7 +2548,6 @@ final class ActivityStack {
                 next.clearOptionsLocked();
                 next.app.thread.scheduleResumeActivity(next.appToken, next.app.repProcState,
                         mService.isNextTransitionForward(), resumeAnimOptions);
-                PreventRunningUtils.onResumeActivity(next);
 
                 mStackSupervisor.checkReadyForSleepLocked();
 
@@ -4042,7 +4040,6 @@ final class ActivityStack {
                 if (DEBUG_SWITCH) Slog.i(TAG_SWITCH, "Destroying: " + r);
                 r.app.thread.scheduleDestroyActivity(r.appToken, r.finishing,
                         r.configChangeFlags);
-                PreventRunningUtils.onDestroyActivity(r);
             } catch (Exception e) {
                 // We can just ignore exceptions here...  if the process
                 // has crashed, our death notification will clean things
