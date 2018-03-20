@@ -222,8 +222,6 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
     private int[] mBoostParamVal;
     private int mBoostDuration;
 
-    
-
     private final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -1226,11 +1224,20 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
     }
 
     private boolean shouldListenForFingerprint() {
-  
-      return (mKeyguardIsVisible || !mDeviceInteractive || mBouncer || mGoingToSleep)
-                && !mSwitchingUser && !mFingerprintAlreadyAuthenticated
-                && !isFingerprintDisabled(getCurrentUser());
 
+        if (!mSwitchingUser && !mFingerprintAlreadyAuthenticated
+                && !isFingerprintDisabled(getCurrentUser())) {
+            if (Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.FINGERPRINT_WAKE_UNLOCK,
+                    mFingerprintWakeUnlock ? 1 : 0,
+                    UserHandle.USER_CURRENT) != 0) {
+                return mKeyguardIsVisible || !mDeviceInteractive || mBouncer || mGoingToSleep;
+            } else {
+                return mDeviceInteractive && (mKeyguardIsVisible || mBouncer);
+            }
+        }
+        return false;
+   
     }
 
     private void startListeningForFingerprint() {
