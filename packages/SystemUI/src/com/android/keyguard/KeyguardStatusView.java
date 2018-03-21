@@ -25,6 +25,7 @@ import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Handler;
 import android.os.Looper;
@@ -67,6 +68,7 @@ public class KeyguardStatusView extends GridLayout implements
     private static final boolean DEBUG = KeyguardConstants.DEBUG;
     private static final String TAG = "KeyguardStatusView";
     private static final int MARQUEE_DELAY_MS = 2000;
+    private static final String FONT_FAMILY = "sans-serif-light";
 
     private final LockPatternUtils mLockPatternUtils;
     private final AlarmManager mAlarmManager;
@@ -237,10 +239,18 @@ public class KeyguardStatusView extends GridLayout implements
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+<<<<<<< HEAD
 
         // ClockView
         mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                 getResources().getDimensionPixelSize(R.dimen.widget_big_font_size));
+=======
+        Typeface tf = Typeface.create(FONT_FAMILY, Typeface.NORMAL);
+        mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+                getResources().getDimensionPixelSize(R.dimen.widget_big_font_size));
+        mClockView.setTypeface(tf);
+        // Some layouts like burmese have a different margin for the clock
+>>>>>>> c12765342bc... Fonts: Update keyguard when font changes
         MarginLayoutParams layoutParams = (MarginLayoutParams) mClockView.getLayoutParams();
         layoutParams.bottomMargin = getResources().getDimensionPixelSize(
                 R.dimen.bottom_text_spacing_digital);
@@ -261,12 +271,18 @@ public class KeyguardStatusView extends GridLayout implements
         // DateView
         mDateView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                 getResources().getDimensionPixelSize(R.dimen.widget_label_font_size));
+<<<<<<< HEAD
 
         // OwnerInfo
+=======
+        mDateView.setTypeface(tf);
+>>>>>>> c12765342bc... Fonts: Update keyguard when font changes
         if (mOwnerInfo != null) {
             mOwnerInfo.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                     getResources().getDimensionPixelSize(R.dimen.widget_label_font_size));
+           mOwnerInfo.setTypeface(tf);
         }
+        mAlarmStatusView.setTypeface(tf);
     }
 
     public void refreshTime() {
