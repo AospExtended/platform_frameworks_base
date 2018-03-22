@@ -4799,7 +4799,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 
         FlingRunnable() {
             mScroller = new OverScroller(getContext());
-            mScroller.setFriction(0.004f);
+            mScroller.setFriction(0.002f);
         }
 
         void start(int initialVelocity) {
