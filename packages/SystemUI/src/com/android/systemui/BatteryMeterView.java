@@ -79,6 +79,7 @@ public class BatteryMeterView extends LinearLayout implements
     private int mStyle = BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT;
     private int mShowPercentText;
     private boolean mCharging;
+    private boolean mPowerSave;
 
     private final int mEndPadding;
 
@@ -148,7 +149,7 @@ public class BatteryMeterView extends LinearLayout implements
     }
 
     public void setForceShowPercent(boolean show) {
-        mForceShowPercent = show;
+        mForceShowPercent = show || mPowerSave;
         updateShowPercent();
     }
 
@@ -202,8 +203,8 @@ public class BatteryMeterView extends LinearLayout implements
         if (isCircleBattery()
             || mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT
             || mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_LANDSCAPE) {
-            mForceShowPercent = pluggedIn;
-            updateShowPercent();
+            setForceShowPercent(pluggedIn);
+            // mDrawable.setCharging(pluggedIn) will invalidate the view
         }
         mCharging = pluggedIn;
         mDrawable.setBatteryLevel(level);
@@ -229,6 +230,9 @@ public class BatteryMeterView extends LinearLayout implements
     @Override
     public void onPowerSaveChanged(boolean isPowerSave) {
         mDrawable.setPowerSave(isPowerSave);
+        mPowerSave = isPowerSave;
+        mForceShowPercent = isPowerSave;
+        updateShowPercent();
     }
 
     private TextView loadPercentView() {
@@ -388,7 +392,7 @@ public class BatteryMeterView extends LinearLayout implements
         if (forcePercentageQsHeader()
                 || style == BatteryMeterDrawableBase.BATTERY_STYLE_TEXT
                 || ((isCircleBattery() || style == BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT
-                || style == BatteryMeterDrawableBase.BATTERY_STYLE_LANDSCAPE) && mCharging)) {
+                || style == BatteryMeterDrawableBase.BATTERY_STYLE_LANDSCAPE) && (mCharging || mPowerSave))) {
             mForceShowPercent = true;
         } else {
             mForceShowPercent = false;
