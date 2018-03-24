@@ -128,14 +128,14 @@ public class AmbientIndicationContainer extends AutoReinflateContainer implement
         mText.setText(charSequence);
         mTrackLenght.setText(lenghtInfo);
         mMediaMetaData = mediaMetaData;
-        boolean infoAvaillable = TextUtils.isEmpty(charSequence);
-        if (infoAvaillable) {
+        boolean infoAvaillable = !TextUtils.isEmpty(charSequence);
+        if (!infoAvaillable) {
             mAmbientIndication.setVisibility(View.INVISIBLE);
         } else {
             mAmbientIndication.setVisibility(View.VISIBLE);
-        }
-        if (mStatusBar != null) {
-            mStatusBar.triggerAmbientForMedia();
+            if (mStatusBar != null) {
+                mStatusBar.triggerAmbientForMedia();
+            }
         }
     }
 }
