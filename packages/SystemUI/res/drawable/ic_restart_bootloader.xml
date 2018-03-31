@@ -19,7 +19,7 @@
     android:height="24.000000dp"
     android:viewportWidth="512.000000"
     android:viewportHeight="512.000000"
-    android:tint="@*android:color/accent_device_default_light">
+    android:tint="?android:attr/colorControlNormal">
 
     <group
         android:translateY="512.000000"
