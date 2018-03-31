@@ -67,10 +67,6 @@
     <!-- Whether device has turbo power charging support -->
     <bool name="config_hasTurboPowerCharger">false</bool>
 
-    <!-- True if the notification's dynamic app icon/title tint should be optimised for dark
-    backgrounds (requires config_allowNotificationIconTextTinting to be true)-->
-    <bool name="config_useDarkBgNotificationIconTextTinting">false</bool>
-
     <!-- Hardware keys present on the device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
          of the following keys present:
@@ -88,7 +84,3 @@
     <integer name="config_button_brightness_default">128</integer>
 
 </resources>
-
-
-
-
