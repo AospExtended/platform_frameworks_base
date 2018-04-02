@@ -1488,7 +1488,6 @@ public class StatusBar extends SystemUI implements DemoMode,
                 setMediaPlaying();
             }
             mNavigationBar.setCurrentSysuiVisibility(mSystemUiVisibility);
-            mNavigationBar.setOmniSwitchEnabled(mOmniSwitchRecents);
         });
     }
 
@@ -6902,7 +6901,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 updateKeyguardStatusSettings();
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.RECENTS_OMNI_SWITCH_ENABLED))) {
-                updateOmniSwitch();
+                updateRecentsMode();
             }
         }
 
@@ -6922,7 +6921,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             setQSTilesScroller();
             setFpToDismissNotifications();
             updateKeyguardStatusSettings();
-            updateOmniSwitch();
+            updateRecentsMode();
         }
     }
 
@@ -6991,13 +6990,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     }
 
-    private void updateOmniSwitch() {
-        mOmniSwitchRecents = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.RECENTS_OMNI_SWITCH_ENABLED, 0, mCurrentUserId) == 1;
-        if (mNavigationBar != null) {
-            mNavigationBar.setOmniSwitchEnabled(mOmniSwitchRecents);
-        }
-    }
 
     private void setHeadsUpStoplist() {
         final String stopString = Settings.System.getString(mContext.getContentResolver(),
@@ -7031,20 +7023,34 @@ public class StatusBar extends SystemUI implements DemoMode,
     private void updateRecentsMode() {
         boolean slimRecents = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.USE_SLIM_RECENTS, 0, mCurrentUserId) == 1;
-        if (slimRecents) {
+        boolean omniSwitch  = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.RECENTS_OMNI_SWITCH_ENABLED, 0, mCurrentUserId) == 1;
+        if (slimRecents || omniSwitch) {
+            // Disable stock recents
             mRecents.evictAllCaches();
             mRecents.removeSbCallbacks();
-            mSlimRecents = new RecentController(mContext);
-            rebuildRecentsScreen();
-            mSlimRecents.addSbCallbacks();
         } else {
             mRecents.addSbCallbacks();
+        }
+
+        if (slimRecents) {
+            // Enable slim recents
+            if (mSlimRecents == null) {
+                mSlimRecents = new RecentController(mContext);
+                rebuildRecentsScreen();
+                mSlimRecents.addSbCallbacks();
+            }
+        } else {
+            // Disable slim recents
             if (mSlimRecents != null) {
                 mSlimRecents.evictAllCaches();
                 mSlimRecents.removeSbCallbacks();
                 mSlimRecents = null;
             }
         }
+
+        // En-/disable OmniSwitch
+        mOmniSwitchRecents = omniSwitch;
         updateRecentsIconPack();
     }
 
@@ -7862,13 +7868,20 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     @Override
     public void preloadRecentApps() {
-        int msg = MSG_PRELOAD_RECENT_APPS;
-        mHandler.removeMessages(msg);
-        mHandler.sendEmptyMessage(msg);
+        if (mOmniSwitchRecents) {
+            OmniSwitchConstants.preloadOmniSwitchRecents(mContext, UserHandle.CURRENT);
+        } else {
+            int msg = MSG_PRELOAD_RECENT_APPS;
+            mHandler.removeMessages(msg);
+            mHandler.sendEmptyMessage(msg);
+        }
     }
 
     @Override
     public void cancelPreloadRecentApps() {
+        if (mOmniSwitchRecents) {
+            return;
+        }
         int msg = MSG_CANCEL_PRELOAD_RECENT_APPS;
         mHandler.removeMessages(msg);
         mHandler.sendEmptyMessage(msg);
@@ -8923,5 +8936,19 @@ public class StatusBar extends SystemUI implements DemoMode,
             gesturesController.stop();
             gesturesController = null;
         }
+    }
+
+    @Override
+    public void hideRecentApps(boolean triggeredFromAltTab, boolean triggeredFromHomeKey) {
+        if (mOmniSwitchRecents) {
+            OmniSwitchConstants.hideOmniSwitchRecents(mContext, UserHandle.CURRENT);
+        } // else Recents does it from its callback
+    }
+
+    @Override
+    public void toggleRecentApps() {
+        if (mOmniSwitchRecents) {
+            OmniSwitchConstants.toggleOmniSwitchRecents(mContext, UserHandle.CURRENT);
+        } // else Recents does it from its callback
     }
 }

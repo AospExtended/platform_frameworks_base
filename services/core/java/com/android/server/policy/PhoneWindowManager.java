@@ -398,6 +398,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private static final String SYSUI_SCREENSHOT_ERROR_RECEIVER =
             "com.android.systemui.screenshot.ScreenshotServiceErrorReceiver";
 
+    // OmniSwitch
+    private boolean mOmniSwitchRecents;
+
     /**
      * Keyguard stuff
      */
