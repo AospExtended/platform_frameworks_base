@@ -101,4 +101,8 @@
     <bool name="config_useDarkBgNotificationIconTextTinting">false</bool>
     <bool name="config_useDarkBgNotificationTinting_override">false</bool>
     <bool name="config_notificationTinting_override">false</bool>
+
+	 <!-- Does the notification LED support multiple colors?
+         Used to decide if the user can change the colors -->
+    <bool name="config_multiColorNotificationLed">false</bool>
 </resources>
