@@ -64,6 +64,7 @@ import java.util.Collection;
 public class QSPanel extends LinearLayout implements Tunable, Callback, BrightnessMirrorListener {
 
     public static final String QS_SHOW_HEADER = "qs_show_header";
+    public static final String QS_BRIGHTNESS_POSITION_BOTTOM = "qs_brightness_position_bottom";
 
     protected final Context mContext;
     protected final ArrayList<TileRecord> mRecords = new ArrayList<>();
@@ -167,7 +168,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         super.onAttachedToWindow();
         mSettingObserver.observe();
         mSettingObserver.update();
-
+        final TunerService tunerService = Dependency.get(TunerService.class);
+        tunerService.addTunable(this, QS_BRIGHTNESS_POSITION_BOTTOM);
         if (mHost != null) {
             setTiles(mHost.getTiles());
         }
@@ -199,6 +201,25 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     @Override
     public void onTuningChanged(String key, String newValue) {
         // No tunings for you.
+        if (QS_BRIGHTNESS_POSITION_BOTTOM.equals(key)) {
+            if (newValue == null || Integer.parseInt(newValue) == 0) {
+                removeView(mBrightnessView);
+                addView(mBrightnessView, 0);
+            } else {
+                removeView(mBrightnessView);
+                addView(mBrightnessView, getBrightnessViewPositionBottom());
+            }
+        }
+    }
+
+    private int getBrightnessViewPositionBottom() {
+        for (int i = 0; i < getChildCount(); i++) {
+            View v = getChildAt(i);
+            if (v == mPanelPageIndicator) {
+                return i;
+            }
+        }
+        return 0;
     }
 
     private void updateViewVisibilityForTuningValue(View view, @Nullable String newValue) {
