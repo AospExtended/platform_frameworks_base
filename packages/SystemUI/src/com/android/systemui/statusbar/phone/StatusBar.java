@@ -2005,7 +2005,8 @@ public class StatusBar extends SystemUI implements DemoMode,
                 mNavigationBar.setPulseColors(n.isColorizedMedia(), colors);
             }
             if (mSlimRecents != null) {
-                mSlimRecents.setMediaColors(n.isColorizedMedia(), colors);
+                mSlimRecents.setMediaColors(n.isColorizedMedia(), colors,
+                        n.getOriginalLargeIcon().loadDrawable(mContext));
             }
         }
     }
