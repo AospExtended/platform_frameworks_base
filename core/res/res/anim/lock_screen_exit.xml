@@ -27,10 +27,10 @@
         android:pivotX="50%p" android:pivotY="50%p"
         android:fillEnabled="true" android:fillAfter="true"
         android:interpolator="@interpolator/accelerate_quint"
-        android:duration="@android:integer/config_shortAnimTime" />
+        android:duration="0" />
     <alpha
         android:fromAlpha="1.0" android:toAlpha="0"
         android:fillEnabled="true" android:fillAfter="true"
         android:interpolator="@interpolator/accelerate_quad"
-        android:duration="@android:integer/config_shortAnimTime"/>
+        android:duration="0"/>
 </set>
