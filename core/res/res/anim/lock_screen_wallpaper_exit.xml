@@ -21,12 +21,12 @@
         android:fromAlpha="1.0" android:toAlpha="0.0"
         android:fillEnabled="true" android:fillBefore="true" android:fillAfter="true"
         android:interpolator="@interpolator/fast_out_linear_in"
-        android:duration="200"/>
+        android:duration="0"/>
 
     <!-- Empty animation so the animation has same duration as lock_screen_behind_enter animation
          -->
     <translate android:fromYDelta="0" android:toYDelta="0"
         android:fillEnabled="true" android:fillBefore="true" android:fillAfter="true"
         android:interpolator="@interpolator/linear"
-        android:duration="300" />
+        android:duration="0" />
 </set>
