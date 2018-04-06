@@ -165,6 +165,13 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         mAnimator = new Builder()
                 .addFloat(mSettingsContainer, "translationX", -(remaining - defSpace), 0)
                 .addFloat(mSettingsButton, "rotation", -120, 0)
+                .addFloat(mRunningServicesButton, "translationX", (mSettingsButtonVisible
+                          ? - 2 : - 1) * (remaining - defSpace), 0)
+                .addFloat(mRunningServicesButton, "rotation", -120, 0)
+                .addFloat(mEdit, "translationX", (mServicesButtonVisible && mSettingsButtonVisible
+                          ? - 3 : (mServicesButtonVisible || mSettingsButtonVisible
+                          ? - 2 : -1)) * (remaining - defSpace), 0)
+                .addFloat(mEdit, "rotation", -120, 0)
                 .build();
         if (mAlarmShowing) {
             int translate = isLayoutRtl() ? mDate.getWidth() : -mDate.getWidth();            
