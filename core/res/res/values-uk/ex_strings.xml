@@ -28,4 +28,21 @@
   <string name="permlab_fakePackageSignature">Дозволити підміну підпису</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Дозволяти додатку видавати себе за інший додаток. Небезпечні додатки можуть отримати доступ до приватних даних. Будьте обережні під час надання цього дозволу!</string>
+  <!-- AOKP custom system animations -->
+  <string name="animation_fade">Згасання</string>
+  <string name="animation_slide_right">Зсув праворуч</string>
+  <string name="animation_slide_left">Зсув ліворуч</string>
+  <string name="animation_slide_right_no_fade">Зсув праворуч (без згасання)</string>
+  <string name="animation_slide_left_no_fade">Зсув ліворуч (без згасання)</string>
+  <string name="animation_slide_up">Зсув вниз</string>
+  <string name="animation_slide_down">Зсув вгору</string>
+  <string name="animation_default">За замовчуванням</string>
+  <string name="animation_translucent">Напівпрозорий</string>
+  <string name="animation_grow_shrink">Збільшення (зверху)</string>
+  <string name="animation_grow_shrink_center">Збільшення (в центрі)</string>
+  <string name="animation_grow_shrink_bottom">Збільшення (знизу)</string>
+  <string name="animation_grow_shrink_left">Збільшення (ліворуч)</string>
+  <string name="animation_grow_shrink_right">Збільшення (праворуч)</string>
+  <string name="animation_random">Випадково</string>
+  <string name="action_null">Порожньо</string>
 </resources>

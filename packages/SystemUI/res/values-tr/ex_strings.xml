@@ -26,7 +26,7 @@
   <string name="global_action_restart_recovery">Kurtarma</string>
   <string name="global_action_restart_bootloader">Ön yükleyici</string>
   <string name="global_action_restart_ui">Arayüz</string>
-  <string name="global_action_restart_soft">Yazılımsal yeniden başlatma</string>
+  <string name="global_action_restart_soft">Hızlı başlatma</string>
   <string name="global_action_screenrecord">Ekran kaydı</string>
   <!-- Advance location quick setting tile -->
   <string name="accessibility_quick_settings_location_battery_saving">Konum bildirimi: pil tasarruf modu.</string>
@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">Uygulama PiP\'i desteklemiyor</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Kafein</string>
   <string name="accessibility_quick_settings_caffeine_off">Kafein kapalı</string>
@@ -67,7 +73,7 @@
   <string name="quick_settings_sound_ring">Zil sesi</string>
   <string name="quick_settings_sound_vibrate">Titreşim</string>
   <string name="quick_settings_sound_dnd">Rahatsız etmeyin</string>
-  <string name="lockscreen_default">Sıfırla</string>
+  <string name="lockscreen_default">Varsayılan</string>
   <string name="lockscreen_hidden">Yok</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <string name="custom_hint">Başlatmak için simgeyi kaydırın</string>
@@ -78,8 +84,8 @@
   <string name="accessibility_quick_settings_heads_up_changed_off">Bildirim pencereleri kapatıldı.</string>
   <string name="accessibility_quick_settings_heads_up_changed_on">Bildirim pencereleri açıldı.</string>
   <!-- Heads up snooze toast -->
-  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Göz atma bildirimi 1 dakikalığına erteleniyor.</string>
-  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Gözatma bildirimi <xliff:g id="number">%d</xliff:g> dakika kadar erteleniyor.</string>
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Bildirim pencereleri 1 dakikalığına erteleniyor.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Bildirim pencereleri <xliff:g id="number">%d</xliff:g> dakika kadar erteleniyor.</string>
   <!-- Battery saver tile -->
   <string name="battery_saver_qs_tile_fully_charged">Pil tam dolu</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
@@ -106,7 +112,7 @@
   <string name="quick_settings_screenrecord_lq_label">Ekran Kaydı 480p</string>
   <string name="quick_settings_screenrecord_mq_label">Ekran Kaydı 720p</string>
   <string name="quick_settings_screenrecord_hq_label">Ekran Kaydı 720p+</string>
-  <string name="systemui_tuner_navbar_title">Varsayılan ayarlar</string>
+  <string name="systemui_tuner_navbar_title">Standart ayarlar</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Alt kısayollar</string>
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Ekran görüntüsü silindi</string>
@@ -117,9 +123,9 @@
   <string name="accessibility_quick_settings_volume_panel">Ses</string>
   <string name="quick_settings_volume_panel_label">Ses seviyesi</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_preventpower">güç tuşu işlevini değiştir</string>
+  <string name="permlab_preventpower">güç tuşunu geçersiz kıl</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_preventpower">Uygulamanın güç tuşunun işlevini değiştirmesine izin verir.</string>
+  <string name="permdesc_preventpower">Uygulamaya güç tuşunu geçersiz kılma izni verir.</string>
   <!-- ADB over network QS tile -->
   <string name="quick_settings_network_adb_enabled_label">Etkin</string>
   <string name="quick_settings_network_adb_disabled_label">Devre dışı</string>
@@ -145,10 +151,10 @@
   <string name="quick_settings_music_play">Oynat</string>
   <string name="quick_settings_music_pause">Duraklat</string>
   <!-- Expanded Desktop QS Tile -->
-  <string name="quick_settings_expanded_desktop_label">Genişletilmiş masaüstü</string>
+  <string name="quick_settings_expanded_desktop_label">Genişletilmiş ekran</string>
   <string name="quick_settings_expanded_desktop">Genişletilmiş</string>
   <string name="quick_settings_expanded_desktop_off">Normal</string>
-  <string name="quick_settings_expanded_navigation_off">Gezinti çubuğunu gizle</string>
+  <string name="quick_settings_expanded_navigation_off">Gezinme çubuğunu gizle</string>
   <string name="quick_settings_expanded_statusbar_off">Durum çubuğunu gizle</string>
   <string name="alert_on_charged_level">Şarj cihazını çıkarabilirsin ( &gt;<xliff:g id="percentage">%s</xliff:g> )</string>
   <string name="battery_level_good_title">Optimum pil seviyesi</string>
@@ -157,7 +163,7 @@
   <string name="drag_or_tap_to_add_tiles">Kare eklemek için dokunun</string>
   <!-- AEX logo -->
   <string name="aex_logo_title">AEX logo</string>
-  <string name="aex_logo_summary">Herkes ekranınızı gördüğünde AEX\'i kullandığınızı öğrensin</string>
+  <string name="aex_logo_summary">Durum çubuğunun sol tarafında AEX logosunu göster</string>
   <!-- HW Keys Tile -->
   <string name="accessibility_quick_settings_hwkeys_on">Donanım tuşları açık</string>
   <string name="accessibility_quick_settings_hwkeys_off">Donanım tuşları kapalı</string>
@@ -179,12 +185,55 @@
   <!-- Weather string format in expanded statusbar header -->
   <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
-  <string name="quick_settings_navigation_bar">Gezinti çubuğu</string>
+  <string name="quick_settings_navigation_bar">Gezinme çubuğu</string>
   <string name="quick_settings_smartbar">Akıllı çubuk</string>
   <string name="quick_settings_fling">Fling</string>
-  <string name="quick_settings_navigation_default">Varsayılan</string>
-  <string name="quick_settings_navigation_disabled">Devde dışı</string>
-  <string name="quick_settings_sound_search">Sesle arama</string>
+  <string name="quick_settings_navigation_default">Standart</string>
+  <string name="quick_settings_navigation_disabled">Devre dışı</string>
+  <string name="quick_settings_sound_search">Sesli arama</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Zorla durdurulsun mu?</string>
+  <string name="force_stop_dlg_text">Uygulamayı zorla durdurursanız, hatalı davranabilir.</string>
+  <string name="dlg_ok">@android:string/ok</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
+  <string name="kill">Uygulamayı sonlandır</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">Turbo şarj bağlandı (tam dolmasına <xliff:g id="charging_time_left">%s</xliff:g> kaldı)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">Turbo şarj bağlandı</string>
+  <string name="keyguard_plugged_in_turbo_charging">Turbo Şarj oluyor</string>
+  <!-- Theme tile -->
+  <string name="systemui_theme_style_title">Arayüz stili</string>
+  <string name="systemui_theme_style_auto">Otomatik</string>
+  <string name="systemui_theme_style_light">Aydınlık arayüz</string>
+  <string name="systemui_theme_style_dark">Karanlık arayüz</string>
+  <string name="systemui_theme_style_black">Siyah arayüz</string>
+  <string name="systemui_theme_style_extended">Extended arayüz</string>
+  <string name="quick_settings_theme_tile_title">Vurgu rengi</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Renk seç</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Stil seçin</string>
+  <string name="quick_settings_theme_tile_color_default">Varsayılan</string>
+  <string name="quick_settings_theme_tile_color_red">Kırmızı</string>
+  <string name="quick_settings_theme_tile_color_pink">Pembe</string>
+  <string name="quick_settings_theme_tile_color_purple">Mor</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Koyu mor</string>
+  <string name="quick_settings_theme_tile_color_indigo">İndigo</string>
+  <string name="quick_settings_theme_tile_color_blue">Mavi</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Açık mavi</string>
+  <string name="quick_settings_theme_tile_color_cyan">Camgöbeği</string>
+  <string name="quick_settings_theme_tile_color_teal">Turkuaz</string>
+  <string name="quick_settings_theme_tile_color_green">Yeşil</string>
+  <string name="quick_settings_theme_tile_color_light_green">Açık yeşil</string>
+  <string name="quick_settings_theme_tile_color_lime">Limon yeşili</string>
+  <string name="quick_settings_theme_tile_color_yellow">Sarı</string>
+  <string name="quick_settings_theme_tile_color_amber">Koyu sarı</string>
+  <string name="quick_settings_theme_tile_color_orange">Turuncu</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Koyu turuncu</string>
+  <string name="quick_settings_theme_tile_color_brown">Kahverengi</string>
+  <string name="quick_settings_theme_tile_color_grey">Gri</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Mavi gri</string>
+  <string name="quick_settings_theme_tile_color_black">Siyah</string>
+  <string name="quick_settings_theme_tile_color_white">Beyaz</string>
+  <string name="theme_info_title">Bu nedir?</string>
+  <string name="theme_info_message">Temalar kullanıcı sistem stilini değiştirmesine izin veren benzersiz ama kullanımı kolay bir tema sistemidir.\n\nStil arasında geçiş yapmak için, sadece kareye uzunca bir süre dokunun ve ardından sunulan seçeneklerden seçim yapmak için tekrar basın.</string>
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

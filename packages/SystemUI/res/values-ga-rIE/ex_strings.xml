@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">Ní thacaíonn an t-iarratas PiP</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Caiféin</string>
   <string name="accessibility_quick_settings_caffeine_off">Caiféin as</string>
@@ -78,7 +84,10 @@
   <string name="accessibility_quick_settings_heads_up_changed_off">Tosaíonn na cinn suas.</string>
   <string name="accessibility_quick_settings_heads_up_changed_on">Tosaíonn suas ar aghaidh.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Buaitear an fógra a mhealladh ar feadh 1 nóiméad.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Tá snoozing do fógraí a chuardach <xliff:g id="number">%d</xliff:g> nóiméad.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Gearrtar go hiomlán</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <!-- Screenrecord Notification Ticker -->
   <!-- Screenrecord notification title -->
@@ -108,4 +117,6 @@
   <!-- Navigation bar Tile -->
   <!-- Kill button in notification guts -->
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <!-- Theme tile -->
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

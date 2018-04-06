@@ -28,4 +28,21 @@
   <string name="permlab_fakePackageSignature">Síniú pacàiste bréagach</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Cead a thabhairt chuig app chun ligeant a bheith mar app éagsúla. D\'fheadfah appana eile é seo a úsàid chun rochtain sonraí príbhàideach app a thabhairt. Bí cúramach le seo!</string>
+  <!-- AOKP custom system animations -->
+  <string name="animation_fade">Céimnithe</string>
+  <string name="animation_slide_right">Sleamhnán sa dheis</string>
+  <string name="animation_slide_left">Sleamhnán sa chlé</string>
+  <string name="animation_slide_right_no_fade">Sleamhnán sa dheis (Níl céimnithe)</string>
+  <string name="animation_slide_left_no_fade">Sleamhnán sa chlé (Gan céimnithe)</string>
+  <string name="animation_slide_up">Sleamhnán sa bhun</string>
+  <string name="animation_slide_down">Sleamhnán sa bhosca</string>
+  <string name="animation_default">Réamhshocrú</string>
+  <string name="animation_translucent">Tréshoilseach</string>
+  <string name="animation_grow_shrink">Fás in (Barr)</string>
+  <string name="animation_grow_shrink_center">Fás i (Lárionad)</string>
+  <string name="animation_grow_shrink_bottom">Fás i (Bun)</string>
+  <string name="animation_grow_shrink_left">Fás (Clé)</string>
+  <string name="animation_grow_shrink_right">Fás i (Ceart)</string>
+  <string name="animation_random">Randamach</string>
+  <string name="action_null">Blank</string>
 </resources>

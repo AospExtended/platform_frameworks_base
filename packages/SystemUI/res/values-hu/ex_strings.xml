@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">Az alkalmazás nem támogatja a kép a képben (PiP) módot</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Koffein</string>
   <string name="accessibility_quick_settings_caffeine_off">Koffein ki</string>
@@ -180,11 +186,54 @@
   <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">Navigációs sáv</string>
-  <string name="quick_settings_smartbar">Okos sáv</string>
+  <string name="quick_settings_smartbar">Okossáv</string>
   <string name="quick_settings_fling">Fling</string>
   <string name="quick_settings_navigation_default">Gyári</string>
   <string name="quick_settings_navigation_disabled">Letiltva</string>
   <string name="quick_settings_sound_search">Hangalapú keresés</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Kényszeríti a leállítást?</string>
+  <string name="force_stop_dlg_text">Ha egy alkalmazást leállásra kényszerít, instabilan viselkedhet.</string>
+  <string name="dlg_ok">@android:string/ok</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
+  <string name="kill">Alkalmazás kilövése</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">TurboPower csatlakoztatva (<xliff:g id="charging_time_left">%s</xliff:g> a teljes töltöttségig)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower csatlakoztatva</string>
+  <string name="keyguard_plugged_in_turbo_charging">Turbótöltés</string>
+  <!-- Theme tile -->
+  <string name="systemui_theme_style_title">Felhasználói felület stílusa</string>
+  <string name="systemui_theme_style_auto">Automatikus</string>
+  <string name="systemui_theme_style_light">Világos felhasználói felület</string>
+  <string name="systemui_theme_style_dark">Sötét felhasználói felület</string>
+  <string name="systemui_theme_style_black">Fekete felhasználói felület</string>
+  <string name="systemui_theme_style_extended">Kiterjesztett felhasználói felület</string>
+  <string name="quick_settings_theme_tile_title">Hangsúly</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Szín kiválasztása</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Stílus kiválasztása</string>
+  <string name="quick_settings_theme_tile_color_default">Alapértelmezett</string>
+  <string name="quick_settings_theme_tile_color_red">Piros</string>
+  <string name="quick_settings_theme_tile_color_pink">Rózsaszín</string>
+  <string name="quick_settings_theme_tile_color_purple">Lila</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Sötétlila</string>
+  <string name="quick_settings_theme_tile_color_indigo">Indigókék</string>
+  <string name="quick_settings_theme_tile_color_blue">Kék</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Világoskék</string>
+  <string name="quick_settings_theme_tile_color_cyan">Ciánkék</string>
+  <string name="quick_settings_theme_tile_color_teal">Türkiz</string>
+  <string name="quick_settings_theme_tile_color_green">Zöld</string>
+  <string name="quick_settings_theme_tile_color_light_green">Világoszöld</string>
+  <string name="quick_settings_theme_tile_color_lime">Lime</string>
+  <string name="quick_settings_theme_tile_color_yellow">Sárga</string>
+  <string name="quick_settings_theme_tile_color_amber">Borostyán</string>
+  <string name="quick_settings_theme_tile_color_orange">Narancssárga</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Mélynarancs</string>
+  <string name="quick_settings_theme_tile_color_brown">Barna</string>
+  <string name="quick_settings_theme_tile_color_grey">Szürke</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Szürkéskék</string>
+  <string name="quick_settings_theme_tile_color_black">Fekete</string>
+  <string name="quick_settings_theme_tile_color_white">Fehér</string>
+  <string name="theme_info_title">Mi a fene ez?</string>
+  <string name="theme_info_message">A témák csempe egy egyedi, de könnyen használható elem, amely lehetővé teszi a rendszer jelölőszínének és stílusának módosítását.\n\nA jelölőszínek és stílusok módosításához nyomd hosszan a csempét, majd válassz a megjelenő lehetőségek közül.</string>
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

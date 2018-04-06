@@ -28,4 +28,5 @@
   <string name="permlab_fakePackageSignature">İmzanı dəyişdirməyə icazə ver</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Proqrama başqa bir proqram kimi görünməyə və davranmağa icazə verir. Zərərli proqramlar bunu istifadə edərək şəxsi məlumatlarızı əldə edə bilərlər. Bu icazəni ehtiyat alaraq verin!</string>
+  <!-- AOKP custom system animations -->
 </resources>

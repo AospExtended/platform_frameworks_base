@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">पी आई पी</string>
   <string name="quick_settings_pip_tile_app_na">ये एप्पलीकेशन पी आई पी मोड में नही चल सकता</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">कैफीन</string>
   <string name="accessibility_quick_settings_caffeine_off">कैफीन बंद</string>
@@ -159,12 +165,37 @@
   <string name="aex_logo_title">AEX लोगो</string>
   <string name="aex_logo_summary">हर किसी को पता chale कि आप AEX का उपयोग कर रहे हैं जब वे अपनी स्क्रीन देखते हैं</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">हार्डवेयर कुंजीयाँ चालू</string>
+  <string name="accessibility_quick_settings_hwkeys_off">हार्डवेयर कुंजीयाँ बंद</string>
+  <string name="quick_settings_hwkeys_label">हार्डवेयर कुंजियाँ</string>
+  <string name="status_bar_data_saver">डेटा सेवर</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">त्रुटि</string>
+  <string name="omnijaws_service_unkown">मौसम के बारे में जानकारी उपलब्ध नहीं|</string>
+  <string name="omnijaws_service_error_long">मौसम डेटा लोड करने में त्रुटि</string>
+  <string name="omnijaws_service_disabled">सेवा अक्षम है।</string>
+  <string name="omnijaws_detail_header">मौसम</string>
+  <string name="omnijaws_label_default">मौसम</string>
+  <string name="omnijaws_current_text">अभी</string>
+  <string name="omnijaws_package_not_available">ओमनीजौज़ उपलब्ध नहीं है।</string>
+  <string name="omnijaws_service_last_update">अंतिम अपडेट का समय:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="तापमान">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">नेविगेशन पट्टी</string>
+  <string name="quick_settings_smartbar">स्मार्ट पट्टी</string>
+  <string name="quick_settings_fling">फ्लिंग</string>
+  <string name="quick_settings_navigation_default">स्टॉक</string>
+  <string name="quick_settings_navigation_disabled">अक्षम कर दिया गया</string>
+  <string name="quick_settings_sound_search">ध्वनि खोज</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">बलपूर्वक रोकें?</string>
+  <string name="force_stop_dlg_text">यदि आप कोई ऍप जबरदस्ती बंद करते हैं, तो वो एॅप दुर्व्यवहार कर सकती हे|</string>
+  <string name="kill">ऍप्लिकेशन नष्ट करें</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <!-- Theme tile -->
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

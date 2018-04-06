@@ -31,17 +31,29 @@
   <!-- Advance location quick setting tile -->
   <string name="accessibility_quick_settings_location_battery_saving">위치 모드: 배터리 절약 모드</string>
   <string name="accessibility_quick_settings_location_gps_only">위치 모드: 기기 전용 모드</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">위치 모드: 높은 정확도 모드</string>
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">앱이 PiP를 지원하지 않습니다</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">카페인</string>
   <string name="accessibility_quick_settings_caffeine_off">카페인 꺼짐</string>
   <string name="accessibility_quick_settings_caffeine_on">카페인 켜짐</string>
   <string name="statusbar_items_title">상태 표시줄 항목</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">스크린샷</string>
+  <string name="quick_settings_region_screenshot_label">부분 스크린샷</string>
+  <string name="recents_free_ram">사용가능한 RAM: %1$d MB</string>
   <!-- volte icon switch -->
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">나침반</string>
+  <string name="accessibility_quick_settings_compass_off">나침반 끄기</string>
   <string name="quick_settings_compass_N">북</string>
   <string name="quick_settings_compass_NE">북동</string>
   <string name="quick_settings_compass_E">동</string>
@@ -96,4 +108,6 @@
   <!-- Navigation bar Tile -->
   <!-- Kill button in notification guts -->
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <!-- Theme tile -->
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

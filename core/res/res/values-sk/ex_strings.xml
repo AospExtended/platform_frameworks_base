@@ -28,4 +28,5 @@
   <string name="permlab_fakePackageSignature">Napodobniť podpis balíčku</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Umožňuje aplikácii vydávať sa sa inú aplikáciu. Škodlivé aplikácie by mohli použiť túto možnosť pre prístup k dátam súkromných aplikácií. Udeľujte toto oprávnenie s opatrnosťou!</string>
+  <!-- AOKP custom system animations -->
 </resources>

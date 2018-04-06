@@ -18,8 +18,23 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="reboot_title">Ponoven zagon</string>
+  <string name="reboot_message">Ponoven zagon sistema</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">Urejevalnik navigacije kontrole</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">Omogoča aplikaciji nadzor nad urejevalnikom navigacijske plošče.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Prevarni podpis paketa</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Omogoča aplikaciji, da se izdaja za drugo aplikacijo. Zlonamerne aplikacije lahko to izkoristijo za dostop do osebnih podatkov vaših aplikacij. To dovoljenje uporabite pazljivo!</string>
+  <!-- AOKP custom system animations -->
+  <string name="animation_fade">Zbledi</string>
+  <string name="animation_slide_right">Podrsaj desno</string>
+  <string name="animation_slide_left">Podrsaj  levo</string>
+  <string name="animation_slide_right_no_fade">Podrsaj desno(ne zbledi)</string>
+  <string name="animation_slide_left_no_fade">Podrsaj levo(ne zbledi)</string>
+  <string name="animation_slide_up">Podrsaj dol</string>
+  <string name="animation_slide_down">Podrsaj gor</string>
+  <string name="animation_default">Privzeto</string>
 </resources>

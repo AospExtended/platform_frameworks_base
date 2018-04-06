@@ -28,4 +28,21 @@
   <string name="permlab_fakePackageSignature">模仿安装包签名</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">允许程序伪装成其他程序。 请注意，恶意程序可能会利用此权限访问隐私数据。请谨慎授予此权限！</string>
+  <!-- AOKP custom system animations -->
+  <string name="animation_fade">淡入淡出</string>
+  <string name="animation_slide_right">右侧滑入</string>
+  <string name="animation_slide_left">左侧滑入</string>
+  <string name="animation_slide_right_no_fade">右侧滑入（无淡入淡出）</string>
+  <string name="animation_slide_left_no_fade">左侧滑动（无淡入淡出）</string>
+  <string name="animation_slide_up">底部滑入</string>
+  <string name="animation_slide_down">顶部滑入</string>
+  <string name="animation_default">默认</string>
+  <string name="animation_translucent">半透明</string>
+  <string name="animation_grow_shrink">缩放（顶部）</string>
+  <string name="animation_grow_shrink_center">缩放 （中间）</string>
+  <string name="animation_grow_shrink_bottom">缩放（底部）</string>
+  <string name="animation_grow_shrink_left">缩放（左侧）</string>
+  <string name="animation_grow_shrink_right">缩放（右侧）</string>
+  <string name="animation_random">随机</string>
+  <string name="action_null">空白</string>
 </resources>

@@ -28,4 +28,5 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">אפשר/י ליישום להעמיד פנים שהוא יישום אחר.
 יישומים זדוניים יוכלו להשתמש בפיצ\'ר זה בכדי לקבל גישה למידע פרטי של יישומים. הענק/י אישור זה בזהירות!</string>
+  <!-- AOKP custom system animations -->
 </resources>

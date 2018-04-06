@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">應用程式不支援 PiP</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">暫停休眠</string>
   <string name="accessibility_quick_settings_caffeine_off">關閉暫停休眠</string>
@@ -186,5 +192,48 @@
   <string name="quick_settings_navigation_disabled">已停用</string>
   <string name="quick_settings_sound_search">語音搜尋</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">您要強制停止嗎？</string>
+  <string name="force_stop_dlg_text">如果您強制停止應用程式，應用程式可能無法正常運作。</string>
+  <string name="dlg_ok">@android:string/ok</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
+  <string name="kill">強制結束應用程式</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">TurboPower 已連接 (還剩 <xliff:g id="charging_time_left">%s</xliff:g> 充滿)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower 已連接</string>
+  <string name="keyguard_plugged_in_turbo_charging">高速充電</string>
+  <!-- Theme tile -->
+  <string name="systemui_theme_style_title">使用者介面樣式</string>
+  <string name="systemui_theme_style_auto">自動</string>
+  <string name="systemui_theme_style_light">淺色使用者介面</string>
+  <string name="systemui_theme_style_dark">深色使用者介面</string>
+  <string name="systemui_theme_style_black">黑色使用者介面</string>
+  <string name="systemui_theme_style_extended">延伸使用者介面</string>
+  <string name="quick_settings_theme_tile_title">強調色</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">選擇顏色</string>
+  <string name="quick_settings_theme_tile_style_detail_title">選擇樣式</string>
+  <string name="quick_settings_theme_tile_color_default">預設</string>
+  <string name="quick_settings_theme_tile_color_red">紅色</string>
+  <string name="quick_settings_theme_tile_color_pink">粉紅色</string>
+  <string name="quick_settings_theme_tile_color_purple">紫色</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">深紫色</string>
+  <string name="quick_settings_theme_tile_color_indigo">靛青色</string>
+  <string name="quick_settings_theme_tile_color_blue">藍色</string>
+  <string name="quick_settings_theme_tile_color_light_blue">亮藍色</string>
+  <string name="quick_settings_theme_tile_color_cyan">青色</string>
+  <string name="quick_settings_theme_tile_color_teal">深青色</string>
+  <string name="quick_settings_theme_tile_color_green">綠色</string>
+  <string name="quick_settings_theme_tile_color_light_green">淺綠</string>
+  <string name="quick_settings_theme_tile_color_lime">淺綠色</string>
+  <string name="quick_settings_theme_tile_color_yellow">黃色</string>
+  <string name="quick_settings_theme_tile_color_amber">琥珀色</string>
+  <string name="quick_settings_theme_tile_color_orange">橙色</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">深橘色</string>
+  <string name="quick_settings_theme_tile_color_brown">棕色</string>
+  <string name="quick_settings_theme_tile_color_grey">灰色</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">藍灰色</string>
+  <string name="quick_settings_theme_tile_color_black">黑色</string>
+  <string name="quick_settings_theme_tile_color_white">白色</string>
+  <string name="theme_info_title">這是什麼？</string>
+  <string name="theme_info_message">\"主題\" 磁磚是一個獨特且便於使用的磁磚, 它允許使用者更更改系統的強調色或風格。\n\n要在強調色與風格之間切換的話，只需要長按磁磚，並再次按下以從提供的選項中選擇。</string>
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

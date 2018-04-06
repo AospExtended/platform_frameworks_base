@@ -25,7 +25,7 @@
   <string name="global_action_restart_advanced">Avançado</string>
   <string name="global_action_restart_recovery">Reinicar em Recovery Mode</string>
   <string name="global_action_restart_bootloader">Bootloader</string>
-  <string name="global_action_restart_ui">IU do sistema</string>
+  <string name="global_action_restart_ui">Iu do sistema</string>
   <string name="global_action_restart_soft">Reiniciar Rápido</string>
   <string name="global_action_screenrecord">Gravação de ecrã</string>
   <!-- Advance location quick setting tile -->
@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">App não suporta PiP</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Cafeína</string>
   <string name="accessibility_quick_settings_caffeine_off">Cafeína desligada</string>
@@ -157,13 +163,44 @@
   <string name="drag_or_tap_to_add_tiles">Arraste ou toque para adicionar mosaicos</string>
   <!-- AEX logo -->
   <string name="aex_logo_title">Logotipo da AEX</string>
+  <string name="aex_logo_summary">Deixa que todos saibam que estás a usar AEX quando olham para o teu ecrã</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">Botões físicos ligados</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Botões físicos desligados</string>
+  <string name="quick_settings_hwkeys_label">Botões físicos</string>
+  <string name="status_bar_data_saver">Poupança de dados</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">Erro</string>
+  <string name="omnijaws_service_unkown">Sem informação de meteorologia</string>
+  <string name="omnijaws_service_error_long">Erro ao carregar os dados meteorológicos</string>
+  <string name="omnijaws_service_disabled">O serviço está desativado</string>
+  <string name="omnijaws_detail_header">Meteorologia</string>
+  <string name="omnijaws_label_default">Meteorologia</string>
+  <string name="omnijaws_current_text">Agora</string>
+  <string name="omnijaws_package_not_available">OmniJaws não disponível</string>
+  <string name="omnijaws_service_last_update">Última atualização:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Barra de navegação</string>
+  <string name="quick_settings_smartbar">SmartBar</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_navigation_default">Stock</string>
+  <string name="quick_settings_navigation_disabled">Desativada</string>
+  <string name="quick_settings_sound_search">Pesquisa de som</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Forçar paragem?</string>
+  <string name="force_stop_dlg_text">Se forçar a paragem de uma aplicação, podem ocorrer comportamento estranhos.</string>
+  <string name="dlg_ok">\@android: string / ok</string>
+  <string name="dlg_cancel">Cancelar</string>
+  <string name="kill">Terminar Aplicação</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">Carregando rápido (<xliff:g id="charging_time_left">%s</xliff:g> até à carga máxima)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">Carregamento rapido conectado</string>
+  <string name="keyguard_plugged_in_turbo_charging">Carregamento rapido</string>
+  <!-- Theme tile -->
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

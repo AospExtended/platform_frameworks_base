@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">Відарыс у відарысе</string>
   <string name="quick_settings_pip_tile_app_na">Праграма не падтрымлівае рэжым \"Відарыс у відарысе\"</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Забарона сну</string>
   <string name="accessibility_quick_settings_caffeine_off">Забарона сну адкл.</string>
@@ -186,5 +192,15 @@
   <string name="quick_settings_navigation_disabled">Адключана</string>
   <string name="quick_settings_sound_search">Галасавы пошук</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Спынiць прымусова?</string>
+  <string name="force_stop_dlg_text">Прымусовае закрыццё праграмы можа адбіцца на яе функцыянальнасці.</string>
+  <string name="dlg_ok">@android:string/ok</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
+  <string name="kill">Зачыніць праграму</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">Хуткая зарадка падлучана (<xliff:g id="charging_time_left">%s</xliff:g> да поўнай зарадкі)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">Падлучэнне хуткай зарадкі</string>
+  <string name="keyguard_plugged_in_turbo_charging">Хуткая зарадка</string>
+  <!-- Theme tile -->
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>
