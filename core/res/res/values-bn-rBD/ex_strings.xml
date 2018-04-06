@@ -28,4 +28,5 @@
   <string name="permlab_fakePackageSignature">স্পুফ প্যাকেজ স্বাক্ষর</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">অ্যাপ্লিকেশনটি একটি ভিন্ন অ্যাপ্লিকেশন হতে ভান করতে দেয়. ব্যক্তিগত অ্যাপ্লিকেশন ডেটা অ্যাক্সেস করতে ক্ষতিকারক অ্যাপ্লিকেশানগুলি এটি ব্যবহার করতে সক্ষম হতে পারে. এই অনুমতি শুধুমাত্র সাবধানতা সঙ্গে অনুমোদন!</string>
+  <!-- AOKP custom system animations -->
 </resources>

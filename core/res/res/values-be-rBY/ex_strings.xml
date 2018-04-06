@@ -28,4 +28,5 @@
   <string name="permlab_fakePackageSignature">Дазволіць падмену подпісу</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Дазваляць праграмам абыходзіць сістэму бяспекі, выдаючы сябе за іншыя праграмы. Шкоднасныя праграмы могуць выкарыстоўваць гэта для доступу да прыватных дадзеных. На свой страх і рызыку!</string>
+  <!-- AOKP custom system animations -->
 </resources>

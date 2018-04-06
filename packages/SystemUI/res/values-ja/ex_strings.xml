@@ -22,6 +22,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">高度な再起動</string>
   <string name="global_action_restart_recovery">リカバリー</string>
   <string name="global_action_restart_bootloader">ブートローダー</string>
   <string name="global_action_restart_ui">ｼｽﾃﾑｲﾝﾀﾌｪｰｽ</string>
@@ -34,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">このアプリは PiP に対応していません</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">カフェイン</string>
   <string name="accessibility_quick_settings_caffeine_off">カフェインをOFF</string>
@@ -63,37 +70,103 @@
   <string name="quick_settings_compass_NW">北西</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">音</string>
+  <string name="quick_settings_sound_ring">着信音</string>
+  <string name="quick_settings_sound_vibrate">バイブレーション</string>
+  <string name="quick_settings_sound_dnd">おやすみモード</string>
+  <string name="lockscreen_default">デフォルト</string>
+  <string name="lockscreen_hidden">なし</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">アイコンをスワイプして起動</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">ヘッドアップ</string>
   <!-- Heads up snooze toast -->
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">充電完了</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">急速充電中（充電完了まで<xliff:g id="Charging_TIME_LEFT">%s</xliff:g>）</string>
+  <string name="keyguard_plugged_in_dash_charging">急速充電中</string>
   <!-- Screenrecord Notification Ticker -->
   <!-- Screenrecord notification title -->
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">停止</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">ポインターを表示</string>
+  <string name="screenrecord_notif_pointer_off">ポインタを隠す</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_hide_hint">ヒントを隠す</string>
+  <string name="screenrecord_show_hint">ヒントを表示</string>
   <!-- Screenrecord Tile -->
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">スクリーンショットを削除しました</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">再起動</string>
+  <string name="quick_settings_reboot_recovery_label">リカバリー</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">音量</string>
+  <string name="quick_settings_volume_panel_label">音量</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">電源ボタンの置き換え</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">アプリが電源ボタンの機能を置き換えることを許可します</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">有効</string>
+  <string name="quick_settings_network_adb_disabled_label">無効</string>
+  <string name="quick_settings_network_adb_label">ネットワーク経由のADB</string>
+  <string name="quick_settings_network_adb_toast">USB デバッグが有効になっていません。</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">同期</string>
+  <string name="accessibility_quick_settings_sync_off">同期OFF</string>
+  <string name="accessibility_quick_settings_sync_on">同期ON</string>
+  <string name="accessibility_quick_settings_sync_changed_off">同期をオフにします</string>
+  <string name="accessibility_quick_settings_sync_changed_on">同期をオンにします</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">USBテザリングOFF</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USBテザリングON</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USBテザリングをOFFにしました</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USBテザリングをONにしました</string>
+  <string name="quick_settings_usb_tether_label">USBテザリング</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">言語</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">音楽</string>
+  <string name="quick_settings_music_play">再生</string>
+  <string name="quick_settings_music_pause">一時停止</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">拡張デスクトップ</string>
+  <string name="quick_settings_expanded_navigation_off">ナビバーを隠す</string>
+  <string name="quick_settings_expanded_statusbar_off">ステータスバーを隠す</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">タイルを追加するにはドラッグかタップしてください</string>
   <!-- AEX logo -->
+  <string name="aex_logo_title">AEX ロゴ</string>
+  <string name="aex_logo_summary">あなたの画面を見た人にあなたがAEXを使っていることを知らせます</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">HWキーON</string>
+  <string name="accessibility_quick_settings_hwkeys_off">HWキーOFF</string>
+  <string name="quick_settings_hwkeys_label">HWキー</string>
+  <string name="status_bar_data_saver">データセーバー</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">エラー</string>
+  <string name="omnijaws_service_unkown">気象情報がありません</string>
+  <string name="omnijaws_service_error_long">気象データ読み込みエラー</string>
+  <string name="omnijaws_service_disabled">サービスは無効です</string>
+  <string name="omnijaws_detail_header">天気</string>
+  <string name="omnijaws_label_default">天気</string>
+  <string name="omnijaws_current_text">今</string>
+  <string name="omnijaws_service_last_update">最終更新:</string>
   <!-- Weather string format in expanded statusbar header -->
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">ナビゲーションバー</string>
+  <string name="quick_settings_smartbar">スマートバー</string>
+  <string name="quick_settings_navigation_disabled">無効</string>
+  <string name="quick_settings_sound_search">音声検索</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">強制停止しますか？</string>
+  <string name="kill">アプリを終了</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <!-- Theme tile -->
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

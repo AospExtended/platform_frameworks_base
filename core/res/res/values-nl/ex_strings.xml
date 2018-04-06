@@ -28,4 +28,5 @@
   <string name="permlab_fakePackageSignature">Pakket handtekening nabootsen</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Staat toe dat een app zich voordoet als een andere app. Kwaadaardige applicaties kunnen hierdoor mogelijk toegang krijgen tot privédata. Verleen deze machtiging alleen met voorzichtigheid!</string>
+  <!-- AOKP custom system animations -->
 </resources>

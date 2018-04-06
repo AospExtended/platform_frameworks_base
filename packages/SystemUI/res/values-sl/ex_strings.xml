@@ -23,10 +23,21 @@
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Advance location quick setting tile -->
   <!-- PiP Tile -->
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <!-- Screenshot QS tile -->
   <!-- volte icon switch -->
   <!-- Compass QS Tile -->
+  <string name="accessibility_quick_settings_compass_off">Kompas izklopljen.</string>
+  <string name="accessibility_quick_settings_compass_on">Kompas vklopljen.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Kompas je izklopljen.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Kompas je vklopljen.</string>
+  <string name="quick_settings_compass_N">N</string>
   <!-- Sound QS Tile -->
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <!-- Heads Up QS Tile -->
@@ -61,4 +72,6 @@
   <!-- Navigation bar Tile -->
   <!-- Kill button in notification guts -->
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <!-- Theme tile -->
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

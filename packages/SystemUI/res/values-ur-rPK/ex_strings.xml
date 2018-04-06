@@ -21,13 +21,41 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA +</string>
+  <string name="global_action_restart_advanced">اعلیٰ</string>
+  <string name="global_action_restart_recovery">ریکوری</string>
+  <string name="global_action_restart_bootloader">بووٹلوادر</string>
+  <string name="global_action_restart_ui">سىستم يوآى</string>
+  <string name="global_action_restart_soft">سوفت بوٹ</string>
+  <string name="global_action_screenrecord">سكرين حفظ</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">محل وقوع کی اطلاع دینا: بیٹری موڈ محفوظ کر رہا ہے ۔</string>
   <!-- PiP Tile -->
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <!-- Screenshot QS tile -->
   <!-- volte icon switch -->
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">قطب نما</string>
+  <string name="quick_settings_compass_N">شمال</string>
+  <string name="quick_settings_compass_NE">شمال مشرق</string>
+  <string name="quick_settings_compass_E">مشرق</string>
+  <string name="quick_settings_compass_SE">جنوب مشرق</string>
+  <string name="quick_settings_compass_S">جنوب</string>
+  <string name="quick_settings_compass_SW">جنوب مغرب</string>
+  <string name="quick_settings_compass_W">مغرب</string>
+  <string name="quick_settings_compass_NW">شمال مغرب</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">آواز</string>
+  <string name="quick_settings_sound_vibrate">تھرتھراہٹ</string>
+  <string name="quick_settings_sound_dnd">پریشان نہ کریں</string>
+  <string name="lockscreen_default">پہلے سے طے شدہ</string>
+  <string name="lockscreen_hidden">کوئی بھی نہیں</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <!-- Heads Up QS Tile -->
   <!-- Heads up snooze toast -->
@@ -37,19 +65,33 @@
   <!-- Screenrecord notification title -->
   <!-- Screenrecord notification action: Stop -->
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_off">پوائنٹر چھپائیں</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_hide_hint">اشارہ چھپائیں</string>
+  <string name="screenrecord_show_hint">اشارہ دکھائیے</string>
   <!-- Screenrecord Tile -->
   <!-- Screenshot Delete Toast -->
   <!-- Reboot/Recovery QS Tile -->
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">صوت</string>
+  <string name="quick_settings_volume_panel_label">صوت</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">فعال کردہ</string>
+  <string name="quick_settings_network_adb_disabled_label">غیرفعال کردہ</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">ہم وقت سازی</string>
   <!-- USB Tethering tile -->
   <!-- Language toggle tile -->
   <!-- Music tile -->
+  <string name="quick_settings_music_label">موسیقی</string>
+  <string name="quick_settings_music_play">چلائیں</string>
+  <string name="quick_settings_music_pause">توقف</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">توسیعی ڈیسک ٹاپ</string>
+  <string name="quick_settings_expanded_desktop">وسیع کردہ</string>
+  <string name="quick_settings_expanded_desktop_off">عمومی</string>
   <!-- QS customizer -->
   <!-- AEX logo -->
   <!-- HW Keys Tile -->
@@ -59,6 +101,11 @@
          [CHAR LIMIT=4] -->
   <!-- Weather string format in expanded statusbar header -->
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_disabled">غیرفعال کردہ</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">زبردستی روک دیں?</string>
+  <string name="force_stop_dlg_text">اگر آپ کسی ایپ کو زبردستی روکتے ہیں، تو یہ غلط برتاؤ کر سکتا ہے.</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <!-- Theme tile -->
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

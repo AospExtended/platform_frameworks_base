@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">Aplikacja nie obsługuje PiP</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Kofeina</string>
   <string name="accessibility_quick_settings_caffeine_off">Kofeina wył.</string>
@@ -186,5 +192,48 @@
   <string name="quick_settings_navigation_disabled">Wyłączono</string>
   <string name="quick_settings_sound_search">Wybieranie głosowe</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Wymusić zatrzymanie?</string>
+  <string name="force_stop_dlg_text">Jeśli wymusisz zatrzymanie aplikacji, może ona działać nieprawidłowo.</string>
+  <string name="dlg_ok">@android:string/ok</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
+  <string name="kill">Zabij aplikację</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">TurboPower podłączone (<xliff:g id="charging_time_left">%s</xliff:g> do końca)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower podłączone</string>
+  <string name="keyguard_plugged_in_turbo_charging">Ładowanie Turbo</string>
+  <!-- Theme tile -->
+  <string name="systemui_theme_style_title">Styl interfejsu</string>
+  <string name="systemui_theme_style_auto">Automatycznie</string>
+  <string name="systemui_theme_style_light">Jasny interfejs użytkownika</string>
+  <string name="systemui_theme_style_dark">Ciemny interfejs użytkownika</string>
+  <string name="systemui_theme_style_black">Czarny interfejs użytkownika</string>
+  <string name="systemui_theme_style_extended">Rozszerzony interfejs użytkownika</string>
+  <string name="quick_settings_theme_tile_title">Akcent</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Wybierz kolor</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Wybierz styl</string>
+  <string name="quick_settings_theme_tile_color_default">Domyślne</string>
+  <string name="quick_settings_theme_tile_color_red">Czerwony</string>
+  <string name="quick_settings_theme_tile_color_pink">Różowy</string>
+  <string name="quick_settings_theme_tile_color_purple">Purpurowy</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Ciemnofioletowy</string>
+  <string name="quick_settings_theme_tile_color_indigo">Indygo</string>
+  <string name="quick_settings_theme_tile_color_blue">Niebieski</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Jasnoniebieski</string>
+  <string name="quick_settings_theme_tile_color_cyan">Turkusowy</string>
+  <string name="quick_settings_theme_tile_color_teal">Morski</string>
+  <string name="quick_settings_theme_tile_color_green">Zielony</string>
+  <string name="quick_settings_theme_tile_color_light_green">Jasnozielony</string>
+  <string name="quick_settings_theme_tile_color_lime">Limonkowy</string>
+  <string name="quick_settings_theme_tile_color_yellow">Żółty</string>
+  <string name="quick_settings_theme_tile_color_amber">Bursztynowy</string>
+  <string name="quick_settings_theme_tile_color_orange">Pomarańczowy</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Ciemnopomarańczowy</string>
+  <string name="quick_settings_theme_tile_color_brown">Brązowy</string>
+  <string name="quick_settings_theme_tile_color_grey">Szary</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Niebieskoszary</string>
+  <string name="quick_settings_theme_tile_color_black">Czarny</string>
+  <string name="quick_settings_theme_tile_color_white">Biały</string>
+  <string name="theme_info_title">Co to jest?</string>
+  <string name="theme_info_message">Kafelek \"Motywy\" jest unikalny, ale łatwy w użyciu. Pozwala on na zmianę koloru akcentu lub stylu systemu.\n\nAby przełączyć się między kolorem akcentu i stylem, przytrzymaj kafelek, po czym naciśnij go, aby wybrać jedną z proponowanych opcji.</string>
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

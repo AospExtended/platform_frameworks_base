@@ -21,9 +21,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="global_action_restart_advanced">אפשרויות מתקדמות</string>
-  <string name="global_action_restart_recovery">ריקברי</string>
+  <string name="global_action_restart_advanced">מתקדם</string>
+  <string name="global_action_restart_recovery">שחזור</string>
   <string name="global_action_restart_bootloader">בוטלואדר</string>
+  <string name="global_action_restart_ui">ממשק מערכת</string>
   <string name="global_action_restart_soft">הפעלה מחדש מהירה</string>
   <string name="global_action_screenrecord">הקלטת מסך</string>
   <!-- Advance location quick setting tile -->
@@ -32,6 +33,12 @@
   <string name="accessibility_quick_settings_location_high_accuracy">מצב דיווח מיקום שונה למצב מיקום מדויק.</string>
   <!-- PiP Tile -->
   <string name="quick_settings_pip_tile_app_na">היישום אינו תומך בPiP</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="statusbar_items_title">פריטים בשורת המצב</string>
   <!-- Screenshot QS tile -->
@@ -40,38 +47,100 @@
   <string name="recents_free_ram">%1$d MB זכרון RAM פנוי</string>
   <!-- volte icon switch -->
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">מצפן</string>
+  <string name="accessibility_quick_settings_compass_off">מצפן כבוי.</string>
+  <string name="accessibility_quick_settings_compass_on">מצפן פועל.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">המצפן כובה.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">המצפן הופעל.</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">צליל</string>
+  <string name="quick_settings_sound_ring">צלצול</string>
+  <string name="quick_settings_sound_vibrate">רטט</string>
+  <string name="quick_settings_sound_dnd">נא לא להפריע</string>
+  <string name="lockscreen_default">ברירת מחדל</string>
+  <string name="lockscreen_hidden">ללא</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">החלק מהסמל כדי להפעיל</string>
   <!-- Heads Up QS Tile -->
   <!-- Heads up snooze toast -->
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">הסוללה טעונה במלואה</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">הקלטת המסך החלה</string>
+  <string name="screenrecord_notif_final_ticker">הקלטת המסך הסתיימה בהצלחה</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">מקליט את המסך</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">הפסק</string>
+  <string name="screenrecord_notif_completed">הקלטת המסך הסתיימה בהצלחה</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">הצג מצביע</string>
+  <string name="screenrecord_notif_pointer_off">הסתר מצביע</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">לא ניתן להקליט את המסך</string>
+  <string name="notification_channel_screenrecord">הקלטות מסך</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">הקלטת מסך</string>
   <!-- Screenshot Delete Toast -->
   <!-- Reboot/Recovery QS Tile -->
   <!-- Volume QS Tile -->
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">מופעל</string>
+  <string name="quick_settings_network_adb_disabled_label">כבוי</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">סינכרון</string>
+  <string name="accessibility_quick_settings_sync_off">סינכרון כבוי</string>
+  <string name="accessibility_quick_settings_sync_on">סינכרון פעיל</string>
+  <string name="accessibility_quick_settings_sync_changed_off">הסנכרון כובה</string>
+  <string name="accessibility_quick_settings_sync_changed_on">סנכון הופעל</string>
   <!-- USB Tethering tile -->
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">שפה</string>
+  <string name="quick_settings_locale_more_locales_toast">הוסף שפות נוספות כדי שאריח זה יהיה שימושי</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">מוזיקה</string>
+  <string name="quick_settings_music_play">הפעל</string>
+  <string name="quick_settings_music_pause">השהה</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">שולחן עבודה מורחב</string>
+  <string name="quick_settings_expanded_desktop">מורחב</string>
+  <string name="quick_settings_expanded_desktop_off">רגיל</string>
+  <string name="quick_settings_expanded_navigation_off">הסתר את סרגל הניווט</string>
+  <string name="quick_settings_expanded_statusbar_off">הסתר את שורת המצב</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">גרור או הקש כדי להוסיף אריחים</string>
   <!-- AEX logo -->
+  <string name="aex_logo_title">סמל AEX</string>
+  <string name="aex_logo_summary">הראה לכולם שאתה משתמש ב- AEX כאשר הם רואים את המסך שלך</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">מקשי חומרה פועלים</string>
+  <string name="accessibility_quick_settings_hwkeys_off">מקשי חומרה מושבתים</string>
+  <string name="quick_settings_hwkeys_label">מקשי חומרה</string>
+  <string name="status_bar_data_saver">‏חוסך הנתונים</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">שגיאה</string>
+  <string name="omnijaws_service_unkown">אין נתוני מזג אוויר</string>
+  <string name="omnijaws_service_error_long">שגיאה בטעינת נתוני מזג האויר</string>
+  <string name="omnijaws_service_disabled">השירות מושבת</string>
+  <string name="omnijaws_detail_header">מזג אוויר</string>
+  <string name="omnijaws_label_default">מזג אוויר</string>
+  <string name="omnijaws_current_text">כעת</string>
+  <string name="omnijaws_package_not_available">OmniJaws אינו זמין</string>
+  <string name="omnijaws_service_last_update">עדכון אחרון:</string>
   <!-- Weather string format in expanded statusbar header -->
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">שורת הניווט</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">לאלץ עצירה?</string>
+  <string name="force_stop_dlg_text">אם תאלץ את עצירת היישום, ייתכן שהוא לא יפעל כהלכה.</string>
+  <string name="kill">סגור יישום</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <!-- Theme tile -->
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

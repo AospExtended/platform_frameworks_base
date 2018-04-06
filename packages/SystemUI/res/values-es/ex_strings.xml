@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">La aplicación no soporta PiP</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Cafeína</string>
   <string name="accessibility_quick_settings_caffeine_off">Cafeína desactivada</string>
@@ -159,15 +165,42 @@
   <string name="aex_logo_title">Logotipo de AEX</string>
   <string name="aex_logo_summary">Que todos sepan que usted está usando AEX cuando ven la pantalla</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">Botones físicos activados</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Botones físicos desactivados</string>
+  <string name="quick_settings_hwkeys_label">Botones físicos</string>
+  <string name="status_bar_data_saver">Ahorrador de datos</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
   <string name="omnijaws_service_error">Error</string>
+  <string name="omnijaws_service_unkown">Sin datos del tiempo</string>
+  <string name="omnijaws_service_error_long">Error al cargar los datos del tiempo</string>
+  <string name="omnijaws_service_disabled">El servicio está desactivado</string>
+  <string name="omnijaws_detail_header">Tiempo</string>
+  <string name="omnijaws_label_default">Tiempo</string>
   <string name="omnijaws_current_text">Ahora</string>
+  <string name="omnijaws_package_not_available">OmniJaws no disponible</string>
+  <string name="omnijaws_service_last_update">Última actualización:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">Barra de navegación</string>
+  <string name="quick_settings_smartbar">SmartBar</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_navigation_default">Predeterminado</string>
+  <string name="quick_settings_navigation_disabled">Desactivado</string>
+  <string name="quick_settings_sound_search">Buscar sonido</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">¿Forzar cierre?</string>
+  <string name="force_stop_dlg_text">Si se detiene una aplicación, es posible que no funcione correctamente.</string>
+  <string name="dlg_ok">@android:string/ok</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
+  <string name="kill">Cerrar aplicación</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">Carga rápida conectada (<xliff:g id="charging_time_left">%s</xliff:g> para completar)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">Carga rápida conectada</string>
+  <string name="keyguard_plugged_in_turbo_charging">Carga rápida</string>
+  <!-- Theme tile -->
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

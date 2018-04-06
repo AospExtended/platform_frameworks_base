@@ -23,11 +23,11 @@
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <string name="accessibility_data_connection_hspap">HSPA+</string>
   <string name="global_action_restart_advanced">Erweitert</string>
-  <string name="global_action_restart_recovery">Wiederherstellen</string>
+  <string name="global_action_restart_recovery">Recovery</string>
   <string name="global_action_restart_bootloader">Bootloader</string>
-  <string name="global_action_restart_ui">SystemUI neustarten</string>
+  <string name="global_action_restart_ui">SystemUI</string>
   <string name="global_action_restart_soft">Schneller Neustart</string>
-  <string name="global_action_screenrecord">Bildschirm aufnehmen</string>
+  <string name="global_action_screenrecord">Bildschirmaufnahme</string>
   <!-- Advance location quick setting tile -->
   <string name="accessibility_quick_settings_location_battery_saving">Standortdienste: Energiesparmodus.</string>
   <string name="accessibility_quick_settings_location_gps_only">Standortdienste: nur Gerät.</string>
@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">Die App unterstützt kein PiP</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Koffein</string>
   <string name="accessibility_quick_settings_caffeine_off">Koffein aus</string>
@@ -52,9 +58,9 @@
   <string name="quick_settings_compass_init">Initialisiere\u2026</string>
   <string name="accessibility_quick_settings_compass_off">Kompass aus.</string>
   <string name="accessibility_quick_settings_compass_on">Kompass an.</string>
-  <string name="accessibility_quick_settings_compass_changed_off">Kompass ausgeschalten.</string>
-  <string name="accessibility_quick_settings_compass_changed_on">Kompass eingeschalten.</string>
-  <string name="quick_settings_compass_N">Nord</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Kompass ausgeschaltet.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Kompass eingeschaltet.</string>
+  <string name="quick_settings_compass_N">Norden</string>
   <string name="quick_settings_compass_NE">Nordosten</string>
   <string name="quick_settings_compass_E">Osten</string>
   <string name="quick_settings_compass_SE">Südosten</string>
@@ -67,7 +73,7 @@
   <string name="quick_settings_sound_ring">Klingeln</string>
   <string name="quick_settings_sound_vibrate">Vibrieren</string>
   <string name="quick_settings_sound_dnd">Nicht stören</string>
-  <string name="lockscreen_default">Standart</string>
+  <string name="lockscreen_default">Standard</string>
   <string name="lockscreen_hidden">Keiner</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <string name="custom_hint">Zum Öffnen vom Symbol wischen</string>
@@ -75,23 +81,23 @@
   <string name="quick_settings_heads_up_label">Popup</string>
   <string name="accessibility_quick_settings_heads_up_off">Popup aus.</string>
   <string name="accessibility_quick_settings_heads_up_on">Popup an.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">Popup ausgeschalten.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">Popup angeschalten.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Popup wurde ausgeschaltet.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Popup wurde eingeschaltet.</string>
   <!-- Heads up snooze toast -->
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Popup-Benachrichtigungen sind für eine Minute deaktiviert.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Popup-Benachrichtigungen sind für <xliff:g id="number">%d</xliff:g> Minuten deaktiviert.</string>
   <!-- Battery saver tile -->
   <string name="battery_saver_qs_tile_fully_charged">Vollständig Aufgeladen</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Schnellladen (<xliff:g id="charging_time_left" example="4 Stunden und 2 Minuten">%s</xliff:g> bis das Gerät voll ist)</string>
-  <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
+  <string name="keyguard_indication_dash_charging_time">Dash-Aufladen (<xliff:g id="charging_time_left" example="4 Stunden und 2 Minuten">%s</xliff:g> bis das Gerät voll ist)</string>
+  <string name="keyguard_plugged_in_dash_charging">Dash-Aufladen</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">Bildschirm wird aufgenommen</string>
   <string name="screenrecord_notif_final_ticker">Bildschirmaufnahme erfolgreich</string>
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">Bildschirmaufzeichnung</string>
   <!-- Screenrecord notification action: Stop -->
-  <string name="screenrecord_notif_stop">Stopp</string>
+  <string name="screenrecord_notif_stop">Stop</string>
   <string name="screenrecord_notif_completed">Bildschirmaufnahme erfolgreich</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Cursor anzeigen</string>
@@ -112,7 +118,7 @@
   <string name="delete_screenshot_toast">Bildschirmfoto gelöscht</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Neustart</string>
-  <string name="quick_settings_reboot_recovery_label">Wiederherstellung</string>
+  <string name="quick_settings_reboot_recovery_label">Recovery</string>
   <!-- Volume QS Tile -->
   <string name="accessibility_quick_settings_volume_panel">Lautstärke</string>
   <string name="quick_settings_volume_panel_label">Lautstärke</string>
@@ -124,7 +130,7 @@
   <string name="quick_settings_network_adb_enabled_label">Aktiviert</string>
   <string name="quick_settings_network_adb_disabled_label">Deaktiviert</string>
   <string name="quick_settings_network_adb_label">ADB über Netzwerk</string>
-  <string name="quick_settings_network_adb_toast">USB-debugging ist nicht aktiviert</string>
+  <string name="quick_settings_network_adb_toast">USB-Debugging ist nicht aktiviert</string>
   <!-- Sync QS Tile -->
   <string name="quick_settings_sync_label">Synchronisation</string>
   <string name="accessibility_quick_settings_sync_off">Synchronisation aus</string>
@@ -151,13 +157,13 @@
   <string name="quick_settings_expanded_navigation_off">Navigationsleiste ausblenden</string>
   <string name="quick_settings_expanded_statusbar_off">Statusleiste ausblenden</string>
   <string name="alert_on_charged_level">Sie können das Ladegerät abstecken ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
-  <string name="battery_level_good_title">Optimalen Ladezustand</string>
+  <string name="battery_level_good_title">Optimaler Ladezustand</string>
   <string name="notification_channel_charge_alert">Der Akku wurde vollständig geladen</string>
   <!-- QS customizer -->
   <string name="drag_or_tap_to_add_tiles">Ziehe und tippe, um Kacheln hinzuzufügen</string>
   <!-- AEX logo -->
   <string name="aex_logo_title">AEX-Logo</string>
-  <string name="aex_logo_summary">Lass alle wissen, dass Sie AEX verwenden, wenn sie Ihren Bildschirm sehen</string>
+  <string name="aex_logo_summary">Lass alle wissen, dass du AEX verwendest, wenn sie auf deinen Bildschirm schauen</string>
   <!-- HW Keys Tile -->
   <string name="accessibility_quick_settings_hwkeys_on">HW Tasten an</string>
   <string name="accessibility_quick_settings_hwkeys_off">HW Tasten aus</string>
@@ -186,5 +192,48 @@
   <string name="quick_settings_navigation_disabled">Deaktiviert</string>
   <string name="quick_settings_sound_search">Soundsuche</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Beenden erzwingen?</string>
+  <string name="force_stop_dlg_text">Das Beenden der App zu erzwingen kann zu unerwünschtem Verhalten führen.</string>
+  <string name="dlg_ok">@android:string/ok</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
+  <string name="kill">App beenden</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">Schnellladegerät verbunden (<xliff:g id="charging_time_left">%s</xliff:g> verbleibend)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">Schnellladegerät angeschlossen</string>
+  <string name="keyguard_plugged_in_turbo_charging">Schnelles Aufladen</string>
+  <!-- Theme tile -->
+  <string name="systemui_theme_style_title">Stil der Benutzeroberfläche</string>
+  <string name="systemui_theme_style_auto">Automatisch</string>
+  <string name="systemui_theme_style_light">Helle Benutzeroberfläche</string>
+  <string name="systemui_theme_style_dark">Dunkle Benutzeroberfläche</string>
+  <string name="systemui_theme_style_black">Schwarze Benutzeroberfläche</string>
+  <string name="systemui_theme_style_extended">Erweitert</string>
+  <string name="quick_settings_theme_tile_title">Akzent</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Farbe wählen</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Stil wählen</string>
+  <string name="quick_settings_theme_tile_color_default">Standard</string>
+  <string name="quick_settings_theme_tile_color_red">Rot</string>
+  <string name="quick_settings_theme_tile_color_pink">Pink</string>
+  <string name="quick_settings_theme_tile_color_purple">Lila</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Dunkles lila</string>
+  <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
+  <string name="quick_settings_theme_tile_color_blue">Blau</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Hellblau</string>
+  <string name="quick_settings_theme_tile_color_cyan">Türkis</string>
+  <string name="quick_settings_theme_tile_color_teal">Blaugrün</string>
+  <string name="quick_settings_theme_tile_color_green">Grün</string>
+  <string name="quick_settings_theme_tile_color_light_green">Hellgrün</string>
+  <string name="quick_settings_theme_tile_color_lime">Limette</string>
+  <string name="quick_settings_theme_tile_color_yellow">Gelb</string>
+  <string name="quick_settings_theme_tile_color_amber">Bernstein</string>
+  <string name="quick_settings_theme_tile_color_orange">Orange</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Dunkles Orange</string>
+  <string name="quick_settings_theme_tile_color_brown">Braun</string>
+  <string name="quick_settings_theme_tile_color_grey">Grau</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Graublau</string>
+  <string name="quick_settings_theme_tile_color_black">Schwarz</string>
+  <string name="quick_settings_theme_tile_color_white">Weiß</string>
+  <string name="theme_info_title">Was ist das?</string>
+  <string name="theme_info_message">Die Themen Kachel ist eine einzigartige aber einfach zu bedienende Kachel, die dem Benutzer erlaubt, den Akzent oder Stil der Benutzeroberfläche zu ändern.\n\nUm zwischen den Akzenten und Stilen umzuschalten, die Fliese länger festhalten und dann erneut antippen.</string>
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

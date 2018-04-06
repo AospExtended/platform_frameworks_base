@@ -28,4 +28,5 @@
   <string name="permlab_fakePackageSignature">പാക്കേജ് സൈൻ ഫെയ്ക് ചെയ്യുക</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">മറ്റൊരു അപ്ലിക്കേഷനായി ഭാവിക്കാൻ ഒരു അപ്ലിക്കേഷനെ അനുവദിക്കുന്നു. ക്ഷുദ്രകരമായ അപ്ലിക്കേഷനുകൾ ഇത് സ്വകാര്യ അപ്ലിക്കേഷൻ ഡാറ്റ ആക്സസ് ചെയ്യാൻ ഉപയോഗിച്ചേക്കാം. ഈ അനുവാദം ജാഗ്രതയോടെ മാത്രം നൽകൂക!</string>
+  <!-- AOKP custom system animations -->
 </resources>

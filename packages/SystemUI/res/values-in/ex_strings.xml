@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">Aplikasi tidak mendukung PiP</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Kafein</string>
   <string name="accessibility_quick_settings_caffeine_off">Kafein nonaktif</string>
@@ -150,7 +156,7 @@
   <string name="quick_settings_expanded_desktop_off">Normal</string>
   <string name="quick_settings_expanded_navigation_off">Sembunyikan bar navigasi</string>
   <string name="quick_settings_expanded_statusbar_off">Sembunyikan statusbar</string>
-  <string name="alert_on_charged_level">Anda bisa melepas charger ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
+  <string name="alert_on_charged_level">Anda dapat mencabut pengisi daya ( \"&gt;\" <xliff:g id="percentage">%s</xliff:g> )</string>
   <string name="battery_level_good_title">Tingkat optimal baterai</string>
   <string name="notification_channel_charge_alert">Tingkat optimal pengisian baterai</string>
   <!-- QS customizer -->
@@ -186,5 +192,15 @@
   <string name="quick_settings_navigation_disabled">Matikan</string>
   <string name="quick_settings_sound_search">Cari suara</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Paksa berhenti?</string>
+  <string name="force_stop_dlg_text">Jika anda menghentikan aplikasi secara paksa, akan menyebabkan gagal fungsi.</string>
+  <string name="dlg_ok">@android:string/ok</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
+  <string name="kill">Tutup Apl</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">TurboPower terhubung (<xliff:g id="charging_time_left">%s</xliff:g> sampai penuh)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower terhubung</string>
+  <string name="keyguard_plugged_in_turbo_charging">Pengisian Turbo</string>
+  <!-- Theme tile -->
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

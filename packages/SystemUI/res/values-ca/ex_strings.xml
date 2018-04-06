@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">App no admet PiP</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Mode Cafeïna</string>
   <string name="accessibility_quick_settings_caffeine_off">Cafeïna desactivada</string>
@@ -83,32 +89,151 @@
   <!-- Battery saver tile -->
   <string name="battery_saver_qs_tile_fully_charged">Càrrega completa</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Càrrega ràpida (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> fins a acabar)</string>
+  <string name="keyguard_plugged_in_dash_charging">Càrrega ràpida</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">La pantalla està sent gravada</string>
+  <string name="screenrecord_notif_final_ticker">Pantalla enregistrada amb èxit</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Enregistrant pantalla</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Aturar</string>
+  <string name="screenrecord_notif_completed">Pantalla enregistrada amb èxit</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Mostra el punter</string>
+  <string name="screenrecord_notif_pointer_off">Amaga el punter</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">No es pot gravar la pantalla</string>
+  <string name="notification_channel_screenrecord">Gravació de pantalla</string>
+  <string name="screenrecord_hide_hint">Amaga suggeriments</string>
+  <string name="screenrecord_show_hint">Mostra suggeriments</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Gravació de pantalla</string>
+  <string name="quick_settings_screenrecord_lq_label">Gravació de pantalla 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Gravació de pantalla 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Gravació de pantalla 720p+</string>
+  <string name="systemui_tuner_navbar_title">Configuració de fàbrica</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Dreceres inferiors</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Captura de pantalla eliminada</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Reiniciar</string>
+  <string name="quick_settings_reboot_recovery_label">Recovery</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">Volum</string>
+  <string name="quick_settings_volume_panel_label">Volum</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">Anul·lar el botó d\'engegar</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Permet a una aplicació anul·lar el botó d\'engegar.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">Habilitat</string>
+  <string name="quick_settings_network_adb_disabled_label">Deshabilitat</string>
+  <string name="quick_settings_network_adb_label">ADB en xarxa</string>
+  <string name="quick_settings_network_adb_toast">Depuració USB no està habilitada</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Sincronització</string>
+  <string name="accessibility_quick_settings_sync_off">Sincronització desactivada</string>
+  <string name="accessibility_quick_settings_sync_on">Sincronització activada</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Sincronització apagada</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Sincronització engegada</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">Ancoratge USB desactivat</string>
+  <string name="accessibility_quick_settings_usb_tether_on">Ancoratge USB activat</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">Ancoratge USB apagat</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">Ancoratge USB encès</string>
+  <string name="quick_settings_usb_tether_label">Ancoratge USB</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Idioma</string>
+  <string name="quick_settings_locale_more_locales_toast">Si us plau, configureu diversos idiomes per habilitar la funció d\'alternar entre ells</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Música</string>
+  <string name="quick_settings_music_play">Reproduir</string>
+  <string name="quick_settings_music_pause">Pausa</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Escriptori ampliat</string>
+  <string name="quick_settings_expanded_desktop">Ampliat</string>
+  <string name="quick_settings_expanded_desktop_off">Normal</string>
+  <string name="quick_settings_expanded_navigation_off">Amaga la barra de nav.</string>
+  <string name="quick_settings_expanded_statusbar_off">Amaga la barra d\'estat</string>
+  <string name="alert_on_charged_level">Desconnecteu el carregador (\"&gt;\"<xliff:g id="percentage">%s</xliff:g>)</string>
+  <string name="battery_level_good_title">Nivell de bateria òptim</string>
+  <string name="notification_channel_charge_alert">Nivell de càrrega de bateria òptim</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">Arrossegueu o toqueu per afegir funcions</string>
   <!-- AEX logo -->
+  <string name="aex_logo_title">Logotip AEX</string>
+  <string name="aex_logo_summary">Que tots sàpiguen que està utilitzant AEX quan vegin la pantalla</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">Tecles HW activades</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Tecles HW desactivades</string>
+  <string name="quick_settings_hwkeys_label">Tecles HW</string>
+  <string name="status_bar_data_saver">Estalvi de dades</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">Error</string>
+  <string name="omnijaws_service_unkown">No hi ha dades meteorològiques</string>
+  <string name="omnijaws_service_error_long">Error en carregar dades meteorològiques</string>
+  <string name="omnijaws_service_disabled">Servei deshabilitat</string>
+  <string name="omnijaws_detail_header">El temps</string>
+  <string name="omnijaws_label_default">El temps</string>
+  <string name="omnijaws_current_text">Ara</string>
+  <string name="omnijaws_package_not_available">OmniJaws no disponible</string>
+  <string name="omnijaws_service_last_update">Darrera actualització:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Barra de navegació</string>
+  <string name="quick_settings_smartbar">Barra intel·ligent</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_navigation_default">Predefinit</string>
+  <string name="quick_settings_navigation_disabled">Deshabilitat</string>
+  <string name="quick_settings_sound_search">Cerca so</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Força l\'aturada?</string>
+  <string name="force_stop_dlg_text">Si forceu el tancament d\'una aplicació, és possible que no funcioni correctament.</string>
+  <string name="dlg_ok">@android:string/ok</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
+  <string name="kill">Matar aplicació</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">Càrrega ràpida (<xliff:g id="charging_time_left">%s</xliff:g> fins a acabar)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower connectat</string>
+  <string name="keyguard_plugged_in_turbo_charging">Càrrega ràpida</string>
+  <!-- Theme tile -->
+  <string name="systemui_theme_style_title">Estil</string>
+  <string name="systemui_theme_style_auto">Automàtic</string>
+  <string name="systemui_theme_style_light">Interfície clara</string>
+  <string name="systemui_theme_style_dark">Interfície fosca</string>
+  <string name="systemui_theme_style_black">Interfície negra</string>
+  <string name="systemui_theme_style_extended">Interfície estesa</string>
+  <string name="quick_settings_theme_tile_title">Èmfasi</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Seleccioneu el color</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Seleccioneu l\'estil</string>
+  <string name="quick_settings_theme_tile_color_default">Per defecte</string>
+  <string name="quick_settings_theme_tile_color_red">Vermell</string>
+  <string name="quick_settings_theme_tile_color_pink">Rosa</string>
+  <string name="quick_settings_theme_tile_color_purple">Porpra</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Porpra fosc</string>
+  <string name="quick_settings_theme_tile_color_indigo">Índigo</string>
+  <string name="quick_settings_theme_tile_color_blue">Blau</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Blau clar</string>
+  <string name="quick_settings_theme_tile_color_cyan">Cyan</string>
+  <string name="quick_settings_theme_tile_color_teal">Verd blavós</string>
+  <string name="quick_settings_theme_tile_color_green">Verd</string>
+  <string name="quick_settings_theme_tile_color_light_green">Verd clar</string>
+  <string name="quick_settings_theme_tile_color_lime">Llima</string>
+  <string name="quick_settings_theme_tile_color_yellow">Groc</string>
+  <string name="quick_settings_theme_tile_color_amber">Ambre</string>
+  <string name="quick_settings_theme_tile_color_orange">Taronja</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Taronja intens</string>
+  <string name="quick_settings_theme_tile_color_brown">Marró</string>
+  <string name="quick_settings_theme_tile_color_grey">Gris</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Gris blavós</string>
+  <string name="quick_settings_theme_tile_color_black">Negre</string>
+  <string name="quick_settings_theme_tile_color_white">Blanc</string>
+  <string name="theme_info_title">Què és això?</string>
+  <string name="theme_info_message">La fitxa de temes és un mosaic únic però fàcil d\'utilitzar que permet l\'usuari canviar l\'estil del sistema.\n\nPer canviar entre èmfasi i estils, simplement feu una pulsació llarga a la fitxa i premeu de nou per seleccionar les opcions que ofereix.</string>
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

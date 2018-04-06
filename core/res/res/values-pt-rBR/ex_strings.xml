@@ -21,11 +21,17 @@
   <string name="reboot_title">Reiniciar</string>
   <string name="reboot_message">Reiniciando o sistema</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_toggleNavigationEditor">editor de navegação</string>
+  <string name="permlab_toggleNavigationEditor">editor de controle de navegação</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_toggleNavigationEditor">Permite que um aplicativo controle o editor da barra de navegação.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_fakePackageSignature">Falsificação de assinatura</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Permite que o aplicativo finja ser um aplicativo diferente. Aplicativos maliciosos podem usar isso para acessar dados privados de aplicativos. Somente conceda esta permissão com cuidado!</string>
+  <string name="permdesc_fakePackageSignature">Permite que o aplicativo pretenda ser um aplicativo diferente. Os aplicativos maliciosos podem ser capazes de usar isso para acessar dados de aplicativos particulares. Conceda esta permissão com cuidado!</string>
+  <!-- AOKP custom system animations -->
+  <string name="animation_fade">Desaparecer</string>
+  <string name="animation_slide_right">Arrastar para direita</string>
+  <string name="animation_slide_left">Arrastar para esquerda</string>
+  <string name="animation_default">Padrão</string>
+  <string name="animation_translucent">Translúcido</string>
 </resources>

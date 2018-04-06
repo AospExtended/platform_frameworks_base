@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">L\'app non supporta PiP</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Caffeina</string>
   <string name="accessibility_quick_settings_caffeine_off">Caffeina spenta</string>
@@ -186,5 +192,48 @@
   <string name="quick_settings_navigation_disabled">Disattivata</string>
   <string name="quick_settings_sound_search">Ricerca audio</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Forzare la chiusura?</string>
+  <string name="force_stop_dlg_text">Se forzi la chiusura di un\'applicazione, la stessa potrebbe comportarsi in modo anomalo.</string>
+  <string name="dlg_ok">\@android: string/ok</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
+  <string name="kill">Termina App</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">TurboPower collegato (<xliff:g id="charging_time_left">%s</xliff:g> fino al completamento)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">Collegamento TurboPower</string>
+  <string name="keyguard_plugged_in_turbo_charging">Ricarica Turbo</string>
+  <!-- Theme tile -->
+  <string name="systemui_theme_style_title">Stile Interfaccia Utente</string>
+  <string name="systemui_theme_style_auto">Automatico</string>
+  <string name="systemui_theme_style_light">Chiara</string>
+  <string name="systemui_theme_style_dark">Scura</string>
+  <string name="systemui_theme_style_black">Nera</string>
+  <string name="systemui_theme_style_extended">Interfaccia Utente Extended</string>
+  <string name="quick_settings_theme_tile_title">Colore primario</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Seleziona il colore</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Seleziona lo stile</string>
+  <string name="quick_settings_theme_tile_color_default">Predefinito</string>
+  <string name="quick_settings_theme_tile_color_red">Rosso</string>
+  <string name="quick_settings_theme_tile_color_pink">Rosa</string>
+  <string name="quick_settings_theme_tile_color_purple">Viola</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Viola scuro</string>
+  <string name="quick_settings_theme_tile_color_indigo">Indaco</string>
+  <string name="quick_settings_theme_tile_color_blue">Blu</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Blu chiaro</string>
+  <string name="quick_settings_theme_tile_color_cyan">Ciano</string>
+  <string name="quick_settings_theme_tile_color_teal">Verde acqua</string>
+  <string name="quick_settings_theme_tile_color_green">Verde</string>
+  <string name="quick_settings_theme_tile_color_light_green">Verde chiaro</string>
+  <string name="quick_settings_theme_tile_color_lime">Limetta</string>
+  <string name="quick_settings_theme_tile_color_yellow">Giallo</string>
+  <string name="quick_settings_theme_tile_color_amber">Ambra</string>
+  <string name="quick_settings_theme_tile_color_orange">Arancione</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Arancione scuro</string>
+  <string name="quick_settings_theme_tile_color_brown">Marrone</string>
+  <string name="quick_settings_theme_tile_color_grey">Grigio</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Grigio blu</string>
+  <string name="quick_settings_theme_tile_color_black">Nero</string>
+  <string name="quick_settings_theme_tile_color_white">Bianco</string>
+  <string name="theme_info_title">Cos\'è questo?</string>
+  <string name="theme_info_message">Il tema dei tile è un sistema tematico unico ma di facile utilizzo che consente all\'utente di modificare lo stile del sistema.\n\nPer cambiare lo stile e il colore principale, basta una pressione prolungata sul tile e poi premere di nuovo per scegliere tra le opzioni presentati.</string>
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

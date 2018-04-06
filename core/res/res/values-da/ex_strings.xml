@@ -28,4 +28,5 @@
   <string name="permlab_fakePackageSignature">Spoof pakke signatur</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Tillader app\'en at udgive sig for en anden app. Ondsindede apps kan muligvis bruge dette til at tilgå privat data. Vær forsigtig med denne tilladelse!</string>
+  <!-- AOKP custom system animations -->
 </resources>

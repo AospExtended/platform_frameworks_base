@@ -32,6 +32,12 @@
   <string name="accessibility_quick_settings_location_battery_saving">ব্যাটারি সুরক্ষা মোড.</string>
   <string name="accessibility_quick_settings_location_gps_only">শুধু সেন্সর মোড.</string>
   <!-- PiP Tile -->
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <!-- Screenshot QS tile -->
   <!-- volte icon switch -->
@@ -70,4 +76,6 @@
   <!-- Navigation bar Tile -->
   <!-- Kill button in notification guts -->
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <!-- Theme tile -->
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">L\'application ne prend pas en charge le PiP</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Caféine</string>
   <string name="accessibility_quick_settings_caffeine_off">Caféine désactivée</string>
@@ -186,5 +192,15 @@
   <string name="quick_settings_navigation_disabled">Désactivé</string>
   <string name="quick_settings_sound_search">Recherche audio</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Forcer l\'arrêt ?</string>
+  <string name="force_stop_dlg_text">Forcer l\'arrêt d\'une application peut provoquer son dysfonctionnement.</string>
+  <string name="dlg_ok">@android:string/ok</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
+  <string name="kill">Arrêter l\'application</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">TurboPower connecté (<xliff:g id="charging_time_left">%s</xliff:g> avant charge complète)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower connecté</string>
+  <string name="keyguard_plugged_in_turbo_charging">Recharge Turbo</string>
+  <!-- Theme tile -->
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>

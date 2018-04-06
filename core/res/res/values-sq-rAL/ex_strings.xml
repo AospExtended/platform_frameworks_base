@@ -28,4 +28,5 @@
   <string name="permlab_fakePackageSignature">Kontrollo firmen dixhitale</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Lejo programin qe te pretendoje qe te jete si tjeter program. Programe virusesh mund te perdorin kete gje per tu mundesuar zonat private te programeve. Lejoje kete gje me kujdes!</string>
+  <!-- AOKP custom system animations -->
 </resources>

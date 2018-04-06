@@ -35,6 +35,12 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">Programi nuk e perdor PiP</string>
+  <!-- Ambient display QS tile -->
+  <!-- Always on Display Tile -->
+  <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Kafeine</string>
   <string name="accessibility_quick_settings_caffeine_off">Jo kafeine</string>
@@ -47,7 +53,7 @@
   <!-- volte icon switch -->
   <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
-  <string name="quick_settings_compass_label">Kompasti</string>
+  <string name="quick_settings_compass_label">Busulla</string>
   <string name="quick_settings_compass_value"><xliff:g id="grade">%1$.0f</xliff:g>\u00b0 
 <xliff:g id="drejtimi">%2$s</xliff:g></string>
   <string name="quick_settings_compass_init">Nis\u2026</string>
@@ -160,12 +166,39 @@
   <string name="aex_logo_title">Logo AEX</string>
   <string name="aex_logo_summary">Njofto te tjeret qe po perdor AEX kur te shikojne ekranin tuaj</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">Butonat fizikë të aktivizuar</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Butonat fizikë të çaktivizuar</string>
+  <string name="quick_settings_hwkeys_label">Butonat fizikë</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">Gabim</string>
+  <string name="omnijaws_service_unkown">Nuk ka të dhëna për motin</string>
+  <string name="omnijaws_service_error_long">Gabim në ngarkimin e të dhënave të motit</string>
+  <string name="omnijaws_service_disabled">Shërbimi është çaktivizuar</string>
+  <string name="omnijaws_detail_header">Moti</string>
+  <string name="omnijaws_label_default">Moti</string>
+  <string name="omnijaws_current_text">Tani</string>
+  <string name="omnijaws_package_not_available">OmniJaws i padisponueshëm</string>
+  <string name="omnijaws_service_last_update">Përditësimi i fundit:</string>
   <!-- Weather string format in expanded statusbar header -->
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Shiriti i lundrimit</string>
+  <string name="quick_settings_smartbar">Shiriti Smart</string>
+  <string name="quick_settings_fling">Nis</string>
+  <string name="quick_settings_navigation_disabled">I/E çaktivizuar</string>
+  <string name="quick_settings_sound_search">Kërkim zanor</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Ndalim i detyruar?</string>
+  <string name="force_stop_dlg_text">Ndalimi në mënyrë të detyruar i një aplikacioni, mund të shkaktojë probleme.</string>
+  <string name="dlg_ok">@android:varg/ok</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
+  <string name="kill">Ndal aplikacionin</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">Karikimi Turbo i lidhur (<xliff:g id="koha_e_mbetur_e_karikimit">%s</xliff:g> deri sa të karikohet plotësisht)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">Karikimi Turbo i lidhur</string>
+  <string name="keyguard_plugged_in_turbo_charging">Karikim Turbo</string>
+  <!-- Theme tile -->
+  <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
 </resources>
