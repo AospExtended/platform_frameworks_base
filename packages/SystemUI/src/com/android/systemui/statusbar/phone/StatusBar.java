@@ -6769,11 +6769,6 @@ public class StatusBar extends SystemUI implements DemoMode,
                     Settings.System.FORCE_AMBIENT_FOR_MEDIA))) {
                 setForceAmbient();
             } else if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.SHOW_BATTERY_PERCENT))
-                    || uri.equals(Settings.Secure.getUriFor(
-                    Settings.Secure.STATUS_BAR_BATTERY_STYLE))) {
-                updateBatterySettings();
-            } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_TICKER_ANIMATION_MODE))) {
                 updateTickerAnimation();
             } else if (uri.equals(Settings.System.getUriFor(
@@ -6796,12 +6791,12 @@ public class StatusBar extends SystemUI implements DemoMode,
             updateRecentsMode();
             updateTheme();
             setForceAmbient();
-            updateBatterySettings();
             updateTickerAnimation();
             setQsPanelOptions();
         }
     }
 
+    // Called from CollapsedStatusBarFragment observer
     public void updateBatterySettings() {
         if (mStatusBarView != null) {
             mStatusBarView.updateBatterySettings();

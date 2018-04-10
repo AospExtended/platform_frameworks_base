@@ -33,7 +33,6 @@
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:singleLine="true"
-        android:paddingEnd="@dimen/status_bar_left_clock_end_padding"
         android:layout_marginEnd="4dp"
         android:gravity="center"
         android:visibility="gone"
@@ -62,8 +61,6 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:singleLine="true"
-        android:paddingStart="@dimen/status_bar_clock_starting_padding"
-        android:paddingEnd="@dimen/status_bar_clock_end_padding"
         android:gravity="center_vertical|start"
         systemui:showDark="false"
         />

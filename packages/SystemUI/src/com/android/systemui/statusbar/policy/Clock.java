@@ -25,6 +25,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.database.ContentObserver;
 import android.graphics.Rect;
@@ -43,6 +44,7 @@ import android.view.Display;
 import android.view.View;
 import android.widget.TextView;
 
+import com.android.settingslib.graph.BatteryMeterDrawableBase;
 import com.android.systemui.DemoMode;
 import com.android.systemui.Dependency;
 import com.android.systemui.FontSizeUtils;
@@ -109,6 +111,8 @@ public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
     private Handler mSecondsHandler;
 
     private boolean mQuickStatusBarHeader;
+
+    private int mBatteryStyle = BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT;
 
     public Clock(Context context) {
         this(context, null);
@@ -256,13 +260,39 @@ public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
     @Override
     public void onDensityOrFontScaleChanged() {
         FontSizeUtils.updateFontSize(this, R.dimen.status_bar_clock_size);
+        setPadding();
+    }
+
+    private void setPadding() {
+        Resources res = mContext.getResources();
+        int startPadding = mClockStyle == STYLE_CLOCK_LEFT ? res.getDimensionPixelSize(
+                        R.dimen.status_bar_left_clock_start_padding_normal) : res.getDimensionPixelSize(
+                        R.dimen.status_bar_clock_starting_padding);
+        int endPadding = mClockStyle == STYLE_CLOCK_LEFT ? res.getDimensionPixelSize(
+                        R.dimen.status_bar_left_clock_end_padding) : res.getDimensionPixelSize(
+                        R.dimen.status_bar_clock_end_padding);
+        if (!mQuickStatusBarHeader && mClockStyle == STYLE_CLOCK_LEFT) {
+            switch (mBatteryStyle) {
+                case BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT:
+                    startPadding = res.getDimensionPixelSize(
+                        R.dimen.status_bar_left_clock_start_padding_max);
+                case BatteryMeterDrawableBase.BATTERY_STYLE_HIDDEN:
+                case BatteryMeterDrawableBase.BATTERY_STYLE_TEXT:
+                    startPadding = res.getDimensionPixelSize(
+                        R.dimen.status_bar_left_clock_start_padding_more);
+                    break;
+                case BatteryMeterDrawableBase.BATTERY_STYLE_CIRCLE:
+                case BatteryMeterDrawableBase.BATTERY_STYLE_DOTTED_CIRCLE:
+                case BatteryMeterDrawableBase.BATTERY_STYLE_BIG_CIRCLE:
+                case BatteryMeterDrawableBase.BATTERY_STYLE_BIG_DOTTED_CIRCLE:
+                    startPadding = res.getDimensionPixelSize(
+                        R.dimen.status_bar_left_clock_start_padding_normal);
+                    break;
+            }
+        }
+
         setPaddingRelative(
-                mContext.getResources().getDimensionPixelSize(
-                        R.dimen.status_bar_clock_starting_padding),
-                0,
-                mContext.getResources().getDimensionPixelSize(
-                        R.dimen.status_bar_clock_end_padding),
-                0);
+                startPadding, 0, endPadding, 0);
     }
 
     private void updateShowSeconds() {
@@ -411,6 +441,11 @@ public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
     public void updateSettings() {
         ContentResolver resolver = mContext.getContentResolver();
 
+        mBatteryStyle = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.STATUS_BAR_BATTERY_STYLE,
+                BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT,
+                UserHandle.USER_CURRENT);
+
         mShowClock = Settings.System.getIntForUser(resolver,
                 Settings.System.STATUS_BAR_CLOCK, 1,
                 UserHandle.USER_CURRENT) == 1;
@@ -449,6 +484,7 @@ public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
 
         updateClockVisibility();
         updateStatus();
+        setPadding();
     }
 
     private void updateStatus() {
@@ -518,5 +554,6 @@ public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
 
     public void setIsQshb(boolean qshb) {
         mQuickStatusBarHeader = qshb;
+        setPadding();
     }
 }
