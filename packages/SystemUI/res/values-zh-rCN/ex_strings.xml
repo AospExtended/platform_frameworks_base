@@ -165,8 +165,8 @@
   <string name="aex_logo_title">AEX 图标</string>
   <string name="aex_logo_summary">让每个看到你手机屏幕的人都知道你正在使用 AEX</string>
   <!-- HW Keys Tile -->
-  <string name="accessibility_quick_settings_hwkeys_on">实体按键已启用</string>
-  <string name="accessibility_quick_settings_hwkeys_off">实体按键已禁用</string>
+  <string name="accessibility_quick_settings_hwkeys_on">实体按键</string>
+  <string name="accessibility_quick_settings_hwkeys_off">实体按键</string>
   <string name="quick_settings_hwkeys_label">实体按键</string>
   <string name="status_bar_data_saver">流量节省程序</string>
   <!-- Text to use when the number in a notification info is too large
