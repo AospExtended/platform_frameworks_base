@@ -64,6 +64,9 @@ public class SoundTile extends QSTileImpl<BooleanState> {
 
     @Override
     public void handleSetListening(boolean listening) {
+        if (mAudioManager == null) {
+            return;
+        }
         if (mListening == listening) return;
         mListening = listening;
         if (listening) {
@@ -119,6 +122,9 @@ public class SoundTile extends QSTileImpl<BooleanState> {
 
     @Override
     protected void handleUpdateState(BooleanState state, Object arg) {
+        if (mAudioManager == null) {
+            return;
+        }
         switch (mAudioManager.getRingerModeInternal()) {
             case AudioManager.RINGER_MODE_NORMAL:
                 state.icon = ResourceIcon.get(R.drawable.ic_qs_ringer_audible);
