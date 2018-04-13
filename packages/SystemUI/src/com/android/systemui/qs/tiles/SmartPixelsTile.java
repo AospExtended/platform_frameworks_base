@@ -82,16 +82,21 @@ public class SmartPixelsTile extends QSTileImpl<BooleanState> {
                 0, UserHandle.USER_CURRENT) == 1);
         mLowPowerMode = (Settings.Global.getInt(
                 mContext.getContentResolver(), Settings.Global.LOW_POWER_MODE, 0) == 1);
-        if (!mLowPowerMode || !mSmartPixelsOnPowerSave) {
-            if (!mSmartPixelsEnable) {
-                Settings.System.putIntForUser(mContext.getContentResolver(),
-                        Settings.System.SMART_PIXELS_ENABLE,
-                        1, UserHandle.USER_CURRENT);
-            } else {
-                Settings.System.putIntForUser(mContext.getContentResolver(),
-                        Settings.System.SMART_PIXELS_ENABLE,
-                        0, UserHandle.USER_CURRENT);
-            }
+        if (mLowPowerMode && mSmartPixelsOnPowerSave) {
+            Settings.System.putIntForUser(mContext.getContentResolver(),
+                    Settings.System.SMART_PIXELS_ON_POWER_SAVE,
+                    0, UserHandle.USER_CURRENT);
+            Settings.System.putIntForUser(mContext.getContentResolver(),
+                    Settings.System.SMART_PIXELS_ENABLE,
+                    0, UserHandle.USER_CURRENT);
+        } else if (!mSmartPixelsEnable) {
+            Settings.System.putIntForUser(mContext.getContentResolver(),
+                    Settings.System.SMART_PIXELS_ENABLE,
+                    1, UserHandle.USER_CURRENT);
+        } else {
+            Settings.System.putIntForUser(mContext.getContentResolver(),
+                    Settings.System.SMART_PIXELS_ENABLE,
+                    0, UserHandle.USER_CURRENT);
         }
         refreshState();
     }
