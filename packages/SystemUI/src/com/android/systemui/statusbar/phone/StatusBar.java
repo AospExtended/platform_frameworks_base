@@ -1966,7 +1966,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             // Mark as seen immediately
             setNotificationShown(shadeEntry.notification);
         } else {
-            tick(shadeEntry.notification, true, false, null);
+            tick(shadeEntry.notification, true, false, null, null);
         }
         addNotificationViews(shadeEntry);
         // Recalculate the position of the sliding windows and the titles.
@@ -1994,11 +1994,17 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         if (mEntryToRefresh == entry) {
             final Notification n = entry.notification.getNotification();
+            String notificationText = null;
+            final String title = n.extras.getString(Notification.EXTRA_TITLE);
+            final String text = n.extras.getString(Notification.EXTRA_TEXT);
+            if (!TextUtils.isEmpty(title) && !TextUtils.isEmpty(text)) {
+                notificationText = title + " - " + text;
+            }
             if (mTickerEnabled == 2) {
-                tick(entry.notification, true, true, mMediaMetadata);
+                tick(entry.notification, true, true, mMediaMetadata, notificationText);
             }
             if (isAmbientContainerAvailable()) {
-                ((AmbientIndicationContainer)mAmbientIndicationContainer).setIndication(mMediaMetadata);
+                ((AmbientIndicationContainer)mAmbientIndicationContainer).setIndication(mMediaMetadata, notificationText);
             }
             final int[] colors = {n.backgroundColor, n.foregroundColor,
                     n.primaryTextColor, n.secondaryTextColor};
@@ -2011,8 +2017,6 @@ public class StatusBar extends SystemUI implements DemoMode,
                 if (icon != null) {
                     drawable = icon.loadDrawable(mContext);
                 }
-                String title = n.extras.getString(Notification.EXTRA_TITLE);
-                String text = n.extras.getString(Notification.EXTRA_TEXT);
                 mSlimRecents.setMedia(n.isColorizedMedia(), colors, drawable, mMediaMetadata, title, text);
             }
         }
@@ -3999,7 +4003,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         if (showMenu) setLightsOn(true);
     }
 
-    private void tick(StatusBarNotification n, boolean firstTime, boolean isMusic, MediaMetadata metaMediaData) {
+    private void tick(StatusBarNotification n, boolean firstTime, boolean isMusic, MediaMetadata metaMediaData, String notificationText) {
         if (mTicker == null || mTickerEnabled == 0) return;
 
         // no ticking on keyguard, we have carrier name in the statusbar
@@ -4022,7 +4026,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 && mStatusBarWindow.getWindowToken() != null) {
             if (0 == (mDisabled1 & (StatusBarManager.DISABLE_NOTIFICATION_ICONS
                     | StatusBarManager.DISABLE_NOTIFICATION_TICKER))) {
-                mTicker.addEntry(n, isMusic, metaMediaData);
+                mTicker.addEntry(n, isMusic, metaMediaData, notificationText);
             }
         }
     }
@@ -6901,7 +6905,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 Settings.System.FORCE_AMBIENT_FOR_MEDIA, 0,
                 UserHandle.USER_CURRENT);
         if (isAmbientContainerAvailable()) {
-            ((AmbientIndicationContainer)mAmbientIndicationContainer).setIndication(mMediaMetadata);
+            ((AmbientIndicationContainer)mAmbientIndicationContainer).setIndication(mMediaMetadata, null);
         }
     }
 
@@ -8530,7 +8534,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         if (updateTicker && isForCurrentUser) {
             haltTicker();
             if (!shouldPeek) {
-                tick(notification, false, false, null);
+                tick(notification, false, false, null, null);
             }
         }
 
