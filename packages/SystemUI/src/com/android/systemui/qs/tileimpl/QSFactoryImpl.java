@@ -27,6 +27,7 @@ import com.android.systemui.plugins.qs.QSTileView;
 import com.android.systemui.qs.QSTileHost;
 import com.android.systemui.qs.external.CustomTile;
 import com.android.systemui.qs.tiles.AirplaneModeTile;
+import com.android.systemui.qs.tiles.AODTile;
 import com.android.systemui.qs.tiles.BatterySaverTile;
 import com.android.systemui.qs.tiles.BluetoothTile;
 import com.android.systemui.qs.tiles.CastTile;
@@ -87,6 +88,9 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<UsbTetherTile> mUsbTetherTileProvider;
     private final Provider<SyncTile> mSyncTileProvider;
 
+    // Additions
+    private final Provider<AODTile> mAODTileProvider;
+
     private QSTileHost mHost;
 
     @Inject
@@ -112,7 +116,8 @@ public class QSFactoryImpl implements QSFactory {
             Provider<CaffeineTile> caffeineTileProvider,
             Provider<AmbientDisplayTile> ambientDisplayTileProvider,
             Provider<UsbTetherTile> usbTetherTileProvider,
-            Provider<SyncTile> syncTileProvider) {
+            Provider<SyncTile> syncTileProvider,
+            Provider<AODTile> aodTileProvider) {
         mWifiTileProvider = wifiTileProvider;
         mBluetoothTileProvider = bluetoothTileProvider;
         mCellularTileProvider = cellularTileProvider;
@@ -136,6 +141,7 @@ public class QSFactoryImpl implements QSFactory {
         mAmbientDisplayTileProvider = ambientDisplayTileProvider;
         mUsbTetherTileProvider = usbTetherTileProvider;
         mSyncTileProvider = syncTileProvider;
+        mAODTileProvider = aodTileProvider;
     }
 
     public void setHost(QSTileHost host) {
@@ -203,6 +209,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new ScreenshotTile(mHost);
             case "heads_up":
                 return new HeadsUpTile(mHost);
+            case "aod":
+                return mAODTileProvider.get();
         }
 
         // Intent tiles.

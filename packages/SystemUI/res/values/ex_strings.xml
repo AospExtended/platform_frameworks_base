@@ -97,5 +97,7 @@
     <!-- Running service button -->
     <string name="accessibility_quick_settings_running_services">Open Running Services screen.</string>
 
+    <!-- Always on display QS tile -->
+    <string name="quick_settings_aod_label">Always on display</string>
 </resources>
 
