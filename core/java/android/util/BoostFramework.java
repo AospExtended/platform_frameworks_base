@@ -62,6 +62,7 @@ public class BoostFramework {
     public static final int VENDOR_HINT_MTP_BOOST = 0x00001086;
     public static final int VENDOR_HINT_DRAG_BOOST = 0x00001087;
     public static final int VENDOR_HINT_PACKAGE_INSTALL_BOOST = 0x00001088;
+    public static final int VENDOR_HINT_ROTATION_LATENCY_BOOST = 0x00001089;
     //perf events
     public static final int VENDOR_HINT_FIRST_DRAW = 0x00001042;
     public static final int VENDOR_HINT_TAP_EVENT = 0x00001043;
