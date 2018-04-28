@@ -90,6 +90,9 @@
     <color name="notification_guts_bg_color">#eeeeee</color>
     <color name="notification_snooze_text">#dd000000</color>
 
+    <!-- Two target preference vertical divider color -->
+    <color name="list_divider_dark">#64000000</color>
+
 </resources>
 
 
