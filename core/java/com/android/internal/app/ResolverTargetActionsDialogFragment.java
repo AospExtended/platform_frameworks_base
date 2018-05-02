@@ -42,6 +42,7 @@ public class ResolverTargetActionsDialogFragment extends DialogFragment
     // Sync with R.array.resolver_target_actions_* resources
     private static final int TOGGLE_PIN_INDEX = 0;
     private static final int APP_INFO_INDEX = 1;
+    private static final int APP_BLACKLIST = 2;
 
     public ResolverTargetActionsDialogFragment() {
     }
@@ -91,6 +92,19 @@ public class ResolverTargetActionsDialogFragment extends DialogFragment
                         .setData(Uri.fromParts("package", name.getPackageName(), null))
                         .addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
                 startActivity(in);
+                break;
+            case APP_BLACKLIST:
+                final String blacklist = Settings.System.getString(getContext().getContentResolver(),
+                        Settings.System.CHOOSER_ACTIVITY_BLACKLIST);
+                String newList = "";
+                if (blacklist != null && !blacklist.isEmpty()) {
+                    newList += blacklist + "|";
+                }
+                newList += name.getPackageName();
+                Settings.System.putString(getContext().getContentResolver(),
+                        Settings.System.CHOOSER_ACTIVITY_BLACKLIST, newList);
+
+                getActivity().recreate();
                 break;
         }
         dismiss();
