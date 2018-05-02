@@ -29,6 +29,8 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.RemoteException;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.util.Log;
 import com.android.internal.annotations.GuardedBy;
 import com.android.internal.annotations.VisibleForTesting;
@@ -37,7 +39,9 @@ import java.lang.InterruptedException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.CountDownLatch;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * A helper for the ResolverActivity that exposes methods to retrieve, filter and sort its list of
@@ -112,7 +116,17 @@ public class ResolverListController {
             int totalSize = infos.size();
             for (int j = totalSize - 1; j >= 0 ; j--) {
                 ResolveInfo info = infos.get(j);
-                if (info.activityInfo != null && !info.activityInfo.exported) {
+                final String blacklist = Settings.System.getStringForUser(
+                        mContext.getContentResolver(), Settings.System.CHOOSER_ACTIVITY_BLACKLIST,
+                        UserHandle.USER_CURRENT);
+                final Set<String> list = new HashSet<String>();
+                if (blacklist != null) {
+                    for (String app : blacklist.split("\\|")) {
+                        list.add(app);
+                    }
+                }
+                if (info.activityInfo != null && (!info.activityInfo.exported
+                        || (!list.isEmpty() && list.contains(info.activityInfo.packageName)))) {
                     infos.remove(j);
                 }
             }
