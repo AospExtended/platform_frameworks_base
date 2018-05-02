@@ -177,7 +177,8 @@
     <string name="accessibility_quick_settings_cpuinfo_changed_off">CPU Info turned off</string>
     <string name="accessibility_quick_settings_cpuinfo_changed_on">CPU Info turned on</string>
 
-    <!-- Reboot/Recovery QS tile -->
+    <!-- Poweroff/Reboot/Recovery QS tile -->
+    <string name="quick_settings_poweroff_label">Power off</string>
     <string name="quick_settings_reboot_label">Reboot</string>
     <string name="quick_settings_reboot_recovery_label">Recovery</string>
 </resources>
