@@ -89,6 +89,9 @@ public class QSSecurityFooter implements OnClickListener, DialogInterface.OnClic
         mHandler = new H(Dependency.get(Dependency.BG_LOOPER));
         mDivider = qsPanel == null ? null : qsPanel.getDivider();
         mUm = (UserManager) mContext.getSystemService(Context.USER_SERVICE);
+        mShowWarnings = Settings.System.getIntForUser(
+                mContext.getContentResolver(), Settings.System.QS_FOOTER_WARNINGS, 1,
+                UserHandle.USER_CURRENT) == 1;
     }
 
     public void setHostEnvironment(QSTileHost host) {
