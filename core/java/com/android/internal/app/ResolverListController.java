@@ -39,9 +39,7 @@ import java.lang.InterruptedException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.CountDownLatch;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * A helper for the ResolverActivity that exposes methods to retrieve, filter and sort its list of
@@ -119,14 +117,8 @@ public class ResolverListController {
                 final String blacklist = Settings.System.getStringForUser(
                         mContext.getContentResolver(), Settings.System.CHOOSER_ACTIVITY_BLACKLIST,
                         UserHandle.USER_CURRENT);
-                final Set<String> list = new HashSet<String>();
-                if (blacklist != null) {
-                    for (String app : blacklist.split("\\|")) {
-                        list.add(app);
-                    }
-                }
                 if (info.activityInfo != null && (!info.activityInfo.exported
-                        || (!list.isEmpty() && list.contains(info.activityInfo.packageName)))) {
+                        || (!blacklist.isEmpty() && blacklist.toLowerCase().contains(info.activityInfo.packageName.toLowerCase())))) {
                     infos.remove(j);
                 }
             }
