@@ -31,6 +31,7 @@ import android.content.pm.ResolveInfo;
 import android.os.RemoteException;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.util.Log;
 import com.android.internal.annotations.GuardedBy;
 import com.android.internal.annotations.VisibleForTesting;
@@ -118,7 +119,7 @@ public class ResolverListController {
                         mContext.getContentResolver(), Settings.System.CHOOSER_ACTIVITY_BLACKLIST,
                         UserHandle.USER_CURRENT);
                 if (info.activityInfo != null && (!info.activityInfo.exported
-                        || (!blacklist.isEmpty() && blacklist.toLowerCase().contains(info.activityInfo.packageName.toLowerCase())))) {
+                        || (!TextUtils.isEmpty(blacklist) && blacklist.toLowerCase().contains(info.activityInfo.packageName.toLowerCase())))) {
                     infos.remove(j);
                 }
             }

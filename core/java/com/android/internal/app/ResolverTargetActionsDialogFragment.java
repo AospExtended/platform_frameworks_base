@@ -27,6 +27,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.text.TextUtils;
 
 import com.android.internal.R;
 
@@ -97,7 +98,7 @@ public class ResolverTargetActionsDialogFragment extends DialogFragment
                 final String blacklist = Settings.System.getString(getContext().getContentResolver(),
                         Settings.System.CHOOSER_ACTIVITY_BLACKLIST);
                 String newList = "";
-                if (blacklist != null && !blacklist.isEmpty()) {
+                if (!TextUtils.isEmpty(blacklist)) {
                     newList += blacklist + "|";
                 }
                 newList += name.getPackageName();
