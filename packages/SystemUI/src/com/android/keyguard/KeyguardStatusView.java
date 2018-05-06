@@ -26,6 +26,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.VectorDrawable;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.UserHandle;
@@ -55,6 +56,7 @@ import android.widget.TextView;
 
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.widget.LockPatternUtils;
+import com.android.settingslib.Utils;
 //import com.android.systemui.ChargingView;
 import com.android.systemui.doze.DozeLog;
 import com.android.systemui.omni.OmniJawsClient;
@@ -404,22 +406,32 @@ public class KeyguardStatusView extends GridLayout implements
                     mWeatherClient.queryWeather();
                     mWeatherData = mWeatherClient.getWeatherInfo();
                     mWeatherCity.setText(mWeatherData.city);
-                    mWeatherConditionImage.setImageDrawable(
-                        mWeatherClient.getWeatherConditionImage(mWeatherData.conditionCode));
+                    Drawable d = mWeatherClient.getWeatherConditionImage(mWeatherData.conditionCode);
+                    mWeatherConditionImage.setImageTintList((d instanceof VectorDrawable) ? ColorStateList.valueOf(getTintColor()) : null);
+                    mWeatherConditionImage.setImageDrawable(d);
                     mWeatherCurrentTemp.setText(mWeatherData.temp + mWeatherData.tempUnits);
                     mWeatherConditionText.setText(mWeatherData.condition);
                     updateWeatherSettings(false);
                 } else {
-                    mWeatherCity.setText(null);
-                    mWeatherConditionImage.setImageDrawable(mContext
-                        .getResources().getDrawable(R.drawable.keyguard_weather_default_off));
-                    mWeatherCurrentTemp.setText(null);
-                    mWeatherConditionText.setText(null);
-                    updateWeatherSettings(true);
+                    setErrorView();
                 }
        } catch(Exception e) {
           // Do nothing
        }
+    }
+
+    private void setErrorView() {
+        mWeatherCity.setText(null);
+        Drawable d = mContext.getResources().getDrawable(R.drawable.keyguard_weather_default_off);
+        mWeatherConditionImage.setImageTintList((d instanceof VectorDrawable) ? ColorStateList.valueOf(getTintColor()) : null);
+        mWeatherConditionImage.setImageDrawable(d);
+        mWeatherCurrentTemp.setText("");
+        mWeatherConditionText.setText("");
+        updateWeatherSettings(true);
+    }
+
+    private int getTintColor() {
+        return Utils.getColorAttr(mContext, R.attr.wallpaperTextColor);
     }
 
     @Override
@@ -636,6 +648,14 @@ public class KeyguardStatusView extends GridLayout implements
     @Override
     public void weatherError(int errorReason) {
         if (DEBUG) Log.d(TAG, "weatherError " + errorReason);
+        // since this is shown in ambient and lock screen
+        // it would look bad to show every error since the
+        // screen-on revovery of the service had no chance
+        // to run fast enough
+        // so only show the disabled state
+        if (errorReason == OmniJawsClient.EXTRA_ERROR_DISABLED) {
+            setErrorView();
+        }
     }
 
     public void updateAll() {
