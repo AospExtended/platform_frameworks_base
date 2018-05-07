@@ -55,4 +55,5 @@ public interface RecentsComponent {
     void addSbCallbacks();
 
     IconsHandler getIconsHandler();
+    void setCurrentIconPack(String currentIconPack);
 }

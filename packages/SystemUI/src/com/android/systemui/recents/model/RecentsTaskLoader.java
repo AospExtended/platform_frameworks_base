@@ -112,10 +112,9 @@ class BackgroundTaskLoader implements Runnable {
     private IconsHandler mIconsHandler;
 
     /** Constructor, creates a new loading thread that loads task resources in the background */
-    public BackgroundTaskLoader(IconsHandler ih, TaskResourceLoadQueue loadQueue,
+    public BackgroundTaskLoader(TaskResourceLoadQueue loadQueue,
             TaskKeyLruCache<Drawable> iconCache, BitmapDrawable defaultIcon,
             OnIdleChangedListener onIdleChangedListener) {
-        mIconsHandler = ih;
         mLoadQueue = loadQueue;
         mIconCache = iconCache;
         mDefaultIcon = defaultIcon;
@@ -212,7 +211,7 @@ class BackgroundTaskLoader implements Runnable {
             if (cachedIcon == null) {
                 ActivityInfo info = ssp.getActivityInfo(
                         t.key.getComponent(), t.key.userId);
-                if (info != null) {
+                if (info != null && mIconsHandler != null) {
                     cachedIcon = mIconsHandler.getIconFromHandler(mContext, info);
                 }
 
@@ -252,6 +251,10 @@ class BackgroundTaskLoader implements Runnable {
 
     interface OnIdleChangedListener {
         void onIdleChanged(boolean idle);
+    }
+
+    public void setIconsHandler(IconsHandler ih) {
+        mIconsHandler = ih;
     }
 }
 
@@ -299,8 +302,7 @@ public class RecentsTaskLoader {
         }
     };
 
-    public RecentsTaskLoader(Context context, IconsHandler ih) {
-        mIconsHandler = ih;
+    public RecentsTaskLoader(Context context) {
         Resources res = context.getResources();
         mDefaultTaskBarBackgroundColor =
                 context.getColor(R.color.recents_task_bar_default_background_color);
@@ -326,12 +328,17 @@ public class RecentsTaskLoader {
         mContentDescriptionCache = new TaskKeyLruCache<>(numRecentTasks,
                 mClearActivityInfoOnEviction);
         mActivityInfoCache = new LruCache(numRecentTasks);
-        mLoader = new BackgroundTaskLoader(mIconsHandler, mLoadQueue, mIconCache, mDefaultIcon,
+        mLoader = new BackgroundTaskLoader(mLoadQueue, mIconCache, mDefaultIcon,
                 mHighResThumbnailLoader::setTaskLoadQueueIdle);
     }
 
     public IconsHandler getIconsHandler() {
         return mIconsHandler;
+    }
+
+    public void setIconsHandler(IconsHandler ih) {
+        mIconsHandler = ih;
+        mLoader.setIconsHandler(ih);
     }
 
     /** Returns the size of the app icon cache. */
@@ -551,7 +558,9 @@ public class RecentsTaskLoader {
 
             // Return and cache the icon package icon for this app, if available
             if (activityInfo != null) {
-                icon = mIconsHandler.getIconFromHandler(context, activityInfo);
+                if (mIconsHandler != null) {
+                    icon = mIconsHandler.getIconFromHandler(context, activityInfo);
+                }
                 if (icon != null) {
                     mIconCache.put(taskKey, icon);
                     return icon;
