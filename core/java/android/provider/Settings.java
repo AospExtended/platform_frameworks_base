@@ -4026,6 +4026,12 @@ public final class Settings {
          */
         public static final String QS_FOOTER_WARNINGS = "qs_footer_warnings";
 
+        /**
+         * Whether to show or hide the running services icon
+         * @hide
+         */
+        public static final String QS_RUNNING_SERVICES_TOGGLE = "qs_running_services_toggle";
+
 
         /**
          * Whether allowing pocket service to register sensors and dispatch informations.
