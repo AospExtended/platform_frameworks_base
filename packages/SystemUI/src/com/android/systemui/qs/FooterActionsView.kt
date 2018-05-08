@@ -21,6 +21,7 @@ import android.content.res.Configuration
 import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.RippleDrawable
+import android.provider.Settings;
 import android.os.UserManager
 import android.util.AttributeSet
 import android.view.View
@@ -147,8 +148,14 @@ class FooterActionsView(context: Context?, attrs: AttributeSet?) : LinearLayout(
         multiUserSwitch.visibility = if (multiUserEnabled) VISIBLE else GONE
         val isDemo = UserManager.isDeviceInDemoMode(context)
         settingsButton.visibility = if (isDemo) INVISIBLE else VISIBLE
-        runningServicesButton.visibility = if (isDemo) INVISIBLE else VISIBLE
+        runningServicesButton.visibility = if (isRunningServicesEnabled) VISIBLE else GONE
     }
+
+    val isRunningServicesEnabled: Boolean
+        get() = Settings.System.getInt(
+            mContext.getContentResolver(),
+            Settings.System.QS_RUNNING_SERVICES_TOGGLE, 0
+        ) === 1
 
     fun onUserInfoChanged(picture: Drawable?, isGuestUser: Boolean) {
         var pictureToSet = picture
