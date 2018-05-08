@@ -106,6 +106,7 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     private View mDateTimeGroup;
     private boolean mKeyguardShowing;
     private TouchAnimator mAlarmAnimator;
+    private boolean hasRunningServices;
 
     public QSFooterImpl(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -326,13 +327,14 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         updateAlarmVisibilities();
         mSettingsContainer.findViewById(R.id.tuner_icon).setVisibility(View.INVISIBLE);
         final boolean isDemo = UserManager.isDeviceInDemoMode(mContext);
+        hasRunningServices = !isRunningServicesDisabled();
 
         mMultiUserSwitch.setVisibility(mExpanded && mMultiUserSwitch.hasMultipleUsers() && !isDemo
                 ? View.VISIBLE : View.INVISIBLE);
 
         mEdit.setVisibility(isDemo || !mExpanded ? View.INVISIBLE : View.VISIBLE);
 
-        mRunningServicesButton.setVisibility(!isDemo && mExpanded ? View.VISIBLE : View.INVISIBLE);
+        mRunningServicesButton.setVisibility(hasRunningServices ? !isDemo && mExpanded ? View.VISIBLE : View.INVISIBLE : View.GONE);
     }
 
     private void updateListeners() {
@@ -357,6 +359,11 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         if (mQsPanel != null) {
             mMultiUserSwitch.setQsPanel(qsPanel);
         }
+    }
+
+    public boolean isRunningServicesDisabled() {
+        return Settings.System.getInt(mContext.getContentResolver(),
+            Settings.System.QS_RUNNING_SERVICES_TOGGLE, 0) == 1;
     }
 
     @Override
