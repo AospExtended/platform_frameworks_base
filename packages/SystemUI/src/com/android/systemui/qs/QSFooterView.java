@@ -279,7 +279,13 @@ public class QSFooterView extends FrameLayout {
         mSettingsButton.setVisibility(isDemo || !mExpanded ? View.INVISIBLE : View.VISIBLE);
 
         mBuildText.setVisibility(mExpanded && mShouldShowBuildText ? View.VISIBLE : View.INVISIBLE);
-        mRunningServicesButton.setVisibility(!isDemo && mExpanded ? View.VISIBLE : View.INVISIBLE);
+        mRunningServicesButton.setVisibility(isRunningServicesEnabled()
+                ? !isDemo && mExpanded ? View.VISIBLE : View.INVISIBLE : View.GONE);
+    }
+
+    public boolean isRunningServicesEnabled() {
+        return Settings.System.getInt(mContext.getContentResolver(),
+            Settings.System.QS_RUNNING_SERVICES_TOGGLE, 0) == 1;
     }
 
     private boolean showUserSwitcher(boolean multiUserEnabled) {
