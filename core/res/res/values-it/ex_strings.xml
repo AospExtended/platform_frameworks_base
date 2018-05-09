@@ -45,4 +45,5 @@
   <string name="animation_grow_shrink_right">Espandi (da destra)</string>
   <string name="animation_random">Casuale</string>
   <string name="action_null">Vuoto</string>
+  <!-- Pocket Lock -->
 </resources>

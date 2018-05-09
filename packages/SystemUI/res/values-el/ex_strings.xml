@@ -203,4 +203,5 @@
   <string name="keyguard_plugged_in_turbo_charging">Γρήγορη φόρτιση</string>
   <!-- Theme tile -->
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <!-- Smart pixels QS tile -->
 </resources>

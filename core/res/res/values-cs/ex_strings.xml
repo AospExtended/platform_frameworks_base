@@ -45,4 +45,5 @@
   <string name="animation_grow_shrink_right">Růst (vpravo)</string>
   <string name="animation_random">Náhodně</string>
   <string name="action_null">Prázdná</string>
+  <!-- Pocket Lock -->
 </resources>

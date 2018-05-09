@@ -36,6 +36,11 @@
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">ഇൗ ആപ് PiP സപ്പോർട്ട് ചെയ്യുന്നില്ല</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">അന്യോജ്യമായ പ്രകാശം</string>
+  <string name="accessibility_quick_settings_ambient_display_off">അന്യോജ്യമായ പ്രകാശം ഓഫ്.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">അന്യോജ്യമായ പ്രകാശം ഓൺ.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">അന്യോജ്യമായ പ്രകാശം ഓഫ് ചെയ്തു.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">അന്യോജ്യമായ പ്രകാശം ഓൺ ചെയ്തു.</string>
   <!-- Always on Display Tile -->
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
@@ -162,15 +167,39 @@
   <!-- QS customizer -->
   <string name="drag_or_tap_to_add_tiles">ടൈൽ ചേർക്കാൻ വലിക്കുകയോ തൊടുകയോ ചെയ്യുക</string>
   <!-- AEX logo -->
+  <string name="aex_logo_title">AEX ലോഗോ</string>
+  <string name="aex_logo_summary">നിങ്ങളുടെ സ്ക്രീൻ കാണുമ്പോൾ നിങ്ങൾ AEX ഉപയോഗിക്കുന്നുവെന്ന് എല്ലാവർക്കുമറിയാം</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">HW കീസ് ഓൺ</string>
+  <string name="accessibility_quick_settings_hwkeys_off">HW കീസ് ഓഫ്</string>
+  <string name="quick_settings_hwkeys_label">HW കീസ്</string>
+  <string name="status_bar_data_saver">ഡാറ്റ സേവർ</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">തെറ്റ്</string>
+  <string name="omnijaws_service_unkown">കാലാവസ്ഥാ വിവരം ഇല്ല</string>
+  <string name="omnijaws_service_error_long">കാലാവസ്ഥ വിവരം ലോഡ് ചെയ്യാൻ കോഴപ്പം</string>
+  <string name="omnijaws_service_disabled">സേവനം പ്രവർത്തനരഹിതമാക്കി</string>
+  <string name="omnijaws_detail_header">കാലാവസ്ഥ</string>
+  <string name="omnijaws_label_default">കാലാവസ്ഥ</string>
+  <string name="omnijaws_current_text">ഇപ്പൊ</string>
+  <string name="omnijaws_package_not_available">Omnijaws ലഭ്യമല്ല</string>
+  <string name="omnijaws_service_last_update">കഴിഞ്ഞ അപ്ഡേറ്റ്:</string>
   <!-- Weather string format in expanded statusbar header -->
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">നാവിഗേഷൻ ബാർ</string>
+  <string name="quick_settings_smartbar">SmartBar</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_navigation_default">സ്റ്റോക്ക്</string>
+  <string name="quick_settings_navigation_disabled">പ്രവർത്തനരഹിതമാക്കി</string>
+  <string name="quick_settings_sound_search">ശബ്ദ തിരച്ചിൽ</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">നിർബന്ധിച്ച് നിർത്തണോ?</string>
+  <string name="force_stop_dlg_text">നിങ്ങൾ ഒരു അപ്ലിക്കേഷൻ നിർബന്ധിതമായി നിർത്തിയാൽ, അത് ശരിയായി പ്രവർത്തിക്കാനിടയില്ല.</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
   <!-- Theme tile -->
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <!-- Smart pixels QS tile -->
 </resources>

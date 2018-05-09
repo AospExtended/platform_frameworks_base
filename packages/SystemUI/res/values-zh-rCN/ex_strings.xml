@@ -36,11 +36,21 @@
   <string name="quick_settings_pip_label">画中画</string>
   <string name="quick_settings_pip_tile_app_na">此应用程序不支持画中画模式</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">环境显示</string>
+  <string name="accessibility_quick_settings_ambient_display_off">关闭环境显示</string>
+  <string name="accessibility_quick_settings_ambient_display_on">开启环境显示</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">环境显示已关闭</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">环境显示已开启</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">总是显示</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">关闭总是显示</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">开启总是显示</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">总是显示已关闭</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">总是显示已开启</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">保持亮屏</string>
   <string name="accessibility_quick_settings_caffeine_off">关闭保持亮屏</string>
@@ -236,4 +246,6 @@
   <string name="theme_info_title">这是什么?</string>
   <string name="theme_info_message">主题瓷贴虽然独特但却易于使用，它允许用户更改系统强调色或样式。\n\n为了更改强调色和样式，只需简单地长按瓷贴，然后再次按下即可从所提供的选项中进行选择。</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">显示正在运行的服务</string>
+  <!-- Smart pixels QS tile -->
 </resources>

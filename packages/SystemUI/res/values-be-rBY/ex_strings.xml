@@ -36,11 +36,21 @@
   <string name="quick_settings_pip_label">Відарыс у відарысе</string>
   <string name="quick_settings_pip_tile_app_na">Праграма не падтрымлівае рэжым \"Відарыс у відарысе\"</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Індыкацыя падзей</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Індыкацыя падзей адкл.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Індыкацыя падзей укл.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Індыкацыя падзей адключана.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Індыкацыя падзей уключана.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Заўсёды ўключаны дысплей</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Заўсёды ўключаны дысплей адкл.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Заўсёды ўключаны дысплей укл.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Заўсёды ўключаны дысплей адключана.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Заўсёды ўключаны дысплей уключаны.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Забарона сну</string>
   <string name="accessibility_quick_settings_caffeine_off">Забарона сну адкл.</string>
@@ -202,5 +212,40 @@
   <string name="keyguard_plugged_in_turbo_power_charging">Падлучэнне хуткай зарадкі</string>
   <string name="keyguard_plugged_in_turbo_charging">Хуткая зарадка</string>
   <!-- Theme tile -->
+  <string name="systemui_theme_style_title">Стыль інтэрфейсу</string>
+  <string name="systemui_theme_style_auto">Аўтаматычна</string>
+  <string name="systemui_theme_style_light">Светлы стыль</string>
+  <string name="systemui_theme_style_dark">Цёмны стыль</string>
+  <string name="systemui_theme_style_black">Чорны стыль</string>
+  <string name="systemui_theme_style_extended">Пашыраны карыстацкі інтэрфейс</string>
+  <string name="quick_settings_theme_tile_title">Адценне</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Выберыце колер</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Выбраць стыль</string>
+  <string name="quick_settings_theme_tile_color_default">Па змаўчанні</string>
+  <string name="quick_settings_theme_tile_color_red">Чырвоны</string>
+  <string name="quick_settings_theme_tile_color_pink">Ружовы</string>
+  <string name="quick_settings_theme_tile_color_purple">Фіялетавы</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Барвовы</string>
+  <string name="quick_settings_theme_tile_color_indigo">Індыга</string>
+  <string name="quick_settings_theme_tile_color_blue">Сіні</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Светла-блакітны</string>
+  <string name="quick_settings_theme_tile_color_cyan">Блакітны</string>
+  <string name="quick_settings_theme_tile_color_teal">Бірузовы</string>
+  <string name="quick_settings_theme_tile_color_green">Зялёны</string>
+  <string name="quick_settings_theme_tile_color_light_green">Светла-зялёны</string>
+  <string name="quick_settings_theme_tile_color_lime">Лайм</string>
+  <string name="quick_settings_theme_tile_color_yellow">Жоўты</string>
+  <string name="quick_settings_theme_tile_color_amber">Бурштынавы</string>
+  <string name="quick_settings_theme_tile_color_orange">Аранжавы</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Цёмна-аранжавы</string>
+  <string name="quick_settings_theme_tile_color_brown">Карычневы</string>
+  <string name="quick_settings_theme_tile_color_grey">Шэры</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Шэра-блакітны</string>
+  <string name="quick_settings_theme_tile_color_black">Чорны</string>
+  <string name="quick_settings_theme_tile_color_white">Белы</string>
+  <string name="theme_info_title">Што гэта значыць?</string>
+  <string name="theme_info_message">Плітка \"Тэмы\" - гэта ўнікальная, але простая ў выкарыстанні плітка, якая дазваляе карыстальніку змяняць сістэмнае адценне або стыль..\n\nКаб пераключыцца паміж адценнямі і стылямі, проста доўга ўтрымлівайце націснутай плітку, а затым яшчэ раз націсніце на яе, каб выбраць з прапанаваных варыянтаў.</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Адкрыць меню працуючых праграм.</string>
+  <!-- Smart pixels QS tile -->
 </resources>

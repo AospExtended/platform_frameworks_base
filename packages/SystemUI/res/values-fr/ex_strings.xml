@@ -36,11 +36,21 @@
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">L\'application ne prend pas en charge le PiP</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Affichage ambient</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Affichage en mode veille désactivé.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Affichage en mode veille activé.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Affichage en mode veille désactivé.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Affichage en mode veille activé.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Écran toujours allumé</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Écran toujours allumé désactivé.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Écran toujours allumé activé.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Écran toujours allumé désactivé.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Écran toujours allumé activé.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Caféine</string>
   <string name="accessibility_quick_settings_caffeine_off">Caféine désactivée</string>
@@ -202,5 +212,40 @@
   <string name="keyguard_plugged_in_turbo_power_charging">TurboPower connecté</string>
   <string name="keyguard_plugged_in_turbo_charging">Recharge Turbo</string>
   <!-- Theme tile -->
+  <string name="systemui_theme_style_title">Style de l\'interface</string>
+  <string name="systemui_theme_style_auto">Automatique</string>
+  <string name="systemui_theme_style_light">Interface claire</string>
+  <string name="systemui_theme_style_dark">Interface sombre</string>
+  <string name="systemui_theme_style_black">Interface noire</string>
+  <string name="systemui_theme_style_extended">Interface Extended</string>
+  <string name="quick_settings_theme_tile_title">Couleur d\'accentuation</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Sélectionner couleur</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Sélectionner le style</string>
+  <string name="quick_settings_theme_tile_color_default">Par défaut</string>
+  <string name="quick_settings_theme_tile_color_red">Rouge</string>
+  <string name="quick_settings_theme_tile_color_pink">Rose</string>
+  <string name="quick_settings_theme_tile_color_purple">Violet</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Violet foncé</string>
+  <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
+  <string name="quick_settings_theme_tile_color_blue">Bleu</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Bleu clair</string>
+  <string name="quick_settings_theme_tile_color_cyan">Cyan</string>
+  <string name="quick_settings_theme_tile_color_teal">Bleu sarcelle</string>
+  <string name="quick_settings_theme_tile_color_green">Vert</string>
+  <string name="quick_settings_theme_tile_color_light_green">Vert clair</string>
+  <string name="quick_settings_theme_tile_color_lime">Lime</string>
+  <string name="quick_settings_theme_tile_color_yellow">Jaune</string>
+  <string name="quick_settings_theme_tile_color_amber">Ambre</string>
+  <string name="quick_settings_theme_tile_color_orange">Orange</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Orange foncé</string>
+  <string name="quick_settings_theme_tile_color_brown">Marron</string>
+  <string name="quick_settings_theme_tile_color_grey">Gris</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Bleu Gris</string>
+  <string name="quick_settings_theme_tile_color_black">Noir</string>
+  <string name="quick_settings_theme_tile_color_white">Blanc</string>
+  <string name="theme_info_title">Qu\'est-ce que c\'est ?</string>
+  <string name="theme_info_message">La tuile thème permet de changer la couleur d\'accentuation ou le style du thème système.\n\nPour basculer entre ces deux modes, effectuer un appui prolongé sur la tuile, puis faire défiler les options disponibles par appui simple.</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Afficher les services en cours.</string>
+  <!-- Smart pixels QS tile -->
 </resources>

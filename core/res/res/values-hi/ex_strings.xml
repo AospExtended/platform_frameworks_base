@@ -29,4 +29,13 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">ये चालू करने से एक एप्लीकेशन दूसरा जैसा बर्ताव कर सकता है। हानिकारक एप्लीकेशन इसके फायदा उठा कर आप सीमित माहिती को पढ़ सकेंगे। इसकी परवानगी सावधानी से दे!।</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">फीका</string>
+  <string name="animation_slide_right">दाएँ खिसकाएँ</string>
+  <string name="animation_slide_left">स्लाइड, बाएँ</string>
+  <string name="animation_slide_right_no_fade">दायें में स्लाइड (फीके के बिना)</string>
+  <string name="animation_slide_left_no_fade">बाएं में स्लाइड (फीके के बिना)</string>
+  <string name="animation_slide_up">तल में स्लाइड</string>
+  <string name="animation_slide_down">शीर्ष में स्लाइड</string>
+  <string name="animation_default">पूर्व निर्धारित</string>
+  <!-- Pocket Lock -->
 </resources>

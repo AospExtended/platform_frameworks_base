@@ -29,4 +29,21 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Umožňuje aplikácii vydávať sa sa inú aplikáciu. Škodlivé aplikácie by mohli použiť túto možnosť pre prístup k dátam súkromných aplikácií. Udeľujte toto oprávnenie s opatrnosťou!</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">Miznutie</string>
+  <string name="animation_slide_right">Potiahnutie vpravo</string>
+  <string name="animation_slide_left">Potiahnutie vľavo</string>
+  <string name="animation_slide_right_no_fade">Posunutie vpravo (bez miznutia)</string>
+  <string name="animation_slide_left_no_fade">Posunutie vľavo (bez miznutia)</string>
+  <string name="animation_slide_up">Posunutie dolu</string>
+  <string name="animation_slide_down">Posunutie nahor</string>
+  <string name="animation_default">Predvolená</string>
+  <string name="animation_translucent">Priehľadnosť</string>
+  <string name="animation_grow_shrink">Zväčšenie (zvrchu)</string>
+  <string name="animation_grow_shrink_center">Zväčšenie (zo stredu)</string>
+  <string name="animation_grow_shrink_bottom">Zväčšenie (zospodu)</string>
+  <string name="animation_grow_shrink_left">Zväčšenie (zľava)</string>
+  <string name="animation_grow_shrink_right">Zväčšenie (sprava)</string>
+  <string name="animation_random">Náhodne</string>
+  <string name="action_null">Prázdne</string>
+  <!-- Pocket Lock -->
 </resources>

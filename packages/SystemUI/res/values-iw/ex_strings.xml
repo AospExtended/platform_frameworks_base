@@ -23,7 +23,7 @@
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <string name="global_action_restart_advanced">מתקדם</string>
   <string name="global_action_restart_recovery">שחזור</string>
-  <string name="global_action_restart_bootloader">בוטלואדר</string>
+  <string name="global_action_restart_bootloader">Bootloader</string>
   <string name="global_action_restart_ui">ממשק מערכת</string>
   <string name="global_action_restart_soft">הפעלה מחדש מהירה</string>
   <string name="global_action_screenrecord">הקלטת מסך</string>
@@ -34,6 +34,11 @@
   <!-- PiP Tile -->
   <string name="quick_settings_pip_tile_app_na">היישום אינו תומך בPiP</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">תצוגת אמביינט</string>
+  <string name="accessibility_quick_settings_ambient_display_off">תצוגת אמביינט כבויה.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">תצוגת אמביינט מופעלת.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">תצוגת אמביינט כובתה.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">תצוגת אמביינט הופעלה.</string>
   <!-- Always on Display Tile -->
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
@@ -84,12 +89,19 @@
   <string name="quick_settings_screenrecord_label">הקלטת מסך</string>
   <!-- Screenshot Delete Toast -->
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">אתחול</string>
+  <string name="quick_settings_reboot_recovery_label">שחזור</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">עוצמת שמע</string>
+  <string name="quick_settings_volume_panel_label">עוצמת שמע</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">עקיפת כפתור הכיבוי\הדלקה</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">אפשר ליישום לעקוף את כפתור ההפעלה.</string>
   <!-- ADB over network QS tile -->
   <string name="quick_settings_network_adb_enabled_label">מופעל</string>
   <string name="quick_settings_network_adb_disabled_label">כבוי</string>
+  <string name="quick_settings_network_adb_label">ADB באמצעות הרשת</string>
   <!-- Sync QS Tile -->
   <string name="quick_settings_sync_label">סינכרון</string>
   <string name="accessibility_quick_settings_sync_off">סינכרון כבוי</string>
@@ -141,6 +153,39 @@
   <string name="force_stop_dlg_text">אם תאלץ את עצירת היישום, ייתכן שהוא לא יפעל כהלכה.</string>
   <string name="kill">סגור יישום</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_plugged_in_turbo_power_charging">טעינה מהירה מופעלת</string>
+  <string name="keyguard_plugged_in_turbo_charging">טעינה מהירה</string>
   <!-- Theme tile -->
+  <string name="systemui_theme_style_title">סגנון ממשק משתמש</string>
+  <string name="systemui_theme_style_auto">אוטומטי</string>
+  <string name="systemui_theme_style_light">ממשק בהיר</string>
+  <string name="systemui_theme_style_dark">ממשק כהה</string>
+  <string name="systemui_theme_style_black">ממשק שחור</string>
+  <string name="systemui_theme_style_extended">ממשק Extended</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">בחר צבע</string>
+  <string name="quick_settings_theme_tile_style_detail_title">בחר סגנון</string>
+  <string name="quick_settings_theme_tile_color_default">ברירת מחדל</string>
+  <string name="quick_settings_theme_tile_color_red">אדום</string>
+  <string name="quick_settings_theme_tile_color_pink">ורוד</string>
+  <string name="quick_settings_theme_tile_color_purple">סגול</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">סגול כהה</string>
+  <string name="quick_settings_theme_tile_color_indigo">כחול כהה</string>
+  <string name="quick_settings_theme_tile_color_blue">כחול</string>
+  <string name="quick_settings_theme_tile_color_light_blue">כחול בהיר</string>
+  <string name="quick_settings_theme_tile_color_cyan">טורקיז</string>
+  <string name="quick_settings_theme_tile_color_teal">כחול-ירקרק</string>
+  <string name="quick_settings_theme_tile_color_green">ירוק</string>
+  <string name="quick_settings_theme_tile_color_light_green">ירוק בהיר</string>
+  <string name="quick_settings_theme_tile_color_yellow">צהוב</string>
+  <string name="quick_settings_theme_tile_color_orange">כתום</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">כתום כהה</string>
+  <string name="quick_settings_theme_tile_color_brown">חום</string>
+  <string name="quick_settings_theme_tile_color_grey">אפור</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">כחול אפור</string>
+  <string name="quick_settings_theme_tile_color_black">שחור</string>
+  <string name="quick_settings_theme_tile_color_white">לבן</string>
+  <string name="theme_info_title">מה זה?</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">פתח מסך שירותים פועלים.</string>
+  <!-- Smart pixels QS tile -->
 </resources>

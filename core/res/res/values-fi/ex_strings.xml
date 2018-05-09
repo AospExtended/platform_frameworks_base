@@ -18,9 +18,32 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="reboot_title">Käynnistä uudelleen</string>
+  <string name="reboot_message">Käynnistetään laite uudelleen</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">hallitse navigointipalkin editointia</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">Salli sovelluksen ohjaa navigointipalkin muokkausta.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Väärennä paketin digitaalinen allekirjoitus</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Antaa sovelluksen peittää itsensä olemalla toinen sovellus. Haitalliset sovellukset ehkä voivat käyttä tätä sovelluksen yksityistietojen saamiseen. Anna tämä käyttöoikeus sovellukselle huolella!</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">Häivytys</string>
+  <string name="animation_slide_right">Liu\'uta sisään oikealle</string>
+  <string name="animation_slide_left">Liu\'uta sisään vasemmalle</string>
+  <string name="animation_slide_right_no_fade">Liu\'uta sisään oikealle (Ei häivytystä)</string>
+  <string name="animation_slide_left_no_fade">Liu\'uta sisään vasemmalle (Ei häivytystä)</string>
+  <string name="animation_slide_up">Sisään liuku alhaalta</string>
+  <string name="animation_slide_down">Liu\'uta ylhäältä</string>
+  <string name="animation_default">Oletus</string>
+  <string name="animation_translucent">Läpikuultava</string>
+  <string name="animation_grow_shrink">Sisään kasvu (Ylhäältä)</string>
+  <string name="animation_grow_shrink_center">Sisään kasvu (Keskeltä)</string>
+  <string name="animation_grow_shrink_bottom">Sisään kasvu (Alhaalta)</string>
+  <string name="animation_grow_shrink_left">Sisään kasvu (Vasemmalta)</string>
+  <string name="animation_grow_shrink_right">Sisään kasvu (Oikealta)</string>
+  <string name="animation_random">Satunnainen</string>
+  <string name="action_null">Tyhjä</string>
+  <!-- Pocket Lock -->
 </resources>

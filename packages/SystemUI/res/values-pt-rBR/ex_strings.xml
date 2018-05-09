@@ -36,11 +36,21 @@
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">O aplicativo não suporta PiP</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Brilho adaptável</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Brilho adaptável desligado.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Brilho adaptável ligado.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Brilho adaptável foi desligado.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Brilho adaptável foi ligado.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Exibição ambiente</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Exibição ambiente desligada.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Exibição ambiente ligada.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Exibição ambiente foi desligada.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Exibição ambiente foi ligada.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Cafeína</string>
   <string name="accessibility_quick_settings_caffeine_off">Cafeína desligada</string>
@@ -72,7 +82,7 @@
   <string name="quick_settings_sound_label">Som</string>
   <string name="quick_settings_sound_ring">Toque</string>
   <string name="quick_settings_sound_vibrate">Vibrar</string>
-  <string name="quick_settings_sound_dnd">Não perturbe</string>
+  <string name="quick_settings_sound_dnd">Não pertube</string>
   <string name="lockscreen_default">Padrão</string>
   <string name="lockscreen_hidden">Nenhum</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
@@ -195,12 +205,47 @@
   <string name="force_stop_dlg_title">Forçar parada?</string>
   <string name="force_stop_dlg_text">Se você forçar a parada de um app, ele pode apresentar mau funcionamento.</string>
   <string name="dlg_ok">@android:string/ok</string>
-  <string name="dlg_cancel">@android:string/cancel</string>
+  <string name="dlg_cancel">@android:string/cancelar</string>
   <string name="kill">Fechar aplicativo</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_turbo_power_time">Carregamento rápido (<xliff:g id="charging_time_left">%s</xliff:g> até concluir)</string>
   <string name="keyguard_plugged_in_turbo_power_charging">Carregamento rápido ativado</string>
   <string name="keyguard_plugged_in_turbo_charging">Carregamento rápido</string>
   <!-- Theme tile -->
+  <string name="systemui_theme_style_title">Estilo da interface</string>
+  <string name="systemui_theme_style_auto">Automático</string>
+  <string name="systemui_theme_style_light">Interface clara</string>
+  <string name="systemui_theme_style_dark">Interface escura</string>
+  <string name="systemui_theme_style_black">Interface preta</string>
+  <string name="systemui_theme_style_extended">Interface estendida</string>
+  <string name="quick_settings_theme_tile_title">Estilo</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Selecionar cor</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Selecionar estilo</string>
+  <string name="quick_settings_theme_tile_color_default">Padrão</string>
+  <string name="quick_settings_theme_tile_color_red">Vermelho</string>
+  <string name="quick_settings_theme_tile_color_pink">Rosa</string>
+  <string name="quick_settings_theme_tile_color_purple">Roxo</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Roxo escuro</string>
+  <string name="quick_settings_theme_tile_color_indigo">Índigo</string>
+  <string name="quick_settings_theme_tile_color_blue">Azul</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Azul claro</string>
+  <string name="quick_settings_theme_tile_color_cyan">Ciano</string>
+  <string name="quick_settings_theme_tile_color_teal">Azul piscina</string>
+  <string name="quick_settings_theme_tile_color_green">Verde</string>
+  <string name="quick_settings_theme_tile_color_light_green">Verde claro</string>
+  <string name="quick_settings_theme_tile_color_lime">Verde limão</string>
+  <string name="quick_settings_theme_tile_color_yellow">Amarelo</string>
+  <string name="quick_settings_theme_tile_color_amber">Âmbar</string>
+  <string name="quick_settings_theme_tile_color_orange">Laranja</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Laranja escuro</string>
+  <string name="quick_settings_theme_tile_color_brown">Marrom</string>
+  <string name="quick_settings_theme_tile_color_grey">Cinza</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Azul acizentado</string>
+  <string name="quick_settings_theme_tile_color_black">Preto</string>
+  <string name="quick_settings_theme_tile_color_white">Branco</string>
+  <string name="theme_info_title">O que é isso?</string>
+  <string name="theme_info_message">O bloco Tema é um bloco único mas fácil de usar que permite ao usuário alterar o estilo do sistema.\n\nPara trocar entre diferentes estilos, simplesmente realize um toque longo no bloco e então toque novamente para selecionar uma das opções oferecidas.</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Abrir tela de Serviços Em Execução.</string>
+  <!-- Smart pixels QS tile -->
 </resources>

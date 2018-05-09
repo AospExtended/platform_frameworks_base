@@ -36,11 +36,21 @@
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">La aplicación no soporta PiP</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Pantalla ambiente</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Apagar pantalla ambiente.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Encender pantalla ambiente.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Pantalla ambiente apagada.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Pantalla ambiente encendida.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Siempre en pantalla</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Apagar siempre en pantalla.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Encender siempre en pantalla.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Siempre en pantalla apagado.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Siempre en pantalla encendido.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Cafeína</string>
   <string name="accessibility_quick_settings_caffeine_off">Cafeína desactivada</string>
@@ -202,5 +212,40 @@
   <string name="keyguard_plugged_in_turbo_power_charging">Carga rápida conectada</string>
   <string name="keyguard_plugged_in_turbo_charging">Carga rápida</string>
   <!-- Theme tile -->
+  <string name="systemui_theme_style_title">Estilo UI</string>
+  <string name="systemui_theme_style_auto">Automático</string>
+  <string name="systemui_theme_style_light">UI clara</string>
+  <string name="systemui_theme_style_dark">UI Oscuro</string>
+  <string name="systemui_theme_style_black">UI Negro</string>
+  <string name="systemui_theme_style_extended">UI Extendido</string>
+  <string name="quick_settings_theme_tile_title">Acento</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Seleccionar color</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Seleccionar estilo</string>
+  <string name="quick_settings_theme_tile_color_default">Por defecto</string>
+  <string name="quick_settings_theme_tile_color_red">Rojo</string>
+  <string name="quick_settings_theme_tile_color_pink">Rosa</string>
+  <string name="quick_settings_theme_tile_color_purple">Morado</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Morado oscuro</string>
+  <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
+  <string name="quick_settings_theme_tile_color_blue">Azul</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Celeste</string>
+  <string name="quick_settings_theme_tile_color_cyan">Cian</string>
+  <string name="quick_settings_theme_tile_color_teal">Teal</string>
+  <string name="quick_settings_theme_tile_color_green">Verde</string>
+  <string name="quick_settings_theme_tile_color_light_green">Verde claro</string>
+  <string name="quick_settings_theme_tile_color_lime">Lima</string>
+  <string name="quick_settings_theme_tile_color_yellow">Amarillo</string>
+  <string name="quick_settings_theme_tile_color_amber">Ámbar</string>
+  <string name="quick_settings_theme_tile_color_orange">Naranjo</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Naranjo oscuro</string>
+  <string name="quick_settings_theme_tile_color_brown">Café</string>
+  <string name="quick_settings_theme_tile_color_grey">Gris</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Gris azulado</string>
+  <string name="quick_settings_theme_tile_color_black">Negro</string>
+  <string name="quick_settings_theme_tile_color_white">Blanco</string>
+  <string name="theme_info_title">¿Qué es esto?</string>
+  <string name="theme_info_message">Los Temas son una única pero fácil manera de cambiar el estilo o acento del sistema.\n\nPara cambiar entre acentos o estilos, simplemente mantén presionado el tema y luego presione nuevamente para seleccionar entre las opciones ofrecidas.</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Abrir la pantalla de servicios en ejecución.</string>
+  <!-- Smart pixels QS tile -->
 </resources>

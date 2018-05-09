@@ -19,7 +19,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="reboot_title">Mula semula</string>
-  <string name="reboot_message">But sistem</string>
+  <string name="reboot_message">Memulakan semula sistem</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_toggleNavigationEditor">mengawal editor navigasi</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -27,6 +27,9 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_fakePackageSignature">Tandatangan pakej spoof</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Membenarkan apl berpura-pura menjadi aplikasi yang berbeza. Aplikasi berniat jahat mungkin dapat menggunakannya untuk mengakses data aplikasi peribadi. Berikan kebenaran ini dengan berhati-hati sahaja!</string>
+  <string name="permdesc_fakePackageSignature">Membenarkan aplikasi berpura-pura menjadi aplikasi yang berbeza. Aplikasi berniat jahat mungkin dapat menggunakannya untuk mengakses data aplikasi peribadi. Berikan kebenaran ini dengan berhati-hati sahaja!</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_random">Rawak</string>
+  <string name="action_null">Kosong</string>
+  <!-- Pocket Lock -->
 </resources>

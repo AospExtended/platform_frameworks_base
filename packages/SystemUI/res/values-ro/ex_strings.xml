@@ -36,11 +36,21 @@
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">Aplicația nu suportă PiP</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Afișaj ambiental</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Afișare ambientală oprită.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Afișare ambientală pornită.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Afișaj ambiental dezactivat.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Afișaj ambiental activat.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Afișaj permanent</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Afișaj permanent oprit.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Afișaj permanent pornit.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Afișaj permanent oprit.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Afișaj permanent pornit.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Cofeină</string>
   <string name="accessibility_quick_settings_caffeine_off">Cofeina este oprită</string>
@@ -200,5 +210,40 @@
   <string name="keyguard_plugged_in_turbo_power_charging">Conectat TurboPower</string>
   <string name="keyguard_plugged_in_turbo_charging">Încărcare turbo</string>
   <!-- Theme tile -->
+  <string name="systemui_theme_style_title">Stil interfață utilizator</string>
+  <string name="systemui_theme_style_auto">Automat</string>
+  <string name="systemui_theme_style_light">Luminos</string>
+  <string name="systemui_theme_style_dark">Întunecat</string>
+  <string name="systemui_theme_style_black">Negru</string>
+  <string name="systemui_theme_style_extended">Extins</string>
+  <string name="quick_settings_theme_tile_title">Accent</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Selectare culoare</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Selectare stil</string>
+  <string name="quick_settings_theme_tile_color_default">Implicit</string>
+  <string name="quick_settings_theme_tile_color_red">Roşu</string>
+  <string name="quick_settings_theme_tile_color_pink">Roz</string>
+  <string name="quick_settings_theme_tile_color_purple">Violet</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Violet închis</string>
+  <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
+  <string name="quick_settings_theme_tile_color_blue">Albastru</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Albastru deschis</string>
+  <string name="quick_settings_theme_tile_color_cyan">Cyan</string>
+  <string name="quick_settings_theme_tile_color_teal">Turcoaz</string>
+  <string name="quick_settings_theme_tile_color_green">Verde</string>
+  <string name="quick_settings_theme_tile_color_light_green">Verde deschis</string>
+  <string name="quick_settings_theme_tile_color_lime">Lime</string>
+  <string name="quick_settings_theme_tile_color_yellow">Galben</string>
+  <string name="quick_settings_theme_tile_color_amber">Chihlimbar</string>
+  <string name="quick_settings_theme_tile_color_orange">Portocaliu</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Portocaliu închis</string>
+  <string name="quick_settings_theme_tile_color_brown">Maro</string>
+  <string name="quick_settings_theme_tile_color_grey">Gri</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Albastru gri</string>
+  <string name="quick_settings_theme_tile_color_black">Negru</string>
+  <string name="quick_settings_theme_tile_color_white">Alb</string>
+  <string name="theme_info_title">Ce este aceasta?</string>
+  <string name="theme_info_message">Tile-ul Teme este un tile unic, dar ușor de utilizat, care permite utilizatorului să schimbe accentul sau stilul sistemului.\n\nPentru a schimba între accente și stiluri, apăsați lung pe tile și apoi apăsați din nou pentru a selecta din opțiunile oferite.</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Deschide ecranul Servicii în execuţie.</string>
+  <!-- Smart pixels QS tile -->
 </resources>

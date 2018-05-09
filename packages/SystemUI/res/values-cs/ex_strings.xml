@@ -36,11 +36,21 @@
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">Aplikace nepodporuje PiP</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Ambientní displej</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Ambientní displej vyp.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Ambientní displej zap.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Ambientní displej je vypnutý.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Ambientní displej je zapnutý.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">\"Always on\" displej</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">\"Always on\" displej vyp.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">\"Always on\" displej zap.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">\"Always on\" displej byl vypnutý.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">\"Always on\" displej byl zapnutý.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Kofein</string>
   <string name="accessibility_quick_settings_caffeine_off">Kofein vyp.</string>
@@ -236,4 +246,6 @@
   <string name="theme_info_title">Co je to?</string>
   <string name="theme_info_message">Dlaždice motivů je jedinečná a snadno použitelná dlaždice, která uživateli umožňuje měnit odstín nebo styl stystému.\n\nChcete-li provést změnu odstínu a stylu, jednoduše stiskněte dlouze dlaždici a poté ji stiskněte znovu pro výběr nabízených možností.</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Otevřít obrazovku spuštěných služeb.</string>
+  <!-- Smart pixels QS tile -->
 </resources>

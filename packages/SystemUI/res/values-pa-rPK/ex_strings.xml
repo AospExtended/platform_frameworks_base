@@ -21,19 +21,69 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA +</string>
+  <string name="global_action_restart_advanced">ਵਧੇਰੇ</string>
+  <string name="global_action_restart_recovery">ਰਿਕਵਰੀ</string>
+  <string name="global_action_restart_bootloader">ਬੂਟਲੋਡਰ</string>
+  <string name="global_action_restart_ui">ਸਿਸਟਮUI</string>
+  <string name="global_action_restart_soft">ਸਾਫਟ ਰੀਬੂਟ</string>
+  <string name="global_action_screenrecord">ਸਕ੍ਰੀਨ ਰਿਕੌਰਡ</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">ਲੋਕੇਸ਼ਨ ਰਿਪੋਟਿੰਗ: ਬੈਟਰੀ ਬਚਾਉ ਮੋਡ.</string>
+  <string name="accessibility_quick_settings_location_gps_only">ਲੋਕੇਸ਼ਨ ਰਿਪੋਟਿੰਗ: ਸਿਰਫ ਸੈਂਸਰ ਮੋਡ.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">ਲੋਕੇਸ਼ਨ ਰਿਪੋਟਿੰਗ: ਹਾਈ ਐਕੂਰੇਸੀ ਮੋਡ.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">PiP</string>
+  <string name="quick_settings_pip_tile_app_na">ਐਪ Pip ਸੱਪੋਟ ਨਹੀਂ ਕਰਦੀ</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">ਅੰਬੀਨਟ ਡਿਸਪਲੇ</string>
+  <string name="accessibility_quick_settings_ambient_display_off">ਅੰਬੀਨਟ ਡਿਸਪਲੇ ਬੰਦ.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">ਅੰਬੀਨਟ ਡਿਸਪਲੇ ਔਨ.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">ਅੰਬੀਨਟ ਡਿਸਪਲੇ ਔਫ ਕਰ ਦਿੱਤੀ ਗਈ ਹੈ.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">ਅੰਬੀਨਟ ਡਿਸਪਲੇ ਔਨ ਕਰ ਦਿੱਤੀ ਗਈ ਹੈ.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">ਡਿਸਪਲੇ ਹਮੇਸ਼ਾ ਔਨ ਰਹੇਗੀ</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">ਹਮੇਸ਼ਾਂ ਡਿਸਪਲੇ ਬੰਦ ਰਹੇਗੀ.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">ਹਮੇਸ਼ਾਂ ਡਿਸਪਲੇ ਔਨ ਹੈ.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">ਹਮੇਸ਼ਾਂ ਔਨ ਡਿਸਪਲੇ ਔਫ ਕਰ ਦਿੱਤੀ ਗਈ ਹੈ.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">ਹਮੇਸ਼ਾਂ ਔਨ ਡਿਸਪਲੇ ਔਨ ਕਰ ਦਿੱਤੀ ਗਈ ਹੈ.</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">ਕੈਫੇਨ</string>
+  <string name="accessibility_quick_settings_caffeine_off">ਕੈਫੇਨ ਔਫ</string>
+  <string name="accessibility_quick_settings_caffeine_on">ਕੈਫੇਨ ਔਨ</string>
+  <string name="statusbar_items_title">ਸਟੇਟਸਬਾਰ ਆਈਟਮਸ</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">ਸਕਰੀਨਸ਼ੌਟ</string>
+  <string name="quick_settings_region_screenshot_label">ਪਾਰਸ਼ੀਅਲ ਸਕਰੀਨਸ਼ੌਟ</string>
+  <string name="recents_free_ram">ਖਾਲੀ ਰੈਮ: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">ਕੰਪਾਸ</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">Initializing\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">ਕੰਪਾਸ ਔਫ.</string>
+  <string name="accessibility_quick_settings_compass_on">ਕੰਪਾਸ ਔਨ.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">ਕੰਪਾਸ ਔਫ ਕਰ ਦਿੱਤੀ ਗਈ ਹੈ.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">ਕੰਪਾਸ ਔਨ ਕਰ ਦਿੱਤੀ ਗਈ ਹੈ.</string>
+  <string name="quick_settings_compass_N">N</string>
+  <string name="quick_settings_compass_NE">NE</string>
+  <string name="quick_settings_compass_E">E</string>
+  <string name="quick_settings_compass_SE">SE</string>
+  <string name="quick_settings_compass_S">S</string>
+  <string name="quick_settings_compass_SW">SW</string>
+  <string name="quick_settings_compass_W">W</string>
+  <string name="quick_settings_compass_NW">NW</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">ਆਵਾਜ</string>
+  <string name="quick_settings_sound_ring">ਰਿੰਗ</string>
+  <string name="quick_settings_sound_vibrate">ਵਾਈਬਰੇਟ</string>
+  <string name="quick_settings_sound_dnd">ਡੂ ਨੌਟ ਡਿਸਟਰਬ</string>
+  <string name="lockscreen_default">ਡਿਫੌਲਟ</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <!-- Heads Up QS Tile -->
   <!-- Heads up snooze toast -->
@@ -54,6 +104,7 @@
   <!-- Sync QS Tile -->
   <!-- USB Tethering tile -->
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">ਭਾਸ਼ਾ</string>
   <!-- Music tile -->
   <!-- Expanded Desktop QS Tile -->
   <!-- QS customizer -->
@@ -69,4 +120,5 @@
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
   <!-- Theme tile -->
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <!-- Smart pixels QS tile -->
 </resources>

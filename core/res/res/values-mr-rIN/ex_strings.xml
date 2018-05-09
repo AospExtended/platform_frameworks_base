@@ -19,9 +19,14 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="reboot_title">Parat chalu kara</string>
+  <string name="reboot_message">प्रणाली पुन्हा सुरू करत आहे</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">नियंत्रण व निर्देशन बदला</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">प्रणालीला निर्देशन तक्त्याला नियंत्रित करण्याची सहमती द्या.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">खोटी संकुलाची स्वाक्षरी</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- AOKP custom system animations -->
+  <!-- Pocket Lock -->
 </resources>

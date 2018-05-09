@@ -23,31 +23,41 @@
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <string name="accessibility_data_connection_hspap">HSPA+</string>
   <string name="global_action_restart_advanced">Avançado</string>
-  <string name="global_action_restart_recovery">Reinicar em Recovery Mode</string>
+  <string name="global_action_restart_recovery">Reinicar em modo recuperação</string>
   <string name="global_action_restart_bootloader">Bootloader</string>
-  <string name="global_action_restart_ui">Iu do sistema</string>
+  <string name="global_action_restart_ui">Interface do sistema</string>
   <string name="global_action_restart_soft">Reiniciar Rápido</string>
   <string name="global_action_screenrecord">Gravação de ecrã</string>
   <!-- Advance location quick setting tile -->
-  <string name="accessibility_quick_settings_location_battery_saving">Localização: economia de bateria.</string>
+  <string name="accessibility_quick_settings_location_battery_saving">Localização: poupança de bateria.</string>
   <string name="accessibility_quick_settings_location_gps_only">Localização: apenas no dispositivo.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Localização: alta precisão.</string>
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">App não suporta PiP</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Ecrã ambiente</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Ecrã ambiente desligado.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Ecrã ambiente ligado.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Ecrã ambiente foi desligado.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">O ecrã ambiente foi ligado.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Ecrã sempre ativo</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Ecrã sempre ativo desligado.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Ecrã sempre ativo ligado.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Ecrã sempre ativo foi desligado.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Ecrã sempre ativo foi ligado.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Cafeína</string>
   <string name="accessibility_quick_settings_caffeine_off">Cafeína desligada</string>
   <string name="accessibility_quick_settings_caffeine_on">Cafeína ligada</string>
   <string name="statusbar_items_title">Itens da barra de estado</string>
   <!-- Screenshot QS tile -->
-  <string name="quick_settings_screenshot_label">Capturar o ecrã</string>
+  <string name="quick_settings_screenshot_label">Captura de ecrã</string>
   <string name="quick_settings_region_screenshot_label">Captura parcial de ecrã</string>
   <string name="recents_free_ram">RAM livre: %1$d MB</string>
   <!-- volte icon switch -->
@@ -84,18 +94,18 @@
   <string name="accessibility_quick_settings_heads_up_changed_off">As notificações pop-up foram desativadas.</string>
   <string name="accessibility_quick_settings_heads_up_changed_on">As notificações pop-up foram ativadas.</string>
   <!-- Heads up snooze toast -->
-  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> • as notificações flutuantes vão adormecer por 1 minuto.</string>
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> • as notificações flutuantes vão desaparecer por 1 minuto.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • as notificações flutuantes vão adormecer por <xliff:g id="number">%d</xliff:g> minutos.</string>
   <!-- Battery saver tile -->
   <string name="battery_saver_qs_tile_fully_charged">Totalmente carregada</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Carregando rápido (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> até à carga máxima)</string>
-  <string name="keyguard_plugged_in_dash_charging">Carregando Dash</string>
+  <string name="keyguard_plugged_in_dash_charging">Carregando em Dash</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">A tela está sendo gravada</string>
   <string name="screenrecord_notif_final_ticker">Tela gravada com sucesso</string>
   <!-- Screenrecord notification title -->
-  <string name="screenrecord_notif_title">Gravando tela</string>
+  <string name="screenrecord_notif_title">A gravar tela</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Parar</string>
   <string name="screenrecord_notif_completed">Tela gravada com sucesso</string>
@@ -115,7 +125,7 @@
   <string name="systemui_tuner_navbar_title">Definições Padrão</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Atalhos inferiores</string>
   <!-- Screenshot Delete Toast -->
-  <string name="delete_screenshot_toast">Captura de tela eliminada</string>
+  <string name="delete_screenshot_toast">Captura de ecrã eliminada</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">Reiniciar</string>
   <string name="quick_settings_reboot_recovery_label">Recuperação</string>
@@ -202,5 +212,40 @@
   <string name="keyguard_plugged_in_turbo_power_charging">Carregamento rapido conectado</string>
   <string name="keyguard_plugged_in_turbo_charging">Carregamento rapido</string>
   <!-- Theme tile -->
+  <string name="systemui_theme_style_title">Estilo da Interface do Utilizador</string>
+  <string name="systemui_theme_style_auto">Automático</string>
+  <string name="systemui_theme_style_light">Interface do utilizador clara</string>
+  <string name="systemui_theme_style_dark">Interface do utilizador escura</string>
+  <string name="systemui_theme_style_black">Interface do utilizador negra</string>
+  <string name="systemui_theme_style_extended">Interface do utilizadorexpandida</string>
+  <string name="quick_settings_theme_tile_title">Detalhe</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Selecionar cor</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Selecionar estilo</string>
+  <string name="quick_settings_theme_tile_color_default">Padrão</string>
+  <string name="quick_settings_theme_tile_color_red">Vermelho</string>
+  <string name="quick_settings_theme_tile_color_pink">Cor de rosa</string>
+  <string name="quick_settings_theme_tile_color_purple">Roxo</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Roxo escuro</string>
+  <string name="quick_settings_theme_tile_color_indigo">Índigo</string>
+  <string name="quick_settings_theme_tile_color_blue">Azul</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Azul claro</string>
+  <string name="quick_settings_theme_tile_color_cyan">Azul bebê</string>
+  <string name="quick_settings_theme_tile_color_teal">Turquesa</string>
+  <string name="quick_settings_theme_tile_color_green">Verde</string>
+  <string name="quick_settings_theme_tile_color_light_green">Verde claro</string>
+  <string name="quick_settings_theme_tile_color_lime">Lima</string>
+  <string name="quick_settings_theme_tile_color_yellow">Amarelo</string>
+  <string name="quick_settings_theme_tile_color_amber">Âmbar</string>
+  <string name="quick_settings_theme_tile_color_orange">Laranja</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Laranja escuro</string>
+  <string name="quick_settings_theme_tile_color_brown">Castanho</string>
+  <string name="quick_settings_theme_tile_color_grey">Cinzento</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Cinzento azulado</string>
+  <string name="quick_settings_theme_tile_color_black">Preti</string>
+  <string name="quick_settings_theme_tile_color_white">Branco</string>
+  <string name="theme_info_title">O que é isto?</string>
+  <string name="theme_info_message">A telha de temas é um azulejo original mas fácil de usar que permite ao usuário alterar a mudança de acento ou style.\n\nTo do sistema entre sotaques e estilos, simplesmente carregue na telha e pressione novamente para selecionar entre as opções oferecidas.</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Abrir ecrã de serviços em execução.</string>
+  <!-- Smart pixels QS tile -->
 </resources>

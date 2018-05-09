@@ -33,19 +33,29 @@
   <string name="accessibility_quick_settings_location_gps_only">Standortdienste: nur Gerät.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Standortdienste: hohe Genauigkeit.</string>
   <!-- PiP Tile -->
-  <string name="quick_settings_pip_label">PiP</string>
-  <string name="quick_settings_pip_tile_app_na">Die App unterstützt kein PiP</string>
+  <string name="quick_settings_pip_label">Bild im Bild (PiP)</string>
+  <string name="quick_settings_pip_tile_app_na">Die App unterstützt keine Bild in Bild Darstellung</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Inaktivitätsdisplay</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Inaktivitätsdisplay aus.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Inaktivitätsdisplay an.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Inaktivitätsdisplay wurde ausgeschaltet.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Inaktivitätsdisplay wurde eingeschaltet.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Always-on Display</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Always-on Display aus.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Always-on Display an.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Always-on Display wurde deaktiviert.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Always-on Display wurde aktiviert.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Koffein</string>
   <string name="accessibility_quick_settings_caffeine_off">Koffein aus</string>
   <string name="accessibility_quick_settings_caffeine_on">Koffein an</string>
-  <string name="statusbar_items_title">Statusleistenelemente</string>
+  <string name="statusbar_items_title">Statusleisten Symbole</string>
   <!-- Screenshot QS tile -->
   <string name="quick_settings_screenshot_label">Bildschirmfoto</string>
   <string name="quick_settings_region_screenshot_label">Partielles Bildschirmfoto</string>
@@ -76,7 +86,7 @@
   <string name="lockscreen_default">Standard</string>
   <string name="lockscreen_hidden">Keiner</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
-  <string name="custom_hint">Zum Öffnen vom Symbol wischen</string>
+  <string name="custom_hint">Zum Öffnen vom Symbol weg wischen</string>
   <!-- Heads Up QS Tile -->
   <string name="quick_settings_heads_up_label">Popup</string>
   <string name="accessibility_quick_settings_heads_up_off">Popup aus.</string>
@@ -87,7 +97,7 @@
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Popup-Benachrichtigungen sind für eine Minute deaktiviert.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Popup-Benachrichtigungen sind für <xliff:g id="number">%d</xliff:g> Minuten deaktiviert.</string>
   <!-- Battery saver tile -->
-  <string name="battery_saver_qs_tile_fully_charged">Vollständig Aufgeladen</string>
+  <string name="battery_saver_qs_tile_fully_charged">Vollständig geladen</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">Dash-Aufladen (<xliff:g id="charging_time_left" example="4 Stunden und 2 Minuten">%s</xliff:g> bis das Gerät voll ist)</string>
   <string name="keyguard_plugged_in_dash_charging">Dash-Aufladen</string>
@@ -236,4 +246,6 @@
   <string name="theme_info_title">Was ist das?</string>
   <string name="theme_info_message">Die Themen Kachel ist eine einzigartige aber einfach zu bedienende Kachel, die dem Benutzer erlaubt, den Akzent oder Stil der Benutzeroberfläche zu ändern.\n\nUm zwischen den Akzenten und Stilen umzuschalten, die Fliese länger festhalten und dann erneut antippen.</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Übersicht der laufenden Anwendungen anzeigen.</string>
+  <!-- Smart pixels QS tile -->
 </resources>

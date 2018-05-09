@@ -36,11 +36,21 @@
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">Aplikacja nie obsługuje PiP</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Wyświetlacz otoczenia</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Wyświetlacz otoczenia wyłączony</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Wyświetlacz otoczenia włączony.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient display wyłączony.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient display włączony.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Zawsze wyświetlaj</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Zawsze wyświetlaj wyłączone.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Zawsze wyświetlaj włączone.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Zawsze na wyświetlaczu wyłączono.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Zawsze na wyświetlaczu włączono.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Kofeina</string>
   <string name="accessibility_quick_settings_caffeine_off">Kofeina wył.</string>
@@ -236,4 +246,6 @@
   <string name="theme_info_title">Co to jest?</string>
   <string name="theme_info_message">Kafelek \"Motywy\" jest unikalny, ale łatwy w użyciu. Pozwala on na zmianę koloru akcentu lub stylu systemu.\n\nAby przełączyć się między kolorem akcentu i stylem, przytrzymaj kafelek, po czym naciśnij go, aby wybrać jedną z proponowanych opcji.</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Otwórz ekran Działających Usług.</string>
+  <!-- Smart pixels QS tile -->
 </resources>

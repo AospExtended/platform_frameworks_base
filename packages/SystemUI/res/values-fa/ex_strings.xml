@@ -21,10 +21,17 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="global_action_restart_advanced">پیشرفته</string>
+  <string name="global_action_restart_recovery">ریکاوری</string>
+  <string name="global_action_restart_bootloader">بوت لودر</string>
+  <string name="global_action_restart_ui">رابط کاربری</string>
+  <string name="global_action_screenrecord">ضبط صفحه نمایش</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">گزارش مکان: حالت ذخیره مصرف باطری</string>
   <!-- PiP Tile -->
   <!-- Ambient display QS tile -->
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">همیشه روی صفحه نمایش</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
@@ -70,4 +77,5 @@
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
   <!-- Theme tile -->
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <!-- Smart pixels QS tile -->
 </resources>

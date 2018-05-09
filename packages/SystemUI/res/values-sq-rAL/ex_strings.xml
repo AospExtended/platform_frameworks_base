@@ -200,5 +200,12 @@
   <string name="keyguard_plugged_in_turbo_power_charging">Karikimi Turbo i lidhur</string>
   <string name="keyguard_plugged_in_turbo_charging">Karikim Turbo</string>
   <!-- Theme tile -->
+  <string name="quick_settings_theme_tile_color_green">E gjelbër</string>
+  <string name="quick_settings_theme_tile_color_yellow">E verdhë</string>
+  <string name="quick_settings_theme_tile_color_brown">Bojë kafe</string>
+  <string name="quick_settings_theme_tile_color_grey">Gri</string>
+  <string name="quick_settings_theme_tile_color_black">E zezë</string>
+  <string name="quick_settings_theme_tile_color_white">Bardhë</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <!-- Smart pixels QS tile -->
 </resources>

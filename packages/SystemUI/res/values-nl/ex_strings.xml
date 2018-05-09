@@ -30,17 +30,27 @@
   <string name="global_action_screenrecord">Schermopname</string>
   <!-- Advance location quick setting tile -->
   <string name="accessibility_quick_settings_location_battery_saving">Locatiebepaling: batterijbesparende modus.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Locatiebepaling: alleen apparaat.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Locatiebepaling: alleen sensoren.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Locatiebepaling: hoge nauwkeurigheidsmodus.</string>
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">App ondersteunt geen PiP</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Sluimerend scherm</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Sluimerend scherm uit.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Sluimerend scherm aan.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Sluimerend scherm uitgeschakeld.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Sluimerend scherm ingeschakeld.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Altijd aan schermweergave</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Altijd aan schermweergave uit.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Altijd aan schermweergave aan.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Altijd aan schermweergave uitgeschakeld.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Altijd aan schermweergave ingeschakeld.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Cafeïne</string>
   <string name="accessibility_quick_settings_caffeine_off">Cafeïne uit</string>
@@ -104,7 +114,7 @@
   <string name="screenrecord_notif_pointer_off">Verberg aanwijzer</string>
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">Kan scherm niet opnemen</string>
-  <string name="notification_channel_screenrecord">Schermopname</string>
+  <string name="notification_channel_screenrecord">Schermopnames</string>
   <string name="screenrecord_hide_hint">Verberg tip</string>
   <string name="screenrecord_show_hint">Toon tip</string>
   <!-- Screenrecord Tile -->
@@ -112,7 +122,7 @@
   <string name="quick_settings_screenrecord_lq_label">Schermopname LQ</string>
   <string name="quick_settings_screenrecord_mq_label">Schermopname HQ</string>
   <string name="quick_settings_screenrecord_hq_label">Schermopname HQ+</string>
-  <string name="systemui_tuner_navbar_title">Standaard instellingen</string>
+  <string name="systemui_tuner_navbar_title">Standaardinstellingen</string>
   <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Onderste sneltoetsen</string>
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">Schermafbeelding verwijderd</string>
@@ -125,18 +135,18 @@
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_preventpower">overschrijf aan/uit-knop</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_preventpower">Hiermee kan de app het gedrag van de aan/uit-knop overschrijven.</string>
+  <string name="permdesc_preventpower">Laat een app het gedrag van de aan/uit-knop overschrijven.</string>
   <!-- ADB over network QS tile -->
   <string name="quick_settings_network_adb_enabled_label">Ingeschakeld</string>
   <string name="quick_settings_network_adb_disabled_label">Uitgeschakeld</string>
   <string name="quick_settings_network_adb_label">ADB over netwerk</string>
   <string name="quick_settings_network_adb_toast">USB-foutopsporing niet toegestaan</string>
   <!-- Sync QS Tile -->
-  <string name="quick_settings_sync_label">Sync</string>
-  <string name="accessibility_quick_settings_sync_off">Sync uit</string>
-  <string name="accessibility_quick_settings_sync_on">Sync aan</string>
-  <string name="accessibility_quick_settings_sync_changed_off">Sync uitgeschakeld</string>
-  <string name="accessibility_quick_settings_sync_changed_on">Sync ingeschakeld</string>
+  <string name="quick_settings_sync_label">Synchroniseer</string>
+  <string name="accessibility_quick_settings_sync_off">Synchronisatie uit</string>
+  <string name="accessibility_quick_settings_sync_on">Synchronisatie aan</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Synchronisatie uitgeschakeld</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Synchronisatie ingeschakeld</string>
   <!-- USB Tethering tile -->
   <string name="accessibility_quick_settings_usb_tether_off">USB tethering uit</string>
   <string name="accessibility_quick_settings_usb_tether_on">USB tethering aan</string>
@@ -154,7 +164,7 @@
   <string name="quick_settings_expanded_desktop_label">Uitgebreid bureaublad</string>
   <string name="quick_settings_expanded_desktop">Uitgebreid</string>
   <string name="quick_settings_expanded_desktop_off">Normaal</string>
-  <string name="quick_settings_expanded_navigation_off">Verberg navbar</string>
+  <string name="quick_settings_expanded_navigation_off">Verberg navigatiebalk</string>
   <string name="quick_settings_expanded_statusbar_off">Statusbalk verbergen</string>
   <string name="alert_on_charged_level">U kunt de oplader loskoppelen (\"&gt;\" <xliff:g id="percentage">%s </xliff:g>)</string>
   <string name="battery_level_good_title">Optimaal batterijniveau</string>
@@ -166,14 +176,76 @@
   <string name="aex_logo_summary">Laat iedereen weten dat je AEX gebruikt wanner ze je scherm zien</string>
   <!-- HW Keys Tile -->
   <string name="accessibility_quick_settings_hwkeys_on">HW toetsen op</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Fysieke knoppen uit</string>
+  <string name="quick_settings_hwkeys_label">Fysieke knoppen</string>
+  <string name="status_bar_data_saver">Databesparing</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">Fout</string>
+  <string name="omnijaws_service_unkown">Geen weergegevens</string>
+  <string name="omnijaws_service_error_long">Probleem met het laden van weergegevens</string>
+  <string name="omnijaws_service_disabled">Achtergrondproces is uitgeschakeld</string>
+  <string name="omnijaws_detail_header">Weer</string>
+  <string name="omnijaws_label_default">Weer</string>
+  <string name="omnijaws_current_text">Nu</string>
+  <string name="omnijaws_package_not_available">OmniJaws is niet beschikbaar</string>
+  <string name="omnijaws_service_last_update">Laatst bijgewerkt:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Navigatiebalk</string>
+  <string name="quick_settings_smartbar">Slimme balk</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_navigation_default">Standaard</string>
+  <string name="quick_settings_navigation_disabled">Uitgeschakeld</string>
+  <string name="quick_settings_sound_search">Zoeken met geluid</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Gedwongen stoppen?</string>
+  <string name="force_stop_dlg_text">Als je een app gedwongen stopt, kan deze onverwacht gedrag vertonen.</string>
+  <string name="dlg_ok">@android:string/ok</string>
+  <string name="dlg_cancel">\@android: string/annuleren</string>
+  <string name="kill">App volledig stoppen</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">TurboPower aangesloten (<xliff:g id="charging_time_left">%s</xliff:g> tot vol)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower verbonden</string>
+  <string name="keyguard_plugged_in_turbo_charging">Snel Opladen</string>
   <!-- Theme tile -->
+  <string name="systemui_theme_style_title">UI-stijl</string>
+  <string name="systemui_theme_style_auto">Automatisch</string>
+  <string name="systemui_theme_style_light">Lichte UI</string>
+  <string name="systemui_theme_style_dark">Donkere UI</string>
+  <string name="systemui_theme_style_black">Zwarte UI</string>
+  <string name="systemui_theme_style_extended">Uitgebreide UI</string>
+  <string name="quick_settings_theme_tile_title">Accent</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Selecteer kleur</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Selecteer stijl</string>
+  <string name="quick_settings_theme_tile_color_default">Standaard</string>
+  <string name="quick_settings_theme_tile_color_red">Rood</string>
+  <string name="quick_settings_theme_tile_color_pink">Roze</string>
+  <string name="quick_settings_theme_tile_color_purple">Paars</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Donkerpaars</string>
+  <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
+  <string name="quick_settings_theme_tile_color_blue">Blauw</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Lichtblauw</string>
+  <string name="quick_settings_theme_tile_color_cyan">Cyaan</string>
+  <string name="quick_settings_theme_tile_color_teal">Groenblauw</string>
+  <string name="quick_settings_theme_tile_color_green">Groen</string>
+  <string name="quick_settings_theme_tile_color_light_green">Lichtgroen</string>
+  <string name="quick_settings_theme_tile_color_lime">Limoen</string>
+  <string name="quick_settings_theme_tile_color_yellow">Geel</string>
+  <string name="quick_settings_theme_tile_color_amber">Amber</string>
+  <string name="quick_settings_theme_tile_color_orange">Oranje</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Donkeroranje</string>
+  <string name="quick_settings_theme_tile_color_brown">Bruin</string>
+  <string name="quick_settings_theme_tile_color_grey">Grijs</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Blauwgrijs</string>
+  <string name="quick_settings_theme_tile_color_black">Zwart</string>
+  <string name="quick_settings_theme_tile_color_white">Wit</string>
+  <string name="theme_info_title">Wat is dit?</string>
+  <string name="theme_info_message">De thema\'s tegel is een unieke maar gebruiksvriendelijke tegel, waarmee de gebruiker het accent of stijl kan wijzigen.\n\nOm te veranderen tussen accenten en stijlen, gewoon lang drukken op de tegel en druk vervolgens opnieuw om te selecteren uit de mogelijkheden.</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Open scherm met actieve achtergrondprocessen.</string>
+  <!-- Smart pixels QS tile -->
 </resources>

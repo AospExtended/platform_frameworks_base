@@ -21,6 +21,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">એડવાન્સ</string>
+  <string name="global_action_restart_recovery">રિકવરી</string>
+  <string name="global_action_restart_bootloader">બૂટલોડર</string>
+  <string name="global_action_restart_ui">સિસ્ટમUI</string>
+  <string name="global_action_restart_soft">Soft Reboot</string>
   <!-- Advance location quick setting tile -->
   <!-- PiP Tile -->
   <!-- Ambient display QS tile -->
@@ -69,4 +75,5 @@
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
   <!-- Theme tile -->
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <!-- Smart pixels QS tile -->
 </resources>
