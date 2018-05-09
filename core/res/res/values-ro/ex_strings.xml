@@ -29,4 +29,21 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Permite aplicației sa imite o aplicație diferită. Aplicațiile rău famate ar putea folosi asta pentru a accesa datele private. Acorda permisiunile cu atenție!</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">Estompare</string>
+  <string name="animation_slide_right">Glisare la dreapta</string>
+  <string name="animation_slide_left">Glisare la stânga</string>
+  <string name="animation_slide_right_no_fade">Glisare la dreapta (Fără estompare)</string>
+  <string name="animation_slide_left_no_fade">Glisare la stânga (Fără estompare)</string>
+  <string name="animation_slide_up">Glisare în jos</string>
+  <string name="animation_slide_down">Glisare în sus</string>
+  <string name="animation_default">Implicit</string>
+  <string name="animation_translucent">Translucid</string>
+  <string name="animation_grow_shrink">Creştere (Sus)</string>
+  <string name="animation_grow_shrink_center">Creștere (Centru)</string>
+  <string name="animation_grow_shrink_bottom">Creștere (Jos)</string>
+  <string name="animation_grow_shrink_left">Creștere (Stânga)</string>
+  <string name="animation_grow_shrink_right">Creștere (Dreapta)</string>
+  <string name="animation_random">Aleator</string>
+  <string name="action_null">Gol</string>
+  <!-- Pocket Lock -->
 </resources>

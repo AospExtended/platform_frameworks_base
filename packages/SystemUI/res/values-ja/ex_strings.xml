@@ -36,11 +36,21 @@
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">このアプリは PiP に対応していません</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">アンビエント表示</string>
+  <string name="accessibility_quick_settings_ambient_display_off">アンビエント表示はオフになっています</string>
+  <string name="accessibility_quick_settings_ambient_display_on">アンビエント表示はオンになっています</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">アンビエント表示がオフになりました</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">アンビエント表示がオンになりました</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Always on display</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Always on displayはオフです</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Always on displayはオンです.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Always on displayはオフになりました.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Always on displayはオンになりました.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">カフェイン</string>
   <string name="accessibility_quick_settings_caffeine_off">カフェインをOFF</string>
@@ -78,24 +88,42 @@
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <string name="custom_hint">アイコンをスワイプして起動</string>
   <!-- Heads Up QS Tile -->
-  <string name="quick_settings_heads_up_label">ヘッドアップ</string>
+  <string name="quick_settings_heads_up_label">Heads Up</string>
+  <string name="accessibility_quick_settings_heads_up_off">Heads Upはオフです</string>
+  <string name="accessibility_quick_settings_heads_up_on">Heads Upはオンです</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Heads Upはオフになりました</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Heads Upはオンになりました</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Heads Up通知は1分間停止します</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Heads Up通知は<xliff:g id="number">%d</xliff:g> 分間停止します</string>
   <!-- Battery saver tile -->
   <string name="battery_saver_qs_tile_fully_charged">充電完了</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_dash_charging_time">急速充電中（充電完了まで<xliff:g id="Charging_TIME_LEFT">%s</xliff:g>）</string>
   <string name="keyguard_plugged_in_dash_charging">急速充電中</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">画面を録画中です</string>
+  <string name="screenrecord_notif_final_ticker">画面の録画は成功しました</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">画面を録画中</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">停止</string>
+  <string name="screenrecord_notif_completed">画面の録画は成功しました</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">ポインターを表示</string>
   <string name="screenrecord_notif_pointer_off">ポインタを隠す</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">画面の録画に失敗しました</string>
+  <string name="notification_channel_screenrecord">画面録画</string>
   <string name="screenrecord_hide_hint">ヒントを隠す</string>
   <string name="screenrecord_show_hint">ヒントを表示</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">画面録画</string>
+  <string name="quick_settings_screenrecord_lq_label">画面録画 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">画面録画 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">画面録画 720p以上</string>
+  <string name="systemui_tuner_navbar_title">標準の設定</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">底部のショートカット</string>
   <!-- Screenshot Delete Toast -->
   <string name="delete_screenshot_toast">スクリーンショットを削除しました</string>
   <!-- Reboot/Recovery QS Tile -->
@@ -122,19 +150,23 @@
   <!-- USB Tethering tile -->
   <string name="accessibility_quick_settings_usb_tether_off">USBテザリングOFF</string>
   <string name="accessibility_quick_settings_usb_tether_on">USBテザリングON</string>
-  <string name="accessibility_quick_settings_usb_tether_changed_off">USBテザリングをOFFにしました</string>
-  <string name="accessibility_quick_settings_usb_tether_changed_on">USBテザリングをONにしました</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USBテザリングをオフにしました</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USBテザリングをオンにしました</string>
   <string name="quick_settings_usb_tether_label">USBテザリング</string>
   <!-- Language toggle tile -->
   <string name="quick_settings_locale_label">言語</string>
+  <string name="quick_settings_locale_more_locales_toast">切り替え機能を有効にするには複数の言語を設定してください</string>
   <!-- Music tile -->
   <string name="quick_settings_music_label">音楽</string>
   <string name="quick_settings_music_play">再生</string>
   <string name="quick_settings_music_pause">一時停止</string>
   <!-- Expanded Desktop QS Tile -->
   <string name="quick_settings_expanded_desktop_label">拡張デスクトップ</string>
+  <string name="quick_settings_expanded_desktop">拡張</string>
+  <string name="quick_settings_expanded_desktop_off">標準</string>
   <string name="quick_settings_expanded_navigation_off">ナビバーを隠す</string>
   <string name="quick_settings_expanded_statusbar_off">ステータスバーを隠す</string>
+  <string name="alert_on_charged_level">充電器を外せます ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
   <!-- QS customizer -->
   <string name="drag_or_tap_to_add_tiles">タイルを追加するにはドラッグかタップしてください</string>
   <!-- AEX logo -->
@@ -156,8 +188,10 @@
   <string name="omnijaws_detail_header">天気</string>
   <string name="omnijaws_label_default">天気</string>
   <string name="omnijaws_current_text">今</string>
+  <string name="omnijaws_package_not_available">OmniJaws は使用できません。</string>
   <string name="omnijaws_service_last_update">最終更新:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">ナビゲーションバー</string>
   <string name="quick_settings_smartbar">スマートバー</string>
@@ -165,8 +199,49 @@
   <string name="quick_settings_sound_search">音声検索</string>
   <!-- Kill button in notification guts -->
   <string name="force_stop_dlg_title">強制停止しますか？</string>
+  <string name="force_stop_dlg_text">アプリを強制停止すると、アプリが正常に機能しないことがあります。</string>
+  <string name="dlg_ok">@android:string/ok</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
   <string name="kill">アプリを終了</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">急速充電中 (フル充電まで残り<xliff:g id="charging_time_left">%s</xliff:g>)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">急速充電中</string>
+  <string name="keyguard_plugged_in_turbo_charging">急速充電</string>
   <!-- Theme tile -->
+  <string name="systemui_theme_style_title">UIのスタイル</string>
+  <string name="systemui_theme_style_auto">自動</string>
+  <string name="systemui_theme_style_light">Light UI</string>
+  <string name="systemui_theme_style_dark">Dark UI</string>
+  <string name="systemui_theme_style_black">Black UI</string>
+  <string name="systemui_theme_style_extended">Extended UI</string>
+  <string name="quick_settings_theme_tile_title">アクセント</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">色を選択</string>
+  <string name="quick_settings_theme_tile_style_detail_title">スタイルを選択</string>
+  <string name="quick_settings_theme_tile_color_default">デフォルト</string>
+  <string name="quick_settings_theme_tile_color_red">赤</string>
+  <string name="quick_settings_theme_tile_color_pink">ピンク</string>
+  <string name="quick_settings_theme_tile_color_purple">紫</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">濃い紫</string>
+  <string name="quick_settings_theme_tile_color_indigo">藍</string>
+  <string name="quick_settings_theme_tile_color_blue">青</string>
+  <string name="quick_settings_theme_tile_color_light_blue">淡青</string>
+  <string name="quick_settings_theme_tile_color_cyan">水色</string>
+  <string name="quick_settings_theme_tile_color_teal">青緑</string>
+  <string name="quick_settings_theme_tile_color_green">緑</string>
+  <string name="quick_settings_theme_tile_color_light_green">淡緑</string>
+  <string name="quick_settings_theme_tile_color_lime">黄緑</string>
+  <string name="quick_settings_theme_tile_color_yellow">黄</string>
+  <string name="quick_settings_theme_tile_color_amber">琥珀</string>
+  <string name="quick_settings_theme_tile_color_orange">橙</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">濃い橙</string>
+  <string name="quick_settings_theme_tile_color_brown">茶</string>
+  <string name="quick_settings_theme_tile_color_grey">灰</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">灰青</string>
+  <string name="quick_settings_theme_tile_color_black">黒</string>
+  <string name="quick_settings_theme_tile_color_white">白</string>
+  <string name="theme_info_title">これは何ですか?</string>
+  <string name="theme_info_message">テーマタイルは、システムアクセントやスタイルをユーザが簡単に変更できるようにします。\n\nアクセントとスタイルを切り替えるには、タイルを長押しした後再度タップして、表示されたオプションから選択するだけです。</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">実行中のサービスを開く</string>
+  <!-- Smart pixels QS tile -->
 </resources>

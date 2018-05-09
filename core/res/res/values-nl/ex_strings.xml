@@ -29,4 +29,21 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Staat toe dat een app zich voordoet als een andere app. Kwaadaardige applicaties kunnen hierdoor mogelijk toegang krijgen tot privédata. Verleen deze machtiging alleen met voorzichtigheid!</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">Vervagen</string>
+  <string name="animation_slide_right">Rechts naar binnen schuiven</string>
+  <string name="animation_slide_left">Links naar binnen schuiven</string>
+  <string name="animation_slide_right_no_fade">Rechts naar binnen schuiven (zonder vervaging)</string>
+  <string name="animation_slide_left_no_fade">Links naar binnen schuiven (zonder vervaging)</string>
+  <string name="animation_slide_up">Van onder naar binnen schuiven</string>
+  <string name="animation_slide_down">Van boven naar binnen schuiven</string>
+  <string name="animation_default">Standaard</string>
+  <string name="animation_translucent">Doorschijnend</string>
+  <string name="animation_grow_shrink">Verschijnen (Boven)</string>
+  <string name="animation_grow_shrink_center">Verschijnen (Midden)</string>
+  <string name="animation_grow_shrink_bottom">Verschijnen (Onder)</string>
+  <string name="animation_grow_shrink_left">Verschijnen (Links)</string>
+  <string name="animation_grow_shrink_right">Verschijnen (Rechts)</string>
+  <string name="animation_random">Willekeurig</string>
+  <string name="action_null">Leeg</string>
+  <!-- Pocket Lock -->
 </resources>

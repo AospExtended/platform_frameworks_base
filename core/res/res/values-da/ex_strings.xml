@@ -29,4 +29,21 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Tillader app\'en at udgive sig for en anden app. Ondsindede apps kan muligvis bruge dette til at tilgå privat data. Vær forsigtig med denne tilladelse!</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">Fade</string>
+  <string name="animation_slide_right">Kør ind fra højre</string>
+  <string name="animation_slide_left">Glid ind fra venstre</string>
+  <string name="animation_slide_right_no_fade">Glid ind fra højre (No fade)</string>
+  <string name="animation_slide_left_no_fade">Glid ind venstre (No fade)</string>
+  <string name="animation_slide_up">Glid ind fra bunden</string>
+  <string name="animation_slide_down">Glid ned fra toppen</string>
+  <string name="animation_default">Standard</string>
+  <string name="animation_translucent">Semitransparent</string>
+  <string name="animation_grow_shrink">Voks ind (Oppefra)</string>
+  <string name="animation_grow_shrink_center">Voks ind (Center)</string>
+  <string name="animation_grow_shrink_bottom">Voks ind (Nedefra)</string>
+  <string name="animation_grow_shrink_left">Voks ind (Venstre)</string>
+  <string name="animation_grow_shrink_right">Voks ind (Højre)</string>
+  <string name="animation_random">Tilfældig</string>
+  <string name="action_null">Tom</string>
+  <!-- Pocket Lock -->
 </resources>

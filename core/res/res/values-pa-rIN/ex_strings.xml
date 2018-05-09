@@ -18,9 +18,32 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="reboot_title">ਮੁੜ-ਚਾਲੂ ਕਰੋ</string>
+  <string name="reboot_message">ਸਿਸਟਮ ਮੁੜ ਚਾਲੂ ਹੋ ਰਿਹਾ</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">ਨੈਵੀਗੇਸ਼ਨ ਐਡੀਟਰ ਨੂੰ ਕੰਟਰੋਲ ਕਰੋ</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">ਐਪਲੀਕੇਸ਼ਨ ਨੂੰ ਆਗਿਆ ਦਵੋ, ਨੈਵੀਗੇਸ਼ਨ ਬਾਰ ਐਡੀਟਰ ਨੂੰ ਕੰਟਰੋਲ ਕਰਨ ਦੀ.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">ਸਪੂਫ ਪੈਕੇਜ ਸਿਗਨੇਚਰ</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">ਐਪ ਨੂੰ ਆਗਿਆ ਦਵੋ ਕਿ ਉਹ ਹੋਰ ਅਐਪ ਵਾਂਗ ਲੱਗੇ. ਨਿੱਜੀ ਐਪਲੀਕੇਸ਼ਨ ਡੇਟਾ ਨੂੰ ਵਰਤਣ ਲਈ ਖਤਰਨਾਕ ਐਪਲੀਕੇਸ਼ਨਾਂ ਇਸਦੀ ਵਰਤੋਂ ਕਰਨ ਦੇ ਯੋਗ ਹੋ ਸਕਦੀਆਂ ਹਨ. ਸਿਰਫ ਇਸ ਸਾਵਧਾਨੀ ਨਾਲ ਇਜਾਜ਼ਤ ਦੇਵੋ!</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">ਫੇਡ</string>
+  <string name="animation_slide_right">ਸੱਜੇ ਨੂੰ ਸਲਾਈਡ ਕਰੋ</string>
+  <string name="animation_slide_left">ਖੱਬੇ ਵੱਲ ਸਲਾਈਡ ਕਰੋ</string>
+  <string name="animation_slide_right_no_fade">ਸੱਜੇ ਵੱਲ ਸਲਾਈਡ ਕਰੋ (ਕੋਈ ਫੇਡ ਨਹੀਂ)</string>
+  <string name="animation_slide_left_no_fade">ਖੱਬੇ ਵੱਲ ਸਲਾਈਡ ਕਰੋ (ਕੋਈ ਫੇਡ ਨਹੀਂ)</string>
+  <string name="animation_slide_up">ਥੱਲੇ ਵੱਲ ਸਲਾਈਡ ਕਰੋ</string>
+  <string name="animation_slide_down">ਉੱਪਰ ਵੱਲ ਸਲਾਈਡ ਕਰੋ</string>
+  <string name="animation_default">ਡਿਫਾਲਟ</string>
+  <string name="animation_translucent">ਪਾਰਦਰਸ਼ੀ</string>
+  <string name="animation_grow_shrink">ਵਿੱਚ ਵਾਧਾ (ਉੱਪਰ)</string>
+  <string name="animation_grow_shrink_center">ਵਿੱਚ ਵਾਧਾ (ਵਿਚਕਾਰ)</string>
+  <string name="animation_grow_shrink_bottom">ਵਿੱਚ ਵਾਧਾ (ਹੇਠਾਂ)</string>
+  <string name="animation_grow_shrink_left">ਵਿੱਚ ਵਾਧਾ (ਖੱਬੇ)</string>
+  <string name="animation_grow_shrink_right">ਵਿੱਚ ਵਾਧਾ (ਸੱਜੇ)</string>
+  <string name="animation_random">ਰਲਵੇਂ</string>
+  <string name="action_null">ਖਾਲੀ</string>
+  <!-- Pocket Lock -->
 </resources>

@@ -36,11 +36,21 @@
   <string name="quick_settings_pip_label">PiP (Ảnh trong Ảnh)</string>
   <string name="quick_settings_pip_tile_app_na">Ứng dụng không hỗ trợ ảnh trong ảnh</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Màn hình xung quanh</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Màn hình xung quanh tắt.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Màn hình xung quanh bật.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Màn hình xung quanh đã tắt.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Hiển thị tương tác đã bật.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Luôn luôn hiển thị</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Màn hình luôn luôn tắt.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Màn hình luôn luôn bật.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Màn hình xung quanh đã tắt.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Màn hình luôn luôn bật.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Caffeine</string>
   <string name="accessibility_quick_settings_caffeine_off">Tắt Cafein</string>
@@ -236,4 +246,6 @@
   <string name="theme_info_title">Cái gì đây?</string>
   <string name="theme_info_message">Chủ đề cho phép người dùng thay đổi hệ thống giọng hoặc style.\n\nTo thay đổi giữa giọng điệu và phong cách, đơn giản chỉ cần bấm lâu vào tựa đề và sau đó bấm một lần nữa để lựa chọn từ các tùy chọn được cung cấp.</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Mở màn hình Dịch vụ đang chạy.</string>
+  <!-- Smart pixels QS tile -->
 </resources>

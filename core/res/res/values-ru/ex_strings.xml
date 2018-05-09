@@ -45,4 +45,5 @@
   <string name="animation_grow_shrink_right">Увеличение (вправо)</string>
   <string name="animation_random">Случайный</string>
   <string name="action_null">Пустой</string>
+  <!-- Pocket Lock -->
 </resources>

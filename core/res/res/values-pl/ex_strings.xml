@@ -45,4 +45,5 @@
   <string name="animation_grow_shrink_right">Powiększenie (z prawej)</string>
   <string name="animation_random">Losowa</string>
   <string name="action_null">Pusty</string>
+  <!-- Pocket Lock -->
 </resources>

@@ -29,4 +29,21 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Дазваляць праграмам абыходзіць сістэму бяспекі, выдаючы сябе за іншыя праграмы. Шкоднасныя праграмы могуць выкарыстоўваць гэта для доступу да прыватных дадзеных. На свой страх і рызыку!</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">Згасанне</string>
+  <string name="animation_slide_right">Зрух управа</string>
+  <string name="animation_slide_left">Зрух улева</string>
+  <string name="animation_slide_right_no_fade">Зрух управа (без згасання)</string>
+  <string name="animation_slide_left_no_fade">Зрух улева (без згасання)</string>
+  <string name="animation_slide_up">Зрух уніз</string>
+  <string name="animation_slide_down">Зрух уверх</string>
+  <string name="animation_default">Па змаўчанні</string>
+  <string name="animation_translucent">Напаўпразрысты</string>
+  <string name="animation_grow_shrink">Павелічэнне (уверх)</string>
+  <string name="animation_grow_shrink_center">Павелічэнне (па цэнтры)</string>
+  <string name="animation_grow_shrink_bottom">Павелічэнне (уніз)</string>
+  <string name="animation_grow_shrink_left">Павелічэнне (улева)</string>
+  <string name="animation_grow_shrink_right">Павелічэнне (управа)</string>
+  <string name="animation_random">Выпадковы</string>
+  <string name="action_null">Пусты</string>
+  <!-- Pocket Lock -->
 </resources>

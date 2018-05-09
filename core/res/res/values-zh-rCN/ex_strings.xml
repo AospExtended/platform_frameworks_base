@@ -45,4 +45,5 @@
   <string name="animation_grow_shrink_right">缩放（右侧）</string>
   <string name="animation_random">随机</string>
   <string name="action_null">空白</string>
+  <!-- Pocket Lock -->
 </resources>

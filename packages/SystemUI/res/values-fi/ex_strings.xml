@@ -21,52 +21,208 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">Lisäasetukset</string>
+  <string name="global_action_restart_recovery">Recovery-tila</string>
+  <string name="global_action_restart_bootloader">Bootloader-tila</string>
+  <string name="global_action_restart_ui">Käyttöliittymä</string>
+  <string name="global_action_restart_soft">Käyttöjärjestelmä</string>
+  <string name="global_action_screenrecord">Näytön tallennus</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Sijainnin raportointi: virransäästötila.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Sijainnin raportointi: vain anturit.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Sijainnin raportointi: korkea tarkkuus.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">Kuva Kuvassa</string>
+  <string name="quick_settings_pip_tile_app_na">Sovellus ei tue Kuva Kuvassa tilaa</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Ambient-näyttö</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Ambient-näyttö pois.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Ambient-näyttö päällä.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient-näyttö pois päältä.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient-näyttö päällä.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Näyttö aina päällä</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Näyttö aina päällä pois.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Näyttö aina päällä päälle.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Näyttö aina päällä pois päältä.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Näyttö aina päällä pällä.</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Kofeiini</string>
+  <string name="accessibility_quick_settings_caffeine_off">Kofeiini pois</string>
+  <string name="accessibility_quick_settings_caffeine_on">Kofeiini päälle</string>
+  <string name="statusbar_items_title">Tilapalkin sisällöt</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Näyttökuva</string>
+  <string name="quick_settings_region_screenshot_label">Osittainen kuvakaappaus</string>
+  <string name="recents_free_ram">Vapaata RAM-muistia: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VoLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Kompassi</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">Käynnistetään\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Kompassi pois päältä.</string>
+  <string name="accessibility_quick_settings_compass_on">Kompassi päälle.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Kompassi pois päällä.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Kompassi päällä.</string>
+  <string name="quick_settings_compass_N">P</string>
+  <string name="quick_settings_compass_NE">KO</string>
+  <string name="quick_settings_compass_E">I</string>
+  <string name="quick_settings_compass_SE">KA</string>
+  <string name="quick_settings_compass_S">E</string>
+  <string name="quick_settings_compass_SW">Lounas</string>
+  <string name="quick_settings_compass_W">K</string>
+  <string name="quick_settings_compass_NW">Luode</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Ääni</string>
+  <string name="quick_settings_sound_ring">Soittoääni</string>
+  <string name="quick_settings_sound_vibrate">Värinä</string>
+  <string name="quick_settings_sound_dnd">Älä häiritse</string>
+  <string name="lockscreen_default">Oletus</string>
+  <string name="lockscreen_hidden">Ei mitään</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Pyyhkäise kuvakkeesta avataksesi</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">Heads up</string>
+  <string name="accessibility_quick_settings_heads_up_off">Heads up pois päältä.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Heads up päälle.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Heads up pois päältä.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Heads up päällä.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> Kurkistus ilmoituksen torkutus 1 minuutti.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> Kurkistus ilmoituksien torkutus <xliff:g id="number">%d</xliff:g> minuuttia.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Täyteen ladattu</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Dash Lataus (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> kunnes täynnä)</string>
+  <string name="keyguard_plugged_in_dash_charging">Dash Lataus</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Näyttöä tallennetaan</string>
+  <string name="screenrecord_notif_final_ticker">Näytön tallennus onnistui</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Tallennetaan näyttöä</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Pysäytä</string>
+  <string name="screenrecord_notif_completed">Näytön tallennus onnistui</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Näytä osoitin</string>
+  <string name="screenrecord_notif_pointer_off">Piilota osoitin</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Näyttöä ei voida tallentaa</string>
+  <string name="notification_channel_screenrecord">Näytön tallennukset</string>
+  <string name="screenrecord_hide_hint">Piilota ohje</string>
+  <string name="screenrecord_show_hint">Näytä ohje</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Näytön tallennus</string>
+  <string name="quick_settings_screenrecord_lq_label">Näytön tallennus 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Näytön tallennus 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Näytön tallennus 720p+</string>
+  <string name="systemui_tuner_navbar_title">Oletusasetukset</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Alareunan pikakuvakkeet</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Kuvakaappaus poistettu</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Käynnistä uudelleen</string>
+  <string name="quick_settings_reboot_recovery_label">Palautus tila</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">Äänenvoimakkuus</string>
+  <string name="quick_settings_volume_panel_label">Äänenvoimakkuus</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">ohita virtanäppäin</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Sallii sovelluksen ohittaa virtapainikkeen käytön.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">Käytössä</string>
+  <string name="quick_settings_network_adb_disabled_label">Pois käytöstä</string>
+  <string name="quick_settings_network_adb_label">ADB verkon yli</string>
+  <string name="quick_settings_network_adb_toast">USB virheenkorjaus ei ole käytössä</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Synkronoi</string>
+  <string name="accessibility_quick_settings_sync_off">Synkronointi pois</string>
+  <string name="accessibility_quick_settings_sync_on">Synkronointi päälle</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Synkronointi poistettu käytöstä</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Synkronointi laitettu päälle</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">USB kytkeminen pois</string>
+  <string name="accessibility_quick_settings_usb_tether_on">USB-jakaminen päällä</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">USB-jako pois päältä</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">USB-jako päälle</string>
+  <string name="quick_settings_usb_tether_label">USB-jakaminen</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Kieli</string>
+  <string name="quick_settings_locale_more_locales_toast">Määritä useampi kieli mahdollistaaksesi kielien vaihtamisen</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Musiikki</string>
+  <string name="quick_settings_music_play">Toista</string>
+  <string name="quick_settings_music_pause">Tauko</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Laajennettu työpöytä</string>
+  <string name="quick_settings_expanded_desktop">Laajennettu</string>
+  <string name="quick_settings_expanded_desktop_off">Normaali</string>
+  <string name="quick_settings_expanded_navigation_off">Piilota navigointipalkki</string>
+  <string name="quick_settings_expanded_statusbar_off">Piilota ilmoituspalkki</string>
+  <string name="alert_on_charged_level">Voit irrottaa laturin laittesta ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
+  <string name="battery_level_good_title">Optimaalinen akun varaus</string>
+  <string name="notification_channel_charge_alert">Optimaalinen akun latauksen varaus</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">Lisää osioita vetämällä tai klikkaamalla niitä</string>
   <!-- AEX logo -->
+  <string name="aex_logo_title">AEX Logo</string>
+  <string name="aex_logo_summary">Anna kaikkien tietää, että käytät AEX, kun ne näkee näyttösi</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">HW näppäimet päällä</string>
+  <string name="accessibility_quick_settings_hwkeys_off">HW näppäimet pois päältä</string>
+  <string name="quick_settings_hwkeys_label">HW näppäimet</string>
+  <string name="status_bar_data_saver">Mobiilidatan säästäjä</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <string name="omnijaws_service_error">Virhe</string>
+  <string name="omnijaws_service_unkown">Säätietoja ei saatavilla</string>
+  <string name="omnijaws_service_error_long">Virhe säätietoja ladattaessa</string>
+  <string name="omnijaws_service_disabled">Palvelu poistettu käytöstä</string>
+  <string name="omnijaws_detail_header">Sää</string>
+  <string name="omnijaws_label_default">Sää</string>
+  <string name="omnijaws_current_text">Nyt</string>
+  <string name="omnijaws_package_not_available">Omnijaws ei ole saatavilla</string>
+  <string name="omnijaws_service_last_update">Viimeisin päivitys:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Navigointipalkki</string>
+  <string name="quick_settings_smartbar">SmartBar</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_navigation_default">Alkuperäinen</string>
+  <string name="quick_settings_navigation_disabled">Pois käytöstä</string>
+  <string name="quick_settings_sound_search">Äänihaku</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Pakota lopetus?</string>
+  <string name="force_stop_dlg_text">Jos pakotat sovelluksen pysähtymään, se saattaa toimia sen jälkeen virheellisesti.</string>
+  <string name="dlg_ok">@android:string/cancel</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
+  <string name="kill">Tapa sovellus</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">TurboPower Yhdistetty (<xliff:g id="charging_time_left">%s</xliff:g> kunnes täynnä)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower yhdistetty</string>
+  <string name="keyguard_plugged_in_turbo_charging">Turbo Lataus</string>
   <!-- Theme tile -->
+  <string name="systemui_theme_style_title">Käyttöliittymän tyyli</string>
+  <string name="systemui_theme_style_auto">Automaattinen</string>
+  <string name="systemui_theme_style_light">Valoisa Käyttöliittymä</string>
+  <string name="systemui_theme_style_dark">Tumma Käyttöliittymä</string>
+  <string name="systemui_theme_style_black">Musta Käyttöliittymä</string>
+  <string name="systemui_theme_style_extended">Laajennettu Käyttöliittymä</string>
+  <string name="quick_settings_theme_tile_title">Korostus</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Valitse väri</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Valitse tyyli</string>
+  <string name="quick_settings_theme_tile_color_default">Oletus</string>
+  <string name="quick_settings_theme_tile_color_red">Punainen</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <!-- Smart pixels QS tile -->
 </resources>

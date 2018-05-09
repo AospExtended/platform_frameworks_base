@@ -29,4 +29,21 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">മറ്റൊരു അപ്ലിക്കേഷനായി ഭാവിക്കാൻ ഒരു അപ്ലിക്കേഷനെ അനുവദിക്കുന്നു. ക്ഷുദ്രകരമായ അപ്ലിക്കേഷനുകൾ ഇത് സ്വകാര്യ അപ്ലിക്കേഷൻ ഡാറ്റ ആക്സസ് ചെയ്യാൻ ഉപയോഗിച്ചേക്കാം. ഈ അനുവാദം ജാഗ്രതയോടെ മാത്രം നൽകൂക!</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">മങ്ങുന്ന_ആനിമേഷൻ</string>
+  <string name="animation_slide_right">ആനിമേഷൻ_ സ്ലൈഡ്_ വലത്തോട്ട്</string>
+  <string name="animation_slide_left">ആനിമേഷൻ_സ്ലൈഡ്_ ഇടത്തോട്ട്</string>
+  <string name="animation_slide_right_no_fade">ഇടത്തോട്ടു തഴുകുക( മായാതെ)</string>
+  <string name="animation_slide_left_no_fade">ഇടത്തോട്ടു തഴുകുക( മായാതെ)</string>
+  <string name="animation_slide_up">മുകളിൽ തഴുകുക</string>
+  <string name="animation_slide_down">താഴെ_തഴുകുക</string>
+  <string name="animation_default">സാധാ_ആനിമേഷൻ</string>
+  <string name="animation_translucent">ട്രാൻസ്ലസെന്റ്</string>
+  <string name="animation_grow_shrink">വളരുക (മുകളിൽ നിന്ന്)</string>
+  <string name="animation_grow_shrink_center">വിരിയുക(നടുവിൽ നിന്ന്)</string>
+  <string name="animation_grow_shrink_bottom">വിരിയുക(അടിയിൽ നിന്ന്)</string>
+  <string name="animation_grow_shrink_left">വിരിയുക(ഇടത് നിന്ന്)</string>
+  <string name="animation_grow_shrink_right">വിരിയുക (വലത് നിന്നു)</string>
+  <string name="animation_random">വികലമായ</string>
+  <string name="action_null">ശൂന്യത</string>
+  <!-- Pocket Lock -->
 </resources>

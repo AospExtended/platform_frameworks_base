@@ -45,4 +45,5 @@
   <string name="animation_grow_shrink_right">Збільшення (праворуч)</string>
   <string name="animation_random">Випадково</string>
   <string name="action_null">Порожньо</string>
+  <!-- Pocket Lock -->
 </resources>

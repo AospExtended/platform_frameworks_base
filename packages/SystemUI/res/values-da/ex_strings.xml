@@ -36,11 +36,21 @@
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">App understøtter ikke PiP</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Ambient display</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Ambient display fra.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Ambient display til.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient display er slået fra.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient display til.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Altid på display</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Altid på display fra.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Altid på display til.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Altid på display er slået fra.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Altid på display er slået til.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Caffeine</string>
   <string name="accessibility_quick_settings_caffeine_off">Caffeine slået fra</string>
@@ -192,7 +202,32 @@
   <string name="quick_settings_navigation_disabled">Deaktiveret</string>
   <string name="quick_settings_sound_search">Søg efter lyd</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Tving til at standse?</string>
+  <string name="force_stop_dlg_text">Hvis du tvinger en app til at standse, kan det medføre, at den ikke fungerer korrekt.</string>
+  <string name="dlg_ok">\@android: streng/ok</string>
+  <string name="dlg_cancel">\@android: streng/Annuller</string>
+  <string name="kill">Luk App ned</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">TurboPower tilsluttet (<xliff:g id="oplade_tid_tilbage">%s</xliff:g> indtil fuld)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower tilsluttet</string>
+  <string name="keyguard_plugged_in_turbo_charging">Turbo opladning</string>
   <!-- Theme tile -->
+  <string name="systemui_theme_style_title">UI stil</string>
+  <string name="systemui_theme_style_auto">Automatisk</string>
+  <string name="systemui_theme_style_light">Lys UI</string>
+  <string name="systemui_theme_style_dark">Mørk UI</string>
+  <string name="systemui_theme_style_black">Sort UI</string>
+  <string name="systemui_theme_style_extended">Udvidet UI</string>
+  <string name="quick_settings_theme_tile_title">Accent</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Vælg farve</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Vælg stil</string>
+  <string name="quick_settings_theme_tile_color_default">Standard</string>
+  <string name="quick_settings_theme_tile_color_red">Rød</string>
+  <string name="quick_settings_theme_tile_color_pink">Pink</string>
+  <string name="quick_settings_theme_tile_color_purple">Lilla</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Dybviolet</string>
+  <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
+  <string name="quick_settings_theme_tile_color_blue">Blå</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <!-- Smart pixels QS tile -->
 </resources>

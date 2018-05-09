@@ -37,4 +37,5 @@
   <string name="animation_slide_up">Podrsaj dol</string>
   <string name="animation_slide_down">Podrsaj gor</string>
   <string name="animation_default">Privzeto</string>
+  <!-- Pocket Lock -->
 </resources>

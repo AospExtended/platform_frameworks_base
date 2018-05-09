@@ -45,4 +45,5 @@
   <string name="animation_grow_shrink_right">Expandeix (des de la dreta)</string>
   <string name="animation_random">Aleatori</string>
   <string name="action_null">En blanc</string>
+  <!-- Pocket Lock -->
 </resources>

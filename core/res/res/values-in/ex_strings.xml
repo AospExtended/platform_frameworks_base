@@ -29,4 +29,21 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Izinkan aplikasi untuk berpura-pura sebagai aplikasi lain. Aplikasi jahat mungkin dapat menggunakan ini untuk mengakses data aplikasi. Perbolehkan ini dengan hati-hati!</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">Memudar</string>
+  <string name="animation_slide_right">Geser ke kanan</string>
+  <string name="animation_slide_left">Geser ke kiri</string>
+  <string name="animation_slide_right_no_fade">Geser ke kanan (Tanpa memudar)</string>
+  <string name="animation_slide_left_no_fade">Geser ke kiri (Tanpa memudar)</string>
+  <string name="animation_slide_up">Geser ke bawah</string>
+  <string name="animation_slide_down">Geser ke atas</string>
+  <string name="animation_default">Bawaan</string>
+  <string name="animation_translucent">Transparan</string>
+  <string name="animation_grow_shrink">Menciut ke (atas)</string>
+  <string name="animation_grow_shrink_center">Menciut ke (tengah)</string>
+  <string name="animation_grow_shrink_bottom">Menciut ke (bawah)</string>
+  <string name="animation_grow_shrink_left">Menciut ke (kiri)</string>
+  <string name="animation_grow_shrink_right">Menciut ke (kanan)</string>
+  <string name="animation_random">Acak</string>
+  <string name="action_null">Kosong</string>
+  <!-- Pocket Lock -->
 </resources>

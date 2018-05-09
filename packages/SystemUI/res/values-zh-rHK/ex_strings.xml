@@ -36,11 +36,21 @@
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">應用程式不支援 PiP</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">環境顯示</string>
+  <string name="accessibility_quick_settings_ambient_display_off">環境顯示關閉</string>
+  <string name="accessibility_quick_settings_ambient_display_on">環境顯示開啟</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">環境顯示已關閉</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">環境顯示已開啟</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">一律顯示</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">息屏顯示關閉</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">息屏顯示開啟</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">息屏顯示已關閉</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">息屏顯示已開啟</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">暫停休眠</string>
   <string name="accessibility_quick_settings_caffeine_off">關閉暫停休眠</string>
@@ -236,4 +246,6 @@
   <string name="theme_info_title">這是什麼？</string>
   <string name="theme_info_message">\"主題\" 磁磚是一個獨特且便於使用的磁磚, 它允許使用者更更改系統的強調色或風格。\n\n要在強調色與風格之間切換的話，只需要長按磁磚，並再次按下以從提供的選項中選擇。</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">開啟執行服務的螢幕</string>
+  <!-- Smart pixels QS tile -->
 </resources>
