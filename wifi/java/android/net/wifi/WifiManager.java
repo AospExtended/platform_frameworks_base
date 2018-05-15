@@ -863,6 +863,15 @@ public class WifiManager {
     public static final String EXTRA_COUNTRY_CODE = "country_code";
 
     /**
+     * Broadcast intent action indicating that the user initiated Wifi OFF
+     * or APM ON and Wifi disconnection is in progress
+     * Actual Wifi disconnection happens after mDisconnectDelayDuration seconds.
+     * @hide
+     */
+    public static final String  ACTION_WIFI_DISCONNECT_IN_PROGRESS =
+            "android.net.wifi.WIFI_DISCONNECT_IN_PROGRESS";
+
+    /**
      * Internally used Wi-Fi lock mode representing the case were no locks are held.
      * @hide
      */
