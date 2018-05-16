@@ -202,6 +202,13 @@
     <string name="tristate_rotation_90">Landscape (90°)</string>
     <string name="tristate_rotation_270">Landscape (270°)</string>
 
+    <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Reading mode</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Reading mode on.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Reading mode off.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Reading mode turned on.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Reading mode turned off.</string>
+
     <!-- Screen record -->
     <!-- Label for notification action to delete a screen recording file [CHAR LIMIT=35] -->
     <string name="screenrecord_delete_label">Delete</string>
