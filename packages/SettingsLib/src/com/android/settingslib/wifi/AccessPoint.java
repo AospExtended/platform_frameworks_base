@@ -1371,18 +1371,18 @@ public class AccessPoint implements Comparable<AccessPoint> {
     }
 
     private static int getSecurity(ScanResult result) {
-        if (result.capabilities.contains("WEP")) {
-            return SECURITY_WEP;
-        } else if (result.capabilities.contains("PSK")) {
-            return SECURITY_PSK;
-        } else if (result.capabilities.contains("EAP")) {
-            return SECURITY_EAP;
-        } else if (result.capabilities.contains("DPP")) {
+        if (result.capabilities.contains("DPP")) {
             return SECURITY_DPP;
         } else if (result.capabilities.contains("SAE")) {
             return SECURITY_SAE;
         } else if (result.capabilities.contains("OWE")) {
             return SECURITY_OWE;
+        } else if (result.capabilities.contains("WEP")) {
+            return SECURITY_WEP;
+        } else if (result.capabilities.contains("PSK")) {
+            return SECURITY_PSK;
+        } else if (result.capabilities.contains("EAP")) {
+            return SECURITY_EAP;
         }
         return SECURITY_NONE;
     }
