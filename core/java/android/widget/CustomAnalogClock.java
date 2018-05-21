@@ -63,6 +63,8 @@ public class CustomAnalogClock extends View {
     private float mHour;
     private boolean mChanged;
 
+    private boolean mRegisteredReceiver;
+
     public CustomAnalogClock(Context context) {
         this(context, null);
     }
@@ -120,21 +122,6 @@ public class CustomAnalogClock extends View {
 
         if (!mAttached) {
             mAttached = true;
-            IntentFilter filter = new IntentFilter();
-
-            filter.addAction(Intent.ACTION_TIME_TICK);
-            filter.addAction(Intent.ACTION_TIME_CHANGED);
-            filter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
-
-            // OK, this is gross but needed. This class is supported by the
-            // remote views machanism and as a part of that the remote views
-            // can be inflated by a context for another user without the app
-            // having interact users permission - just for loading resources.
-            // For exmaple, when adding widgets from a user profile to the
-            // home screen. Therefore, we register the receiver as the current
-            // user not the one the context is for.
-            getContext().registerReceiverAsUser(mIntentReceiver,
-                    android.os.Process.myUserHandle(), filter, null, getHandler());
         }
 
         // NOTE: It's safe to do these after registering the receiver since the receiver always runs
@@ -151,9 +138,38 @@ public class CustomAnalogClock extends View {
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         if (mAttached) {
-            getContext().unregisterReceiver(mIntentReceiver);
             mAttached = false;
         }
+    }
+
+    public void registerReceiver() {
+        if (mRegisteredReceiver) return;
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(Intent.ACTION_TIME_TICK);
+        filter.addAction(Intent.ACTION_TIME_CHANGED);
+        filter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
+
+        // OK, this is gross but needed. This class is supported by the
+        // remote views machanism and as a part of that the remote views
+        // can be inflated by a context for another user without the app
+        // having interact users permission - just for loading resources.
+        // for exmaple, when adding widgets from a user profile to the
+        // home screen. Therefore, we register the receiver as the current
+        // user not the one the context is for.
+        getContext().registerReceiverAsUser(mIntentReceiver,
+                android.os.Process.myUserHandle(), filter, null, getHandler());
+        mRegisteredReceiver = true;
+
+        onTimeChanged();
+        invalidate();
+    }
+
+    public void unregisterReceiver() {
+        if (!mRegisteredReceiver) return;
+
+        getContext().unregisterReceiver(mIntentReceiver);
+        mRegisteredReceiver = false;
     }
 
     @Override
