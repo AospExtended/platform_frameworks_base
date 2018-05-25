@@ -51,8 +51,7 @@ public class BoostFramework {
     private static Method sReleaseFunc = null;
     private static Method sReleaseHandlerFunc = null;
 
-    private static int sIopv2 =
-            SystemProperties.getInt("vendor.iop.enable_uxe", 0);
+    private static int sIopv2 = -1;
     private static Method sIOPStart = null;
     private static Method sIOPStop  = null;
     private static Method sUXEngineEvents  = null;
@@ -159,7 +158,7 @@ public class BoostFramework {
                     argClasses = new Class[] {};
                     sIOPStop =  sPerfClass.getDeclaredMethod("perfIOPrefetchStop", argClasses);
 
-                    if (sIopv2 == 1) {
+                    try {
                         argClasses = new Class[] {int.class, int.class, String.class, int.class};
                         sUXEngineEvents =  sPerfClass.getDeclaredMethod("perfUXEngine_events",
                                                                           argClasses);
@@ -167,6 +166,8 @@ public class BoostFramework {
                         argClasses = new Class[] {int.class};
                         sUXEngineTrigger =  sPerfClass.getDeclaredMethod("perfUXEngine_trigger",
                                                                            argClasses);
+                    } catch (Exception e) {
+                        Log.i(TAG, "BoostFramework() : Exception_4 = PreferredApps not supported");
                     }
 
                     sIsLoaded = true;
@@ -271,8 +272,15 @@ public class BoostFramework {
 /** @hide */
     public int perfUXEngine_events(int opcode, int pid, String pkgName, int lat) {
         int ret = -1;
+        boolean bindApp_check = (opcode == UXE_EVENT_BINDAPP) ? true : false;
+        if (sIopv2 == -1 && !bindApp_check) {
+            sIopv2 = SystemProperties.getInt("vendor.iop.enable_uxe", 0);
+        }
         try {
-            if (sIopv2 == 0 || sUXEngineEvents == null) {
+            if (sUXEngineEvents == null) {
+                return ret;
+            }
+            if (!bindApp_check && sIopv2 == 0) {
                 return ret;
             }
             Object retVal = sUXEngineEvents.invoke(mPerf, opcode, pid, pkgName, lat);
@@ -287,6 +295,9 @@ public class BoostFramework {
 /** @hide */
     public String perfUXEngine_trigger(int opcode) {
         String ret = null;
+        if (sIopv2 == -1) {
+            sIopv2 = SystemProperties.getInt("vendor.iop.enable_uxe", 0);
+        }
         try {
             if (sIopv2 == 0 || sUXEngineTrigger == null) {
                 return ret;
