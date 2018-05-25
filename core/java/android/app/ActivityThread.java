@@ -368,7 +368,6 @@ public final class ActivityThread extends ClientTransactionHandler {
     static volatile Handler sMainThreadHandler;  // set once in main()
 
     Bundle mCoreSettings = null;
-    private final int mEnableUxe = SystemProperties.getInt("vendor.iop.enable_uxe", 0);
 
     /** Activity client record, used for bookkeeping for the real {@link Activity} instance. */
     public static final class ActivityClientRecord {
@@ -5803,7 +5802,7 @@ public final class ActivityThread extends ClientTransactionHandler {
         updateLocaleListFromAppContext(appContext,
                 mResourcesManager.getConfiguration().getLocales());
 
-        if (mEnableUxe != 0 && !Process.isIsolated()) {
+        if (!Process.isIsolated()) {
             ux_perf = new BoostFramework(appContext);
         }
 
