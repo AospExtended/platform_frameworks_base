@@ -37,6 +37,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|top">
+       <RelativeLayout
+            android:id="@+id/clock_styles_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            >
             <TextClock
                 android:id="@+id/clock_view"
                 android:layout_width="wrap_content"
@@ -76,12 +84,13 @@
                 android:src="@drawable/ic_aod_charging_24dp"
                 android:contentDescription="@string/accessibility_ambient_display_charging"
             />-->
+        </RelativeLayout>
 
             <include layout="@layout/keyguard_weather_view"
                 android:id="@+id/keyguard_weather_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/clock_view" />
+                android:layout_below="@id/clock_styles_container" />
 
             <include layout="@layout/keyguard_status_area"
                 android:id="@+id/keyguard_status_area"
