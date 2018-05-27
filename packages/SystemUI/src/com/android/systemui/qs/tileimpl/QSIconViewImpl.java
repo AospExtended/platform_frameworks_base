@@ -155,16 +155,20 @@ public class QSIconViewImpl extends QSIconView {
         return getColorForState(getContext(), state);
     }
 
-    public static void animateGrayScale(int fromColor, int toColor, ImageView iv) {
+    public void animateGrayScale(int fromColor, int toColor, ImageView iv) {
+
         if (iv instanceof AlphaControlledSlashImageView) {
             ((AlphaControlledSlashImageView)iv)
                     .setFinalImageTintList(ColorStateList.valueOf(toColor));
         }
+
         if (ValueAnimator.areAnimatorsEnabled()) {
             final float fromAlpha = Color.alpha(fromColor);
             final float toAlpha = Color.alpha(toColor);
             final float fromChannel = Color.red(fromColor);
             final float toChannel = Color.red(toColor);
+
+            boolean enableQsTileTinting = getContext().getResources().getBoolean(R.bool.config_enable_qs_tile_tinting);
 
             ValueAnimator anim = ValueAnimator.ofFloat(0, 1);
             anim.setDuration(QS_ANIM_LENGTH);
@@ -173,7 +177,11 @@ public class QSIconViewImpl extends QSIconView {
                 int alpha = (int) (fromAlpha + (toAlpha - fromAlpha) * fraction);
                 int channel = (int) (fromChannel + (toChannel - fromChannel) * fraction);
 
-                setTint(iv, Color.argb(alpha, channel, channel, channel));
+                if (!enableQsTileTinting) {
+                    setTint(iv, Color.argb(alpha, channel, channel, channel));
+                } else {
+                    setTint(iv, toColor);
+                }
             });
 
             anim.start();
