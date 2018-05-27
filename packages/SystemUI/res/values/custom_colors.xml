@@ -32,4 +32,14 @@
     <color name="battery_level_good_color">#ff319111</color><!-- green -->
 
     <color name="legacy_icon_background">#FFFFFF</color>
+
+    <!-- QS tiles Active and Inactive tint (Requires config_enable_qs_tile_tinting bool set to true) -->
+    <color name="qs_tiles_active_tint">@*android:color/primary_text_default_material_light</color>
+    <color name="qs_tiles_inactive_tint">@*android:color/hint_foreground_material_light</color>
+    
+    <!-- QS tiles expand, underline and label colors -->    
+    <color name="qs_tiles_expand_tint">@*android:color/text_color_primary</color>
+    <color name="qs_tiles_label_color">@*android:color/text_color_primary</color>
+    <color name="qs_tiles_underline_color">@*android:color/foreground_material_light</color>
+
 </resources>
