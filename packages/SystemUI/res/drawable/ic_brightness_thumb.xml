@@ -14,10 +14,11 @@ Copyright (C) 2014 The Android Open Source Project
         android:height="12dp"
         android:width="12dp"
         android:viewportWidth="42.0"
-        android:viewportHeight="42.0">
+	android:viewportHeight="42.0"
+	android:tint="@*android:color/accent_device_default_light">
 
     <path
-        android:fillColor="?android:attr/colorControlNormal"
+        android:fillColor="#FF000000"
         android:pathData="M 21 0 C 32.5979797464 0 42 9.40202025355 42 21 C 42 32.5979797464 32.5979797464 42 21 42 C 9.40202025355 42 0 32.5979797464 0 21 C 0 9.40202025355 9.40202025355 0 21 0 Z"
         android:strokeWidth="1.0" />
 </vector>

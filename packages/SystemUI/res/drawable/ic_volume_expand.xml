@@ -20,7 +20,7 @@
     android:viewportWidth="24"
     android:height="24dp"
     android:viewportHeight="24"
-    android:tint="?android:attr/colorControlNormal" >
+    android:tint="@*android:color/accent_device_default_light">
     <group
         android:name="caret___4" >
         <group
