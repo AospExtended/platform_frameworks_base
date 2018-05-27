@@ -126,6 +126,9 @@ class GlobalScreenrecord {
         public void run() {
             Runtime rt = Runtime.getRuntime();
 
+            final boolean higherAspectRatio = Resources.getSystem().getBoolean(
+                    com.android.internal.R.bool.config_haveHigherAspectRatioScreen);
+
             // additional arguments to pass to screenrecord bin
             final String[] cmds = new String[6];
             cmds[0] = "/system/bin/screenrecord";
@@ -134,21 +137,21 @@ class GlobalScreenrecord {
                 case WindowManager.SCREEN_RECORD_LOW_QUALITY:
                     // low resolution and 1.5Mbps
                     cmds[2] = "--size";
-                    cmds[3] = "480x800";
+                    cmds[3] = higherAspectRatio ? "480x960" : "480x800";
                     cmds[4] = "--bit-rate";
                     cmds[5] = "1500000";
                     break;
                 case WindowManager.SCREEN_RECORD_MID_QUALITY:
                     // default resolution (720p) and 4Mbps
                     cmds[2] = "--size";
-                    cmds[3] = "720x1280";
+                    cmds[3] = higherAspectRatio ? "720x1440" : "720x1280";
                     cmds[4] = "--bit-rate";
                     cmds[5] = "4000000";
                     break;
                 case WindowManager.SCREEN_RECORD_HIGH_QUALITY:
                     // default resolution (720p) and 8Mbps
                     cmds[2] = "--size";
-                    cmds[3] = "720x1280";
+                    cmds[3] = higherAspectRatio ? "720x1440" : "720x1280";
                     cmds[4] = "--bit-rate";
                     cmds[5] = "8000000";
                     break;
