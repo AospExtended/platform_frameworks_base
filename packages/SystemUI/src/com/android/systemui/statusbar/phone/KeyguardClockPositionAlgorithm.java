@@ -20,6 +20,7 @@ import static com.android.systemui.statusbar.notification.NotificationUtils.inte
 
 import android.content.res.Resources;
 import android.graphics.Path;
+import android.util.TypedValue;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.PathInterpolator;
 
@@ -61,6 +62,7 @@ public class KeyguardClockPositionAlgorithm {
     private int mBurnInPreventionOffsetY;
 
     private boolean mIsBigClock;
+    private float mBigClockPadding;
 
     /**
      * The number (fractional) of notifications the "more" card counts when calculating how many
@@ -101,6 +103,10 @@ public class KeyguardClockPositionAlgorithm {
         mBurnInPreventionOffsetY = res.getDimensionPixelSize(
                 R.dimen.burn_in_prevention_offset_y);
         mDozingStackPadding = res.getDimensionPixelSize(R.dimen.dozing_stack_padding);
+
+        TypedValue typedValue = new TypedValue();
+        res.getValue(R.dimen.dozing_big_clock_padding, typedValue, true);
+        mBigClockPadding = typedValue.getFloat();
     }
 
     public void setup(int maxKeyguardNotifications, int maxPanelHeight, float expandedHeight,
@@ -171,7 +177,7 @@ public class KeyguardClockPositionAlgorithm {
     private int getClockY() {
         // Dark: Align the bottom edge of the clock at one third:
         // clockBottomEdge = result - mKeyguardStatusHeight / 2 + mClockBottom
-        float clockYDark = ((mIsBigClock ? 0.38f : 0.33f) * mHeight + (float) mKeyguardStatusHeight / 2 - mClockBottom)
+        float clockYDark = ((mIsBigClock ? mBigClockPadding : 0.33f) * mHeight + (float) mKeyguardStatusHeight / 2 - mClockBottom)
                 + burnInPreventionOffsetY();
         float clockYRegular = getClockYFraction() * mHeight;
         return (int) interpolate(clockYRegular, clockYDark, mDarkAmount);
