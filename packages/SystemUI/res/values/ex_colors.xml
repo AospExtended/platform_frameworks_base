@@ -14,7 +14,6 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-
 <resources>
     <!-- Floating action button -->
     <color name="fab_color">@*android:color/accent_device_default_light</color>
@@ -55,5 +54,8 @@
     <color name="quick_settings_theme_tile_jade_green">#9ABC98</color>
     <color name="quick_settings_theme_tile_black">#000000</color>
     <color name="quick_settings_theme_tile_white">#ffffff</color>
+
+    <!-- Power menu wallpaper tint off color -->
+    <color name="power_menu_wallpaper_tint_off_color">#80202020</color>
 </resources>
 

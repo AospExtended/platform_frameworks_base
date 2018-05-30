@@ -19,6 +19,7 @@ import android.app.KeyguardManager;
 import android.app.WallpaperManager;
 import android.content.Context;
 import android.graphics.Point;
+import android.graphics.drawable.ColorDrawable;
 import android.os.PowerManager;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -66,7 +67,7 @@ public class GlobalActionsImpl implements GlobalActions {
     @Override
     public void showShutdownUi(boolean isReboot, String reason) {
         GradientDrawable background = new GradientDrawable(mContext);
-        background.setAlpha((int) (showWallpaperTint(mContext) ? SHUTDOWN_SCRIM_ALPHA * 255 : CUSTOM_SHUTDOWN_SCRIM_ALPHA * 255));
+        background.setAlpha((int) (SHUTDOWN_SCRIM_ALPHA * 255));
 
         Dialog d = new Dialog(mContext,
                 com.android.systemui.R.style.Theme_SystemUI_Dialog_GlobalActions);
@@ -84,7 +85,7 @@ public class GlobalActionsImpl implements GlobalActions {
                         | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
                         | WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH
                         | WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
-        window.setBackgroundDrawable(background);
+        window.setBackgroundDrawable(showWallpaperTint(mContext) ? background : new ColorDrawable(mContext.getResources().getColor(com.android.systemui.R.color.power_menu_wallpaper_tint_off_color)));
         window.setWindowAnimations(R.style.Animation_Toast);
 
         d.setContentView(R.layout.shutdown_dialog);
