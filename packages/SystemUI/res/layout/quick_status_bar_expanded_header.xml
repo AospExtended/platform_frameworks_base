@@ -47,6 +47,7 @@
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/qs_header"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
