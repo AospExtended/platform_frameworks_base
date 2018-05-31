@@ -1164,6 +1164,10 @@ public final class PowerManagerService extends SystemService
                         + ", tag=\"" + tag + "\", ws=" + ws + ", uid=" + uid + ", pid=" + pid);
             }
 
+            if (tag.startsWith("WakerLock")){
+                tag = tag.substring(0,9);
+            }
+
             boolean blockWakelock = false;
             if (!mSeenWakeLocks.contains(tag)) {
                 if ((flags & PowerManager.WAKE_LOCK_LEVEL_MASK) == PowerManager.PARTIAL_WAKE_LOCK) {
