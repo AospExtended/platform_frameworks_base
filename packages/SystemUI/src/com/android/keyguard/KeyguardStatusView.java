@@ -470,12 +470,35 @@ public class KeyguardStatusView extends GridLayout implements
 
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) mKeyguardStatusArea.getLayoutParams();
 
+	// Set smaller Clock, Date and OwnerInfo text size if the user selects the small clock type
 	if (mClockSelection == 6) {
+	    // ClockView
 	    mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                 getResources().getDimensionPixelSize(R.dimen.widget_small_font_size));
+
+	    // DateView
+            mDateView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+		getResources().getDimensionPixelSize(R.dimen.widget_label_small_font_size));
+
+            // OwnerInfo
+            if (mOwnerInfo != null) {
+            	mOwnerInfo.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+                    getResources().getDimensionPixelSize(R.dimen.widget_label_small_font_size));
+            }
 	} else {
+	    // ClockView
 	    mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                 getResources().getDimensionPixelSize(R.dimen.widget_big_font_size));
+
+	    // DateView
+            mDateView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+                getResources().getDimensionPixelSize(R.dimen.widget_label_font_size));
+
+            // OwnerInfo
+            if (mOwnerInfo != null) {
+            	mOwnerInfo.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+                    getResources().getDimensionPixelSize(R.dimen.widget_label_font_size));
+            }
 	}
 
         switch (mClockSelection) {
