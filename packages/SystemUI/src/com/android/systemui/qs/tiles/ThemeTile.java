@@ -104,6 +104,16 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
                 R.string.quick_settings_theme_tile_color_grey));
         sThemeItems.add(new ThemeTileItem(19, R.color.quick_settings_theme_tile_blue_grey,
                 R.string.quick_settings_theme_tile_color_blue_grey));
+        sThemeItems.add(new ThemeTileItem(20, R.color.quick_settings_theme_tile_candy_red,
+                R.string.quick_settings_theme_tile_color_candy_red));
+        sThemeItems.add(new ThemeTileItem(21, R.color.quick_settings_theme_tile_pale_red,
+                R.string.quick_settings_theme_tile_color_pale_red));
+        sThemeItems.add(new ThemeTileItem(22, R.color.quick_settings_theme_tile_extended_green,
+                R.string.quick_settings_theme_tile_color_extended_green));
+        sThemeItems.add(new ThemeTileItem(23, R.color.quick_settings_theme_tile_pale_blue,
+                R.string.quick_settings_theme_tile_color_pale_blue));
+        sThemeItems.add(new ThemeTileItem(24, R.color.quick_settings_theme_tile_jade_green,
+                R.string.quick_settings_theme_tile_color_jade_green));
     }
 
     static final List<ThemeTileItem> sStyleItems = new ArrayList<ThemeTileItem>();
@@ -290,10 +300,10 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
     private ThemeTileItem getThemeItemForStyleMode() {
         boolean isDark = isUsingDarkTheme() || isUsingBlackTheme() || isUsingExtendedTheme();
         if (isDark) {
-            return new ThemeTileItem(20, R.color.quick_settings_theme_tile_white,
+            return new ThemeTileItem(25, R.color.quick_settings_theme_tile_white,
                     R.string.quick_settings_theme_tile_color_white);
         } else {
-            return new ThemeTileItem(20, R.color.quick_settings_theme_tile_black,
+            return new ThemeTileItem(25, R.color.quick_settings_theme_tile_black,
                     R.string.quick_settings_theme_tile_color_black);
         }
     }

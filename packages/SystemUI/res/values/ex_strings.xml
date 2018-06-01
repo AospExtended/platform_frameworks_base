@@ -131,6 +131,11 @@
     <string name="quick_settings_theme_tile_color_brown">Brown</string>
     <string name="quick_settings_theme_tile_color_grey">Grey</string>
     <string name="quick_settings_theme_tile_color_blue_grey">Blue grey</string>
+    <string name="quick_settings_theme_tile_color_candy_red">Candy red</string>
+    <string name="quick_settings_theme_tile_color_pale_red">Pale red</string>
+    <string name="quick_settings_theme_tile_color_extended_green">Extended green</string>
+    <string name="quick_settings_theme_tile_color_pale_blue">Pale blue</string>
+    <string name="quick_settings_theme_tile_color_jade_green">Jade green</string>
     <string name="quick_settings_theme_tile_color_black">Black</string>
     <string name="quick_settings_theme_tile_color_white">White</string>
 
