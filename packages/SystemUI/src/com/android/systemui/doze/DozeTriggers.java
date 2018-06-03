@@ -145,7 +145,7 @@ public class DozeTriggers implements DozeMachine.Part {
                 }
                 if (isDoubleTap) {
                     mDozeHost.onDoubleTap(screenX, screenY);
-                    mMachine.wakeUp();
+                    //mMachine.wakeUp();
                 } else {
                     mDozeHost.extendPulse();
                 }
@@ -404,6 +404,11 @@ public class DozeTriggers implements DozeMachine.Part {
             if (active) {
                 mMachine.requestState(DozeMachine.State.FINISH);
             }
+        }
+
+        @Override
+        public void wakeUpFromDoubleTapAod() {
+            mMachine.wakeUp();
         }
     };
 }
