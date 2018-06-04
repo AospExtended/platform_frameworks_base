@@ -16,22 +16,15 @@
 
 package android.widget;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.text.format.DateUtils;
 import android.text.format.Time;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.RemoteViews.RemoteView;
-
-import java.util.TimeZone;
 
 /**
  * This widget display an analogic clock with two hands for hours and
@@ -44,26 +37,9 @@ import java.util.TimeZone;
  */
 @RemoteView
 @Deprecated
-public class DeadPoolAnalogClock extends View {
-    private Time mCalendar;
+public class DeadPoolAnalogClock extends android.widget.CustomAnalogClock {
 
-    private Drawable mHourHand;
-    private Drawable mMinuteHand;
-    private Drawable mDial;
-    private Drawable mDialAmbient;
-
-    private boolean mIsAmbientDisplay;
-
-    private int mDialWidth;
-    private int mDialHeight;
-
-    private boolean mAttached;
-
-    private float mMinutes;
-    private float mHour;
     private boolean mChanged;
-
-    private boolean mRegisteredReceiver;
 
     public DeadPoolAnalogClock(Context context) {
         this(context, null);
@@ -108,101 +84,6 @@ public class DeadPoolAnalogClock extends View {
         mDialHeight = mDial.getIntrinsicHeight();
     }
 
-    public void setDark(boolean dark) {
-        if (mIsAmbientDisplay != dark) {
-            mChanged = true;
-            mIsAmbientDisplay = dark;
-            invalidate();
-        }
-    }
-
-    @Override
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-
-        if (!mAttached) {
-            mAttached = true;
-        }
-
-        // NOTE: It's safe to do these after registering the receiver since the receiver always runs
-        // in the main thread, therefore the receiver can't run before this method returns.
-
-        // The time zone may have changed while the receiver wasn't registered, so update the Time
-        mCalendar = new Time();
-
-        // Make sure we update to the current time
-        onTimeChanged();
-    }
-
-    @Override
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        if (mAttached) {
-            mAttached = false;
-        }
-    }
-
-    public void registerReceiver() {
-        if (mRegisteredReceiver) return;
-
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(Intent.ACTION_TIME_TICK);
-        filter.addAction(Intent.ACTION_TIME_CHANGED);
-        filter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
-
-        // OK, this is gross but needed. This class is supported by the
-        // remote views machanism and as a part of that the remote views
-        // can be inflated by a context for another user without the app
-        // having interact users permission - just for loading resources.
-        // for exmaple, when adding widgets from a user profile to the
-        // home screen. Therefore, we register the receiver as the current
-        // user not the one the context is for.
-        getContext().registerReceiverAsUser(mIntentReceiver,
-                android.os.Process.myUserHandle(), filter, null, getHandler());
-        mRegisteredReceiver = true;
-
-        onTimeChanged();
-        invalidate();
-    }
-
-    public void unregisterReceiver() {
-        if (!mRegisteredReceiver) return;
-
-        getContext().unregisterReceiver(mIntentReceiver);
-        mRegisteredReceiver = false;
-    }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-
-        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-        int widthSize =  MeasureSpec.getSize(widthMeasureSpec);
-        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-        int heightSize =  MeasureSpec.getSize(heightMeasureSpec);
-
-        float hScale = 1.0f;
-        float vScale = 1.0f;
-
-        if (widthMode != MeasureSpec.UNSPECIFIED && widthSize < mDialWidth) {
-            hScale = (float) widthSize / (float) mDialWidth;
-        }
-
-        if (heightMode != MeasureSpec.UNSPECIFIED && heightSize < mDialHeight) {
-            vScale = (float )heightSize / (float) mDialHeight;
-        }
-
-        float scale = Math.min(hScale, vScale);
-
-        setMeasuredDimension(resolveSizeAndState((int) (mDialWidth * scale), widthMeasureSpec, 0),
-                resolveSizeAndState((int) (mDialHeight * scale), heightMeasureSpec, 0));
-    }
-
-    @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w, h, oldw, oldh);
-        mChanged = true;
-    }
-
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -227,7 +108,7 @@ public class DeadPoolAnalogClock extends View {
         if (availableWidth < w || availableHeight < h) {
             scaled = true;
             float scale = Math.min((float) availableWidth / (float) w,
-                                   (float) availableHeight / (float) h);
+                    (float) availableHeight / (float) h);
             canvas.save();
             canvas.scale(scale, scale, x, y);
         }
@@ -273,40 +154,5 @@ public class DeadPoolAnalogClock extends View {
         if (scaled) {
             canvas.restore();
         }
-    }
-
-    private void onTimeChanged() {
-        mCalendar.setToNow();
-
-        int hour = mCalendar.hour;
-        int minute = mCalendar.minute;
-        int second = mCalendar.second;
-
-        mMinutes = minute + second / 60.0f;
-        mHour = hour + mMinutes / 60.0f;
-        mChanged = true;
-
-        updateContentDescription(mCalendar);
-    }
-
-    private final BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(Intent.ACTION_TIMEZONE_CHANGED)) {
-                String tz = intent.getStringExtra("time-zone");
-                mCalendar = new Time(TimeZone.getTimeZone(tz).getID());
-            }
-
-            onTimeChanged();
-
-            invalidate();
-        }
-    };
-
-    private void updateContentDescription(Time time) {
-        final int flags = DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_24HOUR;
-        String contentDescription = DateUtils.formatDateTime(mContext,
-                time.toMillis(false), flags);
-        setContentDescription(contentDescription);
     }
 }

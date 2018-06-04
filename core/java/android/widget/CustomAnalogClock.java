@@ -45,22 +45,22 @@ import java.util.TimeZone;
 @RemoteView
 @Deprecated
 public class CustomAnalogClock extends View {
-    private Time mCalendar;
+    public Time mCalendar;
 
-    private Drawable mHourHand;
-    private Drawable mMinuteHand;
-    private Drawable mDial;
-    private Drawable mDialAmbient;
+    public Drawable mHourHand;
+    public Drawable mMinuteHand;
+    public Drawable mDial;
+    public Drawable mDialAmbient;
 
-    private boolean mIsAmbientDisplay;
+    public boolean mIsAmbientDisplay;
 
-    private int mDialWidth;
-    private int mDialHeight;
+    public int mDialWidth;
+    public int mDialHeight;
 
     private boolean mAttached;
 
-    private float mMinutes;
-    private float mHour;
+    public float mMinutes;
+    public float mHour;
     private boolean mChanged;
 
     private boolean mRegisteredReceiver;
@@ -227,7 +227,7 @@ public class CustomAnalogClock extends View {
         if (availableWidth < w || availableHeight < h) {
             scaled = true;
             float scale = Math.min((float) availableWidth / (float) w,
-                                   (float) availableHeight / (float) h);
+                    (float) availableHeight / (float) h);
             canvas.save();
             canvas.scale(scale, scale, x, y);
         }
