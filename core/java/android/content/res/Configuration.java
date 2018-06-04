@@ -1112,7 +1112,6 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         int changed = 0;
         if (delta.fontScale > 0 && fontScale != delta.fontScale) {
             changed |= ActivityInfo.CONFIG_FONT_SCALE;
-            changed |= ActivityInfo.CONFIG_THEME_FONT;
             fontScale = delta.fontScale;
         }
         if (delta.mcc != 0 && mcc != delta.mcc) {
@@ -1278,7 +1277,6 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         }
         if (delta.assetsSeq != ASSETS_SEQ_UNDEFINED && delta.assetsSeq != assetsSeq) {
             changed |= ActivityInfo.CONFIG_ASSETS_PATHS;
-            changed |= ActivityInfo.CONFIG_THEME_FONT;
             assetsSeq = delta.assetsSeq;
         }
         if (delta.seq != 0) {
@@ -1344,7 +1342,6 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         int changed = 0;
         if ((compareUndefined || delta.fontScale > 0) && fontScale != delta.fontScale) {
             changed |= ActivityInfo.CONFIG_FONT_SCALE;
-            changed |= ActivityInfo.CONFIG_THEME_FONT;
         }
         if ((compareUndefined || delta.mcc != 0) && mcc != delta.mcc) {
             changed |= ActivityInfo.CONFIG_MCC;
@@ -1434,7 +1431,6 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         if ((compareUndefined || delta.assetsSeq != ASSETS_SEQ_UNDEFINED)
                 && assetsSeq != delta.assetsSeq) {
             changed |= ActivityInfo.CONFIG_ASSETS_PATHS;
-            changed |= ActivityInfo.CONFIG_THEME_FONT;
         }
 
         // Make sure that one of the values is not null and that they are not equal.
@@ -1466,7 +1462,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         // CONFIG_ASSETS_PATHS and CONFIG_FONT_SCALE are higher level configuration changes that
         // all resources are subject to change with.
         interestingChanges = interestingChanges | ActivityInfo.CONFIG_ASSETS_PATHS
-                | ActivityInfo.CONFIG_FONT_SCALE | ActivityInfo.CONFIG_THEME_FONT;
+                | ActivityInfo.CONFIG_FONT_SCALE;
         return (configChanges & interestingChanges) != 0;
     }
 

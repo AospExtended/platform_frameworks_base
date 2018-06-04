@@ -458,11 +458,10 @@ public class Process {
                                   String instructionSet,
                                   String appDataDir,
                                   String invokeWith,
-                                  String[] zygoteArgs,
-                                  boolean refreshFont) {
+                                  String[] zygoteArgs) {
         return zygoteProcess.start(processClass, niceName, uid, gid, gids,
                     debugFlags, mountExternal, targetSdkVersion, seInfo,
-                    abi, instructionSet, appDataDir, invokeWith, zygoteArgs, refreshFont);
+                    abi, instructionSet, appDataDir, invokeWith, zygoteArgs);
     }
 
     /** @hide */
@@ -476,11 +475,10 @@ public class Process {
                                   String instructionSet,
                                   String appDataDir,
                                   String invokeWith,
-                                  String[] zygoteArgs,
-                                  boolean refreshFont) {
+                                  String[] zygoteArgs) {
         return WebViewZygote.getProcess().start(processClass, niceName, uid, gid, gids,
                     debugFlags, mountExternal, targetSdkVersion, seInfo,
-                    abi, instructionSet, appDataDir, invokeWith, zygoteArgs, refreshFont);
+                    abi, instructionSet, appDataDir, invokeWith, zygoteArgs);
     }
 
     /**

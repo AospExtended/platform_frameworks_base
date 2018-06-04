@@ -25,7 +25,6 @@ import android.graphics.fonts.FontVariationAxis;
 import android.net.Uri;
 
 import java.lang.annotation.Retention;
-import java.util.List;
 
 
 /**
@@ -33,10 +32,10 @@ import java.util.List;
  * @hide
  */
 public final class FontConfig {
-    private final @NonNull List<Family> mFamilies;
-    private final @NonNull List<Alias> mAliases;
+    private final @NonNull Family[] mFamilies;
+    private final @NonNull Alias[] mAliases;
 
-    public FontConfig(@NonNull List<Family> families, @NonNull List<Alias> aliases) {
+    public FontConfig(@NonNull Family[] families, @NonNull Alias[] aliases) {
         mFamilies = families;
         mAliases = aliases;
     }
@@ -44,14 +43,14 @@ public final class FontConfig {
     /**
      * Returns the ordered list of families included in the system fonts.
      */
-    public @NonNull List<Family> getFamilies() {
+    public @NonNull Family[] getFamilies() {
         return mFamilies;
     }
 
     /**
      * Returns the list of aliases defined for the font families in the system fonts.
      */
-    public @NonNull List<Alias> getAliases() {
+    public @NonNull Alias[] getAliases() {
         return mAliases;
     }
 
@@ -168,7 +167,7 @@ public final class FontConfig {
      * Class that holds information about a Font family.
      */
     public static final class Family {
-        private String mName;
+        private final @NonNull String mName;
         private final @NonNull Font[] mFonts;
         private final @NonNull String mLanguage;
 
@@ -210,10 +209,6 @@ public final class FontConfig {
             mFonts = fonts;
             mLanguage = language;
             mVariant = variant;
-        }
-
-        public void clearName() {
-            mName = null;
         }
 
         /**
