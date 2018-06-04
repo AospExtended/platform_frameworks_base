@@ -22,7 +22,7 @@
         android:id="@+id/keyguard_weather_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="14dp"
+        android:paddingTop="10dp"
         android:layout_gravity="center"
         android:orientation="vertical" >
 
@@ -33,7 +33,7 @@
         android:layout_gravity="center"
         android:includeFontPadding="false"
         android:text="@string/weather_info_not_available"
-        android:textSize="15sp"
+        android:textSize="12sp"
         android:textColor="?attr/wallpaperTextColor" />
 
     <LinearLayout
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:includeFontPadding="false"
-        android:textSize="15sp"
+        android:textSize="12sp"
         android:textStyle="normal"
         android:fontFamily="sans-serif-condensed"
         android:textColor="?attr/wallpaperTextColor" />
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:includeFontPadding="false"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:textStyle="normal"
                 android:fontFamily="sans-serif-condensed"
                 android:textColor="?attr/wallpaperTextColor" />
@@ -113,7 +113,7 @@
                 android:textStyle="normal"
                 android:fontFamily="sans-serif-condensed"
                 android:letterSpacing="0.15"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="?attr/wallpaperTextColor" />
 
 </LinearLayout>
