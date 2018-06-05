@@ -64,6 +64,7 @@ public class QuickStatusBarHeader extends FrameLayout implements StatusBarHeader
     private BatteryMeterView mBatteryView;
     private Clock mClock;
     private Clock mLeftClock;
+    private Clock mCenterClock;
 
     private HorizontalScrollView mQuickQsPanelScroller;
     private ImageView mBackgroundImage;
@@ -100,6 +101,8 @@ public class QuickStatusBarHeader extends FrameLayout implements StatusBarHeader
         ((Clock)mClock).setIsQshb(true);
         mLeftClock = findViewById(R.id.left_clock);
         ((Clock)mLeftClock).setIsQshb(true);
+        mCenterClock = findViewById(R.id.center_clock);
+        ((Clock)mCenterClock).setIsQshb(true);
 
         mActivityStarter = Dependency.get(ActivityStarter.class);
 
@@ -121,6 +124,9 @@ public class QuickStatusBarHeader extends FrameLayout implements StatusBarHeader
         }
         if (mLeftClock != null) {
             ((Clock)mLeftClock).updateSettings();
+        }
+        if (mCenterClock != null) {
+            ((Clock)mCenterClock).updateSettings();
         }
     }
 

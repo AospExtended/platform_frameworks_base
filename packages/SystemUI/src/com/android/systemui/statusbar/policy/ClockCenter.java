@@ -39,6 +39,7 @@ public class ClockCenter extends Clock {
 
     public ClockCenter(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        updateSettings();
     }
 
 
