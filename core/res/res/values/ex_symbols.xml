@@ -242,6 +242,15 @@
   <java-symbol type="drawable" name="deadpool_clock_hand_hour" />
   <java-symbol type="drawable" name="deadpool_clock_hand_minute" />
 
+  <!-- Spidey clock -->
+  <java-symbol type="drawable" name="spidey_clock_dial" />
+  <java-symbol type="drawable" name="spidey_clock_dial_ambient" />
+  <java-symbol type="drawable" name="spidey_clock_hand_hour" />
+  <java-symbol type="drawable" name="spidey_clock_hand_minute" />
+  <java-symbol type="color" name="spidey_clock_hour_hand_color" />
+  <java-symbol type="color" name="spidey_clock_minute_hand_color" />
+
+
   <!-- System fonts -->
   <java-symbol type="array" name="config_fontPackages" />
    
@@ -250,6 +259,7 @@
   <java-symbol type="color" name="tooltip_text_dark" />
 
 </resources>
+
 
 
 

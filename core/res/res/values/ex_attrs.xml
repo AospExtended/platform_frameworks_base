@@ -29,6 +29,9 @@
         <attr name="deadpool_dial" format="reference"/>
         <attr name="deadpool_hand_hour" format="reference"/>
         <attr name="deadpool_hand_minute" format="reference"/>
+        <attr name="spidey_dial" format="reference"/>
+        <attr name="spidey_hand_hour" format="reference"/>
+        <attr name="spidey_hand_minute" format="reference"/>
     </declare-styleable>
 
     <!-- DeadPool Analog clock -->
@@ -36,6 +39,13 @@
         <attr name="deadpool_dial" format="reference"/>
         <attr name="deadpool_hand_hour" format="reference"/>
         <attr name="deadpool_hand_minute" format="reference"/>
+    </declare-styleable>
+
+    <!-- Spidey Analog clock -->
+    <declare-styleable name="SpideyAnalogClock">
+        <attr name="spidey_dial" format="reference"/>
+        <attr name="spidey_hand_hour" format="reference"/>
+        <attr name="spidey_hand_minute" format="reference"/>
     </declare-styleable>
 
 </resources>
