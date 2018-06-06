@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-		android:gravity="center"
+		        android:gravity="center"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
                 android:textColor="?attr/wallpaperTextColor"
@@ -59,6 +59,15 @@
                 android:layout_marginBottom="@dimen/bottom_text_spacing_digital" />
             <DeadPoolAnalogClock
                 android:id="@+id/deadpool_clock_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                style="@style/widget_big_thin"
+                android:layout_marginBottom="@dimen/bottom_text_spacing_digital" />
+            <SpideyAnalogClock
+                android:id="@+id/spidey_clock_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
