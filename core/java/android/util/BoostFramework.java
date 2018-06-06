@@ -43,6 +43,9 @@ public class BoostFramework {
     private static final String PERFORMANCE_JAR = "/system/framework/QPerformance.jar";
     private static final String PERFORMANCE_CLASS = "com.qualcomm.qti.Performance";
 
+    private static final String UXPERFORMANCE_JAR = "/system/framework/UxPerformance.jar";
+    private static final String UXPERFORMANCE_CLASS = "com.qualcomm.qti.UxPerformance";
+
 /** @hide */
     private static boolean sIsLoaded = false;
     private static Class<?> sPerfClass = null;
@@ -57,8 +60,13 @@ public class BoostFramework {
     private static Method sUXEngineEvents  = null;
     private static Method sUXEngineTrigger  = null;
 
+    private static boolean sUxIsLoaded = false;
+    private static Class<?> sUxPerfClass = null;
+    private static Method sUxIOPStart = null;
+
 /** @hide */
     private Object mPerf = null;
+    private Object mUxPerf = null;
 
     //perf hints
     public static final int VENDOR_HINT_SCROLL_BOOST = 0x00001080;
@@ -112,6 +120,9 @@ public class BoostFramework {
             if (sPerfClass != null) {
                 mPerf = sPerfClass.newInstance();
             }
+            if (sUxPerfClass != null) {
+                mUxPerf = sUxPerfClass.newInstance();
+            }
         }
         catch(Exception e) {
             Log.e(TAG,"BoostFramework() : Exception_2 = " + e);
@@ -127,6 +138,9 @@ public class BoostFramework {
                 Constructor cons = sPerfClass.getConstructor(Context.class);
                 if (cons != null)
                     mPerf = cons.newInstance(context);
+            }
+            if (sUxPerfClass != null) {
+                mUxPerf = sUxPerfClass.newInstance();
             }
         }
         catch(Exception e) {
@@ -174,6 +188,19 @@ public class BoostFramework {
                 }
                 catch(Exception e) {
                     Log.e(TAG,"BoostFramework() : Exception_1 = " + e);
+                }
+                // Load UXE Class now Adding new try/catch block to avoid
+                // any interference with Qperformance
+                try {
+                    sUxPerfClass = Class.forName(UXPERFORMANCE_CLASS);
+
+                    Class[] argUxClasses = new Class[] {int.class, String.class, String.class};
+                    sUxIOPStart =   sUxPerfClass.getDeclaredMethod("perfIOPrefetchStart", argUxClasses);
+
+                    sUxIsLoaded = true;
+                }
+                catch(Exception e) {
+                    Log.e(TAG,"BoostFramework() Ux Perf: Exception = " + e);
                 }
             }
         }
@@ -254,6 +281,13 @@ public class BoostFramework {
         } catch (Exception e) {
             Log.e(TAG, "Exception " + e);
         }
+        try {
+            Object retVal = sUxIOPStart.invoke(mUxPerf, pid, pkgName, codePath);
+            ret = (int) retVal;
+        } catch (Exception e) {
+            Log.e(TAG, "Ux Perf Exception " + e);
+        }
+
         return ret;
     }
 
