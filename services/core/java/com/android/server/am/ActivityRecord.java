@@ -2115,15 +2115,6 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
             }
             Log.i(TAG, sb.toString());
         }
-        if (mPerf_iop == null) {
-            mPerf_iop = new BoostFramework();
-        }
-        if (mPerf_iop != null) {
-            if (app != null) {
-                String codePath = appInfo.sourceDir.substring(0, appInfo.sourceDir.lastIndexOf('/'));
-                mPerf_iop.perfIOPrefetchStart(app.pid, packageName, codePath);
-            }
-        }
         mStackSupervisor.reportActivityLaunchedLocked(false, this, thisTime, totalTime);
         if (mPerfFirstDraw == null) {
             mPerfFirstDraw = new BoostFramework();
