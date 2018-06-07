@@ -99,6 +99,11 @@
     <!-- Two target preference vertical divider color -->
     <color name="list_divider_dark">#64000000</color>
 
+    <!-- tooltip light text color -->
+    <color name="tooltip_text_light">@color/foreground_material_light</color>
+
+    <!-- tooltip dark text color -->
+    <color name="tooltip_text_dark">@color/foreground_material_dark</color>
 </resources>
 
 
