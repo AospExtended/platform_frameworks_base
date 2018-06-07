@@ -19,10 +19,6 @@
     <color name="analog_clock_hand_hour_color">@*android:color/accent_device_default_light</color>
     <color name="analog_clock_hand_minute_color">#212121</color>
 
-    <!-- Spidey clock -->
-    <color name="spidey_clock_hour_hand_color">#0288D1</color>
-    <color name="spidey_clock_minute_hand_color">#0288D1</color>
-
     <!-- Settings icon tint color -->
     <color name="settings_icon_tint_color">#737373</color>
 
