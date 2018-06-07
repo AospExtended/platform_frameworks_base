@@ -18,15 +18,24 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="reboot_title">راه اندازی مجدد</string>
+  <string name="reboot_title">راه اندازی مجدد
+</string>
   <string name="reboot_message">راه اندازی مجدد سیستم</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">کنترل ناوبری ویرایشگر</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">اجارچزه میدهد برای ویرایش و کنترل نوار ناوبری</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">امضای بسته جعلی است</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- AOKP custom system animations -->
+  <string name="animation_slide_right">کشیدن از راست</string>
+  <string name="animation_slide_left">کشیدن از چپ</string>
   <string name="animation_default">پیش‌فرض</string>
   <string name="animation_random">تصادفی</string>
   <string name="action_null">خالی</string>
   <!-- Pocket Lock -->
+  <string name="app_blacklist">لیست برنامه های مسدود شده</string>
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 </resources>

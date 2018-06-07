@@ -30,4 +30,6 @@
   <string name="permdesc_fakePackageSignature">Lar appen å utgi seg for å være en annen app. Skadelige apper kan bruke dette til å få tilgang til private application data. Gi denne tillatelsen med forsiktighet!</string>
   <!-- AOKP custom system animations -->
   <!-- Pocket Lock -->
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 </resources>

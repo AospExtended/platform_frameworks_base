@@ -179,10 +179,6 @@
   <string name="accessibility_quick_settings_hwkeys_off">HW näppäimet pois päältä</string>
   <string name="quick_settings_hwkeys_label">HW näppäimet</string>
   <string name="status_bar_data_saver">Mobiilidatan säästäjä</string>
-  <!-- Text to use when the number in a notification info is too large
-         (greater than status_bar_notification_info_maxnum, defined in
-         values/config.xml) and must be truncated.
-         [CHAR LIMIT=4] -->
   <string name="omnijaws_service_error">Virhe</string>
   <string name="omnijaws_service_unkown">Säätietoja ei saatavilla</string>
   <string name="omnijaws_service_error_long">Virhe säätietoja ladattaessa</string>
@@ -223,6 +219,35 @@
   <string name="quick_settings_theme_tile_style_detail_title">Valitse tyyli</string>
   <string name="quick_settings_theme_tile_color_default">Oletus</string>
   <string name="quick_settings_theme_tile_color_red">Punainen</string>
+  <string name="quick_settings_theme_tile_color_pink">Vaaleanpunainen</string>
+  <string name="quick_settings_theme_tile_color_purple">Violetti</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Tumman violetti</string>
+  <string name="quick_settings_theme_tile_color_indigo">Indigon Sininen</string>
+  <string name="quick_settings_theme_tile_color_blue">Sininen</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Vaaleansininen</string>
+  <string name="quick_settings_theme_tile_color_cyan">Syaani</string>
+  <string name="quick_settings_theme_tile_color_teal">Sinivihreä</string>
+  <string name="quick_settings_theme_tile_color_green">Vihreä</string>
+  <string name="quick_settings_theme_tile_color_light_green">Vaaleanvihreä</string>
+  <string name="quick_settings_theme_tile_color_lime">Limetinvihreä</string>
+  <string name="quick_settings_theme_tile_color_yellow">Keltainen</string>
+  <string name="quick_settings_theme_tile_color_amber">Kullanruskea</string>
+  <string name="quick_settings_theme_tile_color_orange">Oranssi</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Syvä oranssi</string>
+  <string name="quick_settings_theme_tile_color_brown">Ruskea</string>
+  <string name="quick_settings_theme_tile_color_grey">Harmaa</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Siniharmaa</string>
+  <string name="quick_settings_theme_tile_color_black">Musta</string>
+  <string name="quick_settings_theme_tile_color_white">Valkoinen</string>
+  <string name="theme_info_title">Mikä tämä on?</string>
+  <string name="theme_info_message">Teemat laatta on ainutlaatuinen, mutta helppokäyttöinen laatta, joka antaa käyttäjän jotta heilahdus elimistö korostus tai style.\n\nTo vaihtaa aksentti ja tyylejä, vain pitkä painallus laatta ja paina sitten uudelleen valita tarjoamat vaihtoehdot.</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Avaa \"Käynnissä olevat palvelut\"-näyttö</string>
   <!-- Smart pixels QS tile -->
+  <string name="quick_settings_smart_pixels">Älykkäät pikselit</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Audo-päällä alykkäät pikselit</string>
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

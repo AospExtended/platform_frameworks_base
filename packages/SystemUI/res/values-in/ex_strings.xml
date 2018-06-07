@@ -36,21 +36,21 @@
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">Aplikasi tidak mendukung PiP</string>
   <!-- Ambient display QS tile -->
-  <string name="quick_settings_ambient_display_label">Tampilan layar</string>
-  <string name="accessibility_quick_settings_ambient_display_off">Tampilan layar mati.</string>
-  <string name="accessibility_quick_settings_ambient_display_on">Tampilan layar hidup.</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_off">Tampilan layar dimatikan.</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_on">Tampilan layar dihidupkan.</string>
+  <string name="quick_settings_ambient_display_label">Layar ambient</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Layar ambient mati.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Layar ambient hidup.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Layar ambient dimatikan.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Layar ambient dihidupkan.</string>
   <!-- Always on Display Tile -->
-  <string name="quick_settings_always_on_display_label">Layar selalu hidup</string>
+  <string name="quick_settings_always_on_display_label">Layar selalu aktif</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_always_on_display_off">Layar selalu mati.</string>
+  <string name="accessibility_quick_settings_always_on_display_off">Layar selalu aktif mati.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_always_on_display_on">Layar selalu hidup.</string>
+  <string name="accessibility_quick_settings_always_on_display_on">Layar selalu aktif hidup.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_always_on_display_changed_off">Layar selalu hidup dimatikan.</string>
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Layar selalu aktif dimatikan.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_always_on_display_changed_on">Layar selalu hidup dihidupkan.</string>
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Layar selalu aktif dihidupkan.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Kafein</string>
   <string name="accessibility_quick_settings_caffeine_off">Kafein nonaktif</string>
@@ -179,10 +179,6 @@
   <string name="accessibility_quick_settings_hwkeys_off">Tombol fisik mati</string>
   <string name="quick_settings_hwkeys_label">Tombol fisik</string>
   <string name="status_bar_data_saver">Penghemat Data</string>
-  <!-- Text to use when the number in a notification info is too large
-         (greater than status_bar_notification_info_maxnum, defined in
-         values/config.xml) and must be truncated.
-         [CHAR LIMIT=4] -->
   <string name="omnijaws_service_error">Kesalahan</string>
   <string name="omnijaws_service_unkown">Data cuaca tidak ada</string>
   <string name="omnijaws_service_error_long">Kesalahan memuat data cuaca</string>
@@ -218,34 +214,40 @@
   <string name="systemui_theme_style_dark">UI Gelap</string>
   <string name="systemui_theme_style_black">UI Hitam</string>
   <string name="systemui_theme_style_extended">UI Extended</string>
-  <string name="quick_settings_theme_tile_title">Tampilan</string>
+  <string name="quick_settings_theme_tile_title">Aksen</string>
   <string name="quick_settings_theme_tile_accent_detail_title">Pilih warna</string>
   <string name="quick_settings_theme_tile_style_detail_title">Pilih gaya</string>
   <string name="quick_settings_theme_tile_color_default">Bawaan</string>
   <string name="quick_settings_theme_tile_color_red">Merah</string>
-  <string name="quick_settings_theme_tile_color_pink">Merah Muda</string>
+  <string name="quick_settings_theme_tile_color_pink">Pink</string>
   <string name="quick_settings_theme_tile_color_purple">Ungu</string>
   <string name="quick_settings_theme_tile_color_deep_purple">Ungu tua</string>
   <string name="quick_settings_theme_tile_color_indigo">Biru tua</string>
   <string name="quick_settings_theme_tile_color_blue">Biru</string>
   <string name="quick_settings_theme_tile_color_light_blue">Biru muda</string>
-  <string name="quick_settings_theme_tile_color_cyan">Biru Muda</string>
-  <string name="quick_settings_theme_tile_color_teal">Hujau muda</string>
+  <string name="quick_settings_theme_tile_color_cyan">Sian</string>
+  <string name="quick_settings_theme_tile_color_teal">Teal</string>
   <string name="quick_settings_theme_tile_color_green">Hijau</string>
-  <string name="quick_settings_theme_tile_color_light_green">Hijau Terang</string>
-  <string name="quick_settings_theme_tile_color_lime">Jeruk Nipis</string>
+  <string name="quick_settings_theme_tile_color_light_green">Hijau muda</string>
+  <string name="quick_settings_theme_tile_color_lime">Jeruk nipis</string>
   <string name="quick_settings_theme_tile_color_yellow">Kuning</string>
-  <string name="quick_settings_theme_tile_color_amber">Cokelat Muda</string>
+  <string name="quick_settings_theme_tile_color_amber">Sawo matang</string>
   <string name="quick_settings_theme_tile_color_orange">Oranye</string>
   <string name="quick_settings_theme_tile_color_deep_orange">Oranye tua</string>
   <string name="quick_settings_theme_tile_color_brown">Cokelat</string>
   <string name="quick_settings_theme_tile_color_grey">Abu-abu</string>
-  <string name="quick_settings_theme_tile_color_blue_grey">Biru Gelap</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Abu-abu kebiruan</string>
   <string name="quick_settings_theme_tile_color_black">Hitam</string>
   <string name="quick_settings_theme_tile_color_white">Putih</string>
   <string name="theme_info_title">Apa ini?</string>
-  <string name="theme_info_message">Tile tema sangat unik tapi mudah juga di gunakan yang memungkinkan pengguna mengubah warna Acent atau gaya temanya.\n\nUntuk mengubah dari aksen dan gaya tema cukup simpel, sentuh yang lama pada tile dan sentuh lagi untuk memilihnya dari pilihan yang tersedia.</string>
+  <string name="theme_info_message">Tema tile sangat unik namun mudah digunakan yang memungkinkan pengguna untuk mengubah warna aksen atau gaya sistem.\n\nUntuk mengubah antara aksen dan gaya, cukup tekan lama pada ubin lalu tekan lagi untuk memilih dari opsi yang ditawarkan.</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_running_services">Layanan tugas latar belakang.</string>
+  <string name="accessibility_quick_settings_running_services">Tampilkan layanan yang sedang berjalan.</string>
   <!-- Smart pixels QS tile -->
+  <string name="quick_settings_smart_pixels">Smart Pixels</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Hidupkan otomatis smart pixels</string>
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

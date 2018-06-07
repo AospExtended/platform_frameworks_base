@@ -29,5 +29,25 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Επιτρέπει στην εφαρμογή να προσποιείται ότι είναι μια διαφορετική εφαρμογή. Κακόβουλες εφαρμογές μπορεί να είναι σε θέση να χρησιμοποιήσουν αυτή τη λειτουργία για να έχουν πρόσβαση σε προσωπικά σας δεδομένα. Εκχωρήσετε το δικαίωμα αυτό με ιδιαίτερη προσοχή!</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">Ξεθώριασμα</string>
+  <string name="animation_slide_right">Σύρετε Δεξιά</string>
+  <string name="animation_slide_left">Σύρετε Αριστερά</string>
+  <string name="animation_slide_right_no_fade">Σύρετε δεξιά (Χωρίς ξεθώριασμα)</string>
+  <string name="animation_slide_left_no_fade">Σύρετε αριστερά (Χωρίς ξεθώριασμα)</string>
+  <string name="animation_slide_up">Σύρετε προς τα κάτω</string>
+  <string name="animation_slide_down">Σύρετε προς την κορυφή</string>
+  <string name="animation_default">Προεπιλογή</string>
+  <string name="animation_translucent">Ημιδιαφανές</string>
+  <string name="animation_grow_shrink">Αύξηση (Πάνω)</string>
+  <string name="animation_grow_shrink_center">Αύξηση (Κέντρο)</string>
+  <string name="animation_grow_shrink_bottom">Αύξηση (Κάτω)</string>
+  <string name="animation_grow_shrink_left">Αύξηση (Προς τα αριστερά)</string>
+  <string name="animation_grow_shrink_right">Αύξηση (Προς τα δεξιά)</string>
+  <string name="animation_random">Τυχαία</string>
+  <string name="action_null">Κενό</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">Πιέστε παρατεταμένα το κουμπί τροφοδοσίας για επίδραση</string>
+  <string name="app_blacklist">Μαύρη λίστα εφαρμογών</string>
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 </resources>

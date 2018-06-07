@@ -163,10 +163,6 @@
   <string name="accessibility_quick_settings_hwkeys_off">Хардуерни бутони изкл.</string>
   <string name="quick_settings_hwkeys_label">Хардуерни бутони</string>
   <string name="status_bar_data_saver">Икономия на данни</string>
-  <!-- Text to use when the number in a notification info is too large
-         (greater than status_bar_notification_info_maxnum, defined in
-         values/config.xml) and must be truncated.
-         [CHAR LIMIT=4] -->
   <string name="omnijaws_service_error">Грешка</string>
   <string name="omnijaws_service_unkown">Няма информация за времето</string>
   <string name="omnijaws_service_error_long">Грешка при зареждане на данни за времето</string>
@@ -187,4 +183,8 @@
   <!-- Theme tile -->
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <!-- Smart pixels QS tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

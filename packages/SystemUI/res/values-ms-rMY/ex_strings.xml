@@ -166,10 +166,6 @@
   <string name="aex_logo_title">Logo AEX</string>
   <string name="aex_logo_summary">Biar semua orang tahu bahawa anda menggunakan AEX apabila mereka melihat skrin anda</string>
   <!-- HW Keys Tile -->
-  <!-- Text to use when the number in a notification info is too large
-         (greater than status_bar_notification_info_maxnum, defined in
-         values/config.xml) and must be truncated.
-         [CHAR LIMIT=4] -->
   <string name="omnijaws_service_unkown">Tiada maklumat cuaca</string>
   <string name="omnijaws_service_error_long">Masalah mengemaskini maklumat cuaca</string>
   <string name="omnijaws_service_disabled">Perkhidmatan dilumpuhkan</string>
@@ -199,4 +195,8 @@
   <string name="quick_settings_theme_tile_color_green">Hijau</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <!-- Smart pixels QS tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

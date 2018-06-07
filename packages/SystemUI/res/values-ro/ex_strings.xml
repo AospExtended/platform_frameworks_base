@@ -179,10 +179,6 @@
   <string name="accessibility_quick_settings_hwkeys_off">Taste fizice oprite</string>
   <string name="quick_settings_hwkeys_label">Taste fizice</string>
   <string name="status_bar_data_saver">Economisire date</string>
-  <!-- Text to use when the number in a notification info is too large
-         (greater than status_bar_notification_info_maxnum, defined in
-         values/config.xml) and must be truncated.
-         [CHAR LIMIT=4] -->
   <string name="omnijaws_service_error">Eroare</string>
   <string name="omnijaws_service_unkown">Date meteo indisponibile</string>
   <string name="omnijaws_service_error_long">Eroare la încărcarea datelor meteo</string>
@@ -204,6 +200,8 @@
   <!-- Kill button in notification guts -->
   <string name="force_stop_dlg_title">Opriți forţat?</string>
   <string name="force_stop_dlg_text">Dacă forţaţi oprirea unei aplicații, aceasta se poate comporta necorespunzător.</string>
+  <string name="dlg_ok">@android:string/ok</string>
+  <string name="dlg_cancel">@android:string/cancel</string>
   <string name="kill">Opriți aplicația</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_turbo_power_time">Conectat TurboPower (<xliff:g id="charging_time_left">%s</xliff:g> până la finalizare)</string>
@@ -246,4 +244,10 @@
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <string name="accessibility_quick_settings_running_services">Deschide ecranul Servicii în execuţie.</string>
   <!-- Smart pixels QS tile -->
+  <string name="quick_settings_smart_pixels">Pixeli inteligenți</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Auto-activare pixeli inteligenți</string>
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

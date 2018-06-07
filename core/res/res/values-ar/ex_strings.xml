@@ -46,4 +46,8 @@
   <string name="animation_random">عشوائي</string>
   <string name="action_null">فارغ</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">اضغط زر الطاقة مطولا للتفاعل</string>
+  <string name="app_blacklist">التطبيقات المحجوبة</string>
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 </resources>

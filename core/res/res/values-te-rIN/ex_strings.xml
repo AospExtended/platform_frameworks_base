@@ -30,4 +30,6 @@
   <string name="permdesc_fakePackageSignature">మరొక అనువర్తనం వలె నటించడానికి అనువర్తనాన్ని అనుమతిస్తుంది. ప్రైవేట్ అనువర్తన డేటాను ప్రాప్యత చేయడానికి హానికరమైన అనువర్తనాలు దీన్ని ఉపయోగించగలవు. ఈ అనుమతిని జాగ్రత్తతో మాత్రమే ఇవ్వండి!</string>
   <!-- AOKP custom system animations -->
   <!-- Pocket Lock -->
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 </resources>

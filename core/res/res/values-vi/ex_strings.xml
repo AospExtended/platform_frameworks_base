@@ -25,7 +25,7 @@
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_toggleNavigationEditor">Cho phép ứng dụng kiểm soát chỉnh sửa thanh điều hướng.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_fakePackageSignature">Gói giả mạo chữ ký</string>
+  <string name="permlab_fakePackageSignature">Giả mạo chữ ký gói</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">Cho phép ứng dụng giả mạo là một ứng dụng khác. Ứng dụng độc hại có thể sử dụng để truy cập vào dữ liệu riêng của ứng dụng khác. Hãy cấp quyền truy cập một cách thận trọng!</string>
   <!-- AOKP custom system animations -->
@@ -46,4 +46,8 @@
   <string name="animation_random">Ngẫu nhiên</string>
   <string name="action_null">Trống</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">Nhấn giữ nút nguồn để tương tác</string>
+  <string name="app_blacklist">Danh sách ứng dụng đen</string>
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 </resources>

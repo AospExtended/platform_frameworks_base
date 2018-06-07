@@ -179,10 +179,6 @@
   <string name="accessibility_quick_settings_hwkeys_off">Tắt phím cứng</string>
   <string name="quick_settings_hwkeys_label">Phím cứng</string>
   <string name="status_bar_data_saver">Tiết kiệm dữ liệu</string>
-  <!-- Text to use when the number in a notification info is too large
-         (greater than status_bar_notification_info_maxnum, defined in
-         values/config.xml) and must be truncated.
-         [CHAR LIMIT=4] -->
   <string name="omnijaws_service_error">Lỗi</string>
   <string name="omnijaws_service_unkown">Không có dữ liệu thời tiết</string>
   <string name="omnijaws_service_error_long">Lỗi tải dữ liệu thời tiết</string>
@@ -248,4 +244,10 @@
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <string name="accessibility_quick_settings_running_services">Mở màn hình Dịch vụ đang chạy.</string>
   <!-- Smart pixels QS tile -->
+  <string name="quick_settings_smart_pixels">Điểm ảnh thông minh</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Tự động kích hoạt điểm ảnh thông minh</string>
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

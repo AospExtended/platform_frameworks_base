@@ -174,10 +174,6 @@
   <string name="accessibility_quick_settings_hwkeys_off">HW കീസ് ഓഫ്</string>
   <string name="quick_settings_hwkeys_label">HW കീസ്</string>
   <string name="status_bar_data_saver">ഡാറ്റ സേവർ</string>
-  <!-- Text to use when the number in a notification info is too large
-         (greater than status_bar_notification_info_maxnum, defined in
-         values/config.xml) and must be truncated.
-         [CHAR LIMIT=4] -->
   <string name="omnijaws_service_error">തെറ്റ്</string>
   <string name="omnijaws_service_unkown">കാലാവസ്ഥാ വിവരം ഇല്ല</string>
   <string name="omnijaws_service_error_long">കാലാവസ്ഥ വിവരം ലോഡ് ചെയ്യാൻ കോഴപ്പം</string>
@@ -202,4 +198,8 @@
   <!-- Theme tile -->
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <!-- Smart pixels QS tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

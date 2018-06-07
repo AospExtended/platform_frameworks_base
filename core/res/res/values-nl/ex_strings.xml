@@ -18,10 +18,10 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="reboot_title">Opnieuw opstarten</string>
+  <string name="reboot_title">Herstart</string>
   <string name="reboot_message">Systeem wordt opnieuw opgestart</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_toggleNavigationEditor">Navigatiebalk-editor beheren</string>
+  <string name="permlab_toggleNavigationEditor">navigatie-controle beheren</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_toggleNavigationEditor">Staat toe dat een applicatie de navigatiebalk-editor beheert.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -46,4 +46,8 @@
   <string name="animation_random">Willekeurig</string>
   <string name="action_null">Leeg</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">Aan/uit-knop inhouden voor interactie</string>
+  <string name="app_blacklist">App op zwarte lijst</string>
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 </resources>

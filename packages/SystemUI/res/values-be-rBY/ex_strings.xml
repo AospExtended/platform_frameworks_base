@@ -179,10 +179,6 @@
   <string name="accessibility_quick_settings_hwkeys_off">Апаратныя кнопкі адключаны</string>
   <string name="quick_settings_hwkeys_label">Апаратныя кнопкі</string>
   <string name="status_bar_data_saver">Эканомія трафіку</string>
-  <!-- Text to use when the number in a notification info is too large
-         (greater than status_bar_notification_info_maxnum, defined in
-         values/config.xml) and must be truncated.
-         [CHAR LIMIT=4] -->
   <string name="omnijaws_service_error">Памылка</string>
   <string name="omnijaws_service_unkown">Няма дадзеных пра надвор\'е</string>
   <string name="omnijaws_service_error_long">Памылка ладавання дадзеных аб надвор\'і</string>
@@ -248,4 +244,10 @@
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <string name="accessibility_quick_settings_running_services">Адкрыць меню працуючых праграм.</string>
   <!-- Smart pixels QS tile -->
+  <string name="quick_settings_smart_pixels">Разумныя пікселі</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Аўтаматычнае ўключэнне разумных пікселяў</string>
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

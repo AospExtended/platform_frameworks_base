@@ -30,4 +30,6 @@
 יישומים זדוניים יוכלו להשתמש בפיצ\'ר זה בכדי לקבל גישה למידע פרטי של יישומים. הענק/י אישור זה בזהירות!</string>
   <!-- AOKP custom system animations -->
   <!-- Pocket Lock -->
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 </resources>

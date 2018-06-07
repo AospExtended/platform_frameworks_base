@@ -65,7 +65,7 @@
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Kompas</string>
   <string name="quick_settings_compass_value"><xliff:g id="stopnie">%1$.0f</xliff:g>\u00b0 <xliff:g id="kierunek">%2$s</xliff:g></string>
-  <string name="quick_settings_compass_init">Inicjowanie\u2026</string>
+  <string name="quick_settings_compass_init">Inicjacja\u2026</string>
   <string name="accessibility_quick_settings_compass_off">Kompas wył.</string>
   <string name="accessibility_quick_settings_compass_on">Kompas wł.</string>
   <string name="accessibility_quick_settings_compass_changed_off">Kompas został wyłączony</string>
@@ -115,8 +115,8 @@
   <!-- Screen record notification error title -->
   <string name="screenrecord_notif_error">Nie można nagrać ekranu</string>
   <string name="notification_channel_screenrecord">Nagrania ekranu</string>
-  <string name="screenrecord_hide_hint">Ukryj wskazówkę</string>
-  <string name="screenrecord_show_hint">Pokaż wskazówkę</string>
+  <string name="screenrecord_hide_hint">Ukryj podpowiedzi</string>
+  <string name="screenrecord_show_hint">Pokaż podpowiedzi</string>
   <!-- Screenrecord Tile -->
   <string name="quick_settings_screenrecord_label">Nagrywanie ekranu</string>
   <string name="quick_settings_screenrecord_lq_label">Nagrywanie ekranu 480p</string>
@@ -179,10 +179,6 @@
   <string name="accessibility_quick_settings_hwkeys_off">Przyciski sprzętowe wył.</string>
   <string name="quick_settings_hwkeys_label">Przyciski sprzętowe</string>
   <string name="status_bar_data_saver">Oszczędzanie danych</string>
-  <!-- Text to use when the number in a notification info is too large
-         (greater than status_bar_notification_info_maxnum, defined in
-         values/config.xml) and must be truncated.
-         [CHAR LIMIT=4] -->
   <string name="omnijaws_service_error">Błąd</string>
   <string name="omnijaws_service_unkown">Brak danych o pogodzie</string>
   <string name="omnijaws_service_error_long">Błąd podczas ładowania danych o pogodzie</string>
@@ -248,4 +244,10 @@
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <string name="accessibility_quick_settings_running_services">Otwórz ekran Działających Usług.</string>
   <!-- Smart pixels QS tile -->
+  <string name="quick_settings_smart_pixels">Inteligentny ekran</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Automatyczne włączanie inteligentnego ekranu</string>
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

@@ -21,19 +21,67 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA +</string>
+  <string name="global_action_restart_advanced">Напредно</string>
+  <string name="global_action_restart_recovery">Опоравак</string>
+  <string name="global_action_restart_bootloader">Боотлоадер</string>
+  <string name="global_action_restart_ui">СyстемУИ</string>
+  <string name="global_action_restart_soft">Нежно рестартовање</string>
+  <string name="global_action_screenrecord">Снимање екрана</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Извештавање о локацији: режим уштеде батерије.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Извештавање о локацији: само сензори.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Извештавање о локацији: режим велике прецизности.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">ПиП</string>
+  <string name="quick_settings_pip_tile_app_na">Апликација не подржава ПиП</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Амбијент приказ</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Амбијентални приказ искључен.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Амбијент приказ укључен.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Амбијентални приказ искључен.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Амбијентални приказ укључен.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Увек укључен екран</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Увек укључен екран искључен.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Увек укључен екран укључен.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Увек укључен екран је искључен.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Увек укључен екран је укључен.</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Кофеин</string>
+  <string name="accessibility_quick_settings_caffeine_off">Кофеин је искључен</string>
+  <string name="accessibility_quick_settings_caffeine_on">Кофеин је укључен</string>
+  <string name="statusbar_items_title">Ставке статусне траке</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Слика екрана</string>
+  <string name="quick_settings_region_screenshot_label">Делимична слика екрана</string>
+  <string name="recents_free_ram">Слободни РАМ: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Компас</string>
+  <string name="accessibility_quick_settings_compass_off">Компас искључен.</string>
+  <string name="accessibility_quick_settings_compass_on">Компас укључен.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Компас искључен.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Компас укључен.</string>
+  <string name="quick_settings_compass_N">С</string>
+  <string name="quick_settings_compass_NE">СИ</string>
+  <string name="quick_settings_compass_E">И</string>
+  <string name="quick_settings_compass_SE">ЈИ</string>
+  <string name="quick_settings_compass_S">Ј</string>
+  <string name="quick_settings_compass_SW">ЈЗ</string>
+  <string name="quick_settings_compass_W">З</string>
+  <string name="quick_settings_compass_NW">СЗ</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Звук</string>
+  <string name="quick_settings_sound_ring">Звоно</string>
+  <string name="quick_settings_sound_vibrate">Вибрација</string>
+  <string name="quick_settings_sound_dnd">Не узнемиравај</string>
+  <string name="lockscreen_default">Подразумевано</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <!-- Heads Up QS Tile -->
   <!-- Heads up snooze toast -->
@@ -53,16 +101,24 @@
   <!-- ADB over network QS tile -->
   <!-- Sync QS Tile -->
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_changed_on">УСБ тетеринг укључен</string>
+  <string name="quick_settings_usb_tether_label">УСБ дељење везе</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Језик</string>
+  <string name="quick_settings_locale_more_locales_toast">Молим Вас одаберите више језика како би омогућили функционалност промене</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Музика</string>
+  <string name="quick_settings_music_play">Пусти</string>
+  <string name="quick_settings_music_pause">Паузирај</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Проширен екран</string>
+  <string name="quick_settings_expanded_desktop">Проширен</string>
+  <string name="quick_settings_expanded_desktop_off">Нормалан</string>
+  <string name="quick_settings_expanded_navigation_off">Сакриј навигациону траку</string>
+  <string name="quick_settings_expanded_statusbar_off">Сакривање статусне траке</string>
   <!-- QS customizer -->
   <!-- AEX logo -->
   <!-- HW Keys Tile -->
-  <!-- Text to use when the number in a notification info is too large
-         (greater than status_bar_notification_info_maxnum, defined in
-         values/config.xml) and must be truncated.
-         [CHAR LIMIT=4] -->
   <!-- Weather string format in expanded statusbar header -->
   <!-- Navigation bar Tile -->
   <!-- Kill button in notification guts -->
@@ -70,4 +126,8 @@
   <!-- Theme tile -->
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <!-- Smart pixels QS tile -->
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

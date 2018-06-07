@@ -27,5 +27,15 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">사라짐</string>
+  <string name="animation_slide_right">오른쪽으로 슬라이드</string>
+  <string name="animation_slide_left">왼쪽으로 슬라이드</string>
+  <string name="animation_default">기본</string>
+  <string name="animation_translucent">반투명</string>
+  <string name="animation_random">임의</string>
+  <string name="action_null">비어 있음</string>
   <!-- Pocket Lock -->
+  <string name="app_blacklist">앱 블랙리스트</string>
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 </resources>

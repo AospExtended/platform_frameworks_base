@@ -26,7 +26,7 @@
   <string name="global_action_restart_recovery">Kurtarma</string>
   <string name="global_action_restart_bootloader">Ön yükleyici</string>
   <string name="global_action_restart_ui">Arayüz</string>
-  <string name="global_action_restart_soft">Yazılımsal başlat</string>
+  <string name="global_action_restart_soft">Hızlı</string>
   <string name="global_action_screenrecord">Ekran kaydı</string>
   <!-- Advance location quick setting tile -->
   <string name="accessibility_quick_settings_location_battery_saving">Konum bildirimi: pil tasarruf modu.</string>
@@ -179,10 +179,6 @@
   <string name="accessibility_quick_settings_hwkeys_off">Donanım tuşları kapalı</string>
   <string name="quick_settings_hwkeys_label">Donanım tuşları</string>
   <string name="status_bar_data_saver">Veri tasarrufu</string>
-  <!-- Text to use when the number in a notification info is too large
-         (greater than status_bar_notification_info_maxnum, defined in
-         values/config.xml) and must be truncated.
-         [CHAR LIMIT=4] -->
   <string name="omnijaws_service_error">Hata</string>
   <string name="omnijaws_service_unkown">Hava durumu verileri yok</string>
   <string name="omnijaws_service_error_long">Hava durumu verileri yüklenemedi</string>
@@ -248,4 +244,10 @@
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <string name="accessibility_quick_settings_running_services">Çalışan hizmetler ekranını aç.</string>
   <!-- Smart pixels QS tile -->
+  <string name="quick_settings_smart_pixels">Akıllı pikseller</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Otomatik olarak akıllı pikselleri etkinleştir</string>
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

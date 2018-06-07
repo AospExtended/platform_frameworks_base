@@ -46,4 +46,8 @@
   <string name="animation_random">Aleatorio</string>
   <string name="action_null">Vacío</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">Mantenga pulsado el botón de encendido para interactuar</string>
+  <string name="app_blacklist">Lista negra de aplicaciones</string>
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 </resources>

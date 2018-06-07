@@ -92,7 +92,7 @@
   <string name="accessibility_quick_settings_heads_up_off">إيقاف الإشعارات العلوية.</string>
   <string name="accessibility_quick_settings_heads_up_on">الإشعارات العلوية تعمل.</string>
   <string name="accessibility_quick_settings_heads_up_changed_off">تم تعطيل الإشعارات العلوية.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">تم تشغيل الإشعارات المنبثقة.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">تم تشغيل الإشعارات العلوية.</string>
   <!-- Heads up snooze toast -->
   <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> • التنبيهات الخاطفة غافية لدقيقة واحدة.</string>
   <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • التنبيهات الخاطفة غافية ل <xliff:g id="number">%d</xliff:g> دقائق.</string>
@@ -179,10 +179,6 @@
   <string name="accessibility_quick_settings_hwkeys_off">أزرار الجهاز معّطلة</string>
   <string name="quick_settings_hwkeys_label">الأزرار الملموسة</string>
   <string name="status_bar_data_saver">توفير البيانات</string>
-  <!-- Text to use when the number in a notification info is too large
-         (greater than status_bar_notification_info_maxnum, defined in
-         values/config.xml) and must be truncated.
-         [CHAR LIMIT=4] -->
   <string name="omnijaws_service_error">خطأ</string>
   <string name="omnijaws_service_unkown">لا يوجد بيانات طقس</string>
   <string name="omnijaws_service_error_long">خطأ في تحميل بيانات الطقس</string>
@@ -248,4 +244,10 @@
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <string name="accessibility_quick_settings_running_services">فتح شاشة الخدمات المشغلة في الخلفية.</string>
   <!-- Smart pixels QS tile -->
+  <string name="quick_settings_smart_pixels">الدقة الذكية</string>
+  <string name="quick_settings_smart_pixels_on_power_save">تمكين الدقة الذكية تلقائياً</string>
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

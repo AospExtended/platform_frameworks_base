@@ -30,17 +30,17 @@
   <string name="global_action_screenrecord">Gravação de ecrã</string>
   <!-- Advance location quick setting tile -->
   <string name="accessibility_quick_settings_location_battery_saving">Localização: poupança de bateria.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Localização: apenas no dispositivo.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Localização: modo de sensores apenas.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Localização: alta precisão.</string>
   <!-- PiP Tile -->
   <string name="quick_settings_pip_label">PiP</string>
-  <string name="quick_settings_pip_tile_app_na">App não suporta PiP</string>
+  <string name="quick_settings_pip_tile_app_na">A aplicação não suporta PiP</string>
   <!-- Ambient display QS tile -->
-  <string name="quick_settings_ambient_display_label">Ecrã ambiente</string>
-  <string name="accessibility_quick_settings_ambient_display_off">Ecrã ambiente desligado.</string>
-  <string name="accessibility_quick_settings_ambient_display_on">Ecrã ambiente ligado.</string>
+  <string name="quick_settings_ambient_display_label">Visualização de ambiente</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Visualização de ambiente desligada.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Visualização de ambiente ligada.</string>
   <string name="accessibility_quick_settings_ambient_display_changed_off">Ecrã ambiente foi desligado.</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_on">O ecrã ambiente foi ligado.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">A visualização de ambiente foi ligada.</string>
   <!-- Always on Display Tile -->
   <string name="quick_settings_always_on_display_label">Ecrã sempre ativo</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
@@ -64,7 +64,7 @@
   <string name="status_bar_volte">VoLTE</string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Bússola</string>
-  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_value"><xliff:g id="graus">%1$.0f</xliff:g>\u00b0 <xliff:g id="direção">%2$s</xliff:g></string>
   <string name="quick_settings_compass_init">A iniciar\u2026</string>
   <string name="accessibility_quick_settings_compass_off">Bússola desligada.</string>
   <string name="accessibility_quick_settings_compass_on">Bússola ligada.</string>
@@ -179,10 +179,6 @@
   <string name="accessibility_quick_settings_hwkeys_off">Botões físicos desligados</string>
   <string name="quick_settings_hwkeys_label">Botões físicos</string>
   <string name="status_bar_data_saver">Poupança de dados</string>
-  <!-- Text to use when the number in a notification info is too large
-         (greater than status_bar_notification_info_maxnum, defined in
-         values/config.xml) and must be truncated.
-         [CHAR LIMIT=4] -->
   <string name="omnijaws_service_error">Erro</string>
   <string name="omnijaws_service_unkown">Sem informação de meteorologia</string>
   <string name="omnijaws_service_error_long">Erro ao carregar os dados meteorológicos</string>
@@ -248,4 +244,10 @@
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
   <string name="accessibility_quick_settings_running_services">Abrir ecrã de serviços em execução.</string>
   <!-- Smart pixels QS tile -->
+  <string name="quick_settings_smart_pixels">Smart pixels</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Auto-ativação de Smart pixels</string>
+  <!-- Text to use when the number in a notification info is too large
+         (greater than status_bar_notification_info_maxnum, defined in
+         values/config.xml) and must be truncated.
+         [CHAR LIMIT=4] -->
 </resources>

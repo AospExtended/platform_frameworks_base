@@ -29,7 +29,7 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">ये चालू करने से एक एप्लीकेशन दूसरा जैसा बर्ताव कर सकता है। हानिकारक एप्लीकेशन इसके फायदा उठा कर आप सीमित माहिती को पढ़ सकेंगे। इसकी परवानगी सावधानी से दे!।</string>
   <!-- AOKP custom system animations -->
-  <string name="animation_fade">फीका</string>
+  <string name="animation_fade">फीका करें</string>
   <string name="animation_slide_right">दाएँ खिसकाएँ</string>
   <string name="animation_slide_left">स्लाइड, बाएँ</string>
   <string name="animation_slide_right_no_fade">दायें में स्लाइड (फीके के बिना)</string>
@@ -37,5 +37,17 @@
   <string name="animation_slide_up">तल में स्लाइड</string>
   <string name="animation_slide_down">शीर्ष में स्लाइड</string>
   <string name="animation_default">पूर्व निर्धारित</string>
+  <string name="animation_translucent">पारभासी</string>
+  <string name="animation_grow_shrink">बढ़ना </string>
+  <string name="animation_grow_shrink_center"> बीच में बढ़े </string>
+  <string name="animation_grow_shrink_bottom">(तल) में हो जाना</string>
+  <string name="animation_grow_shrink_left">(बाईं ओर) में हो जाना</string>
+  <string name="animation_grow_shrink_right">(दायें ओर) हो जाना</string>
+  <string name="animation_random">यादृच्छिक</string>
+  <string name="action_null">  खाली </string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">क्रिया करने के लिए पॉवर बटन को दबाएं</string>
+  <string name="app_blacklist">ऐप्लकैशन को अलग करें</string>
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 </resources>
