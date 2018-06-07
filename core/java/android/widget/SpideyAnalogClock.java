@@ -69,11 +69,13 @@ public class SpideyAnalogClock extends android.widget.CustomAnalogClock {
         mHourHand = a.getDrawable(com.android.internal.R.styleable.SpideyAnalogClock_spidey_hand_hour);
         if (mHourHand == null) {
             mHourHand = context.getDrawable(com.android.internal.R.drawable.spidey_clock_hand_hour);
+            mHourHandAmbient = context.getDrawable(com.android.internal.R.drawable.spidey_clock_hand_hour_ambient);
         }
 
         mMinuteHand = a.getDrawable(com.android.internal.R.styleable.SpideyAnalogClock_spidey_hand_minute);
         if (mMinuteHand == null) {
             mMinuteHand = context.getDrawable(com.android.internal.R.drawable.spidey_clock_hand_minute);
+            mMinuteHandAmbient = context.getDrawable(com.android.internal.R.drawable.spidey_clock_hand_minute_ambient);
         }
 
         a.recycle();
@@ -120,16 +122,11 @@ public class SpideyAnalogClock extends android.widget.CustomAnalogClock {
 
         canvas.save();
         canvas.rotate(mHour / 12.0f * 360.0f, x, y);
-        final Drawable hourHand = mHourHand;
+        final Drawable hourHand = mIsAmbientDisplay ? mHourHandAmbient : mHourHand;
         if (changed) {
             w = hourHand.getIntrinsicWidth();
             h = hourHand.getIntrinsicHeight();
             hourHand.setBounds(x - (w / 2), y - (h / 2), x + (w / 2), y + (h / 2));
-        }
-        if (mIsAmbientDisplay) {
-            hourHand.setTint(Color.GRAY);
-        } else {
-            hourHand.setTintList(null);
         }
         hourHand.draw(canvas);
         canvas.restore();
@@ -137,16 +134,11 @@ public class SpideyAnalogClock extends android.widget.CustomAnalogClock {
         canvas.save();
         canvas.rotate(mMinutes / 60.0f * 360.0f, x, y);
 
-        final Drawable minuteHand = mMinuteHand;
+        final Drawable minuteHand = mIsAmbientDisplay ? mMinuteHandAmbient : mMinuteHand;
         if (changed) {
             w = minuteHand.getIntrinsicWidth();
             h = minuteHand.getIntrinsicHeight();
             minuteHand.setBounds(x - (w / 2), y - (h / 2), x + (w / 2), y + (h / 2));
-        }
-        if (mIsAmbientDisplay) {
-            minuteHand.setTint(Color.GRAY);
-        } else {
-            minuteHand.setTintList(null);
         }
         minuteHand.draw(canvas);
         canvas.restore();
