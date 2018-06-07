@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 The Dirty Unicorns Project
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-          http://www.apache.org/licenses/LICENSE-2.0
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="175.000000dp"
-    android:height="175.000000dp"
-    android:viewportWidth="512.000000"
-    android:viewportHeight="512.000000">
+    android:width="175dp"
+    android:height="175dp"
+    android:viewportWidth="175"
+    android:viewportHeight="175">
 
-    <group
-        android:translateY="512.000000"
-        android:scaleX="0.100000"
-        android:scaleY="-0.100000">
-        <path
-            android:fillColor="@color/spidey_clock_hour_hand_color"
-            android:strokeWidth="1"
-            android:pathData="M2486 4279 l-26 -20 0 -893 0 -893 23 -21 c33 -31 105 -31 135 1 l22 23 0 891 0 892 -26 20 c-16 13 -41 21 -64 21 -23 0 -48 -8 -64 -21z" />
-    </group>
+    <path
+        android:pathData="M 0 0 H 175 V 175 H 0 V 0 Z" />
+    <path
+        android:fillColor="#474747"
+        android:pathData="M 90.1 88.9 L 86.5 89.6 L 81.1 57.8 L 87.7 34.1 L 87.7 34.1 L 83.7 58.8 Z" />
 </vector>
