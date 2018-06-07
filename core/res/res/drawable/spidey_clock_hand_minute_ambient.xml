@@ -9,10 +9,10 @@
         <path
             android:pathData="M 0 0 H 175 V 175 H 0 V 0 Z" />
         <path
-            android:fillColor="#595959"
+            android:fillColor="#b2b2b2"
             android:pathData="M 81.6 87.5 C 81.6 84.189 84.289 81.5 87.6 81.5 C 90.911 81.5 93.6 84.189 93.6 87.5 C 93.6 90.811 90.911 93.5 87.6 93.5 C 84.289 93.5 81.6 90.811 81.6 87.5 Z" />
         <path
-            android:fillColor="#595959"
+            android:fillColor="#b2b2b2"
             android:pathData="M 90.5 88.8 L 86.1 89.6 L 79.7 51.5 L 87.6 23 L 87.6 23 L 82.9 52.6 L 90.5 88.8 Z" />
     </group>
 </vector>
