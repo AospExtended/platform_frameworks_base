@@ -108,6 +108,8 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     private boolean mKeyguardShowing;
     private TouchAnimator mAlarmAnimator;
     private boolean hasRunningServices;
+    private boolean hasEdit;
+
 
     public QSFooterImpl(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -322,11 +324,12 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         mSettingsContainer.findViewById(R.id.tuner_icon).setVisibility(View.INVISIBLE);
         final boolean isDemo = UserManager.isDeviceInDemoMode(mContext);
         hasRunningServices = !isRunningServicesDisabled();
+        hasEdit = !isEditDisabled();
 
         mMultiUserSwitch.setVisibility(mExpanded && mMultiUserSwitch.hasMultipleUsers() && !isDemo
                 ? View.VISIBLE : View.INVISIBLE);
 
-        mEdit.setVisibility(isDemo || !mExpanded ? View.INVISIBLE : View.VISIBLE);
+        mEdit.setVisibility(hasEdit ?  !isDemo || !mExpanded ? View.INVISIBLE : View.VISIBLE : ViewGONE);
 
         mRunningServicesButton.setVisibility(hasRunningServices ? !isDemo && mExpanded ? View.VISIBLE : View.INVISIBLE : View.GONE);
     }
@@ -358,6 +361,11 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     public boolean isRunningServicesDisabled() {
         return Settings.System.getInt(mContext.getContentResolver(),
             Settings.System.QS_RUNNING_SERVICES_TOGGLE, 0) == 1;
+    }
+
+    public boolean isEditDisabled() {
+        return Settings.System.getInt(mContext.getContentResolver(),
+            Settings.System.QS_EDIT_TOGGLE, 0) == 1;
     }
 
     @Override
