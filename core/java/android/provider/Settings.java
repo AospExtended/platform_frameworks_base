@@ -5162,10 +5162,6 @@ public final class Settings {
         public static final String USE_EDGE_SERVICE_FOR_GESTURES = "edge_service_for_gestures";
 
         /**
-         * Which recents style to use
-         * @hide
-         */
-        public static final String RECENTS_LAYOUT_STYLE = "recents_layout_style";
 
         /**
          * Whether to show or hide the edit icon
