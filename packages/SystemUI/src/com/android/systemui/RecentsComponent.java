@@ -16,7 +16,9 @@
 
 package com.android.systemui;
 
+import android.graphics.drawable.Drawable;
 import android.graphics.Rect;
+import android.media.MediaMetadata;
 import android.view.Display;
 import android.view.View;
 
@@ -56,4 +58,7 @@ public interface RecentsComponent {
 
     IconsHandler getIconsHandler();
     void setCurrentIconPack(String currentIconPack);
+
+    void setMediaPlaying(boolean playing, String packageName);
+    void setMedia(boolean colorizedMedia, int[] colors, Drawable artwork, MediaMetadata mediaMetaData, String title, String text);
 }

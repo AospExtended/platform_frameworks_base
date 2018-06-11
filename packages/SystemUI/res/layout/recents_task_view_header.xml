@@ -27,10 +27,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|start"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="12dp" />
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp" />
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -40,9 +40,7 @@
         android:textColor="#ffffffff"
         android:text="@string/recents_empty_message"
         android:fontFamily="sans-serif-medium"
-        android:singleLine="true"
-        android:maxLines="1"
-        android:ellipsize="marquee"
+        android:maxLines="2"
         android:fadingEdge="horizontal"
         android:forceHasOverlappingRendering="false" />
     <com.android.systemui.recents.views.FixedSizeImageView

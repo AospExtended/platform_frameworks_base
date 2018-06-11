@@ -366,4 +366,10 @@ public class Task {
         writer.print(" "); writer.print(title);
         writer.println();
     }
+
+    public void setTaskBackgroundColor(int color) {
+        this.colorPrimary = color;
+        this.useLightOnPrimaryColor = Utilities.computeContrastBetweenColors(color,
+                Color.WHITE) > 3f;
+    }
 }

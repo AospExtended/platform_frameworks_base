@@ -51,6 +51,7 @@ import com.android.systemui.Interpolators;
 import com.android.systemui.R;
 import com.android.systemui.recents.Constants;
 import com.android.systemui.recents.Recents;
+import com.android.systemui.recents.RecentsConfiguration;
 import com.android.systemui.recents.events.EventBus;
 import com.android.systemui.recents.events.activity.LaunchTaskEvent;
 import com.android.systemui.recents.events.ui.ShowApplicationInfoEvent;
@@ -65,7 +66,7 @@ import static android.app.ActivityManager.StackId.INVALID_STACK_ID;
 
 /* The task bar view */
 public class TaskViewHeader extends FrameLayout
-        implements View.OnClickListener, View.OnLongClickListener {
+        implements View.OnClickListener, View.OnLongClickListener, RecentsConfiguration.MediaAndClockCallbacks {
 
     private static final float HIGHLIGHT_LIGHTNESS_INCREMENT = 0.075f;
     private static final float OVERLAY_LIGHTNESS_INCREMENT = -0.0625f;
@@ -491,20 +492,47 @@ public class TaskViewHeader extends FrameLayout
      * Binds the bar view to the task.
      */
     public void bindToTask(Task t, boolean touchExplorationEnabled, boolean disabledInSafeMode) {
-        mTask = t;
+        final RecentsConfiguration config = Recents.getConfiguration();
+        final String packageName = t.key.getComponent().getPackageName();
+        boolean isClock = packageName.contains("deskclock");
+        boolean isPlaying = config.isMediaPlaying() && config.getMediaPackage().equals(packageName);
+        if (isPlaying || isClock) {
+            // register this as RecentsConfiguration MediaAndClockCallbacks so if the panel is showing and
+            // track info get updated or a new alarm is set, the header will be refreshed
+            config.addCallback(this);
+        } else {
+            config.removeCallback(this);
+        }
 
+        int playingColor = config.getMediaColor();
+        if (isPlaying && playingColor != -1) t.setTaskBackgroundColor(playingColor);
+        mTask = t;
         int primaryColor = disabledInSafeMode
                 ? mDisabledTaskBarBackgroundColor
                 : t.colorPrimary;
         if (mBackground.getColor() != primaryColor) {
             updateBackgroundColor(primaryColor, mDimAlpha);
         }
-        if (!mTitleView.getText().toString().equals(t.title)) {
-            mTitleView.setText(t.title);
+        String title = "";
+        if (isPlaying) {
+            final String info = config.getTrackInfo();
+            if (info != null && !info.isEmpty()) {
+                title = info;
+            }
+        }
+        if (title.isEmpty()) {
+            title = t.title;
+        }
+        if (isClock && config.isAlarmActive()) {
+            title = config.getClockWithAlarmTitle(t.title);
+        }
+        if (!mTitleView.getText().toString().equals(title)) {
+            mTitleView.setText(title);
         }
         mTitleView.setContentDescription(t.titleDescription);
         mTitleView.setTextColor(t.useLightOnPrimaryColor ?
                 mTaskBarViewLightTextColor : mTaskBarViewDarkTextColor);
+
         mDismissButton.setImageDrawable(t.useLightOnPrimaryColor ?
                 mLightDismissDrawable : mDarkDismissDrawable);
         mDismissButton.setContentDescription(t.dismissDescription);
@@ -571,9 +599,44 @@ public class TaskViewHeader extends FrameLayout
      * changes.
      */
     public void onTaskDataLoaded() {
-        if (mTask != null && mTask.icon != null) {
+        if (mTask == null) return;
+
+        final RecentsConfiguration config = Recents.getConfiguration();
+        if (config.isMediaPlaying() && config.getMediaPackage().equals(mTask.key.getComponent().getPackageName())
+                && config.getArtwork() != null) {
+            mIconView.setImageDrawable(config.getArtwork());
+        } else if (mTask.icon != null) {
             mIconView.setImageDrawable(mTask.icon);
         }
+    }
+
+    @Override
+    public void onPlayingStateChanged() {
+        if (mTask == null) return;
+
+        // refresh existing track info
+        final RecentsConfiguration config = Recents.getConfiguration();
+        if (config.getArtwork() != null) mIconView.setImageDrawable(config.getArtwork());
+
+        int playingColor = config.getMediaColor();
+        if (playingColor != -1) mTask.setTaskBackgroundColor(playingColor);
+        updateBackgroundColor(playingColor, mDimAlpha);
+
+        final String info = config.getTrackInfo();
+        if (info != null && !info.isEmpty()) {
+            mTitleView.setText(info);
+        }
+        mTitleView.setTextColor(mTask.useLightOnPrimaryColor ?
+                mTaskBarViewLightTextColor : mTaskBarViewDarkTextColor);
+    }
+
+    @Override
+    public void onAlarmChanged() {
+        if (mTask == null) return;
+
+        // refresh existing alarm info
+        final RecentsConfiguration config = Recents.getConfiguration();
+        if (config.isAlarmActive()) mTitleView.setText(config.getClockWithAlarmTitle(mTask.title));
     }
 
     /** Unbinds the bar view from the task */

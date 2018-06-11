@@ -17,6 +17,7 @@
 package com.android.systemui.recents;
 
 import android.app.ActivityManager;
+import android.app.AlarmManager;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -24,13 +25,22 @@ import android.database.ContentObserver;
 import android.graphics.Rect;
 
 import android.os.Handler;
+import android.graphics.drawable.Drawable;
+import android.media.MediaMetadata;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
 
+import com.android.keyguard.KeyguardStatusView;
+import com.android.systemui.Dependency;
 import com.android.systemui.R;
 import com.android.systemui.recents.misc.SystemServicesProxy;
 import com.android.systemui.recents.model.TaskStack;
+import com.android.systemui.statusbar.policy.NextAlarmController;
+import com.android.systemui.statusbar.policy.NextAlarmController.NextAlarmChangeCallback;
+
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Represents the dock regions for each orientation.
@@ -55,10 +65,22 @@ class DockRegion {
  * Application resources that can be retrieved from the application context and are not specifically
  * tied to the current activity.
  */
-public class RecentsConfiguration {
+public class RecentsConfiguration implements NextAlarmChangeCallback {
 
     private static final int LARGE_SCREEN_MIN_DP = 600;
     private static final int XLARGE_SCREEN_MIN_DP = 720;
+
+    private NextAlarmController mNextAlarmController;
+    private String mAlarm = "";
+
+    private int mMediaColor = -1;
+    private boolean mMediaPlaying;
+    private String mMediaPackageName = "";
+    private MediaMetadata mMediaMetaData;
+    private String mMediaText = null;
+    private Drawable mArtWork;
+
+    private ArrayList<MediaAndClockCallbacks> mCallbacks = new ArrayList<>();
 
     /** Levels of svelte in increasing severity/austerity. */
     // No svelting.
@@ -163,6 +185,9 @@ public class RecentsConfiguration {
                 res.getInteger(R.integer.recents_animate_fab_enter_delay);
         fabExitAnimDuration =
                 res.getInteger(R.integer.recents_animate_fab_exit_duration);
+
+        mNextAlarmController = Dependency.get(NextAlarmController.class);
+        mNextAlarmController.addCallback(this);
     }
 
     /**
@@ -192,4 +217,106 @@ public class RecentsConfiguration {
         return mIsGridEnabled;
     }
 
+    public void setMediaPlaying(boolean playing, String packageName) {
+        mMediaPlaying = playing;
+        mMediaPackageName = packageName;
+    }
+
+    public void setMedia(int color, Drawable artwork, MediaMetadata mediaMetaData, String title, String text) {
+        mMediaMetaData = mediaMetaData;
+        String notificationText = null;
+        if (title != null && text != null) {
+            notificationText = title + " - " + text;
+        }
+        mMediaText = notificationText;
+        mMediaColor = color;
+        mArtWork = artwork;
+
+        int callbackCount = mCallbacks.size();
+        for (int i = 0; i < callbackCount; i++) {
+            mCallbacks.get(i).onPlayingStateChanged();
+        }
+    }
+
+    public int getMediaColor() {
+        return mMediaColor;
+    }
+
+    public boolean isMediaPlaying() {
+        return mMediaPlaying;
+    }
+
+    public String getMediaPackage() {
+        return mMediaPackageName;
+    }
+
+    public String getTrackInfo() {
+        CharSequence charSequence = null;
+        CharSequence lenghtInfo = null;
+        if (mMediaMetaData != null) {
+            CharSequence artist = mMediaMetaData.getText(MediaMetadata.METADATA_KEY_ARTIST);
+            CharSequence album = mMediaMetaData.getText(MediaMetadata.METADATA_KEY_ALBUM);
+            CharSequence title = mMediaMetaData.getText(MediaMetadata.METADATA_KEY_TITLE);
+            long duration = mMediaMetaData.getLong(MediaMetadata.METADATA_KEY_DURATION);
+            if (artist != null && album != null && title != null) {
+                charSequence = artist.toString() /*+ " - " + album.toString()*/ + " - " + title.toString();
+                if (duration != 0) {
+                    lenghtInfo = String.format("%02d:%02d",
+                            TimeUnit.MILLISECONDS.toMinutes(duration),
+                            TimeUnit.MILLISECONDS.toSeconds(duration) -
+                            TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(duration))
+                    );
+                }
+            }
+        }
+        if (charSequence != null && lenghtInfo != null) {
+            return (lenghtInfo + " | " + charSequence).toString();
+        } else if (charSequence != null) {
+            return charSequence.toString();
+        }
+        return mMediaText;
+    }
+
+    public Drawable getArtwork() {
+        return mArtWork;
+    }
+
+    // To refresh the app card when the panel is already showing and the players skips a track
+    public interface MediaAndClockCallbacks {
+        public void onPlayingStateChanged();
+
+        public void onAlarmChanged();
+    }
+
+    public void addCallback(MediaAndClockCallbacks cb) {
+        if (!mCallbacks.contains(cb)) {
+            mCallbacks.add(cb);
+        }
+    }
+
+    public void removeCallback(MediaAndClockCallbacks cb) {
+        mCallbacks.remove(cb);
+    }
+
+    @Override
+    public void onNextAlarmChanged(AlarmManager.AlarmClockInfo nextAlarm) {
+        if (nextAlarm != null) {
+            mAlarm = KeyguardStatusView.formatNextAlarm(mAppContext, nextAlarm);
+        } else {
+            mAlarm = "";
+        }
+        int callbackCount = mCallbacks.size();
+        for (int i = 0; i < callbackCount; i++) {
+            mCallbacks.get(i).onAlarmChanged();
+        }
+    }
+
+    public String getClockWithAlarmTitle(String appName) {
+        final String icon = "\u23F2\uFE0E";
+        return appName + " " + "(" + icon + " " + mAlarm + ")";
+    }
+
+    public boolean isAlarmActive() {
+        return !mAlarm.isEmpty();
+    }
 }

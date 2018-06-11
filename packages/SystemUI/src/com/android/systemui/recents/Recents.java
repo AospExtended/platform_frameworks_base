@@ -26,9 +26,11 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.graphics.drawable.Drawable;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.hardware.display.DisplayManager;
+import android.media.MediaMetadata;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
@@ -62,6 +64,7 @@ import com.android.systemui.recents.misc.SystemServicesProxy;
 import com.android.systemui.recents.misc.Utilities;
 import com.android.systemui.recents.model.RecentsTaskLoader;
 import com.android.systemui.recents.model.Task;
+import com.android.systemui.slimrecent.ImageHelper;
 import com.android.systemui.slimrecent.icons.IconsHandler;
 import com.android.systemui.stackdivider.Divider;
 import com.android.systemui.statusbar.CommandQueue;
@@ -884,5 +887,16 @@ public class Recents extends SystemUI
     public void addSbCallbacks() {
         getComponent(CommandQueue.class).addCallbacks(this);
         mImpl.mUseSlimRecents = false;
+    }
+
+    public void setMediaPlaying(boolean playing, String packageName) {
+        getConfiguration().setMediaPlaying(playing, packageName);
+    }
+
+    public void setMedia(boolean colorizedMedia, int[] colors, Drawable artwork, MediaMetadata mediaMetaData, String title, String text) {
+        getConfiguration().setMedia(colorizedMedia ? colors[0] : -1,
+                colorizedMedia ? ImageHelper.getResizedIconDrawable(
+                artwork, mContext, R.dimen.recents_task_view_header_height_tablet_land, 1.0f/*scale*/) : null,
+                mediaMetaData, title, text);
     }
 }
