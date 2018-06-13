@@ -6033,6 +6033,7 @@ public final class Settings {
             MOVED_TO_GLOBAL.add(Settings.Global.WIFI_SAVED_STATE);
             MOVED_TO_GLOBAL.add(Settings.Global.WIFI_SUPPLICANT_SCAN_INTERVAL_MS);
             MOVED_TO_GLOBAL.add(Settings.Global.WIFI_SUSPEND_OPTIMIZATIONS_ENABLED);
+            MOVED_TO_GLOBAL.add(Settings.Global.WIFI_COVERAGE_EXTEND_FEATURE_ENABLED);
             MOVED_TO_GLOBAL.add(Settings.Global.WIFI_VERBOSE_LOGGING_ENABLED);
             MOVED_TO_GLOBAL.add(Settings.Global.WIFI_ENHANCED_AUTO_JOIN);
             MOVED_TO_GLOBAL.add(Settings.Global.WIFI_NETWORK_SHOW_RSSI);
@@ -11589,6 +11590,14 @@ public final class Settings {
         */
        public static final String WIFI_VERBOSE_LOGGING_ENABLED =
                "wifi_verbose_logging_enabled";
+
+       /**
+        * Setting to enable Wi-Fi coverage extend feature; disabled by default, and setting to 1
+        * will enable it.
+        * @hide
+        */
+       public static final String WIFI_COVERAGE_EXTEND_FEATURE_ENABLED =
+               "wifi_coverage_extend_feature_enabled";
 
         /**
          * Setting to enable connected MAC randomization in Wi-Fi; disabled by default, and
