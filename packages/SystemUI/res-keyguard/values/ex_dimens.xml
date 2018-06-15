@@ -2,4 +2,7 @@
 <resources>
     <!-- Weather condition icon  -->
     <dimen name="weather_icon_size">17dp</dimen>
+
+     <!-- Our custom clock values -->
+     <dimen name="widget_sammy_accent_font_size">62dp</dimen>
 </resources>
