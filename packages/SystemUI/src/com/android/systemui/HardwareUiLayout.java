@@ -126,6 +126,18 @@ public class HardwareUiLayout extends LinearLayout implements Tunable {
             }
             mSeparatedView.setLayoutParams(params);
         }
+
+        if (mSeparatedView != null) {
+            MarginLayoutParams params = (MarginLayoutParams) mSeparatedView.getLayoutParams();
+            if (mRotation == ROTATION_LANDSCAPE) {
+                params.topMargin = edge;
+            } else if (mRotation == ROTATION_SEASCAPE) {
+                params.bottomMargin = edge;
+            } else {
+                params.rightMargin = edge;
+            }
+            mSeparatedView.setLayoutParams(params);
+        }
     }
 
     private int getEdgePadding() {
