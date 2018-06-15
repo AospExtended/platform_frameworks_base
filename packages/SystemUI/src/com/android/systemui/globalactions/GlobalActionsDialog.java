@@ -173,6 +173,7 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener,
     private boolean mKeyguardShowing = false;
     private boolean mDeviceProvisioned = false;
     private boolean mIsWaitingForEcmExit = false;
+    private boolean mHasFasterEmergencyButton;
     private boolean mHasTelephony;
     private boolean mHasVibrator;
     private boolean mHasLogoutButton;
