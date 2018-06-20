@@ -67,8 +67,8 @@ import java.util.TimeZone;
 public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
         DarkReceiver, ConfigurationListener {
 
-    private boolean mClockVisibleByPolicy = true;
-    private boolean mClockVisibleByUser = true;
+    protected boolean mClockVisibleByPolicy = true;
+    protected boolean mClockVisibleByUser = true;
 
     protected boolean mAttached;
     protected Calendar mCalendar;
@@ -202,7 +202,6 @@ public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
                     if (!newLocale.equals(mLocale)) {
                         mLocale = newLocale;
                     }
-                    updateClockVisibility();
                     updateStatus();
                     return;
                 });
