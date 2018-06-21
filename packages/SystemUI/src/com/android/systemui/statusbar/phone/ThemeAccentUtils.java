@@ -73,6 +73,13 @@ public class ThemeAccentUtils {
         "com.accents.extendedgreen", //3
     };
 
+    private static final String[] CHOCOLATE_THEMES = {
+        "com.android.system.theme.chocolate", // 0
+        "com.android.settings.theme.chocolate", // 1
+        "com.android.systemui.theme.chocolate", // 2
+        "com.accents.candyred", //3
+    };
+
     private static final String STOCK_DARK_THEME = "com.android.systemui.theme.dark";
 
     // Switches theme accent from to another or back to stock
@@ -82,6 +89,17 @@ public class ThemeAccentUtils {
             if(isUsingExtendedTheme(om, userId)) {
             try {
                 om.setEnabled(EXTENDED_THEMES[3],
+                        true, userId);
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+            } else {
+            unloadAccents(om, userId);
+            }
+            //On selecting default accent, set accent to Candyred if ChocolateUI is being used
+            if(isUsingExtendedTheme(om, userId)) {
+            try {
+                om.setEnabled(CHOCOLATE_THEMES[3],
                         true, userId);
             } catch (RemoteException e) {
                 Log.w(TAG, "Can't change theme", e);
@@ -99,7 +117,7 @@ public class ThemeAccentUtils {
         } else if (accentSetting == 25) {
             try {
                 // If using a dark, black or extendedUI theme we use the white accent, otherwise use the black accent
-                if (isUsingDarkTheme(om, userId) || isUsingBlackTheme(om, userId) || isUsingExtendedTheme(om, userId)) {
+                if (isUsingDarkTheme(om, userId) || isUsingBlackTheme(om, userId) || isUsingExtendedTheme(om, userId) || isUsingChocolateTheme(om, userId)) {
                     om.setEnabled(ACCENTS[26],
                             true, userId);
                 } else {
@@ -162,6 +180,18 @@ public class ThemeAccentUtils {
         return themeInfo != null && themeInfo.isEnabled();
      }
 
+    // Check for the chocolate system theme
+    public static boolean isUsingChocolateTheme(IOverlayManager om, int userId) {
+        OverlayInfo themeInfo = null;
+        try {
+            themeInfo = om.getOverlayInfo(CHOCOLATE_THEMES[0],
+                    userId);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return themeInfo != null && themeInfo.isEnabled();
+     }
+
     public static void setLightDarkTheme(IOverlayManager om, int userId, boolean useDarkTheme) {
         for (String theme : DARK_THEMES) {
                 try {
@@ -201,11 +231,23 @@ public class ThemeAccentUtils {
         }
     }
 
+    public static void setLightChocolateTheme(IOverlayManager om, int userId, boolean useChocolateTheme) {
+        for (String theme : CHOCOLATE_THEMES) {
+                try {
+                    om.setEnabled(theme,
+                        useChocolateTheme, userId);
+                    unfuckBlackWhiteAccent(om, userId);
+                } catch (RemoteException e) {
+                    Log.w(TAG, "Can't change theme", e);
+                }
+        }
+    }
+
     // Check for black and white accent overlays
     public static void unfuckBlackWhiteAccent(IOverlayManager om, int userId) {
         OverlayInfo themeInfo = null;
         try {
-            if (isUsingDarkTheme(om, userId) || isUsingBlackTheme(om, userId) || isUsingExtendedTheme(om, userId)) {
+            if (isUsingDarkTheme(om, userId) || isUsingBlackTheme(om, userId) || isUsingExtendedTheme(om, userId) || isUsingChocolateTheme(om, userId)) {
                 themeInfo = om.getOverlayInfo(ACCENTS[25],
                         userId);
                 if (themeInfo != null && themeInfo.isEnabled()) {

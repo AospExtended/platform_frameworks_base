@@ -128,6 +128,9 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
                 R.string.systemui_theme_style_black, Settings.System.SYSTEM_THEME_STYLE));
         sStyleItems.add(new ThemeTileItem(4, -1,
                 R.string.systemui_theme_style_extended, Settings.System.SYSTEM_THEME_STYLE));
+        sStyleItems.add(new ThemeTileItem(5, -1,
+                R.string.systemui_theme_style_chocolate, Settings.System.SYSTEM_THEME_STYLE));
+
     }
 
     private enum Mode {
@@ -298,7 +301,7 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
     }
 
     private ThemeTileItem getThemeItemForStyleMode() {
-        boolean isDark = isUsingDarkTheme() || isUsingBlackTheme() || isUsingExtendedTheme();
+        boolean isDark = isUsingDarkTheme() || isUsingBlackTheme() || isUsingExtendedTheme() || isUsingChocolateTheme();
         if (isDark) {
             return new ThemeTileItem(25, R.color.quick_settings_theme_tile_white,
                     R.string.quick_settings_theme_tile_color_white);
@@ -337,6 +340,18 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
         OverlayInfo themeInfo = null;
         try {
             themeInfo = mOverlayManager.getOverlayInfo("com.android.system.theme.extended",
+                    UserHandle.USER_CURRENT);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return themeInfo != null && themeInfo.isEnabled();
+    }
+
+    // Check for the chocolate theme overlay
+    private boolean isUsingChocolateTheme() {
+        OverlayInfo themeInfo = null;
+        try {
+            themeInfo = mOverlayManager.getOverlayInfo("com.android.system.theme.chocolate",
                     UserHandle.USER_CURRENT);
         } catch (RemoteException e) {
             e.printStackTrace();

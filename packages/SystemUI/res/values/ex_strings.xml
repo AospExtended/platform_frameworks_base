@@ -108,6 +108,7 @@
     <string name="systemui_theme_style_dark">Dark UI</string>
     <string name="systemui_theme_style_black">Black UI</string>
     <string name="systemui_theme_style_extended">Extended UI</string>
+    <string name="systemui_theme_style_chocolate">Chocolate UI</string>
     <string name="quick_settings_theme_tile_title">Accent</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Select color</string>
     <string name="quick_settings_theme_tile_style_detail_title">Select style</string>
