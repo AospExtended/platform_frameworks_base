@@ -142,6 +142,7 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         mAlarmStatusCollapsed = findViewById(R.id.alarm_status_collapsed);
         mAlarmStatus = findViewById(R.id.alarm_status);
         mDateTimeGroup.setOnClickListener(this);
+        mDateTimeGroup.setOnLongClickListener(this);
 
         mMultiUserSwitch = findViewById(R.id.multi_user_switch);
         mMultiUserAvatar = mMultiUserSwitch.findViewById(R.id.multi_user_avatar);
@@ -406,12 +407,19 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     @Override
     public boolean onLongClick(View v) {
         if (v == mSettingsButton) {
+
             startExtensionsActivity();
-        } else if (v == mRunningServicesButton) {
-            MetricsLogger.action(mContext,
-                    mExpanded ? MetricsProto.MetricsEvent.ACTION_QS_EXPANDED_SETTINGS_LAUNCH
-                            : MetricsProto.MetricsEvent.ACTION_QS_COLLAPSED_SETTINGS_LAUNCH);
-            startRunningServicesActivity();
+        } else if (v == mDateTimeGroup) {
+            if (mAlarmShowing) {
+                Uri.Builder builder = CalendarContract.CONTENT_URI.buildUpon();
+                builder.appendPath("time");
+                builder.appendPath(Long.toString(System.currentTimeMillis()));
+                Intent todayIntent = new Intent(Intent.ACTION_VIEW, builder.build());
+                mActivityStarter.postStartActivityDismissingKeyguard(todayIntent, 0);
+            } else {
+                mActivityStarter.postStartActivityDismissingKeyguard(new Intent(
+                        AlarmClock.ACTION_SHOW_ALARMS), 0);
+            }
         }
         return false;
     }
