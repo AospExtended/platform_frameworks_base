@@ -247,7 +247,7 @@ public class StatusBarKeyguardViewManager implements RemoteInputController.Callb
             if (mOccluded && !mDozing) {
                 mStatusBar.hideKeyguard();
                 mStatusBar.stopWaitingForKeyguardExit();
-                if (hideBouncerWhenShowing || (mBouncer.needsFullscreenBouncer() == mBouncer.UNLOCK_SEQUENCE_DEFAULT)) {
+                if (hideBouncerWhenShowing || (mBouncer.needsFullscreenBouncer() == mBouncer.UNLOCK_SEQUENCE_DEFAULT || mBouncer.needsFullscreenBouncer() == mBouncer.UNLOCK_SEQUENCE_BOUNCER_FIRST)) {
                     hideBouncer(false /* destroyView */);
                 }
             } else {
@@ -302,7 +302,7 @@ public class StatusBarKeyguardViewManager implements RemoteInputController.Callb
     public void setDozing(boolean dozing) {
         if (mDozing != dozing) {
             mDozing = dozing;
-            if (dozing || (mBouncer.needsFullscreenBouncer() == mBouncer.UNLOCK_SEQUENCE_DEFAULT) || mOccluded) {
+            if (dozing || (mBouncer.needsFullscreenBouncer() == mBouncer.UNLOCK_SEQUENCE_DEFAULT || mBouncer.needsFullscreenBouncer() == mBouncer.UNLOCK_SEQUENCE_BOUNCER_FIRST) || mOccluded) {
                 reset(dozing /* hideBouncerWhenShowing */);
             }
             updateStates();
