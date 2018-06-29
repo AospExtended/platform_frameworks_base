@@ -44,8 +44,7 @@ public class OverScroller {
     private static final int SCROLL_MODE = 0;
     private static final int FLING_MODE = 1;
 
-    private static final boolean SCROLL_BOOST_SS_ENABLE =
-                    SystemProperties.getBoolean("vendor.perf.gestureflingboost.enable", false);
+    private static boolean SCROLL_BOOST_SS_ENABLE = false;
 
 
     /**
@@ -83,6 +82,8 @@ public class OverScroller {
         mFlywheel = flywheel;
         mScrollerX = new SplineOverScroller(context);
         mScrollerY = new SplineOverScroller(context);
+        SCROLL_BOOST_SS_ENABLE =
+                    SystemProperties.getBoolean("vendor.perf.gestureflingboost.enable", false);
     }
 
     /**

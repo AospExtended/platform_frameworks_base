@@ -165,7 +165,7 @@ public final class ViewRootImpl implements ViewParent,
     public static final String PROPERTY_EMULATOR_WIN_OUTSET_BOTTOM_PX =
             "ro.emu.win_outset_bottom_px";
 
-    private static final boolean SCROLL_BOOST_SS_ENABLE =
+    private final boolean SCROLL_BOOST_SS_ENABLE =
                     SystemProperties.getBoolean("vendor.perf.gestureflingboost.enable", false);
 
     /**
