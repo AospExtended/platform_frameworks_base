@@ -89,7 +89,7 @@ public class BoostFramework {
     public static final int UXE_EVENT_BINDAPP = 2;
     public static final int UXE_EVENT_DISPLAYED_ACT = 3;
     public static final int UXE_EVENT_KILL = 4;
-    public static final int UXE_EVENT_WAKELOCK  = 5;
+    public static final int UXE_EVENT_GAME  = 5;
     public static final int UXE_EVENT_SUB_LAUNCH = 6;
     public static final int UXE_EVENT_PKG_UNINSTALL = 7;
     public static final int UXE_EVENT_PKG_INSTALL = 8;
