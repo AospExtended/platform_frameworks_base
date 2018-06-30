@@ -4726,6 +4726,13 @@ public final class Settings {
         public static final String ACCENT_PICKER = "accent_picker";
 
         /**
+         * Whether to allow use of system themes alongside substratum
+         *
+         * @hide
+         */
+        public static final String FORCE_ALLOW_SYSTEM_THEMES = "force_allow_system_themes";
+
+        /**
          * Current theme overlay
          * @hide
          */
