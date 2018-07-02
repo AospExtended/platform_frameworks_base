@@ -36,6 +36,7 @@
     <!-- QS tiles Active and Inactive tint (Requires config_enable_qs_tile_tinting bool set to true) -->
     <color name="qs_tiles_active_tint">@*android:color/primary_text_default_material_light</color>
     <color name="qs_tiles_inactive_tint">@*android:color/hint_foreground_material_light</color>
+    <color name="qs_tiles_unavailable_tint">@*android:color/foreground_material_light</color> <!-- keep in mind that the code adds 0.26 (light) or 0.30 (dark) alpha to this color. -->
     
     <!-- QS tiles expand, underline and label colors -->    
     <color name="qs_tiles_expand_tint">@*android:color/text_color_primary</color>
