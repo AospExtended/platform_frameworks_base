@@ -257,14 +257,14 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
                 item.line1 = themeTileItem.getLabel(mContext);
                 items.add(item);
             }
-            Item lastItem = new Item();
+          /*  Item lastItem = new Item();
             ThemeTileItem lastThemeTileItem = getThemeItemForStyleMode();
             lastItem.tag = lastThemeTileItem;
             lastItem.doDisableTint = true;
             lastItem.doDisableFocus = true;
             lastItem.icon = lastThemeTileItem.getIcon(mContext);
             lastItem.line1 = lastThemeTileItem.getLabel(mContext);
-            items.add(lastItem);
+            items.add(lastItem); */
             return items;
         }
 
@@ -306,7 +306,7 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
         }
     }
 
-    private ThemeTileItem getThemeItemForStyleMode() {
+ /*   private ThemeTileItem getThemeItemForStyleMode() {
         if (ThemeAccentUtils.isUsingDarkTheme(mOverlayManager, mCurrentUserId) || ThemeAccentUtils.isUsingBlackTheme(mOverlayManager, mCurrentUserId) || ThemeAccentUtils.isUsingExtendedTheme(mOverlayManager, mCurrentUserId) || ThemeAccentUtils.isUsingChocolateTheme(mOverlayManager, mCurrentUserId)) {
             return new ThemeTileItem(25, R.color.quick_settings_theme_tile_white,
                     R.string.quick_settings_theme_tile_color_white);
@@ -314,7 +314,7 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
             return new ThemeTileItem(25, R.color.quick_settings_theme_tile_black,
                     R.string.quick_settings_theme_tile_color_black);
         }
-    }
+    } */
 
     @Override
     public BooleanState newTileState() {

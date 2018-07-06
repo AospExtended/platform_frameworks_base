@@ -2161,9 +2161,9 @@ public class StatusBar extends SystemUI implements DemoMode,
     }
 
     // Check for black and white accent overlays
-    public void unfuckBlackWhiteAccent() {
+/*    public void unfuckBlackWhiteAccent() {
         ThemeAccentUtils.unfuckBlackWhiteAccent(mOverlayManager, mLockscreenUserManager.getCurrentUserId());
-    }
+    }*/
 
     @Nullable
     public View getAmbientIndicationContainer() {
@@ -4014,26 +4014,26 @@ public class StatusBar extends SystemUI implements DemoMode,
         if (isUsingDarkTheme() != useDarkTheme) {
             // Check for black and white accent so we don't end up
             // with white on white or black on black
-            unfuckBlackWhiteAccent();
+            // unfuckBlackWhiteAccent();
             ThemeAccentUtils.setLightDarkTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useDarkTheme);
         }
         if (isUsingBlackTheme() != useBlackTheme) {
             // Check for black and white accent so we don't end up
             // with white on white or black on black
-            unfuckBlackWhiteAccent();
+            // unfuckBlackWhiteAccent();
             ThemeAccentUtils.setLightBlackTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useBlackTheme);
         }
         if (isUsingExtendedTheme() != useExtendedTheme) {
             // Check for black and white accent so we don't end up
             // with white on white or black on black
-            unfuckBlackWhiteAccent();
+            // unfuckBlackWhiteAccent();
             ThemeAccentUtils.setLightExtendedTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useExtendedTheme);
         }
 
         if (isUsingChocolateTheme() != useChocolateTheme) {
             // Check for black and white accent so we don't end up
             // with white on white or black on black
-            unfuckBlackWhiteAccent();
+            // unfuckBlackWhiteAccent();
             ThemeAccentUtils.setLightChocolateTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useChocolateTheme);
         }
 
