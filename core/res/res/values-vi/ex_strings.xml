@@ -49,5 +49,7 @@
   <string name="pocket_lock_message_long_press">Nhấn giữ nút nguồn để tương tác</string>
   <string name="app_blacklist">Danh sách ứng dụng đen</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessFontManager">quyền quản lý phông chữ</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessFontManager">Cho phép ứng dụng được quyền quản lý phông chữ.</string>
 </resources>

@@ -49,5 +49,7 @@
   <string name="pocket_lock_message_long_press">Paina virtanäppäintä pitkään vaikuttaaksesi</string>
   <string name="app_blacklist">Sovellus mustaan listaan</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessFontManager">siirry fonttien hallitsimeen</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessFontManager">Antaa sovellukselle pääsyn fonttien hallintaan.</string>
 </resources>

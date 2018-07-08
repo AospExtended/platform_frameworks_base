@@ -21,51 +21,236 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">Avancerad</string>
+  <string name="global_action_restart_recovery">Återställning</string>
+  <string name="global_action_restart_bootloader">Starthanterare</string>
+  <string name="global_action_restart_ui">SystemUI</string>
+  <string name="global_action_restart_soft">Mjuk omstart</string>
+  <string name="global_action_screenrecord">Skärminspelning</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Platsrapportering: batterisparläge.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Platsrapportering: endast sensorer.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Platsrapportering: hög precision.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">PiP</string>
+  <string name="quick_settings_pip_tile_app_na">Appen stöder inte PiP</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Aktiv låsskärm</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Aktiv låsskärm av.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Aktiv låsskärm på.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Aktiv låsskärm avstängd.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Aktiv låsskärm påslagen.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">Alltid på skärmläge</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">Alltid på skärmläge av.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">Alltid på skärmläge på.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Alltid på skärmläge avstängd.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Alltid på skärmläge påslagen.</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">Koffein</string>
+  <string name="accessibility_quick_settings_caffeine_off">Koffein av</string>
+  <string name="accessibility_quick_settings_caffeine_on">Koffein på</string>
+  <string name="statusbar_items_title">Statusfältets objekt</string>
   <!-- Screenshot QS tile -->
+  <string name="quick_settings_screenshot_label">Skärmdump</string>
+  <string name="quick_settings_region_screenshot_label">Partiell skärmdump</string>
+  <string name="recents_free_ram">Ledigt RAM: %1$d MB</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
+  <string name="quick_settings_compass_label">Kompass</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+  <string name="quick_settings_compass_init">Initierar\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Kompass av.</string>
+  <string name="accessibility_quick_settings_compass_on">Kompass på.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Kompass avstängd.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Kompass påslagen.</string>
+  <string name="quick_settings_compass_N">N</string>
+  <string name="quick_settings_compass_NE">NÖ</string>
+  <string name="quick_settings_compass_E">Ö</string>
+  <string name="quick_settings_compass_SE">SÖ</string>
+  <string name="quick_settings_compass_S">S</string>
+  <string name="quick_settings_compass_SW">SV</string>
+  <string name="quick_settings_compass_W">V</string>
+  <string name="quick_settings_compass_NW">NV</string>
   <!-- Sound QS Tile -->
+  <string name="quick_settings_sound_label">Ljud</string>
+  <string name="quick_settings_sound_ring">Ring</string>
+  <string name="quick_settings_sound_vibrate">Vibrera</string>
+  <string name="quick_settings_sound_dnd">Stör ej</string>
+  <string name="lockscreen_default">Standard</string>
+  <string name="lockscreen_hidden">Ingen</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+  <string name="custom_hint">Svep från ikonen för att öppna</string>
   <!-- Heads Up QS Tile -->
+  <string name="quick_settings_heads_up_label">Heads up</string>
+  <string name="accessibility_quick_settings_heads_up_off">Heads up av.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Heads up på.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Heads up avstängd.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Heads up aktiverad.</string>
   <!-- Heads up snooze toast -->
+  <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Pikande avisering snoozar i 1 minut.</string>
+  <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Pikande avisering snoozar i <xliff:g id="number">%d</xliff:g> minuter.</string>
   <!-- Battery saver tile -->
+  <string name="battery_saver_qs_tile_fully_charged">Fulladdad</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Dash laddning (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> till full)</string>
+  <string name="keyguard_plugged_in_dash_charging">Dash laddning</string>
   <!-- Screenrecord Notification Ticker -->
+  <string name="screenrecord_notif_ticker">Skärmen spelas in</string>
+  <string name="screenrecord_notif_final_ticker">Skärminspelning lyckades</string>
   <!-- Screenrecord notification title -->
+  <string name="screenrecord_notif_title">Spelar in skärmen</string>
   <!-- Screenrecord notification action: Stop -->
+  <string name="screenrecord_notif_stop">Avbryt</string>
+  <string name="screenrecord_notif_completed">Skärminspelning lyckades</string>
   <!-- Screenrecord notification action: show/hide pointer -->
+  <string name="screenrecord_notif_pointer_on">Visa pekaren</string>
+  <string name="screenrecord_notif_pointer_off">Dölj pekaren</string>
   <!-- Screen record notification error title -->
+  <string name="screenrecord_notif_error">Kan inte spela in skärmen</string>
+  <string name="notification_channel_screenrecord">Skärminspelningar</string>
+  <string name="screenrecord_hide_hint">Dölj tips</string>
+  <string name="screenrecord_show_hint">Visa tips</string>
   <!-- Screenrecord Tile -->
+  <string name="quick_settings_screenrecord_label">Skärminspelning</string>
+  <string name="quick_settings_screenrecord_lq_label">Skärminspelning 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Skärminspelning 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Skärminspelning 720p+</string>
+  <string name="systemui_tuner_navbar_title">Standard inställningar</string>
+  <string name="systemui_tuner_lockscreen_bottom_shortcuts_title">Genvägar i botten</string>
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Skärmdump raderad</string>
   <!-- Reboot/Recovery QS Tile -->
+  <string name="quick_settings_reboot_label">Starta om</string>
+  <string name="quick_settings_reboot_recovery_label">Återställning</string>
   <!-- Volume QS Tile -->
+  <string name="accessibility_quick_settings_volume_panel">Volym</string>
+  <string name="quick_settings_volume_panel_label">Volym</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">åsidosätta strömbrytaren</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Tillåter en app att åsidosätta avstängningsknappen.</string>
   <!-- ADB over network QS tile -->
+  <string name="quick_settings_network_adb_enabled_label">Aktiverad</string>
+  <string name="quick_settings_network_adb_disabled_label">Inaktiverad</string>
+  <string name="quick_settings_network_adb_label">ADB över nätverk</string>
+  <string name="quick_settings_network_adb_toast">USB-felsökning är inte aktiverad</string>
   <!-- Sync QS Tile -->
+  <string name="quick_settings_sync_label">Synk</string>
+  <string name="accessibility_quick_settings_sync_off">Synk av</string>
+  <string name="accessibility_quick_settings_sync_on">Synk på</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Synk avstängd</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Synk påslagen</string>
   <!-- USB Tethering tile -->
+  <string name="accessibility_quick_settings_usb_tether_off">Internetdelning via USB avstängd</string>
+  <string name="accessibility_quick_settings_usb_tether_on">Internetdelning via USB aktiverad</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">Internetdelning via USB av</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">Internetdelning via USB på</string>
+  <string name="quick_settings_usb_tether_label">Internetdelning via USB</string>
   <!-- Language toggle tile -->
+  <string name="quick_settings_locale_label">Språk</string>
+  <string name="quick_settings_locale_more_locales_toast">Konfigurera flera språk om du vill växla mellan funktioner</string>
   <!-- Music tile -->
+  <string name="quick_settings_music_label">Musik</string>
+  <string name="quick_settings_music_play">Spela</string>
+  <string name="quick_settings_music_pause">Pausa</string>
   <!-- Expanded Desktop QS Tile -->
+  <string name="quick_settings_expanded_desktop_label">Utökad skrivbord</string>
+  <string name="quick_settings_expanded_desktop">Utökad</string>
+  <string name="quick_settings_expanded_desktop_off">Normal</string>
+  <string name="quick_settings_expanded_navigation_off">Dölj navigationsfält</string>
+  <string name="quick_settings_expanded_statusbar_off">Dölj statusfält</string>
+  <string name="alert_on_charged_level">Du kan koppla från laddaren ( \"&gt;\"<xliff:g id="percentage">%s</xliff:g> )</string>
+  <string name="battery_level_good_title">Optimal batteri nivå</string>
+  <string name="notification_channel_charge_alert">Optimal batteri laddningsnivå</string>
   <!-- QS customizer -->
+  <string name="drag_or_tap_to_add_tiles">Dra eller tryck för att lägga till panel</string>
   <!-- AEX logo -->
+  <string name="aex_logo_title">AEX logo</string>
+  <string name="aex_logo_summary">Låt alla veta att du använder AEX när de ser din skärm</string>
   <!-- HW Keys Tile -->
+  <string name="accessibility_quick_settings_hwkeys_on">Hårdvaruknappar på</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Hårdvaruknappar av</string>
+  <string name="quick_settings_hwkeys_label">Hårdvaruknappar</string>
+  <string name="status_bar_data_saver">Databesparing</string>
+  <string name="omnijaws_service_error">Fel</string>
+  <string name="omnijaws_service_unkown">Ingen väderdata</string>
+  <string name="omnijaws_service_error_long">Fel vid inläsning av väderdata</string>
+  <string name="omnijaws_service_disabled">Tjänsten är inaktiverad</string>
+  <string name="omnijaws_detail_header">Väder</string>
+  <string name="omnijaws_label_default">Väder</string>
+  <string name="omnijaws_current_text">Nu</string>
+  <string name="omnijaws_package_not_available">OmniJaws är inte tillgänglig</string>
+  <string name="omnijaws_service_last_update">Senast uppdaterad:</string>
   <!-- Weather string format in expanded statusbar header -->
+  <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
   <!-- Navigation bar Tile -->
+  <string name="quick_settings_navigation_bar">Navigationsfält</string>
+  <string name="quick_settings_smartbar">SmartBar</string>
+  <string name="quick_settings_fling">Fling</string>
+  <string name="quick_settings_navigation_default">Standard</string>
+  <string name="quick_settings_navigation_disabled">Inaktiverad</string>
+  <string name="quick_settings_sound_search">Ljudsökning</string>
   <!-- Kill button in notification guts -->
+  <string name="force_stop_dlg_title">Tvinga avslut?</string>
+  <string name="force_stop_dlg_text">Om du tvingar appen att avslutas kanske den inte fungerar som den ska.</string>
+  <string name="dlg_ok">@android:string/ok</string>
+  <string name="dlg_cancel">@android:string/avbryt</string>
+  <string name="kill">Avsluta app</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">TurboPower ansluten (<xliff:g id="charging_time_left">%s</xliff:g> innan fullt)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower ansluten</string>
+  <string name="keyguard_plugged_in_turbo_charging">Turbo Laddning</string>
   <!-- Theme tile -->
+  <string name="systemui_theme_style_title">UI stil</string>
+  <string name="systemui_theme_style_auto">Automatisk</string>
+  <string name="systemui_theme_style_light">Ljus UI</string>
+  <string name="systemui_theme_style_dark">Mörk UI</string>
+  <string name="systemui_theme_style_black">Svart UI</string>
+  <string name="systemui_theme_style_extended">Utökad UI</string>
+  <string name="quick_settings_theme_tile_title">Accent</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Välj färg</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Välj stil</string>
+  <string name="quick_settings_theme_tile_color_default">Standard</string>
+  <string name="quick_settings_theme_tile_color_red">Röd</string>
+  <string name="quick_settings_theme_tile_color_pink">Rosa</string>
+  <string name="quick_settings_theme_tile_color_purple">Lila</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Mörklila</string>
+  <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
+  <string name="quick_settings_theme_tile_color_blue">Blå</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Ljusblå</string>
+  <string name="quick_settings_theme_tile_color_cyan">Cyan</string>
+  <string name="quick_settings_theme_tile_color_teal">Blågrön</string>
+  <string name="quick_settings_theme_tile_color_green">Grön</string>
+  <string name="quick_settings_theme_tile_color_light_green">Ljusgrön</string>
+  <string name="quick_settings_theme_tile_color_lime">Lime</string>
+  <string name="quick_settings_theme_tile_color_yellow">Gul</string>
+  <string name="quick_settings_theme_tile_color_amber">Bärnsten</string>
+  <string name="quick_settings_theme_tile_color_orange">Orange</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Djuporange</string>
+  <string name="quick_settings_theme_tile_color_brown">Brun</string>
+  <string name="quick_settings_theme_tile_color_grey">Grå</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Blågrå</string>
+  <string name="quick_settings_theme_tile_color_candy_red">Godisröd</string>
+  <string name="quick_settings_theme_tile_color_pale_red">Blekröd</string>
+  <string name="quick_settings_theme_tile_color_extended_green">Utökadgrön</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">Blekblå</string>
+  <string name="quick_settings_theme_tile_color_jade_green">Jadegrön</string>
+  <string name="quick_settings_theme_tile_color_black">Svart</string>
+  <string name="quick_settings_theme_tile_color_white">Vit</string>
+  <string name="theme_info_title">Vad är detta?</string>
+  <string name="theme_info_message">Tema panelen är en unik men lättanvänt panel som tillåter användaren att ändra systemet accent eller stil.\n\nFör att förändra mellan accenter och stilar, tryck länge på panelen och tryck sedan på den igen för att välja från de alternativ som erbjuds.</string>
   <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_running_services">Öppna Körande Tjänster skärmen.</string>
   <!-- Smart pixels QS tile -->
+  <string name="quick_settings_smart_pixels">Smarta Pixlar</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Auto-aktiverad smarta pixlar</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.

@@ -237,6 +237,11 @@
   <string name="quick_settings_theme_tile_color_brown">Καφέ</string>
   <string name="quick_settings_theme_tile_color_grey">Γκρι</string>
   <string name="quick_settings_theme_tile_color_blue_grey">Μπλεγκρί</string>
+  <string name="quick_settings_theme_tile_color_candy_red">Κόκκινη καραμέλα</string>
+  <string name="quick_settings_theme_tile_color_pale_red">Απαλό κόκκινο</string>
+  <string name="quick_settings_theme_tile_color_extended_green">Εκτεταμένο πράσινο</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">Απαλό μπλέ</string>
+  <string name="quick_settings_theme_tile_color_jade_green">Νεφρίτης πράσινος</string>
   <string name="quick_settings_theme_tile_color_black">Μαύρο</string>
   <string name="quick_settings_theme_tile_color_white">Λευκό</string>
   <string name="theme_info_title">Τι είναι αυτό;</string>

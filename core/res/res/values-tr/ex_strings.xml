@@ -49,5 +49,7 @@
   <string name="pocket_lock_message_long_press">Etkileşim için güç tuşuna uzun basın</string>
   <string name="app_blacklist">Uygulama kara listesi</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessFontManager">yazı tipi yöneticisine erişim</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessFontManager">Bir uygulamanın yazı tipi yöneticisine erişmesine izin verir.</string>
 </resources>

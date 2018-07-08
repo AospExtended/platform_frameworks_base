@@ -237,6 +237,11 @@
   <string name="quick_settings_theme_tile_color_brown">Café</string>
   <string name="quick_settings_theme_tile_color_grey">Gris</string>
   <string name="quick_settings_theme_tile_color_blue_grey">Gris azulado</string>
+  <string name="quick_settings_theme_tile_color_candy_red">Rojo caramelo</string>
+  <string name="quick_settings_theme_tile_color_pale_red">Rojo pálido</string>
+  <string name="quick_settings_theme_tile_color_extended_green">Verde extendido</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">Azul pálido</string>
+  <string name="quick_settings_theme_tile_color_jade_green">Verde jade</string>
   <string name="quick_settings_theme_tile_color_black">Negro</string>
   <string name="quick_settings_theme_tile_color_white">Blanco</string>
   <string name="theme_info_title">¿Qué es esto?</string>

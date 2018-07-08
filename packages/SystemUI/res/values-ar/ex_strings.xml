@@ -237,6 +237,11 @@
   <string name="quick_settings_theme_tile_color_brown">بني</string>
   <string name="quick_settings_theme_tile_color_grey">رمادي</string>
   <string name="quick_settings_theme_tile_color_blue_grey">أزرق رمادي</string>
+  <string name="quick_settings_theme_tile_color_candy_red">الحلوى الحمراء</string>
+  <string name="quick_settings_theme_tile_color_pale_red">أحمر شاحب</string>
+  <string name="quick_settings_theme_tile_color_extended_green">أخضر ممتد</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">أزرق شاحب</string>
+  <string name="quick_settings_theme_tile_color_jade_green">اليشم الأخضر</string>
   <string name="quick_settings_theme_tile_color_black">أسود</string>
   <string name="quick_settings_theme_tile_color_white">أبيض</string>
   <string name="theme_info_title">ما هذا ؟</string>

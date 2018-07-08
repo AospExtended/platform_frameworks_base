@@ -18,12 +18,12 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="reboot_title">Reiniciar</string>
+  <string name="reboot_title">Reinici</string>
   <string name="reboot_message">Reinicianty</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_toggleNavigationEditor">Editor del control de navegació</string>
+  <string name="permlab_toggleNavigationEditor">editor del control de navegació</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_toggleNavigationEditor">Permet una aplicació controlar l\'editor de barra de navegació.</string>
+  <string name="permdesc_toggleNavigationEditor">Permet una aplicació controlar l\'editor de la barra de navegació.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_fakePackageSignature">Signatura del paquet falsificada</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -46,6 +46,10 @@
   <string name="animation_random">Aleatori</string>
   <string name="action_null">En blanc</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">Apretar el botó d\'inici durant uns segons per a interactuar</string>
+  <string name="app_blacklist">App de llista negra</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessFontManager">acces a l\'administrador de fonts</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessFontManager">Permet a una aplicació l\'acces a l\'administrador de fonts.</string>
 </resources>

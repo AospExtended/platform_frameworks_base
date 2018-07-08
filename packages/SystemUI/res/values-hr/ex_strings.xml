@@ -21,9 +21,26 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
+  <string name="global_action_restart_advanced">Napredno</string>
+  <string name="global_action_restart_recovery">Način oporavka</string>
+  <string name="global_action_restart_bootloader">Podizač sustava</string>
+  <string name="global_action_restart_ui">Sučelje sustava</string>
+  <string name="global_action_restart_soft">Brzo ponovno pokretanje</string>
+  <string name="global_action_screenrecord">Snimanje zaslona</string>
   <!-- Advance location quick setting tile -->
+  <string name="accessibility_quick_settings_location_battery_saving">Izvještavanje o lokaciji: način štednje baterije.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Izvještavanje o lokaciji: način samo sa senzorima.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Izvještavanje o lokaciji: način visoke preciznosti.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">Slika u slici</string>
+  <string name="quick_settings_pip_tile_app_na">Aplikacija ne podržava način \"slike u slici\".</string>
   <!-- Ambient display QS tile -->
+  <string name="quick_settings_ambient_display_label">Ambijentalni zaslon</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Ambijentalni zaslon isključen.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Ambijentalni zaslon uključen.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Ambijentalni zaslon je isključen.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Ambijentalni zaslon je uključen.</string>
   <!-- Always on Display Tile -->
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->

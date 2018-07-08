@@ -49,5 +49,7 @@
   <string name="pocket_lock_message_long_press">Tekan lama tombol power untuk berinteraksi</string>
   <string name="app_blacklist">Aplikasi terblokir</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessFontManager">akses manajer fon</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessFontManager">Mengizinkan aplikasi untuk mengakses manajer fon.</string>
 </resources>

@@ -237,6 +237,11 @@
   <string name="quick_settings_theme_tile_color_brown">Barna</string>
   <string name="quick_settings_theme_tile_color_grey">Szürke</string>
   <string name="quick_settings_theme_tile_color_blue_grey">Szürkéskék</string>
+  <string name="quick_settings_theme_tile_color_candy_red">Piros, mint egy cukor</string>
+  <string name="quick_settings_theme_tile_color_pale_red">Halványuló piros</string>
+  <string name="quick_settings_theme_tile_color_extended_green">Szétáradó zöld</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">Halványuló kékség</string>
+  <string name="quick_settings_theme_tile_color_jade_green">Jádekő zöld</string>
   <string name="quick_settings_theme_tile_color_black">Fekete</string>
   <string name="quick_settings_theme_tile_color_white">Fehér</string>
   <string name="theme_info_title">Mi a fene ez?</string>

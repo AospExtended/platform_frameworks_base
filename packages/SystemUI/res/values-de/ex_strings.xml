@@ -237,6 +237,11 @@
   <string name="quick_settings_theme_tile_color_brown">Braun</string>
   <string name="quick_settings_theme_tile_color_grey">Grau</string>
   <string name="quick_settings_theme_tile_color_blue_grey">Graublau</string>
+  <string name="quick_settings_theme_tile_color_candy_red">Rote Süßigkeiten</string>
+  <string name="quick_settings_theme_tile_color_pale_red">Blasses Rot</string>
+  <string name="quick_settings_theme_tile_color_extended_green">Grün Erweitert</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">Blasses Blau</string>
+  <string name="quick_settings_theme_tile_color_jade_green">Jadegrün</string>
   <string name="quick_settings_theme_tile_color_black">Schwarz</string>
   <string name="quick_settings_theme_tile_color_white">Weiß</string>
   <string name="theme_info_title">Was ist das?</string>

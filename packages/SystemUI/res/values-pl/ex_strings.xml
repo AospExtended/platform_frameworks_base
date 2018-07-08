@@ -26,7 +26,7 @@
   <string name="global_action_restart_recovery">Recovery</string>
   <string name="global_action_restart_bootloader">Bootloader</string>
   <string name="global_action_restart_ui">SystemUI</string>
-  <string name="global_action_restart_soft">Miękki restart</string>
+  <string name="global_action_restart_soft">Szybki restart</string>
   <string name="global_action_screenrecord">Nagrywanie ekranu</string>
   <!-- Advance location quick setting tile -->
   <string name="accessibility_quick_settings_location_battery_saving">Raportowanie lokalizacji: tryb oszczędzania baterii</string>
@@ -36,21 +36,21 @@
   <string name="quick_settings_pip_label">PiP</string>
   <string name="quick_settings_pip_tile_app_na">Aplikacja nie obsługuje PiP</string>
   <!-- Ambient display QS tile -->
-  <string name="quick_settings_ambient_display_label">Wyświetlacz otoczenia</string>
-  <string name="accessibility_quick_settings_ambient_display_off">Wyświetlacz otoczenia wyłączony</string>
-  <string name="accessibility_quick_settings_ambient_display_on">Wyświetlacz otoczenia włączony.</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient display wyłączony.</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient display włączony.</string>
+  <string name="quick_settings_ambient_display_label">Dynamiczny wyświetlacz </string>
+  <string name="accessibility_quick_settings_ambient_display_off">Dynamiczny wyświetlacz wyłączony</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Dynamiczny wyświetlacz włączony</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Dynamiczny wyświetlacz  wyłączony</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Dynamiczny wyświetlacz  włączony</string>
   <!-- Always on Display Tile -->
-  <string name="quick_settings_always_on_display_label">Zawsze wyświetlaj</string>
+  <string name="quick_settings_always_on_display_label">Aktywny wyświetlacz</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_always_on_display_off">Zawsze wyświetlaj wyłączone.</string>
+  <string name="accessibility_quick_settings_always_on_display_off">Aktywny wyświetlacz wyłączony</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_always_on_display_on">Zawsze wyświetlaj włączone.</string>
+  <string name="accessibility_quick_settings_always_on_display_on">Aktywny wyświetlacz włączony</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_always_on_display_changed_off">Zawsze na wyświetlaczu wyłączono.</string>
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Aktywny wyświetlacz wyłączony</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_always_on_display_changed_on">Zawsze na wyświetlaczu włączono.</string>
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Aktywny wyświetlacz włączony</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Kofeina</string>
   <string name="accessibility_quick_settings_caffeine_off">Kofeina wył.</string>
@@ -59,7 +59,7 @@
   <!-- Screenshot QS tile -->
   <string name="quick_settings_screenshot_label">Zrzut ekranu</string>
   <string name="quick_settings_region_screenshot_label">Częściowy zrzut ekranu</string>
-  <string name="recents_free_ram">Wolna pamięć RAM: %1$d MB</string>
+  <string name="recents_free_ram">Wolny RAM: %1$d MB</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">VoLTE</string>
   <!-- Compass QS Tile -->
@@ -237,6 +237,11 @@
   <string name="quick_settings_theme_tile_color_brown">Brązowy</string>
   <string name="quick_settings_theme_tile_color_grey">Szary</string>
   <string name="quick_settings_theme_tile_color_blue_grey">Niebieskoszary</string>
+  <string name="quick_settings_theme_tile_color_candy_red">Cukierkowy czerwony</string>
+  <string name="quick_settings_theme_tile_color_pale_red">Blady czerwony</string>
+  <string name="quick_settings_theme_tile_color_extended_green">Zielony Extended</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">Blady niebieski</string>
+  <string name="quick_settings_theme_tile_color_jade_green">Jadeitowy zielony</string>
   <string name="quick_settings_theme_tile_color_black">Czarny</string>
   <string name="quick_settings_theme_tile_color_white">Biały</string>
   <string name="theme_info_title">Co to jest?</string>

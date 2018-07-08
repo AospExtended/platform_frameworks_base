@@ -47,7 +47,9 @@
   <string name="action_null">Em branco</string>
   <!-- Pocket Lock -->
   <string name="pocket_lock_message_long_press">Manter pressionado botão de ligar/desligar para interagir</string>
-  <string name="app_blacklist">Aplicativos na lista negra</string>
+  <string name="app_blacklist">Aplicação bloqueada</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessFontManager">aceder aos tipos de fonte</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessFontManager">Permite que uma aplicação aceda aos tipos de fonte.</string>
 </resources>

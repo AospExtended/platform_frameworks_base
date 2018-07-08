@@ -49,5 +49,7 @@
   <string name="pocket_lock_message_long_press">Mantenga pulsado el botón de encendido para interactuar</string>
   <string name="app_blacklist">Lista negra de aplicaciones</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessFontManager">access font manager</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessFontManager">Permite a una aplicación acceder al administrador de fuentes.</string>
 </resources>

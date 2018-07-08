@@ -237,6 +237,11 @@
   <string name="quick_settings_theme_tile_color_brown">Marron</string>
   <string name="quick_settings_theme_tile_color_grey">Gris</string>
   <string name="quick_settings_theme_tile_color_blue_grey">Bleu Gris</string>
+  <string name="quick_settings_theme_tile_color_candy_red">Rouge Bonbon</string>
+  <string name="quick_settings_theme_tile_color_pale_red">Rouge Pâle</string>
+  <string name="quick_settings_theme_tile_color_extended_green">Green Extended</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">Bleu Pâle</string>
+  <string name="quick_settings_theme_tile_color_jade_green">Vert Jade</string>
   <string name="quick_settings_theme_tile_color_black">Noir</string>
   <string name="quick_settings_theme_tile_color_white">Blanc</string>
   <string name="theme_info_title">Qu\'est-ce que c\'est ?</string>

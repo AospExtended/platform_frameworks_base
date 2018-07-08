@@ -21,6 +21,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_data_connection_hspap">HSPA+</string>
   <string name="global_action_restart_advanced">מתקדם</string>
   <string name="global_action_restart_recovery">שחזור</string>
   <string name="global_action_restart_bootloader">Bootloader</string>
@@ -32,6 +33,7 @@
   <string name="accessibility_quick_settings_location_gps_only">מצב דיווח מיקום שונה למצב חיישן בלבד.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">מצב דיווח מיקום שונה למצב מיקום מדויק.</string>
   <!-- PiP Tile -->
+  <string name="quick_settings_pip_label">תמונה בתוך תמונה</string>
   <string name="quick_settings_pip_tile_app_na">היישום אינו תומך בPiP</string>
   <!-- Ambient display QS tile -->
   <string name="quick_settings_ambient_display_label">תצוגת אמביינט</string>
@@ -40,23 +42,40 @@
   <string name="accessibility_quick_settings_ambient_display_changed_off">תצוגת אמביינט כובתה.</string>
   <string name="accessibility_quick_settings_ambient_display_changed_on">תצוגת אמביינט הופעלה.</string>
   <!-- Always on Display Tile -->
+  <string name="quick_settings_always_on_display_label">השאר את המסך דולק</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_off">אל תשאיר את המסך דולק.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_on">המסך ישאר דולק באופן קבוע.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_off">אל תשאיר את המסך דולק.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+  <string name="accessibility_quick_settings_always_on_display_changed_on">המסך ישאר דולק באופן קבוע.</string>
   <!-- Caffeine QS Tile -->
+  <string name="quick_settings_caffeine_label">מצב קפה</string>
+  <string name="accessibility_quick_settings_caffeine_off">מצב קפה כבוי</string>
+  <string name="accessibility_quick_settings_caffeine_on">מצב קפה מופעל</string>
   <string name="statusbar_items_title">פריטים בשורת המצב</string>
   <!-- Screenshot QS tile -->
   <string name="quick_settings_screenshot_label">צילום מסך</string>
   <string name="quick_settings_region_screenshot_label">צילום מסך חלקי</string>
   <string name="recents_free_ram">%1$d MB זכרון RAM פנוי</string>
   <!-- volte icon switch -->
+  <string name="status_bar_volte">VOLTE</string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">מצפן</string>
   <string name="accessibility_quick_settings_compass_off">מצפן כבוי.</string>
   <string name="accessibility_quick_settings_compass_on">מצפן פועל.</string>
   <string name="accessibility_quick_settings_compass_changed_off">המצפן כובה.</string>
   <string name="accessibility_quick_settings_compass_changed_on">המצפן הופעל.</string>
+  <string name="quick_settings_compass_N">צפון</string>
+  <string name="quick_settings_compass_NE">צפון מזרח</string>
+  <string name="quick_settings_compass_E">מזרח</string>
+  <string name="quick_settings_compass_SE">דרום מזרח</string>
+  <string name="quick_settings_compass_S">דרום</string>
+  <string name="quick_settings_compass_SW">דרום מערב</string>
+  <string name="quick_settings_compass_W">מערב</string>
+  <string name="quick_settings_compass_NW">צפון מערב</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">צליל</string>
   <string name="quick_settings_sound_ring">צלצול</string>
@@ -71,6 +90,8 @@
   <!-- Battery saver tile -->
   <string name="battery_saver_qs_tile_fully_charged">הסוללה טעונה במלואה</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">טעינה מהירה (<xliff:g id="Charging_TIME_LEFT">%s</xliff:g> עד לסיום)</string>
+  <string name="keyguard_plugged_in_dash_charging">טעינה מהירה</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">הקלטת המסך החלה</string>
   <string name="screenrecord_notif_final_ticker">הקלטת המסך הסתיימה בהצלחה</string>
@@ -87,6 +108,9 @@
   <string name="notification_channel_screenrecord">הקלטות מסך</string>
   <!-- Screenrecord Tile -->
   <string name="quick_settings_screenrecord_label">הקלטת מסך</string>
+  <string name="quick_settings_screenrecord_lq_label">הקלטת מסך</string>
+  <string name="quick_settings_screenrecord_mq_label">הקלטת מסך 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">הקלטת מסך 720p+</string>
   <!-- Screenshot Delete Toast -->
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">אתחול</string>
@@ -144,6 +168,8 @@
   <!-- Weather string format in expanded statusbar header -->
   <!-- Navigation bar Tile -->
   <string name="quick_settings_navigation_bar">שורת הניווט</string>
+  <string name="quick_settings_navigation_disabled">כבוי</string>
+  <string name="quick_settings_sound_search">חיפוש קולי</string>
   <!-- Kill button in notification guts -->
   <string name="force_stop_dlg_title">לאלץ עצירה?</string>
   <string name="force_stop_dlg_text">אם תאלץ את עצירת היישום, ייתכן שהוא לא יפעל כהלכה.</string>
@@ -158,6 +184,7 @@
   <string name="systemui_theme_style_dark">ממשק כהה</string>
   <string name="systemui_theme_style_black">ממשק שחור</string>
   <string name="systemui_theme_style_extended">ממשק Extended</string>
+  <string name="quick_settings_theme_tile_title">ערכת צבע</string>
   <string name="quick_settings_theme_tile_accent_detail_title">בחר צבע</string>
   <string name="quick_settings_theme_tile_style_detail_title">בחר סגנון</string>
   <string name="quick_settings_theme_tile_color_default">ברירת מחדל</string>
@@ -172,12 +199,19 @@
   <string name="quick_settings_theme_tile_color_teal">כחול-ירקרק</string>
   <string name="quick_settings_theme_tile_color_green">ירוק</string>
   <string name="quick_settings_theme_tile_color_light_green">ירוק בהיר</string>
+  <string name="quick_settings_theme_tile_color_lime">ליים</string>
   <string name="quick_settings_theme_tile_color_yellow">צהוב</string>
+  <string name="quick_settings_theme_tile_color_amber">אמבר</string>
   <string name="quick_settings_theme_tile_color_orange">כתום</string>
   <string name="quick_settings_theme_tile_color_deep_orange">כתום כהה</string>
   <string name="quick_settings_theme_tile_color_brown">חום</string>
   <string name="quick_settings_theme_tile_color_grey">אפור</string>
   <string name="quick_settings_theme_tile_color_blue_grey">כחול אפור</string>
+  <string name="quick_settings_theme_tile_color_candy_red">אדום סוכריה</string>
+  <string name="quick_settings_theme_tile_color_pale_red">אדום חיוור</string>
+  <string name="quick_settings_theme_tile_color_extended_green">ירוק מורחב</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">כחול חיוור</string>
+  <string name="quick_settings_theme_tile_color_jade_green">ירוק אמרלד</string>
   <string name="quick_settings_theme_tile_color_black">שחור</string>
   <string name="quick_settings_theme_tile_color_white">לבן</string>
   <string name="theme_info_title">מה זה?</string>

@@ -237,6 +237,11 @@
   <string name="quick_settings_theme_tile_color_brown">Marrom</string>
   <string name="quick_settings_theme_tile_color_grey">Cinza</string>
   <string name="quick_settings_theme_tile_color_blue_grey">Azul acizentado</string>
+  <string name="quick_settings_theme_tile_color_candy_red">Vermelho Cristal</string>
+  <string name="quick_settings_theme_tile_color_pale_red">Vermelho Claro</string>
+  <string name="quick_settings_theme_tile_color_extended_green">Verde expandido</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">Azul Claro</string>
+  <string name="quick_settings_theme_tile_color_jade_green">Verde Jade</string>
   <string name="quick_settings_theme_tile_color_black">Preto</string>
   <string name="quick_settings_theme_tile_color_white">Branco</string>
   <string name="theme_info_title">O que é isso?</string>

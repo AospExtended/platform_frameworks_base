@@ -49,5 +49,7 @@
   <string name="pocket_lock_message_long_press">長按電源鍵以互動</string>
   <string name="app_blacklist">應用程式黑名單</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessFontManager">存取字型管理器</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessFontManager">允許應用程式存取字型管理器。</string>
 </resources>
