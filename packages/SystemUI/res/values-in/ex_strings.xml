@@ -237,6 +237,11 @@
   <string name="quick_settings_theme_tile_color_brown">Cokelat</string>
   <string name="quick_settings_theme_tile_color_grey">Abu-abu</string>
   <string name="quick_settings_theme_tile_color_blue_grey">Abu-abu kebiruan</string>
+  <string name="quick_settings_theme_tile_color_candy_red">Permen merah</string>
+  <string name="quick_settings_theme_tile_color_pale_red">Merah pucat</string>
+  <string name="quick_settings_theme_tile_color_extended_green">Hijau extended</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">Biru pucat</string>
+  <string name="quick_settings_theme_tile_color_jade_green">Hijau giok</string>
   <string name="quick_settings_theme_tile_color_black">Hitam</string>
   <string name="quick_settings_theme_tile_color_white">Putih</string>
   <string name="theme_info_title">Apa ini?</string>

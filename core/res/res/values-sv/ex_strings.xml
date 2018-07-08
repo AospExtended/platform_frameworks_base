@@ -18,12 +18,38 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="reboot_title">Starta om</string>
+  <string name="reboot_message">Startar om Systemet</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">kontrollera navigationsfältredigeraren</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">Tillåter en applikation att ta kontroll över navigationsfältredigeraren.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Ändra paketets signatur</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Tillåter appen att låtsas vara en annan app. skadliga program skulle kunna använda detta för att komma åt privata programdata. Var försiktig med att ge detta tillstånd!</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">Tona</string>
+  <string name="animation_slide_right">Glida in från höger</string>
+  <string name="animation_slide_left">Glida in från vänster</string>
+  <string name="animation_slide_right_no_fade">Glid in från höger (Tona inte ut)</string>
+  <string name="animation_slide_left_no_fade">Glid in från vänster (Tona inte ut)</string>
+  <string name="animation_slide_up">Glida in från botten</string>
+  <string name="animation_slide_down">Glida in från toppen</string>
+  <string name="animation_default">Standard</string>
+  <string name="animation_translucent">Genomskinlig</string>
+  <string name="animation_grow_shrink">Väx i (Överst)</string>
+  <string name="animation_grow_shrink_center">Växa i (Mitten)</string>
+  <string name="animation_grow_shrink_bottom">Väx i (Botten)</string>
+  <string name="animation_grow_shrink_left">Väx i (Vänster)</string>
+  <string name="animation_grow_shrink_right">Väx i (Höger)</string>
+  <string name="animation_random">Slumpmässigt</string>
+  <string name="action_null">Tom</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">Långtryck på strömbrytaren för att interagera</string>
+  <string name="app_blacklist">Svartlista app</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessFontManager">kom åt typsnittshanteraren</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessFontManager">Ger en app åtkomst till typsnittshanteraren.</string>
 </resources>

@@ -237,6 +237,11 @@
   <string name="quick_settings_theme_tile_color_brown">Bruin</string>
   <string name="quick_settings_theme_tile_color_grey">Grijs</string>
   <string name="quick_settings_theme_tile_color_blue_grey">Blauwgrijs</string>
+  <string name="quick_settings_theme_tile_color_candy_red">Fel rood</string>
+  <string name="quick_settings_theme_tile_color_pale_red">Lichtrood</string>
+  <string name="quick_settings_theme_tile_color_extended_green">Rustig groen</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">Lichtblauw</string>
+  <string name="quick_settings_theme_tile_color_jade_green">Helder groen</string>
   <string name="quick_settings_theme_tile_color_black">Zwart</string>
   <string name="quick_settings_theme_tile_color_white">Wit</string>
   <string name="theme_info_title">Wat is dit?</string>

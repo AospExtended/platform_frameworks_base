@@ -237,6 +237,11 @@
   <string name="quick_settings_theme_tile_color_brown">Maro</string>
   <string name="quick_settings_theme_tile_color_grey">Gri</string>
   <string name="quick_settings_theme_tile_color_blue_grey">Albastru gri</string>
+  <string name="quick_settings_theme_tile_color_candy_red">Roșu Candy</string>
+  <string name="quick_settings_theme_tile_color_pale_red">Roşu pal</string>
+  <string name="quick_settings_theme_tile_color_extended_green">Verde extins</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">Albastru pal</string>
+  <string name="quick_settings_theme_tile_color_jade_green">Verde Jade</string>
   <string name="quick_settings_theme_tile_color_black">Negru</string>
   <string name="quick_settings_theme_tile_color_white">Alb</string>
   <string name="theme_info_title">Ce este aceasta?</string>

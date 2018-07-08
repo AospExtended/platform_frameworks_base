@@ -237,6 +237,11 @@
   <string name="quick_settings_theme_tile_color_brown">Hnedá</string>
   <string name="quick_settings_theme_tile_color_grey">Šedá</string>
   <string name="quick_settings_theme_tile_color_blue_grey">Modro-šedá</string>
+  <string name="quick_settings_theme_tile_color_candy_red">Cukríkovo červená</string>
+  <string name="quick_settings_theme_tile_color_pale_red">Bledo červená</string>
+  <string name="quick_settings_theme_tile_color_extended_green">Rozšírene zelená</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">Bledo modrá</string>
+  <string name="quick_settings_theme_tile_color_jade_green">Nefritovo zelená</string>
   <string name="quick_settings_theme_tile_color_black">Čierna</string>
   <string name="quick_settings_theme_tile_color_white">Svetlá</string>
   <string name="theme_info_title">Čo je to?</string>

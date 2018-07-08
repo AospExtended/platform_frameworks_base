@@ -237,6 +237,11 @@
   <string name="quick_settings_theme_tile_color_brown">棕色</string>
   <string name="quick_settings_theme_tile_color_grey">灰色</string>
   <string name="quick_settings_theme_tile_color_blue_grey">藍灰色</string>
+  <string name="quick_settings_theme_tile_color_candy_red">糖果紅</string>
+  <string name="quick_settings_theme_tile_color_pale_red">淡紅色</string>
+  <string name="quick_settings_theme_tile_color_extended_green">擴展綠</string>
+  <string name="quick_settings_theme_tile_color_pale_blue">淡藍色</string>
+  <string name="quick_settings_theme_tile_color_jade_green">翡翠綠</string>
   <string name="quick_settings_theme_tile_color_black">黑色</string>
   <string name="quick_settings_theme_tile_color_white">白色</string>
   <string name="theme_info_title">這是什麼？</string>

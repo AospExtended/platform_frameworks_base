@@ -18,7 +18,7 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="reboot_title">Neu starten</string>
+  <string name="reboot_title">Neustarten</string>
   <string name="reboot_message">System wird neu gestartet</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_toggleNavigationEditor">Navigationsleisten-Editor kontrollieren</string>
@@ -49,5 +49,7 @@
   <string name="pocket_lock_message_long_press">Power-Button gedrückt halten, um mit dem Gerät zu interagieren</string>
   <string name="app_blacklist">Gesperrte Apps</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessFontManager">auf Schriftverwaltung zugreifen</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessFontManager">Erlaubt der Anwendung, auf die Schriftverwaltung zuzugreifen.</string>
 </resources>

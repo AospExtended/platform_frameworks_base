@@ -18,12 +18,38 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="reboot_title">Ponovno pokreni</string>
+  <string name="reboot_message">Ponovno pokretanje sustava</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_toggleNavigationEditor">pokretanje uređivača navigacijske trake</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_toggleNavigationEditor">Dopušta aplikaciji upravljanje uređivačem navigacijske trake.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Imitiraj potpis paketa</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Dopušta aplikaciji da se pretvara da je druga aplikacija. Zlonamjerne aplikacije mogu koristiti ovo kako bi pristupile privatnim podacima aplikacija. Dopustite ovu dozvolu s oprezom!</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_fade">Blijeđenje</string>
+  <string name="animation_slide_right">Klizanje udesno</string>
+  <string name="animation_slide_left">Klizanje ulijevo</string>
+  <string name="animation_slide_right_no_fade">Klizanje udesno (bez blijeđenja)</string>
+  <string name="animation_slide_left_no_fade">Klizanje ulijevo (bez blijeđenja)</string>
+  <string name="animation_slide_up">Klizanje prema dolje</string>
+  <string name="animation_slide_down">Klizanje prema gore</string>
+  <string name="animation_default">Zadano</string>
+  <string name="animation_translucent">Prozirno</string>
+  <string name="animation_grow_shrink">Širenje u rastu (gore)</string>
+  <string name="animation_grow_shrink_center">Širenje u rastu (sredina)</string>
+  <string name="animation_grow_shrink_bottom">Širenje u rastu (dno)</string>
+  <string name="animation_grow_shrink_left">Širenje u rastu (lijevo)</string>
+  <string name="animation_grow_shrink_right">Širenje u rastu (desno)</string>
+  <string name="animation_random">Nasumično</string>
+  <string name="action_null">Prazno</string>
   <!-- Pocket Lock -->
+  <string name="pocket_lock_message_long_press">Pritisnite i držite tipku napajanja za interakciju</string>
+  <string name="app_blacklist">Aplikacija za crnu listu</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessFontManager">pristup upravitelju fonta</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessFontManager">Omogućuje aplikaciji pristup upravitelju fonta.</string>
 </resources>

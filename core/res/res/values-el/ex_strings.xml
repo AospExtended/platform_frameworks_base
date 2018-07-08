@@ -49,5 +49,7 @@
   <string name="pocket_lock_message_long_press">Πιέστε παρατεταμένα το κουμπί τροφοδοσίας για επίδραση</string>
   <string name="app_blacklist">Μαύρη λίστα εφαρμογών</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessFontManager">πρόσβαση διαχειριστή γραμματοσειράς</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessFontManager">Επιτρέπει σε μια εφαρμογή την πρόσβαση στον διαχειριστή γραμματοσειράς.</string>
 </resources>
