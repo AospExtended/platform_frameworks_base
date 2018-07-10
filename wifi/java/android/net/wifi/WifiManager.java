@@ -157,7 +157,7 @@ public class WifiManager {
     *
     * @hide
     **/
-    public static final String  WIFI_DATA_STALL = "android.net.wifi.WIFI_DATA_STALL";
+    public static final String  WIFI_DATA_STALL = "com.qualcomm.qti.net.wifi.WIFI_DATA_STALL";
 
     /**
     *
@@ -817,7 +817,7 @@ public class WifiManager {
      * @see #EXTRA_DPP_DATA.
      * @hide
      */
-    public static final String DPP_EVENT_ACTION = "android.net.wifi.DPP_EVENT";
+    public static final String DPP_EVENT_ACTION = "com.qualcomm.qti.net.wifi.DPP_EVENT";
 
     /**
      * This shall point to DppResult Type.
@@ -902,7 +902,7 @@ public class WifiManager {
      * @hide
      */
     public static final String  ACTION_WIFI_DISCONNECT_IN_PROGRESS =
-            "android.net.wifi.WIFI_DISCONNECT_IN_PROGRESS";
+            "com.qualcomm.qti.net.wifi.WIFI_DISCONNECT_IN_PROGRESS";
 
     /**
      * Internally used Wi-Fi lock mode representing the case were no locks are held.

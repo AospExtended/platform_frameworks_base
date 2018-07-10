@@ -345,7 +345,7 @@
     <protected-broadcast android:name="com.android.server.wifi.wakeup.OPEN_WIFI_SETTINGS" />
     <protected-broadcast android:name="com.android.server.wifi.wakeup.TURN_OFF_WIFI_WAKE" />
     <protected-broadcast android:name="android.net.wifi.WIFI_STATE_CHANGED" />
-    <protected-broadcast android:name="android.net.wifi.WIFI_DATA_STALL" />
+    <protected-broadcast android:name="com.qualcomm.qti.net.wifi.WIFI_DATA_STALL" />
     <protected-broadcast android:name="android.net.wifi.WIFI_AP_STATE_CHANGED" />
     <protected-broadcast android:name="android.net.wifi.WIFI_CREDENTIAL_CHANGED" />
     <protected-broadcast android:name="android.net.wifi.WIFI_SCAN_AVAILABLE" />
@@ -368,11 +368,10 @@
     <protected-broadcast android:name="android.net.wifi.p2p.PEERS_CHANGED" />
     <protected-broadcast android:name="android.net.wifi.p2p.CONNECTION_STATE_CHANGE" />
     <protected-broadcast android:name="android.net.wifi.p2p.PERSISTENT_GROUPS_CHANGED" />
-    <protected-broadcast android:name="android.net.wifi.DPP_EVENT" />
     <protected-broadcast android:name="android.net.wifi.p2p.VENDOR_INFO_CHANGED" />
     <protected-broadcast android:name="com.qualcomm.qti.net.wifi.DPP_EVENT" />
     <protected-broadcast android:name="android.net.wifi.COUNTRY_CODE_CHANGED" />
-    <protected-broadcast android:name="android.net.wifi.WIFI_DISCONNECT_IN_PROGRESS" />
+    <protected-broadcast android:name="com.qualcomm.qti.net.wifi.WIFI_DISCONNECT_IN_PROGRESS" />
     <protected-broadcast android:name="android.net.conn.TETHER_STATE_CHANGED" />
     <protected-broadcast android:name="android.net.conn.INET_CONDITION_ACTION" />
     <protected-broadcast android:name="android.net.conn.NETWORK_CONDITIONS_MEASURED" />
