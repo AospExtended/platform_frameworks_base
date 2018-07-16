@@ -150,4 +150,7 @@
   <java-symbol type="drawable" name="weather_13" />
   <java-symbol type="drawable" name="weather_50" />
 
+  <!-- Whether device ignores the RSSNR signal implementation -->
+  <java-symbol type="bool" name="config_ignoreRssnrSignalLevel" />
+
 </resources>
