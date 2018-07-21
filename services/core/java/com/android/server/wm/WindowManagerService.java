@@ -7640,4 +7640,14 @@ public class WindowManagerService extends IWindowManager.Stub
     public void sendCustomAction(Intent intent) {
         mPolicy.sendCustomAction(intent);
     }
+
+    @Override
+    public boolean isGestureButtonEnabled() {
+        return this.mPolicy.isGestureButtonEnabled();
+    }
+
+    @Override
+    public boolean isGestureButtonRegion(int i, int i2) {
+        return this.mPolicy.isGestureButtonRegion(i, i2);
+    }
 }

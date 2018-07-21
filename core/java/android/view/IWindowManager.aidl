@@ -441,4 +441,8 @@ interface IWindowManager
      * Send some ActionHandler commands to WindowManager.
      */
     void sendCustomAction(in Intent intent);
+
+    boolean isGestureButtonEnabled();
+
+    boolean isGestureButtonRegion(int i, int i2);
 }
