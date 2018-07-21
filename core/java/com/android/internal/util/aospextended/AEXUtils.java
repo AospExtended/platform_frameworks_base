@@ -271,6 +271,11 @@ public class AEXUtils {
         }, 20);
     }
 
+    public static void sendKeycode(int keycode) {
+        final Handler handler = new Handler(Looper.getMainLooper());
+        sendKeycode(keycode, handler);
+    }
+
     public static void moveKbCursor(int action, boolean right) {
         int code = right ? KeyEvent.KEYCODE_DPAD_RIGHT : KeyEvent.KEYCODE_DPAD_LEFT;
         long downTime = System.currentTimeMillis();
