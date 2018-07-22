@@ -90,6 +90,9 @@ public class LteTile extends QSTileImpl<BooleanState> {
             case Phone.NT_MODE_LTE_CDMA_EVDO_GSM_WCDMA:
             case Phone.NT_MODE_LTE_TDSCDMA_GSM_WCDMA:
             case Phone.NT_MODE_LTE_TDSCDMA_WCDMA:
+            case Phone.NT_MODE_LTE_TDSCDMA_GSM:
+            case Phone.NT_MODE_LTE_TDSCDMA:
+            case Phone.NT_MODE_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA:
                 state.icon= ResourceIcon.get(R.drawable.ic_qs_lte_on);
                 state.label = mContext.getString(R.string.lte_on);
                 state.state = Tile.STATE_ACTIVE;
