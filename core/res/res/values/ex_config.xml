@@ -82,8 +82,6 @@
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
     <integer name="config_deviceHardwareKeys">64</integer>
-    <bool name="config_button_brightness_support">false</bool>
-    <integer name="config_button_brightness_default">128</integer>
 
     <!-- True if the notification's dynamic app icon/title tint should be optimised for dark
     backgrounds (requires config_allowNotificationIconTextTinting to be true)-->
@@ -163,6 +161,5 @@
     <string name="config_rat_4g" translatable="false">4G</string>
 
 </resources>
-
 
 

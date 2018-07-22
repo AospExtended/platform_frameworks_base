@@ -17,6 +17,7 @@
      limitations under the License.
 -->
 <resources>
+
     <!-- Package Manager -->
     <java-symbol type="array" name="config_disabledComponents" />
     <java-symbol type="array" name="config_forceEnabledComponents" />
@@ -170,10 +171,6 @@
 
   <!-- Hardware key binding -->
   <java-symbol type="integer" name="config_deviceHardwareKeys" />
-
-  <!-- Button brightness -->
-  <java-symbol type="bool" name="config_button_brightness_support" />
-  <java-symbol type="integer" name="config_button_brightness_default" />
 
   <!-- Power menu items -->
   <java-symbol type="color" name="power_menu_power_off" />
