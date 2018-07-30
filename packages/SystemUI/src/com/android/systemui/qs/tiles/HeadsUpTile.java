@@ -33,6 +33,8 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 /** Quick settings tile: Heads up **/
 public class HeadsUpTile extends QSTileImpl<BooleanState> {
 
+    private final Icon mIcon = ResourceIcon.get(R.drawable.ic_qs_heads_up_on);
+
     private final GlobalSetting mSetting;
 
     public HeadsUpTile(QSHost host) {
@@ -52,7 +54,7 @@ public class HeadsUpTile extends QSTileImpl<BooleanState> {
     }
 
     @Override
-    public void handleClick() {
+    protected void handleClick() {
         setEnabled(!mState.value);
         refreshState();
     }
@@ -78,15 +80,20 @@ public class HeadsUpTile extends QSTileImpl<BooleanState> {
     protected void handleUpdateState(BooleanState state, Object arg) {
         final int value = arg instanceof Integer ? (Integer)arg : mSetting.getValue();
         final boolean headsUp = value != 0;
+	 if (state.slash == null) {
+            state.slash = new SlashState();
+        }
         state.value = headsUp;
         state.label = mContext.getString(R.string.quick_settings_heads_up_label);
+	state.icon = mIcon;
+        state.slash.isSlashed = !state.value;
         if (headsUp) {
-            state.icon = ResourceIcon.get(R.drawable.ic_qs_heads_up_on);
+            /*state.icon = ResourceIcon.get(R.drawable.ic_qs_heads_up_on);*/
             state.contentDescription =  mContext.getString(
                     R.string.accessibility_quick_settings_heads_up_on);
             state.state = Tile.STATE_ACTIVE;
         } else {
-            state.icon = ResourceIcon.get(R.drawable.ic_qs_heads_up_off);
+            /*state.icon = ResourceIcon.get(R.drawable.ic_qs_heads_up_off);*/
             state.contentDescription =  mContext.getString(
                     R.string.accessibility_quick_settings_heads_up_off);
             state.state = Tile.STATE_INACTIVE;
