@@ -27,6 +27,8 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
+import android.provider.Settings;
+import android.os.Handler;
 
 import com.android.systemui.R;
 import com.android.systemui.plugins.qs.QSIconView;
@@ -168,8 +170,6 @@ public class QSIconViewImpl extends QSIconView {
             final float fromChannel = Color.red(fromColor);
             final float toChannel = Color.red(toColor);
 
-            boolean enableQsTileTinting = getContext().getResources().getBoolean(R.bool.config_enable_qs_tile_tinting);
-
             ValueAnimator anim = ValueAnimator.ofFloat(0, 1);
             anim.setDuration(QS_ANIM_LENGTH);
             anim.addUpdateListener(animation -> {
@@ -177,11 +177,7 @@ public class QSIconViewImpl extends QSIconView {
                 int alpha = (int) (fromAlpha + (toAlpha - fromAlpha) * fraction);
                 int channel = (int) (fromChannel + (toChannel - fromChannel) * fraction);
 
-                if (!enableQsTileTinting) {
-                    setTint(iv, Color.argb(alpha, channel, channel, channel));
-                } else {
-                    setTint(iv, toColor);
-                }
+	    setTint(iv, toColor);
             });
 
             anim.start();
