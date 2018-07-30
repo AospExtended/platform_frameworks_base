@@ -433,8 +433,5 @@
         <item>120</item>
     </integer-array>
 
-    <!-- Config to enable/diaable qs tile tinting -->
-    <bool name="config_enable_qs_tile_tinting">true</bool>
-
 </resources>
 
