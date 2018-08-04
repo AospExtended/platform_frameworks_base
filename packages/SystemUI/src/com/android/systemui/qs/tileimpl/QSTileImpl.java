@@ -387,7 +387,7 @@ public abstract class QSTileImpl<TState extends State> implements QSTile {
             case Tile.STATE_UNAVAILABLE:
                 if (enableQsTileTinting) {
                     return Utils.getDisabled(context,
-		            context.getResources().getColor(R.color.qs_tiles_unavailable_tint));
+			    Utils.getColorAttr(context, android.R.attr.colorForeground));
                 } else {
                     return Utils.getDisabled(context, 
 			    Utils.getColorAttr(context, android.R.attr.colorForeground));
