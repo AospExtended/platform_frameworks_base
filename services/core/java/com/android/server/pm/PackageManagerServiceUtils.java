@@ -703,4 +703,12 @@ public class PackageManagerServiceUtils {
         final File[] compressedFiles = getCompressedFiles(codePath);
         return compressedFiles != null && compressedFiles.length > 0;
     }
+
+    public static Signature[] createSignatures(String[] hexBytes) {
+        Signature[] sigs = new Signature[hexBytes.length];
+        for (int i = 0; i < sigs.length; i++) {
+            sigs[i] = new Signature(hexBytes[i]);
+        }
+        return sigs;
+    }
 }

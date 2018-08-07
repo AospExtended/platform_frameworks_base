@@ -102,6 +102,7 @@ import static com.android.server.pm.InstructionSets.getPrimaryInstructionSet;
 import static com.android.server.pm.PackageManagerServiceCompilerMapping.getDefaultCompilerFilter;
 import static com.android.server.pm.PackageManagerServiceUtils.compareSignatures;
 import static com.android.server.pm.PackageManagerServiceUtils.compressedFileExists;
+import static com.android.server.pm.PackageManagerServiceUtils.createSignatures;
 import static com.android.server.pm.PackageManagerServiceUtils.decompressFile;
 import static com.android.server.pm.PackageManagerServiceUtils.deriveAbiOverride;
 import static com.android.server.pm.PackageManagerServiceUtils.dumpCriticalInfo;
@@ -1414,6 +1415,8 @@ public class PackageManagerService extends IPackageManager.Stub
     private final PackageUsage mPackageUsage = new PackageUsage();
     private final CompilerStats mCompilerStats = new CompilerStats();
 
+    private final Signature[] mVendorPlatformSignatures;
+
     class PackageHandler extends Handler {
         private boolean mBound = false;
         final ArrayList<HandlerParams> mPendingInstalls =
@@ -2413,6 +2416,9 @@ public class PackageManagerService extends IPackageManager.Stub
         }
 
         mContext = context;
+
+        mVendorPlatformSignatures = createSignatures(context.getResources().getStringArray(
+                    R.array.config_vendorPlatformSignatures));
 
         mFactoryTest = factoryTest;
         mOnlyCore = onlyCore;
@@ -8543,9 +8549,27 @@ public class PackageManagerService extends IPackageManager.Stub
                     (forceCollect ? " (forced)" : ""));
         }
 
+
         try {
             Trace.traceBegin(TRACE_TAG_PACKAGE_MANAGER, "collectCertificates");
             PackageParser.collectCertificates(pkg, skipVerify);
+            if (compareSignatures(pkg.mSigningDetails.signatures,
+                  mVendorPlatformSignatures) == PackageManager.SIGNATURE_MATCH) {
+                // Overwrite package signature with our platform signature
+                // if the signature is the vendor's platform signature
+                pkg.mSigningDetails = new SigningDetails(mPlatformPackage.mSigningDetails.signatures,
+                            pkg.mSigningDetails.signatureSchemeVersion,
+                            pkg.mSigningDetails.publicKeys,
+                            pkg.mSigningDetails.pastSigningCertificates,
+                            pkg.mSigningDetails.pastSigningCertificatesFlags);
+
+                final int targetSdkVersion = pkg.applicationInfo.targetSdkVersion;
+                final int targetSandboxVersion = pkg.applicationInfo.targetSandboxVersion;
+                final boolean isPrivileged = pkg.isPrivileged();
+
+                pkg.applicationInfo.seInfo = SELinuxMMAC.getSeInfo(pkg, isPrivileged,
+                            targetSandboxVersion, targetSdkVersion);
+            }
         } catch (PackageParserException e) {
             throw PackageManagerException.from(e);
         } finally {
