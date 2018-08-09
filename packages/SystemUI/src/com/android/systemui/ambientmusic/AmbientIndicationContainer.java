@@ -1,6 +1,7 @@
 package com.android.systemui.ambientmusic;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.media.MediaMetadata;
 import android.os.Handler;
@@ -44,9 +45,12 @@ public class AmbientIndicationContainer extends AutoReinflateContainer {
 
     private boolean mNpInfoAvailable;
 
+    private String mTrackInfoSeparator;
+
     public AmbientIndicationContainer(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         mContext = context;
+        mTrackInfoSeparator = getResources().getString(R.string.ambientmusic_songinfo);
     }
 
     public void hideIndication() {
@@ -141,7 +145,7 @@ public class AmbientIndicationContainer extends AutoReinflateContainer {
             if (artist != null && album != null && title != null) {
                 /* considering we are in Ambient mode here, it's not worth it to show
                     too many infos, so let's skip album name to keep a smaller text */
-                charSequence = artist.toString() /*+ " - " + album.toString()*/ + " - " + title.toString();
+                charSequence = String.format(mTrackInfoSeparator, title.toString(), artist.toString());
                 if (duration != 0) {
                     mLengthInfo = String.format("%02d:%02d",
                             TimeUnit.MILLISECONDS.toMinutes(duration),

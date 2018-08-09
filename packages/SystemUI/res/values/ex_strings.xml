@@ -202,6 +202,9 @@
     <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
     <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
 
+    <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s by %s</string>
+
 </resources>
 
 
