@@ -134,11 +134,6 @@
     <bool name="config_haveHigherAspectRatioScreen">false</bool>
     <item name="config_screenAspectRatio" format="float" type="dimen">2.1</item>
 
-    <!-- EdgeGesture service -->
-    <java-symbol type="dimen" name="edge_gesture_trigger_distance" />
-    <java-symbol type="dimen" name="edge_gesture_perpendicular_distance" />
-    <java-symbol type="dimen" name="edge_gesture_trigger_thickness" />
-
     <!-- The second metric to be used for antenna bar display for LTE
          The metrics to be used for Antenna display is based on RSRP and either one of the
            0. RSSNR
