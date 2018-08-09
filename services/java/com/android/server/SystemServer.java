@@ -93,7 +93,6 @@ import com.android.server.os.DeviceIdentifiersPolicyService;
 import com.android.server.os.SchedulingPolicyService;
 import com.android.server.pocket.PocketService;
 import com.android.server.pm.BackgroundDexOptService;
-import com.android.server.gesture.EdgeGestureService;
 import com.android.server.pm.Installer;
 import com.android.server.pm.LauncherAppsService;
 import com.android.server.pm.OtaDexoptService;
@@ -925,7 +924,6 @@ public final class SystemServer {
         ILockSettings lockSettings = null;
         MediaRouterService mediaRouter = null;
         GestureService gestureService = null;
-        EdgeGestureService edgeGestureService = null;
 
         // Bring up services needed for UI.
         if (mFactoryTestMode != FactoryTest.FACTORY_TEST_LOW_LEVEL) {
@@ -1556,13 +1554,6 @@ public final class SystemServer {
 
             Slog.i(TAG, "Starting PocketService");
             mSystemServiceManager.startService(PocketService.class);
-            try {
-                Slog.i(TAG, "EdgeGesture service");
-                edgeGestureService = new EdgeGestureService(context, inputManager);
-                ServiceManager.addService("edgegestureservice", edgeGestureService);
-            } catch (Throwable e) {
-                Slog.e(TAG, "Failure starting EdgeGesture service", e);
-            }
         }
 
         if (!disableNonCoreServices && !disableMediaProjection) {
@@ -1717,14 +1708,8 @@ public final class SystemServer {
             reportWtf("making Display Manager Service ready", e);
         }
         traceEnd();
+
         mSystemServiceManager.setSafeMode(safeMode);
-        if (edgeGestureService != null) {
-            try {
-                edgeGestureService.systemReady();
-            } catch (Throwable e) {
-                reportWtf("making EdgeGesture service ready", e);
-            }
-        }
 
         if (gestureService != null) {
             try {
