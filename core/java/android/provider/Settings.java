@@ -5182,14 +5182,6 @@ public final class Settings {
        public static final String STATUS_BAR_FILE_HEADER_IMAGE = "status_bar_file_header_image";
 
         /**
-         * Use EdgeGesture Service for system gestures in PhoneWindowManager
-         * @hide
-         */
-        public static final String USE_EDGE_SERVICE_FOR_GESTURES = "edge_service_for_gestures";
-
-        /**
-
-        /**
          * Whether to show or hide the edit icon
          * @hide
          */
@@ -5213,7 +5205,7 @@ public final class Settings {
 	 ** @hide
 	 **/
          public static final String QS_TILE_TINTING_ENABLE = "qs_tile_tinting_enable";
-		 
+
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
@@ -8783,18 +8775,6 @@ public final class Settings {
          * @hide
          */
         public static final String EDGE_GESTURES_BACK_SCREEN_PERCENT = "edge_gestures_back_screen_percent";
-
-        /**
-         * Show UI feedback when using back gesture.
-         * @hide
-         */
-        public static final String EDGE_GESTURES_BACK_SHOW_UI_FEEDBACK = "edge_gestures_back_show_ui_feedback";
-
-        /**
-         * Use black arrow theme instead of the white version.
-         * @hide
-         */
-        public static final String EDGE_GESTURES_BACK_USE_BLACK_ARROW = "edge_gestures_back_use_black_arrow";
 
         /**
          * Whether or not the automatic storage manager is enabled and should run on the device.
