@@ -1,8 +1,8 @@
 package com.android.systemui.statusbar.screen_gestures;
 
-import android.app.KeyguardManager;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
 import android.hardware.input.InputManager;
@@ -10,9 +10,11 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.os.UserHandle;
+import android.os.Vibrator;
 import android.provider.Settings;
 import android.service.gesture.EdgeGestureManager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.InputDevice;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
@@ -36,7 +38,6 @@ public class ScreenGesturesController {
     private Context context;
     private WindowManager windowManager;
     private StatusBar statusBar;
-    private KeyguardManager keyguardManager;
 
     private ScreenGesturesView screenGesturesView;
 
@@ -49,7 +50,7 @@ public class ScreenGesturesController {
             if (DEBUG) Log.d(TAG, "onEdgeGestureActivation: Starting gesture");
             final ScreenGesturesView gesturesView = screenGesturesView;
 
-            if (gesturesView != null && !keyguardManager.isKeyguardLocked()) {
+            if (gesturesView != null) {
                 boolean startGesture = true;
                 String backSettingsId = context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT ?
                         Settings.Secure.EDGE_GESTURES_BACK_EDGES :
@@ -116,8 +117,6 @@ public class ScreenGesturesController {
         this.context = context;
         this.windowManager = windowManager;
         this.statusBar = statusBar;
-
-        keyguardManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
 
         edgeGestureManager.setEdgeGestureActivationListener(gestureManagerListener);
         setupEdgeGestureManager();
