@@ -138,6 +138,7 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.statusbar.IStatusBarService;
 import com.android.internal.statusbar.NotificationVisibility;
 import com.android.internal.statusbar.StatusBarIcon;
+import com.android.internal.util.aospextended.AEXUtils;
 import com.android.internal.widget.LockPatternUtils;
 import com.android.internal.widget.MessagingGroup;
 import com.android.internal.widget.MessagingMessage;
@@ -792,6 +793,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         Dependency.get(ActivityStarterDelegate.class).setActivityStarterImpl(this);
 
         Dependency.get(ConfigurationController.class).addCallback(this);
+
     }
 
     // ================================================================================
@@ -3180,6 +3182,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         updateNotificationViews();
         mMediaManager.clearCurrentMediaNotification();
         setLockscreenUser(newUserId);
+        mSbSettingsObserver.update();
     }
 
     @Override
@@ -5083,6 +5086,8 @@ public class StatusBar extends SystemUI implements DemoMode,
         return mVrMode;
     }
 
+    private boolean mShowNavBar;
+
     private SbSettingsObserver mSbSettingsObserver = new SbSettingsObserver(mHandler);
     private class SbSettingsObserver extends ContentObserver {
         SbSettingsObserver(Handler handler) {
@@ -5096,6 +5101,9 @@ public class StatusBar extends SystemUI implements DemoMode,
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.DOUBLE_TAP_SLEEP_GESTURE),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.NAVIGATION_BAR_SHOW),
                     false, this, UserHandle.USER_ALL);
         }
 
@@ -5113,6 +5121,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         public void update() {
             setLockscreenDoubleTapToSleep();
+            updateNavigationBar();
         }
     }
 
@@ -5120,6 +5129,35 @@ public class StatusBar extends SystemUI implements DemoMode,
         if (mStatusBarWindow != null) {
             mStatusBarWindow.setLockscreenDoubleTapToSleep();
         }
+    }
+
+    private void updateNavigationBar() {
+        int showNavBar = Settings.System.getIntForUser(
+                mContext.getContentResolver(), Settings.System.NAVIGATION_BAR_SHOW,
+                 -1, UserHandle.USER_CURRENT);
+        if (showNavBar != -1){
+            boolean showNavBarBool = showNavBar == 1;
+            if (showNavBarBool !=  mShowNavBar){
+
+                  mShowNavBar = AEXUtils.deviceSupportNavigationBar(mContext);
+                  if (DEBUG) Log.v(TAG, "updateNavigationBar=" + mShowNavBar);
+
+                  if (mShowNavBar) {
+                     if (mNavigationBarView == null) {
+                        createNavigationBar();
+                        }
+                  } else {
+                      if (mNavigationBarView != null){
+                         FragmentHostManager fm = FragmentHostManager.get(mNavigationBarView);
+                         mWindowManager.removeViewImmediate(mNavigationBarView);
+                         mNavigationBarView = null;
+                         fm.getFragmentManager().beginTransaction().remove(mNavigationBar).commit();
+                         mNavigationBar = null;
+                      }
+                  }
+           }
+        }
+
     }
 
     private final BroadcastReceiver mBannerActionBroadcastReceiver = new BroadcastReceiver() {
@@ -5699,4 +5737,5 @@ public class StatusBar extends SystemUI implements DemoMode,
                     saveImportance.run();
                 }
             };
+
 }
