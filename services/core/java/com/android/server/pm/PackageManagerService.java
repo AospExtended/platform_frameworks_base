@@ -476,6 +476,7 @@ public class PackageManagerService extends IPackageManager.Stub
     static final int SCAN_AS_OEM = 1<<19;
     static final int SCAN_AS_VENDOR = 1<<20;
     static final int SCAN_AS_PRODUCT = 1<<21;
+    static final int SCAN_AS_THEME = 1<<22;
 
     @IntDef(flag = true, prefix = { "SCAN_" }, value = {
             SCAN_NO_DEX,
@@ -581,6 +582,8 @@ public class PackageManagerService extends IPackageManager.Stub
     private static final String VENDOR_OVERLAY_DIR = "/vendor/overlay";
 
     private static final String PRODUCT_OVERLAY_DIR = "/product/overlay";
+
+    private static final String THEME_OVERLAY_DIR = "/data/system/theme";
 
     /** Canonical intent used to identify what counts as a "web browser" app */
     private static final Intent sBrowserIntent;
@@ -2631,6 +2634,15 @@ public class PackageManagerService extends IPackageManager.Stub
                     | SCAN_AS_SYSTEM
                     | SCAN_AS_PRODUCT,
                     0);
+            scanDirTracedLI(new File(THEME_OVERLAY_DIR),
+                    mDefParseFlags
+                    | PackageParser.PARSE_IS_SYSTEM_DIR,
+                    scanFlags
+                    | SCAN_AS_SYSTEM
+                    | SCAN_AS_PRODUCT
+                    | SCAN_AS_THEME,
+                    0);
+
 
             mParallelPackageParserCallback.findStaticOverlayPackages();
 
