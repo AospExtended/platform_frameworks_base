@@ -98,22 +98,7 @@ class FooterActionsController @Inject constructor(
             metricsLogger.action(
                     if (expanded) MetricsProto.MetricsEvent.ACTION_QS_EXPANDED_SETTINGS_LAUNCH
                     else MetricsProto.MetricsEvent.ACTION_QS_COLLAPSED_SETTINGS_LAUNCH)
-            if (settingsButton.isTunerClick) {
-                activityStarter.postQSRunnableDismissingKeyguard {
-                    if (isTunerEnabled()) {
-                        tunerService.showResetRequest {
-                            // Relaunch settings so that the tuner disappears.
-                            startSettingsActivity()
-                        }
-                    } else {
-                        Toast.makeText(context, R.string.tuner_toast, Toast.LENGTH_LONG).show()
-                        tunerService.isTunerEnabled = true
-                    }
-                    startSettingsActivity()
-                }
-            } else {
-                startSettingsActivity()
-            }
+            startSettingsActivity()
         } else if (v === powerMenuLite) {
             uiEventLogger.log(GlobalActionsDialogLite.GlobalActionsEvent.GA_OPEN_QS)
             globalActionsDialog.showOrHideDialog(false, true, v)

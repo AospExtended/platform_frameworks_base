@@ -139,7 +139,6 @@ class FooterActionsView(context: Context?, attrs: AttributeSet?) : LinearLayout(
         multiUserEnabled: Boolean
     ) {
         settingsContainer.visibility = if (qsDisabled) GONE else VISIBLE
-        tunerIcon.visibility = if (isTunerEnabled) VISIBLE else INVISIBLE
         multiUserSwitch.visibility = if (multiUserEnabled) VISIBLE else GONE
         val isDemo = UserManager.isDeviceInDemoMode(context)
         settingsButton.visibility = if (isDemo) INVISIBLE else VISIBLE
