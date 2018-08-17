@@ -105,25 +105,7 @@ public class QSFooterViewController extends ViewController<QSFooterView> impleme
                 mMetricsLogger.action(
                         mExpanded ? MetricsProto.MetricsEvent.ACTION_QS_EXPANDED_SETTINGS_LAUNCH
                                 : MetricsProto.MetricsEvent.ACTION_QS_COLLAPSED_SETTINGS_LAUNCH);
-                if (mSettingsButton.isTunerClick()) {
-                    mActivityStarter.postQSRunnableDismissingKeyguard(() -> {
-                        if (isTunerEnabled()) {
-                            mTunerService.showResetRequest(
-                                    () -> {
-                                        // Relaunch settings so that the tuner disappears.
-                                        startSettingsActivity();
-                                    });
-                        } else {
-                            Toast.makeText(getContext(), R.string.tuner_toast,
-                                    Toast.LENGTH_LONG).show();
-                            mTunerService.setTunerEnabled(true);
-                        }
-                        startSettingsActivity();
-
-                    });
-                } else {
-                    startSettingsActivity();
-                }
+                startSettingsActivity();
             } else if (v == mPowerMenuLite) {
                 mUiEventLogger.log(GlobalActionsDialogLite.GlobalActionsEvent.GA_OPEN_QS);
                 mGlobalActionsDialog.showOrHideDialog(false, true);
