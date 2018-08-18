@@ -273,6 +273,7 @@ import com.android.systemui.statusbar.policy.RemoteInputView;
 import com.android.systemui.statusbar.policy.UserInfoController;
 import com.android.systemui.statusbar.policy.UserInfoControllerImpl;
 import com.android.systemui.statusbar.policy.UserSwitcherController;
+import com.android.systemui.statusbar.screen_gestures.ScreenGesturesController;
 import com.android.systemui.statusbar.stack.NotificationStackScrollLayout;
 import com.android.systemui.statusbar.stack.NotificationStackScrollLayout
         .OnChildLocationsChangedListener;
@@ -547,6 +548,9 @@ public class StatusBar extends SystemUI implements DemoMode,
     private int mTickerAnimationMode;
 
     private int mAmbientMediaPlaying;
+
+    // Full Screen Gestures
+    protected ScreenGesturesController gesturesController;
 
     // Tracking finger for opening/closing.
     boolean mTracking;
@@ -1149,6 +1153,10 @@ public class StatusBar extends SystemUI implements DemoMode,
                 com.android.internal.R.array.config_nonBlockableNotificationPackages));
         // end old BaseStatusBar.start().
 
+        mContext.getContentResolver().registerContentObserver(Settings.Secure.getUriFor(
+                Settings.Secure.EDGE_GESTURES_ENABLED), false,
+                mEdgeGesturesSettingsObserver);
+
         mMediaSessionManager
                 = (MediaSessionManager) mContext.getSystemService(Context.MEDIA_SESSION_SERVICE);
         // TODO: use MediaSessionManager.SessionListener to hook us up to future updates
@@ -1554,6 +1562,12 @@ public class StatusBar extends SystemUI implements DemoMode,
         mNotificationIconAreaController.onDensityOrFontScaleChanged(mContext);
 
         reevaluateStyles();
+
+        ContentResolver resolver = mContext.getContentResolver();
+
+        boolean edgeGesturesEnabled = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.EDGE_GESTURES_ENABLED, 0, UserHandle.USER_CURRENT) == 1;
+        updateEdgeGestures(edgeGesturesEnabled);
     }
 
     @Override
@@ -6696,6 +6710,17 @@ public class StatusBar extends SystemUI implements DemoMode,
         return mDeviceInteractive;
     }
 
+    private final ContentObserver mEdgeGesturesSettingsObserver = new ContentObserver(mHandler) {
+        @Override
+        public void onChange(boolean selfChange) {
+            ContentResolver resolver = mContext.getContentResolver();
+            boolean edgeGesturesEnabled = Settings.Secure.getIntForUser(resolver,
+                    Settings.Secure.EDGE_GESTURES_ENABLED, 0, UserHandle.USER_CURRENT) == 1;
+
+            updateEdgeGestures(edgeGesturesEnabled);
+        }
+    };
+
     @Override  // NotificationData.Environment
     public boolean isDeviceProvisioned() {
         return mDeviceProvisionedController.isDeviceProvisioned();
@@ -8955,4 +8980,17 @@ public class StatusBar extends SystemUI implements DemoMode,
             mNavigationBar.getBarTransitions().setAutoDim(true);
         }
     };
+
+    public void updateEdgeGestures(boolean enabled) {
+        Log.d(TAG, "updateEdgeGestures: Updating edge gestures");
+        if (enabled) {
+            if (gesturesController == null) {
+                gesturesController = new ScreenGesturesController(mContext, mWindowManager, this);
+            }
+            gesturesController.reorient();
+        } else if (!enabled && gesturesController != null) {
+            gesturesController.stop();
+            gesturesController = null;
+        }
+    }
 }
