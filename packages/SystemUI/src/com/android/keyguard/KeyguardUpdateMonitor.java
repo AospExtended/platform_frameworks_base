@@ -89,8 +89,8 @@ import com.android.systemui.recents.misc.SystemServicesProxy.TaskStackListener;
 
 import com.google.android.collect.Lists;
 
-import org.codeaurora.internal.TelephonyExtUtils;
-import org.codeaurora.internal.TelephonyExtUtils.ProvisioningChangedListener;
+import com.android.systemui.util.TelephonyExtUtils;
+import com.android.systemui.util.TelephonyExtUtils.ProvisioningChangedListener;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;

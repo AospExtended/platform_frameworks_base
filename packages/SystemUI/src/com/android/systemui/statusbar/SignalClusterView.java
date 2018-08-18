@@ -53,8 +53,8 @@ import com.android.systemui.statusbar.policy.SecurityController;
 import com.android.systemui.tuner.TunerService;
 import com.android.systemui.tuner.TunerService.Tunable;
 
-import org.codeaurora.internal.TelephonyExtUtils;
-import org.codeaurora.internal.TelephonyExtUtils.ProvisioningChangedListener;
+import com.android.systemui.util.TelephonyExtUtils;
+import com.android.systemui.util.TelephonyExtUtils.ProvisioningChangedListener;
 
 import java.util.ArrayList;
 import java.util.List;
