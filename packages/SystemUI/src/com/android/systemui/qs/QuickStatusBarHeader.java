@@ -277,6 +277,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         mClockView.setOnClickListener(this);
 	mClockView.setQsHeader();
         mDateView = findViewById(R.id.date);
+        mDateView.setOnClickListener(this);
         mSpace = findViewById(R.id.space);
         mDateView.setOnClickListener(this);
 
