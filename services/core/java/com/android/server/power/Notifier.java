@@ -762,6 +762,7 @@ final class Notifier {
     }
 
     private void showWiredChargingStarted() {
+        playWirelessChargingVibration();
         playChargingStartedSound();
         mSuspendBlocker.release();
     }
@@ -773,7 +774,7 @@ final class Notifier {
     private void playWirelessChargingVibration() {
         final boolean vibrateEnabled = Settings.Global.getInt(mContext.getContentResolver(),
                 Settings.Global.CHARGING_VIBRATION_ENABLED, 0) != 0;
-        if (vibrateEnabled && isChargingFeedbackEnabled()) {
+        if (vibrateEnabled) {
             mVibrator.vibrate(WIRELESS_CHARGING_VIBRATION_EFFECT, VIBRATION_ATTRIBUTES);
         }
     }
