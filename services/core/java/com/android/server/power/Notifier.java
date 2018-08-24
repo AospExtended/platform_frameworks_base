@@ -830,7 +830,7 @@ public class Notifier {
     private void playChargingStartedVibration(@UserIdInt int userId) {
         final boolean vibrateEnabled = Settings.Secure.getIntForUser(mContext.getContentResolver(),
                 Settings.Secure.CHARGING_VIBRATION_ENABLED, 1, userId) != 0;
-        if (vibrateEnabled && isChargingFeedbackEnabled(userId)) {
+        if (vibrateEnabled) {
             mVibrator.vibrate(WIRELESS_CHARGING_VIBRATION_EFFECT, VIBRATION_ATTRIBUTES);
         }
     }
