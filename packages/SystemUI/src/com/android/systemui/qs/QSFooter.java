@@ -26,7 +26,7 @@ public interface QSFooter {
     /**
      * Sets the given {@link QSPanel} to be the one that will display the quick settings.
      */
-    void setQSPanel(@Nullable QSPanel panel);
+    void setQSPanel(@Nullable QSPanel panel, @Nullable QuickQSPanel quickQSPanel);
 
     /**
      * Sets the given {@link QuickQSPanel} to be the one associated with quick settings.

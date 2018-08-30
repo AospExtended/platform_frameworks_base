@@ -41,6 +41,7 @@ class DoubleLineTileLayout(
     private var cellMarginHorizontal = 0
     private var cellMarginVertical = 0
     private var tilesToShow = 0
+    private var actualColumns = 6
 
     init {
         isFocusableInTouchMode = true
@@ -101,6 +102,8 @@ class DoubleLineTileLayout(
 
     override fun getNumVisibleTiles() = tilesToShow
 
+    override fun getNumColumns() = actualColumns
+
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         updateResources()
@@ -134,7 +137,7 @@ class DoubleLineTileLayout(
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
         val availableWidth = r - l - paddingLeft - paddingRight
         val maxColumns = calculateMaxColumns(availableWidth)
-        val actualColumns = Math.min(maxColumns, mRecords.size / NUM_LINES)
+        actualColumns = Math.min(maxColumns, mRecords.size / NUM_LINES)
         if (actualColumns == 0) {
             // No tileSize or horizontal margin
             return

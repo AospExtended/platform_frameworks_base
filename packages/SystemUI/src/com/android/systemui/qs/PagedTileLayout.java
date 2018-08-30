@@ -70,6 +70,7 @@ public class PagedTileLayout extends ViewPager implements QSTileLayout {
     private int mLastExcessHeight;
     private int mMinRows = 1;
     private int mMaxColumns = TileLayout.NO_MAX_COLUMNS;
+    private int mNumColumns;
 
     public PagedTileLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -433,6 +434,10 @@ public class PagedTileLayout extends ViewPager implements QSTileLayout {
     public int getColumnCount() {
         if (mPages.size() == 0) return 0;
         return mPages.get(0).mColumns;
+    }
+
+    public int getNumColumns() {
+        return getColumnCount();
     }
 
     /**

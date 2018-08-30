@@ -238,6 +238,10 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
         return mRecords.size();
     }
 
+    public int getNumColumns() {
+        return mColumns;
+    }
+
     public void updateSettings() {
         final Resources res = mContext.getResources();
         mDefaultColumns = Math.max(1, res.getInteger(R.integer.quick_settings_num_columns));
