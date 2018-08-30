@@ -72,6 +72,7 @@ public class QSFragment extends LifecycleFragment implements QS, CommandQueue.Ca
     private QSCustomizer mQSCustomizer;
     protected QSPanel mQSPanel;
     protected NonInterceptingScrollView mQSPanelScrollView;
+    protected QuickQSPanel mQuickQSPanel;
     private QSDetail mQSDetail;
     private boolean mListening;
     private QSContainerImpl mContainer;
@@ -136,6 +137,7 @@ public class QSFragment extends LifecycleFragment implements QS, CommandQueue.Ca
         mQSDetail = view.findViewById(R.id.qs_detail);
         mHeader = view.findViewById(R.id.header);
         mQSPanel.setHeaderContainer(view.findViewById(R.id.header_text_container));
+        mQuickQSPanel  = mHeader.findViewById(R.id.quick_qs_panel);
         mFooter = view.findViewById(R.id.qs_footer);
         mContainer = view.findViewById(id.quick_settings_container);
 
@@ -145,8 +147,7 @@ public class QSFragment extends LifecycleFragment implements QS, CommandQueue.Ca
 
 
         mQSDetail.setQsPanel(mQSPanel, mHeader, (View) mFooter);
-        mQSAnimator = new QSAnimator(this, mHeader.findViewById(R.id.quick_qs_panel), mQSPanel);
-
+        mQSAnimator = new QSAnimator(this, mQuickQSPanel, mQSPanel);
 
         mQSCustomizer = view.findViewById(R.id.qs_customize);
         mQSCustomizer.setQs(this);
@@ -225,6 +226,9 @@ public class QSFragment extends LifecycleFragment implements QS, CommandQueue.Ca
             if (mQSAnimator != null) {
                 mQSAnimator.onRtlChanged();
             }
+        }
+        if (mQSAnimator != null) {
+            mQSAnimator.updateSettings();
         }
     }
 
@@ -555,6 +559,8 @@ public class QSFragment extends LifecycleFragment implements QS, CommandQueue.Ca
         // when we come back from customize update
         if (!mQSCustomizer.isCustomizing()) {
             mQSPanel.updateSettings();
+            mQuickQSPanel.updateSettings();
+            mQSAnimator.updateSettings();
         }
     }
 
@@ -622,5 +628,9 @@ public class QSFragment extends LifecycleFragment implements QS, CommandQueue.Ca
     public void onStateChanged(int newState) {
         mState = newState;
         setKeyguardShowing(newState == StatusBarState.KEYGUARD);
+    }
+
+    public QuickQSPanel getQuickQsPanel() {
+        return mQuickQSPanel;
     }
 }
