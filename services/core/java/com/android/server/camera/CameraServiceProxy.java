@@ -107,6 +107,7 @@ public class CameraServiceProxy extends SystemService
 
     private ScheduledThreadPoolExecutor mLogWriterService = new ScheduledThreadPoolExecutor(
             /*corePoolSize*/ 1);
+    private final boolean mAllowMediaUid;
 
     /**
      * Structure to track camera usage
@@ -176,7 +177,8 @@ public class CameraServiceProxy extends SystemService
     private final ICameraServiceProxy.Stub mCameraServiceProxy = new ICameraServiceProxy.Stub() {
         @Override
         public void pingForUserUpdate() {
-            if (Binder.getCallingUid() != Process.CAMERASERVER_UID) {
+            if (Binder.getCallingUid() != Process.CAMERASERVER_UID
+                    && (!mAllowMediaUid || Binder.getCallingUid() != Process.MEDIA_UID)) {
                 Slog.e(TAG, "Calling UID: " + Binder.getCallingUid() + " doesn't match expected " +
                         " camera service UID!");
                 return;
@@ -187,7 +189,8 @@ public class CameraServiceProxy extends SystemService
         @Override
         public void notifyCameraState(String cameraId, int newCameraState, int facing,
                 String clientName, int apiLevel) {
-            if (Binder.getCallingUid() != Process.CAMERASERVER_UID) {
+            if (Binder.getCallingUid() != Process.CAMERASERVER_UID
+                    && (!mAllowMediaUid || Binder.getCallingUid() != Process.MEDIA_UID)) {
                 Slog.e(TAG, "Calling UID: " + Binder.getCallingUid() + " doesn't match expected " +
                         " camera service UID!");
                 return;
@@ -213,6 +216,8 @@ public class CameraServiceProxy extends SystemService
         // Don't keep any extra logging threads if not needed
         mLogWriterService.setKeepAliveTime(1, TimeUnit.SECONDS);
         mLogWriterService.allowCoreThreadTimeOut(true);
+        mAllowMediaUid = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_allowMediaUidForCameraServiceProxy);
     }
 
     @Override
