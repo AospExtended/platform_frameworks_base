@@ -93,10 +93,9 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
         mNetworkController = Dependency.get(NetworkController.class);
         mSecurityController = Dependency.get(SecurityController.class);
 
+        Dependency.get(TunerService.class).addTunable(this, StatusBarIconController.ICON_BLACKLIST);
         mNetworkController.addCallback(this);
         mSecurityController.addCallback(this);
-
-        Dependency.get(TunerService.class).addTunable(this, StatusBarIconController.ICON_BLACKLIST);
 
         TelephonyExtUtils.getInstance(context).addListener(this);
     }
@@ -118,6 +117,7 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
     }
 
     public void destroy() {
+	Dependency.get(TunerService.class).removeTunable(this);
         mNetworkController.removeCallback(this);
         mSecurityController.removeCallback(this);
         Dependency.get(TunerService.class).removeTunable(this);
