@@ -778,7 +778,7 @@
     <string name="right_keycode" msgid="708447961000848163">"Right keycode"</string>
     <string name="left_icon" msgid="3096287125959387541">"Left icon"</string>
     <string name="right_icon" msgid="3952104823293824311">"Right icon"</string>
-    <string name="drag_to_add_tiles" msgid="230586591689084925">"Hold and drag to add tiles"</string>
+    <string name="drag_to_add_tiles" msgid="230586591689084925">"Press on tiles to add or remove"</string>
     <string name="drag_to_rearrange_tiles" msgid="4566074720193667473">"Hold and drag to rearrange tiles"</string>
     <string name="drag_to_remove_tiles" msgid="3361212377437088062">"Drag here to remove"</string>
     <string name="drag_to_remove_disabled" msgid="4785920129548299268">"You need at least <xliff:g id="MIN_NUM_TILES">%1$d</xliff:g> tiles"</string>
