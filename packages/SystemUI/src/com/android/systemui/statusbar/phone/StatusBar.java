@@ -4001,7 +4001,9 @@ public class StatusBar extends SystemUI implements DemoMode,
         if (isUsingDarkTheme() != useDarkTheme) {
             mUiOffloadThread.submit(() -> {
                 try {
-                    mOverlayManager.setEnabled("com.android.systemui.theme.dark",
+                    mOverlayManager.setEnabled("com.android.system.theme.dark",
+                            useDarkTheme, mLockscreenUserManager.getCurrentUserId());
+                    mOverlayManager.setEnabled("com.android.settings.theme.dark",
                             useDarkTheme, mLockscreenUserManager.getCurrentUserId());
                     if (useDarkTheme) {
                        unloadStockDarkTheme();
