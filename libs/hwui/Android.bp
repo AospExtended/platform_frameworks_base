@@ -32,7 +32,9 @@ cc_defaults {
         // TODO: Linear blending should be enabled by default, but we are
         // TODO: making it an opt-in while it's a work in progress
         //"-DANDROID_ENABLE_LINEAR_BLENDING",
+        
     ],
+    ldflags: [],
 
     include_dirs: [
         "external/skia/include/private",
@@ -49,6 +51,8 @@ cc_defaults {
             cflags: ["-DUSE_HWC2"],
         },
     },
+
+    quicksilver: true,
 }
 
 cc_defaults {
