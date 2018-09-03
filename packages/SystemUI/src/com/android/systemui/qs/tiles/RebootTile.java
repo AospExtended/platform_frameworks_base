@@ -23,10 +23,13 @@ import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.service.quicksettings.Tile;
+import com.android.systemui.Dependency;
 import com.android.systemui.R;
 import com.android.systemui.qs.QSHost;
 import com.android.systemui.plugins.qs.QSTile.BooleanState;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
+import com.android.systemui.plugins.ActivityStarter;
+import com.android.systemui.statusbar.policy.KeyguardMonitor;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.statusbar.IStatusBarService;
 
@@ -35,8 +38,13 @@ public class RebootTile extends QSTileImpl<BooleanState> {
     private boolean mRebootToRecovery = false;
     private IStatusBarService mBarService;
 
+    private boolean mListening;
+    private final KeyguardMonitor mKeyguard;
+    private final KeyguardCallback mKeyguardCallback = new KeyguardCallback();
+
     public RebootTile(QSHost host) {
         super(host);
+        mKeyguard = Dependency.get(KeyguardMonitor.class);
     }
 
     @Override
@@ -55,8 +63,7 @@ public class RebootTile extends QSTileImpl<BooleanState> {
         refreshState();
     }
 
-    @Override
-    protected void handleLongClick() {
+    private void handleLongClickInner() {
         mHost.collapsePanels();
         mBarService = IStatusBarService.Stub.asInterface(
                 ServiceManager.getService(Context.STATUS_BAR_SERVICE));
@@ -75,12 +82,31 @@ public class RebootTile extends QSTileImpl<BooleanState> {
     }
 
     @Override
+    protected void handleLongClick() {
+        if (mKeyguard.isSecure() && mKeyguard.isShowing()) {
+            Dependency.get(ActivityStarter.class).postQSRunnableDismissingKeyguard(() -> {
+                mHost.openPanels();
+                handleLongClickInner();
+            });
+            return;
+        }
+        handleLongClickInner();
+    }
+
+    @Override
     public Intent getLongClickIntent() {
         return null;
     }
 
     @Override
     public void handleSetListening(boolean listening) {
+         if (mListening == listening) return;
+         mListening = listening;
+         if (listening) {
+            mKeyguard.addCallback(mKeyguardCallback);
+        } else {
+            mKeyguard.removeCallback(mKeyguardCallback);
+        }
     }
 
     @Override
@@ -102,4 +128,11 @@ public class RebootTile extends QSTileImpl<BooleanState> {
                     R.string.quick_settings_reboot_label);
         }
     }
+
+    private final class KeyguardCallback implements KeyguardMonitor.Callback {
+        @Override
+        public void onKeyguardShowingChanged() {
+            refreshState();
+        }
+    };
 }
