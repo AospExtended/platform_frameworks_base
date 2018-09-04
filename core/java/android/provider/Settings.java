@@ -9500,6 +9500,12 @@ public final class Settings {
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
 
         /**
+         * Which port to use for ADB Over Network
+         * @hide
+         */
+        public static final String ADB_PORT = "adb_port";
+
+        /**
          * Stores the java DateFormat string for the date
          * @hide
          */
