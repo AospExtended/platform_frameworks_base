@@ -105,6 +105,7 @@ public class BoostFramework {
         public static final int BOOST_V1 = 1;
         public static final int BOOST_V2 = 2;
         public static final int BOOST_V3 = 3;
+        public static final int BOOST_GAME = 4;
         public static final int TYPE_SERVICE_START = 100;
     };
 

@@ -679,9 +679,7 @@ public class ActivityManagerService extends IActivityManager.Stub
     private static final int NATIVE_DUMP_TIMEOUT_MS = 2000; // 2 seconds;
 
     /* Freq Aggr boost objects */
-    public static BoostFramework mPerf = null;
     public static BoostFramework mPerfServiceStartHint = null;
-    public static boolean mIsPerfLockAcquired = false;
     /* UX perf event object */
     public static BoostFramework mUxPerf = new BoostFramework();
 
@@ -4504,16 +4502,6 @@ public class ActivityManagerService extends IActivityManager.Stub
                         app.info.targetSdkVersion, seInfo, requiredAbi, instructionSet,
                         app.info.dataDir, invokeWith,
                         new String[] {PROC_START_SEQ_IDENT + app.startSeq});
-            }
-
-            if(hostingType.equals("activity")) {
-                if (mPerf == null) {
-                    mPerf = new BoostFramework();
-                }
-
-                if (mPerf != null) {
-                    mPerf.perfHint(BoostFramework.VENDOR_HINT_FIRST_LAUNCH_BOOST, app.processName, -1, BoostFramework.Launch.BOOST_V3);
-                }
             }
 
             if (mPerfServiceStartHint == null) {
