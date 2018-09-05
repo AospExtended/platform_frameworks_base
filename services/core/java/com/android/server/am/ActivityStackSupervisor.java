@@ -219,6 +219,8 @@ public class ActivityStackSupervisor extends ConfigurationContainer implements D
     static final int LAUNCH_TIMEOUT_MSG = FIRST_SUPERVISOR_STACK_MSG + 4;
 
     public static boolean mPerfSendTapHint = false;
+    public static boolean mIsPerfBoostAcquired = false;
+    public static int mPerfHandle = -1;
     public BoostFramework mPerfBoost = null;
     public BoostFramework mUxPerf = null;
     static final int HANDLE_DISPLAY_ADDED = FIRST_SUPERVISOR_STACK_MSG + 5;
@@ -3444,6 +3446,15 @@ public class ActivityStackSupervisor extends ConfigurationContainer implements D
            mPerfBoost.perfHint(BoostFramework.VENDOR_HINT_FIRST_LAUNCH_BOOST, r.packageName, -1, BoostFramework.Launch.BOOST_V1);
            mPerfSendTapHint = true;
            mPerfBoost.perfHint(BoostFramework.VENDOR_HINT_FIRST_LAUNCH_BOOST, r.packageName, -1, BoostFramework.Launch.BOOST_V2);
+           if (r.isAppInfoGame() == 1) {
+               mPerfHandle = mPerfBoost.perfHint(BoostFramework.VENDOR_HINT_FIRST_LAUNCH_BOOST, r.packageName, -1,
+                                                                                               BoostFramework.Launch.BOOST_GAME);
+           } else {
+               mPerfHandle = mPerfBoost.perfHint(BoostFramework.VENDOR_HINT_FIRST_LAUNCH_BOOST, r.packageName, -1,
+                                                                                                 BoostFramework.Launch.BOOST_V3);
+           }
+           if (mPerfHandle > 0)
+               mIsPerfBoostAcquired = true;
            // Start IOP
            mPerfBoost.perfIOPrefetchStart(-1,r.packageName,
                    r.appInfo.sourceDir.substring(0, r.appInfo.sourceDir.lastIndexOf('/')));
