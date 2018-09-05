@@ -112,9 +112,12 @@ public class TaskTapPointerEventListener implements PointerEventListener {
             }
             break;
         }
-        if (ActivityManagerService.mIsPerfLockAcquired) {
-            ActivityManagerService.mPerf.perfLockRelease();
-            ActivityManagerService.mIsPerfLockAcquired = false;
+        if (ActivityStackSupervisor.mIsPerfBoostAcquired && (mPerfObj != null)) {
+            if (ActivityStackSupervisor.mPerfHandle > 0) {
+                mPerfObj.perfLockReleaseHandler(ActivityStackSupervisor.mPerfHandle);
+                ActivityStackSupervisor.mPerfHandle = -1;
+            }
+            ActivityStackSupervisor.mIsPerfBoostAcquired = false;
         }
         if (ActivityStackSupervisor.mPerfSendTapHint && (mPerfObj != null)) {
             mPerfObj.perfHint(BoostFramework.VENDOR_HINT_TAP_EVENT, null);
