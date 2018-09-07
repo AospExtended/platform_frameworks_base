@@ -238,4 +238,7 @@
 
     <!-- Default for Settings.Secure.AWARE_LOCK_ENABLED -->
     <bool name="def_aware_lock_enabled">false</bool>
+
+    <!-- Default for Settings.Global.DEVELOPMENT_SETTINGS_ENABLED -->
+    <integer  name="def_development_settings">1</integer>
 </resources>
