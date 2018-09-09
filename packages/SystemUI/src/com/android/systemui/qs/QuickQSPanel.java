@@ -88,8 +88,9 @@ public class QuickQSPanel extends QSPanel {
         super.onDetachedFromWindow();
     }
 
-    public void setQSPanelAndHeader(QSPanel fullPanel, View header) {
+    public void setQSPanel(QSPanel fullPanel) {
         mFullPanel = fullPanel;
+        updateSettings();
     }
 
     @Override
@@ -168,11 +169,28 @@ public class QuickQSPanel extends QSPanel {
         super.setVisibility(visibility);
     }
 
+    public int getNumColumns() {
+        if (mFullPanel != null) {
+            return mFullPanel.getNumColumns();
+        }
+        return NUM_QUICK_TILES_DEFAULT;
+    }
+
     public void updateSettings() {
         int qsColumns = Settings.System.getIntForUser(
                 mContext.getContentResolver(), Settings.System.OMNI_QS_QUICKBAR_COLUMNS,
                 NUM_QUICK_TILES_DEFAULT, UserHandle.USER_CURRENT);
-        setMaxTiles(qsColumns);
+        if (qsColumns == -1) {
+            setMaxTiles(Math.max(NUM_QUICK_TILES_DEFAULT, getNumColumns()));
+        } else {
+            setMaxTiles(Math.max(NUM_QUICK_TILES_DEFAULT, qsColumns));
+        }
+    }
+
+    public void updateResources() {
+        if (mTileLayout != null) {
+            mTileLayout.updateResources();
+        }
     }
 
     private static class HeaderTileLayout extends LinearLayout implements QSTileLayout {
@@ -200,7 +218,7 @@ public class QuickQSPanel extends QSPanel {
         protected void onConfigurationChanged(Configuration newConfig) {
             super.onConfigurationChanged(newConfig);
 
-            setGravity(Gravity.CENTER);
+            /*setGravity(Gravity.CENTER);
             LayoutParams staticSpaceLayoutParams = generateSpaceLayoutParams(
                     mContext.getResources().getDimensionPixelSize(
                             R.dimen.qs_quick_tile_space_width));
@@ -213,7 +231,7 @@ public class QuickQSPanel extends QSPanel {
                 if (childView instanceof Space) {
                     childView.setLayoutParams(staticSpaceLayoutParams);
                 }
-            }
+            }*/
         }
 
         /**
@@ -292,7 +310,7 @@ public class QuickQSPanel extends QSPanel {
 
         @Override
         public boolean updateResources() {
-            // No resources here.
+            updateSettings();
             return false;
         }
 
@@ -316,8 +334,10 @@ public class QuickQSPanel extends QSPanel {
                         R.id.expand_indicator);
             }
         }
+
         @Override
         public void updateSettings() {
+            mPanel.updateSettings();
         }
 
         @Override
