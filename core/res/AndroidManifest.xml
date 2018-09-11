@@ -368,6 +368,8 @@
     <protected-broadcast android:name="android.net.wifi.p2p.CONNECTION_STATE_CHANGE" />
     <protected-broadcast android:name="android.net.wifi.p2p.PERSISTENT_GROUPS_CHANGED" />
     <protected-broadcast android:name="android.net.wifi.DPP_EVENT" />
+    <protected-broadcast android:name="android.net.wifi.p2p.VENDOR_INFO_CHANGED" />
+    <protected-broadcast android:name="com.qualcomm.qti.net.wifi.DPP_EVENT" />
     <protected-broadcast android:name="android.net.wifi.COUNTRY_CODE_CHANGED" />
     <protected-broadcast android:name="android.net.wifi.WIFI_DISCONNECT_IN_PROGRESS" />
     <protected-broadcast android:name="android.net.conn.TETHER_STATE_CHANGED" />
