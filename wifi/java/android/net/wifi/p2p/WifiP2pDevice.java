@@ -120,6 +120,9 @@ public class WifiP2pDevice implements Parcelable {
     /** @hide */
     public WifiP2pWfdInfo wfdInfo;
 
+    /** @hide */
+    public WifiWscVendorInfo wscVendorExtInfo;
+
     /** Detailed device string pattern with WFD info
      * Example:
      *  P2P-DEVICE-FOUND 00:18:6b:de:a3:6e p2p_dev_addr=00:18:6b:de:a3:6e
