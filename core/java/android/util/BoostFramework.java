@@ -149,6 +149,25 @@ public class BoostFramework {
         }
     }
 
+/** @hide */
+    public BoostFramework(boolean isUntrustedDomain) {
+        initFunctions();
+
+        try {
+            if (sPerfClass != null) {
+                Constructor cons = sPerfClass.getConstructor(boolean.class);
+                if (cons != null)
+                    mPerf = cons.newInstance(isUntrustedDomain);
+            }
+            if (sUxPerfClass != null) {
+                mUxPerf = sUxPerfClass.newInstance();
+            }
+        }
+        catch(Exception e) {
+            Log.e(TAG,"BoostFramework() : Exception_5 = " + e);
+        }
+    }
+
     private void initFunctions () {
         synchronized(BoostFramework.class) {
             if (sIsLoaded == false) {
