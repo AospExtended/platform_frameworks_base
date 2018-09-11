@@ -106,6 +106,15 @@ public class WifiP2pDeviceList implements Parcelable {
         mDevices.put(device.deviceAddress, device);
     }
 
+    /** Only updates details fetched from the supplicant @hide */
+    public void updateSupplicantDetailsExt(WifiWscVendorInfo device) {
+        WifiP2pDevice d = mDevices.get(device.mP2pMacAddress);
+        if (d != null) {
+            d.wscVendorExtInfo = device;
+            return;
+        }
+    }
+
     /** @hide */
     public void updateGroupCapability(String deviceAddress, int groupCapab) {
         validateDeviceAddress(deviceAddress);
