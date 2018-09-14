@@ -1029,6 +1029,19 @@ public class Build {
     public static final String FINGERPRINT = deriveFingerprint();
 
     /**
+     * Custom fingerprint
+     * @hide
+     */
+    public static final String PROP_EXTENDED_FINGERPRINT = "ro.extended.fingerprint";
+
+    /**
+     * Custom fingerprint
+     * @hide
+     */
+    public static final String EXTENDED_FINGERPRINT = SystemProperties.get(PROP_EXTENDED_FINGERPRINT,
+            deriveFingerprint());
+
+    /**
      * Some devices split the fingerprint components between multiple
      * partitions, so we might derive the fingerprint at runtime.
      */
