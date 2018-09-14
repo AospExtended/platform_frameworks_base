@@ -38,6 +38,7 @@ import com.android.systemui.statusbar.policy.NetworkController;
 import com.android.systemui.statusbar.policy.NetworkController.IconState;
 import com.android.systemui.statusbar.policy.NetworkControllerImpl;
 import com.android.systemui.statusbar.policy.SecurityController;
+import com.android.systemui.tuner.TunerService;
 import com.android.systemui.tuner.TunerService.Tunable;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +67,7 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
     private boolean mBlockEthernet;
     private boolean mActivityEnabled;
     private boolean mForceBlockWifi;
+    private boolean mBlockVpn;
 
     // Track as little state as possible, and only for padding purposes
     private boolean mIsAirplaneMode = false;
@@ -90,15 +92,18 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
 
         mNetworkController.addCallback(this);
         mSecurityController.addCallback(this);
+
+        Dependency.get(TunerService.class).addTunable(this, StatusBarIconController.ICON_BLACKLIST);
     }
 
     public void destroy() {
         mNetworkController.removeCallback(this);
         mSecurityController.removeCallback(this);
+        Dependency.get(TunerService.class).removeTunable(this);
     }
 
     private void updateVpn() {
-        boolean vpnVisible = mSecurityController.isVpnEnabled();
+        boolean vpnVisible = mSecurityController.isVpnEnabled() && !mBlockVpn;
         int vpnIconId = currentVpnIconId(mSecurityController.isVpnBranded());
 
         mIconController.setIcon(mSlotVpn, vpnIconId, null);
@@ -127,15 +132,20 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
         boolean blockMobile = blockList.contains(mSlotMobile);
         boolean blockWifi = blockList.contains(mSlotWifi);
         boolean blockEthernet = blockList.contains(mSlotEthernet);
+        boolean blockVpn = blockList.contains(mSlotVpn);
 
         if (blockAirplane != mBlockAirplane || blockMobile != mBlockMobile
-                || blockEthernet != mBlockEthernet || blockWifi != mBlockWifi) {
+                || blockEthernet != mBlockEthernet || blockWifi != mBlockWifi
+                || blockVpn != mBlockVpn) {
             mBlockAirplane = blockAirplane;
             mBlockMobile = blockMobile;
             mBlockEthernet = blockEthernet;
             mBlockWifi = blockWifi || mForceBlockWifi;
+            mBlockVpn = blockVpn;
             // Re-register to get new callbacks.
             mNetworkController.removeCallback(this);
+            mNetworkController.addCallback(this);
+            updateVpn();
         }
     }
 
