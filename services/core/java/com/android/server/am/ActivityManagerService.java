@@ -123,6 +123,8 @@ import static android.provider.Settings.Global.HIDE_ERROR_DIALOGS;
 import static android.provider.Settings.Global.NETWORK_ACCESS_TIMEOUT_MS;
 import static android.provider.Settings.Global.WAIT_FOR_DEBUGGER;
 import static android.provider.Settings.System.FONT_SCALE;
+import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
+import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
 import static android.service.voice.VoiceInteractionSession.SHOW_SOURCE_APPLICATION;
 import static android.text.format.DateUtils.DAY_IN_MILLIS;
 import static android.view.Display.DEFAULT_DISPLAY;
@@ -314,6 +316,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.hardware.display.DisplayManagerInternal;
 import android.location.LocationManager;
+import android.media.AudioManager;
 import android.media.audiofx.AudioEffect;
 import android.metrics.LogMaker;
 import android.net.Proxy;
@@ -364,6 +367,7 @@ import android.os.storage.StorageManager;
 import android.os.storage.StorageManagerInternal;
 import android.provider.Downloads;
 import android.provider.Settings;
+import android.provider.Settings.Global;
 import android.service.voice.IVoiceInteractionSession;
 import android.service.voice.VoiceInteractionManagerInternal;
 import android.telecom.TelecomManager;
@@ -397,6 +401,7 @@ import android.view.RemoteAnimationDefinition;
 import android.view.View;
 import android.view.WindowManager;
 import android.util.BoostFramework;
+import android.widget.Toast;
 
 import android.view.autofill.AutofillManagerInternal;
 
@@ -659,6 +664,15 @@ public class ActivityManagerService extends IActivityManager.Stub
 
     // Determines whether to take full screen screenshots
     static final boolean TAKE_FULLSCREEN_SCREENSHOTS = true;
+
+    // Gaming mode
+    ActivityManager mAm;
+    ApplicationInfo appInfo;
+    AudioManager mAudioManager;
+    NotificationManager mNotificationManager;
+    private static final int GAMING_NOTIFICATION_ID = 420;
+    private Handler mToastHandler = new Handler();
+    private ArrayList<String> mGameApp = new ArrayList<String>();
 
     /**
      * Default value for {@link Settings.Global#NETWORK_ACCESS_TIMEOUT_MS}.
@@ -4294,6 +4308,114 @@ public class ActivityManagerService extends IActivityManager.Stub
         return (ai.flags&ApplicationInfo.FLAG_PERSISTENT) != 0;
     }
 
+    private boolean isGameApp(String packageName) {
+        final String gamingApp = Settings.System.getString(mContext.getContentResolver(),
+                    Settings.System.GAMING_MODE_VALUES);
+        splitAndAddToArrayList(mGameApp, gamingApp, "\\|");
+        return mGameApp.contains(packageName);
+    }
+
+    private void splitAndAddToArrayList(ArrayList<String> arrayList,
+            String baseString, String separator) {
+        // clear first
+        arrayList.clear();
+        if (baseString != null) {
+            final String[] array = TextUtils.split(baseString, separator);
+            for (String item : array) {
+                arrayList.add(item.trim());
+            }
+        }
+    }
+
+    private boolean shouldEnableGamingMode() {
+        mAm = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
+        // get the info from the currently running task
+        List<ActivityManager.RunningTaskInfo> taskInfo = mAm.getRunningTasks(1);
+        if(taskInfo != null && !taskInfo.isEmpty()) {
+            ComponentName componentInfo = taskInfo.get(0).topActivity;
+            while (isGameApp(componentInfo.getPackageName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean shouldAllowDynamicGamingMode(ProcessRecord app) {
+        boolean isDynamicGamingMode = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.GAMING_MODE_DYNAMIC_STATE, 1) == 1;
+        return (isDynamicGamingMode && (app.info.category == ApplicationInfo.CATEGORY_GAME ||
+                (app.info.flags & ApplicationInfo.FLAG_IS_GAME) == ApplicationInfo.FLAG_IS_GAME));
+    }
+
+    private void enableGamingFeatures(ProcessRecord app) {
+        mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
+        boolean enabled = shouldEnableGamingMode() || shouldAllowDynamicGamingMode(app);
+        // Lock brightness
+        boolean enableManualBrightness = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.GAMING_MODE_MANUAL_BRIGHTNESS_TOGGLE, 1) == 1;
+        if (enabled && enableManualBrightness) {
+            final boolean isAdaptiveEnabledByUser = Settings.System.getInt(mContext.getContentResolver(),
+                              Settings.System.SCREEN_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL) == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
+                Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.GAMING_SCREEN_BRIGHTNESS_MODE, isAdaptiveEnabledByUser ? Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC : Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
+                Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_MANUAL);
+        }
+        // Heads up
+        boolean enableHeadsUp = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.GAMING_MODE_HEADSUP_TOGGLE, 1) == 1;
+        if (enabled && enableHeadsUp) {
+            final boolean isHeadsUpEnabledByUser = Settings.Global.getInt(mContext.getContentResolver(),
+                              Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1) == 1;
+                Settings.Global.putInt(mContext.getContentResolver(),
+                    Settings.Global.GAMING_HEADS_UP_NOTIFICATIONS_ENABLED, isHeadsUpEnabledByUser ? 1 : 0);
+                Settings.Global.putInt(mContext.getContentResolver(),
+                    Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 0);
+        }
+        // Capacitive keys
+        boolean disableHwKeys = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.GAMING_MODE_HW_KEYS_TOGGLE, 1) == 1;
+        if (enabled && disableHwKeys) {
+            final boolean isHwKeysEnabledByUser = Settings.Secure.getInt(mContext.getContentResolver(),
+                              Settings.Secure.HARDWARE_KEYS_DISABLE, 0) == 0;
+                Settings.Secure.putInt(mContext.getContentResolver(),
+                    Settings.Secure.GAMING_HARDWARE_KEYS_DISABLE, isHwKeysEnabledByUser ? 0 : 1);
+                Settings.Secure.putInt(mContext.getContentResolver(),
+                    Settings.Secure.HARDWARE_KEYS_DISABLE, 1);
+        }
+        // Ringer changed to "Vibrate mode"
+        boolean enableVibrateMode = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.GAMING_MODE_ENTER_DND, 1) == 1;
+        if (enabled && enableVibrateMode) {
+            final int userState = mAudioManager.getRingerModeInternal();
+                Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.GAMING_RINGER_STATE, userState);
+            mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
+        }
+        // Media volume increased to the fullest
+        boolean maximizeMediaVolume = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.GAMING_MODE_MAXIMIZE_MEDIA_TOGGLE, 1) == 1;
+        if (enabled && !mAudioManager.isWiredHeadsetOn() && maximizeMediaVolume) {
+            final int userMedia = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+                Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.GAMING_MEDIA_VOLUME, userMedia);
+            mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 60, 0); // 60 in the case "Music Volume Steps" have been set to 60 by user.
+        }
+        // Show a toast
+        if (enabled) {
+            mToastHandler.post(new Runnable() {
+                public void run() {
+                    Toast.makeText(mContext, mHandler.getLooper(), "FireHound Gaming enabled", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        if (enabled) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.ENABLE_GAMING_MODE, 1);
+            addNotification();
+        }
+    }
+
     @GuardedBy("this")
     private final void startProcessLocked(ProcessRecord app,
             String hostingType, String hostingNameStr) {
@@ -4691,6 +4813,9 @@ public class ActivityManagerService extends IActivityManager.Stub
         checkTime(app.startTime, "startProcess: building log message");
         StringBuilder buf = mStringBuilder;
         buf.setLength(0);
+        if (app.hostingType.equals("activity")) {
+            enableGamingFeatures(app);
+        }
         buf.append("Start proc ");
         buf.append(pid);
         buf.append(':');
@@ -4808,6 +4933,21 @@ public class ActivityManagerService extends IActivityManager.Stub
         }
 
         return true;
+    }
+
+    private void addNotification() {
+        mNotificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+        final Resources r = mContext.getResources();
+        // Display a notification
+        Notification.Builder builder = new Notification.Builder(mContext, SystemNotificationChannels.GAMING)
+            .setTicker(r.getString(com.android.internal.R.string.gaming_notif_ticker))
+            .setContentTitle(r.getString(com.android.internal.R.string.gaming_notif_title))
+            .setSmallIcon(com.android.internal.R.drawable.ic_gaming_notif)
+            .setWhen(java.lang.System.currentTimeMillis())
+            .setOngoing(true);
+
+        Notification notif = builder.build();
+        mNotificationManager.notify(GAMING_NOTIFICATION_ID, notif);
     }
 
     private ActivityInfo resolveActivityInfo(Intent intent, int flags, int userId) {
@@ -6054,6 +6194,40 @@ public class ActivityManagerService extends IActivityManager.Stub
         final boolean clearLaunchStartTime = !restarting && app.removed && app.foregroundActivities;
         boolean kept = cleanUpApplicationRecordLocked(app, restarting, allowRestart, -1,
                 false /*replacingPid*/);
+        boolean isDynamicGamingMode = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.GAMING_MODE_DYNAMIC_STATE, 1) == 1;
+        // Check if the selected app is removed from the stack
+        if (isGameApp(app.processName) || (isDynamicGamingMode && (app.info.category == ApplicationInfo.CATEGORY_GAME ||
+                      (app.info.flags & ApplicationInfo.FLAG_IS_GAME) == ApplicationInfo.FLAG_IS_GAME))) {
+            final boolean wasAdaptiveEnabledByUser = Settings.System.getInt(mContext.getContentResolver(),
+                              Settings.System.GAMING_SCREEN_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL) == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
+                Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.SCREEN_BRIGHTNESS_MODE, wasAdaptiveEnabledByUser ? Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC : Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
+            final boolean wasHeadsUpEnabledByUser = Settings.Global.getInt(mContext.getContentResolver(),
+                              Settings.Global.GAMING_HEADS_UP_NOTIFICATIONS_ENABLED, 1) == 1;
+                Settings.Global.putInt(mContext.getContentResolver(),
+                    Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, wasHeadsUpEnabledByUser ? 1 : 0);
+            final boolean wasHwKeyEnabledByUser = Settings.Secure.getInt(mContext.getContentResolver(),
+                              Settings.Secure.GAMING_HARDWARE_KEYS_DISABLE, 0) == 0;
+                Settings.Secure.putInt(mContext.getContentResolver(),
+                    Settings.Secure.HARDWARE_KEYS_DISABLE, wasHwKeyEnabledByUser ? 0 : 1);
+            final boolean newState = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.GAMING_RINGER_STATE, AudioManager.RINGER_MODE_NORMAL) == AudioManager.RINGER_MODE_NORMAL;
+            final boolean isVibrate = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.GAMING_RINGER_STATE, AudioManager.RINGER_MODE_VIBRATE) == AudioManager.RINGER_MODE_VIBRATE;
+                    mAudioManager.setRingerModeInternal(newState ? AudioManager.RINGER_MODE_NORMAL : (isVibrate ? AudioManager.RINGER_MODE_VIBRATE : AudioManager.RINGER_MODE_SILENT));
+            final int userMediaVolume = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.GAMING_MEDIA_VOLUME, 1);
+                    mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, userMediaVolume, 0);
+            mToastHandler.post(new Runnable() {
+                public void run() {
+                        Toast.makeText(mContext, mHandler.getLooper(), "FireHound Gaming disabled", Toast.LENGTH_LONG).show();
+                    }
+                });
+            mNotificationManager.cancel(GAMING_NOTIFICATION_ID);
+            Settings.System.putInt(mContext.getContentResolver(),
+                Settings.System.ENABLE_GAMING_MODE, 0);
+        }
         if (!kept && !restarting) {
             removeLruProcessLocked(app);
             if (pid > 0) {
