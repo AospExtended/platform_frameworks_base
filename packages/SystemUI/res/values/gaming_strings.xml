@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) 2019 FireHound
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- FireHound Gaming -->
+    <string name="gaming_mode_tile_title">FireHound Gaming</string>
+    <string name="gaming_mode_tile_toast">FireHound Gaming enabled</string>
+    <string name="gaming_mode_tile_toast_disabled">FireHound Gaming disabled</string>
+    <string name="gaming_mode_dialog_title">FireHound Gaming</string>
+    <string name="gaming_mode_dialog_message">FireHound Gaming will be enabled. Long press to configure Gaming Mode.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
+    <string name="gaming_notif_title">Gaming Mode On</string>
+    <string name="gaming_notif_ticker">Gaming Mode enabled</string>
+    <string name="notification_channel_gaming">Gaming Mode</string>
+</resources>

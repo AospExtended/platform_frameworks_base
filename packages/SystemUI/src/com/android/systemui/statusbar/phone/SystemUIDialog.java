@@ -75,6 +75,10 @@ public class SystemUIDialog extends AlertDialog {
         setButton(BUTTON_NEUTRAL, mContext.getString(resId), onClick);
     }
 
+    public void setIcon(int iconId) {
+        setIcon(mContext.getDrawable(iconId));
+    }
+
     public static void setShowForAllUsers(Dialog dialog, boolean show) {
         if (show) {
             dialog.getWindow().getAttributes().privateFlags |=
