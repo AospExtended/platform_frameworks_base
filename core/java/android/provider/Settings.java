@@ -4963,13 +4963,13 @@ public final class Settings {
         /**
          * Force an Ambient notification when a new media track is being played
          * 0 - disabled
-        * 1 - show track info within normal Ambient Display and force a new Ambient clean layout when skipping tracks
+         * 1 - show track info within normal Ambient Display and force a new Ambient clean layout when skipping tracks
          * @hide
          */
         public static final String FORCE_AMBIENT_FOR_MEDIA = "force_ambient_for_media";
 
         /**
-        * @hide
+         * @hide
          * Whether to set a lower brightness level when enabling night mode
          * 0: Disabled
          * 1: Set the brightness to a very low value
@@ -4985,6 +4985,12 @@ public final class Settings {
          * @hide
          */
         public static final String QS_TILE_STYLE = "qs_tile_style";
+
+        /**
+         * Whether to display cross sign for a data disabled connection
+         * @hide
+         */
+        public static final String DATA_DISABLED_ICON = "data_disabled_icon";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
