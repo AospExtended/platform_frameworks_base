@@ -153,4 +153,7 @@
   <java-symbol type="string" name="url_copy_success" />
   <java-symbol type="string" name="url_copy_failed" />
 
+  <java-symbol type="anim" name="inv_app_in" />
+  <java-symbol type="anim" name="inv_app_out" />
+
 </resources>
