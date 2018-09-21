@@ -63,4 +63,7 @@
     <java-symbol type="bool" name="config_allowMediaUidForCameraServiceProxy" />
 
     <java-symbol type="array" name="config_customPermissionsList" />
+
+    <!-- Home button wake -->
+    <java-symbol type="bool" name="config_HomeWakeButton" />
 </resources>

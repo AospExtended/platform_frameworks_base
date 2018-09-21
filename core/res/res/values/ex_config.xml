@@ -64,4 +64,7 @@
     <string-array translatable="false" name="config_customPermissionsList">
         <item>com.google.android.apps.wellbeing</item>
     </string-array>
+
+    <!-- True if the home button has the ability to wake up phone from lockscreen-->
+    <bool name="config_HomeWakeButton">false</bool>
 </resources>
