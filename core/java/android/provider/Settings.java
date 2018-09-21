@@ -4983,6 +4983,12 @@ public final class Settings {
          */
         public static final String SHOW_VOLTE_ICON = "volte_icon";
 
+	/**
+         * Home wake button
+         * @hide
+         */
+        public static final String HOME_WAKE_BUTTON = "home_wake_button";
+
         /**
          * Change volume up and down handlign based on rotation
          * @hide
