@@ -75,7 +75,7 @@
     <bool name="config_button_brightness_support">false</bool>
     <integer name="config_button_brightness_default">128</integer>
 
-    <!-- Default value for proximity check on screen wake
+    <!-- Default value for proximity check on screen wakez
          NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)
     -->
     <bool name="config_proximityCheckOnWake">false</bool>
@@ -100,5 +100,5 @@
     <bool name="config_notificationTinting_override">false</bool>
 
     <!-- True if the home button has the ability to wake up phone from lockscreen-->
-    <bool name="config_HomeWakeButton">true</bool>
+    <bool name="config_HomeWakeButton">false</bool>
 </resources>
