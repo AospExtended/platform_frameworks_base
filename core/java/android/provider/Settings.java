@@ -4439,6 +4439,12 @@ public final class Settings {
         public static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
 
         /**
+         * Home wake button
+         * @hide
+         */
+        public static final String HOME_WAKE_BUTTON = "home_wake_button";
+
+        /**
          * @hide
          */
         public static final String VOLUME_BUTTON_MUSIC_CONTROL = "volume_button_music_control";
