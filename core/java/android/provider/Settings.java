@@ -5365,6 +5365,12 @@ public final class Settings {
         @Readable
         public static final String VOLUME_BUTTON_MUSIC_CONTROL = "volume_button_music_control";
 
+	/**
+         * Home wake button
+         * @hide
+         */
+        public static final String HOME_WAKE_BUTTON = "home_wake_button";
+
         /**
          * Change volume up and down handlign based on rotation
          * @hide
