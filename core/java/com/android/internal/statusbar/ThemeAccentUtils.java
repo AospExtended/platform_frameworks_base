@@ -80,6 +80,7 @@ public class ThemeAccentUtils {
         "com.android.dialer.theme.extended", //4
         "com.android.contacts.theme.extended", //5
         "com.android.documentsui.theme.extended", //6
+        "com.google.android.apps.wellbeing.theme.extended", //7
     };
 
     private static final String[] CHOCOLATE_THEMES = {
@@ -90,6 +91,7 @@ public class ThemeAccentUtils {
         "com.android.dialer.theme.chocolate", //4
         "com.android.contacts.theme.chocolate", //5
         "com.android.documentsui.theme.chocolate", //6
+        "com.google.android.apps.wellbeing.theme.chocolate", //7
     };
 
 
