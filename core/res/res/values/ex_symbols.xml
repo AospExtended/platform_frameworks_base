@@ -174,5 +174,6 @@
     <!-- Notification sender text color -->
     <java-symbol name="sender_text_color" type="color" />
 
-
+    <!-- Notification app name tint -->
+    <java-symbol type="bool" name="config_allowNotificationAppNameTextTinting" />
 </resources>
