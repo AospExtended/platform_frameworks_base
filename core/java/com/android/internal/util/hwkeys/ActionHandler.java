@@ -152,7 +152,6 @@ public class ActionHandler {
         // quickly and more times 
         sDisabledActions.add(SYSTEMUI_TASK_REGION_SCREENSHOT);
         sDisabledActions.add(SYSTEMUI_TASK_ASSISTANT_SOUND_SEARCH);
-        sDisabledActions.add(SYSTEMUI_TASK_POWER_MENU);
     }
 
     static enum SystemAction {
