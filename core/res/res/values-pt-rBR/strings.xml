@@ -1113,7 +1113,7 @@
     <string name="app_upgrading_toast" msgid="3008139776215597053">"<xliff:g id="APPLICATION">%1$s</xliff:g> está fazendo upgrade…"</string>
     <string name="android_upgrading_apk" msgid="7904042682111526169">"Otimizando app <xliff:g id="NUMBER_0">%1$d</xliff:g> de <xliff:g id="NUMBER_1">%2$d</xliff:g>."</string>
     <string name="android_preparing_apk" msgid="8162599310274079154">"Preparando <xliff:g id="APPNAME">%1$s</xliff:g>."</string>
-    <string name="android_upgrading_starting_apps" msgid="451464516346926713">"Iniciando apps."</string>
+    <string name="android_upgrading_starting_apps" msgid="451464516346926713">"Inicializando o sistema..."</string>
     <string name="android_upgrading_complete" msgid="1405954754112999229">"Concluindo a inicialização."</string>
     <string name="heavy_weight_notification" msgid="9087063985776626166">"<xliff:g id="APP">%1$s</xliff:g> em execução"</string>
     <string name="heavy_weight_notification_detail" msgid="2304833848484424985">"Toque para voltar ao jogo"</string>

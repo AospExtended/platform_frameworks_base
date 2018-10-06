@@ -422,7 +422,7 @@
     <string name="reboot_to_reset_message">Restarting\u2026</string>
 
     <!-- Shutdown Progress Dialog. This is shown if the user chooses to power off the phone. -->
-    <string name="shutdown_progress">Shutting down\u2026</string>
+    <string name="shutdown_progress">Shutting down... What did I do wrong?\u2026</string>
 
     <!-- Shutdown Confirmation Dialog.  When the user chooses to power off the phone, there will
          be a confirmation dialog.  This is the message. -->
@@ -3023,7 +3023,7 @@
     <string name="android_preparing_apk">Preparing <xliff:g id="appname">%1$s</xliff:g>.</string>
 
     <!-- [CHAR LIMIT=NONE] Message to show in upgrading dialog when reached the point of starting apps. -->
-    <string name="android_upgrading_starting_apps">Starting apps.</string>
+    <string name="android_upgrading_starting_apps">Initializing system...</string>
 
     <!-- [CHAR LIMIT=NONE] Message to show in upgrading dialog when the bulk of the upgrade work is done. -->
     <string name="android_upgrading_complete">Finishing boot.</string>

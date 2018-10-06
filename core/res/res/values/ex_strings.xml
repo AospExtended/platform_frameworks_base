@@ -20,6 +20,7 @@
     <string name="reboot_to_bootloader_message">Rebooting to bootloader</string>
     <string name="reboot_title">Reboot</string>
     <string name="reboot_message">Rebooting system</string>
+    <string name="reboot_system_message">BYE! Dont worry you will be coming back.\u2026</string>
 
     <!-- SystemUI Restart -->
     <string name="systemui_restart_title">SystemUI restart required</string>

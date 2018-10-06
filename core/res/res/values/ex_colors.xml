@@ -95,4 +95,10 @@
     <color name="default_icon_fill_color">@color/white</color>
     <color name="generic_icon_fill_color">@color/white</color>
 
+    <!-- Shutdown/reboot dialog -->
+    <color name="shutdown_background">@android:color/black</color>
+    <color name="shutdown_primary_text">#FFFFFFFF</color>
+    <color name="shutdown_progress_tint">@*android:color/accent_device_default_light</color>
+    <color name="shutdown_logo_tint">@*android:color/accent_device_default_light</color>
+
 </resources>
