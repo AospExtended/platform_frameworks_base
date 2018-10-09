@@ -66,7 +66,7 @@ import android.view.InputDevice;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.WindowManagerGlobal;
-//import android.view.WindowManagerPolicyControl;
+import android.view.WindowManagerPolicyControl;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
@@ -146,7 +146,6 @@ public class ActionHandler {
     static final Set<String> sDisabledActions = new HashSet<String>();
     static {
         sDisabledActions.add(SYSTEMUI_TASK_SCREENRECORD);
-        sDisabledActions.add(SYSTEMUI_TASK_EXPANDED_DESKTOP);
         sDisabledActions.add(SYSTEMUI_TASK_ONE_HANDED_MODE_LEFT);
         sDisabledActions.add(SYSTEMUI_TASK_ONE_HANDED_MODE_RIGHT);
         // we need to make this more reliable when the user tap the partial screenshot button
@@ -507,7 +506,7 @@ public class ActionHandler {
             // } else if (action.equals(SYSTEMUI_TASK_AUDIORECORD)) {
             // takeAudiorecord();
         } else if (action.equals(SYSTEMUI_TASK_EXPANDED_DESKTOP)) {
-            // toggleExpandedDesktop(context);
+            toggleExpandedDesktop(context);
             return;
         } else if (action.equals(SYSTEMUI_TASK_SCREENOFF)) {
             screenOff(context);
@@ -747,7 +746,7 @@ public class ActionHandler {
         }
     }
 
-/*
+
     private static void toggleExpandedDesktop(Context context) {
         ContentResolver cr = context.getContentResolver();
         String newVal = "";
@@ -763,7 +762,6 @@ public class ActionHandler {
             WindowManagerPolicyControl.reloadFromSetting(context);
         }
     }
-*/
 
     private static void dispatchMediaKeyWithWakeLock(int keycode, Context context) {
         if (ActivityManagerNative.isSystemReady()) {
