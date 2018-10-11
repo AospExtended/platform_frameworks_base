@@ -54,6 +54,7 @@ public class BoostFramework {
     private static Method sPerfHintFunc = null;
     private static Method sReleaseFunc = null;
     private static Method sReleaseHandlerFunc = null;
+    private static Method sFeedbackFunc = null;
 
     private static int sIopv2 = -1;
     private static Method sIOPStart = null;
@@ -84,6 +85,9 @@ public class BoostFramework {
     //perf events
     public static final int VENDOR_HINT_FIRST_DRAW = 0x00001042;
     public static final int VENDOR_HINT_TAP_EVENT = 0x00001043;
+    //feedback hints
+    public static final int VENDOR_FEEDBACK_WORKLOAD_TYPE = 0x00001601;
+    public static final int VENDOR_FEEDBACK_LAUNCH_END_POINT = 0x00001602;
 
     //UXE Events and Triggers
     public static final int UXE_TRIGGER = 1;
@@ -187,6 +191,9 @@ public class BoostFramework {
                     argClasses = new Class[] {int.class};
                     sReleaseHandlerFunc = sPerfClass.getDeclaredMethod("perfLockReleaseHandler", argClasses);
 
+                    argClasses = new Class[] {int.class, String.class};
+                    sFeedbackFunc = sPerfClass.getMethod("perfGetFeedback", argClasses);
+
                     argClasses = new Class[] {int.class, String.class, String.class};
                     sIOPStart =   sPerfClass.getDeclaredMethod("perfIOPrefetchStart", argClasses);
 
@@ -289,6 +296,20 @@ public class BoostFramework {
             }
         } catch(Exception e) {
            if (DEBUG) Log.e(TAG,"Exception " + e);
+        }
+        return ret;
+    }
+
+/** @hide */
+    public int perfGetFeedback(int req, String userDataStr) {
+        int ret = -1;
+        try {
+            if (sFeedbackFunc != null) {
+                Object retVal = sFeedbackFunc.invoke(mPerf, req, userDataStr);
+                ret = (int)retVal;
+            }
+        } catch(Exception e) {
+            Log.e(TAG,"Exception " + e);
         }
         return ret;
     }
