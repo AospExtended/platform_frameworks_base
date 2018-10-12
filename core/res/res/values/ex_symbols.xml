@@ -124,4 +124,7 @@
   <java-symbol type="string" name="config_rat_3g" />
   <java-symbol type="string" name="config_rat_4g" />
 
+  <!-- Fastscroller -->
+  <java-symbol type="color" name="fastscroller_text_color" />
+
 </resources>
