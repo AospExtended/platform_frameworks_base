@@ -118,6 +118,14 @@ public class BoostFramework {
         public static final int EVENT_TYPE_V1 = 1;
     };
 
+    public class WorkloadType {
+        public static final int NOT_KNOWN = 0;
+        public static final int APP = 1;
+        public static final int GAME = 2;
+        public static final int BROWSER = 3;
+        public static final int PREPROAPP = 4;
+    };
+
 /** @hide */
     public BoostFramework() {
         initFunctions();
