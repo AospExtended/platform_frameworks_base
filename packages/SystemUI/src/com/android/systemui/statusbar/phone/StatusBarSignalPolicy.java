@@ -16,6 +16,7 @@
 
 package com.android.systemui.statusbar.phone;
 
+import android.app.ActivityThread;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Rect;
@@ -79,8 +80,6 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
     private ArrayList<MobileIconState> mMobileStates = new ArrayList<MobileIconState>();
     private WifiIconState mWifiIconState = new WifiIconState();
 
-    private static TelephonyExtUtils extTelephony;
-
     public StatusBarSignalPolicy(Context context, StatusBarIconController iconController) {
         mContext = context;
 
@@ -101,7 +100,6 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
         Dependency.get(TunerService.class).addTunable(this, StatusBarIconController.ICON_BLACKLIST);
 
         TelephonyExtUtils.getInstance(context).addListener(this);
-        extTelephony = TelephonyExtUtils.getInstance(context);
     }
 
     @Override
@@ -434,6 +432,7 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
         private MobileIconState(int subId) {
             super();
             this.subId = subId;
+            TelephonyExtUtils extTelephony = TelephonyExtUtils.getInstance(ActivityThread.currentActivityThread().getSystemContext());
             if (extTelephony.hasService()) {
                 mProvisioned = extTelephony.isSubProvisioned(subId);
             }
