@@ -281,7 +281,7 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
         mMobileStates.clear();
         final int n = subs.size();
         for (int i = 0; i < n; i++) {
-            mMobileStates.add(new MobileIconState(subs.get(i).getSubscriptionId()));
+            mMobileStates.add(new MobileIconState(subs.get(i).getSubscriptionId(), mContext));
         }
     }
 
@@ -428,11 +428,13 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
         public String typeContentDescription;
         public int volteId;
         private boolean mProvisioned = true;
+        public Context mContext;
 
-        private MobileIconState(int subId) {
+        private MobileIconState(int subId, Context context) {
             super();
             this.subId = subId;
-            TelephonyExtUtils extTelephony = TelephonyExtUtils.getInstance(ActivityThread.currentActivityThread().getSystemContext());
+            this.mContext = context;
+            TelephonyExtUtils extTelephony = TelephonyExtUtils.getInstance(context);
             if (extTelephony.hasService()) {
                 mProvisioned = extTelephony.isSubProvisioned(subId);
             }
@@ -461,11 +463,11 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
 
             return Objects
                     .hash(super.hashCode(), subId, strengthId, typeId, roaming, needsLeadingPadding,
-                            typeContentDescription);
+                            typeContentDescription, mContext);
         }
 
         public MobileIconState copy() {
-            MobileIconState copy = new MobileIconState(this.subId);
+            MobileIconState copy = new MobileIconState(this.subId, this.mContext);
             copyTo(copy);
             return copy;
         }
@@ -479,12 +481,13 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
             other.needsLeadingPadding = needsLeadingPadding;
             other.typeContentDescription = typeContentDescription;
             other.volteId = volteId;
+            other.mContext = mContext;
         }
 
         private static List<MobileIconState> copyStates(List<MobileIconState> inStates) {
             ArrayList<MobileIconState> outStates = new ArrayList<>();
             for (MobileIconState state : inStates) {
-                MobileIconState copy = new MobileIconState(state.subId);
+                MobileIconState copy = new MobileIconState(state.subId, state.mContext);
                 state.copyTo(copy);
                 outStates.add(copy);
             }
