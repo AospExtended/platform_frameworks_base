@@ -845,6 +845,24 @@ public class WifiManager {
     public static final String ACTION_REQUEST_DISABLE = "android.net.wifi.action.REQUEST_DISABLE";
 
     /**
+     * Broadcast intent action indicating that WifiCountryCode was updated with new
+     * country code.
+     *
+     * @see #EXTRA_COUNTRY_CODE
+     *
+     * @hide
+     */
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
+    public static final String WIFI_COUNTRY_CODE_CHANGED_ACTION =
+            "android.net.wifi.COUNTRY_CODE_CHANGED";
+     /**
+     * The lookup key for a string that indicates the 2 char new country code
+     *
+     * @hide
+     */
+    public static final String EXTRA_COUNTRY_CODE = "country_code";
+
+    /**
      * Internally used Wi-Fi lock mode representing the case were no locks are held.
      * @hide
      */
