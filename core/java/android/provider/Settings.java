@@ -4647,12 +4647,6 @@ public final class Settings {
         public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
 
         /**
-         * Whether to show Brightness Icon On Brightness Slider
-         * @hide
-         */
-        public static final String QS_SHOW_BRIGHTNESS_ICON = "qs_show_brightness_icon";
-
-        /**
          * Three Finger Gesture from Oppo
          * @hide
          */
@@ -9600,12 +9594,6 @@ public final class Settings {
         /** @hide */
         public static final Validator STATUSBAR_CLOCK_DATE_POSITION_VALIDATOR =
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 1);
-
-        /**
-         * Whether to show the brightness slider in quick settings panel
-         * @hide
-         */
-        public static final String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
 
         /**
          * Whether user is allowed to pull down quick settings on secure keyguard.
