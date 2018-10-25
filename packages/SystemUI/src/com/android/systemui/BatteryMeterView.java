@@ -425,6 +425,13 @@ public class BatteryMeterView extends LinearLayout implements
         updateShowPercent();
     }
 
+    @Override
+    public void onOverlayChanged() {
+        mShowPercentAvailable = getContext().getResources().getBoolean(
+                com.android.internal.R.bool.config_battery_percentage_setting_available);
+        updateShowPercent(false);
+    }
+
     /**
      * Looks up the scale factor for status bar icons and scales the battery view by that amount.
      */
