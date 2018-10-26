@@ -418,6 +418,10 @@ public class BatteryMeterView extends LinearLayout implements
                 }
                 break;
             default:
+                if (mBatteryPercentView != null) {
+                    removeView(mBatteryPercentView);
+                    mBatteryPercentView = null;
+                }
                 mDrawable.setMeterStyle(style);
                 if (mBatteryIconView == null) {
                     mBatteryIconView = new ImageView(mContext);
