@@ -32,6 +32,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 
+import android.service.quicksettings.Tile;
 import com.android.systemui.R;
 import com.android.systemui.plugins.qs.QSTile.BooleanState;
 import com.android.systemui.qs.QSHost;
@@ -120,6 +121,7 @@ public class MusicTile extends QSTileImpl<BooleanState> {
             state.icon = ResourceIcon.get(R.drawable.ic_qs_media_play);
             state.label = mContext.getString(R.string.quick_settings_music_play);
         }
+        state.state = mActive ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE;
     }
 
     private void playbackStateUpdate(int state) {
