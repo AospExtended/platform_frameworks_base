@@ -51,14 +51,17 @@ import androidx.slice.builders.ListBuilder;
 import androidx.slice.builders.ListBuilder.RowBuilder;
 import androidx.slice.builders.SliceAction;
 
+import com.android.systemui.keyguard.weather.WeatherClient;
+
 /**
  * Simple Slice provider that shows the current date.
  */
 public class KeyguardSliceProvider extends SliceProvider implements
-        NextAlarmController.NextAlarmChangeCallback, ZenModeController.Callback {
+        NextAlarmController.NextAlarmChangeCallback, ZenModeController.Callback, WeatherClient.WeatherObserver {
 
     public static final String KEYGUARD_SLICE_URI = "content://com.android.systemui.keyguard/main";
     public static final String KEYGUARD_DATE_URI = "content://com.android.systemui.keyguard/date";
+    public static final String KEYGUARD_WEATHER_URI = "content://com.android.systemui.keyguard/weather";
     public static final String KEYGUARD_NEXT_ALARM_URI =
             "content://com.android.systemui.keyguard/alarm";
     public static final String KEYGUARD_DND_URI = "content://com.android.systemui.keyguard/dnd";
@@ -73,6 +76,7 @@ public class KeyguardSliceProvider extends SliceProvider implements
 
     protected final Uri mSliceUri;
     protected final Uri mDateUri;
+    protected final Uri mWeatherUri;
     protected final Uri mAlarmUri;
     protected final Uri mDndUri;
     private final Date mCurrentTime = new Date();
@@ -121,6 +125,7 @@ public class KeyguardSliceProvider extends SliceProvider implements
         mHandler = handler;
         mSliceUri = Uri.parse(KEYGUARD_SLICE_URI);
         mDateUri = Uri.parse(KEYGUARD_DATE_URI);
+        mWeatherUri = Uri.parse(KEYGUARD_WEATHER_URI);
         mAlarmUri = Uri.parse(KEYGUARD_NEXT_ALARM_URI);
         mDndUri = Uri.parse(KEYGUARD_DND_URI);
     }
@@ -129,6 +134,7 @@ public class KeyguardSliceProvider extends SliceProvider implements
     public Slice onBindSlice(Uri sliceUri) {
         ListBuilder builder = new ListBuilder(getContext(), mSliceUri);
         builder.addRow(new RowBuilder(builder, mDateUri).setTitle(mLastText));
+        addWeather(builder);
         addNextAlarm(builder);
         addZenMode(builder);
         addPrimaryAction(builder);
@@ -184,6 +190,32 @@ public class KeyguardSliceProvider extends SliceProvider implements
                 && suppressingNotifications;
     }
 
+    private WeatherClient mWeatherClient;
+    private WeatherClient.WeatherInfo mWeatherData;
+
+    protected void addWeather(ListBuilder builder) {
+        if (!WeatherClient.isAvailable(getContext()) || mWeatherData == null || mWeatherData.getStatus() != WeatherClient.WEATHER_UPDATE_SUCCESS) {
+            return;
+        }
+        boolean useMetric = true; // TODO: Add entry on Settings > Security > Lockscreen settings, to switch between metric and imperial
+        int temperatureMetric = mWeatherData.getTemperature(true);
+        int temperatureImperial = mWeatherData.getTemperature(false);
+        String temperatureText = useMetric ?
+                                 Integer.toString(temperatureMetric) + "°C" :
+                                 Integer.toString(temperatureImperial) + "°F";
+        Icon conditionIcon = Icon.createWithResource(getContext(), mWeatherData.getWeatherConditionImage());
+        RowBuilder weatherRowBuilder = new RowBuilder(builder, mWeatherUri)
+                .setTitle(temperatureText)
+                .addEndItem(conditionIcon);
+        builder.addRow(weatherRowBuilder);
+    }
+
+    @Override
+    public void onWeatherUpdated(WeatherClient.WeatherInfo weatherData) {
+        mWeatherData = weatherData;
+        mContentResolver.notifyChange(mSliceUri, null /* observer */);
+    }
+
     @Override
     public boolean onCreateSliceProvider() {
         mAlarmManager = getContext().getSystemService(AlarmManager.class);
@@ -192,6 +224,11 @@ public class KeyguardSliceProvider extends SliceProvider implements
         mNextAlarmController.addCallback(this);
         mZenModeController = new ZenModeControllerImpl(getContext(), mHandler);
         mZenModeController.addCallback(this);
+        if (WeatherClient.isAvailable(getContext())) {
+            mWeatherClient = new WeatherClient(getContext());
+            mWeatherData = mWeatherClient.getWeatherData();
+            mWeatherClient.addObserver(this);
+        }
         mDatePattern = getContext().getString(R.string.system_ui_aod_date_pattern);
         registerClockUpdate();
         updateClock();
