@@ -32,6 +32,8 @@ import android.util.Log;
 import com.android.internal.telephony.SmsApplication;
 import com.android.internal.util.ArrayUtils;
 
+import com.android.internal.util.custom.weather.WeatherClient;
+
 /**
  * Handles getting/changing the whitelist for the exceptions to battery saving features.
  */
@@ -94,6 +96,10 @@ public class PowerWhitelistBackend {
         final DevicePolicyManager devicePolicyManager = mAppContext.getSystemService(
                 DevicePolicyManager.class);
         if (devicePolicyManager.packageHasActiveAdmins(pkg)) {
+            return true;
+        }
+
+        if (TextUtils.equals(pkg, WeatherClient.SERVICE_PACKAGE)) {
             return true;
         }
 
