@@ -4750,6 +4750,16 @@ public final class Settings {
                 ANY_STRING_VALIDATOR;
 
         /**
+         * Weather lockscreen temperature scale
+         * @hide
+         */
+        public static final String WEATHER_LOCKSCREEN_UNIT = "weather_lockscreen_unit";
+
+        /** @hide */
+        private static final Validator WEATHER_LOCKSCREEN_UNIT_VALIDATOR =
+               BOOLEAN_VALIDATOR;
+
+        /**
          * 0 - fullscreen
          * 1 - partial
          * @hide
@@ -5030,6 +5040,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(SCREEN_STATE_MOBILE_DATA);
             PRIVATE_SETTINGS.add(SCREEN_STATE_OFF_DELAY);
             PRIVATE_SETTINGS.add(SCREEN_STATE_ON_DELAY);
+            PRIVATE_SETTINGS.add(WEATHER_LOCKSCREEN_UNIT);
         }
 
 
@@ -5147,6 +5158,7 @@ public final class Settings {
             VALIDATORS.put(CUSTOM_DEVICE_PROXI_CHECK_ENABLED, CUSTOM_DEVICE_PROXI_CHECK_ENABLED_VALIDATOR);
             VALIDATORS.put(CUSTOM_DEVICE_GESTURE_FEEDBACK_ENABLED, CUSTOM_DEVICE_GESTURE_FEEDBACK_ENABLED_VALIDATOR);
             VALIDATORS.put(CUSTOM_DEVICE_FEATURE_SETTINGS, CUSTOM_DEVICE_FEATURE_SETTINGS_VALIDATOR);
+            VALIDATORS.put(WEATHER_LOCKSCREEN_UNIT, WEATHER_LOCKSCREEN_UNIT_VALIDATOR);
         }
 
         /**
