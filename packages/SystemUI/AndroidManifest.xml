@@ -231,6 +231,9 @@
     <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
 
+    <!-- Weather on lockscreen -->
+    <uses-permission android:name="org.pixelexperience.weather.client.READ_WEATHER" />
+
     <application
         android:name=".SystemUIApplication"
         android:persistent="true"

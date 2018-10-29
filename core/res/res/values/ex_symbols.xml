@@ -127,8 +127,24 @@
   <!-- Fastscroller -->
   <java-symbol type="color" name="fastscroller_text_color" />
 
-    <!-- Alternative keyhandler -->
-    <java-symbol type="string" name="config_alternativeDeviceKeyHandlerLib" />
-    <java-symbol type="string" name="config_alternativeDeviceKeyHandlerClass" />
+  <!-- Alternative keyhandler -->
+  <java-symbol type="string" name="config_alternativeDeviceKeyHandlerLib" />
+  <java-symbol type="string" name="config_alternativeDeviceKeyHandlerClass" />
+
+  <!-- Weather icons -->
+  <java-symbol type="drawable" name="weather_01" />
+  <java-symbol type="drawable" name="weather_01n" />
+  <java-symbol type="drawable" name="weather_02" />
+  <java-symbol type="drawable" name="weather_02n" />
+  <java-symbol type="drawable" name="weather_03" />
+  <java-symbol type="drawable" name="weather_03n" />
+  <java-symbol type="drawable" name="weather_04" />
+  <java-symbol type="drawable" name="weather_04n" />
+  <java-symbol type="drawable" name="weather_09" />
+  <java-symbol type="drawable" name="weather_10" />
+  <java-symbol type="drawable" name="weather_10n" />
+  <java-symbol type="drawable" name="weather_11" />
+  <java-symbol type="drawable" name="weather_13" />
+  <java-symbol type="drawable" name="weather_50" />
 
 </resources>
