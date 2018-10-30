@@ -8745,7 +8745,7 @@ public final class Settings {
 
         /**
          * What behavior should be invoked when the volume hush gesture is triggered
-         * One of VOLUME_HUSH_OFF, VOLUME_HUSH_VIBRATE, VOLUME_HUSH_MUTE.
+         * One of VOLUME_HUSH_OFF, VOLUME_HUSH_VIBRATE, VOLUME_HUSH_MUTE, VOLUME_HUSH_MUTE_NO_MEDIA.
          *
          * @hide
          */
@@ -8754,6 +8754,7 @@ public final class Settings {
         /** @hide */ public static final int VOLUME_HUSH_OFF = 0;
         /** @hide */ public static final int VOLUME_HUSH_VIBRATE = 1;
         /** @hide */ public static final int VOLUME_HUSH_MUTE = 2;
+        /** @hide */ public static final int VOLUME_HUSH_MUTE_NO_MEDIA = 3;
 
         private static final Validator VOLUME_HUSH_GESTURE_VALIDATOR =
                 NON_NEGATIVE_INTEGER_VALIDATOR;
