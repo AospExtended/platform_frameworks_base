@@ -44,6 +44,7 @@ import android.util.Log;
 import android.util.Slog;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.KeyEvent;
 import android.view.WindowManagerGlobal;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
@@ -55,6 +56,7 @@ import com.android.systemui.plugins.statusbar.phone.NavGesture.GestureHelper;
 import com.android.systemui.shared.recents.IOverviewProxy;
 import com.android.systemui.shared.recents.utilities.Utilities;
 import com.android.systemui.shared.system.NavigationBarCompat;
+import com.android.internal.util.aospextended.AEXUtils;
 
 /**
  * Class to detect gestures on the navigation bar and implement quick scrub.
@@ -85,6 +87,8 @@ public class QuickStepController implements GestureHelper {
     private AnimatorSet mTrackAnimator;
     private ButtonDispatcher mHitTarget;
     private View mCurrentNavigationBarView;
+
+    private boolean mBackActionScheduled;
 
     private final Handler mHandler = new Handler();
     private final Rect mTrackRect = new Rect();
@@ -218,6 +222,7 @@ public class QuickStepController implements GestureHelper {
                 mNavigationBarView.transformMatrixToGlobal(mTransformGlobalMatrix);
                 mNavigationBarView.transformMatrixToLocal(mTransformLocalMatrix);
                 mQuickStepStarted = false;
+                mBackActionScheduled = false;
                 mAllowGestureDetection = true;
                 break;
             }
@@ -261,15 +266,25 @@ public class QuickStepController implements GestureHelper {
                     break;
                 }
 
-                // Do not handle quick scrub if disabled
-                if (!mNavigationBarView.isQuickScrubEnabled()) {
-                    break;
-                }
-
                 if (!mDragPositive) {
                     offset -= mIsVertical ? mTrackRect.height() : mTrackRect.width();
                 }
 
+                final boolean allowBackAction = !mNavigationBarView.isFullGestureMode() ? false
+                        : (!mDragPositive ? offset < 0 && pos > touchDown
+                        : offset >= 0 && pos < touchDown);
+                // if quickscrub is active, don't trigger the back action but allow quickscrub drag
+                // action so the user can still switch apps
+                if (!mQuickScrubActive && exceededScrubTouchSlop && allowBackAction) {
+                    // schedule a back button action and skip quickscrub
+                     mBackActionScheduled = true;
+                    break;
+                }
+
+                // Do not handle quick scrub if disabled
+                if (!mNavigationBarView.isQuickScrubEnabled()) {
+                    break;
+                }
                 final boolean allowDrag = !mDragPositive
                         ? offset < 0 && pos < touchDown : offset >= 0 && pos > touchDown;
                 float scrubFraction = Utilities.clamp(Math.abs(offset) * 1f / trackSize, 0, 1);
@@ -296,18 +311,24 @@ public class QuickStepController implements GestureHelper {
                 break;
             }
             case MotionEvent.ACTION_CANCEL:
+                break;
             case MotionEvent.ACTION_UP:
-                endQuickScrub(true /* animate */);
+                if (mBackActionScheduled) {
+                    AEXUtils.sendKeycode(KeyEvent.KEYCODE_BACK);
+                } else {
+                    endQuickScrub(true /* animate */);
+                }
                 break;
         }
 
-        // Proxy motion events to launcher if not handled by quick scrub
+        // Proxy motion events to launcher if not handled by quick scrub or back action
         // Proxy motion events up/cancel that would be sent after long press on any nav button
-        if (!mQuickScrubActive && (mAllowGestureDetection || action == MotionEvent.ACTION_CANCEL
+        if (!mQuickScrubActive && !mBackActionScheduled
+                && (mAllowGestureDetection || action == MotionEvent.ACTION_CANCEL
                 || action == MotionEvent.ACTION_UP)) {
             proxyMotionEvents(event);
         }
-        return mQuickScrubActive || mQuickStepStarted || deadZoneConsumed;
+        return mQuickScrubActive || mQuickStepStarted || deadZoneConsumed || mBackActionScheduled;
     }
 
     @Override
