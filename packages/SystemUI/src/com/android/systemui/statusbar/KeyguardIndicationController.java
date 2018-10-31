@@ -859,9 +859,11 @@ public class KeyguardIndicationController {
         String batteryInfo = "";
         boolean showbatteryInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
             Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT) == 1;
-         if (showbatteryInfo) {
+        if (showbatteryInfo) {
             if (mChargingCurrent > 0) {
-                batteryInfo = batteryInfo + (mChargingCurrent / 1000) + "mA";
+                batteryInfo = batteryInfo + (mChargingCurrent < 5 ?
+                        (mChargingCurrent * 1000) : (mChargingCurrent < 4000 ?
+                        mChargingCurrent : (mChargingCurrent / 1000))) + "mA";
             }
             if (mChargingWattage > 0) {
                 batteryInfo = (batteryInfo == "" ? "" : batteryInfo + " · ") +
