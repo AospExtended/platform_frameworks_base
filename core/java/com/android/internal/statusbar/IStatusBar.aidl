@@ -155,4 +155,5 @@ oneway interface IStatusBar
      * Aex
      */
     void toggleCameraFlash();
+    void leftInLandscapeChanged(boolean isLeft);
 }
