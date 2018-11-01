@@ -226,6 +226,9 @@ public class NavigationBarFragment extends Fragment implements Callbacks {
         mContentResolver.registerContentObserver(Settings.System.getUriFor(
                 Settings.System.FULL_GESTURE_NAVBAR), false,
                 mSettingsObserver, UserHandle.USER_ALL);
+        mContentResolver.registerContentObserver(Settings.System.getUriFor(
+                Settings.System.FULL_GESTURE_NAVBAR_DT2S), false,
+                mSettingsObserver, UserHandle.USER_ALL);
 
         if (savedInstanceState != null) {
             mDisabledFlags1 = savedInstanceState.getInt(EXTRA_DISABLE_STATE, 0);
@@ -1069,18 +1072,24 @@ public class NavigationBarFragment extends Fragment implements Callbacks {
     }
 
     private void setFullGestureMode() {
-        boolean enabled = false;
+        boolean fullModeEnabled = false;
+        boolean dt2sEnabled = false;
         try {
             if (Settings.System.getIntForUser(mContentResolver,
                     Settings.System.FULL_GESTURE_NAVBAR,
                     UserHandle.USER_CURRENT) == 1) {
-                enabled = true;
+                fullModeEnabled = true;
+            }
+            if (Settings.System.getIntForUser(mContentResolver,
+                    Settings.System.FULL_GESTURE_NAVBAR_DT2S,
+                    UserHandle.USER_CURRENT) == 1) {
+                dt2sEnabled = fullModeEnabled;
             }
         } catch (Settings.SettingNotFoundException e) {
         }
-        mFullGestureMode = mOverviewProxyService.shouldShowSwipeUpUI() && enabled;
+        mFullGestureMode = mOverviewProxyService.shouldShowSwipeUpUI() && fullModeEnabled;
         if (mNavigationBarView != null) {
-            mNavigationBarView.setFullGestureMode(mFullGestureMode);
+            mNavigationBarView.setFullGestureMode(mFullGestureMode, dt2sEnabled);
         }
     }
 
