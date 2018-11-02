@@ -67,8 +67,8 @@ public class ApkSignatureVerifier {
     // multithread verification
     private static final int NUMBER_OF_CORES =
             Runtime.getRuntime().availableProcessors() >= 4 ? 4 : Runtime.getRuntime().availableProcessors() ;
+    private static final int VERIFICATION_TIME_OUT = 10000;//ms
     private static BoostFramework sPerfBoost = null;
-    private static boolean sIsPerfLockAcquired = false;
     /**
      * Verifies the provided APK and returns the certificates associated with each signer.
      *
@@ -175,6 +175,7 @@ public class ApkSignatureVerifier {
             String apkPath, boolean verifyFull)
             throws PackageParserException {
         int objectNumber = verifyFull ? NUMBER_OF_CORES : 1;
+        boolean isPerfLockAcquired = false;
         StrictJarFile[] jarFile = new StrictJarFile[objectNumber];
         final ArrayMap<String, StrictJarFile> strictJarFiles = new ArrayMap<String, StrictJarFile>();
         try {
@@ -186,12 +187,12 @@ public class ApkSignatureVerifier {
             if (sPerfBoost == null) {
                 sPerfBoost = new BoostFramework();
             }
-            if (sPerfBoost != null && !sIsPerfLockAcquired) {
+            if (sPerfBoost != null && !isPerfLockAcquired && verifyFull) {
                 //Use big enough number here to hold the perflock for entire PackageInstall session
                 sPerfBoost.perfHint(BoostFramework.VENDOR_HINT_PACKAGE_INSTALL_BOOST,
-                        null, Integer.MAX_VALUE, -1);
-                Slog.d(TAG, "Perflock acquired for PackageInstall ");
-                sIsPerfLockAcquired = true;
+                        null, VERIFICATION_TIME_OUT, -1);
+                Slog.d(TAG, " Perflock acquired for PackageInstall ");
+                isPerfLockAcquired = true;
             }
             // we still pass verify = true to ctor to collect certs, even though we're not checking
             // the whole jar.
@@ -321,10 +322,10 @@ public class ApkSignatureVerifier {
             throw new PackageParserException(INSTALL_PARSE_FAILED_NO_CERTIFICATES,
                     "Failed to collect certificates from " + apkPath, e);
         } finally {
-            if (sIsPerfLockAcquired && sPerfBoost != null) {
+            if (isPerfLockAcquired && sPerfBoost != null) {
                 sPerfBoost.perfLockRelease();
-                sIsPerfLockAcquired = false;
-                Slog.d(TAG, "Perflock released for PackageInstall ");
+                isPerfLockAcquired = false;
+                Slog.d(TAG, " Perflock released for PackageInstall ");
             }
             strictJarFiles.clear();
             Trace.traceEnd(TRACE_TAG_PACKAGE_MANAGER);
