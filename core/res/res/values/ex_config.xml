@@ -73,7 +73,7 @@
     <string-array translatable="false" name="config_custom_globalActionsList">
         <item>power</item>
         <item>restart</item>
-        <item>advanced</item>
+        <item>recovery</item>
         <item>screenshot</item>
         <item>screenrecord</item>
     </string-array>
