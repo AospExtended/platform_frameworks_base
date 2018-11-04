@@ -594,6 +594,9 @@ public class NavigationBarView extends FrameLayout implements PluginListener<Nav
     public void setNavigationIconHints(int hints) {
         if (hints == mNavigationIconHints) return;
         final boolean backAlt = (hints & StatusBarManager.NAVIGATION_HINT_BACK_ALT) != 0;
+        if (mGestureHelper != null && mGestureHelper instanceof NavigationBarGestureHelper) {
+            ((NavigationBarGestureHelper) mGestureHelper).setKeyboardShowing(backAlt);
+        }
         if ((mNavigationIconHints & StatusBarManager.NAVIGATION_HINT_BACK_ALT) != 0 && !backAlt) {
             mTransitionListener.onBackAltCleared();
         }
