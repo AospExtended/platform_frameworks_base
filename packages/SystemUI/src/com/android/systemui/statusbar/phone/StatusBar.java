@@ -5396,6 +5396,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_TILE_STYLE),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.PULSE_APPS_BLACKLIST),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5433,6 +5436,8 @@ public class StatusBar extends SystemUI implements DemoMode,
                     Settings.System.QS_TILE_STYLE))) {
                 unlockQsTileStyles();
                 updateTileStyle();
+            } else if (uri.equals(Settings.System.getUriFor(Settings.System.PULSE_APPS_BLACKLIST))) {
+                setPulseBlacklist();
             }
 
         }
@@ -5444,6 +5449,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             updateTheme();
             setQsPanelOptions();
             setFpToDismissNotifications();
+            setPulseBlacklist();
         }
     }
 
@@ -5475,6 +5481,13 @@ public class StatusBar extends SystemUI implements DemoMode,
         if (mQSPanel != null) {
             mQSPanel.updateSettings();
         }
+    }
+
+
+    private void setPulseBlacklist() {
+        String blacklist = Settings.System.getStringForUser(mContext.getContentResolver(),
+                Settings.System.PULSE_APPS_BLACKLIST, UserHandle.USER_CURRENT);
+        getMediaManager().setPulseBlacklist(blacklist);
     }
 
     private final BroadcastReceiver mBannerActionBroadcastReceiver = new BroadcastReceiver() {
