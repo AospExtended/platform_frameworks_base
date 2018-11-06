@@ -179,6 +179,7 @@ import android.view.RemoteAnimationDefinition;
 import android.view.WindowManager.LayoutParams;
 
 import com.android.internal.R;
+import com.android.internal.app.procstats.ProcessStats;
 import com.android.internal.app.ResolverActivity;
 import com.android.internal.content.ReferrerIntent;
 import com.android.internal.util.XmlUtils;
@@ -798,7 +799,8 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
         @Override
         protected Void doInBackground(Void... params) {
             String res = null;
-            if (mUxPerf != null) {
+            if (mUxPerf != null
+                    && service.getMemoryTrimLevel() < ProcessStats.ADJ_MEM_FACTOR_CRITICAL) {
                 res = mUxPerf.perfUXEngine_trigger(BoostFramework.UXE_TRIGGER);
                 if (res == null)
                     return null;
