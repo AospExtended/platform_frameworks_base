@@ -90,7 +90,7 @@ public class TunerFragment extends PreferenceFragment {
     }
 
     private boolean alwaysOnAvailable() {
-        return false;
+        return new AmbientDisplayConfiguration(getContext()).alwaysOnAvailable();
     }
 
     @Override
