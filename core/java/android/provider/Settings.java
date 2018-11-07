@@ -5378,6 +5378,9 @@ public final class Settings {
             PRIVATE_SETTINGS.add(OMNI_USE_BOTTOM_GESTURE_NAVIGATION);
             PRIVATE_SETTINGS.add(OMNI_BOTTOM_GESTURE_TRIGGER_TIMEOUT);
             PRIVATE_SETTINGS.add(OMNI_BOTTOM_GESTURE_SWIPE_LIMIT);
+            PRIVATE_SETTINGS.add(VIBRATE_ON_CONNECT);
+            PRIVATE_SETTINGS.add(VIBRATE_ON_DISCONNECT);
+            PRIVATE_SETTINGS.add(VIBRATE_ON_CALLWAITING);
         }
 
 
@@ -5503,6 +5506,9 @@ public final class Settings {
             VALIDATORS.put(OMNI_BOTTOM_GESTURE_SWIPE_LIMIT,
                     OMNI_BOTTOM_GESTURE_SWIPE_LIMIT_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
+            VALIDATORS.put(VIBRATE_ON_CONNECT, VIBRATE_ON_CONNECT_VALIDATOR);
+            VALIDATORS.put(VIBRATE_ON_DISCONNECT, VIBRATE_ON_DISCONNECT_VALIDATOR);
+            VALIDATORS.put(VIBRATE_ON_CALLWAITING, VIBRATE_ON_CALLWAITING_VALIDATOR);
         }
 
         /**
@@ -9546,6 +9552,33 @@ public final class Settings {
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 1);
 
         /**
+         * Whether the phone vibrates on call connect
+         * @hide
+         */
+        public static final String OMNI_VIBRATE_ON_CONNECT = "vibrate_on_connect";
+
+         private static final Validator OMNI_VIBRATE_ON_CONNECT_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+          /**
+         * Whether the phone vibrates on call waiting
+         * @hide
+         */
+        public static final String OMNI_VIBRATE_ON_CALLWAITING = "vibrate_on_callwaiting";
+
+         private static final Validator OMNI_VIBRATE_ON_CALLWAITING_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+          /**
+         * Whether the phone vibrates on disconnect
+         * @hide
+         */
+        public static final String OMNI_VIBRATE_ON_DISCONNECT = "vibrate_on_disconnect";
+
+         private static final Validator OMNI_VIBRATE_ON_DISCONNECT_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
          * This are the settings to be backed up.
          *
          * NOTE: Settings are backed up and restored in the order they appear
@@ -9648,6 +9681,9 @@ public final class Settings {
             HUSH_GESTURE_USED,
             STATUS_BAR_BATTERY_STYLE,
             VOLUME_LINK_NOTIFICATION,
+            VIBRATE_ON_CONNECT,
+            VIBRATE_ON_DISCONNECT,
+            VIBRATE_ON_CALLWAITING,
         };
 
         /**
