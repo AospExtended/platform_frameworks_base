@@ -4475,6 +4475,33 @@ public final class Settings {
         public static final String HEADS_UP_NOTIFICATION_SNOOZE = "heads_up_notification_snooze";
 
         /**
+         * Whether the phone vibrates on call connect
+         * @hide
+         */
+        public static final String VIBRATE_ON_CONNECT = "vibrate_on_connect";
+
+         /** @hide */
+        private static final Validator VIBRATE_ON_CONNECT_VALIDATOR = BOOLEAN_VALIDATOR;
+
+         /**
+         * Whether the phone vibrates on disconnect
+         * @hide
+         */
+        public static final String VIBRATE_ON_DISCONNECT = "vibrate_on_disconnect";
+
+         /** @hide */
+        private static final Validator VIBRATE_ON_DISCONNECT_VALIDATOR = BOOLEAN_VALIDATOR;
+
+         /**
+         * Whether the phone vibrates on call waiting
+         * @hide
+         */
+        public static final String VIBRATE_ON_CALLWAITING = "vibrate_on_callwaiting";
+
+         /** @hide */
+        private static final Validator VIBRATE_ON_CALLWAITING_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * @hide
          */
         public static final String ROAMING_INDICATOR_ICON = "roaming_indicator_icon";
@@ -5213,7 +5240,10 @@ public final class Settings {
             OMNI_USE_BOTTOM_GESTURE_NAVIGATION,
             OMNI_BOTTOM_GESTURE_TRIGGER_TIMEOUT,
             OMNI_BOTTOM_GESTURE_SWIPE_LIMIT,
-            NOTIFICATION_LIGHT_PULSE
+            NOTIFICATION_LIGHT_PULSE,
+            VIBRATE_ON_CONNECT,
+            VIBRATE_ON_DISCONNECT,
+            VIBRATE_ON_CALLWAITING
         };
 
         /**
@@ -5378,6 +5408,9 @@ public final class Settings {
             PRIVATE_SETTINGS.add(OMNI_USE_BOTTOM_GESTURE_NAVIGATION);
             PRIVATE_SETTINGS.add(OMNI_BOTTOM_GESTURE_TRIGGER_TIMEOUT);
             PRIVATE_SETTINGS.add(OMNI_BOTTOM_GESTURE_SWIPE_LIMIT);
+            PRIVATE_SETTINGS.add(VIBRATE_ON_CONNECT);
+            PRIVATE_SETTINGS.add(VIBRATE_ON_DISCONNECT);
+            PRIVATE_SETTINGS.add(VIBRATE_ON_CALLWAITING);
         }
 
 
@@ -5503,7 +5536,10 @@ public final class Settings {
             VALIDATORS.put(OMNI_BOTTOM_GESTURE_SWIPE_LIMIT,
                     OMNI_BOTTOM_GESTURE_SWIPE_LIMIT_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
-        }
+            VALIDATORS.put(VIBRATE_ON_CONNECT, VIBRATE_ON_CONNECT_VALIDATOR);
+            VALIDATORS.put(VIBRATE_ON_DISCONNECT, VIBRATE_ON_DISCONNECT_VALIDATOR);
+            VALIDATORS.put(VIBRATE_ON_CALLWAITING, VIBRATE_ON_CALLWAITING_VALIDATOR); 
+       }
 
         /**
          * These entries are considered common between the personal and the managed profile,
