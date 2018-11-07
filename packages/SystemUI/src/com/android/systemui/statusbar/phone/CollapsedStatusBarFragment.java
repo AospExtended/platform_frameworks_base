@@ -94,6 +94,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private int mShowCarrierLabel;
     private boolean mHasCarrierLabel;
 
+    // AICP additions
+    private View mBatteryBars[] = new View[2];
+
     private class SettingsObserver extends ContentObserver {
         SettingsObserver(Handler handler) {
             super(handler);
@@ -176,6 +179,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mAEXLogo = (ImageView)mStatusBar.findViewById(R.id.status_bar_logo);
         Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mAEXLogo);
         mCustomCarrierLabel = mStatusBar.findViewById(R.id.statusbar_carrier_text);
+        mBatteryBars[0] = mStatusBar.findViewById(R.id.battery_bar);
+        mBatteryBars[1] = mStatusBar.findViewById(R.id.battery_bar_1);
         showSystemIconArea(false);
         showClock(false);
         initEmergencyCryptkeeperText();
@@ -327,10 +332,16 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     public void hideSystemIconArea(boolean animate) {
         animateHide(mSystemIconArea, animate);
+        for (View batteryBar: mBatteryBars) {
+            animateHide(batteryBar, animate);
+        }
     }
 
     public void showSystemIconArea(boolean animate) {
         animateShow(mSystemIconArea, animate);
+        for (View batteryBar: mBatteryBars) {
+            animateShow(batteryBar, animate);
+        }
     }
 
     public void hideClock(boolean animate) {
