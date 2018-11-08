@@ -606,12 +606,15 @@ class GlobalScreenshot {
      */
     private void takeScreenshot(Runnable finisher, boolean statusBarVisible, boolean navBarVisible,
             Rect crop) {
+
+        mDisplay.getRealMetrics(mDisplayMetrics);
+        int displayHeight = mDisplayMetrics.heightPixels;
+        int displayWidth = mDisplayMetrics.widthPixels;
+        Rect displayRect = new Rect(0, 0, displayWidth, displayHeight);
         int rot = mDisplay.getRotation();
-        int width = crop.width();
-        int height = crop.height();
 
         // Take the screenshot
-        mScreenBitmap = SurfaceControl.screenshot(crop, width, height, rot);
+        mScreenBitmap = SurfaceControl.screenshot(displayRect, displayWidth, displayHeight, rot);
         if (mScreenBitmap == null) {
             notifyScreenshotError(mContext, mNotificationManager,
                     R.string.screenshot_failed_to_capture_text);
@@ -619,19 +622,29 @@ class GlobalScreenshot {
             return;
         }
 
+        if (crop != null) {
+            // Crop the screenshot to selected region
+            Bitmap swBitmap = mScreenBitmap.copy(Bitmap.Config.ARGB_8888, true);
+            Bitmap cropped = Bitmap.createBitmap(swBitmap, Math.max(0, crop.left), Math.max(0, crop.top),
+                    crop.width(), crop.height());
+            swBitmap.recycle();
+            mScreenBitmap.recycle();
+            mScreenBitmap = cropped;
+        }
+
         // Optimizations
         mScreenBitmap.setHasAlpha(false);
         mScreenBitmap.prepareToDraw();
 
         // Start the post-screenshot animation
-        startAnimation(finisher, mDisplayMetrics.widthPixels, mDisplayMetrics.heightPixels,
+        startAnimation(finisher, displayWidth, displayHeight,
                 statusBarVisible, navBarVisible);
     }
 
     void takeScreenshot(Runnable finisher, boolean statusBarVisible, boolean navBarVisible) {
         mDisplay.getRealMetrics(mDisplayMetrics);
         takeScreenshot(finisher, statusBarVisible, navBarVisible,
-                new Rect(0, 0, mDisplayMetrics.widthPixels, mDisplayMetrics.heightPixels));
+                null);
     }
 
     /**
@@ -655,16 +668,14 @@ class GlobalScreenshot {
                         view.setVisibility(View.GONE);
                         mWindowManager.removeView(mScreenshotLayout);
                         final Rect rect = view.getSelectionRect();
-                        if (rect != null) {
-                            if (rect.left >= 0 && rect.top >= 0 && rect.width() != 0 && rect.height() != 0) {
-                                // Need mScreenshotLayout to handle it after the view disappears
-                                mScreenshotLayout.post(new Runnable() {
-                                    public void run() {
-                                        takeScreenshot(finisher, statusBarVisible, navBarVisible,
-                                                rect);
-                                    }
-                                });
-                            }
+                        if (rect != null && !rect.isEmpty()) {
+                            // Need mScreenshotLayout to handle it after the view disappears
+                            mScreenshotLayout.post(new Runnable() {
+                                public void run() {
+                                    takeScreenshot(finisher, statusBarVisible, navBarVisible,
+                                            rect);
+                                }
+                            });
                         }
 
                         view.stopSelection();
