@@ -4040,4 +4040,19 @@ public class WifiManager {
         }
     }
 
+    /**
+     * Set Latency level
+     *
+     * @param level: see external doc
+     *
+     * @return: 0 if success and -1 on failure.
+     * @hide
+     */
+    public int setLatencyLevel(int level) {
+        try {
+             return mService.setLatencyLevel(level, mContext.getOpPackageName());
+        } catch (RemoteException e) {
+             throw e.rethrowFromSystemServer();
+        }
+    }
 }
