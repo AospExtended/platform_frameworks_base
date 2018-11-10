@@ -4604,6 +4604,12 @@ public final class Settings {
         public static final int SYSTEM_THEME_STYLE_CHOCOLATE = 5;
 
         /**
+         * Whether to use icon pack for Recents
+         * @hide
+         */
+        public static final String RECENTS_ICON_PACK = "recents_icon_pack";
+
+        /**
          * Select various accents to go along with system themes
          *
          * @hide
