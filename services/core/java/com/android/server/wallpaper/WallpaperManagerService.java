@@ -38,6 +38,7 @@ import android.app.WallpaperInfo;
 import android.app.WallpaperManager;
 import android.app.admin.DevicePolicyManager;
 import android.app.backup.WallpaperBackupHelper;
+import android.app.UiModeManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -50,6 +51,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
 import android.content.pm.UserInfo;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.graphics.Bitmap;
@@ -129,6 +131,9 @@ public class WallpaperManagerService extends IWallpaperManager.Stub
     static final String TAG = "WallpaperManagerService";
     static final boolean DEBUG = false;
     static final boolean DEBUG_LIVE = DEBUG || true;
+
+    /** Whether to force dark theme if Configuration.UI_MODE_NIGHT_YES. */
+    private static final boolean DARK_THEME_IN_NIGHT_MODE = true;
 
     public static class Lifecycle extends SystemService {
         private IWallpaperManagerService mService;
@@ -385,8 +390,13 @@ public class WallpaperManagerService extends IWallpaperManager.Stub
         }
 
         boolean result = true;
-        boolean supportDarkTheme =
+        final Configuration config = mContext.getResources().getConfiguration();
+        final boolean nightModeWantsDarkTheme = DARK_THEME_IN_NIGHT_MODE
+                && (config.uiMode & Configuration.UI_MODE_NIGHT_MASK)
+                    == Configuration.UI_MODE_NIGHT_YES;
+        boolean wallpaperWantsDarkTheme =
                 (colors.getColorHints() & WallpaperColors.HINT_SUPPORTS_DARK_THEME) != 0;
+        boolean supportDarkTheme = wallpaperWantsDarkTheme || nightModeWantsDarkTheme;
         switch (themeMode) {
             case Settings.System.SYSTEM_THEME_STYLE_WALLPAPER:
                 if (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_LIGHT) {
@@ -598,8 +608,14 @@ public class WallpaperManagerService extends IWallpaperManager.Stub
             //return null;
         }
 
+        final Configuration config = mContext.getResources().getConfiguration();
+        final boolean nightModeWantsDarkTheme = DARK_THEME_IN_NIGHT_MODE
+                && (config.uiMode & Configuration.UI_MODE_NIGHT_MASK)
+                    == Configuration.UI_MODE_NIGHT_YES;
         int colorHints = colors.getColorHints();
-        boolean supportDarkTheme = (colorHints & WallpaperColors.HINT_SUPPORTS_DARK_THEME) != 0;
+        boolean wallpaperWantsDarkTheme =
+                (colorHints & WallpaperColors.HINT_SUPPORTS_DARK_THEME) != 0;
+        boolean supportDarkTheme = wallpaperWantsDarkTheme || nightModeWantsDarkTheme;
         if (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_WALLPAPER ||
                 (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_LIGHT && !supportDarkTheme) ||
                 ((mThemeMode == Settings.System.SYSTEM_THEME_STYLE_DARK && supportDarkTheme) || (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_BLACK && supportDarkTheme) ||
