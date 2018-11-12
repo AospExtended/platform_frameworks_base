@@ -386,6 +386,14 @@ public class BrightnessController implements ToggleSlider.Listener {
             mSliderAnimator.cancel();
         }
 
+        setBrightness(tracking, stopTracking, value);
+    }
+
+    public void setBrightnessFromSliderButtons(int value) {
+        setBrightness(false, true, value);
+    }
+
+    private void setBrightness(boolean tracking, boolean stopTracking, int value) {
         final float minBacklight;
         final float maxBacklight;
         final int metric;
