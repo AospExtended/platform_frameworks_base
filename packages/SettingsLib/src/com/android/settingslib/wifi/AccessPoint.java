@@ -140,6 +140,11 @@ public class AccessPoint implements Comparable<AccessPoint> {
      */
     private final Map<String, TimestampedScoredNetwork> mScoredNetworkCache = new HashMap<>();
 
+    /**
+     * Access point supports both AKMs SAE and PSK
+     */
+    private boolean apSupportsSaeAndPsk;
+
     static final String KEY_NETWORKINFO = "key_networkinfo";
     static final String KEY_WIFIINFO = "key_wifiinfo";
     static final String KEY_SSID = "key_ssid";
@@ -313,6 +318,7 @@ public class AccessPoint implements Comparable<AccessPoint> {
         ssid = firstResult.SSID;
         bssid = firstResult.BSSID;
         security = getSecurity(firstResult);
+        apSupportsSaeAndPsk = checkForSaeAndPsk(firstResult);
         if (security == SECURITY_PSK) {
             pskType = getPskType(firstResult);
         }
@@ -624,7 +630,8 @@ public class AccessPoint implements Comparable<AccessPoint> {
             return ssid.equals(removeDoubleQuotes(config.SSID)) && config.FQDN.equals(mConfig.FQDN);
         } else {
             return ssid.equals(removeDoubleQuotes(config.SSID))
-                    && security == getSecurity(config)
+                    && (security == getSecurity(config)
+                    || (apSupportsSaeAndPsk && (getSecurity(config) == SECURITY_PSK)))
                     && (mConfig == null || mConfig.shared == config.shared);
         }
     }
@@ -1385,6 +1392,14 @@ public class AccessPoint implements Comparable<AccessPoint> {
             return SECURITY_EAP;
         }
         return SECURITY_NONE;
+    }
+
+    private static boolean checkForSaeAndPsk(ScanResult result) {
+        if (result.capabilities.contains("SAE")
+            && result.capabilities.contains("PSK"))
+            return true;
+        else
+            return false;
     }
 
     static int getSecurity(WifiConfiguration config) {
