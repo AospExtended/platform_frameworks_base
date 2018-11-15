@@ -5808,7 +5808,12 @@ public final class ActivityThread extends ClientTransactionHandler {
                 mResourcesManager.getConfiguration().getLocales());
 
         if (!Process.isIsolated()) {
-            ux_perf = new BoostFramework(appContext);
+            final int old_mask = StrictMode.allowThreadDiskWritesMask();
+            try {
+                ux_perf = new BoostFramework(appContext);
+            } finally {
+                 StrictMode.setThreadPolicyMask(old_mask);
+            }
         }
 
         if (!Process.isIsolated()) {
