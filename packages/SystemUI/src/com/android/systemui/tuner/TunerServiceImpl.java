@@ -281,7 +281,7 @@ public class TunerServiceImpl extends TunerService {
 
     private void reloadAll() {
         for (String key : mTunableLookup.keySet()) {
-           if (ArrayUtils.contains(RESET_EXCEPTION_LIST, key))
+           if (ArrayUtils.contains(RESET_EXCEPTION_LIST, key) || key.startsWith("system:"))
                 continue;
             String value = getValue(key);
             for (Tunable tunable : mTunableLookup.get(key)) {
