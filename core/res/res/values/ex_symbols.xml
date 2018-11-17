@@ -117,4 +117,8 @@
 
     <!-- Pocket bridge -->
     <java-symbol type="string" name="config_pocketBridgeSysfsInpocket" />
+
+    <!-- Whether device has a physical display cutout -->
+    <java-symbol type="bool" name="config_physicalDisplayCutout" />
+
 </resources>
