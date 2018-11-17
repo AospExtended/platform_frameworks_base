@@ -121,4 +121,7 @@
 	
     <string name="config_pocketBridgeSysfsInpocket"></string>
 
+    <!-- Whether device has a physical display cutout -->
+    <bool name="config_physicalDisplayCutout">false</bool>
+
 </resources>
