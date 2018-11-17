@@ -271,6 +271,5 @@
 
   <!-- Whether device has a physical display cutout -->
   <java-symbol type="bool" name="config_physicalDisplayCutout" />
-
   <java-symbol type="color" name="bootleg_accent_gradient_end_color" />
 </resources>
