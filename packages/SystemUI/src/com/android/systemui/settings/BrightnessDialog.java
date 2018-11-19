@@ -17,6 +17,8 @@
 package com.android.systemui.settings;
 
 import static com.android.settingslib.display.BrightnessUtils.GAMMA_SPACE_MAX;
+import static com.android.systemui.qs.QSPanel.QS_SHOW_AUTO_BRIGHTNESS_BUTTON;
+import static com.android.systemui.qs.QSPanel.QS_SHOW_BRIGHTNESS_SIDE_BUTTONS;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -37,13 +39,16 @@ import android.provider.Settings;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.systemui.Dependency;
 import com.android.systemui.R;
 import com.android.systemui.broadcast.BroadcastDispatcher;
+import com.android.systemui.tuner.TunerService;
+import com.android.systemui.tuner.TunerService.Tunable;
 
 import javax.inject.Inject;
 
 /** A dialog that provides controls for adjusting the screen brightness. */
-public class BrightnessDialog extends Activity {
+public class BrightnessDialog extends Activity implements Tunable {
 
     private BrightnessController mBrightnessController;
     private final BroadcastDispatcher mBroadcastDispatcher;
@@ -53,6 +58,13 @@ public class BrightnessDialog extends Activity {
         mBroadcastDispatcher = broadcastDispatcher;
     }
 
+
+    private ImageView mAutoBrightnessIcon;
+    private ImageView mMaxBrightness;
+    private ImageView mMinBrightness;
+
+    private boolean mShowAutoBrightnessButton;
+    private boolean mShowBrightnessSideButtons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,13 +85,13 @@ public class BrightnessDialog extends Activity {
                 R.layout.quick_settings_brightness_dialog, null);
         setContentView(brightnessView);
 
-        final ImageView icon = findViewById(R.id.brightness_icon);
+        mAutoBrightnessIcon = findViewById(R.id.brightness_icon);
         final ToggleSliderView slider = findViewById(R.id.brightness_slider);
 
-        mBrightnessController = new BrightnessController(this, icon, slider, mBroadcastDispatcher);
+        mBrightnessController = new BrightnessController(this, mAutoBrightnessIcon, slider, mBroadcastDispatcher);
 
-        ImageView minBrightness = brightnessView.findViewById(R.id.brightness_left);
-        minBrightness.setOnClickListener(new View.OnClickListener() {
+        mMinBrightness = brightnessView.findViewById(R.id.brightness_left);
+        mMinBrightness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int currentValue = Settings.System.getIntForUser(resolver,
@@ -93,7 +105,7 @@ public class BrightnessDialog extends Activity {
             }
         });
 
-        minBrightness.setOnLongClickListener(new View.OnLongClickListener() {
+        mMinBrightness.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 setBrightnessMinMax(true);
@@ -102,8 +114,8 @@ public class BrightnessDialog extends Activity {
             }
         });
 
-        ImageView maxBrightness = brightnessView.findViewById(R.id.brightness_right);
-        maxBrightness.setOnClickListener(new View.OnClickListener() {
+        mMaxBrightness = brightnessView.findViewById(R.id.brightness_right);
+        mMaxBrightness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int currentValue = Settings.System.getIntForUser(resolver,
@@ -117,7 +129,7 @@ public class BrightnessDialog extends Activity {
             }
         });
 
-        maxBrightness.setOnLongClickListener(new View.OnLongClickListener() {
+        mMaxBrightness.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 setBrightnessMinMax(false);
@@ -136,6 +148,9 @@ public class BrightnessDialog extends Activity {
         super.onStart();
         mBrightnessController.registerCallbacks();
         MetricsLogger.visible(this, MetricsEvent.BRIGHTNESS_DIALOG);
+
+        Dependency.get(TunerService.class).addTunable(this, QS_SHOW_AUTO_BRIGHTNESS_BUTTON);
+        Dependency.get(TunerService.class).addTunable(this, QS_SHOW_BRIGHTNESS_SIDE_BUTTONS);
     }
 
     @Override
@@ -143,6 +158,8 @@ public class BrightnessDialog extends Activity {
         super.onStop();
         MetricsLogger.hidden(this, MetricsEvent.BRIGHTNESS_DIALOG);
         mBrightnessController.unregisterCallbacks();
+
+        Dependency.get(TunerService.class).removeTunable(this);
     }
 
     @Override
@@ -162,6 +179,23 @@ public class BrightnessDialog extends Activity {
         // If the BrightnessDialog loses focus, dismiss it.
         if (!hasFocus) {
             finish();
+        }
+    }
+
+    @Override
+    public void onTuningChanged(String key, String newValue) {
+        if (QS_SHOW_AUTO_BRIGHTNESS_BUTTON.equals(key)) {
+            if (mAutoBrightnessIcon != null) {
+                mShowAutoBrightnessButton = (newValue == null || Integer.parseInt(newValue) == 0) ? false : true;
+                mAutoBrightnessIcon.setVisibility(!mShowAutoBrightnessButton ? View.GONE : View.VISIBLE);
+            }
+        }
+        if (QS_SHOW_BRIGHTNESS_SIDE_BUTTONS.equals(key)) {
+            if (mMaxBrightness != null || mMinBrightness != null) {
+                mShowBrightnessSideButtons = (newValue == null || Integer.parseInt(newValue) == 0) ? false : true;
+                mMaxBrightness.setVisibility(!mShowBrightnessSideButtons ? View.GONE : View.VISIBLE);
+                mMinBrightness.setVisibility(!mShowBrightnessSideButtons ? View.GONE : View.VISIBLE);
+            }
         }
     }
 }
