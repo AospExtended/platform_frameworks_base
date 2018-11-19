@@ -202,12 +202,13 @@ public class Build {
          * The build number override from an OEM vendor prop.
          * In return, this should retarget the default build number.
          */
-        public static final String BUILD_NUMBER_OVERRIDE = getString("ro.vendor.override.build_display");
+        public static final String BUILD_NUMBER_OVERRIDE = SystemProperties.get("ro.vendor.override.build_display", "");
+        
         /**
          * The security patch level override from an OEM vendor prop.
          * In return, this should retarget the default patch level.
          */
-        public static final String SECURITY_PATCH_OVERRIDE = getString("ro.vendor.override.security_patch");
+        public static final String SECURITY_PATCH_OVERRIDE = SystemProperties.get("ro.vendor.override.security_patch", "");
     }
 
     /** Various version strings. */
