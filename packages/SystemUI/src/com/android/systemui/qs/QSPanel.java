@@ -89,6 +89,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
     public static final String QS_SHOW_BRIGHTNESS = "qs_show_brightness";
     public static final String QS_SHOW_HEADER = "qs_show_header";
+    public static final String QS_SHOW_AUTO_BRIGHTNESS_BUTTON = "qs_show_auto_brightness_button";
+    public static final String QS_SHOW_BRIGHTNESS_SIDE_BUTTONS = "qs_show_brightness_side_buttons";
     public static final String QS_BRIGHTNESS_POSITION_BOTTOM = "qs_brightness_position_bottom";
 
     private static final String TAG = "QSPanel";
@@ -96,9 +98,14 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     protected final Context mContext;
     protected final ArrayList<TileRecord> mRecords = new ArrayList<>();
     protected final View mBrightnessView;
+    protected final ImageView mAutoBrightnessIcon;
+
     private final H mHandler = new H();
     private final MetricsLogger mMetricsLogger = Dependency.get(MetricsLogger.class);
     private final QSTileRevealController mQsTileRevealController;
+
+    private ImageView mMaxBrightness;
+    private ImageView mMinBrightness;
 
     protected boolean mExpanded;
     protected boolean mListening;
@@ -111,6 +118,9 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     protected QSSecurityFooter mFooter;
     private PageIndicator mFooterPageIndicator;
     private boolean mGridContentVisible = true;
+
+    private boolean mShowAutoBrightnessButton = false;
+    private boolean mShowBrightnessSideButtons = false;
 
     protected QSTileLayout mTileLayout;
 
@@ -165,13 +175,13 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
         updateResources();
 
-        ImageView brightnessIcon = (ImageView) mBrightnessView.findViewById(R.id.brightness_icon);
-        brightnessIcon.setVisibility(View.VISIBLE);
+        mAutoBrightnessIcon = (ImageView) mBrightnessView.findViewById(R.id.brightness_icon);
+
         mBrightnessController = new BrightnessController(context,
-                brightnessIcon,
+                mAutoBrightnessIcon,
                 findViewById(R.id.brightness_slider));
 
-        ImageView mMinBrightness = mBrightnessView.findViewById(R.id.brightness_left);
+        mMinBrightness = mBrightnessView.findViewById(R.id.brightness_left);
         mMinBrightness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -194,7 +204,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
             }
         });
 
-        ImageView mMaxBrightness = mBrightnessView.findViewById(R.id.brightness_right);
+        mMaxBrightness = mBrightnessView.findViewById(R.id.brightness_right);
         mMaxBrightness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -263,7 +273,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         super.onAttachedToWindow();
         final TunerService tunerService = Dependency.get(TunerService.class);
         tunerService.addTunable(this, QS_SHOW_BRIGHTNESS);
-
+        tunerService.addTunable(this, QS_SHOW_AUTO_BRIGHTNESS_BUTTON);
+        tunerService.addTunable(this, QS_SHOW_BRIGHTNESS_SIDE_BUTTONS);
         tunerService.addTunable(this, QS_BRIGHTNESS_POSITION_BOTTOM);
         if (mHost != null) {
             setTiles(mHost.getTiles());
@@ -313,7 +324,19 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
                 addView(mBrightnessView, 1);
             }
         }
+        if (QS_SHOW_AUTO_BRIGHTNESS_BUTTON.equals(key)) {
+            mShowAutoBrightnessButton = (newValue == null || Integer.parseInt(newValue) == 0)
+                    ? false : true;
+            mAutoBrightnessIcon.setVisibility(mShowAutoBrightnessButton ? View.VISIBLE : View.GONE);
+        }
+        if (QS_SHOW_BRIGHTNESS_SIDE_BUTTONS.equals(key)) {
+            mShowBrightnessSideButtons = (newValue == null || Integer.parseInt(newValue) == 0)
+                    ? false : true;
+            mMaxBrightness.setVisibility(mShowBrightnessSideButtons ? View.VISIBLE : View.GONE);
+            mMinBrightness.setVisibility(mShowBrightnessSideButtons ? View.VISIBLE : View.GONE);
+        }
     }
+
 
     private void updateViewVisibilityForTuningValue(View view, @Nullable String newValue) {
         view.setVisibility(TunerService.parseIntegerSwitch(newValue, true) ? VISIBLE : GONE);
