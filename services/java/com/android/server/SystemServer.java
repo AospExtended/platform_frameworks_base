@@ -235,6 +235,8 @@ public final class SystemServer {
             "com.android.internal.car.CarServiceHelperService";
     private static final String PERF_SERVICE_CLASS =
             "com.qualcomm.qti.PerfService";
+    private static final String FONT_SERVICE_CLASS =
+            "com.android.server.FontService$Lifecycle";
 
     private static final String PERSISTENT_DATA_BLOCK_PROP = "ro.frp.pst";
 
@@ -841,6 +843,11 @@ public final class SystemServer {
             mActivityManagerService.installSystemProviders();
             // Now that SettingsProvider is ready, reactivate SQLiteCompatibilityWalFlags
             SQLiteCompatibilityWalFlags.reset();
+            traceEnd();
+
+            // Manages fonts
+            traceBeginAndSlog("StartFontService");
+            mSystemServiceManager.startService(FONT_SERVICE_CLASS);
             traceEnd();
 
             // Records errors and logs, for example wtf()

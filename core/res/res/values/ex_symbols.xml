@@ -176,4 +176,7 @@
 
     <!-- Notification app name tint -->
     <java-symbol type="bool" name="config_allowNotificationAppNameTextTinting" />
+
+    <!-- System fonts -->
+    <java-symbol type="array" name="config_fontPackages" />
 </resources>
