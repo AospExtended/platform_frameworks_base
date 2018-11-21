@@ -208,7 +208,6 @@ import java.util.List;
 import java.util.Objects;
 import android.util.BoostFramework;
 
-import android.os.AsyncTask;
 import android.util.BoostFramework;
 
 /**
@@ -793,30 +792,6 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
      */
     void setWillCloseOrEnterPip(boolean willCloseOrEnterPip) {
         getWindowContainerController().setWillCloseOrEnterPip(willCloseOrEnterPip);
-    }
-
-    private class PreferredAppsTask extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected Void doInBackground(Void... params) {
-            String res = null;
-            if (mUxPerf != null
-                    && service.getMemoryTrimLevel() < ProcessStats.ADJ_MEM_FACTOR_CRITICAL) {
-                res = mUxPerf.perfUXEngine_trigger(BoostFramework.UXE_TRIGGER);
-                if (res == null)
-                    return null;
-                String[] p_apps = res.split("/");
-                if (p_apps.length != 0) {
-                    ArrayList<String> apps_l = new ArrayList(Arrays.asList(p_apps));
-                    Bundle bParams = new Bundle();
-                    if (bParams == null)
-                        return null;
-                    bParams.putStringArrayList("start_empty_apps", apps_l);
-                    service.startActivityAsUserEmpty(null, null, intent, null,
-                                  null, null, 0, 0, null, bParams, 0);
-                }
-            }
-            return null;
-        }
     }
 
     static class Token extends IApplicationToken.Stub {
@@ -1892,9 +1867,9 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
                 service.mHomeProcess = app;
             }
             try {
-                new PreferredAppsTask().execute();
+                mStackSupervisor.new PreferredAppsTask().execute();
             } catch (Exception e) {
-                Log.v (TAG, "Exception: " + e);
+                Slog.v (TAG, "Exception: " + e);
             }
         }
         if (nowVisible) {
