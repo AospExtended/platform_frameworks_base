@@ -100,7 +100,7 @@ public class DoubleTapHelper {
                                     event.getY() - mActivationY);
                         }
                         if (withinDoubleTapSlop) {
-                            if (!mDoubleTapListener.onDoubleTap(event)) {
+                            if (!mDoubleTapListener.onDoubleTap()) {
                                 return false;
                             }
                         } else {
@@ -159,7 +159,7 @@ public class DoubleTapHelper {
 
     @FunctionalInterface
     public interface DoubleTapListener {
-        boolean onDoubleTap(MotionEvent event);
+        boolean onDoubleTap();
     }
 
     @FunctionalInterface
