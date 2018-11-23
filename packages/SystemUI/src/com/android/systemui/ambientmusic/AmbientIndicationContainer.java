@@ -123,6 +123,8 @@ public class AmbientIndicationContainer extends AutoReinflateContainer {
 
     public void setIndication(MediaMetadata mediaMetaData, String notificationText) {
         CharSequence charSequence = null;
+        mLengthInfo = null;
+        mInfoToSet = null;
         if (mediaMetaData != null) {
             CharSequence artist = mediaMetaData.getText(MediaMetadata.METADATA_KEY_ARTIST);
             CharSequence album = mediaMetaData.getText(MediaMetadata.METADATA_KEY_ALBUM);
@@ -146,7 +148,6 @@ public class AmbientIndicationContainer extends AutoReinflateContainer {
             setTickerMarquee(true, true);
         }
 
-        mInfoToSet = null;
         if (!TextUtils.isEmpty(charSequence)) {
             mInfoToSet = charSequence.toString();
         } else if (!TextUtils.isEmpty(notificationText)) {
@@ -156,13 +157,8 @@ public class AmbientIndicationContainer extends AutoReinflateContainer {
 
         mInfoAvailable = mInfoToSet != null;
         if (mInfoAvailable) {
-            mText.setText(mInfoToSet);
-            mTrackLenght.setText(mLengthInfo);
             mMediaMetaData = mediaMetaData;
             mMediaText = notificationText;
-            if (mDozing) {
-                mAmbientIndication.setVisibility(View.VISIBLE);
-            }
             boolean isAnotherTrack = mInfoAvailable
                     && (TextUtils.isEmpty(mLastInfo) || (!TextUtils.isEmpty(mLastInfo) && !mLastInfo.equals(mInfoToSet)));
             if (mStatusBar != null && isAnotherTrack) {
@@ -172,6 +168,9 @@ public class AmbientIndicationContainer extends AutoReinflateContainer {
                 mLastInfo = mInfoToSet;
             }
         }
+        mText.setText(mInfoToSet);
+        mTrackLenght.setText(mLengthInfo);
+        mAmbientIndication.setVisibility(mDozing && mInfoAvailable ? View.VISIBLE : View.INVISIBLE);
     }
 
     public View getIndication() {
