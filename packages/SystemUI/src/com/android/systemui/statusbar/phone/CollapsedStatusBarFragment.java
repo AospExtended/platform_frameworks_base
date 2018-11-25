@@ -39,6 +39,7 @@ import com.android.systemui.R;
 import com.android.systemui.SysUiServiceProvider;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.phone.StatusBarIconController.DarkIconManager;
+import com.android.systemui.statusbar.policy.Clock;
 import com.android.systemui.statusbar.policy.DarkIconDispatcher;
 import com.android.systemui.statusbar.policy.EncryptionHelper;
 import com.android.systemui.statusbar.policy.KeyguardMonitor;
@@ -307,6 +308,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
      * Animate a view to INVISIBLE or GONE
      */
     private void animateHiddenState(final View v, int state, boolean animate) {
+        if (v instanceof Clock && !((Clock)v).isClockVisible()) {
+            return;
+        }
         v.animate().cancel();
         if (!animate) {
             v.setAlpha(0f);
@@ -333,6 +337,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
      * Shows a view, and synchronizes the animation with Keyguard exit animations, if applicable.
      */
     private void animateShow(View v, boolean animate) {
+        if (v instanceof Clock && !((Clock)v).isClockVisible()) {
+            return;
+        }
         v.animate().cancel();
         v.setVisibility(View.VISIBLE);
         if (!animate) {
