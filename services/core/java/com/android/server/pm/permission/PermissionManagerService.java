@@ -36,7 +36,6 @@ import android.content.pm.PackageParser;
 import android.content.pm.PermissionGroupInfo;
 import android.content.pm.PermissionInfo;
 import android.content.pm.PackageParser.Package;
-import android.content.pm.Signature;
 import android.metrics.LogMaker;
 import android.os.Binder;
 import android.os.Build;
@@ -57,7 +56,6 @@ import android.util.Log;
 import android.util.Slog;
 import android.util.SparseArray;
 
-import com.android.internal.R;
 import com.android.internal.annotations.GuardedBy;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
@@ -131,8 +129,6 @@ public class PermissionManagerService {
     private final Context mContext;
     private final MetricsLogger mMetricsLogger = new MetricsLogger();
 
-    private final Signature[] mVendorPlatformSignatures;
-
     /** Internal storage for permissions and related settings */
     @GuardedBy("mLock")
     private final PermissionSettings mSettings;
@@ -163,9 +159,6 @@ public class PermissionManagerService {
         SystemConfig systemConfig = SystemConfig.getInstance();
         mSystemPermissions = systemConfig.getSystemPermissions();
         mGlobalGids = systemConfig.getGlobalGids();
-
-        mVendorPlatformSignatures = PackageManagerServiceUtils.createSignatures(
-               context.getResources().getStringArray(R.array.config_vendorPlatformSignatures));
 
         // propagate permission configuration
         final ArrayMap<String, SystemConfig.PermissionEntry> permConfig =
@@ -1100,7 +1093,6 @@ public class PermissionManagerService {
         //     - or its signing certificate is a previous signing certificate of the defining
         //       package, and the defining package still trusts the old certificate for permissions
         //     - or it shares the above relationships with the system package
-        //     - or its signing certificate is from the original vendor
         boolean allowed =
                 pkg.mSigningDetails.hasAncestorOrSelf(
                         bp.getSourcePackageSetting().getSigningDetails())
@@ -1110,9 +1102,7 @@ public class PermissionManagerService {
                 || pkg.mSigningDetails.hasAncestorOrSelf(systemPackage.mSigningDetails)
                 || systemPackage.mSigningDetails.checkCapability(
                         pkg.mSigningDetails,
-                        PackageParser.SigningDetails.CertCapabilities.PERMISSION)
-                || (PackageManagerServiceUtils.compareSignatures(mVendorPlatformSignatures,
-                        pkg.mSigningDetails.signatures) == PackageManager.SIGNATURE_MATCH);
+                        PackageParser.SigningDetails.CertCapabilities.PERMISSION);
         if (!allowed && (privilegedPermission || oemPermission)) {
             if (pkg.isSystem()) {
                 // For updated system applications, a privileged/oem permission
