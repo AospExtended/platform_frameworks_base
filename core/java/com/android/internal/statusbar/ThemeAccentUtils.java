@@ -24,6 +24,16 @@ import android.util.Log;
 public class ThemeAccentUtils {
     public static final String TAG = "ThemeAccentUtils";
 
+    // Vendor overlays to ignore
+    public static final String[] BLACKLIST_VENDOR_OVERLAYS = {
+        "SysuiDarkTheme",
+        "Pixel",
+        "DisplayCutoutEmulationCorner",
+        "DisplayCutoutEmulationDouble",
+        "DisplayCutoutEmulationNarrow",
+        "DisplayCutoutEmulationWide",
+    };
+
     private static final String[] ACCENTS = {
         "default_accent", // 0
         "com.accents.red", // 1
