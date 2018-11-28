@@ -33,7 +33,10 @@ import android.net.Uri;
 import android.opengl.Matrix;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.PowerManager;
+import android.os.ServiceManager;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.provider.Settings.Secure;
 import android.util.MathUtils;
 import android.util.Slog;
@@ -94,6 +97,14 @@ public final class ColorDisplayService extends SystemService
     private Boolean mIsActivated;
     private AutoMode mAutoMode;
 
+    //Night Mode custom brightness
+    private int mNightCustomAdaptiveBrightness;
+    private int mNightCustomManualBrightness;
+    private int mPreviousUserBrightness;
+    private int mNightLowerBrightnessMode;
+    private boolean mIsAdaptiveBrightness;
+    private PowerManager mPm;
+
     public ColorDisplayService(Context context) {
         super(context);
         mHandler = new Handler(Looper.getMainLooper());
@@ -106,6 +117,10 @@ public final class ColorDisplayService extends SystemService
 
     @Override
     public void onBootPhase(int phase) {
+        if (phase >= PHASE_SYSTEM_SERVICES_READY) {
+            mPm = getContext().getSystemService(PowerManager.class);
+        }
+
         if (phase >= PHASE_BOOT_COMPLETED) {
             mBootCompleted = true;
 
@@ -241,6 +256,8 @@ public final class ColorDisplayService extends SystemService
             }
 
             applyTint(false);
+
+            setBrightness(mIsActivated);
         }
     }
 
@@ -261,6 +278,69 @@ public final class ColorDisplayService extends SystemService
 
         if (mAutoMode != null) {
             mAutoMode.onStart();
+        }
+    }
+
+    private void setBrightness(Boolean activated) {
+        if (activated == null) {
+             // system just booted, don't do anything
+            return;
+        }
+
+        if (activated) {
+            updateBrightnessModeValues();
+        }
+
+        if (mNightLowerBrightnessMode == 0 || mPm == null) {
+            return;
+        }
+
+        final ContentResolver cr = getContext().getContentResolver();
+        if (activated) {
+            Settings.System.putIntForUser(cr, Settings.System.SCREEN_BRIGHTNESS,
+                    mIsAdaptiveBrightness ? mNightCustomAdaptiveBrightness : mNightCustomManualBrightness,
+                    mCurrentUser);
+        } else {
+            Settings.System.putIntForUser(cr,
+                    Settings.System.SCREEN_BRIGHTNESS, mPreviousUserBrightness,
+                    mCurrentUser);
+        }
+    }
+
+    public void updateBrightnessModeValues() {
+        final ContentResolver cr = getContext().getContentResolver();
+        // store current brightness user value to be able to restore it lately
+        mPreviousUserBrightness = Settings.System.getIntForUser(cr,
+                Settings.System.SCREEN_BRIGHTNESS,
+                mPm.getDefaultScreenBrightnessSetting(), mCurrentUser);
+        // check the current brightness mode and the wanted brightness level on night mode to set
+        int currentBrightnessMode = Settings.System.getIntForUser(cr,
+                Settings.System.SCREEN_BRIGHTNESS_MODE,
+                Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,
+                mCurrentUser);
+        mIsAdaptiveBrightness =
+                currentBrightnessMode != Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
+        mNightLowerBrightnessMode = Settings.System.getIntForUser(cr,
+                Settings.System.NIGHT_BRIGHTNESS_VALUE, 2,
+                mCurrentUser);
+        switch (mNightLowerBrightnessMode) {
+            // TODO: see if the same value is good for both manual and adaptive mode
+            // now that in P the brightness slider represents absolute brightness also
+            // for adaptive mode instead of a gamma adjustment like it was in Oreo
+            case 1: // minimum
+                mNightCustomAdaptiveBrightness = 0;
+                mNightCustomManualBrightness = 0;
+                break;
+            case 2: // low
+                mNightCustomAdaptiveBrightness = 5;
+                mNightCustomManualBrightness = 5;
+                break;
+            case 3: // mid low
+                mNightCustomAdaptiveBrightness = 10;
+                mNightCustomManualBrightness = 10;
+                break;
+            default: // disabled
+                break;
         }
     }
 
