@@ -24,6 +24,8 @@ import static android.app.StatusBarManager.WindowType;
 import static android.app.StatusBarManager.WindowVisibleState;
 import static android.app.StatusBarManager.windowStateToString;
 import static android.app.WindowConfiguration.WINDOWING_MODE_FULLSCREEN_OR_SPLIT_SCREEN_SECONDARY;
+import static com.android.settingslib.display.BrightnessUtils.GAMMA_SPACE_MAX;
+import static com.android.settingslib.display.BrightnessUtils.convertGammaToLinear;
 
 import static com.android.systemui.Dependency.ALLOW_NOTIFICATION_LONG_PRESS_NAME;
 import static com.android.systemui.Dependency.BG_HANDLER;
@@ -450,11 +452,12 @@ public class StatusBar extends SystemUI implements DemoMode,
     private DisplayManager mDisplayManager;
 
     private int mMinBrightness;
+    private int mMaxBrightness;
     private int mInitialTouchX;
     private int mInitialTouchY;
     private int mLinger;
     private int mQuickQsTotalHeight;
-    private boolean mAutomaticBrightness;
+    //private boolean mAutomaticBrightness;
     private boolean mBrightnessControl;
     private boolean mBrightnessChanged;
     private boolean mJustPeeked;
@@ -863,9 +866,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         mStatusBarWindow.setBypassController(mKeyguardBypassController);
         mStatusBarWindow.setOnTouchListener(getStatusBarWindowTouchListener());
 
-        mMinBrightness = context.getResources().getInteger(
-                com.android.internal.R.integer.config_screenBrightnessDim);
-
         // TODO: Deal with the ugliness that comes from having some of the statusbar broken out
         // into fragments, but the rest here, it leaves some awkward lifecycle and whatnot.
         mNotificationPanel = mStatusBarWindow.findViewById(R.id.notification_panel);
@@ -1097,7 +1097,11 @@ public class StatusBar extends SystemUI implements DemoMode,
         // Private API call to make the shadows look better for Recents
         ThreadedRenderer.overrideProperty("ambientRatio", String.valueOf(1.5f));
 
+
         mFlashlightController = Dependency.get(FlashlightController.class);
+
+        mMinBrightness = pm.getMinimumScreenBrightnessSetting();
+        mMaxBrightness = pm.getMaximumScreenBrightnessSetting();
     }
 
 
@@ -1111,6 +1115,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 Math.max(BRIGHTNESS_CONTROL_PADDING, raw));
         float value = (padded - BRIGHTNESS_CONTROL_PADDING) /
                 (1 - (2.0f * BRIGHTNESS_CONTROL_PADDING));
+/*
         if (mAutomaticBrightness) {
             float adj = (2 * value) - 1;
             adj = Math.max(adj, -1);
@@ -1125,10 +1130,11 @@ public class StatusBar extends SystemUI implements DemoMode,
                 }
             });
         } else {
-            int newBrightness = mMinBrightness + (int) Math.round(value *
-                    (PowerManager.BRIGHTNESS_ON - mMinBrightness));
-            newBrightness = Math.min(newBrightness, PowerManager.BRIGHTNESS_ON);
-            newBrightness = Math.max(newBrightness, mMinBrightness);
+*/
+            int newBrightness = convertGammaToLinear(Math.round(value * GAMMA_SPACE_MAX),
+                    mMinBrightness, mMaxBrightness);
+            newBrightness = Math.min(newBrightness, GAMMA_SPACE_MAX);
+            newBrightness = Math.max(newBrightness, 0);
             final int val = newBrightness;
             mDisplayManager.setTemporaryBrightness(val);
             AsyncTask.execute(new Runnable() {
@@ -1139,7 +1145,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                             UserHandle.USER_CURRENT);
                 }
             });
-        }
+        //}
     }
 
     private void brightnessControl(MotionEvent event) {
@@ -4576,9 +4582,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_FOOTER_WARNINGS),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.System.getUriFor(
+            /*resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.SCREEN_BRIGHTNESS_MODE),
-                    false, this, UserHandle.USER_ALL);
+                    false, this, UserHandle.USER_ALL);*/
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL),
                     false, this, UserHandle.USER_ALL);
@@ -4662,12 +4668,12 @@ public class StatusBar extends SystemUI implements DemoMode,
     }
 
     private void setScreenBrightnessMode() {
-        int mode = Settings.System.getIntForUser(mContext.getContentResolver(),
+/*        int mode = Settings.System.getIntForUser(mContext.getContentResolver(),
             Settings.System.SCREEN_BRIGHTNESS_MODE,
             Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,
             UserHandle.USER_CURRENT);
         mAutomaticBrightness = mode != Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
-
+*/
         mBrightnessControl = Settings.System.getIntForUser(
             mContext.getContentResolver(), Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0,
             UserHandle.USER_CURRENT) == 1;
