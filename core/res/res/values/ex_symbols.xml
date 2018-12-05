@@ -53,15 +53,6 @@
 
   <java-symbol type="array" name="config_vendorPlatformSignatures" />
 
-    <!-- HW keys binding -->
-    <java-symbol type="anim" name="custom_app_in" />
-    <java-symbol type="anim" name="custom_app_out" />
-    <java-symbol type="integer" name="config_deviceHardwareKeys" />
-
-    <!-- Button brightness -->
-    <java-symbol type="bool" name="config_button_brightness_support" />
-    <java-symbol type="integer" name="config_button_brightness_default" />
-
   <!-- Proximity check on screen on -->
   <java-symbol type="bool" name="config_proximityCheckOnWake" />
 
@@ -161,8 +152,5 @@
   <java-symbol type="id" name="aerr_copy" />
   <java-symbol type="string" name="url_copy_success" />
   <java-symbol type="string" name="url_copy_failed" />
-
-  <!-- Ambient display music ticker -->
-  <java-symbol type="bool" name="config_canForceDozeNotifications" />
 
 </resources>

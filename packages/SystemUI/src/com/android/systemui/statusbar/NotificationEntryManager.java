@@ -129,10 +129,6 @@ public class NotificationEntryManager implements Dumpable, NotificationInflater.
     protected boolean mDisableNotificationAlerts;
     protected NotificationListContainer mListContainer;
     private ExpandableNotificationRow.OnAppOpsClickListener mOnAppOpsClickListener;
-
-    private NotificationData.Entry mEntryToRefresh;
-    private boolean mDontPulse;
-
     /**
      * Notifications with keys in this set are not actually around anymore. We kept them around
      * when they were canceled in response to a remote input interaction. This allows us to show
@@ -474,27 +470,6 @@ public class NotificationEntryManager implements Dumpable, NotificationInflater.
             mPresenter.updateNotificationViews();
         }
         entry.row.setLowPriorityStateUpdated(false);
-
-        if (mEntryToRefresh == entry) {
-            final Notification n = entry.notification.getNotification();
-            String notificationText = null;
-            final String title = n.extras.getString(Notification.EXTRA_TITLE);
-            final String text = n.extras.getString(Notification.EXTRA_TEXT);
-            if (!TextUtils.isEmpty(title) && !TextUtils.isEmpty(text)) {
-                notificationText = title + " - " + text;
-            }
-            mMediaManager.setMediaNotificationText(notificationText);
-            if (!mDontPulse) {
-                final int[] colors = {n.backgroundColor, n.foregroundColor,
-                        n.primaryTextColor, n.secondaryTextColor};
-                mMediaManager.setPulseColors(n.isColorizedMedia(), colors);
-            }
-        }
-    }
-
-    public void setEntryToRefresh(NotificationData.Entry entry, boolean dontPulse) {
-        mEntryToRefresh = entry;
-        mDontPulse = dontPulse;
     }
 
     @Override

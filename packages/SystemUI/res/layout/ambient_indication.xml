@@ -15,11 +15,5 @@
   ~ limitations under the License.
   -->
 
-<com.android.systemui.ambientmusic.AmbientIndicationContainer
-    android:layout_gravity="bottom"
-    android:id="@id/ambient_indication_container"
-    android:layout="@layout/ambient_indication_inner"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:forceHasOverlappingRendering="false"
-    xmlns:android="http://schemas.android.com/apk/res/android" />
+<!-- empty stub -->
+<merge />
