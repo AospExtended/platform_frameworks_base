@@ -4189,15 +4189,6 @@ public final class Settings {
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
 
         /**
-         * @hide
-         */
-        public static final String NAVIGATION_BAR_SHOW = "navigation_bar_show";
-
-        /** @hide */
-        private static final Validator NAVIGATION_BAR_SHOW_VALIDATOR =
-                BOOLEAN_VALIDATOR;
-
-        /**
         * Whether to allow battery light
         * @hide
         */
@@ -4238,38 +4229,6 @@ public final class Settings {
         * @hide
         */
        public static final String BATTERY_LIGHT_REALLYFULL_COLOR = "battery_light_reallyfull_color";
-
-        /**
-         * Custom button brightness value for manual mode
-         *
-         * @hide
-         */
-        public static final String CUSTOM_BUTTON_BRIGHTNESS = "custom_button_brightness";
-
-        /**
-         * use same value for buttons as for screen (manual and auto mode)
-         *
-         * @hide
-         */
-        public static final String CUSTOM_BUTTON_USE_SCREEN_BRIGHTNESS = "custom_button_use_screen_brightness";
-
-        /**
-         * disable all button brightness (manual and auto mode)
-         *
-         * @hide
-         */
-        public static final String BUTTON_BACKLIGHT_ENABLE = "button_backlight_enable";
-
-        /**
-         * Timeout value for button lights. 0 = disabled
-         * @hide
-         */
-        public static final String BUTTON_BACKLIGHT_TIMEOUT = "button_backlight_timeout";
-
-        /**
-         * @hide
-         */
-        public static final String BUTTON_BACKLIGHT_ON_TOUCH_ONLY = "button_backlight_on_touch_only";
 
         /**
          * IMPORTANT: If you add a new public settings you also have to add it to
@@ -4789,107 +4748,6 @@ public final class Settings {
                BOOLEAN_VALIDATOR;
 
         /**
-         * Fling pulse music visualizer
-         *
-         * @hide
-         */
-        public static final String FLING_PULSE_ENABLED = "fling_pulse_enabled";
-
-        /**
-         * Fling pulse music visualizer color
-         *
-         * @hide
-         */
-        public static final String FLING_PULSE_COLOR = "fling_pulse_color";
-
-        /**
-         * Fling pulse lavalamp
-         *
-         * @hide
-         */
-        public static final String FLING_PULSE_LAVALAMP_ENABLED = "fling_pulse_lavalamp_enabled";
-
-        /**
-         * Fling pulse lavalamp animation speed
-         *
-         * @hide
-         */
-        public static final String FLING_PULSE_LAVALAMP_SPEED = "fling_pulse_lavalamp_speed";
-
-        /**
-         * Pulse renderer implementation
-         *
-         * @hide
-         */
-        public static final String PULSE_RENDER_STYLE_URI = "pulse_render_style";
-
-        /**
-         * Custom Pulse Widths
-         * @hide
-         */
-        public static final String PULSE_CUSTOM_DIMEN = "pulse_custom_dimen";
-
-        /**
-         * Custom Spacing Between Pulse Bars
-         * @hide
-         */
-        public static final String PULSE_CUSTOM_DIV = "pulse_custom_div";
-
-        /**
-         * Custom Pulse Block Size
-         * @hide
-         */
-        public static final String PULSE_FILLED_BLOCK_SIZE = "pulse_filled_block_size";
-
-        /**
-         * Custom Spacing Between Pulse Blocks
-         * @hide
-         */
-        public static final String PULSE_EMPTY_BLOCK_SIZE = "pulse_empty_block_size";
-
-        /**
-         * Custom Pulse Sanity Levels
-         * @hide
-         */
-        public static final String PULSE_CUSTOM_FUDGE_FACTOR = "pulse_custom_fudge_factor";
-
-        /**
-         * Pulse Fudge Factor
-         * @hide
-         */
-        public static final String PULSE_SOLID_FUDGE_FACTOR = "pulse_solid_fudge_factor";
-
-        /**
-         * Pulse Lavamp Animation Speed
-         * @hide
-         */
-        public static final String PULSE_LAVALAMP_SOLID_SPEED = "lava_lamp_solid_speed";
-
-        /**
-         * Pulse Solid units count
-         * @hide
-         */
-        public static final String PULSE_SOLID_UNITS_COUNT = "pulse_solid_units_count";
-
-        /**
-         * Pulse Solid units opacity
-         * @hide
-         */
-        public static final String PULSE_SOLID_UNITS_OPACITY = "pulse_solid_units_opacity";
-
-        /**
-         * Whether to use automatic color for Pulse
-         * @hide
-         */
-        public static final String PULSE_AUTO_COLOR = "pulse_auto_color";
-
-        /**
-         * Apps to skip for Pulse
-         * @hide
-         */
-        public static final String PULSE_APPS_BLACKLIST = "pulse_apps_blacklist";
-
-        /**
          * 0 - fullscreen
          * 1 - partial
          * @hide
@@ -4940,16 +4798,6 @@ public final class Settings {
         public static final String SCREEN_STATE_ON_DELAY = "screen_state_on_delay";
 
         /**
-         * @hide
-         */
-        public static final String FULL_GESTURE_NAVBAR = "full_gesture_navbar";
-
-        /**
-         * @hide
-         */
-        public static final String FULL_GESTURE_NAVBAR_DT2S = "full_gesture_navbar_dt2s";
-
-        /**
          * Volume key controls ringtone or media sound stream
          * @hide
          */
@@ -4959,14 +4807,6 @@ public final class Settings {
         /** @hide */
         private static final Validator VOLUME_KEYS_CONTROL_RING_TONE_VALIDATOR =
                BOOLEAN_VALIDATOR;
-
-        /**
-         * Force an Ambient notification when a new media track is being played
-         * 0 - disabled
-         * 1 - show track info within normal Ambient Display and force a new Ambient clean layout when skipping tracks
-         * @hide
-         */
-        public static final String FORCE_AMBIENT_FOR_MEDIA = "force_ambient_for_media";
 
         /**
          * @hide
@@ -5052,7 +4892,6 @@ public final class Settings {
             NOTIFICATION_VIBRATION_INTENSITY,
             HAPTIC_FEEDBACK_INTENSITY,
             DISPLAY_COLOR_MODE,
-            NAVIGATION_BAR_SHOW,
             RECENTS_COMPONENT,
             OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE,
             OMNI_QS_LAYOUT_COLUMNS,
@@ -5187,12 +5026,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(DISPLAY_COLOR_MODE);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_LOCKSCREEN);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
-            PRIVATE_SETTINGS.add(NAVIGATION_BAR_SHOW);
-            PRIVATE_SETTINGS.add(CUSTOM_BUTTON_BRIGHTNESS);
-            PRIVATE_SETTINGS.add(CUSTOM_BUTTON_USE_SCREEN_BRIGHTNESS);
-            PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ENABLE);
-            PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_TIMEOUT);
-            PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_STATE);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_TYPE);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
@@ -5331,7 +5164,6 @@ public final class Settings {
             VALIDATORS.put(WIFI_STATIC_DNS1, WIFI_STATIC_DNS1_VALIDATOR);
             VALIDATORS.put(WIFI_STATIC_DNS2, WIFI_STATIC_DNS2_VALIDATOR);
             VALIDATORS.put(SHOW_BATTERY_PERCENT, SHOW_BATTERY_PERCENT_VALIDATOR);
-            VALIDATORS.put(NAVIGATION_BAR_SHOW, NAVIGATION_BAR_SHOW_VALIDATOR);
             VALIDATORS.put(RECENTS_COMPONENT,RECENTS_COMPONENT_VALIDATOR);
             VALIDATORS.put(OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE,
                     OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE_VALIDATOR);
@@ -8133,12 +7965,6 @@ public final class Settings {
         public static final String DOZE_PULSE_ON_DOUBLE_TAP = "doze_pulse_on_double_tap";
 
         private static final Validator DOZE_PULSE_ON_DOUBLE_TAP_VALIDATOR = BOOLEAN_VALIDATOR;
-
-        /**
-         * Disable hw buttons - actions, brightness, haptic feedback, overflow menu
-         * @hide
-         */
-        public static final String HARDWARE_KEYS_DISABLE = "hardware_keys_disable";
 
         /**
          * The current night mode that has been selected by the user.  Owned

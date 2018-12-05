@@ -45,9 +45,6 @@ import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.net.NetworkInfo;
 import com.android.internal.R;
-import android.provider.Settings;
-import android.os.SystemProperties;
-import android.os.UserHandle;
 
 import java.util.List;
 
@@ -145,9 +142,6 @@ public class AEXUtils {
         return ctx.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
     }
 
-    public static boolean deviceSupportNavigationBar(Context context) {
-        return deviceSupportNavigationBarForUser(context, UserHandle.USER_CURRENT);
-    }
 
     // Check to see if a package is installed
     public static boolean isPackageInstalled(Context context, String pkg, boolean ignoreState) {
@@ -247,39 +241,29 @@ public class AEXUtils {
         return null;
     }
 
-    public static void sendKeycode(int keycode, Handler h) {
+    public static void sendKeycode(int keycode) {
         long when = SystemClock.uptimeMillis();
         final KeyEvent evDown = new KeyEvent(when, when, KeyEvent.ACTION_DOWN, keycode, 0,
                 0, KeyCharacterMap.VIRTUAL_KEYBOARD, 0,
                 KeyEvent.FLAG_FROM_SYSTEM | KeyEvent.FLAG_VIRTUAL_HARD_KEY,
                 InputDevice.SOURCE_KEYBOARD);
         final KeyEvent evUp = KeyEvent.changeAction(evDown, KeyEvent.ACTION_UP);
-        h.post(new Runnable() {
+
+        final Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
             @Override
             public void run() {
                 InputManager.getInstance().injectInputEvent(evDown,
                         InputManager.INJECT_INPUT_EVENT_MODE_ASYNC);
             }
         });
-        h.postDelayed(new Runnable() {
+        handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 InputManager.getInstance().injectInputEvent(evUp,
                         InputManager.INJECT_INPUT_EVENT_MODE_ASYNC);
             }
         }, 20);
-    }
-
-    public static void moveKbCursor(int action, boolean right) {
-        int code = right ? KeyEvent.KEYCODE_DPAD_RIGHT : KeyEvent.KEYCODE_DPAD_LEFT;
-        long downTime = System.currentTimeMillis();
-        long when = downTime;
-        final KeyEvent ev = new KeyEvent(downTime, when, action, code, 0,
-                0, KeyCharacterMap.VIRTUAL_KEYBOARD, 0,
-                (KeyEvent.FLAG_SOFT_KEYBOARD | KeyEvent.FLAG_KEEP_TOUCH_MODE),
-                InputDevice.SOURCE_KEYBOARD);
-        InputManager.getInstance().injectInputEvent(ev,
-                InputManager.INJECT_INPUT_EVENT_MODE_ASYNC);
     }
 
     public static void takeScreenshot(boolean full) {
@@ -293,28 +277,6 @@ public class AEXUtils {
             wm.sendCustomAction(new Intent(full? INTENT_SCREENSHOT : INTENT_REGION_SCREENSHOT));
         } catch (RemoteException e) {
             e.printStackTrace();
-        }
-    }
-
-    public static boolean deviceSupportNavigationBarForUser(Context context, int userId) {
-        final boolean showByDefault = context.getResources().getBoolean(
-                com.android.internal.R.bool.config_showNavigationBar);
-        final int hasNavigationBar = Settings.System.getIntForUser(
-                context.getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW, -1,
-                userId);
-
-        if (hasNavigationBar == -1) {
-            String navBarOverride = SystemProperties.get("qemu.hw.mainkeys");
-            if ("1".equals(navBarOverride)) {
-                return false;
-            } else if ("0".equals(navBarOverride)) {
-                return true;
-            } else {
-                return showByDefault;
-            }
-        } else {
-            return hasNavigationBar == 1;
         }
     }
 

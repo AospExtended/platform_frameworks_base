@@ -309,11 +309,6 @@ interface IWindowManager
     boolean hasNavigationBar();
 
     /**
-     * Simulate a hardware menu key
-     */
-    boolean hasPermanentMenuKey();
-
-    /**
      * Get the position of the nav bar
      */
     int getNavBarPosition();

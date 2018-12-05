@@ -148,10 +148,6 @@ public class NavigationBarGestureHelper implements TunerService.Tunable, Gesture
         mQuickStepController.onNavigationButtonLongPress(v);
     }
 
-    public void setKeyboardShowing(boolean showing) {
-        mQuickStepController.setKeyboardShowing(showing);
-    }
-
     private boolean interceptDockWindowEvent(MotionEvent event) {
         switch (event.getActionMasked()) {
             case MotionEvent.ACTION_DOWN:
