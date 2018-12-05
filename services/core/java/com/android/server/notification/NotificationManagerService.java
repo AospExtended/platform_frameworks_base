@@ -4857,7 +4857,7 @@ public class NotificationManagerService extends SystemService {
         }
         if (buzz || beep || blink) {
             // Ignore summary updates because we don't display most of the information.
-            if (record.sbn.isGroup() && record.sbn.getNotification().isGroupSummary()) {
+            /*if (record.sbn.isGroup() && record.sbn.getNotification().isGroupSummary()) {
                 if (DEBUG_INTERRUPTIVENESS) {
                     Log.v(TAG, "INTERRUPTIVENESS: "
                             + record.getKey() + " is not interruptive: summary");
@@ -4866,9 +4866,9 @@ public class NotificationManagerService extends SystemService {
                 if (DEBUG_INTERRUPTIVENESS) {
                     Log.v(TAG, "INTERRUPTIVENESS: "
                             + record.getKey() + " is interruptive: alerted");
-                }
+                }*/
                 record.setInterruptive(true);
-            }
+            //}
             MetricsLogger.action(record.getLogMaker()
                     .setCategory(MetricsEvent.NOTIFICATION_ALERT)
                     .setType(MetricsEvent.TYPE_OPEN)
@@ -4918,7 +4918,7 @@ public class NotificationManagerService extends SystemService {
             return false;
         }
         // Suppressed because it's a silent update
-        final Notification notification = record.getNotification();
+        /*final Notification notification = record.getNotification();
         if (record.isUpdate && (notification.flags & Notification.FLAG_ONLY_ALERT_ONCE) != 0) {
             return false;
         }
@@ -4929,7 +4929,7 @@ public class NotificationManagerService extends SystemService {
         // not if in call or the screen's on
         if (mInCall || mScreenOn) {
             return false;
-        }
+        }*/
 
         return true;
     }
