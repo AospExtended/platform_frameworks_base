@@ -33,6 +33,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.android.systemui.Dependency;
@@ -78,6 +80,10 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private int mShowCarrierLabel;
     private View mBatteryBar;
 
+    // AEX Logo
+    private ImageView mAEXLogo;
+    private boolean mShowLogo;
+
     private class SettingsObserver extends ContentObserver {
        SettingsObserver(Handler handler) {
            super(handler);
@@ -86,6 +92,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
        void observe() {
          mContentResolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_SHOW_CARRIER),
+                    false, this, UserHandle.USER_ALL);
+         mContentResolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_LOGO),
                     false, this, UserHandle.USER_ALL);
        }
 
@@ -133,6 +142,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mClockView = mStatusBar.findViewById(R.id.clock);
         mBatteryBar = mStatusBar.findViewById(R.id.battery_bar);
         mCustomCarrierLabel = mStatusBar.findViewById(R.id.statusbar_carrier_text);
+        mAEXLogo = (ImageView)mStatusBar.findViewById(R.id.status_bar_logo);
+        Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mAEXLogo);
         showSystemIconArea(false);
         showClock(false);
         initEmergencyCryptkeeperText();
@@ -259,11 +270,17 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     public void hideSystemIconArea(boolean animate) {
         animateHiddenState(mBatteryBar, View.GONE, animate);
         animateHide(mSystemIconArea, animate);
+        if (mShowLogo) {
+            animateHide(mAEXLogo, animate);
+        }
     }
 
     public void showSystemIconArea(boolean animate) {
         animateShow(mBatteryBar, animate);
         animateShow(mSystemIconArea, animate);
+        if (mShowLogo) {
+            animateShow(mAEXLogo, animate);
+        }
     }
 
     public void hideClock(boolean animate) {
@@ -404,6 +421,18 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mShowCarrierLabel = Settings.System.getIntForUser(mContentResolver,
                 Settings.System.STATUS_BAR_SHOW_CARRIER, 1,
                 UserHandle.USER_CURRENT);
+        mShowLogo = Settings.System.getIntForUser(mContentResolver,
+                Settings.System.STATUS_BAR_LOGO, 0,
+                UserHandle.USER_CURRENT) == 1;
+        if (mNotificationIconAreaInner != null) {
+            if (mShowLogo) {
+                if (mNotificationIconAreaInner.getVisibility() == View.VISIBLE) {
+                    animateShow(mAEXLogo, animate);
+                }
+            } else {
+                animateHiddenState(mAEXLogo, View.GONE, animate);
+            }
+        }
         setCarrierLabel(animate);
     }
 
