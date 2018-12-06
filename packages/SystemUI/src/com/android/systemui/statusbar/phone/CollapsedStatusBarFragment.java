@@ -20,18 +20,26 @@ import static android.app.StatusBarManager.DISABLE_SYSTEM_INFO;
 
 import android.annotation.Nullable;
 import android.app.Fragment;
+import android.content.ContentResolver;
+import android.database.ContentObserver;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Parcelable;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.android.systemui.Dependency;
 import com.android.systemui.Interpolators;
 import com.android.systemui.R;
+import com.android.systemui.plugins.DarkIconDispatcher;
 import com.android.systemui.plugins.statusbar.StatusBarStateController;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.StatusBarState;
@@ -69,6 +77,31 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private View mOperatorNameFrame;
     private CommandQueue mCommandQueue;
 
+    // AEX Logo
+    private ContentResolver resolver;
+    private ImageView mAEXLogo;
+    private boolean mShowLogo;
+    private Handler mHandler;
+
+    private class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+         void observe() {
+             resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_LOGO),
+                    false, this, UserHandle.USER_ALL);
+        }
+
+         @Override
+        public void onChange(boolean selfChange) {
+            updateSettings(true);
+        }
+    }
+
+    private SettingsObserver mSettingsObserver;
+
     private SignalCallback mSignalCallback = new SignalCallback() {
         @Override
         public void setIsAirplaneMode(NetworkController.IconState icon) {
@@ -84,6 +117,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mStatusBarStateController = Dependency.get(StatusBarStateController.class);
         mStatusBarComponent = Dependency.get(StatusBar.class);
         mCommandQueue = Dependency.get(CommandQueue.class);
+        mHandler = new Handler();
     }
 
     @Override
@@ -100,12 +134,18 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             mStatusBar.restoreHierarchyState(
                     savedInstanceState.getSparseParcelableArray(EXTRA_PANEL_STATE));
         }
+        resolver = getContext().getContentResolver();
+        mSettingsObserver = new SettingsObserver(mHandler);
+        mSettingsObserver.observe();
         mDarkIconManager = new DarkIconManager(view.findViewById(R.id.statusIcons),
                 Dependency.get(CommandQueue.class));
         mDarkIconManager.setShouldLog(true);
         Dependency.get(StatusBarIconController.class).addIconGroup(mDarkIconManager);
         mSystemIconArea = mStatusBar.findViewById(R.id.system_icon_area);
         mClockView = mStatusBar.findViewById(R.id.clock);
+        mAEXLogo = (ImageView)mStatusBar.findViewById(R.id.status_bar_logo);
+        Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mAEXLogo);
+        updateSettings(false);
         showSystemIconArea(false);
         showClock(false);
         initEmergencyCryptkeeperText();
@@ -141,6 +181,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         if (mNetworkController.hasEmergencyCryptKeeperText()) {
             mNetworkController.removeCallback(mSignalCallback);
         }
+        Dependency.get(DarkIconDispatcher.class).removeDarkReceiver(mAEXLogo);
     }
 
     public void initNotificationIconArea(NotificationIconAreaController
@@ -279,11 +320,17 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     public void hideNotificationIconArea(boolean animate) {
         animateHide(mNotificationIconAreaInner, animate);
         animateHide(mCenteredIconArea, animate);
+        if (mShowLogo) {
+            animateHide(mAEXLogo, animate);
+        }
     }
 
     public void showNotificationIconArea(boolean animate) {
         animateShow(mNotificationIconAreaInner, animate);
         animateShow(mCenteredIconArea, animate);
+        if (mShowLogo) {
+            animateShow(mAEXLogo, animate);
+        }
     }
 
     public void hideOperatorName(boolean animate) {
@@ -390,4 +437,19 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     public void onDozingChanged(boolean isDozing) {
         disable(getContext().getDisplayId(), mDisabled1, mDisabled1, false /* animate */);
     }
+
+    public void updateSettings(boolean animate) {
+        mShowLogo = Settings.System.getIntForUser(
+                resolver, Settings.System.STATUS_BAR_LOGO, 0,
+                UserHandle.USER_CURRENT) == 1;
+        if (mNotificationIconAreaInner != null) {
+            if (mShowLogo) {
+                if (mNotificationIconAreaInner.getVisibility() == View.VISIBLE) {
+                    animateShow(mAEXLogo, animate);
+                }
+            } else {
+                animateHiddenState(mAEXLogo, View.GONE, animate);
+            }
+      }
+   }
 }
