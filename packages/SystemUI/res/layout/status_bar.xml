@@ -63,6 +63,7 @@
                 android:id="@+id/status_bar_left_side"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
+                android:orientation="horizontal"
                 android:clipChildren="false"
             >
                 <ViewStub
@@ -70,6 +71,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout="@layout/operator_name" />
+
+                <ImageView
+                    android:id="@+id/status_bar_logo"
+                    android:layout_width="@dimen/status_bar_icon_size"
+                    android:layout_height="@dimen/status_bar_icon_size"
+                    android:src="@drawable/status_bar_logo"
+                    android:scaleType="centerInside"
+                    android:paddingEnd="4dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:visibility="gone" />
 
                 <com.android.systemui.statusbar.policy.Clock
                     android:id="@+id/clock"
@@ -84,6 +96,7 @@
 
                 <com.android.systemui.statusbar.AlphaOptimizedFrameLayout
                     android:id="@+id/notification_icon_area"
+                    android:paddingStart="2dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
