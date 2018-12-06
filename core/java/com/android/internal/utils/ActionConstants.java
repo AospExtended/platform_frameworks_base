@@ -382,8 +382,8 @@ public class ActionConstants {
               + dl(SystemAction.NoAction.mAction)     + dl(SystemAction.NoAction.mLabelRes)    + dl(EMPTY)  // super fling?
 
               + dl(UP_FLING)
-              + dl(SystemAction.SplitScreen.mAction)     + dl(SystemAction.SplitScreen.mLabelRes)    + dl(EMPTY)  // right side (short fling only)
-              + dl(SystemAction.SplitScreen.mAction)     + dl(SystemAction.SplitScreen.mLabelRes)    + dl(EMPTY)  // left side (short fling only)
+              + dl(SystemAction.Overview.mAction)     + dl(SystemAction.Overview.mLabelRes)    + dl(EMPTY)  // right side (short fling only)
+              + dl(SystemAction.Overview.mAction)     + dl(SystemAction.Overview.mLabelRes)    + dl(EMPTY)  // left side (short fling only)
               + dl(SystemAction.NoAction.mAction)     + dl(SystemAction.NoAction.mLabelRes)    + EMPTY;
 
         @Override
