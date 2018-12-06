@@ -40,10 +40,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.android.systemui.Dependency;
 import com.android.systemui.R;
 import com.android.systemui.animation.Interpolators;
+import com.android.systemui.plugins.DarkIconDispatcher;
 import com.android.systemui.plugins.statusbar.StatusBarStateController;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.FeatureFlags;
@@ -110,6 +114,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private LinearLayout mCenterClockLayout;
     private View mRightClock;
     private boolean mShowClock = true;
+    private ImageView mAEXLogo;
+    private boolean mShowLogo;
     private final Handler mHandler = new Handler();
 
     private class SettingsObserver extends ContentObserver {
@@ -123,6 +129,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                     false, this, UserHandle.USER_ALL);
          mContentResolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUSBAR_CLOCK_STYLE),
+                    false, this, UserHandle.USER_ALL);
+         mContentResolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_LOGO),
                     false, this, UserHandle.USER_ALL);
        }
 
@@ -207,6 +216,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mOngoingCallChip = mStatusBar.findViewById(R.id.ongoing_call_chip);
         mCenterClockLayout = (LinearLayout) mStatusBar.findViewById(R.id.center_clock_layout);
         mRightClock = mStatusBar.findViewById(R.id.right_clock);
+        mAEXLogo = (ImageView)mStatusBar.findViewById(R.id.status_bar_logo);
+        Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mAEXLogo);
         showSystemIconArea(false);
         initEmergencyCryptkeeperText();
         animateHide(mClockView, false, false);
@@ -249,6 +260,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         if (mNetworkController.hasEmergencyCryptKeeperText()) {
             mNetworkController.removeCallback(mSignalCallback);
         }
+        Dependency.get(DarkIconDispatcher.class).removeDarkReceiver(mAEXLogo);
     }
 
     /** Initializes views related to the notification icon area. */
@@ -440,12 +452,18 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         animateHide(mNotificationIconAreaInner, animate, true);
         animateHide(mCenteredIconArea, animate, true);
 	animateHide(mCenterClockLayout, animate, true);
+        if (mShowLogo) {
+            animateHide(mAEXLogo, animate, true);
+        }
     }
 
     public void showNotificationIconArea(boolean animate) {
         animateShow(mNotificationIconAreaInner, animate);
         animateShow(mCenteredIconArea, animate);
         animateShow(mCenterClockLayout, animate);
+        if (mShowLogo) {
+            animateShow(mAEXLogo, animate);
+        }
     }
 
     public void hideOperatorName(boolean animate) {
@@ -600,6 +618,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mShowClock = Settings.System.getIntForUser(mContentResolver,
                 Settings.System.STATUSBAR_CLOCK, 1,
                 UserHandle.USER_CURRENT) == 1;
+        mShowLogo = Settings.System.getIntForUser(mContentResolver,
+                Settings.System.STATUS_BAR_LOGO, 0,
+                UserHandle.USER_CURRENT) == 1;
         if (!mShowClock) {
             mClockStyle = 1; // internally switch to centered clock layout because
                              // left & right will show up again after QS pulldown
@@ -609,6 +630,15 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                     UserHandle.USER_CURRENT);
         }
         updateClockStyle(animate);
+        if (mNotificationIconAreaInner != null) {
+            if (mShowLogo) {
+                if (mNotificationIconAreaInner.getVisibility() == View.VISIBLE) {
+                    animateShow(mAEXLogo, animate);
+                }
+            } else {
+                animateHide(mAEXLogo, animate, false);
+            }
+        }
     }
 
     private void updateClockStyle(boolean animate) {
