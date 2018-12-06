@@ -1153,6 +1153,8 @@ public class ActionHandler {
     public static void startAssistantSoundSearch(Context context) {
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.setAction("com.google.android.googlequicksearchbox.MUSIC_SEARCH");
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(intent);
     }
 }
+
