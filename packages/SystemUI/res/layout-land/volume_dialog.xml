@@ -20,8 +20,6 @@
     android:id="@+id/volume_dialog_container"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:gravity="right"
-    android:layout_gravity="right"
     android:background="@android:color/transparent"
     android:theme="@style/volume_dialog_theme">
 
@@ -30,9 +28,8 @@
         android:id="@+id/volume_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="right"
-        android:layout_gravity="right"
-        android:layout_marginRight="@dimen/volume_dialog_panel_transparent_padding_right"
+        android:paddingLeft="@dimen/volume_dialog_panel_transparent_padding_left"
+        android:paddingRight="@dimen/volume_dialog_panel_transparent_padding_right"
         android:orientation="vertical"
         android:clipToPadding="false"
         android:clipChildren="false">
@@ -43,8 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:clipChildren="false"
-            android:gravity="right">
+            android:clipChildren="false">
 
             <include layout="@layout/volume_ringer_drawer" />
 
