@@ -6026,6 +6026,14 @@ public final class Settings {
         public static final String FULLSCREEN_GESTURES = "fullscreen_gestures";
 
         /**
+         * Whether to show volume panel on the left side
+         * Defaults to com.android.systemui.R.bool.config_audioPanelOnLeftSide
+         * @hide
+         */
+        @Readable
+        public static final String VOLUME_PANEL_ON_LEFT = "volume_panel_on_left";
+
+        /**
          * Whether to enable the ripple animation on fingerprint unlock
          * @hide
          */
