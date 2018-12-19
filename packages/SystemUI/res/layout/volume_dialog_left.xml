@@ -20,19 +20,19 @@
     android:id="@+id/volume_dialog_container"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:gravity="right"
-    android:layout_gravity="right"
+    android:gravity="left"
+    android:layout_gravity="left"
     android:clipToPadding="false"
     android:theme="@style/volume_dialog_theme">
 
-    <!-- right-aligned to be physically near volume button -->
+    <!-- left-aligned to be physically near volume button -->
     <LinearLayout
         android:id="@+id/volume_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="right"
-        android:layout_gravity="right"
-        android:layout_marginRight="@dimen/volume_dialog_panel_transparent_padding_horizontal"
+        android:gravity="left"
+        android:layout_gravity="left"
+        android:layout_marginLeft="@dimen/volume_dialog_panel_transparent_padding_horizontal"
         android:orientation="vertical"
         android:clipToPadding="false"
         android:clipChildren="false">
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:clipChildren="false"
             android:orientation="vertical"
-            android:gravity="right">
+            android:gravity="left">
 
             <include layout="@layout/volume_ringer_drawer" />
 
@@ -53,8 +53,8 @@
                 android:layout_width="@dimen/volume_dialog_ringer_size"
                 android:layout_height="@dimen/volume_dialog_ringer_size"
                 android:layout_marginBottom="@dimen/volume_dialog_spacer"
-                android:gravity="right"
-                android:layout_gravity="right"
+                android:gravity="left"
+                android:layout_gravity="left"
                 android:translationZ="@dimen/volume_dialog_elevation"
                 android:clipToPadding="false"
                 android:background="@drawable/rounded_bg_full">
@@ -73,7 +73,7 @@
                 <include layout="@layout/volume_dnd_icon"
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content"
-                         android:layout_marginRight="@dimen/volume_dialog_stream_padding"
+                         android:layout_marginLeft="@dimen/volume_dialog_stream_padding"
                          android:layout_marginTop="6dp"/>
             </FrameLayout>
 
@@ -81,8 +81,8 @@
                 android:id="@+id/volume_dialog_rows_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="right"
-                android:layout_gravity="right"
+                android:gravity="left"
+                android:layout_gravity="left"
                 android:orientation="vertical"
                 android:clipChildren="false"
                 android:clipToPadding="false" >
@@ -99,9 +99,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/volume_background_bottom"
-                    android:paddingLeft="@dimen/volume_dialog_ringer_rows_padding"
+                    android:paddingRight="@dimen/volume_dialog_ringer_rows_padding"
                     android:paddingBottom="@dimen/volume_dialog_ringer_rows_padding"
-                    android:paddingRight="@dimen/volume_dialog_ringer_rows_padding">
+                    android:paddingLeft="@dimen/volume_dialog_ringer_rows_padding">
                     <com.android.keyguard.AlphaOptimizedImageButton
                         android:id="@+id/settings"
                         android:src="@drawable/horizontal_ellipsis"
@@ -122,8 +122,8 @@
             android:layout_width="@dimen/volume_dialog_caption_size"
             android:layout_height="@dimen/volume_dialog_caption_size"
             android:layout_marginTop="@dimen/volume_dialog_row_margin_bottom"
-            android:gravity="right"
-            android:layout_gravity="right"
+            android:gravity="left"
+            android:layout_gravity="left"
             android:clipToPadding="false"
             android:clipToOutline="true"
             android:background="@drawable/volume_row_rounded_background">
@@ -146,7 +146,7 @@
         android:layout="@layout/volume_tool_tip_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom | right"
-        android:layout_marginRight="@dimen/volume_tool_tip_horizontal_margin"/>
+        android:layout_gravity="bottom | left"
+        android:layout_marginLeft="@dimen/volume_tool_tip_horizontal_margin"/>
 
 </FrameLayout>
