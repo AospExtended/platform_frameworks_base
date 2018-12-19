@@ -52,6 +52,7 @@ import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.database.ContentObserver;
 import android.graphics.Color;
 import android.graphics.Outline;
 import android.graphics.PixelFormat;
@@ -67,6 +68,7 @@ import android.os.Debug;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.os.UserHandle;
 import android.os.SystemClock;
 import android.os.VibrationEffect;
 import android.provider.Settings;
@@ -251,6 +253,43 @@ public class VolumeDialogImpl implements VolumeDialog,
     private ViewStub mODICaptionsTooltipViewStub;
     private View mODICaptionsTooltipView = null;
 
+    // Volume panel placement left or right
+    private boolean mVolumePanelOnLeft;
+
+    private class CustomSettingsObserver extends ContentObserver {
+        CustomSettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.VOLUME_PANEL_ON_LEFT),
+                    false, this, UserHandle.USER_ALL);
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            update();
+        }
+
+        public void update() {
+            final boolean volumePanelOnLeft = Settings.System.getInt(mContext.getContentResolver(),
+                        Settings.System.VOLUME_PANEL_ON_LEFT, mVolumePanelOnLeft ? 1 : 0) == 1;
+
+            if (!mShowActiveStreamOnly) {
+                if (mVolumePanelOnLeft != volumePanelOnLeft) {
+                    mVolumePanelOnLeft = volumePanelOnLeft;
+                    mHandler.post(() -> {
+                        // Trigger panel rebuild on next show
+                        mConfigChanged = true;
+                    });
+                }
+            }
+        }
+    }
+
+    private CustomSettingsObserver mCustomSettingsObserver;
+
     private final boolean mUseBackgroundBlur;
     private Consumer<Boolean> mCrossWindowBlurEnabledListener;
     private BackgroundBlurDrawable mDialogRowsViewBackground;
@@ -288,6 +327,12 @@ public class VolumeDialogImpl implements VolumeDialog,
                 mDialogRowsView.invalidate();
             };
         }
+
+        mVolumePanelOnLeft = mContext.getResources().getBoolean(R.bool.config_audioPanelOnLeftSide);
+
+        mCustomSettingsObserver = new CustomSettingsObserver(mHandler);
+        mCustomSettingsObserver.observe();
+        mCustomSettingsObserver.update();
 
         initDimens();
     }
@@ -391,16 +436,26 @@ public class VolumeDialogImpl implements VolumeDialog,
         lp.setTitle(VolumeDialogImpl.class.getSimpleName());
         lp.windowAnimations = -1;
         lp.gravity = mContext.getResources().getInteger(R.integer.volume_dialog_gravity);
+        if (!mShowActiveStreamOnly) {
+            if (!mVolumePanelOnLeft || isLandscape()) {
+                lp.gravity = Gravity.RIGHT | Gravity.CENTER_VERTICAL;
+                mDialog.setContentView(R.layout.volume_dialog);
+            } else {
+                lp.gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
+                mDialog.setContentView(R.layout.volume_dialog_left);
+            }
+        }
         mWindow.setAttributes(lp);
         mWindow.setLayout(WRAP_CONTENT, WRAP_CONTENT);
 
-        mDialog.setContentView(R.layout.volume_dialog);
         mDialogView = mDialog.findViewById(R.id.volume_dialog);
         mDialogView.setAlpha(0);
         mDialog.setCanceledOnTouchOutside(true);
         mDialog.setOnShowListener(dialog -> {
             mDialogView.getViewTreeObserver().addOnComputeInternalInsetsListener(this);
-            if (!isLandscape()) mDialogView.setTranslationX(mDialogView.getWidth() / 2.0f);
+            if (!isLandscape() || !mShowActiveStreamOnly) {
+                mDialogView.setTranslationX(getAnimatorX());
+            }
             mDialogView.setAlpha(0);
             mDialogView.animate()
                     .alpha(1)
@@ -579,6 +634,11 @@ public class VolumeDialogImpl implements VolumeDialog,
 
         // Normal, mute, and possibly vibrate.
         mRingerCount = mShowVibrate ? 3 : 2;
+    }
+
+    private float getAnimatorX() {
+        final float x = mDialogView.getWidth() / 2.0f;
+        return mVolumePanelOnLeft ? -x : x;
     }
 
     protected ViewGroup getDialogView() {
@@ -1326,7 +1386,7 @@ public class VolumeDialogImpl implements VolumeDialog,
                     hideRingerDrawer();
                     mController.notifyVisible(false);
                 }, 50));
-        if (!isLandscape()) animator.translationX(mDialogView.getWidth() / 2.0f);
+        if (!isLandscape() || !mShowActiveStreamOnly) animator.translationX(getAnimatorX());
         animator.start();
         checkODICaptionsTooltip(true);
         synchronized (mSafetyWarningLock) {
@@ -1423,7 +1483,7 @@ public class VolumeDialogImpl implements VolumeDialog,
         }
 
         if (rightmostVisibleRowIndex > -1 && rightmostVisibleRowIndex < Short.MAX_VALUE) {
-            final View lastVisibleChild = mDialogRowsView.getChildAt(rightmostVisibleRowIndex);
+            final View lastVisibleChild = mDialogRowsView.getChildAt(!mVolumePanelOnLeft || isLandscape() ? rightmostVisibleRowIndex : 0);
             final ViewGroup.LayoutParams layoutParams = lastVisibleChild.getLayoutParams();
             // Remove the spacing on the last row, and remove its background since the container is
             // drawing a background for this row.
@@ -1982,8 +2042,11 @@ public class VolumeDialogImpl implements VolumeDialog,
                         ? mDialogRowsViewContainer.getTop()
                         : mDialogRowsViewContainer.getTop() - mDialogCornerRadius);
 
-        // Set gravity to top-right, since additional rows will be added on the left.
-        background.setLayerGravity(0, Gravity.TOP | Gravity.RIGHT);
+        if (!mVolumePanelOnLeft || isLandscape()) {
+            background.setLayerGravity(0, Gravity.TOP | Gravity.RIGHT);
+        } else {
+            background.setLayerGravity(0, Gravity.TOP | Gravity.LEFT);
+        }
 
         // In landscape, the ringer drawer animates out to the left (instead of down). Since the
         // drawer comes from the right (beyond the bounds of the dialog), we should clip it so it
