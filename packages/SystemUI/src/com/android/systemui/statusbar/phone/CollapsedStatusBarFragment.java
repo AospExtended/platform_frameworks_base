@@ -263,11 +263,13 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     public void hideNotificationIconArea(boolean animate) {
         animateHide(mNotificationIconAreaInner, animate, true);
         animateHide(mCenterClockLayout, animate, true);
+        hideCarrierName(animate);
     }
 
     public void showNotificationIconArea(boolean animate) {
         animateShow(mNotificationIconAreaInner, animate);
         animateShow(mCenterClockLayout, animate);
+        showCarrierName(animate);
     }
 
     public void hideOperatorName(boolean animate) {
@@ -284,7 +286,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     public void hideCarrierName(boolean animate) {
         if (mCustomCarrierLabel != null) {
-            animateHide(mCustomCarrierLabel, animate, true);
+            animateHide(mCustomCarrierLabel, animate, false);
         }
     }
 
