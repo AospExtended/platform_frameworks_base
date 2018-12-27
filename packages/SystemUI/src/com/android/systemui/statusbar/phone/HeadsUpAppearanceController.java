@@ -24,6 +24,7 @@ import android.os.UserHandle;
 import android.provider.Settings;
 import android.view.DisplayCutout;
 import android.view.View;
+import android.widget.ImageView;
 import android.view.WindowInsets;
 
 import com.android.internal.annotations.VisibleForTesting;
@@ -52,6 +53,8 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
     private final NotificationStackScrollLayout mStackScroller;
     private final HeadsUpStatusBarView mHeadsUpStatusBarView;
     private final View mClockView;
+    private View mCustomCarrierLabel;
+    private ImageView mAEXLogo;
     private final DarkIconDispatcher mDarkIconDispatcher;
     private final NotificationPanelView mPanelView;
     private final Consumer<ExpandableNotificationRow>
@@ -76,7 +79,9 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
                 statusbarView.findViewById(R.id.heads_up_status_bar_view),
                 statusbarView.findViewById(R.id.notification_stack_scroller),
                 statusbarView.findViewById(R.id.notification_panel),
-                statusbarView.findViewById(R.id.clock));
+                statusbarView.findViewById(R.id.clock),
+                statusbarView.findViewById(R.id.statusbar_carrier_text),
+                statusbarView.findViewById(R.id.status_bar_logo));
     }
 
     @VisibleForTesting
@@ -86,7 +91,9 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
             HeadsUpStatusBarView headsUpStatusBarView,
             NotificationStackScrollLayout stackScroller,
             NotificationPanelView panelView,
-            View clockView) {
+            View clockView,
+            View customCarrierLabel,
+            ImageView aexLogo) {
         mNotificationIconAreaController = notificationIconAreaController;
         mHeadsUpManager = headsUpManager;
         mHeadsUpManager.addListener(this);
@@ -102,6 +109,8 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
         mStackScroller.addOnLayoutChangeListener(mStackScrollLayoutChangeListener);
         mStackScroller.setHeadsUpAppearanceController(this);
         mClockView = clockView;
+        mCustomCarrierLabel = customCarrierLabel;
+        mAEXLogo = aexLogo;
         mDarkIconDispatcher = Dependency.get(DarkIconDispatcher.class);
         mDarkIconDispatcher.addDarkReceiver(this);
     }
@@ -215,6 +224,10 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
     private void setShown(boolean isShown) {
         final int clockStyle = Settings.System.getIntForUser(mClockView.getContext().getContentResolver(),
                 Settings.System.STATUSBAR_CLOCK_STYLE, 0, UserHandle.USER_CURRENT);
+        final int customCarrierLabelState = Settings.System.getIntForUser(mCustomCarrierLabel.getContext().getContentResolver(),
+                Settings.System.STATUS_BAR_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
+        final int aexLogoState = Settings.System.getIntForUser(mAEXLogo.getContext().getContentResolver(),
+                Settings.System.STATUS_BAR_LOGO, 0, UserHandle.USER_CURRENT);
         if (mShown != isShown) {
             mShown = isShown;
             if (isShown) {
@@ -222,7 +235,11 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
                 CrossFadeHelper.fadeIn(mHeadsUpStatusBarView, CONTENT_FADE_DURATION /* duration */,
                         CONTENT_FADE_DELAY /* delay */);
                 CrossFadeHelper.fadeOut(mClockView, CONTENT_FADE_DURATION/* duration */,
-                        0 /* delay */, () -> mClockView.setVisibility(View.INVISIBLE));
+                        0 /* delay */, () -> mClockView.setVisibility(View.GONE));
+                CrossFadeHelper.fadeOut(mCustomCarrierLabel, CONTENT_FADE_DURATION/* duration */,
+                        0 /* delay */, () -> mCustomCarrierLabel.setVisibility(View.GONE));
+                CrossFadeHelper.fadeOut(mAEXLogo, CONTENT_FADE_DURATION/* duration */,
+                        0 /* delay */, () -> mAEXLogo.setVisibility(View.GONE));
             } else {
                 if (clockStyle == 0) {
                     CrossFadeHelper.fadeIn(mClockView, CONTENT_FADE_DURATION /* duration */,
@@ -230,6 +247,21 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
                 } else {
                     mClockView.setVisibility(View.GONE);
                 }
+
+                if (customCarrierLabelState >= 2) {
+                CrossFadeHelper.fadeIn(mCustomCarrierLabel, CONTENT_FADE_DURATION /* duration */,
+                        CONTENT_FADE_DELAY /* delay */);
+                } else {
+                    mCustomCarrierLabel.setVisibility(View.GONE);
+                }
+
+                if (aexLogoState == 1) {
+                CrossFadeHelper.fadeIn(mAEXLogo, CONTENT_FADE_DURATION /* duration */,
+                        CONTENT_FADE_DELAY /* delay */);
+                } else {
+                    mAEXLogo.setVisibility(View.GONE);
+                }
+
                 CrossFadeHelper.fadeOut(mHeadsUpStatusBarView, CONTENT_FADE_DURATION/* duration */,
                         0 /* delay */, () -> mHeadsUpStatusBarView.setVisibility(View.GONE));
 
