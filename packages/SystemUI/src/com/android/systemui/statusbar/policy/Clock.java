@@ -281,7 +281,7 @@ public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
     }
 
     public void setClockVisibilityByPolicy(boolean visible) {
-        mClockVisibleByPolicy = visible;
+        mClockVisibleByPolicy = visible && mClockVisibleByUser;
         updateClockVisibility();
     }
 
@@ -576,4 +576,12 @@ public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
             mSecondsHandler.postAtTime(this, SystemClock.uptimeMillis() / 1000 * 1000 + 1000);
         }
     };
+
+    public boolean isClockDateEnabled() {
+        return isClockVisible() && mClockDateDisplay != CLOCK_DATE_DISPLAY_GONE;
+    }
+
+    public boolean isClockVisible() {
+        return mClockVisibleByUser && mClockVisibleByPolicy;
+    }
 }
