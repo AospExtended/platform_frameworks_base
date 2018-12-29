@@ -108,6 +108,7 @@ import android.app.ActivityManager;
 import android.app.ActivityManagerInternal;
 import android.app.ActivityTaskManager;
 import android.app.AppOpsManager;
+import android.app.IActivityManager;
 import android.app.IUiModeManager;
 import android.app.NotificationManager;
 import android.app.ProgressDialog;
@@ -414,6 +415,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     WindowManagerFuncs mWindowManagerFuncs;
     WindowManagerInternal mWindowManagerInternal;
     PowerManager mPowerManager;
+    IActivityManager mActivityManager;
     ActivityManagerInternal mActivityManagerInternal;
     ActivityTaskManagerInternal mActivityTaskManagerInternal;
     AutofillManagerInternal mAutofillManagerInternal;
@@ -3434,6 +3436,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         final boolean appSwitchKey = keyCode == KeyEvent.KEYCODE_APP_SWITCH;
         final boolean homeKey = keyCode == KeyEvent.KEYCODE_HOME;
         final boolean menuKey = keyCode == KeyEvent.KEYCODE_MENU;
+        final boolean backKey = keyCode == KeyEvent.KEYCODE_BACK;
 
         final boolean keyguardOn = keyguardOn();
 
@@ -3522,6 +3525,18 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         // Any key that is not Alt or Meta cancels Caps Lock combo tracking.
         if (mPendingCapsLockToggle && !KeyEvent.isMetaKey(keyCode) && !KeyEvent.isAltKey(keyCode)) {
             mPendingCapsLockToggle = false;
+        }
+
+        // Screen pinning within back key early check-in.
+        if (backKey) {
+            if (down && !isCustomSource) {
+                if (repeatCount == 0 && isScreenPinningOn()) {
+                    preloadActivityManager();
+                } else if (longPress && isScreenPinningOn()) {
+                    stopScreenPinning();
+                    return -1;
+                }
+            }
         }
 
         // Custom event handling for supported key codes.
@@ -6982,6 +6997,35 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     public void takeAlternativeScreenshot() {
         mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_FULLSCREEN);
         mHandler.post(mScreenshotRunnable);
+    }
+
+    private void preloadActivityManager() {
+        if (mActivityManager == null) {
+            mActivityManager = ActivityManager.getService();
+        }
+    }
+
+    private boolean isScreenPinningOn() {
+        preloadActivityManager();
+        try {
+            return mActivityManager.isInLockTaskMode();
+        } catch (RemoteException|NullPointerException e) {
+            // no-op
+        }
+        return false;
+    }
+
+    private void stopScreenPinning() {
+        preloadActivityManager();
+        try {
+            //mActivityManager.stopSystemLockTaskMode();
+            ActivityTaskManager.getService().stopSystemLockTaskMode();
+            performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, false,
+                    "Assist - Long Press");
+            mWindowManagerFuncs.onUserSwitched();
+        } catch (RemoteException|NullPointerException e) {
+            // no-op
+        }
     }
 
 }
