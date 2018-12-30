@@ -4336,6 +4336,17 @@ public final class Settings {
          */
         public static final String POWERMENU_SCREENSHOT = "powermenu_screenshot";
 
+        /**
+         * Whether to hide the lockscreen clock
+         * @hide
+         */
+        public static final String LOCKSCREEN_CLOCK = "lockscreen_clock";
+
+        /**
+         * Whether to hide the items underneath the lockscreen clock
+         * @hide
+         */
+        public static final String LOCKSCREEN_INFO = "lockscreen_info";
 
 	/**
          * Three Finger Gesture from Oppo
