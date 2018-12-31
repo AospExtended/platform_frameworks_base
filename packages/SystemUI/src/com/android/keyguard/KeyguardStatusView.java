@@ -32,6 +32,7 @@ import android.os.RemoteException;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.support.v4.graphics.ColorUtils;
+import android.text.Html;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.ArraySet;
@@ -40,6 +41,7 @@ import android.util.Log;
 import android.util.Slog;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.CustomAnalogClock;
 import android.widget.GridLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextClock;
@@ -70,6 +72,7 @@ public class KeyguardStatusView extends GridLayout implements
     private final float mSmallClockScale;
 
     private TextView mLogoutView;
+    private CustomAnalogClock mAnalogClockView;
     private TextClock mClockView;
     private View mClockSeparator;
     private TextView mOwnerInfo;
@@ -86,6 +89,8 @@ public class KeyguardStatusView extends GridLayout implements
     private int mLastLayoutHeight;
 
     private boolean mForcedMediaDoze;
+
+    private int mClockSelection;
 
     private KeyguardUpdateMonitorCallback mInfoCallback = new KeyguardUpdateMonitorCallback() {
 
@@ -142,6 +147,7 @@ public class KeyguardStatusView extends GridLayout implements
         mHandler = new Handler(Looper.myLooper());
         mSmallClockScale = getResources().getDimension(R.dimen.widget_small_font_size)
                 / getResources().getDimension(R.dimen.widget_big_font_size);
+
         onDensityOrFontScaleChanged();
     }
 
@@ -179,10 +185,11 @@ public class KeyguardStatusView extends GridLayout implements
 
         mClockView = findViewById(R.id.clock_view);
         mClockView.setShowCurrentUserTime(true);
+        mAnalogClockView = findViewById(R.id.analog_clock_view);
         mOwnerInfo = findViewById(R.id.owner_info);
         mKeyguardSlice = findViewById(R.id.keyguard_status_area);
         mClockSeparator = findViewById(R.id.clock_separator);
-        mVisibleInDoze = Sets.newArraySet(mClockView, mKeyguardSlice);
+        mVisibleInDoze = Sets.newArraySet(mClockView, mKeyguardSlice, mAnalogClockView);
         mTextColor = mClockView.getCurrentTextColor();
 
         int clockStroke = getResources().getDimensionPixelSize(R.dimen.widget_small_font_stroke);
@@ -215,6 +222,14 @@ public class KeyguardStatusView extends GridLayout implements
         layoutParams.bottomMargin = (int) -(height - (clockScale * height));
         mClockView.setLayoutParams(layoutParams);
 		mClockView.setTypeface(tf);
+
+        // Custom analog clock
+        RelativeLayout.LayoutParams customlayoutParams =
+                (RelativeLayout.LayoutParams) mAnalogClockView.getLayoutParams();
+        customlayoutParams.bottomMargin = getResources().getDimensionPixelSize(
+                R.dimen.bottom_text_spacing_digital);
+        mAnalogClockView.setLayoutParams(customlayoutParams);
+
         layoutParams = (RelativeLayout.LayoutParams) mClockSeparator.getLayoutParams();
         layoutParams.topMargin = smallClock ? (int) mWidgetPadding : 0;
         layoutParams.bottomMargin = layoutParams.topMargin;
@@ -315,6 +330,20 @@ public class KeyguardStatusView extends GridLayout implements
 
     private void refreshTime() {
         mClockView.refresh();
+
+        if (mClockSelection == 0) {
+            mClockView.setFormat12Hour(Patterns.clockView12);
+            mClockView.setFormat24Hour(Patterns.clockView24);
+        } else if (mClockSelection == 1) {
+            mClockView.setFormat12Hour(Html.fromHtml("<strong>hh</strong>mm"));
+            mClockView.setFormat24Hour(Html.fromHtml("<strong>kk</strong>mm"));
+        } else if (mClockSelection == 4) {
+            mClockView.setFormat12Hour(Html.fromHtml("<strong>hh</strong><br>mm"));
+            mClockView.setFormat24Hour(Html.fromHtml("<strong>kk</strong><br>mm"));
+        } else {
+            mClockView.setFormat12Hour("hh\nmm");
+            mClockView.setFormat24Hour("kk\nmm");
+        }
     }
 
     private void refreshFormat() {
@@ -387,10 +416,50 @@ public class KeyguardStatusView extends GridLayout implements
 
         boolean showClock = Settings.System.getIntForUser(resolver,
                 Settings.System.LOCKSCREEN_CLOCK, 1, UserHandle.USER_CURRENT) == 1;
+        mClockSelection = Settings.System.getIntForUser(resolver,
+                Settings.System.LOCKSCREEN_CLOCK_SELECTION, 0, UserHandle.USER_CURRENT);
 
         mClockView = (TextClock) findViewById(R.id.clock_view);
-        mClockView.setVisibility(mDarkAmount != 1 ? (showClock ?
-                View.VISIBLE : View.GONE) : View.VISIBLE);
+
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)
+                mKeyguardSlice.getLayoutParams();
+        switch (mClockSelection) {
+            case 0: // default digital
+            default:
+                mClockView.setVisibility(mDarkAmount != 1 ? (showClock ?
+                       View.VISIBLE : View.GONE) : View.VISIBLE);
+                mAnalogClockView.setVisibility(View.GONE);
+                params.addRule(RelativeLayout.BELOW, R.id.clock_view);
+                mClockView.setSingleLine(true);
+                break;
+            case 1: // digital (bold)
+                mClockView.setVisibility(mDarkAmount != 1 ? (showClock ? View.VISIBLE :
+                       View.GONE) : View.VISIBLE);
+                mAnalogClockView.setVisibility(View.GONE);
+                params.addRule(RelativeLayout.BELOW, R.id.clock_view);
+                mClockView.setSingleLine(true);
+                break;
+            case 2: // analog
+                mAnalogClockView.setVisibility(mDarkAmount != 1 ? (showClock ? View.VISIBLE :
+                       View.GONE) : View.VISIBLE);
+                mClockView.setVisibility(View.GONE);
+                params.addRule(RelativeLayout.BELOW, R.id.analog_clock_view);
+                break;
+            case 3: // sammy
+                mClockView.setVisibility(mDarkAmount != 1 ? (showClock ? View.VISIBLE :
+                       View.GONE) : View.VISIBLE);
+                mAnalogClockView.setVisibility(View.GONE);
+                params.addRule(RelativeLayout.BELOW, R.id.clock_view);
+                mClockView.setSingleLine(false);
+                break;
+            case 4: // sammy (bold)
+                mClockView.setVisibility(mDarkAmount != 1 ? (showClock ? View.VISIBLE :
+                       View.GONE) : View.VISIBLE);
+                mAnalogClockView.setVisibility(View.GONE);
+                params.addRule(RelativeLayout.BELOW, R.id.clock_view);
+                mClockView.setSingleLine(false);
+                break;
+        }
     }
 
     public void updateAll() {
@@ -499,6 +568,7 @@ public class KeyguardStatusView extends GridLayout implements
                 child.setAlpha(mDarkAmount == 1 ? 0 : 1);
             }
         }
+        refreshTime();
     }
 
     private boolean shouldShowLogout() {
