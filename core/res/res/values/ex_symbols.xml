@@ -269,14 +269,4 @@
   <java-symbol type="string" name="adb_both_active_notification_title" />
   <java-symbol type="string" name="adb_active_generic_notification_message" />
 
-  <!-- Custom Analog clock -->
-  <java-symbol type="drawable" name="custom_clock_dial" />
-  <java-symbol type="drawable" name="custom_clock_dial_ambient" />
-  <java-symbol type="drawable" name="custom_clock_hand_hour" />
-  <java-symbol type="drawable" name="custom_clock_hand_minute" />
-  <java-symbol type="color" name="analog_clock_border_color" />
-  <java-symbol type="color" name="analog_clock_face_color" />
-  <java-symbol type="color" name="analog_clock_hand_hour_color" />
-  <java-symbol type="color" name="analog_clock_hand_minute_color" />
-
 </resources>

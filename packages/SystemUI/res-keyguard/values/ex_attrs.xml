@@ -21,14 +21,11 @@
 
 <resources>
 
-    <!-- Custom Analog clock -->
+    <!-- Lockscreen clock styles -->
     <declare-styleable name="CustomAnalogClock">
         <attr name="custom_dial" format="reference"/>
         <attr name="custom_hand_hour" format="reference"/>
         <attr name="custom_hand_minute" format="reference"/>
-        <attr name="deadpool_dial" format="reference"/>
-        <attr name="deadpool_hand_hour" format="reference"/>
-        <attr name="deadpool_hand_minute" format="reference"/>
     </declare-styleable>
 
 </resources>
