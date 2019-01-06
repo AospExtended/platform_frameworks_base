@@ -19,13 +19,8 @@
     android:viewportWidth="512.000000"
     android:viewportHeight="512.000000">
 
-    <group
-            android:translateY="512.000000"
-            android:scaleX="0.100000"
-            android:scaleY="-0.100000">
-        <path
-            android:fillColor="#FFFFFFFF"
-            android:strokeWidth="1"
-            android:pathData="M2486 4279 l-26 -20 0 -893 0 -893 23 -21 c33 -31 105 -31 135 1 l22 23 0 891 0 892 -26 20 c-16 13 -41 21 -64 21 -23 0 -48 -8 -64 -21z" />
-    </group>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:strokeWidth="1"
+        android:pathData="m 249.74023,106.32032 h 12.51954 v 149.67967 h -12.51954 z" />
 </vector>
