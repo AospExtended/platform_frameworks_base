@@ -24,7 +24,7 @@
             android:scaleX="0.100000"
             android:scaleY="-0.100000">
         <path
-            android:fillColor="@color/analog_clock_hand_minute_color"
+            android:fillColor="#FFFFFFFF"
             android:strokeWidth="1"
             android:pathData="M2486 4529 l-26 -20 0 -946 0 -945 -25 -30 c-21 -24 -25 -40 -25 -90 0 -57 2 -63 39 -99 37 -37 42 -39 101 -39 59 0 64 2 101 39 37 36 39 42 39 99 0 50 -4 66 -25 90 l-25 30 0 945 0 946 -26 20 c-16 13 -41 21 -64 21 -23 0 -48 -8 -64 -21z" />
     </group>
