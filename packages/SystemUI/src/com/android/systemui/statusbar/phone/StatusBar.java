@@ -4364,6 +4364,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             final boolean useDark = useDarkTheme;
             mUiOffloadThread.submit(() -> {
             ThemeAccentUtils.setLightDarkTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useDark);
+            mNotificationPanel.setLockscreenClockTheme(useDark);
             });
         }
         if (isUsingBlackTheme() != useBlackTheme) {
@@ -4373,6 +4374,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             final boolean useBlack = useBlackTheme;
             mUiOffloadThread.submit(() -> {
             ThemeAccentUtils.setLightBlackTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useBlack);
+            mNotificationPanel.setLockscreenClockTheme(useBlack);
             });
         }
         if (isUsingExtendedTheme() != useExtendedTheme) {
@@ -4382,6 +4384,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             final boolean useExtended = useExtendedTheme;
             mUiOffloadThread.submit(() -> {
             ThemeAccentUtils.setLightExtendedTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useExtended);
+            mNotificationPanel.setLockscreenClockTheme(useExtended);
             });
         }
 
@@ -4392,6 +4395,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             final boolean useChocolate = useChocolateTheme;
             mUiOffloadThread.submit(() -> {
             ThemeAccentUtils.setLightChocolateTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useChocolate);
+            mNotificationPanel.setLockscreenClockTheme(useChocolate);
             });
         }
 
