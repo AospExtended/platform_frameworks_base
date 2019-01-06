@@ -4362,27 +4362,33 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             // with white on white or black on black
             // unfuckBlackWhiteAccent();
             final boolean useDark = useDarkTheme;
+            unloadAccents()
             mUiOffloadThread.submit(() -> {
             ThemeAccentUtils.setLightDarkTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useDark);
             });
+            mNotificationPanel.setLockscreenClockTheme(useDarkTheme);
         }
         if (isUsingBlackTheme() != useBlackTheme) {
             // Check for black and white accent so we don't end up
             // with white on white or black on black
             // unfuckBlackWhiteAccent();
             final boolean useBlack = useBlackTheme;
+            unloadAccents()
             mUiOffloadThread.submit(() -> {
             ThemeAccentUtils.setLightBlackTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useBlack);
             });
+            mNotificationPanel.setLockscreenClockTheme(useBlackTheme);
         }
         if (isUsingExtendedTheme() != useExtendedTheme) {
             // Check for black and white accent so we don't end up
             // with white on white or black on black
             // unfuckBlackWhiteAccent();
             final boolean useExtended = useExtendedTheme;
+            unloadAccents()
             mUiOffloadThread.submit(() -> {
             ThemeAccentUtils.setLightExtendedTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useExtended);
             });
+            mNotificationPanel.setLockscreenClockTheme(useExtendedTheme);
         }
 
         if (isUsingChocolateTheme() != useChocolateTheme) {
@@ -4390,9 +4396,11 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             // with white on white or black on black
             // unfuckBlackWhiteAccent();
             final boolean useChocolate = useChocolateTheme;
+            unloadAccents()
             mUiOffloadThread.submit(() -> {
             ThemeAccentUtils.setLightChocolateTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useChocolate);
             });
+            mNotificationPanel.setLockscreenClockTheme(useChocolateTheme);
         }
 
         // Lock wallpaper defines the color of the majority of the views, hence we'll use it
