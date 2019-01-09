@@ -3602,4 +3602,6 @@
     <!-- Set interval to trigger idleMaint -->
     <integer name="config_idleMaintSecs">0</integer>
 
+    <!-- Enable Zram writeback feature to allow unused pages in zram be written to flash. -->
+    <bool name="config_zramWriteback">true</bool>
 </resources>
