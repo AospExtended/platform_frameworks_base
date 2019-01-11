@@ -42,16 +42,132 @@
     <string name="keycode">കീ കോഡ്</string>
     <string name="no_home_title">ഹോം ബട്ടൺ കണ്ടെത്താൻ സാധിച്ചില്ല</string>
     <string name="no_home_message">സേവ് ചെയ്യുന്നതിന് മുൻപ് ഹോം ബട്ടൺ ആഡ് ചെയ്യൂ.</string>
+    <string name="clipboard_description">ക്ലിപ്ബോർഡ് വാക്കുകളെ ഡ്രാഗ് ചെയ്തു ഇടാനും എടുക്കാനും സാധിക്കും.</string>
+    <string name="keycode_description">കീ കോഡു ബട്ടൻസ് നാവ് ബാറിൽ കീബോര്ഡ് കീസ് ആഡ് ചെയ്യാൻ സഹായിക്കും. പ്രസ് ചെയുമ്പോൾ അവ കീബോര്ഡ് കീ സ്‌ നെ അനുകരിക്കും.</string>
+    <string name="start">ആരംഭിക്കുക</string>
+    <string name="center">നടുഭാഗം</string>
+    <string name="end">അവസാനം</string>
+    <string name="space">വിടവ്</string>
+    <string name="menu_ime">മെനു / കീബോര്ഡ് സ്വിറ്ചെർ</string>
+    <string name="select_button">ആഡ് ചെയ്യാൻ ബട്ടൺ പ്രസ് ചെയുക</string>
+    <string name="add_button">ബട്ടൺ ആഡ് ചെയുക</string>
+    <string name="save">സേവ്</string>
+    <string name="reset">റീസെറ്റ്</string>
+    <string name="select_keycode">കീബോര്ഡ് ബട്ടൺ സെലക്ട് ചെയ്യുക</string>
+    <string name="left">ഇടത്</string>
+    <string name="right">വലത്</string>
+    <string name="navbar_editor_title">എഡിറ്റർ</string>
+    <string name="navbar_editor_summary">നാവ് ബാർ ക്രേമികരിക്കുക</string>
     <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">സ്ക്രീൻഷോട്ട് ഡിലീറ്റ് ചെയതു</string>
     <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">കഫീൻ</string>
+    <string name="accessibility_quick_settings_caffeine_off">കഫീൻ ഓഫ്</string>
+    <string name="accessibility_quick_settings_caffeine_on">കഫീൻ ഓൺ</string>
     <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">റിബൂട്ട്‌</string>
+    <string name="quick_settings_reboot_recovery_label">റിക്കവറി</string>
     <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">സ്ക്രീൻഷോട്ട്</string>
+    <string name="quick_settings_region_screenshot_label">ഭാകികമായ സ്ക്രീൻഷോട്ട്‌</string>
     <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">ഹെഡ്സ് അപ്പ്</string>
+    <string name="accessibility_quick_settings_heads_up_off">ഹെഡ്സ് അപ്പ് ഓഫ്.</string>
+    <string name="accessibility_quick_settings_heads_up_on">ഹെഡ്സ് അപ്പ് ഓണ്‍.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">ഹെഡ്സ് അപ്പ് ഓഫ് ചെയ്തു.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">ഹെഡ്സ് അപ്പ് ഓണ്‍ ചെയ്തു.</string>
     <!-- USB Tethering tile -->
+    <string name="accessibility_quick_settings_usb_tether_off">USB ടെതറിംഗ് ഓഫ്</string>
+    <string name="accessibility_quick_settings_usb_tether_on">USB ടെതറിംഗ് on</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB ടെതറിംഗ് ഓഫ് ചെയ്തു</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">USB ടെതറിംഗ് ഓൺ ചെയ്തു</string>
+    <string name="quick_settings_usb_tether_label">USB ടെതറിംഗ്</string>
     <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">HW കീസ് ഓൺ</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW കീസ് ഓഫ്</string>
+    <string name="quick_settings_hwkeys_label">HW കീസ്</string>
     <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - നോട്ടിഫിക്കേഷൻസ് 1 മിനുറ്റ് സമയത്തേക്ക് ഓഫ്‌ചെയ്തിരിക്കുന്നു.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - പീക്കിങ് നോട്ടിഫിക്കേഷൻസ് <xliff:g id="number">%d</xliff:g> മിനുറ്റ് സമയത്തേക്ക് ഓഫ്‌ചെയ്തിരിക്കുന്നു.</string>
     <!-- Theme tile -->
+    <string name="systemui_theme_style_title">യൂസര്‍ ഇന്‍റര്‍ഫേസ് ശൈലി</string>
+    <string name="systemui_theme_style_auto">ഓട്ടോമാറ്റിക്ക്</string>
+    <string name="systemui_theme_style_light">ലൈറ്റ് യൂസര്‍ ഇന്‍റര്‍ഫേസ്</string>
+    <string name="systemui_theme_style_dark">ഇരുണ്ട യൂസര്‍ ഇന്‍റര്‍ഫേസ്</string>
+    <string name="systemui_theme_style_black">കറുത്ത യൂസർ ഇന്റർഫേസ്</string>
+    <string name="systemui_theme_style_extended">വിപുലീകരിച്ച യൂസര്‍ ഇന്‍റര്‍ഫേസ്</string>
+    <string name="systemui_theme_style_chocolate">ചോക്കലേറ്റ് യൂസര്‍ ഇന്‍റര്‍ഫേസ്</string>
+    <string name="quick_settings_theme_tile_title">കളര്‍ ശൈലി</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">കളര്‍ തിരഞ്ഞെടുക്കുക</string>
+    <string name="quick_settings_theme_tile_style_detail_title">ശൈലി തെരഞ്ഞെടുക്കുക</string>
+    <string name="quick_settings_theme_tile_color_default">സാധാ ഗതിയിലേക്ക്</string>
+    <string name="quick_settings_theme_tile_color_red">ചുവപ്പ്</string>
+    <string name="quick_settings_theme_tile_color_pink">പിങ്ക്</string>
+    <string name="quick_settings_theme_tile_color_purple">പർപ്പിൾ</string>
+    <string name="quick_settings_theme_tile_color_deep_purple">കടുത്ത പര്‍പ്പിള്‍</string>
+    <string name="quick_settings_theme_tile_color_indigo">ഇന്‍ഡിഗോ</string>
+    <string name="quick_settings_theme_tile_color_blue">നീല</string>
+    <string name="quick_settings_theme_tile_color_light_blue">ഇളം നീല</string>
+    <string name="quick_settings_theme_tile_color_cyan">സിയാൻ</string>
+    <string name="quick_settings_theme_tile_color_teal">ടീല്‍</string>
+    <string name="quick_settings_theme_tile_color_green">പച്ച</string>
+    <string name="quick_settings_theme_tile_color_light_green">ഇളം പച്ച</string>
+    <string name="quick_settings_theme_tile_color_lime">ലൈം</string>
+    <string name="quick_settings_theme_tile_color_yellow">മഞ്ഞ</string>
+    <string name="quick_settings_theme_tile_color_amber">അംബര്‍</string>
+    <string name="quick_settings_theme_tile_color_orange">ഓറഞ്ച്</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">കടുത്ത ഓറഞ്ച്</string>
+    <string name="quick_settings_theme_tile_color_brown">തവിട്ട്</string>
+    <string name="quick_settings_theme_tile_color_grey">ചാരനിറം</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">ചാര നീല</string>
+    <string name="quick_settings_theme_tile_color_candy_red">കടും ചുവപ്പ്</string>
+    <string name="quick_settings_theme_tile_color_pale_red">ഇളം ചുവപ്പ്</string>
+    <string name="quick_settings_theme_tile_color_extended_green">വിപുലീകരിച്ച പച്ച</string>
+    <string name="quick_settings_theme_tile_color_pale_blue">ഇളം പച്ച</string>
+    <string name="quick_settings_theme_tile_color_jade_green">ജടെ പച്ച</string>
+    <string name="quick_settings_theme_tile_color_black">കറുപ്പ്</string>
+    <string name="quick_settings_theme_tile_color_white">വെളുപ്പ്‌</string>
+    <string name="theme_info_title">ഇത് എന്താണ്?</string>
+    <string name="theme_info_message">തെയിം ടൈൽ വഴി യൂസേറിന്ന് എളുപ്പത്തിൽ സിസ്റ്റം സ്റ്റൈൽ മാറ്റാൻ സാധിക്കും.\n\nഅസെന്റ സ്റ്റൈൽ തമ്മിൽ ചനജ് ചെയ്യാൻ ടൈൽ ലോങ് പ്രസ് ചെയുക. വരുന്ന ഓപ്ഷൻസ് നിന്നും നിങ്ങൾക്ക് ഇഷ്ടപ്പെടാതെ തിരഞ്ഞെടുക്കാം.</string>
     <!-- QS Config -->
+    <string name="qs_menu_item_columns">കളികൾ</string>
+    <string name="qs_menu_item_columns_landscape">ലൻഡ്സ്കെപെ ഉള്ള കളികൾ</string>
+    <string name="qs_menu_item_columns_three">3</string>
+    <string name="qs_menu_item_columns_four">4</string>
+    <string name="qs_menu_item_columns_five">5</string>
+    <string name="qs_menu_item_columns_six">6</string>
+    <string name="qs_menu_item_columns_seven">7</string>
+    <string name="qs_menu_item_columns_eight">8</string>
+    <string name="qs_menu_item_columns_nine">9</string>
+    <string name="qs_menu_item_reset">റീസെറ്റ്</string>
+    <string name="qs_menu_item_titles">ലേബൽ കാണിക്കുക</string>
+    <string name="qs_menu_item_rows">അറകൾ</string>
+    <string name="qs_menu_item_rows_landscape">ലൻഡ്സ്കെപെ ഉള്ള അറകൾ</string>
+    <string name="qs_menu_item_rows_one">1</string>
+    <string name="qs_menu_item_rows_two">2</string>
+    <string name="qs_menu_item_rows_three">3</string>
+    <string name="qs_menu_item_rows_four">4</string>
+    <string name="qs_menu_item_qs_columns">ക്വിക്ക്ബര് കോളുംൻസ്</string>
+    <string name="qs_menu_item_columns_auto">ഓട്ടോമാറ്റിക്ക്</string>
+    <string name="screenshot_abort_title">സ്ക്രീന്ഷോട് എടുകൻ സാധിച്ചില്ല</string>
+    <string name="screenshot_abort_text">ഓപ്പറേഷൻ ഉപേശികപ്പെട്ടു.</string>
     <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">വികസിച്ച ഡെസ്ക്ടോപ്പ്</string>
+    <string name="quick_settings_expanded_desktop">വികസിപ്പിക്കുക</string>
+    <string name="quick_settings_expanded_desktop_off">സ്വാഭാവികം</string>
+    <string name="quick_settings_expanded_navigation_off">നാവ് ബാർ മറയ്ക്കുക</string>
+    <string name="quick_settings_expanded_statusbar_off">സ്റ്റാറ്റസ് ബാർ മറയ്ക്കുക</string>
     <!-- Advance location quick setting tile -->
+    <string name="quick_settings_location_secondary_battery_saving">സ്വയം ബാറ്ററി സംരക്ഷണം</string>
+    <string name="accessibility_quick_settings_location_battery_saving">സ്ഥാനം റിപ്പോർട്ടിംഗ്: ബാറ്ററി ലാഭിക്കല്‍ മോഡ്.</string>
+    <string name="quick_settings_location_secondary_gps_only">സെൻസർ മാത്രം</string>
+    <string name="accessibility_quick_settings_location_gps_only">സ്ഥാനം റിപ്പോർട്ടിംഗ്: സെൻസറുകൾ മാത്രമുള്ള മോഡ്.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">ഉയർന്ന കൃത്യത</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">സ്ഥാനം റിപ്പോർട്ടിംഗ്: ഉയർന്ന കൃത്യതാ മോഡ്.</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

@@ -18,7 +18,7 @@
     <string name="reboot_message">正在重启</string>
     <!-- SystemUI Restart -->
     <string name="systemui_restart_title">需要重启系统界面</string>
-    <string name="systemui_restart_message">为了使所有更改生效，需要重新启动系统界面。立即重启吗？</string>
+    <string name="systemui_restart_message">要使所有更改生效，需要重新启动系统界面。现在重新启动系统界面吗？</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_fakePackageSignature">伪造安装包签名</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -31,4 +31,9 @@
     <string name="permlab_toggleNavigationEditor">导航栏编辑器</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_toggleNavigationEditor">允许应用程序控制导航栏编辑器</string>
+    <!-- Font service -->
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <!-- AOKP custom system animations -->
 </resources>

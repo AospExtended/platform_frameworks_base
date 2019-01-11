@@ -24,14 +24,14 @@
     <string name="global_action_restart_bootloader">Загрузчик</string>
     <string name="global_action_restart_ui">Системный интерфейс</string>
     <string name="global_action_restart_soft">Мягкая перезагрузка</string>
-    <string name="statusbar_items_title">Значки в строке состояния</string>
+    <string name="statusbar_items_title">Значки строки состояния</string>
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Ярлыки экрана блокировки</string>
     <string name="lockscreen_default">По умолчанию</string>
     <string name="lockscreen_hidden">Ничего</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Звук</string>
-    <string name="quick_settings_sound_ring">Мелодия вызова</string>
+    <string name="quick_settings_sound_ring">Звонок</string>
     <string name="quick_settings_sound_vibrate">Вибрация</string>
     <string name="quick_settings_sound_dnd">Не беспокоить</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
@@ -164,4 +164,10 @@
     <string name="accessibility_quick_settings_location_gps_only">Определение местоположения: только по спутникам.</string>
     <string name="quick_settings_location_secondary_high_accuracy">Высокая точность</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Определение местоположения: по всем источникам.</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

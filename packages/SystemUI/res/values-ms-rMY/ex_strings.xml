@@ -19,19 +19,84 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">Advanced</string>
+    <string name="global_action_restart_recovery">Pemulihan</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">SystemUI</string>
+    <string name="global_action_restart_soft">Reboot lembut</string>
+    <string name="statusbar_items_title">Ikon statusbar</string>
     <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">Pintasan skrin kunci</string>
+    <string name="lockscreen_default">Lalai</string>
+    <string name="lockscreen_hidden">Tiada</string>
     <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Bunyi</string>
+    <string name="quick_settings_sound_ring">Ring</string>
+    <string name="quick_settings_sound_vibrate">Bergetar</string>
+    <string name="quick_settings_sound_dnd">Jangan ganggu</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Leret dari ikon untuk dilancarkan</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_data_saver">Penjimat data</string>
+    <string name="preview">Pratonton</string>
+    <string name="keycode">Kod kunci</string>
+    <string name="no_home_title">Tiada butang rumah yang dijumpai</string>
+    <string name="no_home_message">Butang rumah diperlukan untuk dapat mengemudi peranti ini. Sila tambahkan butang rumah sebelum menyimpan.</string>
+    <string name="clipboard_description">Clipboard membenarkan item diseret terus ke papan klip. Item juga boleh diseret terus keluar dari papan klip apabila ada.</string>
+    <string name="keycode_description">Butang kod kekunci membolehkan kunci papan kekunci ditambah ke Bar Navigasi. Apabila ditekan mereka mencontohkan kekunci papan kekunci yang dipilih. Mula-mula kunci mesti dipilih untuk butang, diikuti dengan imej yang akan ditunjukkan pada butang.</string>
+    <string name="start">Mulakan</string>
+    <string name="center">Pusat</string>
+    <string name="end">Akhirnya</string>
+    <string name="space">Spacer</string>
+    <string name="menu_ime">Penukar Menu / Papan Kekunci</string>
+    <string name="select_button">Pilih butang untuk menambah</string>
+    <string name="add_button">Tambah butang</string>
+    <string name="save">Simpan</string>
+    <string name="reset">Tetapkan semula</string>
+    <string name="select_keycode">Pilih Papan Kekunci</string>
+    <string name="left">Kiri</string>
+    <string name="right">Kanan</string>
+    <string name="navbar_editor_title">Editor</string>
+    <string name="navbar_editor_summary">Konfigurasi bar navigasi</string>
     <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Petikan dipadam</string>
     <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Kafein</string>
+    <string name="accessibility_quick_settings_caffeine_off">Kafein dimatikan</string>
+    <string name="accessibility_quick_settings_caffeine_on">Kafein dinyalakan</string>
     <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Reboot</string>
+    <string name="quick_settings_reboot_recovery_label">Pemulihan</string>
     <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Tangkapan skrin</string>
+    <string name="quick_settings_region_screenshot_label">Tangkapan separa</string>
     <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Heads up</string>
+    <string name="accessibility_quick_settings_heads_up_off">Heads up mati.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Heads up nyala.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Heads up dimatikan.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Heads up dinyalakan.</string>
     <!-- USB Tethering tile -->
+    <string name="accessibility_quick_settings_usb_tether_off">USB tethering off</string>
     <!-- HW Keys Tile -->
     <!-- Heads up snooze toast -->
     <!-- Theme tile -->
     <!-- QS Config -->
+    <string name="qs_menu_item_columns_three">3</string>
+    <string name="qs_menu_item_columns_four">4</string>
+    <string name="qs_menu_item_columns_five">5</string>
+    <string name="qs_menu_item_columns_six">6</string>
+    <string name="qs_menu_item_columns_seven">7</string>
+    <string name="qs_menu_item_columns_eight">8</string>
+    <string name="qs_menu_item_columns_nine">9</string>
+    <string name="qs_menu_item_reset">Tetapkan semula</string>
+    <string name="qs_menu_item_titles">Tunjukkan label</string>
     <!-- Expanded Desktop QS Tile -->
     <!-- Advance location quick setting tile -->
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

@@ -19,19 +19,155 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">Дадаткова</string>
+    <string name="global_action_restart_recovery">Рэжым аднаўлення</string>
+    <string name="global_action_restart_bootloader">Загрузчык</string>
+    <string name="global_action_restart_ui">Сістэмны інтэрфейс</string>
+    <string name="global_action_restart_soft">Хуткая перазагрузка</string>
+    <string name="statusbar_items_title">Значкі радку стану</string>
     <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">Значкі экрана блакавання</string>
+    <string name="lockscreen_default">Па змаўчанні</string>
+    <string name="lockscreen_hidden">Ніводны</string>
     <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Гук</string>
+    <string name="quick_settings_sound_ring">Званок</string>
+    <string name="quick_settings_sound_vibrate">Вібрацыя</string>
+    <string name="quick_settings_sound_dnd">Не турбаваць</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Правядзіце ад значка для запуску</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_data_saver">Эканомія трафіку</string>
+    <string name="preview">Папярэдні прагляд</string>
+    <string name="keycode">Код клавішы</string>
+    <string name="no_home_title">Кнопка \"Дадому\" не знойдзена</string>
+    <string name="no_home_message">Для навігацыі па гэтай прыладзе патрабуецца кнопка галоўнага экрана. Калі ласка, дадайце кнопку галоўнага экрана перад захаваннем.</string>
+    <string name="clipboard_description">З дапамогай кнопкі Буфер абмену можна перацягваць элементы непасрэдна ў буфер абмену. Элементы можна таксама перацягваць непасрэдна з буфера абмену, калі яны там ёсць.</string>
+    <string name="keycode_description">Кнопка Код клавішы дазваляе дадаваць клавішы ў Панэль навігацыі. Пры націску гэтай кнопкі эмулюецца выбраная клавіша. Спачатку трэба выбраць клавішу для кнопкі, а потым відарыс, які будзе паказвацца на кнопцы.</string>
+    <string name="start">Пачаць</string>
+    <string name="center">Па цэнтры</string>
+    <string name="end">Канец</string>
+    <string name="space">Падзяляльнік</string>
+    <string name="menu_ime">Пераключальнік Меню/Клавіятура</string>
+    <string name="select_button">Выберыце, якую кнопку дадаць</string>
+    <string name="add_button">Дадаць кнопку</string>
+    <string name="save">Захаваць</string>
+    <string name="reset">Скінуць</string>
+    <string name="select_keycode">Выберыце клавішу клавіятуры</string>
+    <string name="left">Злева</string>
+    <string name="right">Правая</string>
+    <string name="navbar_editor_title">Рэдактар</string>
+    <string name="navbar_editor_summary">Налады панэлі навігацыі</string>
     <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Скрыншот выдалены</string>
     <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Забарона сну</string>
+    <string name="accessibility_quick_settings_caffeine_off">Забарона сну адкл.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Забарона сну ўкл.</string>
     <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Перазагрузка</string>
+    <string name="quick_settings_reboot_recovery_label">Рэжым аднаўлення</string>
     <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Скрыншот</string>
+    <string name="quick_settings_region_screenshot_label">Скрыншот абранай вобласці экрана</string>
     <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Усплывальныя апавяшчэнні</string>
+    <string name="accessibility_quick_settings_heads_up_off">Усплывальныя апавяшчэння адкл.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Усплывальныя апавяшчэння укл.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Усплывальныя паведамленні адключаны.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Усплывальныя паведамленні ўключаны.</string>
     <!-- USB Tethering tile -->
+    <string name="accessibility_quick_settings_usb_tether_off">USB-мадэм адкл.</string>
+    <string name="accessibility_quick_settings_usb_tether_on">USB-мадэм укл.</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB-мадэм адключаны</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">USB-мадэм уключаны</string>
+    <string name="quick_settings_usb_tether_label">USB-мадэм</string>
     <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">Апаратныя кнопкі ўключаны</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Апаратныя кнопкі адключаны</string>
+    <string name="quick_settings_hwkeys_label">Апаратныя кнопкі</string>
     <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> Усплывальныя апавяшчэння выключаны на адну хвіліну.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Усплывальныя апавяшчэнні выключаны на <xliff:g id="number">%d</xliff:g> хвілін.</string>
     <!-- Theme tile -->
+    <string name="systemui_theme_style_title">Стыль інтэрфейсу</string>
+    <string name="systemui_theme_style_auto">Аўтаматычна</string>
+    <string name="systemui_theme_style_light">Светлы стыль</string>
+    <string name="systemui_theme_style_dark">Цёмны стыль</string>
+    <string name="systemui_theme_style_black">Чорны стыль</string>
+    <string name="systemui_theme_style_extended">Пашыраны карыстацкі інтэрфейс</string>
+    <string name="systemui_theme_style_chocolate">Шакалад</string>
+    <string name="quick_settings_theme_tile_title">Адценне</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Выберыце колер</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Выбраць стыль</string>
+    <string name="quick_settings_theme_tile_color_default">Па змаўчанні</string>
+    <string name="quick_settings_theme_tile_color_red">Чырвоны</string>
+    <string name="quick_settings_theme_tile_color_pink">Ружовы</string>
+    <string name="quick_settings_theme_tile_color_purple">Фіялетавы</string>
+    <string name="quick_settings_theme_tile_color_deep_purple">Барвовы</string>
+    <string name="quick_settings_theme_tile_color_indigo">Індыга</string>
+    <string name="quick_settings_theme_tile_color_blue">Сіні</string>
+    <string name="quick_settings_theme_tile_color_light_blue">Светла-блакітны</string>
+    <string name="quick_settings_theme_tile_color_cyan">Блакітны</string>
+    <string name="quick_settings_theme_tile_color_teal">Бірузовы</string>
+    <string name="quick_settings_theme_tile_color_green">Зялёны</string>
+    <string name="quick_settings_theme_tile_color_light_green">Светла-зялёны</string>
+    <string name="quick_settings_theme_tile_color_lime">Лайм</string>
+    <string name="quick_settings_theme_tile_color_yellow">Жоўты</string>
+    <string name="quick_settings_theme_tile_color_amber">Бурштынавы</string>
+    <string name="quick_settings_theme_tile_color_orange">Аранжавы</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">Цёмна-аранжавы</string>
+    <string name="quick_settings_theme_tile_color_brown">Карычневы</string>
+    <string name="quick_settings_theme_tile_color_grey">Шэры</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">Шэра-блакітны</string>
+    <string name="quick_settings_theme_tile_color_candy_red">Ярка-чырвоны</string>
+    <string name="quick_settings_theme_tile_color_pale_red">Бледна-чырвоны</string>
+    <string name="quick_settings_theme_tile_color_extended_green">Extended зялёны</string>
+    <string name="quick_settings_theme_tile_color_pale_blue">Бледна-блакітны</string>
+    <string name="quick_settings_theme_tile_color_jade_green">Зялёны нефрыт</string>
+    <string name="quick_settings_theme_tile_color_black">Чорны</string>
+    <string name="quick_settings_theme_tile_color_white">Белы</string>
+    <string name="theme_info_title">Што гэта?</string>
+    <string name="theme_info_message">Плітка \"Тэмы\" - гэта ўнікальная, але простая ў выкарыстанні плітка, якая дазваляе карыстальніку змяняць сістэмнае адценне або стыль..\n\nКаб пераключыцца паміж адценнямі і стылямі, проста доўга ўтрымлівайце націснутай плітку, а затым яшчэ раз націсніце на яе, каб выбраць з прапанаваных варыянтаў.</string>
     <!-- QS Config -->
+    <string name="qs_menu_item_columns">Слупкі</string>
+    <string name="qs_menu_item_columns_landscape">Слупкі (альбомны рэжым)</string>
+    <string name="qs_menu_item_columns_three">3</string>
+    <string name="qs_menu_item_columns_four">4</string>
+    <string name="qs_menu_item_columns_five">5</string>
+    <string name="qs_menu_item_columns_six">6</string>
+    <string name="qs_menu_item_columns_seven">7</string>
+    <string name="qs_menu_item_columns_eight">8</string>
+    <string name="qs_menu_item_columns_nine">9</string>
+    <string name="qs_menu_item_reset">Скінуць</string>
+    <string name="qs_menu_item_titles">Паказваць подпісы</string>
+    <string name="qs_menu_item_rows">Радкі</string>
+    <string name="qs_menu_item_rows_landscape">Радкі (альбомная арыентацыя)</string>
+    <string name="qs_menu_item_rows_one">1</string>
+    <string name="qs_menu_item_rows_two">2</string>
+    <string name="qs_menu_item_rows_three">3</string>
+    <string name="qs_menu_item_rows_four">4</string>
+    <string name="qs_menu_item_qs_columns">Слупкі хуткіх налад</string>
+    <string name="qs_menu_item_columns_auto">Аўтаматычна</string>
+    <string name="screenshot_abort_title">Скрыншот не быў створаны</string>
+    <string name="screenshot_abort_text">Аперацыя спынена.</string>
     <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">Рэжым пашыранага экрана</string>
+    <string name="quick_settings_expanded_desktop">Пашыраны</string>
+    <string name="quick_settings_expanded_desktop_off">Звычайны</string>
+    <string name="quick_settings_expanded_navigation_off">Схаваць панэль навігацыі</string>
+    <string name="quick_settings_expanded_statusbar_off">Схаваць радок стану</string>
     <!-- Advance location quick setting tile -->
+    <string name="quick_settings_location_secondary_battery_saving">Энергазберажэнне</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Вызначэнне месцазнаходжання: па каардынатах сеткі.</string>
+    <string name="quick_settings_location_secondary_gps_only">Толькі датчыкі GPS</string>
+    <string name="accessibility_quick_settings_location_gps_only">Вызначэнне месцазнаходжання: рэжым толькі датчыкі GPS.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Высокая дакладнасць</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Вызначэнне месцазнаходжання: па ўсіх крыніцах.</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

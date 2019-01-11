@@ -18,9 +18,11 @@
     <string name="reboot_message">กำลังเริ่มต้นระบบ</string>
     <!-- SystemUI Restart -->
     <string name="systemui_restart_title">เริ่มต้นการทำงานของส่วนติดต่อผู้ใช้ใหม่</string>
+    <string name="systemui_restart_message">เพื่อให้การเปลี่ยนแปลงทั้งหมดมีผลจำเป็นต้องเริ่มระบบใหม่ รีสตาร์ทตอนนี้เลยหรือไม่</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_fakePackageSignature">ตรวจสอบความถูกต้องของแพ็คเกจ</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">อนุญาตให้แอปเสมือน แอปพลิเคชันที่เป็นอันตรายอาจสามารถใช้ข้อมูลนี้เพื่อเข้าถึงข้อมูลแอปพลิเคชันส่วนตัว ให้สิทธิ์นี้ด้วยความระมัดระวังเท่านั้น!</string>
     <!-- App error dialog -->
     <string name="aerr_copy">คัดลอก URL เข้าสู่ระบบล้มเหลว</string>
     <string name="url_copy_success">คัดลอกurl เสร็จเรียบร้อยแล้ว</string>
@@ -29,4 +31,9 @@
     <string name="permlab_toggleNavigationEditor">แก้ไขตัวควบคุมแถบนำทาง</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_toggleNavigationEditor">อนุญาตให้แอปพลิเคชันควบคุมตัวแก้ไขแถบนำทาง</string>
+    <!-- Font service -->
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <!-- AOKP custom system animations -->
 </resources>

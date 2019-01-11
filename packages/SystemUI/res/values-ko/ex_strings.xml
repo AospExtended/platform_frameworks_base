@@ -19,21 +19,155 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
-    <string name="global_action_restart_soft">소프트 재부팅</string>
-    <string name="statusbar_items_title">상태 표시 줄 아이콘</string>
+    <string name="global_action_restart_advanced">고급</string>
+    <string name="global_action_restart_recovery">리커버리</string>
+    <string name="global_action_restart_bootloader">부트로더</string>
+    <string name="global_action_restart_ui">시스템 UI</string>
+    <string name="global_action_restart_soft">빠른 재시작</string>
+    <string name="statusbar_items_title">상태 표시줄 아이콘</string>
     <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">잠금 화면 바로가기</string>
+    <string name="lockscreen_default">기본</string>
+    <string name="lockscreen_hidden">선택 안함</string>
     <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">소리</string>
+    <string name="quick_settings_sound_ring">벨소리</string>
+    <string name="quick_settings_sound_vibrate">진동</string>
+    <string name="quick_settings_sound_dnd">방해 금지</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">실행하려면 아이콘을 미세요</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_data_saver">데이터 세이버</string>
+    <string name="preview">미리보기</string>
+    <string name="keycode">키 코드</string>
+    <string name="no_home_title">홈 버튼을 찾지 못했습니다</string>
+    <string name="no_home_message">이 기기를 탐색하려면 홈 버튼을 사용해야 합니다. 홈 버튼을 추가한 다음 저장하세요.</string>
+    <string name="clipboard_description">클립보드에 아이템을 끌어서 넣거나 뺄 수 있습니다.</string>
+    <string name="keycode_description">키 코드 버튼을 사용하면 키보드 키를 내비게이션 바에 추가할 수 있습니다. 설정된 키 코드 버튼을 누르면 키보드 키가 에뮬레이션됩니다. 먼저 버튼에 할당할 키를 선택하고 그 다음 버튼에 표시될 이미지를 선택해야 합니다.</string>
+    <string name="start">시작</string>
+    <string name="center">중앙</string>
+    <string name="end">끝</string>
+    <string name="space">공백</string>
+    <string name="menu_ime">메뉴 / 키보드 선택기</string>
+    <string name="select_button">추가할 버튼 선택</string>
+    <string name="add_button">버튼 추가</string>
+    <string name="save">저장 및 종료</string>
+    <string name="reset">재설정</string>
+    <string name="select_keycode">키보드 버튼 선택</string>
+    <string name="left">왼쪽</string>
+    <string name="right">오른쪽</string>
+    <string name="navbar_editor_title">편집기</string>
+    <string name="navbar_editor_summary">내비게이션 바 설정</string>
     <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">스크린샷이 삭제되었습니다</string>
     <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">카페인</string>
+    <string name="accessibility_quick_settings_caffeine_off">카페인 꺼짐</string>
+    <string name="accessibility_quick_settings_caffeine_on">카페인 켜짐</string>
     <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">다시 시작</string>
+    <string name="quick_settings_reboot_recovery_label">복구 모드</string>
     <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">스크린샷</string>
+    <string name="quick_settings_region_screenshot_label">부분 스크린샷</string>
     <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">헤드업 알림</string>
+    <string name="accessibility_quick_settings_heads_up_off">헤드업 알림 끄기</string>
+    <string name="accessibility_quick_settings_heads_up_on">헤드업 알림이 켜짐.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">헤드업 알림이 꺼졌습니다.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">헤드업 알림이 켜졌습니다.</string>
     <!-- USB Tethering tile -->
+    <string name="accessibility_quick_settings_usb_tether_off">USB 테더링 끄기</string>
+    <string name="accessibility_quick_settings_usb_tether_on">USB 테더링 켜기</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB 테더링 꺼짐</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">USB 테더링 켜짐</string>
+    <string name="quick_settings_usb_tether_label">USB 테더링</string>
     <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">하드웨어 키 사용</string>
+    <string name="accessibility_quick_settings_hwkeys_off">하드웨어 키 사용 안함</string>
+    <string name="quick_settings_hwkeys_label">하드웨어 키</string>
     <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 알림 엿보기를 1분간 중지합니다</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> • 알림 엿보기를 <xliff:g id="number">%d </xliff:g> 분간 중지합니다.</string>
     <!-- Theme tile -->
+    <string name="systemui_theme_style_title">UI 스타일</string>
+    <string name="systemui_theme_style_auto">자동</string>
+    <string name="systemui_theme_style_light">밝은 UI</string>
+    <string name="systemui_theme_style_dark">어두운 UI</string>
+    <string name="systemui_theme_style_black">블랙 UI</string>
+    <string name="systemui_theme_style_extended">확장된 UI</string>
+    <string name="systemui_theme_style_chocolate">초콜릿 UI</string>
+    <string name="quick_settings_theme_tile_title">강조색</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">색상 선택</string>
+    <string name="quick_settings_theme_tile_style_detail_title">스타일 선택</string>
+    <string name="quick_settings_theme_tile_color_default">기본값</string>
+    <string name="quick_settings_theme_tile_color_red">빨간색</string>
+    <string name="quick_settings_theme_tile_color_pink">분홍색</string>
+    <string name="quick_settings_theme_tile_color_purple">보라색</string>
+    <string name="quick_settings_theme_tile_color_deep_purple">짙은 보라색</string>
+    <string name="quick_settings_theme_tile_color_indigo">남색</string>
+    <string name="quick_settings_theme_tile_color_blue">파란색</string>
+    <string name="quick_settings_theme_tile_color_light_blue">밝은 파란색</string>
+    <string name="quick_settings_theme_tile_color_cyan">하늘색</string>
+    <string name="quick_settings_theme_tile_color_teal">청록색</string>
+    <string name="quick_settings_theme_tile_color_green">초록색</string>
+    <string name="quick_settings_theme_tile_color_light_green">밝은 초록색</string>
+    <string name="quick_settings_theme_tile_color_lime">연두색</string>
+    <string name="quick_settings_theme_tile_color_yellow">노란색</string>
+    <string name="quick_settings_theme_tile_color_amber">호박색</string>
+    <string name="quick_settings_theme_tile_color_orange">오렌지색</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">짙은 오렌지색</string>
+    <string name="quick_settings_theme_tile_color_brown">갈색</string>
+    <string name="quick_settings_theme_tile_color_grey">회색</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">푸른 회색</string>
+    <string name="quick_settings_theme_tile_color_candy_red">빨간 사탕색</string>
+    <string name="quick_settings_theme_tile_color_pale_red">연한 빨간색</string>
+    <string name="quick_settings_theme_tile_color_extended_green">확장된 녹색</string>
+    <string name="quick_settings_theme_tile_color_pale_blue">연한 파랑</string>
+    <string name="quick_settings_theme_tile_color_jade_green">비취색</string>
+    <string name="quick_settings_theme_tile_color_black">검은색</string>
+    <string name="quick_settings_theme_tile_color_white">흰색</string>
+    <string name="theme_info_title">이게 뭐죠?</string>
+    <string name="theme_info_message">테마 타일은 사용자가 시스템 강조색 또는 스타일을 변경할 수 있는 독특하지만 사용하기 쉬운 타일입니다.\n\n 강조색과 스타일을 변경하려면 타일을 길게 누른 후 다시 눌러 제공되는 옵션 중에서 선택하십시오.</string>
     <!-- QS Config -->
+    <string name="qs_menu_item_columns">열</string>
+    <string name="qs_menu_item_columns_landscape">열(세로 모드)</string>
+    <string name="qs_menu_item_columns_three">3</string>
+    <string name="qs_menu_item_columns_four">4</string>
+    <string name="qs_menu_item_columns_five">5</string>
+    <string name="qs_menu_item_columns_six">6</string>
+    <string name="qs_menu_item_columns_seven">7</string>
+    <string name="qs_menu_item_columns_eight">8</string>
+    <string name="qs_menu_item_columns_nine">9</string>
+    <string name="qs_menu_item_reset">재설정</string>
+    <string name="qs_menu_item_titles">레이블 표시</string>
+    <string name="qs_menu_item_rows">행</string>
+    <string name="qs_menu_item_rows_landscape">행 (가로 모드)</string>
+    <string name="qs_menu_item_rows_one">1</string>
+    <string name="qs_menu_item_rows_two">2</string>
+    <string name="qs_menu_item_rows_three">3</string>
+    <string name="qs_menu_item_rows_four">4</string>
+    <string name="qs_menu_item_qs_columns">Quickbar 열</string>
+    <string name="qs_menu_item_columns_auto">자동</string>
+    <string name="screenshot_abort_title">저장된 스크린샷이 없음</string>
+    <string name="screenshot_abort_text">작업이 중단됨.</string>
     <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">확장 데스크탑</string>
+    <string name="quick_settings_expanded_desktop">확장됨</string>
+    <string name="quick_settings_expanded_desktop_off">기본</string>
+    <string name="quick_settings_expanded_navigation_off">내비게이션 바 숨기기</string>
+    <string name="quick_settings_expanded_statusbar_off">상태 표시줄 숨기기</string>
     <!-- Advance location quick setting tile -->
+    <string name="quick_settings_location_secondary_battery_saving">배터리 절약</string>
+    <string name="accessibility_quick_settings_location_battery_saving">위치 확인: 배터리 절약 모드</string>
+    <string name="quick_settings_location_secondary_gps_only">센서만</string>
+    <string name="accessibility_quick_settings_location_gps_only">위치 확인: 센서 전용 모드.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">높은 정확도</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">위치 모드: 높은 정확도 모드</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

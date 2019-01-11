@@ -19,7 +19,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
-    <string name="global_action_restart_advanced">Tingkat Lanjut</string>
+    <string name="global_action_restart_advanced">Lanjutan</string>
     <string name="global_action_restart_recovery">Mode Pemulihan</string>
     <string name="global_action_restart_bootloader">Bootloader</string>
     <string name="global_action_restart_ui">SystemUI</string>
@@ -112,14 +112,14 @@
     <string name="quick_settings_theme_tile_color_teal">Hijau kebiruan</string>
     <string name="quick_settings_theme_tile_color_green">Hijau</string>
     <string name="quick_settings_theme_tile_color_light_green">Hijau muda</string>
-    <string name="quick_settings_theme_tile_color_lime">Hijau Kekuningan</string>
+    <string name="quick_settings_theme_tile_color_lime">Lemon</string>
     <string name="quick_settings_theme_tile_color_yellow">Kuning</string>
     <string name="quick_settings_theme_tile_color_amber">Sawo matang</string>
     <string name="quick_settings_theme_tile_color_orange">Oranye</string>
     <string name="quick_settings_theme_tile_color_deep_orange">Oranye tua</string>
     <string name="quick_settings_theme_tile_color_brown">Cokelat</string>
     <string name="quick_settings_theme_tile_color_grey">Abu-abu</string>
-    <string name="quick_settings_theme_tile_color_blue_grey">Abu-abu kebiruan</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">Biru Keabu-abuan</string>
     <string name="quick_settings_theme_tile_color_candy_red">Merah Permen</string>
     <string name="quick_settings_theme_tile_color_pale_red">Merah Pucat</string>
     <string name="quick_settings_theme_tile_color_extended_green">Hijau extended</string>
@@ -164,4 +164,10 @@
     <string name="accessibility_quick_settings_location_gps_only">Laporan lokasi: hanya mode sensor.</string>
     <string name="quick_settings_location_secondary_high_accuracy">Akurasi tinggi</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Laporan Lokasi: mode akurasi tinggi.</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

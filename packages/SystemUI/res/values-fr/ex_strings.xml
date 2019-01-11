@@ -39,9 +39,11 @@
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_data_saver">Économiseur de données</string>
     <string name="preview">Aperçu</string>
+    <string name="keycode">Touche</string>
     <string name="no_home_title">Aucun bouton d\'accueil trouvé</string>
     <string name="no_home_message">Un bouton d\'accueil est nécessaire pour naviguer sur cet appareil. Veuillez ajouter un bouton d\'accueil avant d\'enregistrer.</string>
     <string name="clipboard_description">Vous pouvez faire glisser des éléments directement dans le Presse-papiers et inversement.</string>
+    <string name="keycode_description">Les boutons de touches permettent d\'ajouter des touches du clavier à la barre de navigation. En les cliquants, ils simulent un appui de la touche de clavier sélectionnée. Il faut d\'abord sélectionner la cible du bouton, puis l\'image à afficher comme bouton.</string>
     <string name="start">Démarrer</string>
     <string name="center">Centrer</string>
     <string name="end">Fin</string>
@@ -86,7 +88,47 @@
     <string name="quick_settings_hwkeys_label">Boutons physiques</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Notifications flottantes désactivées pour 1 minute.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Notification furtive désactivé pendant <xliff:g id="number">%d</xliff:g> minutes.</string>
     <!-- Theme tile -->
+    <string name="systemui_theme_style_title">Style de l\'interface</string>
+    <string name="systemui_theme_style_auto">Automatique</string>
+    <string name="systemui_theme_style_light">Interface claire</string>
+    <string name="systemui_theme_style_dark">Interface sombre</string>
+    <string name="systemui_theme_style_black">Interface noire</string>
+    <string name="systemui_theme_style_extended">Interface Extended</string>
+    <string name="systemui_theme_style_chocolate">Interface Chocolat</string>
+    <string name="quick_settings_theme_tile_title">Couleur d\'accentuation</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Sélectionner la couleur</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Sélectionner le style</string>
+    <string name="quick_settings_theme_tile_color_default">Par défaut</string>
+    <string name="quick_settings_theme_tile_color_red">Rouge</string>
+    <string name="quick_settings_theme_tile_color_pink">Rose</string>
+    <string name="quick_settings_theme_tile_color_purple">Violet</string>
+    <string name="quick_settings_theme_tile_color_deep_purple">Violet foncé</string>
+    <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
+    <string name="quick_settings_theme_tile_color_blue">Bleu</string>
+    <string name="quick_settings_theme_tile_color_light_blue">Bleu clair</string>
+    <string name="quick_settings_theme_tile_color_cyan">Cyan</string>
+    <string name="quick_settings_theme_tile_color_teal">Turquoise</string>
+    <string name="quick_settings_theme_tile_color_green">Vert</string>
+    <string name="quick_settings_theme_tile_color_light_green">Vert clair</string>
+    <string name="quick_settings_theme_tile_color_lime">Vert citron</string>
+    <string name="quick_settings_theme_tile_color_yellow">Jaune</string>
+    <string name="quick_settings_theme_tile_color_amber">Ambre</string>
+    <string name="quick_settings_theme_tile_color_orange">Orange</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">Orange foncé</string>
+    <string name="quick_settings_theme_tile_color_brown">Marron</string>
+    <string name="quick_settings_theme_tile_color_grey">Gris</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">Bleu Gris</string>
+    <string name="quick_settings_theme_tile_color_candy_red">Rouge Candy</string>
+    <string name="quick_settings_theme_tile_color_pale_red">Rouge Pâle</string>
+    <string name="quick_settings_theme_tile_color_extended_green">Green Extended</string>
+    <string name="quick_settings_theme_tile_color_pale_blue">Bleu Pâle</string>
+    <string name="quick_settings_theme_tile_color_jade_green">Vert Jade</string>
+    <string name="quick_settings_theme_tile_color_black">Noir</string>
+    <string name="quick_settings_theme_tile_color_white">Blanc</string>
+    <string name="theme_info_title">Qu\'est-ce que c\'est ?</string>
+    <string name="theme_info_message">La tuile de thèmes est une mosaïque unique mais facile à utiliser qui permet à l’utilisateur de changer la couleur d\'accentuation ou le style du thème système.\n\nPour basculer entre ces deux modes, effectuer un appui prolongé sur la tuile, puis faire défiler les options disponibles par appui simple.</string>
     <!-- QS Config -->
     <string name="qs_menu_item_columns">Colonnes</string>
     <string name="qs_menu_item_columns_landscape">Colonnes (paysage)</string>
@@ -110,7 +152,22 @@
     <string name="screenshot_abort_title">Aucune capture d\'écran prise</string>
     <string name="screenshot_abort_text">Opération annulée.</string>
     <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">Bureau étendu</string>
     <string name="quick_settings_expanded_desktop">Étendu</string>
     <string name="quick_settings_expanded_desktop_off">Normal</string>
+    <string name="quick_settings_expanded_navigation_off">Cacher la barre de navigation</string>
+    <string name="quick_settings_expanded_statusbar_off">Cacher la barre de statut</string>
     <!-- Advance location quick setting tile -->
+    <string name="quick_settings_location_secondary_battery_saving">Économie de batterie</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Rapports de situation : mode économie de batterie.</string>
+    <string name="quick_settings_location_secondary_gps_only">Capteurs seulement</string>
+    <string name="accessibility_quick_settings_location_gps_only">Rapports de situation : mode de capteurs seulement.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Haute précision</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Rapports de situation : mode haute précision.</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

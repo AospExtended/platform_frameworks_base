@@ -76,9 +76,57 @@
     <string name="accessibility_quick_settings_heads_up_changed_on">เปิดการแจ้งเตือนด้านบน</string>
     <!-- USB Tethering tile -->
     <string name="accessibility_quick_settings_usb_tether_off">ปิดการปล่อยสัญญาณผ่าน USB</string>
+    <string name="accessibility_quick_settings_usb_tether_on">เปิดการกระจายสัญญาณผ่าน USB</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">การกระจายสัญญาณผ่าน USB ถูกปิด</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">การกระจายสัญญาณผ่าน USB ถูกเปิด</string>
+    <string name="quick_settings_usb_tether_label">การกระจายสัญญาณผ่าน USB</string>
     <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">เปิด ปุ่ม HW</string>
+    <string name="accessibility_quick_settings_hwkeys_off">ปิด ปุ่ม HW</string>
+    <string name="quick_settings_hwkeys_label">ปุ่ม HW</string>
     <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - ซ่อนการแจ้งเตือน เป็นเวลา 1 นาที</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> -  ซ่อนการแจ้งเตือน เป็นเวลา <xliff:g id="number">%d</xliff:g> นาที</string>
     <!-- Theme tile -->
+    <string name="systemui_theme_style_title">รูปแบบ UI</string>
+    <string name="systemui_theme_style_auto">อัตโนมัติ</string>
+    <string name="systemui_theme_style_light">Light UI</string>
+    <string name="systemui_theme_style_dark">Dark UI</string>
+    <string name="systemui_theme_style_black">Black UI</string>
+    <string name="systemui_theme_style_extended">Extended UI</string>
+    <string name="systemui_theme_style_chocolate">Chocolate UI</string>
+    <string name="quick_settings_theme_tile_title">รูปแบบสี</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">เลือกสี</string>
+    <string name="quick_settings_theme_tile_style_detail_title">เลือกรูปแบบ</string>
+    <string name="quick_settings_theme_tile_color_default">ค่าเริ่มต้น</string>
+    <string name="quick_settings_theme_tile_color_red">สีแดง</string>
+    <string name="quick_settings_theme_tile_color_pink">สีชมพู</string>
+    <string name="quick_settings_theme_tile_color_purple">สีม่วง</string>
+    <string name="quick_settings_theme_tile_color_deep_purple">สีม่วงเข้ม</string>
+    <string name="quick_settings_theme_tile_color_indigo">สีคราม</string>
+    <string name="quick_settings_theme_tile_color_blue">สีน้ำเงิน</string>
+    <string name="quick_settings_theme_tile_color_light_blue">สีฟ้าอ่อน</string>
+    <string name="quick_settings_theme_tile_color_cyan">สีฟ้า</string>
+    <string name="quick_settings_theme_tile_color_teal">สีฟ้าน้ำทะเล</string>
+    <string name="quick_settings_theme_tile_color_green">สีเขียว</string>
+    <string name="quick_settings_theme_tile_color_light_green">สีเขียวอ่อน</string>
+    <string name="quick_settings_theme_tile_color_lime">สีเขียวมะนาว</string>
+    <string name="quick_settings_theme_tile_color_yellow">สีเหลือง</string>
+    <string name="quick_settings_theme_tile_color_amber">สีเหลืองอำพัน</string>
+    <string name="quick_settings_theme_tile_color_orange">สีส้ม</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">สีส้มเข้ม</string>
+    <string name="quick_settings_theme_tile_color_brown">สีน้ำตาล</string>
+    <string name="quick_settings_theme_tile_color_grey">สีเทา</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">สีน้ำเงินอมเทา</string>
+    <string name="quick_settings_theme_tile_color_candy_red">สีแดงสด</string>
+    <string name="quick_settings_theme_tile_color_pale_red">สีแดงซีด</string>
+    <string name="quick_settings_theme_tile_color_extended_green">สีเขียว Extended</string>
+    <string name="quick_settings_theme_tile_color_pale_blue">สีฟ้าซีด</string>
+    <string name="quick_settings_theme_tile_color_jade_green">สีเขียวหยก</string>
+    <string name="quick_settings_theme_tile_color_black">สีดำ</string>
+    <string name="quick_settings_theme_tile_color_white">สีขาว</string>
+    <string name="theme_info_title">นี่คืออะไร</string>
+    <string name="theme_info_message">ชุดรูปแบบเฉพาะ แต่ใช้งานง่ายที่ช่วยให้ผู้ใช้สามารถเปลี่ยนสีและรูปแบบของระบบ\n\n เพียงแค่กดค้างบนรูปแบบแล้วเลือกเปลี่ยนจากตัวเลือกที่แสดงขึ้นมา</string>
     <!-- QS Config -->
     <string name="qs_menu_item_columns">แถว</string>
     <string name="qs_menu_item_columns_landscape">แถว แนวนอน</string>
@@ -114,4 +162,10 @@
     <string name="accessibility_quick_settings_location_gps_only">การระบุตำแหน่ง: โหมดเซนเซอร์เท่านั้น</string>
     <string name="quick_settings_location_secondary_high_accuracy">ความแม่นยำสูง</string>
     <string name="accessibility_quick_settings_location_high_accuracy">การระบุตำแหน่ง: โหมดความแม่นยำสูง</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

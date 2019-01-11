@@ -14,10 +14,26 @@
 -->
 <resources>
     <!-- Advanced reboot -->
+    <string name="reboot_title">Перазагрузка</string>
+    <string name="reboot_message">Перазагрузка сістэмы</string>
     <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">Неабходная перазагрузка карыстацкага інтэрфейсу</string>
+    <string name="systemui_restart_message">Каб усе змены набылі сілу, патрабуецца перазагрузка карыстацкага інтэрфейсу. Перазагрузіць інтэрфейс?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">Дазволіць падмену подпісу</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">Дазваляць праграмам абыходзіць сістэму бяспекі, выдаючы сябе за іншыя праграмы. Шкоднасныя праграмы могуць выкарыстоўваць гэта для доступу да прыватных дадзеных. На свой страх і рызыку!</string>
     <!-- App error dialog -->
+    <string name="aerr_copy">Капіяваць URL журнала памылкі</string>
+    <string name="url_copy_success">Спасылка паспяхова скапіяваная</string>
+    <string name="url_copy_failed">Падчас загрузкі лога на сэрвіс dogbin адбылася памылка</string>
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_toggleNavigationEditor">кіравання рэдактарам панэлі навігацыі</string>
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_toggleNavigationEditor">Дазваляе праграме рэдагаваць панэль навігацыі.</string>
+    <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <!-- AOKP custom system animations -->
 </resources>

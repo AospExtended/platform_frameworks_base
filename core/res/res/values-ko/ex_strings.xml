@@ -14,10 +14,26 @@
 -->
 <resources>
     <!-- Advanced reboot -->
+    <string name="reboot_title">다시 시작</string>
+    <string name="reboot_message">시스템 다시 시작 중</string>
     <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">시스템 UI 재시작이 필요합니다.</string>
+    <string name="systemui_restart_message">모든 변경 사항을 적용하려면 시스템 UI를 재시작해야합니다. 지금 시스템 UI를 재시작하시겠습니까?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">패키지 서명 스푸핑</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">앱이 다른 앱인 것처럼 흉내내는 것을 허용합니다. 악성 앱들이 이 권한을 사용하여 사적인 앱 정보에 접근할 수 있으니 주의하세요.</string>
     <!-- App error dialog -->
+    <string name="aerr_copy">충돌 로그 URL 복사</string>
+    <string name="url_copy_success">URL 복사를 완료하였습니다.</string>
+    <string name="url_copy_failed">dogbin에 로그를 업로드하는 중 에러가 발생했습니다</string>
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_toggleNavigationEditor">내비게이션 바 편집</string>
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_toggleNavigationEditor">어플리케이션에서 내비게이션 바 편집기 제어를 허용합니다.</string>
+    <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <!-- AOKP custom system animations -->
 </resources>

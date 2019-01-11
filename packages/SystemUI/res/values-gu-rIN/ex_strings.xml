@@ -119,6 +119,7 @@
     <string name="quick_settings_theme_tile_color_deep_orange">ઘોટો નારંગી</string>
     <string name="quick_settings_theme_tile_color_brown">કથ્થાઈ</string>
     <string name="quick_settings_theme_tile_color_grey">રાખોડિયું</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">વાદળી ભૂખરા</string>
     <string name="quick_settings_theme_tile_color_candy_red">કેન્ડી લાલ</string>
     <string name="quick_settings_theme_tile_color_pale_red">નિસ્તેજ લાલ</string>
     <string name="quick_settings_theme_tile_color_extended_green">Extended લીલો</string>
@@ -127,7 +128,46 @@
     <string name="quick_settings_theme_tile_color_black">કાળો</string>
     <string name="quick_settings_theme_tile_color_white">સફેદ</string>
     <string name="theme_info_title">આ શું છે?</string>
+    <string name="theme_info_message">થીમ્સ ટાઇલ એક અજોડ પરંતુ ઉપયોગમાં સરળ ટાઇલ છે જે વપરાશકર્તાને સિસ્ટમ ઉચ્ચાર અથવા શૈલી બદલવાની મંજૂરી આપે છે. \n\n ઉચ્ચારો અને શૈલીઓ વચ્ચે ફેરફાર કરવા માટે, ટાઇલ પર ફક્ત લાંબી પ્રેસ દબાવો અને પછી ઓફર કરેલા વિકલ્પોમાંથી પસંદ કરવા માટે ફરીથી દબાવો.</string>
     <!-- QS Config -->
+    <string name="qs_menu_item_columns">સ્તંભો</string>
+    <string name="qs_menu_item_columns_landscape">સ્તંભો લેન્ડસ્કેપ</string>
+    <string name="qs_menu_item_columns_three">૩</string>
+    <string name="qs_menu_item_columns_four">૪</string>
+    <string name="qs_menu_item_columns_five">૫</string>
+    <string name="qs_menu_item_columns_six">૬</string>
+    <string name="qs_menu_item_columns_seven">૭</string>
+    <string name="qs_menu_item_columns_eight">૮</string>
+    <string name="qs_menu_item_columns_nine">૯</string>
+    <string name="qs_menu_item_reset">૧૦</string>
+    <string name="qs_menu_item_titles">ફરીથી સેટ કરો</string>
+    <string name="qs_menu_item_rows">પંક્તિઓ</string>
+    <string name="qs_menu_item_rows_landscape">પંક્તિઓ લેન્ડસ્કેપ</string>
+    <string name="qs_menu_item_rows_one">૧</string>
+    <string name="qs_menu_item_rows_two">૨</string>
+    <string name="qs_menu_item_rows_three">૩</string>
+    <string name="qs_menu_item_rows_four">૪</string>
+    <string name="qs_menu_item_qs_columns">ઝડપીબાર કૉલમ્સ</string>
+    <string name="qs_menu_item_columns_auto">આપોઆપ</string>
+    <string name="screenshot_abort_title">કોઈ સ્ક્રીનશૉટ લેવામાં આવ્યો નથી</string>
+    <string name="screenshot_abort_text">ઓપરેશન રદ કર્યું.</string>
     <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">ડેસ્કટૉપ વિસ્તૃત કરો</string>
+    <string name="quick_settings_expanded_desktop">વિસ્તરણ કરો</string>
+    <string name="quick_settings_expanded_desktop_off">સામાન્ય</string>
+    <string name="quick_settings_expanded_navigation_off">નેવિગેશન બાર છુપાવો</string>
+    <string name="quick_settings_expanded_statusbar_off">સ્થિતિ બાર છુપાવો</string>
     <!-- Advance location quick setting tile -->
+    <string name="quick_settings_location_secondary_battery_saving">બૅટરી બચત</string>
+    <string name="accessibility_quick_settings_location_battery_saving">સ્થાન રિપોર્ટિંગ: બૅટરી બચત મોડ.</string>
+    <string name="quick_settings_location_secondary_gps_only">ફક્ત સેન્સર્સ</string>
+    <string name="accessibility_quick_settings_location_gps_only">સ્થાન રિપોર્ટિંગ: ફક્ત સેન્સર્સ મોડ.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">ઉચ્ચ સચોટતા</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">સ્થાન રિપોર્ટિંગ: ઉચ્ચ સચોટતા મોડ.</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

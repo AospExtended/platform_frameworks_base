@@ -22,6 +22,15 @@
     <!-- Lockscreen icons -->
     <!-- Sound QS Tile -->
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_data_saver">Estalvi de dades</string>
+    <string name="preview">Previsualitzar</string>
+    <string name="keycode">Codi de tecla</string>
+    <string name="no_home_title">No s\'ha trobat cap botó d\'inici</string>
+    <string name="start">Inicia</string>
+    <string name="add_button">Afegeix un botó</string>
+    <string name="left">Esquerra</string>
+    <string name="right">Dreta</string>
     <!-- Screenshot Delete Toast -->
     <!-- Caffeine QS Tile -->
     <!-- Reboot/Recovery QS Tile -->
@@ -34,4 +43,10 @@
     <!-- QS Config -->
     <!-- Expanded Desktop QS Tile -->
     <!-- Advance location quick setting tile -->
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

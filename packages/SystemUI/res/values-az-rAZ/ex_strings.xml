@@ -19,19 +19,105 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">Ətraflı</string>
+    <string name="global_action_restart_recovery">Xilasetmə (Recovery) </string>
+    <string name="global_action_restart_bootloader">Önyükləyici (Bootloader)</string>
+    <string name="global_action_restart_ui">Sistem interfeysi</string>
+    <string name="global_action_restart_soft">Sadə yenidən başlatma</string>
+    <string name="statusbar_items_title">Status paneli ikonları</string>
     <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">Kilid ekranı qısayolları</string>
+    <string name="lockscreen_default">Standart</string>
+    <string name="lockscreen_hidden">Yoxdur</string>
     <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Səs</string>
+    <string name="quick_settings_sound_ring">Zəng səsi</string>
+    <string name="quick_settings_sound_vibrate">Titrəmə</string>
+    <string name="quick_settings_sound_dnd">Narahat etməyin</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Başlatmaq üçün nişandan sürüşdürün</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_data_saver">Məlumat qənaəti</string>
+    <string name="preview">İlkin Baxış</string>
+    <string name="keycode">Açar şifrə</string>
+    <string name="no_home_title">Əsas ekran düyməsi tapılmadı</string>
+    <string name="no_home_message">Bu cihazda gəzinmək üçün əsas ekran düyməsi gərəklidir. Yadda saxlamazdan əvvəl zəhmət olmasa bir əsas ekran düyməsi əlavə edin.</string>
+    <string name="clipboard_description">Mübadilə buferi, elementlərin birbaşa buferə sürüklənməsinə icazə verir. Elementlər mövcud olduqda birbaşa buferdən də sürüklənə bilər.</string>
+    <string name="keycode_description">Əsas kod düymələri klaviatura düymələrinin Naviqasiya Panelinə əlavə olunmasına imkan verir. Basıldıqda seçilmiş klaviatura düyməsini təqlid edər. Əvvəlcə düyməni seçmək lazımdır və düymədə göstəriləcək bir şəkil seçilməsi gərəklidir.</string>
+    <string name="start">Başlanğıc</string>
+    <string name="center">Mərkəz</string>
+    <string name="end">Bitir</string>
+    <string name="space">Ayırıcı</string>
+    <string name="menu_ime">Menyu / Klaviatura dəyişdiricisi</string>
+    <string name="select_button">Əlavə ediləcək düyməni seçin</string>
+    <string name="add_button">Düymə əlavə et</string>
+    <string name="save">Yadda Saxla</string>
+    <string name="reset">Sıfırla</string>
+    <string name="select_keycode">Klaviatura düyməsi seçin</string>
+    <string name="left">Sol</string>
+    <string name="right">Sağ</string>
+    <string name="navbar_editor_title">Redaktor</string>
+    <string name="navbar_editor_summary">Naviqasiya panelini konfiqurasiya etmə</string>
     <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Erkan şəkli silindi</string>
     <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Kofein</string>
+    <string name="accessibility_quick_settings_caffeine_off">Kofein bağlıdır</string>
+    <string name="accessibility_quick_settings_caffeine_on">Kafein açıqdır</string>
     <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Yenidən başlat</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery(Qurtarma)</string>
     <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Ekran şəkli</string>
+    <string name="quick_settings_region_screenshot_label">Qismən ekran görüntüsü</string>
     <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Bildiriş pəncərələri</string>
+    <string name="accessibility_quick_settings_heads_up_off">Bildirim pəncərələri bağlıdır. </string>
+    <string name="accessibility_quick_settings_heads_up_on">Bildiriş pəncərələri aktivdir.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Bildiriş pəncərələri bağlanıldı. </string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Bildiriş pəncərələri açıldı.</string>
     <!-- USB Tethering tile -->
+    <string name="accessibility_quick_settings_usb_tether_off">USB internet paylaşımı qapalı</string>
+    <string name="accessibility_quick_settings_usb_tether_on">USB internet paylaşımı açıq</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB internet paylaşımı söndürüldü</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">USB internet paylaşımı açıldı</string>
+    <string name="quick_settings_usb_tether_label">USB İnternet Paylaşma</string>
     <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">Avadanlıq düymələri açıq</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Avadanlıq düymələri bağlı</string>
+    <string name="quick_settings_hwkeys_label">Avadanlıq düymələri</string>
     <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Gözdən keçirmə bildirimi 1 dəqiqə qədər təxirə salınır.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Bildirişi gözdən keçirmə <xliff:g id="number">%d</xliff:g> dəqiqəyə qədər təxirə salınır.</string>
     <!-- Theme tile -->
+    <string name="systemui_theme_style_title">İnterfeys stili</string>
+    <string name="systemui_theme_style_auto">Avtomatik</string>
+    <string name="systemui_theme_style_light">İşıqlı İnterfeys</string>
+    <string name="systemui_theme_style_dark">Qaranlıq İnterfeys</string>
+    <string name="systemui_theme_style_black">Qara İnterfeys</string>
+    <string name="systemui_theme_style_extended">Genişləndirilmiş İnterfeys</string>
+    <string name="systemui_theme_style_chocolate">Şokolad interfeys</string>
+    <string name="quick_settings_theme_tile_title">Uyğunluq</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Rəng seç</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Üslubu seçin</string>
     <!-- QS Config -->
     <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">Genişlənmiş Masaüstü</string>
+    <string name="quick_settings_expanded_desktop">Genişlənmiş</string>
+    <string name="quick_settings_expanded_desktop_off">Normal</string>
+    <string name="quick_settings_expanded_navigation_off">Naviqasiya panelini gizlət</string>
+    <string name="quick_settings_expanded_statusbar_off">Status panelini gizlət</string>
     <!-- Advance location quick setting tile -->
+    <string name="quick_settings_location_secondary_battery_saving">Batareya qənaəti</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Məkan bildirişi: batareya qənaət rejimi.</string>
+    <string name="quick_settings_location_secondary_gps_only">Yalnız sensorlar</string>
+    <string name="accessibility_quick_settings_location_gps_only">Məkan bildirişi: sadəcə sensorlar rejimi.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Yüksək həssaslıq</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Yer hesabatı: yüksək həssaslıq rejimi.</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

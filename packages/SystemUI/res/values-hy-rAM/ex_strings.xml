@@ -19,13 +19,43 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">Advanced</string>
     <!-- Lockscreen icons -->
+    <string name="lockscreen_default">Լռելյայն</string>
+    <string name="lockscreen_hidden">Ոչ մեկը</string>
     <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Ձայն</string>
+    <string name="quick_settings_sound_ring">Զանգ</string>
+    <string name="quick_settings_sound_dnd">Չանհանգստացնել</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="status_bar_data_saver">Տրաֆիկի խնայիչ</string>
+    <string name="preview">Նախադիտում</string>
+    <string name="keycode">Կոճակի կոդը</string>
+    <string name="no_home_title">ՙՏուն՚ կոճակը չի գտնվել</string>
+    <string name="start">Մեկնարկ</string>
+    <string name="center">Կենտրոն</string>
+    <string name="end">Վերջ</string>
+    <string name="space">Բացատ</string>
+    <string name="menu_ime">Մենյու / Ստեղնաշարի փոփոխիչ</string>
+    <string name="select_button">Ընտրել կոճակ՝ ավելացնելու համար</string>
+    <string name="add_button">Ավելացնել կոճակ</string>
+    <string name="save">Պահպանել</string>
+    <string name="reset">Վերակայել</string>
+    <string name="select_keycode">Ընտրել ստեղնաշարի կոճակ</string>
+    <string name="left">Ձախ</string>
+    <string name="right">Աջ</string>
+    <string name="navbar_editor_title">Խմբագրիչ</string>
     <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Սքրինշոթը ջնջվել է</string>
     <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Կոֆեին</string>
+    <string name="accessibility_quick_settings_caffeine_off">Կոֆեինն անջատված է</string>
+    <string name="accessibility_quick_settings_caffeine_on">Կոֆեինը միացված է</string>
     <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Վերաբեռնել</string>
     <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Սքրինշոթ</string>
+    <string name="quick_settings_region_screenshot_label">Մասնակի սքրինշոթ</string>
     <!-- Heads Up QS Tile -->
     <!-- USB Tethering tile -->
     <!-- HW Keys Tile -->
@@ -34,4 +64,10 @@
     <!-- QS Config -->
     <!-- Expanded Desktop QS Tile -->
     <!-- Advance location quick setting tile -->
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

@@ -33,7 +33,7 @@
     <string name="quick_settings_sound_label">声音</string>
     <string name="quick_settings_sound_ring">铃声</string>
     <string name="quick_settings_sound_vibrate">震动</string>
-    <string name="quick_settings_sound_dnd">请勿打扰</string>
+    <string name="quick_settings_sound_dnd">勿扰</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
     <string name="custom_hint">滑动图标以启动</string>
     <string name="status_bar_vpn">VPN</string>
@@ -41,7 +41,7 @@
     <string name="preview">预览</string>
     <string name="keycode">键码</string>
     <string name="no_home_title">未找到主屏幕按钮</string>
-    <string name="no_home_message">要在此设备上导航，您必须使用主屏幕按钮。请先添加主屏幕按钮，然后再保存。</string>
+    <string name="no_home_message">要在此设备上使用导航栏，您必须启用主屏幕按钮。请先添加主屏幕按钮，然后再保存。</string>
     <string name="clipboard_description">您可以利用“剪贴板”按钮将相应内容直接拖动到剪贴板中。剪贴板中有内容时，您也可以将剪贴板中的内容直接拖出来。</string>
     <string name="keycode_description">您可以利用“键码”按钮将键盘按键添加到导航栏中。只要按下这些按钮，按钮即可模仿所选键盘按键执行相应的操作。要使用这项功能，您必须先为按钮选择相应的按键，然后再选择要在按钮上显示的图片。</string>
     <string name="start">开始</string>
@@ -164,4 +164,10 @@
     <string name="accessibility_quick_settings_location_gps_only">位置报告：仅限设备</string>
     <string name="quick_settings_location_secondary_high_accuracy">高精确度</string>
     <string name="accessibility_quick_settings_location_high_accuracy">位置报告：高精确度</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

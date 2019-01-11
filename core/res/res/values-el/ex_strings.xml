@@ -28,5 +28,12 @@
     <string name="url_copy_success">Αντιγραφή του URL με επιτυχία</string>
     <string name="url_copy_failed">Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου καταγραφής στο dogbin</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_toggleNavigationEditor">επεξεργαστής γραμμής πλοήγησης</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_toggleNavigationEditor">Επιτρέπει σε μία εφαρμογή να ελέγχει τον επεξεργαστή γραμμής πλοήγησης.</string>
+    <!-- Font service -->
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <!-- AOKP custom system animations -->
 </resources>

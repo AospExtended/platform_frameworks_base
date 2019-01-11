@@ -19,19 +19,155 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">Avansat</string>
+    <string name="global_action_restart_recovery">Recuperare</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">SystemUI</string>
+    <string name="global_action_restart_soft">Repornire Soft</string>
+    <string name="statusbar_items_title">Iconiță statusbar</string>
     <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">Scurtături pe ecranul de blocare</string>
+    <string name="lockscreen_default">Implicite</string>
+    <string name="lockscreen_hidden">Nici una</string>
     <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Sunet</string>
+    <string name="quick_settings_sound_ring">Sonerie</string>
+    <string name="quick_settings_sound_vibrate">Vibrație</string>
+    <string name="quick_settings_sound_dnd">Nu deranjați</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Glisează dinspre iconiță pentru a lansa</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_data_saver">Economizor date</string>
+    <string name="preview">Previzualizare</string>
+    <string name="keycode">Cod cheie</string>
+    <string name="no_home_title">Niciun buton acasă găsit</string>
+    <string name="no_home_message">Un buton acasă este necesar pentru a naviga pe acest dispozitiv. Te rog adaugă un buton acasă înainte de a salva.</string>
+    <string name="clipboard_description">Clipboard permite elementelor sa fie trase direct in clipboard. Elementele pot deasemenea trase afară din clipboard.</string>
+    <string name="keycode_description">Butoanele keycode permit tastelor să fie adăugate barei de navigare. La atingere ele vor simula tasta selectată. Întâi o tastă trebuie să fie selectată pentru buton, urmată de o imagine pentru a fi afișată pe buton.</string>
+    <string name="start">Începe</string>
+    <string name="center">Centru</string>
+    <string name="end">Sfârșit</string>
+    <string name="space">Distanțator</string>
+    <string name="menu_ime">Schimbător Meniu / Tastatură</string>
+    <string name="select_button">Selectează un buton pentru adăugare</string>
+    <string name="add_button">Adaugă buton</string>
+    <string name="save">Salvează</string>
+    <string name="reset">Resetează</string>
+    <string name="select_keycode">Alege butonul pentru Tastatură</string>
+    <string name="left">Stânga</string>
+    <string name="right">Dreapta</string>
+    <string name="navbar_editor_title">Editor</string>
+    <string name="navbar_editor_summary">Configurează bara de navigare</string>
     <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Captură de ecran ștearsă</string>
     <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Cafeină</string>
+    <string name="accessibility_quick_settings_caffeine_off">Cafeină oprită</string>
+    <string name="accessibility_quick_settings_caffeine_on">Cafeină pornită</string>
     <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Repornire</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
     <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Captură de ecran</string>
+    <string name="quick_settings_region_screenshot_label">Captură de ecran parțială</string>
     <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Heads up</string>
+    <string name="accessibility_quick_settings_heads_up_off">Heads up oprite.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Heads up pornite.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Heads up oprite.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Heads up pornite.</string>
     <!-- USB Tethering tile -->
+    <string name="accessibility_quick_settings_usb_tether_off">Tethering USB oprit</string>
+    <string name="accessibility_quick_settings_usb_tether_on">Tethering USB activat</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">Tethering USB oprite</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">Tethering USB pornite</string>
+    <string name="quick_settings_usb_tether_label">Tethering USB pornit</string>
     <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">Taste fizice pornite</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Taste fizice oprite</string>
+    <string name="quick_settings_hwkeys_label">Taste fizice</string>
     <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Notificațiile sunt oprite pentru 1 minut.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Notificațiile sunt oprite pentru <xliff:g id="number">%d</xliff:g> minute.</string>
     <!-- Theme tile -->
+    <string name="systemui_theme_style_title">Stil interfață utilizator</string>
+    <string name="systemui_theme_style_auto">Automat</string>
+    <string name="systemui_theme_style_light">Interfață utilizator luminoasă</string>
+    <string name="systemui_theme_style_dark">Interfață utilizator întunecată</string>
+    <string name="systemui_theme_style_black">Interfață utilizator neagră</string>
+    <string name="systemui_theme_style_extended">Interfață utilizator Extended</string>
+    <string name="systemui_theme_style_chocolate">Interfață utilizator ciocolatie</string>
+    <string name="quick_settings_theme_tile_title">Accent</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Selectează culoarea</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Selectează stilul</string>
+    <string name="quick_settings_theme_tile_color_default">Implicit</string>
+    <string name="quick_settings_theme_tile_color_red">Roșu</string>
+    <string name="quick_settings_theme_tile_color_pink">Roz</string>
+    <string name="quick_settings_theme_tile_color_purple">Mov</string>
+    <string name="quick_settings_theme_tile_color_deep_purple">Mov închis</string>
+    <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
+    <string name="quick_settings_theme_tile_color_blue">Albastru</string>
+    <string name="quick_settings_theme_tile_color_light_blue">Albastru deschis</string>
+    <string name="quick_settings_theme_tile_color_cyan">Cyan</string>
+    <string name="quick_settings_theme_tile_color_teal">Turcoaz</string>
+    <string name="quick_settings_theme_tile_color_green">Verde</string>
+    <string name="quick_settings_theme_tile_color_light_green">Verde deschis</string>
+    <string name="quick_settings_theme_tile_color_lime">Lime</string>
+    <string name="quick_settings_theme_tile_color_yellow">Galben</string>
+    <string name="quick_settings_theme_tile_color_amber">Amber</string>
+    <string name="quick_settings_theme_tile_color_orange">Portocaliu</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">Portocaliu închis</string>
+    <string name="quick_settings_theme_tile_color_brown">Maro</string>
+    <string name="quick_settings_theme_tile_color_grey">Gri</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">Albastru gri</string>
+    <string name="quick_settings_theme_tile_color_candy_red">Roșu Candy</string>
+    <string name="quick_settings_theme_tile_color_pale_red">Roșu Pal</string>
+    <string name="quick_settings_theme_tile_color_extended_green">Verde Extended</string>
+    <string name="quick_settings_theme_tile_color_pale_blue">Albastru pal</string>
+    <string name="quick_settings_theme_tile_color_jade_green">Verde Jad</string>
+    <string name="quick_settings_theme_tile_color_black">Negru</string>
+    <string name="quick_settings_theme_tile_color_white">Alb</string>
+    <string name="theme_info_title">Ce este asta?</string>
+    <string name="theme_info_message">Iconița Teme e unică și ușor de folosit, permițând utilizatorului să schimbe accentul sau stilul sistemului.\n\nPentru a schimba accentul sau stilul apăsați lung pe iconiță, apoi apăsați din nou pe una dintre opțiunile oferite.</string>
     <!-- QS Config -->
+    <string name="qs_menu_item_columns">Coloane</string>
+    <string name="qs_menu_item_columns_landscape">Coloane în mod peisaj</string>
+    <string name="qs_menu_item_columns_three">3</string>
+    <string name="qs_menu_item_columns_four">4</string>
+    <string name="qs_menu_item_columns_five">5</string>
+    <string name="qs_menu_item_columns_six">6</string>
+    <string name="qs_menu_item_columns_seven">7</string>
+    <string name="qs_menu_item_columns_eight">8</string>
+    <string name="qs_menu_item_columns_nine">9</string>
+    <string name="qs_menu_item_reset">Resetare</string>
+    <string name="qs_menu_item_titles">Arată etichetele</string>
+    <string name="qs_menu_item_rows">Rânduri</string>
+    <string name="qs_menu_item_rows_landscape">Rânduri în mod peisaj</string>
+    <string name="qs_menu_item_rows_one">1</string>
+    <string name="qs_menu_item_rows_two">2</string>
+    <string name="qs_menu_item_rows_three">3</string>
+    <string name="qs_menu_item_rows_four">4</string>
+    <string name="qs_menu_item_qs_columns">Coloane bară rapidă</string>
+    <string name="qs_menu_item_columns_auto">Automat</string>
+    <string name="screenshot_abort_title">Nici o captură de ecran realizată</string>
+    <string name="screenshot_abort_text">Operație anulată.</string>
     <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">Ecran extins</string>
+    <string name="quick_settings_expanded_desktop">Extins</string>
+    <string name="quick_settings_expanded_desktop_off">Normal</string>
+    <string name="quick_settings_expanded_navigation_off">Ascunde bara de navigare</string>
+    <string name="quick_settings_expanded_statusbar_off">Ascunde bara de stare</string>
     <!-- Advance location quick setting tile -->
+    <string name="quick_settings_location_secondary_battery_saving">Economisire baterie</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Raportare locaţie: mod economisire baterie.</string>
+    <string name="quick_settings_location_secondary_gps_only">Doar senzori</string>
+    <string name="accessibility_quick_settings_location_gps_only">Raportare locaţie: doar senzori.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Precizie ridicată</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Raportare locaţie: precizie ridicată.</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

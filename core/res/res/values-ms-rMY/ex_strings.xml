@@ -14,10 +14,26 @@
 -->
 <resources>
     <!-- Advanced reboot -->
+    <string name="reboot_title">Reboot</string>
+    <string name="reboot_message">Sistem reboot</string>
     <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">Restart SystemUI diperlukan</string>
+    <string name="systemui_restart_message">Untuk semua perubahan yang diperlukan, restart SystemUI diperlukan. Restart SystemUI sekarang?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">Tandatangan pakej spoof</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">Membenarkan apl berpura-pura menjadi aplikasi yang berbeza. Aplikasi berniat jahat mungkin dapat menggunakannya untuk mengakses data aplikasi peribadi. Berikan kebenaran ini dengan berhati-hati sahaja!</string>
     <!-- App error dialog -->
+    <string name="aerr_copy">Salin URL log masuk nahas</string>
+    <string name="url_copy_success">URL disalin berjaya</string>
+    <string name="url_copy_failed">Ralat berlaku semasa memuat naik log ke dogbin</string>
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_toggleNavigationEditor">mengawal editor navigasi</string>
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_toggleNavigationEditor">Membenarkan aplikasi mengendalikan editor bar navigasi.</string>
+    <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <!-- AOKP custom system animations -->
 </resources>

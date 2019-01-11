@@ -17,8 +17,8 @@
     <string name="reboot_title">راه اندازی مجدد</string>
     <string name="reboot_message">راه اندازی مجدد سیستم</string>
     <!-- SystemUI Restart -->
-    <string name="systemui_restart_title">نیازمندِ ریست رابط کاربری سیستم</string>
-    <string name="systemui_restart_message">برای اعمال کامل تغییرات باید رابط کاربری سیستم ریست شود، آیا مایلید هم‌اکنون دستگاه ریست شود؟</string>
+    <string name="systemui_restart_title">رابط کاربری نیازمندِ راه‌اندازی مجدد است</string>
+    <string name="systemui_restart_message">اِعمال همه تغییرات ، به راه‌اندازی مجدد رابط کاربری نیاز دارد. رابط کاربری راه اندازی مجدد شود؟</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_fakePackageSignature">امضای بسته جعلی است</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -28,7 +28,12 @@
     <string name="url_copy_success">آدرس با موفقیت کپی شد</string>
     <string name="url_copy_failed">مشکلی در حین آپلود کردن گزارش به dogbin رخ داد</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permlab_toggleNavigationEditor">کنترل ناوبری ویرایشگر</string>
+    <string name="permlab_toggleNavigationEditor">کنترل ویرایشگر ناوبری</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_toggleNavigationEditor">به یک برنامه اجازه تنظیم و کنترل نوار ناوبری را می‌دهد.</string>
+    <!-- Font service -->
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <!-- AOKP custom system animations -->
 </resources>

@@ -19,19 +19,155 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">उन्नत</string>
+    <string name="global_action_restart_recovery">रिकवरी</string>
+    <string name="global_action_restart_bootloader">बूटलोडर</string>
+    <string name="global_action_restart_ui">सिस्टम यूआई</string>
+    <string name="global_action_restart_soft">केवल OS फिर से शुरू करें</string>
+    <string name="statusbar_items_title">स्टेटसबार चिह्न</string>
     <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">लॉक्सक्रीन शॉर्टकट</string>
+    <string name="lockscreen_default">डिफॉल्ट</string>
+    <string name="lockscreen_hidden">कोई भी नहीं</string>
     <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">ध्वनि</string>
+    <string name="quick_settings_sound_ring">घंटी</string>
+    <string name="quick_settings_sound_vibrate">कंपन</string>
+    <string name="quick_settings_sound_dnd">परेशान ना करें</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">लॉन्च करने के लिए आइकन से स्वाइप</string>
+    <string name="status_bar_vpn">वीपीएन</string>
+    <string name="status_bar_data_saver">डेटा सेवर</string>
+    <string name="preview">पूर्वावलोकन</string>
+    <string name="keycode">कुंजी कोड</string>
+    <string name="no_home_title">कोई होम बटन नहीं मिला</string>
+    <string name="no_home_message">इस डिवाइस को नेविगेट करने के लिए एक होम बटन आवश्यक है । सेव करने से पहले कृपया एक होम बटन जोड़ें ।</string>
+    <string name="clipboard_description">क्लिपबोर्ड आइटम्स को सीधे क्लिपबोर्ड पर खींचने की अनुमति देता है। मौजूद होने पर आइटम को सीधे क्लिपबोर्ड से बाहर खींचा जा सकता है।</string>
+    <string name="keycode_description">Keycode बटन कीबोर्ड की बटन को को नेविगेशन बार में जोड़ने की अनुमति देते हैं। दबाए जाने पर वे चयनित कीबोर्ड कुंजी का अनुकरण करते हैं। पहले Keycode के लिए बटन चुनिए, फिर बटन पर दिखाए जाने वाला चित्र चुना जाना चाहिए।</string>
+    <string name="start">शुरू करें</string>
+    <string name="center">मध्य</string>
+    <string name="end">समाप्त</string>
+    <string name="space">स्पेसर</string>
+    <string name="menu_ime">मेनू / कीबोर्ड स्विचर</string>
+    <string name="select_button">जोड़ने के लिए बटन का चयन करें</string>
+    <string name="add_button">बटन जोड़ें</string>
+    <string name="save">सेव करें</string>
+    <string name="reset">रीसेट करें</string>
+    <string name="select_keycode">कीबोर्ड बटन का चयन करें</string>
+    <string name="left">बाएँ</string>
+    <string name="right">दाएं</string>
+    <string name="navbar_editor_title">संपादक</string>
+    <string name="navbar_editor_summary">नेविगेशन बार कॉन्फ़िगर करें</string>
     <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">स्क्रीनशॉट डिलीट किया</string>
     <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">कैफीन</string>
+    <string name="accessibility_quick_settings_caffeine_off">कैफीन बंद</string>
+    <string name="accessibility_quick_settings_caffeine_on">कैफीन चालू</string>
     <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">रीबूट करें</string>
+    <string name="quick_settings_reboot_recovery_label">रिकवरी</string>
     <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">स्क्रीनशॉट</string>
+    <string name="quick_settings_region_screenshot_label">आंशिक स्क्रीनशॉट</string>
     <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">सचेत</string>
+    <string name="accessibility_quick_settings_heads_up_off">सचेत बंद</string>
+    <string name="accessibility_quick_settings_heads_up_on">सचेत चालु</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">सचेत बंद कर दिया।</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">सचेत चालु कर दिया।</string>
     <!-- USB Tethering tile -->
+    <string name="accessibility_quick_settings_usb_tether_off">यूएसबी टेथरिंग बंद</string>
+    <string name="accessibility_quick_settings_usb_tether_on">यूएसबी टेथरिंग चालू</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">यूएसबी टेथरिंग बंद कर दिया</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">यूएसबी टेथरिंग चालू कर दिया</string>
+    <string name="quick_settings_usb_tether_label">यूएसबी टेथरिंग</string>
     <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">हार्डवेयर कुंजीयाँ चालू</string>
+    <string name="accessibility_quick_settings_hwkeys_off">हार्डवेयर कुंजीयाँ बंद</string>
+    <string name="quick_settings_hwkeys_label">हार्डवेयर कुंजियाँ</string>
     <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - सूचनाएं 1 मिनट के लिए स्थगित की गयी हैं।</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> - सूचनाएँ <xliff:g id="number">%d </xliff:g> मिनट के लिए स्थगित किये जा रहे हैं।</string>
     <!-- Theme tile -->
+    <string name="systemui_theme_style_title">UI शैली</string>
+    <string name="systemui_theme_style_auto">स्वचालित</string>
+    <string name="systemui_theme_style_light">लाइट UI</string>
+    <string name="systemui_theme_style_dark">डार्क UI</string>
+    <string name="systemui_theme_style_black">काला UI</string>
+    <string name="systemui_theme_style_extended">विस्तारित UI</string>
+    <string name="systemui_theme_style_chocolate">चॉकलेट UI</string>
+    <string name="quick_settings_theme_tile_title">एक्सेंट</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">रंग का चयन करें</string>
+    <string name="quick_settings_theme_tile_style_detail_title">शैली का चयन करें</string>
+    <string name="quick_settings_theme_tile_color_default">डिफॉल्ट</string>
+    <string name="quick_settings_theme_tile_color_red">लाल</string>
+    <string name="quick_settings_theme_tile_color_pink">गुलाबी</string>
+    <string name="quick_settings_theme_tile_color_purple">बैंगनी</string>
+    <string name="quick_settings_theme_tile_color_deep_purple">गहरा बैंगनी</string>
+    <string name="quick_settings_theme_tile_color_indigo">इंडिगो</string>
+    <string name="quick_settings_theme_tile_color_blue">नीला</string>
+    <string name="quick_settings_theme_tile_color_light_blue">हल्का नीला</string>
+    <string name="quick_settings_theme_tile_color_cyan">हरिताभ नीला</string>
+    <string name="quick_settings_theme_tile_color_teal">चैती</string>
+    <string name="quick_settings_theme_tile_color_green">हरा</string>
+    <string name="quick_settings_theme_tile_color_light_green">हल्का हरा</string>
+    <string name="quick_settings_theme_tile_color_lime">लाइम</string>
+    <string name="quick_settings_theme_tile_color_yellow">पीला</string>
+    <string name="quick_settings_theme_tile_color_amber">हलका पीला</string>
+    <string name="quick_settings_theme_tile_color_orange">नारंगी</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">गहरा नारंगी</string>
+    <string name="quick_settings_theme_tile_color_brown">भूरा</string>
+    <string name="quick_settings_theme_tile_color_grey">धूसर</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">नीला धूसर</string>
+    <string name="quick_settings_theme_tile_color_candy_red">कैंडी लाल</string>
+    <string name="quick_settings_theme_tile_color_pale_red">पीला लाल</string>
+    <string name="quick_settings_theme_tile_color_extended_green">विस्तारित हरा</string>
+    <string name="quick_settings_theme_tile_color_pale_blue">पीला नीला</string>
+    <string name="quick_settings_theme_tile_color_jade_green">जेड हरा</string>
+    <string name="quick_settings_theme_tile_color_black">काला</string>
+    <string name="quick_settings_theme_tile_color_white">सफ़ेद</string>
+    <string name="theme_info_title">यह क्या है?</string>
+    <string name="theme_info_message">थीम टाइटल एक अनोखा और आसान टाइटल है जिसके द्वारा उपयोग कर्ता सिस्टम एक्सेंट तथा शैली बदल सकते हैं। \n\n सिस्टम एक्सेंट तथा शैलियां बदलने के लिए टाइटल पर देर तक दबा कर रखें तथा दर्शाये गए विकल्पों में से चुने।</string>
     <!-- QS Config -->
+    <string name="qs_menu_item_columns">कॉलम</string>
+    <string name="qs_menu_item_columns_landscape">कॉलम लैंडस्केप</string>
+    <string name="qs_menu_item_columns_three">३</string>
+    <string name="qs_menu_item_columns_four">४</string>
+    <string name="qs_menu_item_columns_five">५</string>
+    <string name="qs_menu_item_columns_six">६</string>
+    <string name="qs_menu_item_columns_seven">७</string>
+    <string name="qs_menu_item_columns_eight">८</string>
+    <string name="qs_menu_item_columns_nine">९</string>
+    <string name="qs_menu_item_reset">रीसेट करें</string>
+    <string name="qs_menu_item_titles">लेबल दिखाएं</string>
+    <string name="qs_menu_item_rows">पंक्तियाँ</string>
+    <string name="qs_menu_item_rows_landscape">पंक्तियाँ (लैंडस्केप)</string>
+    <string name="qs_menu_item_rows_one">१</string>
+    <string name="qs_menu_item_rows_two">२</string>
+    <string name="qs_menu_item_rows_three">३</string>
+    <string name="qs_menu_item_rows_four">४</string>
+    <string name="qs_menu_item_qs_columns">Quickbar कॉलम</string>
+    <string name="qs_menu_item_columns_auto">स्वचालित</string>
+    <string name="screenshot_abort_title">कोई स्क्रीनशॉट नहीं लिया</string>
+    <string name="screenshot_abort_text">करवाई रद्द</string>
     <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">विस्तारित डेस्कटॉप</string>
+    <string name="quick_settings_expanded_desktop">विस्तारित</string>
+    <string name="quick_settings_expanded_desktop_off">सामान्य</string>
+    <string name="quick_settings_expanded_navigation_off">नेविगेशन बार छुपाएँ</string>
+    <string name="quick_settings_expanded_statusbar_off">स्टेटस बार छुपाएँ</string>
     <!-- Advance location quick setting tile -->
+    <string name="quick_settings_location_secondary_battery_saving">बैटरी बचत</string>
+    <string name="accessibility_quick_settings_location_battery_saving">स्थान रिपोर्टिंग: बैटरी बचत मोड</string>
+    <string name="quick_settings_location_secondary_gps_only">केवल सेंसर</string>
+    <string name="accessibility_quick_settings_location_gps_only">लोकेशन मोड: सिर्फ सेंसर मोड़</string>
+    <string name="quick_settings_location_secondary_high_accuracy">उच्च सटीकता</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">स्थान रिपोर्टिंग: उच्च सटीकता मोड।</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

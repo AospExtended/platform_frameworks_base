@@ -19,19 +19,155 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">Napredno</string>
+    <string name="global_action_restart_recovery">Obnovitev</string>
+    <string name="global_action_restart_bootloader">Zagonski nalagalnik</string>
+    <string name="global_action_restart_ui">Uporabniški vmesnik sistema</string>
+    <string name="global_action_restart_soft">Mehki vnovičen zagon</string>
+    <string name="statusbar_items_title">Ikone vrstice stanja</string>
     <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">Bližnjice na zaklenjenem zaslonu</string>
+    <string name="lockscreen_default">Privzeto</string>
+    <string name="lockscreen_hidden">Brez</string>
     <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Zvok</string>
+    <string name="quick_settings_sound_ring">Zvonjenje</string>
+    <string name="quick_settings_sound_vibrate">Vibriraj</string>
+    <string name="quick_settings_sound_dnd">Ne moti</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Potegnite z ikone za zagon</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_data_saver">Ohranjevalnik podatkov</string>
+    <string name="preview">Predogled</string>
+    <string name="keycode">Ključni gumb</string>
+    <string name="no_home_title">Gumb Domov ni najden</string>
+    <string name="no_home_message">Gumb domov je zahtevan, da je možno krmarjenje na tej napravi. Pred shranjevanjem dodajte gumb domov.</string>
+    <string name="clipboard_description">Odložišče dovoli predmetom neposreden poteg v odložišče. Predmete je možno potegniti tudi neposredno iz odložišča, ko je prisotno.</string>
+    <string name="keycode_description">Ključni gumbi dovolijo dodajanje tipk na tipkovnici v vrstico za krmarjenje. Ko je pritisnjena, posnema izbrano tipko na tipkovnici. Najprej mora biti izbrana tipka za gumb, nato sledi slika, ki bo prikazana na gumbu.</string>
+    <string name="start">Začetek</string>
+    <string name="center">Sredina</string>
+    <string name="end">Konec</string>
+    <string name="space">Ločnik</string>
+    <string name="menu_ime">Meni / Preklopnik tipkovnic</string>
+    <string name="select_button">Izberite gumb, ki ga želite dodati</string>
+    <string name="add_button">Dodaj gumb</string>
+    <string name="save">Shrani</string>
+    <string name="reset">Ponastavi</string>
+    <string name="select_keycode">Izberite gumb na tipkovnici</string>
+    <string name="left">Levo</string>
+    <string name="right">Desno</string>
+    <string name="navbar_editor_title">Urejevalnik</string>
+    <string name="navbar_editor_summary">Nastavite vrstico za krmarjenje</string>
     <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Posnetek zaslona izbrisan</string>
     <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Kofein</string>
+    <string name="accessibility_quick_settings_caffeine_off">Kofein izklopljen</string>
+    <string name="accessibility_quick_settings_caffeine_on">Kofein vklopljen</string>
     <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Vnovičen zagon</string>
+    <string name="quick_settings_reboot_recovery_label">Obnovitev</string>
     <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Posnetek zaslona</string>
+    <string name="quick_settings_region_screenshot_label">Delni posnetek zaslona</string>
     <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Obvestila na zaslonu</string>
+    <string name="accessibility_quick_settings_heads_up_off">Obvestila na zaslonu izklopljena.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Obvestila na zaslonu vklopljena.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Obvestila na zaslonu izklopljena.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Obvestila na zaslonu vklopljena.</string>
     <!-- USB Tethering tile -->
+    <string name="accessibility_quick_settings_usb_tether_off">Delj. mob. int. USB izklopljeno</string>
+    <string name="accessibility_quick_settings_usb_tether_on">Delj. mob. int. USB vklopljeno</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">Delj. mob. int. USB izklopljeno</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">Delj. mob. int. USB vklopljeno</string>
+    <string name="quick_settings_usb_tether_label">Delj. mob. int. USB</string>
     <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">Fizične tipke vklopljene</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Fizične tipke izklopljene</string>
+    <string name="quick_settings_hwkeys_label">Fizične tipke</string>
     <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Kukajoča obvestila dremajo za eno minuto.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Kukajoča obvestila dremajo za <xliff:g id="number">%d</xliff:g> minut.</string>
     <!-- Theme tile -->
+    <string name="systemui_theme_style_title">Slog uporabniškega vmesnika</string>
+    <string name="systemui_theme_style_auto">Samodejno</string>
+    <string name="systemui_theme_style_light">Svetli uporabniški vmesnik</string>
+    <string name="systemui_theme_style_dark">Temni uporabniški vmesnik</string>
+    <string name="systemui_theme_style_black">Črni uporabniški vmesnik</string>
+    <string name="systemui_theme_style_extended">Extended uporabniški vmesnik</string>
+    <string name="systemui_theme_style_chocolate">Čokoladni uporabniški vmesnik</string>
+    <string name="quick_settings_theme_tile_title">Poudarek</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Izberite barvo</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Izberite slog</string>
+    <string name="quick_settings_theme_tile_color_default">Privzeto</string>
+    <string name="quick_settings_theme_tile_color_red">Rdeča</string>
+    <string name="quick_settings_theme_tile_color_pink">Roza</string>
+    <string name="quick_settings_theme_tile_color_purple">Vijolična</string>
+    <string name="quick_settings_theme_tile_color_deep_purple">Škrlatna</string>
+    <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
+    <string name="quick_settings_theme_tile_color_blue">Modra</string>
+    <string name="quick_settings_theme_tile_color_light_blue">Svetlo modra</string>
+    <string name="quick_settings_theme_tile_color_cyan">Cian</string>
+    <string name="quick_settings_theme_tile_color_teal">Turkizna</string>
+    <string name="quick_settings_theme_tile_color_green">Zelena</string>
+    <string name="quick_settings_theme_tile_color_light_green">Svetlo zelena</string>
+    <string name="quick_settings_theme_tile_color_lime">Limeta</string>
+    <string name="quick_settings_theme_tile_color_yellow">Rumena</string>
+    <string name="quick_settings_theme_tile_color_amber">Jantar</string>
+    <string name="quick_settings_theme_tile_color_orange">Oranžna</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">Temno oranžna</string>
+    <string name="quick_settings_theme_tile_color_brown">Rjava</string>
+    <string name="quick_settings_theme_tile_color_grey">Siva</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">Modro siva</string>
+    <string name="quick_settings_theme_tile_color_candy_red">Bonbon rdeča</string>
+    <string name="quick_settings_theme_tile_color_pale_red">Bledo rdeča</string>
+    <string name="quick_settings_theme_tile_color_extended_green">Extended zelena</string>
+    <string name="quick_settings_theme_tile_color_pale_blue">Bledo modra</string>
+    <string name="quick_settings_theme_tile_color_jade_green">Žad zelena</string>
+    <string name="quick_settings_theme_tile_color_black">Črna</string>
+    <string name="quick_settings_theme_tile_color_white">Bela</string>
+    <string name="theme_info_title">Kaj je to?</string>
+    <string name="theme_info_message">Ploščica za teme je edinstvena, vendar preprosta za uporabo, ki uporabniku omogoča spremembo poudarka ali sloga sistema.\n\nZa preklop med poudarki in slogi, dolgo pritisnite na ploščico in jo ponovno pritisnite, da izberete med ponujenimi možnostmi.</string>
     <!-- QS Config -->
+    <string name="qs_menu_item_columns">Stolpci</string>
+    <string name="qs_menu_item_columns_landscape">Stolpci ležeče</string>
+    <string name="qs_menu_item_columns_three">3</string>
+    <string name="qs_menu_item_columns_four">4</string>
+    <string name="qs_menu_item_columns_five">5</string>
+    <string name="qs_menu_item_columns_six">6</string>
+    <string name="qs_menu_item_columns_seven">7</string>
+    <string name="qs_menu_item_columns_eight">8</string>
+    <string name="qs_menu_item_columns_nine">9</string>
+    <string name="qs_menu_item_reset">Ponastavi</string>
+    <string name="qs_menu_item_titles">Prikaži oznake</string>
+    <string name="qs_menu_item_rows">Vrstice</string>
+    <string name="qs_menu_item_rows_landscape">Vrstice ležeče</string>
+    <string name="qs_menu_item_rows_one">1</string>
+    <string name="qs_menu_item_rows_two">2</string>
+    <string name="qs_menu_item_rows_three">3</string>
+    <string name="qs_menu_item_rows_four">4</string>
+    <string name="qs_menu_item_qs_columns">Stolpci hitre vrstice</string>
+    <string name="qs_menu_item_columns_auto">Samodejno</string>
+    <string name="screenshot_abort_title">Posnetek zaslona ni bil zajet</string>
+    <string name="screenshot_abort_text">Opravilo preklicano.</string>
     <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">Razširjeno namizje</string>
+    <string name="quick_settings_expanded_desktop">Razširjen</string>
+    <string name="quick_settings_expanded_desktop_off">Običajno</string>
+    <string name="quick_settings_expanded_navigation_off">Skrij vrstico za krmarjenje</string>
+    <string name="quick_settings_expanded_statusbar_off">Skrij vrstico stanja</string>
     <!-- Advance location quick setting tile -->
+    <string name="quick_settings_location_secondary_battery_saving">Varčevanje z energijo akumulatorja</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Poročanje o lokaciji: način varčevanja z energijo akumulatorja.</string>
+    <string name="quick_settings_location_secondary_gps_only">Samo tipala</string>
+    <string name="accessibility_quick_settings_location_gps_only">Poročanje lokacije: samo s senzorji.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Visoka natančnost</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Poročanje lokacije: način visoke natančnosti.</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

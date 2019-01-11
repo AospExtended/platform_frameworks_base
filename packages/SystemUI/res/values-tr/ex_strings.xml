@@ -56,8 +56,8 @@
     <string name="select_keycode">Klavye tuşu seçin</string>
     <string name="left">Sol</string>
     <string name="right">Sağ</string>
-    <string name="navbar_editor_title">Düzenleyici</string>
-    <string name="navbar_editor_summary">Gezinme çubuğunu yapılandırma</string>
+    <string name="navbar_editor_title">Düzenle</string>
+    <string name="navbar_editor_summary">Gezinme çubuğunu düzenle</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Ekran görüntüsü silindi</string>
     <!-- Caffeine QS Tile -->
@@ -164,4 +164,10 @@
     <string name="accessibility_quick_settings_location_gps_only">Konum bildirimi: sadece sensörler modu.</string>
     <string name="quick_settings_location_secondary_high_accuracy">Yüksek doğruluk</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Konum bildirimi: yüksek doğruluk modu.</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>

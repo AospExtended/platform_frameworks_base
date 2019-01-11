@@ -123,7 +123,7 @@
     <string name="quick_settings_theme_tile_color_candy_red">Vermelho Doce</string>
     <string name="quick_settings_theme_tile_color_pale_red">Vermelho Claro</string>
     <string name="quick_settings_theme_tile_color_extended_green">Verde estendido</string>
-    <string name="quick_settings_theme_tile_color_pale_blue">Azul Claro</string>
+    <string name="quick_settings_theme_tile_color_pale_blue">Azul pálido</string>
     <string name="quick_settings_theme_tile_color_jade_green">Verde Jade</string>
     <string name="quick_settings_theme_tile_color_black">Preto</string>
     <string name="quick_settings_theme_tile_color_white">Branco</string>
@@ -164,4 +164,10 @@
     <string name="accessibility_quick_settings_location_gps_only">Modo de localização: somente sensores.</string>
     <string name="quick_settings_location_secondary_high_accuracy">Alta precisão</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Modo de localização: alta precisão.</string>
+    <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <!-- Gaming Mode -->
+    <!-- Ambient Display Pixel-Like string -->
+    <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <!-- Smart pixels QS tile -->
 </resources>
