@@ -269,6 +269,9 @@ Navigator.OnVerticalChangedListener, KeyguardMonitor.Callback, NotificationMedia
             mDisabledFlags1 = savedInstanceState.getInt(EXTRA_DISABLE_STATE, 0);
             mDisabledFlags2 = savedInstanceState.getInt(EXTRA_DISABLE2_STATE, 0);
         }
+        // Respect the latest disabled-flags.
+        mCommandQueue.recomputeDisableFlags(false);
+
         mAssistManager = Dependency.get(AssistManager.class);
         mOverviewProxyService = Dependency.get(OverviewProxyService.class);
 
