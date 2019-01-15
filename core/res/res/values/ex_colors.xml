@@ -89,4 +89,9 @@
     <!-- Notification sender text color -->
     <color name="sender_text_color">@android:color/black</color>
 
+    <color name="bootleg_accent_gradient_end_color">#00000000</color>
+
+    <color name="generic_icon_background">#144ebb</color>
+    <color name="default_icon_fill_color">@color/white</color>
+    <color name="generic_icon_fill_color">@color/white</color>
 </resources>

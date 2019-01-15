@@ -269,4 +269,8 @@
   <java-symbol type="string" name="adb_both_active_notification_title" />
   <java-symbol type="string" name="adb_active_generic_notification_message" />
 
+  <!-- Whether device has a physical display cutout -->
+  <java-symbol type="bool" name="config_physicalDisplayCutout" />
+
+  <java-symbol type="color" name="bootleg_accent_gradient_end_color" />
 </resources>
