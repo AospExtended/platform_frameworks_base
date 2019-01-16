@@ -3449,4 +3449,6 @@
   <!-- For Dual SoftaAp -->
   <java-symbol type="array" name="config_wifi_dual_sap_interfaces" />
   <java-symbol type="bool" name="config_wifi_dual_sap_mode_enabled" />
+
+  <java-symbol type="bool" name="config_waitForMpctlOnBoot" />
 </resources>
