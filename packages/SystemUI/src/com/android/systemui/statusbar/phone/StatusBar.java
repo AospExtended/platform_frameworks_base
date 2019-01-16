@@ -4361,26 +4361,38 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             // Check for black and white accent so we don't end up
             // with white on white or black on black
             // unfuckBlackWhiteAccent();
-            ThemeAccentUtils.setLightDarkTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useDarkTheme);
+            final boolean useDark = useDarkTheme;
+            mUiOffloadThread.submit(() -> {
+            ThemeAccentUtils.setLightDarkTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useDark);
+            });
         }
         if (isUsingBlackTheme() != useBlackTheme) {
             // Check for black and white accent so we don't end up
             // with white on white or black on black
             // unfuckBlackWhiteAccent();
-            ThemeAccentUtils.setLightBlackTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useBlackTheme);
+            final boolean useBlack = useBlackTheme;
+            mUiOffloadThread.submit(() -> {
+            ThemeAccentUtils.setLightBlackTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useBlack);
+            });
         }
         if (isUsingExtendedTheme() != useExtendedTheme) {
             // Check for black and white accent so we don't end up
             // with white on white or black on black
             // unfuckBlackWhiteAccent();
-            ThemeAccentUtils.setLightExtendedTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useExtendedTheme);
+            final boolean useExtended = useExtendedTheme;
+            mUiOffloadThread.submit(() -> {
+            ThemeAccentUtils.setLightExtendedTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useExtended);
+            });
         }
 
         if (isUsingChocolateTheme() != useChocolateTheme) {
             // Check for black and white accent so we don't end up
             // with white on white or black on black
             // unfuckBlackWhiteAccent();
-            ThemeAccentUtils.setLightChocolateTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useChocolateTheme);
+            final boolean useChocolate = useChocolateTheme;
+            mUiOffloadThread.submit(() -> {
+            ThemeAccentUtils.setLightChocolateTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useChocolate);
+            });
         }
 
         // Lock wallpaper defines the color of the majority of the views, hence we'll use it
@@ -4441,7 +4453,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     public void updateAccents() {
         int accentSetting = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.ACCENT_PICKER, 0, mLockscreenUserManager.getCurrentUserId());
+     mUiOffloadThread.submit(() -> {
         ThemeAccentUtils.updateAccents(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), accentSetting);
+     });
     }
 
     // Unload all the theme accents
@@ -4453,7 +4467,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     public void updateTileStyle() {
          int qsTileStyle = Settings.System.getIntForUser(mContext.getContentResolver(),
                  Settings.System.QS_TILE_STYLE, 0, mLockscreenUserManager.getCurrentUserId());
+     mUiOffloadThread.submit(() -> {
         ThemeAccentUtils.updateTileStyle(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), qsTileStyle);
+     });
     }
 
     // Unload all the qs tile styles
