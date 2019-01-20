@@ -986,6 +986,12 @@ public final class DefaultPermissionGrantPolicy {
         if (mPermissionGrantedCallback != null) {
             mPermissionGrantedCallback.onDefaultRuntimePermissionsGranted(userId);
         }
+
+        // Google sound picker
+        PackageParser.Package googleSoundPackage = getSystemPackage("com.google.android.soundpicker");
+        if (googleSoundPackage != null) {
+            grantRuntimePermissions(googleSoundPackage, STORAGE_PERMISSIONS, true, userId);
+        }
     }
 
     private void grantDefaultPermissionsToDefaultSystemDialerApp(
