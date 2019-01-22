@@ -14,8 +14,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Max visible notification icons -->
-    <integer name="config_maxVisibleNotificationIcons">4</integer>
-    <integer name="config_maxVisibleNotificationIconsWhenDark">5</integer>
+    <integer name="config_maxVisibleNotificationIcons">6</integer>
+    <integer name="config_maxVisibleNotificationIconsWhenDark">7</integer>
 
     <!-- Allow devices override audio panel location to the left side -->
     <bool name="config_audioPanelOnLeftSide">false</bool>
