@@ -1018,14 +1018,7 @@ public class Build {
      * Custom fingerprint
      * @hide
      */
-    public static final String PROP_CUSTOM_FINGERPRINT = "ro.extended.fingerprint";
-
-    /**
-     * Custom fingerprint
-     * @hide
-     */
-    public static final String CUSTOM_FINGERPRINT = SystemProperties.get(PROP_CUSTOM_FINGERPRINT,
-            deriveFingerprint());
+    public static final String CUSTOM_FINGERPRINT = getString("ro.build.date");
 
     /**
      * Some devices split the fingerprint components between multiple
