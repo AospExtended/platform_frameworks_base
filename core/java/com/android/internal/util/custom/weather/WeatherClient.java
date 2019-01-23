@@ -43,7 +43,6 @@ import com.android.internal.R;
 public class WeatherClient {
 
     public static final String SERVICE_PACKAGE = "org.pixelexperience.weather.client";
-    private static final String SERVICE_PACKAGE_PERMISSION = SERVICE_PACKAGE + ".READ_WEATHER";
     public static final Uri WEATHER_URI = Uri.parse("content://org.pixelexperience.weather.client.provider/weather");
     public static final int WEATHER_UPDATE_SUCCESS = 0; // Success
     public static final int WEATHER_UPDATE_RUNNING = 1; // Update running
@@ -99,7 +98,6 @@ public class WeatherClient {
 
     public WeatherClient(Context context) {
         mContext = context;
-        mContext.enforceCallingOrSelfPermission(SERVICE_PACKAGE_PERMISSION, "Missing or invalid weather permission: " + SERVICE_PACKAGE_PERMISSION);
         updateIntentAction = "updateIntentAction_" + Integer.toString(getRandomInt());
         pendingWeatherUpdate = PendingIntent.getBroadcast(mContext, getRandomInt(), new Intent(updateIntentAction), 0);
         mObserver = new ArrayList<>();
@@ -230,8 +228,26 @@ public class WeatherClient {
         isRunning = false;
     }
 
-    public void addObserver(final WeatherObserver observer) {
+    public void addObserver(final WeatherObserver observer, boolean withQuery) {
         mObserver.add(observer);
+        if (withQuery) {
+            if (isRunning) {
+                return;
+            }
+            isRunning = true;
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    updateWeatherData();
+                    try {
+                        observer.onWeatherUpdated(mWeatherInfo);
+                    } catch (Exception ignored) {
+                    }
+                }
+            });
+            thread.setPriority(Process.THREAD_PRIORITY_BACKGROUND);
+            thread.start();
+        }
     }
 
     public void removeObserver(WeatherObserver observer) {
@@ -253,8 +269,29 @@ public class WeatherClient {
         String conditions = "";
         int temperatureMetric = 0;
         int temperatureImperial = 0;
+        final Map<String, Integer> conditionsToDrawableMap = new HashMap<>();
 
         public WeatherInfo() {
+            conditionsToDrawableMap.put("partly-cloudy", R.drawable.weather_partly_cloudy);
+            conditionsToDrawableMap.put("partly-cloudy-night", R.drawable.weather_partly_cloudy_night);
+            conditionsToDrawableMap.put("mostly-cloudy", R.drawable.weather_mostly_cloudy);
+            conditionsToDrawableMap.put("mostly-cloudy-night", R.drawable.weather_mostly_cloudy_night);
+            conditionsToDrawableMap.put("cloudy", R.drawable.weather_cloudy);
+            conditionsToDrawableMap.put("clear-night", R.drawable.weather_clear_night);
+            conditionsToDrawableMap.put("mostly-clear-night", R.drawable.weather_mostly_clear_night);
+            conditionsToDrawableMap.put("sunny", R.drawable.weather_sunny);
+            conditionsToDrawableMap.put("mostly-sunny", R.drawable.weather_mostly_sunny);
+            conditionsToDrawableMap.put("scattered-showers", R.drawable.weather_scattered_showers);
+            conditionsToDrawableMap.put("scattered-showers-night", R.drawable.weather_scattered_showers_night);
+            conditionsToDrawableMap.put("rain", R.drawable.weather_rain);
+            conditionsToDrawableMap.put("windy", R.drawable.weather_windy);
+            conditionsToDrawableMap.put("snow", R.drawable.weather_snow);
+            conditionsToDrawableMap.put("scattered-thunderstorms", R.drawable.weather_isolated_scattered_thunderstorms);
+            conditionsToDrawableMap.put("scattered-thunderstorms-night", R.drawable.weather_isolated_scattered_thunderstorms_night);
+            conditionsToDrawableMap.put("isolated-thunderstorms", R.drawable.weather_isolated_scattered_thunderstorms);
+            conditionsToDrawableMap.put("isolated-thunderstorms-night", R.drawable.weather_isolated_scattered_thunderstorms_night);
+            conditionsToDrawableMap.put("thunderstorms", R.drawable.weather_thunderstorms);
+            conditionsToDrawableMap.put("foggy", R.drawable.weather_foggy);
         }
 
         public int getTemperature(boolean metric) {
@@ -270,32 +307,8 @@ public class WeatherClient {
         }
 
         public int getWeatherConditionImage() {
-            Map<String, Integer> conditions = new HashMap<>();
-            conditions.put("partly-cloudy", R.drawable.weather_partly_cloudy);
-            conditions.put("partly-cloudy-night", R.drawable.weather_partly_cloudy_night);
-            conditions.put("mostly-cloudy", R.drawable.weather_mostly_cloudy);
-            conditions.put("mostly-cloudy-night", R.drawable.weather_mostly_cloudy_night);
-            conditions.put("cloudy", R.drawable.weather_cloudy);
-            conditions.put("clear-night", R.drawable.weather_clear_night);
-            conditions.put("mostly-clear-night", R.drawable.weather_mostly_clear_night);
-            conditions.put("sunny", R.drawable.weather_sunny);
-            conditions.put("mostly-sunny", R.drawable.weather_mostly_sunny);
-            conditions.put("scattered-showers", R.drawable.weather_scattered_showers);
-            conditions.put("scattered-showers-night", R.drawable.weather_scattered_showers_night);
-            conditions.put("rain", R.drawable.weather_rain);
-            conditions.put("windy", R.drawable.weather_windy);
-            conditions.put("snow", R.drawable.weather_snow);
-            conditions.put("scattered-thunderstorms", R.drawable.weather_isolated_scattered_thunderstorms);
-            conditions.put("scattered-thunderstorms-night", R.drawable.weather_isolated_scattered_thunderstorms_night);
-            conditions.put("isolated-thunderstorms", R.drawable.weather_isolated_scattered_thunderstorms);
-            conditions.put("isolated-thunderstorms-night", R.drawable.weather_isolated_scattered_thunderstorms_night);
-            conditions.put("thunderstorms", R.drawable.weather_thunderstorms);
-            conditions.put("foggy", R.drawable.weather_foggy);
-            for (String condition : conditions.keySet()) {
-                if (getConditions().equals(condition)) {
-                    return conditions.get(condition);
-                }
-            }
+            if (conditionsToDrawableMap.containsKey(conditions))
+                return conditionsToDrawableMap.get(conditions);
             return 0;
         }
 

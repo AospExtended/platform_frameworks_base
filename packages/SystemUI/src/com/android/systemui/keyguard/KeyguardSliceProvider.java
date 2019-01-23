@@ -230,7 +230,7 @@ public class KeyguardSliceProvider extends SliceProvider implements
         mZenModeController = new ZenModeControllerImpl(getContext(), mHandler);
         mZenModeController.addCallback(this);
         mWeatherClient = new WeatherClient(getContext());
-        mWeatherClient.addObserver(this);
+        mWeatherClient.addObserver(this, false /*withQuery*/);
         mDatePattern = getContext().getString(R.string.system_ui_aod_date_pattern);
         registerClockUpdate();
         updateClock();
