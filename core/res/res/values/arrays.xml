@@ -166,12 +166,26 @@
     </string-array>
 
     <array name="sim_colors">
-        <item>@color/Teal_700</item>
+        <item>@color/Amber_700</item>
+        <item>@color/Carbon_700</item>
         <item>@color/Blue_700</item>
+        <item>@color/Light_Blue_700</item>
+        <item>@color/Brown_700</item>
+        <item>@color/Cyan_700</item>
+        <item>@color/Green_700</item>
+        <item>@color/Light_Green_700</item>
+        <item>@color/Grey_700</item>
+        <item>@color/Blue_Grey_700</item>
         <item>@color/Indigo_700</item>
-        <item>@color/Purple_700</item>
+        <item>@color/Lime_700</item>
+        <item>@color/Orange_700</item>
+        <item>@color/Deep_Orange_700</item>
         <item>@color/Pink_700</item>
-        <item>@color/Red_700</item>
+        <item>@color/Purple_700</item>
+        <item>@color/Deep_Purple_700</item>
+        <item>@color/Vermilion_700</item>
+        <item>@color/Teal_700</item>
+        <item>@color/Yellow_700</item>
     </array>
 
     <!-- Used in ResolverTargetActionsDialogFragment -->
