@@ -92,6 +92,7 @@ import android.os.ServiceManager;
 import android.os.SystemClock;
 import android.os.Trace;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.provider.Settings.Global;
 import android.telephony.TelephonyManager;
 import android.util.ArraySet;
@@ -2290,6 +2291,10 @@ public class AppStandbyController implements AppStandbyInternal {
         public static final long DEFAULT_AUTO_RESTRICTED_BUCKET_DELAY_MS = ONE_DAY;
         public static final boolean DEFAULT_CROSS_PROFILE_APPS_SHARE_STANDBY_BUCKETS = true;
 
+        // Aggressive standby
+        private boolean mAggressiveStandby = false;
+        private static final long AGGRESSIVE_WEIGHT = 3;
+
         private final KeyValueListParser mParser = new KeyValueListParser(',');
 
         SettingsObserver(Handler handler) {
@@ -2303,12 +2308,23 @@ public class AppStandbyController implements AppStandbyInternal {
                     false, this);
             cr.registerContentObserver(Global.getUriFor(Global.ADAPTIVE_BATTERY_MANAGEMENT_ENABLED),
                     false, this);
+            cr.registerContentObserver(Global.getUriFor(Global.AGGRESSIVE_STANDBY_ENABLED),
+                    false, this);
         }
 
         @Override
         public void onChange(boolean selfChange) {
             updateSettings();
             postOneTimeCheckIdleStates();
+        }
+
+        private long getDurationWeighted(String key, long defaultValue) {
+            long duration = mParser.getDurationMillis(key, defaultValue);
+
+            if (mAggressiveStandby)
+                return duration / AGGRESSIVE_WEIGHT;
+
+            return duration;
         }
 
         void updateSettings() {
@@ -2319,6 +2335,15 @@ public class AppStandbyController implements AppStandbyInternal {
                 Slog.d(TAG, "appidleconstants=" + Global.getString(
                         mContext.getContentResolver(),
                         Global.APP_IDLE_CONSTANTS));
+            }
+
+            // Check if aggressive_standby_enabled has changed
+            try {
+                mAggressiveStandby = Global.getInt(mContext.getContentResolver(),
+                        Global.AGGRESSIVE_STANDBY_ENABLED) == 1;
+            } catch (Exception e) {
+                // Setting not found, assume false
+                mAggressiveStandby = false;
             }
 
             // Look at global settings for this.
@@ -2342,54 +2367,54 @@ public class AppStandbyController implements AppStandbyInternal {
                         ELAPSED_TIME_THRESHOLDS, MINIMUM_ELAPSED_TIME_THRESHOLDS);
                 mCheckIdleIntervalMillis = Math.min(mAppStandbyElapsedThresholds[1] / 4,
                         COMPRESS_TIME ? ONE_MINUTE : 4 * 60 * ONE_MINUTE); // 4 hours
-                mStrongUsageTimeoutMillis = mParser.getDurationMillis(
+                mStrongUsageTimeoutMillis = getDurationWeighted(
                         KEY_STRONG_USAGE_HOLD_DURATION,
                                 COMPRESS_TIME ? ONE_MINUTE : DEFAULT_STRONG_USAGE_TIMEOUT);
-                mNotificationSeenTimeoutMillis = mParser.getDurationMillis(
+                mNotificationSeenTimeoutMillis = getDurationWeighted(
                         KEY_NOTIFICATION_SEEN_HOLD_DURATION,
                                 COMPRESS_TIME ? 12 * ONE_MINUTE : DEFAULT_NOTIFICATION_TIMEOUT);
-                mSystemUpdateUsageTimeoutMillis = mParser.getDurationMillis(
+                mSystemUpdateUsageTimeoutMillis = getDurationWeighted(
                         KEY_SYSTEM_UPDATE_HOLD_DURATION,
                                 COMPRESS_TIME ? 2 * ONE_MINUTE : DEFAULT_SYSTEM_UPDATE_TIMEOUT);
-                mPredictionTimeoutMillis = mParser.getDurationMillis(
+                mPredictionTimeoutMillis = getDurationWeighted(
                         KEY_PREDICTION_TIMEOUT,
                                 COMPRESS_TIME ? 10 * ONE_MINUTE : DEFAULT_PREDICTION_TIMEOUT);
-                mSyncAdapterTimeoutMillis = mParser.getDurationMillis(
+                mSyncAdapterTimeoutMillis = getDurationWeighted(
                         KEY_SYNC_ADAPTER_HOLD_DURATION,
                                 COMPRESS_TIME ? ONE_MINUTE : DEFAULT_SYNC_ADAPTER_TIMEOUT);
 
-                mExemptedSyncScheduledNonDozeTimeoutMillis = mParser.getDurationMillis(
+                mExemptedSyncScheduledNonDozeTimeoutMillis = getDurationWeighted(
                         KEY_EXEMPTED_SYNC_SCHEDULED_NON_DOZE_HOLD_DURATION,
                                 COMPRESS_TIME ? (ONE_MINUTE / 2)
                                         : DEFAULT_EXEMPTED_SYNC_SCHEDULED_NON_DOZE_TIMEOUT);
 
-                mExemptedSyncScheduledDozeTimeoutMillis = mParser.getDurationMillis(
+                mExemptedSyncScheduledDozeTimeoutMillis = getDurationWeighted(
                         KEY_EXEMPTED_SYNC_SCHEDULED_DOZE_HOLD_DURATION,
                                 COMPRESS_TIME ? ONE_MINUTE
                                         : DEFAULT_EXEMPTED_SYNC_SCHEDULED_DOZE_TIMEOUT);
 
-                mExemptedSyncStartTimeoutMillis = mParser.getDurationMillis(
+                mExemptedSyncStartTimeoutMillis = getDurationWeighted(
                         KEY_EXEMPTED_SYNC_START_HOLD_DURATION,
                                 COMPRESS_TIME ? ONE_MINUTE
                                         : DEFAULT_EXEMPTED_SYNC_START_TIMEOUT);
 
-                mUnexemptedSyncScheduledTimeoutMillis = mParser.getDurationMillis(
+                mUnexemptedSyncScheduledTimeoutMillis = getDurationWeighted(
                         KEY_UNEXEMPTED_SYNC_SCHEDULED_HOLD_DURATION,
                                 COMPRESS_TIME
                                         ? ONE_MINUTE : DEFAULT_UNEXEMPTED_SYNC_SCHEDULED_TIMEOUT);
 
-                mSystemInteractionTimeoutMillis = mParser.getDurationMillis(
+                mSystemInteractionTimeoutMillis = getDurationWeighted(
                         KEY_SYSTEM_INTERACTION_HOLD_DURATION,
                                 COMPRESS_TIME ? ONE_MINUTE : DEFAULT_SYSTEM_INTERACTION_TIMEOUT);
 
-                mInitialForegroundServiceStartTimeoutMillis = mParser.getDurationMillis(
+                mInitialForegroundServiceStartTimeoutMillis = getDurationWeighted(
                         KEY_INITIAL_FOREGROUND_SERVICE_START_HOLD_DURATION,
                         COMPRESS_TIME ? ONE_MINUTE :
                                 DEFAULT_INITIAL_FOREGROUND_SERVICE_START_TIMEOUT);
 
                 mInjector.mAutoRestrictedBucketDelayMs = Math.max(
                         COMPRESS_TIME ? ONE_MINUTE : 2 * ONE_HOUR,
-                        mParser.getDurationMillis(KEY_AUTO_RESTRICTED_BUCKET_DELAY_MS,
+                        getDurationWeighted(KEY_AUTO_RESTRICTED_BUCKET_DELAY_MS,
                                 COMPRESS_TIME
                                         ? ONE_MINUTE : DEFAULT_AUTO_RESTRICTED_BUCKET_DELAY_MS));
 
