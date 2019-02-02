@@ -250,8 +250,10 @@ public class KeyguardStatusBarView extends RelativeLayout implements
         if (mCarrierLabel != null) {
             if (mShowCarrierLabel == 1 || mShowCarrierLabel == 3) {
                 mCarrierLabel.setVisibility(View.VISIBLE);
+                mCarrierLabel.setSelected(true);
             } else {
                 mCarrierLabel.setVisibility(View.GONE);
+                mCarrierLabel.setSelected(false);
             }
         }
     }
