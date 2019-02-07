@@ -1875,6 +1875,10 @@
          truncate it after committing the transaction. -->
     <integer name="db_journal_size_limit">524288</integer>
 
+    <!-- When opening a database with WAL enabled and if the wal file already exists and larger
+         than this size in bytes, we'll truncate it. -->
+    <integer name="db_wal_truncate_size">1048576</integer>
+
     <!-- The database synchronization mode when using the default journal mode.
          FULL is safest and preserves durability at the cost of extra fsyncs.
          NORMAL also preserves durability in non-WAL modes and uses checksums to ensure
@@ -2611,6 +2615,7 @@
          "silent" = silent mode
          "users" = list of users
          "restart" = restart device
+         "emergency" = Launch emergency dialer
          "lockdown" = Lock down device until the user authenticates
          "logout" =  Logout the current user
          -->
@@ -2619,6 +2624,7 @@
         <item>restart</item>
         <item>recovery</item>
         <item>screenshot</item>
+        <item>emergency</item>
         <item>torch</item>
         <item>airplane</item>
         <item>settings</item>
@@ -3532,8 +3538,8 @@
 
     <!-- Brand value for attestation of misprovisioned device. -->
     <string name="config_misprovisionedBrandValue" translatable="false"></string>
-  
+
     <!-- Component name for default assistant on this device -->
     <string name="config_defaultAssistantComponentName"></string>
 
-  </resources>
+</resources>

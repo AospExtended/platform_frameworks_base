@@ -31,6 +31,9 @@ import android.content.IntentFilter;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Parcelable;
+import android.os.SystemClock;
 import android.os.UserHandle;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
@@ -68,6 +71,12 @@ import java.util.TimeZone;
  */
 public class Clock extends TextView implements DemoMode, Tunable, CommandQueue.Callbacks,
         DarkReceiver, ConfigurationListener {
+
+    private static final String CLOCK_SUPER_PARCELABLE = "clock_super_parcelable";
+    private static final String CURRENT_USER_ID = "current_user_id";
+    private static final String VISIBLE_BY_POLICY = "visible_by_policy";
+    private static final String VISIBLE_BY_USER = "visible_by_user";
+    private static final String VISIBILITY = "visibility";
 
     private final CurrentUserTracker mCurrentUserTracker;
     private int mCurrentUserId;
@@ -146,6 +155,38 @@ public class Clock extends TextView implements DemoMode, Tunable, CommandQueue.C
                 mCurrentUserId = newUserId;
             }
         };
+    }
+
+    @Override
+    public Parcelable onSaveInstanceState() {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(CLOCK_SUPER_PARCELABLE, super.onSaveInstanceState());
+        bundle.putInt(CURRENT_USER_ID, mCurrentUserId);
+        bundle.putBoolean(VISIBLE_BY_POLICY, mClockVisibleByPolicy);
+        bundle.putBoolean(VISIBLE_BY_USER, mClockVisibleByUser);
+        bundle.putInt(VISIBILITY, getVisibility());
+
+        return bundle;
+    }
+
+    @Override
+    public void onRestoreInstanceState(Parcelable state) {
+        if (state == null || !(state instanceof Bundle)) {
+            super.onRestoreInstanceState(state);
+            return;
+        }
+
+        Bundle bundle = (Bundle) state;
+        Parcelable superState = bundle.getParcelable(CLOCK_SUPER_PARCELABLE);
+        super.onRestoreInstanceState(superState);
+        if (bundle.containsKey(CURRENT_USER_ID)) {
+            mCurrentUserId = bundle.getInt(CURRENT_USER_ID);
+        }
+        mClockVisibleByPolicy = bundle.getBoolean(VISIBLE_BY_POLICY, true);
+        mClockVisibleByUser = bundle.getBoolean(VISIBLE_BY_USER, true);
+        if (bundle.containsKey(VISIBILITY)) {
+            setVisibility(bundle.getInt(VISIBILITY));
+        }
     }
 
     @Override
