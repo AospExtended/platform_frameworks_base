@@ -32,7 +32,9 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.os.UserHandle;
 import android.os.UserManager;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.text.format.Formatter;
 import android.util.Log;
@@ -76,7 +78,6 @@ public class KeyguardIndicationController implements StateListener,
         UnlockMethodCache.OnUnlockMethodChangedListener {
 
     private static final String TAG = "KeyguardIndication";
-    private static final boolean DEBUG_CHARGING_SPEED = false;
 
     private static final int MSG_HIDE_TRANSIENT = 1;
     private static final int MSG_CLEAR_BIOMETRIC_MSG = 2;
@@ -396,6 +397,11 @@ public class KeyguardIndicationController implements StateListener,
                     mTextView.setTextColor(Utils.getColorError(mContext));
                 } else if (mPowerPluggedIn) {
                     String indication = computePowerIndication();
+        	boolean showbatteryInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
+            	Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT) == 1;
+                    if (showbatteryInfo) {
+                        indication += ",  " + (mChargingWattage / 1000) + " mW";
+                    }
                     if (animate) {
                         animateText(mTextView, indication);
                     } else {
@@ -427,7 +433,9 @@ public class KeyguardIndicationController implements StateListener,
                 mTextView.setTextColor(Utils.getColorError(mContext));
             } else if (mPowerPluggedIn) {
                 String indication = computePowerIndication();
-                if (DEBUG_CHARGING_SPEED) {
+        	boolean showbatteryInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
+            	Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT) == 1;
+                if (showbatteryInfo) {
                     indication += ",  " + (mChargingWattage / 1000) + " mW";
                 }
                 mTextView.setTextColor(mInitialTextColorState);
