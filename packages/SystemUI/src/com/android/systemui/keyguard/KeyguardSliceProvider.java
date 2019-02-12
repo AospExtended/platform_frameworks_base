@@ -31,7 +31,6 @@ import android.icu.text.DateFormat;
 import android.icu.text.DisplayContext;
 import android.net.Uri;
 import android.os.Handler;
-import android.os.UserHandle;
 import android.provider.Settings;
 import android.service.notification.ZenModeConfig;
 import android.text.TextUtils;
@@ -55,6 +54,7 @@ import androidx.slice.builders.ListBuilder.RowBuilder;
 import androidx.slice.builders.SliceAction;
 
 import com.android.internal.util.custom.weather.WeatherClient;
+import com.android.internal.util.aospextended.AEXUtils;
 
 /**
  * Simple Slice provider that shows the current date.
@@ -195,7 +195,6 @@ public class KeyguardSliceProvider extends SliceProvider implements
 
     private WeatherClient mWeatherClient;
     private WeatherClient.WeatherInfo mWeatherInfo;
-    private boolean useMetricUnit;
 
     protected void addWeather(ListBuilder builder) {
         if (mWeatherInfo == null || mWeatherInfo.getStatus() != WeatherClient.WEATHER_UPDATE_SUCCESS) {
@@ -205,11 +204,10 @@ public class KeyguardSliceProvider extends SliceProvider implements
             Log.d("WeatherClient", "addWeather: Not adding because weather condition image is unknown");
             return;
         }
-        int temperatureMetric = mWeatherInfo.getTemperature(true);
-        int temperatureImperial = mWeatherInfo.getTemperature(false);
-        String temperatureText = useMetricUnit ?
-                                 Integer.toString(temperatureMetric) + "°C" :
-                                 Integer.toString(temperatureImperial) + "°F";
+        int temperature = mWeatherInfo.getTemperature(!AEXUtils.mccCheck(getContext()));
+        String temperatureText = AEXUtils.mccCheck(getContext()) ?
+                Integer.toString(temperature) + "°F" :
+                Integer.toString(temperature) + "°C";
         Icon conditionIcon = Icon.createWithResource(getContext(), mWeatherInfo.getWeatherConditionImage());
         RowBuilder weatherRowBuilder = new RowBuilder(builder, mWeatherUri)
                 .setTitle(temperatureText)
@@ -223,33 +221,6 @@ public class KeyguardSliceProvider extends SliceProvider implements
         mContentResolver.notifyChange(mSliceUri, null /* observer */);
     }
 
-    private WeatherSettingsObserver mWeatherSettingsObserver;
-
-    private class WeatherSettingsObserver extends ContentObserver {
-        WeatherSettingsObserver(Handler handler) {
-            super(handler);
-        }
-
-        void observe() {
-            mContentResolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.WEATHER_LOCKSCREEN_UNIT),
-                    false, this, UserHandle.USER_ALL);
-        }
-
-        @Override
-        public void onChange(boolean selfChange, Uri uri) {
-            super.onChange(selfChange, uri);
-            if (uri.equals(Settings.System.getUriFor(Settings.System.WEATHER_LOCKSCREEN_UNIT))) {
-                updateLockscreenUnit();
-                mContentResolver.notifyChange(mSliceUri, null /* observer */);
-            }
-        }
-
-        public void updateLockscreenUnit() {
-            useMetricUnit = Settings.System.getIntForUser(mContentResolver, Settings.System.WEATHER_LOCKSCREEN_UNIT, 0, UserHandle.USER_CURRENT) == 0;
-        }
-    }
-
     @Override
     public boolean onCreateSliceProvider() {
         mAlarmManager = getContext().getSystemService(AlarmManager.class);
@@ -258,9 +229,6 @@ public class KeyguardSliceProvider extends SliceProvider implements
         mNextAlarmController.addCallback(this);
         mZenModeController = new ZenModeControllerImpl(getContext(), mHandler);
         mZenModeController.addCallback(this);
-        mWeatherSettingsObserver = new WeatherSettingsObserver(mHandler);
-        mWeatherSettingsObserver.observe();
-        mWeatherSettingsObserver.updateLockscreenUnit();
         mWeatherClient = new WeatherClient(getContext());
         mWeatherClient.addObserver(this);
         mDatePattern = getContext().getString(R.string.system_ui_aod_date_pattern);
