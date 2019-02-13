@@ -33,7 +33,27 @@
     <string name="permdesc_toggleNavigationEditor">Umožňuje aplikaci ovládat editor navigačního panelu.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">přístup ke správci písem</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Umožňuje aplikaci přístup ke správci písem.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">Balíček písem, který jste nainstalovali, není kompatibilní kvůli chybějícím souboru fonts.xml. Pro podporu se obraťte se na vývojáře balíčku.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Slábnutí</string>
+    <string name="animation_slide_right">Přejetí vpravo</string>
+    <string name="animation_slide_left">Přejetí vlevo</string>
+    <string name="animation_slide_right_no_fade">Přejetí vpravo (bez slábnutí)</string>
+    <string name="animation_slide_left_no_fade">Přejetí vlevo (bez slábnutí)</string>
+    <string name="animation_slide_up">Přejetí dolů</string>
+    <string name="animation_slide_down">Přejetí nahoru</string>
+    <string name="animation_default">Výchozí</string>
+    <string name="animation_translucent">Průhlednost</string>
+    <string name="animation_grow_shrink">Růst (nahoře)</string>
+    <string name="animation_grow_shrink_center">Růst (uprostřed)</string>
+    <string name="animation_grow_shrink_bottom">Růst (dole)</string>
+    <string name="animation_grow_shrink_left">Růst (vlevo)</string>
+    <string name="animation_grow_shrink_right">Růst (vpravo)</string>
+    <string name="animation_random">Náhodně</string>
+    <string name="action_null">Žádná</string>
+    <!-- ADB over network -->
 </resources>

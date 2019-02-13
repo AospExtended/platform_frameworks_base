@@ -48,7 +48,7 @@
     <string name="center">По центру</string>
     <string name="end">В конец</string>
     <string name="space">Разделитель</string>
-    <string name="menu_ime">Меню / Переключение раскладки</string>
+    <string name="menu_ime">Меню / Переключения клавиатуры</string>
     <string name="select_button">Выберите кнопку для добавления</string>
     <string name="add_button">Добавить кнопку</string>
     <string name="save">Сохранить</string>
@@ -56,19 +56,19 @@
     <string name="select_keycode">Выберите клавишу</string>
     <string name="left">Лево</string>
     <string name="right">Право</string>
-    <string name="navbar_editor_title">Редактор</string>
-    <string name="navbar_editor_summary">Настроить панели навигации</string>
+    <string name="navbar_editor_title">Редактор панели навигации</string>
+    <string name="navbar_editor_summary">Настроить панель навигации</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Снимок экрана удален</string>
     <!-- Caffeine QS Tile -->
     <string name="quick_settings_caffeine_label">Запрет сна</string>
-    <string name="accessibility_quick_settings_caffeine_off">Запрет сна выкл</string>
+    <string name="accessibility_quick_settings_caffeine_off">Запрет сна отключен</string>
     <string name="accessibility_quick_settings_caffeine_on">Запрет сна вкл</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Перезагрузка</string>
     <string name="quick_settings_reboot_recovery_label">Режим восстановления</string>
     <!-- Screenshot QS tile -->
-    <string name="quick_settings_screenshot_label">Скриншот</string>
+    <string name="quick_settings_screenshot_label">Снимок экрана</string>
     <string name="quick_settings_region_screenshot_label">Скриншот выбранной области</string>
     <!-- Heads Up QS Tile -->
     <string name="quick_settings_heads_up_label">Всплывающие уведомления</string>
@@ -130,8 +130,8 @@
     <string name="theme_info_title">Что это?</string>
     <string name="theme_info_message">Плитка \"Темы\" - это уникальная, но простая в использовании плитка, которая позволяет пользователю изменять системный оттенок или стиль.\n\nЧтобы переключиться между оттенками и стилями, просто удерживайте нажатой плитку, а затем ещё раз нажмите на неё, чтобы выбрать из предложенных вариантов.</string>
     <!-- QS Config -->
-    <string name="qs_menu_item_columns">Столбцы</string>
-    <string name="qs_menu_item_columns_landscape">Столбцы (альбомный режим)</string>
+    <string name="qs_menu_item_columns">Колонки</string>
+    <string name="qs_menu_item_columns_landscape">Колонки (ландшафтный режим)</string>
     <string name="qs_menu_item_columns_three">3</string>
     <string name="qs_menu_item_columns_four">4</string>
     <string name="qs_menu_item_columns_five">5</string>
@@ -159,15 +159,35 @@
     <string name="quick_settings_expanded_statusbar_off">Скрыть строку состояния</string>
     <!-- Advance location quick setting tile -->
     <string name="quick_settings_location_secondary_battery_saving">Экономия заряда батареи</string>
-    <string name="accessibility_quick_settings_location_battery_saving">Определение местоположения: по координатам сети.</string>
-    <string name="quick_settings_location_secondary_gps_only">Только датчики Gps</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Определение местоположения: режим экономии батареи.</string>
+    <string name="quick_settings_location_secondary_gps_only">Только GPS</string>
     <string name="accessibility_quick_settings_location_gps_only">Определение местоположения: только по спутникам.</string>
     <string name="quick_settings_location_secondary_high_accuracy">Высокая точность</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Определение местоположения: по всем источникам.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Быстрая зарядка (<xliff:g id="charging_time_left" example="4 часа и 2 минуты">%s</xliff:g> до полной зарядки)</string>
+    <string name="keyguard_plugged_in_dash_charging">Быстрая зарядка</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">Быстрая зарядка подключена (<xliff:g id="charging_time_left">%s</xliff:g> до полной зарядки)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">Быстрая зарядка подключена</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Игровой режим</string>
+    <string name="gaming_mode_tile_toast">Игровой режим включен</string>
+    <string name="gaming_mode_tile_toast_disabled">Игровой режим выключен</string>
+    <string name="gaming_mode_dialog_title">Игровой режим</string>
+    <string name="gaming_mode_dialog_message">Когда игровой режим включен, ваш режим звонка переключится в режим вибрации, все уведомления и аппаратные клавиши будут отключены. Громкость медиа будет увеличена до максимального уровня. Все отключенные настройки будут восстановлены после выхода из режима игры.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Игровой режим включен</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Игровой режим выключен</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s: %s</string>
+    <string name="recents_free_ram">Свободно ОЗУ: %1$d Мб</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Открыть запущенные службы.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Умные пиксели</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Авто-включение умных пикселей</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

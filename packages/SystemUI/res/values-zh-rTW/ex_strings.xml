@@ -165,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">高精確度</string>
     <string name="accessibility_quick_settings_location_high_accuracy">位置回報：高精度模式。</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">快速充電中 (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> 後充滿)</string>
+    <string name="keyguard_plugged_in_dash_charging">快速充電中</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">TurboPower 已連接 (還剩 <xliff:g id="charging_time_left">%s</xliff:g> 充滿)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">TurboPower 已連接</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">遊戲模式</string>
+    <string name="gaming_mode_tile_toast">遊戲模式已啟用</string>
+    <string name="gaming_mode_tile_toast_disabled">遊戲模式已停用</string>
+    <string name="gaming_mode_dialog_title">遊戲模式</string>
+    <string name="gaming_mode_dialog_message">啟用遊戲模式後，您的鈴聲模式將更改為震動模式，所有浮動通知將被停用，實體按鍵將被關閉。媒體音量將增加到最大值。退出遊戲模式後，所有停用的設置都將重置為預設值。</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">遊戲模式開啟</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">遊戲模式關閉</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s 由 %s</string>
+    <string name="recents_free_ram">可用記憶體：%1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">開啟執行服務的螢幕</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">智慧 Pixels</string>
+    <string name="quick_settings_smart_pixels_on_power_save">自動啟用智慧 Pixels</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

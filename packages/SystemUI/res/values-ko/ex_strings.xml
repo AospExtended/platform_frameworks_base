@@ -165,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">높은 정확도</string>
     <string name="accessibility_quick_settings_location_high_accuracy">위치 모드: 높은 정확도 모드</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">대쉬 충전중 (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> 후 충전 완료)</string>
+    <string name="keyguard_plugged_in_dash_charging">고속 충전중</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">TurboPower 연결됨 (<xliff:g id="charging_time_left">%s</xliff:g> 풀 충전까지 남음)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">TurboPower 연결됨</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">게이밍 모드</string>
+    <string name="gaming_mode_tile_toast">게이밍 모드 활성화됨</string>
+    <string name="gaming_mode_tile_toast_disabled">게이밍 모드 비활성화됨</string>
+    <string name="gaming_mode_dialog_title">게이밍 모드</string>
+    <string name="gaming_mode_dialog_message">게이밍 모드가 활성화되면 알림은 진동으로 설정되며 하드웨어 키는 비활성화 됩니다. 미디어 음량은 최대로 바뀌며 이 설정은 게이밍 모드를 비활성화할 때까지 유지됩니다.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">게이밍 모드 사용</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">게이밍 모드 사용 안함</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s 에 의해%s</string>
+    <string name="recents_free_ram">사용가능한 RAM: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">실행중인 서비스 보기</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">스마트 픽셀</string>
+    <string name="quick_settings_smart_pixels_on_power_save">스마트 픽셀 자동으로 켜기</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

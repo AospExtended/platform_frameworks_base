@@ -15,12 +15,12 @@
 <resources>
     <!-- Advanced reboot -->
     <string name="reboot_title">Neustarten</string>
-    <string name="reboot_message">System Neustarten</string>
+    <string name="reboot_message">System wird neu gestartet</string>
     <!-- SystemUI Restart -->
     <string name="systemui_restart_title">Neustart von SystemUI erforderlich</string>
     <string name="systemui_restart_message">Um alle Änderungen anzuwenden, ist ein Neustart der SystemUI notwendig. SystemUI jetzt neustarten?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permlab_fakePackageSignature">Paket Signatur verändern</string>
+    <string name="permlab_fakePackageSignature">Paket Signatur-Spoofing</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_fakePackageSignature">Erlaube der Applikation, sich als eine andere auszugeben. Bösartige Anwendungen könnten hierdurch Zugriff auf private Daten erlangen. Verteilen Sie diese Berechtigung mit Vorsicht!</string>
     <!-- App error dialog -->
@@ -33,7 +33,27 @@
     <string name="permdesc_toggleNavigationEditor">Ermöglicht einer App die Kontrolle des Navigationsleisten-Editors.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">auf Schriftverwaltung zugreifen</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Erlaubt einer Applikation den Zugriff auf den Schriftartenmanager.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">Das Schriftpacket, welches Sie installiert haben, ist aufgrund fehlender fonts.xml nicht kompatibel. Bitte kontaktieren Sie den Entwickler des Schriftpacketes.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Verblassen</string>
+    <string name="animation_slide_right">Von rechts hereingleiten</string>
+    <string name="animation_slide_left">Von links hereingleiten</string>
+    <string name="animation_slide_right_no_fade">Von rechts hereingleiten (ohne Verblassen)</string>
+    <string name="animation_slide_left_no_fade">Von links hereingleiten (ohne Verblassen)</string>
+    <string name="animation_slide_up">Von unten hereingleiten</string>
+    <string name="animation_slide_down">Von oben hereingleiten</string>
+    <string name="animation_default">Standard</string>
+    <string name="animation_translucent">Transparent</string>
+    <string name="animation_grow_shrink">Von oben einblenden</string>
+    <string name="animation_grow_shrink_center">Mittig einblenden</string>
+    <string name="animation_grow_shrink_bottom">Einblenden (von unten)</string>
+    <string name="animation_grow_shrink_left">Einblenden (von links)</string>
+    <string name="animation_grow_shrink_right">Einblenden (von rechts)</string>
+    <string name="animation_random">Zufällig</string>
+    <string name="action_null">Leer</string>
+    <!-- ADB over network -->
 </resources>

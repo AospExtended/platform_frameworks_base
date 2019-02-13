@@ -33,7 +33,27 @@
     <string name="permdesc_toggleNavigationEditor">Consente ad un\'app di controllare l\'editor della barra di navigazione.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">accesso alla gestione caratteri</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Consenti ad un\'applicazione di accedere alla gestione dei caratteri.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">Il pacchetto dei caratteri che hai installato non è compatibile a causa della mancanza di fonts.xml sui loro file. Si prega di contattare lo sviluppatore del pacchetto per il supporto.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Dissolvenza</string>
+    <string name="animation_slide_right">Scorri da destra</string>
+    <string name="animation_slide_left">Scorri da sinistra</string>
+    <string name="animation_slide_right_no_fade">Scorri da destra (senza dissolvenza)</string>
+    <string name="animation_slide_left_no_fade">Scorri da sinistra (senza dissolvenza)</string>
+    <string name="animation_slide_up">Scorri dal basso</string>
+    <string name="animation_slide_down">Scorri dall\'alto</string>
+    <string name="animation_default">Predefinito</string>
+    <string name="animation_translucent">Trasparenza</string>
+    <string name="animation_grow_shrink">Espandi (dall\'alto)</string>
+    <string name="animation_grow_shrink_center">Espandi (dal centro)</string>
+    <string name="animation_grow_shrink_bottom">Espandi (dal basso)</string>
+    <string name="animation_grow_shrink_left">Espandi (da sinistra)</string>
+    <string name="animation_grow_shrink_right">Espandi (da destra)</string>
+    <string name="animation_random">Casuale</string>
+    <string name="action_null">Vuoto</string>
+    <!-- ADB over network -->
 </resources>

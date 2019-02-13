@@ -33,7 +33,27 @@
     <string name="permdesc_toggleNavigationEditor">एप्लीकेशन को नेविगेशन बार में बदलाव करने की अनुमति</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">फ़ॉन्ट मैनेजर पर जाएं</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">एप्लीकेशन को फ़ॉन्ट मैनेजर की अनुमति दें</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">जो फौंट-पैकेज आपने प्रतिस्थापित किया है वह \'fonts.xml\' फाईल के अनुप्लब्ध होने के कारण असंयोज्य है। कृपया सहायता हेतु पैकेज-निर्माता से संपर्क करें ।</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">फीका</string>
+    <string name="animation_slide_right">दाएँ खिसकाएँ</string>
+    <string name="animation_slide_left">बाएं खिसकाएँ</string>
+    <string name="animation_slide_right_no_fade">दाएँ खिसकाएँ (फीके के बिना)</string>
+    <string name="animation_slide_left_no_fade">बाएं खिसकाएँ (फीके के बिना)</string>
+    <string name="animation_slide_up">नीचे खिसकाएँ</string>
+    <string name="animation_slide_down">शीर्ष में खिसकाएँ</string>
+    <string name="animation_default">डिफ़ाल्ट</string>
+    <string name="animation_translucent">पारदर्शी</string>
+    <string name="animation_grow_shrink">बढ़ें (ऊपर)</string>
+    <string name="animation_grow_shrink_center">बढ़ें (केंद्र में)</string>
+    <string name="animation_grow_shrink_bottom">बढ़ें (नीचे)</string>
+    <string name="animation_grow_shrink_left">बढ़ें (बाएं)</string>
+    <string name="animation_grow_shrink_right">बढ़ें (दाएं)</string>
+    <string name="animation_random">यादृच्छिक</string>
+    <string name="action_null">रिक्त</string>
+    <!-- ADB over network -->
 </resources>

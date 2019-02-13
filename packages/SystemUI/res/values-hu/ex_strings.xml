@@ -165,9 +165,27 @@
     <string name="quick_settings_location_secondary_high_accuracy">Nagy pontosságú</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Helymeghatározás: nagy pontosságú mód.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_plugged_in_dash_charging">gyors töltés</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">TurboPower csatlakoztatva (<xliff:g id="charging_time_left">%s</xliff:g> a teljes töltöttségig)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">TurboPower csatlakoztatva</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Játékmód</string>
+    <string name="gaming_mode_tile_toast">Játékmód engedélyezve</string>
+    <string name="gaming_mode_tile_toast_disabled">A Játékmód letiltva</string>
+    <string name="gaming_mode_dialog_title">Játékmód</string>
+    <string name="gaming_mode_dialog_message">Amikor a Játékmód engedélyezett, a készülék csengésről rezgő hivásjelzésre vált, az összes felugró értesítés letiltásra kerül és a hardvergombok kikapcsolódnak. A média hangereje a maximumra állítódik. Minden beállítás gyári állapotba áll vissza, amint kilép a Játékmódból.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Játékmód bekapcsolva</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Játékmód kikapcsolva</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="recents_free_ram">Szabad RAM: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Futó szolgálatások képernyőjének megnyitása.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Intelligens pixelek</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Intelligens pixelek automatikusan engedélyezve</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

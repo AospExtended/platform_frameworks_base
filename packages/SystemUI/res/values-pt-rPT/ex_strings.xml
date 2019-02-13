@@ -131,6 +131,7 @@
     <string name="theme_info_message">O mosaico dos temas é um mosaico original mas também fácil de usar que permite ao utilizador alterar o tema ou a cor de realce.\n\nPara mudar entre temas ou cores de realce, basta uma pressão longa no mosaico e um novo toque para seleccionar entre as opções mostradas</string>
     <!-- QS Config -->
     <string name="qs_menu_item_columns">Colunas</string>
+    <string name="qs_menu_item_columns_landscape">Vista de colunas</string>
     <string name="qs_menu_item_columns_three">3</string>
     <string name="qs_menu_item_columns_four">4</string>
     <string name="qs_menu_item_columns_five">5</string>
@@ -164,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">Alta precisão</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Localização: alta precisão.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Carregando rápido (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> até à carga máxima)</string>
+    <string name="keyguard_plugged_in_dash_charging">Carregando em Dash</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">Carregando rápido (<xliff:g id="charging_time_left">%s</xliff:g> até à carga máxima)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">Carregamento rapido conectado</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Modo de jogo</string>
+    <string name="gaming_mode_tile_toast">Modo de jogo ativado</string>
+    <string name="gaming_mode_tile_toast_disabled">Modo de Jogo desativado</string>
+    <string name="gaming_mode_dialog_title">Modo de jogo</string>
+    <string name="gaming_mode_dialog_message">Quando o modo de jogo é ligado, seu modo de campainha mudará para o modo vibrar, todas as mensagens flutuantes serão desativadas e teclas físicas serão desligadas. Volume de mídia será aumentado para o valor máximo. Todas as configurações desativadas serão redefinidas para o padrão assim que você sair do Modo de jogo.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Modo de Jogo ligado</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Modo de Jogo desligado</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s por %s</string>
+    <string name="recents_free_ram">RAM livre: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Abrir ecrã de serviços em execução.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Píxeis Inteligentes</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Auto-ativação dos Píxeis Inteligentes</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

@@ -14,15 +14,47 @@
 -->
 <resources>
     <!-- Advanced reboot -->
+    <string name="reboot_title">הפעלה מחדש</string>
+    <string name="reboot_message">המערכת מופעלת מחדש</string>
     <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">דרושה הפעלה מחדש של הSystemUI </string>
+    <string name="systemui_restart_message">כדי שכל השינויים ייכנסו לתוקף, נדרשת הפעלה מחדש של SystemUI. הפעל מחדש את SystemUI כעת?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">חתיכת חבילת זיופים</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">אפשר/י ליישום להעמיד פנים שהוא יישום אחר.
+יישומים זדוניים יוכלו להשתמש בפיצ\'ר זה בכדי לקבל גישה למידע פרטי של יישומים. הענק/י אישור זה בזהירות!</string>
     <!-- App error dialog -->
+    <string name="aerr_copy">העתק את כתובת ה- URL של דו\"ח הקריסה</string>
+    <string name="url_copy_success">כתובת ה- URL הועתקה בהצלחה</string>
+    <string name="url_copy_failed">שגיאה התרחשה בעת העלאת הדוח</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_toggleNavigationEditor">שולט במערכת הניווט</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_toggleNavigationEditor">לאפשר ליישומון לשלוט בעורך סרגל ניווט.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">גישה למנהל הגופנים</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">לאפשר לאפליקציה לגשת אל מנהל הגופנים.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">חבילת הגופנים שהתקנת אינה תואמת עקב חוסר של הקובץ fonts.xml בקבצים שלהם. פנה למפתח החבילה לקבלת תמיכה.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">דעיכה</string>
+    <string name="animation_slide_right">החלקה מימין</string>
+    <string name="animation_slide_left">החלקה משמאל</string>
+    <string name="animation_slide_right_no_fade">החלק מימין (ללא דעיכה)</string>
+    <string name="animation_slide_left_no_fade">החלק משמאל (ללא דעיכה)</string>
+    <string name="animation_slide_up">החלקה כלפי מטה</string>
+    <string name="animation_slide_down">החלקה כלפי מעלה</string>
+    <string name="animation_default">ברירת מחדל</string>
+    <string name="animation_translucent">שקוף למחצה</string>
+    <string name="animation_grow_shrink">גדילה (מלמעלה)</string>
+    <string name="animation_grow_shrink_center">גדילה (מהמרכז)</string>
+    <string name="animation_grow_shrink_bottom">גדילה (מלמטה)</string>
+    <string name="animation_grow_shrink_left">גדילה (משמאל)</string>
+    <string name="animation_grow_shrink_right">גדילה (מימין)</string>
+    <string name="animation_random">רנדומלי</string>
+    <string name="action_null">ריק</string>
+    <!-- ADB over network -->
 </resources>

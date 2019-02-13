@@ -165,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">Precizie ridicată</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Raportare locaţie: precizie ridicată.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Încărcare liniară (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> până la finalizare)</string>
+    <string name="keyguard_plugged_in_dash_charging">Încărcare liniară</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">Conectat la alimentare Turbo (<xliff:g id="charging_time_left">%s</xliff:g> până la finalizare)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">Alimentare la putere Turbo</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Mod de joc</string>
+    <string name="gaming_mode_tile_toast">Mod de joc activat</string>
+    <string name="gaming_mode_tile_toast_disabled">Mod de joc dezactivat</string>
+    <string name="gaming_mode_dialog_title">Mod de joc</string>
+    <string name="gaming_mode_dialog_message">Cănd modul de joc este activat, profilul sonerie se va schimba in modul vibrare, toate mesagele de tip head-up vor fi dezactivate și butoanele fizice vor fi oprite. Volumul media va fi setat la valoare maximă. Toate setările vor revenit la normal odată dezactivat Modul de Joc.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Mod de joc activ</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Mod de Joc inactiv</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">de %s până la %s</string>
+    <string name="recents_free_ram">RAM liber: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Deschide ecranul Servicii în rulare.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Pixeli inteligenți</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Pixeli inteligenți auto-activați</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

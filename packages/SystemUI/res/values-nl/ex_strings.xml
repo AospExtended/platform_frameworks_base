@@ -165,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">Hoge nauwkeurigheid</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Locatiebepaling: hoge nauwkeurigheidsmodus.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Dash Opladen (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> resterend)</string>
+    <string name="keyguard_plugged_in_dash_charging">Dash Opladen</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">Verbonden met TurboPower (<xliff:g id="charging_time_left">%s</xliff:g> resterend)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">Verbonden met TurboPower</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Game Modus</string>
+    <string name="gaming_mode_tile_toast">Game modus ingeschakeld</string>
+    <string name="gaming_mode_tile_toast_disabled">Game modus uitgeschakeld</string>
+    <string name="gaming_mode_dialog_title">Game Modus</string>
+    <string name="gaming_mode_dialog_message">Wanneer de game modus is ingeschakeld, zal je trilstand aangezet worden, verschijnen er geen pop-up notificaties en de fysieke knoppen worden uitgeschakeld. Het mediavolume zal op de hoogste stnad gezet worden. Alle gewijzigde instellingen zullen weer terug naar het normale gezet worden wanneer je uit de game modus gaat.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Game modus aan</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Game modus uit</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s door %s</string>
+    <string name="recents_free_ram">Vrij geheugen: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Open het scherm met actieve achtergrondprocessen.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Slimme Pixels</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Slimme pixels automatisch ingeschakeld</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

@@ -165,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">Yüksek doğruluk</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Konum bildirimi: yüksek doğruluk modu.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Dash Şarj oluyor (tam dolmasına <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> kaldı)</string>
+    <string name="keyguard_plugged_in_dash_charging">Dash Şarj oluyor</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">TurboPower bağlandı (tam dolmasına <xliff:g id="charging_time_left">%s</xliff:g> kaldı)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">TurboPower bağlandı</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Oyun modu</string>
+    <string name="gaming_mode_tile_toast">Oyun modu etkin</string>
+    <string name="gaming_mode_tile_toast_disabled">Oyun modu devre dışı</string>
+    <string name="gaming_mode_dialog_title">Oyun modu</string>
+    <string name="gaming_mode_dialog_message">Oyun modu etkinleştirildiğinde zil sesi modunuz titreşim moduna geçer, tüm uyarı mesajları devre dışı bırakılır ve donanım tuşları kapatılır. Medya sesi maksimum değere yükseltilecektir. Oyun modundan çıktığınızda tüm engellenen ayarlar varsayılana sıfırlanacaktır.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Oyun modu açık</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Oyun modu kapalı</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s - %s</string>
+    <string name="recents_free_ram">Boş RAM: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Çalışan hizmetler ekranını aç.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Akıllı pikseller</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Otomatik olarak akıllı pikselleri etkinleştir</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

@@ -14,6 +14,8 @@
 -->
 <resources>
     <!-- Advanced reboot -->
+    <string name="reboot_title">Поново покрени</string>
+    <string name="reboot_message">Поновно покретање система</string>
     <!-- SystemUI Restart -->
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -25,4 +27,5 @@
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
     <!-- AOKP custom system animations -->
+    <!-- ADB over network -->
 </resources>

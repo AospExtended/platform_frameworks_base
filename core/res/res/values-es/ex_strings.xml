@@ -17,7 +17,7 @@
     <string name="reboot_title">Reiniciar</string>
     <string name="reboot_message">Reiniciando sistema</string>
     <!-- SystemUI Restart -->
-    <string name="systemui_restart_title">Se requiere reiniciar interfaz de sistema</string>
+    <string name="systemui_restart_title">Se requiere reiniciar SystemUI</string>
     <string name="systemui_restart_message">Para que todos los cambios surtan efecto, se requiere un reinicio de SystemUI. ¿Reiniciar SystemUI ahora?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_fakePackageSignature">Firma de paquete falsa</string>
@@ -33,7 +33,27 @@
     <string name="permdesc_toggleNavigationEditor">Permite que un aplicación controle el editor de la barra de navegación.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">acceder al gestor de fuentes</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Permite a una aplicación acceder al administrador de fuentes.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">El paquete de la fuente que instalaste no es compatible debido a que falta fonts.xml en sus archivos. Por favor contacta al desarrollador del paquete de la fuente para obtener soporte.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Desvanecer</string>
+    <string name="animation_slide_right">Deslizar a la derecha</string>
+    <string name="animation_slide_left">Deslizar a la izquierda</string>
+    <string name="animation_slide_right_no_fade">Deslizar a la derecha (Sin desvanecer)</string>
+    <string name="animation_slide_left_no_fade">Deslizar a la izquierda (Sin desvanecer)</string>
+    <string name="animation_slide_up">Deslizar desde abajo</string>
+    <string name="animation_slide_down">Deslizar desde arriba</string>
+    <string name="animation_default">Por defecto</string>
+    <string name="animation_translucent">Translúcido</string>
+    <string name="animation_grow_shrink">Expandirse (Arriba)</string>
+    <string name="animation_grow_shrink_center">Expandirse (Centro)</string>
+    <string name="animation_grow_shrink_bottom">Expandirse (Abajo)</string>
+    <string name="animation_grow_shrink_left">Expandirse (Izquierda)</string>
+    <string name="animation_grow_shrink_right">Expandirse (Derecha)</string>
+    <string name="animation_random">Aleatorio</string>
+    <string name="action_null">Vacío</string>
+    <!-- ADB over network -->
 </resources>

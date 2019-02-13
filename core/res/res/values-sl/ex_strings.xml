@@ -33,7 +33,27 @@
     <string name="permdesc_toggleNavigationEditor">Dovoli aplikaciji nadzor nad urejevalnikom vrstice za krmarjenje.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">dostopanje do upravljalnika pisav</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Dovoli aplikaciji dostop do upravljalnika pisav.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">Paket pisave, ki ste ga namestili ni združljiv zaradi manjkajoče datoteke fonts.xml. Kontaktirajte razvijalca paketa za podporo.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Pojenjaj</string>
+    <string name="animation_slide_right">Pridrsaj z desne</string>
+    <string name="animation_slide_left">Pridrsaj z leve</string>
+    <string name="animation_slide_right_no_fade">Pridrsaj z desne (brez pojenjanja)</string>
+    <string name="animation_slide_left_no_fade">Pridrsaj z leve (brez pojenjanja)</string>
+    <string name="animation_slide_up">Pridrsaj z dna</string>
+    <string name="animation_slide_down">Pridrsaj z vrha</string>
+    <string name="animation_default">Privzeta</string>
+    <string name="animation_translucent">Prosojno</string>
+    <string name="animation_grow_shrink">Zrasti (vrh)</string>
+    <string name="animation_grow_shrink_center">Zrasti (sredina)</string>
+    <string name="animation_grow_shrink_bottom">Zrasti (dno)</string>
+    <string name="animation_grow_shrink_left">Zrasti (levo)</string>
+    <string name="animation_grow_shrink_right">Zrasti (desno)</string>
+    <string name="animation_random">Nakjučno</string>
+    <string name="action_null">Prazno</string>
+    <!-- ADB over network -->
 </resources>

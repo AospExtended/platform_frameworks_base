@@ -165,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">उच्च सटीकता</string>
     <string name="accessibility_quick_settings_location_high_accuracy">स्थान रिपोर्टिंग: उच्च सटीकता मोड।</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">डैश चार्जिंग (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> पूर्ण होने में)</string>
+    <string name="keyguard_plugged_in_dash_charging">डैश चार्जिंग</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">टर्बो-पावर से चार्ज हो रहा है (<xliff:g id="charging_time_left">%s</xliff:g>बाकी है)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">टर्बोपावर जुड़ा हुआ है</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">गेमिंग मोड</string>
+    <string name="gaming_mode_tile_toast">गेमिंग मोड चालू किया गया</string>
+    <string name="gaming_mode_tile_toast_disabled">गेमिंग मोड बंद किया गया</string>
+    <string name="gaming_mode_dialog_title">गेमिंग मोड</string>
+    <string name="gaming_mode_dialog_message">गेमिंग मोड सक्षम होने पर, आपका रिंगर मोड कंपन मोड में बदल जाएगा, सभी हेड-अप संदेश अक्षम हो जाएंगे और हार्डवेयर कुंजियां बंद कर दी जाएंगी । मीडिया वॉल्यूम अधिकतम मान के लिए बढ़ जाएगा । आपके गेमिंग मोड से बाहर आने के बाद सभी अक्षम सेटिंग्स डिफ़ॉल्ट पर रीसेट हो जाएंगी।</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">गेमिंग मोड चालू है</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">गेमिंग मोड बंद है</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s के द्वारा %s</string>
+    <string name="recents_free_ram">खाली मैमोरी: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">चल रही सर्विसेज देखें</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">स्मार्ट पिक्सेल</string>
+    <string name="quick_settings_smart_pixels_on_power_save">स्वत:-सक्षम स्मार्ट पिक्सेल</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

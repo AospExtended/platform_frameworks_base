@@ -165,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">Wysoka dokładność</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Raportowanie lokalizacji: wysoka dokładność.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Szybkie ładowanie (<xliff:g id="pozostały_czas" example="4 godziny i 2 minuty">%s</xliff:g> do pełnego naładowania)</string>
+    <string name="keyguard_plugged_in_dash_charging">Ładowanie Dash</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">TurboPower podłączone (<xliff:g id="charging_time_left">%s</xliff:g> do końca)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">TurboPower podłączone</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Tryb grania</string>
+    <string name="gaming_mode_tile_toast">Włączono Tryb grania</string>
+    <string name="gaming_mode_tile_toast_disabled">Wyłączono Tryb grania</string>
+    <string name="gaming_mode_dialog_title">Tryb grania</string>
+    <string name="gaming_mode_dialog_message">Gdy tryb grania jest włączony, tryb dzwonka zostanie zmieniony na tryb wibracji, zostaną wyłączone wszystkie wyskakujące powiadomienia, a klawisze zostaną wyłączone. Głośność multimediów zostanie zwiększona do maksymalnej wartości. Wszystkie wyłączone ustawienia zostaną zresetowane do domyślnych wartości po wyłączeniu trybu grania.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Tryb grania włączony</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Tryb grania wyłączony</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s przez %s</string>
+    <string name="recents_free_ram">Wolny RAM: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Otwórz ekran Działających Usług.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Inteligentne pixele</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Automatyczne włączenie smart pikseli</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

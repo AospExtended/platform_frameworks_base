@@ -165,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">Visoka natančnost</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Poročanje lokacije: način visoke natančnosti.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Hitro polnjenje (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> do napolnjenosti)</string>
+    <string name="keyguard_plugged_in_dash_charging">Hitro polnjenje</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">TurboPower povezan (<xliff:g id="charging_time_left">%s</xliff:g> do napolnjenosti)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">TurboPower povezan</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Igralni način</string>
+    <string name="gaming_mode_tile_toast">Igralni način omogočen</string>
+    <string name="gaming_mode_tile_toast_disabled">Igralni način onemogočen</string>
+    <string name="gaming_mode_dialog_title">Igralni način</string>
+    <string name="gaming_mode_dialog_message">Ko je omogočen igralni način, bo način zvonjenja spremenjen na vibriranje, vsa obvestila na zaslonu bodo onemogočena in fizične tipke bodo izklopljene. Glasnost predstavnosti bo povečana na najvišjo vrednost. Vse onemogočene nastavitve bodo ponastavljene na privzete ob izhodu iz igralnega načina.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Igralni način vklopljen</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Igralni način izklopljen</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s avtorja %s</string>
+    <string name="recents_free_ram">Prosti pomnilnik: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Odpri zaslon storitev v izvajanju.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Pametne pike</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Samodejno omogočene pametne pike</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

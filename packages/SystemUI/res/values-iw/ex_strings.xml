@@ -19,8 +19,21 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">מתקדם</string>
+    <string name="global_action_restart_recovery">ריקברי</string>
+    <string name="global_action_restart_bootloader">מנהל אתחול</string>
+    <string name="global_action_restart_ui">ממשק מערכת</string>
+    <string name="global_action_restart_soft">הפעלה מחדש מהירה</string>
+    <string name="statusbar_items_title">אייקון שורת מצב</string>
     <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">קיצורי דרך במסך הנעילה</string>
+    <string name="lockscreen_default">ברירת מחדל</string>
+    <string name="lockscreen_hidden">ללא</string>
     <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">צלילים</string>
+    <string name="quick_settings_sound_ring">צלצול</string>
+    <string name="quick_settings_sound_vibrate">רטט</string>
+    <string name="quick_settings_sound_dnd">נא לא להפריע</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
     <!-- Screenshot Delete Toast -->
     <!-- Caffeine QS Tile -->
@@ -32,12 +45,18 @@
     <!-- Heads up snooze toast -->
     <!-- Theme tile -->
     <!-- QS Config -->
+    <string name="qs_menu_item_rows_three">3</string>
+    <string name="qs_menu_item_rows_four">4</string>
     <!-- Expanded Desktop QS Tile -->
     <!-- Advance location quick setting tile -->
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <!-- Gaming Mode -->
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
     <!-- Smart pixels QS tile -->
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

@@ -33,7 +33,27 @@
     <string name="permdesc_toggleNavigationEditor">એપ્લિકેશનને નેવિગેશન બાર એડિટરને નિયંત્રિત કરવાની મંજૂરી આપો.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">ઍક્સેસ ફોન્ટ મેનેગેર</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">એપ્લિકેશન ને ફોન્ટ મેનેગેરનો ઍક્સેસ આપવો.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">પસંદ કરેલા પેકેજ માં fonts.xml નથી. તેથી ડેવલપર ને વિનંતી કરવી કે સપોર્ટ આપે.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">ઝાંખા</string>
+    <string name="animation_slide_right">જમણે સ્લાઇડ કરો</string>
+    <string name="animation_slide_left">ડાબે સ્લાઇડ કરો</string>
+    <string name="animation_slide_right_no_fade">જમણે સ્લાઇડ કરો (કોઈ ફેડ નહીં)</string>
+    <string name="animation_slide_left_no_fade">ડાબે સ્લાઇડ કરો (કોઈ ફેડ નહીં)</string>
+    <string name="animation_slide_up">નીચે સ્લાઇડ</string>
+    <string name="animation_slide_down">ઉપર સ્લાઇડ કરો</string>
+    <string name="animation_default">ડિફોલ્ટ</string>
+    <string name="animation_translucent">અર્ધપારદર્શક</string>
+    <string name="animation_grow_shrink">વધારો (ઉપર)</string>
+    <string name="animation_grow_shrink_center">વધારો (કેન્દ્ર)</string>
+    <string name="animation_grow_shrink_bottom">વધારો (નીચે)</string>
+    <string name="animation_grow_shrink_left">વધારો (ડાબે)</string>
+    <string name="animation_grow_shrink_right">વધારો (જમણે)</string>
+    <string name="animation_random">રેન્ડમ</string>
+    <string name="action_null">ખાલી</string>
+    <!-- ADB over network -->
 </resources>

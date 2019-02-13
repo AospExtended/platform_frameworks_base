@@ -165,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">高精度</string>
     <string name="accessibility_quick_settings_location_high_accuracy">位置情報レポート：高精度モード</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">急速充電中（充電完了まで<xliff:g id="Charging_TIME_LEFT">%s</xliff:g>）</string>
+    <string name="keyguard_plugged_in_dash_charging">急速充電中</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">急速充電中（充電完了まで<xliff:g id="charging_time_left">%s</xliff:g>）</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">急速充電中</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">ゲームモード</string>
+    <string name="gaming_mode_tile_toast">ゲームモード有効</string>
+    <string name="gaming_mode_tile_toast_disabled">ゲームモード無効</string>
+    <string name="gaming_mode_dialog_title">ゲームモード</string>
+    <string name="gaming_mode_dialog_message">ゲームモードを有効にすると、着信モードが振動モードに変わり、すべてのHeads Upメッセージが無効になり、ハードウェアキーがオフになります。メディアの容量は最大値まで増加します。ゲームモードを終了すると、全ての無効設定が既定にリセットされます。</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">ゲームモード オン</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">ゲームモード オフ</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s / %s</string>
+    <string name="recents_free_ram">空きメモリ：%1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">実行中のサービスを開く</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">スマートピクセル</string>
+    <string name="quick_settings_smart_pixels_on_power_save">スマートピクセルを自動的に有効にする</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

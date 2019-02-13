@@ -14,10 +14,17 @@
 -->
 <resources>
     <!-- Advanced reboot -->
+    <string name="reboot_title">Repornire</string>
+    <string name="reboot_message">Repornire sistem</string>
     <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">Repornire IU de sistem necesară</string>
+    <string name="systemui_restart_message">Pentru ca toate modificările să aibă efect, este necesară o repornire a IU de sistem. Reporniţi IU de sistem acum?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">Falsifică semnătura pachetului</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">Permite aplicației sa pretindă a fi o altă aplicație. Aplicațiile rău-intenționate ar purea folosi asta pentru a accesa date confidențiale ale altor aplicații. Acordați această permisiune cu prudență!</string>
     <!-- App error dialog -->
+    <string name="aerr_copy">Copiază URL-ul jurnalului de eroare</string>
     <string name="url_copy_success">Adresă URL copiată cu succes</string>
     <string name="url_copy_failed">A apărut o eroare la încărcarea registrului în dogbin</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -26,7 +33,27 @@
     <string name="permdesc_toggleNavigationEditor">Permite unei aplicații sa controleze editorul barei de navigare.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">accesare manager fonturi</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Permite unei aplicații să acceseze managerul de fonturi.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">Pachetul de fonturi pe care l-ați instalat nu este compatibil datorită lipsei fișierelor fonts.xml. Vă rugăm contactați dezvoltatorul pachetului pentru suport.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Estompare</string>
+    <string name="animation_slide_right">Glisare la dreapta</string>
+    <string name="animation_slide_left">Glisare la stânga</string>
+    <string name="animation_slide_right_no_fade">Glisare la dreapta (Fără estompare)</string>
+    <string name="animation_slide_left_no_fade">Glisare la stânga (Fără estompare)</string>
+    <string name="animation_slide_up">Glisare în jos</string>
+    <string name="animation_slide_down">Glisare în sus</string>
+    <string name="animation_default">Prestabilit</string>
+    <string name="animation_translucent">Translucid</string>
+    <string name="animation_grow_shrink">Creștere (Sus)</string>
+    <string name="animation_grow_shrink_center">Creștere (Centru)</string>
+    <string name="animation_grow_shrink_bottom">Creștere (Jos)</string>
+    <string name="animation_grow_shrink_left">Creștere (Stânga)</string>
+    <string name="animation_grow_shrink_right">Creștere (Dreapta)</string>
+    <string name="animation_random">Aleatoriu</string>
+    <string name="action_null">Gol</string>
+    <!-- ADB over network -->
 </resources>

@@ -165,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">Alta precisão</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Modo de localização: alta precisão.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Carregamento Rápido (<xliff:g id="charging_time_left">%s</xliff:g> até concluir)</string>
+    <string name="keyguard_plugged_in_dash_charging">Carregamento Rápido</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">TurboPower conectado (<xliff:g id="charging_time_left">%s</xliff:g> até concluir)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">TurboPower conectado</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Modo Jogo</string>
+    <string name="gaming_mode_tile_toast">Modo jogo ativado</string>
+    <string name="gaming_mode_tile_toast_disabled">Modo jogo desativado</string>
+    <string name="gaming_mode_dialog_title">Modo Jogo</string>
+    <string name="gaming_mode_dialog_message">Quando o modo de jogo está habilitado, seu modo de campainha mudará para o modo vibrar, todas as mensagens de heads-up serão desativadas e teclas físicas serão desligadas. Volume de mídia será aumentado para o valor máximo. Todas as configurações desativadas serão redefinidas para o padrão assim que você sair do Modo de jogos.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Modo jogo ligado</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Modo jogo desligado</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s por %s</string>
+    <string name="recents_free_ram">RAM Livre: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Abrir tela de Serviços Em Execução.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Pixels inteligentes</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Auto-habilitar pixels inteligentes</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

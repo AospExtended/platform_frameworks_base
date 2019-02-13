@@ -165,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">Висока точність</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Визначення місцезнаходження: режим високої точності.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Швидке заряджання (<xliff:g id="charging_time_left" example="4 год 2 хв">%s</xliff:g> до повної зарядки)</string>
+    <string name="keyguard_plugged_in_dash_charging">Швидке заряджання</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">Швидка зарядка підключена (<xliff:g id="charging_time_left">%s</xliff:g> до повного)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">Швидка зарядка підключена</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Ігровий режим</string>
+    <string name="gaming_mode_tile_toast">Ігровий режим ввімкнено</string>
+    <string name="gaming_mode_tile_toast_disabled">Ігровий режим вимкнено</string>
+    <string name="gaming_mode_dialog_title">Ігровий режим</string>
+    <string name="gaming_mode_dialog_message">Коли ігровий режим увімкнуто, ваш режим дзвінку переключиться в режим вібрації, всі сповішення та аппаратні клавіші будуть вимкнуті. Гучність медіа буде збільшена до максимального рівню. Усі вимкнуті налаштування будуть відновлені після виходу з режиму гри.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Ігровий режим увімк.</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Ігровий режим вимк.</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s від %s</string>
+    <string name="recents_free_ram">Вільно пам\'яті: %1$d МБ</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Відкрити список запущених програм.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Розумні пікселі</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Автоматичне увімкнення розумних пікселів</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

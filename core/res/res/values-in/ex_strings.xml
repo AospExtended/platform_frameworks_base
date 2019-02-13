@@ -14,26 +14,46 @@
 -->
 <resources>
     <!-- Advanced reboot -->
-    <string name="reboot_title">Memulai Ulang Perangkat</string>
-    <string name="reboot_message">Memulai Ulang Sistem</string>
+    <string name="reboot_title">Mulai ulang</string>
+    <string name="reboot_message">Memulai ulang sistem</string>
     <!-- SystemUI Restart -->
     <string name="systemui_restart_title">Diperlukan memulai ulang SystemUI</string>
-    <string name="systemui_restart_message">Untuk melihat semua hasil dari perubahan, Diwajibkan memulai ulang SystemUI Perangkat Anda. mulai ulang SystemUI sekarang?</string>
+    <string name="systemui_restart_message">Untuk melihat semua perubahan, diperlukannya memulai ulang SystemUI. Mulai ulang sekarang?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permlab_fakePackageSignature">Memalsukan Tanda Tangan Paket</string>
+    <string name="permlab_fakePackageSignature">Palsukan tanda tangan paket</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_fakePackageSignature">Izinkan aplikasi ini untuk berpura-pura sebagai aplikasi lain. Aplikasi jahat mungkin dapat menggunakan ini untuk mengakses data aplikasi. harap hati-hati saat anda memberikan izin!</string>
+    <string name="permdesc_fakePackageSignature">Izinkan aplikasi untuk berpura-pura sebagai aplikasi lain. Aplikasi jahat mungkin dapat menggunakan ini untuk mengakses data aplikasi. Perbolehkan ini dengan hati-hati!</string>
     <!-- App error dialog -->
-    <string name="aerr_copy">Menyalin log URL yang rusak</string>
-    <string name="url_copy_success">URL Berhasil Disalin</string>
+    <string name="aerr_copy">Salin riwayat kerusakan URL</string>
+    <string name="url_copy_success">URL berhasil disalin</string>
     <string name="url_copy_failed">Terjadi kesalahan pada saat mengunggah log ke dogbin</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permlab_toggleNavigationEditor">Kontrol Navigasi editor</string>
+    <string name="permlab_toggleNavigationEditor">editor kontrol navigasi</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_toggleNavigationEditor">Izinkan aplikasi mengontrol navigasi bar editor.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">akses mengelola font</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Mengizinkan aplikasi mengakses pengelola font.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">Paket font yang anda instal tidak kompatibel karena tidak ada fonts.xml pada berkas tersebut. Silakan hubungi pengembang paket untuk dukungan.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Memudar</string>
+    <string name="animation_slide_right">Geser dari kanan</string>
+    <string name="animation_slide_left">Geser dari kiri</string>
+    <string name="animation_slide_right_no_fade">Geser dari kanan (tanpa memudar)</string>
+    <string name="animation_slide_left_no_fade">Geser dari kiri (tanpa memudar)</string>
+    <string name="animation_slide_up">Geser ke bawah</string>
+    <string name="animation_slide_down">Geser dari atas</string>
+    <string name="animation_default">Bawaan</string>
+    <string name="animation_translucent">Tembus pandang</string>
+    <string name="animation_grow_shrink">Menciut ke (atas)</string>
+    <string name="animation_grow_shrink_center">Menciut ke (tengah)</string>
+    <string name="animation_grow_shrink_bottom">Menciut ke (bawah)</string>
+    <string name="animation_grow_shrink_left">Menciut ke (kiri)</string>
+    <string name="animation_grow_shrink_right">Menciut ke (kanan)</string>
+    <string name="animation_random">Acak</string>
+    <string name="action_null">Tidak ada</string>
+    <!-- ADB over network -->
 </resources>

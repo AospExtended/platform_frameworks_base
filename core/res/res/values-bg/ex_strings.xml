@@ -33,7 +33,26 @@
     <string name="permdesc_toggleNavigationEditor">Разрешава на приложение да контролира редактора на навигационната лента.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">достъп до мениджъра на шрифтове</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Позволява на приложение достъп до мениджъра на шрифтове.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Плавен преход</string>
+    <string name="animation_slide_right">Плъзване надясно</string>
+    <string name="animation_slide_left">Плъзване наляво</string>
+    <string name="animation_slide_right_no_fade">Плъзване надясно (без избледняване)</string>
+    <string name="animation_slide_left_no_fade">Плъзване наляво (без избледняване)</string>
+    <string name="animation_slide_up">Плъзване надолу</string>
+    <string name="animation_slide_down">Плъзване нагоре</string>
+    <string name="animation_default">По подразбиране</string>
+    <string name="animation_translucent">Прозрачен</string>
+    <string name="animation_grow_shrink">Растеж (нагоре)</string>
+    <string name="animation_grow_shrink_center">Растеж (в средата)</string>
+    <string name="animation_grow_shrink_bottom">Растеж (надолу)</string>
+    <string name="animation_grow_shrink_left">Растеж (наляво)</string>
+    <string name="animation_grow_shrink_right">Растеж (надясно)</string>
+    <string name="animation_random">Случайно</string>
+    <string name="action_null">Празно</string>
+    <!-- ADB over network -->
 </resources>

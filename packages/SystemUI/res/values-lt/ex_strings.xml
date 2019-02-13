@@ -165,9 +165,28 @@
     <string name="quick_settings_location_secondary_high_accuracy">Didelis tikslumas</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Vietos ataskaitų teikimas: didelio tikslumo režimas.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Greitasis įkrovimas (<xliff:g id="liko" example="4 val. ir 2 min.">%s</xliff:g> iki pilnos baterijos)</string>
+    <string name="keyguard_plugged_in_dash_charging">Greitas įkrovimas</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">Greitasis įkrovimas yra aktyvus (<xliff:g id="charging_time_left">%s</xliff:g> kol visiškai įkrauta)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">Greitasis įkrovimas prijungtas</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Žaidimų režimas</string>
+    <string name="gaming_mode_tile_toast">Žaidimų režimas įjungtas</string>
+    <string name="gaming_mode_tile_toast_disabled">Žaidimų režimas išjungtas</string>
+    <string name="gaming_mode_dialog_title">Žaidimų režimas</string>
+    <string name="gaming_mode_dialog_message">Kai įjungtas žaidimo režimas, jūsų skambėjimo režimas pasikeis į vibracijos režimą, visi heads-up pranešimai bus išjungti ir aparatūros raktai bus išjungti. Medijos tūris bus padidintas iki maksimalios vertės. Kai išeisite iš žaidimo režimo, visi neįgalieji nustatymai bus atstatyti į numatytąjį.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Įjungtas žaidimo režimas</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Žaidimo režimo išjungimas</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s iš %s</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Atidarykite veikiančių paslaugų langą.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Protingi pikseliai</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Automatiškai įjungiami protingi pikseliai</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

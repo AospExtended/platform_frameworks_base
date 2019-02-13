@@ -33,7 +33,27 @@
     <string name="permdesc_toggleNavigationEditor">السماح لتطبيق ما بالتحكم في محرر شريط التنقل.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">الوصول لمدير الخطوط</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">يسمح لتطبيق ما بالوصول إلى مدير الخطوط.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">حزمة الخط التي ثبتها غير متوافقة بسبب عدم وجود fonts.xml في ملفاتها. يرجى الاتصال بمطور الحزمة للحصول على الدعم.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">التلاشي</string>
+    <string name="animation_slide_right">انزلاق إلى اليمين</string>
+    <string name="animation_slide_left">انزلاق إلى اليسار</string>
+    <string name="animation_slide_right_no_fade">انزلاق إلى اليمين (بدون تلاشي)</string>
+    <string name="animation_slide_left_no_fade">انزلاق إلى اليسار (بدون تلاشي)</string>
+    <string name="animation_slide_up">انزلاق إلى الأسفل</string>
+    <string name="animation_slide_down">انزلاق الى الاعلى</string>
+    <string name="animation_default">الافتراضي</string>
+    <string name="animation_translucent">شفاف</string>
+    <string name="animation_grow_shrink">نمو في (أعلى)</string>
+    <string name="animation_grow_shrink_center">نمو في (الوسط)</string>
+    <string name="animation_grow_shrink_bottom">نمو في (أسفل)</string>
+    <string name="animation_grow_shrink_left">نمو في (اليسار)</string>
+    <string name="animation_grow_shrink_right">نمو في (اليمين)</string>
+    <string name="animation_random">عشوائي</string>
+    <string name="action_null">فارغ</string>
+    <!-- ADB over network -->
 </resources>

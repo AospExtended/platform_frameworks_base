@@ -33,7 +33,30 @@
     <string name="permdesc_toggleNavigationEditor">Bir uygulamanın gezinme çubuğu düzenleyicisini kontrol etmesine izin verir.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">yazı tipi yöneticisine erişim</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Bir uygulamanın yazı tipi yöneticisine erişmesine izin verir.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">Yüklediğiniz yazı tipi paketi dosyalarındaki eksik fonts.xml nedeniyle uyumlu değil. Lütfen destek için paket geliştiriciye başvurun.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Karart</string>
+    <string name="animation_slide_right">Sağa kaydır</string>
+    <string name="animation_slide_left">Sola kaydır</string>
+    <string name="animation_slide_right_no_fade">Sağa kaydır (Karartma yok)</string>
+    <string name="animation_slide_left_no_fade">Sola kaydır (Karartma yok)</string>
+    <string name="animation_slide_up">Aşağı kaydır</string>
+    <string name="animation_slide_down">Yukarı kaydır</string>
+    <string name="animation_default">Varsayılan</string>
+    <string name="animation_translucent">Yarı şeffaf</string>
+    <string name="animation_grow_shrink">Büyüt (Yukarıdan)</string>
+    <string name="animation_grow_shrink_center">Büyüt (Ortadan)</string>
+    <string name="animation_grow_shrink_bottom">Büyüt (Aşağıdan)</string>
+    <string name="animation_grow_shrink_left">Büyüt (Soldan)</string>
+    <string name="animation_grow_shrink_right">Büyüt (Sağdan)</string>
+    <string name="animation_random">Karışık</string>
+    <string name="action_null">Boş</string>
+    <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">Ağ üzerinden ADB etkin</string>
+    <string name="adb_both_active_notification_title">USB ve ağı ADB üzerinden etkin</string>
+    <string name="adb_active_generic_notification_message">Hata ayıklamayı devre dışı bırakmak için dokunun.</string>
 </resources>

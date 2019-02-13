@@ -20,39 +20,39 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="global_action_restart_advanced">Lanjutan</string>
-    <string name="global_action_restart_recovery">Mode Pemulihan</string>
+    <string name="global_action_restart_recovery">Pemulihan</string>
     <string name="global_action_restart_bootloader">Bootloader</string>
     <string name="global_action_restart_ui">SystemUI</string>
-    <string name="global_action_restart_soft">Memulai Ulang Perangkat Dengan Cepat</string>
+    <string name="global_action_restart_soft">Mulai ulang cepat</string>
     <string name="statusbar_items_title">Ikon statusbar</string>
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Pintasan layar kunci</string>
     <string name="lockscreen_default">Bawaan</string>
-    <string name="lockscreen_hidden">Tidak Ada</string>
+    <string name="lockscreen_hidden">Tidak ada</string>
     <!-- Sound QS Tile -->
-    <string name="quick_settings_sound_label">Bunyi</string>
-    <string name="quick_settings_sound_ring">Berdering</string>
-    <string name="quick_settings_sound_vibrate">Bergetar</string>
+    <string name="quick_settings_sound_label">Suara</string>
+    <string name="quick_settings_sound_ring">Dering</string>
+    <string name="quick_settings_sound_vibrate">Getar</string>
     <string name="quick_settings_sound_dnd">Jangan ganggu</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
     <string name="custom_hint">Geser ikon untuk memulai</string>
     <string name="status_bar_vpn">VPN</string>
-    <string name="status_bar_data_saver">Penghemat Data</string>
-    <string name="preview">Tinjauan</string>
-    <string name="keycode">Kata Kunci</string>
-    <string name="no_home_title">Tombol beranda tidak ditemukan</string>
-    <string name="no_home_message">Tombol beranda sangat dibutuhkan untuk menjalankan perangkat. Harap menambahkan tombol beranda sebelum menyimpan.</string>
-    <string name="clipboard_description">Papan Klip memungkinkan item untuk diseret langsung ke papan Klip. Item-item juga dapat diseret langsung dari papan klip ketika tersedia.</string>
-    <string name="keycode_description">Tombol Kata Kunci memungkinan tombol keyboard untuk ditambahkan di Panel Navigasi. Ketika ditekan akan meniru tombol keyboard yang dipilih. Pertama pilih tombol, lalu diikuti oleh gambar untuk ditampilkan pada tombol.</string>
+    <string name="status_bar_data_saver">Penghemat data</string>
+    <string name="preview">Pratinjau</string>
+    <string name="keycode">Kata kunci</string>
+    <string name="no_home_title">Tidak di temukan tombol home</string>
+    <string name="no_home_message">Tombol home diperlukan untuk dapat menavigasi perangkat ini. Harap tambahkan tombol beranda sebelum menyimpan.</string>
+    <string name="clipboard_description">Clipboard memungkinkan item untuk diseret langsung ke clipboard. Item juga bisa diseret keluar dari clipboard saat ada.</string>
+    <string name="keycode_description">Tombol kata kunci memungkinan tombol keyboard untuk ditambahkan di Panel Navigasi. Ketika ditekan akan meniru tombol keyboard yang dipilih. Pertama pilih tombol, lalu diikuti oleh gambar untuk ditampilkan pada tombol.</string>
     <string name="start">Mulai</string>
     <string name="center">Tengah</string>
-    <string name="end">Akhir</string>
+    <string name="end">Selesai</string>
     <string name="space">Jarak</string>
     <string name="menu_ime">Menu / Tukar Keyboard</string>
-    <string name="select_button">Pilih tombol untuk ditambahkan</string>
+    <string name="select_button">Pilih tombol untuk menambahkan</string>
     <string name="add_button">Tambahkan tombol</string>
     <string name="save">Simpan</string>
-    <string name="reset">Atur Ulang</string>
+    <string name="reset">Setel ulang</string>
     <string name="select_keycode">Pilih tombol keyboard</string>
     <string name="left">Kiri</string>
     <string name="right">Kanan</string>
@@ -61,15 +61,15 @@
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Tangkapan layar dihapus</string>
     <!-- Caffeine QS Tile -->
-    <string name="quick_settings_caffeine_label">Batas Waktu Layar</string>
-    <string name="accessibility_quick_settings_caffeine_off">Batas Waktu Layar Dimatikan</string>
-    <string name="accessibility_quick_settings_caffeine_on">Batas Waktu Layar diaktifkan</string>
+    <string name="quick_settings_caffeine_label">Kafein</string>
+    <string name="accessibility_quick_settings_caffeine_off">Kafein mati</string>
+    <string name="accessibility_quick_settings_caffeine_on">Kafein aktif</string>
     <!-- Reboot/Recovery QS Tile -->
-    <string name="quick_settings_reboot_label">Memulai Ulang Perangkat</string>
-    <string name="quick_settings_reboot_recovery_label">Mode Pemulihan</string>
+    <string name="quick_settings_reboot_label">Mulai ulang</string>
+    <string name="quick_settings_reboot_recovery_label">Pemulihan</string>
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">Tangkapan layar</string>
-    <string name="quick_settings_region_screenshot_label">Menangkap sebagian layar</string>
+    <string name="quick_settings_region_screenshot_label">Tangkapan layar sebagian</string>
     <!-- Heads Up QS Tile -->
     <string name="quick_settings_heads_up_label">Notifikasi mengambang</string>
     <string name="accessibility_quick_settings_heads_up_off">Notifikasi mengambang mati.</string>
@@ -131,7 +131,7 @@
     <string name="theme_info_message">Tile tema sangat unik tapi mudah juga di gunakan yang memungkinkan pengguna mengubah warna Acent atau gaya temanya.\n\nUntuk mengubah dari aksen dan gaya tema cukup simpel, sentuh yang lama pada tile dan sentuh lagi untuk memilihnya dari pilihan yang tersedia.</string>
     <!-- QS Config -->
     <string name="qs_menu_item_columns">Kolom</string>
-    <string name="qs_menu_item_columns_landscape">Kolom (mendatar)</string>
+    <string name="qs_menu_item_columns_landscape">Kolom mendatar</string>
     <string name="qs_menu_item_columns_three">3</string>
     <string name="qs_menu_item_columns_four">4</string>
     <string name="qs_menu_item_columns_five">5</string>
@@ -139,20 +139,20 @@
     <string name="qs_menu_item_columns_seven">7</string>
     <string name="qs_menu_item_columns_eight">8</string>
     <string name="qs_menu_item_columns_nine">9</string>
-    <string name="qs_menu_item_reset">Atur Ulang</string>
+    <string name="qs_menu_item_reset">Setel ulang</string>
     <string name="qs_menu_item_titles">Tampilkan label</string>
     <string name="qs_menu_item_rows">Baris</string>
-    <string name="qs_menu_item_rows_landscape">Baris (mendatar)</string>
+    <string name="qs_menu_item_rows_landscape">Baris mendatar</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
     <string name="qs_menu_item_rows_four">4</string>
-    <string name="qs_menu_item_qs_columns">Kolom Bilah Cepat</string>
+    <string name="qs_menu_item_qs_columns">Kolom bilah cepat</string>
     <string name="qs_menu_item_columns_auto">Otomatis</string>
-    <string name="screenshot_abort_title">Tidak ada tangkapan layar yang diambil</string>
+    <string name="screenshot_abort_title">Tidak ada tangkapan layar diambil</string>
     <string name="screenshot_abort_text">Operasi dibatalkan.</string>
     <!-- Expanded Desktop QS Tile -->
-    <string name="quick_settings_expanded_desktop_label">Desktop yang diperluas</string>
+    <string name="quick_settings_expanded_desktop_label">Perluas desktop</string>
     <string name="quick_settings_expanded_desktop">Diperluas</string>
     <string name="quick_settings_expanded_desktop_off">Normal</string>
     <string name="quick_settings_expanded_navigation_off">Sembunyikan navbar</string>
@@ -160,14 +160,34 @@
     <!-- Advance location quick setting tile -->
     <string name="quick_settings_location_secondary_battery_saving">Hemat Baterai</string>
     <string name="accessibility_quick_settings_location_battery_saving">Laporan Lokasi: mode hemat baterai.</string>
-    <string name="quick_settings_location_secondary_gps_only">Hanya Sensor</string>
-    <string name="accessibility_quick_settings_location_gps_only">Laporan lokasi: hanya mode sensor.</string>
+    <string name="quick_settings_location_secondary_gps_only">Sensor saja</string>
+    <string name="accessibility_quick_settings_location_gps_only">Laporan lokasi: mode sensor saja.</string>
     <string name="quick_settings_location_secondary_high_accuracy">Akurasi tinggi</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Laporan Lokasi: mode akurasi tinggi.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Pengisian cepat ( <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> sampai penuh)</string>
+    <string name="keyguard_plugged_in_dash_charging">Pengisian Cepat</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">TurboPower terhubung (<xliff:g id="charging_time_left">%s</xliff:g> sampai penuh)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">TurboPower terhubung</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Mode Permainan</string>
+    <string name="gaming_mode_tile_toast">Mode permainan dihidupkan</string>
+    <string name="gaming_mode_tile_toast_disabled">Mode permainan dimatikan</string>
+    <string name="gaming_mode_dialog_title">Mode Permainan</string>
+    <string name="gaming_mode_dialog_message">Ketika mode permainan dihidupkan. nada dering anda akan diset dalam mode getar, semua notifikasi akan di matikan dan tombol hardware akan dimatikan. media volume akan diset ke nilai maksimal. semua setelan akan dikembalikan ke semula ketika anda mematikan mode permainan.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Mode permainan hidup</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Mode permainan mati</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s oleh %s</string>
+    <string name="recents_free_ram">BEBAS: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Tampilkan layanan yang sedang berjalan.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Piksel pintar</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Otomatis hidupkan piksel pintar</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

@@ -33,7 +33,27 @@
     <string name="permdesc_toggleNavigationEditor">Leidžia kontroliuoti naršymo juostą redaktoriaus programa.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">pasiekti šriftų tvarkyklę</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Leidžiama programai pasiekti šriftų tvarkyklę.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">Įdiegtas šrifto paketas nesuderinamas dėl trūkstamų fonts.xml failų. Dėl palaikymo kreipkitės į paketo kūrėją.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Išnyks</string>
+    <string name="animation_slide_right">Slinkite į dešinę</string>
+    <string name="animation_slide_left">Slinkite į kairę</string>
+    <string name="animation_slide_right_no_fade">Pastumkite į dešinę (ne išnyks)</string>
+    <string name="animation_slide_left_no_fade">Slinkite į kairę (ne išnyks)</string>
+    <string name="animation_slide_up">Slinkite į apačią</string>
+    <string name="animation_slide_down">Slinkite į viršų</string>
+    <string name="animation_default">Numatytas</string>
+    <string name="animation_translucent">Permatomas</string>
+    <string name="animation_grow_shrink">Didinti (Į viršų)</string>
+    <string name="animation_grow_shrink_center">Didinti (centre)</string>
+    <string name="animation_grow_shrink_bottom">Didinti (apačioje)</string>
+    <string name="animation_grow_shrink_left">Didinti (kairėje)</string>
+    <string name="animation_grow_shrink_right">Didinti (dešinėje)</string>
+    <string name="animation_random">Atsitiktinai</string>
+    <string name="action_null">Tuščias</string>
+    <!-- ADB over network -->
 </resources>

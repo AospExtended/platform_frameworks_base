@@ -33,7 +33,27 @@
     <string name="permdesc_toggleNavigationEditor">Staat toe dat een applicatie de navigatiebalk-editor beheert.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">toegang tot lettertype beheerder</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Geeft een applicatie toegang tot de lettertype beheerder.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">Het lettertype pakket dat u heeft geïnstalleerd is compatibel vanwege een missend fonts.xml in hun bestanden. Neem alstublieft contact op met de pakketontwikkelaar voor ondersteuning.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Vervaag</string>
+    <string name="animation_slide_right">Rechts inschuiven</string>
+    <string name="animation_slide_left">Links inschuiven</string>
+    <string name="animation_slide_right_no_fade">Rechts inschuiven (Zonder vervaging)</string>
+    <string name="animation_slide_left_no_fade">Links inschuiven (Zonder vervaging)</string>
+    <string name="animation_slide_up">Van onder inschuiven</string>
+    <string name="animation_slide_down">Van boven inschuiven</string>
+    <string name="animation_default">Standaard</string>
+    <string name="animation_translucent">Doorschijnend</string>
+    <string name="animation_grow_shrink">Verschijnen (Van boven)</string>
+    <string name="animation_grow_shrink_center">Verschijnen (Van centrum)</string>
+    <string name="animation_grow_shrink_bottom">Verschijnen (Van onder)</string>
+    <string name="animation_grow_shrink_left">Verschijnen (Van links)</string>
+    <string name="animation_grow_shrink_right">Verschijnen (Van rechts)</string>
+    <string name="animation_random">Toeval</string>
+    <string name="action_null">Leeg</string>
+    <!-- ADB over network -->
 </resources>

@@ -20,10 +20,10 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="global_action_restart_advanced">Nâng cao</string>
-    <string name="global_action_restart_recovery">Chế độ phục hồi</string>
-    <string name="global_action_restart_bootloader">Chế độ bootloader</string>
-    <string name="global_action_restart_ui">Giao diện người dùng hệ thống</string>
-    <string name="global_action_restart_soft">Khởi động lại mềm</string>
+    <string name="global_action_restart_recovery">Recovery</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">Hệ thống</string>
+    <string name="global_action_restart_soft">Nhanh</string>
     <string name="statusbar_items_title">Biểu tượng thanh trạng thái</string>
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Lối tắt màn hình khóa</string>
@@ -40,15 +40,15 @@
     <string name="status_bar_data_saver">Tiết kiệm dữ liệu</string>
     <string name="preview">Xem trước</string>
     <string name="keycode">Mã phím</string>
-    <string name="no_home_title">Không có nút home được tìm thấy</string>
-    <string name="no_home_message">Nút home là cần thiết để có thể điều hướng các thiết bị này. Xin vui lòng thêm một nút home trước khi tiết kiệm.</string>
+    <string name="no_home_title">Không tìm thấy nút Trang chủ</string>
+    <string name="no_home_message">Cần có nút Trang chủ để có thể điều hướng thiết bị này. Vui lòng thêm nút trang chủ trước khi lưu.</string>
     <string name="clipboard_description">Khay nhớ tạm cho phép kéo trực tiếp mục vào khay nhớ tạm. Bạn cũng có thể kéo trực tiếp mục ra khỏi khay nhớ tạm khi hiển thị.</string>
     <string name="keycode_description">Mã phím nút cho phép các phím bàn phím sẽ được thêm vào thanh menu. Khi ép họ mô phỏng các phím bàn phím đã chọn. Lần đầu tiên quan trọng phải được chọn cho nút, sau đó là một hình ảnh được hiển thị trên nút.</string>
     <string name="start">Bắt đầu</string>
     <string name="center">Giữa</string>
     <string name="end">Kết thúc</string>
-    <string name="space">Ký tự cách</string>
-    <string name="menu_ime">Trình chuyển đổi bàn phím / menu</string>
+    <string name="space">Phím cách</string>
+    <string name="menu_ime">Chuyển đổi bàn phím/Menu</string>
     <string name="select_button">Chọn nút để thêm</string>
     <string name="add_button">Thêm nút</string>
     <string name="save">Lưu</string>
@@ -66,16 +66,16 @@
     <string name="accessibility_quick_settings_caffeine_on">Bật Caffeine</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Khởi động lại</string>
-    <string name="quick_settings_reboot_recovery_label">Chế độ phục hồi</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">Chụp màn hình</string>
     <string name="quick_settings_region_screenshot_label">Chụp một phần màn hình</string>
     <!-- Heads Up QS Tile -->
-    <string name="quick_settings_heads_up_label">Heads up</string>
-    <string name="accessibility_quick_settings_heads_up_off">Heads up tắt.</string>
-    <string name="accessibility_quick_settings_heads_up_on">Heads up bật.</string>
-    <string name="accessibility_quick_settings_heads_up_changed_off">Heads up đã tắt.</string>
-    <string name="accessibility_quick_settings_heads_up_changed_on">Heads up đã bật.</string>
+    <string name="quick_settings_heads_up_label">Thông báo nổi</string>
+    <string name="accessibility_quick_settings_heads_up_off">Tắt thông báo nổi.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Bật thông báo nổi.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Thông báo nổi đã tắt.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Thông báo nổi đã bật.</string>
     <!-- USB Tethering tile -->
     <string name="accessibility_quick_settings_usb_tether_off">Tắt chia sẻ kết nối USB</string>
     <string name="accessibility_quick_settings_usb_tether_on">Mở chia sẽ kết nối USB</string>
@@ -90,14 +90,14 @@
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Thông báo nổi sẽ báo lại trong 1 phút.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Thông báo nổi sẽ báo lại trong <xliff:g id="number">%d</xliff:g> phút.</string>
     <!-- Theme tile -->
-    <string name="systemui_theme_style_title">Phong cách giao diện người dùng</string>
+    <string name="systemui_theme_style_title">Giao diện người dùng</string>
     <string name="systemui_theme_style_auto">Tự động</string>
     <string name="systemui_theme_style_light">Giao diện sáng</string>
     <string name="systemui_theme_style_dark">Giao diện tối</string>
     <string name="systemui_theme_style_black">Giao diện đen</string>
-    <string name="systemui_theme_style_extended">Giao diện Extended</string>
+    <string name="systemui_theme_style_extended">Giao diện AEX</string>
     <string name="systemui_theme_style_chocolate">Giao diện sô cô la</string>
-    <string name="quick_settings_theme_tile_title">Màu nhấn (Accent)</string>
+    <string name="quick_settings_theme_tile_title">Màu chủ đề</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Chọn màu</string>
     <string name="quick_settings_theme_tile_style_detail_title">Chọn kiểu</string>
     <string name="quick_settings_theme_tile_color_default">Mặc định</string>
@@ -106,29 +106,29 @@
     <string name="quick_settings_theme_tile_color_purple">Tím</string>
     <string name="quick_settings_theme_tile_color_deep_purple">Tím đậm</string>
     <string name="quick_settings_theme_tile_color_indigo">Chàm</string>
-    <string name="quick_settings_theme_tile_color_blue">Màu xanh dương</string>
-    <string name="quick_settings_theme_tile_color_light_blue">Ánh sáng màu xanh</string>
-    <string name="quick_settings_theme_tile_color_cyan">Lục lam</string>
-    <string name="quick_settings_theme_tile_color_teal">Mòng két</string>
-    <string name="quick_settings_theme_tile_color_green">Màu xanh lá cây</string>
-    <string name="quick_settings_theme_tile_color_light_green">Ánh sáng màu xanh lá cây</string>
-    <string name="quick_settings_theme_tile_color_lime">Vôi</string>
-    <string name="quick_settings_theme_tile_color_yellow">Màu vàng</string>
-    <string name="quick_settings_theme_tile_color_amber">Hổ phách</string>
-    <string name="quick_settings_theme_tile_color_orange">Orange</string>
-    <string name="quick_settings_theme_tile_color_deep_orange">Màu cam đậm</string>
+    <string name="quick_settings_theme_tile_color_blue">Xanh dương</string>
+    <string name="quick_settings_theme_tile_color_light_blue">Xanh dương nhạt</string>
+    <string name="quick_settings_theme_tile_color_cyan">Xanh lá mạ</string>
+    <string name="quick_settings_theme_tile_color_teal">Xanh mòng két</string>
+    <string name="quick_settings_theme_tile_color_green">Xanh lá</string>
+    <string name="quick_settings_theme_tile_color_light_green">Xanh non</string>
+    <string name="quick_settings_theme_tile_color_lime">Xanh cốm</string>
+    <string name="quick_settings_theme_tile_color_yellow">Vàng</string>
+    <string name="quick_settings_theme_tile_color_amber">Màu vàng cam</string>
+    <string name="quick_settings_theme_tile_color_orange">Màu cam</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">Cam đậm</string>
     <string name="quick_settings_theme_tile_color_brown">Nâu</string>
     <string name="quick_settings_theme_tile_color_grey">Xám</string>
     <string name="quick_settings_theme_tile_color_blue_grey">Xanh xám</string>
     <string name="quick_settings_theme_tile_color_candy_red">Đỏ kẹo</string>
     <string name="quick_settings_theme_tile_color_pale_red">Đỏ hồng</string>
-    <string name="quick_settings_theme_tile_color_extended_green">Màu xanh lá cây mở rộng</string>
-    <string name="quick_settings_theme_tile_color_pale_blue">Màu xanh nhạt</string>
-    <string name="quick_settings_theme_tile_color_jade_green">Xanh ngọc</string>
+    <string name="quick_settings_theme_tile_color_extended_green">Xanh ấn tượng</string>
+    <string name="quick_settings_theme_tile_color_pale_blue">Xanh da trời nhạt</string>
+    <string name="quick_settings_theme_tile_color_jade_green">Xanh lá cây đậm</string>
     <string name="quick_settings_theme_tile_color_black">Màu đen</string>
-    <string name="quick_settings_theme_tile_color_white">Trắng</string>
+    <string name="quick_settings_theme_tile_color_white">Màu trắng</string>
     <string name="theme_info_title">Đây là gì?</string>
-    <string name="theme_info_message">Gạch chủ đề là một gạch độc đáo nhưng dễ sử dụng mà cho phép người dùng thay đổi hệ thống giọng hoặc style.\n\nTo thay đổi giữa giọng điệu và phong cách, đơn giản chỉ cần dài bấm vào ngói và sau đó bấm một lần nữa để lựa chọn từ các tùy chọn được cung cấp.</string>
+    <string name="theme_info_message">Chủ đề cho phép người dùng thay đổi hệ thống giọng hoặc style.\n\nTo thay đổi giữa giọng điệu và phong cách, đơn giản chỉ cần bấm lâu vào tựa đề và sau đó bấm một lần nữa để lựa chọn từ các tùy chọn được cung cấp.</string>
     <!-- QS Config -->
     <string name="qs_menu_item_columns">Cột</string>
     <string name="qs_menu_item_columns_landscape">Cột (màn hình ngang)</string>
@@ -147,14 +147,14 @@
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
     <string name="qs_menu_item_rows_four">4</string>
-    <string name="qs_menu_item_qs_columns">Cột Quickbar</string>
+    <string name="qs_menu_item_qs_columns">Cột thanh nhanh</string>
     <string name="qs_menu_item_columns_auto">Tự động</string>
     <string name="screenshot_abort_title">Không có ảnh chụp màn hình chụp</string>
     <string name="screenshot_abort_text">Thao tác bị hủy bỏ.</string>
     <!-- Expanded Desktop QS Tile -->
     <string name="quick_settings_expanded_desktop_label">Mở rộng màn hình</string>
     <string name="quick_settings_expanded_desktop">Đã mở rộng</string>
-    <string name="quick_settings_expanded_desktop_off">Bình Thường</string>
+    <string name="quick_settings_expanded_desktop_off">Bình thường</string>
     <string name="quick_settings_expanded_navigation_off">Ẩn thanh điều hướng</string>
     <string name="quick_settings_expanded_statusbar_off">Ẩn thanh trạng thái</string>
     <!-- Advance location quick setting tile -->
@@ -165,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">Độ chính xác cao</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Báo cáo vị trí: chế độ chính xác cao.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Đang sạc nhanh (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> nữa sẽ đầy)</string>
+    <string name="keyguard_plugged_in_dash_charging">Đang sạc nhanh</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">Đang sạc nhanh (<xliff:g id="charging_time_left">%s</xliff:g> sẽ đầy)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">Đã kết nối sạc nhanh</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Chế độ chơi game</string>
+    <string name="gaming_mode_tile_toast">Chế độ chơi game được bật</string>
+    <string name="gaming_mode_tile_toast_disabled">Chế độ chơi game đã tắt</string>
+    <string name="gaming_mode_dialog_title">Chế độ chơi game</string>
+    <string name="gaming_mode_dialog_message">Khi Chế độ chơi game được bật, chế độ chuông sẽ được đặt thành chế độ rung, tất cả các thông báo nổi sẽ bị vô hiệu và các phím cứng sẽ bị tắt. Âm lượng phương tiện sẽ được tăng lên mức tối đa. Tất cả các tính năng trên sẽ được khôi phục lại về mặc định khi bạn tắt Chế độ chơi game.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Chế độ chơi game bật</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Chế độ chơi game tắt</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s bởi %s</string>
+    <string name="recents_free_ram">BỘ NHỚ TRỐNG: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Mở các dịch vụ đang hoạt động.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Điểm ảnh thông minh</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Tự động kích hoạt điểm ảnh thông minh</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

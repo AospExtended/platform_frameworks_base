@@ -165,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">Высокая дакладнасць</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Вызначэнне месцазнаходжання: па ўсіх крыніцах.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Хуткая зарадка (засталося <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
+    <string name="keyguard_plugged_in_dash_charging">Хуткая зарадка</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">Хуткая зарадка падлучана (<xliff:g id="charging_time_left">%s</xliff:g> да поўнай зарадкі)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">Падключана хуткая зарадка</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Рэжым гульні</string>
+    <string name="gaming_mode_tile_toast">Гульнявы рэжым уключаны</string>
+    <string name="gaming_mode_tile_toast_disabled">Гульнявы рэжым адключаны</string>
+    <string name="gaming_mode_dialog_title">Рэжым гульні</string>
+    <string name="gaming_mode_dialog_message">Калі гульнявы рэжым уключаны, ваш рэжым званка пераключыцца ў рэжым вібрацыі, усё апавяшчэнні і апаратныя клавішы будуць адключаныя. Гучнасць медыя будзе павялічана да максімальнага ўзроўню. Усе адключаныя налады будуць адноўленыя пасля выхаду з рэжыму гульні.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Гульнявы рэжым уключаны</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Гульнявы рэжым адключаны</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s ад %s</string>
+    <string name="recents_free_ram">Вольна памяці: %1$d MБ</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Адкрыць спіс працуючых праграм.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Разумныя пікселі</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Аўтаматычнае ўключэнне разумных пікселяў</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>

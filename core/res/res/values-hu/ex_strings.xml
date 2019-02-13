@@ -15,7 +15,7 @@
 <resources>
     <!-- Advanced reboot -->
     <string name="reboot_title">Újraindítás</string>
-    <string name="reboot_message">A rendszer újraindítása</string>
+    <string name="reboot_message">Rendszer újraindítása</string>
     <!-- SystemUI Restart -->
     <string name="systemui_restart_title">Rendszerfelület-újraindítás szükséges</string>
     <string name="systemui_restart_message">Az összes módosítás érvénybe léptetéséhez a rendszerfelület újraindítása szükséges. Újraindítja most?</string>
@@ -30,10 +30,30 @@
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_toggleNavigationEditor">a navigációssáv-szerkesztő kezelése</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_toggleNavigationEditor">Lehetővé teszi egy alkalmazás számára, hogy kezelje a navigációssáv-szerkesztőt.</string>
+    <string name="permdesc_toggleNavigationEditor">Lehetővé teszi egy alkalmazás számára, hogy szerkessze a navigációs sávot.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">hozzáférés a betűtípus-kezelőhöz</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Lehetővé teszi egy alkalmazás számára, hogy hozzáférjen a betűtípus-kezelőhöz.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">A telepített betűkészlet nem kompatibilis a fonts.xml-lel, mert az fájlaihoz hiányos, lépjen kapcsolatba a betűkészlet fejlesztőjével.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Áttűnés</string>
+    <string name="animation_slide_right">Csúsztatás jobbra</string>
+    <string name="animation_slide_left">Csúsztatás balra</string>
+    <string name="animation_slide_right_no_fade">Csúsztatás jobbra (nincs halványítás)</string>
+    <string name="animation_slide_left_no_fade">Csúsztatás balra (nincs halványítás)</string>
+    <string name="animation_slide_up">Csúsztatás alulról</string>
+    <string name="animation_slide_down">Csúsztatás felülről</string>
+    <string name="animation_default">Alapértelmezett</string>
+    <string name="animation_translucent">Áttetsző</string>
+    <string name="animation_grow_shrink">Húzás felfelé</string>
+    <string name="animation_grow_shrink_center">Húzás középre</string>
+    <string name="animation_grow_shrink_bottom">Húzás alulról</string>
+    <string name="animation_grow_shrink_left">Húzás balról</string>
+    <string name="animation_grow_shrink_right">Húzás jobbról</string>
+    <string name="animation_random">Véletlenszerű</string>
+    <string name="action_null">Üres</string>
+    <!-- ADB over network -->
 </resources>

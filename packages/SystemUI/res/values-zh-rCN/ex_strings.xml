@@ -149,7 +149,7 @@
     <string name="qs_menu_item_rows_four">4</string>
     <string name="qs_menu_item_qs_columns">磁贴列数</string>
     <string name="qs_menu_item_columns_auto">自动</string>
-    <string name="screenshot_abort_title">没有屏幕截图</string>
+    <string name="screenshot_abort_title">无屏幕截图</string>
     <string name="screenshot_abort_text">操作中止</string>
     <!-- Expanded Desktop QS Tile -->
     <string name="quick_settings_expanded_desktop_label">扩展桌面</string>
@@ -165,9 +165,29 @@
     <string name="quick_settings_location_secondary_high_accuracy">高精确度</string>
     <string name="accessibility_quick_settings_location_high_accuracy">位置报告：高精确度</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">正在快速充电 (还需<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> 充满)</string>
+    <string name="keyguard_plugged_in_dash_charging">正在快速充电</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">TurboPower 已连接 (还需 <xliff:g id="charging_time_left">%s</xliff:g> 充满)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">TurboPower 已连接</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">游戏模式</string>
+    <string name="gaming_mode_tile_toast">游戏模式已启用</string>
+    <string name="gaming_mode_tile_toast_disabled">游戏模式已停用</string>
+    <string name="gaming_mode_dialog_title">游戏模式</string>
+    <string name="gaming_mode_dialog_message">开启游戏模式后会做出如下改动：调整铃声为振动模式，关闭浮动通知，禁用实体按键，媒体量将增加到最大。当退出游戏模式后所有设置便会恢复为打开前的状态。</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">游戏模式开启</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">游戏模式关闭</string>
+    <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s 到 %s</string>
+    <string name="recents_free_ram">可用运存: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">显示正在运行的服务</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">智能像素</string>
+    <string name="quick_settings_smart_pixels_on_power_save">自动启用智能像素</string>
+    <!-- ADB over network QS tile -->
+    <!-- LTE QS Tile -->
+    <!-- Kill button in notification guts -->
 </resources>
