@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
-        android:layout_marginStart="2.5dp"
+        android:layout_marginStart="2dp"
     >
         <FrameLayout
                 android:id="@+id/inout_container"
