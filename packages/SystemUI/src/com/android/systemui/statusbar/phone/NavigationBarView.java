@@ -807,7 +807,7 @@ public class NavigationBarView extends FrameLayout implements Navigator, PulseOb
         reloadNavIcons();
         updateNavButtonIcons();
         setUpSwipeUpOnboarding(isQuickStepSwipeUpEnabled());
-        WindowManagerWrapper.getInstance().setNavBarVirtualKeyHapticFeedbackEnabled(!showSwipeUpUI);
+        WindowManagerWrapper.getInstance().setNavBarVirtualKeyHapticFeedbackEnabled(true);
         getHomeButton().setAccessibilityDelegate(
                 showSwipeUpUI ? mQuickStepAccessibilityDelegate : null);
     }
