@@ -1200,6 +1200,14 @@ public class ActivityStackSupervisor extends ConfigurationContainer implements D
 
     void reportActivityLaunchedLocked(boolean timeout, ActivityRecord r, long totalTime) {
         boolean changed = false;
+        if (totalTime > 0) {
+            if (mPerfBoost == null) {
+                mPerfBoost = new BoostFramework();
+            }
+            if (mPerfBoost != null) {
+               mPerfBoost.perfHint(BoostFramework.VENDOR_HINT_FIRST_DRAW, r.packageName, r.app.pid, BoostFramework.Draw.EVENT_TYPE_V1);
+            }
+        }
         for (int i = mWaitingActivityLaunched.size() - 1; i >= 0; i--) {
             WaitResult w = mWaitingActivityLaunched.remove(i);
             if (w.who == null) {
