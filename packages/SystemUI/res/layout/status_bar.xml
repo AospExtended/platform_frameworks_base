@@ -147,7 +147,7 @@
         <com.android.keyguard.AlphaOptimizedLinearLayout android:id="@+id/system_icon_area"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="@integer/system_icon_area_weight"
             android:orientation="horizontal"
             android:gravity="center_vertical|end"
             >
