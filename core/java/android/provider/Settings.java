@@ -5169,13 +5169,6 @@ public final class Settings {
         public static final String LISTVIEW_INTERPOLATOR = "listview_interpolator";
 
         /**
-         * Whether to enable gaming mode or not
-         *
-         * @hide
-         */
-        public static final String ENABLE_GAMING_MODE = "enable_gaming_mode";
-
-        /**
          * Whether to show media art on lockscreen
          * @hide
          */

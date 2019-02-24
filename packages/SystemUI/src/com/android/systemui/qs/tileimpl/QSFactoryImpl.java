@@ -41,7 +41,6 @@ import com.android.systemui.qs.tiles.DndTile;
 import com.android.systemui.qs.tiles.ExpandedDesktopTile;
 import com.android.systemui.qs.tiles.FlashlightTile;
 import com.android.systemui.qs.tiles.HeadsUpTile;
-import com.android.systemui.qs.tiles.GamingModeTile;
 import com.android.systemui.qs.tiles.FontTile;
 import com.android.systemui.qs.tiles.HotspotTile;
 import com.android.systemui.qs.tiles.HWKeysTile;
@@ -143,8 +142,6 @@ public class QSFactoryImpl implements QSFactory {
                 return new ExpandedDesktopTile(mHost);
             case "hwkeys":
                 return new HWKeysTile(mHost);
-            case "gaming":
-                return new GamingModeTile(mHost);
             case "smartpixels":
                 return new SmartPixelsTile(mHost);
             case "adb_network":
