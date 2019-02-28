@@ -123,19 +123,15 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
     static final List<ThemeTileItem> sStyleItems = new ArrayList<ThemeTileItem>();
     static {
         sStyleItems.add(new ThemeTileItem(0, -1,
-                R.string.systemui_theme_style_auto, Settings.System.SYSTEM_THEME_STYLE));
+                R.string.systemui_theme_style_dark, Settings.System.SYSTEM_DARK_THEME_STYLE));
         sStyleItems.add(new ThemeTileItem(1, -1,
-                R.string.systemui_theme_style_light, Settings.System.SYSTEM_THEME_STYLE));
+                R.string.systemui_theme_style_black, Settings.System.SYSTEM_DARK_THEME_STYLE));
         sStyleItems.add(new ThemeTileItem(2, -1,
-                R.string.systemui_theme_style_dark, Settings.System.SYSTEM_THEME_STYLE));
+                R.string.systemui_theme_style_extended, Settings.System.SYSTEM_DARK_THEME_STYLE));
         sStyleItems.add(new ThemeTileItem(3, -1,
-                R.string.systemui_theme_style_black, Settings.System.SYSTEM_THEME_STYLE));
+                R.string.systemui_theme_style_chocolate, Settings.System.SYSTEM_DARK_THEME_STYLE));
         sStyleItems.add(new ThemeTileItem(4, -1,
-                R.string.systemui_theme_style_extended, Settings.System.SYSTEM_THEME_STYLE));
-        sStyleItems.add(new ThemeTileItem(5, -1,
-                R.string.systemui_theme_style_chocolate, Settings.System.SYSTEM_THEME_STYLE));
-        sStyleItems.add(new ThemeTileItem(6, -1,
-                R.string.systemui_theme_style_elegant, Settings.System.SYSTEM_THEME_STYLE));
+                R.string.systemui_theme_style_elegant, Settings.System.SYSTEM_DARK_THEME_STYLE));
 
     }
 
