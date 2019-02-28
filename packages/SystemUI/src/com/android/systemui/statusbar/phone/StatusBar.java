@@ -2516,6 +2516,15 @@ public class StatusBar extends SystemUI implements DemoMode,
     }
 
     @Override
+    public void toggleSettingsPanel() {
+        if (mPanelExpanded) {
+            mShadeController.animateCollapsePanels();
+        } else {
+            animateExpandSettingsPanel(null);
+        }
+    }
+
+    @Override
     public void animateCollapsePanels(int flags, boolean force) {
         mShadeController.animateCollapsePanels(flags, force, false /* delayed */,
                 1.0f /* speedUpFactor */);
