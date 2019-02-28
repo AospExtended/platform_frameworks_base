@@ -430,4 +430,8 @@ public class ThemeAccentUtils {
         Settings.System.putIntForUser(resolver,
                 Settings.System.ACCENT_PICKER, accentIndex, userId);
     }
+
+    public static boolean isUsingDarkThemeVariant(IOverlayManager om, int userId) {
+        return isUsingDarkTheme(om, userId) || isUsingBlackTheme(om, userId) || isUsingExtendedTheme(om, userId) || isUsingChocolateTheme(om, userId) || isUsingElegantTheme(om, userId);
+    }
 }
