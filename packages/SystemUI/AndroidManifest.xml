@@ -252,6 +252,9 @@
     <!-- DayNight mode -->
     <uses-permission android:name="android.permission.MODIFY_DAY_NIGHT_MODE" />
 
+    <!-- Font tile -->
+    <uses-permission android:name="android.permission.ACCESS_FONT_MANAGER" />
+
     <application
         android:name=".SystemUIApplication"
         android:persistent="true"
