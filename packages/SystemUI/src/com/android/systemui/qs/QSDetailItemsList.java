@@ -17,6 +17,7 @@
 package com.android.systemui.qs;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -134,9 +135,18 @@ public class QSDetailItemsList extends LinearLayout {
                 iv.getOverlay().add(item.overlay);
             }
             final TextView title = (TextView) view.findViewById(android.R.id.title);
+            Typeface tf = null;
+            if (item.fontPath != null) {
+                Typeface.Builder builder = new Typeface.Builder(item.fontPath);
+                tf = builder.build();
+                title.setTypeface(tf);
+            }
             title.setText(item.line1);
             final TextView summary = (TextView) view.findViewById(android.R.id.summary);
             final boolean twoLines = !TextUtils.isEmpty(item.line2);
+            if (twoLines && tf != null) {
+                summary.setTypeface(tf);
+            }
             title.setMaxLines(twoLines ? 1 : 2);
             summary.setVisibility(twoLines ? VISIBLE : GONE);
             summary.setText(twoLines ? item.line2 : null);
