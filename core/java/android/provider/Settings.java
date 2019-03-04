@@ -4716,6 +4716,7 @@ public final class Settings {
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 1);
 
         /**
+<<<<<<< HEAD
          * Whether to change the transparency of the qs panel
          * @hide
          */
@@ -4743,6 +4744,8 @@ public final class Settings {
                 ANY_INTEGER_VALIDATOR;
 
         /**
+=======
+>>>>>>> parent of 9e72eee94ea... base: QS panel opacity
          * Number of qs columns on landscape orientation
          * @hide
          */
@@ -4790,7 +4793,68 @@ public final class Settings {
          * Toast icon
          * @hide
          */
+<<<<<<< HEAD
         public static final String TOAST_ICON = "toast_icon";
+=======
+        public static final String[] SETTINGS_TO_BACKUP = {
+            STAY_ON_WHILE_PLUGGED_IN,   // moved to global
+            WIFI_USE_STATIC_IP,
+            WIFI_STATIC_IP,
+            WIFI_STATIC_GATEWAY,
+            WIFI_STATIC_NETMASK,
+            WIFI_STATIC_DNS1,
+            WIFI_STATIC_DNS2,
+            BLUETOOTH_DISCOVERABILITY,
+            BLUETOOTH_DISCOVERABILITY_TIMEOUT,
+            FONT_SCALE,
+            DIM_SCREEN,
+            SCREEN_OFF_TIMEOUT,
+            SCREEN_BRIGHTNESS_MODE,
+            SCREEN_AUTO_BRIGHTNESS_ADJ,
+            SCREEN_BRIGHTNESS_FOR_VR,
+            VIBRATE_INPUT_DEVICES,
+            MODE_RINGER_STREAMS_AFFECTED,
+            TEXT_AUTO_REPLACE,
+            TEXT_AUTO_CAPS,
+            TEXT_AUTO_PUNCTUATE,
+            TEXT_SHOW_PASSWORD,
+            AUTO_TIME,                  // moved to global
+            AUTO_TIME_ZONE,             // moved to global
+            TIME_12_24,
+            DATE_FORMAT,
+            DTMF_TONE_WHEN_DIALING,
+            DTMF_TONE_TYPE_WHEN_DIALING,
+            HEARING_AID,
+            TTY_MODE,
+            MASTER_MONO,
+            SOUND_EFFECTS_ENABLED,
+            HAPTIC_FEEDBACK_ENABLED,
+            POWER_SOUNDS_ENABLED,       // moved to global
+            DOCK_SOUNDS_ENABLED,        // moved to global
+            LOCKSCREEN_SOUNDS_ENABLED,
+            SHOW_WEB_SUGGESTIONS,
+            SIP_CALL_OPTIONS,
+            SIP_RECEIVE_CALLS,
+            POINTER_SPEED,
+            VIBRATE_WHEN_RINGING,
+            RINGTONE,
+            LOCK_TO_APP_ENABLED,
+            NOTIFICATION_SOUND,
+            ACCELEROMETER_ROTATION,
+            SHOW_BATTERY_PERCENT,
+            NOTIFICATION_VIBRATION_INTENSITY,
+            HAPTIC_FEEDBACK_INTENSITY,
+            DISPLAY_COLOR_MODE,
+            NAVIGATION_BAR_SHOW,
+            RECENTS_COMPONENT,
+            OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE,
+            OMNI_QS_LAYOUT_COLUMNS,
+            OMNI_QS_TILE_TITLE_VISIBILITY,
+            OMNI_QS_LAYOUT_ROWS,
+            OMNI_QS_LAYOUT_ROWS_LANDSCAPE,
+            OMNI_QS_QUICKBAR_COLUMNS,
+        };
+>>>>>>> parent of 9e72eee94ea... base: QS panel opacity
 
         /**
          * some devices have a extra hw button e.g. n3 on the back on the
@@ -5429,6 +5493,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(OMNI_QS_LAYOUT_ROWS);
             PRIVATE_SETTINGS.add(OMNI_QS_LAYOUT_ROWS_LANDSCAPE);
             PRIVATE_SETTINGS.add(OMNI_QS_QUICKBAR_COLUMNS);
+<<<<<<< HEAD
             PRIVATE_SETTINGS.add(OMNI_QS_PANEL_BG_ALPHA);
             PRIVATE_SETTINGS.add(TOAST_ICON);
             PRIVATE_SETTINGS.add(SCREENSHOT_DEFAULT_MODE);
@@ -5465,6 +5530,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD);
             PRIVATE_SETTINGS.add(ONE_HAND_MODE_ENABLED);
             PRIVATE_SETTINGS.add(DOZE_ON_CHARGE);
+=======
+>>>>>>> parent of 9e72eee94ea... base: QS panel opacity
         }
 
 
@@ -5570,6 +5637,7 @@ public final class Settings {
             VALIDATORS.put(OMNI_QS_LAYOUT_ROWS, OMNI_QS_LAYOUT_ROWS_VALIDATOR);
             VALIDATORS.put(OMNI_QS_LAYOUT_ROWS_LANDSCAPE, OMNI_QS_LAYOUT_ROWS_LANDSCAPE_VALIDATOR);
             VALIDATORS.put(OMNI_QS_QUICKBAR_COLUMNS, OMNI_QS_QUICKBAR_COLUMNS_VALIDATOR);
+<<<<<<< HEAD
             VALIDATORS.put(OMNI_QS_PANEL_BG_ALPHA, OMNI_QS_PANEL_BG_ALPHA_VALIDATOR);
             VALIDATORS.put(CUSTOM_BUTTON_EXTRA_KEY_MAPPING, CUSTOM_BUTTON_EXTRA_KEY_MAPPING_VALIDATOR);
             VALIDATORS.put(CUSTOM_DEVICE_PROXI_CHECK_ENABLED, CUSTOM_DEVICE_PROXI_CHECK_ENABLED_VALIDATOR);
@@ -5597,6 +5665,8 @@ public final class Settings {
             VALIDATORS.put(MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD_VALIDATOR);
             VALIDATORS.put(ONE_HAND_MODE_ENABLED, ONE_HAND_MODE_ENABLED_VALIDATOR);
             VALIDATORS.put(DOZE_ON_CHARGE, DOZE_ON_CHARGE_VALIDATOR);
+=======
+>>>>>>> parent of 9e72eee94ea... base: QS panel opacity
         }
 
         /**
