@@ -268,6 +268,7 @@ public class QSDetailItems extends FrameLayout {
         public int icon2 = -1;
         public boolean doDisableTint;
         public boolean doDisableFocus;
+        public String fontPath;
     }
 
     public interface Callback {
