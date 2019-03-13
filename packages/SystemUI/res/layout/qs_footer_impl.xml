@@ -46,13 +46,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical|start"
-            android:paddingStart="16dp">
+            android:paddingStart="@dimen/qs_footer_padding_start">
 
             <include
                 layout="@layout/mobile_signal_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="@dimen/qs_footer_mobilegroup_margin_end"
                 android:visibility="gone" />
 
             <com.android.keyguard.CarrierText
