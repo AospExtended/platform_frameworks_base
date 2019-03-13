@@ -31,7 +31,7 @@
     <string name="lockscreen_hidden">なし</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">音声</string>
-    <string name="quick_settings_sound_ring">着信</string>
+    <string name="quick_settings_sound_ring">鳴動</string>
     <string name="quick_settings_sound_vibrate">振動</string>
     <string name="quick_settings_sound_dnd">サイレント</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
@@ -62,8 +62,8 @@
     <string name="delete_screenshot_toast">スクリーンショットを削除しました</string>
     <!-- Caffeine QS Tile -->
     <string name="quick_settings_caffeine_label">カフェイン</string>
-    <string name="accessibility_quick_settings_caffeine_off">カフェイン オフ</string>
-    <string name="accessibility_quick_settings_caffeine_on">カフェイン オン</string>
+    <string name="accessibility_quick_settings_caffeine_off">カフェイン OFF</string>
+    <string name="accessibility_quick_settings_caffeine_on">カフェイン ON</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">再起動</string>
     <string name="quick_settings_reboot_recovery_label">リカバリー</string>
@@ -72,31 +72,31 @@
     <string name="quick_settings_region_screenshot_label">範囲選択してスクリーンショット</string>
     <!-- Heads Up QS Tile -->
     <string name="quick_settings_heads_up_label">Heads Up</string>
-    <string name="accessibility_quick_settings_heads_up_off">Heads Up オフ</string>
-    <string name="accessibility_quick_settings_heads_up_on">Heads Up オン</string>
-    <string name="accessibility_quick_settings_heads_up_changed_off">Heads Upをオフにしました</string>
-    <string name="accessibility_quick_settings_heads_up_changed_on">Heads Upをオンにしました</string>
+    <string name="accessibility_quick_settings_heads_up_off">Heads Up OFF</string>
+    <string name="accessibility_quick_settings_heads_up_on">Heads Up ON</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Heads Up を OFF にしました</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Heads Up を ON にしました</string>
     <!-- USB Tethering tile -->
-    <string name="accessibility_quick_settings_usb_tether_off">USBテザリング オフ</string>
-    <string name="accessibility_quick_settings_usb_tether_on">USBテザリング オン</string>
-    <string name="accessibility_quick_settings_usb_tether_changed_off">USBテザリングをオフにしました</string>
-    <string name="accessibility_quick_settings_usb_tether_changed_on">USBテザリングをオンにしました</string>
-    <string name="quick_settings_usb_tether_label">USBテザリング</string>
+    <string name="accessibility_quick_settings_usb_tether_off">USB テザリング OFF</string>
+    <string name="accessibility_quick_settings_usb_tether_on">USB テザリング ON</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB テザリングを OFF にしました</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">USB テザリングを ON にしました</string>
+    <string name="quick_settings_usb_tether_label">USB テザリング</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">ハードウェアキー オン</string>
-    <string name="accessibility_quick_settings_hwkeys_off">ハードウェアキー オフ</string>
+    <string name="accessibility_quick_settings_hwkeys_on">ハードウェアキー ON</string>
+    <string name="accessibility_quick_settings_hwkeys_off">ハードウェアキー OFF</string>
     <string name="quick_settings_hwkeys_label">ハードウェアキー</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 通知の表示は1分間停止します</string>
-    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - 通知の表示は<xliff:g id="number">%d</xliff:g>分間停止します</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - 通知の表示は <xliff:g id="number">%d</xliff:g> 分間停止します</string>
     <!-- Theme tile -->
-    <string name="systemui_theme_style_title">UIのスタイル</string>
+    <string name="systemui_theme_style_title">UI のスタイル</string>
     <string name="systemui_theme_style_auto">自動</string>
-    <string name="systemui_theme_style_light">明るいUI</string>
-    <string name="systemui_theme_style_dark">暗いUI</string>
-    <string name="systemui_theme_style_black">黒いUI</string>
-    <string name="systemui_theme_style_extended">拡張UI</string>
-    <string name="systemui_theme_style_chocolate">チョコレートUI</string>
+    <string name="systemui_theme_style_light">明るい UI</string>
+    <string name="systemui_theme_style_dark">暗い UI</string>
+    <string name="systemui_theme_style_black">黒い UI</string>
+    <string name="systemui_theme_style_extended">Extended UI</string>
+    <string name="systemui_theme_style_chocolate">チョコレート UI</string>
     <string name="quick_settings_theme_tile_title">アクセント</string>
     <string name="quick_settings_theme_tile_accent_detail_title">色を選択</string>
     <string name="quick_settings_theme_tile_style_detail_title">スタイルを選択</string>
@@ -127,11 +127,11 @@
     <string name="quick_settings_theme_tile_color_jade_green">ジェイドグリーン</string>
     <string name="quick_settings_theme_tile_color_black">ブラック</string>
     <string name="quick_settings_theme_tile_color_white">ホワイト</string>
-    <string name="theme_info_title">これは何ですか？</string>
+    <string name="theme_info_title">これは何ですか?</string>
     <string name="theme_info_message">テーマタイルはシステムアクセントやスタイルをユーザーが簡単に変更できるようにします。\n\nアクセントとスタイルを切り替えるには、タイルを長押しした後表示されたオプションからタップして選択するだけです。</string>
     <!-- QS Config -->
     <string name="qs_menu_item_columns">列数</string>
-    <string name="qs_menu_item_columns_landscape">列数（横向き）</string>
+    <string name="qs_menu_item_columns_landscape">列数 (横向き)</string>
     <string name="qs_menu_item_columns_three">3</string>
     <string name="qs_menu_item_columns_four">4</string>
     <string name="qs_menu_item_columns_five">5</string>
@@ -142,7 +142,7 @@
     <string name="qs_menu_item_reset">リセット</string>
     <string name="qs_menu_item_titles">ラベルを表示</string>
     <string name="qs_menu_item_rows">行数</string>
-    <string name="qs_menu_item_rows_landscape">行数（横向き）</string>
+    <string name="qs_menu_item_rows_landscape">行数 (横向き)</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
@@ -159,35 +159,65 @@
     <string name="quick_settings_expanded_statusbar_off">ステータスバーを隠す</string>
     <!-- Advance location quick setting tile -->
     <string name="quick_settings_location_secondary_battery_saving">バッテリーセーバー</string>
-    <string name="accessibility_quick_settings_location_battery_saving">位置情報レポート：バッテリー節約モード</string>
+    <string name="accessibility_quick_settings_location_battery_saving">位置情報レポート: バッテリー節約モード</string>
     <string name="quick_settings_location_secondary_gps_only">センサーのみ</string>
-    <string name="accessibility_quick_settings_location_gps_only">位置情報レポート：センサーのみ</string>
+    <string name="accessibility_quick_settings_location_gps_only">位置情報レポート: センサーのみ</string>
     <string name="quick_settings_location_secondary_high_accuracy">高精度</string>
-    <string name="accessibility_quick_settings_location_high_accuracy">位置情報レポート：高精度モード</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">位置情報レポート: 高精度モード</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time">急速充電中（充電完了まで<xliff:g id="Charging_TIME_LEFT">%s</xliff:g>）</string>
+    <string name="keyguard_indication_dash_charging_time">急速充電中 (充電完了まで <xliff:g id="Charging_TIME_LEFT">%s</xliff:g>)</string>
     <string name="keyguard_plugged_in_dash_charging">急速充電中</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_turbo_power_time">急速充電中（充電完了まで<xliff:g id="charging_time_left">%s</xliff:g>）</string>
+    <string name="keyguard_indication_turbo_power_time">急速充電中 (充電完了まで <xliff:g id="charging_time_left">%s</xliff:g>)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">急速充電中</string>
     <!-- Gaming Mode -->
     <string name="gaming_mode_tile_title">ゲームモード</string>
     <string name="gaming_mode_tile_toast">ゲームモード有効</string>
     <string name="gaming_mode_tile_toast_disabled">ゲームモード無効</string>
     <string name="gaming_mode_dialog_title">ゲームモード</string>
-    <string name="gaming_mode_dialog_message">ゲームモードを有効にすると、着信モードが振動モードに変わり、すべてのHeads Upメッセージが無効になり、ハードウェアキーがオフになります。メディアの容量は最大値まで増加します。ゲームモードを終了すると、全ての無効設定が既定にリセットされます。</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">ゲームモード オン</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">ゲームモード オフ</string>
+    <string name="gaming_mode_dialog_message">ゲームモードを有効にすると着信モードが振動モードに変わり、全ての Heads Up メッセージが無効になり、ハードウェアキーが  OFF になります。メディアの容量は最大値まで増加します。ゲームモードを終了すると全ての無効設定が既定にリセットされます。</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">ゲームモード ON</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">ゲームモード OFF</string>
     <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">コンパス</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">初期化中\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">コンパス OFF</string>
+    <string name="accessibility_quick_settings_compass_on">コンパス ON</string>
+    <string name="accessibility_quick_settings_compass_changed_off">コンパスを OFF にしました</string>
+    <string name="accessibility_quick_settings_compass_changed_on">コンパスを ON にしました</string>
+    <string name="quick_settings_compass_N">北</string>
+    <string name="quick_settings_compass_NE">北東</string>
+    <string name="quick_settings_compass_E">東</string>
+    <string name="quick_settings_compass_SE">南東</string>
+    <string name="quick_settings_compass_S">南</string>
+    <string name="quick_settings_compass_SW">南西</string>
+    <string name="quick_settings_compass_W">西</string>
+    <string name="quick_settings_compass_NW">北西</string>
     <!-- Ambient Display Pixel-Like string -->
     <string name="ambientmusic_songinfo">%s / %s</string>
-    <string name="recents_free_ram">空きメモリ：%1$d MB</string>
+    <string name="recents_free_ram">空きメモリ: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
     <string name="accessibility_quick_settings_running_services">実行中のサービスを開く</string>
     <!-- Smart pixels QS tile -->
     <string name="quick_settings_smart_pixels">スマートピクセル</string>
     <string name="quick_settings_smart_pixels_on_power_save">スマートピクセルを自動的に有効にする</string>
     <!-- ADB over network QS tile -->
+    <string name="quick_settings_network_adb_label">ネットワーク経由の ADB</string>
     <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE ON</string>
+    <string name="lte_off">LTE OFF</string>
     <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">強制停止しますか?</string>
+    <string name="force_stop_dlg_text">アプリを強制停止するとアプリが正常に機能しないことがあります</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="kill">アプリを終了</string>
+    <!-- OneHand mode QS tile -->
+    <!--Google sound search tile -->
+    <!-- Always on Display Tile -->
+    <!-- Music tile -->
+    <!-- Sync QS tile -->
+    <!-- Ambient display QS tile -->
 </resources>

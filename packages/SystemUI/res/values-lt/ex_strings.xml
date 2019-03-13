@@ -179,14 +179,45 @@
     <string name="accessibility_quick_settings_gaming_mode_on">Įjungtas žaidimo režimas</string>
     <string name="accessibility_quick_settings_gaming_mode_off">Žaidimo režimo išjungimas</string>
     <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Kompasas</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Inicijuojama\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Kompasas išjungtas.</string>
+    <string name="accessibility_quick_settings_compass_on">Kompasas įjungtas.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Kompaso funkcija išjungta.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Kompaso funkcija įjungta.</string>
+    <string name="quick_settings_compass_N">Š</string>
+    <string name="quick_settings_compass_NE">ŠR</string>
+    <string name="quick_settings_compass_E">R</string>
+    <string name="quick_settings_compass_SE">PR</string>
+    <string name="quick_settings_compass_S">P</string>
+    <string name="quick_settings_compass_SW">PV</string>
+    <string name="quick_settings_compass_W">V</string>
+    <string name="quick_settings_compass_NW">ŠV</string>
     <!-- Ambient Display Pixel-Like string -->
     <string name="ambientmusic_songinfo">%s iš %s</string>
+    <string name="recents_free_ram">Nemokama atmintis:%1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
     <string name="accessibility_quick_settings_running_services">Atidarykite veikiančių paslaugų langą.</string>
     <!-- Smart pixels QS tile -->
     <string name="quick_settings_smart_pixels">Protingi pikseliai</string>
     <string name="quick_settings_smart_pixels_on_power_save">Automatiškai įjungiami protingi pikseliai</string>
     <!-- ADB over network QS tile -->
+    <string name="quick_settings_network_adb_label">ADB derinimo režimas tinkle</string>
     <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE įjungtas</string>
+    <string name="lte_off">LTE išjungtas</string>
     <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Priverstinai sustabdyti?</string>
+    <string name="force_stop_dlg_text">Jei jums reikia sustabdyti programą, tai gali būti netinkama.</string>
+    <string name="dlg_ok">\@android: eilutė/gerai</string>
+    <string name="dlg_cancel">\@android: eilutė/atšaukti</string>
+    <string name="kill">Uždaryti programą</string>
+    <!-- OneHand mode QS tile -->
+    <!--Google sound search tile -->
+    <!-- Always on Display Tile -->
+    <!-- Music tile -->
+    <!-- Sync QS tile -->
+    <!-- Ambient display QS tile -->
 </resources>

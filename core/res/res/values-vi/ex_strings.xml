@@ -56,4 +56,7 @@
     <string name="animation_random">Ngẫu nhiên</string>
     <string name="action_null">Trống</string>
     <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">Đã bật ADB qua mạng</string>
+    <string name="adb_both_active_notification_title">Đã bật ADB qua USB &amp; mạng</string>
+    <string name="adb_active_generic_notification_message">Chạm để tắt gỡ lỗi.</string>
 </resources>

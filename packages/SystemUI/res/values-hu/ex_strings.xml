@@ -97,7 +97,7 @@
     <string name="systemui_theme_style_black">Fekete felhasználói felület</string>
     <string name="systemui_theme_style_extended">Az Extended felhasználói felülete</string>
     <string name="systemui_theme_style_chocolate">Csokoládé-rendszerfelület</string>
-    <string name="quick_settings_theme_tile_title">Kihangsúlyozott</string>
+    <string name="quick_settings_theme_tile_title">Kihangsúlyozás</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Színválasztás</string>
     <string name="quick_settings_theme_tile_style_detail_title">Stílusválasztás</string>
     <string name="quick_settings_theme_tile_color_default">Alapértelmezett</string>
@@ -165,6 +165,7 @@
     <string name="quick_settings_location_secondary_high_accuracy">Nagy pontosságú</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Helymeghatározás: nagy pontosságú mód.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Dash töltés (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> a teljes töltöttségig)</string>
     <string name="keyguard_plugged_in_dash_charging">gyors töltés</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">TurboPower csatlakoztatva (<xliff:g id="charging_time_left">%s</xliff:g> a teljes töltöttségig)</string>
@@ -178,7 +179,23 @@
     <string name="accessibility_quick_settings_gaming_mode_on">Játékmód bekapcsolva</string>
     <string name="accessibility_quick_settings_gaming_mode_off">Játékmód kikapcsolva</string>
     <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Iránytű</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Előkészítés\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Iránytű ki.</string>
+    <string name="accessibility_quick_settings_compass_on">Iránytű be.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Az Iránytű kikapcsolva.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Az Iránytű bekapcsolva.</string>
+    <string name="quick_settings_compass_N">É</string>
+    <string name="quick_settings_compass_NE">ÉK</string>
+    <string name="quick_settings_compass_E">K</string>
+    <string name="quick_settings_compass_SE">DK</string>
+    <string name="quick_settings_compass_S">D</string>
+    <string name="quick_settings_compass_SW">DNy</string>
+    <string name="quick_settings_compass_W">Ny</string>
+    <string name="quick_settings_compass_NW">ÉNy</string>
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s - %s</string>
     <string name="recents_free_ram">Szabad RAM: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
     <string name="accessibility_quick_settings_running_services">Futó szolgálatások képernyőjének megnyitása.</string>
@@ -186,6 +203,21 @@
     <string name="quick_settings_smart_pixels">Intelligens pixelek</string>
     <string name="quick_settings_smart_pixels_on_power_save">Intelligens pixelek automatikusan engedélyezve</string>
     <!-- ADB over network QS tile -->
+    <string name="quick_settings_network_adb_label">ADB a hálózaton keresztül</string>
     <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE Be</string>
+    <string name="lte_off">LTE Ki</string>
     <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Kényszeríti a leállítást?</string>
+    <string name="force_stop_dlg_text">Ha egy alkalmazást leállásra kényszerít, az hibásan működhet.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="kill">Alkalmazás-leállítás</string>
+    <!-- OneHand mode QS tile -->
+    <!--Google sound search tile -->
+    <!-- Always on Display Tile -->
+    <!-- Music tile -->
+    <!-- Sync QS tile -->
+    <!-- Ambient display QS tile -->
 </resources>

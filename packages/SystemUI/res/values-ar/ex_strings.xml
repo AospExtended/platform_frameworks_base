@@ -179,6 +179,21 @@
     <string name="accessibility_quick_settings_gaming_mode_on">وضع الألعاب مفعل</string>
     <string name="accessibility_quick_settings_gaming_mode_off">وضع الألعاب معطل</string>
     <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">البوصلة</string>
+    <string name="quick_settings_compass_value"><xliff:g id="درجات">%1$.0f</xliff:g>\u00b0 <xliff:g id="الإتجاه">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">تهيئة</string>
+    <string name="accessibility_quick_settings_compass_off">البوصلة مغلقة.</string>
+    <string name="accessibility_quick_settings_compass_on">البوصلة تعمل.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">تم تعطيل البوصلة.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">تم تفعيل البوصلة.</string>
+    <string name="quick_settings_compass_N">شمال</string>
+    <string name="quick_settings_compass_NE">شمال شرق</string>
+    <string name="quick_settings_compass_E">شرق</string>
+    <string name="quick_settings_compass_SE">جنوب شرق</string>
+    <string name="quick_settings_compass_S">جنوب</string>
+    <string name="quick_settings_compass_SW">جنوب غرب</string>
+    <string name="quick_settings_compass_W">غرب</string>
+    <string name="quick_settings_compass_NW">شمال غرب</string>
     <!-- Ambient Display Pixel-Like string -->
     <string name="ambientmusic_songinfo">%s بـ %s</string>
     <string name="recents_free_ram">الذاكرة الخالية: %1$d ميغابايت</string>
@@ -188,6 +203,21 @@
     <string name="quick_settings_smart_pixels">الدقة الذكية</string>
     <string name="quick_settings_smart_pixels_on_power_save">تمكين الدقة الذكية تلقائياً</string>
     <!-- ADB over network QS tile -->
+    <string name="quick_settings_network_adb_label">ADB عبر الشبكة</string>
     <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE مفعّل</string>
+    <string name="lte_off">LTE معطل</string>
     <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">إيقاف إجباري؟</string>
+    <string name="force_stop_dlg_text">في حالة فرض إيقاف التطبيق، ربما لا يعمل بشكل صحيح.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="kill">إنهاء التطبيق</string>
+    <!-- OneHand mode QS tile -->
+    <!--Google sound search tile -->
+    <!-- Always on Display Tile -->
+    <!-- Music tile -->
+    <!-- Sync QS tile -->
+    <!-- Ambient display QS tile -->
 </resources>

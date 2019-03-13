@@ -14,8 +14,12 @@
 -->
 <resources>
     <!-- Advanced reboot -->
+    <string name="reboot_to_recovery_title">Recovery</string>
+    <string name="reboot_to_recovery_message">Riavvio in recovery</string>
+    <string name="reboot_to_bootloader_title">Bootloader</string>
+    <string name="reboot_to_bootloader_message">Riavvio in Bootloader</string>
     <string name="reboot_title">Riavvia</string>
-    <string name="reboot_message">Riavvio di Android</string>
+    <string name="reboot_message">Riavvio del sistema</string>
     <!-- SystemUI Restart -->
     <string name="systemui_restart_title">Riavvio del SystemUI richiesto</string>
     <string name="systemui_restart_message">Per rendere effettive tutte le modifiche, è necessario un riavvio dell\'Interfaccia Utente. Riavviare l\'Interfaccia Utente ora?</string>
@@ -25,12 +29,12 @@
     <string name="permdesc_fakePackageSignature">Consenti all\'applicazione di fingersi un altra applicazione. Le applicazioni dannose saranno in grado di accedere ai dati privati dell\' app. Concedi questo permesso con attenzione!</string>
     <!-- App error dialog -->
     <string name="aerr_copy">Copia l\'URL del Crash LOG</string>
-    <string name="url_copy_success">URL Copiato</string>
+    <string name="url_copy_success">URL copiato con successo</string>
     <string name="url_copy_failed">É stato riscontrato un errore durante il caricamento del log su dogbin</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permlab_toggleNavigationEditor">editor controlli di navigazione</string>
+    <string name="permlab_toggleNavigationEditor">modifica controlli di navigazione</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_toggleNavigationEditor">Consente ad un\'app di controllare l\'editor della barra di navigazione.</string>
+    <string name="permdesc_toggleNavigationEditor">Consente ad un\'app di controllare le modifiche della barra di navigazione.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_accessFontManager">accesso alla gestione caratteri</string>
@@ -56,4 +60,7 @@
     <string name="animation_random">Casuale</string>
     <string name="action_null">Vuoto</string>
     <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">ADB tramite rete abilitata</string>
+    <string name="adb_both_active_notification_title">ADB tramite USB &amp; rete abilitata</string>
+    <string name="adb_active_generic_notification_message">Tocca per disattivare il debug.</string>
 </resources>

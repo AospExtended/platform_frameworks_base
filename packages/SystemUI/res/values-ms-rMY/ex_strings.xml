@@ -77,11 +77,61 @@
     <string name="accessibility_quick_settings_heads_up_changed_off">Heads up dimatikan.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Heads up dinyalakan.</string>
     <!-- USB Tethering tile -->
-    <string name="accessibility_quick_settings_usb_tether_off">USB tethering off</string>
+    <string name="accessibility_quick_settings_usb_tether_off">Penambatan USB Mati</string>
+    <string name="accessibility_quick_settings_usb_tether_on">Penambatan USB Hidup</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">Penambatan USB dimatikan</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">Penambatan USB dihidupkan</string>
+    <string name="quick_settings_usb_tether_label">Penambatan USB</string>
     <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">Kekunci hidup</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Kekunci mati</string>
+    <string name="quick_settings_hwkeys_label">Kekunci</string>
     <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Notifikasi intai sedang ditunda selama 1 minit.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Notifikasi intai sedang ditunda selama <xliff:g id="number">%d</xliff:g> minit.</string>
     <!-- Theme tile -->
+    <string name="systemui_theme_style_title">Gaya UI</string>
+    <string name="systemui_theme_style_auto">Automatik</string>
+    <string name="systemui_theme_style_light">UI Cerah</string>
+    <string name="systemui_theme_style_dark">UI Gelap</string>
+    <string name="systemui_theme_style_black">UI Hitam</string>
+    <string name="systemui_theme_style_extended">UI Dilanjutkan</string>
+    <string name="systemui_theme_style_chocolate">UI Coklat</string>
+    <string name="quick_settings_theme_tile_title">Rona</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Pilih warna</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Pilih gaya</string>
+    <string name="quick_settings_theme_tile_color_default">Asal</string>
+    <string name="quick_settings_theme_tile_color_red">Merah</string>
+    <string name="quick_settings_theme_tile_color_pink">Merah jambu</string>
+    <string name="quick_settings_theme_tile_color_purple">Ungu</string>
+    <string name="quick_settings_theme_tile_color_deep_purple">Ungu pekat</string>
+    <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
+    <string name="quick_settings_theme_tile_color_blue">Biru</string>
+    <string name="quick_settings_theme_tile_color_light_blue">Biru muda</string>
+    <string name="quick_settings_theme_tile_color_cyan">Biru kehijauan</string>
+    <string name="quick_settings_theme_tile_color_teal">Hijau kebiruan</string>
+    <string name="quick_settings_theme_tile_color_green">Hijau</string>
+    <string name="quick_settings_theme_tile_color_light_green">Hijau muda</string>
+    <string name="quick_settings_theme_tile_color_lime">Lime</string>
+    <string name="quick_settings_theme_tile_color_yellow">Kuning</string>
+    <string name="quick_settings_theme_tile_color_amber">Amber</string>
+    <string name="quick_settings_theme_tile_color_orange">Oren</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">Oren pekat</string>
+    <string name="quick_settings_theme_tile_color_brown">Perang</string>
+    <string name="quick_settings_theme_tile_color_grey">Kelabu</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">Biru kelabu</string>
+    <string name="quick_settings_theme_tile_color_candy_red">Merah gula-gula</string>
+    <string name="quick_settings_theme_tile_color_pale_red">Merah pucat</string>
+    <string name="quick_settings_theme_tile_color_extended_green">Hijau lanjut</string>
+    <string name="quick_settings_theme_tile_color_pale_blue">Biru pucat</string>
+    <string name="quick_settings_theme_tile_color_jade_green">Hijau jed</string>
+    <string name="quick_settings_theme_tile_color_black">Hitam</string>
+    <string name="quick_settings_theme_tile_color_white">Putih</string>
+    <string name="theme_info_title">Apakah ini?</string>
+    <string name="theme_info_message">Jubin Tema adalah jubin yang unik tetapi mudah digunakan yang membenarkan pengguna untuk mengubah rona atau gaya sistem.\n\nUntuk bertukar di antara rona dan gaya, tekan lama pada jubin dan tekan sekali lagi untuk memilih pilihan tersedia.</string>
     <!-- QS Config -->
+    <string name="qs_menu_item_columns">Lajur</string>
+    <string name="qs_menu_item_columns_landscape">Lajur landskap</string>
     <string name="qs_menu_item_columns_three">3</string>
     <string name="qs_menu_item_columns_four">4</string>
     <string name="qs_menu_item_columns_five">5</string>
@@ -91,16 +141,83 @@
     <string name="qs_menu_item_columns_nine">9</string>
     <string name="qs_menu_item_reset">Tetapkan semula</string>
     <string name="qs_menu_item_titles">Tunjukkan label</string>
+    <string name="qs_menu_item_rows">Baris</string>
+    <string name="qs_menu_item_rows_landscape">Baris landskap</string>
+    <string name="qs_menu_item_rows_one">1</string>
+    <string name="qs_menu_item_rows_two">2</string>
+    <string name="qs_menu_item_rows_three">3</string>
+    <string name="qs_menu_item_rows_four">4</string>
+    <string name="qs_menu_item_qs_columns">Lajur Quickbar</string>
+    <string name="qs_menu_item_columns_auto">Automatik</string>
+    <string name="screenshot_abort_title">Tiada tangkap layar diambil</string>
+    <string name="screenshot_abort_text">Operasi dibatalkan.</string>
     <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">Tetingkap Diperluaskan</string>
+    <string name="quick_settings_expanded_desktop">Diperluaskan</string>
+    <string name="quick_settings_expanded_desktop_off">Normal</string>
+    <string name="quick_settings_expanded_navigation_off">Sembunyikan navbar</string>
+    <string name="quick_settings_expanded_statusbar_off">Sembunyikan statusbar</string>
     <!-- Advance location quick setting tile -->
+    <string name="quick_settings_location_secondary_battery_saving">Penjimatan Bateri</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Pelaporan lokasi: mod penjimatan bateri.</string>
+    <string name="quick_settings_location_secondary_gps_only">Pengesan Sahaja</string>
+    <string name="accessibility_quick_settings_location_gps_only">Pelaporan lokasi: mod pengesan sahaja.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Ketepatan Tinggi</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Pelaporan lokasi: mod ketepatan tinggi.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Pengecasan Dash (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> hingga penuh)</string>
+    <string name="keyguard_plugged_in_dash_charging">Pengecasan Dash</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">TurboPower disambungkan (<xliff:g id="charging_time_left">%s</xliff:g> sehingga penuh)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">TurboPower disambungkan</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Mod Permainan</string>
+    <string name="gaming_mode_tile_toast">Mode permainan diaktifkan</string>
+    <string name="gaming_mode_tile_toast_disabled">Mod permainan dinyahaktifkan</string>
+    <string name="gaming_mode_dialog_title">Mod Permainan</string>
+    <string name="gaming_mode_dialog_message">Apabila mod permainan diaktifkan, mod dering anda akan berubah kepada mod gegaran, semua mesej peringatan akan dinyahaktifkan dan kekunci akan dimatikan. Kelantangan media akan ditingkatkan ke paras maksimum. Segala tetapan yang dinyahaktif akan dikembalikan ke asal setelah anda keluar daripada Mod Permainan.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Mod permainan hidup</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Mod permainan mati</string>
     <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Kompas</string>
+    <string name="quick_settings_compass_value"><xliff:g id="darjah">%1$.0f</xliff:g>\u00b0<xliff:g id="arah">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Memulakan\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Kompas mati.</string>
+    <string name="accessibility_quick_settings_compass_on">Kompas hidup.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Kompas dimatikan.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Kompas dihidupkan.</string>
+    <string name="quick_settings_compass_N">U</string>
+    <string name="quick_settings_compass_NE">TL</string>
+    <string name="quick_settings_compass_E">T</string>
+    <string name="quick_settings_compass_SE">TE</string>
+    <string name="quick_settings_compass_S">S</string>
+    <string name="quick_settings_compass_SW">BD</string>
+    <string name="quick_settings_compass_W">B</string>
+    <string name="quick_settings_compass_NW">BL</string>
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s oleh %s</string>
+    <string name="recents_free_ram">RAM Bebas: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Buka skrin Servis Berjalan.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Piksel Pintar</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Auto-aktif piksel pintar</string>
     <!-- ADB over network QS tile -->
+    <string name="quick_settings_network_adb_label">ADB-Melalui-Rangkaian</string>
     <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE Hidup</string>
+    <string name="lte_off">LTE Mati</string>
     <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Paksa henti?</string>
+    <string name="force_stop_dlg_text">Jika anda paksa henti sesuatu aplikasi, ianya mungkin tidak berfungsi dengan betul.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/batal</string>
+    <string name="kill">Bunuh Aplikasi</string>
+    <!-- OneHand mode QS tile -->
+    <!--Google sound search tile -->
+    <!-- Always on Display Tile -->
+    <!-- Music tile -->
+    <!-- Sync QS tile -->
+    <!-- Ambient display QS tile -->
 </resources>

@@ -14,6 +14,10 @@
 -->
 <resources>
     <!-- Advanced reboot -->
+    <string name="reboot_to_recovery_title">Pemulihan</string>
+    <string name="reboot_to_recovery_message">Memulai ulang ke pemulihan</string>
+    <string name="reboot_to_bootloader_title">Bootloader</string>
+    <string name="reboot_to_bootloader_message">Memulai ulang ke bootloader</string>
     <string name="reboot_title">Mulai ulang</string>
     <string name="reboot_message">Memulai ulang sistem</string>
     <!-- SystemUI Restart -->
@@ -56,4 +60,7 @@
     <string name="animation_random">Acak</string>
     <string name="action_null">Tidak ada</string>
     <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">ADB lewat jaringan hidup</string>
+    <string name="adb_both_active_notification_title">ADB lewat USB &amp; jaringan dihidupkan</string>
+    <string name="adb_active_generic_notification_message">Sentuh untuk menonaktifkan debugging.</string>
 </resources>

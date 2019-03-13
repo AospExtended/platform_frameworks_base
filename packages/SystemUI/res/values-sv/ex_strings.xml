@@ -19,29 +19,203 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">Avancerad</string>
+    <string name="global_action_restart_recovery">Recovery</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">Systemgränssnitt</string>
+    <string name="global_action_restart_soft">Mjuk omstart</string>
+    <string name="statusbar_items_title">Statusfältsikon</string>
     <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">Låsskärmsgenvägar</string>
+    <string name="lockscreen_default">Standard</string>
+    <string name="lockscreen_hidden">Inget</string>
     <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Ljud</string>
+    <string name="quick_settings_sound_ring">Ring</string>
+    <string name="quick_settings_sound_vibrate">Vibrera</string>
+    <string name="quick_settings_sound_dnd">Stör ej</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Svep från ikonen för att öppna</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_data_saver">Databesparing</string>
+    <string name="preview">Förhandsgranska</string>
+    <string name="keycode">Tangentkod</string>
+    <string name="no_home_title">Ingen hemknapp hittades</string>
+    <string name="no_home_message">Det behövs en startskärmsknapp för att kunna navigera på den här enheten. Lägg till en startskärmsknapp innan du sparar.</string>
+    <string name="clipboard_description">Objekt kan dras direkt till urklipp. Objekt kan också dras direkt från urklipp när de visas.</string>
+    <string name="keycode_description">Med knappar för tangentkod kan tangenter läggas till i navigeringsfältet. När du trycker på dem efterliknar de den valda tangenten. Först måste du välja en tangent för knappen och därefter en bild som ska visas på knappen.</string>
+    <string name="start">Start</string>
+    <string name="center">Mitten</string>
+    <string name="end">Slut</string>
+    <string name="space">Utfyllnad</string>
+    <string name="menu_ime">Byt mellan meny/tangentbord</string>
+    <string name="select_button">Välj en knapp att lägga till</string>
+    <string name="add_button">Lägg till knapp</string>
+    <string name="save">Spara</string>
+    <string name="reset">Återställ</string>
+    <string name="select_keycode">Välj tangentbordsknapp</string>
+    <string name="left">Vänster</string>
+    <string name="right">Höger</string>
+    <string name="navbar_editor_title">Redigerare</string>
+    <string name="navbar_editor_summary">Konfigurera navigeringsfältet</string>
     <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Skärmdump borttagen</string>
     <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Koffein</string>
+    <string name="accessibility_quick_settings_caffeine_off">Koffein av</string>
+    <string name="accessibility_quick_settings_caffeine_on">Koffein på</string>
     <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Starta om</string>
+    <string name="quick_settings_reboot_recovery_label">Återställning</string>
     <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Skärmdump</string>
+    <string name="quick_settings_region_screenshot_label">Partiell skärmdump</string>
     <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Popup</string>
+    <string name="accessibility_quick_settings_heads_up_off">Popup av.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Popup på.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Popup avstängd.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Popup aktiverad.</string>
     <!-- USB Tethering tile -->
+    <string name="accessibility_quick_settings_usb_tether_off">Internetdelning via USB avstängd</string>
+    <string name="accessibility_quick_settings_usb_tether_on">Internetdelning via USB aktiverad</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">Internetdelning via USB av</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">Internetdelning via USB på</string>
+    <string name="quick_settings_usb_tether_label">Internetdelning via USB</string>
     <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">Hårdvaruknappar på</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Hårdvaruknappar av</string>
+    <string name="quick_settings_hwkeys_label">Hårdvaruknappar</string>
     <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Visas inte på skärmen under 1 minut.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Visas inte på skärmen under <xliff:g id="number">%d</xliff:g> minuter.</string>
     <!-- Theme tile -->
+    <string name="systemui_theme_style_title">Gränssnitt</string>
+    <string name="systemui_theme_style_auto">Automatiskt</string>
+    <string name="systemui_theme_style_light">Ljust gränssnitt</string>
+    <string name="systemui_theme_style_dark">Mörkt gränssnitt</string>
+    <string name="systemui_theme_style_black">Svart gränssnitt</string>
+    <string name="systemui_theme_style_extended">Utökat gränssnitt</string>
+    <string name="systemui_theme_style_chocolate">Chokladfärgat gränssnitt</string>
+    <string name="quick_settings_theme_tile_title">Accentfärg</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Välj färg</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Välj stil</string>
+    <string name="quick_settings_theme_tile_color_default">Standard</string>
+    <string name="quick_settings_theme_tile_color_red">Röd</string>
+    <string name="quick_settings_theme_tile_color_pink">Rosa</string>
+    <string name="quick_settings_theme_tile_color_purple">Lila</string>
+    <string name="quick_settings_theme_tile_color_deep_purple">Mörklila</string>
+    <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
+    <string name="quick_settings_theme_tile_color_blue">Blå</string>
+    <string name="quick_settings_theme_tile_color_light_blue">Ljusblå</string>
+    <string name="quick_settings_theme_tile_color_cyan">Turkos</string>
+    <string name="quick_settings_theme_tile_color_teal">Kricka</string>
+    <string name="quick_settings_theme_tile_color_green">Grön</string>
+    <string name="quick_settings_theme_tile_color_light_green">Ljusgrön</string>
+    <string name="quick_settings_theme_tile_color_lime">Limegrön</string>
+    <string name="quick_settings_theme_tile_color_yellow">Gul</string>
+    <string name="quick_settings_theme_tile_color_amber">Bärnsten</string>
+    <string name="quick_settings_theme_tile_color_orange">Orange</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">Mörkorange</string>
+    <string name="quick_settings_theme_tile_color_brown">Brun</string>
+    <string name="quick_settings_theme_tile_color_grey">Grå</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">Blågrå</string>
+    <string name="quick_settings_theme_tile_color_candy_red">Godisröd</string>
+    <string name="quick_settings_theme_tile_color_pale_red">Ljusröd</string>
+    <string name="quick_settings_theme_tile_color_extended_green">Utökad grön</string>
+    <string name="quick_settings_theme_tile_color_pale_blue">Blekblå</string>
+    <string name="quick_settings_theme_tile_color_jade_green">Jadegrön</string>
+    <string name="quick_settings_theme_tile_color_black">Svart</string>
+    <string name="quick_settings_theme_tile_color_white">Vit</string>
+    <string name="theme_info_title">Vad är detta?</string>
+    <string name="theme_info_message">Tema är en unik men lättanvänt panel som tillåter användaren att ändra systemets färg och stil.\n\nFör att förändra mellan färger och stilar, tryck länge på panelen och tryck sedan på den igen för att välja från de alternativ som erbjuds.</string>
     <!-- QS Config -->
+    <string name="qs_menu_item_columns">Kolumner</string>
+    <string name="qs_menu_item_columns_landscape">Kolumner (liggande)</string>
+    <string name="qs_menu_item_columns_three">3</string>
+    <string name="qs_menu_item_columns_four">4</string>
+    <string name="qs_menu_item_columns_five">5</string>
+    <string name="qs_menu_item_columns_six">6</string>
+    <string name="qs_menu_item_columns_seven">7</string>
+    <string name="qs_menu_item_columns_eight">8</string>
+    <string name="qs_menu_item_columns_nine">9</string>
+    <string name="qs_menu_item_reset">Återställ</string>
+    <string name="qs_menu_item_titles">Visa etiketter</string>
+    <string name="qs_menu_item_rows">Rader</string>
+    <string name="qs_menu_item_rows_landscape">Rader (liggande)</string>
+    <string name="qs_menu_item_rows_one">1</string>
+    <string name="qs_menu_item_rows_two">2</string>
+    <string name="qs_menu_item_rows_three">3</string>
+    <string name="qs_menu_item_rows_four">4</string>
+    <string name="qs_menu_item_qs_columns">Snabbikoner</string>
+    <string name="qs_menu_item_columns_auto">Automatiskt</string>
+    <string name="screenshot_abort_title">Ingen skärmdump tagen</string>
+    <string name="screenshot_abort_text">Åtgärden avbröts.</string>
     <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">Utökad skärm</string>
+    <string name="quick_settings_expanded_desktop">Utökad</string>
+    <string name="quick_settings_expanded_desktop_off">Normal</string>
+    <string name="quick_settings_expanded_navigation_off">Dölj navigationsfält</string>
+    <string name="quick_settings_expanded_statusbar_off">Dölj statusfält</string>
     <!-- Advance location quick setting tile -->
+    <string name="quick_settings_location_secondary_battery_saving">Batterisparläge</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Platsrapportering: batterisparläge.</string>
+    <string name="quick_settings_location_secondary_gps_only">Endast sensorer</string>
+    <string name="accessibility_quick_settings_location_gps_only">Platsrapportering: endast sensorer.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Hög precision</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Platsrapportering: hög precision.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Snabbladdning (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> tills fulladdat)</string>
+    <string name="keyguard_plugged_in_dash_charging">Snabbladdning</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_plugged_in_turbo_power_charging">TurboPower ansluten</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Spelläge</string>
+    <string name="gaming_mode_tile_toast">Spelläge aktiverat</string>
+    <string name="gaming_mode_tile_toast_disabled">Spelläge inaktiverat</string>
+    <string name="gaming_mode_dialog_title">Spelläge</string>
+    <string name="gaming_mode_dialog_message">När spelläget är aktiverat, ändras din ringsignal till vibrationsläge, alla popup-meddelanden inaktiveras och hårdvaruknapparna kommer att stängas av. Mediavolymen kommer att öka till det högsta värdet. Alla inaktiverade inställningar återställs till standardvärdet när du avslutar spelläget.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Spelläge på</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Spelläge av</string>
     <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Kompass</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g> \u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Initierar \u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Kompass av.</string>
+    <string name="accessibility_quick_settings_compass_on">Kompass på.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Kompass avstängd.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Kompass påslagen.</string>
+    <string name="quick_settings_compass_N">N</string>
+    <string name="quick_settings_compass_NE">NÖ</string>
+    <string name="quick_settings_compass_E">Ö</string>
+    <string name="quick_settings_compass_SE">SÖ</string>
+    <string name="quick_settings_compass_S">S</string>
+    <string name="quick_settings_compass_SW">SV</string>
+    <string name="quick_settings_compass_W">V</string>
+    <string name="quick_settings_compass_NW">NV</string>
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s av %s</string>
+    <string name="recents_free_ram">Ledigt RAM: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Smarta pixlar</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Auto-aktiverad smarta pixlar</string>
     <!-- ADB over network QS tile -->
+    <string name="quick_settings_network_adb_label">ADB över nätverk</string>
     <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE på</string>
+    <string name="lte_off">LTE av</string>
     <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Tvinga avslut?</string>
+    <string name="force_stop_dlg_text">Om du tvingar appen att avslutas kanske den inte fungerar som den ska.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="kill">Avsluta app</string>
+    <!-- OneHand mode QS tile -->
+    <!--Google sound search tile -->
+    <!-- Always on Display Tile -->
+    <!-- Music tile -->
+    <!-- Sync QS tile -->
+    <!-- Ambient display QS tile -->
 </resources>

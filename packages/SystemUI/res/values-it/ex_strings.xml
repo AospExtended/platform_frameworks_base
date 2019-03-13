@@ -23,17 +23,17 @@
     <string name="global_action_restart_recovery">Recovery</string>
     <string name="global_action_restart_bootloader">Bootloader</string>
     <string name="global_action_restart_ui">SystemUI</string>
-    <string name="global_action_restart_soft">Riavvio Veloce</string>
-    <string name="statusbar_items_title">Icone della Barra di stato</string>
+    <string name="global_action_restart_soft">Riavvio veloce</string>
+    <string name="statusbar_items_title">Icona barra di stato</string>
     <!-- Lockscreen icons -->
-    <string name="lockscreen_tuner_title">Scorciatoie della schermata di blocco</string>
+    <string name="lockscreen_tuner_title">Scorciatoie schermata di blocco</string>
     <string name="lockscreen_default">Predefinito</string>
     <string name="lockscreen_hidden">Nessuno</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Suono</string>
     <string name="quick_settings_sound_ring">Suoneria</string>
     <string name="quick_settings_sound_vibrate">Vibrazione</string>
-    <string name="quick_settings_sound_dnd">Non Disturbare</string>
+    <string name="quick_settings_sound_dnd">Non disturbare</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
     <string name="custom_hint">Scorri sull\'icona per avviare</string>
     <string name="status_bar_vpn">VPN</string>
@@ -42,13 +42,13 @@
     <string name="keycode">Keycode</string>
     <string name="no_home_title">Nessun pulsante home trovato</string>
     <string name="no_home_message">Per usare il dispositivo è richiesto di impostare almeno un tasto home. Assicurati di impostarne almeno uno prima di salvare.</string>
-    <string name="clipboard_description">La Clipboard permette agli elementi di essere trascinati direttamente dentro di essa. Gli elementi possono a loro volta essere trascinati fuori dalla Clipboard se presente.</string>
-    <string name="keycode_description">I pulsanti combinazione permettono alle combinazioni della tastiera di essere aggiunti nella barra di navigazione. Quando premuto esso emula la combinazione della tastiera scelta. Prima deve essere stata scelta una combinazione insieme a un immagine che ne esplica la funzione.</string>
+    <string name="clipboard_description">Gli Appunti consentono di trascinare gli elementi direttamente negli appunti. Gli elementi possono essere trascinati direttamente dagli appunti quando sono presenti.</string>
+    <string name="keycode_description">I pulsanti Keycode consentono di aggiungere i tasti della tastiera alla barra di navigazione. Quando premuto emula il tasto della tastiera selezionata. Prima il tasto deve essere selezionato per il pulsante, seguita da un\'immagine da visualizzare sul pulsante.</string>
     <string name="start">Avvio</string>
     <string name="center">Centra</string>
     <string name="end">Fine</string>
     <string name="space">Spaziatore</string>
-    <string name="menu_ime">Menu / Cambio Tastiera</string>
+    <string name="menu_ime">Menù/Selettore tastiera</string>
     <string name="select_button">Seleziona il pulsante da aggiungere</string>
     <string name="add_button">Aggiungi pulsante</string>
     <string name="save">Salva</string>
@@ -59,32 +59,32 @@
     <string name="navbar_editor_title">Modifica</string>
     <string name="navbar_editor_summary">Configura la barra di navigazione</string>
     <!-- Screenshot Delete Toast -->
-    <string name="delete_screenshot_toast">Cattura di schermata eliminata</string>
+    <string name="delete_screenshot_toast">Screenshot eliminato</string>
     <!-- Caffeine QS Tile -->
     <string name="quick_settings_caffeine_label">Caffeina</string>
-    <string name="accessibility_quick_settings_caffeine_off">Caffeina disattivata</string>
+    <string name="accessibility_quick_settings_caffeine_off">Caffeina spenta</string>
     <string name="accessibility_quick_settings_caffeine_on">Caffeina attivata</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Riavvia</string>
-    <string name="quick_settings_reboot_recovery_label">Modalita di recupero</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
     <!-- Screenshot QS tile -->
-    <string name="quick_settings_screenshot_label">Cattura della schermata</string>
-    <string name="quick_settings_region_screenshot_label">Cattura di schermata parziale</string>
+    <string name="quick_settings_screenshot_label">Screenshot</string>
+    <string name="quick_settings_region_screenshot_label">Screenshot parziale</string>
     <!-- Heads Up QS Tile -->
-    <string name="quick_settings_heads_up_label">Notifiche a comparsa</string>
-    <string name="accessibility_quick_settings_heads_up_off">Notifiche a comparsa disattivate.</string>
-    <string name="accessibility_quick_settings_heads_up_on">Notifiche a comparsa attivate.</string>
-    <string name="accessibility_quick_settings_heads_up_changed_off">Notifiche a comparsa disattivate.</string>
-    <string name="accessibility_quick_settings_heads_up_changed_on">Notifiche a comparsa attivate.</string>
+    <string name="quick_settings_heads_up_label">Notifiche Fluttuanti</string>
+    <string name="accessibility_quick_settings_heads_up_off">Notifiche Fluttuanti spente.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Notifiche fluttuanti accese.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Notifiche Fluttuanti disattivate.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Notifiche Fluttuanti attivate.</string>
     <!-- USB Tethering tile -->
-    <string name="accessibility_quick_settings_usb_tether_off">Tethering USB disattivato</string>
-    <string name="accessibility_quick_settings_usb_tether_on">Tethering USB attivato</string>
+    <string name="accessibility_quick_settings_usb_tether_off">USB tethering spento</string>
+    <string name="accessibility_quick_settings_usb_tether_on">Tethering USB acceso</string>
     <string name="accessibility_quick_settings_usb_tether_changed_off">Tethering USB disattivato</string>
     <string name="accessibility_quick_settings_usb_tether_changed_on">Tethering USB attivo</string>
     <string name="quick_settings_usb_tether_label">Tethering USB</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">Tasti fisici attivi</string>
-    <string name="accessibility_quick_settings_hwkeys_off">Tasti fisici disattivi</string>
+    <string name="accessibility_quick_settings_hwkeys_on">Tasti fisici accesi</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Tasti fisici spenti</string>
     <string name="quick_settings_hwkeys_label">Tasti fisici</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - La notifica è posticipata per 1 minuto.</string>
@@ -107,12 +107,12 @@
     <string name="quick_settings_theme_tile_color_deep_purple">Viola scuro</string>
     <string name="quick_settings_theme_tile_color_indigo">Indaco</string>
     <string name="quick_settings_theme_tile_color_blue">Blu</string>
-    <string name="quick_settings_theme_tile_color_light_blue">Blu chiaro</string>
+    <string name="quick_settings_theme_tile_color_light_blue">Azzurro</string>
     <string name="quick_settings_theme_tile_color_cyan">Ciano</string>
     <string name="quick_settings_theme_tile_color_teal">Verde acqua</string>
     <string name="quick_settings_theme_tile_color_green">Verde</string>
     <string name="quick_settings_theme_tile_color_light_green">Verde chiaro</string>
-    <string name="quick_settings_theme_tile_color_lime">Lime</string>
+    <string name="quick_settings_theme_tile_color_lime">Limone</string>
     <string name="quick_settings_theme_tile_color_yellow">Giallo</string>
     <string name="quick_settings_theme_tile_color_amber">Ambra</string>
     <string name="quick_settings_theme_tile_color_orange">Arancione</string>
@@ -131,7 +131,7 @@
     <string name="theme_info_message">Il tema dei tile è un sistema tematico unico ma di facile utilizzo che consente all\'utente di modificare lo stile del sistema.\n\nPer cambiare lo stile e il colore principale, basta una pressione prolungata sul tile e poi premere di nuovo per scegliere tra le opzioni presentati.</string>
     <!-- QS Config -->
     <string name="qs_menu_item_columns">Colonne</string>
-    <string name="qs_menu_item_columns_landscape">Colonne (orizzontale)</string>
+    <string name="qs_menu_item_columns_landscape">Colonne in orizzontale</string>
     <string name="qs_menu_item_columns_three">3</string>
     <string name="qs_menu_item_columns_four">4</string>
     <string name="qs_menu_item_columns_five">5</string>
@@ -160,7 +160,7 @@
     <!-- Advance location quick setting tile -->
     <string name="quick_settings_location_secondary_battery_saving">Risparmio batteria</string>
     <string name="accessibility_quick_settings_location_battery_saving">Geolocalizzazione: modalità risparmio batteria.</string>
-    <string name="quick_settings_location_secondary_gps_only">GPS: solo sensori</string>
+    <string name="quick_settings_location_secondary_gps_only">Solo sensori</string>
     <string name="accessibility_quick_settings_location_gps_only">Geolocalizzazione: modalità solo sensori.</string>
     <string name="quick_settings_location_secondary_high_accuracy">Alta precisione</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Geolocalizzazione: modalità alta precisione.</string>
@@ -175,10 +175,25 @@
     <string name="gaming_mode_tile_toast">Modalità gioco attivata</string>
     <string name="gaming_mode_tile_toast_disabled">Modalità gioco disattivata</string>
     <string name="gaming_mode_dialog_title">Modalità gioco</string>
-    <string name="gaming_mode_dialog_message">Quando la modalità gaming è attivata, la suoneria cambierà in modalità vibrazione, tutte le notifiche a comparsa verranno disabilitate e i pulsanti fisici verranno disattivati. Il volume dei contenuti multimediali sarà aumentato al massimo. Tutte le impostazioni disabilitate verranno ripristinate allo stato precedente una volta usciti dalla modalità di gioco.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Modalità gioco attivata</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Modalità gioco disattivata</string>
+    <string name="gaming_mode_dialog_message">Quando la modalità gioco è attivata, la suoneria cambierà in modalità vibrazione, tutte le notifiche a comparsa verranno disabilitate e i pulsanti fisici verranno disattivati. Il volume dei contenuti multimediali sarà aumentato al massimo. Tutte le impostazioni disabilitate verranno ripristinate allo stato precedente una volta usciti dalla modalità di gioco.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Modalità gioco accesa</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Modalità gioco spenta</string>
     <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Bussola</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Inizializzazione\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Bussola spenta.</string>
+    <string name="accessibility_quick_settings_compass_on">Bussola accesa.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Bussola disattivata.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Bussola attivata.</string>
+    <string name="quick_settings_compass_N">N</string>
+    <string name="quick_settings_compass_NE">NE</string>
+    <string name="quick_settings_compass_E">E</string>
+    <string name="quick_settings_compass_SE">SE</string>
+    <string name="quick_settings_compass_S">S</string>
+    <string name="quick_settings_compass_SW">SW</string>
+    <string name="quick_settings_compass_W">W</string>
+    <string name="quick_settings_compass_NW">NW</string>
     <!-- Ambient Display Pixel-Like string -->
     <string name="ambientmusic_songinfo">%s per %s</string>
     <string name="recents_free_ram">RAM libera: %1$d MB</string>
@@ -188,6 +203,21 @@
     <string name="quick_settings_smart_pixels">Smart Pixel</string>
     <string name="quick_settings_smart_pixels_on_power_save">Abilita automaticamente Smart Pixel</string>
     <!-- ADB over network QS tile -->
+    <string name="quick_settings_network_adb_label">ADB-su-rete</string>
     <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE Acceso</string>
+    <string name="lte_off">LTE Spento</string>
     <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Forzare la chiusura?</string>
+    <string name="force_stop_dlg_text">Se forzi la chiusura di un\'applicazione, la stessa potrebbe comportarsi in modo anomalo.</string>
+    <string name="dlg_ok">\@android: string/ok</string>
+    <string name="dlg_cancel">@android:string/annulla</string>
+    <string name="kill">Termina App</string>
+    <!-- OneHand mode QS tile -->
+    <!--Google sound search tile -->
+    <!-- Always on Display Tile -->
+    <!-- Music tile -->
+    <!-- Sync QS tile -->
+    <!-- Ambient display QS tile -->
 </resources>
