@@ -153,15 +153,11 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     }
 
     private void updateAnimator(int width) {
-        int numTiles = mQuickQSPanel.getNumQuickTiles();
-        int size = mContext.getResources().getDimensionPixelSize(R.dimen.qs_quick_tile_size)
-                - mContext.getResources().getDimensionPixelSize(dimen.qs_quick_tile_padding);
-        int remaining = (width - numTiles * size) / (numTiles - 1);
-        int defSpace = mContext.getResources().getDimensionPixelOffset(R.dimen.default_gear_space);
+        int endMargin = mContext.getResources().getDimensionPixelSize(R.dimen.qs_footer_mobilegroup_margin_end);
+        int sum = endMargin + mMobileGroup.getWidth();
 
         mSettingsCogAnimator = new Builder()
-                .addFloat(mSettingsContainer, "translationX",
-                        isLayoutRtl() ? (remaining - defSpace) : -(remaining - defSpace), 0)
+                .addFloat(mCarrierText, "translationX", -sum, 0)
                 .addFloat(mSettingsButton, "rotation", -120, 0)
                 .build();
 
@@ -200,13 +196,13 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     private TouchAnimator createFooterAnimator() {
         return new TouchAnimator.Builder()
                 .addFloat(mDivider, "alpha", 0, 1)
-                .addFloat(mCarrierText, "alpha", 0, 0, 1)
-                .addFloat(mMobileGroup, "alpha", 0, 1)
-                .addFloat(mActionsContainer, "alpha", 0, 1)
-                .addFloat(mDragHandle, "alpha", 1, 0, 0)
+                .addFloat(mEdit, "alpha", 0, 1)
                 .addFloat(mPageIndicator, "alpha", 0, 1)
                 .addFloat(mRunningServicesButton, "alpha", 0, 1)
                 .addFloat(mMultiUserSwitch, "alpha", 0, 1)
+                .addFloat(mMobileSignal, "alpha", 0, 1)
+                .addFloat(mMobileRoaming, "alpha", 0, 1)
+                .addFloat(mDragHandle, "alpha", 0, 0, 0)
                 .setStartDelay(0.15f)
                 .build();
     }
@@ -289,9 +285,9 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     private void updateVisibilities() {
         mSettingsContainer.setVisibility(mQsDisabled ? View.GONE : View.VISIBLE);
         final boolean isDemo = UserManager.isDeviceInDemoMode(mContext);
+        mSettingsButton.setVisibility(View.VISIBLE);
         mMultiUserSwitch.setVisibility(showUserSwitcher(isDemo) ? View.VISIBLE : View.INVISIBLE);
         mEdit.setVisibility(isEditEnabled() ? isDemo || !mExpanded ? View.INVISIBLE : View.VISIBLE : View.GONE);
-        mSettingsButton.setVisibility(isDemo || !mExpanded ? View.INVISIBLE : View.VISIBLE);
         mRunningServicesButton.setVisibility(isRunningServicesEnabled() ? !isDemo && mExpanded ? View.VISIBLE : View.INVISIBLE : View.GONE);
     }
 
@@ -351,11 +347,6 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
 
     @Override
     public void onClick(View v) {
-        // Don't do anything until view are unhidden
-        if (!mExpanded) {
-            return;
-        }
-
         if (v == mSettingsButton) {
             if (!Dependency.get(DeviceProvisionedController.class).isCurrentUserSetup()) {
                 // If user isn't setup just unlock the device and dump them back at SUW.
