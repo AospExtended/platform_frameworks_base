@@ -20,10 +20,10 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="global_action_restart_advanced">Разширени</string>
-    <string name="global_action_restart_recovery">Възстановяване</string>
+    <string name="global_action_restart_recovery">Режим на възстановяване</string>
     <string name="global_action_restart_bootloader">Буутлоудър</string>
-    <string name="global_action_restart_ui">Системен UI</string>
-    <string name="global_action_restart_soft">Софт рестарт</string>
+    <string name="global_action_restart_ui">Системен интерфейс</string>
+    <string name="global_action_restart_soft">Софтуерен рестарт</string>
     <string name="statusbar_items_title">Икона на лентата на състоянието</string>
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Преки пътища на заключен екран</string>
@@ -31,23 +31,23 @@
     <string name="lockscreen_hidden">Нищо</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Звук</string>
-    <string name="quick_settings_sound_ring">Звън</string>
+    <string name="quick_settings_sound_ring">Позвъняване</string>
     <string name="quick_settings_sound_vibrate">Вибрация</string>
     <string name="quick_settings_sound_dnd">Не безпокойте</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
-    <string name="custom_hint">Плъзнете иконата за стартиране</string>
+    <string name="custom_hint">Плъзнете от иконата за стартиране</string>
     <string name="status_bar_vpn">Виртуална Частна Мрежа (VPN)</string>
     <string name="status_bar_data_saver">Икономия на данни</string>
     <string name="preview">Преглед</string>
-    <string name="keycode">KeyCode</string>
+    <string name="keycode">Код клавиш</string>
     <string name="no_home_title">Няма открит начален бутон</string>
     <string name="no_home_message">Начелен бутон е необходим за навигация на това устройство. Моля добавете начелен бутон преди да запишете.</string>
     <string name="clipboard_description">Клипборда позволява елементи да се влачат директно в клипборда. Елементите също могат да се измъкнат директно от клипборда, когато са налични.</string>
     <string name="keycode_description">KeyCode бутоните позволяват клавиши от клавиатурата да бъдат добавени към лентата за навигация. Когато бъдат натиснати те изпълняват избраното действие. Първо изберете бутон, а след това изображение, което да бъде показано върху него.</string>
-    <string name="start">Старт</string>
+    <string name="start">Начало</string>
     <string name="center">В средата</string>
     <string name="end">Край</string>
-    <string name="space">Дистанционер</string>
+    <string name="space">Разделител</string>
     <string name="menu_ime">Превключвател за меню / клавиатура</string>
     <string name="select_button">Изберете бутон за добавяне</string>
     <string name="add_button">Добавяне на бутон</string>
@@ -62,11 +62,11 @@
     <string name="delete_screenshot_toast">Снимката на екрана е изтрита</string>
     <!-- Caffeine QS Tile -->
     <string name="quick_settings_caffeine_label">Кофеин</string>
-    <string name="accessibility_quick_settings_caffeine_off">Изключи Caffeine</string>
-    <string name="accessibility_quick_settings_caffeine_on">Включи. Caffeine</string>
+    <string name="accessibility_quick_settings_caffeine_off">Изключи Кофеин</string>
+    <string name="accessibility_quick_settings_caffeine_on">Включи Кофеин</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Рестарт</string>
-    <string name="quick_settings_reboot_recovery_label">Възстановяване</string>
+    <string name="quick_settings_reboot_recovery_label">Режим на възстановяване</string>
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">Снимка на екрана</string>
     <string name="quick_settings_region_screenshot_label">Частична екранна снимка</string>
@@ -79,16 +79,16 @@
     <!-- USB Tethering tile -->
     <string name="accessibility_quick_settings_usb_tether_off">USB Тетъринг изключен</string>
     <string name="accessibility_quick_settings_usb_tether_on">USB Тетъринг включен</string>
-    <string name="accessibility_quick_settings_usb_tether_changed_off">USB Тетъринг е изключен</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB Тетъринг изключен</string>
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB Тетъринг е включен</string>
     <string name="quick_settings_usb_tether_label">USB Тетъринг</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">Хардуерни бутони вкл</string>
-    <string name="accessibility_quick_settings_hwkeys_off">Хардуерни бутони изкл.</string>
+    <string name="accessibility_quick_settings_hwkeys_on">Хардуерни бутони включени</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Хардуерни бутони изключени</string>
     <string name="quick_settings_hwkeys_label">Хардуерни бутони</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Изкачащите известия са отложени за 1 минута.</string>
-    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Изкачащите известия са отложени за <xliff:g id="number">%d</xliff:g> минута.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Изкачащите известия са отложени за <xliff:g id="number">%d</xliff:g> минути.</string>
     <!-- Theme tile -->
     <string name="systemui_theme_style_title">Стил на интерфейса</string>
     <string name="systemui_theme_style_auto">Автоматично</string>
@@ -101,24 +101,24 @@
     <string name="quick_settings_theme_tile_accent_detail_title">Изберете цвят</string>
     <string name="quick_settings_theme_tile_style_detail_title">Изберете Стил</string>
     <string name="quick_settings_theme_tile_color_default">По подразбиране</string>
-    <string name="quick_settings_theme_tile_color_red">Червен</string>
-    <string name="quick_settings_theme_tile_color_pink">Розов</string>
-    <string name="quick_settings_theme_tile_color_purple">Лилав</string>
+    <string name="quick_settings_theme_tile_color_red">Червено</string>
+    <string name="quick_settings_theme_tile_color_pink">Розово</string>
+    <string name="quick_settings_theme_tile_color_purple">Лилаво</string>
     <string name="quick_settings_theme_tile_color_deep_purple">Тъмно лилаво</string>
     <string name="quick_settings_theme_tile_color_indigo">Индиго</string>
     <string name="quick_settings_theme_tile_color_blue">Синьо</string>
     <string name="quick_settings_theme_tile_color_light_blue">Светло синьо</string>
     <string name="quick_settings_theme_tile_color_cyan">Синьозелено</string>
-    <string name="quick_settings_theme_tile_color_teal">Синьо-зелен</string>
-    <string name="quick_settings_theme_tile_color_green">Зелен</string>
+    <string name="quick_settings_theme_tile_color_teal">Тъмно синьо-зелено</string>
+    <string name="quick_settings_theme_tile_color_green">Зелено</string>
     <string name="quick_settings_theme_tile_color_light_green">Светло зелено</string>
     <string name="quick_settings_theme_tile_color_lime">Лайм</string>
     <string name="quick_settings_theme_tile_color_yellow">Жълто</string>
     <string name="quick_settings_theme_tile_color_amber">Кехлибар</string>
-    <string name="quick_settings_theme_tile_color_orange">Оранжев</string>
-    <string name="quick_settings_theme_tile_color_deep_orange">Тъмно оранжев</string>
-    <string name="quick_settings_theme_tile_color_brown">Кафяв</string>
-    <string name="quick_settings_theme_tile_color_grey">Сив</string>
+    <string name="quick_settings_theme_tile_color_orange">Оранжево</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">Тъмно оранжево</string>
+    <string name="quick_settings_theme_tile_color_brown">Кафяво</string>
+    <string name="quick_settings_theme_tile_color_grey">Сиво</string>
     <string name="quick_settings_theme_tile_color_blue_grey">Синьо сиво</string>
     <string name="quick_settings_theme_tile_color_candy_red">Бонбонено червено</string>
     <string name="quick_settings_theme_tile_color_pale_red">Бледо червено</string>
@@ -128,7 +128,7 @@
     <string name="quick_settings_theme_tile_color_black">Черно</string>
     <string name="quick_settings_theme_tile_color_white">Бяло</string>
     <string name="theme_info_title">Какво е това?</string>
-    <string name="theme_info_message">Плочката за теми е уникална, но лесна за използване. Позволява на потребителя да промени системния акцент или стил.\n\nЗа да превключите между различните акценти и стилове, просто дълго натиснете върху плочката и след това натиснете отново, за да изберете от предлаганите опции.</string>
+    <string name="theme_info_message">Плочката за теми е единствена по рода си, но лесна за използване. Позволява на потребителя да промени системния акцент или стил.\n\nЗа да превключите между различните акценти и стилове, просто задръжте върху плочката и след това натиснете отново, за да изберете от предложените опции.</string>
     <!-- QS Config -->
     <string name="qs_menu_item_columns">Колони</string>
     <string name="qs_menu_item_columns_landscape">Колони вертикално</string>
@@ -147,7 +147,7 @@
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
     <string name="qs_menu_item_rows_four">4</string>
-    <string name="qs_menu_item_qs_columns">Quickbar колони</string>
+    <string name="qs_menu_item_qs_columns">Колони за бързи настройки</string>
     <string name="qs_menu_item_columns_auto">Автоматично</string>
     <string name="screenshot_abort_title">Не е направена снимка на екрана</string>
     <string name="screenshot_abort_text">Операцията е прекратена.</string>
@@ -160,9 +160,9 @@
     <!-- Advance location quick setting tile -->
     <string name="quick_settings_location_secondary_battery_saving">Пестене на батерия</string>
     <string name="accessibility_quick_settings_location_battery_saving">Отчитане на местоположение: икономичен режим.</string>
-    <string name="quick_settings_location_secondary_gps_only">Само по GPS сензори</string>
-    <string name="accessibility_quick_settings_location_gps_only">Отчитане на местоположение: само по GPS.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Висока точност</string>
+    <string name="quick_settings_location_secondary_gps_only">Само Сензори</string>
+    <string name="accessibility_quick_settings_location_gps_only">Отчитане на местоположение: само по сензори.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Висока Точност</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Отчитане на местоположение: режим на висока точност.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Бързо зареждане (<xliff:g id="charging_time_left" example="4 часа и 2 минути">%s</xliff:g> до пълно зареждане)</string>
@@ -172,19 +172,52 @@
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower е свързан</string>
     <!-- Gaming Mode -->
     <string name="gaming_mode_tile_title">Режим игри</string>
-    <string name="gaming_mode_tile_toast">Режим игри е включен</string>
-    <string name="gaming_mode_tile_toast_disabled">Режим игри е изключен</string>
+    <string name="gaming_mode_tile_toast">Режим игри разрешен</string>
+    <string name="gaming_mode_tile_toast_disabled">Режим игри забранен</string>
     <string name="gaming_mode_dialog_title">Режим игри</string>
+    <string name="gaming_mode_dialog_message">Когато режим за игра е активиран, метода за известяване ще се промени на вибрация, всички изкачащи съобщения ще се деактивират и хардуерните бутони ще се изключат. Звукът за медията ще се увеличи до максимална степен. Всички деактивирани настройки ще се нулират по подразбиране веднага, щом излезете от Режим на Игри.</string>
     <string name="accessibility_quick_settings_gaming_mode_on">Режим игри е включен</string>
     <string name="accessibility_quick_settings_gaming_mode_off">Режим игри е изключен</string>
     <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Компас</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Подготвяне\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Компас изключен.</string>
+    <string name="accessibility_quick_settings_compass_on">Компас включен.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Компасът е изключен.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Компасът е включен.</string>
+    <string name="quick_settings_compass_N">Север</string>
+    <string name="quick_settings_compass_NE">Североизток</string>
+    <string name="quick_settings_compass_E">Изток</string>
+    <string name="quick_settings_compass_SE">Юг-изток</string>
+    <string name="quick_settings_compass_S">Юг</string>
+    <string name="quick_settings_compass_SW">Югозападен</string>
+    <string name="quick_settings_compass_W">Запад</string>
+    <string name="quick_settings_compass_NW">Северозапад</string>
     <!-- Ambient Display Pixel-Like string -->
     <string name="ambientmusic_songinfo">%s от %s</string>
     <string name="recents_free_ram">Свободна RAM: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
     <string name="accessibility_quick_settings_running_services">Отвори екрана на изпълняваните услуги.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Смарт пиксели</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Автоматично включване на смарт пиксели</string>
     <!-- ADB over network QS tile -->
+    <string name="quick_settings_network_adb_label">ADB през мрежата</string>
     <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE включено</string>
+    <string name="lte_off">LTE изключено</string>
     <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Принудително спиране?</string>
+    <string name="force_stop_dlg_text">Ако изключите програмата принудително, това може да се отрази зле на нейната функционалност.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="kill">Спри приложението</string>
+    <!-- OneHand mode QS tile -->
+    <!--Google sound search tile -->
+    <!-- Always on Display Tile -->
+    <!-- Music tile -->
+    <!-- Sync QS tile -->
+    <!-- Ambient display QS tile -->
 </resources>

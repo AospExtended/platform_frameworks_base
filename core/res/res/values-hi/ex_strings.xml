@@ -14,8 +14,8 @@
 -->
 <resources>
     <!-- Advanced reboot -->
-    <string name="reboot_title">वापिस चालू करें</string>
-    <string name="reboot_message">एंड्राइड वापिस चालू हो रहा है</string>
+    <string name="reboot_title">रिबूट</string>
+    <string name="reboot_message">रिबूटिंग सिस्टेम</string>
     <!-- SystemUI Restart -->
     <string name="systemui_restart_title">SystemUI पुनरारंभ आवश्यक</string>
     <string name="systemui_restart_message">सभी परिवर्तनों को प्रभावी करने के लिए, एक SystemUI पुनरारंभ करना आवश्यक है । अभी SystemUI पुनरारंभ करें?</string>
@@ -56,4 +56,7 @@
     <string name="animation_random">यादृच्छिक</string>
     <string name="action_null">रिक्त</string>
     <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">नेटवर्क पर ADB को सक्षम कर दिया गया</string>
+    <string name="adb_both_active_notification_title">यूएसबी और नेटवर्क पर एडीबी को सक्षम कर दिया गया</string>
+    <string name="adb_active_generic_notification_message">डिबगिंग अक्षम करने के लिए स्पर्श करें।</string>
 </resources>

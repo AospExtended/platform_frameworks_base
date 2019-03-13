@@ -179,6 +179,21 @@
     <string name="accessibility_quick_settings_gaming_mode_on">Modo juego activado</string>
     <string name="accessibility_quick_settings_gaming_mode_off">Modo de juego desactivado</string>
     <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Brújula</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Inicializando\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Brújula desactivada.</string>
+    <string name="accessibility_quick_settings_compass_on">Brújula activada.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">La brújula ha sido deshabilitada.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">La brújula ha sido habilitada.</string>
+    <string name="quick_settings_compass_N">N</string>
+    <string name="quick_settings_compass_NE">NE</string>
+    <string name="quick_settings_compass_E">E</string>
+    <string name="quick_settings_compass_SE">SE</string>
+    <string name="quick_settings_compass_S">S</string>
+    <string name="quick_settings_compass_SW">SO</string>
+    <string name="quick_settings_compass_W">O</string>
+    <string name="quick_settings_compass_NW">NO</string>
     <!-- Ambient Display Pixel-Like string -->
     <string name="ambientmusic_songinfo">%s de %s</string>
     <string name="recents_free_ram">RAM libre: %1$d MB</string>
@@ -188,6 +203,21 @@
     <string name="quick_settings_smart_pixels">Smart pixels</string>
     <string name="quick_settings_smart_pixels_on_power_save">Habilitar automáticamente Smart Pixels</string>
     <!-- ADB over network QS tile -->
+    <string name="quick_settings_network_adb_label">ADB-Sobre-Red</string>
     <!-- LTE QS Tile -->
+    <string name="qs_lte_label">4G/LTE</string>
+    <string name="lte_on">LTE On</string>
+    <string name="lte_off">LTE Off</string>
     <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">¿Forzar cierre?</string>
+    <string name="force_stop_dlg_text">Si fuerzas la detención de una aplicación, es posible que funcione incorrectamente.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="kill">Forzar cierre</string>
+    <!-- OneHand mode QS tile -->
+    <!--Google sound search tile -->
+    <!-- Always on Display Tile -->
+    <!-- Music tile -->
+    <!-- Sync QS tile -->
+    <!-- Ambient display QS tile -->
 </resources>

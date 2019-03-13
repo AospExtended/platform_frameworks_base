@@ -33,8 +33,30 @@
     <string name="permdesc_toggleNavigationEditor">Membenarkan aplikasi mengendalikan editor bar navigasi.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">akses pengurus font</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Benarkan aplikasi untuk akses pengurus font.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">Pakej font yang anda pasang tidak sesuai kerana ketiadaan fonts.xml pada failnya. Sila hubungi pembangun pakej untuk sokongan.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Pudar</string>
+    <string name="animation_slide_right">Gelongsor ke kanan</string>
+    <string name="animation_slide_left">Gelongsor ke kiri</string>
+    <string name="animation_slide_right_no_fade">Luncurkan di kanan (Tidak memudar)</string>
+    <string name="animation_slide_left_no_fade">Luncurkan di kanan (Tidak memudar)</string>
+    <string name="animation_slide_up">Gelongsor ke bawah</string>
+    <string name="animation_slide_down">Gelongsor ke atas</string>
+    <string name="animation_default">Asal</string>
+    <string name="animation_translucent">Lut cahaya</string>
+    <string name="animation_grow_shrink">Tumbuh dalam (Atas)</string>
+    <string name="animation_grow_shrink_center">Tumbuh dalam (Tengah)</string>
+    <string name="animation_grow_shrink_bottom">Tumbuh dalam (Bawah)</string>
+    <string name="animation_grow_shrink_left">Tumbuh dalam (Kiri)</string>
+    <string name="animation_grow_shrink_right">Tumbuh dalam (Kanan)</string>
+    <string name="animation_random">Rawak</string>
+    <string name="action_null">Kosong</string>
     <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">ADB melalui rangkaian dibolehkan</string>
+    <string name="adb_both_active_notification_title">ADB melalui USB &amp; rangkaian yang dibolehkan</string>
+    <string name="adb_active_generic_notification_message">Sentuh untuk melumpuhkan penyahpepijatan.</string>
 </resources>

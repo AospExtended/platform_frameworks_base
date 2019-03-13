@@ -17,16 +17,16 @@
     <string name="reboot_title">再起動</string>
     <string name="reboot_message">システムを再起動中...</string>
     <!-- SystemUI Restart -->
-    <string name="systemui_restart_title">システムUIの再起動が必要です</string>
-    <string name="systemui_restart_message">全ての変更を反映するにはシステムUIの再起動が必要です。再起動しますか?</string>
+    <string name="systemui_restart_title">システム UI の再起動が必要です</string>
+    <string name="systemui_restart_message">全ての変更を反映するにはシステム UI の再起動が必要です。再起動しますか?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_fakePackageSignature">パッケージ署名を偽装</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_fakePackageSignature">アプリが別のアプリになりすますことを許可します。悪意のあるアプリがこれを利用してアプリの個人情報にアクセスする可能性があります。慎重にこの許可を与えて下さい!</string>
     <!-- App error dialog -->
-    <string name="aerr_copy">クラッシュログURLをコピーする</string>
-    <string name="url_copy_success">URLを正常にコピーしました</string>
-    <string name="url_copy_failed">dogbinへのログのアップロード中にエラーが発生しました</string>
+    <string name="aerr_copy">クラッシュログ URL をコピーする</string>
+    <string name="url_copy_success">URL を正常にコピーしました</string>
+    <string name="url_copy_failed">dogbin へのログのアップロード中にエラーが発生しました</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_toggleNavigationEditor">ナビゲーションバーエディターの制御</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -42,18 +42,21 @@
     <string name="animation_fade">フェード</string>
     <string name="animation_slide_right">右スライド</string>
     <string name="animation_slide_left">左スライド</string>
-    <string name="animation_slide_right_no_fade">右スライド（フェードなし）</string>
-    <string name="animation_slide_left_no_fade">左スライド（フェードなし）</string>
+    <string name="animation_slide_right_no_fade">右スライド (フェードなし)</string>
+    <string name="animation_slide_left_no_fade">左スライド (フェードなし)</string>
     <string name="animation_slide_up">下スライド</string>
     <string name="animation_slide_down">上スライド</string>
     <string name="animation_default">既定</string>
     <string name="animation_translucent">半透明</string>
-    <string name="animation_grow_shrink">拡大（上）</string>
-    <string name="animation_grow_shrink_center">拡大（中央）</string>
-    <string name="animation_grow_shrink_bottom">拡大（下）</string>
-    <string name="animation_grow_shrink_left">拡大（左）</string>
-    <string name="animation_grow_shrink_right">拡大（右）</string>
+    <string name="animation_grow_shrink">拡大 (上)</string>
+    <string name="animation_grow_shrink_center">拡大 (中央)</string>
+    <string name="animation_grow_shrink_bottom">拡大 (下)</string>
+    <string name="animation_grow_shrink_left">拡大 (左)</string>
+    <string name="animation_grow_shrink_right">拡大 (右)</string>
     <string name="animation_random">ランダム</string>
     <string name="action_null">なし</string>
     <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">ネットワーク経由の ADB が有効です</string>
+    <string name="adb_both_active_notification_title">USB とネットワーク経由の ADB が有効です</string>
+    <string name="adb_active_generic_notification_message">タップしてデバッグを無効にします</string>
 </resources>

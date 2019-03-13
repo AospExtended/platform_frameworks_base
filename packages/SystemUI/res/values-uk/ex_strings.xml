@@ -179,6 +179,21 @@
     <string name="accessibility_quick_settings_gaming_mode_on">Ігровий режим увімк.</string>
     <string name="accessibility_quick_settings_gaming_mode_off">Ігровий режим вимк.</string>
     <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Компас</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Ініціалізація\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Компас вимк.</string>
+    <string name="accessibility_quick_settings_compass_on">Компас ввімк.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Компас вимкнено.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Компас увімкнено.</string>
+    <string name="quick_settings_compass_N">Пн</string>
+    <string name="quick_settings_compass_NE">ПнСх</string>
+    <string name="quick_settings_compass_E">Сх</string>
+    <string name="quick_settings_compass_SE">ПдСх</string>
+    <string name="quick_settings_compass_S">Пд</string>
+    <string name="quick_settings_compass_SW">ПдЗх</string>
+    <string name="quick_settings_compass_W">Зх</string>
+    <string name="quick_settings_compass_NW">ПнЗх</string>
     <!-- Ambient Display Pixel-Like string -->
     <string name="ambientmusic_songinfo">%s від %s</string>
     <string name="recents_free_ram">Вільно пам\'яті: %1$d МБ</string>
@@ -188,6 +203,21 @@
     <string name="quick_settings_smart_pixels">Розумні пікселі</string>
     <string name="quick_settings_smart_pixels_on_power_save">Автоматичне увімкнення розумних пікселів</string>
     <!-- ADB over network QS tile -->
+    <string name="quick_settings_network_adb_label">Налагодження ADB по мережі</string>
     <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE увімк</string>
+    <string name="lte_off">LTE вимк</string>
     <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Примусово зупинити?</string>
+    <string name="force_stop_dlg_text">Примусове вимкнення додатка може призвести до збою в його роботі.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="kill">Зупинити програму</string>
+    <!-- OneHand mode QS tile -->
+    <!--Google sound search tile -->
+    <!-- Always on Display Tile -->
+    <!-- Music tile -->
+    <!-- Sync QS tile -->
+    <!-- Ambient display QS tile -->
 </resources>

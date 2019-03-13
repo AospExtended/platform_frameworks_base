@@ -186,4 +186,10 @@
     <!-- ADB over network QS tile -->
     <!-- LTE QS Tile -->
     <!-- Kill button in notification guts -->
+    <!-- OneHand mode QS tile -->
+    <!--Google sound search tile -->
+    <!-- Always on Display Tile -->
+    <!-- Music tile -->
+    <!-- Sync QS tile -->
+    <!-- Ambient display QS tile -->
 </resources>

@@ -22,7 +22,7 @@
     <string name="global_action_restart_advanced">Avançado</string>
     <string name="global_action_restart_recovery">Recuperação</string>
     <string name="global_action_restart_bootloader">Bootloader</string>
-    <string name="global_action_restart_ui">Interface do sistema</string>
+    <string name="global_action_restart_ui">Interface do Sistema</string>
     <string name="global_action_restart_soft">Reinicialização Rápida</string>
     <string name="statusbar_items_title">Ícone da barra de status</string>
     <!-- Lockscreen icons -->
@@ -40,16 +40,16 @@
     <string name="status_bar_data_saver">Economia de dados</string>
     <string name="preview">Pré-visualização</string>
     <string name="keycode">Código</string>
-    <string name="no_home_title">Nenhum botão de início encontrado</string>
-    <string name="no_home_message">É necessário um botão de início para navegar neste dispositivo. Adicione um botão de início antes de salvar.</string>
-    <string name="clipboard_description">A Área de transferência permite arrastar itens diretamente para a área de transferência. Também é possível arrastar itens diretamente para fora da mesma, quando aí se encontram.</string>
+    <string name="no_home_title">Botão do Inicio não encontrado</string>
+    <string name="no_home_message">É necessário um botão de Início para navegar neste dispositivo. Adicione um botão de início antes de salvar.</string>
+    <string name="clipboard_description">O Clipboard permite que itens sejam arrastados diretamente para a área de transferência. Itens também podem ser arrastados diretamente para fora da área de transferência quando presentes.</string>
     <string name="keycode_description">Os botões de código de tecla permitem que as teclas do teclado sejam adicionadas à barra de navegação. Quando pressionados, eles emulam a tecla selecionada. Primeiro, a tecla deve ser selecionada para o botão, seguida de uma imagem a ser exibida no botão.</string>
     <string name="start">Início</string>
     <string name="center">Centro</string>
     <string name="end">Fim</string>
     <string name="space">Espaçador</string>
     <string name="menu_ime">Menu / Alternador de teclado</string>
-    <string name="select_button">Selecione o botão p/ adicionar</string>
+    <string name="select_button">Selecione o botão para adicionar</string>
     <string name="add_button">Adicionar botão</string>
     <string name="save">Salvar</string>
     <string name="reset">Redefinir</string>
@@ -179,6 +179,21 @@
     <string name="accessibility_quick_settings_gaming_mode_on">Modo jogo ligado</string>
     <string name="accessibility_quick_settings_gaming_mode_off">Modo jogo desligado</string>
     <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Bússola</string>
+    <string name="quick_settings_compass_value"><xliff:g id="graus">%1$.0f</xliff:g>\u00b0 <xliff:g id="direção">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Inicializando\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Bússola desligada.</string>
+    <string name="accessibility_quick_settings_compass_on">Bússola ligada.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">A bússola foi desativada.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">A bússola foi ligada.</string>
+    <string name="quick_settings_compass_N">N</string>
+    <string name="quick_settings_compass_NE">NE</string>
+    <string name="quick_settings_compass_E">E</string>
+    <string name="quick_settings_compass_SE">SE</string>
+    <string name="quick_settings_compass_S">S</string>
+    <string name="quick_settings_compass_SW">SW</string>
+    <string name="quick_settings_compass_W">W</string>
+    <string name="quick_settings_compass_NW">NW</string>
     <!-- Ambient Display Pixel-Like string -->
     <string name="ambientmusic_songinfo">%s por %s</string>
     <string name="recents_free_ram">RAM Livre: %1$d MB</string>
@@ -188,6 +203,20 @@
     <string name="quick_settings_smart_pixels">Pixels inteligentes</string>
     <string name="quick_settings_smart_pixels_on_power_save">Auto-habilitar pixels inteligentes</string>
     <!-- ADB over network QS tile -->
+    <string name="quick_settings_network_adb_label">ADB-sobre-rede</string>
     <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE Ligado</string>
+    <string name="lte_off">LTE Desligado</string>
     <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Forçar parada?</string>
+    <string name="force_stop_dlg_text">Se você forçar a parada de um app, ele pode apresentar mau funcionamento.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="kill">Fechar aplicativo</string>
+    <!-- OneHand mode QS tile -->
+    <!--Google sound search tile -->
+    <!-- Always on Display Tile -->
+    <!-- Music tile -->
+    <!-- Sync QS tile -->
+    <!-- Ambient display QS tile -->
 </resources>
