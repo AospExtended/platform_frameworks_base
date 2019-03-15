@@ -4635,6 +4635,7 @@ public final class Settings {
          * 3 - force black
          * 4 - force extendedUI
          * 5 - force chocolateUI
+         * 6 - force Elegant UI
          * @hide
          */
         public static final String SYSTEM_THEME_STYLE = "system_theme_style";
@@ -4674,6 +4675,13 @@ public final class Settings {
          * @hide
          */
         public static final int SYSTEM_THEME_STYLE_CHOCOLATE = 5;
+
+
+        /**
+         * SYSTEM_THEME_STYLE value for elegant theme mode.
+         * @hide
+         */
+        public static final int SYSTEM_THEME_STYLE_ELEGANT = 6;
 
         /**
          * Whether to use icon pack for Recents
