@@ -116,6 +116,8 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
                 R.string.quick_settings_theme_tile_color_pale_blue));
         sThemeItems.add(new ThemeTileItem(24, R.color.quick_settings_theme_tile_jade_green,
                 R.string.quick_settings_theme_tile_color_jade_green));
+        sThemeItems.add(new ThemeTileItem(25, R.color.quick_settings_theme_tile_elegant_green,
+                R.string.quick_settings_theme_tile_color_elegant_green));
     }
 
     static final List<ThemeTileItem> sStyleItems = new ArrayList<ThemeTileItem>();
@@ -132,6 +134,8 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
                 R.string.systemui_theme_style_extended, Settings.System.SYSTEM_THEME_STYLE));
         sStyleItems.add(new ThemeTileItem(5, -1,
                 R.string.systemui_theme_style_chocolate, Settings.System.SYSTEM_THEME_STYLE));
+        sStyleItems.add(new ThemeTileItem(6, -1,
+                R.string.systemui_theme_style_elegant, Settings.System.SYSTEM_THEME_STYLE));
 
     }
 
@@ -308,10 +312,10 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
 
  /*   private ThemeTileItem getThemeItemForStyleMode() {
         if (ThemeAccentUtils.isUsingDarkTheme(mOverlayManager, mCurrentUserId) || ThemeAccentUtils.isUsingBlackTheme(mOverlayManager, mCurrentUserId) || ThemeAccentUtils.isUsingExtendedTheme(mOverlayManager, mCurrentUserId) || ThemeAccentUtils.isUsingChocolateTheme(mOverlayManager, mCurrentUserId)) {
-            return new ThemeTileItem(25, R.color.quick_settings_theme_tile_white,
+            return new ThemeTileItem(26, R.color.quick_settings_theme_tile_white,
                     R.string.quick_settings_theme_tile_color_white);
         } else {
-            return new ThemeTileItem(25, R.color.quick_settings_theme_tile_black,
+            return new ThemeTileItem(27, R.color.quick_settings_theme_tile_black,
                     R.string.quick_settings_theme_tile_color_black);
         }
     } */

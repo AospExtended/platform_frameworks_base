@@ -404,6 +404,7 @@ public class WallpaperManagerService extends IWallpaperManager.Stub
             case Settings.System.SYSTEM_THEME_STYLE_BLACK:
             case Settings.System.SYSTEM_THEME_STYLE_EXTENDED:
             case Settings.System.SYSTEM_THEME_STYLE_CHOCOLATE:
+            case Settings.System.SYSTEM_THEME_STYLE_ELEGANT:
                 if (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_WALLPAPER) {
                     result = !supportDarkTheme;
                 }
@@ -603,7 +604,7 @@ public class WallpaperManagerService extends IWallpaperManager.Stub
         if (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_WALLPAPER ||
                 (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_LIGHT && !supportDarkTheme) ||
                 ((mThemeMode == Settings.System.SYSTEM_THEME_STYLE_DARK && supportDarkTheme) || (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_BLACK && supportDarkTheme) ||
-                 (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_EXTENDED && supportDarkTheme) || (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_CHOCOLATE && supportDarkTheme))) {
+                 (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_EXTENDED && supportDarkTheme) || (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_CHOCOLATE && supportDarkTheme) || (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_ELEGANT && supportDarkTheme))) {
             return colors;
         }
 
@@ -613,7 +614,7 @@ public class WallpaperManagerService extends IWallpaperManager.Stub
         if (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_LIGHT) {
             colorHints &= ~WallpaperColors.HINT_SUPPORTS_DARK_THEME;
         } else if (mThemeMode == Settings.System.SYSTEM_THEME_STYLE_DARK || mThemeMode == Settings.System.SYSTEM_THEME_STYLE_BLACK || mThemeMode == Settings.System.SYSTEM_THEME_STYLE_EXTENDED
-                   || mThemeMode == Settings.System.SYSTEM_THEME_STYLE_CHOCOLATE) {
+                   || mThemeMode == Settings.System.SYSTEM_THEME_STYLE_CHOCOLATE || mThemeMode == Settings.System.SYSTEM_THEME_STYLE_ELEGANT) {
             colorHints |= WallpaperColors.HINT_SUPPORTS_DARK_THEME;
         }
         themeColors.setColorHints(colorHints);
