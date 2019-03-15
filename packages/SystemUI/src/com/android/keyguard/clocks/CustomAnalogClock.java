@@ -112,6 +112,7 @@ public class CustomAnalogClock extends View {
                 mOverlayManager, ActivityManager.getCurrentUser()) || ThemeAccentUtils.isUsingBlackTheme(
                 mOverlayManager, ActivityManager.getCurrentUser()) || ThemeAccentUtils.isUsingExtendedTheme(
                 mOverlayManager, ActivityManager.getCurrentUser()) || ThemeAccentUtils.isUsingChocolateTheme(
+                mOverlayManager, ActivityManager.getCurrentUser()) || ThemeAccentUtils.isUsingElegantTheme(
                 mOverlayManager, ActivityManager.getCurrentUser()));
         onThemeChanged(useDarkTheme, false);
 
