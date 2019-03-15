@@ -54,6 +54,7 @@
     <color name="quick_settings_theme_tile_extended_green">#21ef8b</color>
     <color name="quick_settings_theme_tile_pale_blue">#A1B6ED</color>
     <color name="quick_settings_theme_tile_jade_green">#9ABC98</color>
+    <color name="quick_settings_theme_tile_elegant_green">#47ae84</color>
     <color name="quick_settings_theme_tile_black">#000000</color>
     <color name="quick_settings_theme_tile_white">#ffffff</color>
 
