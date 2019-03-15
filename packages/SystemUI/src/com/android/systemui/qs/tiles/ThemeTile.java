@@ -132,6 +132,8 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
                 R.string.systemui_theme_style_extended, Settings.System.SYSTEM_THEME_STYLE));
         sStyleItems.add(new ThemeTileItem(5, -1,
                 R.string.systemui_theme_style_chocolate, Settings.System.SYSTEM_THEME_STYLE));
+        sStyleItems.add(new ThemeTileItem(6, -1,
+                R.string.systemui_theme_style_elegant, Settings.System.SYSTEM_THEME_STYLE));
 
     }
 

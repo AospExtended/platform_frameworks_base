@@ -60,8 +60,9 @@ public class ThemeAccentUtils {
         "com.accents.extendedgreen", //22
         "com.accents.paleblue", //23
         "com.accents.jadegreen", //24
-        // "com.accents.black", // 25
-        // "com.accents.white", // 26
+        "com.accents.elegantgreen" //25
+        // "com.accents.black", // 26
+        // "com.accents.white", // 27
     };
 
     private static final String[] DARK_THEMES = {
@@ -117,6 +118,17 @@ public class ThemeAccentUtils {
         "com.android.systemui.qstile.justicons", //7
     };
 
+    private static final String[] ELEGANT_THEMES = {
+        "com.android.system.theme.elegant", // 0
+        "com.android.settings.theme.elegant", // 1
+        "com.android.systemui.theme.elegant", // 2
+        "com.accents.elegantgreen", //3
+        "com.android.dialer.theme.elegant", //4
+        "com.android.contacts.theme.elegant", //5
+        "com.android.documentsui.theme.elegant", //6
+        "com.google.android.apps.wellbeing.theme.elegant", //7
+	"com.google.android.apps.gms.theme.elegant", //8
+    };
 
     private static final String STOCK_DARK_THEME = "com.android.systemui.theme.dark";
 
@@ -138,6 +150,17 @@ public class ThemeAccentUtils {
             if(isUsingExtendedTheme(om, userId)) {
             try {
                 om.setEnabled(CHOCOLATE_THEMES[3],
+                        true, userId);
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change theme", e);
+            }
+            } else {
+            unloadAccents(om, userId);
+            }
+            //On selecting default accent, set accent to elegant green if ElegantUI is being used
+            if(isUsingElegantTheme(om, userId)) {
+            try {
+                om.setEnabled(ELEGANT_THEMES[3],
                         true, userId);
             } catch (RemoteException e) {
                 Log.w(TAG, "Can't change theme", e);
@@ -230,6 +253,18 @@ public class ThemeAccentUtils {
         return themeInfo != null && themeInfo.isEnabled();
      }
 
+    // Check for the elegant system theme
+    public static boolean isUsingElegantTheme(IOverlayManager om, int userId) {
+        OverlayInfo themeInfo = null;
+        try {
+            themeInfo = om.getOverlayInfo(ELEGANT_THEMES[0],
+                    userId);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return themeInfo != null && themeInfo.isEnabled();
+     }
+
     public static void setLightDarkTheme(IOverlayManager om, int userId, boolean useDarkTheme) {
         for (String theme : DARK_THEMES) {
                 try {
@@ -274,6 +309,18 @@ public class ThemeAccentUtils {
                 try {
                     om.setEnabled(theme,
                         useChocolateTheme, userId);
+                  //  unfuckBlackWhiteAccent(om, userId);
+                } catch (RemoteException e) {
+                    Log.w(TAG, "Can't change theme", e);
+                }
+        }
+    }
+
+    public static void setLightElegantTheme(IOverlayManager om, int userId, boolean useElegantTheme) {
+        for (String theme : ELEGANT_THEMES) {
+                try {
+                    om.setEnabled(theme,
+                        useElegantTheme, userId);
                   //  unfuckBlackWhiteAccent(om, userId);
                 } catch (RemoteException e) {
                     Log.w(TAG, "Can't change theme", e);

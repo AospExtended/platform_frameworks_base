@@ -4635,6 +4635,7 @@ public final class Settings {
          * 3 - force black
          * 4 - force extendedUI
          * 5 - force chocolateUI
+         * 6 - force Elegant UI
          * @hide
          */
         public static final String SYSTEM_THEME_STYLE = "system_theme_style";
