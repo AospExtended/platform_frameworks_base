@@ -3599,4 +3599,7 @@
          before setting power profiles on boot. -->
     <bool name="config_waitForMpctlOnBoot">false</bool>
 
+    <!-- Set interval to trigger idleMaint -->
+    <integer name="config_idleMaintSecs">0</integer>
+
 </resources>

@@ -3453,4 +3453,7 @@
   <java-symbol type="bool" name="config_wifi_dual_sap_mode_enabled" />
 
   <java-symbol type="bool" name="config_waitForMpctlOnBoot" />
+
+  <java-symbol type="integer" name="config_idleMaintSecs" />
+
 </resources>
