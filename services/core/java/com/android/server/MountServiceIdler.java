@@ -26,6 +26,7 @@ import android.app.job.JobService;
 import android.content.ComponentName;
 import android.content.Context;
 import android.os.RemoteException;
+import java.util.concurrent.TimeUnit;
 import android.util.Slog;
 
 public class MountServiceIdler extends JobService {
@@ -104,7 +105,15 @@ public class MountServiceIdler extends JobService {
         JobInfo.Builder builder = new JobInfo.Builder(MOUNT_JOB_ID, sIdleService);
         builder.setRequiresDeviceIdle(true);
         builder.setRequiresCharging(true);
-        builder.setMinimumLatency(timeToMidnight);
+
+        long idleMaintSecs = context.getResources().getInteger(com.android.internal.R.integer.config_idleMaintSecs);
+        if (idleMaintSecs == 0) {
+            builder.setMinimumLatency(timeToMidnight);
+            Slog.i(TAG, "Scheduled idleMaint at 3AM");
+        } else {
+            builder.setMinimumLatency(TimeUnit.MINUTES.toMillis(idleMaintSecs));
+            Slog.i(TAG, "Scheduled idleMaint in " + idleMaintSecs + " seconds");
+        }
         tm.schedule(builder.build());
     }
 
