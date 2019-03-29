@@ -544,10 +544,18 @@ public class WifiTracker implements LifecycleObserver, OnStart, OnStop, OnDestro
             final List<NetworkKey> scoresToRequest = new ArrayList<>();
 
             for (Map.Entry<String, List<ScanResult>> entry : scanResultsByApKey.entrySet()) {
+                WifiConfiguration passpointConfig = null;
                 for (ScanResult result : entry.getValue()) {
                     NetworkKey key = NetworkKey.createFromScanResult(result);
                     if (key != null && !mRequestedScores.contains(key)) {
                         scoresToRequest.add(key);
+                    }
+                    if (passpointConfig == null && result.isPasspointNetwork()) {
+                        try {
+                            passpointConfig = mWifiManager.getMatchingWifiConfig(result);
+                        } catch (UnsupportedOperationException e) {
+                            // Passpoint not supported on the device.
+                        }
                     }
                 }
 
@@ -559,6 +567,11 @@ public class WifiTracker implements LifecycleObserver, OnStart, OnStop, OnDestro
 
                 // Update the matching config if there is one, to populate saved network info
                 accessPoint.update(configsByKey.get(entry.getKey()));
+
+                // For passpoint network
+                if (passpointConfig != null) {
+                    accessPoint.update(passpointConfig);
+                }
 
                 accessPoints.add(accessPoint);
             }
