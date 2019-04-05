@@ -103,6 +103,7 @@ interface IStatusBarService
     void onFingerprintError(String error);
     // Used to hide the fingerprint dialog when the authenticationclient is stopped
     void hideFingerprintDialog();
+    void handleInDisplayFingerprintView(boolean show, boolean isEnrolling);
 
     /**
      * Aex
