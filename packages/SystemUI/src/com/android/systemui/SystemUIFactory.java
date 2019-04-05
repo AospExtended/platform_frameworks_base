@@ -30,6 +30,8 @@ import com.android.keyguard.ViewMediatorCallback;
 import com.android.systemui.Dependency.DependencyProvider;
 import com.android.systemui.classifier.FalsingManager;
 import com.android.systemui.keyguard.DismissCallbackRegistry;
+import com.android.systemui.power.EnhancedEstimates;
+import com.android.systemui.power.EnhancedEstimatesTurboImpl;
 import com.android.systemui.qs.QSTileHost;
 import com.android.systemui.statusbar.KeyguardIndicationController;
 import com.android.systemui.statusbar.NotificationBlockingHelperManager;
@@ -151,5 +153,6 @@ public class SystemUIFactory {
         providers.put(SmartReplyController.class, () -> new SmartReplyController());
         providers.put(RemoteInputQuickSettingsDisabler.class,
                 () -> new RemoteInputQuickSettingsDisabler(context));
+        providers.put(EnhancedEstimates.class, () -> new EnhancedEstimatesTurboImpl(context));
     }
 }

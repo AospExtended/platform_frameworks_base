@@ -67,12 +67,16 @@ public class BatteryMeterView extends LinearLayout implements
     private final CurrentUserTracker mUserTracker;
     private TextView mBatteryPercentView;
     private static final String FONT_FAMILY = "sans-serif-medium";
+    private String mBatteryEstimate = null;
+
     private BatteryController mBatteryController;
     private SettingObserver mSettingObserver;
     private int mTextColor;
     private int mLevel;
     private boolean mForceShowPercent;
 
+    private boolean mShowEstimate;
+    
     private int mDarkModeBackgroundColor;
     private int mDarkModeFillColor;
 
@@ -97,6 +101,9 @@ public class BatteryMeterView extends LinearLayout implements
     private int mNonAdaptedForegroundColor;
     private int mNonAdaptedBackgroundColor;
 
+    private int mPercentageStyleId;
+    private int mPercentageSize;
+
     public BatteryMeterView(Context context) {
         this(context, null, 0);
     }
@@ -116,6 +123,8 @@ public class BatteryMeterView extends LinearLayout implements
                 defStyle, 0);
         final int frameColor = atts.getColor(R.styleable.BatteryMeterView_frameColor,
                 context.getColor(R.color.meter_background_color));
+        mPercentageStyleId = atts.getResourceId(R.styleable.BatteryMeterView_textAppearance, 0);
+        mPercentageSize = atts.getDimensionPixelSize(R.styleable.BatteryMeterView_textSize, 0);
         mFrameColor = frameColor;
         mDrawable = new BatteryMeterDrawableBase(context, frameColor);
         atts.recycle();
@@ -147,6 +156,7 @@ public class BatteryMeterView extends LinearLayout implements
                 getContext().getContentResolver().registerContentObserver(
                         Settings.System.getUriFor(SHOW_BATTERY_PERCENT), false, mSettingObserver,
                         newUserId);
+                updateShowPercent();
             }
         };
 
@@ -235,7 +245,8 @@ public class BatteryMeterView extends LinearLayout implements
 
     @Override
     public void onBatteryLevelChanged(int level, boolean pluggedIn, boolean charging) {
-
+        
+        mCharging = pluggedIn;
         if (mCharging != pluggedIn) {
             mCharging = pluggedIn;
             updateShowPercent();
@@ -270,11 +281,33 @@ public class BatteryMeterView extends LinearLayout implements
 
     private void updatePercentText() {
         Typeface tf = Typeface.create(FONT_FAMILY, Typeface.NORMAL);
-		if (mBatteryPercentView != null) {
-            mBatteryPercentView.setText(
-                    NumberFormat.getPercentInstance().format(mLevel / 100f));
-			mBatteryPercentView.setTypeface(tf);
+        if (mBatteryController != null && mBatteryPercentView != null) {
+            if (!mShowEstimate || mCharging) {
+                setPercentTextAtCurrentLevel();
+            } else {
+                mBatteryController.getEstimatedTimeRemainingString(this::onEstimateFetchComplete);
+            }
+            mBatteryPercentView.setTypeface(tf);
         }
+    }
+
+    private void updatePercentSize() {
+        if (mPercentageSize != 0) {
+            mBatteryPercentView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mPercentageSize);
+        }
+    }
+
+    private void onEstimateFetchComplete(String estimate) {
+        if (estimate != null) {
+            mBatteryPercentView.setText(estimate);
+        } else {
+            setPercentTextAtCurrentLevel();
+        }
+    }
+
+    private void setPercentTextAtCurrentLevel() {
+            mBatteryPercentView.setText(
+                                NumberFormat.getPercentInstance().format(mLevel / 100f));
     }
 
     public void setIsQuickSbHeaderOrKeyguard(boolean qs) {
@@ -325,6 +358,18 @@ public class BatteryMeterView extends LinearLayout implements
                 removeView(mBatteryPercentView);
                 mBatteryPercentView = null;
             }
+        }
+    }
+
+    private void createPercentView() {
+        if (mBatteryPercentView == null) {
+            mBatteryPercentView = loadPercentView();
+            if (mTextColor != 0) mBatteryPercentView.setTextColor(mTextColor);
+            updatePercentText();
+            addView(mBatteryPercentView,
+                    new ViewGroup.LayoutParams(
+                            LayoutParams.WRAP_CONTENT,
+                            LayoutParams.MATCH_PARENT));
         }
     }
 
@@ -406,6 +451,10 @@ public class BatteryMeterView extends LinearLayout implements
         }
     }
 
+    public void setShowEstimate(boolean showEstimate) {
+        mShowEstimate = showEstimate;
+    }
+
     private void updateBatteryStyle(String styleStr) {
 
         final int style = styleStr == null ?
@@ -443,5 +492,12 @@ public class BatteryMeterView extends LinearLayout implements
 
         updateShowPercent();
         onDensityOrFontScaleChanged();
+    }
+
+    @Override
+    public void onViewAdded(View child) {
+        if (child == mBatteryPercentView) {
+            post(() -> updatePercentSize());
+        }
     }
 }
