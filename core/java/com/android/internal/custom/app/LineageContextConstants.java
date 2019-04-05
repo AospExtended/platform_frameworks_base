@@ -50,4 +50,11 @@ public final class LineageContextConstants {
      */
     public static final String LINEAGE_LIVEDISPLAY_SERVICE = "lineagelivedisplay";
 
+    /**
+         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
+         * {@link PackageManager#hasSystemFeature}: The device includes the Lineage
+         * fingerprint in screen utilized by the lineage sdk.
+         */
+    public static final String FOD = "vendor.lineage.biometrics.fingerprint.inscreen";
+
 }
