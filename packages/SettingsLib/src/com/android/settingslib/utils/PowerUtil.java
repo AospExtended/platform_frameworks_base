@@ -80,6 +80,16 @@ public class PowerUtil {
         return null;
     }
 
+    public static String getBatteryRemainingShortStringFormatted(Context context, long drainTimeMs) {
+        if (drainTimeMs <= 0) {
+            return null;
+        }
+        if (drainTimeMs <= ONE_DAY_MILLIS) {
+            return getRegularTimeRemainingShortString(context, drainTimeMs);
+        }
+        return getMoreThanOneDayShortString(context, drainTimeMs);
+    }
+
     private static String getShutdownImminentString(Context context, String percentageString) {
         return TextUtils.isEmpty(percentageString)
                 ? context.getString(R.string.power_remaining_duration_only_shutdown_imminent)
@@ -117,6 +127,12 @@ public class PowerUtil {
                     : R.string.power_discharging_duration;
             return context.getString(id, timeString, percentageString);
         }
+    }
+
+    private static String getMoreThanOneDayShortString(Context context, long drainTimeMs) {
+        CharSequence timeString = StringUtil.formatElapsedTime(
+                context, (double) roundTimeToNearestThreshold(drainTimeMs, ONE_HOUR_MILLIS), false);
+        return context.getString(R.string.power_remaining_duration_only_short, new Object[]{timeString});
     }
 
     private static String getMoreThanTwoDaysString(Context context, String percentageString) {
@@ -159,6 +175,13 @@ public class PowerUtil {
                     : R.string.power_discharge_by;
             return context.getString(id, timeString, percentageString);
         }
+    }
+
+    private static String getRegularTimeRemainingShortString(Context context, long drainTimeMs) {
+        String format = DateFormat.getInstanceForSkeleton(
+                android.text.format.DateFormat.getTimeFormatString(context)).format(Date.from(Instant.ofEpochMilli(
+                roundTimeToNearestThreshold(System.currentTimeMillis() + drainTimeMs, FIFTEEN_MINUTES_MILLIS))));
+        return context.getString(R.string.power_discharge_by_only_short, new Object[]{format});
     }
 
     public static long convertUsToMs(long timeUs) {
