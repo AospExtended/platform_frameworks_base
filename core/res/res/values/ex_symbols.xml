@@ -232,7 +232,7 @@
   <java-symbol type="anim" name="slow_fade_in" />
   <java-symbol type="anim" name="slow_fade_out" />
   <java-symbol type="anim" name="slide_in_up_ribbon" />
-  <java-symbol type="anim" name="slide_out_down_ribbon" /> 
+  <java-symbol type="anim" name="slide_out_down_ribbon" />
   <java-symbol type="anim" name="slide_in_right_no_fade" />
   <java-symbol type="anim" name="slide_out_left_no_fade" />
   <java-symbol type="anim" name="slide_in_left_no_fade" />
@@ -261,6 +261,7 @@
   <java-symbol type="bool" name="config_physicalDisplayCutout" />
 
   <java-symbol type="color" name="bootleg_accent_gradient_end_color" />
+
 
     <!-- LiveDisplay -->
     <java-symbol type="string" name="live_display_title" />
@@ -312,4 +313,9 @@
 
     <!-- Pocket bridge -->
     <java-symbol type="string" name="config_pocketBridgeSysfsInpocket" />
+
+    <!-- FoD -->
+    <java-symbol type="bool" name="config_needCustomFODView" />
+    <java-symbol type="bool" name="config_usesOnePlusFOD" />
+
 </resources>
