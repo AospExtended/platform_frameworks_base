@@ -39,4 +39,7 @@
     <java-symbol type="bool" name="config_allowMediaUidForCameraServiceProxy" />
 
     <java-symbol type="array" name="config_customPermissionsList" />
+
+    <!-- Whether to show a custom view for FOD -->
+    <java-symbol type="bool" name="config_needCustomFODView" />
 </resources>
