@@ -414,7 +414,7 @@ public class ActionHandler {
             }
         }
 
-        private static void expandNotificationPanel() {
+        public static void expandNotificationPanel() {
             IStatusBarService service = getStatusBarService();
             if (service != null) {
                 try {
@@ -424,7 +424,7 @@ public class ActionHandler {
             }
         }
 
-        private static void expandSettingsPanel() {
+        public static void expandSettingsPanel() {
             IStatusBarService service = getStatusBarService();
             if (service != null) {
                 try {
@@ -464,7 +464,7 @@ public class ActionHandler {
             }
         }
 */
-        private static void clearAllNotifications() {
+        public static void clearAllNotifications() {
             IStatusBarService service = getStatusBarService();
             if (service != null) {
                 try {
