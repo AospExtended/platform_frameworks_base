@@ -5664,6 +5664,42 @@ public final class Settings {
         public static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
 
         /**
+         * Lockscreen lavalamp psychedelic colors
+         * @hide
+         */
+        public static final String LOCKSCREEN_LAVALAMP_ENABLED = "lockscreen_lavalamp_enabled";
+
+        /**
+         * Lockscreen lavalamp animation speed
+         * @hide
+         */
+        public static final String LOCKSCREEN_LAVALAMP_SPEED = "lockscreen_lavalamp_speed";
+
+        /**
+         * Whether to use automatic color for visualizer
+         * @hide
+         */
+        public static final String LOCKSCREEN_VISUALIZER_AUTOCOLOR = "lockscreen_visualizer_autocolor";
+
+        /**
+         * Number of bars shown in visualizer
+         * @hide
+         */
+        public static final String LOCKSCREEN_SOLID_UNITS_COUNT = "lockscreen_solid_units_count";
+
+        /**
+         * Visualizer sanity level
+         * @hide
+         */
+        public static final String LOCKSCREEN_SOLID_FUDGE_FACTOR = "lockscreen_solid_fudge_factor";
+
+        /**
+         * Visualizer opacity
+         * @hide
+         */
+        public static final String LOCKSCREEN_SOLID_UNITS_OPACITY = "lockscreen_solid_units_opacity";
+
+        /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate
