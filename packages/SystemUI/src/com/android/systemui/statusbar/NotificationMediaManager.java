@@ -687,8 +687,8 @@ public class NotificationMediaManager implements Dumpable {
         if (statusBarOptional != null &&
                 mStatusBarStateController.getState() != StatusBarState.SHADE) {
             VisualizerView visualizerView = statusBarOptional.map(StatusBar::getVisualizer).orElse(null);
-            if (!mKeyguardStateController.isKeyguardFadingAway() && hasArtwork) {
-                // if there's album art, ensure visualizer is visible
+            if (!mKeyguardStateController.isKeyguardFadingAway()) {
+                // ensure visualizer is visible
                 visualizerView.setPlaying(getMediaControllerPlaybackState(mMediaController) ==
                         PlaybackState.STATE_PLAYING);
             }
