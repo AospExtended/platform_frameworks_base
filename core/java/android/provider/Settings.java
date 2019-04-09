@@ -9623,6 +9623,17 @@ public final class Settings {
          */
         public static final String STATUS_BAR_CLOCK = "status_bar_clock";
 
+         /**
+         * Show or hide clock seconds
+         * 0 - hide (default)
+         * 1 - show
+         * @hide
+         */
+        public static final String STATUSBAR_CLOCK_SECONDS = "status_bar_clock_seconds";
+        /** @hide */
+        private static final Validator STATUSBAR_CLOCK_SECONDS_VALIDATOR =
+               BOOLEAN_VALIDATOR;
+
         /** @hide */
         public static final Validator STATUS_BAR_CLOCK_VALIDATOR =
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 1);
@@ -9947,6 +9958,7 @@ public final class Settings {
             VALIDATORS.put(MANUAL_RINGER_TOGGLE_COUNT, MANUAL_RINGER_TOGGLE_COUNT_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_BATTERY_STYLE, STATUS_BAR_BATTERY_STYLE_VALIDATOR);
             VALIDATORS.put(VOLUME_LINK_NOTIFICATION, VOLUME_LINK_NOTIFICATION_VALIDATOR);
+            VALIDATORS.put(STATUSBAR_CLOCK_SECONDS, STATUSBAR_CLOCK_SECONDS_VALIDATOR);
             VALIDATORS.put(LOCK_SCREEN_ALLOW_PRIVATE_NOTIFICATIONS, BOOLEAN_VALIDATOR);
             VALIDATORS.put(LOCK_SCREEN_SHOW_NOTIFICATIONS, BOOLEAN_VALIDATOR);
             VALIDATORS.put(WIFI_DISCONNECT_DELAY_DURATION, WIFI_DISCONNECT_DELAY_DURATION_VALIDATOR);
