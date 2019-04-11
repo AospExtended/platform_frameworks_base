@@ -4539,7 +4539,9 @@ public class ActivityManagerService extends IActivityManager.Stub
             }
             if (mPerfServiceStartHint != null) {
                 if (hostingType.equals("activity")) {
-                    mPerfServiceStartHint.perfHint(BoostFramework.VENDOR_HINT_FIRST_LAUNCH_BOOST, app.processName, startResult.pid, BoostFramework.Launch.TYPE_START_PROC);
+                    if (startResult != null) {
+                        mPerfServiceStartHint.perfHint(BoostFramework.VENDOR_HINT_FIRST_LAUNCH_BOOST, app.processName, startResult.pid, BoostFramework.Launch.TYPE_START_PROC);
+                    }
                 }
             }
 
