@@ -1205,7 +1205,9 @@ public class ActivityStackSupervisor extends ConfigurationContainer implements D
                 mPerfBoost = new BoostFramework();
             }
             if (mPerfBoost != null) {
-               mPerfBoost.perfHint(BoostFramework.VENDOR_HINT_FIRST_DRAW, r.packageName, r.app.pid, BoostFramework.Draw.EVENT_TYPE_V1);
+               if (r.app != null) {
+                   mPerfBoost.perfHint(BoostFramework.VENDOR_HINT_FIRST_DRAW, r.packageName, r.app.pid, BoostFramework.Draw.EVENT_TYPE_V1);
+               }
             }
         }
         for (int i = mWaitingActivityLaunched.size() - 1; i >= 0; i--) {
