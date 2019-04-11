@@ -83,6 +83,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     private View mCustomCarrierLabel;
     private int mShowCarrierLabel;
+    private boolean mHasCarrierLabel;
 
     private class SettingsObserver extends ContentObserver {
         SettingsObserver(Handler handler) {
@@ -463,6 +464,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mShowCarrierLabel = Settings.System.getIntForUser(getContext().getContentResolver(),
                 Settings.System.STATUS_BAR_SHOW_CARRIER, 1,
                 UserHandle.USER_CURRENT);
+        mHasCarrierLabel = (mShowCarrierLabel == 2 || mShowCarrierLabel == 3);
         setCarrierLabel(animate);
         if (mNotificationIconAreaInner != null) {
             if (mShowLogo) {
@@ -476,7 +478,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
    }
 
     private void setCarrierLabel(boolean animate) {
-        if (mShowCarrierLabel == 2 || mShowCarrierLabel == 3) {
+        if (mHasCarrierLabel) {
             animateShow(mCustomCarrierLabel, animate);
         } else {
             animateHiddenState(mCustomCarrierLabel, View.GONE, animate);
