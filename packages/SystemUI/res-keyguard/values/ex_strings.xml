@@ -18,8 +18,6 @@
 
 <resources>
 
-    <string name="custom_text_clock_top_text_default">It\'s</string>
-
     <string name="text_clock_zero_h_min">0\'</string>
     <string name="text_clock_high">High</string>
     <string name="text_clock_noon">Noon</string>
