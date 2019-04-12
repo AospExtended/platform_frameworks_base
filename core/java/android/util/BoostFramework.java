@@ -112,6 +112,8 @@ public class BoostFramework {
         public static final int BOOST_V2 = 2;
         public static final int BOOST_V3 = 3;
         public static final int BOOST_GAME = 4;
+        public static final int RESERVED_1 = 5;
+        public static final int RESERVED_2 = 6;
         public static final int TYPE_SERVICE_START = 100;
         public static final int TYPE_START_PROC = 101;
     };
