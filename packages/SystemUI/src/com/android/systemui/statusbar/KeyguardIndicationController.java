@@ -69,7 +69,6 @@ import com.android.systemui.util.wakelock.WakeLock;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.text.NumberFormat;
-import java.text.DecimalFormat;
 import java.util.IllegalFormatConversionException;
 
 /**
@@ -401,16 +400,8 @@ public class KeyguardIndicationController implements StateListener,
                     String indication = computePowerIndication();
                     boolean showbatteryInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
                         Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT) == 1;
-                    if (showbatteryInfo && !mPowerCharged) {
-                        DecimalFormat df = new DecimalFormat("#.0");
-                        indication += ", " + (df.format(mChargingWattage / 1000000)) + " W";
-                    }
-                    if (showbatteryInfo && !mPowerCharged) {
-                        String amps = String.valueOf(mChargingWattage / mChargingVolt);
-                        amps = amps.substring(0,4);
-                        amps = amps.replaceAll("\\.","");
-                        indication += ", " + (String.format("%.3f", mChargingVolt / 1000)) + " V";
-                        indication += ", " + (amps) + " mA";
+                    if (showbatteryInfo) {
+                        indication += computePowerDetailIndication();
                     }
                     if (animate) {
                         animateText(mTextView, indication);
@@ -445,16 +436,8 @@ public class KeyguardIndicationController implements StateListener,
                 String indication = computePowerIndication();
                 boolean showbatteryInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT) == 1;
-                if (showbatteryInfo && !mPowerCharged) {
-                    DecimalFormat df = new DecimalFormat("#.0");
-                    indication += ", " + (df.format(mChargingWattage / 1000000)) + " W";
-                }
-                if (showbatteryInfo && !mPowerCharged) {
-                    String amps = String.valueOf(mChargingWattage / mChargingVolt);
-                    amps = amps.substring(0,4);
-                    amps = amps.replaceAll("\\.","");
-                    indication += ", " + (String.format("%.3f", mChargingVolt / 1000)) + " V";
-                    indication += ", " + (amps) + " mA";
+                if (showbatteryInfo) {
+                    indication += computePowerDetailIndication();
                 }
                 mTextView.setTextColor(mInitialTextColorState);
                 if (animate) {
@@ -523,6 +506,27 @@ public class KeyguardIndicationController implements StateListener,
                                 });
                     }
                 });
+    }
+
+    private String computePowerDetailIndication() {
+        if (mPowerCharged) {
+            return "";
+        }
+
+        final StringBuilder powerString = new StringBuilder();
+        boolean showbatteryInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
+            Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT) == 1;
+        if (showbatteryInfo) {
+            powerString.append(", ");
+            powerString.append(String.format("%.1f", (float) mChargingWattage / 1000000));
+            powerString.append(" W");
+            powerString.append(", ");
+            powerString.append(String.format("%.3f", mChargingVolt / 1000));
+            powerString.append(" V, ");
+            powerString.append(Math.round(mChargingWattage / mChargingVolt));
+            powerString.append(" mA");
+        }
+        return powerString.toString();
     }
 
     private String computePowerIndication() {
