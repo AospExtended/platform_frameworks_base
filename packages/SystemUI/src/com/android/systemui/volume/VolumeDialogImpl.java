@@ -158,6 +158,8 @@ public class VolumeDialogImpl implements VolumeDialog {
 
     private boolean mLeftVolumeRocker, mCurrentPosition;
 
+    private boolean isRingDefaultStream = false;
+
     private int mTimeOut = 3;
 
     private class SettingsObserver extends ContentObserver {
@@ -166,6 +168,7 @@ public class VolumeDialogImpl implements VolumeDialog {
         }
 
         void observe() {
+            mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(Settings.System.VOLUME_KEYS_CONTROL_RING_TONE), false, this, UserHandle.USER_ALL);
             mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(Settings.System.AUDIO_PANEL_VIEW_POSITION), false, this, UserHandle.USER_ALL);
             mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(Settings.System.AUDIO_PANEL_VIEW_TIMEOUT), false, this, UserHandle.USER_ALL);
             update();
@@ -184,6 +187,8 @@ public class VolumeDialogImpl implements VolumeDialog {
 
         public void update() {
             mCurrentPosition = mLeftVolumeRocker;
+            isRingDefaultStream = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.VOLUME_KEYS_CONTROL_RING_TONE, 0, UserHandle.USER_CURRENT) == 1;
             mLeftVolumeRocker = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.AUDIO_PANEL_VIEW_POSITION, isAudioPanelOnLeftSide() ? 1 : 0, UserHandle.USER_CURRENT) == 1;
             mTimeOut = Settings.System.getIntForUser(mContext.getContentResolver(),
@@ -312,11 +317,21 @@ public class VolumeDialogImpl implements VolumeDialog {
                 addRow(STREAM_ACCESSIBILITY, R.drawable.ic_volume_accessibility,
                         R.drawable.ic_volume_accessibility, true, false);
             }
+            if(!isRingDefaultStream) {
             addRow(AudioManager.STREAM_MUSIC,
-                    R.drawable.ic_volume_media, R.drawable.ic_volume_media_mute, true, true);
+                    R.drawable.ic_volume_media, R.drawable.ic_volume_media_mute, true, !isRingDefaultStream);
+            } else {
+            addRow(AudioManager.STREAM_RING, R.drawable.ic_volume_ringer,
+                    R.drawable.ic_volume_ringer_mute, true, isRingDefaultStream);
+            }
             if (!AudioSystem.isSingleVolume(mContext)) {
+                if(!isRingDefaultStream) {
                 addRow(AudioManager.STREAM_RING, R.drawable.ic_volume_ringer,
-                        R.drawable.ic_volume_ringer_mute, true, false);
+                        R.drawable.ic_volume_ringer_mute, true, isRingDefaultStream);
+                } else {
+                addRow(AudioManager.STREAM_MUSIC,
+                        R.drawable.ic_volume_media, R.drawable.ic_volume_media_mute, true, !isRingDefaultStream);
+                }
                 addRow(AudioManager.STREAM_NOTIFICATION,
                         R.drawable.ic_volume_notification, R.drawable.ic_volume_notification_mute, true, false);
                 addRow(STREAM_ALARM,
@@ -415,7 +430,9 @@ public class VolumeDialogImpl implements VolumeDialog {
             }
         }
         for (VolumeRow row : mRows) {
-            if (row.stream == STREAM_MUSIC) {
+            if (!isRingDefaultStream && row.stream == STREAM_MUSIC) {
+                return row;
+            } else if (isRingDefaultStream && row.stream == STREAM_RING) {
                 return row;
             }
         }
@@ -506,10 +523,18 @@ public class VolumeDialogImpl implements VolumeDialog {
     private void cleanExpandRows() {
         for(int i = mRows.size() - 1; i >= 0; i--) {
             final VolumeRow row = mRows.get(i);
-            if ((row.stream == AudioManager.STREAM_RING ||
-                    row.stream == AudioManager.STREAM_ALARM) && row.stream != mActiveStream) {
-                // Remove streams, except the active one.
-                removeRow(row);
+            if(!isRingDefaultStream) {
+               if ((row.stream == AudioManager.STREAM_RING ||
+                       row.stream == AudioManager.STREAM_ALARM) && row.stream != mActiveStream) {
+                   // Remove streams, except the active one.
+                   removeRow(row);
+               }
+            } else {
+               if ((row.stream == AudioManager.STREAM_MUSIC ||
+                       row.stream == AudioManager.STREAM_ALARM) && row.stream != mActiveStream) {
+                   // Remove streams, except the active one.
+                   removeRow(row);
+               }
             }
         }
     }
@@ -547,13 +572,29 @@ public class VolumeDialogImpl implements VolumeDialog {
     }
 
     private void initialiseExtraRows(boolean userTap) {
+        VolumeRow row;
+
+        if(!isRingDefaultStream) {
         // Let's check whether we should activate the ring stream.
-        VolumeRow row = findRow(AudioManager.STREAM_RING);
+        row = findRow(AudioManager.STREAM_RING);
         if (row == null && userTap || row == null &&
                 (mActiveStream == AudioManager.STREAM_RING && !userTap)) {
             addRow(AudioManager.STREAM_RING,
-                    R.drawable.ic_volume_ringer, R.drawable.ic_volume_ringer_mute, true, false);
+                    R.drawable.ic_volume_ringer, R.drawable.ic_volume_ringer_mute, true, isRingDefaultStream);
         }
+
+        } else {
+
+        // Let's check whether we should activate the music stream.
+        row = findRow(AudioManager.STREAM_MUSIC);
+        if (row == null && userTap || row == null &&
+                (mActiveStream == AudioManager.STREAM_MUSIC && !userTap)) {
+            addRow(AudioManager.STREAM_MUSIC,
+                    R.drawable.ic_volume_media, R.drawable.ic_volume_media_mute, true, !isRingDefaultStream);
+        }
+
+        }
+
         // Let's check whether we should activate the alarm stream.
         row = findRow(AudioManager.STREAM_ALARM);
         if (row == null && userTap || row == null &&
