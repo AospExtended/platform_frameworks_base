@@ -296,12 +296,11 @@ public class VolumeDialogImpl implements VolumeDialog {
         if(!isAudioPanelOnLeftSide()) {            
             paramsRinger.gravity = Gravity.RIGHT|Gravity.CENTER_VERTICAL;
             paramsExpandRows.gravity = Gravity.RIGHT;
-            mExpandRows.setRotation(90);
         } else {
             paramsRinger.gravity = Gravity.LEFT|Gravity.CENTER_VERTICAL;
             paramsExpandRows.gravity = Gravity.LEFT;
-            mExpandRows.setRotation(-90);
         }
+        mExpandRows.setRotation((!isAudioPanelOnLeftSide() && !mLeftVolumeRocker) ? 90 : -90);
         mRinger.setLayoutParams(paramsRinger);
         mExpandRows.setLayoutParams(paramsExpandRows);
 
