@@ -211,8 +211,6 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Tving til at standse?</string>
     <string name="force_stop_dlg_text">Hvis du tvinger en app til at standse, kan det medføre, at den ikke fungerer korrekt.</string>
-    <string name="dlg_ok">\@android: streng/ok</string>
-    <string name="dlg_cancel">\@android: streng/Annuller</string>
     <string name="kill">Luk App ned</string>
     <!-- OneHand mode QS tile -->
     <!--Google sound search tile -->
@@ -220,4 +218,5 @@
     <!-- Music tile -->
     <!-- Sync QS tile -->
     <!-- Ambient display QS tile -->
+    <!-- Volume panel QS tile -->
 </resources>

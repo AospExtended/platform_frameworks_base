@@ -211,12 +211,18 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Paksa henti?</string>
     <string name="force_stop_dlg_text">Jika anda paksa henti sesuatu aplikasi, ianya mungkin tidak berfungsi dengan betul.</string>
-    <string name="dlg_ok">@android:string/ok</string>
     <string name="kill">Bunuh Aplikasi</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Mod satu tangan</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Carian Bunyi</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Paparan sentiasa aktif</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Muzik</string>
+    <string name="quick_settings_music_play">Mainkan</string>
+    <string name="quick_settings_music_pause">Pegun</string>
     <!-- Sync QS tile -->
     <!-- Ambient display QS tile -->
+    <!-- Volume panel QS tile -->
 </resources>

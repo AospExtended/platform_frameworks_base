@@ -19,9 +19,24 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">Papildu opcijas</string>
+    <string name="global_action_restart_recovery">Atjaunošana</string>
+    <string name="global_action_restart_bootloader">Sāknētājs</string>
+    <string name="global_action_restart_ui">SystemUI</string>
+    <string name="global_action_restart_soft">Programmātiskā pārsāknēšana</string>
+    <string name="statusbar_items_title">Rīkjoslas ikona</string>
     <!-- Lockscreen icons -->
+    <string name="lockscreen_default">Noklusējums</string>
     <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_ring">Zvanīt</string>
+    <string name="quick_settings_sound_vibrate">Vibrēt</string>
+    <string name="quick_settings_sound_dnd">Netraucēt</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Vilkt ikonu, lai saktu</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_data_saver">Datu taupīšana</string>
+    <string name="preview">Priekšskatījums</string>
+    <string name="keycode">Atslēgas kods</string>
     <!-- Screenshot Delete Toast -->
     <!-- Caffeine QS Tile -->
     <!-- Reboot/Recovery QS Tile -->
@@ -50,4 +65,5 @@
     <!-- Music tile -->
     <!-- Sync QS tile -->
     <!-- Ambient display QS tile -->
+    <!-- Volume panel QS tile -->
 </resources>

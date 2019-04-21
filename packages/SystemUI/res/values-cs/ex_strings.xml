@@ -211,13 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Vynutit ukončení?</string>
     <string name="force_stop_dlg_text">Vynucené ukončení může způsobit nepředvídatelné chování aplikace.</string>
-    <string name="dlg_ok">@android:string/ok</string>
-    <string name="dlg_cancel">@android:string/cancel</string>
     <string name="kill">Ukončit aplikaci</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Režim jedné ruky</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Zvukové vyhledávání</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">\"Always on\" displej</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Hudba</string>
+    <string name="quick_settings_music_play">Přehrát</string>
+    <string name="quick_settings_music_pause">Pozastavit</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Synchr.</string>
+    <string name="accessibility_quick_settings_sync_off">Synch. vyp.</string>
+    <string name="accessibility_quick_settings_sync_on">Synch. zap.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Synchronizace byla vypnuta.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Synchronizace byla zapnuta.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Ambientní displej</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Ambientní displej vyp.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Ambientní displej zap.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Ambientní displej je vypnutý.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Ambientní displej je zapnutý.</string>
+    <!-- Volume panel QS tile -->
 </resources>

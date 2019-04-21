@@ -15,7 +15,7 @@
 <resources>
     <!-- Advanced reboot -->
     <string name="reboot_title">دوبارہ شروع کریں</string>
-    <string name="reboot_message">سٹسم دوبارہ شروع</string>
+    <string name="reboot_message">سىستىمنى قايتا قوزغۇتۇش</string>
     <!-- SystemUI Restart -->
     <string name="systemui_restart_title">سیسٹیم Ui پھر شروع کرنا درکار ہے</string>
     <string name="systemui_restart_message">تمام تبدیلیوں کو موثر ہونےکے لیے، سیسٹیم دوبارہ شروع کرنے کی ضرورت ہے ۔ سیسٹیم اب دوبارہ شروع کریں?</string>

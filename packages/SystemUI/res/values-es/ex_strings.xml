@@ -20,7 +20,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="global_action_restart_advanced">Avanzado</string>
-    <string name="global_action_restart_recovery">Recuperación</string>
+    <string name="global_action_restart_recovery">Recovery</string>
     <string name="global_action_restart_bootloader">Modo Bootloader</string>
     <string name="global_action_restart_ui">Interfaz de Sistema</string>
     <string name="global_action_restart_soft">Reinicio Rápido</string>
@@ -66,7 +66,7 @@
     <string name="accessibility_quick_settings_caffeine_on">Cafeína encendida</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Reiniciar</string>
-    <string name="quick_settings_reboot_recovery_label">Modo Recuperación</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">Captura de Pantalla</string>
     <string name="quick_settings_region_screenshot_label">Captura Parcial</string>
@@ -211,13 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">¿Forzar cierre?</string>
     <string name="force_stop_dlg_text">Si fuerzas la detención de una aplicación, es posible que funcione incorrectamente.</string>
-    <string name="dlg_ok">@android:string/ok</string>
-    <string name="dlg_cancel">@android:string/cancel</string>
     <string name="kill">Forzar cierre</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Modo de una sola mano</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Buscar sonido</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Pantalla \"Siempre encendida\"</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Música</string>
+    <string name="quick_settings_music_play">Reproducir</string>
+    <string name="quick_settings_music_pause">Pausar</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sincronizar</string>
+    <string name="accessibility_quick_settings_sync_off">Sincronización deshabilitada.</string>
+    <string name="accessibility_quick_settings_sync_on">Sincronización activada.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">La sincronización ha sido deshabilitada.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">La sincronización ha sido habilitada.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Pantalla ambiente</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Apagar pantalla ambiente.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Encender pantalla ambiente.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Pantalla ambiente apagada.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Pantalla ambiente encendida.</string>
+    <!-- Volume panel QS tile -->
 </resources>

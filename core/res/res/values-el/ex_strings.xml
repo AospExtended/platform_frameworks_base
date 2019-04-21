@@ -56,4 +56,7 @@
     <string name="animation_random">Τυχαία</string>
     <string name="action_null">Κενό</string>
     <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">ADB μέσω δικτύου ενεργοποιημένο</string>
+    <string name="adb_both_active_notification_title">ADB μέσω USB &amp; δικτύου ενεργοποιημένο</string>
+    <string name="adb_active_generic_notification_message">Αγγίξτε για απενεργοποίηση του εντοπισμού σφαλμάτων.</string>
 </resources>

@@ -211,13 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Остановить принудительно?</string>
     <string name="force_stop_dlg_text">Принудительное закрытие приложения может отразиться на его функциональности.</string>
-    <string name="dlg_ok">@android:string/ok</string>
-    <string name="dlg_cancel">@android:string/cancel</string>
     <string name="kill">Закрыть приложение</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Режим \"Управление одной рукой\"</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Google - поиск музыки</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Экран - «Всегда включено»</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Музыка</string>
+    <string name="quick_settings_music_play">Воспроизвести</string>
+    <string name="quick_settings_music_pause">Пауза</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Синхронизация</string>
+    <string name="accessibility_quick_settings_sync_off">Синхронизация выключена.</string>
+    <string name="accessibility_quick_settings_sync_on">Синхронизация включена.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Синхронизация отключена.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Синхронизация включена.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Индикация событий</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Индикация событий экраном отключена.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Индикация событий экраном включена.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Индикация событий экраном отключена.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Индикация событий экраном включена.</string>
+    <!-- Volume panel QS tile -->
 </resources>

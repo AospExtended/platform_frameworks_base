@@ -211,13 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">إيقاف إجباري؟</string>
     <string name="force_stop_dlg_text">في حالة فرض إيقاف التطبيق، ربما لا يعمل بشكل صحيح.</string>
-    <string name="dlg_ok">@android:string/ok</string>
-    <string name="dlg_cancel">@android:string/cancel</string>
     <string name="kill">إنهاء التطبيق</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">وضع اليد الواحدة</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">البحث الصوتي</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">دائماً على الشاشة</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">الموسيقى</string>
+    <string name="quick_settings_music_play">تشغيل</string>
+    <string name="quick_settings_music_pause">إيقاف مؤقت</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">مزامنة</string>
+    <string name="accessibility_quick_settings_sync_off">إيقاف المزامنة.</string>
+    <string name="accessibility_quick_settings_sync_on">تفعيل المزامنة.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">تم إيقاف المزامنة.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">تم تشغيل المزامنة.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">العرض المحيط</string>
+    <string name="accessibility_quick_settings_ambient_display_off">تعطيل العرض المحيط.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">تشغيل العرض المحيط.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">تم إيقاف العرض المحيط.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">تم تشغيل العرض المحيط.</string>
+    <!-- Volume panel QS tile -->
 </resources>

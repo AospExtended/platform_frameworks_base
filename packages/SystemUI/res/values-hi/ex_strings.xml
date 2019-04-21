@@ -180,6 +180,7 @@
     <string name="accessibility_quick_settings_gaming_mode_off">गेमिंग मोड बंद है</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">दिशा-सूचक(कम्पास)</string>
+    <string name="quick_settings_compass_value"><xliff:g id="डिग्रीज">%1$.0f</xliff:g>\u00b0 <xliff:g id="दिशा">%2$s</xliff:g></string>
     <string name="quick_settings_compass_init">\u2026 सेट हो रहा है</string>
     <string name="accessibility_quick_settings_compass_off">कम्पास बंद</string>
     <string name="accessibility_quick_settings_compass_on">कम्पास चालु</string>
@@ -210,12 +211,18 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">बलपूर्वक रोके ?</string>
     <string name="force_stop_dlg_text">यदि आप कोई ऍप जबरदस्ती बंद करते हे, तो वो दुर्व्यवहार कर सकता हे|</string>
-    <string name="dlg_cancel">\@android: स्ट्रिंग रद्द/</string>
     <string name="kill">ऍप्लिकेशन नष्ट करें</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">एक हाथ मोड</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">ध्वनि खोज</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">हमेशा प्रदर्शन पर</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">संगीत</string>
+    <string name="quick_settings_music_play">चलायें</string>
+    <string name="quick_settings_music_pause">पॉज</string>
     <!-- Sync QS tile -->
     <!-- Ambient display QS tile -->
+    <!-- Volume panel QS tile -->
 </resources>

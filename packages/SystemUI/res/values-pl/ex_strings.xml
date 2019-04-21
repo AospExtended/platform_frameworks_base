@@ -20,8 +20,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="global_action_restart_advanced">Zaawansowany</string>
-    <string name="global_action_restart_recovery">Odzyskiwanie</string>
-    <string name="global_action_restart_bootloader">Program rozruchowy</string>
+    <string name="global_action_restart_recovery">Recovery</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
     <string name="global_action_restart_ui">SystemUI</string>
     <string name="global_action_restart_soft">Szybki restart</string>
     <string name="statusbar_items_title">Ikona paska stanu</string>
@@ -48,12 +48,12 @@
     <string name="center">Środek</string>
     <string name="end">Koniec</string>
     <string name="space">Separator</string>
-    <string name="menu_ime">Menu / przełączanie klawiatury</string>
+    <string name="menu_ime">Menu / Przełączanie Klawiatury</string>
     <string name="select_button">Wybierz przycisk do dodania</string>
     <string name="add_button">Dodaj przycisk</string>
     <string name="save">Zapisz</string>
     <string name="reset">Resetuj</string>
-    <string name="select_keycode">Wybierz przycisk klawiatury</string>
+    <string name="select_keycode">Wybierz Przycisk Klawiatury</string>
     <string name="left">Lewo</string>
     <string name="right">Prawo</string>
     <string name="navbar_editor_title">Edytor</string>
@@ -147,7 +147,7 @@
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
     <string name="qs_menu_item_rows_four">4</string>
-    <string name="qs_menu_item_qs_columns">Kolumny paska podręcznego</string>
+    <string name="qs_menu_item_qs_columns">Kolumny Paska Szybkich Ustawień</string>
     <string name="qs_menu_item_columns_auto">Automatycznie</string>
     <string name="screenshot_abort_title">Nie wykonano zrzutu ekranu</string>
     <string name="screenshot_abort_text">Operacja przerwana.</string>
@@ -163,29 +163,29 @@
     <string name="quick_settings_location_secondary_gps_only">Tylko czujniki</string>
     <string name="accessibility_quick_settings_location_gps_only">Raportowanie lokalizacji: tylko czujniki.</string>
     <string name="quick_settings_location_secondary_high_accuracy">Wysoka dokładność</string>
-    <string name="accessibility_quick_settings_location_high_accuracy">Raportowanie lokalizacji: wysoka dokładność.</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Usługa lokalizacji: wysoka dokładność.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Szybkie ładowanie (<xliff:g id="pozostały_czas" example="4 godziny i 2 minuty">%s</xliff:g> do pełnego naładowania)</string>
-    <string name="keyguard_plugged_in_dash_charging">Ładowanie Dash</string>
+    <string name="keyguard_plugged_in_dash_charging">Szybkie Ładowanie</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">TurboPower podłączone (<xliff:g id="charging_time_left">%s</xliff:g> do końca)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower podłączone</string>
     <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Tryb grania</string>
+    <string name="gaming_mode_tile_title">Tryb Grania</string>
     <string name="gaming_mode_tile_toast">Włączono Tryb grania</string>
     <string name="gaming_mode_tile_toast_disabled">Wyłączono Tryb grania</string>
-    <string name="gaming_mode_dialog_title">Tryb grania</string>
-    <string name="gaming_mode_dialog_message">Gdy tryb grania jest włączony, tryb dzwonka zostanie zmieniony na tryb wibracji, zostaną wyłączone wszystkie wyskakujące powiadomienia, a klawisze zostaną wyłączone. Głośność multimediów zostanie zwiększona do maksymalnej wartości. Wszystkie wyłączone ustawienia zostaną zresetowane do domyślnych wartości po wyłączeniu trybu grania.</string>
+    <string name="gaming_mode_dialog_title">Tryb Grania</string>
+    <string name="gaming_mode_dialog_message">Gdy tryb grania jest włączony, tryb dzwonka zostanie zmieniony na tryb wibracji, zostaną wyłączone wszystkie wyskakujące powiadomienia, a klawisze zostaną wyłączone. Głośność multimediów zostanie zwiększona do maksymalnej wartości. Wszystkie wyłączone ustawienia zostaną zresetowane do domyślnych wartości po wyłączeniu Trybu Grania.</string>
     <string name="accessibility_quick_settings_gaming_mode_on">Tryb grania włączony</string>
     <string name="accessibility_quick_settings_gaming_mode_off">Tryb grania wyłączony</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Kompas</string>
     <string name="quick_settings_compass_value"><xliff:g id="stopnie">%1$.0f</xliff:g>\u00b0 <xliff:g id="kierunek">%2$s</xliff:g></string>
     <string name="quick_settings_compass_init">Inicjowanie\u2026</string>
-    <string name="accessibility_quick_settings_compass_off">Wyłącz kompas.</string>
+    <string name="accessibility_quick_settings_compass_off">Kompas wył.</string>
     <string name="accessibility_quick_settings_compass_on">Kompas włączony.</string>
     <string name="accessibility_quick_settings_compass_changed_off">Kompas został wyłączony.</string>
-    <string name="accessibility_quick_settings_compass_changed_on">Kompas jest włączony.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Kompas został włączony.</string>
     <string name="quick_settings_compass_N">N</string>
     <string name="quick_settings_compass_NE">NE</string>
     <string name="quick_settings_compass_E">E</string>
@@ -201,22 +201,38 @@
     <string name="accessibility_quick_settings_running_services">Otwórz ekran Działających Usług.</string>
     <!-- Smart pixels QS tile -->
     <string name="quick_settings_smart_pixels">Inteligentne pixele</string>
-    <string name="quick_settings_smart_pixels_on_power_save">Automatyczne włączenie smart pikseli</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Automatyczne włączanie inteligentnych pixeli</string>
     <!-- ADB over network QS tile -->
-    <string name="quick_settings_network_adb_label">ADB-Koniec-Sieć</string>
+    <string name="quick_settings_network_adb_label">ADB przez sieć</string>
     <!-- LTE QS Tile -->
     <string name="qs_lte_label">LTE</string>
-    <string name="lte_on">LTE włączone</string>
-    <string name="lte_off">LTE wyłączony</string>
+    <string name="lte_on">LTE Wł</string>
+    <string name="lte_off">LTE Wył</string>
     <!-- Kill button in notification guts -->
-    <string name="force_stop_dlg_title">Wymuszone zatrzymanie?</string>
-    <string name="force_stop_dlg_text">Jeśli wymusisz zatrzymanie aplikacji, może to źle działać.</string>
-    <string name="dlg_ok">@android:string/ok</string>
-    <string name="kill">Zabij aplikację</string>
+    <string name="force_stop_dlg_title">Wymusić zatrzymanie?</string>
+    <string name="force_stop_dlg_text">Jeśli wymusisz zatrzymanie aplikacji, może ona zadziałać nieprawidłowo.</string>
+    <string name="kill">Wyłącz aplikację</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Tryb jednoręczny</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Wyszukiwanie dźwięku</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Aktywny wyświetlacz</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Muzyka</string>
+    <string name="quick_settings_music_play">Odtwórz</string>
+    <string name="quick_settings_music_pause">Zatrzymaj</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Synchronizacja</string>
+    <string name="accessibility_quick_settings_sync_off">Synchronizacja wył.</string>
+    <string name="accessibility_quick_settings_sync_on">Synchronizacja wł.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Synchronizacja wyłączona.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Synchronizacja włączona.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Dynamiczny wyświetlacz</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Dynamiczny wyświetlacz wył.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Dynamiczny wyświetlacz wł.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Dynamiczny wyświetlacz wyłączony.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Dynamiczny wyświetlacz włączony.</string>
+    <!-- Volume panel QS tile -->
 </resources>

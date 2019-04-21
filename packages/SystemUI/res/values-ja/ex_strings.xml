@@ -41,7 +41,7 @@
     <string name="preview">プレビュー</string>
     <string name="keycode">キーコード</string>
     <string name="no_home_title">ホームボタンが見つかりません</string>
-    <string name="no_home_message">この端末を操作できるようにするにはホームボタンが必要です。保存する前にホームボタンを追加してください。</string>
+    <string name="no_home_message">この端末を操作できるようにするにはホームボタンが必要です。保存する前にホームボタンを追加して下さい。</string>
     <string name="clipboard_description">クリップボード機能ではクリップボードにアイテムを直接ドラッグできます。クリップボードにアイテムがある場合、直接そのアイテムをドラッグして取り出すこともできます。</string>
     <string name="keycode_description">キーコードボタンを利用すると、ナビゲーションバーにキーボードのキー機能を追加できるようになります。ボタンを押すと選択済みのキーボードのキーがエミュレートされます。まずボタン用にキーを選択し、次にボタン上の画像を選択する必要があります。</string>
     <string name="start">開始</string>
@@ -88,7 +88,7 @@
     <string name="quick_settings_hwkeys_label">ハードウェアキー</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 通知の表示は1分間停止します</string>
-    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - 通知の表示は <xliff:g id="number">%d</xliff:g> 分間停止します</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - 通知の表示は<xliff:g id="number">%d</xliff:g>分間停止します</string>
     <!-- Theme tile -->
     <string name="systemui_theme_style_title">UI のスタイル</string>
     <string name="systemui_theme_style_auto">自動</string>
@@ -165,10 +165,10 @@
     <string name="quick_settings_location_secondary_high_accuracy">高精度</string>
     <string name="accessibility_quick_settings_location_high_accuracy">位置情報レポート: 高精度モード</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time">急速充電中 (充電完了まで <xliff:g id="Charging_TIME_LEFT">%s</xliff:g>)</string>
+    <string name="keyguard_indication_dash_charging_time">急速充電中 (充電完了まで<xliff:g id="Charging_TIME_LEFT">%s</xliff:g>)</string>
     <string name="keyguard_plugged_in_dash_charging">急速充電中</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_turbo_power_time">急速充電中 (充電完了まで <xliff:g id="charging_time_left">%s</xliff:g>)</string>
+    <string name="keyguard_indication_turbo_power_time">急速充電中 (充電完了まで<xliff:g id="charging_time_left">%s</xliff:g>)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">急速充電中</string>
     <!-- Gaming Mode -->
     <string name="gaming_mode_tile_title">ゲームモード</string>
@@ -211,13 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">強制停止しますか?</string>
     <string name="force_stop_dlg_text">アプリを強制停止するとアプリが正常に機能しないことがあります</string>
-    <string name="dlg_ok">@android:string/ok</string>
-    <string name="dlg_cancel">@android:string/cancel</string>
     <string name="kill">アプリを終了</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">片手モード</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">音声検索</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Always On Display</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">音楽</string>
+    <string name="quick_settings_music_play">再生</string>
+    <string name="quick_settings_music_pause">一時停止</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">同期</string>
+    <string name="accessibility_quick_settings_sync_off">同期 OFF</string>
+    <string name="accessibility_quick_settings_sync_on">同期 ON</string>
+    <string name="accessibility_quick_settings_sync_changed_off">同期を OFF にしました</string>
+    <string name="accessibility_quick_settings_sync_changed_on">同期を ON にしました</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">アンビエント表示</string>
+    <string name="accessibility_quick_settings_ambient_display_off">アンビエント表示 OFF</string>
+    <string name="accessibility_quick_settings_ambient_display_on">アンビエント表示 ON</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">アンビエント表示を OFF にしました</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">アンビエント表示を ON にしました</string>
+    <!-- Volume panel QS tile -->
 </resources>

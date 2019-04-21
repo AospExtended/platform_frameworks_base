@@ -211,13 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">強制停止？</string>
     <string name="force_stop_dlg_text">如果您強制停止應用程式，應用程式可能無法正常運作。</string>
-    <string name="dlg_ok">@android:string/ok</string>
-    <string name="dlg_cancel">@android:string/cancel</string>
     <string name="kill">終止應用程式</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">單手模式</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">語音搜尋</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Always On Display</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">類型</string>
+    <string name="quick_settings_music_play">播放</string>
+    <string name="quick_settings_music_pause">暫停</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">同步處理</string>
+    <string name="accessibility_quick_settings_sync_off">同步處理關閉</string>
+    <string name="accessibility_quick_settings_sync_on">同步處理開啟</string>
+    <string name="accessibility_quick_settings_sync_changed_off">同步處理已關閉</string>
+    <string name="accessibility_quick_settings_sync_changed_on">同步處理已開啟</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">環境顯示</string>
+    <string name="accessibility_quick_settings_ambient_display_off">環境顯示關閉</string>
+    <string name="accessibility_quick_settings_ambient_display_on">環境顯示開啟</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">環境顯示已關閉</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">環境顯示已開啟</string>
+    <!-- Volume panel QS tile -->
 </resources>

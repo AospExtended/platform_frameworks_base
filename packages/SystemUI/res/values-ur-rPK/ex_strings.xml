@@ -19,6 +19,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">اعلیٰ</string>
     <string name="global_action_restart_recovery">ریکوری</string>
     <string name="global_action_restart_bootloader">بوٹ لوڈر</string>
     <string name="global_action_restart_ui">سىستم يواى</string>
@@ -68,4 +69,5 @@
     <!-- Music tile -->
     <!-- Sync QS tile -->
     <!-- Ambient display QS tile -->
+    <!-- Volume panel QS tile -->
 </resources>

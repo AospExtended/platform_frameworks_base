@@ -211,12 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Beenden erzwingen?</string>
     <string name="force_stop_dlg_text">Das Beenden der App zu erzwingen kann zu unerwünschtem Verhalten führen.</string>
-    <string name="dlg_ok">@android:string/ok</string>
     <string name="kill">App beenden</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Ein-Hand-Modus</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Musiksuche</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Always-on Display</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Musik</string>
+    <string name="quick_settings_music_play">Wiedergeben</string>
+    <string name="quick_settings_music_pause">Pause</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Synchronisation</string>
+    <string name="accessibility_quick_settings_sync_off">Synchronisation aus.</string>
+    <string name="accessibility_quick_settings_sync_on">Synchronisation an.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Synchronisation ausgeschaltet.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Synchronisation eingeschaltet.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Inaktivitätsdisplay</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Inaktivitätsdisplay aus.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Inaktivitätsdisplay an.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Inaktivitätsdisplay ausgeschaltet.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Inaktivitätsdisplay eingeschaltet.</string>
+    <!-- Volume panel QS tile -->
 </resources>

@@ -54,9 +54,19 @@
     <!-- LTE QS Tile -->
     <!-- Kill button in notification guts -->
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Mode d\'una ma</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Cercar sons</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Sempre a la pantalla</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Música</string>
+    <string name="quick_settings_music_play">Reproduir</string>
+    <string name="quick_settings_music_pause">Pausa</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sincronització</string>
+    <string name="accessibility_quick_settings_sync_off">Sinc desactivada.</string>
+    <string name="accessibility_quick_settings_sync_on">Sinc activada.</string>
     <!-- Ambient display QS tile -->
+    <!-- Volume panel QS tile -->
 </resources>

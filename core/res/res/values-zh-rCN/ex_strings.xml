@@ -43,7 +43,7 @@
     <string name="animation_slide_right">右侧滑入</string>
     <string name="animation_slide_left">左侧滑入</string>
     <string name="animation_slide_right_no_fade">右侧滑入（无淡入淡出）</string>
-    <string name="animation_slide_left_no_fade">左侧滑入 (无淡入淡出)</string>
+    <string name="animation_slide_left_no_fade">左侧滑入（无淡入淡出）</string>
     <string name="animation_slide_up">底部滑入</string>
     <string name="animation_slide_down">顶部滑入</string>
     <string name="animation_default">默认</string>

@@ -211,13 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Спынiць прымусова?</string>
     <string name="force_stop_dlg_text">Прымусовае закрыццё праграмы можа адбіцца на яе функцыянальнасці.</string>
-    <string name="dlg_ok">@android:string/ok</string>
-    <string name="dlg_cancel">@android:string/cancel</string>
     <string name="kill">Зачыніць праграму</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Рэжым «Кіраванне адной рукой»</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Пошук музыкі</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Заўсёды ўключаны дысплей</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Музыка</string>
+    <string name="quick_settings_music_play">Прайграць</string>
+    <string name="quick_settings_music_pause">Паўза</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Сінхранізацыя</string>
+    <string name="accessibility_quick_settings_sync_off">Сінхранізацыя адключана.</string>
+    <string name="accessibility_quick_settings_sync_on">Сінхранізацыя ўключана.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Сінхранізацыя адключана.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Сінхранізацыя ўключана.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Індыкацыя падзей</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Індыкацыя падзей адкл.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Індыкацыя падзей укл.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Індыкацыя падзей адключана.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Індыкацыя падзей уключана.</string>
+    <!-- Volume panel QS tile -->
 </resources>

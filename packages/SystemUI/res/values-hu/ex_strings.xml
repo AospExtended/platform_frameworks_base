@@ -211,13 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Kényszeríti a leállítást?</string>
     <string name="force_stop_dlg_text">Ha egy alkalmazást leállásra kényszerít, az hibásan működhet.</string>
-    <string name="dlg_ok">@android:string/ok</string>
-    <string name="dlg_cancel">@android:string/cancel</string>
     <string name="kill">Alkalmazás-leállítás</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Egykezes üzemmód</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Hangalapú keresés</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Képernyő mindig bekapcsolva (Aod)</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Zene</string>
+    <string name="quick_settings_music_play">Lejátszás</string>
+    <string name="quick_settings_music_pause">Szünet</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Szinkronizálás</string>
+    <string name="accessibility_quick_settings_sync_off">Szinkronizálás ki.</string>
+    <string name="accessibility_quick_settings_sync_on">Szinkronizálás be.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Szinkronizálás kikapcsolva.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Szinkronizálás bekapcsolva.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Környezeti kijelző</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Környezeti kijelző ki.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Környezeti kijelző be.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Környezeti kijelző kikapcsolva.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Környezeti kijelző bekapcsolva.</string>
+    <!-- Volume panel QS tile -->
 </resources>

@@ -211,12 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Hentikan paksa?</string>
     <string name="force_stop_dlg_text">Jika anda menghentikan aplikasi secara paksa, akan menyebabkan gagal fungsi.</string>
-    <string name="dlg_ok">@android:string/ok</string>
     <string name="kill">Matikan Aplikasi Secara Paksa</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Pengoperasian satu tangan</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Pencarian suara</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Layar selalu hidup</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Musik</string>
+    <string name="quick_settings_music_play">Mainkan</string>
+    <string name="quick_settings_music_pause">Jeda</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sinkronisasi</string>
+    <string name="accessibility_quick_settings_sync_off">Sinkronisasi mati.</string>
+    <string name="accessibility_quick_settings_sync_on">Sinkronisasi hidup.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Sinkronisasi dinonaktifkan.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Sinkronisasi diaktifkan.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Tampilan Ambient</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Tampilan ambient nonaktif.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Tampilan ambient hidup.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Tampilan ambient dinonaktifkan.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Tampilan ambient dihidupkan.</string>
+    <!-- Volume panel QS tile -->
 </resources>

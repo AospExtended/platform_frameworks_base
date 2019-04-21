@@ -211,13 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Forçar paragem?</string>
     <string name="force_stop_dlg_text">Se forçar a paragem de uma aplicação, podem ocorrer comportamento estranhos.</string>
-    <string name="dlg_ok">\@android: string/ok</string>
-    <string name="dlg_cancel">\@android: string/cancelar</string>
     <string name="kill">Terminar Aplicação</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Modo de uma mão</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Pesquisa de som</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Ecrã sempre ativo</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Música</string>
+    <string name="quick_settings_music_play">Reproduzir</string>
+    <string name="quick_settings_music_pause">Pausa</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sincronização</string>
+    <string name="accessibility_quick_settings_sync_off">Sincronização desativada.</string>
+    <string name="accessibility_quick_settings_sync_on">Sincronização ativada.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">A sincronização foi desativada.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">A sincronização foi ativada.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Visualização de ambiente</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Visualização de ambiente desligada.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Visualização de ambiente ligada.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Ecrã ambiente foi desligado.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">A visualização de ambiente foi ligada.</string>
+    <!-- Volume panel QS tile -->
 </resources>

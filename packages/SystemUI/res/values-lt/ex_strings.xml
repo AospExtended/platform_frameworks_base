@@ -211,13 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Priverstinai sustabdyti?</string>
     <string name="force_stop_dlg_text">Jei jums reikia sustabdyti programą, tai gali būti netinkama.</string>
-    <string name="dlg_ok">\@android: eilutė/gerai</string>
-    <string name="dlg_cancel">\@android: eilutė/atšaukti</string>
     <string name="kill">Uždaryti programą</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Vienos rankos režimas</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Garso paieška</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Ekranas visada įjungtas</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Muzika</string>
+    <string name="quick_settings_music_play">Groti</string>
+    <string name="quick_settings_music_pause">Pauzė</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sinchronizuoti</string>
+    <string name="accessibility_quick_settings_sync_off">Sinchronizavimas išjungtas.</string>
+    <string name="accessibility_quick_settings_sync_on">Sinchronizavimas įjungtas.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Sinchronizavimo funkcija išjungta.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Sinchronizavimo funkcija įjungta.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Aplinkos ekranas</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Aplinkos ekranas išjungtas.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Aplinkos ekranas įjungtas.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Aplinkos ekranas visada išjungtas.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Aplinkos ekranas bus įjungtas.</string>
+    <!-- Volume panel QS tile -->
 </resources>

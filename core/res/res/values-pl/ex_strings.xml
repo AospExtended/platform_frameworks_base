@@ -14,7 +14,7 @@
 -->
 <resources>
     <!-- Advanced reboot -->
-    <string name="reboot_title">Uruchom ponownie</string>
+    <string name="reboot_title">Zrestartuj</string>
     <string name="reboot_message">Ponowne uruchamianie</string>
     <!-- SystemUI Restart -->
     <string name="systemui_restart_title">Wymagany restart SystemUI</string>
@@ -25,19 +25,19 @@
     <string name="permdesc_fakePackageSignature">Pozwala aplikacji na udawanie innej aplikacji. Złośliwe aplikacje mogą wykorzystać to w celu uzyskania dostępu do prywatnych danych. Zachowaj ostrożność udzielając tego uprawnienia!</string>
     <!-- App error dialog -->
     <string name="aerr_copy">Skopiuj adres URL dziennika awarii</string>
-    <string name="url_copy_success">URL skopiowane pomyślnie</string>
+    <string name="url_copy_success">URL skopiowany pomyślnie</string>
     <string name="url_copy_failed">Wystąpił błąd podczas wysyłania dziennika do dogbin</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_toggleNavigationEditor">Edytor paska nawigacji</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_toggleNavigationEditor">Zezwól aplikacjom na używanie edytora paska nawigacji.</string>
+    <string name="permdesc_toggleNavigationEditor">Pozwala aplikacji na kontrolowanie edycji paska nawigacji.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_accessFontManager">Dostęp do menadżera czcionek</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_accessFontManager">Zezwalaj aplikacjom na dostęp do menadżera czcionek.</string>
+    <string name="permdesc_accessFontManager">Umożliwia aplikacji dostęp do menadżera czcionek.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
-    <string name="fontservice_incompatible_font">Zainstalowany pakiet czcionek nie jest zgodny ze względu na brak pliku fonts.xml. W celu uzyskania pomocy skontaktuj się z twórcą pakietu.</string>
+    <string name="fontservice_incompatible_font">Zainstalowany pakiet czcionek nie jest zgodny ze względu na brak plików fonts.xml. W celu uzyskania pomocy skontaktuj się z twórcą pakietu.</string>
     <!-- AOKP custom system animations -->
     <string name="animation_fade">Zanikanie</string>
     <string name="animation_slide_right">Przesunięcie w prawo</string>
@@ -46,17 +46,17 @@
     <string name="animation_slide_left_no_fade">Przesunięcie w lewo (Bez zanikania)</string>
     <string name="animation_slide_up">Przesunięcie w dół</string>
     <string name="animation_slide_down">Przesunięcie w górę</string>
-    <string name="animation_default">Domyślny</string>
-    <string name="animation_translucent">Przeźroczysty</string>
-    <string name="animation_grow_shrink">Powiększenie (od góry)</string>
+    <string name="animation_default">Domyślne</string>
+    <string name="animation_translucent">Przezroczysty</string>
+    <string name="animation_grow_shrink">Powiększenie (ku górze)</string>
     <string name="animation_grow_shrink_center">Powiększenie (od środka)</string>
-    <string name="animation_grow_shrink_bottom">Powiększenie (z dołu)</string>
+    <string name="animation_grow_shrink_bottom">Powiększenie (od dołu)</string>
     <string name="animation_grow_shrink_left">Powiększenie (od lewej)</string>
     <string name="animation_grow_shrink_right">Powiększenie (z prawej)</string>
-    <string name="animation_random">Losowo</string>
+    <string name="animation_random">Losowa</string>
     <string name="action_null">Pusty</string>
     <!-- ADB over network -->
-    <string name="adb_net_active_notification_title">Obsługa ADB przez sieć</string>
-    <string name="adb_both_active_notification_title">ADB przez USB &amp; i sieć włączona</string>
-    <string name="adb_active_generic_notification_message">Dotknij, aby wyłączyć debugowanie</string>
+    <string name="adb_net_active_notification_title">ADB po sieci włączone</string>
+    <string name="adb_both_active_notification_title">ADB przez USB &amp; sieć włączona</string>
+    <string name="adb_active_generic_notification_message">Dotknij, aby wyłączyć debugowanie.</string>
 </resources>

@@ -211,13 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Примусово зупинити?</string>
     <string name="force_stop_dlg_text">Примусове вимкнення додатка може призвести до збою в його роботі.</string>
-    <string name="dlg_ok">@android:string/ok</string>
-    <string name="dlg_cancel">@android:string/cancel</string>
     <string name="kill">Зупинити програму</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Режим \"Керування однією рукою\"</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Пошук музики</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Постійно відображати на екрані</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Музика</string>
+    <string name="quick_settings_music_play">Відтворити</string>
+    <string name="quick_settings_music_pause">Пауза</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Синхронізація</string>
+    <string name="accessibility_quick_settings_sync_off">Синхр. вимк.</string>
+    <string name="accessibility_quick_settings_sync_on">Синхр. ввімк.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Синхронізацію вимкнено.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Синхронізацію увімкнено.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Розширений дисплей</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Розширений дисплей вимкнено.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Розширений дисплей увімкнено.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Розширений дисплей вимкнено.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Розширений дисплей увімкнено.</string>
+    <!-- Volume panel QS tile -->
 </resources>

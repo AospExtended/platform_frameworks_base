@@ -179,6 +179,21 @@
     <string name="accessibility_quick_settings_gaming_mode_on">게이밍 모드 사용</string>
     <string name="accessibility_quick_settings_gaming_mode_off">게이밍 모드 사용 안함</string>
     <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">나침반</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">초기화중\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">나침반 끄기</string>
+    <string name="accessibility_quick_settings_compass_on">나침반 켜기</string>
+    <string name="accessibility_quick_settings_compass_changed_off">나침반 꺼짐.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">나침반 켜짐.</string>
+    <string name="quick_settings_compass_N">북</string>
+    <string name="quick_settings_compass_NE">북동</string>
+    <string name="quick_settings_compass_E">동</string>
+    <string name="quick_settings_compass_SE">남동</string>
+    <string name="quick_settings_compass_S">남</string>
+    <string name="quick_settings_compass_SW">남서</string>
+    <string name="quick_settings_compass_W">서</string>
+    <string name="quick_settings_compass_NW">북서</string>
     <!-- Ambient Display Pixel-Like string -->
     <string name="ambientmusic_songinfo">%s 에 의해%s</string>
     <string name="recents_free_ram">사용가능한 RAM: %1$d MB</string>
@@ -188,6 +203,7 @@
     <string name="quick_settings_smart_pixels">스마트 픽셀</string>
     <string name="quick_settings_smart_pixels_on_power_save">스마트 픽셀 자동으로 켜기</string>
     <!-- ADB over network QS tile -->
+    <string name="quick_settings_network_adb_label">무선 네트워크로 ADB 사용</string>
     <!-- LTE QS Tile -->
     <!-- Kill button in notification guts -->
     <!-- OneHand mode QS tile -->
@@ -196,4 +212,5 @@
     <!-- Music tile -->
     <!-- Sync QS tile -->
     <!-- Ambient display QS tile -->
+    <!-- Volume panel QS tile -->
 </resources>

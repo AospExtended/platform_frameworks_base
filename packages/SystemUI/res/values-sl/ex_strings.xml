@@ -211,13 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Prisilno ustavi?</string>
     <string name="force_stop_dlg_text">Če prisilno ustavite aplikacijo, se lahko začne neobičajno obnašati.</string>
-    <string name="dlg_ok">@android:string/ok</string>
-    <string name="dlg_cancel">@android:string/cancel</string>
     <string name="kill">Uniči aplikacijo</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Enoročni način</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Zvočno iskanje</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Stalno prikazano</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Glasba</string>
+    <string name="quick_settings_music_play">Predvajaj</string>
+    <string name="quick_settings_music_pause">Premor</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sinhronizacija</string>
+    <string name="accessibility_quick_settings_sync_off">Sinhronizacija izklopljena.</string>
+    <string name="accessibility_quick_settings_sync_on">Sinhronizacija vklopljena.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Sinhronizacija izklopljena.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Sinhronizacija vklopljena.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Okoliški zaslon</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Okoliški zaslon izklopljen.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Okoliški zaslon vklopljen.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Okoliški zaslon izklopljen.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Okoliški zaslon vklopljen.</string>
+    <!-- Volume panel QS tile -->
 </resources>

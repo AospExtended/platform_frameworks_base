@@ -211,12 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Forcer l\'arrêt ?</string>
     <string name="force_stop_dlg_text">Si vous forcez l\'arrêt d\'une application, cela peut provoquer son dysfonctionnement.</string>
-    <string name="dlg_ok">@android:string/ok</string>
     <string name="kill">Arrêter l’application</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Mode une main</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Recherche audio</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Always On Display</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Musique</string>
+    <string name="quick_settings_music_play">Lire</string>
+    <string name="quick_settings_music_pause">Pause</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Synchroniser</string>
+    <string name="accessibility_quick_settings_sync_off">Synchronisation désactivée.</string>
+    <string name="accessibility_quick_settings_sync_on">Synchro. activée.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Synchro. désactivée.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Synchronisation activée.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Adaptation de la luminosité</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Adaptation de la luminosité désactivée.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Adaptation de la luminosité activée.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Adaptation de la luminosité désactivée.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Adaptation de la luminosité activée.</string>
+    <!-- Volume panel QS tile -->
 </resources>

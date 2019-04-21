@@ -209,8 +209,6 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Tvinga avslut?</string>
     <string name="force_stop_dlg_text">Om du tvingar appen att avslutas kanske den inte fungerar som den ska.</string>
-    <string name="dlg_ok">@android:string/ok</string>
-    <string name="dlg_cancel">@android:string/cancel</string>
     <string name="kill">Avsluta app</string>
     <!-- OneHand mode QS tile -->
     <!--Google sound search tile -->
@@ -218,4 +216,5 @@
     <!-- Music tile -->
     <!-- Sync QS tile -->
     <!-- Ambient display QS tile -->
+    <!-- Volume panel QS tile -->
 </resources>

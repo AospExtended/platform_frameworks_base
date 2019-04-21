@@ -211,12 +211,28 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Forzare la chiusura?</string>
     <string name="force_stop_dlg_text">Se forzi la chiusura di un\'applicazione, la stessa potrebbe comportarsi in modo anomalo.</string>
-    <string name="dlg_ok">\@android: string/ok</string>
     <string name="kill">Termina App</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Modalità a una mano</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Ricerca audio</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Sempre acceso</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Musica</string>
+    <string name="quick_settings_music_play">Riproduci</string>
+    <string name="quick_settings_music_pause">Pausa</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sincronizzazione</string>
+    <string name="accessibility_quick_settings_sync_off">Sincronizzazione spenta.</string>
+    <string name="accessibility_quick_settings_sync_on">Sincronizzazione accesa.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Sincronizzazione disattivata.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Sincronizzazione attivata.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Ambient Display</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Ambient Display spento.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Ambient Display acceso.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient display disattivato.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient Display attivato.</string>
+    <!-- Volume panel QS tile -->
 </resources>
