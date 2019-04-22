@@ -100,9 +100,6 @@
     <java-symbol name="config_useDarkBgNotificationTinting_override" type="bool" />
     <java-symbol name="config_notificationTinting_override" type="bool" />
 
-    <!-- Oreo's recents component activity -->
-    <java-symbol name="config_recentsComponentNameOreo" type="string" />
-
     <!-- SystemUI Restart -->
     <java-symbol name="systemui_restart_title" type="string" />
     <java-symbol name="systemui_restart_message" type="string" />
