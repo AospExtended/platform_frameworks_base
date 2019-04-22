@@ -86,9 +86,6 @@
     <bool name="config_useDarkBgNotificationTinting_override">false</bool>
     <bool name="config_notificationTinting_override">false</bool>
 
-     <!-- Component name for the activity that will be presenting the Oreo's Recents UI -->
-    <string name="config_recentsComponentNameOreo" translatable="false">com.android.systemui/.recents.RecentsActivity</string>
-
     <!-- display for radio tech -->
     <bool name="config_display_rat">true</bool>
      <!-- config 2G/3G/4G RAT strings for carriers -->
