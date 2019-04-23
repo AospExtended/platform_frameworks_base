@@ -34,6 +34,7 @@ import android.os.Handler;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.AttributeSet;
+import android.util.MathUtils;
 import android.util.Pair;
 import android.util.TypedValue;
 import android.view.DisplayCutout;
@@ -54,6 +55,7 @@ import com.android.systemui.Interpolators;
 import com.android.systemui.R;
 import com.android.systemui.qs.QSPanel;
 import com.android.systemui.statusbar.phone.StatusBarIconController.TintedIconManager;
+import com.android.systemui.statusbar.phone.StatusIconContainer;
 import com.android.systemui.statusbar.policy.BatteryController;
 import com.android.systemui.statusbar.policy.BatteryController.BatteryStateChangeCallback;
 import com.android.systemui.statusbar.policy.ConfigurationController;
@@ -104,6 +106,12 @@ public class KeyguardStatusBarView extends RelativeLayout
     private Handler mHandler = new Handler();
     private CustomSettingsObserver mCustomSettingsObserver = new CustomSettingsObserver(mHandler);
 
+    private float mDarkAmount;
+    private int mCurrentBurnInOffsetX;
+    private int mCurrentBurnInOffsetY;
+    private StatusIconContainer mStatusIconContainer;
+    private int mBurnInOffset;
+
     /**
      * Draw this many pixels into the left/right side of the cutout to optimally use the space
      */
@@ -137,6 +145,7 @@ public class KeyguardStatusBarView extends RelativeLayout
         mCutoutSpace = findViewById(R.id.cutout_space_view);
         mStatusIconArea = findViewById(R.id.status_icon_area);
         mBatteryView.setIsQuickSbHeaderOrKeyguard(true);
+        mStatusIconContainer = findViewById(R.id.statusIcons);
 
         loadDimens();
         updateUserSwitcher();
@@ -204,6 +213,8 @@ public class KeyguardStatusBarView extends RelativeLayout
                 R.dimen.system_icons_super_container_avatarless_margin_end);
         mCutoutSideNudge = getResources().getDimensionPixelSize(
                 R.dimen.display_cutout_margin_consumption);
+        mBurnInOffset = res.getDimensionPixelSize(
+                R.dimen.burn_in_prevention_offset_x);
     }
 
     private void updateVisibilities() {
@@ -536,5 +547,50 @@ public class KeyguardStatusBarView extends RelativeLayout
         mImmerseMode = Settings.System.getIntForUser(mContext.getContentResolver(),
                         Settings.System.DISPLAY_CUTOUT_MODE, 0, UserHandle.USER_CURRENT) == 1;
         updateStatusBarHeight();
+    }
+
+    public void setDarkAmount(float darkAmount) {
+        mDarkAmount = darkAmount;
+        if (darkAmount == 0f) {
+            dozeTimeTick();
+        }
+        updateDarkState();
+    }
+
+    public void dozeTimeTick() {
+        mCurrentBurnInOffsetX = getBurnInOffset(mBurnInOffset, true);
+        mCurrentBurnInOffsetY = getBurnInOffset(mBurnInOffset, false);
+        updateDarkState();
+    }
+
+    private void updateDarkState() {
+        float alpha = 1f - mDarkAmount;
+        mCarrierLabel.setAlpha(alpha * alpha);
+        mStatusIconContainer.setAlpha(alpha);
+        mStatusIconContainer.setVisibility(
+                alpha == 0f ? View.INVISIBLE : View.VISIBLE);
+        float offsetX = mCurrentBurnInOffsetX;
+        if (mMultiUserSwitch.getVisibility() == View.VISIBLE) {
+            mMultiUserAvatar.setAlpha(alpha * alpha);
+            offsetX += mMultiUserAvatar.getPaddingLeft() +
+                    mMultiUserAvatar.getWidth() +
+                    mMultiUserAvatar.getPaddingRight();
+        }
+        mSystemIconsContainer.setTranslationX(offsetX * mDarkAmount);
+        mSystemIconsContainer.setTranslationY(mCurrentBurnInOffsetY * mDarkAmount);
+    }
+
+    // Would be more appropriate to move this somewhere else
+    public static final int getBurnInOffset(int i, boolean z) {
+        return (int) zigzag(((float) System.currentTimeMillis()) / 60000.0f, (float) i, z ? 83.0f : 521.0f);
+    }
+
+    private static final float zigzag(float f, float f2, float f3) {
+        float f4 = (float) 2;
+        f = (f % f3) / (f3 / f4);
+        if (f > ((float) 1)) {
+            f = f4 - f;
+        }
+        return MathUtils.lerp(0.0f, f2, f);
     }
 }
