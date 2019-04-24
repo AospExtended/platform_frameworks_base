@@ -21,18 +21,36 @@ import com.android.systemui.R;
 
 public class CustomTextClock extends TextView {
 
-    private final String[] TensString = {"", "", "Twenty","Thirty","Forty", "Fifty", "Sixty"};
-    private final String[] UnitsString = {"Clock", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
-    private final String[] TensStringH = {"", "", "Twenty","Thirty","Forty", "Fifty", "Sixty"};
-    private final String[] UnitsStringH = {"Twelve", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
+    private final String[] mTensStrings = { "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty" };
+    private final String[] mUnitsStrings = { "Clock", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
+            "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen",
+            "Nineteen" };
+    private final String[] mTensStringsHour = { "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty" };
+    private final String[] mUnitsStringsHour = { "Twelve", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
+            "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen",
+            "Nineteen" };
 
     private Time mCalendar;
 
     private boolean mAttached;
 
-    private int handType;
+    private int mHandType;
 
-    private boolean h24;
+    private boolean m24hrClock;
+
+    private final BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals(Intent.ACTION_TIMEZONE_CHANGED)) {
+                String tz = intent.getStringExtra("time-zone");
+                mCalendar = new Time(TimeZone.getTimeZone(tz).getID());
+            }
+
+            onTimeChanged();
+
+            invalidate();
+        }
+    };
 
     public CustomTextClock(Context context) {
         this(context, null);
@@ -41,14 +59,10 @@ public class CustomTextClock extends TextView {
     public CustomTextClock(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        final TypedArray a = context.obtainStyledAttributes(
-                attrs, R.styleable.CustomTextClock);
-
-        handType = a.getInteger(R.styleable.CustomTextClock_HandType, 2);
-
+        final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CustomTextClock);
+        mHandType = a.getInteger(R.styleable.CustomTextClock_HandType, 2);
+        a.recycle();
         mCalendar = new Time();
-
-
     }
 
     @Override
@@ -67,17 +81,20 @@ public class CustomTextClock extends TextView {
             // remote views machanism and as a part of that the remote views
             // can be inflated by a context for another user without the app
             // having interact users permission - just for loading resources.
-            // For exmaple, when adding widgets from a user profile to the
+            // For example, when adding widgets from a user profile to the
             // home screen. Therefore, we register the receiver as the current
             // user not the one the context is for.
-            getContext().registerReceiverAsUser(mIntentReceiver,
-                    android.os.Process.myUserHandle(), filter, null, getHandler());
+            getContext().registerReceiverAsUser(mIntentReceiver, android.os.Process.myUserHandle(), filter, null,
+                    getHandler());
         }
 
-        // NOTE: It's safe to do these after registering the receiver since the receiver always runs
-        // in the main thread, therefore the receiver can't run before this method returns.
+        // NOTE: It's safe to do these after registering the receiver since the receiver
+        // always runs
+        // in the main thread, therefore the receiver can't run before this method
+        // returns.
 
-        // The time zone may have changed while the receiver wasn't registered, so update the Time
+        // The time zone may have changed while the receiver wasn't registered, so
+        // update the Time
         mCalendar = new Time();
 
         // Make sure we update to the current time
@@ -93,106 +110,75 @@ public class CustomTextClock extends TextView {
         }
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-    }
-
     private void onTimeChanged() {
         mCalendar.setToNow();
-        h24 = DateFormat.is24HourFormat(getContext());
+        m24hrClock = DateFormat.is24HourFormat(getContext());
 
         int hour = mCalendar.hour;
         int minute = mCalendar.minute;
 
-        Log.d("CustomTextClock", ""+h24);
-
-        if (!h24) {
+        if (!m24hrClock) {
             if (hour > 12) {
                 hour = hour - 12;
             }
         }
 
-        switch(handType){
-            case 0:
-                if (hour == 12 && minute == 0) {
-                setText("High");
-                } else {
-                setText(getIntStringHour(hour));
-                }
-                break;
-            case 1:
-                if (hour == 12 && minute == 0) {
-                setText("Noon");
-                } else {
-                setText(getIntStringMin(minute));
-                }
-                break;
-            default:
-                break;
+        switch (mHandType) {
+        case 0:
+            setText(getIntStringHour(hour));
+            break;
+        case 1:
+            setText(getIntStringMin(minute));
+            break;
+        default:
+            break;
         }
 
         updateContentDescription(mCalendar, getContext());
     }
 
-    private final BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(Intent.ACTION_TIMEZONE_CHANGED)) {
-                String tz = intent.getStringExtra("time-zone");
-                mCalendar = new Time(TimeZone.getTimeZone(tz).getID());
-            }
-
-            onTimeChanged();
-
-            invalidate();
-        }
-    };
-
     private void updateContentDescription(Time time, Context mContext) {
         final int flags = DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_24HOUR;
-        String contentDescription = DateUtils.formatDateTime(mContext,
-                time.toMillis(false), flags);
+        String contentDescription = DateUtils.formatDateTime(mContext, time.toMillis(false), flags);
         setContentDescription(contentDescription);
     }
 
-    private String getIntStringHour (int num) {
+    private String getIntStringHour(int num) {
         int tens, units;
         String NumString = "";
-        if(num >= 20) {
-            units = num % 10 ;
-            tens =  num / 10;
-            if ( units == 0 ) {
-                NumString = TensStringH[tens];
+        if (num >= 20) {
+            units = num % 10;
+            tens = num / 10;
+            if (units == 0) {
+                NumString = mTensStringsHour[tens];
             } else {
-                NumString = TensStringH[tens]+" "+UnitsStringH[units];
+                NumString = mTensStringsHour[tens] + " " + mUnitsStringsHour[units];
             }
-        } else if (num < 20 ) {
-            NumString = UnitsStringH[num];
+        } else if (num < 20) {
+            NumString = mUnitsStringsHour[num];
         }
 
         return NumString;
     }
 
-    private String getIntStringMin (int num) {
+    private String getIntStringMin(int num) {
         int tens, units;
         String NumString = "";
-        if(num >= 20) {
-            units = num % 10 ;
-            tens =  num / 10;
-            if ( units == 0 ) {
-                NumString = TensString[tens];
+        if (num >= 20) {
+            units = num % 10;
+            tens = num / 10;
+            if (units == 0) {
+                NumString = mTensStrings[tens];
             } else {
-                NumString = TensString[tens]+" "+UnitsString[units];
+                NumString = mTensStrings[tens] + " " + mUnitsStrings[units];
             }
-        } else if (num < 10 ) {
-            NumString = "O\'"+UnitsString[num];
+        } else if (num < 10) {
+            NumString = "O\'" + mUnitsStrings[num];
         } else if (num >= 10 && num < 20) {
-            NumString = UnitsString[num];
+            NumString = mUnitsStrings[num];
         }
 
         return NumString;
     }
 
 }
-
