@@ -60,7 +60,7 @@ public class CustomTextClock extends TextView {
         super(context, attrs);
 
         final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CustomTextClock);
-        mHandType = a.getInteger(R.styleable.CustomTextClock_HandType, 2);
+        mHandType = a.getInteger(R.styleable.CustomTextClock_handType, 2);
         a.recycle();
         mCalendar = new Time();
     }
