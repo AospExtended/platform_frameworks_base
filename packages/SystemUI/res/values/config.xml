@@ -518,4 +518,6 @@
     <!--  Flag to turn on the rendering of the above path or not  -->
     <bool name="config_enableDisplayCutoutProtection">false</bool>
 
+    <!-- The battery temperature divider, if needed -->
+    <integer name="config_battTempDivider" translatable="false">10</integer>
 </resources>
