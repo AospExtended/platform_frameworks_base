@@ -4571,7 +4571,11 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(Settings.System.DISPLAY_CUTOUT_MODE)) ||
                     uri.equals(Settings.System.getUriFor(Settings.System.STOCK_STATUSBAR_IN_HIDE))||
                     uri.equals(Settings.Secure.getUriFor("sysui_rounded_size"))) {
-                handleCutout(null);
+                handleCutout(null); }
+             {       reloadAssets("com.android.launcher3");
+                     String homeApp = getDefaultHomeApp(mContext);
+                     if (!homeApp.equals("com.android.launcher3")) {
+                         reloadAssets(homeApp);
             } else if (uri.equals(Settings.Secure.getUriFor(Settings.Secure.SYSUI_ROUNDED_FWVALS))) {
                 updateCorners();                   
             }
