@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:letterSpacing="0.03"
+        android:fontFamily="google-sans"
         android:text="@string/custom_text_clock_top_text_default"
         android:textColor="@color/custom_text_clock_top_color" />
 
@@ -44,6 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:letterSpacing="0.03"
+        android:fontFamily="google-sans"
         android:textColor="?attr/wallpaperTextColor" />
 
     <com.android.keyguard.clocks.CustomTextClock
@@ -54,5 +56,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:letterSpacing="0.03"
+        android:fontFamily="google-sans"
         android:textColor="?attr/wallpaperTextColor" />
 </LinearLayout>
