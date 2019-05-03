@@ -144,6 +144,10 @@ import static android.os.IServiceManager.DUMP_FLAG_PRIORITY_NORMAL;
 import static android.os.IServiceManager.DUMP_FLAG_PROTO;
 import static android.view.Display.DEFAULT_DISPLAY;
 
+// LiveDisplay
+import com.android.server.custom.LineageHardwareService;
+import com.android.server.custom.display.LiveDisplayService;
+
 public final class SystemServer {
     private static final String TAG = "SystemServer";
 
@@ -1620,6 +1624,14 @@ public final class SystemServer {
 
             traceBeginAndSlog("StartCrossProfileAppsService");
             mSystemServiceManager.startService(CrossProfileAppsService.class);
+            traceEnd();
+
+            // LiveDisplay
+            traceBeginAndSlog("StartLineageHardwareService");
+            mSystemServiceManager.startService(LineageHardwareService.class);
+            traceEnd();
+            traceBeginAndSlog("StartLiveDisplayService");
+            mSystemServiceManager.startService(LiveDisplayService.class);
             traceEnd();
         }
 
