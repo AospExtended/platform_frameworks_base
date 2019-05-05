@@ -191,7 +191,6 @@ public class NetworkTraffic extends TextView implements StatusIconDisplayable {
          */
         @Override
         public void onChange(boolean selfChange) {
-            setMode();
             updateSettings();
         }
     }
@@ -224,7 +223,6 @@ public class NetworkTraffic extends TextView implements StatusIconDisplayable {
         Handler mHandler = new Handler();
         SettingsObserver settingsObserver = new SettingsObserver(mHandler);
         settingsObserver.observe();
-        setMode();
         updateSettings();
     }
 
@@ -279,6 +277,7 @@ public class NetworkTraffic extends TextView implements StatusIconDisplayable {
     }
 
     private void updateSettings() {
+        setMode();
         updateVisibility();
         if (mIsEnabled) {
             if (mAttached) {
@@ -295,15 +294,28 @@ public class NetworkTraffic extends TextView implements StatusIconDisplayable {
 
     private void setMode() {
         ContentResolver resolver = mContext.getContentResolver();
-        mIsEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_STATE, 0,
-                UserHandle.USER_CURRENT) == 1;
+        if (hasNotch()) {
+            mIsEnabled = false;
+        } else {
+            mIsEnabled = Settings.System.getIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_STATE, 0,
+                    UserHandle.USER_CURRENT) == 1;
+        }
         mTrafficType = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_TYPE, 0,
                 UserHandle.USER_CURRENT);
         mAutoHideThreshold = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1,
                 UserHandle.USER_CURRENT);
+    }
+
+    private boolean hasNotch() {
+        final Resources resources = getResources();
+        if (resources.getBoolean(com.android.internal.R.bool.config_physicalDisplayCutout)) {
+            return !resources.getBoolean(com.android.internal.R.bool.config_maskMainBuiltInDisplayCutout);
+        } else {
+            return false;
+        }
     }
 
     private void clearHandlerCallbacks() {
