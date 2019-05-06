@@ -2440,12 +2440,14 @@ public final class SystemServer implements Dumpable {
             }
 
             // LiveDisplay
-            t.traceBegin("StartLineageHardwareService");
-            mSystemServiceManager.startService(LineageHardwareService.class);
-            t.traceEnd();
-            t.traceBegin("StartLiveDisplayService");
-            mSystemServiceManager.startService(LiveDisplayService.class);
-            t.traceEnd();
+            if (!mOnlyCore){
+                t.traceBegin("StartLineageHardwareService");
+                mSystemServiceManager.startService(LineageHardwareService.class);
+                t.traceEnd();
+                t.traceBegin("StartLiveDisplayService");
+                mSystemServiceManager.startService(LiveDisplayService.class);
+                t.traceEnd();
+            }
         }
 
         if (!isWatch) {
