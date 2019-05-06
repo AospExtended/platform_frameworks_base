@@ -492,18 +492,6 @@ public class NotificationEntryManager implements Dumpable, NotificationInflater.
         entry.row.setLowPriorityStateUpdated(false);
 
         if (mEntryToRefresh == entry && mMediaManager.isMediaNotification(entry)) {
-            String notificationText = null;
-            final MediaMetadata data = mMediaManager.getMediaMetadata();
-            if (data != null) {
-                CharSequence artist = data.getText(MediaMetadata.METADATA_KEY_ARTIST);
-                //CharSequence album = data.getText(MediaMetadata.METADATA_KEY_ALBUM);
-                CharSequence title = data.getText(MediaMetadata.METADATA_KEY_TITLE);
-                if (artist != null && title != null) {
-                    notificationText = String.format(mTrackInfoSeparator, title.toString(), artist.toString());
-                }
-            }
-            mMediaManager.setMediaNotificationText(notificationText, false);
-
             if (!mDontPulse) {
                 final Notification n = entry.notification.getNotification();
                 final int[] colors = {n.backgroundColor, n.foregroundColor,

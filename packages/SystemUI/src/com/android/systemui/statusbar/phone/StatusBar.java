@@ -183,6 +183,7 @@ import com.android.systemui.doze.DozeLog;
 import com.android.systemui.doze.DozeReceiver;
 import com.android.systemui.fragments.ExtensionFragmentListener;
 import com.android.systemui.fragments.FragmentHostManager;
+import com.android.systemui.keyguard.KeyguardSliceProvider;
 import com.android.systemui.keyguard.KeyguardViewMediator;
 import com.android.systemui.keyguard.ScreenLifecycle;
 import com.android.systemui.keyguard.WakefulnessLifecycle;
@@ -749,6 +750,13 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
 
         mColorExtractor = Dependency.get(SysuiColorExtractor.class);
         mColorExtractor.addOnColorsChangedListener(this);
+
+        KeyguardSliceProvider keyguardSliceProvider = KeyguardSliceProvider.getAttachedInstance();
+        if (keyguardSliceProvider != null) {
+            keyguardSliceProvider.setMediaManager(mMediaManager);
+        } else {
+            Log.w("StatusBar", "Cannot init KeyguardSliceProvider dependencies");
+        }
 
         final TunerService tunerService = Dependency.get(TunerService.class);
         tunerService.addTunable(this, SCREEN_BRIGHTNESS_MODE);
@@ -4571,6 +4579,10 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         mKeyguardIndicationController.setDozing(mDozing);
         mNotificationPanel.setDozing(mDozing, animate);
         mVisualizerView.setDozing(mDozing);
+        KeyguardSliceProvider keyguardSliceProvider = KeyguardSliceProvider.getAttachedInstance();
+        if (keyguardSliceProvider != null) {
+            keyguardSliceProvider.setDozing(mDozing);
+        }
         updateQsExpansionEnabled();
 
         if (isAmbientContainerAvailable()) {
@@ -5975,8 +5987,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         mAmbientMediaPlaying = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.FORCE_AMBIENT_FOR_MEDIA, 1,
                 UserHandle.USER_CURRENT) != 0;
-        if (isAmbientContainerAvailable()) {
-            ((AmbientIndicationContainer)mAmbientIndicationContainer).setIndication(null, false);
+        KeyguardSliceProvider keyguardSliceProvider = KeyguardSliceProvider.getAttachedInstance();
+        if (keyguardSliceProvider != null) {
+            keyguardSliceProvider.setAllowMedia(mAmbientMediaPlaying);
         }
     }
 
