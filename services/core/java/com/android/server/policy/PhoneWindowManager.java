@@ -2262,11 +2262,13 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         }
 
         mOPGestures = new OPGesturesListener(context, new OPGesturesListener.Callbacks() {
-                    @Override
-                    public void onSwipeThreeFinger() {
-                        mHandler.post(mScreenshotRunnable);
-                    }
-                });
+            @Override
+            public void onSwipeThreeFinger() {
+                if (!mPocketLockShowing){
+                    mHandler.post(mScreenshotRunnable);
+                }
+            }
+        });
 
         mHandler = new PolicyHandler();
         mCameraManager = (CameraManager) mContext.getSystemService(Context.CAMERA_SERVICE);
