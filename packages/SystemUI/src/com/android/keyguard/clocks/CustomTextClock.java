@@ -21,11 +21,6 @@ import com.android.systemui.R;
 
 public class CustomTextClock extends TextView {
 
-    private final String[] TensString = {"", "", "Twenty","Thirty","Forty", "Fifty", "Sixty"};
-    private final String[] UnitsString = {"Clock", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
-    private final String[] TensStringH = {"", "", "Twenty","Thirty","Forty", "Fifty", "Sixty"};
-    private final String[] UnitsStringH = {"Twelve", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
-
     private Time mCalendar;
 
     private boolean mAttached;
@@ -62,6 +57,7 @@ public class CustomTextClock extends TextView {
             filter.addAction(Intent.ACTION_TIME_TICK);
             filter.addAction(Intent.ACTION_TIME_CHANGED);
             filter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
+            filter.addAction(Intent.ACTION_LOCALE_CHANGED);
 
             // OK, this is gross but needed. This class is supported by the
             // remote views machanism and as a part of that the remote views
@@ -115,20 +111,16 @@ public class CustomTextClock extends TextView {
 
         switch(handType){
             case 0:
-                if (hour == 12 && minute == 0) {
-                setText("High");
-                } else {
+                // Hours text
                 setText(getIntStringHour(hour));
-                }
                 break;
             case 1:
-                if (hour == 12 && minute == 0) {
-                setText("Noon");
-                } else {
+                // Minutes text
                 setText(getIntStringMin(minute));
-                }
                 break;
             default:
+                // Header text
+                setText(getHeaderString(hour));
                 break;
         }
 
@@ -156,43 +148,19 @@ public class CustomTextClock extends TextView {
         setContentDescription(contentDescription);
     }
 
-    private String getIntStringHour (int num) {
-        int tens, units;
-        String NumString = "";
-        if(num >= 20) {
-            units = num % 10 ;
-            tens =  num / 10;
-            if ( units == 0 ) {
-                NumString = TensStringH[tens];
-            } else {
-                NumString = TensStringH[tens]+" "+UnitsStringH[units];
-            }
-        } else if (num < 20 ) {
-            NumString = UnitsStringH[num];
-        }
-
-        return NumString;
+    private String getIntStringHour (int hour) {
+        return getResources().getStringArray(R.array.text_clock_hours_array)[hour];
     }
 
-    private String getIntStringMin (int num) {
-        int tens, units;
-        String NumString = "";
-        if(num >= 20) {
-            units = num % 10 ;
-            tens =  num / 10;
-            if ( units == 0 ) {
-                NumString = TensString[tens];
-            } else {
-                NumString = TensString[tens]+" "+UnitsString[units];
-            }
-        } else if (num < 10 ) {
-            NumString = "O\'"+UnitsString[num];
-        } else if (num >= 10 && num < 20) {
-            NumString = UnitsString[num];
-        }
-
-        return NumString;
+    private String getIntStringMin (int minute) {
+        return getResources().getStringArray(R.array.text_clock_minutes_array)[minute];
     }
 
+    private String getHeaderString (int hour) {
+        if(hour < 2)
+            return getResources().getString(R.string.text_clock_header_singular);
+        else
+            return getResources().getString(R.string.text_clock_header_plural);
+    }
 }
 

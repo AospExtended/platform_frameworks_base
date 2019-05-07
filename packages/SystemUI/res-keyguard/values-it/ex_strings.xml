@@ -15,4 +15,98 @@
      the documentation output. To suppress comment lines from the documentation
      output, insert an eat-comment element after the comment lines.
 -->
-<resources></resources>
+<resources>
+
+    <!-- Header. -->
+    <string name="text_clock_header_singular">È</string>
+    <string name="text_clock_header_plural">Sono</string>
+
+    <!-- Hours. -->
+    <string name="text_clock_hours_midnight">mezzanotte</string>
+    <string name="text_clock_hours_one">l\'una</string>
+    <string name="text_clock_hours_two">le due</string>
+    <string name="text_clock_hours_three">le tre</string>
+    <string name="text_clock_hours_four">le quattro</string>
+    <string name="text_clock_hours_five">le cinque</string>
+    <string name="text_clock_hours_six">le sei</string>
+    <string name="text_clock_hours_seven">le sette</string>
+    <string name="text_clock_hours_eight">le otto</string>
+    <string name="text_clock_hours_nine">le nove</string>
+    <string name="text_clock_hours_ten">le dieci</string>
+    <string name="text_clock_hours_eleven">le undici</string>
+    <string name="text_clock_hours_twelve">le dodici</string>
+    <string name="text_clock_hours_thirteen">le tredici</string>
+    <string name="text_clock_hours_fourteen">le quattordici</string>
+    <string name="text_clock_hours_fifteen">le quindici</string>
+    <string name="text_clock_hours_sixteen">le sedici</string>
+    <string name="text_clock_hours_seventeen">le diciassette</string>
+    <string name="text_clock_hours_eighteen">le diciotto</string>
+    <string name="text_clock_hours_nineteen">le diciannove</string>
+    <string name="text_clock_hours_twenty">le venti</string>
+    <string name="text_clock_hours_twentyone">le ventuno</string>
+    <string name="text_clock_hours_twentytwo">le ventidue</string>
+    <string name="text_clock_hours_twentythree">le ventitrè</string>
+
+    <!-- Minutes. -->
+    <string name="text_clock_minutes_zero">in punto</string>
+    <string name="text_clock_minutes_one">e un minuto</string>
+    <string name="text_clock_minutes_two">e due</string>
+    <string name="text_clock_minutes_three">e tre</string>
+    <string name="text_clock_minutes_four">e quattro</string>
+    <string name="text_clock_minutes_five">e cinque</string>
+    <string name="text_clock_minutes_six">e sei</string>
+    <string name="text_clock_minutes_seven">e sette</string>
+    <string name="text_clock_minutes_eight">e otto</string>
+    <string name="text_clock_minutes_nine">e nove</string>
+    <string name="text_clock_minutes_ten">e dieci</string>
+    <string name="text_clock_minutes_eleven">e undici</string>
+    <string name="text_clock_minutes_twelve">e dodici</string>
+    <string name="text_clock_minutes_thirteen">e tredici</string>
+    <string name="text_clock_minutes_fourteen">e quattordici</string>
+    <string name="text_clock_minutes_fifteen">e quindici</string>
+    <string name="text_clock_minutes_sixteen">e sedici</string>
+    <string name="text_clock_minutes_seventeen">e diciassette</string>
+    <string name="text_clock_minutes_eighteen">e diciotto</string>
+    <string name="text_clock_minutes_nineteen">e diciannove</string>
+    <string name="text_clock_minutes_twenty">e venti</string>
+    <string name="text_clock_minutes_twentyone">e ventuno</string>
+    <string name="text_clock_minutes_twentytwo">e ventidue</string>
+    <string name="text_clock_minutes_twentythree">e ventitré</string>
+    <string name="text_clock_minutes_twentyfour">e ventiquattro</string>
+    <string name="text_clock_minutes_twentyfive">e venticinque</string>
+    <string name="text_clock_minutes_twentysix">e ventisei</string>
+    <string name="text_clock_minutes_twentyseven">e ventisette</string>
+    <string name="text_clock_minutes_twentyeight">e ventotto</string>
+    <string name="text_clock_minutes_twentynine">e ventinove</string>
+    <string name="text_clock_minutes_thirty">e mezza</string>
+    <string name="text_clock_minutes_thirtyone">e trentuno</string>
+    <string name="text_clock_minutes_thirtytwo">e trentadue</string>
+    <string name="text_clock_minutes_thirtythree">e trentatré</string>
+    <string name="text_clock_minutes_thirtyfour">e trentaquattro</string>
+    <string name="text_clock_minutes_thirtyfive">e trentacinque</string>
+    <string name="text_clock_minutes_thirtysix">e trentasei</string>
+    <string name="text_clock_minutes_thirtyseven">e trentasette</string>
+    <string name="text_clock_minutes_thirtyeight">e trentotto</string>
+    <string name="text_clock_minutes_thirtynine">e trentanove</string>
+    <string name="text_clock_minutes_fourty">e quaranta</string>
+    <string name="text_clock_minutes_fourtyone">e quarantuno</string>
+    <string name="text_clock_minutes_fourtytwo">e quarantadue</string>
+    <string name="text_clock_minutes_fourtythree">e quarantatré</string>
+    <string name="text_clock_minutes_fourtyfour">e quarantaquattro</string>
+    <string name="text_clock_minutes_fourtyfive">e quarantacinque</string>
+    <string name="text_clock_minutes_fourtysix">e quarantasei</string>
+    <string name="text_clock_minutes_fourtyseven">e quarantasette</string>
+    <string name="text_clock_minutes_fourtyeight">e quarantotto</string>
+    <string name="text_clock_minutes_fourtynine">e quarantanove</string>
+    <string name="text_clock_minutes_fifty">e cinquanta</string>
+    <string name="text_clock_minutes_fiftyone">e cinquantuno</string>
+    <string name="text_clock_minutes_fiftytwo">e cinquantadue</string>
+    <string name="text_clock_minutes_fiftythree">e cinquantatre</string>
+    <string name="text_clock_minutes_fiftyfour">e cinquantaquattro</string>
+    <string name="text_clock_minutes_fiftyfive">e cinquantacinque</string>
+    <string name="text_clock_minutes_fiftysix">e cinquantasei</string>
+    <string name="text_clock_minutes_fiftyseven">e cinquantasette</string>
+    <string name="text_clock_minutes_fiftyeight">e cinquantotto</string>
+    <string name="text_clock_minutes_fiftynine">e cinquantanove</string>
+
+</resources>

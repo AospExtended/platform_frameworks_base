@@ -18,6 +18,96 @@
 
 <resources>
 
-<string name="custom_text_clock_top_text_default">It\'s</string>
+    <!-- Header. -->
+    <string name="text_clock_header_singular">It\'s</string>
+    <string name="text_clock_header_plural">It\'s</string>
+
+    <!-- Hours. -->
+    <string name="text_clock_hours_midnight">Midnight</string>
+    <string name="text_clock_hours_one">One</string>
+    <string name="text_clock_hours_two">Two</string>
+    <string name="text_clock_hours_three">Three</string>
+    <string name="text_clock_hours_four">Four</string>
+    <string name="text_clock_hours_five">Five</string>
+    <string name="text_clock_hours_six">Six</string>
+    <string name="text_clock_hours_seven">Seven</string>
+    <string name="text_clock_hours_eight">Eight</string>
+    <string name="text_clock_hours_nine">Nine</string>
+    <string name="text_clock_hours_ten">Ten</string>
+    <string name="text_clock_hours_eleven">Eleven</string>
+    <string name="text_clock_hours_twelve">Twelve</string>
+    <string name="text_clock_hours_thirteen">Thirteen</string>
+    <string name="text_clock_hours_fourteen">Fourteen</string>
+    <string name="text_clock_hours_fifteen">Fifteen</string>
+    <string name="text_clock_hours_sixteen">Sixteen</string>
+    <string name="text_clock_hours_seventeen">Seventeen</string>
+    <string name="text_clock_hours_eighteen">Eighteen</string>
+    <string name="text_clock_hours_nineteen">Nineteen</string>
+    <string name="text_clock_hours_twenty">Twenty</string>
+    <string name="text_clock_hours_twentyone">Twenty one</string>
+    <string name="text_clock_hours_twentytwo">Twenty two</string>
+    <string name="text_clock_hours_twentythree">Twenty three</string>
+
+    <!-- Minutes. -->
+    <string name="text_clock_minutes_zero">O\' clock</string>
+    <string name="text_clock_minutes_one">One</string>
+    <string name="text_clock_minutes_two">Two</string>
+    <string name="text_clock_minutes_three">Three</string>
+    <string name="text_clock_minutes_four">Four</string>
+    <string name="text_clock_minutes_five">Five</string>
+    <string name="text_clock_minutes_six">Six</string>
+    <string name="text_clock_minutes_seven">Seven</string>
+    <string name="text_clock_minutes_eight">Eight</string>
+    <string name="text_clock_minutes_nine">Nine</string>
+    <string name="text_clock_minutes_ten">Ten</string>
+    <string name="text_clock_minutes_eleven">Eleven</string>
+    <string name="text_clock_minutes_twelve">Twelve</string>
+    <string name="text_clock_minutes_thirteen">Thirteen</string>
+    <string name="text_clock_minutes_fourteen">Fourteen</string>
+    <string name="text_clock_minutes_fifteen">Fifteen</string>
+    <string name="text_clock_minutes_sixteen">Sixteen</string>
+    <string name="text_clock_minutes_seventeen">Seventeen</string>
+    <string name="text_clock_minutes_eighteen">Eighteen</string>
+    <string name="text_clock_minutes_nineteen">Nineteen</string>
+    <string name="text_clock_minutes_twenty">Twenty</string>
+    <string name="text_clock_minutes_twentyone">Twenty one</string>
+    <string name="text_clock_minutes_twentytwo">Twenty two</string>
+    <string name="text_clock_minutes_twentythree">Twenty three</string>
+    <string name="text_clock_minutes_twentyfour">Twenty four</string>
+    <string name="text_clock_minutes_twentyfive">Twenty five</string>
+    <string name="text_clock_minutes_twentysix">Twenty six</string>
+    <string name="text_clock_minutes_twentyseven">Twenty seven</string>
+    <string name="text_clock_minutes_twentyeight">Twenty eight</string>
+    <string name="text_clock_minutes_twentynine">Twenty nine</string>
+    <string name="text_clock_minutes_thirty">Thirty</string>
+    <string name="text_clock_minutes_thirtyone">Thirty one</string>
+    <string name="text_clock_minutes_thirtytwo">Thirty two</string>
+    <string name="text_clock_minutes_thirtythree">Thirty three</string>
+    <string name="text_clock_minutes_thirtyfour">Thirty four</string>
+    <string name="text_clock_minutes_thirtyfive">Thirty five</string>
+    <string name="text_clock_minutes_thirtysix">Thirty six</string>
+    <string name="text_clock_minutes_thirtyseven">Thirty seven</string>
+    <string name="text_clock_minutes_thirtyeight">Thirty eight</string>
+    <string name="text_clock_minutes_thirtynine">Thirty nine</string>
+    <string name="text_clock_minutes_fourty">Fourty</string>
+    <string name="text_clock_minutes_fourtyone">Fourty one</string>
+    <string name="text_clock_minutes_fourtytwo">Fourty two</string>
+    <string name="text_clock_minutes_fourtythree">Fourty three</string>
+    <string name="text_clock_minutes_fourtyfour">Fourty four</string>
+    <string name="text_clock_minutes_fourtyfive">Fourty five</string>
+    <string name="text_clock_minutes_fourtysix">Fourty six</string>
+    <string name="text_clock_minutes_fourtyseven">Fourty seven</string>
+    <string name="text_clock_minutes_fourtyeight">Fourty eight</string>
+    <string name="text_clock_minutes_fourtynine">Fourty nine</string>
+    <string name="text_clock_minutes_fifty">Fifty</string>
+    <string name="text_clock_minutes_fiftyone">Fifty one</string>
+    <string name="text_clock_minutes_fiftytwo">Fifty two</string>
+    <string name="text_clock_minutes_fiftythree">Fifty three</string>
+    <string name="text_clock_minutes_fiftyfour">Fifty four</string>
+    <string name="text_clock_minutes_fiftyfive">Fifty five</string>
+    <string name="text_clock_minutes_fiftysix">Fifty six</string>
+    <string name="text_clock_minutes_fiftyseven">Fifty seven</string>
+    <string name="text_clock_minutes_fiftyeight">Fifty eight</string>
+    <string name="text_clock_minutes_fiftynine">Fifty nine</string>
 
 </resources>
