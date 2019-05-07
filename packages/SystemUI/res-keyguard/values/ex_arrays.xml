@@ -1,0 +1,108 @@
+<!--
+Copyright 2019 AospExtended
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<resources>
+
+    <string-array translatable="false" name="text_clock_hours_array">
+        <item>@string/text_clock_hours_midnight</item>
+        <item>@string/text_clock_hours_one</item>
+        <item>@string/text_clock_hours_two</item>
+        <item>@string/text_clock_hours_three</item>
+        <item>@string/text_clock_hours_four</item>
+        <item>@string/text_clock_hours_five</item>
+        <item>@string/text_clock_hours_six</item>
+        <item>@string/text_clock_hours_seven</item>
+        <item>@string/text_clock_hours_eight</item>
+        <item>@string/text_clock_hours_nine</item>
+        <item>@string/text_clock_hours_ten</item>
+        <item>@string/text_clock_hours_eleven</item>
+        <item>@string/text_clock_hours_twelve</item>
+        <item>@string/text_clock_hours_thirteen</item>
+        <item>@string/text_clock_hours_fourteen</item>
+        <item>@string/text_clock_hours_fifteen</item>
+        <item>@string/text_clock_hours_sixteen</item>
+        <item>@string/text_clock_hours_seventeen</item>
+        <item>@string/text_clock_hours_eighteen</item>
+        <item>@string/text_clock_hours_nineteen</item>
+        <item>@string/text_clock_hours_twenty</item>
+        <item>@string/text_clock_hours_twentyone</item>
+        <item>@string/text_clock_hours_twentytwo</item>
+        <item>@string/text_clock_hours_twentythree</item>
+    </string-array>
+
+    <string-array translatable="false" name="text_clock_minutes_array">
+        <item>@string/text_clock_minutes_zero</item>
+        <item>@string/text_clock_minutes_one</item>
+        <item>@string/text_clock_minutes_two</item>
+        <item>@string/text_clock_minutes_three</item>
+        <item>@string/text_clock_minutes_four</item>
+        <item>@string/text_clock_minutes_five</item>
+        <item>@string/text_clock_minutes_six</item>
+        <item>@string/text_clock_minutes_seven</item>
+        <item>@string/text_clock_minutes_eight</item>
+        <item>@string/text_clock_minutes_nine</item>
+        <item>@string/text_clock_minutes_ten</item>
+        <item>@string/text_clock_minutes_eleven</item>
+        <item>@string/text_clock_minutes_twelve</item>
+        <item>@string/text_clock_minutes_thirteen</item>
+        <item>@string/text_clock_minutes_fourteen</item>
+        <item>@string/text_clock_minutes_fifteen</item>
+        <item>@string/text_clock_minutes_sixteen</item>
+        <item>@string/text_clock_minutes_seventeen</item>
+        <item>@string/text_clock_minutes_eighteen</item>
+        <item>@string/text_clock_minutes_nineteen</item>
+        <item>@string/text_clock_minutes_twenty</item>
+        <item>@string/text_clock_minutes_twentyone</item>
+        <item>@string/text_clock_minutes_twentytwo</item>
+        <item>@string/text_clock_minutes_twentythree</item>
+        <item>@string/text_clock_minutes_twentyfour</item>
+        <item>@string/text_clock_minutes_twentyfive</item>
+        <item>@string/text_clock_minutes_twentysix</item>
+        <item>@string/text_clock_minutes_twentyseven</item>
+        <item>@string/text_clock_minutes_twentyeight</item>
+        <item>@string/text_clock_minutes_twentynine</item>
+        <item>@string/text_clock_minutes_thirty</item>
+        <item>@string/text_clock_minutes_thirtyone</item>
+        <item>@string/text_clock_minutes_thirtytwo</item>
+        <item>@string/text_clock_minutes_thirtythree</item>
+        <item>@string/text_clock_minutes_thirtyfour</item>
+        <item>@string/text_clock_minutes_thirtyfive</item>
+        <item>@string/text_clock_minutes_thirtysix</item>
+        <item>@string/text_clock_minutes_thirtyseven</item>
+        <item>@string/text_clock_minutes_thirtyeight</item>
+        <item>@string/text_clock_minutes_thirtynine</item>
+        <item>@string/text_clock_minutes_fourty</item>
+        <item>@string/text_clock_minutes_fourtyone</item>
+        <item>@string/text_clock_minutes_fourtytwo</item>
+        <item>@string/text_clock_minutes_fourtythree</item>
+        <item>@string/text_clock_minutes_fourtyfour</item>
+        <item>@string/text_clock_minutes_fourtyfive</item>
+        <item>@string/text_clock_minutes_fourtysix</item>
+        <item>@string/text_clock_minutes_fourtyseven</item>
+        <item>@string/text_clock_minutes_fourtyeight</item>
+        <item>@string/text_clock_minutes_fourtynine</item>
+        <item>@string/text_clock_minutes_fifty</item>
+        <item>@string/text_clock_minutes_fiftyone</item>
+        <item>@string/text_clock_minutes_fiftytwo</item>
+        <item>@string/text_clock_minutes_fiftythree</item>
+        <item>@string/text_clock_minutes_fiftyfour</item>
+        <item>@string/text_clock_minutes_fiftyfive</item>
+        <item>@string/text_clock_minutes_fiftysix</item>
+        <item>@string/text_clock_minutes_fiftyseven</item>
+        <item>@string/text_clock_minutes_fiftyeight</item>
+        <item>@string/text_clock_minutes_fiftynine</item>
+    </string-array>
+
+</resources>
