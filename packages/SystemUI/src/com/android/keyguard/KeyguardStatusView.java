@@ -197,7 +197,7 @@ public class KeyguardStatusView extends GridLayout implements
         mOwnerInfo = findViewById(R.id.owner_info);
         mKeyguardSlice = findViewById(R.id.keyguard_status_area);
         mClockSeparator = findViewById(R.id.clock_separator);
-        mVisibleInDoze = Sets.newArraySet(mClockView, mKeyguardSlice, mCustomClockView);
+        mVisibleInDoze = Sets.newArraySet(mClockView, mKeyguardSlice, mCustomClockView, mTextClock);
         mTextColor = mClockView.getCurrentTextColor();
 
         int clockStroke = getResources().getDimensionPixelSize(R.dimen.widget_small_font_stroke);
@@ -634,6 +634,7 @@ public class KeyguardStatusView extends GridLayout implements
                     mKeyguardSlice.getLayoutParams();
             params.addRule(RelativeLayout.BELOW, R.id.clock_view);
             mClockView.setSingleLine(true);
+            mClockView.setBackgroundResource(0);
             mClockView.setGravity(Gravity.CENTER);
             mClockView.setVisibility(mDarkAmount != 1 ? (mShowClock ? View.VISIBLE :
                     View.GONE) : View.VISIBLE);
