@@ -178,15 +178,6 @@
     <string name="quick_settings_expanded_navigation_off">Hide navbar</string>
     <string name="quick_settings_expanded_statusbar_off">Hide statusbar</string>
 
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_secondary_location_off"></string>
-    <string name="quick_settings_location_secondary_battery_saving">Battery Saving</string>
-    <string name="accessibility_quick_settings_location_battery_saving">Location reporting: battery saving mode.</string>
-    <string name="quick_settings_location_secondary_gps_only">Sensors Only</string>
-    <string name="accessibility_quick_settings_location_gps_only">Location reporting: sensors only mode.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">High Accuracy</string>
-    <string name="accessibility_quick_settings_location_high_accuracy">Location reporting: high accuracy mode.</string>
-
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
     <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
