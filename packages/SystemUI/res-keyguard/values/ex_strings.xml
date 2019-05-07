@@ -18,6 +18,7 @@
 
 <resources>
 
-<string name="custom_text_clock_top_text_default">It\'s</string>
+<string name="TextClockHeaderSingular">It\'s</string>
+<string name="TextClockHeaderPlural">It\'s</string>
 
 </resources>

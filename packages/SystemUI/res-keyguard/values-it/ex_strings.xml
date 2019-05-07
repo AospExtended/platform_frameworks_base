@@ -15,4 +15,9 @@
      the documentation output. To suppress comment lines from the documentation
      output, insert an eat-comment element after the comment lines.
 -->
-<resources></resources>
+<resources>
+
+    <string translatable="true" name="TextClockHeaderSingular">È</string>
+    <string translatable="true" name="TextClockHeaderPlural">Sono</string>
+
+</resources>
