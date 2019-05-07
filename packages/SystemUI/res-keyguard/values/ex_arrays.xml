@@ -1,0 +1,106 @@
+<!--
+Copyright 2019 AospExtended
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<resources>
+    <string-array translatable="true" name="TextClockHours">
+        <item>Midnight</item>
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+        <item>Six</item>
+        <item>Seven</item>
+        <item>Eight</item>
+        <item>Nine</item>
+        <item>Ten</item>
+        <item>Eleven</item>
+        <item>Twelve</item>
+        <item>Thirteen</item>
+        <item>Fourteen</item>
+        <item>Fifteen</item>
+        <item>Sixteen</item>
+        <item>Seventeen</item>
+        <item>Eighteen</item>
+        <item>Nineteen</item>
+        <item>Twenty</item>
+        <item>Twenty one</item>
+        <item>Twenty two</item>
+        <item>Twenty three</item>
+    </string-array>
+    
+    <string-array translatable="true" name="TextClockMinutes">
+        <item>O\' clock</item>
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+        <item>Six</item>
+        <item>Seven</item>
+        <item>Eight</item>
+        <item>Nine</item>
+        <item>Ten</item>
+        <item>Eleven</item>
+        <item>Twelve</item>
+        <item>Thirteen</item>
+        <item>Fourteen</item>
+        <item>Fifteen</item>
+        <item>Sixteen</item>
+        <item>Seventeen</item>
+        <item>Eighteen</item>
+        <item>Nineteen</item>
+        <item>Twenty</item>
+        <item>Twenty one</item>
+        <item>Twenty two</item>
+        <item>Twenty three</item>
+        <item>Twenty four</item>
+        <item>Twenty five</item>
+        <item>Twenty six</item>
+        <item>Twenty seven</item>
+        <item>Twenty eight</item>
+        <item>Twenty nine</item>
+        <item>Thirty</item>
+        <item>Thirty one</item>
+        <item>Thirty two</item>
+        <item>Thirty three</item>
+        <item>Thirty four</item>
+        <item>Thirty five</item>
+        <item>Thirty six</item>
+        <item>Thirty seven</item>
+        <item>Thirty eight</item>
+        <item>Thirty nine</item>
+        <item>Fourty</item>
+        <item>Fourty one</item>
+        <item>Fourty two</item>
+        <item>Fourty three</item>
+        <item>Fourty four</item>
+        <item>Fourty five</item>
+        <item>Fourty six</item>
+        <item>Fourty seven</item>
+        <item>Fourty eight</item>
+        <item>Fourty nine</item>
+        <item>Fifty</item>
+        <item>Fifty one</item>
+        <item>Fifty two</item>
+        <item>Fifty three</item>
+        <item>Fifty four</item>
+        <item>Fifty five</item>
+        <item>Fifty six</item>
+        <item>Fifty seven</item>
+        <item>Fifty eight</item>
+        <item>Fifty nine</item>
+    </string-array>
+</resources>

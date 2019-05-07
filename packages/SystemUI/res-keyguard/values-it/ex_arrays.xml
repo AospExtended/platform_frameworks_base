@@ -1,0 +1,106 @@
+<!--
+Copyright 2019 AospExtended
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<resources>
+    <string-array translatable="true" name="TextClockHours">
+        <item>mezzanotte</item>
+        <item>l\'una</item>
+        <item>le due</item>
+        <item>le tre</item>
+        <item>le quattro</item>
+        <item>le cinque</item>
+        <item>le sei</item>
+        <item>le sette</item>
+        <item>le otto</item>
+        <item>le nove</item>
+        <item>le dieci</item>
+        <item>le undici</item>
+        <item>le dodici</item>
+        <item>le tredici</item>
+        <item>le quattordici</item>
+        <item>le quindici</item>
+        <item>le sedici</item>
+        <item>le diciassette</item>
+        <item>le diciotto</item>
+        <item>le diciannove</item>
+        <item>le venti</item>
+        <item>le ventuno</item>
+        <item>le ventidue</item>
+        <item>le ventitrè</item>
+    </string-array>
+    
+    <string-array translatable="true" name="TextClockMinutes">
+        <item>in punto</item>
+        <item>e un minuto</item>
+        <item>e due</item>
+        <item>e tre</item>
+        <item>e quattro</item>
+        <item>e cinque</item>
+        <item>e sei</item>
+        <item>e sette</item>
+        <item>e otto</item>
+        <item>e nove</item>
+        <item>e dieci</item>
+        <item>e undici</item>
+        <item>e dodici</item>
+        <item>e tredici</item>
+        <item>e quattordici</item>
+        <item>e quindici</item>
+        <item>e sedici</item>
+        <item>e diciassette</item>
+        <item>e diciotto</item>
+        <item>e diciannove</item>
+        <item>e venti</item>
+        <item>e ventuno</item>
+        <item>e ventidue</item>
+        <item>e ventitré</item>
+        <item>e ventiquattro</item>
+        <item>e venticinque</item>
+        <item>e ventisei</item>
+        <item>e ventisette</item>
+        <item>e ventotto</item>
+        <item>e ventinove</item>
+        <item>e mezza</item>
+        <item>e trentuno</item>
+        <item>e trentadue</item>
+        <item>e trentatré</item>
+        <item>e trentaquattro</item>
+        <item>e trentacinque</item>
+        <item>e trentasei</item>
+        <item>e trentasette</item>
+        <item>e trentotto</item>
+        <item>e trentanove</item>
+        <item>e quaranta</item>
+        <item>e quarantuno</item>
+        <item>e quarantadue</item>
+        <item>e quarantatré</item>
+        <item>e quarantaquattro</item>
+        <item>e quarantacinque</item>
+        <item>e quarantasei</item>
+        <item>e quarantasette</item>
+        <item>e quarantotto</item>
+        <item>e quarantanove</item>
+        <item>e cinquanta</item>
+        <item>e cinquantuno</item>
+        <item>e cinquantadue</item>
+        <item>e cinquantatre</item>
+        <item>e cinquantaquattro</item>
+        <item>e cinquantacinque</item>
+        <item>e cinquantasei</item>
+        <item>e cinquantasette</item>
+        <item>e cinquantotto</item>
+        <item>e cinquantanove</item>
+    </string-array>
+</resources>
