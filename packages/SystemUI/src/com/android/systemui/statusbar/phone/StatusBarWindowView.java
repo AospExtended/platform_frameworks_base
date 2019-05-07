@@ -375,7 +375,8 @@ public class StatusBarWindowView extends FrameLayout implements Tunable {
         // if in Aod, or dozing but tapping on music info, return to skip the onTouchEvent
         mIsMusicTickerTap = false;
         if (mService.isDozing()) {
-            if (mService.isDoubleTapOnMusicTicker(ev.getX(), ev.getY())) {
+            if (mService.isDoubleTapOnMusicTicker(ev.getX(), ev.getY()) 
+                    || mService.isDoubleTapOnMediaSlice(ev.getX(), ev.getY())) {
                 mIsMusicTickerTap = true;
                 mDoubleTapHelper.onTouchEvent(ev);
                 return true;
