@@ -5664,11 +5664,12 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     }
 
     public boolean isDoubleTapOnMusicTicker(float eventX, float eventY) {
+        final View indication = ((AmbientIndicationContainer) mAmbientIndicationContainer).getIndication();
         if (eventX <= 0 || eventY <= 0 || mAmbientIndicationContainer == null
-                || mAmbientIndicationContainer.getVisibility() != View.VISIBLE) {
+                || mAmbientIndicationContainer.getVisibility() != View.VISIBLE
+                || indication.getVisibility() != View.VISIBLE) {
             return false;
         }
-        final View indication = ((AmbientIndicationContainer)mAmbientIndicationContainer).getIndication();
         indication.getLocationOnScreen(mTmpInt2);
         float viewX = eventX - mTmpInt2[0];
         float viewY = eventY - mTmpInt2[1];
