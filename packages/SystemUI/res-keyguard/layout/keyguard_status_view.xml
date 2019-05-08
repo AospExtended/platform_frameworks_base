@@ -76,32 +76,29 @@
                 android:layout_marginTop="@dimen/custom_clock_top_margin"
                 android:layout_alignParentTop="true"
                 android:orientation="vertical" >
-            <com.android.keyguard.clocks.CustomTextClock
+            <com.android.keyguard.clocks.CustomTextClockHeader
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:letterSpacing="0.03"
-                style="@style/customtextclock_big_thin"
                 android:textColor="@color/custom_text_clock_top_color"
-                analog:HandType="2" />
-            <com.android.keyguard.clocks.CustomTextClock
+                style="@style/customtextclock_big_thin" />
+            <com.android.keyguard.clocks.CustomTextClockHours
                 android:id="@+id/custom_textclock_view1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.03"
                 android:textColor="?attr/wallpaperTextColor"
-                style="@style/customtextclock_big_thin"
-                analog:HandType="0" />
-            <com.android.keyguard.clocks.CustomTextClock
+                style="@style/customtextclock_big_thin" />
+            <com.android.keyguard.clocks.CustomTextClockMinutes
                 android:id="@+id/custom_textclock_view2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:letterSpacing="0.03"
                 android:textColor="?attr/wallpaperTextColor"
-                style="@style/customtextclock_big_thin"
-                analog:HandType="1" />
+                style="@style/customtextclock_big_thin" />
             </LinearLayout>
 
             <com.android.keyguard.clocks.CustomAnalogClock
