@@ -19,31 +19,16 @@ import java.util.TimeZone;
 
 import com.android.systemui.R;
 
-public class CustomTextClock extends TextView {
+public abstract class CustomTextClock extends TextView {
 
     private Time mCalendar;
-
     private boolean mAttached;
-
-    private int handType;
-
     private boolean h24;
-
-    public CustomTextClock(Context context) {
-        this(context, null);
-    }
 
     public CustomTextClock(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        final TypedArray a = context.obtainStyledAttributes(
-                attrs, R.styleable.CustomTextClock);
-
-        handType = a.getInteger(R.styleable.CustomTextClock_HandType, 2);
-
         mCalendar = new Time();
-
-
     }
 
     @Override
@@ -89,11 +74,6 @@ public class CustomTextClock extends TextView {
         }
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-    }
-
     private void onTimeChanged() {
         mCalendar.setToNow();
         h24 = DateFormat.is24HourFormat(getContext());
@@ -109,20 +89,7 @@ public class CustomTextClock extends TextView {
             }
         }
 
-        switch(handType){
-            case 0:
-                // Hours text
-                setText(getIntStringHour(hour));
-                break;
-            case 1:
-                // Minutes text
-                setText(getIntStringMin(minute));
-                break;
-            default:
-                // Header text
-                setText(getHeaderString(hour));
-                break;
-        }
+        setText(getTimeString(hour, minute));
 
         updateContentDescription(mCalendar, getContext());
     }
@@ -148,19 +115,6 @@ public class CustomTextClock extends TextView {
         setContentDescription(contentDescription);
     }
 
-    private String getIntStringHour (int hour) {
-        return getResources().getStringArray(R.array.text_clock_hours_array)[hour];
-    }
-
-    private String getIntStringMin (int minute) {
-        return getResources().getStringArray(R.array.text_clock_minutes_array)[minute];
-    }
-
-    private String getHeaderString (int hour) {
-        if(hour < 2)
-            return getResources().getString(R.string.text_clock_header_singular);
-        else
-            return getResources().getString(R.string.text_clock_header_plural);
-    }
+    protected abstract String getTimeString(int hour, int minute);
 }
 
