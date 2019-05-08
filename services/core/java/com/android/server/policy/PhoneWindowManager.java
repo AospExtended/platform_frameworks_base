@@ -1282,8 +1282,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
     @VisibleForTesting
     SystemGesturesPointerEventListener mSystemGestures;
-
-    private OPGesturesListener mOPGestures;
+    private SwipeToScreenshotListener mSwipeToScreenshot;
 
     private void handleRingerChordGesture() {
         if (mRingerToggleChord == VOLUME_HUSH_OFF) {
@@ -2261,13 +2260,13 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     context, minHorizontal, maxHorizontal, minVertical, maxVertical, maxRadius);
         }
 
-        mOPGestures = new OPGesturesListener(context, new OPGesturesListener.Callbacks() {
+        mSwipeToScreenshot = new SwipeToScreenshotListener(context, new SwipeToScreenshotListener.Callbacks() {
                     @Override
                     public void onSwipeThreeFinger() {
                         mHandler.post(mScreenshotRunnable);
                     }
                 });
-
+                
         mHandler = new PolicyHandler();
         mCameraManager = (CameraManager) mContext.getSystemService(Context.CAMERA_SERVICE);
         mCameraManager.registerTorchCallback(new TorchModeCallback(), mHandler);
@@ -2691,11 +2690,11 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         if (enable) {
             if (haveEnableGesture) return;
             haveEnableGesture = true;
-            mWindowManagerFuncs.registerPointerEventListener(mOPGestures);
+            mWindowManagerFuncs.registerPointerEventListener(mSwipeToScreenshot);
         } else {
             if (!haveEnableGesture) return;
             haveEnableGesture = false;
-            mWindowManagerFuncs.unregisterPointerEventListener(mOPGestures);
+            mWindowManagerFuncs.unregisterPointerEventListener(mSwipeToScreenshot);
         }
     }
 
