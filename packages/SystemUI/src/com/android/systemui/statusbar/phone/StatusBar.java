@@ -352,6 +352,13 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     public static final int FADE_KEYGUARD_DURATION = 300;
     public static final int FADE_KEYGUARD_DURATION_PULSING = 96;
 
+    /** Dark Variant Themes */
+    private static final int DARK = 0;
+    private static final int BLACK = 1;
+    private static final int EXTENDED = 2;
+    private static final int CHOCOLATE = 3;
+    private static final int ELEGANT = 4;
+
     /** If true, the system is in the half-boot-to-decryption-screen state.
      * Prudently disable QS and notifications.  */
     private static final boolean ONLY_CORE_APPS;
@@ -673,7 +680,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     private BatteryController mBatteryController;
     protected boolean mPanelExpanded;
     private IOverlayManager mOverlayManager;
-    private int mCurrentTheme;
+    private int mCurrentDarkTheme;
     private boolean mKeyguardRequested;
     private boolean mIsKeyguard;
     private LogMaker mStatusBarStateLog;
@@ -913,7 +920,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         final Context context = mContext;
         updateDisplaySize(); // populates mDisplayMetrics
         updateResources();
-        getCurrentThemeSetting();
+        getCurrentDarkThemeSetting();
         updateTheme();
 
         inflateStatusBarWindow(context);
@@ -4384,9 +4391,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         Trace.endSection();
     }
 
-    private void getCurrentThemeSetting() {
-        mCurrentTheme = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.SYSTEM_THEME_STYLE, 0, mLockscreenUserManager.getCurrentUserId());
+    private void getCurrentDarkThemeSetting() {
+        mCurrentDarkTheme = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.SYSTEM_DARK_THEME_STYLE, 0, mLockscreenUserManager.getCurrentUserId());
     }
 
     /**
@@ -4394,85 +4401,84 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
      */
     protected void updateTheme() {
         final boolean inflated = mStackScroller != null && mStatusBarWindowManager != null;
-        boolean useElegantTheme = false;
-        boolean useChocolateTheme = false;
-        boolean useExtendedTheme = false;
-        boolean useBlackTheme = false;
-        boolean useDarkTheme = false;
-        if (mCurrentTheme == 0) {
-           // The system wallpaper defines if QS should be light or dark.
-            WallpaperColors systemColors = mColorExtractor
-                    .getWallpaperColors(WallpaperManager.FLAG_SYSTEM);
-            final boolean wallpaperWantsDarkTheme = systemColors != null
-                    && (systemColors.getColorHints() & WallpaperColors.HINT_SUPPORTS_DARK_THEME) != 0;
-            final Configuration config = mContext.getResources().getConfiguration();
-            final boolean nightModeWantsDarkTheme = DARK_THEME_IN_NIGHT_MODE
-                    && (config.uiMode & Configuration.UI_MODE_NIGHT_MASK)
-                        == Configuration.UI_MODE_NIGHT_YES;
-            useDarkTheme = wallpaperWantsDarkTheme || nightModeWantsDarkTheme;
-        } else {
-            useDarkTheme = mCurrentTheme == 2;
-            useBlackTheme = mCurrentTheme == 3;
-            useExtendedTheme = mCurrentTheme == 4;
-            useChocolateTheme = mCurrentTheme == 5;
-            useElegantTheme = mCurrentTheme == 6;
-        }
-        if (isUsingDarkTheme() != useDarkTheme) {
-            // Check for black and white accent so we don't end up
-            // with white on white or black on black
-            // unfuckBlackWhiteAccent();
-            final boolean useDark = useDarkTheme;
-            unloadAccents();
-            mUiOffloadThread.submit(() -> {
-            ThemeAccentUtils.setLightDarkTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useDark);
-            });
-            mNotificationPanel.setLockscreenClockTheme(useDarkTheme);
-        }
-        if (isUsingBlackTheme() != useBlackTheme) {
-            // Check for black and white accent so we don't end up
-            // with white on white or black on black
-            // unfuckBlackWhiteAccent();
-            final boolean useBlack = useBlackTheme;
-            unloadAccents();
-            mUiOffloadThread.submit(() -> {
-            ThemeAccentUtils.setLightBlackTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useBlack);
-            });
-            mNotificationPanel.setLockscreenClockTheme(useBlackTheme);
-        }
-        if (isUsingExtendedTheme() != useExtendedTheme) {
-            // Check for black and white accent so we don't end up
-            // with white on white or black on black
-            // unfuckBlackWhiteAccent();
-            final boolean useExtended = useExtendedTheme;
-            unloadAccents();
-            mUiOffloadThread.submit(() -> {
-            ThemeAccentUtils.setLightExtendedTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useExtended);
-            });
-            mNotificationPanel.setLockscreenClockTheme(useExtendedTheme);
-        }
 
-        if (isUsingChocolateTheme() != useChocolateTheme) {
-            // Check for black and white accent so we don't end up
-            // with white on white or black on black
-            // unfuckBlackWhiteAccent();
-            final boolean useChocolate = useChocolateTheme;
-            unloadAccents();
-            mUiOffloadThread.submit(() -> {
-            ThemeAccentUtils.setLightChocolateTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useChocolate);
-            });
-            mNotificationPanel.setLockscreenClockTheme(useChocolateTheme);
-        }
 
-        if (isUsingElegantTheme() != useElegantTheme) {
-            // Check for black and white accent so we don't end up
-            // with white on white or black on black
-            // unfuckBlackWhiteAccent();
-            final boolean useElegant = useElegantTheme;
-            unloadAccents();
-            mUiOffloadThread.submit(() -> {
-            ThemeAccentUtils.setLightElegantTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useElegant);
-            });
-            mNotificationPanel.setLockscreenClockTheme(useElegantTheme);
+        // The system wallpaper defines if QS should be light or dark.
+        WallpaperColors systemColors = mColorExtractor
+                .getWallpaperColors(WallpaperManager.FLAG_SYSTEM);
+        final boolean wallpaperWantsDarkTheme = systemColors != null
+                && (systemColors.getColorHints() & WallpaperColors.HINT_SUPPORTS_DARK_THEME) != 0;
+        final Configuration config = mContext.getResources().getConfiguration();
+        final boolean nightModeWantsDarkTheme = DARK_THEME_IN_NIGHT_MODE
+                && (config.uiMode & Configuration.UI_MODE_NIGHT_MASK)
+                == Configuration.UI_MODE_NIGHT_YES;
+        final boolean useDarkTheme = wallpaperWantsDarkTheme || nightModeWantsDarkTheme;
+
+        if(useDarkTheme) {
+            switch (mCurrentDarkTheme) {
+                case DARK:
+                    default:
+                    if (!isUsingDarkTheme()) {
+                        // Check for black and white accent so we don't end up
+                        // with white on white or black on black
+                        // unfuckBlackWhiteAccent();
+                        unloadAccents();
+                        mUiOffloadThread.submit(() -> {
+                            ThemeAccentUtils.setLightDarkTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), true);
+                        });
+                        mNotificationPanel.setLockscreenClockTheme(true);
+                    }
+                    break;
+                case BLACK:
+                    if (!isUsingBlackTheme()) {
+                        // Check for black and white accent so we don't end up
+                        // with white on white or black on black
+                        // unfuckBlackWhiteAccent();
+                        unloadAccents();
+                        mUiOffloadThread.submit(() -> {
+                            ThemeAccentUtils.setLightBlackTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), true);
+                        });
+                        mNotificationPanel.setLockscreenClockTheme(true);
+                    }
+                    break;
+                case EXTENDED:
+                    if (!isUsingExtendedTheme()) {
+                        // Check for black and white accent so we don't end up
+                        // with white on white or black on black
+                        // unfuckBlackWhiteAccent();
+                        unloadAccents();
+                        mUiOffloadThread.submit(() -> {
+                            ThemeAccentUtils.setLightExtendedTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), true);
+                        });
+                        mNotificationPanel.setLockscreenClockTheme(true);
+                    }
+                    break;
+                case CHOCOLATE:
+                    if (!isUsingChocolateTheme()) {
+                        // Check for black and white accent so we don't end up
+                        // with white on white or black on black
+                        // unfuckBlackWhiteAccent();
+                        unloadAccents();
+                        mUiOffloadThread.submit(() -> {
+                            ThemeAccentUtils.setLightChocolateTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), true);
+                        });
+                        mNotificationPanel.setLockscreenClockTheme(true);
+                    }
+                    break;
+                case ELEGANT:
+                    if (!isUsingElegantTheme()) {
+                        // Check for black and white accent so we don't end up
+                        // with white on white or black on black
+                        // unfuckBlackWhiteAccent();
+                        unloadAccents();
+                        mUiOffloadThread.submit(() -> {
+                            ThemeAccentUtils.setLightElegantTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), true);
+                        });
+                        mNotificationPanel.setLockscreenClockTheme(true);
+                    }
+                    break;
+
+            }
         }
 
         // Lock wallpaper defines the color of the majority of the views, hence we'll use it

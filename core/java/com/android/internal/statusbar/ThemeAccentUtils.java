@@ -120,7 +120,7 @@ public class ThemeAccentUtils {
         "com.android.contacts.theme.elegant", //5
         "com.android.documentsui.theme.elegant", //6
         "com.google.android.apps.wellbeing.theme.elegant", //7
-	"com.google.android.apps.gms.theme.elegant", //8
+	    "com.google.android.apps.gms.theme.elegant", //8
         "com.aospextended.ota.theme.elegant", //9
     };
 
@@ -153,7 +153,7 @@ public class ThemeAccentUtils {
             unloadAccents(om, userId);
             }
             //On selecting default accent, set accent to Candyred if ChocolateUI is being used
-            if(isUsingExtendedTheme(om, userId)) {
+            if(isUsingChocolateTheme(om, userId)) {
             try {
                 om.setEnabled(CHOCOLATE_THEMES[3],
                         true, userId);
