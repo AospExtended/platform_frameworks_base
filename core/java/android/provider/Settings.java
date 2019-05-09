@@ -4653,59 +4653,14 @@ public final class Settings {
         public static final String LOCKSCREEN_BATTERY_INFO = "lockscreen_battery_info";
 
         /**
-         * 0 - wallpaper based
-         * 1 - force light
-         * 2 - force dark
-         * 3 - force black
-         * 4 - force extendedUI
-         * 5 - force chocolateUI
-         * 6 - force Elegant UI
+         * 0 - force dark
+         * 1 - force black
+         * 2 - force extendedUI
+         * 3 - force chocolateUI
+         * 4 - force Elegant UI
          * @hide
          */
-        public static final String SYSTEM_THEME_STYLE = "system_theme_style";
-
-        /**
-         * SYSTEM_THEME_STYLE value for wallpaper mode.
-         * @hide
-         */
-        public static final int SYSTEM_THEME_STYLE_WALLPAPER = 0;
-
-        /**
-         * SYSTEM_THEME_STYLE value for light theme mode.
-         * @hide
-         */
-        public static final int SYSTEM_THEME_STYLE_LIGHT = 1;
-
-        /**
-         * SYSTEM_THEME_STYLE value for dark theme mode.
-         * @hide
-         */
-        public static final int SYSTEM_THEME_STYLE_DARK = 2;
-
-        /**
-         * SYSTEM_THEME_STYLE value for black theme mode.
-         * @hide
-         */
-        public static final int SYSTEM_THEME_STYLE_BLACK = 3;
-
-        /**
-         * SYSTEM_THEME_STYLE value for extended theme mode.
-         * @hide
-         */
-        public static final int SYSTEM_THEME_STYLE_EXTENDED = 4;
-
-        /**
-         * SYSTEM_THEME_STYLE value for chocolate theme mode.
-         * @hide
-         */
-        public static final int SYSTEM_THEME_STYLE_CHOCOLATE = 5;
-
-
-        /**
-         * SYSTEM_THEME_STYLE value for elegant theme mode.
-         * @hide
-         */
-        public static final int SYSTEM_THEME_STYLE_ELEGANT = 6;
+        public static final String SYSTEM_DARK_THEME_STYLE = "system_dark_theme_style";
 
         /**
          * Whether to use icon pack for Recents
@@ -5693,7 +5648,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_FULL_COLOR);
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_REALLYFULL_COLOR);
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_LOW_BLINKING);
-            PRIVATE_SETTINGS.add(SYSTEM_THEME_STYLE);
+            PRIVATE_SETTINGS.add(SYSTEM_DARK_THEME_STYLE);
             PRIVATE_SETTINGS.add(RECENTS_COMPONENT);
             PRIVATE_SETTINGS.add(OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE);
             PRIVATE_SETTINGS.add(OMNI_QS_LAYOUT_COLUMNS);

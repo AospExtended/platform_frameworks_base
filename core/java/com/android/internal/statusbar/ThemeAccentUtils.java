@@ -16,9 +16,11 @@
 
 package com.android.internal.statusbar;
 
+import android.content.ContentResolver;
 import android.content.om.IOverlayManager;
 import android.content.om.OverlayInfo;
 import android.os.RemoteException;
+import android.provider.Settings;
 import android.util.Log;
 
 public class ThemeAccentUtils {
@@ -149,28 +151,23 @@ public class ThemeAccentUtils {
             } catch (RemoteException e) {
                 Log.w(TAG, "Can't change theme", e);
             }
-            } else {
-            unloadAccents(om, userId);
-            }
-            //On selecting default accent, set accent to Candyred if ChocolateUI is being used
-            if(isUsingExtendedTheme(om, userId)) {
+
+            } else if(isUsingChocolateTheme(om, userId)) { //On selecting default accent, set accent to Candyred if ChocolateUI is being used
             try {
                 om.setEnabled(CHOCOLATE_THEMES[3],
                         true, userId);
             } catch (RemoteException e) {
                 Log.w(TAG, "Can't change theme", e);
             }
-            } else {
-            unloadAccents(om, userId);
-            }
-            //On selecting default accent, set accent to elegant green if ElegantUI is being used
-            if(isUsingElegantTheme(om, userId)) {
+
+            } else if(isUsingElegantTheme(om, userId)) { //On selecting default accent, set accent to elegant green if ElegantUI is being used
             try {
                 om.setEnabled(ELEGANT_THEMES[3],
                         true, userId);
             } catch (RemoteException e) {
                 Log.w(TAG, "Can't change theme", e);
             }
+
             } else {
             unloadAccents(om, userId);
             }
@@ -427,5 +424,10 @@ public class ThemeAccentUtils {
             e.printStackTrace();
         }
         return themeInfo != null && themeInfo.isEnabled();
+    }
+
+    public static void updateAccentSettings(ContentResolver resolver, int accentIndex, int userId) {
+        Settings.System.putIntForUser(resolver,
+                Settings.System.ACCENT_PICKER, accentIndex, userId);
     }
 }
