@@ -4424,6 +4424,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                         // unfuckBlackWhiteAccent();
                         unloadAccents();
                         mUiOffloadThread.submit(() -> {
+                            ThemeAccentUtils.updateAccentSettings(mContext.getContentResolver(),0, mLockscreenUserManager.getCurrentUserId());
                             ThemeAccentUtils.setLightDarkTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), true);
                         });
                         mNotificationPanel.setLockscreenClockTheme(true);
@@ -4436,6 +4437,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                         // unfuckBlackWhiteAccent();
                         unloadAccents();
                         mUiOffloadThread.submit(() -> {
+                            ThemeAccentUtils.updateAccentSettings(mContext.getContentResolver(),0, mLockscreenUserManager.getCurrentUserId());
                             ThemeAccentUtils.setLightBlackTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), true);
                         });
                         mNotificationPanel.setLockscreenClockTheme(true);
@@ -4448,6 +4450,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                         // unfuckBlackWhiteAccent();
                         unloadAccents();
                         mUiOffloadThread.submit(() -> {
+                            ThemeAccentUtils.updateAccentSettings(mContext.getContentResolver(),22, mLockscreenUserManager.getCurrentUserId());
                             ThemeAccentUtils.setLightExtendedTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), true);
                         });
                         mNotificationPanel.setLockscreenClockTheme(true);
@@ -4460,6 +4463,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                         // unfuckBlackWhiteAccent();
                         unloadAccents();
                         mUiOffloadThread.submit(() -> {
+                            ThemeAccentUtils.updateAccentSettings(mContext.getContentResolver(),20, mLockscreenUserManager.getCurrentUserId());
                             ThemeAccentUtils.setLightChocolateTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), true);
                         });
                         mNotificationPanel.setLockscreenClockTheme(true);
@@ -4472,6 +4476,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                         // unfuckBlackWhiteAccent();
                         unloadAccents();
                         mUiOffloadThread.submit(() -> {
+                            ThemeAccentUtils.updateAccentSettings(mContext.getContentResolver(),25, mLockscreenUserManager.getCurrentUserId());
                             ThemeAccentUtils.setLightElegantTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), true);
                         });
                         mNotificationPanel.setLockscreenClockTheme(true);
@@ -5780,7 +5785,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                     Settings.System.HEADS_UP_BLACKLIST_VALUES),
                     false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.SYSTEM_THEME_STYLE),
+                    Settings.System.SYSTEM_DARK_THEME_STYLE),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.ACCENT_PICKER),
@@ -5836,7 +5841,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                     Settings.System.HEADS_UP_BLACKLIST_VALUES))) {
                 setHeadsUpBlacklist();
             } else if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.SYSTEM_THEME_STYLE))) {
+                    Settings.System.SYSTEM_DARK_THEME_STYLE))) {
                 getCurrentThemeSetting();
                 updateTheme();
             } else if (uri.equals(Settings.System.getUriFor(
