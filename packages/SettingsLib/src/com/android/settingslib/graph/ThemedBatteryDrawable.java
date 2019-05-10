@@ -369,12 +369,13 @@ public class ThemedBatteryDrawable extends BatteryMeterDrawableBase {
     }
 
     private final void loadPaths() {
-        this.perimeterPath.set(PathParser.createPathFromPathData("M3.5,2 v0 H1.33 C0.6,2 0,2.6 0,3.33 V13v5.67 C0,19.4 0.6,20 1.33,20 h9.33 C11.4,20 12,19.4 12,18.67 V13V3.33 C12,2.6 11.4,2 10.67,2 H8.5 V0 H3.5 z M2,18v-7V4h8v9v5H2L2,18z"));
+        Resources res = context.getResources();
+        this.perimeterPath.set(PathParser.createPathFromPathData(res.getString(R.string.config_batterymeterPerimeterPath)));
         this.perimeterPath.computeBounds(new RectF(), true);
-        this.fillMask.set(PathParser.createPathFromPathData("M2,18 v-14 h8 v14 z"));
+        this.fillMask.set(PathParser.createPathFromPathData(res.getString(R.string.config_batterymeterFillMask)));
         this.fillMask.computeBounds(this.fillRect, true);
-        this.boltPath.set(PathParser.createPathFromPathData("M5,16.8 V12 H3 L7,5.2 V10 h2 L5,16.8 z"));
-        this.plusPath.set(PathParser.createPathFromPathData("M9,10l-2,0l0,-2l-2,0l0,2l-2,0l0,2l2,0l0,2l2,0l0,-2l2,0z"));
+        this.boltPath.set(PathParser.createPathFromPathData(res.getString(R.string.config_batterymeterBoltPath)));
+        this.plusPath.set(PathParser.createPathFromPathData(res.getString(R.string.config_batterymeterPowersavePath)));
         this.dualTone = false;
     }
 }
