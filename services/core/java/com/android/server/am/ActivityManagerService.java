@@ -519,6 +519,8 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import com.android.internal.util.aospextended.GamingModeController;
+import com.android.internal.util.custom.cutout.CutoutFullscreenController;
+
 
 public class ActivityManagerService extends IActivityManager.Stub
         implements Watchdog.Monitor, BatteryStatsImpl.BatteryCallback {
@@ -2033,7 +2035,9 @@ public class ActivityManagerService extends IActivityManager.Stub
     private boolean mIsSwipeToScrenshotEnabled;
 
     private GamingModeController mGamingModeController;
-	
+
+    private CutoutFullscreenController mCutoutFullscreenController;
+
     /**
      * Current global configuration information. Contains general settings for the entire system,
      * also corresponds to the merged configuration of the default display.
@@ -13162,9 +13166,12 @@ public class ActivityManagerService extends IActivityManager.Stub
         RescueParty.onSettingsProviderPublished(mContext);
 
         //mUsageStatsService.monitorPackages();
-		
+
         // Gaming Mode provider
         mGamingModeController = new GamingModeController(mContext);
+
+        // Force full screen for devices with cutout
+        mCutoutFullscreenController = new CutoutFullscreenController(mContext);
     }
 
     void startPersistentApps(int matchFlags) {
@@ -27658,4 +27665,12 @@ public class ActivityManagerService extends IActivityManager.Stub
             return mIsSwipeToScrenshotEnabled && SystemProperties.getBoolean("sys.android.screenshot", false);
         }
     }
+
+    @Override
+    public boolean shouldForceCutoutFullscreen(String packageName) {
+        synchronized (this) {
+            return mCutoutFullscreenController.shouldForceCutoutFullscreen(packageName);
+        }
+    }
+
 }
