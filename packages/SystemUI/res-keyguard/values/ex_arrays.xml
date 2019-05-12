@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019 AOSiP
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!-- Formatting note: terminate all comments with a period, to avoid breaking
+     the documentation output. To suppress comment lines from the documentation
+     output, insert an eat-comment element after the comment lines.
+-->
+
+<resources>
+    <string-array name="type_clock_hours">
+        <item>Twelve</item>
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+        <item>Six</item>
+        <item>Seven</item>
+        <item>Eight</item>
+        <item>Nine</item>
+        <item>Ten</item>
+        <item>Eleven</item>
+    </string-array>
+    <string-array name="type_clock_minutes">
+        <item>O’Clock</item>
+        <item>O’One</item>
+        <item>O’Two</item>
+        <item>O’Three</item>
+        <item>O’Four</item>
+        <item>O’Five</item>
+        <item>O’Six</item>
+        <item>O’Seven</item>
+        <item>O’Eight</item>
+        <item>O’Nine</item>
+        <item>Ten</item>
+        <item>Eleven</item>
+        <item>Twelve</item>
+        <item>Thirteen</item>
+        <item>Fourteen</item>
+        <item>Fifteen</item>
+        <item>Sixteen</item>
+        <item>Seventeen</item>
+        <item>Eighteen</item>
+        <item>Nineteen</item>
+        <item>Twenty</item>
+        <item>"Twenty
+One"</item>
+        <item>"Twenty
+Two"</item>
+        <item>"Twenty
+Three"</item>
+        <item>"Twenty
+Four"</item>
+        <item>"Twenty
+Five"</item>
+        <item>"Twenty
+Six"</item>
+        <item>"Twenty
+Seven"</item>
+        <item>"Twenty
+Eight"</item>
+        <item>"Twenty
+Nine"</item>
+        <item>Thirty</item>
+        <item>"Thirty
+One"</item>
+        <item>"Thirty
+Two"</item>
+        <item>"Thirty
+Three"</item>
+        <item>"Thirty
+Four"</item>
+        <item>"Thirty
+Five"</item>
+        <item>"Thirty
+Six"</item>
+        <item>"Thirty
+Seven"</item>
+        <item>"Thirty
+Eight"</item>
+        <item>"Thirty
+Nine"</item>
+        <item>Forty</item>
+        <item>"Forty
+One"</item>
+        <item>"Forty
+Two"</item>
+        <item>"Forty
+Three"</item>
+        <item>"Forty
+Four"</item>
+        <item>"Forty
+Five"</item>
+        <item>"Forty
+Six"</item>
+        <item>"Forty
+Seven"</item>
+        <item>"Forty
+Eight"</item>
+        <item>"Forty
+Nine"</item>
+        <item>Fifty</item>
+        <item>"Fifty
+One"</item>
+        <item>"Fifty
+Two"</item>
+        <item>"Fifty
+Three"</item>
+        <item>"Fifty
+Four"</item>
+        <item>"Fifty
+Five"</item>
+        <item>"Fifty
+Six"</item>
+        <item>"Fifty
+Seven"</item>
+        <item>"Fifty
+Eight"</item>
+        <item>"Fifty
+Nine"</item>
+    </string-array>
+</resources>

@@ -17,7 +17,15 @@
 -->
 
 <resources>
-
-<string name="custom_text_clock_top_text_default">It\'s</string>
-
+    <plurals name="type_clock_header">
+        <item quantity="other"><annotation name="color">It’s</annotation>"
+^1
+^2"</item>
+        <item quantity="one"><annotation name="color">It’s</annotation>"
+^1
+^2"</item>
+        <item quantity="few"><annotation name="color">It’s</annotation>"
+^1
+^2"</item>
+     </plurals>
 </resources>

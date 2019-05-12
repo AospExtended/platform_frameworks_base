@@ -31,8 +31,4 @@
         <attr name="custom_clock_dial_ambient" format="reference"/>
     </declare-styleable>
 
-    <declare-styleable name="CustomTextClock">
-        <attr name="handType"/>
-    </declare-styleable>
-
 </resources>
