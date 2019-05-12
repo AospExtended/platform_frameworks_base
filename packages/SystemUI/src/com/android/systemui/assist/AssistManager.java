@@ -307,10 +307,6 @@ public class AssistManager {
         intent.setComponent(assistComponent);
         intent.putExtras(args);
 
-        if (structureEnabled && AssistUtils.isDisclosureEnabled(mContext)) {
-            showDisclosure();
-        }
-
         try {
             final ActivityOptions opts = ActivityOptions.makeCustomAnimation(mContext,
                     R.anim.search_launch_enter, R.anim.search_launch_exit);
@@ -359,9 +355,7 @@ public class AssistManager {
         return getAssistInfoForUser(KeyguardUpdateMonitor.getCurrentUser());
     }
 
-    public void showDisclosure() {
-        mAssistDisclosure.postShow();
-    }
+    public void showDisclosure() {}
 
     public void onLockscreenShown() {
         AsyncTask.execute(new Runnable() {
