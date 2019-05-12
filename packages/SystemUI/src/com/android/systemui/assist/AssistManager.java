@@ -139,7 +139,7 @@ public class AssistManager implements ConfigurationChangedReceiver {
     }
 
     protected boolean shouldShowOrb() {
-        return true;
+        return false;
     }
 
     public void startAssist(Bundle args) {
@@ -218,10 +218,6 @@ public class AssistManager implements ConfigurationChangedReceiver {
         }
         intent.setComponent(assistComponent);
         intent.putExtras(args);
-
-        if (structureEnabled) {
-            showDisclosure();
-        }
 
         try {
             final ActivityOptions opts = ActivityOptions.makeCustomAnimation(mContext,
@@ -305,9 +301,7 @@ public class AssistManager implements ConfigurationChangedReceiver {
         return mAssistUtils.getAssistComponentForUser(KeyguardUpdateMonitor.getCurrentUser());
     }
 
-    public void showDisclosure() {
-        mAssistDisclosure.postShow();
-    }
+    public void showDisclosure() {}
 
     public void onLockscreenShown() {
         mAssistUtils.onLockscreenShown();
