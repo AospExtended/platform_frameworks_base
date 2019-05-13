@@ -25,6 +25,7 @@ import android.util.ArrayMap;
 import android.util.Log;
 import android.util.Range;
 
+import com.android.internal.R;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.util.ArrayUtils;
 
@@ -207,7 +208,8 @@ public final class LineageHardwareManager {
      * @return true if the feature is supported, false otherwise.
      */
     public boolean isSupported(int feature) {
-        return isSupportedHIDL(feature) || isSupportedLegacy(feature);
+        return (isSupportedHIDL(feature) || isSupportedLegacy(feature)) &&
+            mContext.getResources().getBoolean(R.bool.config_liveDisplayAvailable);
     }
 
     private boolean isSupportedHIDL(int feature) {
