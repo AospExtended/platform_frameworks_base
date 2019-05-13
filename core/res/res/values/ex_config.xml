@@ -167,4 +167,6 @@
     <!-- Should we filter any display modes which are unampped? -->
     <bool name="config_filterDisplayModes">false</bool>
 
+    <!-- Default state for LiveDisplay -->
+    <bool name="config_liveDisplayAvailable">false</bool>
 </resources>
