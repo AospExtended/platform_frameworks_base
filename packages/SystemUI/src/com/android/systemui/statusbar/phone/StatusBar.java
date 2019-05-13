@@ -610,7 +610,8 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                 return;
             }
             WallpaperInfo info = wallpaperManager.getWallpaperInfo();
-            mWallpaperSupportsAmbientMode = info != null && info.getSupportsAmbientMode();
+            mWallpaperSupportsAmbientMode = info != null &&
+                    (info.getSupportsAmbientMode() || "com.breel.wallpapers18".equals(info.getPackageName()));
 
             mStatusBarWindowManager.setWallpaperSupportsAmbientMode(mWallpaperSupportsAmbientMode);
             mScrimController.setWallpaperSupportsAmbientMode(mWallpaperSupportsAmbientMode);
