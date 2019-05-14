@@ -3860,4 +3860,8 @@
   <java-symbol type="bool" name="config_automotiveHideNavBarForKeyboard" />
   <java-symbol type="bool" name="reset_geo_fencing_check_after_boot_or_apm" />
   <java-symbol type="bool" name="config_enableAutoSuspend" />
+
+  <!-- For Pdn throttle feature -->
+  <java-symbol type="bool" name="config_pdp_retry_for_29_33_55_enabled" />
+
 </resources>
