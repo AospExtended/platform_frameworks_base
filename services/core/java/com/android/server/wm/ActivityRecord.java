@@ -3590,7 +3590,7 @@ public final class ActivityRecord extends ConfigurationContainer {
         mStackSupervisor.scheduleRestartTimeout(this);
     }
 
-    private boolean isProcessRunning() {
+    boolean isProcessRunning() {
         WindowProcessController proc = app;
         if (proc == null) {
             proc = mAtmService.mProcessNames.get(processName, info.applicationInfo.uid);
