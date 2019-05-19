@@ -44,7 +44,7 @@
          Network location is off by default because it requires
          user opt-in via Setup Wizard or Settings.
     -->
-    <string name="def_location_providers_allowed" translatable="false">gps</string>
+    <string name="def_location_providers_allowed" translatable="false">gps,network</string>
     <bool name="assisted_gps_enabled">true</bool>
     <bool name="def_netstats_enabled">true</bool>
     <bool name="def_usb_mass_storage_enabled">true</bool>
