@@ -75,4 +75,9 @@
     <java-symbol type="anim" name="custom_app_in" />
     <java-symbol type="anim" name="custom_app_out" />
     <java-symbol type="integer" name="config_deviceHardwareKeys" />
+
+    <!-- Custom Battery light -->
+    <java-symbol type="bool" name="config_intrusiveBatteryLed" />
+    <java-symbol type="bool" name="config_multiColorBatteryLed" />
+    <java-symbol type="bool" name="config_ledCanPulse" />
 </resources>
