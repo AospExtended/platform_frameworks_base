@@ -80,4 +80,9 @@
     <java-symbol type="bool" name="config_haveHigherAspectRatioScreen" />
     <java-symbol type="dimen" name="config_screenAspectRatio" />
 
+    <!-- Custom Battery light -->
+    <java-symbol type="bool" name="config_intrusiveBatteryLed" />
+    <java-symbol type="bool" name="config_multiColorBatteryLed" />
+    <java-symbol type="bool" name="config_ledCanPulse" />
+
 </resources>
