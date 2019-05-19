@@ -168,6 +168,7 @@ interface IStatusBarService
      * Aex
      */
     void toggleCameraFlash();
+    void toggleCameraFlashState(boolean enable);
 
     void toggleRecentApps();
     void toggleSplitScreen();
