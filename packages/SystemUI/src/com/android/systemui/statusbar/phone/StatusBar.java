@@ -1228,16 +1228,20 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     }
 
     protected void createNavigationBar() {
-        mNavigationBarView = NavigationBarFragment.create(mContext, (tag, fragment) -> {
-            mNavigationBar = (NavigationBarFragment) fragment;
-            if (mLightBarController != null) {
-                mNavigationBar.setLightBarController(mLightBarController);
-            }
-            if (!mNavigationBar.isUsingStockNav()) {
-                ((NavigationBarFrame)mNavigationBarView).disableDeadZone();
-            }
-            mNavigationBar.setCurrentSysuiVisibility(mSystemUiVisibility);
-        });
+        try {
+            mNavigationBarView = NavigationBarFragment.create(mContext, (tag, fragment) -> {
+                mNavigationBar = (NavigationBarFragment) fragment;
+                if (mLightBarController != null) {
+                    mNavigationBar.setLightBarController(mLightBarController);
+                }
+                if (!mNavigationBar.isUsingStockNav()) {
+                    ((NavigationBarFrame)mNavigationBarView).disableDeadZone();
+                }
+                mNavigationBar.setCurrentSysuiVisibility(mSystemUiVisibility);
+            });
+        } catch (WindowManager.BadTokenException e) {
+            Log.d(TAG, "Unable to add navbar. " + e);
+        }
     }
 
     protected void removeNavigationBar() {
