@@ -17473,6 +17473,10 @@ public class PackageManagerService extends IPackageManager.Stub
                     replace = true;
                     if (DEBUG_INSTALL) Slog.d(TAG, "Replace existing pacakge: " + pkgName);
                     acquireUxPerfLock(BoostFramework.UXE_EVENT_PKG_INSTALL, pkgName, 1);
+                    BoostFramework mPerf = new BoostFramework();
+                    if (mPerf != null) {
+                        mPerf.perfHint(BoostFramework.VENDOR_HINT_APP_UPDATE, pkgName, -1, 0);
+                    }
                 }
 
                 // Child packages are installed through the parent package
