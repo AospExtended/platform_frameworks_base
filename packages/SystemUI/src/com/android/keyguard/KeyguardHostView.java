@@ -425,7 +425,7 @@ public class KeyguardHostView extends FrameLayout implements SecurityCallback {
         super.dispatchSystemUiVisibilityChanged(visibility);
 
         if (!(mContext instanceof Activity)) {
-            setSystemUiVisibility(STATUS_BAR_DISABLE_BACK);
+            //setSystemUiVisibility(STATUS_BAR_DISABLE_BACK);
         }
     }
 
