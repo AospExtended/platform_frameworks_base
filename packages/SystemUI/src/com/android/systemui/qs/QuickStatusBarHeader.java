@@ -192,14 +192,12 @@ public class QuickStatusBarHeader extends RelativeLayout implements
 
             mBatteryRemainingIcon.setIsQuickSbHeaderOrKeyguard(true);
             mBatteryRemainingIcon.setShowEstimate(true);
-            mBatteryRemainingIcon.setOnClickListener(this);
         } else {
             ((ViewGroup) mBatteryRemainingIcon.getParent()).removeView(mBatteryRemainingIcon);
             mBatteryRemainingIcon = null;
 
             mBatteryMeterView.setIsQuickSbHeaderOrKeyguard(true);
             mBatteryMeterView.setShowEstimate(true);
-            mBatteryMeterView.setOnClickListener(this);
         }
 
         mClockView = findViewById(R.id.clock);
@@ -463,7 +461,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         if (v == mClockView) {
             Dependency.get(ActivityStarter.class).postStartActivityDismissingKeyguard(new Intent(
                     AlarmClock.ACTION_SHOW_ALARMS),0);
-        } else if (v == mBatteryMeterView || v == mBatteryRemainingIcon) {
+        } else if (v == mBatteryMeterView) {
             Dependency.get(ActivityStarter.class).postStartActivityDismissingKeyguard(new Intent(
                     Intent.ACTION_POWER_USAGE_SUMMARY),0);
         }
