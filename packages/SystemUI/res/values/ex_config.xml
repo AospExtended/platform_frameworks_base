@@ -30,7 +30,4 @@
 
     <!-- Use wakelock for flashlight -->
     <bool name="config_useWakeLockForFlashlight">false</bool>
-
-    <!-- Show battery icon in the QS Panel instead of in the header -->
-    <bool name="config_batteryInQSPanel">true</bool>
 </resources>
