@@ -47,10 +47,6 @@ public interface BatteryController extends DemoMode, Dumpable,
         return isPowerSave();
     }
 
-    default void getEstimatedTimeRemainingString(EstimateFetchCompletion callback) {
-        callback.onBatteryRemainingEstimateRetrieved("Hello!");
-    }
-
     /**
      * A listener that will be notified whenever a change in battery level or power save mode
      * has occurred.
@@ -58,9 +54,5 @@ public interface BatteryController extends DemoMode, Dumpable,
     interface BatteryStateChangeCallback {
         default void onBatteryLevelChanged(int level, boolean pluggedIn, boolean charging) {}
         default void onPowerSaveChanged(boolean isPowerSave) {}
-    }
-    
-    interface EstimateFetchCompletion {
-        void onBatteryRemainingEstimateRetrieved(String estimate);
     }
 }
