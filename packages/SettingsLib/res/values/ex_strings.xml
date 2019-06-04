@@ -21,6 +21,4 @@
     <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->
     <string name="screen_zoom_summary_smallest">Smallest</string>
 
-    <!-- For estimated battery in QuickQS -->
-    <string name="power_discharge_by_only_short">Until %1$s</string>
 </resources>
