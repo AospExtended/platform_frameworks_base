@@ -3564,10 +3564,6 @@
 
     <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
     <bool name="config_swipe_up_gesture_setting_available">false</bool>
-    
-    <!-- Stop listening to the fingerprint reader when NON-WAKEUP proximity sensor is covered & screen is off.
-         config_proximityCheckOnWake must be true. -->
-    <bool name="config_proximityCheckOnFingerprintWake">false</bool>
 
     <!-- The duration (in milliseconds) for the outgoing sms authorization request to timeout.-->
     <integer name="config_sms_authorization_timeout_ms">0</integer>
