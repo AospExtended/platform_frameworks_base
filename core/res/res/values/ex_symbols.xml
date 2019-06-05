@@ -53,15 +53,6 @@
 
     <java-symbol name="config_vendorPlatformSignatures" type="array" />
 
-    <!-- Proximity check on screen on -->
-    <java-symbol name="config_proximityCheckOnWake" type="bool" />
-
-    <!-- Proximity check timeout -->
-    <java-symbol name="config_proximityCheckTimeout" type="integer" />
-
-    <!-- Proximity check on screen on default -->
-    <java-symbol name="config_proximityCheckOnWakeEnabledByDefault" type="bool" />
-
     <!-- Home button wake -->
     <java-symbol name="config_HomeWakeButton" type="bool" />
 
