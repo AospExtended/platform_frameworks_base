@@ -671,7 +671,7 @@ public class ActivityManagerService extends IActivityManager.Stub
     AudioManager mAudioManager;
     NotificationManager mNotificationManager;
     private static final int GAMING_NOTIFICATION_ID = 420;
-    private Handler mToastHandler = new Handler();
+    private Toast toast;
     private ArrayList<String> mGameApp = new ArrayList<String>();
 
     /**
@@ -4348,8 +4348,12 @@ public class ActivityManagerService extends IActivityManager.Stub
     }
 
     private void enableGamingFeatures(ProcessRecord app) {
+        boolean enabled = false;
+        if (!shouldEnableGamingMode() && !shouldAllowDynamicGamingMode(app))
+             return;
+        enabled = true;
+        int toastMsgId = mContext.getResources().getIdentifier("gaming_mode_enabled_toast", "string", mContext.getPackageName());
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-        boolean enabled = shouldEnableGamingMode() || shouldAllowDynamicGamingMode(app);
         // Lock brightness
         boolean enableManualBrightness = Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.GAMING_MODE_MANUAL_BRIGHTNESS_TOGGLE, 1) == 1;
@@ -4401,15 +4405,8 @@ public class ActivityManagerService extends IActivityManager.Stub
                     Settings.System.GAMING_MEDIA_VOLUME, userMedia);
             mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 60, 0); // 60 in the case "Music Volume Steps" have been set to 60 by user.
         }
-        // Show a toast
         if (enabled) {
-            mToastHandler.post(new Runnable() {
-                public void run() {
-                    Toast.makeText(mContext, mHandler.getLooper(), "FireHound Gaming enabled", Toast.LENGTH_LONG).show();
-                }
-            });
-        }
-        if (enabled) {
+            showToast(toastMsgId, Toast.LENGTH_LONG);
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.ENABLE_GAMING_MODE, 1);
             addNotification();
@@ -6162,6 +6159,19 @@ public class ActivityManagerService extends IActivityManager.Stub
         }
     }
 
+    private void showToast(int messageId, int duration) {
+        final String message = mUiContext.getResources().getString(messageId);
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+        @Override
+        public void run() {
+            if (toast != null) toast.cancel();
+            toast = Toast.makeText(mUiContext, message, duration);
+            toast.show();
+            }
+        });
+    }
+
     @Override
     public void overridePendingTransition(IBinder token, String packageName,
             int enterAnim, int exitAnim) {
@@ -6196,6 +6206,7 @@ public class ActivityManagerService extends IActivityManager.Stub
                 false /*replacingPid*/);
         boolean isDynamicGamingMode = Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.GAMING_MODE_DYNAMIC_STATE, 1) == 1;
+        int toastMsgId = mContext.getResources().getIdentifier("gaming_mode_disabled_toast", "string", mContext.getPackageName());
         // Check if the selected app is removed from the stack
         if (isGameApp(app.processName) || (isDynamicGamingMode && (app.info.category == ApplicationInfo.CATEGORY_GAME ||
                       (app.info.flags & ApplicationInfo.FLAG_IS_GAME) == ApplicationInfo.FLAG_IS_GAME))) {
@@ -6219,11 +6230,7 @@ public class ActivityManagerService extends IActivityManager.Stub
             final int userMediaVolume = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.GAMING_MEDIA_VOLUME, 1);
                     mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, userMediaVolume, 0);
-            mToastHandler.post(new Runnable() {
-                public void run() {
-                        Toast.makeText(mContext, mHandler.getLooper(), "FireHound Gaming disabled", Toast.LENGTH_LONG).show();
-                    }
-                });
+            showToast(toastMsgId, Toast.LENGTH_LONG);
             mNotificationManager.cancel(GAMING_NOTIFICATION_ID);
             Settings.System.putInt(mContext.getContentResolver(),
                 Settings.System.ENABLE_GAMING_MODE, 0);
