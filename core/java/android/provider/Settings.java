@@ -5142,6 +5142,12 @@ public final class Settings {
         public static final String SCREENRECORD_VIDEO_BITRATE = "screenrecord_video_bitrate";
 
         /**
+         * Whether to show charging animation
+         * @hide
+         */
+        public static final String CHARGING_ANIMATION = "charging_animation";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
