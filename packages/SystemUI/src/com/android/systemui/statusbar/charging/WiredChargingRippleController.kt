@@ -21,6 +21,7 @@ import android.content.res.Configuration
 import android.graphics.PixelFormat
 import android.graphics.PointF
 import android.os.SystemProperties
+import android.provider.Settings
 import android.util.DisplayMetrics
 import android.view.View
 import android.view.WindowManager
@@ -61,8 +62,7 @@ class WiredChargingRippleController @Inject constructor(
     private val uiEventLogger: UiEventLogger
 ) {
     private var pluggedIn: Boolean? = null
-    private val rippleEnabled: Boolean = featureFlags.isChargingRippleEnabled &&
-            !SystemProperties.getBoolean("persist.debug.suppress-charging-ripple", false)
+    private var rippleEnabled: Boolean = true;
     private var normalizedPortPosX: Float = context.resources.getFloat(
             R.dimen.physical_charger_port_location_normalized_x)
     private var normalizedPortPosY: Float = context.resources.getFloat(
@@ -93,6 +93,9 @@ class WiredChargingRippleController @Inject constructor(
                 nowPluggedIn: Boolean,
                 charging: Boolean
             ) {
+                rippleEnabled = Settings.System.getInt(context.contentResolver,
+                        Settings.System.CHARGING_ANIMATION, 1) == 1
+
                 // Suppresses the ripple when it's disabled, or when the state change comes
                 // from wireless charging.
                 if (!rippleEnabled || batteryController.isPluggedInWireless) {
