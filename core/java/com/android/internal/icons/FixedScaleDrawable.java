@@ -14,6 +14,7 @@ import org.xmlpull.v1.XmlPullParser;
 /**
  * Extension of {@link DrawableWrapper} which scales the child drawables by a fixed amount.
  */
+@TargetApi(Build.VERSION_CODES.N)
 public class FixedScaleDrawable extends DrawableWrapper {
 
     // TODO b/33553066 use the constant defined in MaskableIconDrawable
@@ -28,7 +29,7 @@ public class FixedScaleDrawable extends DrawableWrapper {
 
     @Override
     public void draw(Canvas canvas) {
-        int saveCount = canvas.save(Canvas.MATRIX_SAVE_FLAG);
+        int saveCount = canvas.save();
         canvas.scale(mScaleX, mScaleY,
                 getBounds().exactCenterX(), getBounds().exactCenterY());
         super.draw(canvas);
