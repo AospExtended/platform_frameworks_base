@@ -3293,6 +3293,11 @@ public final class Settings {
         public static final String GAMING_RINGER_STATE = "gaming_ringer_state";
 
         /**
+         * Save the current user zend mode
+         */
+        public static final String GAMING_MODE_ZEN_STATE = "gaming_mode_zen_state";
+
+        /**
          * Save the user defined media volume for restoring it later
          */
         public static final String GAMING_MEDIA_VOLUME = "gaming_media_volume";
@@ -5093,11 +5098,11 @@ public final class Settings {
         public static final String GAMING_MODE_HEADSUP_TOGGLE = "gaming_mode_headsup_toggle";
 
         /**
-         * Whether to enter DND in gaming mode
+         * Ringer in gaming mode (0:OFF, 1:Vibrate, 2:DND, 3:Silent)
          *
          * @hide
          */
-        public static final String GAMING_MODE_ENTER_DND = "gaming_mode_enter_dnd";
+        public static final String GAMING_MODE_RINGER_MODE = "gaming_mode_ringer_mode";
 
         /**
          * Whether to maximize media volume in gaming mode
