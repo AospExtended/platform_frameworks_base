@@ -18,6 +18,8 @@ package com.android.systemui.qs.tiles;
 
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
+import static android.provider.Settings.Global.ZEN_MODE_OFF;
+import static android.provider.Settings.Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -148,7 +150,7 @@ public class GamingModeTile extends QSTileImpl<BooleanState> {
         }
         // Heads up
         boolean enableHeadsUp = Settings.System.getInt(mContext.getContentResolver(),
-                    Settings.System.GAMING_MODE_HEADSUP_TOGGLE, 1) == 1;
+                    Settings.System.GAMING_MODE_HEADSUP_TOGGLE, 0) == 1;
         if (enabled && enableHeadsUp) {
             final boolean isHeadsUpEnabledByUser = Settings.Global.getInt(mContext.getContentResolver(),
                               Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1) == 1;
@@ -178,20 +180,40 @@ public class GamingModeTile extends QSTileImpl<BooleanState> {
                 Settings.Secure.putInt(mContext.getContentResolver(),
                     Settings.Secure.HARDWARE_KEYS_DISABLE, wasHwKeyEnabledByUser ? 0 : 1);
         }
-        // Ringer changed to "Vibrate mode"
-        boolean enableVibrateMode = Settings.System.getInt(mContext.getContentResolver(),
-                    Settings.System.GAMING_MODE_ENTER_DND, 1) == 1;
-        if (enabled && enableVibrateMode) {
-            final int userState = mAudioManager.getRingerModeInternal();
-                Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.GAMING_RINGER_STATE, userState);
-            mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
+
+        // Ringer mode (0: OFF, 1: Vibrate, 2:DND: 3:Silent
+        if (enabled) {
+            int ringerMode = Settings.System.getInt(mContext.getContentResolver(),
+                 Settings.System.GAMING_MODE_RINGER_MODE, 0);
+            int userState = mAudioManager.getRingerModeInternal();
+                 Settings.System.putInt(mContext.getContentResolver(),
+                     Settings.System.GAMING_RINGER_STATE, userState);
+            int userZenState = mNotificationManager.getZenMode();
+                 Settings.System.getInt(mContext.getContentResolver(),
+                     Settings.System.GAMING_MODE_ZEN_STATE, userZenState);
+            if (ringerMode != 0 || ringerMode != userState) {
+                if (ringerMode == 1) {
+                    mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
+                    mNotificationManager.setZenMode(ZEN_MODE_OFF, null, TAG);
+                }
+            else if (ringerMode == 2) {
+                mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
+                mNotificationManager.setZenMode(ZEN_MODE_IMPORTANT_INTERRUPTIONS, null, TAG);
+                }
+            else if (ringerMode == 3) {
+                mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_SILENT);
+                mNotificationManager.setZenMode(ZEN_MODE_IMPORTANT_INTERRUPTIONS, null, TAG);
+                }
+            }
         } else if (!enabled) {
-            final boolean newState = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.GAMING_RINGER_STATE, AudioManager.RINGER_MODE_NORMAL) == AudioManager.RINGER_MODE_NORMAL;
-            final boolean isVibrate = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.GAMING_RINGER_STATE, AudioManager.RINGER_MODE_VIBRATE) == AudioManager.RINGER_MODE_VIBRATE;
-                mAudioManager.setRingerModeInternal(newState ? AudioManager.RINGER_MODE_NORMAL : (isVibrate ? AudioManager.RINGER_MODE_VIBRATE : AudioManager.RINGER_MODE_SILENT));
+            final int ringerState = Settings.System.getInt(mContext.getContentResolver(),
+                  Settings.System.GAMING_RINGER_STATE, AudioManager.RINGER_MODE_NORMAL);
+            final int zenState = Settings.System.getInt(mContext.getContentResolver(),
+                  Settings.System.GAMING_MODE_ZEN_STATE, ZEN_MODE_OFF);
+            if (ringerState != mAudioManager.getRingerModeInternal())
+                  mAudioManager.setRingerModeInternal(ringerState);
+            if (zenState != mNotificationManager.getZenMode())
+                  mNotificationManager.setZenMode(zenState, null, TAG);
         }
         // Media volume increased to the fullest
         boolean maximizeMediaVolume = Settings.System.getInt(mContext.getContentResolver(),
