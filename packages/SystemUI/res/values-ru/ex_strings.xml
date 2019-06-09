@@ -41,7 +41,7 @@
     <string name="preview">Предварительный просмотр</string>
     <string name="keycode">Код клавиши</string>
     <string name="no_home_title">Кнопка \"Домой\" не найдена</string>
-    <string name="no_home_message">Для навигации по этому устройству требуется кнопка \"Домой\". Пожалуйста, добавьте кнопку \"Домой\" перед сохранением.</string>
+    <string name="no_home_message">Для навигации по этому устройству требуется кнопка \"Домой\". Пожалуйста, добавьте её перед сохранением.</string>
     <string name="clipboard_description">С помощью этой кнопки можно копировать файлы в буфер обмена и извлекать их из него.</string>
     <string name="keycode_description">С помощью этой кнопки можно добавлять клавиши клавиатуры на панель навигации. При нажатии они эмулируют выбранную клавишу клавиатуры. Сначала следует выбрать эмулируемую клавишу для кнопки, а затем изображение, которое будет отображаться на кнопке.</string>
     <string name="start">Запуск</string>
@@ -59,7 +59,7 @@
     <string name="navbar_editor_title">Редактор</string>
     <string name="navbar_editor_summary">Настроить панель навигации</string>
     <!-- Screenshot Delete Toast -->
-    <string name="delete_screenshot_toast">Снимок экрана удален</string>
+    <string name="delete_screenshot_toast">Скриншот удален</string>
     <!-- Caffeine QS Tile -->
     <string name="quick_settings_caffeine_label">Запрет сна</string>
     <string name="accessibility_quick_settings_caffeine_off">Запрет сна отключен</string>
@@ -77,7 +77,7 @@
     <string name="accessibility_quick_settings_heads_up_changed_off">Всплывающие уведомления отключены.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Всплывающие уведомления включены.</string>
     <!-- USB Tethering tile -->
-    <string name="accessibility_quick_settings_usb_tether_off">Выключить USB-модем</string>
+    <string name="accessibility_quick_settings_usb_tether_off">USB-модем выключен</string>
     <string name="accessibility_quick_settings_usb_tether_on">Включить USB-модем</string>
     <string name="accessibility_quick_settings_usb_tether_changed_off">USB-модем выключен</string>
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB-модем включен</string>
@@ -96,10 +96,10 @@
     <string name="systemui_theme_style_dark">Темный стиль</string>
     <string name="systemui_theme_style_black">Чёрный стиль</string>
     <string name="systemui_theme_style_extended">Extended стиль</string>
-    <string name="systemui_theme_style_chocolate">Шоколад</string>
-    <string name="quick_settings_theme_tile_title">Акцент</string>
+    <string name="systemui_theme_style_chocolate">Шоколадный стиль</string>
+    <string name="quick_settings_theme_tile_title">Оттенок</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Выберите цвет</string>
-    <string name="quick_settings_theme_tile_style_detail_title">Выбрать стиль</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Выберите стиль</string>
     <string name="quick_settings_theme_tile_color_default">По умолчанию</string>
     <string name="quick_settings_theme_tile_color_red">Красный</string>
     <string name="quick_settings_theme_tile_color_pink">Розовый</string>
@@ -109,10 +109,10 @@
     <string name="quick_settings_theme_tile_color_blue">Синий</string>
     <string name="quick_settings_theme_tile_color_light_blue">Голубой</string>
     <string name="quick_settings_theme_tile_color_cyan">Бирюзовый</string>
-    <string name="quick_settings_theme_tile_color_teal">Морской волны</string>
+    <string name="quick_settings_theme_tile_color_teal">Бирюзовый</string>
     <string name="quick_settings_theme_tile_color_green">Зелёный</string>
     <string name="quick_settings_theme_tile_color_light_green">Светло-зелёный</string>
-    <string name="quick_settings_theme_tile_color_lime">Салатовый</string>
+    <string name="quick_settings_theme_tile_color_lime">Лаймовый</string>
     <string name="quick_settings_theme_tile_color_yellow">Жёлтый</string>
     <string name="quick_settings_theme_tile_color_amber">Янтарный</string>
     <string name="quick_settings_theme_tile_color_orange">Оранжевый</string>
@@ -124,14 +124,14 @@
     <string name="quick_settings_theme_tile_color_pale_red">Бледно-красный</string>
     <string name="quick_settings_theme_tile_color_extended_green">Extended зелёный</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Бледно-голубой</string>
-    <string name="quick_settings_theme_tile_color_jade_green">Нефритовый</string>
+    <string name="quick_settings_theme_tile_color_jade_green">Зелёный нефрит</string>
     <string name="quick_settings_theme_tile_color_black">Чёрный</string>
     <string name="quick_settings_theme_tile_color_white">Белый</string>
     <string name="theme_info_title">Что это?</string>
     <string name="theme_info_message">Плитка \"Темы\" - это уникальная, но простая в использовании плитка, которая позволяет пользователю изменять системный оттенок или стиль.\n\nЧтобы переключиться между оттенками и стилями, просто удерживайте нажатой плитку, а затем ещё раз нажмите на неё, чтобы выбрать из предложенных вариантов.</string>
     <!-- QS Config -->
-    <string name="qs_menu_item_columns">Колонки</string>
-    <string name="qs_menu_item_columns_landscape">Колонки (ландшафтный режим)</string>
+    <string name="qs_menu_item_columns">Столбцы</string>
+    <string name="qs_menu_item_columns_landscape">Колонки (ландшафт)</string>
     <string name="qs_menu_item_columns_three">3</string>
     <string name="qs_menu_item_columns_four">4</string>
     <string name="qs_menu_item_columns_five">5</string>
@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">Нормальный</string>
     <string name="quick_settings_expanded_navigation_off">Скрыть панель навигации</string>
     <string name="quick_settings_expanded_statusbar_off">Скрыть строку состояния</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Экономия заряда батареи</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Определение местоположения: режим экономии батареи.</string>
-    <string name="quick_settings_location_secondary_gps_only">Только GPS</string>
     <string name="accessibility_quick_settings_location_gps_only">Определение местоположения: только по спутникам.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Высокая точность</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Определение местоположения: по всем источникам.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Быстрая зарядка (<xliff:g id="charging_time_left" example="4 часа и 2 минуты">%s</xliff:g> до полной зарядки)</string>
@@ -235,4 +232,7 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Индикация событий экраном отключена.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Индикация событий экраном включена.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Панель громкости</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

@@ -96,7 +96,7 @@
     <string name="systemui_theme_style_dark">Karanlık arayüz</string>
     <string name="systemui_theme_style_black">Siyah arayüz</string>
     <string name="systemui_theme_style_extended">Extended arayüz</string>
-    <string name="systemui_theme_style_chocolate">Çikolata arayüzü</string>
+    <string name="systemui_theme_style_chocolate">Çikolata arayüz</string>
     <string name="quick_settings_theme_tile_title">Vurgu rengi</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Renk seçin</string>
     <string name="quick_settings_theme_tile_style_detail_title">Stil seçin</string>
@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">Normal</string>
     <string name="quick_settings_expanded_navigation_off">Gezinme çubuğunu gizle</string>
     <string name="quick_settings_expanded_statusbar_off">Durum çubuğunu gizle</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Pil tasarrufu</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Konum bildirimi: pil tasarruf modu.</string>
-    <string name="quick_settings_location_secondary_gps_only">Sadece sensörler</string>
     <string name="accessibility_quick_settings_location_gps_only">Konum bildirimi: sadece sensörler modu.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Yüksek doğruluk</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Konum bildirimi: yüksek doğruluk modu.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Dash Şarj oluyor (tam dolmasına <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> kaldı)</string>
@@ -235,4 +232,7 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Ortam ekranı kapatıldı.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Ortam ekranı açıldı.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Ses paneli</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">सामान्य</string>
     <string name="quick_settings_expanded_navigation_off">नेविगेशन बार छुपाएँ</string>
     <string name="quick_settings_expanded_statusbar_off">स्टेटस बार छुपाएँ</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">बैटरी बचत</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">स्थान रिपोर्टिंग: बैटरी बचत मोड</string>
-    <string name="quick_settings_location_secondary_gps_only">केवल सेंसर</string>
     <string name="accessibility_quick_settings_location_gps_only">लोकेशन मोड: सिर्फ सेंसर मोड़</string>
-    <string name="quick_settings_location_secondary_high_accuracy">उच्च सटीकता</string>
     <string name="accessibility_quick_settings_location_high_accuracy">स्थान रिपोर्टिंग: उच्च सटीकता मोड।</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">डैश चार्जिंग (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> पूर्ण होने में)</string>
@@ -223,6 +220,11 @@
     <string name="quick_settings_music_play">चलायें</string>
     <string name="quick_settings_music_pause">पॉज</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">सिंक</string>
+    <string name="accessibility_quick_settings_sync_off">सिंक बंद</string>
+    <string name="accessibility_quick_settings_sync_on">सिंक चालु</string>
     <!-- Ambient display QS tile -->
     <!-- Volume panel QS tile -->
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

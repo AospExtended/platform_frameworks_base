@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">Κανονική</string>
     <string name="quick_settings_expanded_navigation_off">Απόκρυψη γραμμής πλοήγησης</string>
     <string name="quick_settings_expanded_statusbar_off">Απόκρυψη γραμμής κατάστασης</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Εξοικονόμηση μπαταρίας</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Αναφορά τοποθεσίας: λειτουργία εξοικονόμησης μπαταρίας.</string>
-    <string name="quick_settings_location_secondary_gps_only">Αισθητήρες μόνο</string>
     <string name="accessibility_quick_settings_location_gps_only">Αναφορά τοποθεσίας: μόνο GPS.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Υψηλή ακρίβεια</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Αναφορά ροποθεσίας: υψηλής ακρίβειας.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Ταχεία φόρτιση (<xliff:g id="charging_time_left" example="4 ώρες και 2 λεπτά">%s</xliff:g> για πλήρη φόρτιση)</string>
@@ -235,4 +232,7 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Η οθόνη περιβάλλοντος απενεργοποιήθηκε.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">H oθόνη περιβάλλοντος ενεργοποιήθηκε.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Πίνακας ήχου</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

@@ -42,7 +42,7 @@
     <string name="keycode">Kata kunci</string>
     <string name="no_home_title">Tidak di temukan tombol home</string>
     <string name="no_home_message">Tombol home diperlukan untuk dapat menavigasi perangkat ini. Harap tambahkan tombol beranda sebelum menyimpan.</string>
-    <string name="clipboard_description">Clipboard memungkinkan item untuk diseret langsung ke clipboard. Item juga bisa diseret keluar dari clipboard saat ada.</string>
+    <string name="clipboard_description">Papan Klip memungkinkan item untuk diseret langsung ke papan Klip. Item-item juga dapat diseret langsung dari papan klip ketika tersedia.</string>
     <string name="keycode_description">Tombol kata kunci memungkinan tombol keyboard untuk ditambahkan di Panel Navigasi. Ketika ditekan akan meniru tombol keyboard yang dipilih. Pertama pilih tombol, lalu diikuti oleh gambar untuk ditampilkan pada tombol.</string>
     <string name="start">Mulai</string>
     <string name="center">Tengah</string>
@@ -100,12 +100,12 @@
     <string name="quick_settings_theme_tile_title">Aksen</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Pilih warna</string>
     <string name="quick_settings_theme_tile_style_detail_title">Pilih gaya</string>
-    <string name="quick_settings_theme_tile_color_default">Settingan Bawaan</string>
+    <string name="quick_settings_theme_tile_color_default">Bawaan</string>
     <string name="quick_settings_theme_tile_color_red">Merah</string>
     <string name="quick_settings_theme_tile_color_pink">Merah Muda</string>
     <string name="quick_settings_theme_tile_color_purple">Ungu</string>
     <string name="quick_settings_theme_tile_color_deep_purple">Ungu tua</string>
-    <string name="quick_settings_theme_tile_color_indigo">Biru tua</string>
+    <string name="quick_settings_theme_tile_color_indigo">Biru ungu</string>
     <string name="quick_settings_theme_tile_color_blue">Biru</string>
     <string name="quick_settings_theme_tile_color_light_blue">Biru muda</string>
     <string name="quick_settings_theme_tile_color_cyan">Biru kehijauan</string>
@@ -115,8 +115,8 @@
     <string name="quick_settings_theme_tile_color_lime">Lemon</string>
     <string name="quick_settings_theme_tile_color_yellow">Kuning</string>
     <string name="quick_settings_theme_tile_color_amber">Sawo matang</string>
-    <string name="quick_settings_theme_tile_color_orange">Oranye</string>
-    <string name="quick_settings_theme_tile_color_deep_orange">Oranye tua</string>
+    <string name="quick_settings_theme_tile_color_orange">Jeruk</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">Jeruk tua</string>
     <string name="quick_settings_theme_tile_color_brown">Cokelat</string>
     <string name="quick_settings_theme_tile_color_grey">Abu-abu</string>
     <string name="quick_settings_theme_tile_color_blue_grey">Biru Keabu-abuan</string>
@@ -124,7 +124,7 @@
     <string name="quick_settings_theme_tile_color_pale_red">Merah Pucat</string>
     <string name="quick_settings_theme_tile_color_extended_green">Hijau extended</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Biru Pucat</string>
-    <string name="quick_settings_theme_tile_color_jade_green">Hijau Batu Permata</string>
+    <string name="quick_settings_theme_tile_color_jade_green">Hijau permata</string>
     <string name="quick_settings_theme_tile_color_black">Hitam</string>
     <string name="quick_settings_theme_tile_color_white">Putih</string>
     <string name="theme_info_title">Apa ini?</string>
@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">Normal</string>
     <string name="quick_settings_expanded_navigation_off">Sembunyikan navbar</string>
     <string name="quick_settings_expanded_statusbar_off">Sembunyikan statusbar</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Hemat Baterai</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Laporan Lokasi: mode hemat baterai.</string>
-    <string name="quick_settings_location_secondary_gps_only">Sensor saja</string>
     <string name="accessibility_quick_settings_location_gps_only">Laporan lokasi: mode sensor saja.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Akurasi tinggi</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Laporan Lokasi: mode akurasi tinggi.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Pengisian cepat ( <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> sampai penuh)</string>
@@ -183,9 +180,9 @@
     <string name="quick_settings_compass_value"><xliff:g id="derajat">%1$.0f</xliff:g>\u00b0<xliff:g id="arah">%2$s</xliff:g></string>
     <string name="quick_settings_compass_init">Inisialisasi\u2026</string>
     <string name="accessibility_quick_settings_compass_off">Kompas mati.</string>
-    <string name="accessibility_quick_settings_compass_on">Kompas hidup.</string>
+    <string name="accessibility_quick_settings_compass_on">Kompas aktif.</string>
     <string name="accessibility_quick_settings_compass_changed_off">Kompas dimatikan.</string>
-    <string name="accessibility_quick_settings_compass_changed_on">Komoas dihidupkan.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Kompas diaktifkan.</string>
     <string name="quick_settings_compass_N">Utara</string>
     <string name="quick_settings_compass_NE">Timur Laut</string>
     <string name="quick_settings_compass_E">Timur</string>
@@ -201,19 +198,19 @@
     <string name="accessibility_quick_settings_running_services">Tampilkan layanan yang sedang berjalan.</string>
     <!-- Smart pixels QS tile -->
     <string name="quick_settings_smart_pixels">Piksel pintar</string>
-    <string name="quick_settings_smart_pixels_on_power_save">Hidupkan otomatis piksel pintar</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Otomatis hidupkan piksel pintar</string>
     <!-- ADB over network QS tile -->
     <string name="quick_settings_network_adb_label">ADB Melalui Jaringan</string>
     <!-- LTE QS Tile -->
     <string name="qs_lte_label">LTE</string>
-    <string name="lte_on">LTE hidup</string>
+    <string name="lte_on">LTE aktif</string>
     <string name="lte_off">LTE mati</string>
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Hentikan paksa?</string>
     <string name="force_stop_dlg_text">Jika anda menghentikan aplikasi secara paksa, akan menyebabkan gagal fungsi.</string>
-    <string name="kill">Matikan Aplikasi Secara Paksa</string>
+    <string name="kill">Matikan Aplikasi</string>
     <!-- OneHand mode QS tile -->
-    <string name="qs_onehand_label">Pengoperasian satu tangan</string>
+    <string name="qs_onehand_label">Mode satu tangan</string>
     <!--Google sound search tile -->
     <string name="quick_settings_sound_search">Pencarian suara</string>
     <!-- Always on Display Tile -->
@@ -225,14 +222,17 @@
     <!-- Sync QS tile -->
     <string name="quick_settings_sync_label">Sinkronisasi</string>
     <string name="accessibility_quick_settings_sync_off">Sinkronisasi mati.</string>
-    <string name="accessibility_quick_settings_sync_on">Sinkronisasi hidup.</string>
+    <string name="accessibility_quick_settings_sync_on">Sinkronisasi aktif.</string>
     <string name="accessibility_quick_settings_sync_changed_off">Sinkronisasi dinonaktifkan.</string>
     <string name="accessibility_quick_settings_sync_changed_on">Sinkronisasi diaktifkan.</string>
     <!-- Ambient display QS tile -->
     <string name="quick_settings_ambient_display_label">Tampilan Ambient</string>
     <string name="accessibility_quick_settings_ambient_display_off">Tampilan ambient nonaktif.</string>
-    <string name="accessibility_quick_settings_ambient_display_on">Tampilan ambient hidup.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Tampilan ambient aktif.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_off">Tampilan ambient dinonaktifkan.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Tampilan ambient dihidupkan.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Panel volume</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

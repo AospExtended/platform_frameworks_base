@@ -56,4 +56,8 @@
     <string name="animation_random">랜덤</string>
     <string name="action_null">없음</string>
     <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">네트워크를 통한 ADB 사용</string>
+    <string name="adb_active_generic_notification_message">탭하여 디버깅 모드 사용 중지</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

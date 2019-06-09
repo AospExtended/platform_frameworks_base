@@ -59,4 +59,6 @@
     <string name="adb_net_active_notification_title">ADB - Режим за отстраняване на грешки през мрежата е активиран</string>
     <string name="adb_both_active_notification_title">ADB - Режим за отстраняване на грешки през USB &amp; мрежата е активирана</string>
     <string name="adb_active_generic_notification_message">Докоснете, за да деактивирате отстраняване на грешки.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

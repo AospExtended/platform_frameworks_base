@@ -19,12 +19,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
-    <string name="global_action_restart_advanced">進階重啟</string>
-    <string name="global_action_restart_recovery">Recovery 模式</string>
-    <string name="global_action_restart_bootloader">Bootloader 模式</string>
-    <string name="global_action_restart_ui">系統使用者介面</string>
+    <string name="global_action_restart_advanced">進階</string>
+    <string name="global_action_restart_recovery">修復模式</string>
+    <string name="global_action_restart_bootloader">啟動載入程式Bootloader</string>
+    <string name="global_action_restart_ui">使用者介面</string>
     <string name="global_action_restart_soft">軟體重新啟動</string>
-    <string name="statusbar_items_title">狀態列項目</string>
+    <string name="statusbar_items_title">狀態列圖示</string>
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">鎖定畫面捷徑</string>
     <string name="lockscreen_default">預設值</string>
@@ -33,9 +33,9 @@
     <string name="quick_settings_sound_label">音效</string>
     <string name="quick_settings_sound_ring">鈴聲</string>
     <string name="quick_settings_sound_vibrate">震動</string>
-    <string name="quick_settings_sound_dnd">零打擾</string>
+    <string name="quick_settings_sound_dnd">勿擾模式</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
-    <string name="custom_hint">滑動圖示以啟動</string>
+    <string name="custom_hint">滑動圖示啟動</string>
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_data_saver">數據節省模式</string>
     <string name="preview">預覽</string>
@@ -57,27 +57,27 @@
     <string name="left">左</string>
     <string name="right">右</string>
     <string name="navbar_editor_title">編輯器</string>
-    <string name="navbar_editor_summary">配置導覽列</string>
+    <string name="navbar_editor_summary">配置導覽欄</string>
     <!-- Screenshot Delete Toast -->
-    <string name="delete_screenshot_toast">已刪除螢幕擷取畫面。</string>
+    <string name="delete_screenshot_toast">已刪除螢幕截圖</string>
     <!-- Caffeine QS Tile -->
-    <string name="quick_settings_caffeine_label">暫停休眠</string>
-    <string name="accessibility_quick_settings_caffeine_off">關閉暫停休眠</string>
-    <string name="accessibility_quick_settings_caffeine_on">開啟暫停休眠</string>
+    <string name="quick_settings_caffeine_label">醒下啦 請您飲咖啡</string>
+    <string name="accessibility_quick_settings_caffeine_off">Caffeine 關閉</string>
+    <string name="accessibility_quick_settings_caffeine_on">去飲咖啡</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">重新啟動</string>
-    <string name="quick_settings_reboot_recovery_label">Recovery 模式</string>
+    <string name="quick_settings_reboot_recovery_label">修復模式</string>
     <!-- Screenshot QS tile -->
-    <string name="quick_settings_screenshot_label">擷取螢幕畫面</string>
-    <string name="quick_settings_region_screenshot_label">部分擷取螢幕畫面</string>
+    <string name="quick_settings_screenshot_label">畫面截圖</string>
+    <string name="quick_settings_region_screenshot_label">部分截圖</string>
     <!-- Heads Up QS Tile -->
     <string name="quick_settings_heads_up_label">浮動通知</string>
-    <string name="accessibility_quick_settings_heads_up_off">浮動通知關閉。</string>
-    <string name="accessibility_quick_settings_heads_up_on">浮動通知開啟。</string>
-    <string name="accessibility_quick_settings_heads_up_changed_off">浮動通知已關閉。</string>
-    <string name="accessibility_quick_settings_heads_up_changed_on">浮動通知已開啟。</string>
+    <string name="accessibility_quick_settings_heads_up_off">關閉浮動通知</string>
+    <string name="accessibility_quick_settings_heads_up_on">開啟浮動通知</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">已關閉浮動通知</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">已開啟浮動通知</string>
     <!-- USB Tethering tile -->
-    <string name="accessibility_quick_settings_usb_tether_off">關閉 USB 網路共用</string>
+    <string name="accessibility_quick_settings_usb_tether_off">關閉USB網路共享</string>
     <string name="accessibility_quick_settings_usb_tether_on">開啟 USB 網路共用</string>
     <string name="accessibility_quick_settings_usb_tether_changed_off">USB 網路共用已關閉</string>
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB 網路共用已開啟</string>
@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">一般</string>
     <string name="quick_settings_expanded_navigation_off">隱藏導覽列</string>
     <string name="quick_settings_expanded_statusbar_off">隱藏狀態列</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">省電模式</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">位置回報：節約耗電量</string>
-    <string name="quick_settings_location_secondary_gps_only">僅用 GPS</string>
     <string name="accessibility_quick_settings_location_gps_only">位置報告：僅限 GPS</string>
-    <string name="quick_settings_location_secondary_high_accuracy">高精確度</string>
     <string name="accessibility_quick_settings_location_high_accuracy">位置回報：高精度模式。</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">快速充電中 (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> 後充滿)</string>
@@ -235,4 +232,7 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">環境顯示已關閉</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">環境顯示已開啟</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">音量面板</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

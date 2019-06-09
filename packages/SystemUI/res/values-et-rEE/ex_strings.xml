@@ -19,36 +19,220 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">Lisavalikud</string>
+    <string name="global_action_restart_recovery">Taastus</string>
+    <string name="global_action_restart_bootloader">Algkäivitus</string>
+    <string name="global_action_restart_ui">SystemUI</string>
+    <string name="global_action_restart_soft">Poolik taaskäivitus</string>
+    <string name="statusbar_items_title">Olekuriba ikoon</string>
     <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">Lukustusekraani otseteed</string>
+    <string name="lockscreen_default">Vaikimisi</string>
+    <string name="lockscreen_hidden">Mitte ükski</string>
     <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Heli</string>
+    <string name="quick_settings_sound_ring">Helin</string>
+    <string name="quick_settings_sound_vibrate">Vibreeri</string>
+    <string name="quick_settings_sound_dnd">Mitte segada</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Viibake alates ikoonist, et käivitada</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_data_saver">Andmeside mahu säästja</string>
+    <string name="preview">Eelvaade</string>
+    <string name="keycode">Võtmekood</string>
+    <string name="no_home_title">Avakuva nuppu ei leitud</string>
+    <string name="no_home_message">Seadme navigeerimiseks on vaja avakuva nuppu. Palun lisage enne salvestamist kodunupp.</string>
+    <string name="clipboard_description">Lõikepuhvris saab üksusi otse lõikepuhvrisse lohistada. Esemeid saab ka olemasolevast lõikepuhvrist otse välja tõmmata.</string>
+    <string name="keycode_description">Keycode\'i nupud võimaldavad klaviatuuriklahve navigeerimisribale lisada. Kui vajutate, emiteerivad nad valitud klaviatuuriklahvi. Kõigepealt tuleb klahvi jaoks valida võti, millele järgneb nupul kuvatav pilt.</string>
+    <string name="start">Start</string>
+    <string name="center">Keskel</string>
+    <string name="end">Lõpp</string>
+    <string name="space">Vahekaugused</string>
+    <string name="menu_ime">Menüü / lülitite klaviatuur</string>
+    <string name="select_button">Lisamiseks valige nupp</string>
+    <string name="add_button">Lisamisnupp</string>
+    <string name="save">Salvesta</string>
+    <string name="reset">Lähtesta</string>
+    <string name="select_keycode">Valige klaviatuuri nupp</string>
+    <string name="left">Vasak</string>
+    <string name="right">Parem</string>
+    <string name="navbar_editor_title">Toimetaja</string>
+    <string name="navbar_editor_summary">Seadistage navigeerimisriba</string>
     <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Kuvatõmmis kustutatud</string>
     <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Kofeiin</string>
+    <string name="accessibility_quick_settings_caffeine_off">Kofeiin väljas</string>
+    <string name="accessibility_quick_settings_caffeine_on">Kofeiin sees</string>
     <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Taaskäivita</string>
+    <string name="quick_settings_reboot_recovery_label">Taastus</string>
     <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Kuvatõmmis</string>
+    <string name="quick_settings_region_screenshot_label">Osaline kuvatõmmis</string>
     <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Etteteavitus</string>
+    <string name="accessibility_quick_settings_heads_up_off">Etteteavitus väljas.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Etteteavitus sees.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Etteteavitus on väljalülitatud.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Etteteavitus on sisselülitatud.</string>
     <!-- USB Tethering tile -->
+    <string name="accessibility_quick_settings_usb_tether_off">USB jagamine väljas</string>
+    <string name="accessibility_quick_settings_usb_tether_on">USB jagamine sees</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB jagamine väljalülitatud</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">USB jagamine sisselülitatud</string>
+    <string name="quick_settings_usb_tether_label">USB jagamine</string>
     <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">Füüsilised nupud on sisse lülitatud</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Füüsilised nupud on välja lülitatud</string>
+    <string name="quick_settings_hwkeys_label">Füüsilised nupud</string>
     <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Piilumis teated jäävad 1 minutiks.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Piilumis teated jäävad <xliff:g id="number">%d</xliff:g> minutiks.</string>
     <!-- Theme tile -->
+    <string name="systemui_theme_style_title">Kasutajaliidese stiil</string>
+    <string name="systemui_theme_style_auto">Automaatne</string>
+    <string name="systemui_theme_style_light">Hele kasutajaliides</string>
+    <string name="systemui_theme_style_dark">Tume kasutajaliides</string>
+    <string name="systemui_theme_style_black">Must kasutajaliides</string>
+    <string name="systemui_theme_style_extended">Laiendatud kasutajaliides</string>
+    <string name="systemui_theme_style_chocolate">Šokolaad kasutajaliides</string>
+    <string name="quick_settings_theme_tile_title">Rõhumärk</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Vali värv</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Vali stiil</string>
+    <string name="quick_settings_theme_tile_color_default">Vaikimisi</string>
+    <string name="quick_settings_theme_tile_color_red">Punane</string>
+    <string name="quick_settings_theme_tile_color_pink">Roosa</string>
+    <string name="quick_settings_theme_tile_color_purple">Lilla</string>
+    <string name="quick_settings_theme_tile_color_deep_purple">Tumelilla</string>
+    <string name="quick_settings_theme_tile_color_indigo">Indigosinine</string>
+    <string name="quick_settings_theme_tile_color_blue">Sinine</string>
+    <string name="quick_settings_theme_tile_color_light_blue">Helesinine</string>
+    <string name="quick_settings_theme_tile_color_cyan">Erksinine</string>
+    <string name="quick_settings_theme_tile_color_teal">Sinakasroheline</string>
+    <string name="quick_settings_theme_tile_color_green">Roheline</string>
+    <string name="quick_settings_theme_tile_color_light_green">Heleroheline</string>
+    <string name="quick_settings_theme_tile_color_lime">Laimi roheline</string>
+    <string name="quick_settings_theme_tile_color_yellow">Kollane</string>
+    <string name="quick_settings_theme_tile_color_amber">Merevaigukollane</string>
+    <string name="quick_settings_theme_tile_color_orange">Oranž</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">Sügav oranž</string>
+    <string name="quick_settings_theme_tile_color_brown">Pruun</string>
+    <string name="quick_settings_theme_tile_color_grey">Hall</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">Sinakashall</string>
+    <string name="quick_settings_theme_tile_color_candy_red">Karamell punane</string>
+    <string name="quick_settings_theme_tile_color_pale_red">Helepunane</string>
+    <string name="quick_settings_theme_tile_color_extended_green">Laiendatud roheline</string>
+    <string name="quick_settings_theme_tile_color_pale_blue">Helesinine</string>
+    <string name="quick_settings_theme_tile_color_jade_green">Nefriit roheline</string>
+    <string name="quick_settings_theme_tile_color_black">Must</string>
+    <string name="quick_settings_theme_tile_color_white">Valge</string>
+    <string name="theme_info_title">Mis see on?</string>
+    <string name="theme_info_message">Teemaplaat on ainulaadne, kuid kergesti kasutatav plaat, mis võimaldab kasutajal süsteemi rõhku või stiili muuta.\n\nRõhkude ja stiilide vahel vahetamiseks vajutage plaadile pikalt ja vajutage uuesti, et valida pakutavatest valikutest.</string>
     <!-- QS Config -->
+    <string name="qs_menu_item_columns">Väljad</string>
+    <string name="qs_menu_item_columns_landscape">Vertikaal veerud</string>
+    <string name="qs_menu_item_columns_three">3</string>
+    <string name="qs_menu_item_columns_four">4</string>
+    <string name="qs_menu_item_columns_five">5</string>
+    <string name="qs_menu_item_columns_six">6</string>
+    <string name="qs_menu_item_columns_seven">7</string>
+    <string name="qs_menu_item_columns_eight">8</string>
+    <string name="qs_menu_item_columns_nine">9</string>
+    <string name="qs_menu_item_reset">Lähtesta</string>
+    <string name="qs_menu_item_titles">Näita silte</string>
+    <string name="qs_menu_item_rows">Read</string>
+    <string name="qs_menu_item_rows_landscape">Horisontaal read</string>
+    <string name="qs_menu_item_rows_one">1</string>
+    <string name="qs_menu_item_rows_two">2</string>
+    <string name="qs_menu_item_rows_three">3</string>
+    <string name="qs_menu_item_rows_four">4</string>
+    <string name="qs_menu_item_qs_columns">Kiirklahvid</string>
+    <string name="qs_menu_item_columns_auto">Automaatne</string>
+    <string name="screenshot_abort_title">Kuvatõmmist ei tehtud</string>
+    <string name="screenshot_abort_text">Toiming katkestati.</string>
     <!-- Expanded Desktop QS Tile -->
-    <!-- Advance location quick setting tile -->
+    <string name="quick_settings_expanded_desktop_label">Laiendatud töölaud</string>
+    <string name="quick_settings_expanded_desktop">Laiendatud</string>
+    <string name="quick_settings_expanded_desktop_off">Tavaline</string>
+    <string name="quick_settings_expanded_navigation_off">Peida navigeerimisriba</string>
+    <string name="quick_settings_expanded_statusbar_off">Peida olekuriba</string>
+    <!-- Location Tile -->
+    <string name="accessibility_quick_settings_location_battery_saving">Asukoha teatamine: aku säästmise režiim.</string>
+    <string name="accessibility_quick_settings_location_gps_only">Asukoha teatamine: ainult andurite režiim.</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Asukoha teatamine: kõrge täpsusega režiim.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">Kiire laadimine (<xliff:g id="charging_time_left" example="4 tundi ja 2 minutit">%s</xliff:g> kuni aku on täis)</string>
+    <string name="keyguard_plugged_in_dash_charging">Kiir laadimine</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">TurboPower on ühendatud (<xliff:g id="charging_time_left">%s</xliff:g> jäänud)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">TurboPower on ühendatud</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Mängurežiim</string>
+    <string name="gaming_mode_tile_toast">Mängurežiim on lubatud</string>
+    <string name="gaming_mode_tile_toast_disabled">Mängurežiim on keelatud</string>
+    <string name="gaming_mode_dialog_title">Mängurežiim</string>
+    <string name="gaming_mode_dialog_message">Kui mängurežiim on sisse lülitatud, muutub helina režiim vibreerivaks režiimiks, kõik heads-up sõnumid blokeeritakse ja riistvara võtmed lülitatakse välja. Meedia maht suureneb maksimaalsele väärtusele. Kõik välja lülitatud seaded lähtestatakse vaikerežiimile pärast mängurežiimist väljumist.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Mängurežiim on sisse lülitatud</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Mängurežiim on välja lülitatud</string>
     <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Kompass</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Määratlen\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Kompass väljas.</string>
+    <string name="accessibility_quick_settings_compass_on">Kompass sees.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Kompass on välja lülitatud.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Kompass on sisse lülitatud.</string>
+    <string name="quick_settings_compass_N">Põhi</string>
+    <string name="quick_settings_compass_NE">Kirre</string>
+    <string name="quick_settings_compass_E">Ida</string>
+    <string name="quick_settings_compass_SE">Kagu</string>
+    <string name="quick_settings_compass_S">Lõuna</string>
+    <string name="quick_settings_compass_SW">Edel</string>
+    <string name="quick_settings_compass_W">Lääs</string>
+    <string name="quick_settings_compass_NW">Loe</string>
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s kuni %s</string>
+    <string name="recents_free_ram">Vaba muutmälu: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">Avage jooksvate teenuste kuva.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Targad pikslid</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Automaatselt lubatud targad pikslid</string>
     <!-- ADB over network QS tile -->
+    <string name="quick_settings_network_adb_label">ADB üle võrgu</string>
     <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE sees</string>
+    <string name="lte_off">LTE väljas</string>
     <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Kas peatada sunniviisiliselt?</string>
+    <string name="force_stop_dlg_text">Kui sunnite rakenduse peatuma, võib see valesti käituda.</string>
+    <string name="kill">Sulge rakendus</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Ühe käe režiim</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Heliotsing</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">Kuva alati</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">Muusika</string>
+    <string name="quick_settings_music_play">Esita</string>
+    <string name="quick_settings_music_pause">Paus</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sünkroniseeri</string>
+    <string name="accessibility_quick_settings_sync_off">Sünk. väljas.</string>
+    <string name="accessibility_quick_settings_sync_on">Sünk. sees.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Sünk välja lülitatud.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Sünk sisse lülitatud.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Säästlik ekraan</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Säästlik ekraan väljas.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Säästlik ekraan sees.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Säästlik ekraan väljalülitatud.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Säästlik ekraan sisselülitatud.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Helipaneel</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

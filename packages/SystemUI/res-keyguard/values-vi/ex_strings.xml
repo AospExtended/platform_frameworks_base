@@ -15,4 +15,8 @@
      the documentation output. To suppress comment lines from the documentation
      output, insert an eat-comment element after the comment lines.
 -->
-<resources></resources>
+<resources>
+    <!-- Header. -->
+    <!-- Hours. -->
+    <!-- Minutes. -->
+</resources>

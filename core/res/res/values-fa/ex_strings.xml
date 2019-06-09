@@ -33,8 +33,32 @@
     <string name="permdesc_toggleNavigationEditor">به یک برنامه اجازه تنظیم و کنترل نوار ناوبری را می‌دهد.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">دسترسی به مدیریت فونت</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">اجازه دادن به یک برنامه برای دسترسی به مدیریت فونت.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">این پکیج فوت نصب شده اما به نظر می‌رسد که فایل fonts.xml وجود ندارد. لطفاً به توسعه دهنده خود اطلاع دهید.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">محو شدن</string>
+    <string name="animation_slide_right">کشیدن از راست</string>
+    <string name="animation_slide_left">کشیدن از چپ</string>
+    <string name="animation_slide_right_no_fade">کشیدن به راست (بدون محو شدن)</string>
+    <string name="animation_slide_left_no_fade">کشیدن به چپ (بدون محو شدن)</string>
+    <string name="animation_slide_up">کشیدن از پایین</string>
+    <string name="animation_slide_down">کشیدن از بالا</string>
+    <string name="animation_default">پیش‌فرض</string>
+    <string name="animation_translucent">شفافیت</string>
+    <string name="animation_grow_shrink">بزرگ شدن (از بالا)</string>
+    <string name="animation_grow_shrink_center">بزرگ شدن (از مرکز)</string>
+    <string name="animation_grow_shrink_bottom">بزرگ شدن (از پایین)</string>
+    <string name="animation_grow_shrink_left">بزرگ شدن (از چپ)</string>
+    <string name="animation_grow_shrink_right">بزرگ شدن (از راست)</string>
+    <string name="animation_random">تصادفی</string>
+    <string name="action_null">خالی</string>
     <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">ای‌دی‌بی از طریق شبکه فعال شد</string>
+    <string name="adb_both_active_notification_title">ADB روی شبکه USB و &amp; فعال شد</string>
+    <string name="adb_active_generic_notification_message">برای غیرفعال کردن اشکال‌زدایی لمس کنید.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

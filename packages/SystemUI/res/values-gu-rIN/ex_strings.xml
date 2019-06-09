@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">સામાન્ય</string>
     <string name="quick_settings_expanded_navigation_off">નેવિગેશન બાર છુપાવો</string>
     <string name="quick_settings_expanded_statusbar_off">સ્થિતિ બાર છુપાવો</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">બૅટરી બચત</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">સ્થાન રિપોર્ટિંગ: બૅટરી બચત મોડ.</string>
-    <string name="quick_settings_location_secondary_gps_only">ફક્ત સેન્સર્સ</string>
     <string name="accessibility_quick_settings_location_gps_only">સ્થાન રિપોર્ટિંગ: ફક્ત સેન્સર્સ મોડ.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">ઉચ્ચ સચોટતા</string>
     <string name="accessibility_quick_settings_location_high_accuracy">સ્થાન રિપોર્ટિંગ: ઉચ્ચ સચોટતા મોડ.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_plugged_in_dash_charging">ડૅશ ચારજીંગ</string>
@@ -193,4 +190,6 @@
     <!-- Sync QS tile -->
     <!-- Ambient display QS tile -->
     <!-- Volume panel QS tile -->
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

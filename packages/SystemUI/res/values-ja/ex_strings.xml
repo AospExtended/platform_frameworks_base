@@ -68,7 +68,7 @@
     <string name="quick_settings_reboot_label">再起動</string>
     <string name="quick_settings_reboot_recovery_label">リカバリー</string>
     <!-- Screenshot QS tile -->
-    <string name="quick_settings_screenshot_label">スクリーンショット</string>
+    <string name="quick_settings_screenshot_label">スクリーン\nショット</string>
     <string name="quick_settings_region_screenshot_label">範囲選択してスクリーンショット</string>
     <!-- Heads Up QS Tile -->
     <string name="quick_settings_heads_up_label">Heads Up</string>
@@ -81,11 +81,11 @@
     <string name="accessibility_quick_settings_usb_tether_on">USB テザリング ON</string>
     <string name="accessibility_quick_settings_usb_tether_changed_off">USB テザリングを OFF にしました</string>
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB テザリングを ON にしました</string>
-    <string name="quick_settings_usb_tether_label">USB テザリング</string>
+    <string name="quick_settings_usb_tether_label">USB\nテザリング</string>
     <!-- HW Keys Tile -->
     <string name="accessibility_quick_settings_hwkeys_on">ハードウェアキー ON</string>
     <string name="accessibility_quick_settings_hwkeys_off">ハードウェアキー OFF</string>
-    <string name="quick_settings_hwkeys_label">ハードウェアキー</string>
+    <string name="quick_settings_hwkeys_label">ハードウェア\nキー</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 通知の表示は1分間停止します</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - 通知の表示は<xliff:g id="number">%d</xliff:g>分間停止します</string>
@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">黒い UI</string>
     <string name="systemui_theme_style_extended">Extended UI</string>
     <string name="systemui_theme_style_chocolate">チョコレート UI</string>
+    <string name="systemui_theme_style_elegant">エレガント UI</string>
     <string name="quick_settings_theme_tile_title">アクセント</string>
     <string name="quick_settings_theme_tile_accent_detail_title">色を選択</string>
     <string name="quick_settings_theme_tile_style_detail_title">スタイルを選択</string>
@@ -122,9 +123,10 @@
     <string name="quick_settings_theme_tile_color_blue_grey">ブルーグレー</string>
     <string name="quick_settings_theme_tile_color_candy_red">キャンディレッド</string>
     <string name="quick_settings_theme_tile_color_pale_red">ペイルレッド</string>
-    <string name="quick_settings_theme_tile_color_extended_green">エクステンデッドグリーン</string>
+    <string name="quick_settings_theme_tile_color_extended_green">Extended グリーン</string>
     <string name="quick_settings_theme_tile_color_pale_blue">ペイルブルー</string>
     <string name="quick_settings_theme_tile_color_jade_green">ジェイドグリーン</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">エレガントグリーン</string>
     <string name="quick_settings_theme_tile_color_black">ブラック</string>
     <string name="quick_settings_theme_tile_color_white">ホワイト</string>
     <string name="theme_info_title">これは何ですか?</string>
@@ -153,17 +155,28 @@
     <string name="screenshot_abort_text">操作を中止しました</string>
     <!-- Expanded Desktop QS Tile -->
     <string name="quick_settings_expanded_desktop_label">拡張デスクトップ</string>
-    <string name="quick_settings_expanded_desktop">展開中</string>
+    <string name="quick_settings_expanded_desktop">拡張済み</string>
     <string name="quick_settings_expanded_desktop_off">標準</string>
     <string name="quick_settings_expanded_navigation_off">ナビゲーションバーを隠す</string>
     <string name="quick_settings_expanded_statusbar_off">ステータスバーを隠す</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">バッテリーセーバー</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">位置情報レポート: バッテリー節約モード</string>
-    <string name="quick_settings_location_secondary_gps_only">センサーのみ</string>
-    <string name="accessibility_quick_settings_location_gps_only">位置情報レポート: センサーのみ</string>
-    <string name="quick_settings_location_secondary_high_accuracy">高精度</string>
+    <string name="accessibility_quick_settings_location_gps_only">位置情報レポート: 端末のみモード</string>
     <string name="accessibility_quick_settings_location_high_accuracy">位置情報レポート: 高精度モード</string>
+    <string name="quick_settings_location_battery_saving_label">バッテリー節約</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">バッテリー\n節約</string>
+    <string name="quick_settings_location_gps_only_label">GPS のみ</string>
+    <string name="quick_settings_location_gps_only_label_twoline">GPS のみ</string>
+    <string name="quick_settings_location_high_accuracy_label">高精度</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">高精度</string>
+    <string name="quick_settings_location_detail_title">位置情報</string>
+    <string name="quick_settings_location_detail_menu_title">選択モード:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">高精度</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">バッテリー節約</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">端末のみ</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">GPS・Wi‑Fi・Bluetooth・モバイルネットワークで現在地を特定する</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Wi‑Fi・Bluetooth・モバイルネットワークで現在地を特定する</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">GPS で現在地を特定する</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">急速充電中 (充電完了まで<xliff:g id="Charging_TIME_LEFT">%s</xliff:g>)</string>
     <string name="keyguard_plugged_in_dash_charging">急速充電中</string>
@@ -200,10 +213,10 @@
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
     <string name="accessibility_quick_settings_running_services">実行中のサービスを開く</string>
     <!-- Smart pixels QS tile -->
-    <string name="quick_settings_smart_pixels">スマートピクセル</string>
-    <string name="quick_settings_smart_pixels_on_power_save">スマートピクセルを自動的に有効にする</string>
+    <string name="quick_settings_smart_pixels">スマート\nピクセル</string>
+    <string name="quick_settings_smart_pixels_on_power_save">自動有効</string>
     <!-- ADB over network QS tile -->
-    <string name="quick_settings_network_adb_label">ネットワーク経由の ADB</string>
+    <string name="quick_settings_network_adb_label">ネット経由の ADB</string>
     <!-- LTE QS Tile -->
     <string name="qs_lte_label">LTE</string>
     <string name="lte_on">LTE ON</string>
@@ -229,10 +242,20 @@
     <string name="accessibility_quick_settings_sync_changed_off">同期を OFF にしました</string>
     <string name="accessibility_quick_settings_sync_changed_on">同期を ON にしました</string>
     <!-- Ambient display QS tile -->
-    <string name="quick_settings_ambient_display_label">アンビエント表示</string>
+    <string name="quick_settings_ambient_display_label">アンビエント\n表示</string>
     <string name="accessibility_quick_settings_ambient_display_off">アンビエント表示 OFF</string>
     <string name="accessibility_quick_settings_ambient_display_on">アンビエント表示 ON</string>
     <string name="accessibility_quick_settings_ambient_display_changed_off">アンビエント表示を OFF にしました</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">アンビエント表示を ON にしました</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">音量パネル</string>
+    <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">読書モード</string>
+    <string name="accessibility_quick_settings_reading_mode_on">読書モード ON</string>
+    <string name="accessibility_quick_settings_reading_mode_off">読書モード OFF</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">読書モードを ON にしました</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">読書モードを OFF にしました</string>
+    <!-- Font Tile -->
+    <string name="quick_settings_font_label">フォント</string>
+    <string name="quick_settings_font_detail_label">フォントを選択</string>
 </resources>

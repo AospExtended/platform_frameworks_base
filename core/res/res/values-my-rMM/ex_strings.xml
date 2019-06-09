@@ -14,10 +14,17 @@
 -->
 <resources>
     <!-- Advanced reboot -->
+    <string name="reboot_title">Reboot</string>
+    <string name="reboot_message">Rebooting system</string>
     <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">SystemUI restart required</string>
+    <string name="systemui_restart_message">For all changes to take effect, a SystemUI restart is required. Restart SystemUI now?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">Spoof package signature</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">Allows the app to pretend to be a different app. Malicious applications might be able to use this to access private application data. Grant this permission with caution only!</string>
     <!-- App error dialog -->
+    <string name="aerr_copy">Copy crash log URL</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <!-- Font service -->
@@ -26,4 +33,6 @@
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
     <!-- AOKP custom system animations -->
     <!-- ADB over network -->
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

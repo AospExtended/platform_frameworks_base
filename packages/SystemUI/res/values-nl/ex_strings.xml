@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">Normaal</string>
     <string name="quick_settings_expanded_navigation_off">Verberg navigatiebalk</string>
     <string name="quick_settings_expanded_statusbar_off">Statusbalk verbergen</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Batterijbesparing</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Locatiebepaling: accu besparingsmodus.</string>
-    <string name="quick_settings_location_secondary_gps_only">Alleen sensoren</string>
     <string name="accessibility_quick_settings_location_gps_only">Locatiebepaling: alleen sensoren.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Hoge nauwkeurigheid</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Locatiebepaling: hoge nauwkeurigheidsmodus.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Dash Opladen (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> resterend)</string>
@@ -197,4 +194,6 @@
     <!-- Sync QS tile -->
     <!-- Ambient display QS tile -->
     <!-- Volume panel QS tile -->
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

@@ -56,4 +56,9 @@
     <string name="animation_random">Aleatoriu</string>
     <string name="action_null">Gol</string>
     <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">ADB prin rețea activat</string>
+    <string name="adb_both_active_notification_title">Depanare prin USB și rețea pornită</string>
+    <string name="adb_active_generic_notification_message">Atingeți pentru a dezactiva depanarea.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">Običajno</string>
     <string name="quick_settings_expanded_navigation_off">Skrij vrstico za krmarjenje</string>
     <string name="quick_settings_expanded_statusbar_off">Skrij vrstico stanja</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Varčevanje z energijo akumulatorja</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Poročanje o lokaciji: način varčevanja z energijo akumulatorja.</string>
-    <string name="quick_settings_location_secondary_gps_only">Samo tipala</string>
     <string name="accessibility_quick_settings_location_gps_only">Poročanje lokacije: samo s senzorji.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Visoka natančnost</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Poročanje lokacije: način visoke natančnosti.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Hitro polnjenje (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> do napolnjenosti)</string>
@@ -235,4 +232,6 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Okoliški zaslon izklopljen.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Okoliški zaslon vklopljen.</string>
     <!-- Volume panel QS tile -->
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

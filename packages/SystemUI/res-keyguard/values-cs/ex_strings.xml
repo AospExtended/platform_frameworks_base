@@ -15,4 +15,95 @@
      the documentation output. To suppress comment lines from the documentation
      output, insert an eat-comment element after the comment lines.
 -->
-<resources></resources>
+<resources>
+    <!-- Header. -->
+    <string name="text_clock_header_one">Je</string>
+    <string name="text_clock_header_few">Je</string>
+    <string name="text_clock_header_multiple">Je</string>
+    <!-- Hours. -->
+    <string name="text_clock_hours_midnight">Půlnoc</string>
+    <string name="text_clock_hours_one">Jedna</string>
+    <string name="text_clock_hours_two">Dvě</string>
+    <string name="text_clock_hours_three">Tři</string>
+    <string name="text_clock_hours_four">Čtyři</string>
+    <string name="text_clock_hours_five">Pět</string>
+    <string name="text_clock_hours_six">Šest</string>
+    <string name="text_clock_hours_seven">Sedm</string>
+    <string name="text_clock_hours_eight">Osm</string>
+    <string name="text_clock_hours_nine">Devět</string>
+    <string name="text_clock_hours_ten">Deset</string>
+    <string name="text_clock_hours_eleven">Jedenáct</string>
+    <string name="text_clock_hours_twelve">Dvanáct</string>
+    <string name="text_clock_hours_thirteen">Třináct</string>
+    <string name="text_clock_hours_fourteen">Čtrnáct</string>
+    <string name="text_clock_hours_fifteen">Patnáct</string>
+    <string name="text_clock_hours_sixteen">Šestnáct</string>
+    <string name="text_clock_hours_seventeen">Sedmnáct</string>
+    <string name="text_clock_hours_eighteen">Osmnáct</string>
+    <string name="text_clock_hours_nineteen">Devatenáct</string>
+    <string name="text_clock_hours_twenty">Dvacet</string>
+    <string name="text_clock_hours_twentyone">Dvacet jedna</string>
+    <string name="text_clock_hours_twentytwo">Dvacet dva</string>
+    <string name="text_clock_hours_twentythree">Dvacet tři</string>
+    <!-- Minutes. -->
+    <string name="text_clock_minutes_zero">Hod.</string>
+    <string name="text_clock_minutes_one">Jedna</string>
+    <string name="text_clock_minutes_two">Dvě</string>
+    <string name="text_clock_minutes_three">Tři</string>
+    <string name="text_clock_minutes_four">Čtyři</string>
+    <string name="text_clock_minutes_five">Pět</string>
+    <string name="text_clock_minutes_six">Šest</string>
+    <string name="text_clock_minutes_seven">Sedm</string>
+    <string name="text_clock_minutes_eight">Osm</string>
+    <string name="text_clock_minutes_nine">Devět</string>
+    <string name="text_clock_minutes_ten">Deset</string>
+    <string name="text_clock_minutes_eleven">Jedenáct</string>
+    <string name="text_clock_minutes_twelve">Dvanáct</string>
+    <string name="text_clock_minutes_thirteen">Třináct</string>
+    <string name="text_clock_minutes_fourteen">Čtrnáct</string>
+    <string name="text_clock_minutes_fifteen">Patnáct</string>
+    <string name="text_clock_minutes_sixteen">Šestnáct</string>
+    <string name="text_clock_minutes_seventeen">Sedmnáct</string>
+    <string name="text_clock_minutes_eighteen">Osmnáct</string>
+    <string name="text_clock_minutes_nineteen">Devatenáct</string>
+    <string name="text_clock_minutes_twenty">Dvacet</string>
+    <string name="text_clock_minutes_twentyone">Dvacet jedna</string>
+    <string name="text_clock_minutes_twentytwo">Dvacet dva</string>
+    <string name="text_clock_minutes_twentythree">Dvacet tři</string>
+    <string name="text_clock_minutes_twentyfour">Dvacet čtyři</string>
+    <string name="text_clock_minutes_twentyfive">Dvacet pět</string>
+    <string name="text_clock_minutes_twentysix">Dvacet šest</string>
+    <string name="text_clock_minutes_twentyseven">Dvacet sedm</string>
+    <string name="text_clock_minutes_twentyeight">Dvacet osm</string>
+    <string name="text_clock_minutes_twentynine">Dvacet devět</string>
+    <string name="text_clock_minutes_thirty">Třicet</string>
+    <string name="text_clock_minutes_thirtyone">Třicet jedna</string>
+    <string name="text_clock_minutes_thirtytwo">Třicet dva</string>
+    <string name="text_clock_minutes_thirtythree">Třicet tři</string>
+    <string name="text_clock_minutes_thirtyfour">Třicet čtyři</string>
+    <string name="text_clock_minutes_thirtyfive">Třicet pět</string>
+    <string name="text_clock_minutes_thirtysix">Třicet šest</string>
+    <string name="text_clock_minutes_thirtyseven">Třicet sedm</string>
+    <string name="text_clock_minutes_thirtyeight">Třicet osm</string>
+    <string name="text_clock_minutes_thirtynine">Třicet devět</string>
+    <string name="text_clock_minutes_fourty">Čtyřicet</string>
+    <string name="text_clock_minutes_fourtyone">Čtyřicet jedna</string>
+    <string name="text_clock_minutes_fourtytwo">Čtyřicet dva</string>
+    <string name="text_clock_minutes_fourtythree">Čtyřicet tři</string>
+    <string name="text_clock_minutes_fourtyfour">Čtyřicet čtyři</string>
+    <string name="text_clock_minutes_fourtyfive">Čtyřicet pět</string>
+    <string name="text_clock_minutes_fourtysix">Čtyřicet šest</string>
+    <string name="text_clock_minutes_fourtyseven">Čtyřicet sedm</string>
+    <string name="text_clock_minutes_fourtyeight">Čtyřicet osm</string>
+    <string name="text_clock_minutes_fourtynine">Čtyřicet devět</string>
+    <string name="text_clock_minutes_fifty">Padesát</string>
+    <string name="text_clock_minutes_fiftyone">Padesát jedna</string>
+    <string name="text_clock_minutes_fiftytwo">Padesát dva</string>
+    <string name="text_clock_minutes_fiftythree">Padesát tři</string>
+    <string name="text_clock_minutes_fiftyfour">Padesát čtyři</string>
+    <string name="text_clock_minutes_fiftyfive">Padesát pět</string>
+    <string name="text_clock_minutes_fiftysix">Padesát šest</string>
+    <string name="text_clock_minutes_fiftyseven">Padesát sedm</string>
+    <string name="text_clock_minutes_fiftyeight">Padesát osm</string>
+    <string name="text_clock_minutes_fiftynine">Padesát devět</string>
+</resources>

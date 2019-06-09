@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">Normál</string>
     <string name="quick_settings_expanded_navigation_off">A Navigációs sáv elrejtése</string>
     <string name="quick_settings_expanded_statusbar_off">Az Állapotsor elrejtése</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Akkumulátorkímélő</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Helymeghatározás: akkumulátorkímélő mód.</string>
-    <string name="quick_settings_location_secondary_gps_only">Csak a GPS használata a helymeghatározáshoz</string>
     <string name="accessibility_quick_settings_location_gps_only">Helymeghatározás: csak GPS.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Nagy pontosságú</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Helymeghatározás: nagy pontosságú mód.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Dash töltés (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> a teljes töltöttségig)</string>
@@ -235,4 +232,7 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Környezeti kijelző kikapcsolva.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Környezeti kijelző bekapcsolva.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Hangerőszabályzó</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

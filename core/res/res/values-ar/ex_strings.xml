@@ -59,4 +59,6 @@
     <string name="adb_net_active_notification_title">تم تمكين ADB عبر الشبكة</string>
     <string name="adb_both_active_notification_title">تمكين ADB عبر USB وعبر الشبكة</string>
     <string name="adb_active_generic_notification_message">انقر لتعطيل تصحيح الأخطاء.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">Normal</string>
     <string name="quick_settings_expanded_navigation_off">Navigationsleiste ausblenden</string>
     <string name="quick_settings_expanded_statusbar_off">Statusleiste ausblenden</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Energiesparmodus</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Standortdienste: Energiesparmodus.</string>
-    <string name="quick_settings_location_secondary_gps_only">Nur Gps</string>
     <string name="accessibility_quick_settings_location_gps_only">Standortdienste: nur Gps.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Hohe Genauigkeit</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Standortdienste: hohe Genauigkeit.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Schnellladen (<xliff:g id="charging_time_left" example="4 Stunden und 2 Minuten">%s</xliff:g> bis Akku voll)</string>
@@ -235,4 +232,7 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Inaktivitätsdisplay ausgeschaltet.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Inaktivitätsdisplay eingeschaltet.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Lautstärkeregler</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

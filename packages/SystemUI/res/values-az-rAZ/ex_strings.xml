@@ -107,12 +107,9 @@
     <string name="quick_settings_expanded_desktop_off">Normal</string>
     <string name="quick_settings_expanded_navigation_off">Naviqasiya panelini gizlət</string>
     <string name="quick_settings_expanded_statusbar_off">Status panelini gizlət</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Batareya qənaəti</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Məkan bildirişi: batareya qənaət rejimi.</string>
-    <string name="quick_settings_location_secondary_gps_only">Yalnız sensorlar</string>
     <string name="accessibility_quick_settings_location_gps_only">Məkan bildirişi: sadəcə sensorlar rejimi.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Yüksək həssaslıq</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Yer hesabatı: yüksək həssaslıq rejimi.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
@@ -131,4 +128,6 @@
     <!-- Sync QS tile -->
     <!-- Ambient display QS tile -->
     <!-- Volume panel QS tile -->
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

@@ -59,4 +59,6 @@
     <string name="adb_net_active_notification_title">ADB μέσω δικτύου ενεργοποιημένο</string>
     <string name="adb_both_active_notification_title">ADB μέσω USB &amp; δικτύου ενεργοποιημένο</string>
     <string name="adb_active_generic_notification_message">Αγγίξτε για απενεργοποίηση του εντοπισμού σφαλμάτων.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

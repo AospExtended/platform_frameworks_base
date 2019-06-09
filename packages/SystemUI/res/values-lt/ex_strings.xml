@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">Normalus</string>
     <string name="quick_settings_expanded_navigation_off">Slėpti naršymo juosta</string>
     <string name="quick_settings_expanded_statusbar_off">Slėpti būsenos juostą</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Baterijos taupymas</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Vietos pranešimai: akumuliatoriaus taupymo režimas.</string>
-    <string name="quick_settings_location_secondary_gps_only">Tik jutikliai</string>
     <string name="accessibility_quick_settings_location_gps_only">Vietos ataskaitų teikimas: tik jutiklių režimas.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Didelis tikslumas</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Vietos ataskaitų teikimas: didelio tikslumo režimas.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Greitasis įkrovimas (<xliff:g id="liko" example="4 val. ir 2 min.">%s</xliff:g> iki pilnos baterijos)</string>
@@ -235,4 +232,7 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Aplinkos ekranas visada išjungtas.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Aplinkos ekranas bus įjungtas.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Garsumo skydelis</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

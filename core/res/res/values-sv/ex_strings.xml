@@ -59,4 +59,6 @@
     <string name="adb_net_active_notification_title">ADB över nätverk aktiverat</string>
     <string name="adb_both_active_notification_title">ADB över USB &amp; nätverk aktiverade</string>
     <string name="adb_active_generic_notification_message">Tryck för att inaktivera felsökning.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

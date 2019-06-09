@@ -59,4 +59,6 @@
     <string name="adb_net_active_notification_title">ADB derinimas per tinklą įjungtas</string>
     <string name="adb_both_active_notification_title">ADB per USB &amp; tinklas įjungtas</string>
     <string name="adb_active_generic_notification_message">Palieskite, kad išjungtumėte derinimą.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

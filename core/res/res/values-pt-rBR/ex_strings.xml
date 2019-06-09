@@ -59,4 +59,6 @@
     <string name="adb_net_active_notification_title">ADB sobre rede ativado</string>
     <string name="adb_both_active_notification_title">ADB sobre USB &amp; rede habilitado</string>
     <string name="adb_active_generic_notification_message">Toque para desativar a depuração.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

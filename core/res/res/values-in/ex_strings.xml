@@ -60,7 +60,9 @@
     <string name="animation_random">Acak</string>
     <string name="action_null">Tidak ada</string>
     <!-- ADB over network -->
-    <string name="adb_net_active_notification_title">ADB lewat jaringan hidup</string>
-    <string name="adb_both_active_notification_title">ADB lewat USB &amp; jaringan dihidupkan</string>
+    <string name="adb_net_active_notification_title">ADB melalui jaringan diaktifkan</string>
+    <string name="adb_both_active_notification_title">ADB melalui USB &amp; amp; jaringan diaktifkan</string>
     <string name="adb_active_generic_notification_message">Sentuh untuk menonaktifkan debugging.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

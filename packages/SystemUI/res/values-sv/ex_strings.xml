@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">Normal</string>
     <string name="quick_settings_expanded_navigation_off">Dölj navigationsfält</string>
     <string name="quick_settings_expanded_statusbar_off">Dölj statusfält</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Batterisparläge</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Platsrapportering: batterisparläge.</string>
-    <string name="quick_settings_location_secondary_gps_only">Endast sensorer</string>
     <string name="accessibility_quick_settings_location_gps_only">Platsrapportering: endast sensorer.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Hög precision</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Platsrapportering: hög precision.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Snabbladdning (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> tills fulladdat)</string>
@@ -217,4 +214,6 @@
     <!-- Sync QS tile -->
     <!-- Ambient display QS tile -->
     <!-- Volume panel QS tile -->
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

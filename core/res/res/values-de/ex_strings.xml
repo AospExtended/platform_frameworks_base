@@ -59,4 +59,6 @@
     <string name="adb_net_active_notification_title">ADB über Netzwerk aktiviert</string>
     <string name="adb_both_active_notification_title">ADB über USB &amp; Netzwerk aktiviert</string>
     <string name="adb_active_generic_notification_message">Berühren, um Debugging zu deaktivieren.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

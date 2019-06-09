@@ -59,4 +59,6 @@
     <string name="adb_net_active_notification_title">ADB праз сетку ўключана</string>
     <string name="adb_both_active_notification_title">ADB праз USB і сетку ўключана</string>
     <string name="adb_active_generic_notification_message">Націсніце, каб адключыць адладку.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

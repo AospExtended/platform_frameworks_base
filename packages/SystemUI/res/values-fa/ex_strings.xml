@@ -21,7 +21,7 @@
     <!-- Advanced reboot -->
     <string name="global_action_restart_advanced">پیشرفته</string>
     <string name="global_action_restart_recovery">ریکاوری</string>
-    <string name="global_action_restart_bootloader">بوت‌لود</string>
+    <string name="global_action_restart_bootloader">بوت‌لودر</string>
     <string name="global_action_restart_ui">رابط کابری سیستم</string>
     <string name="global_action_restart_soft">ریبوت نرم</string>
     <string name="statusbar_items_title">آیکون نوار وضعیت</string>
@@ -157,28 +157,82 @@
     <string name="quick_settings_expanded_desktop_off">معمولی</string>
     <string name="quick_settings_expanded_navigation_off">پنهان کردن نوار ناوبری</string>
     <string name="quick_settings_expanded_statusbar_off">پنهان کردن نوار وضعیت</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">صرفه جویی در باتری</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">گزارش مکان: حالت ذخیره مصرف باطری.</string>
-    <string name="quick_settings_location_secondary_gps_only">فقط سنسور ها</string>
     <string name="accessibility_quick_settings_location_gps_only">گزارش مکان: حالت فقط سنسور.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">دقت بالا</string>
     <string name="accessibility_quick_settings_location_high_accuracy">گزارش مکان: حالت دقت بالا.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_dash_charging_time">در حال سوپر شارژ (<xliff:g id="charging_time_left" مثال="4ساعت و 2 دقیقه ">%s </xliff:g> تا کامل شدن باتری)</string>
+    <string name="keyguard_plugged_in_dash_charging">شارژ سریع وان پلاس</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_turbo_power_time">شارژ توربو متصل شد (<xliff:g id="charging_time_left">%s</xliff:g> تا کامل شدن باتری)</string>
+    <string name="keyguard_plugged_in_turbo_power_charging">شارژ توربو متصل شد</string>
     <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">حالت بازی</string>
+    <string name="gaming_mode_tile_toast">حالت بازی فعال شد</string>
+    <string name="gaming_mode_tile_toast_disabled">حالت بازی غیر فعال شد</string>
+    <string name="gaming_mode_dialog_title">حالت بازی</string>
+    <string name="gaming_mode_dialog_message">در صورت فعال بودن حالت بازی هشدار زنگ تماس به حالت لرزش تغییر خواهد کرد،تمام پیام های فوری شناور غیرفعال می شود و کلید های سخت افزاری خاموش خواهد شد. صدای رسانه به بیشترین مقدار افزایش پیدا می کند. تمام تنظیمات غیرفعال شده هنگام خروج از حالت بازی به تنظيم پیش فرض برخواهد گشت.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">حالت بازی فعال</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">حالت بازی غیرفعال</string>
     <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">قطب نما</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">مقدار اولیه\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">قطب نما خاموش</string>
+    <string name="accessibility_quick_settings_compass_on">قطب نما روشن</string>
+    <string name="accessibility_quick_settings_compass_changed_off">قطب نما خاموش شد.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">قطب نما روشن شد.</string>
+    <string name="quick_settings_compass_N">شمال</string>
+    <string name="quick_settings_compass_NE">شمال شرقی</string>
+    <string name="quick_settings_compass_E">شرق</string>
+    <string name="quick_settings_compass_SE">جنوب شرقی</string>
+    <string name="quick_settings_compass_S">جنوب</string>
+    <string name="quick_settings_compass_SW">جنوب غربی</string>
+    <string name="quick_settings_compass_W">غرب</string>
+    <string name="quick_settings_compass_NW">شمال غربی</string>
     <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s توسط %s</string>
+    <string name="recents_free_ram">رم آزاد: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_running_services">نمایش سرویس های در حال اجرا.</string>
     <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">پیکسل هوشمند برای صرفه جویی در مصرف باتری</string>
+    <string name="quick_settings_smart_pixels_on_power_save">پیکسل هوشمند درحالت خودکار</string>
     <!-- ADB over network QS tile -->
+    <string name="quick_settings_network_adb_label">ای‌دی‌بی از طریق شبکه</string>
     <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE فعال</string>
+    <string name="lte_off">LTE غیر فعال</string>
     <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">به اجبار متوقف شود؟</string>
+    <string name="force_stop_dlg_text">اگر برنامه‌ای را به اجبار متوقف کنید، ممکن است درست کار نکند.</string>
+    <string name="kill">توقف برنامه</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">حالت یک دستی</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">جستجو صدا</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">حالت همیشه روشن</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">موسیقی</string>
+    <string name="quick_settings_music_play">پخش</string>
+    <string name="quick_settings_music_pause">مکث</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">همگام سازی</string>
+    <string name="accessibility_quick_settings_sync_off">همگام‌سازی خاموش</string>
+    <string name="accessibility_quick_settings_sync_on">همگام‌سازی روشن</string>
+    <string name="accessibility_quick_settings_sync_changed_off">همگام‌سازی خاموش شد.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">همگام‌سازی روشن شد.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">نمایش حساس به محیط</string>
+    <string name="accessibility_quick_settings_ambient_display_off">نمایش حساس به محیط خاموش</string>
+    <string name="accessibility_quick_settings_ambient_display_on">نمایش حساس به محیط روشن</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">نمایش حساس به محیط خاموش شد.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">نمایش حساس به محیط روشن شد.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">پنل صدا</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

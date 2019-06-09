@@ -57,4 +57,6 @@
     <string name="animation_random">רנדומלי</string>
     <string name="action_null">ריק</string>
     <!-- ADB over network -->
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

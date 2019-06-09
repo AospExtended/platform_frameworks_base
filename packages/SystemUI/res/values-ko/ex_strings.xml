@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">기본</string>
     <string name="quick_settings_expanded_navigation_off">내비게이션 바 숨기기</string>
     <string name="quick_settings_expanded_statusbar_off">상태 표시줄 숨기기</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">배터리 절약</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">위치 확인: 배터리 절약 모드</string>
-    <string name="quick_settings_location_secondary_gps_only">센서만</string>
     <string name="accessibility_quick_settings_location_gps_only">위치 확인: 센서 전용 모드.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">높은 정확도</string>
     <string name="accessibility_quick_settings_location_high_accuracy">위치 모드: 높은 정확도 모드</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">대쉬 충전중 (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> 후 충전 완료)</string>
@@ -205,12 +202,37 @@
     <!-- ADB over network QS tile -->
     <string name="quick_settings_network_adb_label">무선 네트워크로 ADB 사용</string>
     <!-- LTE QS Tile -->
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE 켜짐</string>
+    <string name="lte_off">LTE 꺼짐</string>
     <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">강제로 종료하시겠습니까?</string>
+    <string name="force_stop_dlg_text">강제로 앱을 종료하면 예기치 않은 오류가 발생할 수 있습니다.</string>
+    <string name="kill">앱 종료</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">한 손 조작 모드</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">사운드 검색</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">올웨이즈 온 디스플레이</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">음악</string>
+    <string name="quick_settings_music_play">재생</string>
+    <string name="quick_settings_music_pause">일시 정지</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">동기화</string>
+    <string name="accessibility_quick_settings_sync_off">동기화 꺼짐</string>
+    <string name="accessibility_quick_settings_sync_on">동기화 켜짐</string>
+    <string name="accessibility_quick_settings_sync_changed_off">동기화가 해제되었습니다.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">동기화가 설정되었습니다.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">앰비언트 디스플레이</string>
+    <string name="accessibility_quick_settings_ambient_display_off">앰비언트 디스플레이 꺼짐</string>
+    <string name="accessibility_quick_settings_ambient_display_on">앰비언트 디스플레이 켜짐</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">앰비언트 디스플레이가 꺼졌습니다.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">엠비언트 디스플레이가 켜졌습니다.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">볼륨 패널</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

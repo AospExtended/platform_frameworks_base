@@ -56,4 +56,6 @@
     <string name="animation_random">રેન્ડમ</string>
     <string name="action_null">ખાલી</string>
     <!-- ADB over network -->
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

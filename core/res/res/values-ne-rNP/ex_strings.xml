@@ -14,16 +14,51 @@
 -->
 <resources>
     <!-- Advanced reboot -->
+    <string name="reboot_title">पुनः सुचारु</string>
+    <string name="reboot_message">सिस्टम पुनः सुचारु हुँदैछ</string>
     <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">प्रणालीयूआई पुन: सुरुवात आवश्यक छ</string>
+    <string name="systemui_restart_message">प्रभावकारी बनाउन सबै परिवर्तनहरूका लागि, प्रणालीयूआई पुन: सुरुवात आवश्यक पर्दछ। प्रणालीयूआई अहिले सुरू गर्नुहोस्?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">प्याकेज हस्ताक्षर स्पुफ गर्नुहोस</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">एपलाई एक फरक एप जस्तो व्यबहार गर्न अनुमति दिन्छ। दुर्भावनापूर्ण अनुप्रयोगहरूले निजी अनुप्रयोग डाटा पहुँच गर्न यो प्रयोग गर्न सक्षम हुन सक्दछ। यो अनुमति सावधानीपूर्वक मात्र अनुमति दिनुहोस्!</string>
     <!-- App error dialog -->
+    <string name="aerr_copy">दुर्घटना लग यूआरएल प्रतिलिपि गर्नुहोस्</string>
+    <string name="url_copy_success">यूआरएल सफलतापूर्वक प्रतिलिपि गरियो</string>
+    <string name="url_copy_failed">डगबिनमा लग अपलोड गर्दा त्रुटि देखा पर्यो</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_toggleNavigationEditor">नियन्त्रण नेभिगेशन सम्पादक</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_toggleNavigationEditor">नेभिगेसन पट्टी सम्पादकलाई नियन्त्रण गर्न अनुप्रयोगलाई अनुमति दिन्छ।.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">फन्ट प्रबन्धक पहुँच गर्नुहोस्</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">अनुप्रयोगलाई फन्ट प्रबन्धक पहुँच गर्न अनुमति दिन्छ।</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">तपाईँले स्थापना गर्नुभएको फन्ट प्याकेज fonts.xml फाईल नभएको ले प्रयोग गर्न लायक छैन। कृपया समर्थनको लागि प्याकेज विकासकर्तालाई सम्पर्क गर्नुहोस्।</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">फिका</string>
+    <string name="animation_slide_right">दायाँतिर स्लाइड</string>
+    <string name="animation_slide_left">बायाँ तिर स्लाइड</string>
+    <string name="animation_slide_right_no_fade">दाँयामा स्लाइड (फीका छैन)</string>
+    <string name="animation_slide_left_no_fade">बायाँ स्लाइड (फीका छैन)</string>
+    <string name="animation_slide_up">तल स्लाइड गर्नुहोस्</string>
+    <string name="animation_slide_down">शीर्षमा स्लाइड गर्नुहोस्</string>
+    <string name="animation_default">पूर्वनिर्धारित</string>
+    <string name="animation_translucent">पारदर्शी</string>
+    <string name="animation_grow_shrink">बढाउनुहोस् (शीर्ष)</string>
+    <string name="animation_grow_shrink_center">बढाउनुहोस् (केन्द्र)</string>
+    <string name="animation_grow_shrink_bottom">बढाउनुहोस् (तल)</string>
+    <string name="animation_grow_shrink_left">बढाउनुहोस् (बायाँ)</string>
+    <string name="animation_grow_shrink_right">बढाउनुहोस् (बायाँ)</string>
+    <string name="animation_random">अनियमित</string>
+    <string name="action_null">खाली</string>
     <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">नेटवर्क मा एडीबी सक्षम गरियो</string>
+    <string name="adb_both_active_notification_title">एडीबी यूएस्बि नेटवर्क मा सक्षम गरियो</string>
+    <string name="adb_active_generic_notification_message">युएसबी डिबग असक्षम पार्न छुनुहोस्।.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

@@ -59,4 +59,6 @@
     <string name="adb_net_active_notification_title">Увімкнено функцію ADB по мережі</string>
     <string name="adb_both_active_notification_title">Відладка по мережі і USB дозволена</string>
     <string name="adb_active_generic_notification_message">Торкніться, щоб вимкнути відладку.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

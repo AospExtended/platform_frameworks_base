@@ -59,4 +59,6 @@
     <string name="adb_net_active_notification_title">ADB par réseau activé</string>
     <string name="adb_both_active_notification_title">ADB par USB &amp; réseau activé</string>
     <string name="adb_active_generic_notification_message">Appuyez pour désactiver le débogage.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

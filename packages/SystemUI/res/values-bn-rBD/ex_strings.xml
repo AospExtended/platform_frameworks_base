@@ -90,7 +90,7 @@
     <string name="qs_menu_item_columns_eight">৮</string>
     <string name="qs_menu_item_columns_nine">৯</string>
     <!-- Expanded Desktop QS Tile -->
-    <!-- Advance location quick setting tile -->
+    <!-- Location Tile -->
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <!-- Gaming Mode -->
@@ -108,4 +108,6 @@
     <!-- Sync QS tile -->
     <!-- Ambient display QS tile -->
     <!-- Volume panel QS tile -->
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

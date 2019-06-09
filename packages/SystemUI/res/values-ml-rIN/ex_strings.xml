@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">സ്വാഭാവികം</string>
     <string name="quick_settings_expanded_navigation_off">നാവ് ബാർ മറയ്ക്കുക</string>
     <string name="quick_settings_expanded_statusbar_off">സ്റ്റാറ്റസ് ബാർ മറയ്ക്കുക</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">സ്വയം ബാറ്ററി സംരക്ഷണം</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">സ്ഥാനം റിപ്പോർട്ടിംഗ്: ബാറ്ററി ലാഭിക്കല്‍ മോഡ്.</string>
-    <string name="quick_settings_location_secondary_gps_only">സെൻസർ മാത്രം</string>
     <string name="accessibility_quick_settings_location_gps_only">സ്ഥാനം റിപ്പോർട്ടിംഗ്: സെൻസറുകൾ മാത്രമുള്ള മോഡ്.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">ഉയർന്ന കൃത്യത</string>
     <string name="accessibility_quick_settings_location_high_accuracy">സ്ഥാനം റിപ്പോർട്ടിംഗ്: ഉയർന്ന കൃത്യതാ മോഡ്.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
@@ -181,4 +178,6 @@
     <!-- Sync QS tile -->
     <!-- Ambient display QS tile -->
     <!-- Volume panel QS tile -->
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

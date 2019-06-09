@@ -59,4 +59,6 @@
     <string name="adb_net_active_notification_title">ADB via netværk aktiveret</string>
     <string name="adb_both_active_notification_title">ADB via USB &amp; netværk aktiveret</string>
     <string name="adb_active_generic_notification_message">Tryk for at deaktivere fejlretning.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">一般</string>
     <string name="quick_settings_expanded_navigation_off">隱藏導覽列</string>
     <string name="quick_settings_expanded_statusbar_off">隱藏狀態列</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">省電模式</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">位置回報：節約耗電量</string>
-    <string name="quick_settings_location_secondary_gps_only">僅用 GPS</string>
     <string name="accessibility_quick_settings_location_gps_only">位置報告：僅限 GPS</string>
-    <string name="quick_settings_location_secondary_high_accuracy">高精確度</string>
     <string name="accessibility_quick_settings_location_high_accuracy">位置回報：高精度模式。</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">快速充電中 (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> 後充滿)</string>
@@ -235,4 +232,7 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">環境顯示已關閉</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">環境顯示已開啟</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">音量面板</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

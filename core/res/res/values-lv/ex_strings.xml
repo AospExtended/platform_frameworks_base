@@ -40,4 +40,6 @@
     <!-- AOKP custom system animations -->
     <string name="animation_fade">Izbalināt</string>
     <!-- ADB over network -->
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

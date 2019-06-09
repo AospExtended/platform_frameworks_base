@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">Interfaz de Usuario Negra</string>
     <string name="systemui_theme_style_extended">Extended UI</string>
     <string name="systemui_theme_style_chocolate">Chocolate UI</string>
+    <string name="systemui_theme_style_elegant">UI elegante</string>
     <string name="quick_settings_theme_tile_title">Acento</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Seleccionar color</string>
     <string name="quick_settings_theme_tile_style_detail_title">Seleccionar estilo</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Verde Extended</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Azul pálido</string>
     <string name="quick_settings_theme_tile_color_jade_green">Verde jade</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Verde elegante</string>
     <string name="quick_settings_theme_tile_color_black">Negro</string>
     <string name="quick_settings_theme_tile_color_white">Blanco</string>
     <string name="theme_info_title">¿Qué es esto?</string>
@@ -157,13 +159,24 @@
     <string name="quick_settings_expanded_desktop_off">Normal</string>
     <string name="quick_settings_expanded_navigation_off">Ocultar barra de navegación</string>
     <string name="quick_settings_expanded_statusbar_off">Ocultar barra de estado</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Ahorro de batería</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Reporte de ubicación: modo de ahorro de energía.</string>
-    <string name="quick_settings_location_secondary_gps_only">Sólo sensores</string>
     <string name="accessibility_quick_settings_location_gps_only">Reporte de ubicación: modo de sólo sensores.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Alta precisión</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Reporte de ubicación: modo de alta precisión.</string>
+    <string name="quick_settings_location_battery_saving_label">Ahorro de batería</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Ahorro\nde batería</string>
+    <string name="quick_settings_location_gps_only_label">Sólo GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Sólo GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Alta precisión</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Alta\nprecisión</string>
+    <string name="quick_settings_location_detail_title">Ubicación</string>
+    <string name="quick_settings_location_detail_menu_title">Seleccionar modo:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Alta precisión</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Ahorro de batería</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Sólo dispositivo</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Determinar ubicación con GPS, Wi‑Fi, Bluetooth o redes móviles </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Determinar ubicación con Wi\u2011Fi, Bluetooth o redes móviles</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Utilizar el GPS para determinar tu ubicación</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Carga rápida(<xliff:g id="charging_time_left" example="4 horas y 2 minutos">%s</xliff:g> hasta completarse)</string>
     <string name="keyguard_plugged_in_dash_charging">Carga rápida</string>
@@ -235,4 +248,14 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Pantalla ambiente apagada.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Pantalla ambiente encendida.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Panel de volumen</string>
+    <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Modo lectura</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Modo lectura activado.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Modo lectura desactivado.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Modo lectura activado.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Modo lectura desactivado.</string>
+    <!-- Font Tile -->
+    <string name="quick_settings_font_label">Fuentes</string>
+    <string name="quick_settings_font_detail_label">Seleccionar tipo de letra</string>
 </resources>

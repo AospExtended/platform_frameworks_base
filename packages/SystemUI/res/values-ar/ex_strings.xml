@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">عادي</string>
     <string name="quick_settings_expanded_navigation_off">إخفاء شريط التنقل</string>
     <string name="quick_settings_expanded_statusbar_off">إخفاء شريط الحالة</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">توفير البطارية</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">تحديد الموقع: وضع توفير البطارية.</string>
-    <string name="quick_settings_location_secondary_gps_only">وضع الجهاز فقط</string>
     <string name="accessibility_quick_settings_location_gps_only">تحديد الموقع: وضع الجهاز فقط.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">دقة عالية</string>
     <string name="accessibility_quick_settings_location_high_accuracy">تحديد الموقع: وضع الدقة العالية.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">الشحن السريع (<xliff:g id="charging_time_left" example="4 ساعة و 2 دقيقة">%s</xliff:g> حتى الإمتلاء)</string>
@@ -235,4 +232,7 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">تم إيقاف العرض المحيط.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">تم تشغيل العرض المحيط.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">لوحة مستوى الصوت</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

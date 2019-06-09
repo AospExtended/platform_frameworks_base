@@ -59,4 +59,6 @@
     <string name="adb_net_active_notification_title">ADB melalui rangkaian dibolehkan</string>
     <string name="adb_both_active_notification_title">ADB melalui USB &amp; rangkaian yang dibolehkan</string>
     <string name="adb_active_generic_notification_message">Sentuh untuk melumpuhkan penyahpepijatan.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

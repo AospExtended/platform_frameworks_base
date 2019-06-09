@@ -22,7 +22,7 @@
     <string name="global_action_restart_advanced">ขั้นสูง</string>
     <string name="global_action_restart_recovery">กู้คืนระบบ</string>
     <string name="global_action_restart_bootloader">Bootloader</string>
-    <string name="global_action_restart_ui">Ui ระบบ</string>
+    <string name="global_action_restart_ui">Ui ของระบบ</string>
     <string name="global_action_restart_soft">ซอฟท์รีบูต</string>
     <string name="statusbar_items_title">ไอคอนแถบสถานะ</string>
     <!-- Lockscreen icons -->
@@ -40,10 +40,10 @@
     <string name="status_bar_data_saver">ประหยัดข้อมูล</string>
     <string name="preview">ดูตัวอย่าง</string>
     <string name="keycode">รหัส</string>
-    <string name="no_home_title">ไม่พบปุ่มหลัก</string>
-    <string name="no_home_message">จำเป็นต้องมีปุ่มหลักเพื่อควบคุมอุปกรณ์นี้ กรุณาเพิ่มปุ่มก่อนทำการบันทึก</string>
-    <string name="clipboard_description">คลิปบอร์ดให้รายการที่จะลากตรงไปยังคลิปบอร์ด ยังสามารถลากสินค้าโดยตรงจากคลิปบอร์ดเมื่อปัจจุบัน</string>
-    <string name="keycode_description">ปุ่ม Keycode ให้แป้นที่จะเพิ่มแถบนำทาง เมื่อกดพวกเขาเลียนแบบแป้นเลือก อันดับแรก ต้องเลือกคีย์สำหรับปุ่ม ตาม ด้วยรูปภาพที่จะแสดงบนปุ่ม</string>
+    <string name="no_home_title">ไม่พบปุ่มหน้าแรก</string>
+    <string name="no_home_message">จำเป็นต้องมีปุ่มหน้าแรกเพื่อให้สามารถควบคุมอุปกรณ์นี้ได้ กรุณาเพิ่มปุ่มหน้าแรกก่อนทำการบันทึก</string>
+    <string name="clipboard_description">คลิปบอร์ดช่วยให้สามารถลากรายการที่จะถูกลากไปยังคลิปบอร์ด นอกจากนี้ยังสามารถลากรายการออกจากคลิปบอร์ดได้โดยตรงเมื่อปรากฏให้เห็น</string>
+    <string name="keycode_description">ปุ่ม Keycode ช่วยให้สามารถเพิ่มแป้นพิมพ์ลงในแถบนำทาง เมื่อกดจะเลียนแบบแป้นพิมพ์ที่เลือก อันดับแรก ต้องเลือกปุ่มตามภาพที่จะแสดงบนปุ่ม</string>
     <string name="start">เริ่ม</string>
     <string name="center">ศูนย์กลาง</string>
     <string name="end">สิ้นสุด</string>
@@ -65,7 +65,7 @@
     <string name="accessibility_quick_settings_caffeine_off">ปิดโหมดคาเฟอีน</string>
     <string name="accessibility_quick_settings_caffeine_on">เปิดโหมดคาเฟอีน</string>
     <!-- Reboot/Recovery QS Tile -->
-    <string name="quick_settings_reboot_label">เริ่มระบบใหม่</string>
+    <string name="quick_settings_reboot_label">เริ่มต้นระบบใหม่</string>
     <string name="quick_settings_reboot_recovery_label">กู้คืนระบบ</string>
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">จับภาพหน้าจอ</string>
@@ -78,17 +78,17 @@
     <string name="accessibility_quick_settings_heads_up_changed_on">เปิดการแจ้งเตือนด้านบน</string>
     <!-- USB Tethering tile -->
     <string name="accessibility_quick_settings_usb_tether_off">ปิดการปล่อยสัญญาณผ่าน USB</string>
-    <string name="accessibility_quick_settings_usb_tether_on">เปิดการกระจายสัญญาณผ่าน USB</string>
-    <string name="accessibility_quick_settings_usb_tether_changed_off">การกระจายสัญญาณผ่าน USB ถูกปิด</string>
-    <string name="accessibility_quick_settings_usb_tether_changed_on">การกระจายสัญญาณผ่าน USB ถูกเปิด</string>
-    <string name="quick_settings_usb_tether_label">การกระจายสัญญาณผ่าน USB</string>
+    <string name="accessibility_quick_settings_usb_tether_on">เปิดการปล่อยสัญญาณผ่าน USB</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">การปล่อยสัญญาณผ่าน USB ถูกปิด</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">การปล่อยสัญญาณผ่าน USB ถูกเปิด</string>
+    <string name="quick_settings_usb_tether_label">การปล่อยสัญญาณผ่าน USB</string>
     <!-- HW Keys Tile -->
     <string name="accessibility_quick_settings_hwkeys_on">เปิด ปุ่ม HW</string>
     <string name="accessibility_quick_settings_hwkeys_off">ปิด ปุ่ม HW</string>
     <string name="quick_settings_hwkeys_label">ปุ่ม HW</string>
     <!-- Heads up snooze toast -->
-    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - ซ่อนการแจ้งเตือน เป็นเวลา 1 นาที</string>
-    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> -  ซ่อนการแจ้งเตือน เป็นเวลา <xliff:g id="number">%d</xliff:g> นาที</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="ข้อความ">%s</xliff:g> - ซ่อนการแจ้งเตือน เป็นเวลา 1 นาที</string>
+    <string name="heads_up_snooze_message"><xliff:g id="ข้อความ">%s</xliff:g> - ซ่อนการแจ้งเตือน เป็นเวลา <xliff:g id="ตัวเลข">%d</xliff:g> นาที</string>
     <!-- Theme tile -->
     <string name="systemui_theme_style_title">รูปแบบ UI</string>
     <string name="systemui_theme_style_auto">อัตโนมัติ</string>
@@ -127,11 +127,11 @@
     <string name="quick_settings_theme_tile_color_jade_green">สีเขียวหยก</string>
     <string name="quick_settings_theme_tile_color_black">สีดำ</string>
     <string name="quick_settings_theme_tile_color_white">สีขาว</string>
-    <string name="theme_info_title">นี่คืออะไร</string>
-    <string name="theme_info_message">ชุดรูปแบบเฉพาะ แต่ใช้งานง่ายที่ช่วยให้ผู้ใช้สามารถเปลี่ยนสีและรูปแบบของระบบ\n\n เพียงแค่กดค้างบนรูปแบบแล้วเลือกเปลี่ยนจากตัวเลือกที่แสดงขึ้นมา</string>
+    <string name="theme_info_title">นี่คืออะไร?</string>
+    <string name="theme_info_message">ธีมที่มีรูปแบบเฉพาะ แต่ใช้งานง่ายที่ช่วยให้ผู้ใช้สามารถเปลี่ยนสีและรูปแบบของระบบ\n\n เพียงแค่กดค้างบนรูปแบบแล้วเลือกเปลี่ยนจากตัวเลือกที่แสดงขึ้นมา</string>
     <!-- QS Config -->
     <string name="qs_menu_item_columns">แถว</string>
-    <string name="qs_menu_item_columns_landscape">แถว แนวนอน</string>
+    <string name="qs_menu_item_columns_landscape">แถว (แนวนอน)</string>
     <string name="qs_menu_item_columns_three">3</string>
     <string name="qs_menu_item_columns_four">4</string>
     <string name="qs_menu_item_columns_five">5</string>
@@ -142,7 +142,7 @@
     <string name="qs_menu_item_reset">ตั้งค่าใหม่</string>
     <string name="qs_menu_item_titles">แสดงป้ายชื่อ</string>
     <string name="qs_menu_item_rows">แถว</string>
-    <string name="qs_menu_item_rows_landscape">แถว แนวนอน</string>
+    <string name="qs_menu_item_rows_landscape">แถว (แนวนอน)</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
@@ -157,29 +157,27 @@
     <string name="quick_settings_expanded_desktop_off">ปกติ</string>
     <string name="quick_settings_expanded_navigation_off">ซ่อนแถบนำทาง</string>
     <string name="quick_settings_expanded_statusbar_off">ซ่อนแถบสถานะ</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">ประหยัดแบตเตอรี่</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">การระบุตำแหน่ง: โหมดประหยัดพลังงาน</string>
-    <string name="quick_settings_location_secondary_gps_only">เซนเซอร์เท่านั้น</string>
     <string name="accessibility_quick_settings_location_gps_only">การระบุตำแหน่ง: โหมดเซนเซอร์เท่านั้น</string>
-    <string name="quick_settings_location_secondary_high_accuracy">ความแม่นยำสูง</string>
     <string name="accessibility_quick_settings_location_high_accuracy">การระบุตำแหน่ง: โหมดความแม่นยำสูง</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time">Dash Charge (<xliff:g id="charging_time_left" ตัวอย่าง="4 ชั่วโมง กับ 2 นาที">%s</xliff:g> จนกระทั่งเต็ม)</string>
+    <string name="keyguard_indication_dash_charging_time">ชาร์จเร็ว (<xliff:g id="เหลือเวลาชาร์จอีก" example="4 ชั่วโมง 2 นาที">%s</xliff:g> จนกระทั่งเต็ม)</string>
     <string name="keyguard_plugged_in_dash_charging">การชาร์จเร็ว (Dash Charging)</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_turbo_power_time">เชื่อมต่อพลังเทอร์โบชาร์จแล้ว (<xliff:g id="charging_time_left">%s</xliff:g> จะเต็ม)</string>
+    <string name="keyguard_indication_turbo_power_time">เชื่อมต่อพลังเทอร์โบชาร์จแล้ว (<xliff:g id="เหลือเวลาชาร์จอีก">%s</xliff:g> จนกระทั่งเต็ม)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">เชื่อมต่อพลังเทอร์โบชาร์จแล้ว</string>
     <!-- Gaming Mode -->
     <string name="gaming_mode_tile_title">โหมดการเล่นเกม</string>
     <string name="gaming_mode_tile_toast">เปิดใช้งานโหมดเล่นเกม</string>
     <string name="gaming_mode_tile_toast_disabled">ปิดใช้งานโหมดเล่นเกม</string>
     <string name="gaming_mode_dialog_title">โหมดเกม</string>
-    <string name="gaming_mode_dialog_message">เมื่อเปิดใช้งานโหมดการเล่นเกม โหมดเสียงเรียกเข้าของคุณจะเปลี่ยนเป็นโหมดสั่น ข้อ heads-up ทั้งหมดจะถูกปิด และคีย์ฮาร์ดแวร์จะถูกปิด สื่อเสียงจะเพิ่มขึ้นถึงค่าสูงสุด จะถูกรีเซ็ตการตั้งค่าการปิดใช้งานการเริ่มต้นเมื่อคุณออกจากโหมดการเล่นเกม</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">โหมดการเล่นเกม</string>
+    <string name="gaming_mode_dialog_message">เมื่อเปิดใช้งานโหมดการเล่นเกม โหมดเสียงเรียกเข้าของคุณจะเปลี่ยนเป็นโหมดสั่น ข้อความที่แสดง แถบด้านบนทั้งหมดจะถูกปิด และคีย์ฮาร์ดแวร์จะถูกปิด ปริมาณเสียงสื่อ(มีเดีย) จะเพิ่มขึ้นถึงค่าสูงสุด การตั้งค่าที่ปิดใช้งานทั้งหมดจะถูกรีเซ็ตเป็นค่าเริ่มต้นเมื่อคุณออกจากโหมดเกม</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">เปิดโหมดเล่นเกม</string>
     <string name="accessibility_quick_settings_gaming_mode_off">ปิดโหมดเล่นเกม</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">เข็มทิศ</string>
+    <string name="quick_settings_compass_value"><xliff:g id="องศา">%1$.0f</xliff:g>\u00b0 <xliff:g id="ทิศ">%2$s</xliff:g></string>
     <string name="quick_settings_compass_init">กำลังเริ่มต้น\u2026</string>
     <string name="accessibility_quick_settings_compass_off">ปิดเข็มทิศ</string>
     <string name="accessibility_quick_settings_compass_on">เปิดเข็มทิศ</string>
@@ -194,9 +192,10 @@
     <string name="quick_settings_compass_W">ตะวันตก</string>
     <string name="quick_settings_compass_NW">ตะวันตกเฉียงเหนือ</string>
     <!-- Ambient Display Pixel-Like string -->
-    <string name="recents_free_ram">แรมว่าง: %1$d MB</string>
+    <string name="ambientmusic_songinfo">%s โดย %s</string>
+    <string name="recents_free_ram">หน่วยความจำเหลือ: %1$d MB</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_running_services">เปิดบริการสำหรับจอภาพ</string>
+    <string name="accessibility_quick_settings_running_services">เปิดหน้าจอ Running Services</string>
     <!-- Smart pixels QS tile -->
     <string name="quick_settings_smart_pixels">พิกเซลอัจฉริยะ</string>
     <string name="quick_settings_smart_pixels_on_power_save">เปิดพิกเซลอัจฉริยะโดยอัตโนมัติ</string>
@@ -204,16 +203,36 @@
     <string name="quick_settings_network_adb_label">ADB บนเครือข่าย</string>
     <!-- LTE QS Tile -->
     <string name="qs_lte_label">LTE</string>
-    <string name="lte_on">LTE เปิด</string>
+    <string name="lte_on">เปิด LTE</string>
     <string name="lte_off">ปิด LTE</string>
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">บังคับให้หยุด</string>
     <string name="force_stop_dlg_text">หากคุณบังคับปิดแอปพลิเคชัน อาจทำให้การทำงานผิดพลาดได้.</string>
+    <string name="kill">ปิดแอป</string>
     <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">โหมดใช้งานมือเดียว</string>
     <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">ค้นหาด้วยเสียง</string>
     <!-- Always on Display Tile -->
+    <string name="quick_settings_always_on_display_label">แสดงผลตลอด</string>
     <!-- Music tile -->
+    <string name="quick_settings_music_label">เพลง</string>
+    <string name="quick_settings_music_play">เล่น</string>
+    <string name="quick_settings_music_pause">หยุดชั่วคราว</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">การซิงค์</string>
+    <string name="accessibility_quick_settings_sync_off">ปิดการซิงค์</string>
+    <string name="accessibility_quick_settings_sync_on">เปิดการซิงก์</string>
+    <string name="accessibility_quick_settings_sync_changed_off">การซิงค์ปิดอยู่</string>
+    <string name="accessibility_quick_settings_sync_changed_on">การซิงค์เปิดอยู่</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">การแจ้งเตือนแบบแอมเบียนท์</string>
+    <string name="accessibility_quick_settings_ambient_display_off">ปิดการแจ้งเตือนแบบแอมเบียนท์</string>
+    <string name="accessibility_quick_settings_ambient_display_on">เปิดการแจ้งเตือนแบบแอมเบียนท์</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">การแจ้งเตือนแบบแอมเบียนท์ปิดอยู่</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">การแจ้งเตือนแบบแอมเบียนท์เปิดอยู่</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">แผงควบคุมระดับเสียง</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

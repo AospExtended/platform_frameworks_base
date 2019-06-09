@@ -18,7 +18,7 @@
     <string name="reboot_message">Sistem yeniden başlatılıyor</string>
     <!-- SystemUI Restart -->
     <string name="systemui_restart_title">Sistem arayüzü yeniden başlatılmalı</string>
-    <string name="systemui_restart_message">Tüm değişikliklerin etkili olması için Sistem arayüzünün yeniden başlatılması gerekiyor. Sistem arayüzünü şimdi yeniden başlatmak istermisiniz?</string>
+    <string name="systemui_restart_message">Tüm değişikliklerin etkili olması için Sistem arayüzü yeniden başlatılması gerekiyor. Sistem arayüzü şimdi yeniden başlatılsın mı?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_fakePackageSignature">Sahte paket imzası</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -26,7 +26,7 @@
     <!-- App error dialog -->
     <string name="aerr_copy">Kilitlenme günlüğü URL\'sini kopyala</string>
     <string name="url_copy_success">URL başarıyla kopyalandı</string>
-    <string name="url_copy_failed">Günlük dogbin\'e yüklerken bir hata oluştu</string>
+    <string name="url_copy_failed">Günlüğü dogbin\'e yüklerken bir hata oluştu</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_toggleNavigationEditor">gezinme çubuğu düzenleyicisini kontrol et</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -53,10 +53,12 @@
     <string name="animation_grow_shrink_bottom">Büyüt (Aşağıdan)</string>
     <string name="animation_grow_shrink_left">Büyüt (Soldan)</string>
     <string name="animation_grow_shrink_right">Büyüt (Sağdan)</string>
-    <string name="animation_random">Karışık</string>
+    <string name="animation_random">Rastgele</string>
     <string name="action_null">Boş</string>
     <!-- ADB over network -->
     <string name="adb_net_active_notification_title">Ağ üzerinden ADB etkin</string>
     <string name="adb_both_active_notification_title">USB ve ağı ADB üzerinden etkin</string>
     <string name="adb_active_generic_notification_message">Hata ayıklamayı devre dışı bırakmak için dokunun.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

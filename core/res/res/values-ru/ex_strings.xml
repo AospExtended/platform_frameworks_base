@@ -41,11 +41,11 @@
     <!-- AOKP custom system animations -->
     <string name="animation_fade">Затухание</string>
     <string name="animation_slide_right">Слайд вправо</string>
-    <string name="animation_slide_left">Слайд влево</string>
+    <string name="animation_slide_left">Сдвиг влево</string>
     <string name="animation_slide_right_no_fade">Сдвиг вправо (без затухания)</string>
     <string name="animation_slide_left_no_fade">Сдвиг влево (без затухания)</string>
-    <string name="animation_slide_up">Слайд внизу</string>
-    <string name="animation_slide_down">Слайд вверх</string>
+    <string name="animation_slide_up">Сдвиг вниз</string>
+    <string name="animation_slide_down">Сдвиг вверх</string>
     <string name="animation_default">По умолчанию</string>
     <string name="animation_translucent">Прозрачность</string>
     <string name="animation_grow_shrink">Увеличение (вверх)</string>
@@ -59,4 +59,6 @@
     <string name="adb_net_active_notification_title">ADB по сети разрешен</string>
     <string name="adb_both_active_notification_title">Включена отладка по сети и USB</string>
     <string name="adb_active_generic_notification_message">Нажмите, чтобы отключить отладку.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

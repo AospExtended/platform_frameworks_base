@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">Černé UI</string>
     <string name="systemui_theme_style_extended">Rozšířené UI</string>
     <string name="systemui_theme_style_chocolate">Čokoládové UI</string>
+    <string name="systemui_theme_style_elegant">Elegantní UI</string>
     <string name="quick_settings_theme_tile_title">Odstín</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Vybrat barvu</string>
     <string name="quick_settings_theme_tile_style_detail_title">Vybrat styl</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Extended green</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Pale blue</string>
     <string name="quick_settings_theme_tile_color_jade_green">Jade green</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Elegantní zelená</string>
     <string name="quick_settings_theme_tile_color_black">Černá</string>
     <string name="quick_settings_theme_tile_color_white">Bílá</string>
     <string name="theme_info_title">Co je to?</string>
@@ -157,13 +159,24 @@
     <string name="quick_settings_expanded_desktop_off">Normální</string>
     <string name="quick_settings_expanded_navigation_off">Skrýt navigační panel</string>
     <string name="quick_settings_expanded_statusbar_off">Skrýt stavovou lištu</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Úspora baterie</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Hlášení polohy: úspora baterie.</string>
-    <string name="quick_settings_location_secondary_gps_only">Pouze GPS</string>
     <string name="accessibility_quick_settings_location_gps_only">Hlášení polohy: pouze GPS.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Vysoká přesnost</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Hlášení polohy: vysoká přesnost.</string>
+    <string name="quick_settings_location_battery_saving_label">Úspora baterie</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Úspora\nbaterie</string>
+    <string name="quick_settings_location_gps_only_label">Pouze GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Pouze GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Vysoká přesnost</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Vysoká\npřesnost</string>
+    <string name="quick_settings_location_detail_title">Poloha</string>
+    <string name="quick_settings_location_detail_menu_title">Zvolte režim:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Vysoká přesnost</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Úspora baterie</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Pouze GPS</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">K určování polohy používat GPS, Wi\u2011Fi, Bluetooth nebo mobilní sítě </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">K určování polohy používat Wi\u2011Fi, Bluetooth nebo mobilní sítě</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">K určování polohy používat GPS</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">DASH nabíjení (plně nabito za <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
     <string name="keyguard_plugged_in_dash_charging">DASH nabíjení</string>
@@ -235,4 +248,14 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Ambientní displej je vypnutý.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Ambientní displej je zapnutý.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Panel hlasitosti</string>
+    <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Režim čtení</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Režim čtení zap.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Režim čtení vyp.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Režim čtení je zapnutý.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Režim čtení je vypnutý.</string>
+    <!-- Font Tile -->
+    <string name="quick_settings_font_label">Písma</string>
+    <string name="quick_settings_font_detail_label">Vybrat písmo</string>
 </resources>

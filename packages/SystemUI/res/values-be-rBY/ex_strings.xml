@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">Звычайны</string>
     <string name="quick_settings_expanded_navigation_off">Схаваць панэль навігацыі</string>
     <string name="quick_settings_expanded_statusbar_off">Схаваць радок стану</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Энергазберажэнне</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Вызначэнне месцазнаходжання: па каардынатах сеткі.</string>
-    <string name="quick_settings_location_secondary_gps_only">Толькі датчыкі GPS</string>
     <string name="accessibility_quick_settings_location_gps_only">Вызначэнне месцазнаходжання: рэжым толькі датчыкі GPS.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Высокая дакладнасць</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Вызначэнне месцазнаходжання: па ўсіх крыніцах.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Хуткая зарадка (засталося <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
@@ -235,4 +232,7 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Індыкацыя падзей адключана.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Індыкацыя падзей уключана.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Панэль гучнасці</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

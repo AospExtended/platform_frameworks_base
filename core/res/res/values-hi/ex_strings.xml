@@ -58,5 +58,7 @@
     <!-- ADB over network -->
     <string name="adb_net_active_notification_title">नेटवर्क पर ADB को सक्षम कर दिया गया</string>
     <string name="adb_both_active_notification_title">यूएसबी और नेटवर्क पर एडीबी को सक्षम कर दिया गया</string>
-    <string name="adb_active_generic_notification_message">डिबगिंग अक्षम करने के लिए स्पर्श करें।</string>
+    <string name="adb_active_generic_notification_message">डीबगिंग को अक्षम करने के लिए छुएँ।</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">Normal</string>
     <string name="quick_settings_expanded_navigation_off">Ocultar barra de navegação</string>
     <string name="quick_settings_expanded_statusbar_off">Ocultar barra de status</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Economia de bateria</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Localização: modo de economia de energia.</string>
-    <string name="quick_settings_location_secondary_gps_only">Somente sensores</string>
     <string name="accessibility_quick_settings_location_gps_only">Modo de localização: somente sensores.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Alta precisão</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Modo de localização: alta precisão.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Carregamento Rápido (<xliff:g id="charging_time_left">%s</xliff:g> até concluir)</string>
@@ -235,4 +232,7 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Tela ambiente foi desligada.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Tela ambiente foi ativada.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Painel de volume</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>

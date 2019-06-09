@@ -17,16 +17,16 @@
     <string name="reboot_title">Khởi động lại</string>
     <string name="reboot_message">Đang khởi động lại hệ thống</string>
     <!-- SystemUI Restart -->
-    <string name="systemui_restart_title">Phải khởi động lại giao diện hệ thống</string>
+    <string name="systemui_restart_title">Yêu cầu khởi động lại giao diện hệ thống</string>
     <string name="systemui_restart_message">Để mọi thay đổi được áp dụng, phải khởi động lại giao diện hệ thống. Khởi động lại bây giờ?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_fakePackageSignature">Chữ ký ứng dụng giả mạo</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_fakePackageSignature">Cho phép ứng dụng có thể giả mạo làm ứng dụng khác. Các ứng dụng độc hại có thể sử dụng quyền này để truy cập trái phép vào dữ liệu riêng tư của bạn. Hãy thận trọng khi cấp quyền này!</string>
     <!-- App error dialog -->
-    <string name="aerr_copy">Sao chép sự cố log URL</string>
-    <string name="url_copy_success">URL đã sao chép thành công</string>
-    <string name="url_copy_failed">Lỗi đã xảy ra trong khi tải lên các bản ghi để dogbin</string>
+    <string name="aerr_copy">Sao chép URL nhật ký sự cố</string>
+    <string name="url_copy_success">Đã sao chép URL thành công</string>
+    <string name="url_copy_failed">Đã xảy ra lỗi khi tải nhật ký lên dogbin</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_toggleNavigationEditor">trình tùy biến thanh điều hướng</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -59,4 +59,6 @@
     <string name="adb_net_active_notification_title">Đã bật ADB qua mạng</string>
     <string name="adb_both_active_notification_title">Đã bật ADB qua USB &amp; mạng</string>
     <string name="adb_active_generic_notification_message">Chạm để tắt gỡ lỗi.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

@@ -14,16 +14,51 @@
 -->
 <resources>
     <!-- Advanced reboot -->
+    <string name="reboot_title">Taaskäivita</string>
+    <string name="reboot_message">Süsteemi taaskäivitus</string>
     <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">Vajalik on SystemUI taaskäivitamine</string>
+    <string name="systemui_restart_message">Kõigi muudatuste jõustumiseks on vaja SystemUI taaskäivitada. Kas taaskäivitada SystemUI?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">Pettepaketi allkiri</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">Lubab rakendusel teeselda teistsugust rakendust. Pahatahtlikud tarkvarad võivad saada seda kasutada, et tungida rakenduse privaatsetesse andmetesse. Anna seda luba ainult, kui sa oled selles täiesti kindel!</string>
     <!-- App error dialog -->
+    <string name="aerr_copy">Kopeeri rikke logi URL</string>
+    <string name="url_copy_success">URL kopeeritud</string>
+    <string name="url_copy_failed">Logi laadimisel dogbin-ile ilmnes viga</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_toggleNavigationEditor">navigatsiooni redaktori kontroll</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_toggleNavigationEditor">Võimaldab rakendusel navigeerimisriba redaktorit juhtida.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">juurdepääs fondihaldurile</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Võimaldab rakendusel juurdepääsu fondihaldurile.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">Teie installitud fondipakett ei ole ühilduv, kuna nende failides puuduvad fonts.xml. Palun võtke ühendust pakendi arendajaga.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Tuhmuv</string>
+    <string name="animation_slide_right">Lohistage paremale</string>
+    <string name="animation_slide_left">Lohistage vasakule</string>
+    <string name="animation_slide_right_no_fade">Lohistage paremale (ei tuhmu)</string>
+    <string name="animation_slide_left_no_fade">Lohistage vasakule (ei tuhmu)</string>
+    <string name="animation_slide_up">Libistage alla</string>
+    <string name="animation_slide_down">Libistage üles</string>
+    <string name="animation_default">Vaikimisi</string>
+    <string name="animation_translucent">Läbipaistev</string>
+    <string name="animation_grow_shrink">Suurendamine (Üleval)</string>
+    <string name="animation_grow_shrink_center">Suurendamine (Keskel)</string>
+    <string name="animation_grow_shrink_bottom">Suurendamine (All)</string>
+    <string name="animation_grow_shrink_left">Suurendamine (Vasakul)</string>
+    <string name="animation_grow_shrink_right">Suurendamine (Paremal)</string>
+    <string name="animation_random">Juhuslik</string>
+    <string name="action_null">Tühi</string>
     <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">ADB üle võrgu aktiveeritud</string>
+    <string name="adb_both_active_notification_title">ADB üle USB &amp; võrgu aktiveeritud</string>
+    <string name="adb_active_generic_notification_message">Puudutage silumise lõpetamiseks.</string>
+    <!-- LiveDisplay strings -->
+    <!-- Pocket Lock -->
 </resources>

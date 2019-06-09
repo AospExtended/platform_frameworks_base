@@ -157,12 +157,9 @@
     <string name="quick_settings_expanded_desktop_off">Нормален</string>
     <string name="quick_settings_expanded_navigation_off">Скрий навигационна лента</string>
     <string name="quick_settings_expanded_statusbar_off">Скрий лентата на състоянието</string>
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_location_secondary_battery_saving">Пестене на батерия</string>
+    <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Отчитане на местоположение: икономичен режим.</string>
-    <string name="quick_settings_location_secondary_gps_only">Само Сензори</string>
     <string name="accessibility_quick_settings_location_gps_only">Отчитане на местоположение: само по сензори.</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Висока Точност</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Отчитане на местоположение: режим на висока точност.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Бързо зареждане (<xliff:g id="charging_time_left" example="4 часа и 2 минути">%s</xliff:g> до пълно зареждане)</string>
@@ -235,4 +232,7 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Активен дисплей е изключен.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Активен дисплей е включен.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Звуков панел</string>
+    <!-- Reader mode QS tile -->
+    <!-- Font Tile -->
 </resources>
