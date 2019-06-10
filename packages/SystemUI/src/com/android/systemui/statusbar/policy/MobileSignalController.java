@@ -199,6 +199,7 @@ public class MobileSignalController extends SignalController<
 
         mapIconSets();
         updateTelephony();
+        notifyListeners();
     }
 
     public void setConfiguration(Config config) {
@@ -380,15 +381,6 @@ public class MobileSignalController extends SignalController<
         return mImsManager != null && mImsManager.isEnhanced4gLteModeSettingEnabledByUser();
     }
 
-    private int getVolteResId() {
-        int resId = 0;
-        if ( (mCurrentState.voiceCapable || mCurrentState.videoCapable)
-                &&  mCurrentState.imsRegistered && mVoLTEicon) {
-            resId = R.drawable.ic_volte;
-        }
-        return resId;
-    }
-
     private void setListeners() {
         if (mImsManager == null) {
             Log.e(mTag, "setListeners mImsManager is null");
@@ -416,7 +408,7 @@ public class MobileSignalController extends SignalController<
             Log.d(mTag, "queryImsState tm=" + tm + " phone=" + mPhone
                     + " voiceCapable=" + mCurrentState.voiceCapable
                     + " videoCapable=" + mCurrentState.videoCapable
-                    + " imsResitered=" + mCurrentState.imsRegistered);
+                    + " imsRegistered=" + mCurrentState.imsRegistered);
         }
         notifyListenersIfNecessary();
     }
@@ -464,6 +456,7 @@ public class MobileSignalController extends SignalController<
                 getCurrentIconId(), contentDescription);
 
         int qsTypeIcon = 0;
+        int resId = 0;
         IconState qsIcon = null;
         CharSequence description = null;
         // Only send data sim callbacks to QS.
@@ -480,8 +473,11 @@ public class MobileSignalController extends SignalController<
                 && !mCurrentState.carrierNetworkChangeMode
                 && mCurrentState.activityOut;
         showDataIcon &= mCurrentState.isDefault || dataDisabled;
+        if ( mCurrentState.imsRegistered && mVoLTEicon ) {
+            resId = R.drawable.ic_volte;
+        }
         int typeIcon = (showDataIcon || mConfig.alwaysShowDataRatIcon) ? icons.mDataType : 0;
-        int volteIcon = mConfig.showVolteIcon && isVolteSwitchOn() ? getVolteResId() : 0;
+        int volteIcon = mConfig.showVolteIcon && isVolteSwitchOn() ? resId : 0;
         callback.setMobileDataIndicators(statusIcon, qsIcon, typeIcon, qsTypeIcon,
                 activityIn, activityOut, volteIcon, dataContentDescription, dataContentDescriptionHtml,
                 description, icons.mIsWide, mSubscriptionInfo.getSubscriptionId(),
