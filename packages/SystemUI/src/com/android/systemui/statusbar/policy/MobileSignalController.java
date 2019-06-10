@@ -193,6 +193,7 @@ public class MobileSignalController extends SignalController<
 
         mapIconSets();
         updateTelephony();
+        notifyListeners();
     }
 
 
@@ -378,15 +379,6 @@ public class MobileSignalController extends SignalController<
                 && mImsManager.isNonTtyOrTtyOnVolteEnabled();
     }
 
-    private int getVolteResId() {
-        int resId = 0;
-
-        if ( mCurrentState.imsResitered && mVoLTEicon ) {
-            resId = R.drawable.ic_volte;
-        }
-        return resId;
-    }
-
     private void updateImsRegistrationState() {
         mCurrentState.imsResitered = mPhone.isImsRegistered(mSubscriptionInfo.getSubscriptionId());
         notifyListenersIfNecessary();
@@ -410,6 +402,7 @@ public class MobileSignalController extends SignalController<
                 getCurrentIconId(), contentDescription);
 
         int qsTypeIcon = 0;
+        int resId = 0;
         IconState qsIcon = null;
         String description = null;
         // Only send data sim callbacks to QS.
@@ -426,10 +419,12 @@ public class MobileSignalController extends SignalController<
                 && !mCurrentState.carrierNetworkChangeMode
                 && mCurrentState.activityOut;
         showDataIcon &= mCurrentState.isDefault || dataDisabled;
-
+        if ( mCurrentState.imsResitered && mVoLTEicon ) {
+            resId = R.drawable.ic_volte;
+        }
         int typeIcon = (showDataIcon || mConfig.alwaysShowDataRatIcon) ? icons.mDataType : 0;
         int volteIcon = mConfig.showVolteIcon && isEnhanced4gLteModeSettingEnabled()
-                ? getVolteResId() : 0;
+                ? resId : 0;
         callback.setMobileDataIndicators(statusIcon, qsIcon, typeIcon, qsTypeIcon,
                 activityIn, activityOut, volteIcon, dataContentDescription, description, icons.mIsWide,
                 mSubscriptionInfo.getSubscriptionId(), mCurrentState.roaming);
