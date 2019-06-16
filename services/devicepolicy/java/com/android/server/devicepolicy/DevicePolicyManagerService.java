@@ -3429,6 +3429,9 @@ public class DevicePolicyManagerService extends IDevicePolicyManager.Stub {
 
     @Override
     public boolean isSeparateProfileChallengeAllowed(int userHandle) {
+        if (!isCallerWithSystemUid()) {
+            throw new SecurityException("Caller must be system");
+        }
         ComponentName profileOwner = getProfileOwner(userHandle);
         // Profile challenge is supported on N or newer release.
         return profileOwner != null &&
@@ -7831,6 +7834,7 @@ public class DevicePolicyManagerService extends IDevicePolicyManager.Stub {
         if (!mHasFeature) {
             return null;
         }
+        enforceManageUsers();
         synchronized (this) {
             List<String> result = null;
             // If we have multiple profiles we return the intersection of the
