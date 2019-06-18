@@ -25,6 +25,7 @@ import android.content.Intent;
 import android.media.MediaRouter.RouteInfo;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.SystemProperties;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.util.Log;
@@ -81,6 +82,8 @@ public class CastTile extends QSTileImpl<BooleanState> {
     private Dialog mDialog;
     private boolean mWifiConnected;
     private boolean mHotspotConnected;
+
+    private static final String WFD_ENABLE = "persist.debug.wfd.enable";
 
     @Inject
     public CastTile(
@@ -300,11 +303,18 @@ public class CastTile extends QSTileImpl<BooleanState> {
                     // statusIcon.visible has the connected status information
                     boolean enabledAndConnected = indicators.enabled
                             && (indicators.qsIcon == null ? false : indicators.qsIcon.visible);
-                    if (enabledAndConnected != mWifiConnected) {
-                        mWifiConnected = enabledAndConnected;
-                        // Hotspot is not connected, so changes here should update
-                        if (!mHotspotConnected) {
+                    if(SystemProperties.getBoolean(WFD_ENABLE, false)) {
+                        if (indicators.enabled != mWifiConnected) {
+                            mWifiConnected = indicators.enabled;
                             refreshState();
+                        }
+                    } else {
+                        if (enabledAndConnected != mWifiConnected) {
+                            mWifiConnected = enabledAndConnected;
+                            // Hotspot is not connected, so changes here should update
+                            if (!mHotspotConnected) {
+                                refreshState();
+                            }
                         }
                     }
                 }
@@ -315,11 +325,18 @@ public class CastTile extends QSTileImpl<BooleanState> {
                 @Override
                 public void onHotspotChanged(boolean enabled, int numDevices) {
                     boolean enabledAndConnected = enabled && numDevices > 0;
-                    if (enabledAndConnected != mHotspotConnected) {
-                        mHotspotConnected = enabledAndConnected;
-                        // Wifi is not connected, so changes here should update
-                        if (!mWifiConnected) {
+                    if(SystemProperties.getBoolean(WFD_ENABLE, false)) {
+                        if(enabled != mHotspotConnected) {
+                            mHotspotConnected = enabled;
                             refreshState();
+                        }
+                    } else {
+                        if (enabledAndConnected != mHotspotConnected) {
+                            mHotspotConnected = enabledAndConnected;
+                            // Wifi is not connected, so changes here should update
+                            if (!mWifiConnected) {
+                                refreshState();
+                            }
                         }
                     }
                 }
