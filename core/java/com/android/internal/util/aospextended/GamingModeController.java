@@ -25,13 +25,12 @@ import static android.provider.Settings.Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS;
 
 import android.app.ActivityManager;
 import android.app.ActivityThread;
-import android.app.ActivityManager.RunningAppProcessInfo;
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
-import android.content.ComponentName;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.database.ContentObserver;
@@ -58,7 +57,6 @@ import android.widget.Toast;
 public class GamingModeController {
     private Context mContext;
     final Context mUiContext;
-    ActivityManager mAm;
     ApplicationInfo appInfo;
     AudioManager mAudioManager;
     NotificationManager mNotificationManager;
@@ -271,7 +269,7 @@ public class GamingModeController {
               }
             int userZenState = getZenMode();
               if (userZenState >= 0) {
-                    Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.putInt(mContext.getContentResolver(),
                         Settings.System.GAMING_MODE_ZEN_STATE, userZenState);
               }
         if (ringerMode != 0 || ringerMode != userState) {
@@ -337,7 +335,7 @@ public class GamingModeController {
         // Display a notification
         Notification.Builder builder = new Notification.Builder(mContext, SystemNotificationChannels.GAMING)
             .setTicker(r.getString(com.android.internal.R.string.gaming_notif_ticker))
-            .setContentTitle(r.getString(com.android.internal.R.string.gaming_notif_title))
+            .setContentTitle(r.getString(com.android.internal.R.string.gaming_notif_ticker))
             .setSmallIcon(com.android.internal.R.drawable.ic_gaming_notif)
             .setWhen(java.lang.System.currentTimeMillis())
             .setOngoing(true);

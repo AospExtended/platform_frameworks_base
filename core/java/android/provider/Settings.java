@@ -5114,13 +5114,6 @@ public final class Settings {
         public static final String GAMING_MODE_MANUAL_BRIGHTNESS_TOGGLE = "gaming_mode_manual_brightness_toggle";
 
         /**
-         * Whether to enable loudspeaker during calls in gaming mode
-         *
-         * @hide
-         */
-        public static final String GAMING_MODE_SPEAKER_IN_CALL_TOGGLE = "gaming_mode_speaker_in_call_toggle";
-
-        /**
          * Whether to automatically enable the gaming mode
          * if the launched app is a game
          *
