@@ -4690,12 +4690,6 @@ public final class Settings {
         public static final int SYSTEM_THEME_STYLE_ELEGANT = 6;
 
         /**
-         * THEME_MODE value for time mode.
-         * @hide
-         */
-        public static final int THEME_MODE_TIME = 7;
-
-        /**
          * Whether to use icon pack for Recents
          * @hide
          */
