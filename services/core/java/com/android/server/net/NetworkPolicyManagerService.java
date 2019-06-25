@@ -712,10 +712,6 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
         try {
             // Boost thread's priority during system server init
             Process.setThreadPriority(Process.THREAD_PRIORITY_FOREGROUND);
-            if (!isBandwidthControlEnabled()) {
-                Slog.w(TAG, "bandwidth controls disabled, unable to enforce policy");
-                return;
-            }
 
             mUsageStats = LocalServices.getService(UsageStatsManagerInternal.class);
             mNetworkStats = LocalServices.getService(NetworkStatsManagerInternal.class);
@@ -4667,18 +4663,6 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
         } catch (RuntimeException e) {
             Slog.w(TAG, "Failed to read network stats: " + e);
             return new NetworkStats(SystemClock.elapsedRealtime(), 0);
-        }
-    }
-
-    private boolean isBandwidthControlEnabled() {
-        final long token = Binder.clearCallingIdentity();
-        try {
-            return mNetworkManager.isBandwidthControlEnabled();
-        } catch (RemoteException e) {
-            // ignored; service lives in system_server
-            return false;
-        } finally {
-            Binder.restoreCallingIdentity(token);
         }
     }
 

@@ -1963,12 +1963,6 @@ public class NetworkManagementService extends INetworkManagementService.Stub
     }
 
     @Override
-    public boolean isBandwidthControlEnabled() {
-        mContext.enforceCallingOrSelfPermission(CONNECTIVITY_INTERNAL, TAG);
-        return mBandwidthControlEnabled;
-    }
-
-    @Override
     public NetworkStats getNetworkStatsUidDetail(int uid, String[] ifaces) {
         mContext.enforceCallingOrSelfPermission(CONNECTIVITY_INTERNAL, TAG);
         try {
