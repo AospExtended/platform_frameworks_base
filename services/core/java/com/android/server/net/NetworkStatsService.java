@@ -378,11 +378,6 @@ public class NetworkStatsService extends INetworkStatsService.Stub {
     public void systemReady() {
         mSystemReady = true;
 
-        if (!isBandwidthControlEnabled()) {
-            Slog.w(TAG, "bandwidth controls disabled, unable to track stats");
-            return;
-        }
-
         synchronized (mStatsLock) {
             // create data recorders along with historical rotators
             mDevRecorder = buildRecorder(PREFIX_DEV, mSettings.getDevConfig(), false);
@@ -551,7 +546,6 @@ public class NetworkStatsService extends INetworkStatsService.Stub {
     }
 
     private INetworkStatsSession openSessionInternal(final int flags, final String callingPackage) {
-        assertBandwidthControlEnabled();
 
         final int callingUid = Binder.getCallingUid();
         final int usedFlags = isRateLimitedForPoll(callingUid)
@@ -745,7 +739,6 @@ public class NetworkStatsService extends INetworkStatsService.Stub {
 
     private long getNetworkTotalBytes(NetworkTemplate template, long start, long end) {
         assertSystemReady();
-        assertBandwidthControlEnabled();
 
         // NOTE: if callers want to get non-augmented data, they should go
         // through the public API
@@ -756,7 +749,6 @@ public class NetworkStatsService extends INetworkStatsService.Stub {
 
     private NetworkStats getNetworkUidBytes(NetworkTemplate template, long start, long end) {
         assertSystemReady();
-        assertBandwidthControlEnabled();
 
         final NetworkStatsCollection uidComplete;
         synchronized (mStatsLock) {
@@ -771,7 +763,6 @@ public class NetworkStatsService extends INetworkStatsService.Stub {
         if (Binder.getCallingUid() != uid) {
             mContext.enforceCallingOrSelfPermission(ACCESS_NETWORK_STATE, TAG);
         }
-        assertBandwidthControlEnabled();
 
         // TODO: switch to data layer stats once kernel exports
         // for now, read network layer stats and flatten across all ifaces
@@ -855,7 +846,6 @@ public class NetworkStatsService extends INetworkStatsService.Stub {
     @Override
     public void forceUpdateIfaces(Network[] defaultNetworks) {
         mContext.enforceCallingOrSelfPermission(READ_NETWORK_USAGE_HISTORY, TAG);
-        assertBandwidthControlEnabled();
 
         final long token = Binder.clearCallingIdentity();
         try {
@@ -868,7 +858,6 @@ public class NetworkStatsService extends INetworkStatsService.Stub {
     @Override
     public void forceUpdate() {
         mContext.enforceCallingOrSelfPermission(READ_NETWORK_USAGE_HISTORY, TAG);
-        assertBandwidthControlEnabled();
 
         final long token = Binder.clearCallingIdentity();
         try {
@@ -879,7 +868,6 @@ public class NetworkStatsService extends INetworkStatsService.Stub {
     }
 
     private void advisePersistThreshold(long thresholdBytes) {
-        assertBandwidthControlEnabled();
 
         // clamp threshold into safe range
         mPersistThreshold = MathUtils.constrain(thresholdBytes, 128 * KB_IN_BYTES, 2 * MB_IN_BYTES);
@@ -1708,24 +1696,6 @@ public class NetworkStatsService extends INetworkStatsService.Stub {
     private void assertSystemReady() {
         if (!mSystemReady) {
             throw new IllegalStateException("System not ready");
-        }
-    }
-
-    private void assertBandwidthControlEnabled() {
-        if (!isBandwidthControlEnabled()) {
-            throw new IllegalStateException("Bandwidth module disabled");
-        }
-    }
-
-    private boolean isBandwidthControlEnabled() {
-        final long token = Binder.clearCallingIdentity();
-        try {
-            return mNetworkManager.isBandwidthControlEnabled();
-        } catch (RemoteException e) {
-            // ignored; service lives in system_server
-            return false;
-        } finally {
-            Binder.restoreCallingIdentity(token);
         }
     }
 

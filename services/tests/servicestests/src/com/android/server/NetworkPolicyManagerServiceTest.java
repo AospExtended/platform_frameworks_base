@@ -403,7 +403,6 @@ public class NetworkPolicyManagerServiceTest {
                 .thenReturn(buildApplicationInfo(PKG_NAME_B));
         when(mPackageManager.getApplicationInfo(eq(PKG_NAME_C), anyInt()))
                 .thenReturn(buildApplicationInfo(PKG_NAME_C));
-        when(mNetworkManager.isBandwidthControlEnabled()).thenReturn(true);
         when(mNetworkManager.setDataSaverModeEnabled(anyBoolean())).thenReturn(true);
         doNothing().when(mConnectivityManager)
                 .registerNetworkCallback(any(), mNetworkCallbackCaptor.capture());

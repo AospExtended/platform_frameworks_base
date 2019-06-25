@@ -315,11 +315,6 @@ interface INetworkManagementService
     void setUidCleartextNetworkPolicy(int uid, int policy);
 
     /**
-     * Return status of bandwidth control module.
-     */
-    boolean isBandwidthControlEnabled();
-
-    /**
      * Sets idletimer for an interface.
      *
      * This either initializes a new idletimer or increases its
