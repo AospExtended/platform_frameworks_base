@@ -2043,32 +2043,6 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
             mStackSupervisor.reportActivityLaunchedLocked(false /* timeout */, this,
                     info.windowsFullyDrawnDelayMs);
             }
-
-        int windowsFullyDrawnDelayMsPerf = info != null ? info.windowsFullyDrawnDelayMs : 0;
-
-        if (mUxPerf != null) {
-                    mUxPerf.perfUXEngine_events(BoostFramework.UXE_EVENT_DISPLAYED_ACT, 0, packageName,
-                                                       windowsFullyDrawnDelayMsPerf);
-        }
-
-        int isGame = isAppInfoGame();
-        if (mUxPerf !=  null) {
-            mUxPerf.perfUXEngine_events(BoostFramework.UXE_EVENT_GAME, 0, packageName, isGame);
-        }
-
-        if (mPerfFirstDraw == null) {
-            mPerfFirstDraw = new BoostFramework();
-        }
-
-        if (mPerfFirstDraw != null) {
-            mPerfFirstDraw.perfHint(BoostFramework.VENDOR_HINT_FIRST_DRAW, info.packageName,
-                                          windowsFullyDrawnDelayMsPerf, BoostFramework.Draw.EVENT_TYPE_V1);
-        }
-
-        if (mPerf != null && perfActivityBoostHandler > 0) {
-            mPerf.perfLockReleaseHandler(perfActivityBoostHandler);
-            perfActivityBoostHandler = -1;
-        }
     }
 
     public int isAppInfoGame() {
