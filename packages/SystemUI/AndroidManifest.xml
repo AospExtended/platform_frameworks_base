@@ -705,5 +705,12 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name="com.android.systemui.aex.gamingmode.GamingModeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.GAMING_MODE_TURN_OFF" />
+                <action android:name="android.intent.action.GAMING_MODE_TURN_ON" />
+            </intent-filter>
+        </receiver>
+
     </application>
 </manifest>
