@@ -3283,19 +3283,9 @@ public final class Settings {
         private static final Validator SCREEN_BRIGHTNESS_MODE_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
-         * Save the user defined brightness state
+         * Gaming mode active state - to disable via notification / tile
          */
-        public static final String GAMING_SCREEN_BRIGHTNESS_MODE = "gaming_screen_brightness_mode";
-
-        /**
-         * Save the current user ringer mode
-         */
-        public static final String GAMING_RINGER_STATE = "gaming_ringer_state";
-
-        /**
-         * Save the current user zend mode
-         */
-        public static final String GAMING_MODE_ZEN_STATE = "gaming_mode_zen_state";
+        public static final String GAMING_MODE_ACTIVE = "gaming_mode_active";
 
         /**
          * Adjustment to auto-brightness to make it generally more (>0.0 <1.0)
@@ -5068,14 +5058,7 @@ public final class Settings {
          *
          * @hide
          */
-        public static final String GAMING_MODE_MASTER_SWITCH = "gaming_mode_master_switch";
-
-        /**
-         * Whether to enable gaming mode or not
-         *
-         * @hide
-         */
-        public static final String ENABLE_GAMING_MODE = "enable_gaming_mode";
+        public static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
 
         /**
          * Package name of apps for enabling Gaming mode
@@ -5108,7 +5091,7 @@ public final class Settings {
         public static final String GAMING_MODE_RINGER_MODE = "gaming_mode_ringer_mode";
 
         /**
-         * Whether to show notifications/toasts (0:OFF, 1:notifications, 2:toasts, 3: all
+         * Whether to show notifications/toasts (0:OFF, 1:notifications, 2:toasts, 3: all)
          *
          * @hide
          */
@@ -8798,12 +8781,6 @@ public final class Settings {
          * @hide
          */
         public static final int SHOW_ROTATION_SUGGESTIONS_DISABLED = 0x0;
-
-        /**
-         * Save hardware buttons toggle state.
-         * @hide
-         */
-        public static final String GAMING_HARDWARE_KEYS_DISABLE = "gaming_hardware_keys_disable";
 
         /**
          * The enabled state of SHOW_ROTATION_SUGGESTIONS.
@@ -13724,14 +13701,6 @@ public final class Settings {
          */
         public static final String HEADS_UP_NOTIFICATIONS_ENABLED =
                 "heads_up_notifications_enabled";
-
-        /**
-         * Save user defined heads up toggle state.
-         *
-         * @hide
-         */
-        public static final String GAMING_HEADS_UP_NOTIFICATIONS_ENABLED =
-                "gaming_heads_up_notifications_enabled";
 
         /** @hide */ public static final int HEADS_UP_OFF = 0;
         /** @hide */ public static final int HEADS_UP_ON = 1;
