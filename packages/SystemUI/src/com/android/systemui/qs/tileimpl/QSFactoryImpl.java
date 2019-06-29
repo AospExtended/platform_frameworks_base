@@ -38,6 +38,7 @@ import com.android.systemui.qs.tiles.DataSaverTile;
 import com.android.systemui.qs.tiles.DndTile;
 import com.android.systemui.qs.tiles.FlashlightTile;
 import com.android.systemui.qs.tiles.FPSInfoTile;
+import com.android.systemui.qs.tiles.GamingModeTile;
 import com.android.systemui.qs.tiles.HeadsUpTile;
 import com.android.systemui.qs.tiles.HotspotTile;
 import com.android.systemui.qs.tiles.IntentTile;
@@ -92,6 +93,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<UsbTetherTile> mUsbTetherTileProvider;
     private final Provider<SyncTile> mSyncTileProvider;
     private final Provider<FPSInfoTile> mFPSInfoTileProvider;
+    private final Provider<GamingModeTile> mGamingModeTileProvider;
 
     // Additions
     private final Provider<AODTile> mAODTileProvider;
@@ -123,7 +125,8 @@ public class QSFactoryImpl implements QSFactory {
             Provider<UsbTetherTile> usbTetherTileProvider,
             Provider<SyncTile> syncTileProvider,
             Provider<AODTile> aodTileProvider,
-            Provider<FPSInfoTile> fpsInfoTileProvider) {
+            Provider<FPSInfoTile> fpsInfoTileProvider,
+            Provider<GamingModeTile> gamingModeTileProvider) {
         mWifiTileProvider = wifiTileProvider;
         mBluetoothTileProvider = bluetoothTileProvider;
         mCellularTileProvider = cellularTileProvider;
@@ -149,6 +152,7 @@ public class QSFactoryImpl implements QSFactory {
         mSyncTileProvider = syncTileProvider;
         mAODTileProvider = aodTileProvider;
         mFPSInfoTileProvider = fpsInfoTileProvider;
+        mGamingModeTileProvider = gamingModeTileProvider;
     }
 
     public void setHost(QSTileHost host) {
@@ -224,6 +228,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new RebootTile(mHost);
             case "fpsinfo":
                 return mFPSInfoTileProvider.get();
+            case "gaming":
+                return mGamingModeTileProvider.get();
         }
 
         // Intent tiles.
