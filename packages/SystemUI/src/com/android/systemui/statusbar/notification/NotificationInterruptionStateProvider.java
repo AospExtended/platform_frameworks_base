@@ -78,6 +78,8 @@ public class NotificationInterruptionStateProvider {
 
     private boolean mLessBoringHeadsUp;
 
+    private boolean mSkipHeadsUp;
+
     @Inject
     public NotificationInterruptionStateProvider(Context context, NotificationFilter filter,
             StatusBarStateController stateController, BatteryController batteryController) {
@@ -362,13 +364,24 @@ public class NotificationInterruptionStateProvider {
         mLessBoringHeadsUp = lessBoring;
     }
 
+    public void setGamingPeekMode(boolean skipHeadsUp) {
+        mSkipHeadsUp = skipHeadsUp;
+    }
+
     public boolean shouldSkipHeadsUp(StatusBarNotification sbn) {
-        boolean isImportantHeadsUp = false;
         String notificationPackageName = sbn.getPackageName().toLowerCase();
-        isImportantHeadsUp = notificationPackageName.contains("dialer") ||
-                notificationPackageName.contains("messaging") ||
+        // Gaming mode takes precedence since messaging headsup is intrusive
+        if (mSkipHeadsUp) {
+            boolean isNonInstrusive = notificationPackageName.contains("dialer") ||
                 notificationPackageName.contains("clock");
-        return !Dependency.get(ShadeController.class).isDozing() && mLessBoringHeadsUp && !isImportantHeadsUp;
+            return !Dependency.get(ShadeController.class).isDozing() && mSkipHeadsUp && !isNonInstrusive;
+        }
+
+        boolean isLessBoring = notificationPackageName.contains("dialer") ||
+                notificationPackageName.contains("clock") ||
+                notificationPackageName.contains("messaging");
+
+        return !Dependency.get(ShadeController.class).isDozing() && mLessBoringHeadsUp && !isLessBoring;
     }
 
     /**
@@ -381,7 +394,7 @@ public class NotificationInterruptionStateProvider {
     public boolean canAlertAwakeCommon(NotificationEntry entry) {
         StatusBarNotification sbn = entry.notification;
 
-        if (mPresenter.isDeviceInVrMode() || shouldSkipHeadsUp(sbn)) {
+        if (!mUseHeadsUp || mPresenter.isDeviceInVrMode() || shouldSkipHeadsUp(sbn)) {
             if (DEBUG_HEADS_UP) {
                 Log.d(TAG, "No alerting: no huns or vr mode or less boring headsup enabled");
             }
