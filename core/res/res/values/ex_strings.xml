@@ -21,12 +21,16 @@
     <string name="reboot_to_recovery_title" translatable="false">Recovery</string>
     <string name="reboot_to_recovery_message" translatable="false">Rebooting to recovery</string>
     <string name="reboot_to_bootloader_title" translatable="false">Bootloader</string>
-    <string name="reboot_to_bootloader_message" translatable="false">Rebooting to bootloader</string>
+    <string name="reboot_to_bootloader_message" translatabl="false">Rebooting to bootloader</string>
     <string name="reboot_title">Reboot</string>
     <string name="reboot_message">Rebooting system</string>
 
-    <!-- Pocket Lock -->
-    <string name="pocket_lock_message_long_press">Long press power button to interact</string>
+    <!-- Gaming mode -->
+    <string name="notification_channel_gaming">Gaming mode</string>
+    <string name="gaming_mode_notification_title">Gaming mode enabled</string>
+    <string name="gaming_mode_notification_content">Tap to turn off Gaming mode</string>
+    <string name="gaming_mode_enabled_toast">Gaming mode turned on</string>
+    <string name="gaming_mode_disabled_toast">Gaming mode turned off</string>
 
     <!-- MicroG -->
     <string name="permlab_fakePackageSignature">Spoof package signature</string>
