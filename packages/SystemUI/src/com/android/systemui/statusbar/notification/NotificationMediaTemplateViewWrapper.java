@@ -109,10 +109,10 @@ public class NotificationMediaTemplateViewWrapper extends NotificationTemplateVi
                 mSeekBar.setMax((int) mDuration);
                 mSeekBarTotalTime.setText(millisecondsToTimeString(duration));
             }
-            if (!mTrackingTouch) {
-                long position = mMediaController.getPlaybackState().getPosition();
-                mSeekBar.setProgress((int) position);
-            }
+            long position = 0;
+            if (!mTrackingTouch && mMediaController.getPlaybackState() != null)
+                position = mMediaController.getPlaybackState().getPosition();
+            mSeekBar.setProgress((int) position);
         }
     };
 
