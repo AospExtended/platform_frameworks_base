@@ -1406,11 +1406,11 @@ public final class SystemServer {
             mSystemServiceManager.startService(TwilightService.class);
             traceEnd();
 
-            if (ColorDisplayController.isAvailable(context)) {
+            //if (ColorDisplayController.isAvailable(context)) {
                 traceBeginAndSlog("StartNightDisplay");
                 mSystemServiceManager.startService(ColorDisplayService.class);
                 traceEnd();
-            }
+            //}
 
             traceBeginAndSlog("StartJobScheduler");
             mSystemServiceManager.startService(JobSchedulerService.class);
