@@ -73,6 +73,7 @@ public class GamingModeController {
     private static int mRingerState;
     private static int mZenState;
     private static int mHwKeysState;
+    private static int mOpGesturesState;
     private static int mAdaptiveBrightness;
 
     public static final String GAMING_MODE_TURN_OFF = "android.intent.action.GAMING_MODE_TURN_OFF";
@@ -259,6 +260,16 @@ public class GamingModeController {
                 Settings.Secure.HARDWARE_KEYS_DISABLE, 1);
         }
 
+        // Gestures
+        boolean disableGestures = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.GAMING_MODE_GESTURES_TOGGLE, 0) == 1;
+        if (disableGestures) {
+            mOpGesturesState = Settings.System.getInt(mContext.getContentResolver(),
+                              Settings.System.OMNI_USE_BOTTOM_GESTURE_NAVIGATION, 0);
+            Settings.System.putInt(mContext.getContentResolver(),
+                Settings.System.OMNI_USE_BOTTOM_GESTURE_NAVIGATION, 0);
+        }
+
         // Ringer mode (0: Off, 1: Vibrate, 2:DND: 3:Silent)
         int ringerMode = Settings.System.getInt(mContext.getContentResolver(),
             Settings.System.GAMING_MODE_RINGER_MODE, 0);
@@ -301,6 +312,15 @@ public class GamingModeController {
             Settings.Secure.putInt(mContext.getContentResolver(),
                 Settings.Secure.HARDWARE_KEYS_DISABLE, mHwKeysState);
         }
+
+        // Gestures
+        boolean disableGestures = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.GAMING_MODE_GESTURES_TOGGLE, 0) == 1;
+        if (disableGestures) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                Settings.System.OMNI_USE_BOTTOM_GESTURE_NAVIGATION, mOpGesturesState);
+        }
+
         int ringerMode = Settings.System.getInt(mContext.getContentResolver(),
                  Settings.System.GAMING_MODE_RINGER_MODE, 0);
         if (ringerMode != 0 && (mRingerState != getRingerModeInternal() ||
