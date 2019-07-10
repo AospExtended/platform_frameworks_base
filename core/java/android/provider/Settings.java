@@ -5077,6 +5077,13 @@ public final class Settings {
         public static final String GAMING_MODE_HW_KEYS_TOGGLE = "gaming_mode_hw_keys_toggle";
 
         /**
+         * Whether to disable gestures in gaming mode
+         *
+         * @hide
+         */
+        public static final String GAMING_MODE_GESTURES_TOGGLE = "gaming_mode_gestures_toggle";
+
+        /**
          * Whether to disable heads up gaming mode
          *
          * @hide
