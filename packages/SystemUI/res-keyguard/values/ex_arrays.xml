@@ -83,16 +83,16 @@ Copyright 2019 AospExtended
         <item>@string/text_clock_minutes_thirtyseven</item>
         <item>@string/text_clock_minutes_thirtyeight</item>
         <item>@string/text_clock_minutes_thirtynine</item>
-        <item>@string/text_clock_minutes_fourty</item>
-        <item>@string/text_clock_minutes_fourtyone</item>
-        <item>@string/text_clock_minutes_fourtytwo</item>
-        <item>@string/text_clock_minutes_fourtythree</item>
-        <item>@string/text_clock_minutes_fourtyfour</item>
-        <item>@string/text_clock_minutes_fourtyfive</item>
-        <item>@string/text_clock_minutes_fourtysix</item>
-        <item>@string/text_clock_minutes_fourtyseven</item>
-        <item>@string/text_clock_minutes_fourtyeight</item>
-        <item>@string/text_clock_minutes_fourtynine</item>
+        <item>@string/text_clock_minutes_forty</item>
+        <item>@string/text_clock_minutes_fortyone</item>
+        <item>@string/text_clock_minutes_fortytwo</item>
+        <item>@string/text_clock_minutes_fortythree</item>
+        <item>@string/text_clock_minutes_fortyfour</item>
+        <item>@string/text_clock_minutes_fortyfive</item>
+        <item>@string/text_clock_minutes_fortysix</item>
+        <item>@string/text_clock_minutes_fortyseven</item>
+        <item>@string/text_clock_minutes_fortyeight</item>
+        <item>@string/text_clock_minutes_fortynine</item>
         <item>@string/text_clock_minutes_fifty</item>
         <item>@string/text_clock_minutes_fiftyone</item>
         <item>@string/text_clock_minutes_fiftytwo</item>
