@@ -67,6 +67,7 @@ import java.lang.ref.WeakReference;
 import java.text.Collator;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -75,6 +76,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.regex.Pattern;
+import com.android.internal.util.custom.OverlayUtils;
 
 /**
  * Keeps track of information about all installed applications, lazy-loading
@@ -1671,7 +1673,7 @@ public class ApplicationsState {
 
         @Override
         public boolean filterApp(AppEntry entry) {
-            return true;
+            return !Arrays.asList(OverlayUtils.AllPackages).contains(entry.info.packageName);
         }
     };
 
