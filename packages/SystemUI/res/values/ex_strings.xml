@@ -258,11 +258,6 @@
     <!-- Always on Display Tile -->
     <string name="quick_settings_always_on_display_label">Always on display</string>
 
-    <!-- Music tile -->
-    <string name="quick_settings_music_label">Music</string>
-    <string name="quick_settings_music_play">Play</string>
-    <string name="quick_settings_music_pause">Pause</string>
-
     <!-- Sync QS tile -->
     <string name="quick_settings_sync_label">Sync</string>
     <string name="accessibility_quick_settings_sync_off">Sync off.</string>
@@ -298,4 +293,5 @@
     <string name="vpn_credentials_username">Username</string>
     <string name="vpn_credentials_password">Password</string>
     <string name="vpn_credentials_dialog_connect">Connect</string>
+
 </resources>

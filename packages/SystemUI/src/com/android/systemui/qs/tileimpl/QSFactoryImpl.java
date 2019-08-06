@@ -50,7 +50,6 @@ import com.android.systemui.qs.tiles.LocationTile;
 import com.android.systemui.qs.tiles.LteTile;
 import com.android.systemui.qs.tiles.OneHandTile;
 import com.android.systemui.qs.tiles.NfcTile;
-import com.android.systemui.qs.tiles.MusicTile;
 import com.android.systemui.qs.tiles.NightDisplayTile;
 import com.android.systemui.qs.tiles.RebootTile;
 import com.android.systemui.qs.tiles.ReadingModeTile;
@@ -158,8 +157,6 @@ public class QSFactoryImpl implements QSFactory {
                 return new SoundSearchTile(mHost);
             case "always_on_display":
                 return new AlwaysOnDisplayTile(mHost);
-            case "music":
-                return new MusicTile(mHost);
             case "sync":
                 return new SyncTile(mHost);
             case "ambient_display":
