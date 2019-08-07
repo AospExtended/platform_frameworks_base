@@ -144,7 +144,6 @@ public class LiveDisplayService extends SystemService {
     @Override
     public void onBootPhase(int phase) {
         if (phase == PHASE_BOOT_COMPLETED) {
-            final boolean isNightDisplayAvailable = ColorDisplayManager.isNightDisplayAvailable(mContext);
 
             mAwaitingNudge = getSunsetCounter() < 1;
 
@@ -152,9 +151,7 @@ public class LiveDisplayService extends SystemService {
             mFeatures.add(mDHC);
 
             mCTC = new ColorTemperatureController(mContext, mHandler, mDHC);
-            if (!isNightDisplayAvailable) {
-                mFeatures.add(mCTC);
-            }
+            mFeatures.add(mCTC);
 
             mOMC = new OutdoorModeController(mContext, mHandler);
             mFeatures.add(mOMC);
@@ -175,8 +172,7 @@ public class LiveDisplayService extends SystemService {
             int defaultMode = mContext.getResources().getInteger(
                     com.android.internal.R.integer.config_defaultLiveDisplayMode);
 
-            mConfig = new LiveDisplayConfig(capabilities,
-                    isNightDisplayAvailable ? MODE_OFF : defaultMode,
+            mConfig = new LiveDisplayConfig(capabilities, defaultMode,
                     mCTC.getDefaultDayTemperature(), mCTC.getDefaultNightTemperature(),
                     mOMC.getDefaultAutoOutdoorMode(), mDHC.getDefaultAutoContrast(),
                     mDHC.getDefaultCABC(), mDHC.getDefaultColorEnhancement(),
@@ -198,10 +194,8 @@ public class LiveDisplayService extends SystemService {
             mState.mLowPowerMode =
                     pmi.getLowPowerState(SERVICE_TYPE_DUMMY).globalBatterySaverEnabled;
 
-            if (!isNightDisplayAvailable) {
-                mTwilightTracker.registerListener(mTwilightListener, mHandler);
-                mState.mTwilight = mTwilightTracker.getCurrentState();
-            }
+            mTwilightTracker.registerListener(mTwilightListener, mHandler);
+            mState.mTwilight = mTwilightTracker.getCurrentState();
 
             if (mConfig.hasModeSupport()) {
                 mModeObserver = new ModeObserver(mHandler);
