@@ -17,6 +17,7 @@ package com.android.server.custom.display;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.hardware.display.ColorDisplayManager;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.UserHandle;
@@ -43,6 +44,7 @@ public abstract class LiveDisplayFeature {
 
     protected final Context mContext;
     protected final Handler mHandler;
+    protected final boolean mNightDisplayAvailable;
 
     private SettingsObserver mSettingsObserver;
     private State mState;
@@ -50,6 +52,7 @@ public abstract class LiveDisplayFeature {
     public LiveDisplayFeature(Context context, Handler handler) {
         mContext = context;
         mHandler = handler;
+        mNightDisplayAvailable = ColorDisplayManager.isNightDisplayAvailable(mContext);
     }
 
     public abstract void onStart();
