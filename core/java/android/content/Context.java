@@ -4219,6 +4219,12 @@ public abstract class Context {
     public static final String SECURE_ELEMENT_SERVICE = "secure_element";
 
     /**
+     * Long screenshot
+     * @hide
+     */
+    public static final String LONGSCREENSHOT_SERVICE = "longshot";
+
+    /**
      * Use with {@link #getSystemService} to retrieve a
      * {@link android.os.PocketManager} for accessing and listening to device pocket state.
      *
