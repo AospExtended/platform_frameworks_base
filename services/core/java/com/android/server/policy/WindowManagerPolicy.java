@@ -1792,6 +1792,13 @@ public interface WindowManagerPolicy extends WindowManagerPolicyConstants {
     boolean setAodShowing(boolean aodShowing);
 
     /**
+     * Long screenshot
+     * @hide
+     */
+    public void takeOPScreenshot(int type, int reason);
+    public void stopLongshotConnection();
+
+    /**
      * Send some ActionHandler commands to WindowManager.
      */
     public void sendCustomAction(Intent intent);

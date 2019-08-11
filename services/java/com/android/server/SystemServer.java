@@ -151,6 +151,9 @@ import static android.view.Display.DEFAULT_DISPLAY;
 import com.android.server.custom.LineageHardwareService;
 import com.android.server.custom.display.LiveDisplayService;
 
+// Long screenshot
+import com.android.internal.custom.longshot.LongScreenshotManagerService;
+
 public final class SystemServer {
     private static final String TAG = "SystemServer";
 
@@ -990,6 +993,10 @@ public final class SystemServer {
 
             traceBeginAndSlog("PinnerService");
             mSystemServiceManager.startService(PinnerService.class);
+            traceEnd();
+
+            traceBeginAndSlog("LongScreenShot Manager");
+            ServiceManager.addService(Context.LONGSCREENSHOT_SERVICE, LongScreenshotManagerService.getInstance(context));
             traceEnd();
         } catch (RuntimeException e) {
             Slog.e("System", "******************************************");
