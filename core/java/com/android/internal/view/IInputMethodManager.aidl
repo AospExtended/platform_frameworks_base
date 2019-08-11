@@ -95,4 +95,7 @@ interface IInputMethodManager {
     oneway void notifyUserAction(int sequenceNumber);
 
     boolean isImeWindowVisible();
+	
+    // Long screenshot
+    boolean hideSoftInputForLongshot(int flags, in ResultReceiver resultReceiver);
 }
