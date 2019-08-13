@@ -26,4 +26,7 @@
     <!-- Navbar -->
     <string name="config_navBarLayoutHandleArrows" translatable="false">back[1.7WC];home_handle;ime_switcher[1.7WC]</string>
 
+    <!-- Asus stitch editor component name -->
+    <string name="config_stitchEditor">com.asus.stitchimage/com.asus.stitchimage.editor.ScreenshotEditorActivity</string>
+
 </resources>
