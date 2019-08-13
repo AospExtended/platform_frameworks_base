@@ -92,6 +92,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowManager;
+import android.view.WindowManagerGlobal;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
@@ -1060,8 +1061,11 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    mScreenshotHelper.takeScreenshot(TAKE_SCREENSHOT_FULLSCREEN, true, true,
-                            SCREENSHOT_GLOBAL_ACTIONS, mHandler, null);
+                    try {
+                        WindowManagerGlobal.getWindowManagerService().takeAlternativeScreenshot();
+                    } catch (RemoteException e) {
+                        Log.e("GlobalActionsDialog", "Error while trying to takeAlternativeScreenshot.", e);
+                    }
                     mMetricsLogger.action(MetricsEvent.ACTION_SCREENSHOT_POWER_MENU);
                     mUiEventLogger.log(GlobalActionsEvent.GA_SCREENSHOT_PRESS);
                 }
