@@ -36,6 +36,7 @@ import static android.os.Process.THREAD_GROUP_RESTRICTED;
 import static android.os.Process.THREAD_GROUP_TOP_APP;
 import static android.os.Process.THREAD_PRIORITY_DISPLAY;
 import static android.os.Process.setProcessGroup;
+import static android.os.Process.setCgroupProcsProcessGroup;
 import static android.os.Process.setThreadPriority;
 import static android.os.Process.setThreadScheduler;
 
@@ -69,6 +70,7 @@ import android.os.PowerManagerInternal;
 import android.os.Process;
 import android.os.RemoteException;
 import android.os.SystemClock;
+import android.os.SystemProperties;
 import android.os.Trace;
 import android.os.UserHandle;
 import android.util.ArrayMap;
@@ -162,6 +164,12 @@ public final class OomAdjuster {
     private final ActivityManagerService mService;
     private final ProcessList mProcessList;
 
+    // Process in same process Group keep in same cgroup
+    boolean mEnableProcessGroupCgroupFollow =
+            SystemProperties.getBoolean("ro.vendor.qti.cgroup_follow.enable", false);
+    boolean mProcessGroupCgroupFollowDex2oatOnly =
+            SystemProperties.getBoolean("ro.vendor.qti.cgroup_follow.dex2oat_only", false);
+
     OomAdjuster(ActivityManagerService service, ProcessList processList, ActiveUids activeUids) {
         mService = service;
         mProcessList = processList;
@@ -182,7 +190,12 @@ public final class OomAdjuster {
             final int pid = msg.arg1;
             final int group = msg.arg2;
             try {
-                setProcessGroup(pid, group);
+                if (mEnableProcessGroupCgroupFollow) {
+                    final int uid = ((Integer)msg.obj).intValue();
+                    setCgroupProcsProcessGroup(uid, pid, group, mProcessGroupCgroupFollowDex2oatOnly);
+                } else {
+                    setProcessGroup(pid, group);
+                }
             } catch (Exception e) {
                 if (DEBUG_ALL) {
                     Slog.w(TAG, "Failed setting process group of " + pid + " to " + group, e);
@@ -1758,7 +1771,7 @@ public final class OomAdjuster {
                         break;
                 }
                 mProcessGroupHandler.sendMessage(mProcessGroupHandler.obtainMessage(
-                        0 /* unused */, app.pid, processGroup));
+                        0 /* unused */, app.pid, processGroup, Integer.valueOf(app.info.uid)));
                 try {
                     if (curSchedGroup == ProcessList.SCHED_GROUP_TOP_APP) {
                         // do nothing if we already switched to RT
