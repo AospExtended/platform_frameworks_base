@@ -817,6 +817,7 @@ public class Process {
      * @param uid The user identifier of the process to change.
      * @param pid The identifier of the process to change.
      * @param group The target group for this process from THREAD_GROUP_*.
+     * @param dex2oat_only is the cgroup apply for all or for dex2oat only.
      *
      * @throws IllegalArgumentException Throws IllegalArgumentException if
      * <var>tid</var> does not exist.
@@ -832,7 +833,7 @@ public class Process {
      *
      * Always sets cpusets.
      */
-    public static final native void setCgroupProcsProcessGroup(int uid, int pid, int group)
+    public static final native void setCgroupProcsProcessGroup(int uid, int pid, int group, boolean dex2oat_only)
             throws IllegalArgumentException, SecurityException;
 
     /**
