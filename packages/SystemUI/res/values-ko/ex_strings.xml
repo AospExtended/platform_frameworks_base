@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">블랙 UI</string>
     <string name="systemui_theme_style_extended">확장된 UI</string>
     <string name="systemui_theme_style_chocolate">초콜릿 UI</string>
+    <string name="systemui_theme_style_elegant">우아한 사용자 환경</string>
     <string name="quick_settings_theme_tile_title">강조색</string>
     <string name="quick_settings_theme_tile_accent_detail_title">색상 선택</string>
     <string name="quick_settings_theme_tile_style_detail_title">스타일 선택</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">확장된 녹색</string>
     <string name="quick_settings_theme_tile_color_pale_blue">연한 파랑</string>
     <string name="quick_settings_theme_tile_color_jade_green">비취색</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">우아한 녹색</string>
     <string name="quick_settings_theme_tile_color_black">검은색</string>
     <string name="quick_settings_theme_tile_color_white">흰색</string>
     <string name="theme_info_title">이게 뭐죠?</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">위치 확인: 배터리 절약 모드</string>
     <string name="accessibility_quick_settings_location_gps_only">위치 확인: 센서 전용 모드.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">위치 모드: 높은 정확도 모드</string>
+    <string name="quick_settings_location_battery_saving_label">절전 모드</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">절전\n모드</string>
+    <string name="quick_settings_location_gps_only_label">기기 전용</string>
+    <string name="quick_settings_location_gps_only_label_twoline">기기 전용</string>
+    <string name="quick_settings_location_high_accuracy_label">높은 정확도</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">높은\n정확성</string>
+    <string name="quick_settings_location_detail_title">위치</string>
+    <string name="quick_settings_location_detail_menu_title">모드 선택:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">높은 정확도</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">절전 모드</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">기기 전용</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">GPS, Wi‑Fi, 블루투스 또는 이동통신망을 사용하여 위치를 찾습니다. </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Wi‑Fi, 블루투스 또는 이동통신망을 사용하여 위치를 찾습니다.</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">GPS를 사용하여 위치를 찾습니다.</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">대쉬 충전중 (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> 후 충전 완료)</string>
     <string name="keyguard_plugged_in_dash_charging">고속 충전중</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">TurboPower 연결됨 (<xliff:g id="charging_time_left">%s</xliff:g> 풀 충전까지 남음)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower 연결됨</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">게이밍 모드</string>
-    <string name="gaming_mode_tile_toast">게이밍 모드 활성화됨</string>
-    <string name="gaming_mode_tile_toast_disabled">게이밍 모드 비활성화됨</string>
-    <string name="gaming_mode_dialog_title">게이밍 모드</string>
-    <string name="gaming_mode_dialog_message">게이밍 모드가 활성화되면 알림은 진동으로 설정되며 하드웨어 키는 비활성화 됩니다. 미디어 음량은 최대로 바뀌며 이 설정은 게이밍 모드를 비활성화할 때까지 유지됩니다.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">게이밍 모드 사용</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">게이밍 모드 사용 안함</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">나침반</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -234,5 +242,13 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">볼륨 패널</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">읽기 모드</string>
+    <string name="accessibility_quick_settings_reading_mode_on">읽기 모드 켜짐.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">읽기 모드 꺼짐.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">읽기 모드가 켜졌습니다.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">읽기 모드가 꺼졌습니다.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">글꼴</string>
+    <string name="quick_settings_font_detail_label">글꼴 선택</string>
+    <!-- VPN QS tile -->
 </resources>

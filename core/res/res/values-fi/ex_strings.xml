@@ -12,20 +12,56 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="reboot_title">Käynnistä uudelleen</string>
+    <string name="reboot_message">Käynnistetään laite uudelleen</string>
     <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">JärjestelmäUI uudelleenkäynnistys vaaditaan</string>
+    <string name="systemui_restart_message">Jotta kaikki muutokset tulevat voimaan, SystemUI uudelleenkäynnistys vaaditaan. Uudelleenkäynnistä SystemUI nyt?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">Väärennä paketin digitaalinen allekirjoitus</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">Antaa sovelluksen peittää itsensä toisena sovelluksena. Haitalliset sovellukset saattavat käyttä tätä yksityisten tietojen saamiseen. Valitse huolella mille annat tämän oikeuden!</string>
     <!-- App error dialog -->
+    <string name="aerr_copy">Kopioi lokin URL-osoite</string>
+    <string name="url_copy_success">URL-osoite kopioitu onnistuneesti</string>
+    <string name="url_copy_failed">Lokia dogbinniin ladatessa tapahtui virhe</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_toggleNavigationEditor">hallitse navigointipalkin editointia</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_toggleNavigationEditor">Sallii sovelluksen ohjata navigointipalkin muokkausta.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">siirry fonttien hallitsimeen</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Antaa sovellukselle pääsyn fonttien hallintaan.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">Asentamasi fonttipaketti ei ole yhteensopiva fonts.xml tiedoston puuttumisen takia. Ota yhteyttä paketin ylläpitäjään.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Häivytys</string>
+    <string name="animation_slide_right">Liu\'uta sisään oikealle</string>
+    <string name="animation_slide_left">Liu\'uta sisään vasemmalle</string>
+    <string name="animation_slide_right_no_fade">Liu\'uta sisään oikealle (Ei häivytystä)</string>
+    <string name="animation_slide_left_no_fade">Liu\'uta sisään vasemmalle (Ei häivytystä)</string>
+    <string name="animation_slide_up">Sisään liuku alhaalta</string>
+    <string name="animation_slide_down">Liu\'uta ylhäältä</string>
+    <string name="animation_default">Oletus</string>
+    <string name="animation_translucent">Läpikuultava</string>
+    <string name="animation_grow_shrink">Sisään kasvu (Ylhäällä)</string>
+    <string name="animation_grow_shrink_center">Sisään kasvu (Keskelle)</string>
+    <string name="animation_grow_shrink_bottom">Sisään kasvu (Alhaalta)</string>
+    <string name="animation_grow_shrink_left">Sisään kasvu (Vasemmalle)</string>
+    <string name="animation_grow_shrink_right">Sisään kasvu (Oikealle)</string>
+    <string name="animation_random">Satunnainen</string>
+    <string name="action_null">Tyhjä</string>
     <!-- ADB over network -->
-    <!-- LiveDisplay strings -->
+    <string name="adb_net_active_notification_title">ADB verkon kautta käytössä</string>
+    <string name="adb_both_active_notification_title">ADB USB: n kautta &amp; verkko käytössä</string>
+    <string name="adb_active_generic_notification_message">Kosketa poistaaksesi vianetsinnän käytöstä.</string>
     <!-- Pocket Lock -->
+    <string name="pocket_lock_message_long_press">Paina virtanäppäintä pitkään vaikuttaaksesi</string>
+    <!-- App ops requests -->
+    <!-- Privacy Guard -->
+    <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
 </resources>

@@ -12,7 +12,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="reboot_to_recovery_title">Recovery</string>
     <string name="reboot_to_recovery_message">Riavvio in recovery</string>
@@ -63,29 +63,9 @@
     <string name="adb_net_active_notification_title">ADB tramite rete abilitata</string>
     <string name="adb_both_active_notification_title">ADB tramite USB &amp; rete abilitata</string>
     <string name="adb_active_generic_notification_message">Tocca per disattivare il debug.</string>
-    <!-- LiveDisplay strings -->
-    <string name="live_display_title">LiveDisplay</string>
-    <string name="live_display_auto">Automatico</string>
-    <string name="live_display_auto_summary">Regola automaticamente la temperatura del colore dello schermo dopo il tramonto e l\'alba</string>
-    <string name="live_display_off">Spento</string>
-    <string name="live_display_off_summary">Disattiva tutte le regolazioni</string>
-    <string name="live_display_day">Giorno</string>
-    <string name="live_display_day_summary">Utilizza solo l\'impostazione giorno</string>
-    <string name="live_display_night">Notte</string>
-    <string name="live_display_night_summary">Utilizza solo l\'impostazione notte</string>
-    <string name="live_display_outdoor">All\'aperto (sole)</string>
-    <string name="live_display_outdoor_summary">Utilizza solo le impostazioni all\'aperto</string>
-    <string name="live_display_hint">LiveDisplay può aiutare a ridurre l\'affaticamento degli occhi e aiuta a dormire la notte. Clicca qui per provarlo!</string>
-    <string name="accessibility_quick_settings_live_display_off">LiveDisplay spento.</string>
-    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: modalità automatica.</string>
-    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: modalità giorno.</string>
-    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: modalità notte.</string>
-    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: modalità all\'aperto.</string>
-    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay disattivato.</string>
-    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay cambiato in modalità automatica.</string>
-    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay cambiato in modalità giorno.</string>
-    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay cambiato in modalità notte.</string>
-    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay cambiato in modalità all\'aperto.</string>
     <!-- Pocket Lock -->
     <string name="pocket_lock_message_long_press">Pressione prolungata sul tasto accensione per interagire</string>
+    <!-- App ops requests -->
+    <!-- Privacy Guard -->
+    <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
 </resources>

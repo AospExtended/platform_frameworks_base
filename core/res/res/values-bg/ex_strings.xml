@@ -12,7 +12,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="reboot_title">Рестартиране</string>
     <string name="reboot_message">Рестартиране на системата</string>
@@ -59,6 +59,8 @@
     <string name="adb_net_active_notification_title">ADB - Режим за отстраняване на грешки през мрежата е активиран</string>
     <string name="adb_both_active_notification_title">ADB - Режим за отстраняване на грешки през USB &amp; мрежата е активирана</string>
     <string name="adb_active_generic_notification_message">Докоснете, за да деактивирате отстраняване на грешки.</string>
-    <!-- LiveDisplay strings -->
     <!-- Pocket Lock -->
+    <!-- App ops requests -->
+    <!-- Privacy Guard -->
+    <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
 </resources>

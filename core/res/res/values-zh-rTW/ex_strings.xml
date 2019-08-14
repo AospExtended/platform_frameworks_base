@@ -12,7 +12,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="reboot_to_recovery_title">Recovery 模式</string>
     <string name="reboot_to_recovery_message">重新啟動至 Recovery 模式</string>
@@ -63,6 +63,9 @@
     <string name="adb_net_active_notification_title">網路 ADB 偵錯已啟用</string>
     <string name="adb_both_active_notification_title">USB 和網絡 ADB 偵錯已啟用</string>
     <string name="adb_active_generic_notification_message">輕觸即可停用偵錯。</string>
-    <!-- LiveDisplay strings -->
     <!-- Pocket Lock -->
+    <string name="pocket_lock_message_long_press">長按電源鍵以互動</string>
+    <!-- App ops requests -->
+    <!-- Privacy Guard -->
+    <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
 </resources>

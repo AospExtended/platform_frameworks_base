@@ -183,14 +183,6 @@
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">TurboPower je připojen (plně nabito za <xliff:g id="charging_time_left">%s</xliff:g>)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower je připojen</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Herní režim</string>
-    <string name="gaming_mode_tile_toast">Herní režim povolen</string>
-    <string name="gaming_mode_tile_toast_disabled">Herní režim zakázán</string>
-    <string name="gaming_mode_dialog_title">Herní režim</string>
-    <string name="gaming_mode_dialog_message">Pokud je herní režim povolen, vyzvánění se změní na vibrace, všechny plovoucí zprávy budou deaktivovány a hardwarová tlačítka budou vypnuta. Hlasitost médií se zvýší na maximální hodnotu. Po ukončení herního režimu budou všechna deaktivovaná nastavení obnovena na výchozí.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Herní režim zap.</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Herní režim vyp.</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Kompas</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -258,4 +250,5 @@
     <!-- Font Tile -->
     <string name="quick_settings_font_label">Písma</string>
     <string name="quick_settings_font_detail_label">Vybrat písmo</string>
+    <!-- VPN QS tile -->
 </resources>

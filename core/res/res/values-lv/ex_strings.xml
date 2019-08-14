@@ -12,7 +12,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="reboot_title">Pārstartēt</string>
     <string name="reboot_message">Pārstartēt sistēmu</string>
@@ -40,6 +40,8 @@
     <!-- AOKP custom system animations -->
     <string name="animation_fade">Izbalināt</string>
     <!-- ADB over network -->
-    <!-- LiveDisplay strings -->
     <!-- Pocket Lock -->
+    <!-- App ops requests -->
+    <!-- Privacy Guard -->
+    <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
 </resources>

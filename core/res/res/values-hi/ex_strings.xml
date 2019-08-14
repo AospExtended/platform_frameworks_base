@@ -12,7 +12,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="reboot_title">रिबूट</string>
     <string name="reboot_message">रिबूटिंग सिस्टेम</string>
@@ -59,6 +59,8 @@
     <string name="adb_net_active_notification_title">नेटवर्क पर ADB को सक्षम कर दिया गया</string>
     <string name="adb_both_active_notification_title">यूएसबी और नेटवर्क पर एडीबी को सक्षम कर दिया गया</string>
     <string name="adb_active_generic_notification_message">डीबगिंग को अक्षम करने के लिए छुएँ।</string>
-    <!-- LiveDisplay strings -->
     <!-- Pocket Lock -->
+    <!-- App ops requests -->
+    <!-- Privacy Guard -->
+    <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
 </resources>

@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">黑色使用者介面</string>
     <string name="systemui_theme_style_extended">延伸使用者介面</string>
     <string name="systemui_theme_style_chocolate">巧克力使用者介面</string>
+    <string name="systemui_theme_style_elegant">優雅 UI</string>
     <string name="quick_settings_theme_tile_title">強調色</string>
     <string name="quick_settings_theme_tile_accent_detail_title">選擇顏色</string>
     <string name="quick_settings_theme_tile_style_detail_title">選擇樣式</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">擴展綠</string>
     <string name="quick_settings_theme_tile_color_pale_blue">淡藍色</string>
     <string name="quick_settings_theme_tile_color_jade_green">翡翠綠</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">優雅綠</string>
     <string name="quick_settings_theme_tile_color_black">黑色</string>
     <string name="quick_settings_theme_tile_color_white">白色</string>
     <string name="theme_info_title">這是什麼？</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">位置回報：節約耗電量</string>
     <string name="accessibility_quick_settings_location_gps_only">位置報告：僅限 GPS</string>
     <string name="accessibility_quick_settings_location_high_accuracy">位置回報：高精度模式。</string>
+    <string name="quick_settings_location_battery_saving_label">省電模式</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">省電\n模式</string>
+    <string name="quick_settings_location_gps_only_label">僅 GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">僅 GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">高精確度</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">高\n精確度</string>
+    <string name="quick_settings_location_detail_title">位置</string>
+    <string name="quick_settings_location_detail_menu_title">選擇模式：</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">高精確度</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">省電模式</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">僅限裝置</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">使用 GPS、Wi-Fi、藍牙或行動網路判斷位置 </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">使用 Wi-Fi、藍牙或行動網路判斷位置</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">使用 GPS 來判斷您的位置</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">快速充電中 (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> 後充滿)</string>
     <string name="keyguard_plugged_in_dash_charging">快速充電中</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">TurboPower 已連接 (還剩 <xliff:g id="charging_time_left">%s</xliff:g> 充滿)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower 已連接</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">遊戲模式</string>
-    <string name="gaming_mode_tile_toast">遊戲模式已啟用</string>
-    <string name="gaming_mode_tile_toast_disabled">遊戲模式已停用</string>
-    <string name="gaming_mode_dialog_title">遊戲模式</string>
-    <string name="gaming_mode_dialog_message">啟用遊戲模式後，您的鈴聲模式將更改為震動模式，所有浮動通知將被停用，實體按鍵將被關閉。媒體音量將增加到最大值。退出遊戲模式後，所有停用的設置都將重置為預設值。</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">遊戲模式開啟</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">遊戲模式關閉</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">指南針</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -234,5 +242,13 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">音量面板</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">閱讀模式</string>
+    <string name="accessibility_quick_settings_reading_mode_on">閱讀模式開啟。</string>
+    <string name="accessibility_quick_settings_reading_mode_off">閱讀模式關閉。</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">閱讀模式已開啟。</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">閱讀模式已關閉。</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">字型</string>
+    <string name="quick_settings_font_detail_label">設定字體</string>
+    <!-- VPN QS tile -->
 </resources>

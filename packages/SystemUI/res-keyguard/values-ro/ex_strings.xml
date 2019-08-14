@@ -17,6 +17,10 @@
 -->
 <resources>
     <!-- Header. -->
+    <string name="text_clock_header_one">Este</string>
+    <string name="text_clock_header_few">Sunt</string>
+    <string name="text_clock_header_multiple">Sunt</string>
     <!-- Hours. -->
+    <string name="text_clock_hours_midnight">Miezul nopţii</string>
     <!-- Minutes. -->
 </resources>
