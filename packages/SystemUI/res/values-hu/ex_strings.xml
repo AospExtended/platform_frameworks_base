@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">Fekete felhasználói felület</string>
     <string name="systemui_theme_style_extended">Az Extended felhasználói felülete</string>
     <string name="systemui_theme_style_chocolate">Csokoládé-rendszerfelület</string>
+    <string name="systemui_theme_style_elegant">Elegáns rendszerfelület</string>
     <string name="quick_settings_theme_tile_title">Kihangsúlyozás</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Színválasztás</string>
     <string name="quick_settings_theme_tile_style_detail_title">Stílusválasztás</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Erőteljes zöld</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Halványkék</string>
     <string name="quick_settings_theme_tile_color_jade_green">Jádezöld</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Elegáns zöld</string>
     <string name="quick_settings_theme_tile_color_black">Fekete</string>
     <string name="quick_settings_theme_tile_color_white">Fehér</string>
     <string name="theme_info_title">Mi ez?</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">Helymeghatározás: akkumulátorkímélő mód.</string>
     <string name="accessibility_quick_settings_location_gps_only">Helymeghatározás: csak GPS.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Helymeghatározás: nagy pontosságú mód.</string>
+    <string name="quick_settings_location_battery_saving_label">Energiatakarékos</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Energia\ntakarékos</string>
+    <string name="quick_settings_location_gps_only_label">Csak GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Csak GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Nagy pontosság</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Nagy\npontosság</string>
+    <string name="quick_settings_location_detail_title">Tartózkodási hely</string>
+    <string name="quick_settings_location_detail_menu_title">Válasszon módot:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Nagy pontosság</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Energiatakarékos</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Csak a készüléken</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">GPS, Wi\u2011Fi, Bluetooth és mobilhálózatok használata a tartózkodási hely megállapításához </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Wi\u2011Fi, Bluetooth és mobilhálózatok használata a tartózkodási hely megállapításához</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">GPS használata a tartózkodási hely megállapításához</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Dash töltés (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> a teljes töltöttségig)</string>
     <string name="keyguard_plugged_in_dash_charging">gyors töltés</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">TurboPower csatlakoztatva (<xliff:g id="charging_time_left">%s</xliff:g> a teljes töltöttségig)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower csatlakoztatva</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Játékmód</string>
-    <string name="gaming_mode_tile_toast">Játékmód engedélyezve</string>
-    <string name="gaming_mode_tile_toast_disabled">A Játékmód letiltva</string>
-    <string name="gaming_mode_dialog_title">Játékmód</string>
-    <string name="gaming_mode_dialog_message">Amikor a Játékmód engedélyezett, a készülék csengésről rezgő hivásjelzésre vált, az összes felugró értesítés letiltásra kerül és a hardvergombok kikapcsolódnak. A média hangereje a maximumra állítódik. Minden beállítás gyári állapotba áll vissza, amint kilép a Játékmódból.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Játékmód bekapcsolva</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Játékmód kikapcsolva</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Iránytű</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -234,5 +242,13 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Hangerőszabályzó</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Olvasómód</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Olvasómód be.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Olvasómód ki.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Olvasómód bekapcsolva.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Olvasómód kikapcsolva.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">Betűtípus</string>
+    <string name="quick_settings_font_detail_label">Válasszon betűtípust</string>
+    <!-- VPN QS tile -->
 </resources>

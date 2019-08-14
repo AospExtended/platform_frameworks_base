@@ -12,7 +12,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="reboot_title">Khởi động lại</string>
     <string name="reboot_message">Đang khởi động lại hệ thống</string>
@@ -59,6 +59,9 @@
     <string name="adb_net_active_notification_title">Đã bật ADB qua mạng</string>
     <string name="adb_both_active_notification_title">Đã bật ADB qua USB &amp; mạng</string>
     <string name="adb_active_generic_notification_message">Chạm để tắt gỡ lỗi.</string>
-    <!-- LiveDisplay strings -->
     <!-- Pocket Lock -->
+    <string name="pocket_lock_message_long_press">Nhấn giữ nút nguồn để tương tác</string>
+    <!-- App ops requests -->
+    <!-- Privacy Guard -->
+    <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
 </resources>

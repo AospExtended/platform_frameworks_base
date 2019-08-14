@@ -199,7 +199,6 @@ volume_steps_7
     <!-- Location Tile -->
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
-    <!-- Gaming Mode -->
     <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
@@ -216,4 +215,5 @@ volume_steps_7
     <!-- Volume panel QS tile -->
     <!-- Reader mode QS tile -->
     <!-- Font Tile -->
+    <!-- VPN QS tile -->
 </resources>

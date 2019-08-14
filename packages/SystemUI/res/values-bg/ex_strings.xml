@@ -167,14 +167,6 @@
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">TurboPower е свързан (<xliff:g id="charging_time_left">%s</xliff:g> до пълен заряд)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower е свързан</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Режим игри</string>
-    <string name="gaming_mode_tile_toast">Режим игри разрешен</string>
-    <string name="gaming_mode_tile_toast_disabled">Режим игри забранен</string>
-    <string name="gaming_mode_dialog_title">Режим игри</string>
-    <string name="gaming_mode_dialog_message">Когато режим за игра е активиран, метода за известяване ще се промени на вибрация, всички изкачащи съобщения ще се деактивират и хардуерните бутони ще се изключат. Звукът за медията ще се увеличи до максимална степен. Всички деактивирани настройки ще се нулират по подразбиране веднага, щом излезете от Режим на Игри.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Режим игри е включен</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Режим игри е изключен</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Компас</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -235,4 +227,5 @@
     <string name="quick_settings_volume_panel_label">Звуков панел</string>
     <!-- Reader mode QS tile -->
     <!-- Font Tile -->
+    <!-- VPN QS tile -->
 </resources>

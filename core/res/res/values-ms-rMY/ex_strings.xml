@@ -12,13 +12,13 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
-    <string name="reboot_title">Reboot</string>
-    <string name="reboot_message">Sistem reboot</string>
+    <string name="reboot_title">Mula semula</string>
+    <string name="reboot_message">Memulakan semula sistem</string>
     <!-- SystemUI Restart -->
-    <string name="systemui_restart_title">Restart SystemUI diperlukan</string>
-    <string name="systemui_restart_message">Untuk semua perubahan yang diperlukan, restart SystemUI diperlukan. Restart SystemUI sekarang?</string>
+    <string name="systemui_restart_title">SystemUI perlu dimulakan semula</string>
+    <string name="systemui_restart_message">Untuk semua perubahan yang diperlukan, SystemUI perlu dimulakan semula. Mulakan semula SystemUI sekarang?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_fakePackageSignature">Tandatangan pakej spoof</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -59,6 +59,9 @@
     <string name="adb_net_active_notification_title">ADB melalui rangkaian dibolehkan</string>
     <string name="adb_both_active_notification_title">ADB melalui USB &amp; rangkaian yang dibolehkan</string>
     <string name="adb_active_generic_notification_message">Sentuh untuk melumpuhkan penyahpepijatan.</string>
-    <!-- LiveDisplay strings -->
     <!-- Pocket Lock -->
+    <string name="pocket_lock_message_long_press">Tekan dan tahan butang kuasa untuk berinteraksi</string>
+    <!-- App ops requests -->
+    <!-- Privacy Guard -->
+    <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
 </resources>

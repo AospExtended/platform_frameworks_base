@@ -19,8 +19,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
-    <string name="global_action_restart_advanced">Advanced</string>
-    <string name="global_action_restart_recovery">Pemulihan</string>
+    <string name="global_action_restart_advanced">Lanjutan</string>
+    <string name="global_action_restart_recovery">Mod \"Recovery\"</string>
     <string name="global_action_restart_bootloader">Bootloader</string>
     <string name="global_action_restart_ui">SystemUI</string>
     <string name="global_action_restart_soft">Reboot lembut</string>
@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">UI Hitam</string>
     <string name="systemui_theme_style_extended">UI Dilanjutkan</string>
     <string name="systemui_theme_style_chocolate">UI Coklat</string>
+    <string name="systemui_theme_style_elegant">UI Elegan</string>
     <string name="quick_settings_theme_tile_title">Rona</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Pilih warna</string>
     <string name="quick_settings_theme_tile_style_detail_title">Pilih gaya</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Hijau lanjut</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Biru pucat</string>
     <string name="quick_settings_theme_tile_color_jade_green">Hijau jed</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Hijau Elegan</string>
     <string name="quick_settings_theme_tile_color_black">Hitam</string>
     <string name="quick_settings_theme_tile_color_white">Putih</string>
     <string name="theme_info_title">Apakah ini?</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">Pelaporan lokasi: mod penjimatan bateri.</string>
     <string name="accessibility_quick_settings_location_gps_only">Pelaporan lokasi: mod pengesan sahaja.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Pelaporan lokasi: mod ketepatan tinggi.</string>
+    <string name="quick_settings_location_battery_saving_label">Penjimatan bateri</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Bateri\njimat</string>
+    <string name="quick_settings_location_gps_only_label">GPS sahaja</string>
+    <string name="quick_settings_location_gps_only_label_twoline">GPS sahaja</string>
+    <string name="quick_settings_location_high_accuracy_label">Ketepatan tinggi</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Ketepatan\ntinggi</string>
+    <string name="quick_settings_location_detail_title">Lokasi</string>
+    <string name="quick_settings_location_detail_menu_title">Pilih mod:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Ketepatan tinggi</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Penjimatan bateri</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Peranti sahaja</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Guna GPS, Wi\u2011Fi, Bluetooth, atau rangkaian selular untuk tentukan lokasi </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Guna Wi\u2011Fi, Bluetooth, atau rangkaian selular untuk tentukan lokasi</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Guna GPS untuk tentukan lokasi anda</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Pengecasan Dash (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> hingga penuh)</string>
     <string name="keyguard_plugged_in_dash_charging">Pengecasan Dash</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">TurboPower disambungkan (<xliff:g id="charging_time_left">%s</xliff:g> sehingga penuh)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower disambungkan</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Mod Permainan</string>
-    <string name="gaming_mode_tile_toast">Mode permainan diaktifkan</string>
-    <string name="gaming_mode_tile_toast_disabled">Mod permainan dinyahaktifkan</string>
-    <string name="gaming_mode_dialog_title">Mod Permainan</string>
-    <string name="gaming_mode_dialog_message">Apabila mod permainan diaktifkan, mod dering anda akan berubah kepada mod gegaran, semua mesej peringatan akan dinyahaktifkan dan kekunci akan dimatikan. Kelantangan media akan ditingkatkan ke paras maksimum. Segala tetapan yang dinyahaktif akan dikembalikan ke asal setelah anda keluar daripada Mod Permainan.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Mod permainan hidup</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Mod permainan mati</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Kompas</string>
     <string name="quick_settings_compass_value"><xliff:g id="darjah">%1$.0f</xliff:g>\u00b0<xliff:g id="arah">%2$s</xliff:g></string>
@@ -220,8 +228,27 @@
     <string name="quick_settings_music_play">Mainkan</string>
     <string name="quick_settings_music_pause">Pegun</string>
     <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sync</string>
+    <string name="accessibility_quick_settings_sync_off">Segerak dinyahaktifkan.</string>
+    <string name="accessibility_quick_settings_sync_on">Segerak diaktifkan.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Segerak dimatikan.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Sinkronisasi dihidupkan.</string>
     <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Paparan ambien</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Paparan ambien dimatikan.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Paparan ambien dimulakan.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Paparan ambien dimatikan.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Paparan ambien dimulakan.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Panel kelantangan</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Mod membaca</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Mod membaca dimulakan.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Mod membaca dimatikan.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Mod membaca dimulakan.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Mod membaca dimatikan.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">Jenis tulisan</string>
+    <string name="quick_settings_font_detail_label">Pilih jenis tulisan</string>
+    <!-- VPN QS tile -->
 </resources>

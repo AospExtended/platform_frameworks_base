@@ -12,7 +12,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="reboot_title">পুনরায় চালু করুন</string>
     <string name="reboot_message">রিবুট সিস্টেম</string>
@@ -31,6 +31,8 @@
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
     <!-- AOKP custom system animations -->
     <!-- ADB over network -->
-    <!-- LiveDisplay strings -->
     <!-- Pocket Lock -->
+    <!-- App ops requests -->
+    <!-- Privacy Guard -->
+    <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
 </resources>

@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">Чорны стыль</string>
     <string name="systemui_theme_style_extended">Пашыраны карыстацкі інтэрфейс</string>
     <string name="systemui_theme_style_chocolate">Шакалад</string>
+    <string name="systemui_theme_style_elegant">Элегантны UI</string>
     <string name="quick_settings_theme_tile_title">Адценне</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Выберыце колер</string>
     <string name="quick_settings_theme_tile_style_detail_title">Выбраць стыль</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Extended зялёны</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Бледна-блакітны</string>
     <string name="quick_settings_theme_tile_color_jade_green">Зялёны нефрыт</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Элегантны зялёны</string>
     <string name="quick_settings_theme_tile_color_black">Чорны</string>
     <string name="quick_settings_theme_tile_color_white">Белы</string>
     <string name="theme_info_title">Што гэта?</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">Вызначэнне месцазнаходжання: па каардынатах сеткі.</string>
     <string name="accessibility_quick_settings_location_gps_only">Вызначэнне месцазнаходжання: рэжым толькі датчыкі GPS.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Вызначэнне месцазнаходжання: па ўсіх крыніцах.</string>
+    <string name="quick_settings_location_battery_saving_label">Энергазберажэнне</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Энерга\nзберажэнне</string>
+    <string name="quick_settings_location_gps_only_label">Толькі GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Толькі GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Па ўсіх крыніцах</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Высокая\nдакладнасць</string>
+    <string name="quick_settings_location_detail_title">Месцазнаходжанне</string>
+    <string name="quick_settings_location_detail_menu_title">Выбар рэжыму працы:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Па ўсіх крыніцах</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Энергазберажэнне</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Толькі GPS</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Выкарыстанне GPS, Wi\u2011Fi, Bluetooth, або сотавыя сеткі для вызначэння месцазнаходжання</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Выкарыстанне Wi\u2011Fi, Bluetooth, або сотавыя сеткі для вызначэння месцазнаходжання</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Выкарыстоўваць GPS для вызначэння Вашага месцазнаходжання</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Хуткая зарадка (засталося <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
     <string name="keyguard_plugged_in_dash_charging">Хуткая зарадка</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">Хуткая зарадка падлучана (<xliff:g id="charging_time_left">%s</xliff:g> да поўнай зарадкі)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">Падключана хуткая зарадка</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Рэжым гульні</string>
-    <string name="gaming_mode_tile_toast">Гульнявы рэжым уключаны</string>
-    <string name="gaming_mode_tile_toast_disabled">Гульнявы рэжым адключаны</string>
-    <string name="gaming_mode_dialog_title">Рэжым гульні</string>
-    <string name="gaming_mode_dialog_message">Калі гульнявы рэжым уключаны, ваш рэжым званка пераключыцца ў рэжым вібрацыі, усё апавяшчэнні і апаратныя клавішы будуць адключаныя. Гучнасць медыя будзе павялічана да максімальнага ўзроўню. Усе адключаныя налады будуць адноўленыя пасля выхаду з рэжыму гульні.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Гульнявы рэжым уключаны</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Гульнявы рэжым адключаны</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Компас</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -234,5 +242,13 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Панэль гучнасці</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Рэжым чытання</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Рэжым чытання ўключаны.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Рэжым чытання адключаны.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Рэжым чытання актываваны.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Рэжым чытання дэактываваны.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">Шрыфт</string>
+    <string name="quick_settings_font_detail_label">Выбраць шрыфт</string>
+    <!-- VPN QS tile -->
 </resources>

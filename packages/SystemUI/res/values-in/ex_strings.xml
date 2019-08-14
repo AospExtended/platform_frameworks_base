@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">UI Hitam</string>
     <string name="systemui_theme_style_extended">UI Extended</string>
     <string name="systemui_theme_style_chocolate">UI Cokelat</string>
+    <string name="systemui_theme_style_elegant">UI Elegan</string>
     <string name="quick_settings_theme_tile_title">Aksen</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Pilih warna</string>
     <string name="quick_settings_theme_tile_style_detail_title">Pilih gaya</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Hijau extended</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Biru Pucat</string>
     <string name="quick_settings_theme_tile_color_jade_green">Hijau permata</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Hijau elegan</string>
     <string name="quick_settings_theme_tile_color_black">Hitam</string>
     <string name="quick_settings_theme_tile_color_white">Putih</string>
     <string name="theme_info_title">Apa ini?</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">Laporan Lokasi: mode hemat baterai.</string>
     <string name="accessibility_quick_settings_location_gps_only">Laporan lokasi: mode sensor saja.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Laporan Lokasi: mode akurasi tinggi.</string>
+    <string name="quick_settings_location_battery_saving_label">Hemat baterai</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Hemat\nbaterai</string>
+    <string name="quick_settings_location_gps_only_label">Hanya GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Hanya GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Akurasi tinggi</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Akurasi tinggi</string>
+    <string name="quick_settings_location_detail_title">Lokasi</string>
+    <string name="quick_settings_location_detail_menu_title">Pilih mode:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Akurasi tinggi</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Hemat baterai</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Hanya perangkat</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Menggunakan GPS, WiFi, Bluetooth atau jaringan seluler untuk menentukan lokasi</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Menggunakan WiFi, Bluetooth atau jaringan seluler untuk menentukan lokasi</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Menggunakan GPS untuk menentukan lokasi Anda</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Pengisian cepat ( <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> sampai penuh)</string>
     <string name="keyguard_plugged_in_dash_charging">Pengisian Cepat</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">TurboPower terhubung (<xliff:g id="charging_time_left">%s</xliff:g> sampai penuh)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower terhubung</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Mode Permainan</string>
-    <string name="gaming_mode_tile_toast">Mode permainan dihidupkan</string>
-    <string name="gaming_mode_tile_toast_disabled">Mode permainan dimatikan</string>
-    <string name="gaming_mode_dialog_title">Mode Permainan</string>
-    <string name="gaming_mode_dialog_message">Ketika mode permainan dihidupkan. nada dering anda akan diset dalam mode getar, semua notifikasi akan di matikan dan tombol hardware akan dimatikan. media volume akan diset ke nilai maksimal. semua setelan akan dikembalikan ke semula ketika anda mematikan mode permainan.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Mode permainan hidup</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Mode permainan mati</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Kompas</string>
     <string name="quick_settings_compass_value"><xliff:g id="derajat">%1$.0f</xliff:g>\u00b0<xliff:g id="arah">%2$s</xliff:g></string>
@@ -234,5 +242,13 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Panel volume</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Mode membaca</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Mode membaca hidup.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Mode membaca mati.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Mode membaca dihidupkan.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Mode membaca dimatikan.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">Huruf</string>
+    <string name="quick_settings_font_detail_label">Pilih huruf</string>
+    <!-- VPN QS tile -->
 </resources>

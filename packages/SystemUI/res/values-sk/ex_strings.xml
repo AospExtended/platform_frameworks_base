@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">Čierne rozhranie</string>
     <string name="systemui_theme_style_extended">Rozšírené rozhranie</string>
     <string name="systemui_theme_style_chocolate">Čokoládové UI</string>
+    <string name="systemui_theme_style_elegant">Elegantný UI</string>
     <string name="quick_settings_theme_tile_title">Odtieň farby</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Vybrať farbu</string>
     <string name="quick_settings_theme_tile_style_detail_title">Vybrať štýl</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Rozšírene zelená</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Bledo modrá</string>
     <string name="quick_settings_theme_tile_color_jade_green">Nefritovo zelená</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Elegantná zelená</string>
     <string name="quick_settings_theme_tile_color_black">Čierna</string>
     <string name="quick_settings_theme_tile_color_white">Biela</string>
     <string name="theme_info_title">Čo je to?</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">Hlásenie polohy: režim šetrenia batérie.</string>
     <string name="accessibility_quick_settings_location_gps_only">Hlásenie polohy: iba GPS.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Hlásenie polohy: vysoká presnosť.</string>
+    <string name="quick_settings_location_battery_saving_label">Šetrenie batérie</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Šetrenie\nbatérie</string>
+    <string name="quick_settings_location_gps_only_label">Iba GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Iba GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Vysoká presnosť</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Vysoká\npresnosť</string>
+    <string name="quick_settings_location_detail_title">Poloha</string>
+    <string name="quick_settings_location_detail_menu_title">Vyberte režim:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Vysoká presnosť</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Šetrenie batérie</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Iba zariadenie</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Pre zisťovanie polohy používať GPS, Wi\u2011Fi, Bluetooth alebo mobilné siete </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Pre zisťovanie polohy používať Wi\u2011Fi, Bluetooth alebo mobilné siete</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Pre určovanie polohy používať GPS</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Dash nabíjanie (úplne nabité za <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
     <string name="keyguard_plugged_in_dash_charging">Dash nabíjanie</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">Turbo-Power je pripojený (<xliff:g id="charging_time_left">%s</xliff:g> až do plna)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower je pripojený</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Herný režim</string>
-    <string name="gaming_mode_tile_toast">Herný režim povolený</string>
-    <string name="gaming_mode_tile_toast_disabled">Herný režim zakázaný</string>
-    <string name="gaming_mode_dialog_title">Herný režim</string>
-    <string name="gaming_mode_dialog_message">Ak je herný režim povolený, zvonenie sa zmení na vibrácie, všetky plávajúce správy budú deaktivované a hardvérové tlačidlá budú vypnuté. Hlasitosť médií sa zvýši na maximálnu hodnotu. Po ukončení herného režimu budú všetky deaktivované nastavenia obnovené na predvolené.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Herný režim zapnutý</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Herný režim vypnutý</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Kompas</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -234,5 +242,13 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Panel hlasitosti</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Režim čítania</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Režim čítania zap.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Režim čítania vyp.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Režim čítania je zapnutý.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Režim čítania je vypnutý.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">Štýl písma</string>
+    <string name="quick_settings_font_detail_label">Vyberte štýl písma</string>
+    <!-- VPN QS tile -->
 </resources>

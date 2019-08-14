@@ -12,7 +12,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="reboot_title">Перезагрузка</string>
     <string name="reboot_message">Перезагрузка системы</string>
@@ -59,6 +59,30 @@
     <string name="adb_net_active_notification_title">ADB по сети разрешен</string>
     <string name="adb_both_active_notification_title">Включена отладка по сети и USB</string>
     <string name="adb_active_generic_notification_message">Нажмите, чтобы отключить отладку.</string>
-    <!-- LiveDisplay strings -->
     <!-- Pocket Lock -->
+    <string name="pocket_lock_message_long_press">Удерживайте кнопку питания для взаимодействия</string>
+    <!-- App ops requests -->
+    <string name="app_ops_access_camera">получать доступ к камере</string>
+    <string name="app_ops_access_location">получать доступ к вашему местоположению</string>
+    <string name="app_ops_access_notifications">получать доступ к уведомлениям</string>
+    <string name="app_ops_activate_vpn">активировать VPN</string>
+    <string name="app_ops_add_voicemail">добавлять голосовое сообщение</string>
+    <string name="app_ops_app_start_foreground">запуск приложений без установки</string>
+    <string name="app_ops_assist_screenshot">сделать снимок экрана</string>
+    <string name="app_ops_assist_structure">использовать ассистента</string>
+    <string name="app_ops_audio_accessibility_volume">изменять уровень громкости</string>
+    <string name="app_ops_auto_start">назначить запуск при включении устройства</string>
+    <string name="app_ops_bind_accessibility_service">подключаться к службе спец. возможностей</string>
+    <string name="app_ops_bluetooth_scan">поиск Bluetooth-устройств</string>
+    <string name="app_ops_change_wallpaper">изменять обои</string>
+    <string name="app_ops_delete_call_log">удалять журнал вызовов</string>
+    <string name="app_ops_delete_contacts">удалять ваши контакты</string>
+    <string name="app_ops_delete_mms">удалять ваши MMS-сообщения</string>
+    <string name="app_ops_delete_sms">удалять ваши SMS-сообщения</string>
+    <string name="app_ops_draw_on_top">отображать элементы интерфейса поверх других окон</string>
+    <string name="app_ops_get_accounts">получать информацию об аккаунтах</string>
+    <string name="app_ops_get_usage_stats">получать статистику использования приложений</string>
+    <string name="app_ops_accept_handover">передача вызова из другого приложения</string>
+    <!-- Privacy Guard -->
+    <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
 </resources>

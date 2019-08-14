@@ -161,20 +161,15 @@
     <string name="accessibility_quick_settings_location_battery_saving">گزارش مکان: حالت ذخیره مصرف باطری.</string>
     <string name="accessibility_quick_settings_location_gps_only">گزارش مکان: حالت فقط سنسور.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">گزارش مکان: حالت دقت بالا.</string>
+    <string name="quick_settings_location_gps_only_label_twoline">فقط GPS</string>
+    <string name="quick_settings_location_detail_title">مکان</string>
+    <string name="quick_settings_location_detail_menu_title">انتخاب حالت:</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">در حال سوپر شارژ (<xliff:g id="charging_time_left" مثال="4ساعت و 2 دقیقه ">%s </xliff:g> تا کامل شدن باتری)</string>
     <string name="keyguard_plugged_in_dash_charging">شارژ سریع وان پلاس</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">شارژ توربو متصل شد (<xliff:g id="charging_time_left">%s</xliff:g> تا کامل شدن باتری)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">شارژ توربو متصل شد</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">حالت بازی</string>
-    <string name="gaming_mode_tile_toast">حالت بازی فعال شد</string>
-    <string name="gaming_mode_tile_toast_disabled">حالت بازی غیر فعال شد</string>
-    <string name="gaming_mode_dialog_title">حالت بازی</string>
-    <string name="gaming_mode_dialog_message">در صورت فعال بودن حالت بازی هشدار زنگ تماس به حالت لرزش تغییر خواهد کرد،تمام پیام های فوری شناور غیرفعال می شود و کلید های سخت افزاری خاموش خواهد شد. صدای رسانه به بیشترین مقدار افزایش پیدا می کند. تمام تنظیمات غیرفعال شده هنگام خروج از حالت بازی به تنظيم پیش فرض برخواهد گشت.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">حالت بازی فعال</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">حالت بازی غیرفعال</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">قطب نما</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -234,5 +229,8 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">پنل صدا</string>
     <!-- Reader mode QS tile -->
+    <string name="accessibility_quick_settings_reading_mode_changed_on">حالت مطالعه روشن شد.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">حالت مطالعه خاموش شد.</string>
     <!-- Font Tile -->
+    <!-- VPN QS tile -->
 </resources>

@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">Črni uporabniški vmesnik</string>
     <string name="systemui_theme_style_extended">Extended uporabniški vmesnik</string>
     <string name="systemui_theme_style_chocolate">Čokoladni uporabniški vmesnik</string>
+    <string name="systemui_theme_style_elegant">Elegant uporabniški vmesnik</string>
     <string name="quick_settings_theme_tile_title">Poudarek</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Izberite barvo</string>
     <string name="quick_settings_theme_tile_style_detail_title">Izberite slog</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Extended zelena</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Bledo modra</string>
     <string name="quick_settings_theme_tile_color_jade_green">Žad zelena</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Elegant zelena</string>
     <string name="quick_settings_theme_tile_color_black">Črna</string>
     <string name="quick_settings_theme_tile_color_white">Bela</string>
     <string name="theme_info_title">Kaj je to?</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">Poročanje o lokaciji: način varčevanja z energijo akumulatorja.</string>
     <string name="accessibility_quick_settings_location_gps_only">Poročanje lokacije: samo s senzorji.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Poročanje lokacije: način visoke natančnosti.</string>
+    <string name="quick_settings_location_battery_saving_label">Varčevanje z energijo akumulatorja</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Varčevanje z energijo\nakumulatorja</string>
+    <string name="quick_settings_location_gps_only_label">Samo GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Samo GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Visoka natančnost</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Visoka\nnatančnost</string>
+    <string name="quick_settings_location_detail_title">Lokacija</string>
+    <string name="quick_settings_location_detail_menu_title">Izberite način:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Visoka natančnost</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Varčevanje z energijo akumulatorja</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Samo v napravi</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Uporabi GPS, Wi\u2011Fi, Bluetooth ali mobilna omrežja za določanje lokacije </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Uporabi Wi\u2011Fi, Bluetooth ali mobilna omrežja za določanje lokacije</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Uporabi GPS za določanje vaše lokacije</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Hitro polnjenje (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> do napolnjenosti)</string>
     <string name="keyguard_plugged_in_dash_charging">Hitro polnjenje</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">TurboPower povezan (<xliff:g id="charging_time_left">%s</xliff:g> do napolnjenosti)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower povezan</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Igralni način</string>
-    <string name="gaming_mode_tile_toast">Igralni način omogočen</string>
-    <string name="gaming_mode_tile_toast_disabled">Igralni način onemogočen</string>
-    <string name="gaming_mode_dialog_title">Igralni način</string>
-    <string name="gaming_mode_dialog_message">Ko je omogočen igralni način, bo način zvonjenja spremenjen na vibriranje, vsa obvestila na zaslonu bodo onemogočena in fizične tipke bodo izklopljene. Glasnost predstavnosti bo povečana na najvišjo vrednost. Vse onemogočene nastavitve bodo ponastavljene na privzete ob izhodu iz igralnega načina.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Igralni način vklopljen</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Igralni način izklopljen</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Kompas</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -232,6 +240,15 @@
     <string name="accessibility_quick_settings_ambient_display_changed_off">Okoliški zaslon izklopljen.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Okoliški zaslon vklopljen.</string>
     <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Plošča za glasnost</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Način za branje</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Način za branje vklopljen.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Način za branje izklopljen.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Način za branje vklopljen.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Način za branje izklopljen.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">Pisave</string>
+    <string name="quick_settings_font_detail_label">Izberite pisavo</string>
+    <!-- VPN QS tile -->
 </resources>
