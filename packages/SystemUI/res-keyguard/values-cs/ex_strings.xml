@@ -46,7 +46,7 @@
     <string name="text_clock_hours_twentytwo">Dvacet dva</string>
     <string name="text_clock_hours_twentythree">Dvacet tři</string>
     <!-- Minutes. -->
-    <string name="text_clock_minutes_zero">Hod.</string>
+    <string name="text_clock_minutes_zero">Hodin</string>
     <string name="text_clock_minutes_one">Jedna</string>
     <string name="text_clock_minutes_two">Dvě</string>
     <string name="text_clock_minutes_three">Tři</string>
@@ -86,16 +86,6 @@
     <string name="text_clock_minutes_thirtyseven">Třicet sedm</string>
     <string name="text_clock_minutes_thirtyeight">Třicet osm</string>
     <string name="text_clock_minutes_thirtynine">Třicet devět</string>
-    <string name="text_clock_minutes_forty">Čtyřicet</string>
-    <string name="text_clock_minutes_fortyone">Čtyřicet jedna</string>
-    <string name="text_clock_minutes_fortytwo">Čtyřicet dva</string>
-    <string name="text_clock_minutes_fortythree">Čtyřicet tři</string>
-    <string name="text_clock_minutes_fortyfour">Čtyřicet čtyři</string>
-    <string name="text_clock_minutes_fortyfive">Čtyřicet pět</string>
-    <string name="text_clock_minutes_fortysix">Čtyřicet šest</string>
-    <string name="text_clock_minutes_fortyseven">Čtyřicet sedm</string>
-    <string name="text_clock_minutes_fortyeight">Čtyřicet osm</string>
-    <string name="text_clock_minutes_fortynine">Čtyřicet devět</string>
     <string name="text_clock_minutes_fifty">Padesát</string>
     <string name="text_clock_minutes_fiftyone">Padesát jedna</string>
     <string name="text_clock_minutes_fiftytwo">Padesát dva</string>

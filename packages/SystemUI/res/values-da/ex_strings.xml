@@ -167,14 +167,6 @@
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">TurboPower tilsluttet (<xliff:g id="oplade_tid_tilbage">%s</xliff:g> indtil fuld)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower tilsluttet</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Gaming Mode</string>
-    <string name="gaming_mode_tile_toast">Gaming Mode aktiveret</string>
-    <string name="gaming_mode_tile_toast_disabled">Gaming Mode deaktiveret</string>
-    <string name="gaming_mode_dialog_title">Gaming Mode</string>
-    <string name="gaming_mode_dialog_message">Når Gaming Mode er aktiveret, vil din ringetilstand ændres vibration, alle heads-up beskeder deaktiveres og hardware taster vil være slukket. Medievolumen forhøjes til den maksimale værdi. Alle de deaktiverede indstillinger nulstilles til standard, når du forlader Gaming Mode.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Start Gaming Mode</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Afslut Gaming Mode</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Kompas</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -218,4 +210,5 @@
     <!-- Volume panel QS tile -->
     <!-- Reader mode QS tile -->
     <!-- Font Tile -->
+    <!-- VPN QS tile -->
 </resources>

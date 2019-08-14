@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">Juoda vartotojo sąsaja</string>
     <string name="systemui_theme_style_extended">Išplėstinė vartotojo sąsaja</string>
     <string name="systemui_theme_style_chocolate">Šokolado vartotojo sąsaja</string>
+    <string name="systemui_theme_style_elegant">Elegantiška UI</string>
     <string name="quick_settings_theme_tile_title">Akcentas</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Pasirinkti spalvą</string>
     <string name="quick_settings_theme_tile_style_detail_title">Pasirinkite stilių</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Išplėstas žalias</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Šviesiai mėlyna</string>
     <string name="quick_settings_theme_tile_color_jade_green">Žalsvos</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Elegantiška žalia</string>
     <string name="quick_settings_theme_tile_color_black">Juoda</string>
     <string name="quick_settings_theme_tile_color_white">Balta</string>
     <string name="theme_info_title">Kas tai yra?</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">Vietos pranešimai: akumuliatoriaus taupymo režimas.</string>
     <string name="accessibility_quick_settings_location_gps_only">Vietos ataskaitų teikimas: tik jutiklių režimas.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Vietos ataskaitų teikimas: didelio tikslumo režimas.</string>
+    <string name="quick_settings_location_battery_saving_label">Akumuliatoriaus taupymas</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Akumuliatoriaus\ntausojimas</string>
+    <string name="quick_settings_location_gps_only_label">Tik GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Tik GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Didelis tikslumas</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Didelis\ntikslumas</string>
+    <string name="quick_settings_location_detail_title">Vietovė</string>
+    <string name="quick_settings_location_detail_menu_title">Pasirinkite režimą:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Didelis tikslumas</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Baterijos taupymas</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Tik įrenginys</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Vietos nustatymui naudokite GPS, „Wi-Fi“, „Bluetooth“ arba mobiliojo ryšio tinklus </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Vietos nustatymui naudokite „Wi2011Fi“, „Bluetooth“ arba mobiliojo ryšio tinklus</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Naudoti GPS norint nustatyti jūsų buvimo vietą</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Greitasis įkrovimas (<xliff:g id="liko" example="4 val. ir 2 min.">%s</xliff:g> iki pilnos baterijos)</string>
     <string name="keyguard_plugged_in_dash_charging">Greitas įkrovimas</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">Greitasis įkrovimas yra aktyvus (<xliff:g id="charging_time_left">%s</xliff:g> kol visiškai įkrauta)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">Greitasis įkrovimas prijungtas</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Žaidimų režimas</string>
-    <string name="gaming_mode_tile_toast">Žaidimų režimas įjungtas</string>
-    <string name="gaming_mode_tile_toast_disabled">Žaidimų režimas išjungtas</string>
-    <string name="gaming_mode_dialog_title">Žaidimų režimas</string>
-    <string name="gaming_mode_dialog_message">Kai įjungtas žaidimo režimas, jūsų skambėjimo režimas pasikeis į vibracijos režimą, visi heads-up pranešimai bus išjungti ir aparatūros raktai bus išjungti. Medijos tūris bus padidintas iki maksimalios vertės. Kai išeisite iš žaidimo režimo, visi neįgalieji nustatymai bus atstatyti į numatytąjį.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Įjungtas žaidimo režimas</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Žaidimo režimo išjungimas</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Kompasas</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -234,5 +242,13 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Garsumo skydelis</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Skaitymo režimas</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Skaitymo režimas įjungtas.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Skaitymo režimas išjungtas.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Įjungtas skaitymo režimas.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Įšjungtas skaitymo režimas.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">Šriftai</string>
+    <string name="quick_settings_font_detail_label">Pasirinkite šriftą</string>
+    <!-- VPN QS tile -->
 </resources>

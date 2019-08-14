@@ -19,24 +19,82 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">Edistynyt</string>
+    <string name="global_action_restart_recovery">Recovery-tila</string>
+    <string name="global_action_restart_bootloader">Bootloader-tila</string>
+    <string name="global_action_restart_ui">Käyttöliittymä</string>
+    <string name="global_action_restart_soft">Käynnistä uudelleen (soft)</string>
+    <string name="statusbar_items_title">Tilapalkin kuvake</string>
     <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">Lukitusnäytön pikakuvakkeet</string>
+    <string name="lockscreen_default">Oletus</string>
+    <string name="lockscreen_hidden">Ei mitään</string>
     <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Ääni</string>
+    <string name="quick_settings_sound_ring">Soittoääni</string>
+    <string name="quick_settings_sound_vibrate">Värinä</string>
+    <string name="quick_settings_sound_dnd">Älä häiritse</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Pyyhkäise kuvakkeesta avataksesi</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_data_saver">Mobiilidatan säästäjä</string>
+    <string name="preview">Esikatselu</string>
+    <string name="keycode">Näppäinkoodi</string>
+    <string name="no_home_title">Aloitusnäyttöpainiketta ei havaittu</string>
+    <string name="no_home_message">Laitteessa navigointi edellyttää aloitusnäyttöpainiketta. Lisää aloitusnäyttöpainike ennen tallentamista.</string>
+    <string name="clipboard_description">Leikepöytä sallii kohteiden vetämisen suoraan leikepöydälle. Kohteet voi vetää myös suoraan pois leikepöydältä, kun se on käytössä.</string>
+    <string name="keycode_description">Näppäinkoodi-painikkeet sallivat näppäimistön näppäimien lisäämisen navigointipalkkiin. Kun painiketta painetaan, se jäljittelee valittua näppäintä. Valitse ensin painikkeen kohteena oleva näppäin, sitten painikkeessa näkyvä kuva.</string>
+    <string name="start">Käynnistä</string>
+    <string name="center">Keskellä</string>
+    <string name="end">Loppu</string>
+    <string name="space">Tyhjä väli</string>
+    <string name="menu_ime">Valikko/Näppäimistövalitsin</string>
+    <string name="select_button">Valitse lisättävä painike</string>
+    <string name="add_button">Lisää painike</string>
+    <string name="save">Tallenna</string>
+    <string name="reset">Nollaa</string>
+    <string name="select_keycode">Valitse näppäimistön näppäin</string>
+    <string name="left">Vasemmalla</string>
+    <string name="right">Oikealla</string>
+    <string name="navbar_editor_title">Editori</string>
+    <string name="navbar_editor_summary">Muokkaa tilapalkkia</string>
     <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Kuvakaappaus poistettu</string>
     <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Kofeiini</string>
+    <string name="accessibility_quick_settings_caffeine_off">Kofeiini pois</string>
+    <string name="accessibility_quick_settings_caffeine_on">Kofeiini päälle</string>
     <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Käynnistä uudelleen</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery-tila</string>
     <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Näyttökuva</string>
+    <string name="quick_settings_region_screenshot_label">Osittainen kuvakaappaus</string>
     <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Heads up</string>
+    <string name="accessibility_quick_settings_heads_up_off">Heads up pois päältä.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Heads up päälle.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Heads up pois päältä.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Heads up päällä.</string>
     <!-- USB Tethering tile -->
+    <string name="accessibility_quick_settings_usb_tether_off">USB tethering pois päältä</string>
+    <string name="accessibility_quick_settings_usb_tether_on">USB tethering päällä</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB tethering pois päältä</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">USB tethering päällä</string>
+    <string name="quick_settings_usb_tether_label">USB tethering</string>
     <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">HW näppäimet päällä</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW näppäimet pois päältä</string>
+    <string name="quick_settings_hwkeys_label">HW näppäimet</string>
     <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> Kurkistusilmoitukset on torkutettu 1 minuutiksi.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> Kurkistusilmoitukset on torkutettu <xliff:g id="number">%d</xliff:g> minuutiksi.</string>
     <!-- Theme tile -->
     <!-- QS Config -->
     <!-- Expanded Desktop QS Tile -->
     <!-- Location Tile -->
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
-    <!-- Gaming Mode -->
     <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
@@ -53,4 +111,5 @@
     <!-- Volume panel QS tile -->
     <!-- Reader mode QS tile -->
     <!-- Font Tile -->
+    <!-- VPN QS tile -->
 </resources>

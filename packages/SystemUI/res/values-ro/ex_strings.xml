@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">Interfață utilizator neagră</string>
     <string name="systemui_theme_style_extended">Interfață utilizator Extended</string>
     <string name="systemui_theme_style_chocolate">Interfață utilizator ciocolatie</string>
+    <string name="systemui_theme_style_elegant">Interfață de utilizator elegantă</string>
     <string name="quick_settings_theme_tile_title">Accent</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Selectează culoarea</string>
     <string name="quick_settings_theme_tile_style_detail_title">Selectează stilul</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Verde Extended</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Albastru pal</string>
     <string name="quick_settings_theme_tile_color_jade_green">Verde Jad</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Verde elegant</string>
     <string name="quick_settings_theme_tile_color_black">Negru</string>
     <string name="quick_settings_theme_tile_color_white">Alb</string>
     <string name="theme_info_title">Ce este asta?</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">Raportare locaţie: mod economisire baterie.</string>
     <string name="accessibility_quick_settings_location_gps_only">Raportare locaţie: doar senzori.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Raportare locaţie: precizie ridicată.</string>
+    <string name="quick_settings_location_battery_saving_label">Economisire baterie</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Economisire\nbaterie</string>
+    <string name="quick_settings_location_gps_only_label">Doar GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Doar GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Precizie ridicată</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Precizie\nridicată</string>
+    <string name="quick_settings_location_detail_title">Locaţie</string>
+    <string name="quick_settings_location_detail_menu_title">Selectați modul:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Precizie ridicată</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Economisire baterie</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Numai pe dispozitiv</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Utilizați GPS, Wi\u2011Fi, Bluetooth sau rețele mobile pentru determinarea locației </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Utilizați Wi\u2011Fi, Bluetooth sau rețele mobile pentru determinarea locației</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Utilizați GPS-ul pentru a vă determina locaţia</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Încărcare liniară (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> până la finalizare)</string>
     <string name="keyguard_plugged_in_dash_charging">Încărcare liniară</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">Conectat la alimentare Turbo (<xliff:g id="charging_time_left">%s</xliff:g> până la finalizare)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">Alimentare la putere Turbo</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Mod de joc</string>
-    <string name="gaming_mode_tile_toast">Mod de joc activat</string>
-    <string name="gaming_mode_tile_toast_disabled">Mod de joc dezactivat</string>
-    <string name="gaming_mode_dialog_title">Mod de joc</string>
-    <string name="gaming_mode_dialog_message">Cănd modul de joc este activat, profilul sonerie se va schimba in modul vibrare, toate mesagele de tip head-up vor fi dezactivate și butoanele fizice vor fi oprite. Volumul media va fi setat la valoare maximă. Toate setările vor revenit la normal odată dezactivat Modul de Joc.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Mod de joc activ</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Mod de Joc inactiv</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Busolă</string>
     <string name="quick_settings_compass_value"><xliff:g id="grade">%1$.0f</xliff:g>\u00b0 <xliff:g id="direcție">%2$s</xliff:g></string>
@@ -234,5 +242,13 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Panou de volum</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Mod lectură</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Mod lectură activat.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Mod lectură dezactivat.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Modul lectură a fost activat.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Modul lectură a fost dezactivat.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">Fonturi</string>
+    <string name="quick_settings_font_detail_label">Selectați un font</string>
+    <!-- VPN QS tile -->
 </resources>

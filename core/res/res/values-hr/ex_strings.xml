@@ -12,20 +12,56 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="reboot_title">Ponovno pokreni</string>
+    <string name="reboot_message">Ponovno pokretanje sustava</string>
     <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">Potrebno ponovno pokretanje korisničkog sučelja sustava</string>
+    <string name="systemui_restart_message">Kako bi se primijenile sve promjene, potrebno je ponovno pokretanje korisničkog sučelja sustava. Ponovno pokrenuti korisničko sučelje sustava?</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">Imitiraj potpis paketa</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">Dopušta aplikaciji da se pretvara da je druga aplikacija. Zlonamjerne aplikacije mogu koristiti ovo kako bi pristupile privatnim podacima aplikacija. Dopustite ovu dozvolu s oprezom!</string>
     <!-- App error dialog -->
+    <string name="aerr_copy">Kopiraj URL zapisa pada</string>
+    <string name="url_copy_success">URL kopiran uspješno</string>
+    <string name="url_copy_failed">Dogodila se greška tijekom uploada zapisa na dogbin</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_toggleNavigationEditor">kontrola uređivača navigacije</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_toggleNavigationEditor">Dopušta aplikaciji upravljanje uređivačem navigacijske trake.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">pristup upravitelju fonta</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">Omogućuje aplikaciji pristup upravitelju fonta.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">Paket fonta koji ste instalirali nije podržan zbog nepostojećeg fonts.xml u datotekama fonta. Molimo kontaktirajte razvijača paketa za podršku.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">Blijeđenje</string>
+    <string name="animation_slide_right">Klizanje udesno</string>
+    <string name="animation_slide_left">Klizanje ulijevo</string>
+    <string name="animation_slide_right_no_fade">Klizanje udesno (bez blijeđenja)</string>
+    <string name="animation_slide_left_no_fade">Klizanje ulijevo (bez blijeđenja)</string>
+    <string name="animation_slide_up">Klizanje prema dolje</string>
+    <string name="animation_slide_down">Klizanje prema gore</string>
+    <string name="animation_default">Zadano</string>
+    <string name="animation_translucent">Prozirno</string>
+    <string name="animation_grow_shrink">Širenje u rastu (gore)</string>
+    <string name="animation_grow_shrink_center">Širenje u rastu (sredina)</string>
+    <string name="animation_grow_shrink_bottom">Širenje u rastu (dno)</string>
+    <string name="animation_grow_shrink_left">Širenje u rastu (lijevo)</string>
+    <string name="animation_grow_shrink_right">Širenje u rastu (desno)</string>
+    <string name="animation_random">Nasumično</string>
+    <string name="action_null">Prazno</string>
     <!-- ADB over network -->
-    <!-- LiveDisplay strings -->
+    <string name="adb_net_active_notification_title">ADB preko mreže je omogućen</string>
+    <string name="adb_both_active_notification_title">Omogućen je ADB putem mreže USB-a i mreže</string>
+    <string name="adb_active_generic_notification_message">Dodirnite za onemogućavanje ispravljanja pogrešaka.</string>
     <!-- Pocket Lock -->
+    <string name="pocket_lock_message_long_press">Pritisnite i držite tipku napajanja za interakciju</string>
+    <!-- App ops requests -->
+    <!-- Privacy Guard -->
+    <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
 </resources>

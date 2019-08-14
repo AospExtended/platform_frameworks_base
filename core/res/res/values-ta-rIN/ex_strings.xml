@@ -12,7 +12,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="reboot_title">மறுதொடக்கம்</string>
     <string name="reboot_message">மீண்டும் துவங்குகிறது</string>
@@ -28,13 +28,40 @@
     <string name="url_copy_success">URL வெற்றிகரமாக நகலெடுக்கப்பட்டது</string>
     <string name="url_copy_failed">பதிவை பதிவு செய்யும் போது பிழை ஏற்பட்டது</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_toggleNavigationEditor">கட்டுப்பாடு வழிசெலுத்தல் ஆசிரியர்</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_toggleNavigationEditor">வழிசெலுத்தல் பட்டியை ஆசிரியர் கட்டுப்படுத்த ஒரு பயன்பாட்டை அனுமதிக்கிறது.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_accessFontManager">அணுகல் எழுத்துரு மேலாளர்</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_accessFontManager">எழுத்துரு மேலாளரை அணுக பயன்பாட்டை அனுமதிக்கிறது.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
+    <string name="fontservice_incompatible_font">நீங்கள் நிறுவியிருக்கும் எழுத்துரு பொத்தான் அவற்றின் கோப்புகளில் fonts.xml ஐ காணாமல் போயுள்ளது. ஆதரவுக்காக தொகுப்பு டெவெலப்பரை தொடர்பு கொள்ளவும்.</string>
     <!-- AOKP custom system animations -->
+    <string name="animation_fade">ஃபேட்</string>
+    <string name="animation_slide_right">வலது பக்கம் சரிய</string>
+    <string name="animation_slide_left">வலது பக்கம் சரிய</string>
+    <string name="animation_slide_right_no_fade">வலதுபுறத்தில் ஸ்லைடு (இல்லை மங்காது)</string>
+    <string name="animation_slide_left_no_fade">இடையில் ஸ்லைடு (இல்லை மங்காது)</string>
+    <string name="animation_slide_up">கீழே ஸ்லைடு</string>
+    <string name="animation_slide_down">மேலே படவில்லை</string>
+    <string name="animation_default">இயல்புநிலை</string>
+    <string name="animation_translucent">கசியும்</string>
+    <string name="animation_grow_shrink">Grove\'s (Top)</string>
+    <string name="animation_grow_shrink_center">வளரும் (மையம்)</string>
+    <string name="animation_grow_shrink_bottom">(கீழே) வளர</string>
+    <string name="animation_grow_shrink_left">(இடது) வளர</string>
+    <string name="animation_grow_shrink_right">(வலது) வளர</string>
+    <string name="animation_random">ஏதாவது ஒரு</string>
+    <string name="action_null">வெற்று</string>
     <!-- ADB over network -->
-    <!-- LiveDisplay strings -->
+    <string name="adb_net_active_notification_title">ADB நெட்வொர்க் செயல்படுத்தப்பட்டது</string>
+    <string name="adb_both_active_notification_title">பிணையம் மற்றும் USB வழியாக ஆபிபா (ADB) செயல்படுத்த பட்டது</string>
+    <string name="adb_active_generic_notification_message">பிழைத்திருத்தத்தை முடக்க, தொடவும்.</string>
     <!-- Pocket Lock -->
+    <string name="pocket_lock_message_long_press">நீண்ட நேரம் சக்தி பொத்தானை அழுத்தவும்</string>
+    <!-- App ops requests -->
+    <!-- Privacy Guard -->
+    <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
 </resources>

@@ -167,14 +167,6 @@
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">टर्बो-पावर से चार्ज हो रहा है (<xliff:g id="charging_time_left">%s</xliff:g>बाकी है)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">टर्बोपावर जुड़ा हुआ है</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">गेमिंग मोड</string>
-    <string name="gaming_mode_tile_toast">गेमिंग मोड चालू किया गया</string>
-    <string name="gaming_mode_tile_toast_disabled">गेमिंग मोड बंद किया गया</string>
-    <string name="gaming_mode_dialog_title">गेमिंग मोड</string>
-    <string name="gaming_mode_dialog_message">गेमिंग मोड सक्षम होने पर, आपका रिंगर मोड कंपन मोड में बदल जाएगा, सभी हेड-अप संदेश अक्षम हो जाएंगे और हार्डवेयर कुंजियां बंद कर दी जाएंगी । मीडिया वॉल्यूम अधिकतम मान के लिए बढ़ जाएगा । आपके गेमिंग मोड से बाहर आने के बाद सभी अक्षम सेटिंग्स डिफ़ॉल्ट पर रीसेट हो जाएंगी।</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">गेमिंग मोड चालू है</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">गेमिंग मोड बंद है</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">दिशा-सूचक(कम्पास)</string>
     <string name="quick_settings_compass_value"><xliff:g id="डिग्रीज">%1$.0f</xliff:g>\u00b0 <xliff:g id="दिशा">%2$s</xliff:g></string>
@@ -227,4 +219,5 @@
     <!-- Volume panel QS tile -->
     <!-- Reader mode QS tile -->
     <!-- Font Tile -->
+    <!-- VPN QS tile -->
 </resources>

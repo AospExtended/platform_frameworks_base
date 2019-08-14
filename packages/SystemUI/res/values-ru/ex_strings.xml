@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">Чёрный стиль</string>
     <string name="systemui_theme_style_extended">Extended стиль</string>
     <string name="systemui_theme_style_chocolate">Шоколадный стиль</string>
+    <string name="systemui_theme_style_elegant">Элегантный UI</string>
     <string name="quick_settings_theme_tile_title">Оттенок</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Выберите цвет</string>
     <string name="quick_settings_theme_tile_style_detail_title">Выберите стиль</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Extended зелёный</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Бледно-голубой</string>
     <string name="quick_settings_theme_tile_color_jade_green">Зелёный нефрит</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Элегантный зеленый</string>
     <string name="quick_settings_theme_tile_color_black">Чёрный</string>
     <string name="quick_settings_theme_tile_color_white">Белый</string>
     <string name="theme_info_title">Что это?</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">Определение местоположения: режим экономии батареи.</string>
     <string name="accessibility_quick_settings_location_gps_only">Определение местоположения: только по спутникам.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Определение местоположения: по всем источникам.</string>
+    <string name="quick_settings_location_battery_saving_label">Экономия батареи</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Экономия\nбатареи</string>
+    <string name="quick_settings_location_gps_only_label">Только GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Только GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Высокая точность</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Высокая\nточность</string>
+    <string name="quick_settings_location_detail_title">Местоположение</string>
+    <string name="quick_settings_location_detail_menu_title">Выберите режим:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Высокая точность</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Экономия батареи</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">По спутникам GPS</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Использовать GPS, Wi‑Fi, Bluetooth и мобильные сети для определения местоположения </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Использовать Wi‑Fi, Bluetooth и мобильные сети для определения местоположения</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Использовать GPS для определения местоположения</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Быстрая зарядка (<xliff:g id="charging_time_left" example="4 часа и 2 минуты">%s</xliff:g> до полной зарядки)</string>
     <string name="keyguard_plugged_in_dash_charging">Быстрая зарядка</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">Быстрая зарядка подключена (<xliff:g id="charging_time_left">%s</xliff:g> до полной зарядки)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">Быстрая зарядка подключена</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Игровой режим</string>
-    <string name="gaming_mode_tile_toast">Игровой режим включен</string>
-    <string name="gaming_mode_tile_toast_disabled">Игровой режим выключен</string>
-    <string name="gaming_mode_dialog_title">Игровой режим</string>
-    <string name="gaming_mode_dialog_message">Когда игровой режим включен, ваш режим звонка переключится в режим вибрации, все уведомления и аппаратные клавиши будут отключены. Громкость медиа будет увеличена до максимального уровня. Все отключенные настройки будут восстановлены после выхода из режима игры.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Игровой режим включен</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Игровой режим выключен</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Компас</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -234,5 +242,13 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Панель громкости</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Режим чтения</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Режим чтения включен.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Режим чтения выключен.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Режим чтения активирован.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Режим чтения деактивирован.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">Шрифты</string>
+    <string name="quick_settings_font_detail_label">Выберите шрифт</string>
+    <!-- VPN QS tile -->
 </resources>

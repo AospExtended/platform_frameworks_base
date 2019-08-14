@@ -167,14 +167,6 @@
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">Verbonden met TurboPower (<xliff:g id="charging_time_left">%s</xliff:g> resterend)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">Verbonden met TurboPower</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Game Modus</string>
-    <string name="gaming_mode_tile_toast">Game modus ingeschakeld</string>
-    <string name="gaming_mode_tile_toast_disabled">Game modus uitgeschakeld</string>
-    <string name="gaming_mode_dialog_title">Game Modus</string>
-    <string name="gaming_mode_dialog_message">Wanneer de game modus is ingeschakeld, zal je trilstand aangezet worden, verschijnen er geen pop-up notificaties en de fysieke knoppen worden uitgeschakeld. Het mediavolume zal op de hoogste stnad gezet worden. Alle gewijzigde instellingen zullen weer terug naar het normale gezet worden wanneer je uit de game modus gaat.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Game modus aan</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Game modus uit</string>
     <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
     <string name="ambientmusic_songinfo">%s door %s</string>
@@ -196,4 +188,5 @@
     <!-- Volume panel QS tile -->
     <!-- Reader mode QS tile -->
     <!-- Font Tile -->
+    <!-- VPN QS tile -->
 </resources>

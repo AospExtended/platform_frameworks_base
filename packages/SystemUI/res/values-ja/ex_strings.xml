@@ -24,14 +24,14 @@
     <string name="global_action_restart_bootloader">ブートローダー</string>
     <string name="global_action_restart_ui">システム UI</string>
     <string name="global_action_restart_soft">ソフトリブート</string>
-    <string name="statusbar_items_title">ステータスバーアイコン</string>
+    <string name="statusbar_items_title">ステータスバーのアイコン</string>
     <!-- Lockscreen icons -->
-    <string name="lockscreen_tuner_title">ロック画面のショートカット</string>
+    <string name="lockscreen_tuner_title">ショートカット</string>
     <string name="lockscreen_default">既定</string>
     <string name="lockscreen_hidden">なし</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">音声</string>
-    <string name="quick_settings_sound_ring">鳴動</string>
+    <string name="quick_settings_sound_ring">通常</string>
     <string name="quick_settings_sound_vibrate">振動</string>
     <string name="quick_settings_sound_dnd">サイレント</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
@@ -69,7 +69,7 @@
     <string name="quick_settings_reboot_recovery_label">リカバリー</string>
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">スクリーン\nショット</string>
-    <string name="quick_settings_region_screenshot_label">範囲選択してスクリーンショット</string>
+    <string name="quick_settings_region_screenshot_label">範囲選択</string>
     <!-- Heads Up QS Tile -->
     <string name="quick_settings_heads_up_label">Heads Up</string>
     <string name="accessibility_quick_settings_heads_up_off">Heads Up OFF</string>
@@ -154,7 +154,7 @@
     <string name="screenshot_abort_title">スクリーンショットは撮影されていません</string>
     <string name="screenshot_abort_text">操作を中止しました</string>
     <!-- Expanded Desktop QS Tile -->
-    <string name="quick_settings_expanded_desktop_label">拡張デスクトップ</string>
+    <string name="quick_settings_expanded_desktop_label">拡張\nデスクトップ</string>
     <string name="quick_settings_expanded_desktop">拡張済み</string>
     <string name="quick_settings_expanded_desktop_off">標準</string>
     <string name="quick_settings_expanded_navigation_off">ナビゲーションバーを隠す</string>
@@ -183,14 +183,6 @@
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">急速充電中 (充電完了まで<xliff:g id="charging_time_left">%s</xliff:g>)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">急速充電中</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">ゲームモード</string>
-    <string name="gaming_mode_tile_toast">ゲームモード有効</string>
-    <string name="gaming_mode_tile_toast_disabled">ゲームモード無効</string>
-    <string name="gaming_mode_dialog_title">ゲームモード</string>
-    <string name="gaming_mode_dialog_message">ゲームモードを有効にすると着信モードが振動モードに変わり、全ての Heads Up メッセージが無効になり、ハードウェアキーが  OFF になります。メディアの容量は最大値まで増加します。ゲームモードを終了すると全ての無効設定が既定にリセットされます。</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">ゲームモード ON</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">ゲームモード OFF</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">コンパス</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -216,7 +208,7 @@
     <string name="quick_settings_smart_pixels">スマート\nピクセル</string>
     <string name="quick_settings_smart_pixels_on_power_save">自動有効</string>
     <!-- ADB over network QS tile -->
-    <string name="quick_settings_network_adb_label">ネット経由の ADB</string>
+    <string name="quick_settings_network_adb_label">ネット経由の\nADB</string>
     <!-- LTE QS Tile -->
     <string name="qs_lte_label">LTE</string>
     <string name="lte_on">LTE ON</string>
@@ -258,4 +250,5 @@
     <!-- Font Tile -->
     <string name="quick_settings_font_label">フォント</string>
     <string name="quick_settings_font_detail_label">フォントを選択</string>
+    <!-- VPN QS tile -->
 </resources>

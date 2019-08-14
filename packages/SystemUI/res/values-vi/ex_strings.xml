@@ -20,9 +20,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="global_action_restart_advanced">Nâng cao</string>
-    <string name="global_action_restart_recovery">Recovery</string>
-    <string name="global_action_restart_bootloader">Bootloader</string>
-    <string name="global_action_restart_ui">Giao diện người dùng hệ thống</string>
+    <string name="global_action_restart_recovery">Phục hồi</string>
+    <string name="global_action_restart_bootloader">Bộ nạp</string>
+    <string name="global_action_restart_ui">Giao diện người dùng</string>
     <string name="global_action_restart_soft">Khởi động lại mềm</string>
     <string name="statusbar_items_title">Biểu tượng thanh trạng thái</string>
     <!-- Lockscreen icons -->
@@ -40,8 +40,8 @@
     <string name="status_bar_data_saver">Trình tiết kiệm dữ liệu</string>
     <string name="preview">Xem trước</string>
     <string name="keycode">Mã phím</string>
-    <string name="no_home_title">Không tìm thấy nút màn hình chính</string>
-    <string name="no_home_message">Cần có nút màn hình chính để có thể điều hướng thiết bị này. Vui lòng thêm nút trang chủ trước khi lưu.</string>
+    <string name="no_home_title">Không tìm thấy nút Trang chủ</string>
+    <string name="no_home_message">Cần có nút Trang chủ để có thể điều hướng thiết bị này. Vui lòng thêm nút trang chủ trước khi lưu.</string>
     <string name="clipboard_description">Khay nhớ tạm cho phép kéo trực tiếp mục vào khay nhớ tạm. Bạn cũng có thể kéo trực tiếp mục ra khỏi khay nhớ tạm khi hiển thị.</string>
     <string name="keycode_description">Các nút mã phím cho phép thêm các phím trên bàn phím vào Thanh điều hướng. Khi bạn nhấn, các nút này sẽ mô phỏng phím trên bàn phím được chọn. Trước tiên, bạn phải chọn phím cho nút, sau đó chọn một hình ảnh để hiển thị trên nút.</string>
     <string name="start">Bắt đầu</string>
@@ -66,7 +66,7 @@
     <string name="accessibility_quick_settings_caffeine_on">Bật Caffeine</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Khởi động lại</string>
-    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+    <string name="quick_settings_reboot_recovery_label">Chế độ phục hồi</string>
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">Chụp màn hình</string>
     <string name="quick_settings_region_screenshot_label">Chụp một phần màn hình</string>
@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">Giao diện đen</string>
     <string name="systemui_theme_style_extended">Giao diện Extended</string>
     <string name="systemui_theme_style_chocolate">Giao diện sôcôla</string>
+    <string name="systemui_theme_style_elegant">Giao diện Elegant</string>
     <string name="quick_settings_theme_tile_title">Màu nhấn</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Chọn màu</string>
     <string name="quick_settings_theme_tile_style_detail_title">Chọn kiểu</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Xanh ấn tượng</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Xanh da trời nhạt</string>
     <string name="quick_settings_theme_tile_color_jade_green">Xanh lá cây đậm</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Xanh lục thanh lịch</string>
     <string name="quick_settings_theme_tile_color_black">Đen</string>
     <string name="quick_settings_theme_tile_color_white">Màu trắng</string>
     <string name="theme_info_title">Đây là gì?</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">Báo cáo vị trí: chế độ tiết kiệm pin.</string>
     <string name="accessibility_quick_settings_location_gps_only">Báo cáo vị trí: chế độ chỉ các cảm biến.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Báo cáo vị trí: chế độ chính xác cao.</string>
+    <string name="quick_settings_location_battery_saving_label">Tiết kiệm pin</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Tiết kiệm\npin</string>
+    <string name="quick_settings_location_gps_only_label">Chỉ GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Chỉ GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Chính xác cao</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Chính xác\ncao</string>
+    <string name="quick_settings_location_detail_title">Vị trí</string>
+    <string name="quick_settings_location_detail_menu_title">Chọn chế độ:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Chính xác cao</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Tiết kiệm pin</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Chỉ thiết bị</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Sử dụng GPS, Wi\u2011Fi, Bluetooth hoặc mạng di động để xác định vị trí </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Sử dụng Wi\u2011Fi, Bluetooth hoặc mạng di động để xác định vị trí</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Sử dụng GPS để xác định vị trí của bạn</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Đang sạc nhanh (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> nữa sẽ đầy)</string>
     <string name="keyguard_plugged_in_dash_charging">Đang sạc nhanh</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">Đang sạc nhanh (<xliff:g id="charging_time_left">%s</xliff:g> sẽ đầy)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">Đã kết nối sạc nhanh</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Chế độ chơi game</string>
-    <string name="gaming_mode_tile_toast">Chế độ chơi game đã bật</string>
-    <string name="gaming_mode_tile_toast_disabled">Chế độ chơi game đã tắt</string>
-    <string name="gaming_mode_dialog_title">Chế độ chơi game</string>
-    <string name="gaming_mode_dialog_message">Khi Chế độ chơi game được bật, chế độ chuông sẽ được đặt thành chế độ rung, tất cả các thông báo nổi sẽ bị vô hiệu và các phím cứng sẽ bị tắt. Âm lượng phương tiện sẽ được tăng lên mức tối đa. Tất cả các tính năng trên sẽ được khôi phục lại về mặc định khi bạn tắt Chế độ chơi game.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Chế độ chơi game bật</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Chế độ chơi game tắt</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">La bàn</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -234,5 +242,13 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Bảng điều chỉnh âm lượng</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Chế độ đọc</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Chế độ đọc đang bật.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Chế độ đọc đang tắt.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Chế độ đọc đã được bật.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Chế độ đọc đã được tắt.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">Phông chữ</string>
+    <string name="quick_settings_font_detail_label">Chọn phông chữ</string>
+    <!-- VPN QS tile -->
 </resources>

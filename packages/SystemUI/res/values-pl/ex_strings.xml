@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">Czarny interfejs użytkownika</string>
     <string name="systemui_theme_style_extended">Motyw AEX</string>
     <string name="systemui_theme_style_chocolate">Czekoladowy interfejs użytkownika</string>
+    <string name="systemui_theme_style_elegant">Eleganckie UI</string>
     <string name="quick_settings_theme_tile_title">Akcent</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Wybierz kolor</string>
     <string name="quick_settings_theme_tile_style_detail_title">Wybierz styl</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Zielony AEX</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Blady niebieski</string>
     <string name="quick_settings_theme_tile_color_jade_green">Jadeitowy zielony</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Elegancka zieleń</string>
     <string name="quick_settings_theme_tile_color_black">Czarny</string>
     <string name="quick_settings_theme_tile_color_white">Biały</string>
     <string name="theme_info_title">Co to jest?</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">Usługa lokalizacji: tryb oszczędzania baterii.</string>
     <string name="accessibility_quick_settings_location_gps_only">Raportowanie lokalizacji: tylko czujniki.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Usługa lokalizacji: wysoka dokładność.</string>
+    <string name="quick_settings_location_battery_saving_label">Oszczędzanie baterii</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Oszczędzanie\nbaterii</string>
+    <string name="quick_settings_location_gps_only_label">Tylko GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Tylko GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Wysoka dokładność</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Wysoka\ndokładność</string>
+    <string name="quick_settings_location_detail_title">Lokalizacja</string>
+    <string name="quick_settings_location_detail_menu_title">Tryb wyboru:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Wysoka dokładność</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Oszczędzanie baterii</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Tylko urządzenie</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Używaj GPS, Wi\u2011Fi, Bluetooth oraz sieci komórkowej, aby ustalić lokalizację </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Używaj Gps, Wi\u2011Fi, Bluetooth oraz sieci komórkowej, aby ustalić lokalizację</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Ustalaj lokalizację przez GPS</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Szybkie ładowanie (<xliff:g id="pozostały_czas" example="4 godziny i 2 minuty">%s</xliff:g> do pełnego naładowania)</string>
     <string name="keyguard_plugged_in_dash_charging">Szybkie Ładowanie</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">TurboPower podłączone (<xliff:g id="charging_time_left">%s</xliff:g> do końca)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower podłączone</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Tryb Grania</string>
-    <string name="gaming_mode_tile_toast">Włączono Tryb grania</string>
-    <string name="gaming_mode_tile_toast_disabled">Wyłączono Tryb grania</string>
-    <string name="gaming_mode_dialog_title">Tryb Grania</string>
-    <string name="gaming_mode_dialog_message">Gdy tryb grania jest włączony, tryb dzwonka zostanie zmieniony na tryb wibracji, zostaną wyłączone wszystkie wyskakujące powiadomienia, a klawisze zostaną wyłączone. Głośność multimediów zostanie zwiększona do maksymalnej wartości. Wszystkie wyłączone ustawienia zostaną zresetowane do domyślnych wartości po wyłączeniu Trybu Grania.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Tryb grania włączony</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Tryb grania wyłączony</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Kompas</string>
     <string name="quick_settings_compass_value"><xliff:g id="stopnie">%1$.0f</xliff:g>\u00b0 <xliff:g id="kierunek">%2$s</xliff:g></string>
@@ -234,5 +242,13 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Panel głośności</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Tryb czytania</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Włącz tryb czytania.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Wyłącz tryb czytania.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Tryb czytania włączony.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Tryb czytania wyłączony.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">Czcionki</string>
+    <string name="quick_settings_font_detail_label">Wybierz czcionkę</string>
+    <!-- VPN QS tile -->
 </resources>

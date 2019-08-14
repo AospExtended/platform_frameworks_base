@@ -166,14 +166,6 @@
     <string name="keyguard_plugged_in_dash_charging">Snabbladdning</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower ansluten</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Spelläge</string>
-    <string name="gaming_mode_tile_toast">Spelläge aktiverat</string>
-    <string name="gaming_mode_tile_toast_disabled">Spelläge inaktiverat</string>
-    <string name="gaming_mode_dialog_title">Spelläge</string>
-    <string name="gaming_mode_dialog_message">När spelläget är aktiverat, ändras din ringsignal till vibrationsläge, alla popup-meddelanden inaktiveras och hårdvaruknapparna kommer att stängas av. Mediavolymen kommer att öka till det högsta värdet. Alla inaktiverade inställningar återställs till standardvärdet när du avslutar spelläget.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Spelläge på</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Spelläge av</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Kompass</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g> \u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -216,4 +208,5 @@
     <!-- Volume panel QS tile -->
     <!-- Reader mode QS tile -->
     <!-- Font Tile -->
+    <!-- VPN QS tile -->
 </resources>

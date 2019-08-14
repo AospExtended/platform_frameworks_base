@@ -167,14 +167,6 @@
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">เชื่อมต่อพลังเทอร์โบชาร์จแล้ว (<xliff:g id="เหลือเวลาชาร์จอีก">%s</xliff:g> จนกระทั่งเต็ม)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">เชื่อมต่อพลังเทอร์โบชาร์จแล้ว</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">โหมดการเล่นเกม</string>
-    <string name="gaming_mode_tile_toast">เปิดใช้งานโหมดเล่นเกม</string>
-    <string name="gaming_mode_tile_toast_disabled">ปิดใช้งานโหมดเล่นเกม</string>
-    <string name="gaming_mode_dialog_title">โหมดเกม</string>
-    <string name="gaming_mode_dialog_message">เมื่อเปิดใช้งานโหมดการเล่นเกม โหมดเสียงเรียกเข้าของคุณจะเปลี่ยนเป็นโหมดสั่น ข้อความที่แสดง แถบด้านบนทั้งหมดจะถูกปิด และคีย์ฮาร์ดแวร์จะถูกปิด ปริมาณเสียงสื่อ(มีเดีย) จะเพิ่มขึ้นถึงค่าสูงสุด การตั้งค่าที่ปิดใช้งานทั้งหมดจะถูกรีเซ็ตเป็นค่าเริ่มต้นเมื่อคุณออกจากโหมดเกม</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">เปิดโหมดเล่นเกม</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">ปิดโหมดเล่นเกม</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">เข็มทิศ</string>
     <string name="quick_settings_compass_value"><xliff:g id="องศา">%1$.0f</xliff:g>\u00b0 <xliff:g id="ทิศ">%2$s</xliff:g></string>
@@ -235,4 +227,5 @@
     <string name="quick_settings_volume_panel_label">แผงควบคุมระดับเสียง</string>
     <!-- Reader mode QS tile -->
     <!-- Font Tile -->
+    <!-- VPN QS tile -->
 </resources>

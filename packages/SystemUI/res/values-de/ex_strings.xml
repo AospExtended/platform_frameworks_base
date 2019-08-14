@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">Schwarze Benutzeroberfläche</string>
     <string name="systemui_theme_style_extended">Extended Benutzeroberfläche</string>
     <string name="systemui_theme_style_chocolate">Schokoladen Benutzeroberfläche</string>
+    <string name="systemui_theme_style_elegant">Elegantes UI</string>
     <string name="quick_settings_theme_tile_title">Akzent</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Farbe wählen</string>
     <string name="quick_settings_theme_tile_style_detail_title">Stil wählen</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Extended Grün</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Blasses Blau</string>
     <string name="quick_settings_theme_tile_color_jade_green">Jadegrün</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Elegantes Grün</string>
     <string name="quick_settings_theme_tile_color_black">Schwarz</string>
     <string name="quick_settings_theme_tile_color_white">Weiß</string>
     <string name="theme_info_title">Was ist das?</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">Standortdienste: Energiesparmodus.</string>
     <string name="accessibility_quick_settings_location_gps_only">Standortdienste: nur Gps.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Standortdienste: hohe Genauigkeit.</string>
+    <string name="quick_settings_location_battery_saving_label">Energiesparmodus</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Energie\nsparen</string>
+    <string name="quick_settings_location_gps_only_label">Nur GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Nur GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Hohe Genauigkeit</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Hohe\nGenauigkeit</string>
+    <string name="quick_settings_location_detail_title">Standort</string>
+    <string name="quick_settings_location_detail_menu_title">Modus auswählen:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Hohe Genauigkeit</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Energiesparmodus</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Nur Gerät</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">GPS, Wi\u2011Fi, Bluetooth oder Mobilfunknetze verwenden, um den Standort zu bestimmen </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Standort über WLAN, Bluetooth oder Mobilfunknetz bestimmen</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">GPS zur Standortbestimmung verwenden</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Schnellladen (<xliff:g id="charging_time_left" example="4 Stunden und 2 Minuten">%s</xliff:g> bis Akku voll)</string>
     <string name="keyguard_plugged_in_dash_charging">Schnellladen</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">TurboPower connected (<xliff:g id="charging_time_left">%s</xliff:g> until full)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower connected</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Gaming Mode</string>
-    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
-    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
-    <string name="gaming_mode_dialog_title">Gaming Mode</string>
-    <string name="gaming_mode_dialog_message">When gaming mode is enabled, your ringer mode will change to vibrate mode, all heads-up messages will be disabled and hardware keys will be turned off. Media volume will be increased to the maximum value. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Gaming-Modus deaktivieren</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Kompass</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -234,5 +242,13 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Lautstärkeregler</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Lesemodus</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Lesemodus an.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Lesemodus aus.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Lesemodus angeschaltet.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Lesemodus ausgeschaltet.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">Schriftarten</string>
+    <string name="quick_settings_font_detail_label">Schriftart auswählen</string>
+    <!-- VPN QS tile -->
 </resources>

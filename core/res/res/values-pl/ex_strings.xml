@@ -12,7 +12,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="reboot_title">Zrestartuj</string>
     <string name="reboot_message">Ponowne uruchamianie</string>
@@ -59,6 +59,9 @@
     <string name="adb_net_active_notification_title">ADB po sieci włączone</string>
     <string name="adb_both_active_notification_title">ADB przez USB &amp; sieć włączona</string>
     <string name="adb_active_generic_notification_message">Dotknij, aby wyłączyć debugowanie.</string>
-    <!-- LiveDisplay strings -->
     <!-- Pocket Lock -->
+    <string name="pocket_lock_message_long_press">Przytrzymaj przycisk zasilania w celu interakcji</string>
+    <!-- App ops requests -->
+    <!-- Privacy Guard -->
+    <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
 </resources>

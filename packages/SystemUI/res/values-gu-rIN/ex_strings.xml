@@ -166,13 +166,6 @@
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">ટર્બોપાવર સાથે જોડાયેલ છે (<xliff:g id="charging_time_left">%s</xliff:g> until full)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">ટર્બોપાવર જોડાયેલ છે</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">ગેમિંગ મોડ</string>
-    <string name="gaming_mode_tile_toast">ગેમિંગ મોડે ચાલુ છે</string>
-    <string name="gaming_mode_tile_toast_disabled">ગેમિંગ મોડે બંધ છે</string>
-    <string name="gaming_mode_dialog_title">ગેમિંગ મોડ</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">ગેમિંગ મોડ ઓન</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">ગેમિંગ મોડ ઓફ</string>
     <!-- Compass QS Tile -->
     <!-- Ambient Display Pixel-Like string -->
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
@@ -192,4 +185,5 @@
     <!-- Volume panel QS tile -->
     <!-- Reader mode QS tile -->
     <!-- Font Tile -->
+    <!-- VPN QS tile -->
 </resources>

@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">Siyah arayüz</string>
     <string name="systemui_theme_style_extended">Extended arayüz</string>
     <string name="systemui_theme_style_chocolate">Çikolata arayüz</string>
+    <string name="systemui_theme_style_elegant">Zarif arayüzü</string>
     <string name="quick_settings_theme_tile_title">Vurgu rengi</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Renk seçin</string>
     <string name="quick_settings_theme_tile_style_detail_title">Stil seçin</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">Extended yeşili</string>
     <string name="quick_settings_theme_tile_color_pale_blue">Soluk mavi</string>
     <string name="quick_settings_theme_tile_color_jade_green">Yeşim yeşili</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">Zarif yeşil</string>
     <string name="quick_settings_theme_tile_color_black">Siyah</string>
     <string name="quick_settings_theme_tile_color_white">Beyaz</string>
     <string name="theme_info_title">Bu nedir?</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">Konum bildirimi: pil tasarruf modu.</string>
     <string name="accessibility_quick_settings_location_gps_only">Konum bildirimi: sadece sensörler modu.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">Konum bildirimi: yüksek doğruluk modu.</string>
+    <string name="quick_settings_location_battery_saving_label">Pil tasarrufu</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Pil\ntasarrufu</string>
+    <string name="quick_settings_location_gps_only_label">Yalnızca GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Yalnızca GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Yüksek doğruluk</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Yüksek\ndoğruluk</string>
+    <string name="quick_settings_location_detail_title">Konum</string>
+    <string name="quick_settings_location_detail_menu_title">Mod seç:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Yüksek doğruluk</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Pil tasarrufu</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Yalnızca cihaz</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Konumu belirlemek için GPS, Wi\u2011Fi, Bluetooth veya hücresel ağlar kullanılır </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Konumu belirlemek için Wi\u2011Fi, Bluetooth veya hücresel ağlar kullanılır</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Konumunuzu belirlemek için GPS kullanın</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Dash Şarj oluyor (tam dolmasına <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> kaldı)</string>
     <string name="keyguard_plugged_in_dash_charging">Dash Şarj oluyor</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">TurboPower bağlandı (tam dolmasına <xliff:g id="charging_time_left">%s</xliff:g> kaldı)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">TurboPower bağlandı</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Oyun modu</string>
-    <string name="gaming_mode_tile_toast">Oyun modu etkin</string>
-    <string name="gaming_mode_tile_toast_disabled">Oyun modu devre dışı</string>
-    <string name="gaming_mode_dialog_title">Oyun modu</string>
-    <string name="gaming_mode_dialog_message">Oyun modu etkinleştirildiğinde zil sesi modunuz titreşim moduna geçer, tüm uyarı mesajları devre dışı bırakılır ve donanım tuşları kapatılır. Medya sesi maksimum değere yükseltilecektir. Oyun modundan çıktığınızda tüm engellenen ayarlar varsayılana sıfırlanacaktır.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Oyun modu açık</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Oyun modu kapalı</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">Pusula</string>
     <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
@@ -234,5 +242,13 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Ses paneli</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Okuma modu</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Okuma modu açık.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Okuma modu kapalı.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Okuma modu açıldı.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Okuma modu kapatıldı.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">Yazı tipleri</string>
+    <string name="quick_settings_font_detail_label">Bir yazı tipi seç</string>
+    <!-- VPN QS tile -->
 </resources>

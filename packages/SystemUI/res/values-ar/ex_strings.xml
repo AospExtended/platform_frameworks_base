@@ -19,7 +19,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
-    <string name="global_action_restart_advanced">مُتقدم</string>
+    <string name="global_action_restart_advanced">إعدادات متقدمة</string>
     <string name="global_action_restart_recovery">الإسترداد</string>
     <string name="global_action_restart_bootloader">محمل الإقلاع</string>
     <string name="global_action_restart_ui">واجهة النظام</string>
@@ -66,7 +66,7 @@
     <string name="accessibility_quick_settings_caffeine_on">كافيين يعمل</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">إعادة التشغيل</string>
-    <string name="quick_settings_reboot_recovery_label">الإسترداد</string>
+    <string name="quick_settings_reboot_recovery_label">ريكفري</string>
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">لقطة الشاشة</string>
     <string name="quick_settings_region_screenshot_label">لقطة الشاشة الجزئية</string>
@@ -97,6 +97,7 @@
     <string name="systemui_theme_style_black">واجهة سوداء</string>
     <string name="systemui_theme_style_extended">الواجهة الموسعة</string>
     <string name="systemui_theme_style_chocolate">واجهة الشوكولاتة</string>
+    <string name="systemui_theme_style_elegant">واجهة جميلة</string>
     <string name="quick_settings_theme_tile_title">اللكنة</string>
     <string name="quick_settings_theme_tile_accent_detail_title">تحديد اللون</string>
     <string name="quick_settings_theme_tile_style_detail_title">أختيار النمط</string>
@@ -125,6 +126,7 @@
     <string name="quick_settings_theme_tile_color_extended_green">أخضر ممتد</string>
     <string name="quick_settings_theme_tile_color_pale_blue">أزرق باهت</string>
     <string name="quick_settings_theme_tile_color_jade_green">أخضر غامق</string>
+    <string name="quick_settings_theme_tile_color_elegant_green">اخضر جميل</string>
     <string name="quick_settings_theme_tile_color_black">أسود</string>
     <string name="quick_settings_theme_tile_color_white">أبيض</string>
     <string name="theme_info_title">ما هذا ؟</string>
@@ -161,20 +163,26 @@
     <string name="accessibility_quick_settings_location_battery_saving">تحديد الموقع: وضع توفير البطارية.</string>
     <string name="accessibility_quick_settings_location_gps_only">تحديد الموقع: وضع الجهاز فقط.</string>
     <string name="accessibility_quick_settings_location_high_accuracy">تحديد الموقع: وضع الدقة العالية.</string>
+    <string name="quick_settings_location_battery_saving_label">توفير الطاقة</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">توفير\nالبطارية</string>
+    <string name="quick_settings_location_gps_only_label">GPS فقط</string>
+    <string name="quick_settings_location_gps_only_label_twoline">GPS فقط</string>
+    <string name="quick_settings_location_high_accuracy_label">دقة عالية</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">دقة\nعالية</string>
+    <string name="quick_settings_location_detail_title">الموقع</string>
+    <string name="quick_settings_location_detail_menu_title">تحديد الوضع:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">دقة عالية</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">توفير الطاقة</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">الجهاز فقط</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">‏استخدام نظام تحديد المواقع العالمي (GPS) وشبكات Wi‑Fi وبلوتوث وشبكات الجوّال لتحديد الموقع </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">‏استخدام شبكات Wi‑Fi وبلوتوث وشبكات الجوّال لتحديد الموقع</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">‏استخدام نظام تحديد المواقع العالمي (GPS) في تحديد موقعك</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">الشحن السريع (<xliff:g id="charging_time_left" example="4 ساعة و 2 دقيقة">%s</xliff:g> حتى الإمتلاء)</string>
     <string name="keyguard_plugged_in_dash_charging">الشحن السريع</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_turbo_power_time">متصل بشاحن سريع (<xliff:g id="charging_time_left">%s</xliff:g> حتى يكتمل)</string>
     <string name="keyguard_plugged_in_turbo_power_charging">متصل بشاحن سريع</string>
-    <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">وضع الألعاب</string>
-    <string name="gaming_mode_tile_toast">وضع الألعاب مفعل</string>
-    <string name="gaming_mode_tile_toast_disabled">وضع الألعاب معطل</string>
-    <string name="gaming_mode_dialog_title">وضع الألعاب</string>
-    <string name="gaming_mode_dialog_message">عندما يتم تمكين وضع الألعاب، سيتم تغيير صوت الجهاز الخاص بك لوضع الاهتزاز فقط، سيتم إيقاف كافة التنبيهات المنبثقة وسيتم إيقاف أزرار الجهاز. سيتم زيادة صوت الوسائط إلى الحد الأقصى. سيتم إعادة تعيين كافة الإعدادات المذكورة أعلاه بمجرد الخروج من \"وضع الألعاب\".</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">وضع الألعاب مفعل</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">وضع الألعاب معطل</string>
     <!-- Compass QS Tile -->
     <string name="quick_settings_compass_label">البوصلة</string>
     <string name="quick_settings_compass_value"><xliff:g id="درجات">%1$.0f</xliff:g>\u00b0 <xliff:g id="الإتجاه">%2$s</xliff:g></string>
@@ -234,5 +242,13 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">لوحة مستوى الصوت</string>
     <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">وضع القراءة</string>
+    <string name="accessibility_quick_settings_reading_mode_on">وضع القراءة مفعل.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">وضع القراءة معطل.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">تم تشغيل وضع القراءة.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">تم إيقاف وضع القراءة.</string>
     <!-- Font Tile -->
+    <string name="quick_settings_font_label">الخطوط</string>
+    <string name="quick_settings_font_detail_label">تحديد الخط</string>
+    <!-- VPN QS tile -->
 </resources>
