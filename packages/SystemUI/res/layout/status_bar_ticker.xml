@@ -21,6 +21,8 @@
     android:layout_height="match_parent"
     android:paddingStart="@dimen/ticker_start_padding"
     android:animationCache="false"
+    android:layout_gravity="center"
+    android:gravity="center_vertical"
     android:orientation="horizontal">
 
     <ImageSwitcher android:id="@+id/tickerIcon"
