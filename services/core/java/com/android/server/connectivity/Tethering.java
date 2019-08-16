@@ -65,6 +65,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.hardware.usb.UsbManager;
 import android.net.INetworkPolicyManager;
 import android.net.INetworkStatsService;
@@ -291,6 +292,18 @@ public class Tethering extends BaseNetworkObserver {
         if (umi != null) {
             umi.addUserRestrictionsListener(new TetheringUserRestrictionListener(this));
         }
+
+        // Listen for allowing tethering upstream via VPN settings changes
+        final ContentObserver vpnSettingObserver = new ContentObserver(handler) {
+            @Override
+            public void onChange(boolean self) {
+                // Reconsider tethering upstream
+                mTetherMasterSM.sendMessage(TetherMasterSM.CMD_UPSTREAM_CHANGED);
+            }
+        };
+        mContext.getContentResolver().registerContentObserver(Settings.Secure.getUriFor(
+                Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS), false, vpnSettingObserver,
+                UserHandle.USER_ALL);
     }
 
     private WifiManager getWifiManager() {
