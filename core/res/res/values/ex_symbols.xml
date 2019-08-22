@@ -97,4 +97,7 @@
 
     <!-- QS -->
     <java-symbol type="dimen" name="quick_qs_total_height_extra" />
+
+    <!-- Whether device supports internal audio recording -->
+    <java-symbol type="bool" name="config_hasInternalAudioRecordingSupport" />
 </resources>
