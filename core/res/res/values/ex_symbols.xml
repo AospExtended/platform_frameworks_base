@@ -307,4 +307,7 @@
     <!-- In-display Fingerprint -->
     <java-symbol type="bool" name="config_supportsInDisplayFingerprint" />
 
+    <!-- Whether device supports internal audio recording -->
+    <java-symbol type="bool" name="config_hasInternalAudioRecordingSupport" />
+
 </resources>
