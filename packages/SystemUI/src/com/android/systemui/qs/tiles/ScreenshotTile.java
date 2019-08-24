@@ -18,10 +18,13 @@ package com.android.systemui.qs.tiles;
 import android.content.Context;
 import android.content.Intent;
 import android.os.UserHandle;
+import android.os.RemoteException;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
+import android.view.WindowManagerGlobal;
+import android.util.Log;
 
-import com.android.internal.util.aospextended.AEXUtils;
+import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.systemui.qs.QSHost;
 import com.android.systemui.plugins.qs.QSTile.BooleanState;
@@ -55,22 +58,19 @@ public class ScreenshotTile extends QSTileImpl<BooleanState> {
 
     @Override
     public void handleClick() {
-        mRegion = !mRegion;
-        Settings.System.putIntForUser(mContext.getContentResolver(),
-                Settings.System.SCREENSHOT_DEFAULT_MODE, mRegion ? 1 : 0,
-                UserHandle.USER_CURRENT);
-        refreshState();
-    }
-
-    @Override
-    public void handleLongClick() {
         mHost.collapsePanels();
 
         //finish collapsing the panel
         try {
              Thread.sleep(1000); //1s
         } catch (InterruptedException ie) {}
-        AEXUtils.takeScreenshot(mRegion ? false : true);
+        try {
+            WindowManagerGlobal.getWindowManagerService().takeOPScreenshot(1, 0);
+            } catch (RemoteException e) {
+                Log.e(TAG, "Error while trying to takeOPScreenshot.", e);
+            }
+            MetricsLogger.action(mContext,
+                MetricsEvent.ACTION_SCREENSHOT_POWER_MENU);
     }
 
     @Override
@@ -85,16 +85,9 @@ public class ScreenshotTile extends QSTileImpl<BooleanState> {
 
     @Override
     protected void handleUpdateState(BooleanState state, Object arg) {
-        if (mRegion) {
-            state.label = mContext.getString(R.string.quick_settings_region_screenshot_label);
-            state.icon = ResourceIcon.get(R.drawable.ic_qs_region_screenshot);
-            state.contentDescription =  mContext.getString(
-                    R.string.quick_settings_region_screenshot_label);
-        } else {
-            state.label = mContext.getString(R.string.quick_settings_screenshot_label);
-            state.icon = ResourceIcon.get(R.drawable.ic_qs_screenshot);
-            state.contentDescription =  mContext.getString(
-                    R.string.quick_settings_screenshot_label);
-        }
+        state.label = mContext.getString(R.string.quick_settings_screenshot_label);
+        state.icon = ResourceIcon.get(R.drawable.ic_qs_screenshot);
+        state.contentDescription =  mContext.getString(
+            R.string.quick_settings_screenshot_label);
     }
 }
