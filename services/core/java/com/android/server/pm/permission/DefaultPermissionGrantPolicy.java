@@ -971,6 +971,11 @@ public final class DefaultPermissionGrantPolicy {
             grantRuntimePermissions(googledialerPackage, CONTACTS_PERMISSIONS, userId);
             grantRuntimePermissions(googledialerPackage, SMS_PERMISSIONS, userId);
         }
+        // Google Markup
+        PackageParser.Package googlemarkupPackage = getSystemPackage("com.google.android.markup");
+        if (googlemarkupPackage != null && doesPackageSupportRuntimePermissions(googlemarkupPackage)) {
+            grantRuntimePermissions(googlemarkupPackage, STORAGE_PERMISSIONS, userId);
+        }
         // Pixel Wallpaper
         PackageParser.Package pixelwallsPackage = getDefaultProviderAuthorityPackage("com.google.android.apps.wallpaper", userId);
         if (pixelwallsPackage != null) {
