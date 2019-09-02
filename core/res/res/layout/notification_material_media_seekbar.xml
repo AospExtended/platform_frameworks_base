@@ -23,39 +23,39 @@
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
     android:orientation="vertical">
-    <SeekBar
-        android:id="@+id/notification_media_progress_bar"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-12dp"
-        android:layout_marginBottom="-24dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="24dp"
-        android:clickable="true"
-        android:maxHeight="3dp"
-        android:splitTrack="false"
-        style="@style/Widget.ProgressBar.Horizontal" />
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/notification_media_progress_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="11dp"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp">
         <TextView
             android:id="@+id/notification_media_elapsed_time"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginStart="@dimen/notification_content_margin_start"
             android:gravity="start"
             style="@style/Widget.Material.Notification.Text" />
+        <SeekBar
+            android:id="@+id/notification_media_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/notification_media_total_time"
+            android:layout_toRightOf="@id/notification_media_elapsed_time"
+            android:layout_alignTop="@id/notification_media_elapsed_time"
+            android:layout_alignBottom="@id/notification_media_total_time"
+            android:clickable="true"
+            android:maxHeight="3dp"
+            android:splitTrack="false"
+            style="@style/Widget.ProgressBar.Horizontal" />
         <TextView
             android:id="@+id/notification_media_total_time"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginEnd="@dimen/notification_content_margin_end"
             android:gravity="end"
             style="@style/Widget.Material.Notification.Text" />
-    </FrameLayout>
+    </RelativeLayout>
 </LinearLayout>
