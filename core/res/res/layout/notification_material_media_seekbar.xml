@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="12dp">
+        android:layout_marginBottom="18dp">
         <TextView
             android:id="@+id/notification_media_elapsed_time"
             android:layout_width="wrap_content"
