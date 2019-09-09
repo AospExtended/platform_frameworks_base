@@ -51,6 +51,7 @@ namespace android
 typedef struct dlLibHandler {
     void *dlhandle;
     void (*startActivity)(const char *, int *);
+    void (*startApp)(const char *, int *);
     void (*resumeActivity)(const char *);
     void (*pauseActivity)(const char *);
     void (*stopActivity)(const char *);
@@ -65,7 +66,7 @@ typedef struct dlLibHandler {
  */
 static dlLibHandler mDlLibHandler = {
     NULL, NULL, NULL, NULL, NULL, NULL,
-    NULL, NULL, "libqti-at.so"
+    NULL, NULL, NULL, "libqti-at.so"
 };
 
 // ----------------------------------------------------------------------------
@@ -84,6 +85,9 @@ com_android_internal_app_ActivityTrigger_native_at_init()
     if (mDlLibHandler.startActivity == NULL) {
         errored = true;
     }
+
+    *(void **) (&mDlLibHandler.startApp) = dlsym(mDlLibHandler.dlhandle, "activity_trigger_qspm_start");
+
     if (!errored) {
         *(void **) (&mDlLibHandler.resumeActivity) = dlsym(mDlLibHandler.dlhandle, "activity_trigger_resume");
         if (mDlLibHandler.resumeActivity == NULL) {
@@ -116,6 +120,7 @@ com_android_internal_app_ActivityTrigger_native_at_init()
     }
     if (errored) {
         mDlLibHandler.startActivity  = NULL;
+        mDlLibHandler.startApp = NULL;
         mDlLibHandler.resumeActivity = NULL;
         mDlLibHandler.pauseActivity  = NULL;
         mDlLibHandler.stopActivity = NULL;
@@ -134,6 +139,7 @@ com_android_internal_app_ActivityTrigger_native_at_deinit(JNIEnv *env, jobject c
 {
     if (mDlLibHandler.dlhandle) {
         mDlLibHandler.startActivity  = NULL;
+        mDlLibHandler.startApp = NULL;
         mDlLibHandler.resumeActivity = NULL;
         mDlLibHandler.pauseActivity  = NULL;
         mDlLibHandler.stopActivity = NULL;
@@ -157,6 +163,20 @@ com_android_internal_app_ActivityTrigger_native_at_startActivity(JNIEnv *env, jo
        const char *actStr = env->GetStringUTFChars(activity, NULL);
        if (actStr) {
            (*mDlLibHandler.startActivity)(actStr, &activiyFlags);
+           env->ReleaseStringUTFChars(activity, actStr);
+       }
+    }
+    return activiyFlags;
+}
+
+static jint
+com_android_internal_app_ActivityTrigger_native_at_startApp(JNIEnv *env, jobject clazz, jstring activity, jint flags)
+{
+    int activiyFlags = flags;
+    if(mDlLibHandler.startApp && activity) {
+       const char *actStr = env->GetStringUTFChars(activity, NULL);
+       if (actStr) {
+           (*mDlLibHandler.startApp)(actStr, &activiyFlags);
            env->ReleaseStringUTFChars(activity, actStr);
        }
     }
@@ -217,6 +237,7 @@ com_android_internal_app_ActivityTrigger_native_at_miscActivity(JNIEnv *env, job
 
 static JNINativeMethod gMethods[] = {
     {"native_at_startActivity",  "(Ljava/lang/String;I)I", (void *)com_android_internal_app_ActivityTrigger_native_at_startActivity},
+    {"native_at_startApp", "(Ljava/lang/String;I)I", (void *)com_android_internal_app_ActivityTrigger_native_at_startApp},
     {"native_at_resumeActivity", "(Ljava/lang/String;)V", (void *)com_android_internal_app_ActivityTrigger_native_at_resumeActivity},
     {"native_at_pauseActivity", "(Ljava/lang/String;)V", (void *)com_android_internal_app_ActivityTrigger_native_at_pauseActivity},
     {"native_at_stopActivity", "(Ljava/lang/String;)V", (void *)com_android_internal_app_ActivityTrigger_native_at_stopActivity},
