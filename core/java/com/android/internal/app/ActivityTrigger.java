@@ -55,7 +55,7 @@ public class ActivityTrigger
         String activity = null;
         activity = appInfo.packageName + "/" + appInfo.processName + "/" +
                appInfo.longVersionCode + "/" + pid;
-        native_at_startActivity(activity, reserved);
+        native_at_startApp(activity, reserved);
     }
 
     /** @hide */
@@ -92,6 +92,7 @@ public class ActivityTrigger
     }
 
     private native int native_at_startActivity(String activity, int flags);
+    private native int native_at_startApp(String activity, int flags);
     private native void native_at_resumeActivity(String activity);
     private native void native_at_pauseActivity(String activity);
     private native void native_at_stopActivity(String activity);
