@@ -67,4 +67,6 @@
     <!-- Whether to show a custom view for FOD -->
     <java-symbol type="bool" name="config_needCustomFODView" />
 
+    <!-- Post reset runnable for all clients -->
+    <java-symbol type="bool" name="config_fingerprintPostResetRunnableForAllClients" />
 </resources>
