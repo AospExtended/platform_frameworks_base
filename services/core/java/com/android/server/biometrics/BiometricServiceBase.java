@@ -83,6 +83,7 @@ public abstract class BiometricServiceBase extends SystemService
     private final PowerManager mPowerManager;
     private final UserManager mUserManager;
     private final MetricsLogger mMetricsLogger;
+    private final boolean mPostResetRunnableForAllClients;
     private final BiometricTaskStackListener mTaskStackListener = new BiometricTaskStackListener();
     private final ResetClientStateRunnable mResetClientState = new ResetClientStateRunnable();
     private final ArrayList<LockoutResetMonitor> mLockoutMonitors = new ArrayList<>();
@@ -659,6 +660,8 @@ public abstract class BiometricServiceBase extends SystemService
                 com.android.internal.R.bool.config_notifyClientOnFingerprintCancelSuccess);
         mCleanupUnusedFingerprints = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_cleanupUnusedFingerprints);
+        mPostResetRunnableForAllClients = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_fingerprintPostResetRunnableForAllClients);
     }
 
     @Override
@@ -1072,12 +1075,21 @@ public abstract class BiometricServiceBase extends SystemService
                             + "(" + newClient.getOwnerString() + ")"
                             + ", initiatedByClient = " + initiatedByClient);
                 }
+                if (mPostResetRunnableForAllClients) {
+                    mHandler.removeCallbacks(mResetClientState);
+                    mHandler.postDelayed(mResetClientState, CANCEL_TIMEOUT_LIMIT);
+                }
             } else {
                 currentClient.stop(initiatedByClient);
+
+                // Only post the reset runnable for non-cleanup clients. Cleanup clients should
+                // never be forcibly stopped since they ensure synchronization between HAL and
+                // framework. Thus, we should instead just start the pending client once cleanup
+                // finishes instead of using the reset runnable.
+                mHandler.removeCallbacks(mResetClientState);
+                mHandler.postDelayed(mResetClientState, CANCEL_TIMEOUT_LIMIT);
             }
             mPendingClient = newClient;
-            mHandler.removeCallbacks(mResetClientState);
-            mHandler.postDelayed(mResetClientState, CANCEL_TIMEOUT_LIMIT);
         } else if (newClient != null) {
             // For BiometricPrompt clients, do not start until
             // <Biometric>Service#startPreparedClient is called. BiometricService waits until all
@@ -1256,6 +1268,7 @@ public abstract class BiometricServiceBase extends SystemService
         } else {
             clearEnumerateState();
             if (mPendingClient != null) {
+                Slog.d(getTag(), "Enumerate finished, starting pending client");
                 startClient(mPendingClient, false /* initiatedByClient */);
                 mPendingClient = null;
             }
