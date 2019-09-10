@@ -75,4 +75,7 @@
     
     <!-- Home button wake -->
     <java-symbol type="bool" name="config_HomeWakeButton" />
+
+    <!-- Post reset runnable for all clients -->
+    <java-symbol type="bool" name="config_fingerprintPostResetRunnableForAllClients" />
 </resources>
