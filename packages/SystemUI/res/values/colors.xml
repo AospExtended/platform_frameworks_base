@@ -139,6 +139,12 @@
     <color name="udfps_enroll_progress">#7DA7F1</color>
     <color name="udfps_enroll_progress_help">#ffEE675C</color>
 
+    <!-- Color for the Assistant invocation lights -->
+    <color name="edge_light_blue">#ff4185f4</color>
+    <color name="edge_light_green">#ff3aa853</color>
+    <color name="edge_light_red">#ffea4234</color>
+    <color name="edge_light_yellow">#fffbbc06</color>
+
     <!-- Global screenshot actions -->
     <color name="global_screenshot_button_ripple">#1f000000</color>
     <color name="global_screenshot_background_protection_start">#40000000</color> <!-- 25% black -->
