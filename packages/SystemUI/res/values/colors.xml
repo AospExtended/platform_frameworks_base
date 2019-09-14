@@ -191,6 +191,10 @@
 
     <!-- Color for the Assistant invocation lights -->
     <color name="default_invocation_lights_color">#ffffffff</color>         <!-- white -->
+    <color name="edge_light_blue">#ff4185f4</color>
+    <color name="edge_light_green">#ff3aa853</color>
+    <color name="edge_light_red">#ffea4234</color>
+    <color name="edge_light_yellow">#fffbbc06</color>
 
     <!-- Global screenshot actions -->
     <color name="global_screenshot_button_background">#F5F5F5</color>
