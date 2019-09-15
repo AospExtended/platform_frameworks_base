@@ -246,7 +246,9 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
             R.layout.quick_settings_brightness_dialog, this, false);
         addView(mBrightnessView);
         mBrightnessController = new BrightnessController(getContext(),
-                findViewById(R.id.brightness_slider), mBroadcastDispatcher);
+                findViewById(R.id.brightness_icon),
+                findViewById(R.id.brightness_slider),
+                mBroadcastDispatcher);
     }
 
     protected QSTileLayout createRegularTileLayout() {
