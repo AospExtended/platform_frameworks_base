@@ -45,6 +45,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.PowerManager;
+import android.os.Process;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
@@ -399,7 +400,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
                     mItems.add(new EmergencyDialerAction());
                 }
             } else if (GLOBAL_ACTION_KEY_RESTART_RECOVERY.equals(actionKey)) {
-                mItems.add(new AdvancedRestartAction());
+                    mItems.add(new AdvancedRestartAction());
             } else {
                 Log.e(TAG, "Invalid global action key " + actionKey);
             }
@@ -647,15 +648,31 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
         }
     }
 
-    private final class AdvancedRestartAction extends SinglePressAction implements LongPressAction {
+    private final class AdvancedRestartAction extends SinglePressAction {
         private AdvancedRestartAction() {
             super(com.android.systemui.R.drawable.ic_restart_advanced, com.android.systemui.R.string.global_action_restart_advanced);
         }
 
         @Override
-        public boolean onLongPress() {
-            mWindowManagerFuncs.advancedReboot(PowerManager.REBOOT_BOOTLOADER);
+        public boolean showDuringKeyguard() {
             return true;
+        }
+
+        @Override
+        public boolean showBeforeProvisioning() {
+            return true;
+        }
+
+        @Override
+        public void onPress() {
+            mHandler.sendEmptyMessage(MESSAGE_SHOW_ADVANCED_TOGGLES);
+        }
+    }
+
+
+    private final class RestartRecoveryAction extends SinglePressAction {
+        private RestartRecoveryAction() {
+            super(com.android.systemui.R.drawable.ic_restart_recovery, com.android.systemui.R.string.global_action_restart_recovery);
         }
 
         @Override
@@ -671,6 +688,49 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
         @Override
         public void onPress() {
             mWindowManagerFuncs.advancedReboot(PowerManager.REBOOT_RECOVERY);
+        }
+    }
+
+    private final class RestartBootloaderAction extends SinglePressAction {
+        private RestartBootloaderAction() {
+            super(com.android.systemui.R.drawable.ic_restart_bootloader, com.android.systemui.R.string.global_action_restart_bootloader);
+        }
+
+        @Override
+        public boolean showDuringKeyguard() {
+            return true;
+        }
+
+        @Override
+        public boolean showBeforeProvisioning() {
+            return true;
+        }
+
+        @Override
+        public void onPress() {
+            mWindowManagerFuncs.advancedReboot(PowerManager.REBOOT_BOOTLOADER);
+        }
+    }
+
+    private final class RestartSystemUIAction extends SinglePressAction {
+        private RestartSystemUIAction() {
+            super(com.android.systemui.R.drawable.ic_restart_ui, com.android.systemui.R.string.global_action_restart_ui);
+        }
+
+        @Override
+        public boolean showDuringKeyguard() {
+            return true;
+        }
+
+        @Override
+        public boolean showBeforeProvisioning() {
+            return true;
+        }
+
+        @Override
+        public void onPress() {
+            mWindowManagerFuncs.onGlobalActionsHidden();
+            restartSystemUI(mContext);
         }
     }
 
@@ -1478,6 +1538,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
     private static final int MESSAGE_DISMISS = 0;
     private static final int MESSAGE_REFRESH = 1;
     private static final int MESSAGE_SHOW = 2;
+    private static final int MESSAGE_SHOW_ADVANCED_TOGGLES = 3;
     private static final int DIALOG_DISMISS_DELAY = 300; // ms
 
     private Handler mHandler = new Handler() {
@@ -1500,9 +1561,22 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
                 case MESSAGE_SHOW:
                     handleShow();
                     break;
+                case MESSAGE_SHOW_ADVANCED_TOGGLES:
+                    mDialog.dismiss();
+                    addNewItems();
+                    mDialog.refreshList();
+                    mDialog.show();
+                    break;
             }
         }
     };
+
+    private void addNewItems() {
+            mItems.clear();
+	    mItems.add(new RestartRecoveryAction());
+	    mItems.add(new RestartBootloaderAction());
+	    mItems.add(new RestartSystemUIAction());
+    }
 
     private void onAirplaneModeChanged() {
         // Let the service state callbacks handle the state.
@@ -1582,6 +1656,10 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
 
             mPanelController = plugin;
             initializeLayout();
+        }
+
+        public void refreshList() {
+            mGlobalActionsLayout.updateList();
         }
 
         private boolean shouldUsePanel() {
@@ -1875,5 +1953,9 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
      */
     private static boolean shouldUseSeparatedView() {
         return true;
+    }
+
+    public static void restartSystemUI(Context ctx) {
+        Process.killProcess(Process.myPid());
     }
 }
