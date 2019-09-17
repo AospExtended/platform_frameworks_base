@@ -159,4 +159,11 @@
 
     <!-- Enable face auth only when swiping security view -->
     <java-symbol type="bool" name="config_faceAuthOnlyOnSecurityView" />
+
+     <!-- Smart charging -->
+     <java-symbol type="integer" name="config_smartChargingBatteryLevel" />
+     <java-symbol type="string" name="config_SmartChargingSysfsNode" />
+     <java-symbol type="string" name="config_SmartChargingSuspendValue" />
+     <java-symbol type="string" name="config_SmartChargingResumeValue" />
+
 </resources>
