@@ -101,6 +101,10 @@ class DoubleLineTileLayout(
 
     override fun getNumVisibleTiles() = tilesToShow
 
+    override fun updateSettings() {
+        updateResources()
+    }
+
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         updateResources()

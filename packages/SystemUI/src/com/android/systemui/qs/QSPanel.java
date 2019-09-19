@@ -225,6 +225,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         }
         mQSLogger.logAllTilesChangeListening(mListening, getDumpableTag(), mCachedSpecs);
         updateResources();
+        updateSettings();
     }
 
     protected void onMediaVisibilityChanged(Boolean visible) {
@@ -1201,6 +1202,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         int getOffsetTop(TileRecord tile);
 
         boolean updateResources();
+        void updateSettings();
 
         void setListening(boolean listening);
 
@@ -1286,6 +1288,12 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
                     t.click();
                     setAnimationTile(v);
             });
+        }
+    }
+
+    public void updateSettings() {
+        if (mTileLayout != null) {
+            mTileLayout.updateSettings();
         }
     }
 }
