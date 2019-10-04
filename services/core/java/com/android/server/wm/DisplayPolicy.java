@@ -231,6 +231,7 @@ public class DisplayPolicy {
     private final ScreenshotHelper mScreenshotHelper;
 
     private static boolean SCROLL_BOOST_SS_ENABLE = false;
+    private static boolean isLowRAM = false;
 
     /*
      * @hide
@@ -441,20 +442,34 @@ public class DisplayPolicy {
         }
     }
 
-    private boolean isTopAppGame() {
-        boolean isGame = false;
+    private String getAppPackageName() {
+        String currentPackage;
         try {
             ActivityManager.RunningTaskInfo rti = ActivityManager.getService().getFilteredTasks(1,
-                                    ACTIVITY_TYPE_RECENTS, WINDOWING_MODE_UNDEFINED).get(0);
-            ApplicationInfo ai = mContext.getPackageManager().getApplicationInfo(
-                        rti.topActivity.getPackageName(), 0);
-            if(ai != null) {
-                isGame = (ai.category == ApplicationInfo.CATEGORY_GAME) ||
-                        ((ai.flags & ApplicationInfo.FLAG_IS_GAME) ==
-                            ApplicationInfo.FLAG_IS_GAME);
-            }
+                  ACTIVITY_TYPE_RECENTS, WINDOWING_MODE_UNDEFINED).get(0);
+            currentPackage = rti.topActivity.getPackageName();
         } catch (Exception e) {
-            return false;
+            currentPackage = null;
+        }
+        return currentPackage;
+    }
+
+    private boolean isTopAppGame(String currentPackage, BoostFramework BoostType) {
+        boolean isGame = false;
+        if (isLowRAM) {
+            try {
+                ApplicationInfo ai = mContext.getPackageManager().getApplicationInfo(currentPackage, 0);
+                if(ai != null) {
+                    isGame = (ai.category == ApplicationInfo.CATEGORY_GAME) ||
+                            ((ai.flags & ApplicationInfo.FLAG_IS_GAME) ==
+                                ApplicationInfo.FLAG_IS_GAME);
+                }
+            } catch (Exception e) {
+                return false;
+            }
+        } else {
+            isGame = (BoostType.perfGetFeedback(BoostFramework.VENDOR_FEEDBACK_WORKLOAD_TYPE,
+                      currentPackage) == BoostFramework.WorkloadType.GAME);
         }
         return isGame;
     }
@@ -492,6 +507,7 @@ public class DisplayPolicy {
 
         if (mPerf != null)
                 SCROLL_BOOST_SS_ENABLE = Boolean.parseBoolean(mPerf.perfGetProp("vendor.perf.gestureflingboost.enable", "true"));
+        isLowRAM = SystemProperties.getBoolean("ro.config.low_ram", false);
 
         final Looper looper = UiThread.getHandler().getLooper();
         mHandler = new PolicyHandler(looper);
@@ -553,9 +569,12 @@ public class DisplayPolicy {
 
                     @Override
                     public void onVerticalFling(int duration) {
-                        String currentPackage = mContext.getPackageName();
-                        boolean isGame = isTopAppGame();
-                        if (SCROLL_BOOST_SS_ENABLE && !isGame) {
+                        String currentPackage = getAppPackageName();
+                        if (currentPackage == null) {
+                            Slog.e(TAG, "Error: package name null");
+                            return;
+                        }
+                        if (SCROLL_BOOST_SS_ENABLE) {
                             if (mPerfBoostFling == null) {
                                 mPerfBoostFling = new BoostFramework();
                                 mIsPerfBoostFlingAcquired = false;
@@ -564,18 +583,23 @@ public class DisplayPolicy {
                                 Slog.e(TAG, "Error: boost object null");
                                 return;
                             }
-
-                            mPerfBoostFling.perfHint(BoostFramework.VENDOR_HINT_SCROLL_BOOST,
-                                currentPackage, duration + 160, BoostFramework.Scroll.VERTICAL);
-                            mIsPerfBoostFlingAcquired = true;
+                            boolean isGame = isTopAppGame(currentPackage, mPerfBoostFling);
+                            if (!isGame) {
+                                mPerfBoostFling.perfHint(BoostFramework.VENDOR_HINT_SCROLL_BOOST,
+                                    currentPackage, duration + 160, BoostFramework.Scroll.VERTICAL);
+                                mIsPerfBoostFlingAcquired = true;
+                           }
                         }
                     }
 
                     @Override
                     public void onHorizontalFling(int duration) {
-                        String currentPackage = mContext.getPackageName();
-                        boolean isGame = isTopAppGame();
-                        if (SCROLL_BOOST_SS_ENABLE && !isGame) {
+                        String currentPackage = getAppPackageName();
+                        if (currentPackage == null) {
+                            Slog.e(TAG, "Error: package name null");
+                            return;
+                        }
+                        if (SCROLL_BOOST_SS_ENABLE) {
                             if (mPerfBoostFling == null) {
                                 mPerfBoostFling = new BoostFramework();
                                 mIsPerfBoostFlingAcquired = false;
@@ -584,16 +608,23 @@ public class DisplayPolicy {
                                 Slog.e(TAG, "Error: boost object null");
                                 return;
                             }
-                            mPerfBoostFling.perfHint(BoostFramework.VENDOR_HINT_SCROLL_BOOST,
-                                currentPackage, duration + 160, BoostFramework.Scroll.HORIZONTAL);
-                            mIsPerfBoostFlingAcquired = true;
+                            boolean isGame = isTopAppGame(currentPackage, mPerfBoostFling);
+                            if (!isGame) {
+                                mPerfBoostFling.perfHint(BoostFramework.VENDOR_HINT_SCROLL_BOOST,
+                                    currentPackage, duration + 160, BoostFramework.Scroll.HORIZONTAL);
+                                mIsPerfBoostFlingAcquired = true;
+                            }
                         }
                     }
 
                     @Override
                     public void onScroll(boolean started) {
-                        String currentPackage = mContext.getPackageName();
-                        boolean isGame = isTopAppGame();
+                        String currentPackage = getAppPackageName();
+                        if (currentPackage == null) {
+                            Slog.e(TAG, "Error: package name null");
+                            return;
+                        }
+                        boolean isGame;
                         if (mPerfBoostDrag == null) {
                             mPerfBoostDrag = new BoostFramework();
                         }
@@ -601,7 +632,7 @@ public class DisplayPolicy {
                             Slog.e(TAG, "Error: boost object null");
                             return;
                         }
-                        if (SCROLL_BOOST_SS_ENABLE && !isGame) {
+                        if (SCROLL_BOOST_SS_ENABLE) {
                             if (mPerfBoostPrefling == null) {
                                 mPerfBoostPrefling = new BoostFramework();
                             }
@@ -609,9 +640,13 @@ public class DisplayPolicy {
                                 Slog.e(TAG, "Error: boost object null");
                                 return;
                             }
-                            mPerfBoostPrefling.perfHint(BoostFramework.VENDOR_HINT_SCROLL_BOOST,
-                                    currentPackage, -1, BoostFramework.Scroll.PREFILING);
+                            isGame = isTopAppGame(currentPackage, mPerfBoostPrefling);
+                            if (!isGame) {
+                                mPerfBoostPrefling.perfHint(BoostFramework.VENDOR_HINT_SCROLL_BOOST,
+                                        currentPackage, -1, BoostFramework.Scroll.PREFILING);
+                            }
                         }
+                        isGame = isTopAppGame(currentPackage, mPerfBoostDrag);
                         if (!isGame && started) {
                             mPerfBoostDrag.perfHint(BoostFramework.VENDOR_HINT_DRAG_BOOST,
                                             currentPackage, -1, 1);
