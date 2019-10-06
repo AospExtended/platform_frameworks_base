@@ -97,7 +97,8 @@
     <!-- Running service button -->
     <string name="accessibility_quick_settings_running_services">Open Running Services screen.</string>
 
-    <!-- SystemUI tuner -->
-    <string name="systemui_tuner_navbar_title">Stock navbar</string>
+    <!-- Navbar -->
+    <string name="systemui_tuner_navbar_title">Layout</string>
+    <string name="navigation_bar_format_title">Navbar format</string>
 </resources>
 
