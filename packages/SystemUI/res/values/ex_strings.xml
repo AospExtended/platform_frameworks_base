@@ -131,7 +131,8 @@
     <string name="dlg_cancel">@android:string/cancel</string>
     <string name="guts_force_close_app">Close App</string>
 
-    <!-- SystemUI tuner -->
-    <string name="systemui_tuner_navbar_title">Stock navbar</string>
+    <!-- Navbar -->
+    <string name="systemui_tuner_navbar_title">Layout</string>
+    <string name="navigation_bar_format_title">Navbar format</string>
 </resources>
 
