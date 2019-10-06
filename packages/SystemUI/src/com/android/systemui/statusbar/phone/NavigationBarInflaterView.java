@@ -39,12 +39,14 @@ import com.android.systemui.recents.OverviewProxyService;
 import com.android.systemui.shared.system.QuickStepContract;
 import com.android.systemui.statusbar.phone.ReverseLinearLayout.ReverseRelativeLayout;
 import com.android.systemui.statusbar.policy.KeyButtonView;
+import com.android.systemui.tuner.TunerService;
+import com.android.systemui.tuner.TunerService.Tunable;
 
 import java.io.PrintWriter;
 import java.util.Objects;
 
 public class NavigationBarInflaterView extends FrameLayout
-        implements NavigationModeController.ModeChangedListener {
+        implements NavigationModeController.ModeChangedListener, Tunable {
 
     private static final String TAG = "NavBarInflater";
 
@@ -148,13 +150,25 @@ public class NavigationBarInflaterView extends FrameLayout
     }
 
     @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        Dependency.get(TunerService.class).addTunable(this, NAV_BAR_VIEWS);
+    }
+
+    @Override
     protected void onDetachedFromWindow() {
         Dependency.get(NavigationModeController.class).removeListener(this);
         super.onDetachedFromWindow();
     }
 
-    public void onLikelyDefaultLayoutChange() {
+    @Override
+    public void onTuningChanged(String key, String newValue) {
+        if (NAV_BAR_VIEWS.equals(key)) {
+            onLikelyDefaultLayoutChange();
+        }
+    }
 
+    public void onLikelyDefaultLayoutChange() {
         // Reevaluate new layout
         final String newValue = getDefaultLayout();
         if (!Objects.equals(mCurrentLayout, newValue)) {
