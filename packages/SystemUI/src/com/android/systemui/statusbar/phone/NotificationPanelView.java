@@ -3172,6 +3172,10 @@ public class NotificationPanelView extends PanelView implements
         mAnimateNextPositionUpdate = true;
     }
 
+    public void setPulseReason(int reason) {
+        mNotificationStackScroller.setPulseReason(reason);
+    }
+
     /**
      * Panel and QS expansion callbacks.
      */
