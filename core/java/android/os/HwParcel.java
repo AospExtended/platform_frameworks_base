@@ -24,6 +24,8 @@ import android.compat.annotation.UnsupportedAppUsage;
 
 import dalvik.annotation.optimization.FastNative;
 
+import dalvik.annotation.optimization.FastNative;
+
 import libcore.util.NativeAllocationRegistry;
 
 import java.lang.annotation.Retention;
