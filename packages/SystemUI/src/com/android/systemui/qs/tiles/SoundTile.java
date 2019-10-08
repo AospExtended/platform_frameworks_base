@@ -37,7 +37,6 @@ import com.android.systemui.qs.QSHost;
 import com.android.systemui.plugins.qs.QSTile.State;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
 import com.android.systemui.R;
-import com.android.systemui.statusbar.policy.ZenModeController;
 import com.android.systemui.dagger.qualifiers.Background;
 import com.android.systemui.dagger.qualifiers.Main;
 import com.android.systemui.plugins.ActivityStarter;
@@ -49,7 +48,6 @@ import javax.inject.Inject;
 
 public class SoundTile extends QSTileImpl<State> {
 
-    private final ZenModeController mZenController;
     private final AudioManager mAudioManager;
 
     private boolean mListening = false;
@@ -70,7 +68,6 @@ public class SoundTile extends QSTileImpl<State> {
     ) {
         super(host, backgroundLooper, mainHandler, falsingManager, metricsLogger,
                 statusBarStateController, activityStarter, qsLogger);
-        mZenController = Dependency.get(ZenModeController.class);
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
         mReceiver = new BroadcastReceiver() {
             @Override
@@ -128,11 +125,10 @@ public class SoundTile extends QSTileImpl<State> {
                 break;
             case AudioManager.RINGER_MODE_VIBRATE:
                 newState = AudioManager.RINGER_MODE_SILENT;
-                mZenController.setZen(Global.ZEN_MODE_ALARMS, null, TAG);
+                mAudioManager.setRingerModeInternal(newState);
                 break;
             case AudioManager.RINGER_MODE_SILENT:
                 newState = AudioManager.RINGER_MODE_NORMAL;
-                mZenController.setZen(Global.ZEN_MODE_OFF, null, TAG);
                 mAudioManager.setRingerModeInternal(newState);
                 break;
             default:
@@ -164,7 +160,7 @@ public class SoundTile extends QSTileImpl<State> {
                 break;
             case AudioManager.RINGER_MODE_SILENT:
                 state.icon = ResourceIcon.get(R.drawable.ic_qs_ringer_silent);
-                state.label = mContext.getString(R.string.quick_settings_sound_dnd);
+                state.label = mContext.getString(R.string.quick_settings_sound_mute);
                 state.state = Tile.STATE_ACTIVE;
                 break;
             default:
