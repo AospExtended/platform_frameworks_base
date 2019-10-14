@@ -64,6 +64,13 @@ public class CarrierLabel extends TextView implements DarkReceiver {
     public CarrierLabel(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         mContext = context;
+        /* Force carrier label to the lockscreen. This helps us avoid
+        the carrier label on the statusbar if for whatever reason
+        the user changes notch overlays */
+        if (AEXUtils.hasNotch(mContext)) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_SHOW_CARRIER, 1);
+        }
     }
 
     @Override
