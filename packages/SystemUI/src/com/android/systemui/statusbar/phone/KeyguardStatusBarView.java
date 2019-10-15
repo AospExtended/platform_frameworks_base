@@ -27,7 +27,10 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
+import android.os.UserHandle;
 import android.os.UserManager;
+import android.provider.Settings;
 import android.util.AttributeSet;
 import android.util.Pair;
 import android.util.TypedValue;
@@ -64,6 +67,8 @@ public class KeyguardStatusBarView extends RelativeLayout {
 
     private boolean mShowPercentAvailable;
     private boolean mBatteryCharging;
+
+    private int mShowCarrierLabel;
 
     private TextView mCarrierLabel;
     private ImageView mMultiUserAvatar;
@@ -102,6 +107,12 @@ public class KeyguardStatusBarView extends RelativeLayout {
     public KeyguardStatusBarView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mUserManager = UserManager.get(getContext());
+        showStatusBarCarrier();
+    }
+
+    public void showStatusBarCarrier() {
+        mShowCarrierLabel = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.STATUS_BAR_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -184,7 +195,7 @@ public class KeyguardStatusBarView extends RelativeLayout {
                 R.dimen.rounded_corner_content_padding);
     }
 
-    private void updateVisibilities() {
+    public void updateVisibilities() {
         if (mMultiUserAvatar.getParent() != mStatusIconArea
                 && !mKeyguardUserSwitcherEnabled) {
             if (mMultiUserAvatar.getParent() != null) {
@@ -210,6 +221,13 @@ public class KeyguardStatusBarView extends RelativeLayout {
             }
         }
         mBatteryView.setForceShowPercent(mBatteryCharging && mShowPercentAvailable);
+        if (mCarrierLabel != null) {
+            if (mShowCarrierLabel == 1 || mShowCarrierLabel == 3) {
+                mCarrierLabel.setVisibility(View.VISIBLE);
+            } else {
+                mCarrierLabel.setVisibility(View.GONE);
+            }
+        }
     }
 
     private void updateSystemIconsLayoutParams() {

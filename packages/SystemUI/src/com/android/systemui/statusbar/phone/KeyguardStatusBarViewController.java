@@ -24,7 +24,11 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.hardware.biometrics.BiometricSourceType;
+import android.net.Uri;
+import android.os.Handler;
+import android.provider.Settings;
 import android.util.MathUtils;
 import android.view.View;
 
@@ -282,6 +286,8 @@ public class KeyguardStatusBarViewController extends ViewController<KeyguardStat
     protected void onViewAttached() {
         mConfigurationController.addCallback(mConfigurationListener);
         mAnimationScheduler.addCallback(mAnimationCallback);
+        getContext().getContentResolver().registerContentObserver(Settings.System.getUriFor(
+		        Settings.System.STATUS_BAR_SHOW_CARRIER), false, mObserver);
         mUserInfoController.addCallback(mOnUserInfoChangedListener);
         mStatusBarStateController.addCallback(mStatusBarStateListener);
         mKeyguardUpdateMonitor.registerCallback(mKeyguardUpdateMonitorCallback);
@@ -346,6 +352,14 @@ public class KeyguardStatusBarViewController extends ViewController<KeyguardStat
     public void updateTopClipping(int notificationPanelTop) {
         mView.setTopClipping(notificationPanelTop - mView.getTop());
     }
+
+    public ContentObserver mObserver = new ContentObserver(new Handler()) {
+        public void onChange(boolean selfChange, Uri uri) {
+            mView.showStatusBarCarrier();
+            mView.updateVisibilities();
+        }
+    };
+
 
     /** Sets the dozing state. */
     public void setDozing(boolean dozing) {

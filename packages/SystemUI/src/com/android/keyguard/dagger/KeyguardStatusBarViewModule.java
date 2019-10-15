@@ -20,6 +20,7 @@ import com.android.keyguard.CarrierText;
 import com.android.systemui.R;
 import com.android.systemui.battery.BatteryMeterView;
 import com.android.systemui.statusbar.phone.KeyguardStatusBarView;
+import com.android.systemui.aospextended.carrierlabel.CarrierLabel;
 
 import dagger.Module;
 import dagger.Provides;
@@ -29,7 +30,7 @@ import dagger.Provides;
 public abstract class KeyguardStatusBarViewModule {
     @Provides
     @KeyguardStatusBarViewScope
-    static CarrierText getCarrierText(KeyguardStatusBarView view) {
+    static CarrierLabel getCarrierText(KeyguardStatusBarView view) {
         return view.findViewById(R.id.keyguard_carrier_text);
     }
 
