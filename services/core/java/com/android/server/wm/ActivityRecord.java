@@ -1558,10 +1558,6 @@ public final class ActivityRecord extends ConfigurationContainer {
         if (stopped) {
             clearOptionsLocked();
         }
-
-        if (mAtmService != null) {
-            mAtmService.getTaskChangeNotificationController().notifyTaskStackChanged();
-        }
     }
 
     UriPermissionOwner getUriPermissionsLocked() {
