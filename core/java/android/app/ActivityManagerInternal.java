@@ -345,4 +345,7 @@ public abstract class ActivityManagerInternal {
      * Unregisters the specified {@code processObserver}.
      */
     public abstract void unregisterProcessObserver(IProcessObserver processObserver);
+
+    // Starts a process as empty.
+    public abstract int startActivityAsUserEmpty(Bundle options);
 }
