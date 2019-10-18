@@ -4865,7 +4865,6 @@ public final class Settings {
         private static final Validator CUSTOM_DEVICE_FEATURE_SETTINGS_VALIDATOR =
                 ANY_STRING_VALIDATOR;
 
-
         /**
          * Apps to skip for Pulse
          * @hide
