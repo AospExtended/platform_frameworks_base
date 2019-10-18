@@ -239,9 +239,6 @@
 
     <protected-broadcast android:name="android.intent.action.SCREEN_STATE_SERVICE_UPDATE" />
 
-    <!-- Weather on lockscreen -->
-    <uses-permission android:name="org.pixelexperience.weather.client.READ_WEATHER" />
-
     <!-- Visualizer -->
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />

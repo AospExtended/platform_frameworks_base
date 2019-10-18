@@ -25,7 +25,6 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.database.ContentObserver;
 import android.graphics.drawable.Icon;
 import android.icu.text.DateFormat;
 import android.icu.text.DisplayContext;
@@ -34,7 +33,6 @@ import android.os.Handler;
 import android.provider.Settings;
 import android.service.notification.ZenModeConfig;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.systemui.R;
@@ -53,18 +51,15 @@ import androidx.slice.builders.ListBuilder;
 import androidx.slice.builders.ListBuilder.RowBuilder;
 import androidx.slice.builders.SliceAction;
 
-import com.android.internal.util.custom.weather.WeatherClient;
-import com.android.internal.util.aospextended.AEXUtils;
 
 /**
  * Simple Slice provider that shows the current date.
  */
 public class KeyguardSliceProvider extends SliceProvider implements
-        NextAlarmController.NextAlarmChangeCallback, ZenModeController.Callback, WeatherClient.WeatherObserver {
+        NextAlarmController.NextAlarmChangeCallback, ZenModeController.Callback {
 
     public static final String KEYGUARD_SLICE_URI = "content://com.android.systemui.keyguard/main";
     public static final String KEYGUARD_DATE_URI = "content://com.android.systemui.keyguard/date";
-    public static final String KEYGUARD_WEATHER_URI = "content://com.android.systemui.keyguard/weather";
     public static final String KEYGUARD_NEXT_ALARM_URI =
             "content://com.android.systemui.keyguard/alarm";
     public static final String KEYGUARD_DND_URI = "content://com.android.systemui.keyguard/dnd";
@@ -79,7 +74,6 @@ public class KeyguardSliceProvider extends SliceProvider implements
 
     protected final Uri mSliceUri;
     protected final Uri mDateUri;
-    protected final Uri mWeatherUri;
     protected final Uri mAlarmUri;
     protected final Uri mDndUri;
     private final Date mCurrentTime = new Date();
@@ -128,7 +122,6 @@ public class KeyguardSliceProvider extends SliceProvider implements
         mHandler = handler;
         mSliceUri = Uri.parse(KEYGUARD_SLICE_URI);
         mDateUri = Uri.parse(KEYGUARD_DATE_URI);
-        mWeatherUri = Uri.parse(KEYGUARD_WEATHER_URI);
         mAlarmUri = Uri.parse(KEYGUARD_NEXT_ALARM_URI);
         mDndUri = Uri.parse(KEYGUARD_DND_URI);
     }
@@ -137,7 +130,6 @@ public class KeyguardSliceProvider extends SliceProvider implements
     public Slice onBindSlice(Uri sliceUri) {
         ListBuilder builder = new ListBuilder(getContext(), mSliceUri);
         builder.addRow(new RowBuilder(builder, mDateUri).setTitle(mLastText));
-        addWeather(builder);
         addNextAlarm(builder);
         addZenMode(builder);
         addPrimaryAction(builder);
@@ -190,34 +182,6 @@ public class KeyguardSliceProvider extends SliceProvider implements
         return mZenModeController.getZen() != Settings.Global.ZEN_MODE_OFF;
     }
 
-    private WeatherClient mWeatherClient;
-    private WeatherClient.WeatherInfo mWeatherInfo;
-
-    protected void addWeather(ListBuilder builder) {
-        if (mWeatherInfo == null || mWeatherInfo.getStatus() != WeatherClient.WEATHER_UPDATE_SUCCESS) {
-            return;
-        }
-        if (mWeatherInfo.getWeatherConditionImage() == 0){
-            Log.d("WeatherClient", "addWeather: Not adding because weather condition image is unknown");
-            return;
-        }
-        int temperature = mWeatherInfo.getTemperature(!AEXUtils.mccCheck(getContext()));
-        String temperatureText = AEXUtils.mccCheck(getContext()) ?
-                Integer.toString(temperature) + "°F" :
-                Integer.toString(temperature) + "°C";
-        Icon conditionIcon = Icon.createWithResource(getContext(), mWeatherInfo.getWeatherConditionImage());
-        RowBuilder weatherRowBuilder = new RowBuilder(builder, mWeatherUri)
-                .setTitle(temperatureText)
-                .addEndItem(conditionIcon);
-        builder.addRow(weatherRowBuilder);
-    }
-
-    @Override
-    public void onWeatherUpdated(WeatherClient.WeatherInfo weatherInfo) {
-        mWeatherInfo = weatherInfo;
-        mContentResolver.notifyChange(mSliceUri, null /* observer */);
-    }
-
     @Override
     public boolean onCreateSliceProvider() {
         mAlarmManager = getContext().getSystemService(AlarmManager.class);
@@ -226,8 +190,6 @@ public class KeyguardSliceProvider extends SliceProvider implements
         mNextAlarmController.addCallback(this);
         mZenModeController = new ZenModeControllerImpl(getContext(), mHandler);
         mZenModeController.addCallback(this);
-        mWeatherClient = new WeatherClient(getContext());
-        mWeatherClient.addObserver(this, false /*withQuery*/);
         mDatePattern = getContext().getString(R.string.system_ui_aod_date_pattern);
         registerClockUpdate();
         updateClock();
