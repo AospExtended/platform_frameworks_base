@@ -80,7 +80,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.android.internal.util.custom.weather.WeatherClient;
 
 /**
  * This class is the policy for granting runtime permissions to
@@ -980,12 +979,6 @@ public final class DefaultPermissionGrantPolicy {
         PackageParser.Package pixelwallsPackage = getDefaultProviderAuthorityPackage("com.google.android.apps.wallpaper", userId);
         if (pixelwallsPackage != null) {
             grantRuntimePermissions(pixelwallsPackage, STORAGE_PERMISSIONS, true, userId);
-        }
-
-        // Weather client
-        PackageParser.Package weatherClientPackage = getSystemPackage(WeatherClient.SERVICE_PACKAGE);
-        if (weatherClientPackage != null && doesPackageSupportRuntimePermissions(weatherClientPackage)) {
-            grantRuntimePermissions(weatherClientPackage, LOCATION_PERMISSIONS, userId);
         }
 
         if (mPermissionGrantedCallback != null) {

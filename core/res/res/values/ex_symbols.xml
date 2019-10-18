@@ -113,26 +113,6 @@
     <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
     <java-symbol name="config_cleanupUnusedFingerprints" type="bool" />
 
-    <!-- Weather icons -->
-    <java-symbol name="weather_clear_night" type="drawable" />
-    <java-symbol name="weather_cloudy" type="drawable" />
-    <java-symbol name="weather_foggy" type="drawable" />
-    <java-symbol name="weather_isolated_scattered_thunderstorms_night" type="drawable" />
-    <java-symbol name="weather_isolated_scattered_thunderstorms" type="drawable" />
-    <java-symbol name="weather_mostly_clear_night" type="drawable" />
-    <java-symbol name="weather_mostly_cloudy_night" type="drawable" />
-    <java-symbol name="weather_mostly_cloudy" type="drawable" />
-    <java-symbol name="weather_mostly_sunny" type="drawable" />
-    <java-symbol name="weather_partly_cloudy_night" type="drawable" />
-    <java-symbol name="weather_partly_cloudy" type="drawable" />
-    <java-symbol name="weather_rain" type="drawable" />
-    <java-symbol name="weather_scattered_showers_night" type="drawable" />
-    <java-symbol name="weather_scattered_showers" type="drawable" />
-    <java-symbol name="weather_snow" type="drawable" />
-    <java-symbol name="weather_sunny" type="drawable" />
-    <java-symbol name="weather_thunderstorms" type="drawable" />
-    <java-symbol name="weather_windy" type="drawable" />
-
     <!-- Whether device ignores the RSSNR signal implementation -->
     <java-symbol name="config_ignoreRssnrSignalLevel" type="bool" />
 
