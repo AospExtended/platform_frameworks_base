@@ -36,8 +36,8 @@ public class SystemUIGoogleFactory extends SystemUIFactory {
             LockscreenWallpaper lockscreenWallpaper,
             TriConsumer<ScrimState, Float, GradientColors> scrimStateListener,
             Consumer<Integer> scrimVisibleListener, DozeParameters dozeParameters,
-            AlarmManager alarmManager) {
+            AlarmManager alarmManager, keyguardMonitor) {
         return new LiveWallpaperScrimController(scrimBehind, scrimInFront, lockscreenWallpaper,
-                scrimStateListener, scrimVisibleListener, dozeParameters, alarmManager);
+                scrimStateListener, scrimVisibleListener, dozeParameters, alarmManager, keyguardMonitor);
     }
 }

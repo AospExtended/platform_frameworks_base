@@ -31,7 +31,7 @@ public class LiveWallpaperScrimController extends ScrimController {
     }
 
     public LiveWallpaperScrimController(ScrimView scrimView, ScrimView scrimView2, LockscreenWallpaper lockscreenWallpaper, TriConsumer<ScrimState, Float, GradientColors> triConsumer, Consumer<Integer> consumer, DozeParameters dozeParameters, AlarmManager alarmManager) {
-        super(scrimView, scrimView2, triConsumer, consumer, dozeParameters, alarmManager);
+        super(scrimView, scrimView2, triConsumer, consumer, dozeParameters, alarmManager, keyguardMonitor);
         mLockscreenWallpaper = lockscreenWallpaper;
     }
 
