@@ -13,6 +13,7 @@ import com.android.systemui.statusbar.phone.DozeParameters;
 import com.android.systemui.statusbar.phone.ScrimController;
 import com.android.systemui.statusbar.phone.ScrimState;
 import com.android.systemui.statusbar.phone.LockscreenWallpaper;
+import com.android.systemui.statusbar.policy.KeyguardMonitor;
 
 import java.util.function.Consumer;
 
@@ -36,8 +37,8 @@ public class SystemUIGoogleFactory extends SystemUIFactory {
             LockscreenWallpaper lockscreenWallpaper,
             TriConsumer<ScrimState, Float, GradientColors> scrimStateListener,
             Consumer<Integer> scrimVisibleListener, DozeParameters dozeParameters,
-            AlarmManager alarmManager) {
+            AlarmManager alarmManager, KeyguardMonitor keyguardMonitor) {
         return new LiveWallpaperScrimController(scrimBehind, scrimInFront, lockscreenWallpaper,
-                scrimStateListener, scrimVisibleListener, dozeParameters, alarmManager);
+                scrimStateListener, scrimVisibleListener, dozeParameters, alarmManager, keyguardMonitor);
     }
 }

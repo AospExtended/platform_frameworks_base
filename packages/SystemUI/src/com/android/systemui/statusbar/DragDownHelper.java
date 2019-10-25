@@ -123,7 +123,7 @@ public class DragDownHelper implements Gefingerpoken {
                     mInitialTouchY = y;
                     mInitialTouchX = x;
                     mDragDownCallback.onTouchSlopExceeded();
-                    return true;
+                    return mStartingChild != null || mDragDownCallback.isDragDownAnywhereEnabled();
                 }
                 break;
         }
@@ -193,7 +193,11 @@ public class DragDownHelper implements Gefingerpoken {
         if (mStartingChild == null) {
             mStartingChild = findView(x, y);
             if (mStartingChild != null) {
-                mCallback.setUserLockedChild(mStartingChild, true);
+                if (mDragDownCallback.isDragDownEnabledForView(mStartingChild)) {
+                    mCallback.setUserLockedChild(mStartingChild, true);
+                } else {
+                    mStartingChild = null;
+                }
             }
         }
     }
@@ -268,6 +272,10 @@ public class DragDownHelper implements Gefingerpoken {
         return mDraggingDown;
     }
 
+    public boolean isDragDownEnabled() {
+        return mDragDownCallback.isDragDownEnabledForView(null);
+    }
+
     public interface DragDownCallback {
 
         /**
@@ -284,6 +292,17 @@ public class DragDownHelper implements Gefingerpoken {
         void onTouchSlopExceeded();
         void setEmptyDragAmount(float amount);
         boolean isFalsingCheckNeeded();
+
+        /**
+         * Is dragging down enabled on a given view
+         * @param view The view to check or {@code null} to check if it's enabled at all
+         */
+        boolean isDragDownEnabledForView(ExpandableView view);
+
+        /**
+         * @return if drag down is enabled anywhere, not just on selected views.
+         */
+        boolean isDragDownAnywhereEnabled();
     }
 
     public void updateDoubleTapToSleep(boolean updateDoubleTapToSleep) {
