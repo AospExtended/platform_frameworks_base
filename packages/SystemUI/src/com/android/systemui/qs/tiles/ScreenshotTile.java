@@ -105,16 +105,17 @@ public class ScreenshotTile extends QSTileImpl<State> {
 
     @Override
     protected void handleUpdateState(State state, Object arg) {
+        state.label = mContext.getString(R.string.quick_settings_screenshot_label);
         if (mRegion) {
-            state.label = mContext.getString(R.string.quick_settings_region_screenshot_label);
+            state.secondaryLabel = mContext.getString(R.string.quick_settings_region_screenshot_label);
             state.icon = ResourceIcon.get(R.drawable.ic_qs_region_screenshot);
-            state.contentDescription =  mContext.getString(
+            state.contentDescription = mContext.getString(
                     R.string.quick_settings_region_screenshot_label);
         } else {
-            state.label = mContext.getString(R.string.quick_settings_screenshot_label);
+            state.secondaryLabel = mContext.getString(R.string.quick_settings_full_screenshot_label);
             state.icon = ResourceIcon.get(R.drawable.ic_qs_screenshot);
-            state.contentDescription =  mContext.getString(
-                    R.string.quick_settings_screenshot_label);
+            state.contentDescription = mContext.getString(
+                    R.string.quick_settings_full_screenshot_label);
         }
         state.secondaryLabel = mContext.getString(R.string.quick_settings_tile_long_press);
     }
