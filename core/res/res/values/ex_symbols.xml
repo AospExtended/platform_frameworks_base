@@ -80,4 +80,6 @@
     <java-symbol type="bool" name="config_haveHigherAspectRatioScreen" />
     <java-symbol type="dimen" name="config_screenAspectRatio" />
 
+    <!-- Custom notification light -->
+    <java-symbol type="bool" name="config_multicolorled" />
 </resources>
