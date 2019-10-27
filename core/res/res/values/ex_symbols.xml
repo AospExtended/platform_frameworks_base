@@ -78,4 +78,12 @@
 
     <!-- Home button wake -->
     <java-symbol type="bool" name="config_HomeWakeButton" />
+
+    <!-- Custom Battery light -->
+    <java-symbol type="bool" name="config_intrusiveBatteryLed" />
+    <java-symbol type="bool" name="config_multiColorBatteryLed" />
+    <java-symbol type="bool" name="config_ledCanPulse" />
+
+    <!-- Custom notification light -->
+    <java-symbol type="bool" name="config_multicolorled" />
 </resources>
