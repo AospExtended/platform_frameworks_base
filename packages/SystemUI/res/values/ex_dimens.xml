@@ -34,4 +34,7 @@
 
     <!-- Volume panel -->
     <dimen name="volume_dialog_panel_transparent_padding_left">20dp</dimen>
+
+    <!-- Screenrecord UI -->
+    <dimen name="screenrecord_dot_size">48dp</dimen>
 </resources>
