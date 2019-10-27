@@ -40,4 +40,7 @@
     <dimen name="global_screenshot_selector_corner_width">8dp</dimen>
     <dimen name="global_screenshot_selector_touch_width">30dp</dimen>
 
+    <!-- Screenrecord UI -->
+    <dimen name="screenrecord_dot_size">48dp</dimen>
+
 </resources>
