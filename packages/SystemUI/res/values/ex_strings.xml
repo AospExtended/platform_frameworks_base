@@ -182,5 +182,7 @@
     <!-- Running service button -->
     <string name="accessibility_quick_settings_running_services">Open Running Services screen.</string>
 
+    <!-- Pocket Lock -->
+    <string name="pocket_lock_message_long_press">Press and hold power button to unlock</string>
 </resources>
 
