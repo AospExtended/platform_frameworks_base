@@ -200,5 +200,7 @@
     <string name="screenrecord_lowquality_label">Lower quality for smaller file size</string>
     <string name="screenrecord_longer_timeout_switch_label">Bigger file size limit\nLimit recording size to 15GiB</string>
 
+    <!-- Pocket Lock -->
+    <string name="pocket_lock_message_long_press">Press and hold power button to unlock</string>
 </resources>
 
