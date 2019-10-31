@@ -164,5 +164,6 @@
     <string name="screenrecord_taps_title">Show touches on screen</string>
     <string name="screenrecord_stopdot_title">Show stop dot</string>
     <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
+    <string name="screenrecorder_title_tile">Screenrecord</string>
 
 </resources>
