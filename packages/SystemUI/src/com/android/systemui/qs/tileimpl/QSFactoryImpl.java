@@ -60,6 +60,7 @@ import com.android.systemui.util.leak.GarbageMonitor;
 import com.android.systemui.qs.tiles.CaffeineTile;
 import com.android.systemui.qs.tiles.AmbientDisplayTile;
 import com.android.systemui.qs.tiles.UsbTetherTile;
+import com.android.systemui.qs.tiles.ScreenRecordTile;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -97,6 +98,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<FPSInfoTile> mFPSInfoTileProvider;
     private final Provider<MusicTile> mMusicTileProvider;
     private final Provider<DataSwitchTile> mDataSwitchTileProvider;
+    private final Provider<ScreenRecordTile> mScreenRecordTileProvider;
 
     private QSTileHost mHost;
 
@@ -127,7 +129,8 @@ public class QSFactoryImpl implements QSFactory {
             Provider<FPSInfoTile> fpsInfoTileProvider,
             Provider<AODTile> aodTileProvider,
             Provider<MusicTile> musicTileProvider,
-            Provider<DataSwitchTile> dataSwitchTileProvider) {
+            Provider<DataSwitchTile> dataSwitchTileProvider,
+            Provider<ScreenRecordTile> screenRecordTileProvider) {
         mWifiTileProvider = wifiTileProvider;
         mBluetoothTileProvider = bluetoothTileProvider;
         mCellularTileProvider = cellularTileProvider;
@@ -155,6 +158,7 @@ public class QSFactoryImpl implements QSFactory {
         mFPSInfoTileProvider = fpsInfoTileProvider;
         mMusicTileProvider = musicTileProvider;
         mDataSwitchTileProvider = dataSwitchTileProvider;
+        mScreenRecordTileProvider = screenRecordTileProvider;
     }
 
     public void setHost(QSTileHost host) {
@@ -234,6 +238,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mMusicTileProvider.get();
             case "dataswitch":
                 return mDataSwitchTileProvider.get();
+            case "screenrecord":
+                return mScreenRecordTileProvider.get();
         }
 
         // Intent tiles.

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2019 Havoc-OS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportHeight="24"
+    android:viewportWidth="24">
+
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M15.5,7.3v9.3H3.8V7.3H15.5 M16.7,5h-14C2,5,1.5,5.5,1.5,6.2v11.7C1.5,18.5,2,19,2.7,19h14c0.6,0,1.2-0.5,1.2-1.2v-4.1 l4.7,4.7V5.6l-4.7,4.7V6.2C17.8,5.5,17.3,5,16.7,5z" />
+</vector>
