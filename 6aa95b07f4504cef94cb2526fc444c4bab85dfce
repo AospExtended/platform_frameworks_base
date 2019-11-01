@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c305a469_791c27d8",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/EdgeBackGestureHandler.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1000005
+      },
+      "writtenOn": "2019-11-01T02:33:01Z",
+      "side": 1,
+      "message": "It should be BACK_GESTURE_HEIGHT only.",
+      "revId": "6aa95b07f4504cef94cb2526fc444c4bab85dfce",
+      "serverId": "d5cc2900-f5de-4894-bcd1-c35edbbdd7bf",
+      "unresolved": true
+    }
+  ]
+}
