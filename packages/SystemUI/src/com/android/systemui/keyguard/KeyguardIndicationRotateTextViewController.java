@@ -183,10 +183,20 @@ public class KeyguardIndicationRotateTextViewController extends
     }
 
     /**
-     * @return true if there are available indications to show
+     * @return true if there are available non-resting indications to show.
      */
     public boolean hasIndications() {
+        if (hasIndication(INDICATION_TYPE_RESTING)) {
+            return mIndicationMessages.keySet().size() > 1;
+        }
         return mIndicationMessages.keySet().size() > 0;
+    }
+
+    /**
+     * @return true if there is an indication of the following type.
+     */
+    public boolean hasIndication(@IndicationType int type) {
+        return mIndicationMessages.containsKey(type);
     }
 
     /**
