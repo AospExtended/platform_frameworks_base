@@ -139,7 +139,5 @@
         <item name="android:textSize">14sp</item>
         <item name="android:maxLines">1</item>
         <item name="android:textColor">?attr/wallpaperTextColor</item>
-        <item name="android:shadowColor">@color/keyguard_shadow_color</item>
-        <item name="android:shadowRadius">?attr/shadowRadius</item>
     </style>
 </resources>
