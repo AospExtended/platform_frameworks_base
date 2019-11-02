@@ -923,7 +923,7 @@
     <dimen name="keyguard_lock_width">42dp</dimen>
     <dimen name="keyguard_lock_padding">20dp</dimen>
 
-    <dimen name="keyguard_indication_margin_bottom">32dp</dimen>
+    <dimen name="keyguard_indication_margin_bottom">16dp</dimen>
     <dimen name="lock_icon_margin_bottom">98dp</dimen>
 
     <!-- The text size for battery level -->
