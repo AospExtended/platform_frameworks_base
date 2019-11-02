@@ -40,7 +40,7 @@ import java.util.LinkedList;
 public class KeyguardIndicationTextView extends TextView {
     private static final long MSG_MIN_DURATION_MILLIS_DEFAULT = 1500;
     private long mNextAnimationTime = 0;
-    private boolean mAnimationsEnabled = true;
+    private boolean mAnimationsEnabled = false;
     private LinkedList<CharSequence> mMessages = new LinkedList<>();
     private LinkedList<KeyguardIndication> mKeyguardIndicationInfo = new LinkedList<>();
 
