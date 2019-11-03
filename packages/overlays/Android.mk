@@ -51,7 +51,31 @@ LOCAL_REQUIRED_MODULES := \
 	NavigationBarModeGesturalOverlay \
 	NavigationBarModeGesturalOverlayNarrowBack \
 	NavigationBarModeGesturalOverlayWideBack \
-	NavigationBarModeGesturalOverlayExtraWideBack
+	NavigationBarModeGesturalOverlayExtraWideBack \
+	AmberAccent \
+	BlueAccent \
+	BlueGreyAccent \
+	BrownAccent \
+	CyanAccent \
+	CandyRedAccent \
+	DeepOrangeAccent \
+	DeepPurpleAccent \
+	ExtendedGreenAccent \
+	ElegantGreenAccent \
+	GreyAccent \
+	IndigoAccent \
+	JadeGreenAccent \
+	LightBlueAccent \
+	LightGreenAccent \
+	LimeAccent \
+	OrangeAccent \
+	PaleBlueAccent \
+	PaleRedAccent \
+	PinkAccent \
+	RedAccent \
+	TealAccent \
+	WhiteAccent \
+	YellowAccent
 
 include $(BUILD_PHONY_PACKAGE)
 include $(CLEAR_VARS)
