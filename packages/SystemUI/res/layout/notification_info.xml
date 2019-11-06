@@ -328,7 +328,7 @@ asked for it -->
         <RelativeLayout
             android:id="@+id/bottom_buttons"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="60dp"
             android:gravity="center_vertical"
             android:paddingStart="4dp"
             android:paddingEnd="4dp"
@@ -340,6 +340,7 @@ asked for it -->
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:gravity="start|center_vertical"
+                android:paddingEnd="28dp"
                 android:minWidth="@dimen/notification_importance_toggle_size"
                 android:minHeight="@dimen/notification_importance_toggle_size"
                 android:maxWidth="200dp"
@@ -347,10 +348,13 @@ asked for it -->
             <TextView
                 android:id="@+id/notification_inspect_kill"
                 android:text="@string/guts_force_close_app"
-                android:gravity="start|center_vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="8dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/turn_off_notifications"
+                android:gravity="center_vertical"
+                android:paddingEnd="28dp"
+                android:minWidth="@dimen/notification_importance_toggle_size"
+                android:minHeight="@dimen/notification_importance_toggle_size"
                 style="@style/TextAppearance.NotificationInfo.Button"/>
             <TextView
                 android:id="@+id/done"
