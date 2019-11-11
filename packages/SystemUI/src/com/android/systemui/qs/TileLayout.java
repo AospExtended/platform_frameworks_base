@@ -95,6 +95,7 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
 
     protected void addTileView(TileRecord tile) {
         addView(tile.tileView);
+        tile.tileView.textVisibility();
     }
 
     @Override
@@ -133,14 +134,26 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
                         Settings.System.QS_ROWS_LANDSCAPE, 1,
                         UserHandle.USER_CURRENT));
         }
-        mCellHeight = mContext.getResources().getDimensionPixelSize(R.dimen.qs_tile_height);
+        //mCellHeight = mContext.getResources().getDimensionPixelSize(R.dimen.qs_tile_height);
         mCellMarginHorizontal = res.getDimensionPixelSize(R.dimen.qs_tile_margin_horizontal);
         mCellMarginVertical= res.getDimensionPixelSize(R.dimen.qs_tile_margin_vertical);
         mCellMarginTop = res.getDimensionPixelSize(R.dimen.qs_tile_margin_top);
         /*mMaxAllowedRows = Math.max(1, getResources().getInteger(R.integer.quick_settings_max_rows));
         if (mLessRows) mMaxAllowedRows = Math.max(mMinRows, mMaxAllowedRows - 1);*/
-        if (updateColumns() || mRows != rows) {
+        int cellHeight;
+        if (Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_TITLE_VISIBILITY, 1,
+                UserHandle.USER_CURRENT) == 1) {
+            cellHeight = mContext.getResources().getDimensionPixelSize(R.dimen.qs_tile_height);
+        } else {
+            cellHeight = mContext.getResources().getDimensionPixelSize(R.dimen.qs_tile_height_wo_label);
+        }
+        for (TileRecord record : mRecords) {
+            record.tileView.textVisibility();
+        }
+        if (updateColumns() || mRows != rows || mCellHeight != cellHeight) {
             mRows = rows;
+            mCellHeight = cellHeight;
             requestLayout();
             return true;
         }
