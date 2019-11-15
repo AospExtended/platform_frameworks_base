@@ -18,6 +18,7 @@ package com.android.systemui.qs.tiles;
 
 import android.content.Context;
 import android.content.Intent;
+import android.service.quicksettings.Tile;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.ScreenRecordHelper;
@@ -74,7 +75,7 @@ public class ScreenRecordTile extends QSTileImpl<BooleanState> {
     protected void handleUpdateState(BooleanState state, Object arg) {
         state.icon = ResourceIcon.get(R.drawable.ic_qs_screenrecorder);
         state.label = mContext.getString(R.string.screenrecorder_title_tile);
-
+        state.state = Tile.STATE_INACTIVE;
     }
 
     @Override
