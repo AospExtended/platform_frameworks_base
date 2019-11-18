@@ -4691,6 +4691,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.FORCE_SHOW_NAVBAR),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.Secure.getUriFor(
+                    Settings.Secure.SHOW_BACK_ARROW_GESTURE),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -4733,6 +4736,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             setUseLessBoringHeadsUp();
             updateCorners();
             updateNavigationBarVisibility();
+            setHideArrowForBackGesture();
         }
     }
 
@@ -4773,6 +4777,12 @@ public class StatusBar extends SystemUI implements DemoMode,
     private void setLockScreenMediaArt() {
         if (mMediaManager != null) {
             mMediaManager.setLockScreenMediaArt();
+        }
+    }
+
+    private void setHideArrowForBackGesture() {
+        if (getNavigationBarView() != null) {
+            getNavigationBarView().updateBackArrowForGesture();
         }
     }
 
