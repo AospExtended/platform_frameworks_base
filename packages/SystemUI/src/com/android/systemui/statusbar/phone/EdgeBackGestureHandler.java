@@ -246,6 +246,12 @@ public class EdgeBackGestureHandler implements DisplayListener {
         updateEdgeHeightValue();
     }
 
+    public void setStateForBackArrowGesture() {
+        if (mEdgePanel != null) {
+            mEdgePanel.setBackArrowVisibility();
+        }
+    }
+
     private void disposeInputChannel() {
         if (mInputEventReceiver != null) {
             mInputEventReceiver.dispose();
