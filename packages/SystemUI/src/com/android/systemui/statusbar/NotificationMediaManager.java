@@ -844,11 +844,9 @@ public class NotificationMediaManager implements Dumpable {
     }
 
     public void setLockScreenMediaBlurLevel() {
-        /* divide for 100 so if we set 2500 on the seekbar we get 25, the stock aosp value
-        remember to set 2500 as default value to the seekbar! */
         mLockscreenMediaBlur = (float) Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.LOCKSCREEN_MEDIA_BLUR, 2500,
-                UserHandle.USER_CURRENT) / 100;
+                Settings.System.LOCKSCREEN_MEDIA_BLUR, 25,
+                UserHandle.USER_CURRENT);
     }
 
     @MainThread
