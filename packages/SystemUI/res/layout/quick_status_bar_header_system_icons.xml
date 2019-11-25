@@ -61,7 +61,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical|end" >
 
-    <include layout="@layout/ongoing_privacy_chip" />
+        <include layout="@layout/ongoing_privacy_chip" />
 
     <com.android.systemui.statusbar.policy.NetworkTraffic
         android:id="@+id/networkTraffic"
@@ -75,5 +75,11 @@
         android:lineSpacingMultiplier="1.2"
         systemui:showDark="false"/>
 
+        <com.android.systemui.BatteryMeterView
+            android:id="@+id/battery"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:paddingStart="6dp"
+            android:visibility="gone" />
     </LinearLayout>
 </LinearLayout>
