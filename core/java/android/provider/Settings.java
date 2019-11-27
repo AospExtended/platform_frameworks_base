@@ -5929,6 +5929,11 @@ public final class Settings {
         public static final String ROAMING_INDICATOR_ICON = "roaming_indicator_icon";
 
         /**
+         * @hide
+         */
+        public static final String USE_OLD_MOBILETYPE = "use_old_mobiletype";   
+
+        /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate
@@ -5945,7 +5950,7 @@ public final class Settings {
          * @hide
          */
         public static final String[] LEGACY_RESTORE_SETTINGS = {
-        };
+        };     
 
         /**
          * These are all public system settings
