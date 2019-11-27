@@ -5264,6 +5264,13 @@ public final class Settings {
         private static final Validator QS_BACKGROUND_BLUR_INTENSITY_VALIDATOR = ANY_INTEGER_VALIDATOR;
 
         /**
+         * @hide
+         */
+        public static final String USE_OLD_MOBILETYPE = "use_old_mobiletype";
+
+        private static final Validator USE_OLD_MOBILETYPE_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -5347,6 +5354,7 @@ public final class Settings {
             QS_BACKGROUND_BLUR,
             QS_BACKGROUND_BLUR_ALPHA,
             QS_BACKGROUND_BLUR_INTENSITY,
+            USE_OLD_MOBILETYPE,
         };
 
         /**
@@ -5498,6 +5506,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(STATUS_BAR_LOGO);
             PRIVATE_SETTINGS.add(DISPLAY_CUTOUT_MODE);
             PRIVATE_SETTINGS.add(STOCK_STATUSBAR_IN_HIDE);
+            PRIVATE_SETTINGS.add(USE_OLD_MOBILETYPE);
         }
 
 
@@ -5622,6 +5631,7 @@ public final class Settings {
             VALIDATORS.put(QS_BACKGROUND_BLUR, QS_BACKGROUND_BLUR_VALIDATOR);
             VALIDATORS.put(QS_BACKGROUND_BLUR_ALPHA, QS_BACKGROUND_BLUR_ALPHA_VALIDATOR);
             VALIDATORS.put(QS_BACKGROUND_BLUR_INTENSITY, QS_BACKGROUND_BLUR_INTENSITY_VALIDATOR);
+            VALIDATORS.put(USE_OLD_MOBILETYPE, USE_OLD_MOBILETYPE_VALIDATOR);
         }
 
         /**
