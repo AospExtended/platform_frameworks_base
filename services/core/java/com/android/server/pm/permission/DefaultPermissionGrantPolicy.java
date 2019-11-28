@@ -215,6 +215,11 @@ final class DefaultPermissionGrantPolicy {
         NEARBY_DEVICES_PERMISSIONS.add(Manifest.permission.UWB_RANGING);
     }
 
+    private static final Set<String> SUSPEND_APP_PERMISSIONS = new ArraySet<>();
+    static {
+        SUSPEND_APP_PERMISSIONS.add(Manifest.permission.SUSPEND_APPS);
+    }
+
     private static final int MSG_READ_DEFAULT_PERMISSION_EXCEPTIONS = 1;
 
     private static final String ACTION_TRACK = "com.android.fitness.TRACK";
@@ -502,6 +507,18 @@ final class DefaultPermissionGrantPolicy {
         }
     }
 
+    private boolean mWellbeingInstalled(String packageName) {
+       PackageManager mPm = mContext.getPackageManager();
+       boolean result = true;
+       try {
+           mPm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+       } catch (PackageManager.NameNotFoundException e) {
+           Log.i(TAG, "Wellbeing not installed.", e);
+           result = false;
+       }
+       return result;
+    }
+
     private void grantDefaultSystemHandlerPermissions(PackageManagerWrapper pm, int userId) {
         Log.i(TAG, "Granting permissions to default platform handlers for user " + userId);
 
@@ -704,6 +721,16 @@ final class DefaultPermissionGrantPolicy {
                 getDefaultSystemHandlerActivityPackageForCategory(pm,
                         Intent.CATEGORY_APP_EMAIL, userId),
                 userId, CONTACTS_PERMISSIONS, CALENDAR_PERMISSIONS);
+
+        // Wellbeing
+        String WellbeingPackageName = "com.google.android.apps.wellbeing";
+        if (mWellbeingInstalled(WellbeingPackageName) != false) {
+        grantSystemFixedPermissionsToSystemPackage(pm,
+                getDefaultProviderAuthorityPackage(WellbeingPackageName, userId),
+                userId, SUSPEND_APP_PERMISSIONS);
+        grantPermissionsToPackage(pm,WellbeingPackageName, userId, false,
+                true, SUSPEND_APP_PERMISSIONS);
+        }
 
         // Voice interaction
         if (voiceInteractPackageNames != null) {
