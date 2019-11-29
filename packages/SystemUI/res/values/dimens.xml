@@ -88,7 +88,7 @@
     <dimen name="status_bar_left_clock_starting_padding">0dp</dimen>
 
     <!-- End padding for left-aligned status bar clock -->
-    <dimen name="status_bar_left_clock_end_padding">7dp</dimen>
+    <dimen name="status_bar_left_clock_end_padding">3dp</dimen>
 
     <!-- Spacing after the wifi signals that is present if there are any icons following it. -->
     <dimen name="status_bar_wifi_signal_spacer_width">2.5dp</dimen>
@@ -693,7 +693,7 @@
     <dimen name="edge_tap_area_width">48dp</dimen>
 
     <!-- The padding between notification children when collapsed -->
-    <dimen name="notification_children_padding">4dp</dimen>
+    <dimen name="notification_children_padding">2.5dp</dimen>
 
     <!-- The padding on top of the first notification to the children container -->
     <dimen name="notification_children_container_top_padding">8dp</dimen>
