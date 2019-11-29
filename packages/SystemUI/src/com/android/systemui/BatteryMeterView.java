@@ -120,7 +120,8 @@ public class BatteryMeterView extends LinearLayout implements
     private boolean mCharging;
     public int mBatteryStyle = BATTERY_STYLE_PORTRAIT;
     public int mShowBatteryPercent;
-
+    private boolean mShowBatteryEstimate;
+    
     private DualToneHandler mDualToneHandler;
     private int mUser;
 
@@ -271,8 +272,16 @@ public class BatteryMeterView extends LinearLayout implements
     private void updateSettings() {
         updateSbBatteryStyle();
         updateSbShowBatteryPercent();
+        updateQsBatteryEstimate();        
     }
 
+    private void updateQsBatteryEstimate() {
+        mShowBatteryEstimate = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.QS_SHOW_BATTERY_ESTIMATE, 1,
+                UserHandle.USER_CURRENT) == 1;
+        updatePercentView();
+    }
+    
     private void updateSbBatteryStyle() {
         mBatteryStyle = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT);
@@ -374,7 +383,7 @@ public class BatteryMeterView extends LinearLayout implements
         }
 
         if (mBatteryPercentView != null) {
-            if (mShowPercentMode == MODE_ESTIMATE && !mCharging) {
+            if (mShowPercentMode == MODE_ESTIMATE && !mCharging && mShowBatteryEstimate) {
                 mBatteryController.getEstimatedTimeRemainingString((String estimate) -> {
                     if (estimate != null) {
                         if (mBatteryPercentView != null) {
@@ -567,6 +576,7 @@ public class BatteryMeterView extends LinearLayout implements
     @Override
     public void onDarkChanged(Rect area, float darkIntensity, int tint) {
         float intensity = DarkIconDispatcher.isInArea(area, this) ? darkIntensity : 0;
+        updateSettings();
         mNonAdaptedSingleToneColor = mDualToneHandler.getSingleColor(intensity);
         mNonAdaptedForegroundColor = mDualToneHandler.getFillColor(intensity);
         mNonAdaptedBackgroundColor = mDualToneHandler.getBackgroundColor(intensity);
@@ -616,6 +626,9 @@ public class BatteryMeterView extends LinearLayout implements
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QS_SHOW_BATTERY_ESTIMATE),
+                    false, this, UserHandle.USER_ALL);                    
         }
 
         @Override
