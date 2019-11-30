@@ -113,7 +113,6 @@ class SplitShadeHeaderController @Inject constructor(
         val batteryIcon: BatteryMeterView = statusBar.findViewById(R.id.batteryRemainingIcon)
 
         // battery settings same as in QS icons
-        batteryMeterViewController.ignoreTunerUpdates()
         batteryIcon.setPercentShowMode(BatteryMeterView.MODE_ESTIMATE)
 
         carrierIconSlots = if (featureFlags.isCombinedStatusBarSignalIconsEnabled) {
