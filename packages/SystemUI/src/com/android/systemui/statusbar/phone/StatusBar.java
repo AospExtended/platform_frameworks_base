@@ -996,6 +996,18 @@ public class StatusBar extends SystemUI implements
 
         mDisplayManager = mContext.getSystemService(DisplayManager.class);
 
+        mNeedsNavigationBar = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_showNavigationBar);
+
+        // Allow a system property to override this. Used by the emulator.
+        // See also hasNavigationBar().
+        String navBarOverride = SystemProperties.get("qemu.hw.mainkeys");
+        if ("1".equals(navBarOverride)) {
+            mNeedsNavigationBar = false;
+        } else if ("0".equals(navBarOverride)) {
+            mNeedsNavigationBar = true;
+        }
+
         mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
         mDreamManager = IDreamManager.Stub.asInterface(
                 ServiceManager.checkService(DreamService.DREAM_SERVICE));
@@ -4076,6 +4088,7 @@ public class StatusBar extends SystemUI implements
     private final AccessibilityFloatingMenuController mAccessibilityFloatingMenuController;
 
     private NavigationBarController.SystemUiVisibility mNavigationBarSystemUiVisibility;
+    private boolean mNeedsNavigationBar;
 
     // UI-specific methods
 
@@ -4250,18 +4263,28 @@ public class StatusBar extends SystemUI implements
 
     private void updateNavigationBarVisibility() {
         if (mDisplayId == Display.DEFAULT_DISPLAY && mWindowManagerService != null) {
+            int mDefNavBar;
+            if (mNeedsNavigationBar) {
+                mDefNavBar = 1;
+            } else {
+                mDefNavBar = 0;
+            }
             boolean forcedVisibility = Settings.System.getIntForUser(
-                mContext.getContentResolver(), Settings.System.FORCE_SHOW_NAVBAR,
-                 0, UserHandle.USER_CURRENT) == 1;
+                    mContext.getContentResolver(), Settings.System.FORCE_SHOW_NAVBAR,
+                    mDefNavBar, UserHandle.USER_CURRENT) == 1;
             boolean hasNavbar = getNavigationBarView() != null;
             if (forcedVisibility) {
                 if (!hasNavbar) {
-                    mNavigationBarController.onDisplayReady(mDisplayId,
-                            mNavigationBarSystemUiVisibility);
+                    try {
+                        mNavigationBarController.onDisplayReady(mDisplayId,
+                                mNavigationBarSystemUiVisibility);
+                    } catch (Exception e) { }
                 }
             } else {
                 if (hasNavbar) {
-                    mNavigationBarController.onDisplayRemoved(mDisplayId);
+                    try {
+                        mNavigationBarController.onDisplayRemoved(mDisplayId);
+                    } catch (Exception e) { }
             }
         }
     }
