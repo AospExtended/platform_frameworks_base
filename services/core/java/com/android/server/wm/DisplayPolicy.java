@@ -703,8 +703,15 @@ public class DisplayPolicy {
     public void updateSettings() {
         ContentResolver resolver = mContext.getContentResolver();
 
+        int mDefNavBar;
+        if (mHasNavigationBar) {
+            mDefNavBar = 1;
+        } else {
+            mDefNavBar = 0;
+        }
+
         mForceNavbar = Settings.System.getIntForUser(resolver,
-                Settings.System.FORCE_SHOW_NAVBAR, 0,
+                Settings.System.FORCE_SHOW_NAVBAR, mDefNavBar,
                 UserHandle.USER_CURRENT);
     }
 
@@ -756,7 +763,7 @@ public class DisplayPolicy {
     }
 
     public boolean hasNavigationBar() {
-        return mHasNavigationBar || mForceNavbar == 1;
+        return mForceNavbar == 1;
     }
 
     public boolean hasStatusBar() {
