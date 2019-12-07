@@ -45,4 +45,7 @@
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
     </string-array>
 
+    <string-array translatable="false" name="config_customPermissionsList">
+        <item>com.google.android.apps.wellbeing</item>
+    </string-array>
 </resources>
