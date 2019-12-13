@@ -89,4 +89,8 @@
     <dimen name="quick_qs_brightness_margin_top">24dp</dimen>
 
     <dimen name="screenrecord_dot_size">48dp</dimen>
+
+    <!-- The width of the view containing the menu/ime navigation bar icons -->
+    <dimen name="navigation_extra_key_width">36dp</dimen>
+
 </resources>

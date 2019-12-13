@@ -210,12 +210,11 @@
     <string name="screenrecord_lowquality_label">Lower quality for smaller file size</string>
     <string name="screenrecord_longer_timeout_switch_label">Bigger file size limit\nLimit recording size to 15GiB</string>
 
-    <!-- SystemUI tuner -->
-    <string name="systemui_tuner_navbar_title">Stock navbar</string>
-
     <!-- Navbar -->
     <string name="systemui_tuner_navbar_title">Layout</string>
     <string name="navigation_bar_format_title">Navbar format</string>
     <string name="navigation_bar_inverse_title">Swap buttons</string>
     <string name="navigation_bar_inverse_summary">Swap the order of recents and back buttons</string>
+    <string name="navigation_bar_accessibility_dpad_left">Cursor left</string>
+    <string name="navigation_bar_accessibility_dpad_right">Cursor right</string>
 </resources>
