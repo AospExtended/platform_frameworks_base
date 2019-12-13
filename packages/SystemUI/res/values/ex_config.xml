@@ -23,4 +23,7 @@
     <!-- Allow devices override audio panel location to the left side -->
     <bool name="config_audioPanelOnLeftSide">false</bool>
 
+    <!-- Navbar -->
+    <string name="config_navBarLayoutHandleArrows" translatable="false">back[1.7WC];home_handle;ime_switcher[1.7WC]</string>
+
 </resources>
