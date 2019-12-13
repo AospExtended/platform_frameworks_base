@@ -17,4 +17,7 @@
     <integer name="config_maxVisibleNotificationIcons">5</integer>
     <integer name="config_maxVisibleNotificationIconsWhenLock">6</integer>
 
+    <!-- Navbar -->
+    <string name="config_navBarLayoutHandleArrows" translatable="false">back[1.7WC];home_handle;ime_switcher[1.7WC]</string>
+
 </resources>
