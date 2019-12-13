@@ -420,7 +420,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
 
         mItems = new ArrayList<Action>();
         String[] defaultActions = mContext.getResources().getStringArray(
-                R.array.config_globalActionsList);
+                R.array.config_custom_globalActionsList);
 
         ArraySet<String> addedKeys = new ArraySet<String>();
         mHasLogoutButton = false;
