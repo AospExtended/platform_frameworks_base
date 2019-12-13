@@ -5050,6 +5050,15 @@ public final class Settings {
         public static final Validator FORCE_SHOW_NAVBAR_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
+         * Whether to show arrow keys in navigation bar
+         * @hide
+         */
+        public static final String NAVIGATION_BAR_ARROW_KEYS = "navigation_bar_menu_arrow_keys";
+
+        private static final Validator NAVIGATION_BAR_ARROW_KEYS_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -5128,6 +5137,7 @@ public final class Settings {
             VIBRATE_ON_DISCONNECT,
             LESS_BORING_HEADS_UP,
             NOTIFICATION_GUTS_KILL_APP_BUTTON,
+            NAVIGATION_BAR_ARROW_KEYS,
         };
 
         /**
@@ -5276,6 +5286,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(LESS_BORING_HEADS_UP);
             PRIVATE_SETTINGS.add(NOTIFICATION_GUTS_KILL_APP_BUTTON);
             PRIVATE_SETTINGS.add(FORCE_SHOW_NAVBAR);
+            PRIVATE_SETTINGS.add(NAVIGATION_BAR_ARROW_KEYS);
         }
 
 
@@ -5393,6 +5404,8 @@ public final class Settings {
             VALIDATORS.put(LESS_BORING_HEADS_UP, LESS_BORING_HEADS_UP_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_GUTS_KILL_APP_BUTTON, NOTIFICATION_GUTS_KILL_APP_BUTTON_VALIDATOR);
             VALIDATORS.put(FORCE_SHOW_NAVBAR, FORCE_SHOW_NAVBAR_VALIDATOR);
+            VALIDATORS.put(NAVIGATION_BAR_ARROW_KEYS,
+                    NAVIGATION_BAR_ARROW_KEYS_VALIDATOR);
         }
 
         /**
