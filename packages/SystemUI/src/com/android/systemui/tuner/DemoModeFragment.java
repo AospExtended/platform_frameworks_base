@@ -84,11 +84,10 @@ public class DemoModeFragment extends PreferenceFragment implements OnPreference
         mDemoModeTracker.startTracking();
         updateDemoModeEnabled();
         updateDemoModeOn();
-
-        setHasOptionsMenu(true);
+        //setHasOptionsMenu(true);
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -96,7 +95,7 @@ public class DemoModeFragment extends PreferenceFragment implements OnPreference
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     @Override
     public void onResume() {
@@ -222,4 +221,10 @@ public class DemoModeFragment extends PreferenceFragment implements OnPreference
             updateDemoModeOn();
         }
     };
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
+    }
 }
