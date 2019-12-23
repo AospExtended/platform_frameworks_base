@@ -624,7 +624,8 @@ public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
         mAmPmStyle = is24hour ? AM_PM_STYLE_GONE : amPmStyle;
         mClockFormatString = "";
 
-        mClockDateDisplay = Settings.System.getIntForUser(resolver,
+        mClockDateDisplay = mQsHeader ? CLOCK_DATE_DISPLAY_GONE
+                        : Settings.System.getIntForUser(resolver,
                 Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, CLOCK_DATE_DISPLAY_GONE,
                 UserHandle.USER_CURRENT);
 
@@ -652,6 +653,8 @@ public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
 
     public void setQsHeader() {
         mQsHeader = true;
+        mClockVisibleByUser = true;
+        mClockDateDisplay = CLOCK_DATE_DISPLAY_GONE;
     }
 
     private boolean mDemoMode;
