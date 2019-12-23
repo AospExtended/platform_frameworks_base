@@ -82,7 +82,7 @@ class MediaArtworkProcessor @Inject constructor() {
                     blur.forEach(output)
                 output.copyTo(outBitmap)
             } else {
-                outBitmap = inBitmap
+                outBitmap = inBitmap.copy(Bitmap.Config.ARGB_8888, true/*mutable*/)
             }
             val swatch = MediaNotificationProcessor.findBackgroundSwatch(artwork)
             val canvas = Canvas(outBitmap)
@@ -95,8 +95,8 @@ class MediaArtworkProcessor @Inject constructor() {
             if (blur_radius >= 1f) {
                 input?.destroy()
                 output?.destroy()
-                inBitmap?.recycle()
             }
+            inBitmap?.recycle()
             blur.destroy()
         }
     }
