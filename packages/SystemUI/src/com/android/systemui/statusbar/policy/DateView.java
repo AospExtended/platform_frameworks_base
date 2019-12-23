@@ -26,6 +26,7 @@ import android.icu.text.DisplayContext;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.TextView;
 
 import com.android.systemui.Dependency;
@@ -46,6 +47,8 @@ public class DateView extends TextView {
     private final BroadcastDispatcher mBroadcastDispatcher;
 
     private boolean mScreenOn = true;
+    private boolean mQsDateView;
+    private boolean mVisibleDate;
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         @Override
@@ -148,5 +151,20 @@ public class DateView extends TextView {
         if (isAttachedToWindow()) {
             updateClock();
         }
+    }
+
+    public void setVisibility(boolean visible, boolean qsDateView) {
+        mQsDateView = qsDateView;
+        mVisibleDate = visible;
+        super.setVisibility(visible ?  View.VISIBLE : View.INVISIBLE);
+    }
+
+    @Override
+    public void setVisibility(int visibility) {
+        if (mQsDateView && visibility == View.VISIBLE && !mVisibleDate) {
+            return;
+        }
+
+        super.setVisibility(visibility);
     }
 }
