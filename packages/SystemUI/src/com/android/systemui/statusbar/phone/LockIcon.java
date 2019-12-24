@@ -115,7 +115,7 @@ public class LockIcon extends KeyguardAffordanceView {
     boolean updateIconVisibility(boolean visible) {
         boolean wasVisible = getVisibility() == VISIBLE;
         if (visible != wasVisible) {
-            setVisibility(visible ? VISIBLE : INVISIBLE);
+            setVisibility((visible && !mPulsing) ? VISIBLE : INVISIBLE);
             animate().cancel();
             if (visible) {
                 setScaleX(0);
