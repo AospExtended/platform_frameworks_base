@@ -59,6 +59,7 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
     private final View mCenteredIconView;
     private final View mClockView;
     private final View mOperatorNameView;
+    private final View mAEXLogoView;
     private final DarkIconDispatcher mDarkIconDispatcher;
     private final NotificationPanelViewController mNotificationPanelViewController;
     private final Consumer<ExpandableNotificationRow>
@@ -104,7 +105,8 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
                 statusBarView.findViewById(R.id.heads_up_status_bar_view),
                 statusBarView.findViewById(R.id.clock),
                 statusBarView.findViewById(R.id.operator_name_frame),
-                statusBarView.findViewById(R.id.centered_icon_area));
+                statusBarView.findViewById(R.id.centered_icon_area),
+                statusBarView.findViewById(R.id.status_bar_logo));
     }
 
     @VisibleForTesting
@@ -121,7 +123,8 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
             HeadsUpStatusBarView headsUpStatusBarView,
             View clockView,
             View operatorNameView,
-            View centeredIconView) {
+            View centeredIconView,
+            View aexLogoView) {
         mNotificationIconAreaController = notificationIconAreaController;
         mHeadsUpManager = headsUpManager;
         mHeadsUpManager.addListener(this);
@@ -136,6 +139,7 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
         mStackScrollerController.addOnExpandedHeightChangedListener(mSetExpandedHeight);
         mStackScrollerController.setHeadsUpAppearanceController(this);
         mClockView = clockView;
+        mAEXLogoView = aexLogoView;
         mOperatorNameView = operatorNameView;
         mDarkIconDispatcher = Dependency.get(DarkIconDispatcher.class);
         mDarkIconDispatcher.addDarkReceiver(this);
@@ -229,6 +233,9 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
                 if (mOperatorNameView != null) {
                     hide(mOperatorNameView, View.INVISIBLE);
                 }
+               if (mAEXLogoView.getVisibility() != View.GONE) {
+                    hide(mAEXLogoView, View.INVISIBLE);
+                }
             } else {
                 if (clockStyle == 0 && isClockVisible) {
                     show(mClockView);
@@ -240,6 +247,9 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
                 }
                 if (mOperatorNameView != null) {
                     show(mOperatorNameView);
+                }
+               if (mAEXLogoView.getVisibility() != View.GONE) {
+                    show(mAEXLogoView);
                 }
                 hide(mHeadsUpStatusBarView, View.GONE, () -> {
                     updateParentClipping(true /* shouldClip */);
