@@ -13,11 +13,6 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
-    <!-- Network traffic monitor -->
-    <dimen name="net_traffic_single_text_size">12dp</dimen>
-    <dimen name="net_traffic_multi_text_size">8dp</dimen>
-    <dimen name="net_traffic_txt_img_padding">2dp</dimen>
-
     <!-- Sets a custom extra padding for the QS icons and statusbar date -->
     <dimen name="qs_items_padding">8dp</dimen>
 </resources>

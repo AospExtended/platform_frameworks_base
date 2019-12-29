@@ -27,18 +27,14 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.android.systemui.statusbar.policy.NetworkTraffic;
-
 public class StatusBarIconList {
     private ArrayList<Slot> mSlots = new ArrayList<>();
 
     public StatusBarIconList(String[] slots) {
         final int N = slots.length;
-        for (int i=1; i < N; i++) {
+        for (int i=0; i < N; i++) {
             mSlots.add(new Slot(slots[i], null));
         }
-        // Network traffic slot
-        mSlots.add(0, new Slot(NetworkTraffic.SLOT, StatusBarIconHolder.fromNetworkTraffic()));
     }
 
     public int getSlotIndex(String slot) {

@@ -4627,33 +4627,6 @@ public final class Settings {
         public static final String THREE_FINGER_GESTURE = "three_finger_gesture";
 
         /**
-         * Whether to show network traffic indicator in statusbar
-         * @hide
-         */
-        public static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
-
-        /**
-         * What to show in network traffic indicator in statusbar
-         * @hide
-         */
-        public static final String NETWORK_TRAFFIC_TYPE = "network_traffic_type";
-
-        /**
-         * Network traffic inactivity threshold (default is 1 kBs)
-         * @hide
-         */
-        public static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
-
-        /**
-          * Whether to disable showing arrows in network traffic indicators
-          * @hide
-         */
-        public static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";
-         /** @hide */
-        private static final Validator NETWORK_TRAFFIC_HIDEARROW_VALIDATOR =
-                ANY_INTEGER_VALIDATOR;
-
-        /**
          * Volume rocker wake
          * @hide
          */
@@ -4854,7 +4827,6 @@ public final class Settings {
             DISPLAY_COLOR_MODE,
             ALARM_ALERT,
             NOTIFICATION_LIGHT_PULSE,
-            NETWORK_TRAFFIC_HIDEARROW,
             QS_LAYOUT_COLUMNS_LANDSCAPE,
             QS_LAYOUT_COLUMNS,
             QS_TILE_TITLE_VISIBILITY,
@@ -4983,10 +4955,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(DISPLAY_COLOR_MODE);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_LOCKSCREEN);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
-            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_STATE);
-            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_TYPE);
-            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
-            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_HIDEARROW);
             PRIVATE_SETTINGS.add(QS_LAYOUT_COLUMNS_LANDSCAPE);
             PRIVATE_SETTINGS.add(QS_LAYOUT_COLUMNS);
             PRIVATE_SETTINGS.add(QS_TILE_TITLE_VISIBILITY);
@@ -5097,7 +5065,6 @@ public final class Settings {
             VALIDATORS.put(WIFI_STATIC_DNS2, WIFI_STATIC_DNS2_VALIDATOR);
             VALIDATORS.put(SHOW_BATTERY_PERCENT, SHOW_BATTERY_PERCENT_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
-            VALIDATORS.put(NETWORK_TRAFFIC_HIDEARROW, NETWORK_TRAFFIC_HIDEARROW_VALIDATOR);
             VALIDATORS.put(QS_LAYOUT_COLUMNS_LANDSCAPE,
                     QS_LAYOUT_COLUMNS_LANDSCAPE_VALIDATOR);
             VALIDATORS.put(QS_LAYOUT_COLUMNS, QS_LAYOUT_COLUMNS_VALIDATOR);
