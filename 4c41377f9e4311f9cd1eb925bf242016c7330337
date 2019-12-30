@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1c155d_98019adb",
+        "filename": "services/core/java/com/android/server/policy/PhoneWindowManager.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 4119,
+      "author": {
+        "id": 1000040
+      },
+      "writtenOn": "2019-12-30T18:58:52Z",
+      "side": 1,
+      "message": "I\u0027m not sure for this line because of this patch\nhttp://gerrit.aospextended.com/c/AospExtended/platform_frameworks_base/+/94\nI\u0027ll test and send new patch if it needed.",
+      "revId": "4c41377f9e4311f9cd1eb925bf242016c7330337",
+      "serverId": "d5cc2900-f5de-4894-bcd1-c35edbbdd7bf",
+      "unresolved": false
+    }
+  ]
+}
