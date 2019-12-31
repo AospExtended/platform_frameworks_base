@@ -55,7 +55,6 @@ import com.android.systemui.settings.CurrentUserTracker;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.phone.StatusBarIconController;
 import com.android.systemui.statusbar.policy.ConfigurationController.ConfigurationListener;
-import com.android.systemui.statusbar.policy.DateView;
 import com.android.systemui.tuner.TunerService;
 import com.android.systemui.tuner.TunerService.Tunable;
 
@@ -120,7 +119,6 @@ public class Clock extends TextView implements DemoMode, Tunable, CommandQueue.C
 
     private final boolean mShowDark;
     private boolean mQsHeader;
-    private DateView mDateView;
 
     /**
      * Whether we should use colors that adapt based on wallpaper/the scrim behind quick settings
@@ -554,10 +552,8 @@ public class Clock extends TextView implements DemoMode, Tunable, CommandQueue.C
                 if (newValue == null) {
                     newValue = "0"; // no date
                 }
-                mClockDateDisplay = Integer.parseInt(newValue);
-                if (mDateView != null) {
-                    mDateView.setVisibility(!isClockDateEnabled(), true);
-                }
+                mClockDateDisplay = mQsHeader ? CLOCK_DATE_DISPLAY_GONE
+                        : Integer.parseInt(newValue);
                 break;
 
             case (STATUSBAR_CLOCK_DATE_STYLE):
@@ -590,14 +586,9 @@ public class Clock extends TextView implements DemoMode, Tunable, CommandQueue.C
         }
     }
 
-    public boolean isClockDateEnabled() {
-        return shouldBeVisible() && mClockDateDisplay != CLOCK_DATE_DISPLAY_GONE;
-    }
-
-    public void setQsHeader(DateView v) {
+    public void setQsHeader() {
         mQsHeader = true;
         mClockVisibleByUser = true;
-        v.setVisibility(!isClockDateEnabled(), true);
-        mDateView = v;
+        mClockDateDisplay = CLOCK_DATE_DISPLAY_GONE;
     }
 }
