@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "23353f3f_ddec595e",
+        "filename": "core/res/res/values/ex_config.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000040
+      },
+      "writtenOn": "2020-01-01T14:28:52Z",
+      "side": 1,
+      "message": "why wee need to new commit to make it false?!",
+      "revId": "492018b87ae092e8c600d11bbdc78e1dfa4ca9e3",
+      "serverId": "d5cc2900-f5de-4894-bcd1-c35edbbdd7bf",
+      "unresolved": true
+    }
+  ]
+}
