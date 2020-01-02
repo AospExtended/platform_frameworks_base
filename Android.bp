@@ -383,10 +383,10 @@ java_library {
         "android.hardware.vibrator-V1.2-java",
         "android.hardware.vibrator-V1.3-java",
         "devicepolicyprotosnano",
-
         "com.android.sysprop.apex",
         "com.android.sysprop.init",
         "PlatformProperties",
+        "vendor.lineage.touch-V1.0-java",
     ],
     sdk_version: "core_platform",
     installable: false,
