@@ -39,7 +39,7 @@
              android:paddingBottom="@dimen/title_clock_padding"
              android:letterSpacing="0.02"
              android:textColor="?attr/wallpaperTextColor"
-             android:singleLine="true"
+             android:singleLine="false"
              style="@style/widget_big"
              android:format12Hour="@string/keyguard_widget_12_hours_format"
              android:format24Hour="@string/keyguard_widget_24_hours_format"
