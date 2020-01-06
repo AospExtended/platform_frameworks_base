@@ -67,7 +67,6 @@ import android.util.ArraySet;
 import android.util.Slog;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
-import android.util.BoostFramework;
 import android.view.MotionEvent;
 import android.view.WindowManagerPolicyConstants.PointerEventListener;
 
@@ -192,7 +191,6 @@ class RecentTasks {
     private final HashMap<ComponentName, ActivityInfo> mTmpAvailActCache = new HashMap<>();
     private final HashMap<String, ApplicationInfo> mTmpAvailAppCache = new HashMap<>();
     private final SparseBooleanArray mTmpQuietProfileUserIds = new SparseBooleanArray();
-    private final BoostFramework mUxPerf = new BoostFramework();
 
     // TODO(b/127498985): This is currently a rough heuristic for interaction inside an app
     private final PointerEventListener mListener = new PointerEventListener() {
@@ -1162,13 +1160,6 @@ class RecentTasks {
     void remove(TaskRecord task) {
         mTasks.remove(task);
         notifyTaskRemoved(task, false /* wasTrimmed */, false /* killProcess */);
-        if (task != null) {
-            final String taskPkgName =
-                  task.getBaseIntent().getComponent().getPackageName();
-            if (mUxPerf != null) {
-                mUxPerf.perfUXEngine_events(BoostFramework.UXE_EVENT_KILL, 0, taskPkgName, 0);
-            }
-        }
     }
 
     /**
