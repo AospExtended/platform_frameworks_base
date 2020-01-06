@@ -70,14 +70,14 @@ final class AssistHandleReminderExpBehavior implements BehaviorController {
     private static final String LEARNING_EVENT_COUNT_KEY = "reminder_exp_learning_event_count";
     private static final String LEARNED_HINT_LAST_SHOWN_KEY =
             "reminder_exp_learned_hint_last_shown";
-    private static final long DEFAULT_LEARNING_TIME_MS = TimeUnit.DAYS.toMillis(10);
-    private static final int DEFAULT_LEARNING_COUNT = 10;
+    private static final long DEFAULT_LEARNING_TIME_MS = TimeUnit.DAYS.toMillis(2);
+    private static final int DEFAULT_LEARNING_COUNT = 2;
     private static final long DEFAULT_SHOW_AND_GO_DELAYED_SHORT_DELAY_MS = 150;
     private static final long DEFAULT_SHOW_AND_GO_DELAYED_LONG_DELAY_MS =
             TimeUnit.SECONDS.toMillis(1);
     private static final long DEFAULT_SHOW_AND_GO_DELAY_RESET_TIMEOUT_MS =
             TimeUnit.SECONDS.toMillis(3);
-    private static final boolean DEFAULT_SUPPRESS_ON_LOCKSCREEN = false;
+    private static final boolean DEFAULT_SUPPRESS_ON_LOCKSCREEN = true;
     private static final boolean DEFAULT_SUPPRESS_ON_LAUNCHER = false;
     private static final boolean DEFAULT_SUPPRESS_ON_APPS = true;
     private static final boolean DEFAULT_SHOW_WHEN_TAUGHT = false;
@@ -264,9 +264,6 @@ final class AssistHandleReminderExpBehavior implements BehaviorController {
         if (mContext != null) {
             mBroadcastDispatcher.get().unregisterReceiver(mDefaultHomeBroadcastReceiver);
             mBootCompleteCache.get().removeListener(mBootCompleteListener);
-            Settings.Secure.putLong(mContext.getContentResolver(), LEARNING_TIME_ELAPSED_KEY, 0);
-            Settings.Secure.putInt(mContext.getContentResolver(), LEARNING_EVENT_COUNT_KEY, 0);
-            Settings.Secure.putLong(mContext.getContentResolver(), LEARNED_HINT_LAST_SHOWN_KEY, 0);
             mContext = null;
         }
         mStatusBarStateController.get().removeCallback(mStatusBarStateListener);
@@ -479,15 +476,11 @@ final class AssistHandleReminderExpBehavior implements BehaviorController {
     }
 
     private long getLearningTimeMs() {
-        return mDeviceConfigHelper.getLong(
-                SystemUiDeviceConfigFlags.ASSIST_HANDLES_LEARN_TIME_MS,
-                DEFAULT_LEARNING_TIME_MS);
+        return DEFAULT_LEARNING_TIME_MS;
     }
 
     private int getLearningCount() {
-        return mDeviceConfigHelper.getInt(
-                SystemUiDeviceConfigFlags.ASSIST_HANDLES_LEARN_COUNT,
-                DEFAULT_LEARNING_COUNT);
+        return DEFAULT_LEARNING_COUNT;
     }
 
     private long getShowAndGoDelayedShortDelayMs() {
@@ -509,9 +502,7 @@ final class AssistHandleReminderExpBehavior implements BehaviorController {
     }
 
     private boolean getSuppressOnLockscreen() {
-        return mDeviceConfigHelper.getBoolean(
-                SystemUiDeviceConfigFlags.ASSIST_HANDLES_SUPPRESS_ON_LOCKSCREEN,
-                DEFAULT_SUPPRESS_ON_LOCKSCREEN);
+        return DEFAULT_SUPPRESS_ON_LOCKSCREEN;
     }
 
     private boolean getSuppressOnLauncher() {
@@ -521,15 +512,11 @@ final class AssistHandleReminderExpBehavior implements BehaviorController {
     }
 
     private boolean getSuppressOnApps() {
-        return mDeviceConfigHelper.getBoolean(
-                SystemUiDeviceConfigFlags.ASSIST_HANDLES_SUPPRESS_ON_APPS,
-                DEFAULT_SUPPRESS_ON_APPS);
+        return DEFAULT_SUPPRESS_ON_APPS;
     }
 
     private boolean getShowWhenTaught() {
-        return mDeviceConfigHelper.getBoolean(
-                SystemUiDeviceConfigFlags.ASSIST_HANDLES_SHOW_WHEN_TAUGHT,
-                DEFAULT_SHOW_WHEN_TAUGHT);
+        return DEFAULT_SHOW_WHEN_TAUGHT;
     }
 
     @Override
