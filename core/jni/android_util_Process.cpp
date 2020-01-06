@@ -22,8 +22,6 @@
 #include <utils/Log.h>
 #include <binder/IPCThreadState.h>
 #include <binder/IServiceManager.h>
-#include <cutils/sched_policy.h>
-#include <cutils/properties.h>
 #include <utils/String8.h>
 #include <utils/Vector.h>
 #include <meminfo/procmeminfo.h>
@@ -309,67 +307,6 @@ void android_os_Process_setProcessGroup(JNIEnv* env, jobject clazz, int pid, jin
 
     }
     closedir(d);
-}
-
-void android_os_Process_setCgroupProcsProcessGroup(JNIEnv* env, jobject clazz, int uid, int pid, jint grp, jboolean dex2oat_only)
-{
-    int fd;
-    char path[255];
-    if ((grp == SP_FOREGROUND) || (grp > SP_MAX)) {
-        signalExceptionForGroupError(env, EINVAL, pid);
-        return;
-    }
-
-    //set process group for current process
-    android_os_Process_setProcessGroup(env, clazz, pid, grp);
-
-    //find processes in the same cgroup.procs of current uid and pid
-    snprintf(path, sizeof(path), "/acct/uid_%d/pid_%d/cgroup.procs", uid, pid);
-    fd = open(path, O_RDONLY);
-    if (fd >= 0) {
-        char buffer[256];
-        char ch;
-        int numRead;
-        size_t len=0;
-        for (;;) {
-            numRead=read(fd, &ch, 1);
-            if (numRead <= 0)
-                break;
-            if (ch != '\n') {
-                buffer[len++] = ch;
-            } else {
-                int temp_pid = atoi(buffer);
-                len=0;
-                if (temp_pid == pid)
-                    continue;
-                if (dex2oat_only) {
-                    // check if cmdline of temp_pid is dex2oat
-                    char cmdline[64];
-                    snprintf(cmdline, sizeof(cmdline), "/proc/%d/cmdline", temp_pid);
-                    int cmdline_fd = open(cmdline, O_RDONLY);
-                    if (cmdline_fd >= 0) {
-                        size_t read_size = read(cmdline_fd, buffer, 255);
-                        close(cmdline_fd);
-                        buffer[read_size]='\0';
-                        const char *dex2oat_name1 = "dex2oat"; //for plugins compiler
-                        const char *dex2oat_name2 = "/system/bin/dex2oat"; //for installer
-                        const char *dex2oat_name3 = "/apex/com.android.runtime/bin/dex2oat"; //for installer
-                        if (strncmp(buffer, dex2oat_name1, strlen(dex2oat_name1)) != 0
-                                && strncmp(buffer, dex2oat_name2, strlen(dex2oat_name2)) != 0
-                                && strncmp(buffer, dex2oat_name3, strlen(dex2oat_name3)) != 0) {
-                            continue;
-                        }
-                    } else {
-                        //ALOGE("read %s failed", cmdline);
-                        continue;
-                    }
-                }
-                //set cgroup of temp_pid follow pid
-                android_os_Process_setProcessGroup(env, clazz, temp_pid, grp);
-            }
-        }
-        close(fd);
-    }
 }
 
 jint android_os_Process_getProcessGroup(JNIEnv* env, jobject clazz, jint pid)
@@ -1303,7 +1240,6 @@ static const JNINativeMethod methods[] = {
     {"setThreadGroup",      "(II)V", (void*)android_os_Process_setThreadGroup},
     {"setThreadGroupAndCpuset", "(II)V", (void*)android_os_Process_setThreadGroupAndCpuset},
     {"setProcessGroup",     "(II)V", (void*)android_os_Process_setProcessGroup},
-    {"setCgroupProcsProcessGroup", "(IIIZ)V", (void*)android_os_Process_setCgroupProcsProcessGroup},
     {"getProcessGroup",     "(I)I", (void*)android_os_Process_getProcessGroup},
     {"getExclusiveCores",   "()[I", (void*)android_os_Process_getExclusiveCores},
     {"setSwappiness",   "(IZ)Z", (void*)android_os_Process_setSwappiness},
