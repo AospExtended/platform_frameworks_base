@@ -5145,6 +5145,15 @@ public final class Settings {
         public static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
 
         /**
+         * Whether to blur behind QS
+         * @hide
+         */
+        public static final String QS_BACKGROUND_BLUR = "qs_background_blur";
+
+        /** @hide */
+        private static final Validator QS_BACKGROUND_BLUR_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -5224,6 +5233,7 @@ public final class Settings {
             LESS_BORING_HEADS_UP,
             NOTIFICATION_GUTS_KILL_APP_BUTTON,
             NAVIGATION_BAR_ARROW_KEYS,
+            QS_BACKGROUND_BLUR,
         };
 
         /**
@@ -5494,6 +5504,7 @@ public final class Settings {
             VALIDATORS.put(NAVIGATION_BAR_ARROW_KEYS,
                     NAVIGATION_BAR_ARROW_KEYS_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_LOGO, STATUS_BAR_LOGO_VALIDATOR);
+            VALIDATORS.put(QS_BACKGROUND_BLUR, QS_BACKGROUND_BLUR_VALIDATOR);
         }
 
         /**
