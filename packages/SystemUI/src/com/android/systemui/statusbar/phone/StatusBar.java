@@ -78,6 +78,8 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.ContentObserver;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.PointF;
 import android.graphics.Rect;
@@ -85,6 +87,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.hardware.display.DisplayManager;
+import android.graphics.drawable.GradientDrawable;
 import android.media.AudioAttributes;
 import android.metrics.LogMaker;
 import android.net.Uri;
@@ -129,6 +132,7 @@ import android.view.WindowManagerGlobal;
 import android.view.accessibility.AccessibilityManager;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.DateTimeView;
+import android.widget.ImageView;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.colorextraction.ColorExtractor;
@@ -154,6 +158,7 @@ import com.android.systemui.Dependency;
 import com.android.systemui.Dumpable;
 import com.android.systemui.EventLogTags;
 import com.android.systemui.ForegroundServiceController;
+import com.android.systemui.ImageUtilities;
 import com.android.systemui.InitController;
 import com.android.systemui.Interpolators;
 import com.android.systemui.Prefs;
@@ -490,6 +495,9 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     private final MetricsLogger mMetricsLogger = Dependency.get(MetricsLogger.class);
 
+    public ImageView mQSBlurView;
+    private boolean blurperformed = false;
+    
     Runnable mLongPressBrightnessChange = new Runnable() {
         @Override
         public void run() {
@@ -900,6 +908,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         mNotificationPanel = mStatusBarWindow.findViewById(R.id.notification_panel);
         mStackScroller = mStatusBarWindow.findViewById(R.id.notification_stack_scroller);
         mZenController.addCallback(this);
+        mQSBlurView = mStatusBarWindow.findViewById(R.id.qs_blur);
         NotificationListContainer notifListContainer = (NotificationListContainer) mStackScroller;
         mNotificationLogger.setUpWithContainer(notifListContainer);
 
@@ -1217,6 +1226,28 @@ public class StatusBar extends SystemUI implements DemoMode,
                 || action == MotionEvent.ACTION_CANCEL) {
             mHandler.removeCallbacks(mLongPressBrightnessChange);
         }
+    }
+
+    public void updateBlurVisibility() {
+
+        int QSBlurAlpha = Math.round(255.0f * mNotificationPanel.getExpandedFraction());
+
+        if (QSBlurAlpha > 0 && !blurperformed && !mIsKeyguard && isQSBlurEnabled()) {
+            Bitmap bittemp = ImageUtilities.blurImage(mContext, ImageUtilities.screenshotSurface(mContext));
+            Drawable blurbackground = new BitmapDrawable(mContext.getResources(), bittemp);
+            blurperformed = true;
+            mQSBlurView.setBackgroundDrawable(blurbackground);
+        } else if (QSBlurAlpha == 0 || mState == StatusBarState.KEYGUARD) {
+            blurperformed = false;
+            mQSBlurView.setBackgroundColor(Color.TRANSPARENT);
+        }
+        mQSBlurView.setAlpha(QSBlurAlpha);
+        mQSBlurView.getBackground().setAlpha(QSBlurAlpha);
+    }
+    
+    private boolean isQSBlurEnabled() {
+        return Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.QS_BACKGROUND_BLUR, 0) != 0;
     }
 
     protected QS createDefaultQSFragment() {
@@ -3362,6 +3393,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     }
 
     private boolean updateIsKeyguard() {
+        updateBlurVisibility();
         boolean wakeAndUnlocking = mBiometricUnlockController.getMode()
                 == BiometricUnlockController.MODE_WAKE_AND_UNLOCK;
 
