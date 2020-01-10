@@ -246,6 +246,10 @@
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
+    <style name="TextAppearance.QS.Battery" parent="TextAppearance.QS.Status">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
     <style name="TextAppearance.DeviceManagementDialog.Title" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle"/>
 
     <style name="TextAppearance.AuthCredential">
