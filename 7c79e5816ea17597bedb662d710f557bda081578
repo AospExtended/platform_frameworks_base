@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ff48dec_d334f2c2",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/AODTile.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000005
+      },
+      "writtenOn": "2020-01-12T15:53:22Z",
+      "side": 1,
+      "message": "Didn\u0027t test before pushing patch. Please test it before uploading or keep it as wip.",
+      "revId": "7c79e5816ea17597bedb662d710f557bda081578",
+      "serverId": "d5cc2900-f5de-4894-bcd1-c35edbbdd7bf",
+      "unresolved": true
+    }
+  ]
+}
