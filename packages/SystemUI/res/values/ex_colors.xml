@@ -17,6 +17,7 @@
 <resources>
     <!-- Color of the FOD view -->
     <color name="config_fodColor">#00ff00</color>
+    <color name="config_fodColorBackground">#20000000</color>
 
     <!-- Theme tile -->
     <color name="quick_settings_theme_tile_default">#FF1A73E8</color>
