@@ -4756,6 +4756,12 @@ public final class Settings {
          */
         public static final String QS_EDIT_TOGGLE = "qs_edit_toggle";
 
+       /**
+        * Whether to persist settings icon on non-expanded panel or not
+        * @hide
+        */
+        public static final String SETTING_BUTTON_TOGGLE = "setting_button_toggle";
+
         /**
          * Whether to display our aex logo in the statusbar for extra swag
          * @hide
