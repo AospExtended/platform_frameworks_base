@@ -11,14 +11,17 @@ import android.graphics.PorterDuff.Mode;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Trace;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
+
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.slice.Slice;
 import androidx.slice.builders.ListBuilder;
 import androidx.slice.builders.ListBuilder.HeaderBuilder;
 import androidx.slice.builders.ListBuilder.RowBuilder;
 import androidx.slice.builders.SliceAction;
+
 import com.android.systemui.R;
 import com.android.systemui.SystemUIFactory;
 import com.android.systemui.keyguard.KeyguardSliceProvider;
@@ -109,6 +112,7 @@ public class KeyguardSliceProviderGoogle extends KeyguardSliceProvider implement
         Slice slice;
         IconCompat iconCompat;
         ListBuilder listBuilder = new ListBuilder(getContext(), mSliceUri, -1);
+        boolean showStatusArea = Settings.System.getInt(getContext().getContentResolver(), Settings.System.CLOCK_SHOW_STATUS_AREA, 1) == 1;
         synchronized (this) {
             SmartSpaceCard currentCard = mSmartSpaceData.getCurrentCard();
             boolean hasAction = false;
@@ -154,7 +158,9 @@ public class KeyguardSliceProviderGoogle extends KeyguardSliceProvider implement
                     }
                     listBuilder.addRow(rowBuilder);
                 }
-                addWeather(listBuilder);
+                if (showStatusArea) {
+                    addWeather(listBuilder);
+                }
                 addZenModeLocked(listBuilder);
                 addPrimaryActionLocked(listBuilder);
             }else{
@@ -165,8 +171,10 @@ public class KeyguardSliceProviderGoogle extends KeyguardSliceProvider implement
                     rowBuilder2.setTitle(getFormattedDateLocked());
                     listBuilder.addRow(rowBuilder2);
                 }
-                addWeather(listBuilder);
-                addNextAlarmLocked(listBuilder);
+                if (showStatusArea) {
+                    addWeather(listBuilder);
+                    addNextAlarmLocked(listBuilder);
+                }
                 addZenModeLocked(listBuilder);
                 addPrimaryActionLocked(listBuilder);
             }

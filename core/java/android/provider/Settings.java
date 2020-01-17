@@ -5752,6 +5752,12 @@ public final class Settings {
 
 
         /**
+         * Whether to display status area (date & weather information) on the cLock
+         * @hide
+         */
+        public static final String CLOCK_SHOW_STATUS_AREA = "clock_show_status_area";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
