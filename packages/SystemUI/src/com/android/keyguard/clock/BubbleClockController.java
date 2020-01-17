@@ -16,11 +16,13 @@
 package com.android.keyguard.clock;
 
 import android.app.WallpaperManager;
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Paint.Style;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextClock;
@@ -74,6 +76,8 @@ public class BubbleClockController implements ClockPlugin {
     private View mLockClockContainer;
     private TextClock mLockClock;
 
+    private final Context mContext;
+
     /**
      * Helper to extract colors from wallpaper palette for clock face.
      */
@@ -88,10 +92,24 @@ public class BubbleClockController implements ClockPlugin {
      */
     public BubbleClockController(Resources res, LayoutInflater inflater,
             SysuiColorExtractor colorExtractor) {
+        this(res, inflater, colorExtractor, null);
+    }
+
+    /**
+     * Create a BubbleClockController instance.
+     *
+     * @param res Resources contains title and thumbnail.
+     * @param inflater Inflater used to inflate custom clock views.
+     * @param colorExtractor Extracts accent color from wallpaper.
+     * @param context A context.
+     */
+    public BubbleClockController(Resources res, LayoutInflater inflater,
+            SysuiColorExtractor colorExtractor, Context context) {
         mResources = res;
         mLayoutInflater = inflater;
         mColorExtractor = colorExtractor;
         mClockPosition = new SmallClockPosition(res);
+        mContext = context;
     }
 
     private void createViews() {
@@ -205,6 +223,7 @@ public class BubbleClockController implements ClockPlugin {
 
     @Override
     public boolean shouldShowStatusArea() {
-        return true;
+        if (mContext == null) return true;
+        return Settings.System.getInt(mContext.getContentResolver(), Settings.System.CLOCK_SHOW_STATUS_AREA, 1) == 1;
     }
 }

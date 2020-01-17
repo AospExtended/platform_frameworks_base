@@ -16,11 +16,13 @@
 package com.android.keyguard.clock;
 
 import android.app.WallpaperManager;
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Paint.Style;
+import android.provider.Settings;
 import android.util.MathUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -84,6 +86,8 @@ public class TypeClockAltController implements ClockPlugin {
      */
     private CrossFadeDarkController mDarkController;
 
+    private final Context mContext;
+
     /**
      * Create a TypeClockAltController instance.
      *
@@ -93,9 +97,23 @@ public class TypeClockAltController implements ClockPlugin {
      */
     TypeClockAltController(Resources res, LayoutInflater inflater,
             SysuiColorExtractor colorExtractor) {
+        this(res, inflater, colorExtractor, null);
+    }
+
+    /**
+     * Create a TypeClockAltController instance.
+     *
+     * @param res Resources contains title and thumbnail.
+     * @param inflater Inflater used to inflate custom clock views.
+     * @param colorExtractor Extracts accent color from wallpaper.
+     * @param context A context.
+     */
+    TypeClockAltController(Resources res, LayoutInflater inflater,
+            SysuiColorExtractor colorExtractor, Context context) {
         mResources = res;
         mLayoutInflater = inflater;
         mColorExtractor = colorExtractor;
+        mContext = context;
         mStatusBarHeight = res.getDimensionPixelSize(R.dimen.status_bar_height);
         mKeyguardLockPadding = res.getDimensionPixelSize(R.dimen.keyguard_lock_padding);
         mKeyguardLockHeight = res.getDimensionPixelSize(R.dimen.keyguard_lock_height);
@@ -221,6 +239,7 @@ public class TypeClockAltController implements ClockPlugin {
 
     @Override
     public boolean shouldShowStatusArea() {
-        return true;
+        if (mContext == null) return true;
+        return Settings.System.getInt(mContext.getContentResolver(), Settings.System.CLOCK_SHOW_STATUS_AREA, 1) == 1;
     }
 }
