@@ -148,4 +148,8 @@
     <string name="quick_settings_theme_tile_color_extendedgreen">Extended Green</string>
     <string name="quick_settings_theme_tile_color_elegantgreen">Elegant Green</string>
 
+    <!-- Partial screenshot -->
+    <string name="global_screenshot_selector_capture_description">Capture partial screenshot</string>
+    <string name="global_screenshot_selector_cancel_description">Cancel partial screenshot</string>
+
 </resources>

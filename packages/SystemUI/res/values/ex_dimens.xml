@@ -32,4 +32,9 @@
     <!-- QS detail view scrolling -->
     <dimen name="qs_detail_item_height_twoline">72dp</dimen>
 
+    <!-- Partial screenshot -->
+    <dimen name="global_screenshot_selector_border_width">4dp</dimen>
+    <dimen name="global_screenshot_selector_corner_width">8dp</dimen>
+    <dimen name="global_screenshot_selector_touch_width">30dp</dimen>
+
 </resources>
