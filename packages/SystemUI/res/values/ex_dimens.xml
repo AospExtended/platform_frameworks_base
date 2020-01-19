@@ -34,4 +34,10 @@
 
     <!-- Volume panel -->
     <dimen name="volume_dialog_panel_transparent_padding_left">20dp</dimen>
+
+    <!-- Partial screenshot -->
+    <dimen name="global_screenshot_selector_border_width">4dp</dimen>
+    <dimen name="global_screenshot_selector_corner_width">8dp</dimen>
+    <dimen name="global_screenshot_selector_touch_width">30dp</dimen>
+
 </resources>
