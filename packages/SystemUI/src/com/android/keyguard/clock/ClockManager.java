@@ -159,6 +159,7 @@ public final class ClockManager {
         addBuiltinClock(() -> new AnalogClockController(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new TypeClockAltController(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new TypeClockController(res, layoutInflater, colorExtractor));
+        addBuiltinClock(() -> new SpectrumClockController(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new FluidClockController(res, layoutInflater, colorExtractor));
 
         // Store the size of the display for generation of clock preview.
