@@ -20,5 +20,6 @@
     <string name="clock_title_samsung" translatable="false">Samsung</string>
     <string name="clock_title_samsung_accent" translatable="false">Samsung (colored)</string>
     <string name="clock_title_samsung_bold" translatable="false">Samsung (bold)</string>
+    <string name="clock_title_spectrum" translatable="false">Spectrum</string>
     <string name="clock_title_type_alt" translatable="false">Type (center)</string>
 </resources>
