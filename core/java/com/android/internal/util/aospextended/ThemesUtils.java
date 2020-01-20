@@ -45,4 +45,14 @@ public class ThemesUtils {
             "com.android.theme.color.teal", // Teal
             "com.android.theme.color.yellow", // Yellow
     };
+
+    public static final String[] PITCH_BLACK = {
+            "com.android.theme.pitchblack.system",
+            "com.android.theme.pitchblack.systemui",
+    };
+
+    public static final String[] EXTENDED_UI = {
+            "com.android.theme.extendedui.system",
+            "com.android.theme.extendedui.systemui",
+    };
 }
