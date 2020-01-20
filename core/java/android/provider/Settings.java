@@ -4511,6 +4511,12 @@ public final class Settings {
          */
         public static final String SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
 
+        /**
+         * Current UI mode
+         * @hide
+         */
+        public static final String SYSTEM_THEME_STYLE = "system_theme_style";
+
         /** @hide */
         private static final Validator SHOW_BATTERY_PERCENT_VALIDATOR = BOOLEAN_VALIDATOR;
 
