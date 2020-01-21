@@ -69,6 +69,9 @@
     <color name="edge_light_red">#ea4234</color>
     <color name="edge_light_yellow">#fbbc06</color>
 
+    <!-- Daily data usage -->
+    <dimen name="data_usage_padding_start">4dp</dimen>
+
     <!-- Ambient Indication -->
     <dimen name="dock_logo_min_size">48dp</dimen>
     <dimen name="dock_top_logo_margin">12dp</dimen>
