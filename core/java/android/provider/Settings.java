@@ -5171,7 +5171,7 @@ public final class Settings {
           * @hide
           */
         public static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
-        
+
         /**
          * Whether to blur behind QS
          * @hide
@@ -5180,6 +5180,15 @@ public final class Settings {
 
         /** @hide */
         private static final Validator QS_BACKGROUND_BLUR_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
+         * QS blur alpha
+         * @hide
+         */
+        public static final String QS_BACKGROUND_BLUR_ALPHA = "qs_background_blur_alpha";
+
+        /** @hide */
+        private static final Validator QS_BACKGROUND_BLUR_ALPHA_VALIDATOR = ANY_INTEGER_VALIDATOR;
 
         /**
          * @hide
@@ -5285,6 +5294,7 @@ public final class Settings {
             NAVIGATION_BAR_ARROW_KEYS,
             USE_OLD_MOBILETYPE,
             QS_BACKGROUND_BLUR,
+            QS_BACKGROUND_BLUR_ALPHA,
         };
 
         /**
@@ -5556,6 +5566,7 @@ public final class Settings {
             VALIDATORS.put(STATUS_BAR_LOGO, STATUS_BAR_LOGO_VALIDATOR);
             VALIDATORS.put(USE_OLD_MOBILETYPE, USE_OLD_MOBILETYPE_VALIDATOR);
             VALIDATORS.put(QS_BACKGROUND_BLUR, QS_BACKGROUND_BLUR_VALIDATOR);
+            VALIDATORS.put(QS_BACKGROUND_BLUR_ALPHA, QS_BACKGROUND_BLUR_ALPHA_VALIDATOR);
         }
 
         /**
