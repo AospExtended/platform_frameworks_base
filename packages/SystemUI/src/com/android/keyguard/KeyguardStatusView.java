@@ -18,18 +18,21 @@ package com.android.keyguard;
 
 import android.app.ActivityManager;
 import android.app.IActivityManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.RemoteException;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.Slog;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
@@ -297,6 +300,22 @@ public class KeyguardStatusView extends GridLayout implements
         if (mOwnerInfo == null) return;
         String info = mLockPatternUtils.getDeviceOwnerInfo();
         if (info == null) {
+            final ContentResolver resolver = mContext.getContentResolver();
+            String currentClock = Settings.Secure.getString(
+                resolver, Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_FACE);
+            boolean mCustomClockSelection = currentClock == null ? false : currentClock.contains("Type")
+                    || currentClock.contains("IDE") || currentClock.contains("ShapeShift");
+
+            // If left aligned style clock, align the textView to start else keep it center.
+            if (mCustomClockSelection) {
+                mOwnerInfo.setPaddingRelative((int) mContext.getResources()
+                    .getDimension(R.dimen.custom_clock_left_padding) + 8, 0, 0, 0);
+                mOwnerInfo.setGravity(Gravity.START);
+            } else {
+                mOwnerInfo.setPaddingRelative(0, 0, 0, 0);
+                mOwnerInfo.setGravity(Gravity.CENTER);
+            }
+
             // Use the current user owner information if enabled.
             final boolean ownerInfoEnabled = mLockPatternUtils.isOwnerInfoEnabled(
                     KeyguardUpdateMonitor.getCurrentUser());

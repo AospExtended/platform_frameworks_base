@@ -29,4 +29,7 @@
     <dimen name="clock_oronos_outline_size">4dp</dimen>
 
     <dimen name="ide_clock_font_size">14sp</dimen>
+
+    <!-- Custom clock -->
+    <dimen name="custom_clock_left_padding">50dp</dimen>
 </resources>
