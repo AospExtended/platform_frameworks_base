@@ -5387,8 +5387,8 @@
     <string name="mime_type_presentation_ext"><xliff:g id="extension" example="PDF">%1$s</xliff:g> presentation</string>
 
     <!-- Strings for Bluetooth service -->
-    <!-- toast message informing user that Bluetooth stays on after airplane mode is turned on [CHAR LIMIT=60] -->
-    <string name="bluetooth_airplane_mode_toast">Bluetooth media is connected, Bluetooth stays ON</string>
+    <!-- toast message informing user that Bluetooth stays on after airplane mode is turned on. [CHAR LIMIT=NONE] -->
+    <string name="bluetooth_airplane_mode_toast">Bluetooth will stay on during airplane mode</string>
 
     <!-- Strings for car -->
     <!-- String displayed when loading a user in the car [CHAR LIMIT=30] -->

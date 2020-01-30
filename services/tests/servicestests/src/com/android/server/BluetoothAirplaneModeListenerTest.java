@@ -52,9 +52,9 @@ public class BluetoothAirplaneModeListenerTest {
         mHelper = mock(AirplaneModeHelper.class);
         when(mHelper.getSettingsInt(BluetoothAirplaneModeListener.TOAST_COUNT))
                 .thenReturn(BluetoothAirplaneModeListener.MAX_TOAST_COUNT);
-        doNothing().when(mHelper).storeSettingsInt(anyString(), anyInt());
+        doNothing().when(mHelper).setSettingsInt(anyString(), anyInt());
         doNothing().when(mHelper).showToastMessage();
-        doNothing().when(mHelper).airplaneModeChanged(any(BluetoothManagerService.class));
+        doNothing().when(mHelper).onAirplaneModeChanged(any(BluetoothManagerService.class));
 
         mBluetoothAirplaneModeListener = new BluetoothAirplaneModeListener(
                     mBluetoothManagerService, Looper.getMainLooper(), mContext);
@@ -63,22 +63,22 @@ public class BluetoothAirplaneModeListenerTest {
 
     @Test
     public void testIgnoreOnAirplanModeChange() {
-        Assert.assertFalse(mBluetoothAirplaneModeListener.ignoreOnAirplanModeChange());
+        Assert.assertFalse(mBluetoothAirplaneModeListener.shouldSkipAirplaneModeChange());
 
         when(mHelper.isBluetoothOn()).thenReturn(true);
-        Assert.assertFalse(mBluetoothAirplaneModeListener.ignoreOnAirplanModeChange());
+        Assert.assertFalse(mBluetoothAirplaneModeListener.shouldSkipAirplaneModeChange());
 
         when(mHelper.isA2dpOrHearingAidConnected()).thenReturn(true);
-        Assert.assertFalse(mBluetoothAirplaneModeListener.ignoreOnAirplanModeChange());
+        Assert.assertFalse(mBluetoothAirplaneModeListener.shouldSkipAirplaneModeChange());
 
         when(mHelper.isAirplaneModeOn()).thenReturn(true);
-        Assert.assertTrue(mBluetoothAirplaneModeListener.ignoreOnAirplanModeChange());
+        Assert.assertTrue(mBluetoothAirplaneModeListener.shouldSkipAirplaneModeChange());
     }
 
     @Test
     public void testHandleAirplaneModeChange_InvokeAirplaneModeChanged() {
         mBluetoothAirplaneModeListener.handleAirplaneModeChange();
-        verify(mHelper).airplaneModeChanged(mBluetoothManagerService);
+        verify(mHelper).onAirplaneModeChanged(mBluetoothManagerService);
     }
 
     @Test
@@ -89,10 +89,10 @@ public class BluetoothAirplaneModeListenerTest {
         when(mHelper.isAirplaneModeOn()).thenReturn(true);
         mBluetoothAirplaneModeListener.handleAirplaneModeChange();
 
-        verify(mHelper).storeSettingsInt(Settings.Global.BLUETOOTH_ON,
+        verify(mHelper).setSettingsInt(Settings.Global.BLUETOOTH_ON,
                 BluetoothManagerService.BLUETOOTH_ON_AIRPLANE);
         verify(mHelper, times(0)).showToastMessage();
-        verify(mHelper, times(0)).airplaneModeChanged(mBluetoothManagerService);
+        verify(mHelper, times(0)).onAirplaneModeChanged(mBluetoothManagerService);
     }
 
     @Test
@@ -103,23 +103,23 @@ public class BluetoothAirplaneModeListenerTest {
         when(mHelper.isAirplaneModeOn()).thenReturn(true);
         mBluetoothAirplaneModeListener.handleAirplaneModeChange();
 
-        verify(mHelper).storeSettingsInt(Settings.Global.BLUETOOTH_ON,
+        verify(mHelper).setSettingsInt(Settings.Global.BLUETOOTH_ON,
                 BluetoothManagerService.BLUETOOTH_ON_AIRPLANE);
         verify(mHelper).showToastMessage();
-        verify(mHelper, times(0)).airplaneModeChanged(mBluetoothManagerService);
+        verify(mHelper, times(0)).onAirplaneModeChanged(mBluetoothManagerService);
     }
 
     @Test
     public void testIsPopToast_PopToast() {
         mBluetoothAirplaneModeListener.mToastCount = 0;
-        Assert.assertTrue(mBluetoothAirplaneModeListener.isPopToast());
-        verify(mHelper).storeSettingsInt(BluetoothAirplaneModeListener.TOAST_COUNT, 1);
+        Assert.assertTrue(mBluetoothAirplaneModeListener.shouldPopToast());
+        verify(mHelper).setSettingsInt(BluetoothAirplaneModeListener.TOAST_COUNT, 1);
     }
 
     @Test
     public void testIsPopToast_NotPopToast() {
         mBluetoothAirplaneModeListener.mToastCount = BluetoothAirplaneModeListener.MAX_TOAST_COUNT;
-        Assert.assertFalse(mBluetoothAirplaneModeListener.isPopToast());
-        verify(mHelper, times(0)).storeSettingsInt(anyString(), anyInt());
+        Assert.assertFalse(mBluetoothAirplaneModeListener.shouldPopToast());
+        verify(mHelper, times(0)).setSettingsInt(anyString(), anyInt());
     }
 }
