@@ -181,4 +181,9 @@
     <string name="quick_settings_poweroff_label">Power off</string>
     <string name="quick_settings_reboot_label">Reboot</string>
     <string name="quick_settings_reboot_recovery_label">Recovery</string>
+
+    <!-- Mono QS Tile -->
+    <string name="quick_settings_monotoggle_tile">Audio mode</string>
+    <string name="quick_settings_monotoggle_tile_mono">Mono audio</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Stereo audio</string>
 </resources>
