@@ -23,6 +23,7 @@ import android.graphics.Rect;
 import android.view.DisplayCutout;
 import android.view.View;
 import android.view.WindowInsets;
+import android.widget.LinearLayout;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.widget.ViewClippingUtil;
@@ -61,6 +62,7 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
     private final View mClockView;
     private final View mOperatorNameView;
     private final View mAEXLogoView;
+    private final LinearLayout mCustomIconArea;
     private final DarkIconDispatcher mDarkIconDispatcher;
     private final NotificationPanelView mPanelView;
     private final Consumer<ExpandableNotificationRow>
@@ -109,7 +111,8 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
                 statusbarView.findViewById(R.id.clock),
                 statusbarView.findViewById(R.id.operator_name_frame),
                 statusbarView.findViewById(R.id.centered_icon_area),
-                statusbarView.findViewById(R.id.status_bar_logo));
+                statusbarView.findViewById(R.id.status_bar_logo),
+                statusbarView.findViewById(R.id.left_icon_area));
     }
 
     @VisibleForTesting
@@ -125,7 +128,8 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
             View clockView,
             View operatorNameView,
             View centeredIconView,
-            View aexLogoView) {
+            View aexLogoView,
+            LinearLayout customIconArea) {
         mNotificationIconAreaController = notificationIconAreaController;
         mHeadsUpManager = headsUpManager;
         mHeadsUpManager.addListener(this);
@@ -144,6 +148,7 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
         mClockView = clockView;
         mAEXLogoView = aexLogoView;
         mOperatorNameView = operatorNameView;
+        mCustomIconArea = customIconArea;
         mDarkIconDispatcher = Dependency.get(DarkIconDispatcher.class);
         mDarkIconDispatcher.addDarkReceiver(this);
 
@@ -294,6 +299,7 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
                if (mAEXLogoView.getVisibility() != View.GONE) {
                     hide(mAEXLogoView, View.INVISIBLE);
                 }
+                hide(mCustomIconArea, View.INVISIBLE);
             } else {
                 if (((Clock)mClockView).shouldBeVisible()) {
                     show(mClockView);
@@ -307,6 +313,7 @@ public class HeadsUpAppearanceController implements OnHeadsUpChangedListener,
                if (mAEXLogoView.getVisibility() != View.GONE) {
                     show(mAEXLogoView);
                 }
+                show(mCustomIconArea);
                 hide(mHeadsUpStatusBarView, View.GONE, () -> {
                     updateParentClipping(true /* shouldClip */);
                 });
