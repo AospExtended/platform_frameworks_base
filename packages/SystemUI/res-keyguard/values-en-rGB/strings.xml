@@ -158,15 +158,15 @@
   </string-array>
   <string-array name="type_clock_minutes">
     <item msgid="8322049385467207985">"O’Clock"</item>
-    <item msgid="2091812961809760681">"Oh One"</item>
-    <item msgid="1496435384877290709">"Oh Two"</item>
-    <item msgid="881846472976674129">"Oh Three"</item>
-    <item msgid="2784477043911540584">"Oh Four"</item>
-    <item msgid="1610928853656700614">"Oh Five"</item>
-    <item msgid="2317806244043886658">"Oh Six"</item>
-    <item msgid="3318687539120971327">"Oh Seven"</item>
-    <item msgid="5701600693712102348">"Oh Eight"</item>
-    <item msgid="3247381605947372495">"Oh Nine"</item>
+    <item msgid="2091812961809760681">"O’One"</item>
+    <item msgid="1496435384877290709">"O’Two"</item>
+    <item msgid="881846472976674129">"O’Three"</item>
+    <item msgid="2784477043911540584">"O’Four"</item>
+    <item msgid="1610928853656700614">"O’Five"</item>
+    <item msgid="2317806244043886658">"O’Six"</item>
+    <item msgid="3318687539120971327">"O’Seven"</item>
+    <item msgid="5701600693712102348">"O’Eight"</item>
+    <item msgid="3247381605947372495">"O’Nine"</item>
     <item msgid="3508406095411245038">"Ten"</item>
     <item msgid="7161996337755311711">"Eleven"</item>
     <item msgid="4044549963329624197">"Twelve"</item>
