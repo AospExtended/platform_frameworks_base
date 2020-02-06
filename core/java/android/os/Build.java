@@ -274,6 +274,13 @@ public class Build {
                 "ro.build.version.security_patch", "");
 
         /**
+         * The user-visible DU security patch level.
+         * @hide
+         */
+        public static final String SECURITY_PATCH_EX = SystemProperties.get(
+                "ro.aex.version.security_patch", "");
+
+        /**
          * The user-visible SDK version of the framework in its raw String
          * representation; use {@link #SDK_INT} instead.
          *
