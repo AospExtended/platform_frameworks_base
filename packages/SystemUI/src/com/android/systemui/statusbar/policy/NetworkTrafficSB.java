@@ -51,6 +51,7 @@ import com.android.systemui.R;
 import com.android.systemui.plugins.DarkIconDispatcher;
 import com.android.systemui.plugins.DarkIconDispatcher.DarkReceiver;
 import com.android.systemui.statusbar.StatusIconDisplayable;
+import com.android.systemui.statusbar.policy.KeyguardMonitor;
 
 /*
 *
@@ -272,6 +273,9 @@ public class NetworkTrafficSB extends TextView implements StatusIconDisplayable 
         }
     }
 
+    private final KeyguardMonitor mKeyguard;
+    private final KeyguardCallback mKeyguardCallback = new KeyguardCallback();
+
     /*
      *  @hide
      */
@@ -291,6 +295,7 @@ public class NetworkTrafficSB extends TextView implements StatusIconDisplayable 
      */
     public NetworkTrafficSB(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        mKeyguard = Dependency.get(KeyguardMonitor.class);
         final Resources resources = getResources();
         txtSize = (mTrafficType == BOTH)
                     ? resources.getDimensionPixelSize(R.dimen.net_traffic_multi_text_size)
@@ -307,6 +312,7 @@ public class NetworkTrafficSB extends TextView implements StatusIconDisplayable 
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
+        mKeyguard.addCallback(mKeyguardCallback);
         if (!mAttached) {
             mAttached = true;
             IntentFilter filter = new IntentFilter();
@@ -322,6 +328,7 @@ public class NetworkTrafficSB extends TextView implements StatusIconDisplayable 
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
+        mKeyguard.removeCallback(mKeyguardCallback);
         if (mAttached) {
             mContext.unregisterReceiver(mIntentReceiver);
             mAttached = false;
@@ -514,7 +521,7 @@ public class NetworkTrafficSB extends TextView implements StatusIconDisplayable 
     }
 
     private void updateVisibility() {
-        if (mIsEnabled && mTrafficVisible && mSystemIconVisible && !mTrafficInHeaderView) {
+        if (mIsEnabled && mTrafficVisible && mSystemIconVisible && !mTrafficInHeaderView && !mKeyguard.isShowing()) {
             setVisibility(View.VISIBLE);
         } else {
             setText("");
@@ -532,4 +539,11 @@ public class NetworkTrafficSB extends TextView implements StatusIconDisplayable 
     @Override
     public void setDecorColor(int color) {
     }
+
+    private final class KeyguardCallback implements KeyguardMonitor.Callback {
+        @Override
+        public void onKeyguardShowingChanged() {
+            updateSettings();
+        }
+    };
 }
