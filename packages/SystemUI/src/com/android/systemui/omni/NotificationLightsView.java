@@ -65,21 +65,29 @@ public class NotificationLightsView extends RelativeLayout {
     }
 
     public void animateNotification() {
-        int defaultColor = getResources().getInteger(
-                com.android.internal.R.integer.config_ambientNotificationDefaultColor);
-        int color = defaultColor;
+        animateNotificationWithColor(getNotificationLightsColor());
+    }
+
+    public int getNotificationLightsColor() {
+        int color = getDefaultNotificationLightsColor();
         boolean useAccent = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.NOTIFICATION_PULSE_ACCENT,
                 0, UserHandle.USER_CURRENT) != 0;
         if (useAccent) {
-            color = useAccent ?
-                    Utils.getColorAccentDefaultColor(getContext()) : defaultColor;
-        } else {
-            color = Settings.System.getIntForUser(mContext.getContentResolver(),
-                    Settings.System.OMNI_NOTIFICATION_PULSE_COLOR, defaultColor,
-                    UserHandle.USER_CURRENT);
+            color = Utils.getColorAccentDefaultColor(getContext());
         }
-        if (DEBUG) Log.d(TAG, "color = " + Integer.toHexString(color));
+        return color;
+    }
+
+    public int getDefaultNotificationLightsColor() {
+        int defaultColor = getResources().getInteger(
+                com.android.internal.R.integer.config_ambientNotificationDefaultColor);
+        return Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.NOTIFICATION_PULSE_COLOR, defaultColor,
+                    UserHandle.USER_CURRENT);
+    }
+
+    public void animateNotificationWithColor(int color) {
         ImageView leftView = (ImageView) findViewById(R.id.notification_animation_left);
         ImageView rightView = (ImageView) findViewById(R.id.notification_animation_right);
         leftView.setColorFilter(color);
