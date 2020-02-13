@@ -29,6 +29,7 @@ import android.animation.ValueAnimator;
 import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.app.Fragment;
+import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.StatusBarManager;
 import android.content.ContentResolver;
@@ -488,7 +489,6 @@ public class NotificationPanelViewController extends PanelViewController {
     private boolean mDelayShowingKeyguardStatusBar;
     private ScreenDecorations mScreenDecorations;
 
-    // Omni additions
     private NotificationLightsView mPulseLightsView;
     private boolean mPulseLightHandled;
     private boolean mAmbientPulseLightRunning;
@@ -3075,21 +3075,22 @@ public class NotificationPanelViewController extends PanelViewController {
         final boolean
                 animatePulse =
                 !mDozeParameters.getDisplayNeedsBlanking() && mDozeParameters.getAlwaysOn();
-        boolean pulseLights = Settings.System.getIntForUser(
-                mView.getContext().getContentResolver(), Settings.System.NOTIFICATION_PULSE,
-                0, UserHandle.USER_CURRENT) != 0;
-        boolean ambientLights = Settings.System.getIntForUser(
-                mView.getContext().getContentResolver(), Settings.System.AOD_NOTIFICATION_PULSE,
-                0, UserHandle.USER_CURRENT) != 0;
-        boolean activeNotif = mNotificationStackScroller.hasActiveClearableNotifications(ROWS_ALL);
+        ContentResolver resolver = mView.getContext().getContentResolver();
+        boolean pulseLights = Settings.System.getIntForUser(resolver,
+                Settings.System.NOTIFICATION_PULSE, 0, UserHandle.USER_CURRENT) != 0;
+        boolean ambientLights = Settings.System.getIntForUser(resolver,
+                Settings.System.AOD_NOTIFICATION_PULSE, 0, UserHandle.USER_CURRENT) != 0;
+        ExpandableNotificationRow row = mNotificationStackScroller.getFirstActiveClearableNotifications(ROWS_ALL);
+        boolean activeNotif = row != null;
         int pulseReason = Settings.System.getIntForUser(mView.getContext().getContentResolver(),
                 Settings.System.PULSE_TRIGGER_REASON, DozeLog.PULSE_REASON_NONE, UserHandle.USER_CURRENT);
         boolean pulseReasonNotification = pulseReason == DozeLog.PULSE_REASON_NOTIFICATION;
-        boolean ambientLightsHideAod = Settings.System.getIntForUser(
-                mView.getContext().getContentResolver(), Settings.System.AOD_NOTIFICATION_PULSE_CLEAR,
-                0, UserHandle.USER_CURRENT) != 0;
-        int ambientLightsTimeout = Settings.System.getIntForUser(mView.getContext().getContentResolver(),
+        boolean ambientLightsHideAod = Settings.System.getIntForUser(resolver,
+                Settings.System.AOD_NOTIFICATION_PULSE_CLEAR, 0, UserHandle.USER_CURRENT) != 0;
+        int ambientLightsTimeout = Settings.System.getIntForUser(resolver,
                 Settings.System.AOD_NOTIFICATION_PULSE_TIMEOUT, 0, UserHandle.USER_CURRENT);
+        boolean pulseColorAutomatic = Settings.System.getIntForUser(resolver,
+                Settings.System.NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0, UserHandle.USER_CURRENT) != 0;
         if (animatePulse) {
             mAnimateNextPositionUpdate = true;
         }
@@ -3105,11 +3106,22 @@ public class NotificationPanelViewController extends PanelViewController {
                         + " mPulseLightHandled = " + mPulseLightHandled + " mDozing = " + mDozing
                         + " pulseReason = " + pulseReason + " ambientLightsTimeout = " + ambientLightsTimeout);
             }
+            int pulseColor = mPulseLightsView.getDefaultNotificationLightsColor();
+            if (row != null) {
+                if (pulseColorAutomatic) {
+                    int notificationColor = row.getStatusBarNotification().getNotification().color;
+                    if (notificationColor != Notification.COLOR_DEFAULT) {
+                        pulseColor = notificationColor;
+                    }
+                } else {
+                    pulseColor = mPulseLightsView.getNotificationLightsColor();
+                }
+            }
             if (mPulsing) {
                 if (activeNotif && pulseReasonNotification) {
                     // show the bars if we have to
                     if (pulseLights) {
-                        mPulseLightsView.animateNotification();
+                        mPulseLightsView.animateNotificationWithColor(pulseColor);
                         mPulseLightsView.setVisibility(View.VISIBLE);
                     } else {
                         // bars can still be visible as leftover
@@ -3133,7 +3145,7 @@ public class NotificationPanelViewController extends PanelViewController {
                     if (ambientLightsHideAod) {
                         showAodContent(false);
                     }
-                    mPulseLightsView.animateNotification();
+                    mPulseLightsView.animateNotificationWithColor(pulseColor);
                     mPulseLightsView.setVisibility(View.VISIBLE);
                     mAmbientPulseLightRunning = true;
                     if (ambientLightsTimeout != 0) {
