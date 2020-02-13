@@ -344,7 +344,7 @@ public class KeyguardSecurityContainer extends FrameLayout implements KeyguardSe
             .setTitle(title)
             .setMessage(message)
             .setCancelable(false)
-            .setNeutralButton(R.string.ok, null)
+            .setPositiveButton(R.string.ok, null)
             .create();
         if (!(mContext instanceof Activity)) {
             mAlertDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);
