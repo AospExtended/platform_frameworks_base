@@ -29,6 +29,7 @@ import android.content.IntentFilter;
 import android.content.pm.UserInfo;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.hardware.biometrics.BiometricSourceType;
 import android.hardware.face.FaceManager;
 import android.hardware.fingerprint.FingerprintManager;
@@ -37,6 +38,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.RemoteException;
 import android.os.SystemClock;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.os.IBatteryPropertiesRegistrar;
@@ -45,8 +47,10 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.text.format.Formatter;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 import androidx.annotation.Nullable;
 
@@ -81,6 +85,8 @@ import java.util.IllegalFormatConversionException;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import vendor.lineage.biometrics.fingerprint.inscreen.V1_0.IFingerprintInscreen;
+
 /**
  * Controls the indications and error messages shown on the Keyguard
  */
@@ -95,7 +101,7 @@ public class KeyguardIndicationController implements StateListener,
     private static final int MSG_CLEAR_BIOMETRIC_MSG = 2;
     private static final int MSG_SWIPE_UP_TO_UNLOCK = 3;
     private static final long TRANSIENT_BIOMETRIC_ERROR_TIMEOUT = 1300;
-    private static final float BOUNCE_ANIMATION_FINAL_Y = 0f;	
+    private static final float BOUNCE_ANIMATION_FINAL_Y = 0f;
     private static final String LOCKSCREEN_CHARGING_ANIMATION_STYLE =
             "system:" + Settings.System.LOCKSCREEN_CHARGING_ANIMATION_STYLE;
 
@@ -109,6 +115,7 @@ public class KeyguardIndicationController implements StateListener,
     private KeyguardIndicationTextView mDisclosure;
     private LottieAnimationView mChargingIndicationView;
     private int mChargingIndication = 1;
+    private int mFODPositionY = 0;
     private final IBatteryStats mBatteryInfo;
     private final SettableWakeLock mWakeLock;
     private final DockManager mDockManager;
@@ -220,6 +227,18 @@ public class KeyguardIndicationController implements StateListener,
         updateChargingIndicationStyle();
         mDisclosure = indicationArea.findViewById(R.id.keyguard_indication_enterprise_disclosure);
         mDisclosureMaxAlpha = mDisclosure.getAlpha();
+
+        if (hasActiveInDisplayFp()) {
+            try {
+                IFingerprintInscreen daemon = IFingerprintInscreen.getService();
+                mFODPositionY = daemon.getPositionY();
+            } catch (RemoteException e) {
+                // do nothing
+            }
+            if (mFODPositionY <= 0) {
+                mFODPositionY = 0;
+            }
+        }
         updateIndication(false /* animate */);
         updateDisclosure();
 
@@ -529,7 +548,7 @@ public class KeyguardIndicationController implements StateListener,
             mIndicationArea.setVisibility(View.GONE);
         }
     }
-	
+
     public void updateChargingIndicationStyle() {
         switch (mChargingIndication) {
             default:
@@ -571,13 +590,52 @@ public class KeyguardIndicationController implements StateListener,
         }
     }
 
-    private void updateChargingIndication() {
+    public void updateChargingIndication() {
         if (mChargingIndication > 0 && !mPowerCharged && mBatteryPresent && mPowerPluggedIn) {
             mChargingIndicationView.setVisibility(View.VISIBLE);
+            if (hasActiveInDisplayFp()) {
+                if (mFODPositionY != 0) {
+                    // Get screen height
+                    WindowManager windowManager = mContext.getSystemService(WindowManager.class);
+                    Display defaultDisplay = windowManager.getDefaultDisplay();
+                    Point size = new Point();
+                    defaultDisplay.getRealSize(size);
+                    int screenHeight = size.y;
+                    // Correct FOD position if cutout is hidden
+                    int statusbarHeight = mContext.getResources().getDimensionPixelSize(
+                            com.android.internal.R.dimen.status_bar_height_portrait);
+                    boolean cutoutMasked = mContext.getResources().getBoolean(
+                            com.android.internal.R.bool.config_maskMainBuiltInDisplayCutout);
+                    int fodPositionY = mFODPositionY;
+                    if (cutoutMasked) {
+                        fodPositionY = mFODPositionY - statusbarHeight;
+                    }
+                    // Get indication text height
+                    int textViewHeight = mTextView.getMeasuredHeight();
+                    // Get bottom margin height
+                    int marginBottom = mContext.getResources().getDimensionPixelSize(
+                            R.dimen.keyguard_indication_margin_bottom_fingerprint_in_display);
+                    // Calculate charging indication margin
+                    int animationMargin = (screenHeight - fodPositionY) - (textViewHeight + marginBottom) + 10;
+                    // Set position of charging indication
+                    ViewGroup.MarginLayoutParams params =
+                            (ViewGroup.MarginLayoutParams) mChargingIndicationView.getLayoutParams();
+                    params.setMargins(0, 0, 0, animationMargin);
+                    mChargingIndicationView.setLayoutParams(params);
+                }
+            }
             mChargingIndicationView.playAnimation();
         } else {
             mChargingIndicationView.setVisibility(View.GONE);
         }
+    }
+
+    private boolean hasActiveInDisplayFp() {
+        String FOD_DISABLED_BY_PROP = "ro.fingerprint.inscreen_disabled";
+        boolean hasInDisplayFingerprint = !SystemProperties.getBoolean(FOD_DISABLED_BY_PROP, false);
+        int userId = KeyguardUpdateMonitor.getCurrentUser();
+        FingerprintManager fpm = (FingerprintManager) mContext.getSystemService(Context.FINGERPRINT_SERVICE);
+        return hasInDisplayFingerprint && fpm.getEnrolledFingerprints(userId).size() > 0;
     }
 
     // animates textView - textView moves up and bounces down
