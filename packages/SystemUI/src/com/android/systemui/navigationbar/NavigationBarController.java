@@ -20,6 +20,7 @@ import static android.view.Display.DEFAULT_DISPLAY;
 import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_3BUTTON;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -36,6 +37,7 @@ import android.view.IWindowManager;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.WindowManagerGlobal;
+import android.view.WindowInsetsController.Appearance;
 import android.view.accessibility.AccessibilityManager;
 
 import androidx.annotation.NonNull;
@@ -45,6 +47,7 @@ import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.UiEventLogger;
 import com.android.internal.statusbar.RegisterStatusBarResult;
+import com.android.internal.view.AppearanceRegion;
 import com.android.settingslib.applications.InterestingConfigChanges;
 import com.android.systemui.Dumpable;
 import com.android.systemui.accessibility.AccessibilityButtonModeObserver;
@@ -120,6 +123,15 @@ public class NavigationBarController implements Callbacks,
     private int mNavMode;
     private boolean mIsTablet;
     private final UserTracker mUserTracker;
+
+    public class SystemUiVisibility {
+        public int displayId;
+        public @Appearance int appearance;
+        public AppearanceRegion[] appearanceRegions;
+        public boolean navbarColorManagedByIme;
+        public int behavior;
+        public boolean isFullscreen;
+    }
 
     /** A displayId - nav bar maps. */
     @VisibleForTesting
@@ -265,9 +277,17 @@ public class NavigationBarController implements Callbacks,
 
     @Override
     public void onDisplayReady(int displayId) {
+        onDisplayReady(displayId, null);
+    }
+
+    public void onDisplayReady(int displayId, SystemUiVisibility systemUiVisibility) {
         Display display = mDisplayManager.getDisplay(displayId);
         mIsTablet = isTablet(mContext.getResources().getConfiguration());
-        createNavigationBar(display, null /* savedState */, null /* result */);
+        createNavigationBar(display, null /* savedState */, null /* result */, systemUiVisibility);
+    }
+
+    public SystemUiVisibility createSystemUiVisibility() {
+        return new SystemUiVisibility();
     }
 
     @Override
@@ -302,6 +322,11 @@ public class NavigationBarController implements Callbacks,
      */
     public void createNavigationBars(final boolean includeDefaultDisplay,
             RegisterStatusBarResult result) {
+        createNavigationBars(includeDefaultDisplay, result, null);
+    }
+
+    public void createNavigationBars(final boolean includeDefaultDisplay,
+            RegisterStatusBarResult result, SystemUiVisibility systemUiVisibility) {
         if (updateNavbarForTaskbar()) {
             return;
         }
@@ -309,7 +334,7 @@ public class NavigationBarController implements Callbacks,
         Display[] displays = mDisplayManager.getDisplays();
         for (Display display : displays) {
             if (includeDefaultDisplay || display.getDisplayId() != DEFAULT_DISPLAY) {
-                createNavigationBar(display, null /* savedState */, result);
+                createNavigationBar(display, null /* savedState */, result, systemUiVisibility);
             }
         }
     }
@@ -322,6 +347,11 @@ public class NavigationBarController implements Callbacks,
      */
     @VisibleForTesting
     void createNavigationBar(Display display, Bundle savedState, RegisterStatusBarResult result) {
+        createNavigationBar(display, savedState, result, null);
+    }
+
+    void createNavigationBar(Display display, Bundle savedState, RegisterStatusBarResult result,
+            SystemUiVisibility systemUiVisibility) {
         if (display == null) {
             return;
         }
@@ -372,6 +402,7 @@ public class NavigationBarController implements Callbacks,
                 mNavBarOverlayController,
                 mUiEventLogger,
                 mUserTracker);
+
         mNavigationBars.put(displayId, navBar);
 
         View navigationBarView = navBar.createView(savedState);
@@ -390,6 +421,15 @@ public class NavigationBarController implements Callbacks,
                 v.removeOnAttachStateChangeListener(this);
             }
         });
+
+        if (systemUiVisibility != null && systemUiVisibility.displayId == displayId) {
+            navBar.onSystemBarAttributesChanged(systemUiVisibility.displayId,
+                    systemUiVisibility.appearance,
+                    systemUiVisibility.appearanceRegions,
+                    systemUiVisibility.navbarColorManagedByIme,
+                    systemUiVisibility.behavior,
+                    systemUiVisibility.isFullscreen);
+        }
     }
 
     void removeNavigationBar(int displayId) {
