@@ -19,6 +19,7 @@ package com.android.systemui.statusbar;
 import static android.view.Display.DEFAULT_DISPLAY;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.hardware.display.DisplayManager;
 import android.os.Handler;
 import android.os.RemoteException;
@@ -27,12 +28,14 @@ import android.util.SparseArray;
 import android.view.Display;
 import android.view.IWindowManager;
 import android.view.View;
+import android.view.WindowInsetsController.Appearance;
 import android.view.WindowManagerGlobal;
 
 import androidx.annotation.Nullable;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.statusbar.RegisterStatusBarResult;
+import com.android.internal.view.AppearanceRegion;
 import com.android.systemui.Dependency;
 import com.android.systemui.assist.AssistHandleViewController;
 import com.android.systemui.dagger.qualifiers.Main;
@@ -61,6 +64,13 @@ public class NavigationBarController implements Callbacks {
     private final Handler mHandler;
     private final DisplayManager mDisplayManager;
 
+    public class SystemUiVisibility {
+        public int displayId;
+        public @Appearance int appearance;
+        public AppearanceRegion[] appearanceRegions;
+        public boolean navbarColorManagedByIme;
+    }
+
     /** A displayId - nav bar maps. */
     @VisibleForTesting
     SparseArray<NavigationBarFragment> mNavigationBars = new SparseArray<>();
@@ -81,8 +91,16 @@ public class NavigationBarController implements Callbacks {
 
     @Override
     public void onDisplayReady(int displayId) {
+        onDisplayReady(displayId, null);
+    }
+
+    public void onDisplayReady(int displayId, SystemUiVisibility systemUiVisibility) {
         Display display = mDisplayManager.getDisplay(displayId);
-        createNavigationBar(display, null);
+        createNavigationBar(display, null, systemUiVisibility);
+    }
+
+    public SystemUiVisibility createSystemUiVisibility() {
+        return new SystemUiVisibility();
     }
 
     // TODO(b/117478341): I use {@code includeDefaultDisplay} to make this method compatible to
@@ -94,10 +112,15 @@ public class NavigationBarController implements Callbacks {
      */
     public void createNavigationBars(final boolean includeDefaultDisplay,
             RegisterStatusBarResult result) {
+        createNavigationBars(includeDefaultDisplay, result, null);
+    }
+
+    public void createNavigationBars(final boolean includeDefaultDisplay,
+            RegisterStatusBarResult result, SystemUiVisibility systemUiVisibility) {
         Display[] displays = mDisplayManager.getDisplays();
         for (Display display : displays) {
             if (includeDefaultDisplay || display.getDisplayId() != DEFAULT_DISPLAY) {
-                createNavigationBar(display, result);
+                createNavigationBar(display, result, systemUiVisibility);
             }
         }
     }
@@ -110,6 +133,11 @@ public class NavigationBarController implements Callbacks {
      */
     @VisibleForTesting
     void createNavigationBar(Display display, RegisterStatusBarResult result) {
+        createNavigationBar(display, result, null);
+    }
+
+    void createNavigationBar(Display display, RegisterStatusBarResult result,
+            SystemUiVisibility systemUiVisibility) {
         if (display == null) {
             return;
         }
@@ -154,6 +182,14 @@ public class NavigationBarController implements Callbacks {
                             Dependency.get(IWindowManager.class));
             navBar.setAutoHideController(autoHideController);
             navBar.restoreAppearanceAndTransientState();
+
+            if (systemUiVisibility != null && systemUiVisibility.displayId == displayId) {
+                navBar.onSystemBarAppearanceChanged(systemUiVisibility.displayId,
+                        systemUiVisibility.appearance,
+                        systemUiVisibility.appearanceRegions,
+                        systemUiVisibility.navbarColorManagedByIme);
+            }
+
             mNavigationBars.append(displayId, navBar);
 
             if (result != null) {
