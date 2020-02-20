@@ -4798,6 +4798,10 @@ public final class Settings {
          */
         public static final String STATUS_BAR_LOGO = "status_bar_logo";
 
+        /** @hide */
+        private static final Validator STATUS_BAR_LOGO_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
         /**
          * Wheter to show network traffic indicator in statusbar
          * @hide
@@ -5336,6 +5340,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(NOTIFICATION_GUTS_KILL_APP_BUTTON);
             PRIVATE_SETTINGS.add(FORCE_SHOW_NAVBAR);
             PRIVATE_SETTINGS.add(NAVIGATION_BAR_ARROW_KEYS);
+            PRIVATE_SETTINGS.add(STATUS_BAR_LOGO);
         }
 
 
@@ -5455,6 +5460,7 @@ public final class Settings {
             VALIDATORS.put(FORCE_SHOW_NAVBAR, FORCE_SHOW_NAVBAR_VALIDATOR);
             VALIDATORS.put(NAVIGATION_BAR_ARROW_KEYS,
                     NAVIGATION_BAR_ARROW_KEYS_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_LOGO, STATUS_BAR_LOGO_VALIDATOR);
         }
 
         /**
