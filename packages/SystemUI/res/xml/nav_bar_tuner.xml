@@ -26,4 +26,9 @@
         android:entries="@array/nav_bar_layouts"
         android:entryValues="@array/nav_bar_layouts_values" />
 
+    <com.android.systemui.tuner.TunerSwitch
+        android:key="sysui_nav_bar_inverse"
+        android:title="@string/navigation_bar_inverse_title"
+        android:summary="@string/navigation_bar_inverse_summary" />
+
 </PreferenceScreen>

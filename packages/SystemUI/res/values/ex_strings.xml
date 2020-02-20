@@ -134,5 +134,7 @@
     <!-- Navbar -->
     <string name="systemui_tuner_navbar_title">Layout</string>
     <string name="navigation_bar_format_title">Navbar format</string>
+    <string name="navigation_bar_inverse_title">Swap buttons</string>
+    <string name="navigation_bar_inverse_summary">Swap the order of recents and back buttons</string>
 </resources>
 
