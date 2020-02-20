@@ -34,6 +34,7 @@ import com.android.keyguard.KeyguardSecurityModel;
 import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.keyguard.clock.ClockManager;
 import com.android.settingslib.bluetooth.LocalBluetoothManager;
+import com.android.systemui.CustomSettingsService;
 import com.android.systemui.appops.AppOpsController;
 import com.android.systemui.assist.AssistManager;
 import com.android.systemui.broadcast.BroadcastDispatcher;
@@ -322,6 +323,7 @@ public class Dependency {
     @Inject Lazy<RecordingController> mRecordingController;
     @Inject Lazy<ProtoTracer> mProtoTracer;
     @Inject Lazy<Divider> mDivider;
+    @Inject Lazy<CustomSettingsService> mCustomSettingsService;
 
     @Inject
     public Dependency() {
@@ -518,6 +520,7 @@ public class Dependency {
 
         mProviders.put(RecordingController.class, mRecordingController::get);
         mProviders.put(Divider.class, mDivider::get);
+        mProviders.put(CustomSettingsService.class, mCustomSettingsService::get);
 
         sDependency = this;
     }

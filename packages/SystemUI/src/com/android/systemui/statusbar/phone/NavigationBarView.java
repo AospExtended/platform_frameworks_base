@@ -1330,6 +1330,6 @@ public class NavigationBarView extends FrameLayout implements
 
     private boolean showDpadArrowKeys() {
         return Settings.System.getIntForUser(getContext().getContentResolver(),
-                Settings.System.OMNI_NAVIGATION_BAR_ARROW_KEYS, 0, UserHandle.USER_CURRENT) != 0;
+                Settings.System.NAVIGATION_BAR_ARROW_KEYS, 0, UserHandle.USER_CURRENT) != 0;
     }
 }
