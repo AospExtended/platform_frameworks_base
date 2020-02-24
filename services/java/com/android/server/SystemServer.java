@@ -1781,12 +1781,10 @@ public final class SystemServer {
                 traceEnd();
             }
 
-            if (hasFeatureFace || hasFeatureIris || hasFeatureFingerprint) {
-                // Start this service after all biometric services.
-                traceBeginAndSlog("StartBiometricService");
-                mSystemServiceManager.startService(BiometricService.class);
-                traceEnd();
-            }
+            // Start this service after all biometric services.
+            traceBeginAndSlog("StartBiometricService");
+            mSystemServiceManager.startService(BiometricService.class);
+            traceEnd();
 
             traceBeginAndSlog("StartBackgroundDexOptService");
             try {
