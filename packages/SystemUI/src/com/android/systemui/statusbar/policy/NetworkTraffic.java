@@ -374,13 +374,14 @@ public class NetworkTraffic extends TextView {
                 UserHandle.USER_CURRENT);
         mShowArrow = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_ARROW, 1,
-	        UserHandle.USER_CURRENT) == 1;
+                UserHandle.USER_CURRENT) == 1;
         mTrafficInHeaderView = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_VIEW_LOCATION, 0,
                 UserHandle.USER_CURRENT) == 1;
         mNetTrafSize = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 42,
                 UserHandle.USER_CURRENT);
+        setVisibility(View.GONE);
     }
 
     private void clearHandlerCallbacks() {
