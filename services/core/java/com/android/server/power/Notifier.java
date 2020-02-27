@@ -840,7 +840,7 @@ public class Notifier {
 
     private void showWiredChargingStarted(@UserIdInt int userId,int batteryLevel) {
         final boolean animationEnabled = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.CHARGING_ANIMATION, 1) == 1;
+                Settings.System.CHARGING_ANIMATION, 0) == 1;
         playChargingStartedFeedback(userId, false /* wireless */);
         if (mStatusBarManagerInternal != null && animationEnabled) {
             mStatusBarManagerInternal.showChargingAnimation(batteryLevel);
