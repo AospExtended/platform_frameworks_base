@@ -82,36 +82,40 @@ public class NotificationLightsView extends RelativeLayout {
     }
 
     public int getNotificationLightsColor() {
+        int color = 0xFFFFFFFF;
         int colorMode = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.NOTIFICATION_PULSE_COLOR_MODE,
                 0, UserHandle.USER_CURRENT);
-        int color = getDefaultNotificationLightsColor(); // custom color (fallback)
-        if (colorMode == 0) { // accent
-            color = Utils.getColorAccentDefaultColor(getContext());
-        } else if (colorMode == 1) { // wallpapper
-            try {
-                WallpaperManager wallpaperManager = WallpaperManager.getInstance(mContext);
-                WallpaperInfo wallpaperInfo = wallpaperManager.getWallpaperInfo();
-                if (wallpaperInfo == null) { // if not a live wallpaper
-                    Drawable wallpaperDrawable = wallpaperManager.getDrawable();
-                    Bitmap bitmap = ((BitmapDrawable)wallpaperDrawable).getBitmap();
-                    if (bitmap != null) { // if wallpaper is not blank
-                        Palette p = Palette.from(bitmap).generate();
-                        int wallColor = p.getDominantColor(color);
-                        if (color != wallColor)
-                            color = wallColor;
+        int customColor = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.NOTIFICATION_PULSE_COLOR, 0xFFFFFFFF,
+                UserHandle.USER_CURRENT);
+        switch (colorMode) {
+            case 1: // Wallpaper
+                try {
+                    WallpaperManager wallpaperManager = WallpaperManager.getInstance(mContext);
+                    WallpaperInfo wallpaperInfo = wallpaperManager.getWallpaperInfo();
+                    if (wallpaperInfo == null) { // if not a live wallpaper
+                        Drawable wallpaperDrawable = wallpaperManager.getDrawable();
+                        Bitmap bitmap = ((BitmapDrawable)wallpaperDrawable).getBitmap();
+                        if (bitmap != null) { // if wallpaper is not blank
+                            Palette p = Palette.from(bitmap).generate();
+                            int wallColor = p.getDominantColor(color);
+                            if (color != wallColor)
+                                color = wallColor;
+                        }
                     }
-                }
-            } catch (Exception e) { /* nothing to do, will use fallback */ }
+                } catch (Exception e) { /* nothing to do, will use fallback */ }
+                break;
+            case 2: // Accent
+                color = Utils.getColorAccentDefaultColor(getContext());
+                break;
+            case 3: // Custom
+                color = customColor;
+                break;
+            default: // White
+                color = 0xFFFFFFFF;
         }
         return color;
-    }
-
-    public int getDefaultNotificationLightsColor() {
-        int defaultColor = Utils.getColorAccentDefaultColor(getContext());
-        return Settings.System.getIntForUser(mContext.getContentResolver(),
-                    Settings.System.NOTIFICATION_PULSE_COLOR, defaultColor,
-                    UserHandle.USER_CURRENT);
     }
 
     public void animateNotificationWithColor(int color) {
@@ -130,7 +134,7 @@ public class NotificationLightsView extends RelativeLayout {
         mLightAnimator = ValueAnimator.ofFloat(new float[]{0.0f, 2.0f});
         mLightAnimator.setDuration(duration);
         mLightAnimator.setRepeatCount(repeats == 0 ?
-                ValueAnimator.INFINITE : repeats);
+                ValueAnimator.INFINITE : repeats - 1);
         mLightAnimator.setRepeatMode(ValueAnimator.RESTART);
         if (repeats != 0) {
             mLightAnimator.addListener(new AnimatorListener() {
