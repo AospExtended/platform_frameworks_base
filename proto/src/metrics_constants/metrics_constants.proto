@@ -7438,5 +7438,8 @@ message MetricsEvent {
 
     //Extensions
     EXTENSIONS = 1150;
+
+    // Panel for Bluetooth
+    PANEL_BLUETOOTH = 2003;
   }
 }
