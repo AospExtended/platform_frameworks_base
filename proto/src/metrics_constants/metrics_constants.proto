@@ -7439,6 +7439,9 @@ message MetricsEvent {
     //Extensions
     EXTENSIONS = 1150;
 
+    // Panel for Mobile Data
+    PANEL_MOBILE_DATA = 2002;
+
     // Panel for Bluetooth
     PANEL_BLUETOOTH = 2003;
   }
