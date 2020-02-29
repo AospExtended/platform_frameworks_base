@@ -7426,6 +7426,7 @@ message MetricsEvent {
     // CATEGORY: SETTINGS
     // OS: Q
     SETTINGS_AWARE_DISPLAY = 1750;
+
     // ---- End Q Constants, all Q constants go above this line ----
 
     // Location Tile
@@ -7436,5 +7437,8 @@ message MetricsEvent {
 
     //Extensions
     EXTENSIONS = 1150;
+
+    // Panel for Mobile Data
+    PANEL_MOBILE_DATA = 2002;
   }
 }
