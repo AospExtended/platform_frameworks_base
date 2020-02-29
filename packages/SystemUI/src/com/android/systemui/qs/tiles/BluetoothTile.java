@@ -63,7 +63,7 @@ import javax.inject.Inject;
 
 /** Quick settings tile: Bluetooth **/
 public class BluetoothTile extends SecureQSTile<BooleanState> {
-    private static final Intent BLUETOOTH_SETTINGS = new Intent(Settings.ACTION_BLUETOOTH_SETTINGS);
+    private static final Intent BLUETOOTH_SETTINGS = new Intent(Settings.Panel.ACTION_BLUETOOTH);
 
     private final BluetoothController mController;
     private final BluetoothDetailAdapter mDetailAdapter;
@@ -113,7 +113,7 @@ public class BluetoothTile extends SecureQSTile<BooleanState> {
 
     @Override
     public Intent getLongClickIntent() {
-        return new Intent(Settings.ACTION_BLUETOOTH_SETTINGS);
+        return BLUETOOTH_SETTINGS;
     }
 
     @Override
