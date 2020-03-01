@@ -155,6 +155,7 @@
     
     <!-- AOD QS tile -->
     <string name="quick_settings_aod_label">Always on display</string>
+    <string name="quick_settings_aod_off_powersave_label">Always on display off\nBattery saver</string>
 
     <!-- Gaming mode -->
     <string name="gaming_mode_not_enabled">Gaming mode is disabled in settings</string>
