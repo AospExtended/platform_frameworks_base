@@ -66,6 +66,7 @@ import com.android.systemui.statusbar.phone.ConfigurationControllerImpl;
 import com.android.systemui.statusbar.policy.ConfigurationController;
 import com.android.systemui.statusbar.policy.DataSaverController;
 import com.android.systemui.theme.ThemeOverlayApplier;
+import com.android.systemui.statusbar.policy.TaskHelper;
 import com.android.systemui.util.leak.LeakDetector;
 import com.android.systemui.util.settings.SecureSettings;
 
@@ -290,5 +291,12 @@ public class DependencyProvider {
     @SysUISingleton
     public ModeSwitchesController providesModeSwitchesController(Context context) {
         return new ModeSwitchesController(context);
+    }
+
+    /** */
+    @Provides
+    @SysUISingleton
+    public TaskHelper provideTaskHelper(Context context) {
+        return new TaskHelper(context);
     }
 }
