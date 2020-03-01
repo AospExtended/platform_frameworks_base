@@ -320,6 +320,8 @@
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
 
+    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
+
     <!-- Smart space -->
     <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.QSB"/>
     <protected-broadcast android:name="com.google.android.systemui.smartspace.ENABLE_UPDATE"/>
