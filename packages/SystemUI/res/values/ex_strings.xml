@@ -224,5 +224,9 @@
     <!-- Content description of the Gaming mode tile in quick settings when enabled (not shown on the screen). [CHAR LIMIT=NONE] -->
     <string name="accessibility_quick_settings_gaming_mode_enabled">Gaming mode turned on.</string>
 
+    <!-- Force kill app -->
+    <string name="task_helper_app_killed">%1$s hart beendet</string>
+    <string name="empty_app_killed">App</string>
+
 </resources>
 
