@@ -150,5 +150,6 @@
 
     <!-- AOD QS tile -->
     <string name="quick_settings_aod_label">Always on display</string>
+    <string name="quick_settings_aod_off_powersave_label">Always on display off\nBattery saver</string>
 
 </resources>
