@@ -156,7 +156,7 @@ final class AssistHandleReminderExpBehavior implements BehaviorController {
 
     private final Clock mClock;
     private final Handler mHandler;
-    private final PhenotypeHelper mPhenotypeHelper;
+    private final DeviceConfigHelper mDeviceConfigHelper;
     private final Lazy<StatusBarStateController> mStatusBarStateController;
     private final Lazy<ActivityManagerWrapper> mActivityManagerWrapper;
     private final Lazy<OverviewProxyService> mOverviewProxyService;
@@ -188,7 +188,7 @@ final class AssistHandleReminderExpBehavior implements BehaviorController {
     AssistHandleReminderExpBehavior(
             @Named(UPTIME_NAME) Clock clock,
             @Named(ASSIST_HANDLE_THREAD_NAME) Handler handler,
-            PhenotypeHelper phenotypeHelper,
+            DeviceConfigHelper deviceConfigHelper,
             Lazy<StatusBarStateController> statusBarStateController,
             Lazy<ActivityManagerWrapper> activityManagerWrapper,
             Lazy<OverviewProxyService> overviewProxyService,
@@ -196,7 +196,7 @@ final class AssistHandleReminderExpBehavior implements BehaviorController {
             Lazy<PackageManagerWrapper> packageManagerWrapper) {
         mClock = clock;
         mHandler = handler;
-        mPhenotypeHelper = phenotypeHelper;
+        mDeviceConfigHelper = deviceConfigHelper;
         mStatusBarStateController = statusBarStateController;
         mActivityManagerWrapper = activityManagerWrapper;
         mOverviewProxyService = overviewProxyService;
@@ -465,19 +465,19 @@ final class AssistHandleReminderExpBehavior implements BehaviorController {
     }
 
     private long getShowAndGoDelayedShortDelayMs() {
-        return mPhenotypeHelper.getLong(
+        return mDeviceConfigHelper.getLong(
                 SystemUiDeviceConfigFlags.ASSIST_HANDLES_SHOW_AND_GO_DELAYED_SHORT_DELAY_MS,
                 DEFAULT_SHOW_AND_GO_DELAYED_SHORT_DELAY_MS);
     }
 
     private long getShowAndGoDelayedLongDelayMs() {
-        return mPhenotypeHelper.getLong(
+        return mDeviceConfigHelper.getLong(
                 SystemUiDeviceConfigFlags.ASSIST_HANDLES_SHOW_AND_GO_DELAYED_LONG_DELAY_MS,
                 DEFAULT_SHOW_AND_GO_DELAYED_LONG_DELAY_MS);
     }
 
     private long getShowAndGoDelayResetTimeoutMs() {
-        return mPhenotypeHelper.getLong(
+        return mDeviceConfigHelper.getLong(
                 SystemUiDeviceConfigFlags.ASSIST_HANDLES_SHOW_AND_GO_DELAY_RESET_TIMEOUT_MS,
                 DEFAULT_SHOW_AND_GO_DELAY_RESET_TIMEOUT_MS);
     }
@@ -487,7 +487,7 @@ final class AssistHandleReminderExpBehavior implements BehaviorController {
     }
 
     private boolean getSuppressOnLauncher() {
-        return mPhenotypeHelper.getBoolean(
+        return mDeviceConfigHelper.getBoolean(
                 SystemUiDeviceConfigFlags.ASSIST_HANDLES_SUPPRESS_ON_LAUNCHER,
                 DEFAULT_SUPPRESS_ON_LAUNCHER);
     }
