@@ -422,7 +422,10 @@ public class PhoneStatusBarPolicy
                             } else {
                                 iconId = R.drawable.stat_sys_data_bluetooth_connected;
                             }
-                            contentDescription = mContext.getString(R.string.accessibility_bluetooth_connected);
+                            if (mBluetooth.isBluetoothAudioActive()
+                                    || !mBluetooth.isBluetoothAudioProfileOnly()) {
+                                contentDescription = mContext.getString(R.string.accessibility_bluetooth_connected);
+                            }
                             break;
                         }
                     }
