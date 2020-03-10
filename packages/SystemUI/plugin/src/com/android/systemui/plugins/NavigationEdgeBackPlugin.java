@@ -56,6 +56,8 @@ public interface NavigationEdgeBackPlugin extends Plugin {
 
     void resetOnDown();
 
+    void setLongSwipeEnabled(boolean enabled);
+
     /** Callback to let the system react to the detected back gestures. */
     interface BackCallback {
         /** Indicates that a Back gesture was recognized and the system should go back. */
