@@ -1,3 +1,4 @@
+
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -35,6 +36,7 @@ import com.android.systemui.qs.tiles.ColorInversionTile;
 import com.android.systemui.qs.tiles.DataSaverTile;
 import com.android.systemui.qs.tiles.DndTile;
 import com.android.systemui.qs.tiles.FlashlightTile;
+import com.android.systemui.qs.tiles.FPSInfoTile;
 import com.android.systemui.qs.tiles.HeadsUpTile;
 import com.android.systemui.qs.tiles.HotspotTile;
 import com.android.systemui.qs.tiles.IntentTile;
@@ -87,6 +89,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<AmbientDisplayTile> mAmbientDisplayTileProvider;
     private final Provider<UsbTetherTile> mUsbTetherTileProvider;
     private final Provider<SyncTile> mSyncTileProvider;
+    private final Provider<FPSInfoTile> mFPSInfoTileProvider;
 
     private QSTileHost mHost;
 
@@ -113,7 +116,8 @@ public class QSFactoryImpl implements QSFactory {
             Provider<CaffeineTile> caffeineTileProvider,
             Provider<AmbientDisplayTile> ambientDisplayTileProvider,
             Provider<UsbTetherTile> usbTetherTileProvider,
-            Provider<SyncTile> syncTileProvider) {
+            Provider<SyncTile> syncTileProvider,
+            Provider<FPSInfoTile> fpsInfoTileProvider) {
         mWifiTileProvider = wifiTileProvider;
         mBluetoothTileProvider = bluetoothTileProvider;
         mCellularTileProvider = cellularTileProvider;
@@ -137,6 +141,7 @@ public class QSFactoryImpl implements QSFactory {
         mAmbientDisplayTileProvider = ambientDisplayTileProvider;
         mUsbTetherTileProvider = usbTetherTileProvider;
         mSyncTileProvider = syncTileProvider;
+        mFPSInfoTileProvider = fpsInfoTileProvider;
     }
 
     public void setHost(QSTileHost host) {
@@ -206,6 +211,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new HeadsUpTile(mHost);
             case "theme":
                 return new ThemeTile(mHost);
+            case "fpsinfo":
+                return mFPSInfoTileProvider.get();
         }
 
         // Intent tiles.
