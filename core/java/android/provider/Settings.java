@@ -15745,6 +15745,12 @@ public final class Settings {
                 "key_chord_power_volume_up";
 
         /**
+         * @hide
+         */
+        public static final String SHOW_FPS_OVERLAY = "show_fps_overlay";
+
+
+        /**
          * Keyguard should be on the left hand side of the screen, for wide screen layouts.
          *
          * @hide
