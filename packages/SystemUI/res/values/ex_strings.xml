@@ -145,5 +145,10 @@
     <string name="quick_settings_theme_tile_accent_detail_title">Select accent</string>
     <string name="quick_settings_theme_tile_style_detail_title">Select theme</string>
 
+    <!-- FPS Info tile -->
+    <string name="quick_settings_fpsinfo_label">FPS Info</string>
+    <string name="accessibility_quick_settings_fpsinfo_off">FPS Info off</string>
+    <string name="accessibility_quick_settings_fpsinfo_on">FPS Info on</string>
+
 </resources>
 
