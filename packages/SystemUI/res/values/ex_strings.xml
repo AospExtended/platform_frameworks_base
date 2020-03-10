@@ -104,4 +104,10 @@
     <string name="navigation_bar_inverse_summary">Swap the order of recents and back buttons</string>
     <string name="navigation_bar_accessibility_dpad_left">Cursor left</string>
     <string name="navigation_bar_accessibility_dpad_right">Cursor right</string>
+
+    <!-- FPS Info tile -->
+    <string name="quick_settings_fpsinfo_label">FPS Info</string>
+    <string name="accessibility_quick_settings_fpsinfo_off">FPS Info off</string>
+    <string name="accessibility_quick_settings_fpsinfo_on">FPS Info on</string>
+
 </resources>
