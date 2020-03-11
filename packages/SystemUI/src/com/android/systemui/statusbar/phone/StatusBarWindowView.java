@@ -117,9 +117,6 @@ public class StatusBarWindowView extends FrameLayout implements Tunable {
     private boolean mExpandAnimationPending;
     private boolean mSuppressingWakeUpGesture;
 
-    // omni additions start
-    private boolean mDoubleTapEnabledNative;
-
     private final GestureDetector.SimpleOnGestureListener mGestureListener =
             new GestureDetector.SimpleOnGestureListener() {
         @Override
@@ -134,7 +131,7 @@ public class StatusBarWindowView extends FrameLayout implements Tunable {
 
         @Override
         public boolean onDoubleTap(MotionEvent e) {
-            if (mDoubleTapEnabled || mSingleTapEnabled || mDoubleTapEnabledNative) {
+            if (mDoubleTapEnabled || mSingleTapEnabled) {
                 mService.wakeUpIfDozing(SystemClock.uptimeMillis(), StatusBarWindowView.this,
                         "DOUBLE_TAP");
                 return true;
@@ -146,15 +143,11 @@ public class StatusBarWindowView extends FrameLayout implements Tunable {
         AmbientDisplayConfiguration configuration = new AmbientDisplayConfiguration(mContext);
         switch (key) {
             case Settings.Secure.DOZE_DOUBLE_TAP_GESTURE:
-                mDoubleTapEnabled = configuration.doubleTapGestureEnabled(UserHandle.USER_CURRENT);
+                mDoubleTapEnabled = Settings.Secure.getIntForUser(mContext.getContentResolver(),
+                        Settings.Secure.DOZE_DOUBLE_TAP_GESTURE, 1, UserHandle.USER_CURRENT) == 1;
                 break;
             case Settings.Secure.DOZE_TAP_SCREEN_GESTURE:
                 mSingleTapEnabled = configuration.tapGestureEnabled(UserHandle.USER_CURRENT);
-                break;
-            case Settings.Secure.DOUBLE_TAP_TO_WAKE:
-                mDoubleTapEnabledNative = Settings.Secure.getIntForUser(mContext.getContentResolver(),
-                        Settings.Secure.DOUBLE_TAP_TO_WAKE, 0, UserHandle.USER_CURRENT) == 1;
-                break;
         }
     };
 
@@ -182,8 +175,7 @@ public class StatusBarWindowView extends FrameLayout implements Tunable {
         mStatusBarStateController = Dependency.get(StatusBarStateController.class);
         Dependency.get(TunerService.class).addTunable(mTunable,
                 Settings.Secure.DOZE_DOUBLE_TAP_GESTURE,
-                Settings.Secure.DOZE_TAP_SCREEN_GESTURE,
-                Settings.Secure.DOUBLE_TAP_TO_WAKE);
+                Settings.Secure.DOZE_TAP_SCREEN_GESTURE);
     }
 
     @Override
