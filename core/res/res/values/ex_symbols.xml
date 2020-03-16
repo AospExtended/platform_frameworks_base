@@ -94,4 +94,7 @@
 
     <!-- Custom notification light -->
     <java-symbol type="bool" name="config_multicolorled" />
+
+    <!-- QS -->
+    <java-symbol type="dimen" name="quick_qs_total_height_extra" />
 </resources>
