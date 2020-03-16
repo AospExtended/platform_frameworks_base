@@ -25,4 +25,7 @@
     <dimen name="qs_footer_padding_top">0dp</dimen>
     <dimen name="qs_page_indicator_margin_bottom">12dp</dimen>
     <dimen name="qs_paged_tile_layout_padding_bottom">4dp</dimen>
+
+    <!-- QS Panel -->
+    <dimen name="qs_quick_header_panel_height_extra">140dp</dimen>
 </resources>
