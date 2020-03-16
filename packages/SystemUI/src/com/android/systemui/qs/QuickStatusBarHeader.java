@@ -28,12 +28,14 @@ import android.content.IntentFilter;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.UserHandle;
 import android.provider.AlarmClock;
 import android.provider.DeviceConfig;
 import android.provider.CalendarContract;
@@ -179,6 +181,19 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         public void privacyChanged(List<PrivacyItem> privacyItems) {
             mPrivacyChip.setPrivacyList(privacyItems);
             setChipVisibility(!privacyItems.isEmpty());
+        }
+    };
+
+    private boolean isSettingButtonEnabled = false;
+
+    private final ContentObserver mSettingsObserver = new ContentObserver(
+            new Handler(mContext.getMainLooper())) {
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            super.onChange(selfChange, uri);
+            isSettingButtonEnabled = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.SETTING_BUTTON_TOGGLE, 0) == 1;
+            updateResources();
         }
     };
 
@@ -379,9 +394,14 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     private void updateMinimumHeight() {
         int sbHeight = mContext.getResources().getDimensionPixelSize(
                 com.android.internal.R.dimen.status_bar_height);
-        int qqsHeight = mContext.getResources().getDimensionPixelSize(
-                R.dimen.qs_quick_header_panel_height);
-
+        int qqsHeight = 0;
+        if (isSettingButtonEnabled) {
+            qqsHeight = mContext.getResources().getDimensionPixelSize(
+                    R.dimen.qs_quick_header_panel_height_extra);
+        } else {
+            qqsHeight = mContext.getResources().getDimensionPixelSize(
+                    R.dimen.qs_quick_header_panel_height);
+        }
         setMinimumHeight(sbHeight + qqsHeight);
     }
 
@@ -403,9 +423,15 @@ public class QuickStatusBarHeader extends RelativeLayout implements
             lp.height = resources.getDimensionPixelSize(
                     com.android.internal.R.dimen.quick_qs_offset_height);
         } else {
-            lp.height = Math.max(getMinimumHeight(),
-                    resources.getDimensionPixelSize(
-                            com.android.internal.R.dimen.quick_qs_total_height));
+            if (isSettingButtonEnabled) {
+                lp.height = Math.max(getMinimumHeight(),
+                        resources.getDimensionPixelSize(
+                                com.android.internal.R.dimen.quick_qs_total_height_extra));
+            } else {
+                lp.height = Math.max(getMinimumHeight(),
+                        resources.getDimensionPixelSize(
+                                com.android.internal.R.dimen.quick_qs_total_height));
+            }
         }
 
         setLayoutParams(lp);
@@ -492,6 +518,9 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         super.onAttachedToWindow();
         mStatusBarIconController.addIconGroup(mIconManager);
         requestApplyInsets();
+        mContext.getContentResolver().registerContentObserver(
+                Settings.System.getUriFor(Settings.System.SETTING_BUTTON_TOGGLE), false,
+                mSettingsObserver, UserHandle.USER_ALL);
     }
 
     @Override
@@ -530,6 +559,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     public void onDetachedFromWindow() {
         setListening(false);
         mStatusBarIconController.removeIconGroup(mIconManager);
+        mContext.getContentResolver().unregisterContentObserver(mSettingsObserver);
         super.onDetachedFromWindow();
     }
 
