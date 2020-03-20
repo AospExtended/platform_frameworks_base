@@ -140,8 +140,8 @@ public class ActionHandler {
 
     public static final String INTENT_SHOW_POWER_MENU = "action_handler_show_power_menu";
     public static final String INTENT_TOGGLE_SCREENRECORD = "action_handler_toggle_screenrecord";
-    public static final String INTENT_SCREENSHOT = "action_handler_screenshot";
-    public static final String INTENT_REGION_SCREENSHOT = "action_handler_region_screenshot";
+    public static final String INTENT_SCREENSHOT = "action_take_screenshot";
+    public static final String INTENT_REGION_SCREENSHOT = "action_take_region_screenshot";
 
     // remove actions from here as they come back on deck
     static final Set<String> sDisabledActions = new HashSet<String>();
