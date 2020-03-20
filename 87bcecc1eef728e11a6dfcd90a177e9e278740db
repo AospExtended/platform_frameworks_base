@@ -16,6 +16,24 @@
       "revId": "87bcecc1eef728e11a6dfcd90a177e9e278740db",
       "serverId": "d5cc2900-f5de-4894-bcd1-c35edbbdd7bf",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5580a8a3_3d66139c",
+        "filename": "core/res/res/values/ex_symbols.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2020-03-20T20:26:41Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "29184059_688e4e72",
+      "revId": "87bcecc1eef728e11a6dfcd90a177e9e278740db",
+      "serverId": "d5cc2900-f5de-4894-bcd1-c35edbbdd7bf",
+      "unresolved": false
     }
   ]
 }
