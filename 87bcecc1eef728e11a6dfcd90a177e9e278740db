@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "29184059_688e4e72",
+        "filename": "core/res/res/values/ex_symbols.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2020-03-20T11:10:40Z",
+      "side": 0,
+      "message": "Hagg diya",
+      "revId": "87bcecc1eef728e11a6dfcd90a177e9e278740db",
+      "serverId": "d5cc2900-f5de-4894-bcd1-c35edbbdd7bf",
+      "unresolved": true
+    }
+  ]
+}
