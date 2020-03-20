@@ -53,10 +53,10 @@ import java.util.List;
 
 public class ThemeTile extends QSTileImpl<BooleanState> {
 
-    static final List<ThemeTileItem> sThemeItems = new ArrayList<ThemeTileItem>();
-    static {
+    final List<ThemeTileItem> sThemeItems = new ArrayList<ThemeTileItem>();
+    {
         sThemeItems.add(new ThemeTileItem(0, R.color.quick_settings_theme_tile_default,
-                R.string.quick_settings_theme_tile_color_default));
+                R.string.quick_settings_theme_tile_color_default, "default"));
         sThemeItems.add(new ThemeTileItem(1, R.color.quick_settings_theme_tile_space,
                 R.string.quick_settings_theme_tile_color_space, "com.android.theme.color.space"));
         sThemeItems.add(new ThemeTileItem(2, R.color.quick_settings_theme_tile_purple,
@@ -109,12 +109,16 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
                 R.string.quick_settings_theme_tile_color_elegantgreen, "com.android.theme.color.elegantgreen"));
     }
 
-    static final List<ThemeTileItem> sStyleItems = new ArrayList<ThemeTileItem>();
-    static {
-        sStyleItems.add(new ThemeTileItem(UiModeManager.MODE_NIGHT_YES, -1,
-                R.string.system_theme_style_dark));
-        sStyleItems.add(new ThemeTileItem(UiModeManager.MODE_NIGHT_NO, -1,
-                R.string.system_theme_style_light));
+    final List<ThemeTileItem> sStyleItems = new ArrayList<ThemeTileItem>();
+    {
+        sStyleItems.add(new ThemeTileItem(ThemesUtils.DEVICE_THEME_LIGHT, -1,
+                R.string.system_theme_style_light, "light"));
+        sStyleItems.add(new ThemeTileItem(ThemesUtils.DEVICE_THEME_DARK, -1,
+                R.string.system_theme_style_dark, "dark"));
+        sStyleItems.add(new ThemeTileItem(ThemesUtils.DEVICE_THEME_BLACK, -1,
+                R.string.system_theme_style_black, "black"));
+        sStyleItems.add(new ThemeTileItem(ThemesUtils.DEVICE_THEME_EXTENDED, -1,
+                R.string.system_theme_style_extendedui, "extended_ui"));
     }
 
     private enum Mode {
@@ -125,15 +129,18 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
     private Mode mMode;
     private static UiModeManager mUiModeManager;
 
+    private ThemesUtils mThemesUtils;
+
     public ThemeTile(QSHost host) {
         super(host);
         mOverlayManager = IOverlayManager.Stub.asInterface(
                 ServiceManager.getService(Context.OVERLAY_SERVICE));
         mUiModeManager = mContext.getSystemService(UiModeManager.class);
         mMode = Mode.ACCENT;
+        mThemesUtils = new ThemesUtils(mContext);
     }
 
-    private static class ThemeTileItem {
+    private class ThemeTileItem {
         final int settingsVal;
         final int colorRes;
         final int labelRes;
@@ -155,23 +162,11 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
         }
 
         public void commit() {
-            try {
-                for (int i = 0; i < ThemesUtils.ACCENTS.length; i++) {
-                    String accent = ThemesUtils.ACCENTS[i];
-                    try {
-                        mOverlayManager.setEnabled(accent, false, USER_SYSTEM);
-                    } catch (RemoteException e) {
-                        e.printStackTrace();
-                    }
-                }
-                mOverlayManager.setEnabled(uri, true, USER_SYSTEM);
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
+            mThemesUtils.setAccentEnabled(uri);
         }
 
         public void styleCommit(Context context) {
-            mUiModeManager.setNightMode(settingsVal);
+            mThemesUtils.setTheme(settingsVal);
         }
 
         public QSTile.Icon getIcon(Context context) {
