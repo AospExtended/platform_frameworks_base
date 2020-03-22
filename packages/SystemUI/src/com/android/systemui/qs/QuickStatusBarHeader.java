@@ -184,15 +184,11 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         }
     };
 
-    private boolean isSettingButtonEnabled = false;
-
     private final ContentObserver mSettingsObserver = new ContentObserver(
             new Handler(mContext.getMainLooper())) {
         @Override
         public void onChange(boolean selfChange, Uri uri) {
             super.onChange(selfChange, uri);
-            isSettingButtonEnabled = Settings.System.getInt(mContext.getContentResolver(),
-                    Settings.System.SETTING_BUTTON_TOGGLE, 0) == 1;
             updateResources();
         }
     };
@@ -395,7 +391,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         int sbHeight = mContext.getResources().getDimensionPixelSize(
                 com.android.internal.R.dimen.status_bar_height);
         int qqsHeight = 0;
-        if (isSettingButtonEnabled) {
+        if (isSettingButtonEnabled()) {
             qqsHeight = mContext.getResources().getDimensionPixelSize(
                     R.dimen.qs_quick_header_panel_height_extra);
         } else {
@@ -423,7 +419,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
             lp.height = resources.getDimensionPixelSize(
                     com.android.internal.R.dimen.quick_qs_offset_height);
         } else {
-            if (isSettingButtonEnabled) {
+            if (isSettingButtonEnabled()) {
                 lp.height = Math.max(getMinimumHeight(),
                         resources.getDimensionPixelSize(
                                 com.android.internal.R.dimen.quick_qs_total_height_extra));
@@ -638,6 +634,11 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     @Override
     public void onConfigChanged(ZenModeConfig config) {
         updateStatusText();
+    }
+
+    public boolean isSettingButtonEnabled() {
+        return Settings.System.getInt(mContext.getContentResolver(),
+            Settings.System.SETTING_BUTTON_TOGGLE, 0) == 1;
     }
 
     public void updateEverything() {
