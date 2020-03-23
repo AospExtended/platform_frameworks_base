@@ -48,10 +48,8 @@ class BluetoothAirplaneModeListener {
     @VisibleForTesting static final String TOAST_COUNT = "bluetooth_airplane_toast_count";
 
     private static final int MSG_AIRPLANE_MODE_CHANGED = 0;
-    private static final int MSG_CHECK_USER_PREFERENCE = 1;
 
-    private static final int USER_PREFERENCE_CHECK_DELAY_MS = 20000; // 20 seconds
-    @VisibleForTesting static final int MAX_TOAST_COUNT = 10;
+    @VisibleForTesting static final int MAX_TOAST_COUNT = 10; // 10 times
 
     private final BluetoothManagerService mBluetoothManager;
     private final BluetoothAirplaneModeHandler mHandler;
@@ -88,9 +86,6 @@ class BluetoothAirplaneModeListener {
                 case MSG_AIRPLANE_MODE_CHANGED:
                     handleAirplaneModeChange();
                     break;
-                case MSG_CHECK_USER_PREFERENCE:
-                    // TODO(ugoyu) add metrics of user's preference
-                    break;
                 default:
                     Log.e(TAG, "Invalid message: " + msg.what);
                     break;
@@ -109,37 +104,34 @@ class BluetoothAirplaneModeListener {
     }
 
     @VisibleForTesting
-    boolean isPopToast() {
+    boolean shouldPopToast() {
         if (mToastCount >= MAX_TOAST_COUNT) {
             return false;
         }
         mToastCount++;
-        mAirplaneHelper.storeSettingsInt(TOAST_COUNT, mToastCount);
+        mAirplaneHelper.setSettingsInt(TOAST_COUNT, mToastCount);
         return true;
     }
 
     @VisibleForTesting
     void handleAirplaneModeChange() {
-        if (ignoreOnAirplanModeChange()) {
+        if (shouldSkipAirplaneModeChange()) {
             Log.i(TAG, "Ignore airplane mode change");
             // We have to store Bluetooth state here, so if user turns off Bluetooth
             // after airplane mode is turned on, we don't forget to turn on Bluetooth
             // when airplane mode turns off.
-            mAirplaneHelper.storeSettingsInt(Settings.Global.BLUETOOTH_ON,
+            mAirplaneHelper.setSettingsInt(Settings.Global.BLUETOOTH_ON,
                     BluetoothManagerService.BLUETOOTH_ON_AIRPLANE);
-            if (isPopToast()) {
+            if (shouldPopToast()) {
                 mAirplaneHelper.showToastMessage();
             }
-
-            Message msg = mHandler.obtainMessage(MSG_CHECK_USER_PREFERENCE);
-            mHandler.sendMessageDelayed(msg, USER_PREFERENCE_CHECK_DELAY_MS);
             return;
         }
-        mAirplaneHelper.airplaneModeChanged(mBluetoothManager);
+        mAirplaneHelper.onAirplaneModeChanged(mBluetoothManager);
     }
 
     @VisibleForTesting
-    boolean ignoreOnAirplanModeChange() {
+    boolean shouldSkipAirplaneModeChange() {
         if (mAirplaneHelper == null) {
             return false;
         }
@@ -223,7 +215,7 @@ class BluetoothAirplaneModeListener {
         }
 
         @VisibleForTesting
-        public void airplaneModeChanged(BluetoothManagerService managerService) {
+        public void onAirplaneModeChanged(BluetoothManagerService managerService) {
             managerService.onAirplaneModeChanged();
         }
 
@@ -234,7 +226,7 @@ class BluetoothAirplaneModeListener {
         }
 
         @VisibleForTesting
-        public void storeSettingsInt(String name, int value) {
+        public void setSettingsInt(String name, int value) {
             Settings.Global.putInt(mContext.getContentResolver(),
                     name, value);
         }
