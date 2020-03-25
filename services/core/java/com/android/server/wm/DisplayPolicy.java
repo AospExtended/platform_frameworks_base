@@ -656,6 +656,9 @@ public class DisplayPolicy {
             } else if ("0".equals(navBarOverride)) {
                 mHasNavigationBar = true;
             }
+
+            // Register content observer only for main display
+            mSettingsObserver = new SettingsObserver(mHandler);
         } else {
             mHasStatusBar = false;
             mHasNavigationBar = mDisplayContent.supportsSystemDecorations();
@@ -674,8 +677,6 @@ public class DisplayPolicy {
             }
         });
         mHandler.post(mGestureNavigationSettingsObserver::register);
-
-        mSettingsObserver = new SettingsObserver(mHandler);
     }
 
     private void checkAltBarSwipeForTransientBars(@WindowManagerPolicy.AltBarPosition int pos) {
