@@ -286,9 +286,11 @@ public class AppTransition implements Dump {
         mService = service;
         mHandler = new Handler(service.mH.getLooper());
         mDisplayContent = displayContent;
-        mSettingsObserver = new SettingsObserver(new Handler());
-        mSettingsObserver.observe();
-        updateSettings();
+        if (mDisplayContent.isDefaultDisplay) {
+            mSettingsObserver = new SettingsObserver(new Handler());
+            mSettingsObserver.observe();
+            updateSettings();
+        }
         mLinearOutSlowInInterpolator = AnimationUtils.loadInterpolator(context,
                 com.android.internal.R.interpolator.linear_out_slow_in);
         mFastOutLinearInInterpolator = AnimationUtils.loadInterpolator(context,
