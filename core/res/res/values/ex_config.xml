@@ -148,4 +148,7 @@
 
     <!-- NightLight FOD -->
     <bool name="disable_fod_night_light">false</bool>
+
+    <!-- Enable face auth only when swiping security view -->
+    <bool name="config_faceAuthOnlyOnSecurityView">false</bool>
 </resources>
