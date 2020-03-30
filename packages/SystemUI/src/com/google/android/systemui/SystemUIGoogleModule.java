@@ -1,9 +1,8 @@
 package com.google.android.systemui;
 
 import com.android.systemui.statusbar.NotificationLockscreenUserManager;
-import com.android.systemui.statusbar.notification.NotificationEntryManager;
 
-import com.google.android.systemui.statusbar.NotificationEntryManagerGoogle;
+import com.google.android.systemui.NotificationLockscreenUserManagerGoogle;
 
 import dagger.Binds;
 import dagger.Module;
@@ -14,10 +13,6 @@ import dagger.Module;
  */
 @Module
 public abstract class SystemUIGoogleModule {
-
-    @Binds
-    abstract NotificationEntryManager bindNotificationEntryManager(
-        NotificationEntryManagerGoogle notificationEntryManagerManager);
 
     @Binds
     abstract NotificationLockscreenUserManager bindNotificationLockscreenUserManager(
