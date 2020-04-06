@@ -5114,10 +5114,10 @@ public final class Settings {
                 BOOLEAN_VALIDATOR;
 
         /**
-         * Screenrecord: enable mic
+         * Screenrecord: audio source
          * @hide
          */
-        public static final String SCREENRECORD_ENABLE_MIC = "screenrecord_enable_mic";
+        public static final String SCREENRECORD_AUDIO_SOURCE = "screenrecord_audio_source";
 
         /**
          * Screenrecord: show taps
