@@ -22,4 +22,6 @@
 
     <!-- Custom Analog clocks -->
     <color name="analog_clock_hand_hour_color">@*android:color/accent_device_default_light</color>
+
+    <color name="clock_sf_system_background_dark">@*android:color/background_device_default_dark</color>
 </resources>
