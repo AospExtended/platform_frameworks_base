@@ -203,6 +203,7 @@ public class NotificationData {
                     return true;
                 }
             }
+            return filteredForUser;
         }
         return false;
     }
