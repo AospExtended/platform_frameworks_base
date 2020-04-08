@@ -120,6 +120,7 @@ public class CommandQueue extends IStatusBar.Stub implements CallbackController<
     private static final int MSG_SHOW_IN_DISPLAY_FINGERPRINT_VIEW = 49 << MSG_SHIFT;
     private static final int MSG_HIDE_IN_DISPLAY_FINGERPRINT_VIEW = 50 << MSG_SHIFT;
     private static final int MSG_TOGGLE_CAMERA_FLASH_STATE     = 51 << MSG_SHIFT;
+    private static final int MSG_PARTIAL_SCREENSHOT_ACTIVE           = 52 << MSG_SHIFT;
 
     public static final int FLAG_EXCLUDE_NONE = 0;
     public static final int FLAG_EXCLUDE_SEARCH_PANEL = 1 << 0;
@@ -300,6 +301,7 @@ public class CommandQueue extends IStatusBar.Stub implements CallbackController<
         default void onRecentsAnimationStateChanged(boolean running) { }
         default void toggleCameraFlash() { }
         default void toggleCameraFlashState(boolean enable) { }
+        default void setPartialScreenshot(boolean active) { }
     }
 
     @VisibleForTesting
@@ -863,6 +865,14 @@ public class CommandQueue extends IStatusBar.Stub implements CallbackController<
         }
     }
 
+    @Override
+    public void setPartialScreenshot(boolean active) {
+        synchronized (mLock) {
+            mHandler.removeMessages(MSG_PARTIAL_SCREENSHOT_ACTIVE);
+            mHandler.obtainMessage(MSG_PARTIAL_SCREENSHOT_ACTIVE, active).sendToTarget();
+        }
+    }
+
     private final class H extends Handler {
         private H(Looper l) {
             super(l);
@@ -1146,6 +1156,11 @@ public class CommandQueue extends IStatusBar.Stub implements CallbackController<
                 case MSG_TOGGLE_CAMERA_FLASH_STATE:
                     for (int i = 0; i < mCallbacks.size(); i++) {
                         mCallbacks.get(i).toggleCameraFlashState(msg.arg1 != 0);
+                    }
+                    break;
+                case MSG_PARTIAL_SCREENSHOT_ACTIVE:
+                    for (int i = 0; i < mCallbacks.size(); i++) {
+                        mCallbacks.get(i).setPartialScreenshot((Boolean) msg.obj);
                     }
                     break;
             }
