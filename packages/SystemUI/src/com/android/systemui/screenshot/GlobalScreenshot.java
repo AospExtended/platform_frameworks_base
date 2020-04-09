@@ -85,6 +85,7 @@ import android.util.Slog;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
+import android.view.Surface;
 import android.view.SurfaceControl;
 import android.view.View;
 import android.view.ViewGroup;
@@ -799,6 +800,45 @@ class GlobalScreenshot {
         mDisplay.getRealMetrics(mDisplayMetrics);
         takeScreenshot(finisher, statusBarVisible, navBarVisible,
                 new Rect(0, 0, mDisplayMetrics.widthPixels, mDisplayMetrics.heightPixels));
+    }
+
+    Rect getRotationAdjustedRect(Rect rect) {
+        Display defaultDisplay = mWindowManager.getDefaultDisplay();
+        Rect adjustedRect = new Rect(rect);
+
+        mDisplay.getRealMetrics(mDisplayMetrics);
+        int rotation = defaultDisplay.getRotation();
+        switch (rotation) {
+            case Surface.ROTATION_0:
+                // properly rotated
+                break;
+            case Surface.ROTATION_90:
+                adjustedRect.top = mDisplayMetrics.heightPixels - rect.bottom;
+                adjustedRect.bottom = mDisplayMetrics.heightPixels - rect.top;
+                break;
+            case Surface.ROTATION_180:
+                adjustedRect.left = mDisplayMetrics.widthPixels - rect.right;
+                adjustedRect.top = mDisplayMetrics.heightPixels - rect.bottom;
+                adjustedRect.right = mDisplayMetrics.widthPixels - rect.left;
+                adjustedRect.bottom = mDisplayMetrics.heightPixels - rect.top;
+                break;
+            case Surface.ROTATION_270:
+                adjustedRect.left = mDisplayMetrics.widthPixels - rect.right;
+                adjustedRect.right = mDisplayMetrics.widthPixels - rect.left;
+                break;
+            default:
+                throw new IllegalArgumentException("Unknown rotation: " + rotation);
+        }
+
+        return adjustedRect;
+    }
+
+    void setLockedScreenOrientation(boolean locked) {
+        if (locked) {
+            mWindowLayoutParams.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_LOCKED;
+        } else {
+            mWindowLayoutParams.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED;
+        }
     }
 
     /**
