@@ -792,7 +792,7 @@ class GlobalScreenshot {
 
     void takeScreenshot(Consumer<Uri> finisher, boolean statusBarVisible, boolean navBarVisible) {
         if (mScreenshotLayout.getParent() != null) {
-            finisher.run();
+            finisher.accept(null);
             return;
         }
 
@@ -807,11 +807,11 @@ class GlobalScreenshot {
     void takeScreenshotPartial(final Consumer<Uri> finisher, final boolean statusBarVisible,
             final boolean navBarVisible) {
         if (mScreenshotLayout.getParent() != null) {
-            finisher.run();
+            finisher.accept(null);
             return;
         }
         mWindowManager.addView(mScreenshotLayout, mWindowLayoutParams);
-        ActionUtils.setPartialScreenshot(true);
+        AEXUtils.setPartialScreenshot(true);
         mScreenshotSelectorView.setSelectionListener(
                 new ScreenshotSelectorView.OnSelectionListener() {
             @Override
@@ -827,7 +827,7 @@ class GlobalScreenshot {
             @Override
             public void onClick(View v) {
                 mScreenshotLayout.post(() -> {
-                    finisher.run();
+                    finisher.accept(null);
                     hideScreenshotSelector();
                 });
             }
@@ -860,7 +860,7 @@ class GlobalScreenshot {
     }
 
     void hideScreenshotSelector() {
-        ActionUtils.setPartialScreenshot(false);
+        AEXUtils.setPartialScreenshot(false);
         mWindowManager.removeView(mScreenshotLayout);
         mScreenshotSelectorView.stopSelection();
         mScreenshotSelectorView.setVisibility(View.GONE);
@@ -880,7 +880,7 @@ class GlobalScreenshot {
             }
         }
         // called when unbinding screenshot service
-        ActionUtils.setPartialScreenshot(false);
+        AEXUtils.setPartialScreenshot(false);
     }
 
     /**

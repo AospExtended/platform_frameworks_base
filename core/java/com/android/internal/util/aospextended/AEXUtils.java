@@ -60,6 +60,18 @@ public class AEXUtils {
     public static final String INTENT_SCREENSHOT = "action_take_screenshot";
     public static final String INTENT_REGION_SCREENSHOT = "action_take_region_screenshot";
 
+    private static IStatusBarService mStatusBarService = null;
+
+    private static IStatusBarService getStatusBarService() {
+        synchronized (AEXUtils.class) {
+            if (mStatusBarService == null) {
+                mStatusBarService = IStatusBarService.Stub.asInterface(
+                        ServiceManager.getService("statusbar"));
+            }
+            return mStatusBarService;
+        }
+    }
+
     public static void switchScreenOff(Context ctx) {
         PowerManager pm = (PowerManager) ctx.getSystemService(Context.POWER_SERVICE);
         if (pm!= null) {
@@ -173,15 +185,6 @@ public class AEXUtils {
         }, 20);
     }
 
-    public static void setPartialScreenshot(boolean active) {
-        IStatusBarService service = getStatusBarService();
-        if (service != null) {
-            try {
-                service.setPartialScreenshot(active);
-            } catch (RemoteException e) {}
-        }
-    }
-
     public static void takeScreenshot(boolean full) {
         try {
             Thread.sleep(1000);
@@ -217,6 +220,15 @@ public class AEXUtils {
                     // do nothing.
                 }
             }
+        }
+    }
+
+    public static void setPartialScreenshot(boolean active) {
+        IStatusBarService service = getStatusBarService();
+        if (service != null) {
+            try {
+                service.setPartialScreenshot(active);
+            } catch (RemoteException e) {}
         }
     }
 
