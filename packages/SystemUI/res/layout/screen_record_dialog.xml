@@ -17,6 +17,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="4dp"
     android:background="@drawable/bottom_sheet_background"
     android:orientation="vertical">
 
@@ -67,6 +68,8 @@
                 android:id="@+id/video_bitrate_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:paddingStart="?android:attr/dialogPreferredPadding"
                 android:paddingEnd="?android:attr/dialogPreferredPadding">
 
@@ -75,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="50dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="24dp">
+                    android:layout_marginBottom="12dp">
 
                     <TextView
                         android:id="@android:id/title"
@@ -85,17 +88,6 @@
                         android:textStyle="bold"
                         android:textColor="?android:attr/textColorSecondary"
                         android:text="@string/screenrecord_video_bitrate_title" />
-
-                    <TextView
-                        android:id="@android:id/summary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@android:id/title"
-                        android:layout_alignStart="@android:id/title"
-                        android:layout_marginEnd="90dp"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="?android:attr/textColorSecondary"
-                        android:text="@string/screenrecord_video_bitrate_summary" />
 
                 </RelativeLayout>
 
@@ -114,11 +106,14 @@
                     android:layout_gravity="top|end" />
 
             </FrameLayout>
+
             <!-- Audio Recording -->
             <FrameLayout
                 android:id="@+id/audio_source_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:paddingStart="?android:attr/dialogPreferredPadding"
                 android:paddingEnd="?android:attr/dialogPreferredPadding">
 
@@ -138,17 +133,6 @@
                         android:textColor="?android:attr/textColorSecondary"
                         android:text="@string/screenrecord_audio_title" />
 
-                    <TextView
-                        android:id="@android:id/summary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@android:id/title"
-                        android:layout_alignStart="@android:id/title"
-                        android:layout_marginEnd="90dp"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="?android:attr/textColorSecondary"
-                        android:text="@string/screenrecord_audio_summary" />
-
                 </RelativeLayout>
 
                 <ImageView
@@ -165,11 +149,14 @@
                     android:layout_gravity="top|end" />
 
             </FrameLayout>
+
             <!-- Show taps in screen -->
             <FrameLayout
                 android:id="@+id/show_taps_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:paddingStart="?android:attr/dialogPreferredPadding"
                 android:paddingEnd="?android:attr/dialogPreferredPadding">
 
@@ -189,17 +176,6 @@
                         android:textColor="?android:attr/textColorSecondary"
                         android:text="@string/screenrecord_taps_title" />
 
-                    <TextView
-                        android:id="@android:id/summary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@android:id/title"
-                        android:layout_alignStart="@android:id/title"
-                        android:layout_marginEnd="90dp"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="?android:attr/textColorSecondary"
-                        android:text="@string/screenrecord_taps_summary" />
-
                 </RelativeLayout>
 
                 <ImageView
@@ -216,11 +192,14 @@
                     android:layout_gravity="top|end" />
 
             </FrameLayout>
+
             <!-- Show dot for stop -->
             <FrameLayout
                 android:id="@+id/show_stop_dot_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:paddingStart="?android:attr/dialogPreferredPadding"
                 android:paddingEnd="?android:attr/dialogPreferredPadding">
 
@@ -239,17 +218,6 @@
                         android:textStyle="bold"
                         android:textColor="?android:attr/textColorSecondary"
                         android:text="@string/screenrecord_stopdot_title" />
-
-                    <TextView
-                        android:id="@android:id/summary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@android:id/title"
-                        android:layout_alignStart="@android:id/title"
-                        android:layout_marginEnd="90dp"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="?android:attr/textColorSecondary"
-                        android:text="@string/screenrecord_stopdot_summary" />
 
                 </RelativeLayout>
 
@@ -271,7 +239,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
                 android:background="#e3e3e3"/>
 
             <RelativeLayout
@@ -279,7 +248,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="?android:attr/dialogPreferredPadding"
                 android:paddingEnd="?android:attr/dialogPreferredPadding"
-                android:paddingBottom="?android:attr/dialogPreferredPadding">
+                android:paddingBottom="8dp">
 
                 <Button
                     android:id="@+id/cancel_button"
