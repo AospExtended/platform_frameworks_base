@@ -34,6 +34,7 @@ import android.database.ContentObserver;
 import android.hardware.display.ColorDisplayManager;
 import android.os.Handler;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.service.quicksettings.Tile;
 
 import com.android.internal.util.ArrayUtils;
