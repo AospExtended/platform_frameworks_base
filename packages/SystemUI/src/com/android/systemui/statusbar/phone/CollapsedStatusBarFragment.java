@@ -42,7 +42,9 @@ import com.android.systemui.plugins.DarkIconDispatcher;
 import com.android.systemui.plugins.statusbar.StatusBarStateController;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.StatusBarState;
+import com.android.systemui.BatteryMeterView;
 import com.android.systemui.statusbar.phone.StatusBarIconController.DarkIconManager;
+import com.android.systemui.statusbar.phone.StatusIconContainer;
 import com.android.systemui.statusbar.policy.Clock;
 import com.android.systemui.statusbar.policy.EncryptionHelper;
 import com.android.systemui.statusbar.policy.KeyguardStateController;
@@ -76,6 +78,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private DarkIconManager mDarkIconManager;
     private View mOperatorNameFrame;
     private CommandQueue mCommandQueue;
+    private BatteryMeterView mBatteryMeterView;
+    private StatusIconContainer mStatusIcons;
+    private int mSignalClusterEndPadding = 0;
 
     // AEX Logo
     private ImageView mAEXLogo;
@@ -115,6 +120,15 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         }
     };
 
+    private BatteryMeterView.BatteryMeterViewCallbacks mBatteryMeterViewCallback =
+            new BatteryMeterView.BatteryMeterViewCallbacks() {
+        @Override
+        public void onHiddenBattery(boolean hidden) {
+            mStatusIcons.setPadding(
+                    mStatusIcons.getPaddingLeft(), mStatusIcons.getPaddingTop(), (hidden ? 0 : mSignalClusterEndPadding), mStatusIcons.getPaddingBottom());
+        }
+    };
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -147,6 +161,13 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mDarkIconManager.setShouldLog(true);
         Dependency.get(StatusBarIconController.class).addIconGroup(mDarkIconManager);
         mSystemIconArea = mStatusBar.findViewById(R.id.system_icon_area);
+        mSignalClusterEndPadding = getResources().getDimensionPixelSize(R.dimen.signal_cluster_battery_padding);
+        mStatusIcons = mStatusBar.findViewById(R.id.statusIcons);
+        int batteryStyle = Settings.System.getInt(getContext().getContentResolver(),
+                Settings.System.STATUS_BAR_BATTERY_STYLE, 0);
+        mStatusIcons.setPadding(mStatusIcons.getPaddingLeft(), mStatusIcons.getPaddingTop(), (batteryStyle == 5/*hidden*/ ? 0 : mSignalClusterEndPadding), mStatusIcons.getPaddingBottom());
+        mBatteryMeterView = mStatusBar.findViewById(R.id.battery);
+        mBatteryMeterView.addCallback(mBatteryMeterViewCallback);
         mCustomIconArea = mStatusBar.findViewById(R.id.left_icon_area);
         mClockView = mStatusBar.findViewById(R.id.clock);
         mAEXLogo = (ImageView)mStatusBar.findViewById(R.id.status_bar_logo);
@@ -189,6 +210,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             mNetworkController.removeCallback(mSignalCallback);
         }
         Dependency.get(DarkIconDispatcher.class).removeDarkReceiver(mAEXLogo);
+        if (mBatteryMeterView != null) {
+            mBatteryMeterView.removeCallback(mBatteryMeterViewCallback);
+        }
     }
 
     public void initNotificationIconArea(NotificationIconAreaController
