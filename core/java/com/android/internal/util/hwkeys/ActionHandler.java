@@ -23,7 +23,6 @@ package com.android.internal.util.hwkeys;
 
 import android.app.ActivityManager;
 import android.app.ActivityManagerNative;
-import android.app.ActivityOptions;
 import android.app.ActivityTaskManager;
 import android.app.IActivityManager;
 import android.app.SearchManager;
@@ -546,7 +545,7 @@ public class ActionHandler {
             toggleRecentApps();
             return;
         } else if (action.equals(SYSTEMUI_TASK_LAST_APP)) {
-            switchToLastApp(context);
+            ActionUtils.switchToLastApp(context);
             return;
         } else if (action.equals(SYSTEMUI_TASK_SETTINGS_PANEL)) {
             StatusBarHelper.expandSettingsPanel();
@@ -693,52 +692,6 @@ public class ActionHandler {
         } catch (Exception e) {
             Log.i(TAG, "Unable to launch activity " + e);
         }
-    }
-
-    private static void switchToLastApp(Context context) {
-        final ActivityManager am =
-                (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        ActivityManager.RunningTaskInfo lastTask = getLastTask(context, am);
-
-        if (lastTask != null) {
-            am.moveTaskToFront(lastTask.id, ActivityManager.MOVE_TASK_NO_USER_ACTION,
-                    getAnimation(context).toBundle());
-        }
-    }
-
-    private static ActivityOptions getAnimation(Context context) {
-        return ActivityOptions.makeCustomAnimation(context,
-                com.android.internal.R.anim.custom_app_in,
-                com.android.internal.R.anim.custom_app_out);
-    }
-
-    private static ActivityManager.RunningTaskInfo getLastTask(Context context,
-            final ActivityManager am) {
-        final List<String> packageNames = getCurrentLauncherPackages(context);
-        final List<ActivityManager.RunningTaskInfo> tasks = am.getRunningTasks(5);
-        for (int i = 1; i < tasks.size(); i++) {
-            String packageName = tasks.get(i).topActivity.getPackageName();
-            if (!packageName.equals(context.getPackageName())
-                    && !packageName.equals(SYSTEMUI)
-                    && !packageNames.contains(packageName)) {
-                return tasks.get(i);
-            }
-        }
-        return null;
-    }
-
-    private static List<String> getCurrentLauncherPackages(Context context) {
-        final PackageManager pm = context.getPackageManager();
-        final List<ResolveInfo> homeActivities = new ArrayList<>();
-        pm.getHomeActivities(homeActivities);
-        final List<String> packageNames = new ArrayList<>();
-        for (ResolveInfo info : homeActivities) {
-            final String name = info.activityInfo.packageName;
-            if (!name.equals("com.android.settings")) {
-                packageNames.add(name);
-            }
-        }
-        return packageNames;
     }
 
     private static void sendCloseSystemWindows(String reason) {
