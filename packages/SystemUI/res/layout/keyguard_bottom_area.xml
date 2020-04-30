@@ -67,10 +67,9 @@
         android:layout_margin="@dimen/keyguard_affordance_margin"
         android:layout_gravity="bottom|end"
         android:padding="@dimen/keyguard_affordance_padding"
-        android:src="@drawable/ic_camera_alt_24dp"
+        android:src="@drawable/ic_camera_alt_26dp"
         android:scaleType="center"
-        android:contentDescription="@string/accessibility_camera_button"
-        android:tint="?attr/wallpaperTextColor" />
+        android:contentDescription="@string/accessibility_camera_button" />
 
     <com.android.systemui.statusbar.KeyguardAffordanceView
         android:id="@+id/left_button"
@@ -81,8 +80,8 @@
         android:padding="@dimen/keyguard_affordance_padding"
         android:src="@*android:drawable/ic_phone"
         android:scaleType="center"
-        android:contentDescription="@string/accessibility_phone_button"
-        android:tint="?attr/wallpaperTextColor" />
+        android:tint="?attr/wallpaperTextColor"
+        android:contentDescription="@string/accessibility_phone_button" />
 
     <FrameLayout
         android:id="@+id/overlay_container"

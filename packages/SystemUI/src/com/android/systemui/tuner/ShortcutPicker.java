@@ -65,9 +65,9 @@ public class ShortcutPicker extends PreferenceFragment implements Tunable {
         mDefaultPreference.setTitle(R.string.lockscreen_default);
         screen.addPreference(mDefaultPreference);
         if (LOCKSCREEN_LEFT_BUTTON.equals(mKey)) {
-            mDefaultPreference.setIcon(context.getDrawable(R.drawable.ic_mic_26dp));
+            mDefaultPreference.setIcon(context.getDrawable(R.drawable.ic_mic_alt_26dp));
         } else {
-            mDefaultPreference.setIcon(context.getDrawable(R.drawable.ic_camera_alt_24dp));
+            mDefaultPreference.setIcon(context.getDrawable(R.drawable.ic_camera_alt_26dp));
         }
 
         LauncherApps apps = getContext().getSystemService(LauncherApps.class);

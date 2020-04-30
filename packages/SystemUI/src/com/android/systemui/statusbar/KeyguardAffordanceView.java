@@ -136,7 +136,7 @@ public class KeyguardAffordanceView extends ImageView {
         mCirclePaint.setColor(mCircleColor);
 
         mNormalColor = a.getColor(android.R.styleable.ImageView_tint, 0xffffffff);
-        mNormalColorNoTint = 0xffffffff;
+        mNormalColorNoTint = 0x00ffffff;
         mDarkIconColor = 0xff000000;
         mMinBackgroundRadius = mContext.getResources().getDimensionPixelSize(
                 R.dimen.keyguard_affordance_min_background_radius);
