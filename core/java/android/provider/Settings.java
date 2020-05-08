@@ -5173,6 +5173,33 @@ public final class Settings {
         public static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
 
         /**
+         * Whether to blur behind QS
+         * @hide
+         */
+        public static final String QS_BACKGROUND_BLUR = "qs_background_blur";
+
+        /** @hide */
+        private static final Validator QS_BACKGROUND_BLUR_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
+         * QS blur alpha
+         * @hide
+         */
+        public static final String QS_BACKGROUND_BLUR_ALPHA = "qs_background_blur_alpha";
+
+        /** @hide */
+        private static final Validator QS_BACKGROUND_BLUR_ALPHA_VALIDATOR = ANY_INTEGER_VALIDATOR;
+
+        /**
+         * QS blur intensity
+         * @hide
+         */
+        public static final String QS_BACKGROUND_BLUR_INTENSITY = "qs_background_blur_intensity";
+
+        /** @hide */
+        private static final Validator QS_BACKGROUND_BLUR_INTENSITY_VALIDATOR = ANY_INTEGER_VALIDATOR;
+
+        /**
          * @hide
          */
         public static final String USE_OLD_MOBILETYPE = "use_old_mobiletype";
@@ -5275,6 +5302,9 @@ public final class Settings {
             NOTIFICATION_GUTS_KILL_APP_BUTTON,
             NAVIGATION_BAR_ARROW_KEYS,
             USE_OLD_MOBILETYPE,
+            QS_BACKGROUND_BLUR,
+            QS_BACKGROUND_BLUR_ALPHA,
+            QS_BACKGROUND_BLUR_INTENSITY,
         };
 
         /**
@@ -5545,6 +5575,9 @@ public final class Settings {
                     NAVIGATION_BAR_ARROW_KEYS_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_LOGO, STATUS_BAR_LOGO_VALIDATOR);
             VALIDATORS.put(USE_OLD_MOBILETYPE, USE_OLD_MOBILETYPE_VALIDATOR);
+            VALIDATORS.put(QS_BACKGROUND_BLUR, QS_BACKGROUND_BLUR_VALIDATOR);
+            VALIDATORS.put(QS_BACKGROUND_BLUR_ALPHA, QS_BACKGROUND_BLUR_ALPHA_VALIDATOR);
+            VALIDATORS.put(QS_BACKGROUND_BLUR_INTENSITY, QS_BACKGROUND_BLUR_INTENSITY_VALIDATOR);
         }
 
         /**
