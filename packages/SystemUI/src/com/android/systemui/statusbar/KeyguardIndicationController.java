@@ -68,7 +68,6 @@ import com.android.systemui.util.wakelock.WakeLock;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.IllegalFormatConversionException;
 
@@ -548,22 +547,13 @@ public class KeyguardIndicationController implements StateListener,
         String batteryInfo = "";
         boolean showbatteryInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
             Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT) == 1;
-
          if (showbatteryInfo) {
-            if (mChargingWattage > 0) {
-                DecimalFormat df = new DecimalFormat("#.0");
-                batteryInfo = batteryInfo + df.format(mChargingWattage / 1000000) + "W";
-            }
             if (mChargingCurrent > 0) {
-                batteryInfo = (batteryInfo == "" ? "" : batteryInfo + " · ") +
-                          (mChargingCurrent < 5 ?
-                          (mChargingCurrent * 1000) : (mChargingCurrent < 4000 ?
-                          mChargingCurrent : (mChargingCurrent / 1000))) + "mA" ;
+                batteryInfo = batteryInfo + (mChargingCurrent / 1000) + "mA";
             }
             if (mChargingVoltage > 0) {
-                DecimalFormat df = new DecimalFormat("#.0");
                 batteryInfo = (batteryInfo == "" ? "" : batteryInfo + " · ") +
-                        df.format(mChargingVoltage / 1000000) + "V";
+                        String.format("%.1f", (mChargingVoltage / 1000 / 1000)) + "V";
             }
             if (mTemperature > 0) {
                 batteryInfo = (batteryInfo == "" ? "" : batteryInfo + " · ") +
@@ -584,17 +574,21 @@ public class KeyguardIndicationController implements StateListener,
                     mContext, chargingTimeRemaining);
 
             try {
-                return mContext.getResources().getString(chargingId, chargingTimeFormatted,
-                        batteryInfo);
+                String chargingText = mContext.getResources().getString(chargingId, chargingTimeFormatted,
+                        percentage);
+                return chargingText + batteryInfo;
             } catch (IllegalFormatConversionException e) {
-                return mContext.getResources().getString(chargingId, chargingTimeFormatted);
+                String chargingText =  mContext.getResources().getString(chargingId, chargingTimeFormatted);
+                return chargingText + batteryInfo;
             }
         } else {
             // Same as above
             try {
-                return mContext.getResources().getString(chargingId, batteryInfo);
+                String chargingText =  mContext.getResources().getString(chargingId, percentage);
+                return chargingText + batteryInfo;
             } catch (IllegalFormatConversionException e) {
-                return mContext.getResources().getString(chargingId);
+                String chargingText =  mContext.getResources().getString(chargingId);
+                return chargingText + batteryInfo;
             }
         }
     }
