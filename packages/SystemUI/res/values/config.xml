@@ -486,5 +486,11 @@
 
     <!-- The battery temperature divider, if needed -->
     <integer name="config_battTempDivider" translatable="false">10</integer>
+    
+    <!-- The battery voltage divider, if needed -->
+    <integer name="config_battVoltageDivider" translatable="false">1000</integer>
+
+    <!-- The battery current divider, if needed -->
+    <integer name="config_battCurrentDivider" translatable="false">1000</integer>
 
 </resources>
