@@ -69,7 +69,11 @@ import com.android.systemui.util.wakelock.WakeLock;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.text.NumberFormat;
+import java.text.DecimalFormat;
 import java.util.IllegalFormatConversionException;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 /**
  * Controls the indications and error messages shown on the Keyguard
@@ -120,10 +124,14 @@ public class KeyguardIndicationController implements StateListener,
     private int mChargingSpeed;
     private int mChargingWattage;
     private double mChargingVolt;
+    private double mChargingAmpere;
     private double mBatteryTemp;
     private int mBatteryLevel;
     private int mBatteryTempDivider;
     private String mMessageToShowOnScreenOn;
+    private int mChargingPower;
+    private int mChargingTension;
+    private int mChargingCurrent;
 
     private KeyguardUpdateMonitorCallback mUpdateMonitorCallback;
 
@@ -512,24 +520,37 @@ public class KeyguardIndicationController implements StateListener,
                 });
     }
 
-    private String computePowerDetailIndication() {
+    private String computeBatteryDetailIndication() {
         if (mPowerCharged) {
             return "";
         }
-
+        boolean showInvertedCurrent = mContext.getResources().getBoolean(R.bool.showInvertedCurrent);
         final StringBuilder powerString = new StringBuilder("\n");
         final String SPACER = " • ";
+        final String CURRENT = " ";
         boolean showbatteryInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
             Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT) == 1;
-
         if (showbatteryInfo) {
-            powerString.append(String.format("%.1f", (float) mChargingWattage / 1000000));
+            powerString.append("Batt ");
+            powerString.append(SPACER);
+            if (showInvertedCurrent) {
+                mChargingPower = (int) Math.round((mChargingVolt /1000000) * (mChargingAmpere / 1000000) * -1);
+            } else {
+                mChargingPower = (int) Math.round((mChargingVolt /1000000) * (mChargingAmpere / 1000000));
+            }
+            powerString.append(mChargingPower);
             powerString.append(" W");
             powerString.append(SPACER);
-            powerString.append(String.format("%.3f", mChargingVolt / 1000));
-            powerString.append(" V");
+            mChargingTension = (int) Math.round(mChargingVolt / 1000);
+            powerString.append(mChargingTension);
+            powerString.append(" mV");
             powerString.append(SPACER);
-            powerString.append(Math.round(mChargingWattage / mChargingVolt));
+            if (showInvertedCurrent) {
+                mChargingCurrent = (int) Math.round(mChargingAmpere / 1000 * -1);
+            } else {
+                mChargingCurrent = (int) Math.round(mChargingAmpere / 1000);
+            }
+            powerString.append(mChargingCurrent);
             powerString.append(" mA");
             powerString.append(SPACER);
             powerString.append(String.format("%.1f", (float) mBatteryTemp / mBatteryTempDivider));
@@ -668,6 +689,7 @@ public class KeyguardIndicationController implements StateListener,
         pw.println("  mChargingSpeed: " + mChargingSpeed);
         pw.println("  mChargingWattage: " + mChargingWattage);
         pw.println("  mChargingVolt: " + mChargingVolt);
+        pw.println("  mChargingAmpere: " + mChargingAmpere);
         pw.println("  mBatteryTemp: " + mBatteryTemp);
         pw.println("  mMessageToShowOnScreenOn: " + mMessageToShowOnScreenOn);
         pw.println("  mDozing: " + mDozing);
@@ -691,6 +713,33 @@ public class KeyguardIndicationController implements StateListener,
         updateIndication(!mDozing);
     }
 
+    private static String readOneLine(String fname) {
+        BufferedReader br;
+        String line = null;
+        try {
+            br = new BufferedReader(new FileReader(fname), 512);
+            try {
+                line = br.readLine();
+            } finally {
+                br.close();
+            }
+        } catch (Exception e) {
+            return line;
+        }
+        return line;
+    }
+
+    private String getCurrent() {
+        String currents = KeyguardIndicationController.readOneLine(mContext.getResources().getString(R.string.config_currentPath));
+        return currents;
+    }
+
+    private String getVoltage() {
+        String voltages = KeyguardIndicationController.readOneLine(mContext.getResources().getString(R.string.config_voltagePath));
+        return voltages;
+    }
+
+
     protected class BaseKeyguardCallback extends KeyguardUpdateMonitorCallback {
         public static final int HIDE_DELAY_MS = 5000;
 
@@ -704,7 +753,8 @@ public class KeyguardIndicationController implements StateListener,
             mPowerCharged = status.isCharged();
             mBatteryTemp = status.currBatteryTemp;
             mChargingWattage = status.maxChargingWattage;
-            mChargingVolt = status.currChargingVolt;
+            mChargingVolt = Integer.parseInt(getVoltage());
+            mChargingAmpere = Integer.parseInt(getCurrent());
             mChargingSpeed = status.getChargingSpeed(mSlowThreshold, mFastThreshold);
             mBatteryLevel = status.level;
             updateIndication(!wasPluggedIn && mPowerPluggedInWired);
