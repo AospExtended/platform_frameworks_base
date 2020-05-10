@@ -2311,6 +2311,15 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
             return true;
         }
 
+        // change in charging voltage while plugged in
+        if (nowPluggedIn && current.currChargingVolt != old.currChargingVolt) {
+            return true;
+        }
+
+        // change in battery temperature while plugged in
+        if (nowPluggedIn && current.currBatteryTemp != old.currBatteryTemp) {
+            return true;
+        }
         return false;
     }
 
