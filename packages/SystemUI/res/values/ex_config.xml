@@ -39,10 +39,10 @@
     <string name="config_stitchEditor">com.asus.stitchimage/com.asus.stitchimage.editor.ScreenshotEditorActivity</string>
 
     <!-- LockScreenCharger current sysfs path -->
-    <string name="config_currentPath">/sys/class/power_supply/battery/current_now</string>
+    <string name="config_currentPath">/sys/class/power_supply/bms/current_now</string>
 
     <!-- LockScreenCharger voltage sysfs path -->
-    <string name="config_voltagePath">/sys/class/power_supply/battery/voltage_now</string>
+    <string name="config_voltagePath">/sys/class/power_supply/bms/voltage_now</string>
 
     <!-- LockScreenCharger current inversion -->
     <bool name="showInvertedCurrent">false</bool>
