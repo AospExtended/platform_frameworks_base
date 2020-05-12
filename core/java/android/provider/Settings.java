@@ -4724,6 +4724,12 @@ public final class Settings {
                 ANY_INTEGER_VALIDATOR;
 
         /**
+         * Whether to show the charger info on the lockscreen while charging
+         * @hide
+         */
+        public static final String LOCKSCREEN_CHARGER_INFO = "lockscreen_charger_info";
+
+        /**
          * Whether to show the battery info on the lockscreen while charging
          * @hide
          */
