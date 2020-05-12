@@ -122,6 +122,8 @@ public class KeyguardIndicationController implements StateListener,
     private boolean mPowerCharged;
     private int mChargingSpeed;
     private int mChargingWattage;
+    private double mChargerVolt; 
+    private double mChargerAmpere;
     private double mChargingVolt;
     private double mChargingAmpere;
     private double mBatteryTemp;
@@ -406,10 +408,15 @@ public class KeyguardIndicationController implements StateListener,
                     mTextView.setTextColor(Utils.getColorError(mContext));
                 } else if (mPowerPluggedIn) {
                     String indication = computePowerIndication();
+                    boolean showchargerInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
+                        Settings.System.LOCKSCREEN_CHARGER_INFO, 1, UserHandle.USER_CURRENT) == 1;
+                    if (showchargerInfo) {
+                        indication += computeChargerDetailIndication();
+                    }
                     boolean showbatteryInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
                         Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT) == 1;
                     if (showbatteryInfo) {
-                        indication += computePowerDetailIndication();
+                        indication += computeBatteryDetailIndication();
                     }
                     if (animate) {
                         animateText(mTextView, indication);
@@ -442,10 +449,15 @@ public class KeyguardIndicationController implements StateListener,
                 mTextView.setTextColor(Utils.getColorError(mContext));
             } else if (mPowerPluggedIn) {
                 String indication = computePowerIndication();
+                boolean showchargerInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.LOCKSCREEN_CHARGER_INFO, 1, UserHandle.USER_CURRENT) == 1;
+                if (showchargerInfo) {
+                    indication += computeChargerDetailIndication();
+                }
                 boolean showbatteryInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT) == 1;
                 if (showbatteryInfo) {
-                    indication += computePowerDetailIndication();
+                    indication += computeBatteryDetailIndication();
                 }
                 mTextView.setTextColor(mInitialTextColorState);
                 if (animate) {
@@ -514,6 +526,30 @@ public class KeyguardIndicationController implements StateListener,
                                 });
                     }
                 });
+    }
+
+    private String computeChargerDetailIndication() {
+        if (mPowerCharged) {
+            return "";
+        }
+
+        final StringBuilder powerString = new StringBuilder("\n");
+        final String SPACER = " • ";
+        boolean showchargerInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
+            Settings.System.LOCKSCREEN_CHARGER_INFO, 1, UserHandle.USER_CURRENT) == 1;
+        if (showchargerInfo) {
+            powerString.append("Charger ");
+            powerString.append(SPACER);
+            powerString.append(String.format("%.1f", (float) mChargingWattage / 1000000));
+            powerString.append(" W");
+            powerString.append(SPACER);
+            powerString.append(String.format("%.1f", mChargerVolt / 1000000));
+            powerString.append(" V");
+            powerString.append(SPACER);
+            powerString.append(String.format("%.0f", mChargerAmpere / 1000));
+            powerString.append(" mA");
+        }
+        return powerString.toString();
     }
 
     private String computeBatteryDetailIndication() {
@@ -680,6 +716,8 @@ public class KeyguardIndicationController implements StateListener,
         pw.println("  mPowerCharged: " + mPowerCharged);
         pw.println("  mChargingSpeed: " + mChargingSpeed);
         pw.println("  mChargingWattage: " + mChargingWattage);
+        pw.println("  mChargerVolt: " + mChargerVolt);
+        pw.println("  mChargerAmpere: " + mChargerAmpere);
         pw.println("  mChargingVolt: " + mChargingVolt);
         pw.println("  mChargingAmpere: " + mChargingAmpere);
         pw.println("  mBatteryTemp: " + mBatteryTemp);
@@ -745,6 +783,8 @@ public class KeyguardIndicationController implements StateListener,
             mPowerCharged = status.isCharged();
             mBatteryTemp = status.currBatteryTemp;
             mChargingWattage = status.maxChargingWattage;
+            mChargerVolt = status.maxChargingVoltage;
+            mChargerAmpere = status.maxChargingCurrent;
             mChargingVolt = Integer.parseInt(getVoltage());
             mChargingAmpere = Integer.parseInt(getCurrent());
             mChargingSpeed = status.getChargingSpeed(mSlowThreshold, mFastThreshold);

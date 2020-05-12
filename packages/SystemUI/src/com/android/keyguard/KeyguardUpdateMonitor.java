@@ -1067,11 +1067,11 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
                 final int level = intent.getIntExtra(EXTRA_LEVEL, 0);
                 final int health = intent.getIntExtra(EXTRA_HEALTH, BATTERY_HEALTH_UNKNOWN);
 
-                double currBatteryTemp = intent.getIntExtra(EXTRA_TEMPERATURE, -1);
                 final int maxChargingMicroAmp = intent.getIntExtra(EXTRA_MAX_CHARGING_CURRENT, -1);
                 int maxChargingMicroVolt = intent.getIntExtra(EXTRA_MAX_CHARGING_VOLTAGE, -1);
                 double currChargingVoltage = intent.getIntExtra(EXTRA_VOLTAGE, -1);
                 final int maxChargingMicroWatt;
+                double currBatteryTemp = intent.getIntExtra(EXTRA_TEMPERATURE, -1);
 
                 if ((maxChargingMicroVolt <= 0) || (currChargingVoltage <= 0)) {
                     maxChargingMicroVolt = DEFAULT_CHARGING_VOLTAGE_MICRO_VOLT;
@@ -1090,7 +1090,8 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
                         maxChargingMicroWatt + " currBatteryTemp = " + currBatteryTemp);
                 final Message msg = mHandler.obtainMessage(
                         MSG_BATTERY_UPDATE, new BatteryStatus(status, level, plugged, health,
-                                maxChargingMicroWatt, currChargingVoltage, currBatteryTemp));
+                                maxChargingMicroAmp, maxChargingMicroVolt, maxChargingMicroWatt,
+                                currChargingVoltage, currBatteryTemp));
                 mHandler.sendMessage(msg);
             } else if (TelephonyIntents.ACTION_SIM_STATE_CHANGED.equals(action)) {
                 SimData args = SimData.fromIntent(intent);
@@ -1333,15 +1334,18 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
         public final int level;
         public final int plugged;
         public final int health;
+        public final int maxChargingCurrent;
+        public final int maxChargingVoltage;
         public final int maxChargingWattage;
         public final double currChargingVolt;
         public final double currBatteryTemp;
-        public BatteryStatus(int status, int level, int plugged, int health,
-                int maxChargingWattage, double currChargingVolt, double currBatteryTemp) {
+        public BatteryStatus(int status, int level, int plugged, int health, int maxChargingCurrent, int maxChargingVoltage, int maxChargingWattage, double currChargingVolt, double currBatteryTemp) {
             this.status = status;
             this.level = level;
             this.plugged = plugged;
             this.health = health;
+            this.maxChargingCurrent = maxChargingCurrent;
+            this.maxChargingVoltage = maxChargingVoltage;
             this.maxChargingWattage = maxChargingWattage;
             this.currChargingVolt = currChargingVolt;
             this.currBatteryTemp = currBatteryTemp;
@@ -1537,7 +1541,7 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
         }
 
         // Take a guess at initial SIM state, battery status and PLMN until we get an update
-        mBatteryStatus = new BatteryStatus(BATTERY_STATUS_UNKNOWN, 100, 0, 0, 0, 0, 0);
+        mBatteryStatus = new BatteryStatus(BATTERY_STATUS_UNKNOWN, 100, 0, 0, 0, 0, 0, 0, 0);
 
         // Watch for interesting updates
         final IntentFilter filter = new IntentFilter();
