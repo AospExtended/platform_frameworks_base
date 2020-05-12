@@ -1090,7 +1090,7 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
                         maxChargingMicroWatt + " currBatteryTemp = " + currBatteryTemp);
                 final Message msg = mHandler.obtainMessage(
                         MSG_BATTERY_UPDATE, new BatteryStatus(status, level, plugged, health,
-                                maxChargingMicroWatt, currChargingVoltage, currBatteryTemp));
+                                maxChargingMicroWatt, maxChargingMicroVolt, maxChargingMicroAmp, currChargingVoltage, currBatteryTemp));
                 mHandler.sendMessage(msg);
             } else if (TelephonyIntents.ACTION_SIM_STATE_CHANGED.equals(action)) {
                 SimData args = SimData.fromIntent(intent);
@@ -1334,15 +1334,18 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
         public final int plugged;
         public final int health;
         public final int maxChargingWattage;
+        public final int maxChargingVoltage;
+        public final int maxChargingCurrent;
         public final double currChargingVolt;
         public final double currBatteryTemp;
-        public BatteryStatus(int status, int level, int plugged, int health,
-                int maxChargingWattage, double currChargingVolt, double currBatteryTemp) {
+        public BatteryStatus(int status, int level, int plugged, int health, int maxChargingWattage, int maxChargingVoltage, int maxChargingCurrent, double currChargingVolt, double currBatteryTemp) {
             this.status = status;
             this.level = level;
             this.plugged = plugged;
             this.health = health;
             this.maxChargingWattage = maxChargingWattage;
+            this.maxChargingVoltage = maxChargingVoltage;
+            this.maxChargingCurrent = maxChargingCurrent;
             this.currChargingVolt = currChargingVolt;
             this.currBatteryTemp = currBatteryTemp;
         }
@@ -1537,7 +1540,7 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
         }
 
         // Take a guess at initial SIM state, battery status and PLMN until we get an update
-        mBatteryStatus = new BatteryStatus(BATTERY_STATUS_UNKNOWN, 100, 0, 0, 0, 0, 0);
+        mBatteryStatus = new BatteryStatus(BATTERY_STATUS_UNKNOWN, 100, 0, 0, 0, 0, 0, 0, 0);
 
         // Watch for interesting updates
         final IntentFilter filter = new IntentFilter();
