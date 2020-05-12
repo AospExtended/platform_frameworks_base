@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5401108e_4d5976a8",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/KeyguardIndicationController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2020-05-12T06:20:51Z",
+      "side": 1,
+      "message": "Spacer seems too big. Reduce it",
+      "revId": "2586c2e286b78124ea11b85ef4d807132a78a57b",
+      "serverId": "d5cc2900-f5de-4894-bcd1-c35edbbdd7bf",
+      "unresolved": true
+    }
+  ]
+}
