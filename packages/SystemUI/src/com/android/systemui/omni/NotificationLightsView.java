@@ -126,6 +126,9 @@ public class NotificationLightsView extends RelativeLayout {
         int repeats = Settings.System.getIntForUser(resolver,
                 Settings.System.NOTIFICATION_PULSE_REPEATS, 0,
                 UserHandle.USER_CURRENT);
+        boolean directionIsRestart = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.AMBIENT_LIGHT_REPEAT_DIRECTION, 0,
+                UserHandle.USER_CURRENT) != 1;
 
         ImageView leftView = (ImageView) findViewById(R.id.notification_animation_left);
         ImageView rightView = (ImageView) findViewById(R.id.notification_animation_right);
@@ -135,7 +138,7 @@ public class NotificationLightsView extends RelativeLayout {
         mLightAnimator.setDuration(duration);
         mLightAnimator.setRepeatCount(repeats == 0 ?
                 ValueAnimator.INFINITE : repeats - 1);
-        mLightAnimator.setRepeatMode(ValueAnimator.RESTART);
+        mLightAnimator.setRepeatMode(directionIsRestart ? ValueAnimator.RESTART : ValueAnimator.REVERSE);
         if (repeats != 0) {
             mLightAnimator.addListener(new AnimatorListener() {
                 @Override
