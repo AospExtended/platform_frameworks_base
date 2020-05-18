@@ -33,4 +33,6 @@
     <!-- Asus stitch editor component name -->
     <string name="config_stitchEditor">com.asus.stitchimage/com.asus.stitchimage.editor.ScreenshotEditorActivity</string>
 
+    <!-- Whether to show VoWiFi icon in the status bar -->
+    <bool name="config_display_vowifi">true</bool>
 </resources>
