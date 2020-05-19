@@ -90,6 +90,10 @@ java_library_static {
         "java/com/android/server/policy/EventLogTags.logtags",
     ],
 
+    defaults: [
+        "framework-wifi-vendor-hide-access-defaults",
+    ],
+
     libs: [
         "services.net",
         "android.hardware.light-V2.0-java",
