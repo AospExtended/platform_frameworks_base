@@ -164,15 +164,6 @@ public class SfunyClockController implements ClockPlugin {
     }
 
     @Override
-    public void setTypeface(Typeface tf) {
-        mHourClock.setTypeface(tf);
-        mMinuteClock.setTypeface(tf);
-    }
-
-    @Override
-    public void setDateTypeface(Typeface tf) {}
-
-    @Override
     public void setColorPalette(boolean supportsDarkText, int[] colorPalette) {}
 
     @Override
