@@ -968,7 +968,7 @@ class GlobalScreenshot {
             @Override
             public void run() {
                 if (Settings.System.getIntForUser(mContext.getContentResolver(),
-                        Settings.System.SCREENSHOT_SHUTTER_SOUND, 0, UserHandle.USER_CURRENT) == 1) {
+                        Settings.System.SCREENSHOT_SHUTTER_SOUND, 1, UserHandle.USER_CURRENT) == 1) {
                     // Play the shutter sound to notify that we've taken a screenshot
                     mCameraSound.play(MediaActionSound.SHUTTER_CLICK);
                 }
