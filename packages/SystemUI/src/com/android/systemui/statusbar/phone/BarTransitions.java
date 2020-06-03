@@ -90,6 +90,13 @@ public class BarTransitions {
         return mMode;
     }
 
+    /**
+     * @hid
+     */
+    public BarBackgroundDrawable getBackground() {
+        return mBarBackground;
+    }
+
     public void setAutoDim(boolean autoDim) {
         // Default is don't care.
     }
