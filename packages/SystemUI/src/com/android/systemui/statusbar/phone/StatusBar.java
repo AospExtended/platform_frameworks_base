@@ -4233,7 +4233,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     }        
         
     private void setBlackStatusBar(boolean enable) {
-        if (mStatusBarView == null) return;
+        if (mStatusBarView == null || mStatusBarView.getBackground() == null) return;
         if (enable) {
             ((BarBackgroundDrawable) mStatusBarView.getBackground()).setColorOverride(new Integer(0xFF000000));
         } else {
