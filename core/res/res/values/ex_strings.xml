@@ -25,9 +25,6 @@
     <string name="reboot_title">Reboot</string>
     <string name="reboot_message">Rebooting system</string>
 
-    <!-- Pocket Lock -->
-    <string name="pocket_lock_message_long_press">Long press power button to interact</string>
-
     <!-- Gaming mode -->
     <string name="notification_channel_gaming">Gaming mode</string>
     <string name="gaming_mode_notification_title">Gaming mode enabled</string>
