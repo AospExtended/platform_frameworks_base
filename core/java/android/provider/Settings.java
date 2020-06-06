@@ -5128,19 +5128,6 @@ public final class Settings {
         public static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
 
         /**
-        * Whether allowing pocket service to register sensors and dispatch informations.
-        *   0 = disabled
-        *   1 = enabled
-        * @author Carlo Savignano
-        * @hide
-        */
-        public static final String POCKET_JUDGE = "pocket_judge";
-
-        /** @hide */
-        private static final Validator POCKET_JUDGE_VALIDATOR =
-                BOOLEAN_VALIDATOR;
-
-        /**
          * Force show navigation bar setting.
          * @hide
          */
@@ -5310,6 +5297,18 @@ public final class Settings {
          */
         public static final String GAMING_MODE_DYNAMIC_STATE = "gaming_mode_dynamic_state";
         
+        /**
+        * Whether allowing pocket service to register sensors and dispatch informations.
+        *   0 = disabled
+        *   1 = enabled
+        * @author Carlo Savignano
+        * @hide
+        */
+        public static final String POCKET_JUDGE = "pocket_judge";
+        /** @hide */
+        private static final Validator POCKET_JUDGE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
