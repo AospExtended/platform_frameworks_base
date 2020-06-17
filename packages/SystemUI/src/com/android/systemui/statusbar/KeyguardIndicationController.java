@@ -569,28 +569,44 @@ public class KeyguardIndicationController implements StateListener,
         if (showbatteryInfo) {
             powerString.append("Batt ");
             powerString.append(SPACER);
-            if (showInvertedCurrent) {
-                mChargingPower = (int) Math.round((mChargingVolt / mBatteryVoltageDivider / 1000) * (mChargingAmpere / mBatteryCurrentDivider / 1000) * -1);
+            if ((mChargingVolt == 0) || (mChargingAmpere == 0)) {
+                powerString.append("---");
             } else {
-                mChargingPower = (int) Math.round((mChargingVolt / mBatteryVoltageDivider / 1000) * (mChargingAmpere / mBatteryCurrentDivider / 1000));
+                if (showInvertedCurrent) {
+                    mChargingPower = (int) Math.round((mChargingVolt / mBatteryVoltageDivider / 1000) * (mChargingAmpere / mBatteryCurrentDivider / 1000) * -1);
+                } else {
+                    mChargingPower = (int) Math.round((mChargingVolt / mBatteryVoltageDivider / 1000) * (mChargingAmpere / mBatteryCurrentDivider / 1000));
+                }
+                powerString.append(mChargingPower);
             }
-            powerString.append(mChargingPower);
             powerString.append(" W");
             powerString.append(SPACER);
-            mChargingTension = (int) Math.round(mChargingVolt / mBatteryVoltageDivider);
-            powerString.append(mChargingTension);
+            if (mChargingVolt == 0) {
+                powerString.append("---");
+            } else {
+                mChargingTension = (int) Math.round(mChargingVolt / mBatteryVoltageDivider);
+                powerString.append(mChargingTension);
+            }
             powerString.append(" mV");
             powerString.append(SPACER);
-            if (showInvertedCurrent) {
-                mChargingCurrent = (int) Math.round(mChargingAmpere / mBatteryCurrentDivider * -1);
+            if (mChargingAmpere == 0) {
+                powerString.append("---");
             } else {
-                mChargingCurrent = (int) Math.round(mChargingAmpere / mBatteryCurrentDivider);
+                if (showInvertedCurrent) {
+                    mChargingCurrent = (int) Math.round(mChargingAmpere / mBatteryCurrentDivider * -1);
+                } else {
+                    mChargingCurrent = (int) Math.round(mChargingAmpere / mBatteryCurrentDivider);
+                }
+                powerString.append(mChargingCurrent);
             }
-            powerString.append(mChargingCurrent);
             powerString.append(" mA");
             powerString.append(SPACER);
-            powerString.append(String.format("%.1f", (float) mBatteryTemp / mBatteryTempDivider));
-            powerString.append(" °C");
+            if (mBatteryTemp == 0) {
+                powerString.append("---");
+            } else {
+                powerString.append(String.format("%.1f", (float) mBatteryTemp / mBatteryTempDivider));
+            }
+                powerString.append(" °C");
         }
         return powerString.toString();
     }
@@ -607,13 +623,25 @@ public class KeyguardIndicationController implements StateListener,
         if (showchargerInfo) {
             powerString.append("Charger ");
             powerString.append(SPACER);
-            powerString.append(String.format("%.1f", (float) mChargingWattage / 1000000));
+            if (mChargingWattage == 0) {
+                powerString.append("---");
+            } else {
+                powerString.append(String.format("%.1f", (float) mChargingWattage / 1000000));
+            }
             powerString.append(" W");
             powerString.append(SPACER);
-            powerString.append(String.format("%.1f", mChargerVolt / 1000000));
+            if (mChargerVolt == 0) {
+                powerString.append("---");
+            } else {
+                powerString.append(String.format("%.1f", mChargerVolt / 1000000));
+            }
             powerString.append(" V");
             powerString.append(SPACER);
-            powerString.append(String.format("%.0f", mChargerAmpere / 1000));
+            if (mChargerAmpere == 0) {
+                powerString.append("---");
+            } else {
+                powerString.append(String.format("%.0f", mChargerAmpere / 1000));
+            }
             powerString.append(" mA");
         }
         return powerString.toString();
@@ -775,9 +803,10 @@ public class KeyguardIndicationController implements StateListener,
         updateIndication(!mDozing);
     }
 
-    private static String readOneLine(String fname) {
+    public static String readOneLine(String fname) {
         BufferedReader br;
         String line = null;
+
         try {
             br = new BufferedReader(new FileReader(fname), 512);
             try {
@@ -786,7 +815,8 @@ public class KeyguardIndicationController implements StateListener,
                 br.close();
             }
         } catch (Exception e) {
-            return line;
+            Log.e(TAG, "IO Exception when reading /sys/ file", e);
+            line = "0";
         }
         return line;
     }
