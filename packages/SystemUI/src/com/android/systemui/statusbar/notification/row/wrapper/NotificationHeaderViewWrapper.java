@@ -21,6 +21,7 @@ import static com.android.systemui.statusbar.notification.TransformState.TRANSFO
 import android.app.AppOpsManager;
 import android.app.Notification;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.util.ArraySet;
 import android.view.NotificationHeaderView;
 import android.view.View;
@@ -74,9 +75,11 @@ public class NotificationHeaderViewWrapper extends NotificationViewWrapper {
     private boolean mIsLowPriority;
     private boolean mTransformLowPriorityTitle;
     private boolean mShowExpandButtonAtEnd;
+    private Context mContext;
 
     protected NotificationHeaderViewWrapper(Context ctx, View view, ExpandableNotificationRow row) {
         super(ctx, view, row);
+        mContext = ctx;
         mShowExpandButtonAtEnd = ctx.getResources().getBoolean(
                 R.bool.config_showNotificationExpandButtonAtEnd)
                 || NotificationUtils.useNewInterruptionModel(ctx);
@@ -175,7 +178,19 @@ public class NotificationHeaderViewWrapper extends NotificationViewWrapper {
         addRemainingTransformTypes();
         updateCropToPaddingForImageViews();
         Notification notification = row.getEntry().getSbn().getNotification();
-        mIcon.setTag(ImageTransformState.ICON_TAG, notification.getSmallIcon());
+
+        String pkgname = row.getEntry().getSbn().getPackageName();
+        Drawable icon = null;
+        try {
+            icon = mContext.getPackageManager().getApplicationIcon(pkgname);
+            mIcon.setImageDrawable(icon);
+        } catch (android.content.pm.PackageManager.NameNotFoundException e) {
+        }
+        mWorkProfileImage.setImageIcon(notification.getSmallIcon());
+        mIcon.setTag(ImageTransformState.ICON_TAG,notification.getSmallIcon());
+        // The work profile image is always the same lets just set the icon tag for it not to
+        // animate
+        mWorkProfileImage.setTag(ImageTransformState.ICON_TAG, notification.getSmallIcon());
 
         // We need to reset all views that are no longer transforming in case a view was previously
         // transformed, but now we decided to transform its container instead.
