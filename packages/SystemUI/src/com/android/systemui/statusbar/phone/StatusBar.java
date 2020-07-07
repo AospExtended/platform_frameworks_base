@@ -72,6 +72,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.om.IOverlayManager;
 import android.content.pm.IPackageManager;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -662,6 +663,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     protected final BatteryController mBatteryController;
     private CurrentUserTracker mUserTracker;
     protected boolean mPanelExpanded;
+    private IOverlayManager mOverlayManager;
     private UiModeManager mUiModeManager;
     protected boolean mIsKeyguard;
     private LogMaker mStatusBarStateLog;
@@ -943,6 +945,9 @@ public class StatusBar extends SystemUI implements DemoMode,
         mKeyguardManager = (KeyguardManager) mContext.getSystemService(Context.KEYGUARD_SERVICE);
         mWallpaperSupported =
                 mContext.getSystemService(WallpaperManager.class).isWallpaperSupported();
+
+        mOverlayManager = IOverlayManager.Stub.asInterface(
+                ServiceManager.getService(Context.OVERLAY_SERVICE));
 
         // Connect in to the status bar manager service
         mCommandQueue.addCallback(this);
@@ -3133,6 +3138,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         mViewHierarchyManager.updateRowStates();
         mScreenPinningRequest.onConfigurationChanged();
+        handleCutout(newConfig);
     }
 
     /**
@@ -4152,6 +4158,70 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     };
 
+    private void setBlackStatusBar(boolean enable) {
+        if (getStatusBarTransitions() == null) return;
+        if (enable) {
+            getStatusBarTransitions().getBackground().setColorOverride(new Integer(0xFF000000));
+        } else {
+            getStatusBarTransitions().getBackground().setColorOverride(null);
+        }
+    }
+
+    private void setCutoutOverlay(boolean enable) {
+        try {
+            mOverlayManager.setEnabled("co.potatoproject.overlay.hidecutout",
+                        enable, mLockscreenUserManager.getCurrentUserId());
+        } catch (RemoteException e) {
+            Log.w(TAG, "Failed to handle cutout overlay", e);
+        }
+    }
+
+    private void setStatusBarStockOverlay(boolean enable) {
+        try {
+            mOverlayManager.setEnabled("co.potatoproject.overlay.statusbarstock",
+                        enable, mLockscreenUserManager.getCurrentUserId());
+        } catch (RemoteException e) {
+            Log.w(TAG, "Failed to handle statusbar height overlay", e);
+        }
+    }
+
+    private void setNotificationPanelPadding(boolean enable) {
+        if (mNotificationPanelViewController == null
+                        || mNotificationPanelViewController.getView() == null) return;
+        if (enable) {
+            int size = (int) (Settings.Secure.getIntForUser(mContext.getContentResolver(),
+                    "sysui_rounded_size", -1, UserHandle.USER_CURRENT) * getDisplayDensity());
+            // Choose a sane safe size in immerse, often
+            // defaults are too large
+            if (size < 0) {
+                size = (int) (20 * getDisplayDensity());
+            }
+            mNotificationPanelViewController.getView().setPadding(size, 0, size, 0);
+        } else {
+            mNotificationPanelViewController.getView().setPadding(0, 0, 0, 0);
+        }
+
+    }
+
+    private void handleCutout(Configuration newConfig) {
+        boolean immerseMode;
+        if (newConfig == null) newConfig = mContext.getResources().getConfiguration();
+        if (newConfig == null || newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            immerseMode = Settings.System.getIntForUser(mContext.getContentResolver(),
+                        Settings.System.DISPLAY_CUTOUT_MODE, 0, UserHandle.USER_CURRENT) == 1;
+        } else {
+            immerseMode = false;
+        }
+        final boolean hideCutoutMode = Settings.System.getIntForUser(mContext.getContentResolver(),
+                        Settings.System.DISPLAY_CUTOUT_MODE, 0, UserHandle.USER_CURRENT) == 2;
+        final boolean statusBarStock = Settings.System.getIntForUser(mContext.getContentResolver(),
+                        Settings.System.STOCK_STATUSBAR_IN_HIDE, 1, UserHandle.USER_CURRENT) == 1;
+        setBlackStatusBar(immerseMode);
+        setCutoutOverlay(hideCutoutMode);
+        setNotificationPanelPadding(immerseMode);
+        setStatusBarStockOverlay(hideCutoutMode && statusBarStock);
+    }
+
     public int getWakefulnessState() {
         return mWakefulnessLifecycle.getWakefulness();
     }
@@ -4453,6 +4523,15 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.GAMING_MODE_HEADSUP_TOGGLE),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.Secure.getUriFor(
+                    "sysui_rounded_size"),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STOCK_STATUSBAR_IN_HIDE),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.DISPLAY_CUTOUT_MODE),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -4479,6 +4558,10 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.FORCE_SHOW_NAVBAR))) {
                 updateNavigationBarVisibility();
+            } else if (uri.equals(Settings.System.getUriFor(Settings.System.DISPLAY_CUTOUT_MODE)) ||
+                    uri.equals(Settings.System.getUriFor(Settings.System.STOCK_STATUSBAR_IN_HIDE))||
+                    uri.equals(Settings.Secure.getUriFor("sysui_rounded_size"))) {
+                handleCutout(null);
             }
             update();
         }
@@ -4495,6 +4578,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             setUseLessBoringHeadsUp();
             updateNavigationBarVisibility();
             setGamingMode();
+            handleCutout(null);
         }
     }
 
