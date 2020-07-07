@@ -21,6 +21,10 @@ import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.database.ContentObserver;
+import android.os.Handler;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.graphics.Point;
 import android.util.AttributeSet;
 import android.view.View;
@@ -71,8 +75,13 @@ public class QSContainerImpl extends FrameLayout {
     private int mContentPaddingEnd = -1;
     private boolean mAnimateBottomOnNextLayout;
 
+    private boolean mImmerseMode;
+
     public QSContainerImpl(Context context, AttributeSet attrs) {
         super(context, attrs);
+        Handler handler = new Handler();
+        SettingsObserver settingsObserver = new SettingsObserver(handler);
+        settingsObserver.observe();
     }
 
     @Override
@@ -98,6 +107,27 @@ public class QSContainerImpl extends FrameLayout {
 
 
         setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_NO);
+        updateSettings();
+    }
+
+    private class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+        void observe() {
+            getContext().getContentResolver().registerContentObserver(Settings.System
+                    .getUriFor(Settings.System.DISPLAY_CUTOUT_MODE), false,
+                    this, UserHandle.USER_ALL);
+        }
+        @Override
+        public void onChange(boolean selfChange) {
+            updateSettings();
+        }
+    }
+
+    private void updateSettings() {
+        mImmerseMode = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.DISPLAY_CUTOUT_MODE, 0, UserHandle.USER_CURRENT) == 1;
     }
 
     private void setBackgroundBottom(int value) {
