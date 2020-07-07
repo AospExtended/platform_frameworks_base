@@ -566,9 +566,6 @@ public class ScreenDecorations extends SystemUI implements Tunable,
 
     private void updateColorInversion(int colorsInvertedValue) {
         int tint = colorsInvertedValue != 0 ? Color.WHITE : Color.BLACK;
-        if (DEBUG_COLOR) {
-            tint = Color.RED;
-        }
         ColorStateList tintList = ColorStateList.valueOf(tint);
 
         if (mOverlays == null) {
