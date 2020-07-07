@@ -3205,6 +3205,10 @@ public class NotificationPanelViewController extends PanelViewController {
         mView.setAlpha(alpha);
     }
 
+    public NotificationPanelView getView() {
+        return mView;
+    }
+
     public ViewPropertyAnimator fadeOut(long startDelayMs, long durationMs, Runnable endAction) {
         return mView.animate().alpha(0).setStartDelay(startDelayMs).setDuration(
                 durationMs).setInterpolator(Interpolators.ALPHA_OUT).withLayer().withEndAction(
