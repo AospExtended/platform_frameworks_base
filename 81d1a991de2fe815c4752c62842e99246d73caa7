@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d7465c12_0f831d54",
+        "filename": "packages/SystemUI/tests/src/com/android/systemui/appops/AppOpsControllerTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2020-07-08T01:46:25Z",
+      "side": 1,
+      "message": "Lol, 4 duplicates makes no sense",
+      "revId": "81d1a991de2fe815c4752c62842e99246d73caa7",
+      "serverId": "d5cc2900-f5de-4894-bcd1-c35edbbdd7bf",
+      "unresolved": true
+    }
+  ]
+}
