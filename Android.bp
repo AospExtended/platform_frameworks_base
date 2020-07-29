@@ -271,6 +271,7 @@ java_library {
         "PlatformProperties",
         "vendor.lineage.touch-V1.0-java",
         "vendor.lineage.livedisplay-V2.0-java",
+        "vendor.lineage.livedisplay-V2.1-java",
     ],
     sdk_version: "core_platform",
     installable: false,
