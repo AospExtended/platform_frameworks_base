@@ -1493,4 +1493,11 @@ public interface WindowManagerPolicy extends WindowManagerPolicyConstants {
      * @hide
      */
     void takeAlternativeScreenshot();
+
+    public interface FingerListener {
+        void powerDown(boolean z);
+    }
+    void registerFingerListener(FingerListener fingerListener);
+    void interceptPowerKeyByFinger(long time);
+    void notifySideFpAuthenOrEnroll(boolean start);
 }

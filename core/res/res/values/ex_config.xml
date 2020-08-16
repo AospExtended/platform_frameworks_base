@@ -228,4 +228,7 @@
     <!-- Default fod pressed color -->
     <integer name="config_fod_pressed_color">1</integer>
 
+    <!-- Whether device has fingerprint on power button -->
+    <bool name="config_powerButtonFingerprint">false</bool>
+
 </resources>
