@@ -54,4 +54,7 @@
 
     <!-- Home button wake -->
     <java-symbol type="bool" name="config_HomeWakeButton" />
+
+    <!-- Vendor signatures -->
+    <java-symbol type="array" name="config_vendorPlatformSignatures" />
 </resources>
