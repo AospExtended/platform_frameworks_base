@@ -28,4 +28,7 @@
 
     <!-- Proximity check on screen on default -->
     <java-symbol type="bool" name="config_proximityCheckOnWakeEnabledByDefault" />
+
+    <!-- Vendor signatures -->
+    <java-symbol type="array" name="config_vendorPlatformSignatures" />
 </resources>
