@@ -17,6 +17,6 @@
     package="com.android.theme.icon_pack.sam.android"
     android:versionCode="1"
     android:versionName="1.0">
-    <overlay android:targetPackage="android" android:category="android.theme.customization.icon_pack.android" android:priority="1"/>
+    <overlay android:targetPackage="android" android:category="android.theme.customization.icon_pack" android:priority="1"/>
     <application android:label="Sam" android:hasCode="false"/>
 </manifest>
