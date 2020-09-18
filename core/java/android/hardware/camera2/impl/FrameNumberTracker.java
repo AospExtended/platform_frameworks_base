@@ -80,23 +80,13 @@ public class FrameNumberTracker {
                     removeError = true;
                 }
             } else {
-                if (!mPendingFrameNumbers[requestType].isEmpty()) {
-                    if (errorFrameNumber == mPendingFrameNumbers[requestType].element()) {
-                        mCompletedFrameNumber[requestType] = errorFrameNumber;
-                        mPendingFrameNumbers[requestType].remove();
+                for (int i = 1; i < CaptureRequest.REQUEST_TYPE_COUNT; i++) {
+                    int otherType = (requestType + i) % CaptureRequest.REQUEST_TYPE_COUNT;
+                    if (!mPendingFrameNumbersWithOtherType[otherType].isEmpty() && errorFrameNumber
+                            == mPendingFrameNumbersWithOtherType[otherType].element()) {
+                        mPendingFrameNumbersWithOtherType[otherType].remove();
                         removeError = true;
-                    }
-                } else {
-                    for (int i = 1; i < CaptureRequest.REQUEST_TYPE_COUNT; i++) {
-                        int otherType = (requestType + i) % CaptureRequest.REQUEST_TYPE_COUNT;
-                        if (!mPendingFrameNumbersWithOtherType[otherType].isEmpty()
-                                && errorFrameNumber
-                                == mPendingFrameNumbersWithOtherType[otherType].element()) {
-                            mCompletedFrameNumber[requestType] = errorFrameNumber;
-                            mPendingFrameNumbersWithOtherType[otherType].remove();
-                            removeError = true;
-                            break;
-                        }
+                        break;
                     }
                 }
             }
