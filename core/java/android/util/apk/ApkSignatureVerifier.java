@@ -29,7 +29,10 @@ import android.content.pm.PackageParser.SigningDetails.SignatureSchemeVersion;
 import android.content.pm.Signature;
 import android.os.Build;
 import android.os.Trace;
+import android.util.Slog;
+
 import android.util.jar.StrictJarFile;
+import android.util.BoostFramework;
 
 import com.android.internal.util.ArrayUtils;
 
@@ -58,6 +61,10 @@ public class ApkSignatureVerifier {
 
     private static final AtomicReference<byte[]> sBuffer = new AtomicReference<>();
 
+    private static final String TAG = "ApkSignatureVerifier";
+    // multithread verification
+    private static BoostFramework sPerfBoost = null;
+    private static boolean sIsPerfLockAcquired = false;
     /**
      * Verifies the provided APK and returns the certificates associated with each signer.
      *
@@ -327,6 +334,16 @@ public class ApkSignatureVerifier {
 
             Trace.traceBegin(TRACE_TAG_PACKAGE_MANAGER, "strictJarFileCtor");
 
+            if (sPerfBoost == null) {
+                sPerfBoost = new BoostFramework();
+            }
+            if (sPerfBoost != null && !sIsPerfLockAcquired && verifyFull) {
+                //Use big enough number here to hold the perflock for entire PackageInstall session
+                sPerfBoost.perfHint(BoostFramework.VENDOR_HINT_PACKAGE_INSTALL_BOOST,
+                        null, Integer.MAX_VALUE, -1);
+                Slog.d(TAG, "Perflock acquired for PackageInstall ");
+                sIsPerfLockAcquired = true;
+            }
             // we still pass verify = true to ctor to collect certs, even though we're not checking
             // the whole jar.
             jarFile = new StrictJarFile(
@@ -391,6 +408,11 @@ public class ApkSignatureVerifier {
             throw new PackageParserException(INSTALL_PARSE_FAILED_NO_CERTIFICATES,
                     "Failed to collect certificates from " + apkPath, e);
         } finally {
+            if (sIsPerfLockAcquired && sPerfBoost != null) {
+                sPerfBoost.perfLockRelease();
+                sIsPerfLockAcquired = false;
+                Slog.d(TAG, "Perflock released for PackageInstall ");
+            }
             Trace.traceEnd(TRACE_TAG_PACKAGE_MANAGER);
             closeQuietly(jarFile);
         }

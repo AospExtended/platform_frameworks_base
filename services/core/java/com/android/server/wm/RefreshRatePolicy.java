@@ -95,6 +95,13 @@ class RefreshRatePolicy {
             return 0;
         }
 
+        // If app is forced to specified refresh rate, return the specified refresh rate
+        ForceRefreshRatePackageList forceList = ForceRefreshRatePackageList.getInstance(mWmService);
+        int forceRefreshRateId = forceList.getForceRefreshRateId(w.getOwningPackage());
+        if(forceRefreshRateId > 0) {
+            return forceRefreshRateId;
+        }
+
         // If app requests a certain refresh rate or mode, don't override it.
         if (w.mAttrs.preferredRefreshRate != 0 || w.mAttrs.preferredDisplayModeId != 0) {
             return w.mAttrs.preferredDisplayModeId;

@@ -19,10 +19,12 @@ package android.widget;
 import android.compat.annotation.UnsupportedAppUsage;
 import android.content.Context;
 import android.hardware.SensorManager;
+import android.util.BoostFramework.ScrollOptimizer;
 import android.util.Log;
 import android.view.ViewConfiguration;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
+import android.os.SystemProperties;
 
 /**
  * This class encapsulates scrolling with the ability to overshoot the bounds
@@ -161,6 +163,9 @@ public class OverScroller {
      */
     public final void forceFinished(boolean finished) {
         mScrollerX.mFinished = mScrollerY.mFinished = finished;
+        if (finished) {
+            ScrollOptimizer.setFlingFlag(ScrollOptimizer.FLING_END);
+        }
     }
 
     /**
@@ -303,6 +308,7 @@ public class OverScroller {
      */
     public boolean computeScrollOffset() {
         if (isFinished()) {
+            ScrollOptimizer.setFlingFlag(ScrollOptimizer.FLING_END);
             return false;
         }
 
@@ -343,6 +349,9 @@ public class OverScroller {
                 break;
         }
 
+        if (isFinished()) {
+            ScrollOptimizer.setFlingFlag(ScrollOptimizer.FLING_END);
+        }
         return true;
     }
 
@@ -449,6 +458,8 @@ public class OverScroller {
             }
         }
 
+        ScrollOptimizer.setFlingFlag(ScrollOptimizer.FLING_START);
+
         mMode = FLING_MODE;
         mScrollerX.fling(startX, velocityX, minX, maxX, overX);
         mScrollerY.fling(startY, velocityY, minY, maxY, overY);
@@ -516,6 +527,7 @@ public class OverScroller {
      * @see #forceFinished(boolean)
      */
     public void abortAnimation() {
+        ScrollOptimizer.setFlingFlag(ScrollOptimizer.FLING_END);
         mScrollerX.finish();
         mScrollerY.finish();
     }

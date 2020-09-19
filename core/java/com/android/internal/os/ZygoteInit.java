@@ -187,6 +187,11 @@ public class ZygoteInit {
         } catch (Error | RuntimeException e) {
             // tolerate missing sfplugin_ccodec which is only present on Codec 2 devices
         }
+        try {
+            System.loadLibrary("qti_performance");
+        } catch (UnsatisfiedLinkError e) {
+            Log.e(TAG, "Couldn't load qti_performance");
+        }        
     }
 
     native private static void nativePreloadAppProcessHALs();

@@ -1240,6 +1240,8 @@ public final class SystemServer {
             mSystemServiceManager.startService(IorapForwardingService.class);
             t.traceEnd();
 
+            mSystemServiceManager.startService(ActivityTriggerService.class);
+             
             t.traceBegin("StartAppLockService");
             mSystemServiceManager.startService(AppLockService.class);
             t.traceEnd();

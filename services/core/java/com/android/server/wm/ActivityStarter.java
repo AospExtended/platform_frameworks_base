@@ -110,6 +110,7 @@ import android.os.UserHandle;
 import android.os.UserManager;
 import android.service.voice.IVoiceInteractionSession;
 import android.text.TextUtils;
+import android.util.BoostFramework;
 import android.util.ArraySet;
 import android.util.DebugUtils;
 import android.util.Pools.SynchronizedPool;
@@ -202,6 +203,8 @@ class ActivityStarter {
 
     private IVoiceInteractionSession mVoiceSession;
     private IVoiceInteractor mVoiceInteractor;
+
+    public BoostFramework mPerf = null;
 
     // Last activity record we attempted to start
     private ActivityRecord mLastStartActivityRecord;
@@ -542,6 +545,7 @@ class ActivityStarter {
         mSupervisor = supervisor;
         mInterceptor = interceptor;
         reset(true);
+        mPerf = new BoostFramework();
     }
 
     /**
@@ -1661,6 +1665,12 @@ class ActivityStarter {
         if (newTask) {
             final Task taskToAffiliate = (mLaunchTaskBehind && mSourceRecord != null)
                     ? mSourceRecord.getTask() : null;
+            String packageName= mService.mContext.getPackageName();
+            if (mPerf != null) {
+                mStartActivity.perfActivityBoostHandler =
+                    mPerf.perfHint(BoostFramework.VENDOR_HINT_FIRST_LAUNCH_BOOST,
+                                        packageName, -1, BoostFramework.Launch.BOOST_V1);
+            }
             setNewTask(taskToAffiliate);
             if (mService.getLockTaskController().isLockTaskModeViolation(
                     mStartActivity.getTask())) {
@@ -2587,6 +2597,12 @@ class ActivityStarter {
     }
 
     private void addOrReparentStartingActivity(Task parent, String reason) {
+        String packageName= mService.mContext.getPackageName();
+        if (mPerf != null) {
+            mStartActivity.perfActivityBoostHandler =
+                mPerf.perfHint(BoostFramework.VENDOR_HINT_FIRST_LAUNCH_BOOST,
+                                    packageName, -1, BoostFramework.Launch.BOOST_V1);
+        }
         if (mStartActivity.getTask() == null || mStartActivity.getTask() == parent) {
             parent.addChild(mStartActivity);
         } else {

@@ -28,6 +28,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Process;
 import android.os.SystemClock;
+import android.os.SystemProperties;
 import android.os.Trace;
 import android.provider.DeviceConfig;
 import android.provider.DeviceConfig.OnPropertiesChangedListener;
@@ -36,6 +37,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.EventLog;
 import android.util.Slog;
+import android.util.BoostFramework;
 
 import com.android.internal.annotations.GuardedBy;
 import com.android.internal.annotations.VisibleForTesting;
@@ -89,8 +91,10 @@ public final class CachedAppOptimizer {
     private static final String COMPACT_ACTION_ANON = "anon";
     private static final String COMPACT_ACTION_FULL = "all";
 
+    private static boolean isLowRAM = false;
+
     // Defaults for phenotype flags.
-    @VisibleForTesting static final Boolean DEFAULT_USE_COMPACTION = false;
+    @VisibleForTesting static Boolean DEFAULT_USE_COMPACTION = false;
     @VisibleForTesting static final Boolean DEFAULT_USE_FREEZER = false;
     @VisibleForTesting static final int DEFAULT_COMPACT_ACTION_1 = COMPACT_ACTION_FILE_FLAG;
     @VisibleForTesting static final int DEFAULT_COMPACT_ACTION_2 = COMPACT_ACTION_FULL_FLAG;
@@ -251,6 +255,7 @@ public final class CachedAppOptimizer {
     private int mPersistentCompactionCount;
     private int mBfgsCompactionCount;
     private final ProcessDependencies mProcessDependencies;
+    public static BoostFramework mPerf = new BoostFramework();
 
     public CachedAppOptimizer(ActivityManagerService am) {
         this(am, null, new DefaultProcessDependencies());
@@ -265,6 +270,10 @@ public final class CachedAppOptimizer {
         mProcStateThrottle = new HashSet<>();
         mProcessDependencies = processDependencies;
         mTestCallback = callback;
+        isLowRAM = SystemProperties.getBoolean("ro.config.low_ram", false);
+
+        if (isLowRAM == true)
+            DEFAULT_USE_COMPACTION = true;
     }
 
     /**
@@ -285,6 +294,73 @@ public final class CachedAppOptimizer {
             updateProcStateThrottle();
             updateUseFreezer();
         }
+        boolean useCompaction =
+                    Boolean.valueOf(mPerf.perfGetProp("vendor.appcompact.enable_app_compact",
+                        "false"));
+        int someCompactionType =
+                    Integer.valueOf(mPerf.perfGetProp("vendor.appcompact.some_compact_type",
+                        String.valueOf(COMPACT_ACTION_ANON_FLAG)));
+        int fullCompactionType =
+                    Integer.valueOf(mPerf.perfGetProp("vendor.appcompact.full_compact_type",
+                        String.valueOf(COMPACT_ACTION_ANON_FLAG)));
+        int compactThrottleSomeSome =
+                    Integer.valueOf(mPerf.perfGetProp("vendor.appcompact.compact_throttle_somesome",
+                        String.valueOf(DEFAULT_COMPACT_THROTTLE_1)));
+        int compactThrottleSomeFull =
+                    Integer.valueOf(mPerf.perfGetProp("vendor.appcompact.compact_throttle_somefull",
+                        String.valueOf(DEFAULT_COMPACT_THROTTLE_2)));
+        int compactThrottleFullSome =
+                    Integer.valueOf(mPerf.perfGetProp("vendor.appcompact.compact_throttle_fullsome",
+                        String.valueOf(DEFAULT_COMPACT_THROTTLE_3)));
+        int compactThrottleFullFull =
+                    Integer.valueOf(mPerf.perfGetProp("vendor.appcompact.compact_throttle_fullfull",
+                        String.valueOf(DEFAULT_COMPACT_THROTTLE_4)));
+        int compactThrottleBfgs =
+                    Integer.valueOf(mPerf.perfGetProp("vendor.appcompact.compact_throttle_bfgs",
+                        String.valueOf(DEFAULT_COMPACT_THROTTLE_5)));
+        int compactThrottlePersistent =
+                    Integer.valueOf(mPerf.perfGetProp("vendor.appcompact.compact_throttle_persistent",
+                        String.valueOf(DEFAULT_COMPACT_THROTTLE_6)));
+        int fullRssThrottleKB =
+                    Integer.valueOf(mPerf.perfGetProp("vendor.appcompact.rss_throttle_kb",
+                        String.valueOf(DEFAULT_COMPACT_FULL_RSS_THROTTLE_KB)));
+        int deltaRssThrottleKB =
+                    Integer.valueOf(mPerf.perfGetProp("vendor.appcompact.delta_rss_throttle_kb",
+                        String.valueOf(DEFAULT_COMPACT_FULL_DELTA_RSS_THROTTLE_KB)));
+
+        DeviceConfig.setProperty(
+                    DeviceConfig.NAMESPACE_ACTIVITY_MANAGER, KEY_COMPACT_ACTION_1,
+                        String.valueOf(someCompactionType), true);
+        DeviceConfig.setProperty(
+                    DeviceConfig.NAMESPACE_ACTIVITY_MANAGER, KEY_COMPACT_ACTION_2,
+                        String.valueOf(fullCompactionType), true);
+        DeviceConfig.setProperty(
+                    DeviceConfig.NAMESPACE_ACTIVITY_MANAGER, KEY_COMPACT_THROTTLE_1,
+                        String.valueOf(compactThrottleSomeSome), true);
+        DeviceConfig.setProperty(
+                    DeviceConfig.NAMESPACE_ACTIVITY_MANAGER, KEY_COMPACT_THROTTLE_2,
+                        String.valueOf(compactThrottleSomeFull), true);
+        DeviceConfig.setProperty(
+                    DeviceConfig.NAMESPACE_ACTIVITY_MANAGER, KEY_COMPACT_THROTTLE_3,
+                        String.valueOf(compactThrottleFullSome), true);
+        DeviceConfig.setProperty(
+                    DeviceConfig.NAMESPACE_ACTIVITY_MANAGER, KEY_COMPACT_THROTTLE_4,
+                        String.valueOf(compactThrottleFullFull), true);
+        DeviceConfig.setProperty(
+                    DeviceConfig.NAMESPACE_ACTIVITY_MANAGER, KEY_COMPACT_THROTTLE_5,
+                        String.valueOf(compactThrottleBfgs), true);
+        DeviceConfig.setProperty(
+                    DeviceConfig.NAMESPACE_ACTIVITY_MANAGER, KEY_COMPACT_THROTTLE_6,
+                        String.valueOf(compactThrottlePersistent), true);
+        DeviceConfig.setProperty(
+                    DeviceConfig.NAMESPACE_ACTIVITY_MANAGER, KEY_COMPACT_FULL_RSS_THROTTLE_KB,
+                        String.valueOf(fullRssThrottleKB), true);
+        DeviceConfig.setProperty(
+                    DeviceConfig.NAMESPACE_ACTIVITY_MANAGER, KEY_COMPACT_FULL_DELTA_RSS_THROTTLE_KB,
+                        String.valueOf(deltaRssThrottleKB), true);
+        DeviceConfig.setProperty(
+                    DeviceConfig.NAMESPACE_ACTIVITY_MANAGER, KEY_USE_COMPACTION,
+                        String.valueOf(useCompaction), true);
     }
 
     /**

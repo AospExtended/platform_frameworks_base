@@ -58,6 +58,7 @@ import android.util.Slog;
 import android.util.SparseArray;
 import android.util.TimeUtils;
 import android.util.proto.ProtoOutputStream;
+import android.util.BoostFramework;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.app.procstats.ProcessState;
@@ -909,6 +910,7 @@ class ProcessRecord implements WindowProcessListener {
     void kill(String reason, @Reason int reasonCode, @SubReason int subReason, boolean noisy) {
         if (!killedByAm) {
             Trace.traceBegin(Trace.TRACE_TAG_ACTIVITY_MANAGER, "kill");
+            BoostFramework ux_perf = new BoostFramework();
             if (mService != null && (noisy || info.uid == mService.mCurOomAdjUid)) {
                 mService.reportUidInfoMessageLocked(TAG,
                         "Killing " + toShortString() + " (adj " + setAdj + "): " + reason,
@@ -926,6 +928,13 @@ class ProcessRecord implements WindowProcessListener {
                 killed = true;
                 killedByAm = true;
             }
+            if (ux_perf != null && !mService.mForceStopKill && !mNotResponding && !mCrashing) {
+                ux_perf.perfUXEngine_events(BoostFramework.UXE_EVENT_KILL, 0, this.processName, 0);
+            } else {
+                mService.mForceStopKill = false;
+            }
+            if (ux_perf != null)
+                ux_perf.perfHint(BoostFramework.VENDOR_HINT_KILL, this.processName, pid, 0);//sending Kill notification to PreKill iresspective of Kill reason.
             Trace.traceEnd(Trace.TRACE_TAG_ACTIVITY_MANAGER);
         }
     }

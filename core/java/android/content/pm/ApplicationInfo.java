@@ -29,6 +29,8 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Environment;
+import android.os.SystemProperties;
+import android.util.DisplayMetrics;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.UserHandle;
@@ -784,6 +786,19 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
      * @hide
      */
     public static final String METADATA_PRELOADED_FONTS = "preloaded_fonts";
+
+    /**
+     * Boolean indicating whether the resolution of the SurfaceView associated
+     * with this appplication can be overriden.
+     * {@hide}
+     */
+    public int overrideRes = 0;
+
+    /**
+     * In case, app needs different density than device density, set this value.
+     * {@hide}
+     */
+    public int overrideDensity = 0;
 
     /**
      * The required smallest screen width the application can run on.  If 0,
@@ -1629,6 +1644,8 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
         theme = orig.theme;
         flags = orig.flags;
         privateFlags = orig.privateFlags;
+        overrideRes = orig.overrideRes;
+        overrideDensity = orig.overrideDensity;
         requiresSmallestWidthDp = orig.requiresSmallestWidthDp;
         compatibleWidthLimitDp = orig.compatibleWidthLimitDp;
         largestWidthLimitDp = orig.largestWidthLimitDp;
@@ -1708,6 +1725,8 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
         dest.writeInt(theme);
         dest.writeInt(flags);
         dest.writeInt(privateFlags);
+        dest.writeInt(overrideRes);
+        dest.writeInt(overrideDensity);
         dest.writeInt(requiresSmallestWidthDp);
         dest.writeInt(compatibleWidthLimitDp);
         dest.writeInt(largestWidthLimitDp);
@@ -1792,6 +1811,8 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
         theme = source.readInt();
         flags = source.readInt();
         privateFlags = source.readInt();
+        overrideRes = source.readInt();
+        overrideDensity = source.readInt();
         requiresSmallestWidthDp = source.readInt();
         compatibleWidthLimitDp = source.readInt();
         largestWidthLimitDp = source.readInt();
@@ -2220,6 +2241,11 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
         return output.toArray(new String[output.size()]);
     }
 
+    /** @hide */
+    public int getOverrideDensity() {
+        return overrideDensity;
+    }
+
     /** {@hide} */ public void setCodePath(String codePath) { scanSourceDir = codePath; }
     /** {@hide} */ public void setBaseCodePath(String baseCodePath) { sourceDir = baseCodePath; }
     /** {@hide} */ public void setSplitCodePaths(String[] splitCodePaths) { splitSourceDirs = splitCodePaths; }
@@ -2227,6 +2253,7 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
     /** {@hide} */ public void setBaseResourcePath(String baseResourcePath) { publicSourceDir = baseResourcePath; }
     /** {@hide} */ public void setSplitResourcePaths(String[] splitResourcePaths) { splitPublicSourceDirs = splitResourcePaths; }
     /** {@hide} */ public void setGwpAsanMode(@GwpAsanMode int value) { gwpAsanMode = value; }
+    /** {@hide} */ public void setOverrideRes(int overrideResolution) { overrideRes = overrideResolution; }
 
     /** {@hide} */
     @UnsupportedAppUsage
@@ -2240,4 +2267,5 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
     /** {@hide} */ public String[] getSplitResourcePaths() { return splitPublicSourceDirs; }
     @GwpAsanMode
     public int getGwpAsanMode() { return gwpAsanMode; }
+    /** {@hide} */ public int canOverrideRes() { return overrideRes; }
 }
