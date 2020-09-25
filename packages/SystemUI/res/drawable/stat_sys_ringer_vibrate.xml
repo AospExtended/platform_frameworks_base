@@ -14,8 +14,8 @@
      limitations under the License.
 -->
 <inset xmlns:android="http://schemas.android.com/apk/res/android"
-    android:insetLeft="0.5dp"
-    android:insetRight="0.5dp" >
+    android:insetLeft="0dp"
+    android:insetRight="0dp" >
 
     <vector
         android:height="19dp"
