@@ -380,6 +380,8 @@ public class KeyguardViewMediator extends SystemUI implements Dumpable {
     private IKeyguardDrawnCallback mDrawnCallback;
     private CharSequence mCustomMessage;
 
+    private boolean mHasFod;
+
     private final DeviceConfig.OnPropertiesChangedListener mOnPropertiesChangedListener =
             new DeviceConfig.OnPropertiesChangedListener() {
             @Override
@@ -748,6 +750,8 @@ public class KeyguardViewMediator extends SystemUI implements Dumpable {
                 QuickStepContract.isGesturalMode(navigationModeController.addListener(mode -> {
                     mInGestureNavigationMode = QuickStepContract.isGesturalMode(mode);
                 }));
+        mHasFod = context.getResources().getBoolean(
+                com.android.internal.R.bool.config_needCustomFODView);
     }
 
     public void userActivity() {
@@ -878,7 +882,9 @@ public class KeyguardViewMediator extends SystemUI implements Dumpable {
             // explicitly DO NOT want to call
             // mKeyguardViewControllerLazy.get().setKeyguardGoingAwayState(false)
             // here, since that will mess with the device lock state.
-            mUpdateMonitor.dispatchKeyguardGoingAway(false);
+            if (!mHasFod) {
+                mUpdateMonitor.dispatchKeyguardGoingAway(false);
+            }
 
             // Lock immediately based on setting if secure (user has a pin/pattern/password).
             // This also "locks" the device when not secure to provide easy access to the
