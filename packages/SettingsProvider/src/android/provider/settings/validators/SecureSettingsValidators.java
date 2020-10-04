@@ -295,6 +295,7 @@ public class SecureSettingsValidators {
         VALIDATORS.put(Secure.NOTIFICATION_BUBBLES, BOOLEAN_VALIDATOR);
         VALIDATORS.put(Secure.LOCATION_TIME_ZONE_DETECTION_ENABLED, BOOLEAN_VALIDATOR);
         VALIDATORS.put(Secure.VOLUME_LINK_NOTIFICATION, BOOLEAN_VALIDATOR);
+        VALIDATORS.put(Secure.GESTURE_NAVBAR_LENGTH_MODE, new InclusiveIntegerRangeValidator(0, 2));
         VALIDATORS.put(Secure.DEVICE_STATE_ROTATION_LOCK, value -> {
             if (TextUtils.isEmpty(value)) {
                 return true;
