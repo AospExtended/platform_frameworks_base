@@ -67,6 +67,12 @@ public class GestureNavigationSettingsObserver extends ContentObserver {
         r.registerContentObserver(
                 Settings.Secure.getUriFor(Settings.Secure.USER_SETUP_COMPLETE),
                 false, this, UserHandle.USER_ALL);
+        r.registerContentObserver(
+                Settings.Secure.getUriFor(Settings.Secure.BACK_GESTURE_HEIGHT_LEFT),
+                false, this, UserHandle.USER_ALL);
+        r.registerContentObserver(
+                Settings.Secure.getUriFor(Settings.Secure.BACK_GESTURE_HEIGHT_RIGHT),
+                false, this, UserHandle.USER_ALL);
         DeviceConfig.addOnPropertiesChangedListener(
                 DeviceConfig.NAMESPACE_SYSTEMUI,
                 runnable -> mMainHandler.post(runnable),
@@ -113,5 +119,17 @@ public class GestureNavigationSettingsObserver extends ContentObserver {
         final float scale = Settings.Secure.getFloatForUser(
                 mContext.getContentResolver(), side, 1.0f, UserHandle.USER_CURRENT);
         return (int) (inset * scale);
+    }
+
+    public float getLeftHeight() {
+        return Settings.Secure.getFloatForUser(
+                        mContext.getContentResolver(), Settings.Secure.BACK_GESTURE_HEIGHT_LEFT,
+                        1.0f, UserHandle.USER_CURRENT);
+    }
+
+    public float getRightHeight() {
+        return Settings.Secure.getFloatForUser(
+                        mContext.getContentResolver(), Settings.Secure.BACK_GESTURE_HEIGHT_RIGHT,
+                        1.0f, UserHandle.USER_CURRENT);
     }
 }
