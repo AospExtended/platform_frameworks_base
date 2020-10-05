@@ -515,6 +515,9 @@ public class EdgeBackGestureHandler extends CurrentUserTracker implements Displa
     }
 
     private void onMotionEvent(MotionEvent ev) {
+        // Get updated values
+        updateCurrentUserResources();
+
         int action = ev.getActionMasked();
         if (action == MotionEvent.ACTION_DOWN) {
             // Verify if this is in within the touch region and we aren't in immersive mode, and
