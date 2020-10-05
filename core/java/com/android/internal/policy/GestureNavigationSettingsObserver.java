@@ -73,6 +73,9 @@ public class GestureNavigationSettingsObserver extends ContentObserver {
         r.registerContentObserver(
                 Settings.Secure.getUriFor(Settings.Secure.BACK_GESTURE_HEIGHT_RIGHT),
                 false, this, UserHandle.USER_ALL);
+        r.registerContentObserver(Settings.System.getUriFor(
+                Settings.System.BACK_GESTURE_HAPTIC),
+                false, this, UserHandle.USER_ALL);
         DeviceConfig.addOnPropertiesChangedListener(
                 DeviceConfig.NAMESPACE_SYSTEMUI,
                 runnable -> mMainHandler.post(runnable),
@@ -98,6 +101,15 @@ public class GestureNavigationSettingsObserver extends ContentObserver {
 
     public int getRightSensitivity(Resources userRes) {
         return getSensitivity(userRes, Settings.Secure.BACK_GESTURE_INSET_SCALE_RIGHT);
+    }
+
+    public boolean getEdgeHaptic() {
+        return (Settings.System.getIntForUser(
+                   mContext.getContentResolver(), Settings.System.BACK_GESTURE_HAPTIC, 0,
+                   UserHandle.USER_CURRENT) == 1 &&
+               Settings.System.getIntForUser(
+                   mContext.getContentResolver(), Settings.System.HAPTIC_FEEDBACK_ENABLED, 0,
+                   UserHandle.USER_CURRENT) == 1);
     }
 
     public boolean areNavigationButtonForcedVisible() {
