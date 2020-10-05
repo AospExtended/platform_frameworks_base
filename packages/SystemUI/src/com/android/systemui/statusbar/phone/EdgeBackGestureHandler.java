@@ -173,6 +173,9 @@ public class EdgeBackGestureHandler extends CurrentUserTracker implements Displa
     private int mRightInset;
     private int mSysUiFlags;
 
+    private float mEdgeHeightLeft;
+    private float mEdgeHeightRight;
+
     private final GestureNavigationSettingsObserver mGestureNavigationSettingsObserver;
 
     private final NavigationEdgeBackPlugin.BackCallback mBackCallback =
@@ -249,6 +252,9 @@ public class EdgeBackGestureHandler extends CurrentUserTracker implements Displa
         mEdgeWidthRight = mGestureNavigationSettingsObserver.getRightSensitivity(res);
         mIsBackGestureAllowed =
                 !mGestureNavigationSettingsObserver.areNavigationButtonForcedVisible();
+
+        mEdgeHeightLeft = mDisplaySize.y / mGestureNavigationSettingsObserver.getLeftHeight();
+        mEdgeHeightRight = mDisplaySize.y / mGestureNavigationSettingsObserver.getRightHeight();
 
         final DisplayMetrics dm = res.getDisplayMetrics();
         final float defaultGestureHeight = res.getDimension(
@@ -433,6 +439,12 @@ public class EdgeBackGestureHandler extends CurrentUserTracker implements Displa
     private boolean isWithinTouchRegion(int x, int y) {
         // Disallow if we are in the bottom gesture area
         if (y >= (mDisplaySize.y - mBottomGestureHeight)) {
+            return false;
+        }
+
+        // Disallow if gesture height is mmore than allowed
+        if ((mIsOnLeftEdge && y < (mDisplaySize.y - mBottomGestureHeight - (int) mEdgeHeightLeft)) ||
+                 (!mIsOnLeftEdge && y < (mDisplaySize.y - mBottomGestureHeight - (int) mEdgeHeightRight))) {
             return false;
         }
 
