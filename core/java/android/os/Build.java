@@ -67,6 +67,11 @@ public class Build {
     public static final String BOARD = getString("ro.product.board");
 
     /**
+     * @hide
+     */
+    public static final String DATE = getString("ro.build.date");
+
+    /**
      * The name of the instruction set (CPU type + ABI convention) of native code.
      *
      * @deprecated Use {@link #SUPPORTED_ABIS} instead.
@@ -1057,19 +1062,6 @@ public class Build {
 
     /** A string that uniquely identifies this build.  Do not attempt to parse this value. */
     public static final String FINGERPRINT = deriveFingerprint();
-
-    /**
-     * Custom fingerprint
-     * @hide
-     */
-    public static final String PROP_EXTENDED_FINGERPRINT = "ro.extended.fingerprint";
-
-    /**
-     * Custom fingerprint
-     * @hide
-     */
-    public static final String EXTENDED_FINGERPRINT = SystemProperties.get(PROP_EXTENDED_FINGERPRINT,
-            deriveFingerprint());
 
     /**
      * Some devices split the fingerprint components between multiple
