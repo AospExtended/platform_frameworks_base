@@ -9470,6 +9470,18 @@ public final class Settings {
                 "back_gesture_inset_scale_right";
 
         /**
+         * Height to be allowed for back gesture
+         * @hide
+         */
+        public static final String BACK_GESTURE_HEIGHT_LEFT =
+                "back_gesture_height_left";
+        /**
+         * @hide
+         */
+        public static final String BACK_GESTURE_HEIGHT_RIGHT =
+                 "back_gesture_height_right";
+
+        /**
          * Current provider of proximity-based sharing services.
          * Default value in @string/config_defaultNearbySharingComponent.
          * No VALIDATOR as this setting will not be backed up.
