@@ -1604,7 +1604,7 @@ public class DisplayPolicy {
             pf.set((fl & FLAG_LAYOUT_IN_SCREEN) == 0 ? attached.getFrame() : df);
         }
 
-        final int cutoutMode = attrs.layoutInDisplayCutoutMode;
+        final int cutoutMode = LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS;
         // Ensure that windows with a DEFAULT or NEVER display cutout mode are laid out in
         // the cutout safe zone.
         if (cutoutMode != LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS) {
