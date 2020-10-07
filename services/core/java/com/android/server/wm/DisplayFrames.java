@@ -98,33 +98,10 @@ public class DisplayFrames {
         state.setDisplayCutout(cutout);
         state.setRoundedCorners(roundedCorners);
         state.setPrivacyIndicatorBounds(indicatorBounds);
-        if (!cutout.isEmpty()) {
-            if (cutout.getSafeInsetLeft() > 0) {
-                safe.left = unrestricted.left + cutout.getSafeInsetLeft();
-            }
-            if (cutout.getSafeInsetTop() > 0) {
-                safe.top = unrestricted.top + cutout.getSafeInsetTop();
-            }
-            if (cutout.getSafeInsetRight() > 0) {
-                safe.right = unrestricted.right - cutout.getSafeInsetRight();
-            }
-            if (cutout.getSafeInsetBottom() > 0) {
-                safe.bottom = unrestricted.bottom - cutout.getSafeInsetBottom();
-            }
-            state.getSource(ITYPE_LEFT_DISPLAY_CUTOUT).setFrame(
-                    unrestricted.left, unrestricted.top, safe.left, unrestricted.bottom);
-            state.getSource(ITYPE_TOP_DISPLAY_CUTOUT).setFrame(
-                    unrestricted.left, unrestricted.top, unrestricted.right, safe.top);
-            state.getSource(ITYPE_RIGHT_DISPLAY_CUTOUT).setFrame(
-                    safe.right, unrestricted.top, unrestricted.right, unrestricted.bottom);
-            state.getSource(ITYPE_BOTTOM_DISPLAY_CUTOUT).setFrame(
-                    unrestricted.left, safe.bottom, unrestricted.right, unrestricted.bottom);
-        } else {
-            state.removeSource(ITYPE_LEFT_DISPLAY_CUTOUT);
-            state.removeSource(ITYPE_TOP_DISPLAY_CUTOUT);
-            state.removeSource(ITYPE_RIGHT_DISPLAY_CUTOUT);
-            state.removeSource(ITYPE_BOTTOM_DISPLAY_CUTOUT);
-        }
+        state.removeSource(ITYPE_LEFT_DISPLAY_CUTOUT);
+        state.removeSource(ITYPE_TOP_DISPLAY_CUTOUT);
+        state.removeSource(ITYPE_RIGHT_DISPLAY_CUTOUT);
+        state.removeSource(ITYPE_BOTTOM_DISPLAY_CUTOUT);
         return true;
     }
 
