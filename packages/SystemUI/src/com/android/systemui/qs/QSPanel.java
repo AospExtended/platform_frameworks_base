@@ -728,6 +728,11 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         switchToParent((View) newLayout, parent, index);
         index++;
 
+        if (!mUsingHorizontalLayout && mBrightnessView != null) {
+            switchToParent(mBrightnessView, parent, index);
+            index++;
+        }
+
         if (mSecurityFooter != null) {
             View view = mSecurityFooter.getView();
             LinearLayout.LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
