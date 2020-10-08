@@ -147,6 +147,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     private int mVisualTilePadding;
     private boolean mUsingHorizontalLayout;
 
+    private boolean mQsMediaVisible;
+
     private QSCustomizer mCustomizePanel;
     private Record mDetailRecord;
 
@@ -230,6 +232,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     }
 
     protected void onMediaVisibilityChanged(Boolean visible) {
+        mQsMediaVisible = visible;
         switchTileLayout();
         if (mMediaVisibilityChangedListener != null) {
             mMediaVisibilityChangedListener.accept(visible);
@@ -528,7 +531,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
         if (newConfig.orientation != mLastOrientation) {
             mLastOrientation = newConfig.orientation;
-            switchTileLayout();
+            switchTileLayout(true);
         }
     }
 
@@ -553,13 +556,19 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
             } else {
                 mDivider.setVisibility(View.GONE);
             }
+        QSTileLayout newLayout = horizontal ? mHorizontalTileLayout : mRegularTileLayout;
+        if (needsDynamicRowsAndColumns()) {
+            int rows = (mQsMediaVisible || getResources().getConfiguration().orientation
+                == Configuration.ORIENTATION_LANDSCAPE) ? 2 : TileLayout.NO_MAX_ROWS;
+            newLayout.setMinRows(horizontal ? 2 : rows);
+            // Let's use 3 columns to match the current layout
+            newLayout.setMaxColumns(horizontal ? 3 : TileLayout.NO_MAX_COLUMNS);
         }
         if (horizontal != mUsingHorizontalLayout || force) {
             mUsingHorizontalLayout = horizontal;
             View visibleView = horizontal ? mHorizontalLinearLayout : (View) mRegularTileLayout;
             View hiddenView = horizontal ? (View) mRegularTileLayout : mHorizontalLinearLayout;
             ViewGroup newParent = horizontal ? mHorizontalContentContainer : this;
-            QSTileLayout newLayout = horizontal ? mHorizontalTileLayout : mRegularTileLayout;
             if (hiddenView != null &&
                     (mRegularTileLayout != mHorizontalTileLayout ||
                             hiddenView != mRegularTileLayout)) {
@@ -580,11 +589,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
             mTileLayout = newLayout;
             if (mHost != null) setTiles(mHost.getTiles());
             newLayout.setListening(mListening);
-            if (needsDynamicRowsAndColumns()) {
-                newLayout.setMinRows(horizontal ? 2 : 1);
-                // Let's use 3 columns to match the current layout
-                newLayout.setMaxColumns(horizontal ? 3 : TileLayout.NO_MAX_COLUMNS);
-            }
             updateTileLayoutMargins();
             updateFooterMargin();
             updateDividerMargin();

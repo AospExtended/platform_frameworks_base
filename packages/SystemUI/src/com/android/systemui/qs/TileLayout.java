@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class TileLayout extends ViewGroup implements QSTileLayout {
 
     public static final int NO_MAX_COLUMNS = 100;
+    public static final int NO_MAX_ROWS = 3;
     private static final float TILE_ASPECT = 1.2f;
 
     private static final String TAG = "TileLayout";
