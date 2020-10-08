@@ -485,7 +485,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
                 addView(mBrightnessView, 0);
             } else {
                 removeView(mBrightnessView);
-                addView(mBrightnessView, 1);
+                addView(mBrightnessView, 2);
             }
         }
         if (QS_SHOW_AUTO_BRIGHTNESS_BUTTON.equals(key)) {
@@ -731,6 +731,13 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         // Let's first move the tileLayout to the new parent, since that should come first.
         switchToParent((View) newLayout, parent, index);
         index++;
+
+        if (!mUsingHorizontalLayout && mBrightnessView != null) {
+            boolean bottom = Settings.Secure.getIntForUser(mContext.getContentResolver(),
+                    QS_BRIGHTNESS_POSITION_BOTTOM, 0, UserHandle.USER_CURRENT) == 1;
+            switchToParent(mBrightnessView, parent, bottom ? index : 0);
+            index++;
+        }
 
         if (mSecurityFooter != null) {
             View view = mSecurityFooter.getView();
