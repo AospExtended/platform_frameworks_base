@@ -1320,6 +1320,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
                 configureTile(r.tile, r.tileView);
             }
         }
+        // Refresh QS Panel views
+        switchTileLayout(true);
     }
 
     public int getNumColumns() {
