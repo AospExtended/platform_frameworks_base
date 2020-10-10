@@ -41,6 +41,8 @@ import com.android.systemui.statusbar.AlertingNotificationManager;
 import com.android.systemui.statusbar.notification.collection.NotificationEntry;
 import com.android.systemui.statusbar.notification.row.NotificationRowContentBinder.InflationFlag;
 
+import com.android.systemui.SysUIToast;
+
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.HashSet;
@@ -218,18 +220,14 @@ public abstract class HeadsUpManager extends AlertingNotificationManager {
                     appName = packageName;
                 }
                 if (mSnoozeLengthMs == 60000) {
-                    Toast toast = Toast.makeText(mContext,
+                    Toast toast = SysUIToast.makeText(mContext,
                     mContext.getString(R.string.heads_up_snooze_message_one_minute, appName),
                             Toast.LENGTH_LONG);
-                    TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
-                    if( v != null) v.setGravity(Gravity.CENTER);
                     toast.show();
                 } else {
-                    Toast toast = Toast.makeText(mContext,
+                    Toast toast = SysUIToast.makeText(mContext,
                     mContext.getString(R.string.heads_up_snooze_message, appName,
                     mSnoozeLengthMs / 60 / 1000), Toast.LENGTH_LONG);
-                    TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
-                    if( v != null) v.setGravity(Gravity.CENTER);
                     toast.show();
                 }
             }
