@@ -1429,6 +1429,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         if (mSecurityFooter != null) {
             mSecurityFooter.updateSettings();
         }
+        // Refresh QS Panel views
+        switchTileLayout(true);
     }
 
     public int getNumColumns() {
