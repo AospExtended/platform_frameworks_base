@@ -204,4 +204,8 @@
     <string name="animation_grow_shrink_right">Grow in (Right)</string>
     <string name="animation_random">Random</string>
     <string name="action_null">Blank</string>
+
+    <!-- Default value for Ambient Pulse light color -->
+    <integer name="config_ambientNotificationDefaultColor">0xFF3980FF</integer>  
+
 </resources>
