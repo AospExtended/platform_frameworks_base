@@ -28,4 +28,16 @@
 
     <!-- Proximity check on screen on default -->
     <java-symbol type="bool" name="config_proximityCheckOnWakeEnabledByDefault" />
+
+    <!-- Advanced reboot -->
+    <java-symbol type="string" name="reboot_to_recovery_title" />
+    <java-symbol type="string" name="reboot_to_recovery_message" />
+    <java-symbol type="string" name="reboot_to_bootloader_title" />
+    <java-symbol type="string" name="reboot_to_bootloader_message" />
+    <java-symbol type="string" name="reboot_title" />
+    <java-symbol type="string" name="reboot_message" />
+
+    <!-- Global Actions pref list -->
+    <java-symbol type="array" name="custom_config_globalActionsList" />
+
 </resources>
