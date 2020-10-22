@@ -5415,6 +5415,13 @@ public final class Settings {
         public static final String NAVIGATION_BAR_ARROW_KEYS = "navigation_bar_menu_arrow_keys";
 
         /**
+         * Settings dashboard icon style
+         * @hide
+         */
+        public static final String THEMING_SETTINGS_DASHBOARD_ICONS =
+                "theming_settings_dashboard_icons";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *

@@ -97,6 +97,79 @@ public class AdaptiveIcon extends LayerDrawable {
         mAdaptiveConstantState.mColor = color;
     }
 
+    public int getBackgroundColor() {
+        return mBackgroundColor;
+    }
+
+    /**
+     * Set background color.
+     * @hide
+     */
+    public void setCustomBackgroundColor(int color) {
+        Drawable bg = getDrawable(0);
+        // Remove background from AdaptiveIcon#setBackgroundColor
+        bg.clearColorFilter();
+        // Apply color
+        bg.setTint(color);
+        // Fix wellbeing-like icons
+        removeForegroundBackground();
+    }
+
+    /**
+     * Set foreground color.
+     * @hide
+     */
+    public void setForegroundColor(int color) {
+        Drawable fg = getDrawable(1);
+        // Workaround layer drawables containing background (looking at Digital Wellbeing)
+        if (fg instanceof LayerDrawable) {
+            LayerDrawable ld = (LayerDrawable) fg;
+            if (ld.getNumberOfLayers() == 2) {
+                fg = ld.getDrawable(1);
+            }
+        }
+        // Apply color
+        fg.setTint(color);
+    }
+
+    /**
+     * Try to remove background paths in the foreground drawable.
+     * Looking at you, Digital Wellbeing
+     * @hide
+     */
+    private void removeForegroundBackground() {
+        Drawable fg = getDrawable(1);
+        if (fg instanceof LayerDrawable) {
+            LayerDrawable ld = (LayerDrawable) fg;
+            if (ld.getNumberOfLayers() == 2) {
+                ld.getDrawable(0).setTint(0);
+            }
+        }
+    }
+
+    /**
+     * Reset foreground and background colors.
+     * @hide
+     */
+    public void resetColors() {
+        // Reset background color
+        Drawable bg = getDrawable(0);
+        bg.clearColorFilter();
+        bg.setTintList(null);
+        setBackgroundColor(mBackgroundColor);
+        // Reset foreground
+        Drawable fg = getDrawable(1);
+        if (fg instanceof LayerDrawable) {
+            LayerDrawable ld = (LayerDrawable) fg;
+            if (ld.getNumberOfLayers() == 2) {
+                fg = ld.getDrawable(1);
+                // Undo changes from removeForegroundBackground
+                ld.getDrawable(0).setTintList(null);
+            }
+        }
+        fg.setTintList(null);
+    }
+
     @Override
     public ConstantState getConstantState() {
         return mAdaptiveConstantState;
