@@ -13,9 +13,8 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.android.theme.icon.hexagon"
+          package="com.android.theme.icon.flower"
           android:versionCode="1"
           android:versionName="1.0">
     <overlay
@@ -23,5 +22,5 @@
         android:category="android.theme.customization.adaptive_icon_shape"
         android:priority="1"/>
 
-    <application android:label="@string/icon_shape_hexagon_overlay" android:hasCode="false"/>
+    <application android:label="@string/icon_shape_flower_overlay" android:hasCode="false"/>
 </manifest>
