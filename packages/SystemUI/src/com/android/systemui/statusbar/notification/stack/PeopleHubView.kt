@@ -21,6 +21,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
+import android.view.Gravity
 import android.widget.ImageView
 import android.widget.TextView
 import com.android.systemui.R
@@ -54,6 +55,7 @@ class PeopleHubView(context: Context, attrs: AttributeSet) :
     }
 
     fun setTextColor(@ColorInt color: Int) = label.setTextColor(color)
+    fun setLabelGravity(gravity: Int) = label.setGravity(gravity)
 
     override fun findContentView(): View = contents
     override fun findSecondaryView(): View? = null
