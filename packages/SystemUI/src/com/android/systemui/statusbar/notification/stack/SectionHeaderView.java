@@ -22,6 +22,7 @@ import android.annotation.StringRes;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -130,5 +131,16 @@ public class SectionHeaderView extends StackScrollerDecorView {
     void setForegroundColor(@ColorInt int color) {
         mLabelView.setTextColor(color);
         mClearAllButton.setImageTintList(ColorStateList.valueOf(color));
+    }
+
+    void setLabelGravity(int gravity) {
+        mLabelView.setGravity(gravity);
+        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) mLabelView.getLayoutParams();
+        if (gravity == Gravity.CENTER){
+          lp.setMarginStart(0);
+        } else if (gravity == Gravity.START){
+          lp.setMarginStart(0);
+        }
+        mLabelView.setLayoutParams(lp);
     }
 }

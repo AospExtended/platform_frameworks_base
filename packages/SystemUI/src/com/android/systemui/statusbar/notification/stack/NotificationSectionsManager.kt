@@ -21,6 +21,7 @@ import android.annotation.LayoutRes
 import android.content.Intent
 import android.provider.Settings
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import com.android.internal.annotations.VisibleForTesting
@@ -87,6 +88,8 @@ class NotificationSectionsManager @Inject internal constructor(
     private lateinit var parent: NotificationStackScrollLayout
     private var initialized = false
     private var mShowHeaders = true
+    private var mCenterHeaders = false
+
     private var onClearSilentNotifsClickListener: View.OnClickListener? = null
 
     @get:VisibleForTesting
@@ -114,10 +117,11 @@ class NotificationSectionsManager @Inject internal constructor(
         private set
 
     /** Must be called before use.  */
-    fun initialize(parent: NotificationStackScrollLayout, layoutInflater: LayoutInflater, showHeaders: Boolean) {
+    fun initialize(parent: NotificationStackScrollLayout, layoutInflater: LayoutInflater, showHeaders: Boolean, centerHeaders: Boolean) {
         check(!initialized) { "NotificationSectionsManager already initialized" }
         initialized = true
         mShowHeaders = showHeaders
+        mCenterHeaders = centerHeaders
         this.parent = parent
         reinflateViews(layoutInflater)
         configurationController.addCallback(configurationListener)
@@ -162,6 +166,12 @@ class NotificationSectionsManager @Inject internal constructor(
             } else {
                 setVisibility(View.GONE)
             }
+
+            if (mCenterHeaders) {
+                setLabelGravity(Gravity.CENTER or Gravity.CENTER_VERTICAL)
+            } else {
+                setLabelGravity(Gravity.START or Gravity.CENTER_VERTICAL)
+            }
         }
         alertingHeaderView = reinflateView(
                 alertingHeaderView, layoutInflater, R.layout.status_bar_notification_section_header
@@ -171,6 +181,12 @@ class NotificationSectionsManager @Inject internal constructor(
                 setOnHeaderClickListener { onGentleHeaderClick() }
             } else {
                 setVisibility(View.GONE)
+            }
+
+            if (mCenterHeaders) {
+                setLabelGravity(Gravity.CENTER or Gravity.CENTER_VERTICAL)
+            } else {
+                setLabelGravity(Gravity.START or Gravity.CENTER_VERTICAL)
             }
         }
         peopleHubSubscription?.unsubscribe()
@@ -184,6 +200,12 @@ class NotificationSectionsManager @Inject internal constructor(
                 setVisibility(View.VISIBLE)
                 setOnHeaderClickListener(View.OnClickListener { onPeopleHeaderClick() })
             }
+
+            if (mCenterHeaders) {
+                setLabelGravity(Gravity.CENTER or Gravity.CENTER_VERTICAL)
+            } else {
+                setLabelGravity(Gravity.START or Gravity.CENTER_VERTICAL)
+            }
         }
         if (ENABLE_SNOOZED_CONVERSATION_HUB) {
             peopleHubSubscription = peopleHubViewAdapter.bindView(peopleHubViewBoundary)
@@ -196,6 +218,12 @@ class NotificationSectionsManager @Inject internal constructor(
                 setOnHeaderClickListener { onGentleHeaderClick() }
             } else {
                 setVisibility(View.GONE)
+            }
+
+            if (mCenterHeaders) {
+                setLabelGravity(Gravity.CENTER or Gravity.CENTER_VERTICAL)
+            } else {
+                setLabelGravity(Gravity.START or Gravity.CENTER_VERTICAL)
             }
         }
         mediaControlsView =

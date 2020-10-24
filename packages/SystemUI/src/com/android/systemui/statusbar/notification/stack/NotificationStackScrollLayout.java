@@ -590,8 +590,11 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
         boolean showHeaders = Settings.System.getIntForUser(getContext().getContentResolver(),
                 Settings.System.NOTIFICATION_HEADERS, 1, UserHandle.USER_CURRENT) == 1;
 
+        boolean centerHeaders = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.CENTER_NOTIFICATION_HEADERS, 0, UserHandle.USER_CURRENT) == 1;
+
         mSectionsManager = notificationSectionsManager;
-        mSectionsManager.initialize(this, LayoutInflater.from(context), showHeaders);
+        mSectionsManager.initialize(this, LayoutInflater.from(context), showHeaders, centerHeaders);
         mSectionsManager.setOnClearSilentNotifsClickListener(v -> {
             // Leave the shade open if there will be other notifs left over to clear
             final boolean closeShade = !hasActiveClearableNotifications(ROWS_HIGH_PRIORITY);
