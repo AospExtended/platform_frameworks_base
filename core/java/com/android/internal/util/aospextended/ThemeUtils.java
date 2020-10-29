@@ -102,13 +102,13 @@ public class ThemeUtils {
         if (mCurrentTheme == theme) return;
 
         if ("light.theme".equals(packageName)) {
-            mUiModeManager.setNightMode(UiModeManager.MODE_NIGHT_NO);
+            mUiModeManager.setNightModeActivated(false);
             setOverlayEnabled(THEMES_KEY, "android");
         } else if ("dark.theme".equals(packageName)) {
-            mUiModeManager.setNightMode(UiModeManager.MODE_NIGHT_YES);
+            mUiModeManager.setNightModeActivated(true);
             setOverlayEnabled(THEMES_KEY, "android");
         } else {
-            mUiModeManager.setNightMode(UiModeManager.MODE_NIGHT_YES);
+            mUiModeManager.setNightModeActivated(true);
             setOverlayEnabled(THEMES_KEY, packageName);
         }
 
@@ -146,6 +146,9 @@ public class ThemeUtils {
     public List<Integer> getThemeColors() {
         final List<Integer> colorlist = new ArrayList<>();
             colorlist.add(mContext.getColor(android.R.color.white));
+            colorlist.add(Resources.getSystem().getColor(
+                            Resources.getSystem().getIdentifier("primary_device_default_dark",
+                            "color", "android"), null));
             for (String overlayPackage : getOverlayPackagesForCategory(THEMES_KEY)) {
                 try {
                     if (overlayPackage.equals("android")) continue;
