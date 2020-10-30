@@ -524,6 +524,8 @@ public abstract class QSTileImpl<TState extends State> implements QSTile, Lifecy
     public abstract CharSequence getTileLabel();
 
     public static int getColorForState(Context context, int state) {
+        final int mQsTileStyle = Settings.Secure.getIntForUser(context.getContentResolver(),
+                     Settings.Secure.QS_TILE_STYLE, 0, UserHandle.USER_CURRENT);
         switch (state) {
             case Tile.STATE_UNAVAILABLE:
                 return Utils.getDisabled(context,
@@ -531,7 +533,7 @@ public abstract class QSTileImpl<TState extends State> implements QSTile, Lifecy
             case Tile.STATE_INACTIVE:
                 return Utils.getColorAttrDefaultColor(context, android.R.attr.textColorSecondary);
             case Tile.STATE_ACTIVE:
-                return Utils.getColorAttrDefaultColor(context, android.R.attr.colorPrimary);
+                return Utils.getColorAttrDefaultColor(context, mQsTileStyle == 0 ? android.R.attr.colorPrimary : android.R.attr.colorAccent);
             default:
                 Log.e("QSTile", "Invalid state " + state);
                 return 0;
