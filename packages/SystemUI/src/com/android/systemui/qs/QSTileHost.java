@@ -79,6 +79,7 @@ public class QSTileHost implements QSHost, Tunable, PluginListener<QSFactory>, D
     private static final int MAX_QS_INSTANCE_ID = 1 << 20;
 
     public static final String TILES_SETTING = Secure.QS_TILES;
+    public static final String QS_TILE_STYLE = Secure.QS_TILE_STYLE;
 
     private final Context mContext;
     private final LinkedHashMap<String, QSTile> mTiles = new LinkedHashMap<>();
@@ -137,6 +138,7 @@ public class QSTileHost implements QSHost, Tunable, PluginListener<QSFactory>, D
             // QSTileHost -> XXXTile -> QSTileHost. Posting ensures creation
             // finishes before creating any tiles.
             tunerService.addTunable(this, TILES_SETTING);
+            tunerService.addTunable(this, QS_TILE_STYLE);
             // AutoTileManager can modify mTiles so make sure mTiles has already been initialized.
             mAutoTiles = autoTiles.get();
         });
@@ -158,6 +160,13 @@ public class QSTileHost implements QSHost, Tunable, PluginListener<QSFactory>, D
         mServices.destroy();
         mPluginManager.removePluginListener(this);
         mDumpManager.unregisterDumpable(TAG);
+    }
+
+    public void refreshAllTiles() {
+        // Force remove and recreate of all tiles.
+        String value = mTunerService.getValue(TILES_SETTING);
+        onTuningChanged(TILES_SETTING, "");
+        onTuningChanged(TILES_SETTING, value);
     }
 
     @Override
@@ -244,6 +253,9 @@ public class QSTileHost implements QSHost, Tunable, PluginListener<QSFactory>, D
 
     @Override
     public void onTuningChanged(String key, String newValue) {
+        if (QS_TILE_STYLE.equals(key)) {
+            refreshAllTiles();
+        }
         if (!TILES_SETTING.equals(key)) {
             return;
         }
