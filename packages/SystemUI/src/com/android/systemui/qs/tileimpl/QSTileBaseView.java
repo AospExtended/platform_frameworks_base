@@ -46,6 +46,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Switch;
 
+import com.android.internal.graphics.ColorUtils;
+
 import com.android.settingslib.Utils;
 import com.android.systemui.R;
 import com.android.systemui.plugins.qs.QSIconView;
@@ -70,7 +72,7 @@ public class QSTileBaseView extends com.android.systemui.plugins.qs.QSTileView {
     private float mStrokeWidthInactive;
 
     private final ImageView mBg;
-    private final int mColorActive;
+    private int mColorActive;
     private final int mColorInactive;
     private final int mColorDisabled;
     private int mCircleColor;
@@ -130,6 +132,9 @@ public class QSTileBaseView extends com.android.systemui.plugins.qs.QSTileView {
         setBackground(mTileBackground);
 
         mColorActive = Utils.getColorAttrDefaultColor(context, android.R.attr.colorAccent);
+        if (mQsTileStyle == 2) {
+            mColorActive = ColorUtils.setAlphaComponent(mColorActive, 50);
+        }
         mColorDisabled = Utils.getDisabled(context,
                 Utils.getColorAttrDefaultColor(context, android.R.attr.textColorTertiary));
         mColorInactive = Utils.getColorAttrDefaultColor(context, android.R.attr.textColorSecondary);

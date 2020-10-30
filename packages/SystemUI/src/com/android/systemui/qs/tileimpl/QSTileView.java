@@ -18,6 +18,8 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.service.quicksettings.Tile;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -47,6 +49,7 @@ public class QSTileView extends QSTileBaseView {
     private View mExpandIndicator;
     private View mExpandSpace;
     private ColorStateList mColorLabelDefault;
+    private ColorStateList mColorLabelActive;
     private ColorStateList mColorLabelUnavailable;
 
     public QSTileView(Context context, QSIconView icon) {
@@ -65,6 +68,7 @@ public class QSTileView extends QSTileBaseView {
         setOrientation(VERTICAL);
         setGravity(Gravity.CENTER_HORIZONTAL | Gravity.TOP);
         mColorLabelDefault = Utils.getColorAttr(getContext(), android.R.attr.textColorPrimary);
+        mColorLabelActive = Utils.getColorAttr(getContext(), android.R.attr.colorAccent);
         // The text color for unavailable tiles is textColorSecondary, same as secondaryLabel for
         // contrast purposes
         mColorLabelUnavailable = Utils.getColorAttr(getContext(),
@@ -127,6 +131,11 @@ public class QSTileView extends QSTileBaseView {
             mSecondLine.setText(state.secondaryLabel);
             mSecondLine.setVisibility(TextUtils.isEmpty(state.secondaryLabel) ? View.GONE
                     : View.VISIBLE);
+        }
+        final int mQsTileStyle = Settings.Secure.getIntForUser(getContext().getContentResolver(),
+                     Settings.Secure.QS_TILE_STYLE, 0, UserHandle.USER_CURRENT);
+        if (state.state == Tile.STATE_ACTIVE && mQsTileStyle != 0) {
+            mLabel.setTextColor(mColorLabelActive);
         }
         boolean dualTarget = DUAL_TARGET_ALLOWED && state.dualTarget;
         mExpandIndicator.setVisibility(dualTarget ? View.VISIBLE : View.GONE);
