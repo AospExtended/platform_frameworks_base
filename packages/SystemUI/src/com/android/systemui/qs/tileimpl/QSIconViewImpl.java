@@ -26,6 +26,8 @@ import android.graphics.Color;
 import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.Animatable2.AnimationCallback;
 import android.graphics.drawable.Drawable;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
@@ -174,6 +176,8 @@ public class QSIconViewImpl extends QSIconView {
 
     private void animateGrayScale(int fromColor, int toColor, ImageView iv,
         final Runnable endRunnable) {
+        final int mQsTileStyle = Settings.Secure.getIntForUser(getContext().getContentResolver(),
+                     Settings.Secure.QS_TILE_STYLE, 0, UserHandle.USER_CURRENT);
         if (iv instanceof AlphaControlledSlashImageView) {
             ((AlphaControlledSlashImageView)iv)
                     .setFinalImageTintList(ColorStateList.valueOf(toColor));
@@ -191,7 +195,7 @@ public class QSIconViewImpl extends QSIconView {
                 int alpha = (int) (fromAlpha + (toAlpha - fromAlpha) * fraction);
                 int channel = (int) (fromChannel + (toChannel - fromChannel) * fraction);
 
-                setTint(iv, Color.argb(alpha, channel, channel, channel));
+                setTint(iv, mQsTileStyle == 0 ? Color.argb(alpha, channel, channel, channel) : toColor);
             });
             anim.addListener(new AnimatorListenerAdapter() {
                 @Override

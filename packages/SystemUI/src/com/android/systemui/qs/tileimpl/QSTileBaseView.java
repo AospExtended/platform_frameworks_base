@@ -31,6 +31,8 @@ import android.graphics.drawable.shapes.PathShape;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.text.TextUtils;
 import android.util.Log;
@@ -88,6 +90,14 @@ public class QSTileBaseView extends com.android.systemui.plugins.qs.QSTileView {
                 .getDimension(com.android.internal.R.dimen.config_qsTileStrokeWidthActive);
         mStrokeWidthInactive = context.getResources()
                 .getDimension(com.android.internal.R.dimen.config_qsTileStrokeWidthInactive);
+
+        final int mQsTileStyle = Settings.Secure.getIntForUser(context.getContentResolver(),
+                     Settings.Secure.QS_TILE_STYLE, 0, UserHandle.USER_CURRENT);
+
+        if (mQsTileStyle == 1) {
+            mStrokeWidthActive = mStrokeWidthInactive = context.getResources().getDisplayMetrics().density * 1;
+        }
+
         int size = context.getResources().getDimensionPixelSize(R.dimen.qs_quick_tile_size);
         addView(mIconFrame, new LayoutParams(size, size));
         mBg = new ImageView(getContext());
