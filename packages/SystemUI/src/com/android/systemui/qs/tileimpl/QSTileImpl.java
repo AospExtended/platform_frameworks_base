@@ -536,7 +536,7 @@ public abstract class QSTileImpl<TState extends State> implements QSTile, Lifecy
                 return Utils.getDisabled(context,
                         Utils.getColorAttrDefaultColor(context, android.R.attr.textColorSecondary));
             case Tile.STATE_INACTIVE:
-                return Utils.getColorAttrDefaultColor(context, android.R.attr.textColorSecondary);
+                return Utils.getColorAttrDefaultColor(context, mQsTileStyle == 0 ? android.R.attr.textColorSecondary : android.R.attr.textColorPrimary);
             case Tile.STATE_ACTIVE:
                 return Utils.getColorAttrDefaultColor(context, mQsTileStyle == 0 ? android.R.attr.colorPrimary : android.R.attr.colorAccent);
             default:
