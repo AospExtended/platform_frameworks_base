@@ -20,4 +20,6 @@
     <color name="config_fodColor">#00ff00</color>
     <color name="config_fodColorBackground">#20000000</color>
 
+    <color name="qs_tile_background_color_disabled">#F2F2F2</color>
+
 </resources>
