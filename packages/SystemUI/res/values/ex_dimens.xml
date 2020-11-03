@@ -76,4 +76,8 @@
     <dimen name="ambient_indication_icon_size">20dp</dimen>
 
     <dimen name="screenrecord_dot_size">48dp</dimen>
+
+    <!-- Recognizing fingerprint animation -->
+    <dimen name="fod_animation_size">280dp</dimen>
+
 </resources>
