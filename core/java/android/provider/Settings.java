@@ -5963,6 +5963,11 @@ public final class Settings {
         public static final String NOTIFICATION_SOUND_VIB_SCREEN_ON = "notification_sound_vib_screen_on";
 
         /**
+         * @hide
+         */
+        public static final String WFD_LEGACY_VIDEO_MODE = "wfd_legacy_video_mode";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
