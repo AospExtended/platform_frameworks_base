@@ -113,4 +113,8 @@
     <!-- Media Player -->
     <dimen name="quick_settings_top_margin_media">4dp</dimen>
     <dimen name="quick_settings_top_margin_media_extra">8dp</dimen>
+
+    <!-- Recognizing fingerprint animation -->
+    <dimen name="fod_animation_size">280dp</dimen>
+
 </resources>
