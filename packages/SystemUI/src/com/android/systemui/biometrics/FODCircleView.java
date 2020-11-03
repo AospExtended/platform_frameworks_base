@@ -30,6 +30,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
 import android.hardware.biometrics.BiometricSourceType;
+import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.PowerManager;
@@ -241,6 +242,14 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
                 mPressPending = false;
             }
             mScreenTurnedOn = true;
+        }
+
+        @Override
+        public void onBiometricHelp(int msgId, String helpString,
+                BiometricSourceType biometricSourceType) {
+            if (msgId == -1){ // Auth error
+                mHandler.post(() -> mFODAnimation.hideFODanimation());
+            }
         }
     };
 
