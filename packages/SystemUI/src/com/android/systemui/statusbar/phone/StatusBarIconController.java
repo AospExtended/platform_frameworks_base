@@ -451,8 +451,8 @@ public interface StatusBarIconController {
         }
 
         private boolean useOldStyleMobileDataIcons() {
-            return Settings.System.getIntForUser(mContext.getContentResolver(),
-                    Settings.System.USE_OLD_MOBILETYPE, 0,
+            return Settings.Secure.getIntForUser(mContext.getContentResolver(),
+                    Settings.Secure.USE_OLD_MOBILETYPE, 0,
                     UserHandle.USER_CURRENT) != 0;
         }
     }
