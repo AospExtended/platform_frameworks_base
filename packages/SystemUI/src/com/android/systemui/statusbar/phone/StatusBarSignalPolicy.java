@@ -18,6 +18,7 @@ package com.android.systemui.statusbar.phone;
 
 import android.content.Context;
 import android.os.Handler;
+import android.provider.Settings;
 import android.telephony.SubscriptionInfo;
 import android.util.ArraySet;
 import android.util.Log;
@@ -39,6 +40,8 @@ import java.util.Objects;
 public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallback,
         SecurityController.SecurityControllerCallback, Tunable {
     private static final String TAG = "StatusBarSignalPolicy";
+
+    private static final String USE_OLD_MOBILETYPE = Settings.Secure.USE_OLD_MOBILETYPE;
 
     private final String mSlotAirplane;
     private final String mSlotMobile;
@@ -81,7 +84,7 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
         mNetworkController = Dependency.get(NetworkController.class);
         mSecurityController = Dependency.get(SecurityController.class);
 
-        Dependency.get(TunerService.class).addTunable(this, StatusBarIconController.ICON_BLACKLIST);
+        Dependency.get(TunerService.class).addTunable(this, StatusBarIconController.ICON_BLACKLIST, USE_OLD_MOBILETYPE);
         mNetworkController.addCallback(this);
         mSecurityController.addCallback(this);
     }
@@ -119,6 +122,10 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
 
     @Override
     public void onTuningChanged(String key, String newValue) {
+        if (USE_OLD_MOBILETYPE.equals(key)) {
+            mNetworkController.removeCallback(this);
+            mNetworkController.addCallback(this);
+        }
         if (!StatusBarIconController.ICON_BLACKLIST.equals(key)) {
             return;
         }
