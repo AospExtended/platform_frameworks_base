@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2020 The Android Open Source Project
+<!-- Copyright (C) 2020 The AospExtended Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,11 +13,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-       android:tint="?android:attr/textColorSecondary">
-    <solid android:color="?android:attr/textColorSecondary" />
-    <size
-        android:height="1dp"
-        android:width="1dp" />
-</shape>
+<inset xmlns:android="http://schemas.android.com/apk/res/android">
+    <shape>
+        <solid android:color="?android:attr/colorSecondary"/>
+        <corners android:radius="@*android:dimen/config_dialogCornerRadius" />
+    </shape>
+</inset>
