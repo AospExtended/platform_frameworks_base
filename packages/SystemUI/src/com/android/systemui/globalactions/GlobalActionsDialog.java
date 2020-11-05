@@ -26,6 +26,8 @@ import static com.android.internal.widget.LockPatternUtils.StrongAuthTracker.STR
 import static com.android.internal.widget.LockPatternUtils.StrongAuthTracker.STRONG_AUTH_REQUIRED_AFTER_USER_LOCKDOWN;
 import static com.android.systemui.shared.system.QuickStepContract.SYSUI_STATE_GLOBAL_ACTIONS_SHOWING;
 
+import com.android.internal.graphics.ColorUtils;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
@@ -902,8 +904,8 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
                 Context context, View convertView, ViewGroup parent, LayoutInflater inflater) {
             View v = super.create(context, convertView, parent, inflater);
             int textColor;
-            v.setBackgroundTintList(ColorStateList.valueOf(v.getResources().getColor(
-                    com.android.systemui.R.color.global_actions_emergency_background)));
+            v.setBackgroundTintList(ColorStateList.valueOf(ColorUtils.setAlphaComponent(v.getResources().getColor(
+                    com.android.systemui.R.color.global_actions_emergency_background), 60)));
             textColor = v.getResources().getColor(
                     com.android.systemui.R.color.global_actions_emergency_text);
             TextView messageView = v.findViewById(R.id.message);

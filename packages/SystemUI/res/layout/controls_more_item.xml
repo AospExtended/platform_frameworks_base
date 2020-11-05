@@ -19,6 +19,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="start"
+    android:textColor="?android:attr/textColorPrimary"
     android:paddingStart="@dimen/control_menu_horizontal_padding"
     android:paddingEnd="@dimen/control_menu_horizontal_padding"
     android:textDirection="locale"/>

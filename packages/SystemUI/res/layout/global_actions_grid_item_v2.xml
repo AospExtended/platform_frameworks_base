@@ -28,14 +28,14 @@
     android:layout_marginRight="@dimen/control_base_item_margin"
     android:layout_marginLeft="@dimen/control_base_item_margin"
     android:stateListAnimator="@anim/control_state_list_animator"
-    android:background="@drawable/control_background">
+    android:background="@drawable/control_background_ripple">
         <ImageView
             android:id="@*android:id/icon"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginBottom="14dp"
             android:scaleType="centerInside"
-            android:tint="@color/control_primary_text" />
+            android:tint="?android:attr/textColorPrimary" />
         <TextView
             android:id="@*android:id/message"
             android:layout_width="match_parent"
@@ -45,7 +45,7 @@
             android:maxLines="2"
             android:textSize="12sp"
             android:gravity="center"
-            android:textColor="@color/control_primary_text"
+            android:textColor="?android:attr/textColorPrimary"
             android:breakStrategy="high_quality"
             android:hyphenationFrequency="full"
             android:textAppearance="?android:attr/textAppearanceSmall" />
