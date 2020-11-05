@@ -777,9 +777,9 @@
         <item name="android:overlapAnchor">true</item>
 
         <!-- used to override dark/light theming -->
-        <item name="*android:colorBackgroundFloating">@color/GM2_grey_800</item>
-        <item name="*android:colorPopupBackground">@color/GM2_grey_800</item>
-        <item name="*android:dialogCornerRadius">8dp</item>
+        <item name="*android:colorBackgroundFloating">?android:attr/colorSecondary</item>
+        <item name="*android:colorPopupBackground">?android:attr/colorSecondary</item>
+        <item name="*android:dialogCornerRadius">@*android:dimen/config_dialogCornerRadius</item>
     </style>
 
     <style name="TextAppearance.ControlSetup">

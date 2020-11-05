@@ -20,8 +20,8 @@
   <item
       android:id="@+id/background">
     <shape>
-      <solid android:color="@color/control_default_background" />
-      <corners android:radius="@dimen/control_corner_radius" />
+      <solid android:color="?android:attr/colorPrimary" />
+      <corners android:radius="@*android:dimen/config_dialogCornerRadius" />
     </shape>
   </item>
   <item
