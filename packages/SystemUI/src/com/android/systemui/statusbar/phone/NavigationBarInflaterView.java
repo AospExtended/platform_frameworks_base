@@ -92,6 +92,7 @@ public class NavigationBarInflaterView extends FrameLayout
 
     protected FrameLayout mHorizontal;
     protected FrameLayout mVertical;
+    private boolean mUsingCustomLayout;
 
     @VisibleForTesting
     SparseArray<ButtonDispatcher> mButtonDispatchers;
@@ -176,14 +177,14 @@ public class NavigationBarInflaterView extends FrameLayout
     @Override
     public void onTuningChanged(String key, String newValue) {
         if (NAV_BAR_VIEWS.equals(key)) {
-            onLikelyDefaultLayoutChange();
+            setNavigationBarLayout(newValue);
         }
         if (NAV_BAR_INVERSE.equals(key)) {
             mInverseLayout = TunerService.parseIntegerSwitch(newValue, false);
             updateLayoutInversion();
         }
         if (QuickStepContract.isGesturalMode(mNavBarMode)) {
-            onLikelyDefaultLayoutChange();
+            setNavigationBarLayout(newValue);
         }
     }
 
@@ -193,7 +194,19 @@ public class NavigationBarInflaterView extends FrameLayout
         updateLayoutInversion();
     }
 
+
+    public void setNavigationBarLayout(String layoutValue) {
+        if (!Objects.equals(mCurrentLayout, layoutValue)) {
+            mUsingCustomLayout = layoutValue != null;
+            clearViews();
+            inflateLayout(layoutValue);
+        }
+    }
+
+
     public void onLikelyDefaultLayoutChange() {
+        // Don't override custom layouts
+        if (mUsingCustomLayout) return;
         // Reevaluate new layout
         final String newValue = getDefaultLayout();
         if (!Objects.equals(mCurrentLayout, newValue)) {
