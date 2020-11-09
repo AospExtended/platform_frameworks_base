@@ -10477,6 +10477,11 @@ public final class Settings {
          */
         public static final String NAVIGATION_BAR_HINT = "navigation_bar_hint";
         
+       /**
+         * Immersive Navigation gesture
+         * @hide
+         */
+        public static final String IMMERSIVE_NAVIGATION = "immersive_navigation";
     }
 
     /**
