@@ -5863,21 +5863,20 @@ public final class Settings {
         public static final String AOD_NOTIFICATION_PULSE_TRIGGER = "ambient_notification_light";
 
         /**
-         * Whether to use accent color for pulse
+         * Pulse ambient lights color mode
+         * 0 - Default
+         * 1 - Accent
+         * 2 - Notification
+         * 3 - Custom color
          * @hide
          */
-        public static final String NOTIFICATION_PULSE_ACCENT = "ambient_notification_light_accent";
+        public static final String NOTIFICATION_PULSE_COLOR_MODE = "ambient_notification_color_mode";
 
         /**
          * Pulse Ambient lights color
          * @hide
          */
         public static final String NOTIFICATION_PULSE_COLOR = "ambient_notification_light_color";
-
-        /**
-         * @hide
-         */
-        public static final String NOTIFICATION_PULSE_COLOR_AUTOMATIC = "ambient_notification_light_color_automatic";
 
         /**
          * Whether Ambient Edge lights are activated
