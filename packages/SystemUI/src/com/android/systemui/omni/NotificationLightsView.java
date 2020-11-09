@@ -19,10 +19,16 @@ package com.android.systemui.omni;
 
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
+import android.app.WallpaperColors;
+import android.app.WallpaperManager;
+import android.app.WallpaperInfo;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -33,6 +39,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
+
+import androidx.palette.graphics.Palette;
 
 import com.android.settingslib.Utils;
 import com.android.systemui.R;
@@ -70,19 +78,33 @@ public class NotificationLightsView extends RelativeLayout {
     }
 
     public int getNotificationLightsColor() {
-        int color = getDefaultNotificationLightsColor();
-        boolean useAccent = Settings.System.getIntForUser(mContext.getContentResolver(),
+        int colorMode = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.NOTIFICATION_PULSE_COLOR_MODE,
-                0, UserHandle.USER_CURRENT) == 1;
-        if (useAccent) {
+                0, UserHandle.USER_CURRENT);
+        int color = getDefaultNotificationLightsColor(); // custom color (fallback)
+        if (colorMode == 0) { // accent
             color = Utils.getColorAccentDefaultColor(getContext());
+        } else if (colorMode == 1) { // wallpapper
+            try {
+                WallpaperManager wallpaperManager = WallpaperManager.getInstance(mContext);
+                WallpaperInfo wallpaperInfo = wallpaperManager.getWallpaperInfo();
+                if (wallpaperInfo == null) { // if not a live wallpaper
+                    Drawable wallpaperDrawable = wallpaperManager.getDrawable();
+                    Bitmap bitmap = ((BitmapDrawable)wallpaperDrawable).getBitmap();
+                    if (bitmap != null) { // if wallpaper is not blank
+                        Palette p = Palette.from(bitmap).generate();
+                        int wallColor = p.getDominantColor(color);
+                        if (color != wallColor)
+                            color = wallColor;
+                    }
+                }
+            } catch (Exception e) { /* nothing to do, will use fallback */ }
         }
         return color;
     }
 
     public int getDefaultNotificationLightsColor() {
-        int defaultColor = getResources().getInteger(
-                com.android.internal.R.integer.config_ambientNotificationDefaultColor);
+        int defaultColor = Utils.getColorAccentDefaultColor(getContext());
         return Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.NOTIFICATION_PULSE_COLOR, defaultColor,
                     UserHandle.USER_CURRENT);

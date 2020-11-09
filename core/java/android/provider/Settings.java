@@ -5850,8 +5850,8 @@ public final class Settings {
 
         /**
          * Pulse ambient lights color mode
-         * 0 - Default
-         * 1 - Accent
+         * 0 - Default (Accent)
+         * 1 - Wallpaper
          * 2 - Notification
          * 3 - Custom color
          * @hide
