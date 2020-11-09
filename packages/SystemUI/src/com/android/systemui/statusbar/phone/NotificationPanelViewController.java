@@ -494,6 +494,7 @@ public class NotificationPanelViewController extends PanelViewController {
     private NotificationLightsView mPulseLightsView;
     private boolean mPulseLightHandled;
     private boolean mAmbientPulseLightRunning;
+    private boolean mAmbientPulseRanOnce = false; // used only for repeats
     public static final String CANCEL_NOTIFICATION_PULSE_ACTION = "cancel_notification_pulse";
 
     private boolean mAnimatingQS;
@@ -3093,6 +3094,8 @@ public class NotificationPanelViewController extends PanelViewController {
                 Settings.System.AOD_NOTIFICATION_PULSE_TIMEOUT, 0, UserHandle.USER_CURRENT);
         boolean pulseColorAutomatic = Settings.System.getIntForUser(resolver,
                 Settings.System.NOTIFICATION_PULSE_COLOR_MODE, 0, UserHandle.USER_CURRENT) == 2;
+        int repeats = Settings.System.getIntForUser(resolver,
+                Settings.System.NOTIFICATION_PULSE_REPEATS, 0, UserHandle.USER_CURRENT);
         if (animatePulse) {
             mAnimateNextPositionUpdate = true;
         }
@@ -3101,7 +3104,7 @@ public class NotificationPanelViewController extends PanelViewController {
         if (!mPulsing && !mDozing) {
             mAnimateNextPositionUpdate = false;
         }
-        if (mPulseLightsView != null && (pulseLights || ambientLights)) {
+        if (mPulseLightsView != null && pulseLights) {
             if (DEBUG_PULSE_LIGHT) {
                 Log.d(TAG, "setPulsing pulsing = " + pulsing + " pulseLights = " + pulseLights
                         + " ambientLights = " + ambientLights + " activeNotif = " + activeNotif
@@ -3156,9 +3159,14 @@ public class NotificationPanelViewController extends PanelViewController {
                     mPulseLightsView.animateNotificationWithColor(pulseColor);
                     mPulseLightsView.setVisibility(View.VISIBLE);
                     mAmbientPulseLightRunning = true;
-                    if (ambientLightsTimeout != 0) {
+                    if (ambientLightsTimeout != 0 && repeats == 0) {
                         // start the end timer
                         startNotificationPulseTimer(ambientLightsTimeout);
+                    } else if (repeats != 0 && !mAmbientPulseRanOnce) {
+                        mAmbientPulseRanOnce = true;
+                    } else if (repeats != 0 && mAmbientPulseRanOnce) {
+                        // stop if using repeats and already ran once
+                        stopNotificationPulse();
                     }
                 } else {
                     // no active notifications or just pulse without aod - so no reason to continue
@@ -4092,6 +4100,7 @@ public class NotificationPanelViewController extends PanelViewController {
         boolean doShowAodContent = true;
         if (mAmbientPulseLightRunning) {
             mAmbientPulseLightRunning = false;
+            mAmbientPulseRanOnce = false;
             mPulseLightHandled = true;
             stopNotificationPulseTimer();
             // only do it if we continue to doze but never when we already woke up
