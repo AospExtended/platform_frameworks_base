@@ -30,9 +30,10 @@ LOCAL_REQUIRED_MODULES := \
 	AccentColorAmethystOverlay \
 	AccentColorAquamarineOverlay \
 	AccentColorTangerineOverlay \
+        AOSPImmersiveNavigationOverlay \
 	DisplayCutoutEmulationCornerOverlay \
 	DisplayCutoutEmulationDoubleOverlay \
-    DisplayCutoutEmulationHoleOverlay \
+        DisplayCutoutEmulationHoleOverlay \
 	DisplayCutoutEmulationTallOverlay \
 	DisplayCutoutEmulationWaterfallOverlay \
 	FontNotoSerifSourceOverlay \
