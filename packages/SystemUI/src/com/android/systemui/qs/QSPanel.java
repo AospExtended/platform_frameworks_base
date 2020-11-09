@@ -873,9 +873,9 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     }
 
     public void refreshAllTiles() {
-        if (mBrightnessController != null) {
+        /*if (mBrightnessController != null) {
             mBrightnessController.checkRestrictionAndSetEnabled();
-        }
+        }*/
         for (TileRecord r : mRecords) {
             r.tile.refreshState();
         }
