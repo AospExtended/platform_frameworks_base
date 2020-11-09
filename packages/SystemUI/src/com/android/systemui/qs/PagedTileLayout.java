@@ -436,8 +436,14 @@ public class PagedTileLayout extends ViewPager implements QSTileLayout {
         return mPages.get(0).mColumns;
     }
 
+    @Override
     public int getNumColumns() {
         return getColumnCount();
+    }
+
+    @Override
+    public boolean isShowTitles() {
+        return mPages.get(0).isShowTitles();
     }
 
     /**

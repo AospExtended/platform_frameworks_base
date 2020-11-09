@@ -441,6 +441,11 @@ public class QuickQSPanel extends QSPanel {
         }
 
         @Override
+        public boolean isShowTitles() {
+            return false;
+        }
+
+        @Override
         public void setListening(boolean listening) {
             boolean startedListening = !mListening && listening;
             super.setListening(listening);

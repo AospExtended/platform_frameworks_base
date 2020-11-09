@@ -141,7 +141,11 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
         if (menuItemQs != null) {
             mQsColumnsSubMenu = menuItemQs.getSubMenu();
         }
-        updateColumnsMenu();
+        int qsTitlesValue = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.QS_TILE_TITLE_VISIBILITY, 1,
+                UserHandle.USER_CURRENT);
+        MenuItem qsTitlesMenuItem = mToolbar.getMenu().findItem(R.id.menu_item_titles);
+        qsTitlesMenuItem.setChecked(qsTitlesValue == 1);
         int accentColor = Utils.getColorAccentDefaultColor(context);
         mToolbar.setTitleTextColor(accentColor);
         mToolbar.getNavigationIcon().setTint(accentColor);
@@ -173,6 +177,7 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
         mKeyguardStateController = keyguardStateController;
         mScreenLifecycle = screenLifecycle;
         updateNavBackDrop(getResources().getConfiguration());
+        updateSettings();
     }
 
     @Override
@@ -357,20 +362,23 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
         } else if (id ==  R.id.menu_item_qs_columns_auto) {
             Settings.System.putIntForUser(mContext.getContentResolver(),
                     Settings.System.QS_QUICKBAR_COLUMNS, -1, UserHandle.USER_CURRENT);
+        } else if (id == R.id.menu_item_titles) {
+            item.setChecked(!item.isChecked());
+            Settings.System.putIntForUser(mContext.getContentResolver(),
+                   Settings.System.QS_TILE_TITLE_VISIBILITY, item.isChecked() ? 1 : 0,
+                   UserHandle.USER_CURRENT);
         }
         updateSettings();
         return false;
     }
 
     private void reset() {
-        mTileAdapter.resetTileSpecs(mHost, QSTileHost.getDefaultSpecs(mContext));
-        Settings.System.putIntForUser(mContext.getContentResolver(),
-                Settings.System.QS_LAYOUT_COLUMNS, mDefaultColumns,
-                UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(mContext.getContentResolver(),
-                Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, mDefaultColumns,
-                UserHandle.USER_CURRENT);
-        updateSettings();
+        ArrayList<String> tiles = new ArrayList<>();
+        String defTiles = mContext.getString(R.string.quick_settings_tiles_default);
+        for (String tile : defTiles.split(",")) {
+            tiles.add(tile);
+        }
+        mTileAdapter.resetTileSpecs(mHost, tiles);
     }
 
     private void setTileSpecs() {

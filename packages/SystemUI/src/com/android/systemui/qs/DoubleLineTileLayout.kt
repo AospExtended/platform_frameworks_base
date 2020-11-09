@@ -104,6 +104,10 @@ class DoubleLineTileLayout(
 
     override fun getNumColumns() = actualColumns
 
+    override fun isShowTitles(): Boolean {
+        return false
+    }
+
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         updateResources()
