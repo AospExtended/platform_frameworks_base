@@ -5892,10 +5892,22 @@ public final class Settings {
         public static final String PULSE_TRIGGER_REASON = "pulse_trigger_reason";
 
         /**
+         * Notification pulse repeats count - 0 means go by timeout
+         * @hide
+         */
+        public static final String NOTIFICATION_PULSE_REPEATS = "ambient_notification_light_repeats";
+
+        /**
          * Timeout for ambient pulse in seconds - 0 is no timeout
          * @hide
          */
         public static final String AOD_NOTIFICATION_PULSE_TIMEOUT = "ambient_notification_light_timeout";
+
+        /**
+         * Notification pulse animation duration in seconds
+         * @hide
+         */
+        public static final String NOTIFICATION_PULSE_DURATION = "ambient_notification_light_duration";
 
         /**
          * Keys we no longer back up under the current schema, but want to continue to

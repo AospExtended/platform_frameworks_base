@@ -19,6 +19,7 @@ package com.android.systemui.omni;
 
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -88,13 +89,22 @@ public class NotificationLightsView extends RelativeLayout {
     }
 
     public void animateNotificationWithColor(int color) {
+        ContentResolver resolver = mContext.getContentResolver();
+        int duration = Settings.System.getIntForUser(resolver,
+                Settings.System.NOTIFICATION_PULSE_DURATION, 2,
+                UserHandle.USER_CURRENT) * 1000; // seconds to ms
+        int repeats = Settings.System.getIntForUser(resolver,
+                Settings.System.NOTIFICATION_PULSE_REPEATS, 0,
+                UserHandle.USER_CURRENT);
+
         ImageView leftView = (ImageView) findViewById(R.id.notification_animation_left);
         ImageView rightView = (ImageView) findViewById(R.id.notification_animation_right);
         leftView.setColorFilter(color);
         rightView.setColorFilter(color);
         mLightAnimator = ValueAnimator.ofFloat(new float[]{0.0f, 2.0f});
-        mLightAnimator.setDuration(2000);
-        mLightAnimator.setRepeatCount(ValueAnimator.INFINITE);
+        mLightAnimator.setDuration(duration);
+        mLightAnimator.setRepeatCount(repeats == 0 ?
+                ValueAnimator.INFINITE : repeats);
         mLightAnimator.setRepeatMode(ValueAnimator.RESTART);
         mLightAnimator.addUpdateListener(new AnimatorUpdateListener() {
             public void onAnimationUpdate(ValueAnimator animation) {
