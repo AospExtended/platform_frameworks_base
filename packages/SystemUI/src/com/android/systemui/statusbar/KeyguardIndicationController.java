@@ -857,21 +857,24 @@ public class KeyguardIndicationController {
         }
 
         String batteryInfo = "";
+        int current = 0;
+        double voltage = 0;
         boolean showbatteryInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
             Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT) == 1;
         if (showbatteryInfo) {
             if (mChargingCurrent > 0) {
-                batteryInfo = batteryInfo + (mChargingCurrent < 5 ?
-                        (mChargingCurrent * 1000) : (mChargingCurrent < 4000 ?
-                        mChargingCurrent : (mChargingCurrent / 1000))) + "mA";
+                current = (mChargingCurrent < 5 ? (mChargingCurrent * 1000)
+                        : (mChargingCurrent < 4000 ? mChargingCurrent : (mChargingCurrent / 1000)));
+                batteryInfo = batteryInfo + current + "mA";
             }
-            if (mChargingWattage > 0) {
+            if (mChargingVoltage > 0 && mChargingCurrent > 0) {
+                voltage = mChargingVoltage / 1000 / 1000;
                 batteryInfo = (batteryInfo == "" ? "" : batteryInfo + " · ") +
-                        String.format("%.1f" , (mChargingWattage / 1000 / 1000)) + "W";
+                        String.format("%.1f" , ((double) current / 1000) * voltage) + "W";
             }
             if (mChargingVoltage > 0) {
                 batteryInfo = (batteryInfo == "" ? "" : batteryInfo + " · ") +
-                        String.format("%.1f", (float) (mChargingVoltage / 1000 / 1000)) + "V";
+                        String.format("%.1f" , voltage) + "V";
             }
             if (mTemperature > 0) {
                 batteryInfo = (batteryInfo == "" ? "" : batteryInfo + " · ") +
