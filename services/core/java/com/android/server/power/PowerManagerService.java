@@ -1351,7 +1351,9 @@ public final class PowerManagerService extends SystemService
         boolean mAmbientLights = Settings.System.getIntForUser(
                 mContext.getContentResolver(), Settings.System.AOD_NOTIFICATION_PULSE,
                 0, UserHandle.USER_CURRENT) != 0;
-        if (mAmbientLights) {
+        boolean aodEnabled = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.DOZE_ALWAYS_ON, 0, UserHandle.USER_CURRENT) == 1;
+        if (mAmbientLights && aodEnabled) {
             boolean dozeOnNotification = Settings.System.getIntForUser(resolver,
                     Settings.System.AOD_NOTIFICATION_PULSE_TRIGGER, 0, UserHandle.USER_CURRENT) != 0;
             Settings.System.putIntForUser(resolver,
