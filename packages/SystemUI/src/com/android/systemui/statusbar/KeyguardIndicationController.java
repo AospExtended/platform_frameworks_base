@@ -102,7 +102,7 @@ public class KeyguardIndicationController implements StateListener,
     private KeyguardIndicationTextView mTextView;
     private KeyguardIndicationTextView mDisclosure;
     private LottieAnimationView mChargingIndicationView;
-    private boolean mChargingIndication = true;
+    private int mChargingIndication = 1;
     private final IBatteryStats mBatteryInfo;
     private final SettableWakeLock mWakeLock;
     private final DockManager mDockManager;
@@ -499,12 +499,50 @@ public class KeyguardIndicationController implements StateListener,
         }
     }
 	
-    public void updateChargingIndication(boolean visible) {
-        mChargingIndication = visible;
+    public void updateChargingIndication(int style) {
+        mChargingIndication = style;
+        switch (mChargingIndication) {
+            default:
+            case 1: // Flash
+                mChargingIndicationView.setFileName("keyguard_charging_indication.json");
+                mChargingIndicationView.getLayoutParams().height = mContext.getResources().getDimensionPixelSize(
+                            R.dimen.keyguard_charging_indication_height);
+                mChargingIndicationView.getLayoutParams().width = mContext.getResources().getDimensionPixelSize(
+                            R.dimen.keyguard_charging_indication_width);
+                break;
+            case 2: // Battery
+                mChargingIndicationView.setFileName("keyguard_charge_battery.json");
+                mChargingIndicationView.getLayoutParams().height = mContext.getResources().getDimensionPixelSize(
+                            R.dimen.keyguard_charging_indication_width);
+                mChargingIndicationView.getLayoutParams().width = mContext.getResources().getDimensionPixelSize(
+                            R.dimen.keyguard_charging_indication_height);
+                break;
+            case 3: // Drop
+                mChargingIndicationView.setFileName("keyguard_charge_drop.json");
+                mChargingIndicationView.getLayoutParams().height = mContext.getResources().getDimensionPixelSize(
+                            R.dimen.keyguard_charging_indication_height);
+                mChargingIndicationView.getLayoutParams().width = mContext.getResources().getDimensionPixelSize(
+                            R.dimen.keyguard_charging_indication_height);
+                break;
+            case 4: // Explosion
+                mChargingIndicationView.setFileName("keyguard_charge_explosion.json");
+                mChargingIndicationView.getLayoutParams().height = mContext.getResources().getDimensionPixelSize(
+                            R.dimen.keyguard_charging_indication_height);
+                mChargingIndicationView.getLayoutParams().width = mContext.getResources().getDimensionPixelSize(
+                            R.dimen.keyguard_charging_indication_height);
+                break;
+            case 5: // Water
+                mChargingIndicationView.setFileName("keyguard_charge_water.json");
+                mChargingIndicationView.getLayoutParams().height = mContext.getResources().getDimensionPixelSize(
+                            R.dimen.keyguard_charging_indication_height);
+                mChargingIndicationView.getLayoutParams().width = mContext.getResources().getDimensionPixelSize(
+                            R.dimen.keyguard_charging_indication_height);
+                break;
+        }
     }
 
     private void updateChargingIndication() {
-        if (mChargingIndication && !mDozing && mBatteryPresent && mPowerPluggedIn) {
+        if (mChargingIndication > 0 && !mDozing && mBatteryPresent && mPowerPluggedIn) {
             mChargingIndicationView.setVisibility(View.VISIBLE);
             mChargingIndicationView.playAnimation();
         } else {
