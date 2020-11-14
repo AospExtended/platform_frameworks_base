@@ -956,6 +956,10 @@ final class DefaultPermissionGrantPolicy {
         grantSystemFixedPermissionsToSystemPackage(pm,"com.google.android.apps.recorder", userId, MICROPHONE_PERMISSIONS,
                 ALWAYS_LOCATION_PERMISSIONS);
 
+        // SafetyHub
+        grantSystemFixedPermissionsToSystemPackage(pm,"com.google.android.apps.safetyhub", userId, SENSORS_PERMISSIONS,
+                CONTACTS_PERMISSIONS, ALWAYS_LOCATION_PERMISSIONS, MICROPHONE_PERMISSIONS, PHONE_PERMISSIONS);
+
         // Settings Services
         grantSystemFixedPermissionsToSystemPackage(pm,"com.google.android.settings.intelligence", userId, PHONE_PERMISSIONS,
                 ALWAYS_LOCATION_PERMISSIONS);
