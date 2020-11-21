@@ -682,7 +682,8 @@ public class NavigationBarEdgePanel extends View implements NavigationEdgeBackPl
         }
     }
 
-    private void resetOnDown() {
+    @Override
+    public void resetOnDown() {
         animate().cancel();
         mAngleAnimation.cancel();
         mTranslationAnimation.cancel();

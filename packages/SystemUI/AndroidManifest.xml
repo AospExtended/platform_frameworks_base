@@ -921,5 +921,50 @@
         <!-- FPS Info -->
         <service android:name=".FPSInfoService"
                 android:exported="false" />
+
+        <activity
+            android:name="com.android.systemui.statusbar.phone.LeftBackSwipeCustomApp"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
+            android:label="@string/app_picker_dialog_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.systemui.statusbar.phone.LeftBackSwipeCustomApp" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.android.systemui.statusbar.phone.RightBackSwipeCustomApp"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
+            android:label="@string/app_picker_dialog_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.systemui.statusbar.phone.RightBackSwipeCustomApp" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.android.systemui.statusbar.phone.LeftBackVerticalSwipeCustomApp"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
+            android:label="@string/app_picker_dialog_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.systemui.statusbar.phone.LeftBackVerticalSwipeCustomApp" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.android.systemui.statusbar.phone.RightBackVerticalSwipeCustomApp"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
+            android:label="@string/app_picker_dialog_title"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.android.systemui.statusbar.phone.RightBackVerticalSwipeCustomApp" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>
