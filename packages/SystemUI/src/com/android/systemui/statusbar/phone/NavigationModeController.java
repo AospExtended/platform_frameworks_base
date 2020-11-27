@@ -192,7 +192,7 @@ public class NavigationModeController implements Dumpable {
     private void switchToDefaultGestureNavOverlayIfNecessary() {
         final int userId = mCurrentUserContext.getUserId();
         final boolean hasImmersiveNavigation = Settings.Secure.getInt(mCurrentUserContext.getContentResolver(),
-                Settings.Secure.IMMERSIVE_NAVIGATION, 1) == 1;
+                Settings.Secure.IMMERSIVE_NAVIGATION, 0) == 1;
         try {
             final IOverlayManager om = IOverlayManager.Stub.asInterface(
                     ServiceManager.getService(Context.OVERLAY_SERVICE));
