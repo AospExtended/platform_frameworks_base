@@ -88,10 +88,9 @@ public class ScreenshotTile extends QSTileImpl<State> {
         mHost.collapsePanels();
 
         //finish collapsing the panel
-        try {
-             Thread.sleep(1000); //1s
-        } catch (InterruptedException ie) {}
-        AEXUtils.takeScreenshot(mRegion ? false : true);
+        mUiHandler.postDelayed(() -> {
+            AEXUtils.takeScreenshot(mRegion ? false : true);
+        }, 1000/*timeout*/);
     }
 
     @Override
