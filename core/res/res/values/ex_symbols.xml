@@ -214,4 +214,5 @@
     <!-- App Lock -->
     <java-symbol type="string" name="lockscreen_pattern_instructions" />
 
+     <java-symbol type="string" name="config_fodAnimationPackage" />
 </resources>

@@ -213,4 +213,7 @@
     <!-- Whether device supports in-display fingerprint when screen is turned off -->
     <bool name="config_supportsScreenOffInDisplayFingerprint">false</bool>
 
+    <!-- Default value for FOD animation package resources -->
+    <string name="config_fodAnimationPackage" translatable="false">org.aospextended.fod.animations</string>
+
 </resources>
