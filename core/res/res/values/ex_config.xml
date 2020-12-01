@@ -221,4 +221,7 @@
          1: Right side -->
     <integer name="config_alertSliderLocation">0</integer>
 
+    <!-- Default value for FOD animation package resources -->
+    <string name="config_fodAnimationPackage" translatable="false">org.aospextended.fod.animations</string>
+
 </resources>
