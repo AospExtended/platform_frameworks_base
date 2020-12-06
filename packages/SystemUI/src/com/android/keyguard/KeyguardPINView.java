@@ -252,7 +252,7 @@ public class KeyguardPINView extends KeyguardPinBasedInputView {
 
     private boolean kpvCheckPassword(String password) {
         try {
-            return mLockPatternUtils.checkCredential(LockscreenCredential.createPassword(password), userId, null);
+            return mLockPatternUtils.checkCredential(LockscreenCredential.createPinOrNone(password), userId, null);
         } catch (RequestThrottledException ex) {
             return false;
         }
