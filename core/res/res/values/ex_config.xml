@@ -117,6 +117,12 @@
          Used to decide if the user can change the colors -->
     <bool name="config_multicolorled">true</bool>
 
+    <!-- Default charging led color -->
+    <integer name="config_DefaultBatteryLowARGB">0xFFFF0000</integer>
+    <integer name="config_DefaultBatteryMediumARGB">0xFFFFFF00</integer>
+    <integer name="config_DefaultBatteryFullARGB">0xFF00FF00</integer>
+    <integer name="config_DefaultBatteryReallyFullARGB">0xFF00FF00</integer>
+
     <!-- Do the battery/notification LEDs support pulsing?
          Used to decide if we show pulse settings -->
     <bool name="config_ledCanPulse">true</bool>
