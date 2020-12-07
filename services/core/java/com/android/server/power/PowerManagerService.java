@@ -3795,7 +3795,7 @@ public final class PowerManagerService extends SystemService
 
     private void setTemporaryButtonBrightnessSettingOverrideInternal(int brightness) {
         if (mButtonBrightnessSupport){
-            mLightsManager.getLight(LightsManager.LIGHT_ID_BUTTONS).setBrightness(brightness);
+            mLightsManager.getLight(LightsManager.LIGHT_ID_BUTTONS).setBrightness(brightnessIntToFloat(brightness));
         }
     }
 
@@ -5761,7 +5761,7 @@ public final class PowerManagerService extends SystemService
 
         if (!mButtonBacklightEnable){
             mCurrentButtonBrightness = 0;
-            mLightsManager.getLight(LightsManager.LIGHT_ID_BUTTONS).setBrightness(mCurrentButtonBrightness);
+            mLightsManager.getLight(LightsManager.LIGHT_ID_BUTTONS).setBrightness(brightnessIntToFloat(mCurrentButtonBrightness));
             return;
         }
 
@@ -5770,7 +5770,7 @@ public final class PowerManagerService extends SystemService
                 Slog.d(TAG, "button timeout handled");
             }
             mCurrentButtonBrightness = 0;
-            mLightsManager.getLight(LightsManager.LIGHT_ID_BUTTONS).setBrightness(mCurrentButtonBrightness);
+            mLightsManager.getLight(LightsManager.LIGHT_ID_BUTTONS).setBrightness(brightnessIntToFloat(mCurrentButtonBrightness));
             return;
         }
 
@@ -5797,7 +5797,7 @@ public final class PowerManagerService extends SystemService
             Slog.d(TAG, "mCurrentButtonBrightness="+mCurrentButtonBrightness);
         }
 
-        mLightsManager.getLight(LightsManager.LIGHT_ID_BUTTONS).setBrightness(mCurrentButtonBrightness);
+        mLightsManager.getLight(LightsManager.LIGHT_ID_BUTTONS).setBrightness(brightnessIntToFloat(mCurrentButtonBrightness));
     }
 
     private int calcButtonLight() {
@@ -5821,5 +5821,13 @@ public final class PowerManagerService extends SystemService
         Message msg = mHandler.obtainMessage(MSG_BUTTON_TIMEOUT);
         msg.setAsynchronous(true);
         mHandler.sendMessageAtTime(msg, now + mButtonTimeout);
+    }
+
+
+    private float brightnessIntToFloat(int brightness) {
+        return BrightnessSynchronizer.brightnessIntToFloat(
+                brightness,
+                PowerManager.BRIGHTNESS_OFF + 1, PowerManager.BRIGHTNESS_ON,
+                PowerManager.BRIGHTNESS_MIN, PowerManager.BRIGHTNESS_MAX);
     }
 }
