@@ -79,7 +79,11 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     private SettingsButton mSettingsButton;
     protected View mSettingsContainer;
     private PageIndicator mPageIndicator;
+
     private View mRunningServicesButton;
+
+    //private TextView mBuildText;
+    //private boolean mShouldShowBuildText;
 
     private boolean mQsDisabled;
     private QSPanel mQsPanel;
@@ -153,6 +157,7 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
 
         mActionsContainer = findViewById(R.id.qs_footer_actions_container);
         mEditContainer = findViewById(R.id.qs_footer_actions_edit_container);
+        mBuildText = findViewById(R.id.build);
 
         // RenderThread is doing more harm than good when touching the header (to expand quick
         // settings), so disable it for this view
@@ -169,16 +174,19 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     }
 
     private void setBuildText() {
-        /*TextView v = findViewById(R.id.build);
-        if (v == null) return;
+        /*if (mBuildText == null) return;
         if (DevelopmentSettingsEnabler.isDevelopmentSettingsEnabled(mContext)) {
-            v.setText(mContext.getString(
+            mBuildText.setText(mContext.getString(
                     com.android.internal.R.string.bugreport_status,
                     Build.VERSION.RELEASE_OR_CODENAME,
                     Build.ID));
-            v.setVisibility(View.VISIBLE);
+            // Set as selected for marquee before its made visible, then it won't be announced when
+            // it's made visible.
+            mBuildText.setSelected(true);
+            mShouldShowBuildText = true;
         } else {
-            v.setVisibility(View.GONE);
+            mShouldShowBuildText = false;
+            mBuildText.setSelected(false);
         }*/
     }
 
@@ -328,6 +336,8 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         mEdit.setVisibility(isEditEnabled() ? View.VISIBLE : View.GONE);
         mSettingsButton.setVisibility(isDemo || !mExpanded ? View.INVISIBLE : View.VISIBLE);
         mRunningServicesButton.setVisibility(isRunningServicesEnabled() ? !isDemo && mExpanded ? View.VISIBLE : View.INVISIBLE : View.GONE);
+
+        //mBuildText.setVisibility(mExpanded && mShouldShowBuildText ? View.VISIBLE : View.GONE);
     }
 
     private boolean showUserSwitcher() {
