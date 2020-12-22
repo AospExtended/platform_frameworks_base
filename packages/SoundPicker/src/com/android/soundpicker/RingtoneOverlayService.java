@@ -106,8 +106,8 @@ public class RingtoneOverlayService extends Service {
 
     private void set(@NonNull final String name, @NonNull final Uri uri) {
         final Uri settingUri = System.getUriFor(name);
-        RingtoneManager.setActualDefaultRingtoneUri(this,
-                RingtoneManager.getDefaultType(settingUri), uri);
+        RingtoneManager.setActualDefaultRingtoneUriForPhoneAccountHandle(this,
+                RingtoneManager.getDefaultType(settingUri), uri, null);
         System.putInt(getContentResolver(), name + "_set", 1);
     }
 }
