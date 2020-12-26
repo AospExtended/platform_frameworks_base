@@ -221,4 +221,7 @@
     <java-symbol type="integer" name="config_alertSliderLocation" />
 
     <java-symbol type="string" name="config_fodAnimationPackage" />
+
+    <!-- Default fod pressed icon -->
+    <java-symbol type="integer" name="config_fod_pressed_color" />
 </resources>
