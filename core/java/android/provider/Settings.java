@@ -5974,6 +5974,12 @@ public final class Settings {
         public static final String BERRY_ROUNDED_STYLE = "berry_rounded_style";
 
         /**
+         * Settings switch button style
+         * @hide
+         */
+        public static final String SWITCH_STYLE = "switch_style";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *

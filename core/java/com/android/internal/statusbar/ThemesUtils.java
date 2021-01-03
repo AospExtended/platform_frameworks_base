@@ -18,9 +18,9 @@ package com.android.internal.statusbar;
 
 import android.content.om.IOverlayManager;
 
-public class ThemeAccentUtils {
+public class ThemesUtils {
 
-    public static final String TAG = "ThemeAccentUtils";
+    public static final String TAG = "ThemesUtils";
 
     // Rounded corner styles
     private static final String[] ROUNDED_STYLES = {
@@ -31,6 +31,37 @@ public class ThemeAccentUtils {
         "com.android.system.rounded.high", // 4
         "com.android.system.rounded.extreme", // 5
     };
+
+    // Switch themes
+    private static final String[] SWITCH_THEMES = {
+        "com.android.system.switch.aosp", // 0
+        "com.android.system.switch.telegram", // 1
+        "com.android.system.switch.md2", // 2
+        "com.android.system.switch.oos", // 3
+    };
+
+    public static void updateSwitchStyle(IOverlayManager iom, int userId, int switchStyle) {
+        if (switchStyle == 0) {
+            stockSwitchStyle(iom, userId);
+        } else {
+            try {
+                iom.setEnabled(SWITCH_THEMES[switchStyle],
+                        true, userId);
+            } catch (Exception e) {
+            }
+        }
+    }
+
+    public static void stockSwitchStyle(IOverlayManager iom, int userId) {
+        for (int i = 1; i < SWITCH_THEMES.length; i++) {
+            String switchtheme = SWITCH_THEMES[i];
+            try {
+                iom.setEnabled(switchtheme,
+                        false /*disable*/, userId);
+            } catch (Exception e) {
+            }
+        }
+    }
 
     // Unloads the rounded styles
     private static void unloadRoundedStyle(IOverlayManager iom, int userId) {
