@@ -1372,7 +1372,10 @@ public class NotificationContentView extends FrameLayout {
                     ? R.drawable.ic_stop_bubble
                     : R.drawable.ic_create_bubble);
             mContainingNotification.updateNotificationColor();
-            final int tint = mContainingNotification.getNotificationColor();
+            final int tint = mContext.getResources().getBoolean(
+                    com.android.internal.R.bool.config_allowNotificationIconTextTinting) ?
+                        mContainingNotification.getNotificationColor() : mContext.getResources().getColor(
+                    com.android.internal.R.color.notification_text_default_color);
             d.setTint(tint);
 
             String contentDescription = mContext.getResources().getString(entry.isBubble()
