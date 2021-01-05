@@ -87,6 +87,7 @@ public class Clock extends TextView implements DemoMode, Tunable, CommandQueue.C
     private boolean mClockVisibleByUser = true;
 
     private boolean mAttached;
+    private boolean mScreenReceiverRegistered;
     private Calendar mCalendar;
     private String mClockFormatString;
     private SimpleDateFormat mClockFormat;

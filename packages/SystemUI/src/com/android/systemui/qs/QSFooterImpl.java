@@ -79,11 +79,13 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     private SettingsButton mSettingsButton;
     protected View mSettingsContainer;
     private PageIndicator mPageIndicator;
+    private TextView mBuildText;
+    private boolean mShouldShowBuildText;
 
     private View mRunningServicesButton;
 
-    private TextView mBuildText;
-    private boolean mShouldShowBuildText;
+    //private TextView mBuildText;
+    //private boolean mShouldShowBuildText;
 
     private boolean mQsDisabled;
     private QSPanel mQsPanel;
@@ -175,7 +177,6 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
 
     private void setBuildText() {
         /*if (mBuildText == null) return;
-        if (DevelopmentSettingsEnabler.isDevelopmentSettingsEnabled(mContext)) {
             mBuildText.setText(mContext.getString(
                     com.android.internal.R.string.bugreport_status,
                     Build.VERSION.RELEASE_OR_CODENAME,
