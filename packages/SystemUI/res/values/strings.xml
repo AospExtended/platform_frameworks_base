@@ -88,6 +88,9 @@
     <!-- Battery saver notification action [CHAR LIMIT=NONE]-->
     <string name="battery_saver_start_action">Turn on Battery Saver</string>
 
+    <!-- Battery saver extreme [CHAR LIMIT=NONE]-->
+    <string name="extreme_battery_saver_text">Extreme</string>
+
     <!-- Name of the button that links to the Settings app. [CHAR LIMIT=NONE] -->
     <string name="status_bar_settings_settings_button">Settings</string>
 
