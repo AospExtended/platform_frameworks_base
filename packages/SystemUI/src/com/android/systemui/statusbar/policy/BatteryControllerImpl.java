@@ -22,6 +22,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -42,6 +44,7 @@ import com.android.systemui.dagger.qualifiers.Main;
 import com.android.systemui.demomode.DemoMode;
 import com.android.systemui.demomode.DemoModeController;
 import com.android.systemui.power.EnhancedEstimates;
+import com.android.systemui.settings.UserContentResolverProvider;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -58,7 +61,11 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
     private static final String ACTION_LEVEL_TEST = "com.android.systemui.BATTERY_LEVEL_TEST";
 
     private static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
+    static final String EBS_STATE_AUTHORITY = "com.google.android.flipendo.api";
+    static final Uri IS_EBS_ENABLED_OBSERVABLE_URI = Uri.parse("content://com.google.android.flipendo.api/get_flipendo_state");
 
+    protected final ContentObserver mContentObserver;
+    private final UserContentResolverProvider mContentResolverProvider;
     private final EnhancedEstimates mEstimates;
     protected final BroadcastDispatcher mBroadcastDispatcher;
     protected final ArrayList<BatteryController.BatteryStateChangeCallback>
@@ -79,6 +86,7 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
     protected boolean mPowerSave;
     private boolean mAodPowerSave;
     private boolean mWirelessCharging;
+    private boolean mExtremeSaver;
     private boolean mTestMode = false;
     @VisibleForTesting
     boolean mHasReceivedBattery = false;
@@ -93,7 +101,8 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
             BroadcastDispatcher broadcastDispatcher,
             DemoModeController demoModeController,
             @Main Handler mainHandler,
-            @Background Handler bgHandler) {
+            @Background Handler bgHandler,
+            UserContentResolverProvider userContentResolverProvider) {
         mContext = context;
         mMainHandler = mainHandler;
         mBgHandler = bgHandler;
@@ -101,6 +110,16 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
         mEstimates = enhancedEstimates;
         mBroadcastDispatcher = broadcastDispatcher;
         mDemoModeController = demoModeController;
+        mContentResolverProvider = userContentResolverProvider;
+        mContentObserver = new ContentObserver(mBgHandler) {
+            @Override
+            public void onChange(boolean selfChange, Uri uri) {
+                if (DEBUG) {
+                    Log.d(TAG, "Change in EBS value " + uri.toSafeString());
+                }
+                setExtremeSaver(isExtremeBatterySaving());
+            }
+        };
     }
 
     private void registerReceiver() {
@@ -127,6 +146,13 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
         mDemoModeController.addCallback(this);
         updatePowerSave();
         updateEstimate();
+        try {
+            mContentResolverProvider.getUserContentResolver().registerContentObserver(
+                    IS_EBS_ENABLED_OBSERVABLE_URI, false, mContentObserver, -1);
+            mContentObserver.onChange(false, IS_EBS_ENABLED_OBSERVABLE_URI);
+        } catch (Exception e) {
+            Log.w(TAG, "Couldn't register to observe provider", e);
+        }
     }
 
     @Override
@@ -138,6 +164,7 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
         pw.print("  mCharged="); pw.println(mCharged);
         pw.print("  mPowerSave="); pw.println(mPowerSave);
         pw.print("  mStateUnknown="); pw.println(mStateUnknown);
+        pw.print("  mExtremeSaver="); pw.println(mExtremeSaver);
     }
 
     @Override
@@ -157,6 +184,7 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
         cb.onPowerSaveChanged(mPowerSave);
         cb.onBatteryUnknownStateChanged(mStateUnknown);
         cb.onWirelessChargingChanged(mWirelessCharging);
+        cb.onExtremeBatterySaverChanged(mExtremeSaver);
     }
 
     @Override
@@ -268,6 +296,11 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
     }
 
     @Override
+    public boolean isExtremeSaverOn() {
+        return mExtremeSaver;
+    }
+
+    @Override
     public void getEstimatedTimeRemainingString(EstimateFetchCompletion completion) {
         // Need to fetch or refresh the estimate, but it may involve binder calls so offload the
         // work
@@ -348,6 +381,13 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
         firePowerSaveChanged();
     }
 
+    public void setExtremeSaver(boolean isExtreme) {
+        if (isExtreme != mExtremeSaver) {
+            mExtremeSaver = isExtreme;
+            fireExtremeSaverChanged();
+        }
+    }
+
     protected void fireBatteryLevelChanged() {
         synchronized (mChangeCallbacks) {
             final int N = mChangeCallbacks.size();
@@ -373,6 +413,25 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
                 mChangeCallbacks.get(i).onPowerSaveChanged(mPowerSave);
             }
         }
+    }
+
+    private void fireExtremeSaverChanged() {
+        synchronized (mChangeCallbacks) {
+            int N = mChangeCallbacks.size();
+            for (int i = 0; i < N; i++) {
+                mChangeCallbacks.get(i).onExtremeBatterySaverChanged(mExtremeSaver);
+            }
+        }
+    }
+
+    public boolean isExtremeBatterySaving() {
+        Bundle bundle;
+        try {
+            bundle = mContentResolverProvider.getUserContentResolver().call(EBS_STATE_AUTHORITY, "get_flipendo_state", null, new Bundle());
+        } catch (IllegalArgumentException unused) {
+            bundle = new Bundle();
+        }
+        return bundle.getBoolean("flipendo_state", false);
     }
 
     @Override
