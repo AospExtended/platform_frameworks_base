@@ -241,6 +241,9 @@ public class ScreenDecorations extends SystemUI implements Tunable,
         mIsRoundedCornerMultipleRadius = mContext.getResources().getBoolean(
                 R.bool.config_roundedCornerMultipleRadius);
         updateRoundedCornerRadii();
+
+        mMainHandler.post(() -> mTunerService.addTunable(this, SIZE));
+
         setupDecorations();
         setupCameraListener();
 
@@ -312,8 +315,6 @@ public class ScreenDecorations extends SystemUI implements Tunable,
             DisplayMetrics metrics = new DisplayMetrics();
             mDisplayManager.getDisplay(DEFAULT_DISPLAY).getMetrics(metrics);
             mDensity = metrics.density;
-
-            mMainHandler.post(() -> mTunerService.addTunable(this, SIZE));
 
             // Watch color inversion and invert the overlay as needed.
             if (mColorInversionSetting == null) {
@@ -726,11 +727,12 @@ public class ScreenDecorations extends SystemUI implements Tunable,
         }
     }
     private boolean hasRoundedCorners() {
-        //return mRoundedDefault.x > 0
-        //        || mRoundedDefaultBottom.x > 0
-        //        || mRoundedDefaultTop.x > 0
-        //        || mIsRoundedCornerMultipleRadius;
-        return true;
+        final int size = Secure.getIntForUser(mContext.getContentResolver(), SIZE, 0, UserHandle.USER_CURRENT);
+        return mRoundedDefault.x > 0
+                || mRoundedDefaultBottom.x > 0
+                || mRoundedDefaultTop.x > 0
+                || mIsRoundedCornerMultipleRadius
+                || size != 0;
     }
 
     private boolean shouldShowRoundedCorner(@BoundsPosition int pos) {
@@ -781,7 +783,12 @@ public class ScreenDecorations extends SystemUI implements Tunable,
     public void onTuningChanged(String key, String newValue) {
         mHandler.post(() -> {
             if (SIZE.equals(key)) {
-                if (mOverlays == null) setupDecorations();
+                if (mOverlays == null) {
+                    if (TunerService.parseIntegerSwitch(newValue, false))
+                        setupDecorations();
+                    else
+                        return;
+                }
                 Point size = mRoundedDefault;
                 Point sizeTop = mRoundedDefaultTop;
                 Point sizeBottom = mRoundedDefaultBottom;
@@ -845,6 +852,7 @@ public class ScreenDecorations extends SystemUI implements Tunable,
             sizeBottom = sizeDefault;
         }
 
+        updateOrientation();
         for (int i = 0; i < BOUNDS_POSITION_LENGTH; i++) {
             if (mOverlays[i] == null) {
                 continue;
