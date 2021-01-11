@@ -533,6 +533,14 @@ public class NotificationShadeWindowViewController {
         }
     }
 
+    public void setShowLockscreenStatusBar() {
+        boolean isShowLockscreenStatusBarEnabled = Settings.System.getIntForUser(mView.getContext().getContentResolver(),
+                Settings.System.LOCKSCREEN_STATUS_BAR, 1, UserHandle.USER_CURRENT) == 1;
+        if (mNotificationPanelViewController != null) {
+            mNotificationPanelViewController.setShowLockscreenStatusBar(isShowLockscreenStatusBarEnabled);
+        }
+    }
+
     public void setStatusBarWindowViewOptions() {
         int isQsQuickPulldown = Settings.System.getIntForUser(mView.getContext().getContentResolver(),
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);

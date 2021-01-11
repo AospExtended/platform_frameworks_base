@@ -4418,6 +4418,9 @@ public class StatusBar extends SystemUI implements DemoMode,
                     Settings.System.DOUBLE_TAP_SLEEP_GESTURE),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.LOCKSCREEN_STATUS_BAR),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.HEADS_UP_STOPLIST_VALUES), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.HEADS_UP_BLACKLIST_VALUES), false, this);
@@ -4463,6 +4466,9 @@ public class StatusBar extends SystemUI implements DemoMode,
                     Settings.System.DOUBLE_TAP_SLEEP_GESTURE))) {
                 setLockscreenDoubleTapToSleep();
             } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.LOCKSCREEN_STATUS_BAR))) {
+                setShowLockscreenStatusBar();
+            } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN))) {
                 setStatusBarWindowViewOptions();
             } else if (uri.equals(Settings.System.getUriFor(
@@ -4483,6 +4489,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         public void update() {
             setLockscreenDoubleTapToSleep();
+            setShowLockscreenStatusBar();
             setHeadsUpStoplist();
             setHeadsUpBlacklist();
             setStatusBarWindowViewOptions();
@@ -4499,6 +4506,12 @@ public class StatusBar extends SystemUI implements DemoMode,
     private void setLockscreenDoubleTapToSleep() {
         if (mNotificationShadeWindowViewController != null) {
             mNotificationShadeWindowViewController.setLockscreenDoubleTapToSleep();
+        }
+    }
+
+    private void setShowLockscreenStatusBar() {
+        if (mNotificationShadeWindowViewController != null) {
+            mNotificationShadeWindowViewController.setShowLockscreenStatusBar();
         }
     }
 

@@ -283,6 +283,8 @@ public class NotificationPanelViewController extends PanelViewController {
     private boolean mIsLockscreenDoubleTapEnabled;
     private int mStatusBarHeaderHeight;
 
+    private boolean mShowLockscreenStatusBar;
+
     /**
      * If set, the ongoing touch gesture might both trigger the expansion in {@link PanelView} and
      * the expansion for quick settings.
@@ -1651,6 +1653,7 @@ public class NotificationPanelViewController extends PanelViewController {
             };
 
     private void animateKeyguardStatusBarIn(long duration) {
+        if (!mShowLockscreenStatusBar) return;
         mKeyguardStatusBar.setVisibility(View.VISIBLE);
         mKeyguardStatusBar.setAlpha(0f);
         ValueAnimator anim = ValueAnimator.ofFloat(0f, 1f);
@@ -2275,7 +2278,7 @@ public class NotificationPanelViewController extends PanelViewController {
                 mFirstBypassAttempt && mUpdateMonitor.shouldListenForFace()
                         || mDelayShowingKeyguardStatusBar;
         mKeyguardStatusBar.setVisibility(
-                newAlpha != 0f && !mDozing && !hideForBypass ? View.VISIBLE : View.INVISIBLE);
+                newAlpha != 0f && !mDozing && !hideForBypass && mShowLockscreenStatusBar ? View.VISIBLE : View.INVISIBLE);
     }
 
     private void updateKeyguardBottomAreaAlpha() {
@@ -3181,6 +3184,10 @@ public class NotificationPanelViewController extends PanelViewController {
         mDoubleTapToSleepEnabled = doubleTapToSleepEnabled;
     }
 
+    public void setShowLockscreenStatusBar(boolean isShowLockscreenStatusBarEnabled) {
+        mShowLockscreenStatusBar = isShowLockscreenStatusBarEnabled;
+    }
+
     public void setQsQuickPulldown(int mode) {
         mOneFingerQuickSettingsIntercept = mode;
     }
@@ -3709,7 +3716,7 @@ public class NotificationPanelViewController extends PanelViewController {
                 }
             } else {
                 mKeyguardStatusBar.setAlpha(1f);
-                mKeyguardStatusBar.setVisibility(keyguardShowing ? View.VISIBLE : View.INVISIBLE);
+                mKeyguardStatusBar.setVisibility(keyguardShowing && mShowLockscreenStatusBar ? View.VISIBLE : View.INVISIBLE);
                 if (keyguardShowing && oldState != mBarState) {
                     if (mQs != null) {
                         mQs.hideImmediately();
