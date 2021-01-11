@@ -30,6 +30,8 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -160,6 +162,8 @@ public class StatusBarKeyguardViewManager implements RemoteInputController.Callb
     private boolean mGesturalNav;
     private boolean mIsDocked;
 
+    private boolean mShowLockIcon;
+
     protected boolean mFirstUpdate = true;
     protected boolean mLastShowing;
     protected boolean mLastOccluded;
@@ -237,7 +241,7 @@ public class StatusBarKeyguardViewManager implements RemoteInputController.Callb
         mStatusBar = statusBar;
         mContainer = container;
         mLockIconContainer = lockIconContainer;
-        if (mLockIconContainer != null) {
+        if (mLockIconContainer != null && !mShowLockIcon) {
             mLastLockVisible = mLockIconContainer.getVisibility() == View.VISIBLE;
         }
         mBiometricUnlockController = biometricUnlockController;
@@ -312,7 +316,9 @@ public class StatusBarKeyguardViewManager implements RemoteInputController.Callb
         }
         boolean keyguardWithoutQs = mStatusBarStateController.getState() == StatusBarState.KEYGUARD
                 && !mNotificationPanelViewController.isQsExpanded();
-        boolean lockVisible = (mBouncer.isShowing() || keyguardWithoutQs)
+        mShowLockIcon = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.LOCKSCREEN_LOCK_ICON, 1, UserHandle.USER_CURRENT) == 1;
+        boolean lockVisible = (mBouncer.isShowing() || keyguardWithoutQs) && !mShowLockIcon
                 && !mBouncer.isAnimatingAway() && !mKeyguardStateController.isKeyguardFadingAway();
 
         if (mLastLockVisible != lockVisible) {
@@ -814,6 +820,8 @@ public class StatusBarKeyguardViewManager implements RemoteInputController.Callb
         boolean bouncerInTransit = mBouncer.inTransit();
         boolean bouncerDismissible = !mBouncer.isFullscreenBouncer();
         boolean remoteInputActive = mRemoteInputActive;
+        mShowLockIcon = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.LOCKSCREEN_LOCK_ICON, 1, UserHandle.USER_CURRENT) == 1;
 
         if ((bouncerDismissible || !showing || remoteInputActive) !=
                 (mLastBouncerDismissible || !mLastShowing || mLastRemoteInputActive)
