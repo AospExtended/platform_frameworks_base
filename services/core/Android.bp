@@ -133,6 +133,7 @@ java_library_static {
         "SurfaceFlingerProperties",
         "vendor.lineage.biometrics.fingerprint.inscreen-V1.0-java",
         "faceunlock_framework",
+        "vendor.aosp.smartcharge-V1.0-java",
     ],
 }
 
