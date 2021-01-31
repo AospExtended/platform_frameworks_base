@@ -1193,7 +1193,11 @@ public class StatusBar extends SystemUI implements DemoMode,
                     checkBarModes();
                     mBurnInProtectionController =
                         new BurnInProtectionController(mContext, this, mStatusBarView);
-                    handleCutout(null);
+                handleCutout(null);
+                reloadAssets("com.android.launcher3");
+                String homeApp = getDefaultHomeApp(mContext);
+                if (!homeApp.equals("com.android.launcher3")){
+                         reloadAssets(homeApp);}
                 }).getFragmentManager()
                 .beginTransaction()
                 .replace(R.id.status_bar_container, new CollapsedStatusBarFragment(),
@@ -4628,7 +4632,23 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         return (cornerRadiusRes == cornerRadius) && (contentPaddingRes == contentPadding);
     }
-    
+
+    private void reloadAssets(String packageName) {
+            try {
+              IOverlayManager.Stub.asInterface(ServiceManager.getService("overlay"))
+                    .reloadAssets(packageName, UserHandle.USER_CURRENT);
+              } catch (RemoteException e) {
+                  Log.i(TAG, "Unable to reload resources for " + packageName);
+             }
+         }
+
+    private static String getDefaultHomeApp(Context context) {
+        PackageManager pm = context.getPackageManager();
+        Intent intent = new Intent("android.intent.action.MAIN");
+        intent.addCategory("android.intent.category.HOME");
+        return pm.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY).activityInfo.packageName;
+    }    
+        
     private void setLockscreenDoubleTapToSleep() {
         if (mNotificationShadeWindowViewController != null) {
             mNotificationShadeWindowViewController.setLockscreenDoubleTapToSleep();
