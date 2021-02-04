@@ -18,6 +18,7 @@ package com.android.internal.util;
 
 import android.content.ContentProviderClient;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
@@ -57,6 +58,53 @@ public class ImageUtils {
     private Canvas mTempCompactBitmapCanvas;
     private Paint mTempCompactBitmapPaint;
     private final Matrix mTempMatrix = new Matrix();
+
+    public static Drawable resize(Context context, Drawable image, int size) {
+        if (image == null || context == null) {
+            return null;
+        }
+
+        int newSize = Converter.dpToPx(context, size);
+        Bitmap bitmap = ((BitmapDrawable) image).getBitmap();
+        Bitmap scaledBitmap = Bitmap.createBitmap(newSize, newSize, Config.ARGB_8888);
+
+        float ratioX = newSize / (float) bitmap.getWidth();
+        float ratioY = newSize / (float) bitmap.getHeight();
+        float middleX = newSize / 2.0f;
+        float middleY = newSize / 2.0f;
+
+        final Paint paint = new Paint(Paint.FILTER_BITMAP_FLAG);
+        paint.setAntiAlias(true);
+
+        Matrix scaleMatrix = new Matrix();
+        scaleMatrix.setScale(ratioX, ratioY, middleX, middleY);
+
+        Canvas canvas = new Canvas(scaledBitmap);
+        canvas.setMatrix(scaleMatrix);
+        canvas.drawBitmap(bitmap, middleX - bitmap.getWidth() / 2,
+                middleY - bitmap.getHeight() / 2, paint);
+        return new BitmapDrawable(context.getResources(), scaledBitmap);
+    }
+    
+    public static Bitmap scaleBitmap(Bitmap bm, int maxWidth, int maxHeight) {
+        int width = bm.getWidth();
+        int height = bm.getHeight(); 
+        if (width < maxWidth || height < maxHeight) return bm;    
+        if (width > height) {
+            float ratio = (float) width / maxWidth;
+            width = maxWidth;
+            height = (int)(height / ratio);
+        } else if (height > width) {
+            float ratio = (float) height / maxHeight;
+            height = maxHeight;
+            width = (int)(width / ratio);
+        } else {
+            height = maxHeight;
+            width = maxWidth;
+        }
+        bm = Bitmap.createScaledBitmap(bm, width, height, true);
+        return bm;
+    }
 
     /**
      * Checks whether a bitmap is grayscale. Grayscale here means "very close to a perfect
