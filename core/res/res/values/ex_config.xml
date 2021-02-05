@@ -144,6 +144,7 @@
 
     <!-- Pocket Lock -->
     <bool name="config_pocketModeSupported">true</bool>
+    <bool name="config_pocketUseLightSensor">true</bool>
 
     <!-- Whether the device supports Smart Pixels -->
     <bool name="config_enableSmartPixels">false</bool>
