@@ -79,6 +79,8 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     private SettingsButton mSettingsButton;
     protected View mSettingsContainer;
     private PageIndicator mPageIndicator;
+    private TextView mBuildText;
+    private boolean mShouldShowBuildText;
 
     private View mRunningServicesButton;
 
@@ -338,6 +340,7 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         mRunningServicesButton.setVisibility(isRunningServicesEnabled() ? !isDemo && mExpanded ? View.VISIBLE : View.INVISIBLE : View.GONE);
 
         //mBuildText.setVisibility(mExpanded && mShouldShowBuildText ? View.VISIBLE : View.GONE);
+
     }
 
     private boolean showUserSwitcher() {

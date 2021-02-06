@@ -890,7 +890,6 @@ public class FingerprintService extends BiometricServiceBase {
         mAlarmManager = context.getSystemService(AlarmManager.class);
         context.registerReceiver(mLockoutReceiver, new IntentFilter(getLockoutResetIntent()),
                 getLockoutBroadcastPermission(), null /* handler */);
-
         PackageManager packageManager = context.getPackageManager();
         mHasFod = context.getResources().getBoolean(
                 com.android.internal.R.bool.config_needCustomFODView);

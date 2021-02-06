@@ -96,6 +96,7 @@ import com.android.systemui.shared.system.TaskStackChangeListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
+
 import java.util.function.Consumer;
 
 import javax.inject.Inject;

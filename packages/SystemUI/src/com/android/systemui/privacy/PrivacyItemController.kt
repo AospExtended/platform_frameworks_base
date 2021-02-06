@@ -118,7 +118,11 @@ class PrivacyItemController @Inject constructor(
 
                     // Running on the ui executor so can iterate on callbacks
                     if (properties.keyset.contains(ALL_INDICATORS)) {
+<<<<<<< HEAD
                         allIndicatorsAvailable = properties.getBoolean(ALL_INDICATORS, true)
+=======
+                        allIndicatorsAvailable = properties.getBoolean(ALL_INDICATORS, false)
+>>>>>>> 4fa03b2b85df8b4430d453bd6282a6e717deea7e
                         callbacks.forEach { it.get()?.onFlagAllChanged(allIndicatorsAvailable) }
                     }
 
@@ -334,4 +338,8 @@ class PrivacyItemController @Inject constructor(
             outerClass.get()?.removeCallback(WeakReference(callback))
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4fa03b2b85df8b4430d453bd6282a6e717deea7e

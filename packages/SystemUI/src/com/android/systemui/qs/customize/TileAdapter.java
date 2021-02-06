@@ -91,6 +91,7 @@ public class TileAdapter extends RecyclerView.Adapter<Holder> implements TileSta
     private final UiEventLogger mUiEventLogger;
     private boolean mHideLabel;
 
+
     private final AccessibilityDelegateCompat mAccessibilityDelegate;
     private RecyclerView mRecyclerView;
 
