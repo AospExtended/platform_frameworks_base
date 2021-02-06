@@ -559,7 +559,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
         if (!mDeviceProvisioned && !action.showBeforeProvisioning()) {
             return false;
         }
-        return action.shouldShow();
+        return true;
     }
 
     /**
@@ -1000,6 +1000,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
 
     @VisibleForTesting
     class ScreenshotAction extends SinglePressAction implements LongPressAction {
+
         public ScreenshotAction() {
             super(R.drawable.ic_screenshot, R.string.global_action_screenshot);
         }
