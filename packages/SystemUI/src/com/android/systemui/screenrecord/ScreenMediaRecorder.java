@@ -51,6 +51,8 @@ import android.util.Size;
 import android.view.Surface;
 import android.view.WindowManager;
 
+import com.android.systemui.R;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -85,6 +87,7 @@ public class ScreenMediaRecorder {
     private ScreenRecordingMuxer mMuxer;
     private ScreenInternalAudioRecorder mAudio;
     private ScreenRecordingAudioSource mAudioSource;
+    private int mMaxRefreshRate;
 
     private boolean mLowQuality;
     private boolean mLongerDuration;
@@ -99,6 +102,8 @@ public class ScreenMediaRecorder {
         mUser = user;
         mListener = listener;
         mAudioSource = audioSource;
+        mMaxRefreshRate = mContext.getResources().getInteger(
+                R.integer.config_screenRecorderMaxFramerate);
     }
 
     public void setLowQuality(boolean low) {
@@ -143,6 +148,7 @@ public class ScreenMediaRecorder {
         wm.getDefaultDisplay().getRealMetrics(metrics);
         int refreshRate = mLowQuality ? LOW_FRAME_RATE
                 : (int) wm.getDefaultDisplay().getRefreshRate();
+        if (mMaxRefreshRate != 0 && refreshRate > mMaxRefreshRate) refreshRate = mMaxRefreshRate;
         int[] dimens = getSupportedSize(metrics.widthPixels, metrics.heightPixels, refreshRate);
         int width = dimens[0];
         int height = dimens[1];

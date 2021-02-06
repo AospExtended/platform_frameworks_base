@@ -45,4 +45,7 @@
 
      <!-- System icon area layout weight -->
     <item name="system_icon_area_weight" format="float" type="integer">1</item>
+
+    <!-- If not zero, limits the internal screen recorder's framerate to the set value. -->
+    <integer name="config_screenRecorderMaxFramerate">0</integer>
 </resources>
