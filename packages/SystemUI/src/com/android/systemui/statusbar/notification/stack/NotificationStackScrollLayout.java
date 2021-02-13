@@ -42,6 +42,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Outline;
@@ -51,7 +52,9 @@ import android.graphics.PointF;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -546,6 +549,34 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
                 updateDecorViews(useDarkText);
             };
 
+    private CustomSettingsObserver mCustomSettingsObserver = new CustomSettingsObserver(new Handler());
+    private class CustomSettingsObserver extends ContentObserver {
+        CustomSettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.NOTIFICATION_HEADERS),
+                    false, this, UserHandle.USER_ALL);
+        }
+
+        void stop() {
+            mContext.getContentResolver().unregisterContentObserver(this);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            update();
+        }
+
+        void update() {
+            boolean enabled = Settings.System.getIntForUser(getContext().getContentResolver(),
+                    Settings.System.NOTIFICATION_HEADERS, 1, UserHandle.USER_CURRENT) == 1;
+            mSectionsManager.setHeadersVisibility(enabled);
+        }
+    }
+
     @Inject
     public NotificationStackScrollLayout(
             @Named(VIEW_CONTEXT) Context context,
@@ -857,6 +888,7 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
         ((SysuiStatusBarStateController) Dependency.get(StatusBarStateController.class))
                 .addCallback(mStateListener, SysuiStatusBarStateController.RANK_STACK_SCROLLER);
         Dependency.get(ConfigurationController.class).addCallback(this);
+        mCustomSettingsObserver.observe();
     }
 
     @Override
@@ -865,6 +897,7 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
         super.onDetachedFromWindow();
         Dependency.get(StatusBarStateController.class).removeCallback(mStateListener);
         Dependency.get(ConfigurationController.class).removeCallback(this);
+        mCustomSettingsObserver.stop();
     }
 
     @Override
