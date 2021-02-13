@@ -184,6 +184,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
     private static final String GLOBAL_ACTION_KEY_VOICEASSIST = "voiceassist";
     private static final String GLOBAL_ACTION_KEY_ASSIST = "assist";
     static final String GLOBAL_ACTION_KEY_RESTART = "restart";
+    private static final String GLOBAL_ACTION_KEY_ADVANCED_RESTART = "advanced";
     private static final String GLOBAL_ACTION_KEY_LOGOUT = "logout";
     static final String GLOBAL_ACTION_KEY_EMERGENCY = "emergency";
     static final String GLOBAL_ACTION_KEY_SCREENSHOT = "screenshot";
@@ -712,10 +713,14 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
                 if (Settings.System.getInt(mContext.getContentResolver(),
                         Settings.System.POWERMENU_RESTART, 1) == 1) {
                     addIfShouldShowAction(tempActions, restartAction);
-                    // if Restart action is available, add advanced restart actions too
-                    addIfShouldShowAction(tempActions, restartBootloaderAction);
-                    addIfShouldShowAction(tempActions, restartRecoveryAction);
-                    addIfShouldShowAction(tempActions, restartSystemUiAction);
+                }
+            } else if (GLOBAL_ACTION_KEY_ADVANCED_RESTART.equals(actionKey)) {
+                if (Settings.System.getInt(mContext.getContentResolver(),
+                        Settings.System.POWERMENU_ADVANCED, 0) == 1) {
+                    mPowerItems.add(restartRecoveryAction);
+                    mPowerItems.add(restartBootloaderAction);
+                    mPowerItems.add(restartSystemUiAction);
+                    addIfShouldShowAction(tempActions, new PowerOptionsAction());
                 }
             } else if (GLOBAL_ACTION_KEY_SCREENSHOT.equals(actionKey)) {
                 if (Settings.System.getInt(mContext.getContentResolver(),
@@ -741,33 +746,6 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
             addedKeys.add(actionKey);
         }
 
-        if (tempActions.contains(restartAction)) {
-            // transfer restart and advanced restart to their own list of power actions
-            // and position it where Reset button was supposed to be
-            int powerOptionsIndex = tempActions.indexOf(restartAction);
-            tempActions.remove(restartAction);
-            tempActions.remove(restartBootloaderAction);
-            tempActions.remove(restartRecoveryAction);
-            tempActions.remove(restartSystemUiAction);
-            if (tempActions.contains(shutdownAction)) {
-                mPowerItems.add(shutdownAction); // will be removed later if needed
-            }
-            mPowerItems.add(restartAction);
-            mPowerItems.add(restartBootloaderAction);
-            mPowerItems.add(restartRecoveryAction);
-            mPowerItems.add(restartSystemUiAction);
-
-            // add the PowerOptionsAction after Emergency and Shutdown action, if present
-            tempActions.add(powerOptionsIndex, new PowerOptionsAction());
-        }
-        // Add also Power to power actions list, if needed
-        if (tempActions.contains(shutdownAction) && mPowerItems.size() > 1
-                /*tempActions.size gets in count already PowerOptionsAction if added*/
-                && tempActions.size() > getMaxShownPowerItems()) {
-            tempActions.remove(shutdownAction);
-        } else {
-            mPowerItems.remove(shutdownAction);
-        }
         for (Action action : tempActions) {
             addActionItem(action);
         }
