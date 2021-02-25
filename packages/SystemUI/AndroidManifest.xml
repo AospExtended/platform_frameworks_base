@@ -860,6 +860,12 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name="com.android.settingslib.wifi.WifiTimeoutReceiver">
+            <intent-filter>
+                <action android:name="android.net.wifi.intent.TIMEOUT" />
+            </intent-filter>
+        </receiver>
+
         <!-- aospextended additions start -->
         <service android:name=".CPUInfoService"
                 android:exported="false" />
