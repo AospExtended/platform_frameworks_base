@@ -43,4 +43,12 @@
     <!-- SystemUI Restart -->
     <string name="systemui_restart_title">SystemUI restart required</string>
     <string name="systemui_restart_message">For all changes to take effect, a SystemUI restart is required. Restart SystemUI now?</string>
+
+    <!-- Pocket Lock -->
+    <string name="pocket_view_title">Pocket mode is on</string>
+    <string name="pocket_view_title_cancel">To activate your phone:</string>
+    <string name="pocket_view_top_tag_cancel">Do not cover the blue area of your phone, and clean any dirt or dust off.</string>
+    <string name="pocket_view_top_tag_cancel2">Long press the power button to force quit pocket mode</string>
+    <string name="pocket_view_top_tag_number1">1.\u0020</string>
+    <string name="pocket_view_top_tag_number2">2.\u0020</string>
 </resources>
