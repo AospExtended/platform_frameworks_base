@@ -161,6 +161,7 @@ import android.os.ServiceManager;
 import android.os.ServiceSpecificException;
 import android.os.ShellCallback;
 import android.os.ShellCommand;
+import android.os.StrictMode;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.os.UserHandle;
@@ -252,6 +253,7 @@ import java.util.SortedSet;
 import java.util.StringJoiner;
 import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 /**
  * @hide
@@ -3369,6 +3371,13 @@ public class ConnectivityService extends IConnectivityManager.Stub
         if (nai == null) {
             return;
         }
+        try {
+            if (update.validated) {
+                mNMS.setDNSCleartextWhitelist(new String[0]);
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Exception setting global cleartext restriction", e);
+        }
         mDnsManager.updatePrivateDnsValidation(update);
         handleUpdateLinkProperties(nai, new LinkProperties(nai.linkProperties));
     }
@@ -6417,17 +6426,19 @@ public class ConnectivityService extends IConnectivityManager.Stub
         final NetworkAgentInfo defaultNai = getDefaultNetwork();
         final boolean isDefaultNetwork = (defaultNai != null && defaultNai.network.netId == netId);
 
+        final Collection<InetAddress> dnses = newLp.getDnsServers();
         if (DBG) {
-            final Collection<InetAddress> dnses = newLp.getDnsServers();
             log("Setting DNS servers for network " + netId + " to " + dnses);
         }
         try {
             mDnsManager.noteDnsServersForNetwork(netId, newLp);
+            mNMS.setDNSCleartextWhitelist(dnses.stream().map(InetAddress::getHostAddress)
+                    .collect(Collectors.toList()).toArray(new String[0]));
             // TODO: netd should listen on [::1]:53 and proxy queries to the current
             // default network, and we should just set net.dns1 to ::1, not least
             // because applications attempting to use net.dns resolvers will bypass
             // the privacy protections of things like DNS-over-TLS.
-            if (isDefaultNetwork) mDnsManager.setDefaultDnsSystemProperties(newLp.getDnsServers());
+            if (isDefaultNetwork) mDnsManager.setDefaultDnsSystemProperties(dnses);
             mDnsManager.flushVmDnsCache();
         } catch (Exception e) {
             loge("Exception in setDnsConfigurationForNetwork: " + e);

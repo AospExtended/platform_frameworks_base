@@ -15708,6 +15708,19 @@ public final class Settings {
          */
         public static final String NR_NSA_TRACKING_SCREEN_OFF_MODE =
                 "nr_nsa_tracking_screen_off_mode";
+
+        /**
+         * Global cleartext (aka non-TLS) traffic blocking
+         *
+         * Values are:
+         * 0: StrictMode.NETWORK_POLICY_ACCEPT - Allow all cleartext traffic.
+         * 1: StrictMode.NETWORK_POLICY_LOG - Log all cleartext traffic.
+         *    This is not in logcat by default but it piggy backs on the existing
+         *    StrictMode code for cleartext network penalties.
+         * 2: StrictMode.NETWORK_POLICY_REJECT - Reject all cleartext traffic.
+         * @hide
+         */
+        public static final String CLEARTEXT_NETWORK_POLICY = "cleartext_network_policy";
     }
 
     /**
