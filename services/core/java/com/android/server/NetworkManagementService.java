@@ -45,6 +45,7 @@ import static com.android.server.NetworkManagementSocketTagger.PROP_QTAGUID_ENAB
 import android.annotation.NonNull;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.database.ContentObserver;
 import android.net.ConnectivityManager;
 import android.net.INetd;
 import android.net.INetdUnsolicitedEventListener;
@@ -86,6 +87,7 @@ import android.os.StrictMode;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.os.Trace;
+import android.provider.Settings;
 import android.telephony.DataConnectionRealTimeInfo;
 import android.text.TextUtils;
 import android.util.Log;
@@ -118,6 +120,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * @hide
@@ -307,6 +310,8 @@ public class NetworkManagementService extends INetworkManagementService.Stub {
         throw new IllegalStateException("Unknown interface restriction");
     }
 
+    private static int mGlobalCleartextNetworkPolicy = StrictMode.NETWORK_POLICY_ACCEPT;
+
     private final HashMap<Network, NetworkCapabilities> mNetworkCapabilitiesMap = new HashMap<>();
 
     /**
@@ -328,6 +333,22 @@ public class NetworkManagementService extends INetworkManagementService.Stub {
         synchronized (mTetheringStatsProviders) {
             mTetheringStatsProviders.put(new NetdTetheringStatsProvider(), "netd");
         }
+
+        mContext.getContentResolver().registerContentObserver(
+                Settings.Global.getUriFor(Settings.Global.CLEARTEXT_NETWORK_POLICY),
+                false,
+                new ContentObserver(mDaemonHandler) {
+                    @Override
+                    public void onChange(boolean selfChange) {
+                        super.onChange(selfChange);
+                        setGlobalCleartextNetworkPolicy(
+                                Settings.Global.getInt(mContext.getContentResolver(),
+                                Settings.Global.CLEARTEXT_NETWORK_POLICY,
+                                StrictMode.NETWORK_POLICY_ACCEPT)
+                        );
+                    }
+                }
+        );
     }
 
     @VisibleForTesting
@@ -705,6 +726,11 @@ public class NetworkManagementService extends INetworkManagementService.Stub {
                             uidAcceptOnQuota.valueAt(i));
                 }
             }
+
+            int policy = Settings.Global.getInt(mContext.getContentResolver(),
+                    Settings.Global.CLEARTEXT_NETWORK_POLICY, StrictMode.NETWORK_POLICY_ACCEPT);
+            setGlobalCleartextNetworkPolicy(policy);
+            mGlobalCleartextNetworkPolicy = policy;
 
             size = mUidCleartextPolicy.size();
             if (size > 0) {
@@ -1634,6 +1660,30 @@ public class NetworkManagementService extends INetworkManagementService.Stub {
         }
     }
 
+    private void applyGlobalCleartextNetworkPolicy(int policy) {
+        final int policyValue;
+        switch (policy) {
+            case StrictMode.NETWORK_POLICY_ACCEPT:
+                policyValue = INetd.PENALTY_POLICY_ACCEPT;
+                break;
+            case StrictMode.NETWORK_POLICY_LOG:
+                policyValue = INetd.PENALTY_POLICY_LOG;
+                break;
+            case StrictMode.NETWORK_POLICY_REJECT:
+                policyValue = INetd.PENALTY_POLICY_REJECT;
+                break;
+            default:
+                throw new IllegalArgumentException("Unknown policy " + policy);
+        }
+
+        try {
+            mNetdService.strictGlobalCleartextPenalty(policyValue);
+            mGlobalCleartextNetworkPolicy = policy;
+        } catch (RemoteException | ServiceSpecificException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+
     private void applyUidCleartextNetworkPolicy(int uid, int policy) {
         final int policyValue;
         switch (policy) {
@@ -1655,6 +1705,50 @@ public class NetworkManagementService extends INetworkManagementService.Stub {
             mUidCleartextPolicy.put(uid, policy);
         } catch (RemoteException | ServiceSpecificException e) {
             throw new IllegalStateException(e);
+        }
+    }
+
+    @Override
+    public void setDNSCleartextWhitelist(String[] dns) {
+        NetworkStack.checkNetworkStackPermission(mContext);
+
+        try {
+            mNetdService.strictDNSCleartextWhitelist(dns);
+        } catch (RemoteException | ServiceSpecificException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+
+    @Override
+    public void setGlobalCleartextNetworkPolicy(int policy) {
+        NetworkStack.checkNetworkStackPermission(mContext);
+
+        synchronized (mQuotaLock) {
+            final int oldPolicy = mGlobalCleartextNetworkPolicy;
+            if (oldPolicy == policy) {
+                // This also ensures we won't needlessly apply an ACCEPT policy if we've just
+                // enabled strict and the underlying iptables rules are empty.
+                return;
+            }
+
+            // TODO: remove this code after removing prepareNativeDaemon()
+            if (!mStrictEnabled) {
+                // Module isn't enabled yet; stash the requested policy away to
+                // apply later once the daemon is connected.
+                mGlobalCleartextNetworkPolicy = policy;
+                return;
+            }
+
+            // netd does not keep state on strict mode policies, and cannot replace a non-accept
+            // policy without deleting it first. Rather than add state to netd, just always send
+            // it an accept policy when switching between two non-accept policies.
+            // TODO: consider keeping state in netd so we can simplify this code.
+            if (oldPolicy != StrictMode.NETWORK_POLICY_ACCEPT &&
+                    policy != StrictMode.NETWORK_POLICY_ACCEPT) {
+                applyGlobalCleartextNetworkPolicy(StrictMode.NETWORK_POLICY_ACCEPT);
+            }
+
+            applyGlobalCleartextNetworkPolicy(policy);
         }
     }
 
