@@ -59,6 +59,7 @@ import com.android.systemui.statusbar.phone.ConfigurationControllerImpl;
 import com.android.systemui.statusbar.policy.ConfigurationController;
 import com.android.systemui.statusbar.policy.DataSaverController;
 import com.android.systemui.statusbar.policy.NetworkController;
+import com.android.systemui.statusbar.policy.TaskHelper;
 import com.android.systemui.util.leak.LeakDetector;
 
 import java.util.concurrent.Executor;
@@ -242,5 +243,11 @@ public class DependencyProvider {
     @Provides
     static UiEventLogger provideUiEventLogger() {
         return new UiEventLoggerImpl();
+    }
+
+    @Singleton
+    @Provides
+    public TaskHelper provideTaskHelper(Context context) {
+        return new TaskHelper(context);
     }
 }
