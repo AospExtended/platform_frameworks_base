@@ -69,6 +69,7 @@ import com.android.internal.logging.UiEvent;
 import com.android.internal.logging.UiEventLogger;
 import com.android.internal.logging.UiEventLoggerImpl;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.aospextended.fod.FodUtils;
 import com.android.internal.widget.LockPatternUtils;
 import com.android.keyguard.KeyguardSecurityModel.SecurityMode;
 import com.android.settingslib.utils.ThreadUtils;
@@ -265,8 +266,7 @@ public class KeyguardSecurityContainer extends FrameLayout implements KeyguardSe
                 mUpdateMonitor, mCallback, new Handler(Looper.myLooper()));
 
         PackageManager packageManager = mContext.getPackageManager();
-        mHasFod = context.getResources().getBoolean(
-                com.android.internal.R.bool.config_needCustomFODView);
+        mHasFod = FodUtils.hasFodSupport(mContext);
     }
 
     public void setSecurityCallback(SecurityCallback callback) {
