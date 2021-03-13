@@ -22,14 +22,17 @@ import static com.android.systemui.util.InjectionInflationController.VIEW_CONTEX
 import android.annotation.ColorInt;
 import android.app.ActivityManager;
 import android.app.AlarmManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.media.AudioManager;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
@@ -63,6 +66,7 @@ import androidx.lifecycle.LifecycleRegistry;
 import com.android.internal.logging.UiEventLogger;
 import com.android.settingslib.Utils;
 import com.android.systemui.BatteryMeterView;
+import com.android.systemui.Dependency;
 import com.android.systemui.DualToneHandler;
 import com.android.systemui.Interpolators;
 import com.android.systemui.R;
@@ -88,6 +92,7 @@ import com.android.systemui.statusbar.policy.Clock;
 import com.android.systemui.statusbar.policy.DateView;
 import com.android.systemui.statusbar.policy.NextAlarmController;
 import com.android.systemui.statusbar.policy.ZenModeController;
+import com.android.systemui.tuner.TunerService;
 import com.android.systemui.util.RingerModeTracker;
 
 import java.util.ArrayList;
@@ -105,7 +110,7 @@ import javax.inject.Named;
  */
 public class QuickStatusBarHeader extends RelativeLayout implements
         View.OnClickListener, NextAlarmController.NextAlarmChangeCallback,
-        ZenModeController.Callback, LifecycleOwner {
+        ZenModeController.Callback, LifecycleOwner, TunerService.Tunable {
     private static final String TAG = "QuickStatusBarHeader";
     private static final boolean DEBUG = false;
 
@@ -114,6 +119,9 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     private static final int FADE_ANIMATION_DURATION_MS = 300;
     private static final int TOOLTIP_NOT_YET_SHOWN_COUNT = 0;
     public static final int MAX_TOOLTIP_SHOWN_COUNT = 2;
+
+    public static final String QS_DATAUSAGE =
+            "system:" + Settings.System.QS_DATAUSAGE;
 
     private final NextAlarmController mAlarmController;
     private final ZenModeController mZenController;
@@ -186,6 +194,8 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     private float mExpandedHeaderAlpha = 1.0f;
     private float mKeyguardExpansionFraction;
     private boolean mPrivacyChipLogged = false;
+    private int mQSDataUsage = 0;
+    private boolean mRegistered;
 
     private PrivacyItemController.Callback mPICCallback = new PrivacyItemController.Callback() {
         @Override
@@ -292,14 +302,14 @@ public class QuickStatusBarHeader extends RelativeLayout implements
 	mClockView.setQsHeader();
         mDateView = findViewById(R.id.date);
         mDateView.setOnClickListener(this);
+        mSpace = findViewById(R.id.space);
 
         mDataUsageLayout = findViewById(R.id.daily_data_usage_layout);
         mDataUsageImage = findViewById(R.id.daily_data_usage_icon);
         mDataUsageView = findViewById(R.id.data_sim_usage);
-        updateDataUsageImage();
         // Set the correct tint for the data usage icons so they contrast
         mDataUsageImage.setImageTintList(ColorStateList.valueOf(fillColor));
-        mSpace = findViewById(R.id.space);
+        updateDataUsageView();
 
         // Tint for the battery icons are handled in setupHost()
         mBatteryRemainingIcon = findViewById(R.id.batteryRemainingIcon);
@@ -315,8 +325,11 @@ public class QuickStatusBarHeader extends RelativeLayout implements
 
         mAllIndicatorsEnabled = mPrivacyItemController.getAllIndicatorsAvailable();
         mMicCameraIndicatorsEnabled = mPrivacyItemController.getMicCameraAvailable();
-        updateSettings();
 
+        updateResources();
+
+        Dependency.get(TunerService.class).addTunable(this,
+                QS_DATAUSAGE);
     }
 
     public QuickQSPanel getHeaderQsPanel() {
@@ -477,40 +490,44 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         updateBatteryIcon();
     }
 
-    public void updateSettings() {
-        updateDataUsageView();
-        updateDataUsageImage();
-    }
-
-    private void updateDataUsageView() {
-        if (mDataUsageView.isDataUsageEnabled() != 0) {
-            if (mDataUsageView.isConnected()) {
-                mDataUsageView.updateUsage();
-                mDataUsageLayout.setVisibility(View.VISIBLE);
-                mDataUsageImage.setVisibility(View.VISIBLE);
-                mDataUsageView.setVisibility(View.VISIBLE);
-            } else {
-                mDataUsageView.setVisibility(View.GONE);
-                mDataUsageImage.setVisibility(View.GONE);
-                mDataUsageLayout.setVisibility(View.GONE);
+    private final BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action == null) return;
+            if (action.equals(ConnectivityManager.CONNECTIVITY_ACTION)) {
+                updateDataUsageView();
             }
-        } else {
-            mDataUsageView.setVisibility(View.GONE);
-            mDataUsageImage.setVisibility(View.GONE);
-            mDataUsageLayout.setVisibility(View.GONE);
+        }
+    };
+
+    private void registerDataUsageView() {
+        if (mQSDataUsage != 0 && !mRegistered) {
+            mRegistered = true;
+            IntentFilter filter = new IntentFilter();
+            filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+            mContext.registerReceiver(mIntentReceiver, filter);
+        } else if (mQSDataUsage == 0 && mRegistered) {
+            mRegistered = false;
+            mContext.unregisterReceiver(mIntentReceiver);
         }
     }
 
-    public void updateDataUsageImage() {
-        if (mDataUsageView.isDataUsageEnabled() == 0) {
-            mDataUsageImage.setVisibility(View.GONE);
-        } else {
+    public void updateDataUsageView() {
+        if (mQSDataUsage != 0 && mDataUsageView.isConnected()) {
+            mDataUsageView.updateUsageData(mQSDataUsage);
+            mDataUsageLayout.setVisibility(View.VISIBLE);
+            mDataUsageImage.setVisibility(View.VISIBLE);
+            mDataUsageView.setVisibility(View.VISIBLE);
             if (mDataUsageView.isWiFiConnected()) {
                 mDataUsageImage.setImageDrawable(mContext.getDrawable(R.drawable.ic_data_usage_wifi));
             } else {
                 mDataUsageImage.setImageDrawable(mContext.getDrawable(R.drawable.ic_data_usage_cellular));
             }
-            mDataUsageImage.setVisibility(View.VISIBLE);
+        } else {
+            mDataUsageView.setVisibility(View.GONE);
+            mDataUsageImage.setVisibility(View.GONE);
+            mDataUsageLayout.setVisibility(View.GONE);
         }
     }
 
@@ -548,7 +565,6 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         mHeaderQsPanel.setExpanded(expanded);
 	mDateView.setVisibility(mClockView.isClockDateEnabled() ? View.INVISIBLE : View.VISIBLE);
         updateEverything();
-        updateDataUsageView();
     }
 
     /**
@@ -617,6 +633,8 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         });
         mStatusBarIconController.addIconGroup(mIconManager);
         requestApplyInsets();
+        registerDataUsageView();
+        updateDataUsageView();
     }
 
     @Override
@@ -877,5 +895,19 @@ public class QuickStatusBarHeader extends RelativeLayout implements
 
     private void updateStatusbarProperties() {
         mBatteryMeterView.useWallpaperTextColor(mLandscape);
+    }
+
+    @Override
+    public void onTuningChanged(String key, String newValue) {
+        switch (key) {
+            case QS_DATAUSAGE:
+                mQSDataUsage =
+                        TunerService.parseInteger(newValue, 0);
+                registerDataUsageView();
+                updateDataUsageView();
+                break;
+            default:
+                break;
+        }
     }
 }
