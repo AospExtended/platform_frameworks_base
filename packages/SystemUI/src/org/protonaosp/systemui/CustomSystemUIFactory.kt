@@ -34,4 +34,8 @@ class CustomSystemUIFactory : SystemUIFactory() {
             ThemeOverlayController::class to CustomThemeOverlayController::class,
         ).map { it.key.java.name to it.value.java.name }.toMap()
     }
+
+    // ML back gesture provider
+    override fun createBackGestureTfClassifierProvider(am: AssetManager, modelName: String) =
+        CustomBackGestureTfClassifierProvider(am, modelName)
 }
