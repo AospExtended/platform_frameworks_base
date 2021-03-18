@@ -17,10 +17,11 @@
 
 package com.android.systemui.qs.tiles;
 
+import android.app.ActivityManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Build;
 import android.os.SystemProperties;
 import android.provider.Settings;
 import android.provider.Settings.Secure;
@@ -32,17 +33,18 @@ import androidx.annotation.Nullable;
 
 import com.android.internal.logging.MetricsLogger;
 
-import com.android.systemui.plugins.qs.QSTile.BooleanState;
-import com.android.systemui.qs.QSHost;
-import com.android.systemui.qs.tileimpl.QSTileImpl;
-import com.android.systemui.qs.SecureSetting;
 import com.android.systemui.R;
 import com.android.systemui.dagger.qualifiers.Background;
 import com.android.systemui.dagger.qualifiers.Main;
 import com.android.systemui.plugins.ActivityStarter;
 import com.android.systemui.plugins.FalsingManager;
+import com.android.systemui.plugins.qs.QSTile.BooleanState;
 import com.android.systemui.plugins.statusbar.StatusBarStateController;
+import com.android.systemui.qs.QSHost;
 import com.android.systemui.qs.logging.QSLogger;
+import com.android.systemui.qs.tileimpl.QSTileImpl;
+import com.android.systemui.qs.SecureSetting;
+import com.android.systemui.settings.UserTracker;
 import com.android.systemui.util.settings.SecureSettings;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
@@ -65,12 +67,14 @@ public class AmbientDisplayTile extends QSTileImpl<BooleanState> {
             StatusBarStateController statusBarStateController,
             ActivityStarter activityStarter,
             QSLogger qsLogger,
+            UserTracker userTracker,
             SecureSettings secureSettings
     ) {
         super(host, backgroundLooper, mainHandler, falsingManager, metricsLogger,
                 statusBarStateController, activityStarter, qsLogger);
 
-        mSetting = new SecureSetting(secureSettings, mHandler, Secure.DOZE_ENABLED) {
+        mSetting = new SecureSetting(secureSettings, mHandler, Secure.DOZE_ENABLED,
+                userTracker.getUserId(), 1) {
             @Override
             protected void handleValueChanged(int value, boolean observedChange) {
                 handleRefreshState(value);
