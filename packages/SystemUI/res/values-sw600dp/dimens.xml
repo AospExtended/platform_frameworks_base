@@ -53,9 +53,6 @@
     <!-- end margin for multi user switch in collapsed quick settings -->
     <dimen name="multi_user_switch_keyguard_margin">6dp</dimen>
 
-    <!-- Margin on the left side of the carrier text on Keyguard -->
-    <dimen name="keyguard_carrier_text_margin">24dp</dimen>
-
     <!-- The width/height of the phone/camera/unlock icon on keyguard. -->
     <dimen name="keyguard_affordance_height">80dp</dimen>
     <dimen name="keyguard_affordance_width">120dp</dimen>
@@ -63,9 +60,6 @@
     <!-- The width of the region on the left/right edge of the screen for performing the camera/
      phone hints. -->
     <dimen name="edge_tap_area_width">80dp</dimen>
-
-    <!-- Margin on the right side of the system icon group on Keyguard. -->
-    <dimen name="system_icons_keyguard_padding_end">2dp</dimen>
 
     <!-- Screen pinning request width -->
     <dimen name="screen_pinning_request_width">400dp</dimen>
