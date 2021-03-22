@@ -35,7 +35,8 @@ public class PixelPropsUtils {
             "com.google.android.apps.turbo",
             "com.google.android.apps.wallpaper",
             "com.google.android.apps.maps",
-            "com.google.android.gms"
+            "com.google.android.gms",
+            "com.google.android.settings.intelligence"
     };
 
     static {
@@ -61,10 +62,6 @@ public class PixelPropsUtils {
                 Object value = prop.getValue();
                 setPropValue(key, value);
             }
-        }
-        // Set proper indexing fingerprint
-        if (packageName.equals("com.google.android.settings.intelligence")){
-            setPropValue("FINGERPRINT", Build.EXTENDED_FINGERPRINT);
         }
     }
 
