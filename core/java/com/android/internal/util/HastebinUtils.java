@@ -30,19 +30,19 @@ import javax.net.ssl.HttpsURLConnection;
 /**
  * Helper functions for uploading to del.dog
  */
-public final class DogbinUtils {
-    private static final String TAG = "DogbinUtils";
-    private static final String BASE_URL = "https://del.dog";
+public final class HastebinUtils {
+    private static final String TAG = "HastebinUtils";
+    private static final String BASE_URL = "https://hastebin.com";
     private static final String API_URL = String.format("%s/documents", BASE_URL);
     private static Handler handler;
 
-    private DogbinUtils() {
+    private HastebinUtils() {
     }
 
     /**
-     * Uploads {@code content} to dogbin
+     * Uploads {@code content} to hastebin
      * 
-     * @param content the content to upload to dogbin
+     * @param content the content to upload to hastebin
      * @param callback the callback to call on success / failure
      */
     public static void upload(String content, UploadResultCallback callback) {
@@ -76,14 +76,14 @@ public final class DogbinUtils {
                         if (!key.isEmpty()) {
                             callback.onSuccess(getUrl(key));
                         } else {
-                            String msg = "Failed to upload to dogbin: No key retrieved";
-                            callback.onFail(msg, new DogbinException(msg));
+                            String msg = "Failed to upload to hastebin: No key retrieved";
+                            callback.onFail(msg, new HastebinException(msg));
                         }
                     } finally {
                         urlConnection.disconnect();
                     }
                 } catch (Exception e) {
-                    callback.onFail("Failed to upload to dogbin", e);
+                    callback.onFail("Failed to upload to hastebin", e);
                 }
             }
         });
@@ -98,7 +98,7 @@ public final class DogbinUtils {
 
     private static Handler getHandler() {
         if (handler == null) {
-            HandlerThread handlerThread = new HandlerThread("dogbinThread");
+            HandlerThread handlerThread = new HandlerThread("hastebinThread");
             if (!handlerThread.isAlive())
                 handlerThread.start();
             handler = new Handler(handlerThread.getLooper());
