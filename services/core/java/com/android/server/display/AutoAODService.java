@@ -27,6 +27,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
+import android.os.SystemClock;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Slog;
@@ -417,11 +418,23 @@ public class AutoAODService extends SystemService {
                 Settings.Secure.DOZE_ALWAYS_ON, active ? 1 : 0,
                 UserHandle.USER_CURRENT);
 
-        // triggering doze to update the screen state
+        // update the screen state
         PowerManager powerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
         WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
-        final Intent intent = new Intent(PULSE_ACTION);
         wakeLock.acquire(WAKELOCK_TIMEOUT_MS);
-        mContext.sendBroadcastAsUser(intent, UserHandle.CURRENT);
+        if (isDozeEnabled()) {
+            // trigger doze if it's enabled
+            final Intent intent = new Intent(PULSE_ACTION);
+            mContext.sendBroadcastAsUser(intent, UserHandle.CURRENT);
+        } else {
+            // turn the screen on if we have to
+            powerManager.wakeUp(SystemClock.uptimeMillis(),
+                    PowerManager.WAKE_REASON_APPLICATION, TAG);
+        }
+    }
+
+    private boolean isDozeEnabled() {
+        return Settings.Secure.getIntForUser(mContext.getContentResolver(),
+                Settings.Secure.DOZE_ENABLED, 1, UserHandle.USER_CURRENT) == 1;
     }
 }
