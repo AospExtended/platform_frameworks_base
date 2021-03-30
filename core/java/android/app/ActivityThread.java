@@ -6824,11 +6824,6 @@ public final class ActivityThread extends ClientTransactionHandler {
             throw ex.rethrowFromSystemServer();
         }
         if (holder == null) {
-            if (UserManager.get(c).isUserUnlocked(userId)) {
-                if (DEBUG_MESSAGES) Slog.e(TAG, "Failed to find provider info for " + auth);
-            } else {
-                if (DEBUG_MESSAGES) Slog.w(TAG, "Failed to find provider info for " + auth + " (user not unlocked)");
-            }
             return null;
         }
 
