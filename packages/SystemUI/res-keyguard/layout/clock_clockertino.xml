@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.keyguard.clock.ClockLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginRight="8dp"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/timeWidget"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="4dp">
+
+                    <TextClock
+                        android:id="@+id/textClockHH"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:format12Hour="hh"
+                        android:format24Hour="KK"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:letterSpacing="0.08"
+                        android:textSize="22sp" />
+
+                    <TextClock
+                        android:id="@+id/textClockMM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:format12Hour="mm"
+                        android:format24Hour="mm"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:letterSpacing="0.08"
+                        android:textSize="22sp" />
+
+                    <TextClock
+                        android:id="@+id/textClockSS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:format12Hour="ss"
+                        android:format24Hour="ss"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:letterSpacing="0.08"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="4dp">
+
+                    <TextView
+                        android:id="@+id/textViewHH"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:letterSpacing="0.08"
+                        android:fontFamily="sans-serif"
+                        android:gravity="left|center_vertical"
+                        android:text="@string/custom_clock_hours_title"
+                        android:textAllCaps="true"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/textViewMM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:letterSpacing="0.08"
+                        android:fontFamily="sans-serif"
+                        android:gravity="left|center_vertical"
+                        android:text="@string/custom_clock_minutes_title"
+                        android:textAllCaps="true"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/textViewSS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:letterSpacing="0.08"
+                        android:fontFamily="sans-serif"
+                        android:gravity="left|center_vertical"
+                        android:text="@string/custom_clock_seconds_title"
+                        android:textAllCaps="true"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginLeft="8dp"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/dateWidget"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="4dp">
+
+                    <TextView
+                        android:id="@+id/textViewD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical"
+                        android:letterSpacing="0.08"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/custom_clock_day_title"
+                        android:textAllCaps="true"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/textViewM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical"
+                        android:letterSpacing="0.08"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/custom_clock_month_title"
+                        android:textAllCaps="true"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/textViewY"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical"
+                        android:letterSpacing="0.08"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/custom_clock_year_title"
+                        android:textAllCaps="true"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="4dp">
+
+                    <TextClock
+                        android:id="@+id/textClockD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:format12Hour="dd"
+                        android:format24Hour="dd"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:letterSpacing="0.08"
+                        android:textSize="22sp" />
+
+                    <TextClock
+                        android:id="@+id/textClockM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:format12Hour="MM"
+                        android:format24Hour="MM"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:letterSpacing="0.08"
+                        android:textSize="22sp" />
+
+                    <TextClock
+                        android:id="@+id/textClockY"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:format12Hour="yy"
+                        android:format24Hour="yy"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:letterSpacing="0.08"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</com.android.keyguard.clock.ClockLayout>
