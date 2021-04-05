@@ -243,7 +243,7 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
             }
             handlePocketManagerCallback(showing);
             updateStyle();
-            if (mIsFodAnimationAvailable && mFODAnimation != null) {
+            if (mIsRecognizingAnimEnabled) {
                 mFODAnimation.setAnimationKeyguard(mIsKeyguard);
             }
         }
@@ -261,7 +261,7 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
             } else {
                 hide();
             }
-            if (mIsFodAnimationAvailable && mFODAnimation != null) {
+            if (mIsRecognizingAnimEnabled) {
                 mFODAnimation.setAnimationKeyguard(mIsBouncer);
             }
         }
@@ -535,9 +535,6 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
             return true;
         }
 
-        if (mIsFodAnimationAvailable) {
-            mHandler.post(() -> mFODAnimation.hideFODanimation());
-        }
         return false;
     }
 
@@ -610,12 +607,11 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
         setDim(true);
         dispatchPress();
 
-        if (mIsFodAnimationAvailable) {
-            mHandler.post(() -> mFODAnimation.showFODanimation());
-        }
-
         setImageDrawable(null);
         invalidate();
+        if (mIsRecognizingAnimEnabled) {
+            mFODAnimation.showFODanimation();
+        }
     }
 
     public void hideCircle() {
@@ -627,11 +623,10 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
         dispatchRelease();
         setDim(false);
 
-        if (mIsFodAnimationAvailable) {
-            mHandler.post(() -> mFODAnimation.hideFODanimation());
-        }
-
         setKeepScreenOn(false);
+        if (mIsRecognizingAnimEnabled) {
+            mFODAnimation.hideFODanimation();
+        }
     }
 
     public void show() {
@@ -740,7 +735,7 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
         if (mIsDreaming) {
             mParams.x += mDreamingOffsetX;
             mParams.y += mDreamingOffsetY;
-            if (mIsFodAnimationAvailable) {
+            if (mIsRecognizingAnimEnabled) {
                 mFODAnimation.updateParams(mParams.y);
             }
         }
