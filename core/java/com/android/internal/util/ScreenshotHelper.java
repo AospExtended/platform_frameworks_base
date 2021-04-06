@@ -1,12 +1,15 @@
 package com.android.internal.util;
 
+import static android.content.Intent.ACTION_USER_SWITCHED;
 import static android.view.WindowManager.ScreenshotSource.SCREENSHOT_OTHER;
 
 import android.annotation.NonNull;
 import android.annotation.Nullable;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.graphics.Insets;
 import android.graphics.Rect;
@@ -164,9 +167,22 @@ public class ScreenshotHelper {
     private final Context mContext;
     private final StitchImageUtility mStitchImageUtility;
 
+    private final BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            synchronized (mScreenshotLock) {
+                if (ACTION_USER_SWITCHED.equals(intent.getAction())) {
+                    resetConnection();
+                }
+            }
+        }
+    };
+
     public ScreenshotHelper(Context context) {
         mContext = context;
         mStitchImageUtility = new StitchImageUtility(mContext);
+        IntentFilter filter = new IntentFilter(ACTION_USER_SWITCHED);
+        mContext.registerReceiver(mBroadcastReceiver, filter);
     }
 
     /**
@@ -317,9 +333,8 @@ public class ScreenshotHelper {
             final Runnable mScreenshotTimeout = () -> {
                 synchronized (mScreenshotLock) {
                     if (mScreenshotConnection != null) {
-                        mContext.unbindService(mScreenshotConnection);
-                        mScreenshotConnection = null;
-                        mScreenshotService = null;
+                        Log.e(TAG, "Timed out before getting screenshot capture response");
+                        resetConnection();
                         notifyScreenshotError();
                     }
                 }
@@ -342,11 +357,7 @@ public class ScreenshotHelper {
                             break;
                         case SCREENSHOT_MSG_PROCESS_COMPLETE:
                             synchronized (mScreenshotLock) {
-                                if (mScreenshotConnection != null) {
-                                    mContext.unbindService(mScreenshotConnection);
-                                    mScreenshotConnection = null;
-                                    mScreenshotService = null;
-                                }
+                                resetConnection();
                             }
                             break;
                     }
@@ -386,9 +397,7 @@ public class ScreenshotHelper {
                     public void onServiceDisconnected(ComponentName name) {
                         synchronized (mScreenshotLock) {
                             if (mScreenshotConnection != null) {
-                                mContext.unbindService(mScreenshotConnection);
-                                mScreenshotConnection = null;
-                                mScreenshotService = null;
+                                resetConnection();
                                 // only log an error if we're still within the timeout period
                                 if (handler.hasCallbacks(mScreenshotTimeout)) {
                                     handler.removeCallbacks(mScreenshotTimeout);
@@ -417,6 +426,17 @@ public class ScreenshotHelper {
                 }
                 handler.postDelayed(mScreenshotTimeout, timeoutMs);
             }
+        }
+    }
+
+    /**
+     * Unbinds the current screenshot connection (if any).
+     */
+    private void resetConnection() {
+        if (mScreenshotConnection != null) {
+            mContext.unbindService(mScreenshotConnection);
+            mScreenshotConnection = null;
+            mScreenshotService = null;
         }
     }
 
