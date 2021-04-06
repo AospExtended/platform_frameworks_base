@@ -255,9 +255,9 @@ public class NetworkManagementService extends INetworkManagementService.Stub {
     /* map keys used by netd to keep per app interface restrictions
      * separate for each use case.
      */
-    private static final String RESTRICT_USECASE_DATA = "data";
+    private static final String RESTRICT_USECASE_CELLULAR = "cellular";
     private static final String RESTRICT_USECASE_VPN  = "vpn";
-    private static final String RESTRICT_USECASE_WLAN = "wlan";
+    private static final String RESTRICT_USECASE_WIFI = "wifi";
 
     // Helper class for managing per uid interface blacklists.
     private static class RestrictIf {
@@ -286,8 +286,8 @@ public class NetworkManagementService extends INetworkManagementService.Stub {
             // Ordered by match preference (in the event we get a callback with
             // multiple transports).
             new RestrictIf(RESTRICT_USECASE_VPN, NetworkCapabilities.TRANSPORT_VPN),
-            new RestrictIf(RESTRICT_USECASE_DATA, NetworkCapabilities.TRANSPORT_CELLULAR),
-            new RestrictIf(RESTRICT_USECASE_WLAN, NetworkCapabilities.TRANSPORT_WIFI),
+            new RestrictIf(RESTRICT_USECASE_CELLULAR, NetworkCapabilities.TRANSPORT_CELLULAR),
+            new RestrictIf(RESTRICT_USECASE_WIFI, NetworkCapabilities.TRANSPORT_WIFI),
     };
 
     private RestrictIf getUseCaseRestrictIf(String useCase) {
@@ -298,6 +298,8 @@ public class NetworkManagementService extends INetworkManagementService.Stub {
         }
         throw new IllegalStateException("Unknown interface restriction");
     }
+
+    private final HashMap<Network, NetworkCapabilities> mNetworkCapabilitiesMap = new HashMap<>();
 
     /**
      * Constructs a new NetworkManagementService instance
@@ -357,8 +359,23 @@ public class NetworkManagementService extends INetworkManagementService.Stub {
         final ConnectivityManager.NetworkCallback mNetworkCallback =
                 new ConnectivityManager.NetworkCallback() {
             @Override
+            public void onCapabilitiesChanged(Network network,
+                    NetworkCapabilities networkCapabilities) {
+                mNetworkCapabilitiesMap.put(network, networkCapabilities);
+            }
+
+            @Override
             public void onLinkPropertiesChanged(Network network, LinkProperties linkProperties) {
-                NetworkCapabilities nc = mConnectivityManager.getNetworkCapabilities(network);
+                // Callback ordering in Oreo+ is documented to be:
+                // onCapabilitiesChanged, onLinkPropertiesChanged
+                // At this point, we should always find the network in our
+                // local map but guard anyway.
+                NetworkCapabilities nc = mNetworkCapabilitiesMap.get(network);
+                if (nc == null) {
+                    Slog.e(TAG, "onLinkPropertiesChanged: network was not in map: "
+                            + "network=" + network + " linkProperties=" + linkProperties);
+                    return;
+                }
                 RestrictIf matchedRestrictIf = null;
                 for (RestrictIf restrictIf : mRestrictIf) {
                     if (nc.hasTransport(restrictIf.transport)) {
@@ -378,6 +395,11 @@ public class NetworkManagementService extends INetworkManagementService.Stub {
                 // Exit the callback ASAP and move further work onto daemon thread
                 mDaemonHandler.post(() ->
                         updateAppOnInterfaceCallback(finalRestrictIf, iface));
+            }
+
+            @Override
+            public void onLost(Network network) {
+                mNetworkCapabilitiesMap.remove(network);
             }
         };
 
