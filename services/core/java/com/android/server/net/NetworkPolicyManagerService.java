@@ -60,9 +60,9 @@ import static android.net.NetworkPolicyManager.MASK_METERED_NETWORKS;
 import static android.net.NetworkPolicyManager.POLICY_ALLOW_METERED_BACKGROUND;
 import static android.net.NetworkPolicyManager.POLICY_NONE;
 import static android.net.NetworkPolicyManager.POLICY_REJECT_METERED_BACKGROUND;
-import static android.net.NetworkPolicyManager.POLICY_REJECT_ON_DATA;
-import static android.net.NetworkPolicyManager.POLICY_REJECT_ON_VPN;
-import static android.net.NetworkPolicyManager.POLICY_REJECT_ON_WLAN;
+import static android.net.NetworkPolicyManager.POLICY_REJECT_CELLULAR;
+import static android.net.NetworkPolicyManager.POLICY_REJECT_VPN;
+import static android.net.NetworkPolicyManager.POLICY_REJECT_WIFI;
 import static android.net.NetworkPolicyManager.RULE_ALLOW_ALL;
 import static android.net.NetworkPolicyManager.RULE_ALLOW_METERED;
 import static android.net.NetworkPolicyManager.RULE_NONE;
@@ -4326,12 +4326,12 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
         int newRule = RULE_NONE;
 
         try {
-            mNetworkManager.restrictAppOnInterface("data", uid,
-                    (uidPolicy & POLICY_REJECT_ON_DATA) != 0);
+            mNetworkManager.restrictAppOnInterface("cellular", uid,
+                    (uidPolicy & POLICY_REJECT_CELLULAR) != 0);
             mNetworkManager.restrictAppOnInterface("vpn", uid,
-                    (uidPolicy & POLICY_REJECT_ON_VPN) != 0);
-            mNetworkManager.restrictAppOnInterface("wlan", uid,
-                    (uidPolicy & POLICY_REJECT_ON_WLAN) != 0);
+                    (uidPolicy & POLICY_REJECT_VPN) != 0);
+            mNetworkManager.restrictAppOnInterface("wifi", uid,
+                    (uidPolicy & POLICY_REJECT_WIFI) != 0);
         } catch (RemoteException e) {
             // ignored; service lives in system_server
         }
