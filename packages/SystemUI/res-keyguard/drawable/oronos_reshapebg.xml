@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <vector xmlns:android="http://schemas.android.com/apk/res/android"
+          android:width="36dp"
+          android:height="36dp"
+          android:viewportWidth="107"
+          android:viewportHeight="107">
+          <group android:translateX="3" android:translateY="3">
+              <path
+                  android:pathData="@*android:string/config_icon_mask"
+                  android:fillColor="@*android:color/background_device_default_dark"/>
+          </group>
+      </vector>
+

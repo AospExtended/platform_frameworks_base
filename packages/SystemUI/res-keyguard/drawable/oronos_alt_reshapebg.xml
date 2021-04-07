@@ -6,7 +6,7 @@
         android:top="2dp"
         android:right="2dp"
         android:bottom="2dp" />
-    <corners android:radius="8dp" />
+    <corners android:radius="?android:attr/dialogCornerRadius" />
     <solid android:color="@*android:color/background_device_default_dark" />
 </shape>
 
