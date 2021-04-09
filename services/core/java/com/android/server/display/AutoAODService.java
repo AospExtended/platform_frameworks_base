@@ -25,6 +25,7 @@ import android.content.IntentFilter;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.os.SystemClock;
@@ -69,13 +70,13 @@ public class AutoAODService extends SystemService {
 
     private final AlarmManager mAlarmManager;
     private final Context mContext;
-    private final Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler(Looper.getMainLooper());
     private TwilightManager mTwilightManager;
     private TwilightState mTwilightState;
 
     /**
      * Current operation mode
-     * Can either be {@link MODE_DISABLED}, {@link MODE_NIGHT} or {@link MODE_TIME}
+     * Can either be {@link #MODE_DISABLED}, {@link #MODE_NIGHT} or {@link #MODE_TIME}
      */
     private int mMode = MODE_DISABLED;
     /**
@@ -146,7 +147,7 @@ public class AutoAODService extends SystemService {
             mAlarmManager.setExact(AlarmManager.RTC_WAKEUP,
                     time, TAG, this, mHandler);
             Slog.v(TAG, "new alarm set to " + time
-                    + " mIsNextActivate=" + String.valueOf(mIsNextActivate));
+                    + " mIsNextActivate=" + mIsNextActivate);
         }
 
         public void cancel() {
@@ -155,7 +156,7 @@ public class AutoAODService extends SystemService {
         }
     }
 
-    private Alarm mAlarm = new Alarm();
+    private final Alarm mAlarm = new Alarm();
 
     private class SettingsObserver extends ContentObserver {
         SettingsObserver(Handler handler) {
@@ -178,7 +179,7 @@ public class AutoAODService extends SystemService {
         }
     }
 
-    private SettingsObserver mSettingsObserver;
+    private final SettingsObserver mSettingsObserver;
 
     public AutoAODService(Context context) {
         super(context);
@@ -206,7 +207,7 @@ public class AutoAODService extends SystemService {
     }
 
     /**
-     * Registers or unregisters {@link mTimeChangedReceiver}
+     * Registers or unregisters {@link #mTimeChangedReceiver}
      * @param register Register when true, unregister when false
      */
     private void setTimeReciever(boolean register) {
@@ -226,7 +227,7 @@ public class AutoAODService extends SystemService {
     }
 
     /**
-     * Registers or unregisters {@link mTwilightListener}
+     * Registers or unregisters {@link #mTwilightListener}
      * @param register Register when true, unregister when false
      */
     private void setTwilightListener(boolean register) {
@@ -246,7 +247,7 @@ public class AutoAODService extends SystemService {
 
     /**
      * Initiates the state according to user settings
-     * Registers or unregisters listeners and calls {@link maybeActivateAOD()}
+     * Registers or unregisters listeners and calls {@link #maybeActivateAOD()}
      */
     private void initState() {
         int pMode = mMode;
@@ -299,7 +300,7 @@ public class AutoAODService extends SystemService {
     }
 
     /**
-     * Calls the correct function to set the next alarm according to {@link mMode}
+     * Calls the correct function to set the next alarm according to {@link #mMode}
      */
     private void maybeActivateAOD() {
         switch (mMode) {
@@ -318,14 +319,14 @@ public class AutoAODService extends SystemService {
     }
 
     /**
-     * See {@link maybeActivateNight(boolean)}
+     * See {@link #maybeActivateNight(boolean)}
      */
     private void maybeActivateNight() {
         maybeActivateNight(true);
     }
 
     /**
-     * Sets the next alarm for {@link MODE_NIGHT}
+     * Sets the next alarm for {@link #MODE_NIGHT}
      * @param setActive Whether to set activation state.
      *                  When false only updates the alarm
      */
@@ -341,15 +342,15 @@ public class AutoAODService extends SystemService {
     }
 
     /**
-     * See {@link maybeActivateTime(boolean)}
+     * See {@link #maybeActivateTime(boolean)}
      */
     private void maybeActivateTime() {
         maybeActivateTime(true);
     }
 
     /**
-     * Sets the next alarm for {@link MODE_TIME}, {@link MODE_MIXED_SUNSET} and
-     *                         {@link MODE_MIXED_SUNRISE}
+     * Sets the next alarm for {@link #MODE_TIME}, {@link #MODE_MIXED_SUNSET} and
+     *                         {@link #MODE_MIXED_SUNRISE}
      * @param setActive Whether to set activation state
      *                  When false only updates the alarm
      */
@@ -363,11 +364,11 @@ public class AutoAODService extends SystemService {
         String[] times = value.split(",", 0);
         String[] sinceValues = times[0].split(":", 0);
         String[] tillValues = times[1].split(":", 0);
-        since.set(Calendar.HOUR_OF_DAY, Integer.valueOf(sinceValues[0]));
-        since.set(Calendar.MINUTE, Integer.valueOf(sinceValues[1]));
+        since.set(Calendar.HOUR_OF_DAY, Integer.parseInt(sinceValues[0]));
+        since.set(Calendar.MINUTE, Integer.parseInt(sinceValues[1]));
         since.set(Calendar.SECOND, 0);
-        till.set(Calendar.HOUR_OF_DAY, Integer.valueOf(tillValues[0]));
-        till.set(Calendar.MINUTE, Integer.valueOf(tillValues[1]));
+        till.set(Calendar.HOUR_OF_DAY, Integer.parseInt(tillValues[0]));
+        till.set(Calendar.MINUTE, Integer.parseInt(tillValues[1]));
         till.set(Calendar.SECOND, 0);
 
         // handle mixed modes
@@ -376,7 +377,6 @@ public class AutoAODService extends SystemService {
                 Slog.e(TAG, "aborting maybeActivateTime(). mTwilightState is null");
                 return;
             }
-            boolean isNight = mTwilightState.isNight();
             if (mMode == MODE_MIXED_SUNSET) {
                 since.setTimeInMillis(mTwilightState.sunsetTimeMillis());
             } else { // MODE_MIXED_SUNRISE
@@ -413,7 +413,7 @@ public class AutoAODService extends SystemService {
     private void setAutoAODActive(boolean active) {
         if (mActive == active) return;
         mActive = active;
-        Slog.v(TAG, "setAutoAODActive: active=" + String.valueOf(active));
+        Slog.v(TAG, "setAutoAODActive: active=" + active);
         Settings.Secure.putIntForUser(mContext.getContentResolver(),
                 Settings.Secure.DOZE_ALWAYS_ON, active ? 1 : 0,
                 UserHandle.USER_CURRENT);
