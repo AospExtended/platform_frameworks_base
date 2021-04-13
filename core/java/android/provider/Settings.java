@@ -9713,6 +9713,17 @@ public final class Settings {
         public static final String FACE_UNLOCK_RE_ENROLL = "face_unlock_re_enroll";
 
         /**
+         * Whether user is required to press power button to unlock with fingerprint.
+         *
+         * This option is only available in side-mounted fingerprint devices where
+         * the fingerprint scanner is embedded in the power button.
+         *
+         * @hide
+         */
+        public static final String FINGERPRINT_POWER_BUTTON_PRESS =
+                "fingerprint_power_button_press";
+
+        /**
          * Whether or not debugging is enabled.
          * @hide
          */
