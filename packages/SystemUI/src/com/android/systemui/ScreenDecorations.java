@@ -483,7 +483,7 @@ public class ScreenDecorations extends SystemUI implements Tunable,
 
         lp.setTitle(getWindowTitleByPos(pos));
         lp.gravity = getOverlayWindowGravity(pos);
-        if (mImmerseMode && !mFullscreenMode) {
+        if (mImmerseMode && (!mFullscreenMode || mStatusBar.isKeyguardShowing())) {
             lp.layoutInDisplayCutoutMode = LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER;
         } else {
             lp.layoutInDisplayCutoutMode = LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS;
@@ -1356,11 +1356,6 @@ public class ScreenDecorations extends SystemUI implements Tunable,
         }
     }
 
-    private boolean inFullscreenMode() {
-        if (mStatusBar == null) mStatusBar = Dependency.get(StatusBar.class);
-        return mStatusBar != null && mStatusBar.inFullscreenMode();
-    }
-
     private void updateAllForCutout() {
         onTuningChanged(SIZE, null);
         updateLayoutParams();
@@ -1433,9 +1428,8 @@ public class ScreenDecorations extends SystemUI implements Tunable,
 
     @Override
     public void onFullscreenStateChanged(boolean isFullscreen, boolean isImmersive) {
-        boolean fullscreenMode = inFullscreenMode();
-        if (fullscreenMode == mFullscreenMode) return;
-        mFullscreenMode = fullscreenMode;
+        if (isFullscreen == mFullscreenMode) return;
+        mFullscreenMode = isFullscreen;
         if (!mHandler.getLooper().isCurrentThread()) {
             mHandler.post(() -> updateLayoutParams());
         } else {
