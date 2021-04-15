@@ -17,7 +17,8 @@
 <com.android.keyguard.clock.ClockLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal|top"
   >
   <com.android.keyguard.clock.ImageClock
       android:id="@+id/analog_clock"
