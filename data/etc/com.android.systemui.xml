@@ -70,5 +70,7 @@
         <permission name="android.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS" />
         <permission name="android.permission.CAMERA_OPEN_CLOSE_LISTENER" />
         <permission name="android.permission.FORCE_STOP_PACKAGES" />
+        <permission name="android.permission.WRITE_APN_SETTINGS"/>
+        <permission name="lineageos.permission.HARDWARE_ABSTRACTION_ACCESS"/>
     </privapp-permissions>
 </permissions>
