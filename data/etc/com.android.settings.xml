@@ -58,5 +58,8 @@
         <permission name="android.permission.INSTALL_DYNAMIC_SYSTEM"/>
         <permission name="android.permission.READ_DREAM_STATE"/>
         <permission name="android.permission.READ_DREAM_SUPPRESSION"/>
+        <permission name="android.permission.RESET_BATTERY_STATS"/>
+        <permission name="lineageos.permission.HARDWARE_ABSTRACTION_ACCESS"/>
+        <permission name="lineageos.permission.MANAGE_LIVEDISPLAY"/>
     </privapp-permissions>
 </permissions>
