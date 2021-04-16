@@ -791,31 +791,43 @@ public final class Zygote {
 
     private static native void nativeBoostUsapPriority();
 
-    private static void maybeSetGoogleModel(String packageName, String loggingTag) {
+    private static void setBuildField(String loggingTag, String key, String value) {
+        /*
+         * This would be much prettier if we just removed "final" from the Build fields,
+         * but that requires changing the API.
+         *
+         * While this an awful hack, it's technically safe because the fields are
+         * populated at runtime.
+         */
+        try {
+            // Unlock
+            Field field = Build.class.getDeclaredField(key);
+            field.setAccessible(true);
+
+            // Edit
+            field.set(null, value);
+
+            // Lock
+            field.setAccessible(false);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            Log.e(loggingTag, "Failed to spoof Build." + key, e);
+        }
+    }
+
+    private static void maybeSpoofBuild(String packageName, String loggingTag) {
+        // Set device model to defy NGA in Google Assistant
         if (PRODUCT_NEEDS_MODEL_EDIT &&
                 packageName != null &&
                 packageName.startsWith("com.google.android.googlequicksearchbox")) {
-            /*
-             * This would be much prettier if we just removed "final" from the MODEL field in Build,
-             * but that requires changing the API.
-             *
-             * While this an awful hack, it's technically safe because the field was populated at
-             * runtime (in pre-fork Zygote) and it's not a primitive.
-             */
-            try {
-                // Unlock
-                Field field = Build.class.getDeclaredField("MODEL");
-                field.setAccessible(true);
+            setBuildField(loggingTag, "MODEL", "Pixel 3 XL");
+        }
 
-                // Edit
-                String newModel = "Pixel 3 XL";
-                field.set(null, newModel);
-
-                // Lock
-                field.setAccessible(false);
-            } catch (NoSuchFieldException | IllegalAccessException e) {
-                Log.w(loggingTag, "Failed to set fake model name for Google", e);
-            }
+        // Set fingerprint to make SafetyNet pass
+        String stockFp = SystemProperties.get("ro.build.stock_fingerprint");
+        if (stockFp != null &&
+                packageName != null &&
+                packageName.startsWith("com.google.android.gms")) {
+            setBuildField(loggingTag, "FINGERPRINT", stockFp);
         }
     }
 
@@ -828,8 +840,7 @@ public final class Zygote {
             Log.w(loggingTag, "Unable to set package name.");
         }
 
-        // Modify model to defy Next-Generation Assistant in the Google app
-        maybeSetGoogleModel(args.mPackageName, loggingTag);
+        maybeSpoofBuild(args.mPackageName, loggingTag);
     }
 
     private static final String USAP_ERROR_PREFIX = "Invalid command to USAP: ";
