@@ -230,7 +230,7 @@ public class KeyguardClockSwitch extends RelativeLayout {
             mClockPlugin.onDestroyView();
             mClockPlugin = null;
         }
-        adjustStatusAreaPadding(plugin);
+        mKeyguardStatusArea.setRowGravity(isTypeClock(plugin) ? Gravity.START : Gravity.CENTER);
         if (plugin == null) {
             if (mShowingHeader) {
                 mClockView.setVisibility(View.GONE);
@@ -439,12 +439,12 @@ public class KeyguardClockSwitch extends RelativeLayout {
         }
     }
 
-    private void adjustStatusAreaPadding(ClockPlugin plugin) {
-        final boolean mIsTypeClock = plugin != null && plugin.getName().equals("type");
-        mKeyguardStatusArea.setRowGravity(mIsTypeClock ? Gravity.LEFT : Gravity.CENTER);
-        mKeyguardStatusArea.setRowPadding(mIsTypeClock ? mContext.getResources()
-                .getDimensionPixelSize(R.dimen.keyguard_status_area_typeclock_padding) : 0, 0, 0,
-                0);
+    private boolean isTypeClock(ClockPlugin plugin) {
+        return plugin != null && plugin.getName().equals("type");
+    }
+
+    public boolean isTypeClock() {
+        return isTypeClock(mClockPlugin);
     }
 
     /**

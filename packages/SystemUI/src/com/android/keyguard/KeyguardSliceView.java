@@ -195,10 +195,6 @@ public class KeyguardSliceView extends LinearLayout implements View.OnClickListe
         mRow.setGravity(gravity);
     }
 
-    public void setRowPadding(int left, int top, int right, int bottom) {
-        mRow.setPadding(left, top, right, bottom);
-    }
-
     /**
      * Returns whether the current visible slice has a title/header.
      */
@@ -545,7 +541,8 @@ public class KeyguardSliceView extends LinearLayout implements View.OnClickListe
         KeyguardSliceTextView(Context context) {
             super(context, null /* attrs */, 0 /* styleAttr */, sStyleId);
             onDensityOrFontScaleChanged();
-            setEllipsize(TruncateAt.END);
+            setEllipsize(TruncateAt.MARQUEE);
+            setAutoSizeTextTypeWithDefaults(AUTO_SIZE_TEXT_TYPE_UNIFORM);
         }
 
         @Override
@@ -580,7 +577,7 @@ public class KeyguardSliceView extends LinearLayout implements View.OnClickListe
             boolean hasText = !TextUtils.isEmpty(getText());
             int horizontalPadding = (int) getContext().getResources()
                     .getDimension(R.dimen.widget_horizontal_padding) / 2;
-            setPadding(horizontalPadding, 0, horizontalPadding * (hasText ? 1 : -1), 0);
+            setPadding(0, 0, horizontalPadding * (hasText ? 2 : -1), 0);
             setCompoundDrawablePadding((int) mContext.getResources()
                     .getDimension(R.dimen.widget_icon_padding));
         }

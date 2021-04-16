@@ -20,20 +20,15 @@
 <!-- This is a view that shows general status information in Keyguard. -->
 <com.android.keyguard.KeyguardSliceView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
     android:clipToPadding="false"
-    android:orientation="vertical"
-    android:layout_centerHorizontal="true">
+    android:orientation="vertical">
     <TextView
               android:id="@+id/title"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:paddingStart="44dp"
-              android:paddingEnd="44dp"
               android:visibility="gone"
               android:textColor="?attr/wallpaperTextColor"
               android:theme="@style/TextAppearance.Keyguard"

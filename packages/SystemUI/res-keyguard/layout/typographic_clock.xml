@@ -20,6 +20,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingStart="50dp"
+    android:paddingBottom="5dp"
     android:textAlignment="viewStart"
     style="@style/widget_big"
     android:textSize="40dp"
