@@ -31,7 +31,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -59,9 +59,9 @@ public class BrightnessDialog extends Activity implements Tunable {
     }
 
 
-    private ImageView mAutoBrightnessIcon;
-    private ImageView mMaxBrightness;
-    private ImageView mMinBrightness;
+    private ImageButton mAutoBrightnessIcon;
+    private ImageButton mMaxBrightness;
+    private ImageButton mMinBrightness;
 
     private boolean mShowAutoBrightnessButton;
     private boolean mShowBrightnessSideButtons;
