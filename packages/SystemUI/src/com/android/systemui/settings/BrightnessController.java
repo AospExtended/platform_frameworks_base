@@ -42,7 +42,7 @@ import android.util.Log;
 import android.util.MathUtils;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 
 import com.android.internal.BrightnessSynchronizer;
 import com.android.internal.logging.MetricsLogger;
@@ -82,7 +82,7 @@ public class BrightnessController implements ToggleSlider.Listener {
     private final float mDefaultBacklightForVr;
 
     private final Context mContext;
-    private final ImageView mIcon;
+    private final ImageButton mIcon;
     private final ToggleSlider mControl;
     private final boolean mAutomaticAvailable;
     private final DisplayManager mDisplayManager;
@@ -303,7 +303,7 @@ public class BrightnessController implements ToggleSlider.Listener {
         }
     };
 
-    public BrightnessController(Context context, ImageView icon, ToggleSlider control,
+    public BrightnessController(Context context, ImageButton icon, ToggleSlider control,
             BroadcastDispatcher broadcastDispatcher) {
         mContext = context;
         mIcon = icon;

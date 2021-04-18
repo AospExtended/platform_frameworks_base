@@ -54,7 +54,7 @@ import android.view.animation.OvershootInterpolator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.android.internal.logging.MetricsLogger;
@@ -118,7 +118,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
     @Nullable
     protected View mBrightnessView;
-    protected ImageView mAutoBrightnessIcon;
+    protected ImageButton mAutoBrightnessIcon;
     @Nullable
     private BrightnessController mBrightnessController;
 
@@ -130,8 +130,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     private int mVisualMarginStart;
     private int mVisualMarginEnd;
 
-    private ImageView mMaxBrightness;
-    private ImageView mMinBrightness;
+    private ImageButton mMaxBrightness;
+    private ImageButton mMinBrightness;
 
     protected boolean mExpanded;
     protected boolean mListening;
@@ -266,7 +266,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
                  mContext.getResources().getDimensionPixelSize(R.dimen.qs_brightness_footer_padding));
         addView(mBrightnessView);
 
-        mAutoBrightnessIcon = (ImageView) mBrightnessView.findViewById(R.id.brightness_icon);
+        mAutoBrightnessIcon = (ImageButton) mBrightnessView.findViewById(R.id.brightness_icon);
         mBrightnessController = new BrightnessController(getContext(),
                 mAutoBrightnessIcon,
                 findViewById(R.id.brightness_slider),
