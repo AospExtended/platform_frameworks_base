@@ -64,6 +64,8 @@ public interface ClockPlugin extends Plugin {
      */
     View getView();
 
+    default void setHasVisibleNotifications(boolean hasVisibleNotifications){};
+
     /**
      * Get clock view for a large clock that appears behind NSSL.
      */
