@@ -1003,6 +1003,8 @@ public class VolumeDialogImpl implements VolumeDialog,
                     mAllyStream = -1;
                     mMusicHidden = false;
                     tryToRemoveCaptionsTooltip();
+                    mDialog.getViewTreeObserver().removeOnComputeInternalInsetsListener(
+                            mInsetsListener);
                     mController.notifyVisible(false);
                 }, 50));
         if (!isLandscape() || !mShowActiveStreamOnly) animator.translationX(getAnimatorX());
