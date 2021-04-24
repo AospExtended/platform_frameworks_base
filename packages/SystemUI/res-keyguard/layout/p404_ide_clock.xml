@@ -67,7 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@*android:string/config_headlineFontFamilyMedium"
-                    android:text="std;"
+                    android:text="icecold;"
                     android:textSize="14sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -127,7 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@*android:string/config_headlineFontFamilyMedium"
-                    android:text="\tstring time, date, day, month;"
+                    android:text="\tstring time, day, date, month;"
                     android:textSize="14sp"
                     android:textStyle="bold" />
             </LinearLayout>
