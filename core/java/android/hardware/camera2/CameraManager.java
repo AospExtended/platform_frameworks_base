@@ -22,8 +22,8 @@ import android.annotation.Nullable;
 import android.annotation.RequiresPermission;
 import android.annotation.SystemService;
 import android.annotation.TestApi;
-import android.app.ActivityThread;
 import android.content.Context;
+import android.hardware.Camera;
 import android.hardware.CameraInfo;
 import android.hardware.CameraStatus;
 import android.hardware.ICameraService;
@@ -44,8 +44,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.ServiceSpecificException;
 import android.os.SystemProperties;
-import android.text.TextUtils;
-import android.util.Log;
 import android.util.ArrayMap;
 import android.util.ArraySet;
 import android.util.Log;
@@ -1239,26 +1237,10 @@ public final class CameraManager {
 
         private String[] extractCameraIdListLocked() {
             String[] cameraIds = null;
-
-            boolean exposeAuxCamera = true;
-            String packageName = ActivityThread.currentOpPackageName();
-            String packageList = SystemProperties.get("vendor.camera.aux.packagelist", "");
-            String packageBlacklist = SystemProperties.get("vendor.camera.aux.packageblacklist", "");
-            if (!packageList.isEmpty()) {
-                exposeAuxCamera = false;
-                if (Arrays.asList(packageList.split(",")).contains(packageName)) {
-                    exposeAuxCamera = true;
-                }
-            } else if (!packageBlacklist.isEmpty()) {
-                exposeAuxCamera = true;
-                if (Arrays.asList(packageBlacklist.split(",")).contains(packageName)) {
-                    exposeAuxCamera = false;
-                }
-            }
-
+            boolean exposeAuxCamera = Camera.shouldExposeAuxCamera();
             int idCount = 0;
             for (int i = 0; i < mDeviceStatus.size(); i++) {
-                if(!exposeAuxCamera && (i == 2)) break;
+                if (!exposeAuxCamera && i == 2) break;
                 int status = mDeviceStatus.valueAt(i);
                 if (status == ICameraServiceListener.STATUS_NOT_PRESENT
                         || status == ICameraServiceListener.STATUS_ENUMERATING) continue;
@@ -1267,7 +1249,7 @@ public final class CameraManager {
             cameraIds = new String[idCount];
             idCount = 0;
             for (int i = 0; i < mDeviceStatus.size(); i++) {
-                if(!exposeAuxCamera && (i == 2)) break;
+                if (!exposeAuxCamera && i == 2) break;
                 int status = mDeviceStatus.valueAt(i);
                 if (status == ICameraServiceListener.STATUS_NOT_PRESENT
                         || status == ICameraServiceListener.STATUS_ENUMERATING) continue;
@@ -1719,30 +1701,9 @@ public final class CameraManager {
         }
 
         private void onStatusChangedLocked(int status, String id) {
-            /* Force to ignore the last mono/aux camera status update
-             * if the package name does not falls in this bucket
-             */
-            boolean exposeMonoCamera = true;
-            String packageName = ActivityThread.currentOpPackageName();
-            String packageList = SystemProperties.get("vendor.camera.aux.packagelist", "");
-            String packageBlacklist = SystemProperties.get("vendor.camera.aux.packageblacklist", "");
-            if (!packageList.isEmpty()) {
-                exposeMonoCamera = false;
-                if (Arrays.asList(packageList.split(",")).contains(packageName)) {
-                    exposeMonoCamera = true;
-                }
-            } else if (!packageBlacklist.isEmpty()) {
-                exposeMonoCamera = true;
-                if (Arrays.asList(packageBlacklist.split(",")).contains(packageName)) {
-                    exposeMonoCamera = false;
-                }
-            }
-
-            if (exposeMonoCamera == false) {
-                if (Integer.parseInt(id) >= 2) {
-                    Log.w(TAG, "[soar.cts] ignore the status update of camera: " + id);
-                    return;
-                }
+            if (!Camera.shouldExposeAuxCamera() && Integer.parseInt(id) >= 2) {
+                Log.w(TAG, "[soar.cts] ignore the status update of camera: " + id);
+                return;
             }
 
             if (DEBUG) {
