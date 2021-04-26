@@ -314,11 +314,6 @@
     <protected-broadcast android:name="com.google.android.systemui.smartspace.EXPIRE_EVENT"/>
     <protected-broadcast android:name="com.google.android.systemui.smartspace.CLICK_EVENT"/>
 
-    <!-- Live wallpapers -->
-    <protected-broadcast android:name="com.breel.wallpapers.NOTIFICATION_RECEIVED"/>
-    <permission android:name="com.breel.wallpapers.notifications"/>
-    <uses-permission android:name="com.breel.wallpapers.notifications"/>
-
     <!-- Asus Long screenshot -->
     <uses-permission android:name="com.asus.stitchimage.permission.EXPORTED_FOR_ASUS_APPS"/>
 
