@@ -363,7 +363,7 @@ public final class DeviceConfig {
      */
     @NonNull
     private static final List<String> PUBLIC_NAMESPACES =
-            Arrays.asList(NAMESPACE_TEXTCLASSIFIER, NAMESPACE_RUNTIME);
+            Arrays.asList(NAMESPACE_TEXTCLASSIFIER, NAMESPACE_RUNTIME, NAMESPACE_TELEPHONY);
     /**
      * Privacy related properties definitions.
      *
