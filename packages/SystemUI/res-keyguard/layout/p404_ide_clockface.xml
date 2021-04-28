@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/IdeClock_LinearLayout">
+
+        <TextView
+            android:id="@+id/textInclude"
+            android:text="#include  "
+            style="@style/IdeClock_StaticString.Bold" />
+
+        <TextView
+            android:text="\u003Ciostream\u003E"
+            style="@style/IdeClock_StaticString.Colored" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/IdeClock_LinearLayout">
+
+        <TextView
+            android:id="@+id/textUsingNamespace"
+            android:text="using namespace  "
+            style="@style/IdeClock_StaticString.Bold" />
+
+        <TextView
+            android:id="@+id/textStd"
+            android:text="icecold;"
+            style="@style/IdeClock_StaticString.Bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/IdeClock_LinearLayout">
+
+        <TextView
+            android:id="@+id/textIntMain"
+            android:text="int main  "
+            style="@style/IdeClock_StaticString.Bold" />
+
+        <TextView
+            android:text="( )"
+            style="@style/IdeClock_StaticString.WallColor" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/IdeClock_LinearLayout">
+
+        <TextView
+            android:text="{"
+            style="@style/IdeClock_StaticString.WallColor" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/IdeClock_LinearLayout">
+
+        <TextView
+            android:id="@+id/textTimeDateDayMonth"
+            android:text="\tstring time, day, date, month;"
+            style="@style/IdeClock_StaticString.Bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/IdeClock_LinearLayout">
+
+        <TextView
+            android:text="\ttime =  \u0022"
+            style="@style/IdeClock_StaticString.WallColor" />
+
+        <TextClock
+            android:id="@+id/clockTime"
+            android:format12Hour="hh:mm"
+            android:format24Hour="kk:mm"
+            android:letterSpacing="0.03"
+            android:textColor="#FFFFFF"
+            style="@style/IdeClock_StaticString" />
+
+        <TextView
+            android:paddingStart="-0.5dip"
+            android:text="\u0022  ;"
+            style="@style/IdeClock_StaticString.WallColor" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/IdeClock_LinearLayout">
+
+        <TextView
+            android:text="\tday =  \u0022"
+            style="@style/IdeClock_StaticString.WallColor" />
+
+        <TextClock
+            android:id="@+id/clockDay"
+            android:layout_gravity="center_horizontal"
+            android:format12Hour="EEEE"
+            android:format24Hour="EEEE"
+            android:gravity="center"
+            android:letterSpacing="0.3"
+            android:textAllCaps="true"
+            style="@style/IdeClock_StaticString.Colored" />
+
+        <TextView
+            android:paddingStart="-0.5dip"
+            android:text="\u0022  ;"
+            style="@style/IdeClock_StaticString.WallColor" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/IdeClock_LinearLayout">
+
+        <TextView
+            android:text="\tdate =  \u0022"
+            style="@style/IdeClock_StaticString.WallColor" />
+
+        <TextClock
+            android:id="@+id/clockDate"
+            android:format12Hour="yyyy.MM.dd"
+            android:format24Hour="yyyy.MM.dd"
+            android:letterSpacing="0.03"
+            android:singleLine="true"
+            style="@style/IdeClock_StaticString" />
+
+        <TextView
+            android:paddingStart="-0.5dip"
+            android:text="\u0022  ;"
+            style="@style/IdeClock_StaticString.WallColor" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/IdeClock_LinearLayout">
+
+        <TextView
+            android:text="\tmonth =  \u0022"
+            style="@style/IdeClock_StaticString.WallColor" />
+
+        <TextClock
+            android:id="@+id/clockMonth"
+            android:format12Hour="MMMM"
+            android:format24Hour="MMMM"
+            android:gravity="center"
+            android:letterSpacing="0.3"
+            android:singleLine="true"
+            android:textAllCaps="true"
+            style="@style/IdeClock_StaticString" />
+
+        <TextView
+            android:paddingStart="-0.5dip"
+            android:text="\u0022  ;"
+            style="@style/IdeClock_StaticString.WallColor" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/IdeClock_LinearLayout">
+
+        <TextView
+            android:text="\treturn 0;"
+            style="@style/IdeClock_StaticString.WallColor" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/IdeClock_LinearLayout">
+
+        <TextView
+            android:text="}"
+            style="@style/IdeClock_StaticString.WallColor" />
+    </LinearLayout>
+</LinearLayout>
