@@ -27,4 +27,6 @@
     <dimen name="binary_clock_height">100dp</dimen>
     <!-- Custom clock outline size -->
     <dimen name="clock_oronos_outline_size">4dp</dimen>
+
+    <dimen name="ide_clock_font_size">14sp</dimen>
 </resources>
