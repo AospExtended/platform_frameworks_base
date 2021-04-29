@@ -196,7 +196,8 @@
         android:id="@+id/icon"
         android:tint="@color/media_primary_text"
         android:layout_width="@dimen/qs_media_icon_size"
-        android:layout_height="@dimen/qs_media_icon_size" />
+        android:layout_height="@dimen/qs_media_icon_size"
+        android:alpha="0.6" />
 
     <!-- Constraints are set here as they are the same regardless of host -->
     <TextView

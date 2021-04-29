@@ -25,6 +25,7 @@
         android:layout_marginTop="@dimen/qs_media_panel_outer_padding"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/album_art"
+        android:alpha="0.6"
         />
 
     <Constraint
