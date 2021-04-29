@@ -39,6 +39,7 @@
         android:layout_marginStart="18dp"
         app:layout_constraintStart_toEndOf="@id/album_art"
         app:layout_constraintTop_toTopOf="parent"
+        android:alpha="0.6"
         />
 
     <Constraint
