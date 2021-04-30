@@ -183,14 +183,7 @@ public class KeyguardStatusBarView extends RelativeLayout
         mCarrierLabel.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                 getResources().getDimensionPixelSize(
                         com.android.internal.R.dimen.text_size_small_material));
-        lp = (MarginLayoutParams) mCarrierLabel.getLayoutParams();
 
-        int marginStart = calculateMargin(
-                getResources().getDimensionPixelSize(R.dimen.keyguard_carrier_text_margin),
-                mPadding.first);
-        lp.setMarginStart(marginStart);
-
-        mCarrierLabel.setLayoutParams(lp);
         updateCutout();
     }
 
@@ -286,6 +279,7 @@ public class KeyguardStatusBarView extends RelativeLayout
         Pair<Integer, Integer> cornerCutoutMargins =
                 StatusBarWindowView.cornerCutoutMargins(mDisplayCutout, getDisplay());
         updatePadding(cornerCutoutMargins);
+        updateCarrierLabelParams();
         if (mDisplayCutout == null || cornerCutoutMargins != null) {
             return updateLayoutParamsNoCutout();
         } else {
@@ -300,6 +294,16 @@ public class KeyguardStatusBarView extends RelativeLayout
                 StatusBarWindowView.paddingNeededForCutoutAndRoundedCorner(
                         mDisplayCutout, cornerCutoutMargins, mRoundedCornerPadding);
         setPadding(mPadding.first, waterfallTop, mPadding.second, 0);
+    }
+
+    private void updateCarrierLabelParams() {
+        int marginStart = calculateMargin(
+                getResources().getDimensionPixelSize(R.dimen.keyguard_carrier_text_margin),
+                mPadding.first);
+        MarginLayoutParams lp = (MarginLayoutParams) mCarrierLabel.getLayoutParams();
+        lp.setMarginStart(marginStart);
+
+        mCarrierLabel.setLayoutParams(lp);
     }
 
     private boolean updateLayoutParamsNoCutout() {
