@@ -219,11 +219,15 @@ public class KeyguardSliceProvider extends SliceProvider implements
     protected boolean needsMediaLocked() {
         boolean keepWhenAwake = mKeyguardBypassController != null
                 && mKeyguardBypassController.getBypassEnabled() && mDozeParameters.getAlwaysOn();
+        String currentClock = Settings.Secure.getString(
+                mContentResolver, Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_FACE);
+        boolean isTypeClockSelected = currentClock == null ? false : currentClock.contains("Type");
+        boolean isAndroidSClockSelected = currentClock == null ? false : currentClock.contains("Android") && currentClock.contains("S");
         // Show header if music is playing and the status bar is in the shade state. This way, an
         // animation isn't necessary when pressing power and transitioning to AOD.
         boolean keepWhenShade = mStatusBarState == StatusBarState.SHADE && mMediaIsVisible;
-        return !TextUtils.isEmpty(mMediaTitle) && mMediaIsVisible && (mDozing || keepWhenAwake
-                || keepWhenShade);
+        return !TextUtils.isEmpty(mMediaTitle) && (mMediaIsVisible || isAndroidSClockSelected) && (mDozing || keepWhenAwake
+                || keepWhenShade || isAndroidSClockSelected) && !isAndroidSClockSelected && !isTypeClockSelected;
     }
 
     protected void addMediaLocked(ListBuilder listBuilder) {
