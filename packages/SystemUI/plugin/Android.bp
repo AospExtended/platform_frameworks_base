@@ -19,6 +19,9 @@ java_library {
     srcs: ["src/**/*.java"],
 
     static_libs: [
+        "androidx.slice_slice-core",
+        "androidx.slice_slice-view",
+        "androidx.slice_slice-builders",
         "PluginCoreLib"
     ],
 
