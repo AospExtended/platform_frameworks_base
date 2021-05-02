@@ -551,7 +551,7 @@ public class KeyguardSliceView extends LinearLayout implements View.OnClickListe
         @StyleRes
         private static int sStyleId = R.style.TextAppearance_Keyguard_Secondary;
 
-        KeyguardSliceTextView(Context context) {
+        public KeyguardSliceTextView(Context context) {
             super(context, null /* attrs */, 0 /* styleAttr */, sStyleId);
             onDensityOrFontScaleChanged();
             setEllipsize(TruncateAt.END);

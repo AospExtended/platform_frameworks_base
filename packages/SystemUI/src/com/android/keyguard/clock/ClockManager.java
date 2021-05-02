@@ -150,6 +150,8 @@ public final class ClockManager {
         LayoutInflater layoutInflater = injectionInflater.injectable(LayoutInflater.from(context));
 
         addBuiltinClock(() -> new AnalogClockController(res, layoutInflater, colorExtractor, context));
+        addBuiltinClock(() -> new AndroidSClockController(res, layoutInflater, colorExtractor));
+        addBuiltinClock(() -> new AndroidSDP3ClockController(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new BinaryClockController(res, layoutInflater, colorExtractor, context));
         addBuiltinClock(() -> new BubbleClockController(res, layoutInflater, colorExtractor, context));
         addBuiltinClock(() -> new ClockertinoClockController(res, layoutInflater, colorExtractor));
