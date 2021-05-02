@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2019 The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+<com.android.keyguard.clock.ClockLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal|top">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clock_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true">
+        <TextClock
+            android:id="@+id/clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="12dp"
+            android:gravity="start|top"
+            android:lineSpacingMultiplier="0.9"
+            android:fontFamily="@*android:string/config_headlineFontFamilyMedium"
+            android:textAlignment="center"
+            android:textColor="?attr/wallpaperTextColor"
+            android:textSize="48dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:theme="@style/TextAppearance.Keyguard"
+        />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|top"
+            android:letterSpacing="0.02"
+            android:fontFamily="@*android:string/config_headlineFontFamilyMedium"
+            android:textColor="?attr/wallpaperTextColor"
+            android:textSize="28dp"
+            android:singleLine="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="12dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/clock"
+            app:layout_constraintBottom_toTopOf="@id/row"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:theme="@style/TextAppearance.Keyguard"
+        />
+        <view class="com.android.keyguard.KeyguardSliceView$Row"
+            android:id="@+id/row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" 
+        />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.android.keyguard.clock.ClockLayout>
