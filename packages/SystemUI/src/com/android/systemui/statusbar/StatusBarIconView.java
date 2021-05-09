@@ -739,6 +739,7 @@ public class StatusBarIconView extends AnimatedImageView implements StatusIconDi
     }
 
     public int getStaticDrawableColor() {
+        if (!NewIconStyle) return mDrawableColor;
         if (mNotification == null) return mDrawableColor;
         return mNotification.getPackageName().contains("systemui") /*mIsSystemUI*/ ? mDrawableColor : 0;
     }
