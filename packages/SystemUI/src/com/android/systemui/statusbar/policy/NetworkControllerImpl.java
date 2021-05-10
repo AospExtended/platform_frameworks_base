@@ -548,10 +548,10 @@ public class NetworkControllerImpl extends BroadcastReceiver
             mobileSignalController.notifyListeners(cb);
         }
         if (mMobileSignalControllers.size() == 2) {
-            boolean volte1 = mMobileSignalControllers.valueAt(0).isVolteAvailable();
-            boolean volte2 = mMobileSignalControllers.valueAt(1).isVolteAvailable();
-            boolean vowifi1 = mMobileSignalControllers.valueAt(0).isVowifiAvailable();
-            boolean vowifi2 = mMobileSignalControllers.valueAt(1).isVowifiAvailable();
+            boolean volte1 = mMobileSignalControllers.valueAt(1).isVolteAvailable();
+            boolean volte2 = mMobileSignalControllers.valueAt(0).isVolteAvailable();
+            boolean vowifi1 = mMobileSignalControllers.valueAt(1).isVowifiAvailable();
+            boolean vowifi2 = mMobileSignalControllers.valueAt(0).isVowifiAvailable();
             cb.setImsIcon(new ImsIconState((volte1 || volte2) && mShowImsIcon,
                     (vowifi1 || vowifi2) && mShowImsIcon,
                     getVolteResId(volte1, volte2),
@@ -583,10 +583,10 @@ public class NetworkControllerImpl extends BroadcastReceiver
 
     public void updateImsIcon() {
         if (mMobileSignalControllers.size() == 2) {
-            boolean volte1 = mMobileSignalControllers.valueAt(0).isVolteAvailable();
-            boolean volte2 = mMobileSignalControllers.valueAt(1).isVolteAvailable();
-            boolean vowifi1 = mMobileSignalControllers.valueAt(0).isVowifiAvailable();
-            boolean vowifi2 = mMobileSignalControllers.valueAt(1).isVowifiAvailable();
+            boolean volte1 = mMobileSignalControllers.valueAt(1).isVolteAvailable();
+            boolean volte2 = mMobileSignalControllers.valueAt(0).isVolteAvailable();
+            boolean vowifi1 = mMobileSignalControllers.valueAt(1).isVowifiAvailable();
+            boolean vowifi2 = mMobileSignalControllers.valueAt(0).isVowifiAvailable();
             mCallbackHandler.setImsIcon(new ImsIconState((volte1 || volte2) && mShowImsIcon,
                     (vowifi1 || vowifi2) && mShowImsIcon,
                     getVolteResId(volte1, volte2),
