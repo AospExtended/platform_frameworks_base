@@ -122,6 +122,7 @@ public class VpnTile extends QSTileImpl<BooleanState> {
             return;
         } else if (profiles.isEmpty() && vpnApps.size() == 1) {
             mController.launchVpnApp(vpnApps.get(0));
+            mHost.collapsePanels();
             return;
         } else if (vpnApps.isEmpty() && profiles.size() == 1) {
             connectVpnOrAskForCredentials(profiles.get(0));
