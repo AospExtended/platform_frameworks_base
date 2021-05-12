@@ -1225,8 +1225,8 @@ public class NetworkControllerImpl extends BroadcastReceiver
                         CarrierConfigManager.KEY_SHOW_4G_FOR_LTE_DATA_ICON_BOOL);
                 config.show4gFor3g = b.getBoolean(
                         CarrierConfigManager.KEY_SHOW_4G_FOR_3G_DATA_ICON_BOOL);
-                config.hideLtePlus = b.getBoolean(
-                        CarrierConfigManager.KEY_HIDE_LTE_PLUS_DATA_ICON_BOOL);
+               /* config.hideLtePlus = b.getBoolean(
+                        CarrierConfigManager.KEY_HIDE_LTE_PLUS_DATA_ICON_BOOL);*/
             }
 
             config.showVolteIcon = res.getBoolean(R.bool.config_display_volte);
