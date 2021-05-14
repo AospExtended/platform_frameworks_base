@@ -66,6 +66,12 @@ public class OPMinimalClockController implements ClockPlugin {
     private ImageClock mOneplusClock;
 
     /**
+     * Small clock shown on lock screen above stack scroller.
+     */
+    private View mView;
+    private TextClock mLockClock;
+
+    /**
      * Helper to extract colors from wallpaper palette for clock face.
      */
     private final ClockPalette mPalette = new ClockPalette();
@@ -88,12 +94,17 @@ public class OPMinimalClockController implements ClockPlugin {
     private void createViews() {
         mBigClockView = (ClockLayout) mLayoutInflater.inflate(R.layout.op_minimal_clock, null);
         mOneplusClock = mBigClockView.findViewById(R.id.analog_clock);
+
+        mView = mLayoutInflater.inflate(R.layout.digital_clock, null);
+        mLockClock = mView.findViewById(R.id.lock_screen_clock);
     }
 
     @Override
     public void onDestroyView() {
         mBigClockView = null;
         mOneplusClock = null;
+        mView = null;
+        mLockClock = null;
     }
 
     @Override
@@ -130,7 +141,10 @@ public class OPMinimalClockController implements ClockPlugin {
 
     @Override
     public View getView() {
-        return null;
+        if (mView == null) {
+            createViews();
+        }
+        return mView;
     }
 
     @Override
@@ -163,6 +177,7 @@ public class OPMinimalClockController implements ClockPlugin {
     private void updateColor() {
         final int primary = mPalette.getPrimaryColor();
         final int secondary = mPalette.getSecondaryColor();
+        mLockClock.setTextColor(secondary);
         //mOneplusClock.setClockColors(primary, secondary);
     }
 
@@ -170,11 +185,13 @@ public class OPMinimalClockController implements ClockPlugin {
     public void onTimeTick() {
         mOneplusClock.onTimeChanged();
         mBigClockView.onTimeChanged();
+        mLockClock.refreshTime();
     }
 
     @Override
     public void setDarkAmount(float darkAmount) {
         mPalette.setDarkAmount(darkAmount);
+        mClockPosition.setDarkAmount(darkAmount);
         mBigClockView.setDarkAmount(darkAmount);
     }
 
