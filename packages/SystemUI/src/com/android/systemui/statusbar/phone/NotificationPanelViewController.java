@@ -898,7 +898,7 @@ public class NotificationPanelViewController extends PanelViewController {
             boolean bypassEnabled = mKeyguardBypassController.getBypassEnabled();
             final boolean
                     hasVisibleNotifications =
-                    !bypassEnabled && mNotificationStackScroller.getVisibleNotificationCount() != 0;
+                    !bypassEnabled && mNotificationStackScroller.isVisibleNotification();
             mKeyguardStatusView.setHasVisibleNotifications(hasVisibleNotifications);
             mClockPositionAlgorithm.setup(mStatusBarMinHeight, totalHeight - bottomPadding,
                     mNotificationStackScroller.getIntrinsicContentHeight(), getExpandedFraction(),

@@ -90,7 +90,7 @@ import static com.android.systemui.statusbar.phone
 public class AndroidSClockController implements ClockPlugin {
 
     private final float mTextSizeNormal = 38f;
-    private final float mTextSizeBig = 50f;
+    private final float mTextSizeBig = 68f;
     private final float mSliceTextSize = 24f;
     private final float mTitleTextSize = 28f;
     private boolean mHasVisibleNotification = false;
@@ -393,6 +393,7 @@ public class AndroidSClockController implements ClockPlugin {
 
     private void animate() {
         final float differenceSize = mTextSizeBig - mTextSizeNormal;
+        mClock.clearAnimation();
         if (!mHasVisibleNotification) {
             if (!mClockState) {
                 mClock.animate()
