@@ -1353,6 +1353,22 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
         return count;
     }
 
+    /**
+     * Returns a boolean var true if has visible notifications.
+     */
+    public boolean isVisibleNotification() {
+        for (int i = 0; i < getChildCount(); i++) {
+            final View child = getChildAt(i);
+            if (child.getVisibility() != View.GONE && child instanceof ExpandableNotificationRow) {
+                return true;
+            }
+        }
+        if (mKeyguardMediaController.getView().getVisibility() != View.GONE) {
+            return true;
+        }
+        return false;
+    }
+
     @ShadeViewRefactor(RefactorComponent.STATE_RESOLVER)
     private boolean isCurrentlyAnimating() {
         return mStateAnimator.isRunning();
