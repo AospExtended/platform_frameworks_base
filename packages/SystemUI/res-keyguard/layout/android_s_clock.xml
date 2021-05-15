@@ -28,7 +28,7 @@
         android:layout_alignParentTop="true">
         <TextView
             android:id="@+id/title"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="start|top"
             android:letterSpacing="0.02"
@@ -48,7 +48,7 @@
         />
         <view class="com.android.keyguard.KeyguardSliceView$Row"
             android:id="@+id/row"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:gravity="start"
