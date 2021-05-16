@@ -320,6 +320,10 @@
     <!-- Volume Plugin -->
     <protected-broadcast android:name="com.android.systemui.action.PLUGIN_CHANGED"/>    
 
+    <!-- Ambient Indication -->
+    <permission android:name="com.google.android.ambientindication.permission.AMBIENT_INDICATION" android:protectionLevel="normal|signature|system"/>
+    <uses-permission android:name="com.google.android.ambientindication.permission.AMBIENT_INDICATION"/>
+
     <application
         android:name=".SystemUIApplication"
         android:persistent="true"
