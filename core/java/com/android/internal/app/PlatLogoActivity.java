@@ -25,6 +25,7 @@ import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
@@ -59,7 +60,16 @@ public class PlatLogoActivity extends Activity {
 
     private static final int UNLOCK_TRIES = 3;
 
+    private int screenOrientation;
+
     BigDialView mDialView;
+
+    // capture the orientation changes.
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        screenOrientation = newConfig.orientation;
+    }
 
     @Override
     protected void onPause() {
@@ -69,6 +79,10 @@ public class PlatLogoActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // get initial screen orientation on activity creation.
+        screenOrientation = this.getResources().getConfiguration().orientation;
+
         final float dp = getResources().getDisplayMetrics().density;
 
         getWindow().getDecorView().setSystemUiVisibility(
@@ -329,16 +343,25 @@ public class PlatLogoActivity extends Activity {
                 final int h = bounds.height();
                 final float w2 = w / 2f;
                 final float h2 = h / 2f;
-                final float radius = w / 4f;
+                final float radius;
+
+                // adjust the radius according to the orientation.
+                if (screenOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    radius = h / 4f;
+                } else {
+                    radius = w / 4f;
+                }
 
                 canvas.drawColor(mNightMode ? COLOR_NAVY : COLOR_LIGHTBLUE);
 
                 canvas.save();
                 canvas.rotate(45, w2, h2);
-                canvas.clipRect(w2, h2 - radius, Math.min(w, h), h2 + radius);
+
+                // adjust the dimensions of clip rectangle and shader to work for both orientations.
+                canvas.clipRect(w2, h2 - radius, w2 + Math.min(w2,h2), h2 + radius);
                 final int gradientColor = mNightMode ? 0x60000020 : (0x10FFFFFF & COLOR_NAVY);
                 mPaint.setShader(
-                        new LinearGradient(w2, h2, Math.min(w, h), h2, gradientColor,
+                        new LinearGradient(w2, h2, w2 + Math.min(w2,h2), h2, gradientColor,
                                 0x00FFFFFF & gradientColor, Shader.TileMode.CLAMP));
                 mPaint.setColor(Color.BLACK);
                 canvas.drawPaint(mPaint);
@@ -351,7 +374,10 @@ public class PlatLogoActivity extends Activity {
                 canvas.drawCircle(w2, h2, radius, mPaint);
 
                 mPaint.setColor(mNightMode ? COLOR_LIGHTBLUE : COLOR_NAVY);
-                final float cx = w * 0.85f;
+
+                // adjust the position of surrounding circles according to changes
+                //in main circle radius.
+                final float cx = w2 + radius + radius/2.5f;
                 for (int i = 0; i < STEPS; i++) {
                     final float f = (float) i / STEPS;
                     canvas.save();
@@ -363,7 +389,15 @@ public class PlatLogoActivity extends Activity {
 
                 if (mElevenAnim > 0f) {
                     final int color = COLOR_ORANGE;
-                    final int size2 = (int) ((0.5 + 0.5f * mElevenAnim) * w / 14);
+
+                    // size of 11 animation should change for orientation changes.
+                    final int size2;
+                    if (screenOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        size2 = (int) ((0.5 + 0.5f * mElevenAnim) * h / 14);
+                    } else {
+                        size2 = (int) ((0.5 + 0.5f * mElevenAnim) * w / 14);
+                    }
+
                     final float cx11 = cx + size2 / 4f;
                     mEleven.setBounds((int) cx11 - size2, (int) h2 - size2,
                             (int) cx11 + size2, (int) h2 + size2);
@@ -379,8 +413,15 @@ public class PlatLogoActivity extends Activity {
                 // it's easier to draw at far-right and rotate backwards
                 canvas.rotate(-angle, w2, h2);
                 mPaint.setColor(Color.WHITE);
-                final float dimple = w2 / 12f;
-                canvas.drawCircle(w - radius - dimple * 2, h2, dimple, mPaint);
+
+                // dimple radius depends on the orientation.
+                final float dimple;
+                if (screenOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    dimple = h2 / 12f;
+                } else {
+                    dimple = w2 / 12f;
+                }
+                canvas.drawCircle(w2 + radius - dimple * 2, h2, dimple, mPaint);
             }
 
             float clamp(float x, float a, float b) {
