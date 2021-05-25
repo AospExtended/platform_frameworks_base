@@ -3,9 +3,7 @@ package com.android.systemui.qs;
 import static com.android.systemui.util.Utils.useQsMediaPlayer;
 
 import android.content.Context;
-import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.AttributeSet;
 import android.view.View;
@@ -20,7 +18,6 @@ import java.util.ArrayList;
 public class TileLayout extends ViewGroup implements QSTileLayout {
 
     public static final int NO_MAX_COLUMNS = 100;
-    public static final int NO_MAX_ROWS = 3;
     private static final float TILE_ASPECT = 1.2f;
 
     private static final String TAG = "TileLayout";
@@ -32,8 +29,6 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
     protected int mCellMarginVertical;
     protected int mSidePadding;
     protected int mRows = 1;
-    protected int mDefaultColumns;
-    protected boolean mShowTitles = true;
 
     protected final ArrayList<TileRecord> mRecords = new ArrayList<>();
     private int mCellMarginTop;
@@ -116,20 +111,23 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
 
     public boolean updateResources() {
         final Resources res = mContext.getResources();
+        mResourceColumns = Math.max(1, res.getInteger(R.integer.quick_settings_num_columns));
         mCellHeight = mContext.getResources().getDimensionPixelSize(R.dimen.qs_tile_height);
         mCellMarginHorizontal = res.getDimensionPixelSize(R.dimen.qs_tile_margin_horizontal);
         mCellMarginVertical= res.getDimensionPixelSize(R.dimen.qs_tile_margin_vertical);
         mCellMarginTop = res.getDimensionPixelSize(R.dimen.qs_tile_margin_top);
         mMaxAllowedRows = Math.max(1, getResources().getInteger(R.integer.quick_settings_max_rows));
         if (mLessRows) mMaxAllowedRows = Math.max(mMinRows, mMaxAllowedRows - 1);
-        updateSettings();
+        if (updateColumns()) {
+            requestLayout();
+            return true;
+        }
         return false;
     }
 
     private boolean updateColumns() {
-        updateSettings();
         int oldColumns = mColumns;
-        mColumns = Math.min(mColumns, mMaxColumns);
+        mColumns = Math.min(mResourceColumns, mMaxColumns);
         return oldColumns != mColumns;
     }
 
@@ -238,40 +236,5 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
     @Override
     public int getNumVisibleTiles() {
         return mRecords.size();
-    }
-
-    public int getNumColumns() {
-        return mColumns;
-    }
-
-    public void updateSettings() {
-        final Resources res = mContext.getResources();
-        mDefaultColumns = Math.max(1, res.getInteger(R.integer.quick_settings_num_columns));
-        boolean isPortrait = res.getConfiguration().orientation
-                == Configuration.ORIENTATION_PORTRAIT;
-        int columns = Settings.System.getIntForUser(
-                mContext.getContentResolver(), Settings.System.QS_LAYOUT_COLUMNS, mDefaultColumns,
-                UserHandle.USER_CURRENT);
-        int columnsLandscape = Settings.System.getIntForUser(
-                mContext.getContentResolver(), Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, mDefaultColumns,
-                UserHandle.USER_CURRENT);
-        boolean showTitles = Settings.System.getIntForUser(
-                mContext.getContentResolver(), Settings.System.QS_TILE_TITLE_VISIBILITY, 1,
-                UserHandle.USER_CURRENT) == 1;
-         if (showTitles) {
-            mCellHeight = mContext.getResources().getDimensionPixelSize(R.dimen.qs_tile_height);
-        } else {
-            mCellHeight = mContext.getResources().getDimensionPixelSize(R.dimen.qs_tile_height_wo_label);
-        }
-        if (mColumns != (isPortrait ? columns : columnsLandscape) || mShowTitles != showTitles) {
-            mColumns = isPortrait ? columns : columnsLandscape;
-            mShowTitles = showTitles;
-            requestLayout();
-        }
-    }
-
-    @Override
-    public boolean isShowTitles() {
-        return mShowTitles;
     }
 }

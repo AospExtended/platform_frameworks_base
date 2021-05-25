@@ -13,9 +13,8 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
-    <!-- Sets a custom extra padding for the QS icons and statusbar date -->
-    <dimen name="qs_items_padding">8dp</dimen>
-    <dimen name="qs_tile_height_wo_label">48dp</dimen>
+  	<!-- Sets a custom extra padding for the QS icons and statusbar date -->
+	  <dimen name="qs_items_padding">8dp</dimen>
 
     <!-- Network traffic monitor -->
     <dimen name="net_traffic_multi_text_size">8dp</dimen>
@@ -54,3 +53,5 @@
     <dimen name="applock_icon_dimension">54dp</dimen>
 
 </resources>
+
+
