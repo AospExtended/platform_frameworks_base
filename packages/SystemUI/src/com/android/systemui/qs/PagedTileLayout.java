@@ -70,7 +70,6 @@ public class PagedTileLayout extends ViewPager implements QSTileLayout {
     private int mLastExcessHeight;
     private int mMinRows = 1;
     private int mMaxColumns = TileLayout.NO_MAX_COLUMNS;
-    private int mNumColumns;
 
     public PagedTileLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -436,16 +435,6 @@ public class PagedTileLayout extends ViewPager implements QSTileLayout {
         return mPages.get(0).mColumns;
     }
 
-    @Override
-    public int getNumColumns() {
-        return getColumnCount();
-    }
-
-    @Override
-    public boolean isShowTitles() {
-        return mPages.get(0).isShowTitles();
-    }
-
     /**
      * Gets the number of pages in this paged tile layout
      */
@@ -601,13 +590,5 @@ public class PagedTileLayout extends ViewPager implements QSTileLayout {
 
     public interface PageListener {
         void onPageChanged(boolean isFirst);
-    }
-
-    @Override
-    public void updateSettings() {
-        for (int i = 0; i < mPages.size(); i++) {
-            mPages.get(i).updateSettings();
-        }
-        distributeTiles();
     }
 }
