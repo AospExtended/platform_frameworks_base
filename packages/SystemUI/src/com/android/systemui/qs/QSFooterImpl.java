@@ -352,9 +352,8 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     }
 
     @Override
-    public void setQSPanel(final QSPanel qsPanel, final QuickQSPanel quickQSPanel) {
+    public void setQSPanel(final QSPanel qsPanel) {
         mQsPanel = qsPanel;
-        mQuickQsPanel = quickQSPanel;
         if (mQsPanel != null) {
             mMultiUserSwitch.setQsPanel(qsPanel);
             mQsPanel.setFooterPageIndicator(mPageIndicator);
