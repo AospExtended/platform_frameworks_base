@@ -42,7 +42,6 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -158,8 +157,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     private int mVisualTilePadding;
     private boolean mUsingHorizontalLayout;
 
-    private boolean mQsMediaVisible;
-
     private boolean mShowAutoBrightnessButton = false;
     private boolean mShowBrightnessSideButtons = false;
 
@@ -243,12 +240,10 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
                     (PagedTileLayout) mRegularTileLayout);
         }
         mQSLogger.logAllTilesChangeListening(mListening, getDumpableTag(), mCachedSpecs);
-        updateSettings();
         updateResources();
     }
 
     protected void onMediaVisibilityChanged(Boolean visible) {
-        mQsMediaVisible = visible;
         switchTileLayout();
         if (mMediaVisibilityChangedListener != null) {
             mMediaVisibilityChangedListener.accept(visible);
@@ -331,6 +326,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         }
         return mRegularTileLayout;
     }
+
 
     protected QSTileLayout createHorizontalTileLayout() {
         return createRegularTileLayout();
@@ -631,7 +627,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
         if (newConfig.orientation != mLastOrientation) {
             mLastOrientation = newConfig.orientation;
-            switchTileLayout(true);
+            switchTileLayout();
         }
     }
 
@@ -649,19 +645,12 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     private boolean switchTileLayout(boolean force) {
         /** Whether or not the QuickQSPanel currently contains a media player. */
         boolean horizontal = shouldUseHorizontalLayout();
-        QSTileLayout newLayout = horizontal ? mHorizontalTileLayout : mRegularTileLayout;
-        if (needsDynamicRowsAndColumns()) {
-            int rows = (mQsMediaVisible || getResources().getConfiguration().orientation
-                == Configuration.ORIENTATION_LANDSCAPE) ? 2 : TileLayout.NO_MAX_ROWS;
-            newLayout.setMinRows(horizontal ? 2 : rows);
-            // Let's use 3 columns to match the current layout
-            newLayout.setMaxColumns(horizontal ? 3 : TileLayout.NO_MAX_COLUMNS);
-        }
         if (horizontal != mUsingHorizontalLayout || force) {
             mUsingHorizontalLayout = horizontal;
             View visibleView = horizontal ? mHorizontalLinearLayout : (View) mRegularTileLayout;
             View hiddenView = horizontal ? (View) mRegularTileLayout : mHorizontalLinearLayout;
             ViewGroup newParent = horizontal ? mHorizontalContentContainer : this;
+            QSTileLayout newLayout = horizontal ? mHorizontalTileLayout : mRegularTileLayout;
             if (hiddenView != null &&
                     (mRegularTileLayout != mHorizontalTileLayout ||
                             hiddenView != mRegularTileLayout)) {
@@ -682,6 +671,11 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
             mTileLayout = newLayout;
             if (mHost != null) setTiles(mHost.getTiles());
             newLayout.setListening(mListening);
+            if (needsDynamicRowsAndColumns()) {
+                newLayout.setMinRows(horizontal ? 2 : 1);
+                // Let's use 3 columns to match the current layout
+                newLayout.setMaxColumns(horizontal ? 3 : TileLayout.NO_MAX_COLUMNS);
+            }
             updateTileLayoutMargins();
             updateFooterMargin();
             updateMediaDisappearParameters();
@@ -1294,9 +1288,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         int getOffsetTop(TileRecord tile);
 
         boolean updateResources();
-        int getNumColumns();
-        void updateSettings();
-        boolean isShowTitles();
 
         void setListening(boolean listening);
 
@@ -1378,30 +1369,11 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
     private void tileClickListener(QSTile t, QSTileView v) {
         if (mTileLayout != null) {
-            v.setHideLabel(!mTileLayout.isShowTitles());
             v.setOnClickListener(view -> {
                     t.click();
                     setAnimationTile(v);
             });
         }
-    }
-
-    public void updateSettings() {
-        if (mTileLayout != null) {
-            mTileLayout.updateSettings();
-            for (TileRecord r : mRecords) {
-                tileClickListener(r.tile, r.tileView);
-            }
-        }
-        if (mSecurityFooter != null) {
-            mSecurityFooter.updateSettings();
-        }
-        // Refresh QS Panel views
-        switchTileLayout(true);
-    }
-
-    public int getNumColumns() {
-        return mTileLayout.getNumColumns();
     }
 
     private void setBrightnessMinMax(boolean min) {
