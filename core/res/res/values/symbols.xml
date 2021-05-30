@@ -3780,6 +3780,7 @@
   <java-symbol type="string" name="bluetooth_airplane_mode_toast" />
 
   <!-- For high refresh rate displays -->
+  <java-symbol type="integer" name="config_defaultMinimumRefreshRate" />
   <java-symbol type="integer" name="config_defaultRefreshRate" />
   <java-symbol type="integer" name="config_defaultPeakRefreshRate" />
   <java-symbol type="integer" name="config_defaultRefreshRateInZone" />
