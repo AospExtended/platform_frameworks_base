@@ -678,6 +678,9 @@
     <!-- IMS Status -->
     <protected-broadcast android:name="android.intent.action.IMS_REGISTRATION_CHANGED" />
 
+    <!-- Sleep Mode -->
+    <protected-broadcast android:name="android.intent.action.SLEEP_MODE_TURN_OFF" />
+
     <!-- ====================================================================== -->
     <!--                          RUNTIME PERMISSIONS                           -->
     <!-- ====================================================================== -->

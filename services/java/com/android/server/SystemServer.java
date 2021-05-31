@@ -153,6 +153,7 @@ import com.android.server.policy.PhoneWindowManager;
 import com.android.server.policy.role.LegacyRoleResolutionPolicy;
 import com.android.server.power.PowerManagerService;
 import com.android.server.power.ShutdownThread;
+import com.android.server.power.SleepModeService;
 import com.android.server.power.ThermalManagerService;
 import com.android.server.recoverysystem.RecoverySystemService;
 import com.android.server.restrictions.RestrictionsManagerService;
@@ -2506,6 +2507,15 @@ public final class SystemServer {
             }
 
             mSmartPixelsReceiver = new SmartPixelsReceiver(context);
+
+            t.traceBegin("SleepModeService");
+            try {
+                mSystemServiceManager.startService(SleepModeService.class);
+            } catch (Throwable e) {
+                Slog.e("System", "Failure starting Sleep mode service");
+                throw e;
+            }
+            t.traceEnd();
 
         }, t);
 
