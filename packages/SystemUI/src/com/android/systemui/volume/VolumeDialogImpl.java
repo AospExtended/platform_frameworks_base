@@ -214,7 +214,7 @@ public class VolumeDialogImpl implements VolumeDialog,
 
         public void update() {
             final boolean volumePanelOnLeft = Settings.System.getInt(mContext.getContentResolver(),
-                        Settings.System.VOLUME_PANEL_ON_LEFT, 0) == 1;
+                        Settings.System.VOLUME_PANEL_ON_LEFT, mVolumePanelOnLeft) == 1;
 
             if (!mShowActiveStreamOnly) {
                 if (mVolumePanelOnLeft != volumePanelOnLeft) {
@@ -242,6 +242,7 @@ public class VolumeDialogImpl implements VolumeDialog,
         mShowActiveStreamOnly = showActiveStreamOnly();
         mHasSeenODICaptionsTooltip =
                 Prefs.getBoolean(context, Prefs.Key.HAS_SEEN_ODI_CAPTIONS_TOOLTIP, false);
+        mVolumePanelOnLeft = mContext.getResources().getBoolean(R.bool.config_audioPanelOnLeftSide);
 
         mCustomSettingsObserver = new CustomSettingsObserver(mHandler);
         mCustomSettingsObserver.observe();
