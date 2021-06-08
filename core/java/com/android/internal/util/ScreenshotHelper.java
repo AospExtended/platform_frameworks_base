@@ -178,6 +178,17 @@ public class ScreenshotHelper {
         }
     };
 
+    private final BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            synchronized (mScreenshotLock) {
+                if (ACTION_USER_SWITCHED.equals(intent.getAction())) {
+                    resetConnection();
+                }
+            }
+        }
+    };
+
     public ScreenshotHelper(Context context) {
         mContext = context;
         IntentFilter filter = new IntentFilter(ACTION_USER_SWITCHED);
