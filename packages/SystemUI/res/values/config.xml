@@ -585,4 +585,8 @@
     <!-- Whether to show VoLTE icon in the status bar -->
     <bool name="config_display_volte">true</bool>
 
+    <!-- Whether or not to show a notification for an unknown battery state -->
+    <bool name="config_showNotificationForUnknownBatteryState">false</bool>
+    <!-- content URL in a notification when ACTION_BATTERY_CHANGED.EXTRA_PRESENT field is false -->
+    <string translatable="false" name="config_batteryStateUnknownUrl"></string>
 </resources>
