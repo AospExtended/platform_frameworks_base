@@ -62,7 +62,7 @@ public class ThemeUtils {
     public static final String FONT_KEY = "android.theme.customization.font";
     public static final String ICON_SHAPE_KEY= "android.theme.customization.adaptive_icon_shape";
 
-    public static final String THEMES_KEY = "android.theme.customization.theme_style";
+    public static final String THEMES_KEY = "android.theme.customization.theme_style.android";
 
     public static final Comparator<OverlayInfo> OVERLAY_INFO_COMPARATOR =
             Comparator.comparingInt(a -> a.priority);
@@ -110,10 +110,10 @@ public class ThemeUtils {
             mUiModeManager.setNightModeActivated(false);
             setOverlayEnabled(THEMES_KEY, "android");
         } else if ("dark.theme".equals(packageName)) {
-            mUiModeManager.setNightModeActivated(true);
+            mUiModeManager.setNightModeActivated(false);
             setOverlayEnabled(THEMES_KEY, "android");
         } else {
-            mUiModeManager.setNightModeActivated(true);
+            mUiModeManager.setNightModeActivated(false);
             setOverlayEnabled(THEMES_KEY, packageName);
         }
 
