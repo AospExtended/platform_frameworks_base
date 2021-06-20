@@ -89,7 +89,7 @@ public class ScrollView extends FrameLayout {
 
     private final Rect mTempRect = new Rect();
     @UnsupportedAppUsage
-    private static OverScroller mScroller;
+    private OverScroller mScroller;
     /**
      * Tracks the state of the top edge glow.
      *
@@ -142,7 +142,7 @@ public class ScrollView extends FrameLayout {
      * Determines speed during touch scrolling
      */
     @UnsupportedAppUsage
-    private static VelocityTracker mVelocityTracker;
+    private VelocityTracker mVelocityTracker;
 
     /**
      * When set to true, the scroll view measure its child to make it fill the currently
@@ -567,7 +567,7 @@ public class ScrollView extends FrameLayout {
         }
     }
 
-    private static void recycleVelocityTracker() {
+    private void recycleVelocityTracker() {
         if (mVelocityTracker != null) {
             mVelocityTracker.recycle();
             mVelocityTracker = null;
