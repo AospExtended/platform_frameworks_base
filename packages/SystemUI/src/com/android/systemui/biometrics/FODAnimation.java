@@ -41,7 +41,6 @@ public class FODAnimation extends ImageView {
     private AnimationDrawable recognizingAnim;
     private WindowManager mWindowManager;
     private boolean mIsKeyguard;
-    private boolean mIsRecognizingAnimEnabled;
 
     private int mSelectedAnim;
     private String[] ANIMATION_STYLES_NAMES = {
@@ -95,11 +94,6 @@ public class FODAnimation extends ImageView {
         mAnimParams.y = mPositionY - (mAnimationSize / 2) + mAnimationOffset;
 
         setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-
-        mIsRecognizingAnimEnabled = Settings.System.getInt(mContext.getContentResolver(),
-            Settings.System.FOD_RECOGNIZING_ANIMATION, 0) != 0;
-
-        update(mIsRecognizingAnimEnabled);
     }
 
     private void updateAnimationStyle(String drawableName) {
@@ -118,16 +112,13 @@ public class FODAnimation extends ImageView {
         }
     }
 
-    public void update(boolean isEnabled) {
-        mSelectedAnim = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.FOD_ANIM, 0);
-
+    public void update(boolean isEnabled, int selectedAnim) {
         if (isEnabled)
             setAlpha(1.0f);
         else
             setAlpha(0.0f);
 
-        updateAnimationStyle(ANIMATION_STYLES_NAMES[mSelectedAnim]);
+        updateAnimationStyle(ANIMATION_STYLES_NAMES[selectedAnim]);
     }
 
     public void updateParams(int mDreamingOffsetY) {
@@ -141,8 +132,9 @@ public class FODAnimation extends ImageView {
     public void showFODanimation() {
         if (mAnimParams != null && !mShowing && mIsKeyguard) {
             mShowing = true;
-            if (getWindowToken() == null){
+            if (getWindowToken() == null) {
                 mWindowManager.addView(this, mAnimParams);
+            } else {
                 mWindowManager.updateViewLayout(this, mAnimParams);
             }
             if (recognizingAnim != null) {
