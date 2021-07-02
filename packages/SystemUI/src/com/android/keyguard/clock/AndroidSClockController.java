@@ -320,7 +320,7 @@ public class AndroidSClockController implements ClockPlugin {
                 button.setTextColor(blendedColor);
                 button.setGravity(Gravity.START);
                 button.setTag(itemTag);
-                final int viewIndex = i - (mHasHeader ? 0 : 0);
+                final int viewIndex = i - (mHasHeader ? 1 : 0);
                 mRow.addView(button, viewIndex);
             } else {
                 button.setTextSize(isDateSlice ? mTitleTextSize : mSliceTextSize);
