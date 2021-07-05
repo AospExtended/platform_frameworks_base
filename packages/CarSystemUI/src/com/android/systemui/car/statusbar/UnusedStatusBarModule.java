@@ -30,6 +30,7 @@ import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.keyguard.ViewMediatorCallback;
 import com.android.systemui.InitController;
 import com.android.systemui.assist.AssistManager;
+import com.android.systemui.biometrics.FODCircleViewImpl;
 import com.android.systemui.broadcast.BroadcastDispatcher;
 import com.android.systemui.bubbles.BubbleController;
 import com.android.systemui.colorextraction.SysuiColorExtractor;
@@ -202,7 +203,8 @@ public interface UnusedStatusBarModule {
             KeyguardIndicationController keyguardIndicationController,
             Lazy<NotificationShadeDepthController> notificationShadeDepthController,
             DismissCallbackRegistry dismissCallbackRegistry,
-            StatusBarTouchableRegionManager statusBarTouchableRegionManager) {
+            StatusBarTouchableRegionManager statusBarTouchableRegionManager,
+            FODCircleViewImpl fodCircleViewImpl) {
         return new UnusedStatusBar(
                 context,
                 notificationsController,
@@ -280,6 +282,7 @@ public interface UnusedStatusBarModule {
                 keyguardIndicationController,
                 dismissCallbackRegistry,
                 notificationShadeDepthController,
-                statusBarTouchableRegionManager);
+                statusBarTouchableRegionManager,
+                fodCircleViewImpl);
     }
 }
