@@ -274,13 +274,14 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
 
         @Override
         public void onScreenTurnedOn() {
-            if (!mFodGestureEnable && mIsBiometricRunning) {
-                show();
-            }
-            if (mFodGestureEnable && mPressPending) {
-                mHandler.post(() -> showCircle());
-                mPressPending = false;
-            }
+            if (mIsBiometricRunning) {
+                if (!mFodGestureEnable) {
+                    show();
+                } else if (mPressPending) {
+                    mHandler.post(() -> showCircle());
+                    mPressPending = false;
+                }
+            }    
             mScreenTurnedOn = true;
         }
 
