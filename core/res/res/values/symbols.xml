@@ -4437,4 +4437,7 @@
   <java-symbol type="integer" name="config_customizedMaxCachedProcesses" />
 
   <java-symbol type="color" name="overview_background"/>
+
+  <!-- For dynamic default font styles -->
+  <java-symbol type="string" name="config_bodyFontFamily" />
 </resources>
