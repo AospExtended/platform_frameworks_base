@@ -375,8 +375,12 @@ public class AndroidSClockController implements ClockPlugin {
         mTitle.requestLayout();
         mRow.requestLayout();
 
-        mRowHeight = mRow.getHeight() + (mHasHeader ? mTitle.getHeight() : 0);
-        if (mRow.getChildCount() != 0) mContainerSetBig.setMargin(mClock.getId(), ConstraintSet.TOP, mRowHeight);
+        if (mClock != null) {
+            mRowHeight = mRow.getHeight() + (mHasHeader ? mTitle.getHeight() : 0);
+            if (mRow.getChildCount() != 0) {
+                mContainerSetBig.setMargin(mClock.getId(), ConstraintSet.TOP, mRowHeight);
+            }
+        }
     };
 
     /**
