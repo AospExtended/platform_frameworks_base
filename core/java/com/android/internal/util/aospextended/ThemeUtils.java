@@ -121,9 +121,13 @@ public class ThemeUtils {
     }
 
     public List<String> getOverlayPackagesForCategory(String category) {
+        return getOverlayPackagesForCategory(category, "android");
+    }
+
+    public List<String> getOverlayPackagesForCategory(String category, String target) {
         List<String> overlays = new ArrayList<>();
         overlays.add("android");
-        for (OverlayInfo info : getOverlayInfos(category)) {
+        for (OverlayInfo info : getOverlayInfos(category, target)) {
             if (category.equals(info.getCategory())) {
                 overlays.add(info.getPackageName());
             }
@@ -132,10 +136,14 @@ public class ThemeUtils {
     }
 
     public List<OverlayInfo> getOverlayInfos(String category) {
+        return getOverlayInfos(category, "android");
+    }
+
+    public List<OverlayInfo> getOverlayInfos(String category, String target) {
         final List<OverlayInfo> filteredInfos = new ArrayList<>();
         try {
             List<OverlayInfo> overlayInfos = mOverlayManager
-                    .getOverlayInfosForTarget("android", USER_SYSTEM);
+                    .getOverlayInfosForTarget(target, USER_SYSTEM);
             for (OverlayInfo overlayInfo : overlayInfos) {
                 if (category.equals(overlayInfo.category)) {
                     filteredInfos.add(overlayInfo);
