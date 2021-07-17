@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a21677d1_82675bb9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-07-17T16:11:27Z",
+      "side": 1,
+      "message": "please check it",
+      "revId": "df55ba5ed30d3a938f5d7a6c6d18c6d3946fe7d9",
+      "serverId": "692a3d4a-6cfc-41d4-b12b-cb9542eed61e"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "545b8ff3_9a0646d2",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/notification/stack/NotificationSectionsManager.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-07-17T16:11:27Z",
+      "side": 1,
+      "message": "Does it break incoming header?",
+      "revId": "df55ba5ed30d3a938f5d7a6c6d18c6d3946fe7d9",
+      "serverId": "692a3d4a-6cfc-41d4-b12b-cb9542eed61e"
+    }
+  ]
+}
