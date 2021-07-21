@@ -153,6 +153,8 @@ public final class ClockManager {
         addBuiltinClock(() -> new BinaryClockController(res, layoutInflater, colorExtractor, context));
         addBuiltinClock(() -> new BubbleClockController(res, layoutInflater, colorExtractor, context));
         addBuiltinClock(() -> new ClockertinoClockController(res, layoutInflater, colorExtractor));
+        addBuiltinClock(() -> new CustomAnalogClock(res, layoutInflater, colorExtractor));
+        addBuiltinClock(() -> new DeadpoolClock(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new DefaultClockController(res, layoutInflater, colorExtractor, context));
         addBuiltinClock(() -> new DefaultBoldClockController(res, layoutInflater, colorExtractor, context));
         addBuiltinClock(() -> new DividedLinesClockController(res, layoutInflater, colorExtractor, context));
@@ -173,6 +175,7 @@ public final class ClockManager {
         addBuiltinClock(() -> new SfunyClockController(res, layoutInflater, colorExtractor, context));
         addBuiltinClock(() -> new ShapeShiftClockController(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new SpectrumClockController(res, layoutInflater, colorExtractor, context));
+        addBuiltinClock(() -> new SpoidermonClock(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new TypeAltClockController(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new TypeClockAltController(res, layoutInflater, colorExtractor, context));
         addBuiltinClock(() -> new TypeClockController(res, layoutInflater, colorExtractor, context));
