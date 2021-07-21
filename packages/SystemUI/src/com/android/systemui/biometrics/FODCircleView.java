@@ -627,6 +627,8 @@ public class FODCircleView extends ImageView implements ConfigurationListener, T
 
         setImageResource(ICON_STYLES[mSelectedIcon]);
 
+        setPadding(15,15,15,15);
+
         updatePosition();
 
         setVisibility(View.VISIBLE);
