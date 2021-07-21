@@ -176,6 +176,9 @@ public final class ClockManager {
         addBuiltinClock(() -> new TypeAltClockController(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new TypeClockAltController(res, layoutInflater, colorExtractor, context));
         addBuiltinClock(() -> new TypeClockController(res, layoutInflater, colorExtractor, context));
+        addBuiltinClock(() -> new SpoidermonClock(res, layoutInflater, colorExtractor));
+        addBuiltinClock(() -> new DeadpoolClock(res, layoutInflater, colorExtractor));
+        addBuiltinClock(() -> new CustomAnalogClock(res, layoutInflater, colorExtractor));
 
         // Store the size of the display for generation of clock preview.
         DisplayMetrics dm = res.getDisplayMetrics();
