@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/romLogoView"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
         android:layout_gravity="bottom|right"
-        android:layout_marginRight="-90dp"
+        android:layout_marginRight="-60dp"
         android:src="@drawable/gradient_fire_rom_logo"
         android:alpha="0.36"
         android:tint="?attr/wallpaperTextColor" />
