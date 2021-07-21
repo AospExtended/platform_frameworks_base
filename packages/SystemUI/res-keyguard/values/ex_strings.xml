@@ -34,7 +34,7 @@
     <string name="custom_clock_month_title">Month</string>
     <string name="custom_clock_year_title">Year</string>
     <string name="ide_java_comment">Show the date for once, the user is curious</string>
-    <string name="gradient_fire_bottom_text" formatted="false" translatable="false">家 • %1$s</string>
+    <string name="gradient_fire_bottom_text" formatted="false" translatable="false">%1$s</string>
     <string name="salute_fallback">Hello</string>
     <string name="salute_morning">Good morning</string>
     <string name="salute_evening">Good evening</string>
