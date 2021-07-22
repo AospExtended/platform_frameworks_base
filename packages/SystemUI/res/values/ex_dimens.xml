@@ -34,6 +34,10 @@
     <dimen name="status_bar_battery_bigcircle_icon_height">20.5dp</dimen>
      <!-- Width of the big battery circle icon in the status bar. -->
     <dimen name="status_bar_battery_bigcircle_icon_width">20.5dp</dimen>
+    <!-- Height of the landscape battery icon in the status bar. -->
+    <dimen name="status_bar_battery_icon_height_landscape">12.5dp</dimen>
+    <!-- Width of the landscape battery icon in the status bar. -->
+    <dimen name="status_bar_battery_icon_width_landscape">24dp</dimen>
 
     <!-- Old style mobile data indicators -->
     <dimen name="status_bar_mobile_signal_with_type_width">18dp</dimen>
