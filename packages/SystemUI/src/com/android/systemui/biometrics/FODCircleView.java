@@ -136,6 +136,7 @@ public class FODCircleView extends ImageView implements ConfigurationListener, T
     private int mSelectedIcon = 0;
     private final int[] ICON_STYLES = {
         R.drawable.fod_icon_default,
+        R.drawable.fod_icon_aex,
         R.drawable.fod_icon_default_1,
         R.drawable.fod_icon_default_2,
         R.drawable.fod_icon_default_3,
