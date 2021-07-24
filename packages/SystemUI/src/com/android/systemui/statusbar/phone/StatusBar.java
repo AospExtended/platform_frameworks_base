@@ -144,6 +144,7 @@ import com.android.internal.logging.UiEventLoggerImpl;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.statusbar.IStatusBarService;
 import com.android.internal.statusbar.RegisterStatusBarResult;
+import com.android.internal.statusbar.ThemeAccentUtils;
 import com.android.internal.view.AppearanceRegion;
 import com.android.internal.util.hwkeys.ActionConstants;
 import com.android.internal.util.hwkeys.ActionUtils;
@@ -159,6 +160,7 @@ import com.android.systemui.AutoReinflateContainer;
 import com.android.systemui.DejankUtils;
 import com.android.systemui.Dependency;
 import com.android.systemui.DemoMode;
+import com.android.systemui.Dependency;
 import com.android.systemui.Dumpable;
 import com.android.systemui.EventLogTags;
 import com.android.systemui.InitController;
@@ -166,6 +168,7 @@ import com.android.systemui.Prefs;
 import com.android.systemui.R;
 import com.android.systemui.SystemUI;
 import com.android.systemui.SystemUIFactory;
+import com.android.systemui.UiOffloadThread;
 import com.android.systemui.assist.AssistManager;
 import com.android.systemui.biometrics.FODCircleViewImpl;
 import com.android.systemui.biometrics.FODCircleViewImplCallback;
@@ -694,6 +697,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     private CurrentUserTracker mUserTracker;
     protected boolean mPanelExpanded;
     private IOverlayManager mOverlayManager;
+    private final UiOffloadThread mUiOffloadThread = Dependency.get(UiOffloadThread.class);
     private UiModeManager mUiModeManager;
     protected boolean mIsKeyguard;
     private LogMaker mStatusBarStateLog;
@@ -744,6 +748,8 @@ public class StatusBar extends SystemUI implements DemoMode,
     private final IFingerprintService mFingerprintService;
 
     private ActivityIntentHelper mActivityIntentHelper;
+
+    private int mRoundedStyle;
 
     /**
      * Public constructor for StatusBar.
@@ -3783,6 +3789,12 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     }
 
+    private void updateRoundedStyle() {
+        mUiOffloadThread.execute(() -> {
+            ThemeAccentUtils.setRoundedStyle(mOverlayManager, mRoundedStyle, mContext.getUserId());
+        });
+    }
+
     private void updateDozingState() {
         Trace.traceCounter(Trace.TRACE_TAG_APP, "dozing", mDozing ? 1 : 0);
         Trace.beginSection("StatusBar#updateDozingState");
@@ -4585,6 +4597,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_TILE_TITLE_VISIBILITY),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.BERRY_ROUNDED_STYLE),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -4621,6 +4636,8 @@ public class StatusBar extends SystemUI implements DemoMode,
                     uri.equals(Settings.System.getUriFor(Settings.System.QS_COLUMNS_LANDSCAPE)) ||
                     uri.equals(Settings.System.getUriFor(Settings.System.QS_TILE_TITLE_VISIBILITY))) {
                 updateQsPanelResources();
+            } else if (uri.equals(Settings.System.getUriFor(Settings.System.BERRY_ROUNDED_STYLE))) {
+                updateCorners();
             }
             update();
         }
@@ -4735,6 +4752,15 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     }
 }
+
+    private void updateCorners() {
+        int roundedStyle = Settings.System.getIntForUser(mContext.getContentResolver(),
+                         Settings.System.BERRY_ROUNDED_STYLE, 0, UserHandle.USER_CURRENT);
+        if (mRoundedStyle != roundedStyle) {
+            mRoundedStyle = roundedStyle;
+            updateRoundedStyle();
+        }
+    }
 
     private void setGamingMode() {
         mGamingModeActivated = Settings.System.getIntForUser(mContext.getContentResolver(),
