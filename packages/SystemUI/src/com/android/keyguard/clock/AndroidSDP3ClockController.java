@@ -367,6 +367,8 @@ public class AndroidSDP3ClockController implements ClockPlugin {
 
     @Override
     public void onTimeTick() {
+        mView.onTimeChanged();
+        mClock.refreshTime();
     }
 
     @Override
