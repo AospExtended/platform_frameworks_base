@@ -3164,7 +3164,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
         out.writeString(mCharacters);
     }
 
-    /* @hide */
+    /** @hide */
     public boolean equals(KeyEvent other) {
         return other != null
                 && mId == other.mId
