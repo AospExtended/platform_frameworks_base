@@ -20,25 +20,21 @@ import static android.app.Notification.safeCharSequence;
 import static android.provider.Settings.ACTION_MEDIA_CONTROLS_SETTINGS;
 
 import android.app.PendingIntent;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Outline;
 import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 import android.media.session.MediaController;
 import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
-import android.net.Uri;
 import android.provider.Settings;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
-import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -48,7 +44,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.UiThread;
 import androidx.constraintlayout.widget.ConstraintSet;
 
-import com.android.internal.util.ImageUtils;
 import com.android.settingslib.Utils;
 import com.android.settingslib.widget.AdaptiveIcon;
 import com.android.systemui.R;
@@ -102,7 +97,6 @@ public class MediaControlPanel {
     // This will provide the corners for the album art.
     private final ViewOutlineProvider mViewOutlineProvider;
     private final MediaOutputDialogFactory mMediaOutputDialogFactory;
-    private ViewOutlineProvider mBackgroundOutlineProvider;
 
     /**
      * Initialize a new control panel
@@ -240,8 +234,8 @@ public class MediaControlPanel {
         ConstraintSet collapsedSet = mMediaViewController.getCollapsedLayout();
 
         boolean backgroundArtwork = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.ARTWORK_MEDIA_BACKGROUND, 0) != 0;
-        ImageView backgroundImage = (ImageView) mViewHolder.getPlayer().findViewById(R.id.bg_album_art);
+                Settings.System.ARTWORK_MEDIA_BACKGROUND, 0) == 1;
+        ImageView backgroundImage = mViewHolder.getPlayer().findViewById(R.id.bg_album_art);
 
         mViewHolder.getPlayer().setBackgroundTintList(
                 ColorStateList.valueOf(mBackgroundColor));
@@ -256,30 +250,24 @@ public class MediaControlPanel {
         }
 
         ImageView albumView = mViewHolder.getAlbumView();
-        boolean hasArtwork = data.getArtwork() != null;
+        Icon artwork = data.getArtwork();
+        boolean hasArtwork = artwork != null;
         if (hasArtwork) {
-            Drawable artwork = scaleDrawable(data.getArtwork());
-            albumView.setImageDrawable(artwork);
+            albumView.setImageDrawable(scaleDrawable(artwork));
         }
         setVisibleAndAlpha(collapsedSet, R.id.album_art, hasArtwork && !backgroundArtwork);
         setVisibleAndAlpha(expandedSet, R.id.album_art, hasArtwork && !backgroundArtwork);
 
-        DisplayMetrics metrics = new DisplayMetrics();
-        WindowManager wm = mContext.getSystemService(WindowManager.class);
-        wm.getDefaultDisplay().getRealMetrics(metrics);
-        int maxWidth = metrics.widthPixels;
-
         if (hasArtwork) {
-            backgroundImage.setImageDrawable(ImageUtils.resize(mContext, data.getArtwork().loadDrawable(mContext), maxWidth));
-            backgroundImage.setImageAlpha(120);
-            mBackgroundOutlineProvider = new ViewOutlineProvider() {
+            backgroundImage.setImageDrawable(artwork.loadDrawable(mContext));
+            backgroundImage.setClipToOutline(true);
+            backgroundImage.setOutlineProvider(new ViewOutlineProvider() {
                 @Override
                 public void getOutline(View view, Outline outline) {
-                    outline.setRoundRect(0, 0, backgroundImage.getWidth(), backgroundImage.getHeight(), mAlbumArtRadius);
+                    outline.setRoundRect(0, 0, backgroundImage.getWidth(),
+                        backgroundImage.getHeight(), mAlbumArtRadius);
                 }
-            };
-            backgroundImage.setClipToOutline(true);
-            backgroundImage.setOutlineProvider(mBackgroundOutlineProvider);
+            });
         }
         setVisibleAndAlpha(collapsedSet, R.id.bg_album_art, backgroundArtwork);
         setVisibleAndAlpha(expandedSet, R.id.bg_album_art, backgroundArtwork);
