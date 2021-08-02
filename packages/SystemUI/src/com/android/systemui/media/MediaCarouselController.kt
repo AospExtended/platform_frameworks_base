@@ -1,10 +1,16 @@
 package com.android.systemui.media
 
+import android.content.ContentResolver
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
+import android.database.ContentObserver
 import android.graphics.Color
-import android.provider.Settings.ACTION_MEDIA_CONTROLS_SETTINGS
+import android.net.Uri
+import android.os.Handler
+import android.os.Looper
+import android.os.UserHandle
+import android.provider.Settings
 import android.util.Log
 import android.util.MathUtils
 import android.view.LayoutInflater
@@ -29,7 +35,7 @@ import javax.inject.Provider
 import javax.inject.Singleton
 
 private const val TAG = "MediaCarouselController"
-private val settingsIntent = Intent().setAction(ACTION_MEDIA_CONTROLS_SETTINGS)
+private val settingsIntent = Intent().setAction(Settings.ACTION_MEDIA_CONTROLS_SETTINGS)
 
 /**
  * Class that is responsible for keeping the view carousel up to date.
@@ -146,6 +152,11 @@ class MediaCarouselController @Inject constructor(
         }
     }
 
+    private var contentResolver: ContentResolver
+    private val settingsObserver = SettingsObserver(context)
+    private var backgroundArtwork: Boolean = false
+    private var artworkFadeLevel: Int = 30
+
     init {
         mediaFrame = inflateMediaCarousel()
         mediaCarousel = mediaFrame.requireViewById(R.id.media_carousel_scroller)
@@ -171,6 +182,8 @@ class MediaCarouselController @Inject constructor(
         }
         visualStabilityManager.addReorderingAllowedCallback(visualStabilityCallback,
                 true /* persistent */)
+        contentResolver = context.getContentResolver()
+        settingsObserver.observe()
         mediaManager.addListener(object : MediaDataManager.Listener {
             override fun onMediaDataLoaded(key: String, oldKey: String?, data: MediaData) {
                 addOrUpdatePlayer(key, oldKey, data)
@@ -250,12 +263,14 @@ class MediaCarouselController @Inject constructor(
             val lp = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT)
             newPlayer.view?.player?.setLayoutParams(lp)
+            newPlayer.updateBgArtworkParams(backgroundArtwork, artworkFadeLevel)
             newPlayer.bind(data, key)
             newPlayer.setListening(currentlyExpanded)
             MediaPlayerData.addMediaPlayer(key, data, newPlayer)
             updatePlayerToState(newPlayer, noAnimation = true)
             reorderAllPlayers()
         } else {
+            existingPlayer.updateBgArtworkParams(backgroundArtwork, artworkFadeLevel)
             existingPlayer.bind(data, key)
             MediaPlayerData.addMediaPlayer(key, data, existingPlayer)
             if (visualStabilityManager.isReorderingAllowed) {
@@ -487,6 +502,39 @@ class MediaCarouselController @Inject constructor(
             mediaCarousel.layout(0, 0, width, mediaCarousel.measuredHeight)
             // Update the padding after layout; view widths are used in RTL to calculate scrollX
             mediaCarouselScrollHandler.playerWidthPlusPadding = playerWidthPlusPadding
+        }
+    }
+
+    inner class SettingsObserver: ContentObserver {
+        private val ARTWORK_MEDIA_BACKGROUND_URI = Settings.System.getUriFor(
+            Settings.System.ARTWORK_MEDIA_BACKGROUND)
+        private val ARTWORK_MEDIA_FADE_LEVEL_URI = Settings.System.getUriFor(
+            Settings.System.ARTWORK_MEDIA_FADE_LEVEL)
+
+        constructor(context: Context): super(Handler(Looper.getMainLooper()))
+
+        fun observe() {
+            update()
+            contentResolver.registerContentObserver(ARTWORK_MEDIA_BACKGROUND_URI,
+                false, this, UserHandle.USER_CURRENT)
+            contentResolver.registerContentObserver(ARTWORK_MEDIA_FADE_LEVEL_URI,
+                false, this, UserHandle.USER_CURRENT)
+        }
+
+        fun unobserve() {
+            contentResolver.unregisterContentObserver(this);
+        }
+
+        override fun onChange(selfChange: Boolean, uri: Uri) {
+            update()
+            recreatePlayers()
+        }
+
+        private fun update() {
+            backgroundArtwork = Settings.System.getInt(contentResolver,
+                Settings.System.ARTWORK_MEDIA_BACKGROUND, 0) == 1;
+            artworkFadeLevel = Settings.System.getInt(contentResolver,
+                Settings.System.ARTWORK_MEDIA_FADE_LEVEL, 30);
         }
     }
 }
