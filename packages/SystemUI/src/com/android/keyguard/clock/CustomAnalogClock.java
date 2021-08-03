@@ -140,7 +140,9 @@ public class CustomAnalogClock implements ClockPlugin {
 
     @Override
     public Bitmap getPreview(int width, int height) {
-
+        if (mView == null) {
+            createViews();
+        }
         // Initialize state of plugin before generating preview.
         setDarkAmount(1f);
         setTextColor(Color.WHITE);
@@ -149,7 +151,7 @@ public class CustomAnalogClock implements ClockPlugin {
         setColorPalette(colors.supportsDarkText(), colors.getColorPalette());
         onTimeTick();
 
-        return mRenderer.createPreview(getView(), width, height);
+        return mRenderer.createPreview(mView, width, height);
     }
 
     @Override
