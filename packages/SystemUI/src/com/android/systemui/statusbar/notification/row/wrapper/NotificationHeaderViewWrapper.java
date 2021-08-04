@@ -22,6 +22,8 @@ import android.app.AppOpsManager;
 import android.app.Notification;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.util.ArraySet;
 import android.view.NotificationHeaderView;
 import android.view.View;
@@ -77,6 +79,8 @@ public class NotificationHeaderViewWrapper extends NotificationViewWrapper {
     private boolean mShowExpandButtonAtEnd;
     private Context mContext;
 
+    boolean NewIconStyle;
+
     protected NotificationHeaderViewWrapper(Context ctx, View view, ExpandableNotificationRow row) {
         super(ctx, view, row);
         mContext = ctx;
@@ -112,6 +116,9 @@ public class NotificationHeaderViewWrapper extends NotificationViewWrapper {
                 }, TRANSFORMING_VIEW_TITLE);
         resolveHeaderViews();
         addAppOpsOnClickListener(row);
+
+        NewIconStyle = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.STATUSBAR_ICONS_STYLE, 0, UserHandle.USER_CURRENT) == 1;
     }
 
     protected void resolveHeaderViews() {
@@ -179,12 +186,16 @@ public class NotificationHeaderViewWrapper extends NotificationViewWrapper {
         updateCropToPaddingForImageViews();
         Notification notification = row.getEntry().getSbn().getNotification();
 
-        String pkgname = row.getEntry().getSbn().getPackageName();
-        Drawable icon = null;
-        try {
-            icon = mContext.getPackageManager().getApplicationIcon(pkgname);
-            mIcon.setImageDrawable(icon);
-        } catch (android.content.pm.PackageManager.NameNotFoundException e) {
+        if (!NewIconStyle) {
+            mIcon.setTag(ImageTransformState.ICON_TAG, notification.getSmallIcon());
+        } else {
+            String pkgname = row.getEntry().getSbn().getPackageName();
+            Drawable icon = null;
+                try {
+                    icon = mContext.getPackageManager().getApplicationIcon(pkgname);
+                    mIcon.setImageDrawable(icon);
+                } catch (android.content.pm.PackageManager.NameNotFoundException e) {
+            }
         }
         mWorkProfileImage.setImageIcon(notification.getSmallIcon());
         mIcon.setTag(ImageTransformState.ICON_TAG,notification.getSmallIcon());
