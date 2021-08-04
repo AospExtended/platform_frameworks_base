@@ -542,7 +542,7 @@ public class KeyguardIndicationController implements StateListener,
     }
 
     private void updateChargingIndication() {
-        if (mChargingIndication > 0 && !mDozing && mBatteryPresent && mPowerPluggedIn) {
+        if (mChargingIndication > 0 && mBatteryPresent && mPowerPluggedIn) {
             mChargingIndicationView.setVisibility(View.VISIBLE);
             mChargingIndicationView.playAnimation();
         } else {
