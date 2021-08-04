@@ -176,7 +176,7 @@ public class NotificationIconContainer extends AlphaOptimizedFrameLayout {
     private View mIsolatedIconForAnimation;
 
         boolean NewIconStyle = Settings.System.getIntForUser(getContext().getContentResolver(),
-                Settings.System.STATUSBAR_ICONS_STYLE, 1, UserHandle.USER_CURRENT) == 1;
+                Settings.System.STATUSBAR_ICONS_STYLE, 0, UserHandle.USER_CURRENT) == 1;
 
     public NotificationIconContainer(Context context, AttributeSet attrs) {
         super(context, attrs);

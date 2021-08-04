@@ -125,7 +125,7 @@ public class NotificationIconAreaController implements DarkReceiver,
         reloadAodColor();
 
     NewIconStyle = Settings.System.getIntForUser(mContext.getContentResolver(),
-            Settings.System.STATUSBAR_ICONS_STYLE, 1, UserHandle.USER_CURRENT) == 1;
+            Settings.System.STATUSBAR_ICONS_STYLE, 0, UserHandle.USER_CURRENT) == 1;
 
     }
 
