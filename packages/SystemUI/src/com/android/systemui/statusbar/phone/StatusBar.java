@@ -605,8 +605,6 @@ public class StatusBar extends SystemUI implements DemoMode,
     private VisualizerView mVisualizerView;
     private VolumePluginManager mVolumePluginManager;
 
-    private int mChargingAnimation;
-
     private boolean mWallpaperSupportsAmbientMode;
     private final BroadcastReceiver mWallpaperChangedReceiver = new BroadcastReceiver() {
         @Override
@@ -4661,9 +4659,6 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_DATAUSAGE),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.LOCKSCREEN_CHARGING_ANIMATION_STYLE),
-                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -4707,8 +4702,6 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(Settings.System.SWITCH_STYLE))) {
                 stockSwitchStyle();
                 updateSwitchStyle();
-            } else if (uri.equals(Settings.System.getUriFor(Settings.System.LOCKSCREEN_CHARGING_ANIMATION_STYLE))) {
-                updateChargingAnimation();
             }
             update();
         }
@@ -4727,7 +4720,6 @@ public class StatusBar extends SystemUI implements DemoMode,
             setGamingMode();
             handleCutout(null);
             updateQsPanelResources();
-            updateChargingAnimation();
         }
     }
 
@@ -4824,14 +4816,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     }
 }
-
-    private void updateChargingAnimation() {
-        mChargingAnimation = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.LOCKSCREEN_CHARGING_ANIMATION_STYLE, 1, UserHandle.USER_CURRENT);
-        if (mKeyguardIndicationController != null) {
-            mKeyguardIndicationController.updateChargingIndication(mChargingAnimation);
-        }
-    }
 
     private void updateCorners() {
         int roundedStyle = Settings.System.getIntForUser(mContext.getContentResolver(),
