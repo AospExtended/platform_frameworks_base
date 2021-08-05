@@ -44,6 +44,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.UiThread;
 import androidx.constraintlayout.widget.ConstraintSet;
 
+import com.android.internal.graphics.ColorUtils;
 import com.android.settingslib.Utils;
 import com.android.settingslib.widget.AdaptiveIcon;
 import com.android.systemui.R;
@@ -235,6 +236,9 @@ public class MediaControlPanel {
 
         boolean backgroundArtwork = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.ARTWORK_MEDIA_BACKGROUND, 0) == 1;
+        int artworkFadeLevel = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.ARTWORK_MEDIA_FADE_LEVEL, 30);
+
         ImageView backgroundImage = mViewHolder.getPlayer().findViewById(R.id.bg_album_art);
 
         mViewHolder.getPlayer().setBackgroundTintList(
@@ -268,6 +272,11 @@ public class MediaControlPanel {
                         backgroundImage.getHeight(), mAlbumArtRadius);
                 }
             });
+            if (backgroundArtwork) {
+                int extraTint = ColorUtils.setAlphaComponent(mBackgroundColor, artworkFadeLevel * 255 / 100);
+                extraTint = ColorUtils.blendARGB(extraTint, android.graphics.Color.BLACK, Math.min(artworkFadeLevel / 100f, 0.5f));
+                backgroundImage.setColorFilter(extraTint, android.graphics.PorterDuff.Mode.SRC_ATOP);
+            }
         }
         setVisibleAndAlpha(collapsedSet, R.id.bg_album_art, backgroundArtwork);
         setVisibleAndAlpha(expandedSet, R.id.bg_album_art, backgroundArtwork);
