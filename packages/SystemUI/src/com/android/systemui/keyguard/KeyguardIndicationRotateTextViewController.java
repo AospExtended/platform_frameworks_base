@@ -105,8 +105,12 @@ public class KeyguardIndicationRotateTextViewController extends
             // temporarily don't show here, instead use AmbientContainer b/181049781
             return;
         }
+
         final boolean hasPreviousIndication = mIndicationMessages.get(type) != null;
         final boolean hasNewIndication = newIndication != null;
+
+        mView.setAnimationsEnabled(!hasPreviousIndication);
+
         if (!hasNewIndication) {
             mIndicationMessages.remove(type);
             mIndicationQueue.removeIf(x -> x == type);
