@@ -609,7 +609,7 @@ public class KeyguardIndicationController implements StateListener,
         if (showbatteryInfo) {
             if (mChargingCurrent > 0) {
                 current = (mChargingCurrent < 5 ? (mChargingCurrent * 1000)
-                        : (mChargingCurrent < 4000 ? mChargingCurrent : (mChargingCurrent / 1000)));
+                        : (mChargingCurrent < 7000 ? mChargingCurrent : (mChargingCurrent / 1000)));
                 batteryInfo = batteryInfo + current + "mA";
             }
             if (mChargingVoltage > 0 && mChargingCurrent > 0) {
