@@ -122,6 +122,9 @@ public class KeyguardIndicationRotateTextViewController extends
         final boolean hasPreviousIndication = mIndicationMessages.get(type) != null
                 && !TextUtils.isEmpty(mIndicationMessages.get(type).getMessage());
         final boolean hasNewIndication = newIndication != null;
+
+        mView.setAnimationsEnabled(!hasPreviousIndication);
+
         if (!hasNewIndication) {
             mIndicationMessages.remove(type);
             mIndicationQueue.removeIf(x -> x == type);
