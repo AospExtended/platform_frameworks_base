@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2015-2018 AospExtended
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="aerr_copy">Çökmə jurnal URL-sini kopyala</string>
+    <string name="url_copy_success">URL uğurla kopyalandı</string>
+    <string name="url_copy_failed">Jurnalı dogbin-ə yükləyərkən xəta baş verdi</string>
+    <string name="reboot_title">Yenidən başlat</string>
+    <string name="reboot_message">Sistem yenidən başladılır</string>
+    <string name="notification_channel_gaming">Oyun rejimi</string>
+    <string name="gaming_mode_notification_title">Oyun rejimi fəaldır</string>
+    <string name="gaming_mode_notification_content">Oyun rejimini bağlamaq üçün toxunun</string>
+    <string name="gaming_mode_enabled_toast">Oyun rejimi açıldı</string>
+    <string name="gaming_mode_disabled_toast">Oyun rejimi bağlanıldı</string>
+    <string name="permlab_fakePackageSignature">Saxta paket imzası</string>
+    <string name="permdesc_fakePackageSignature">Tətbiqetmənin özünü başqa bir tətbiq kimi göstərməsinə icazə verir. Zərərli tətbiqlər bundan faydalanaraq özəl tətbiq verilənlərinə müraciət edə bilər. Qanuni istifadəyə təqlid edildiyi kimi görünən bir emulyator da daxildir. İcazə verərkən diqqətli olun!</string>
+    <string name="permgrouplab_fake_package_signature">Saxta paket imzası</string>
+    <string name="permgroupdesc_fake_package_signature">paket imzasını təqlid etməyə icazə ver</string>
+    <string name="permgrouprequest_fake_package_signature">&lt;b&gt;<xliff:g id="app_name" example="Gmail">%1$s</xliff:g>&lt;/b&gt; paket imzasını təqlid etməyə icazə verilsin?</string>
+    <string name="pocket_lock_message_long_press">Qarşılıqlı təsir üçün güc düyməsinə uzun basın</string>
+    <string name="live_display_auto">Avtomatik</string>
+    <string name="live_display_auto_summary">Gün çıxandan və batandan sonra ekranın rəng hərarətini avtomatik tənzimləyər</string>
+    <string name="live_display_off">Bağlı</string>
+    <string name="live_display_off_summary">Bütün nizamlamaları sıradan çıxart</string>
+    <string name="live_display_day">Gündüz</string>
+    <string name="live_display_day_summary">Yalnız gündüz tənzm. istifadə et</string>
+    <string name="live_display_night">Gecə</string>
+    <string name="live_display_night_summary">Yalnız gecə tənzm. istifadə et</string>
+    <string name="live_display_outdoor">Açıq hava (parlaq günəş)</string>
+    <string name="live_display_outdoor_summary">Yalnız açıq hava tənzm. istifadə et</string>
+    <string name="live_display_hint">LiveDisplay göz yorğunluğunuzu azaldıb, gecələr yuxulamağınıza kömək edə bilər. Sınamaq üçün bura klikləyin!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay bağlıdır.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: avtomatik rejim.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: gündüz rejimi.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: gecə rejimi.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: açıq hava rejimi.</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay bağlıdır.</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay avtomatik rejimə keçdi.</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay gündüz rejiminə keçdi.</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay gecə rejiminə keçdi.</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay açıq hava rejiminə keçdi.</string>
+    <string name="pocket_view_title">Cib rejimi açıqdır</string>
+    <string name="pocket_view_title_cancel">Telefonunuzu aktivləşdirmək üçün:</string>
+    <string name="pocket_view_top_tag_cancel">Telefonunuzun mavi sahəsini örtməyin və bütün kir və ya tozları təmizləyin.</string>
+    <string name="pocket_view_top_tag_cancel2">Cib rejimindən çıxmağa məcbur etmək üçün gec düyməsinə uzun basın</string>
+    <string name="pocket_view_top_tag_number1">1.\u0020</string>
+    <string name="pocket_view_top_tag_number2">2.\u0020</string>
+</resources>

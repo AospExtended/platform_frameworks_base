@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2019, AospExtended ROM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="statusbar_items_title">ไอคอนแถบสถานะ</string>
+    <string name="lockscreen_default">ค่าเริ่มต้น</string>
+    <string name="lockscreen_hidden">ไม่มี</string>
+    <string name="custom_hint">ปัดไอคอนเพื่อเปิดใช้งาน</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="quick_settings_caffeine_label">โหมดคาเฟอีน</string>
+    <string name="accessibility_quick_settings_caffeine_off">ปิดโหมดคาเฟอีน</string>
+    <string name="accessibility_quick_settings_caffeine_on">คาเฟอีนเปิดอยู่</string>
+    <string name="quick_settings_ambient_display_label">หน้าจอแอมเบียนท์</string>
+    <string name="accessibility_quick_settings_ambient_display_off">ปิดการแจ้งเตือนแบบแอมเบียนท์</string>
+    <string name="accessibility_quick_settings_ambient_display_on">เปิดหน้าจอแอมเบียนท์</string>
+    <string name="quick_settings_usb_tether_label">ปล่อยสัญญาณผ่าน USB</string>
+    <string name="quick_settings_sync_label">ซิงก์ข้อมูล</string>
+    <string name="accessibility_quick_settings_sync_off">ปิดการซิงก์</string>
+    <string name="accessibility_quick_settings_sync_on">เปิดการซิงก์</string>
+    <string name="accessibility_quick_settings_sync_changed_off">การซิงค์ปิดอยู่</string>
+    <string name="accessibility_quick_settings_sync_changed_on">การซิงค์เปิดอยู่</string>
+    <string name="quick_settings_location_secondary_battery_saving">ประหยัดแบตเตอรี่</string>
+    <string name="accessibility_quick_settings_location_battery_saving">การระบุตำแหน่ง: โหมดประหยัดพลังงาน</string>
+    <string name="quick_settings_location_secondary_gps_only">เซนเซอร์เท่านั้น</string>
+    <string name="accessibility_quick_settings_location_gps_only">การระบุตำแหน่ง: โหมดเซนเซอร์เท่านั้น</string>
+    <string name="quick_settings_location_secondary_high_accuracy">ความแม่นยำสูง</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">การระบุตำแหน่ง: โหมดความแม่นยำสูง</string>
+    <string name="global_action_restart_advanced">ขั้นสูง</string>
+    <string name="global_action_restart_recovery">กู้คืนระบบ</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">Ui ของระบบ</string>
+    <string name="quick_settings_sound_label">เสียง</string>
+    <string name="quick_settings_sound_ring">เสียงเรียกเข้า</string>
+    <string name="quick_settings_sound_vibrate">สั่น</string>
+    <string name="quick_settings_sound_dnd">ห้าม​รบกวน</string>
+    <string name="quick_settings_screenshot_label">จับภาพหน้าจอ</string>
+    <string name="quick_settings_region_screenshot_label">จับภาพหน้าจอบางส่วน</string>
+    <string name="quick_settings_heads_up_label">การแจ้งเตือนด้านบน</string>
+    <string name="accessibility_quick_settings_heads_up_off">ปิดแจ้งเตือนด้านบน</string>
+    <string name="accessibility_quick_settings_heads_up_on">เปิดแจ้งเตือนด้านบน</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">ปิดการแจ้งเตือนด้านบน</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">เปิดการแจ้งเตือนด้านบน</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="ข้อความ">%s</xliff:g> - ซ่อนการแจ้งเตือน เป็นเวลา 1 นาที</string>
+    <string name="accessibility_quick_settings_running_services">เปิดหน้าจอ Running Services</string>
+    <string name="force_stop_dlg_title">บังคับให้หยุด</string>
+    <string name="force_stop_dlg_text">หากคุณบังคับปิดแอปพลิเคชัน อาจทำให้การทำงานผิดพลาดได้.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+</resources>

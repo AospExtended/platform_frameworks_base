@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2015-2018 AospExtended
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="aerr_copy">Копировать URL краш-лога</string>
+    <string name="url_copy_success">URL скопирован успешно</string>
+    <string name="url_copy_failed">Произошла ошибка при загрузке лога на dogbin</string>
+    <string name="reboot_title">Перезагрузить</string>
+    <string name="reboot_message">Перезагрузка системы</string>
+    <string name="notification_channel_gaming">Игровой режим</string>
+    <string name="gaming_mode_notification_title">Игровой режим включен</string>
+    <string name="gaming_mode_notification_content">Нажмите, чтобы отключить Игровой режим</string>
+    <string name="gaming_mode_enabled_toast">Игровой режим включен</string>
+    <string name="gaming_mode_disabled_toast">Игровой режим выключен</string>
+    <string name="permlab_fakePackageSignature">Подмена подписи пакета</string>
+    <string name="permdesc_fakePackageSignature">Позволять приложениям притворяться различными приложениями. Вредоносные приложения могут пользоваться этим для доступа к личным данным. Используйте внутри эмулятора чтобы понять чем притворяются приложения. Используйте на свой страх и риск!</string>
+    <string name="permgrouplab_fake_package_signature">Разрешить подмену подписи</string>
+    <string name="permgroupdesc_fake_package_signature">Разрешить подделку подписи пакета</string>
+    <string name="permgrouprequest_fake_package_signature">Разрешить
+&lt;b&gt;<xliff:g id="app_name" example="Gmail">%1$s</xliff:g>&lt;/b&gt;
+подмену подписи?</string>
+    <string name="pocket_lock_message_long_press">Долгое нажатие кнопки питания для взаимодействия</string>
+    <string name="live_display_auto">Автоматически</string>
+    <string name="live_display_auto_summary">Автоматически регулировать температуру цвета после заката и восхода солнца</string>
+    <string name="live_display_off">Выкл.</string>
+    <string name="live_display_off_summary">Отключить все улучшения</string>
+    <string name="live_display_day">День</string>
+    <string name="live_display_day_summary">Использовать только дневные настройки</string>
+    <string name="live_display_night">Ночь</string>
+    <string name="live_display_night_summary">Использовать только ночные настройки</string>
+    <string name="live_display_outdoor">На улице (яркое солнце)</string>
+    <string name="live_display_outdoor_summary">Только режим \"При ярком солнце\"</string>
+    <string name="live_display_hint">LiveDisplay помогает снизить напряжение глаз и улучшает ночной сон. Нажмите здесь, чтобы попробовать!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay выкл.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: авто.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: день.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: ночь.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: улица.</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay выключен.</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay переключён в автоматический режим.</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay переключен в дневной режим.</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay переключён на ночной режим.</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay переключен в режим «улица».</string>
+    <string name="pocket_view_title">Режим \"в кармане\" включен</string>
+    <string name="pocket_view_title_cancel">Для активации телефона:</string>
+    <string name="pocket_view_top_tag_cancel">Не закрывайте синюю область вашего телефона и очистите любую грязь или пыль.</string>
+    <string name="pocket_view_top_tag_cancel2">Долгое нажатие кнопки питания для принудительного выхода из режима \"В кармане\"</string>
+    <string name="pocket_view_top_tag_number1">1.\u0020</string>
+    <string name="pocket_view_top_tag_number2">2.\u0020</string>
+</resources>

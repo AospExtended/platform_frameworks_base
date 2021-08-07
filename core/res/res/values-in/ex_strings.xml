@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2015-2018 AospExtended
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="aerr_copy">Salin riwayat kerusakan URL</string>
+    <string name="url_copy_success">URL berhasil disalin</string>
+    <string name="url_copy_failed">Terjadi kesalahan pada saat mengunggah log ke dogbin</string>
+    <string name="reboot_title">Mulai ulang</string>
+    <string name="reboot_message">Memulai ulang sistem</string>
+    <string name="notification_channel_gaming">Mode Permainan</string>
+    <string name="gaming_mode_notification_title">Mode Permainan diaktifkan</string>
+    <string name="gaming_mode_notification_content">Ketuk untuk mematikan Mode Permainan</string>
+    <string name="gaming_mode_enabled_toast">Mode Permainan dihidupkan</string>
+    <string name="gaming_mode_disabled_toast">Mode Permainan dimatikan</string>
+    <string name="permlab_fakePackageSignature">Palsukan tanda tangan paket</string>
+    <string name="permdesc_fakePackageSignature">Mengizinkan aplikasi berpura-pura menjadi aplikasi yang berbeda. Aplikasi jahat mungkin dapat menggunakan ini untuk mengakses data aplikasi pribadi. Penggunaan yang sah termasuk emulator yang berpura-pura seperti apa yang ditiru. Berikan izin ini hanya dengan hati-hati!</string>
+    <string name="permgrouplab_fake_package_signature">Palsukan tanda tangan paket</string>
+    <string name="permgroupdesc_fake_package_signature">izinkan untuk memalsukan tanda tangan paket</string>
+    <string name="permgrouprequest_fake_package_signature">Izinkan
+        &lt;b&gt;<xliff:g id="app_name" example="Gmail">%1$s</xliff:g>&lt;/b&gt; untuk memalsukan tanda tangan paket?</string>
+    <string name="pocket_lock_message_long_press">Tekan lama tombol daya untuk berinteraksi</string>
+    <string name="live_display_auto">Otomatis</string>
+    <string name="live_display_auto_summary">Secara otomatis menyesuaikan suhu warna layar setelah matahari terbenam dan matahari terbit</string>
+    <string name="live_display_off">Nonaktif</string>
+    <string name="live_display_off_summary">Nonaktifkan semua penyesuaian</string>
+    <string name="live_display_day">Siang</string>
+    <string name="live_display_day_summary">Gunakan setelan siang saja</string>
+    <string name="live_display_night">Malam</string>
+    <string name="live_display_night_summary">Gunakan setelan malam saja</string>
+    <string name="live_display_outdoor">Luar ruangan (matahari terang)</string>
+    <string name="live_display_outdoor_summary">Gunakan setelan luar ruangan saja</string>
+    <string name="live_display_hint">LiveDisplay dapat membantu mengurangi kelelahan mata dan membantu Anda tidur di malam hari. Klik di sini untuk mencobanya!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay nonaktif.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: mode otomatis.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: mode siang.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: mode malam.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: mode luar ruangan.</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay dinonaktifkan.</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay diubah ke mode otomatis.</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay diubah ke mode siang.</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay diubah ke mode malam.</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay diubah ke mode luar ruangan.</string>
+    <string name="pocket_view_title">Mode saku aktif</string>
+    <string name="pocket_view_title_cancel">Untuk mengaktifkan perangkat Anda:</string>
+    <string name="pocket_view_top_tag_cancel">Jangan menutupi area biru ponsel Anda, dan bersihkan kotoran atau debu.</string>
+    <string name="pocket_view_top_tag_cancel2">Tekan lama tombol daya untuk memaksa keluar dari mode saku</string>
+    <string name="pocket_view_top_tag_number1">1.\u0020</string>
+    <string name="pocket_view_top_tag_number2">2.\u0020</string>
+</resources>

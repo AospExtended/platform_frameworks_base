@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2019, AospExtended ROM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="statusbar_items_title">Ikona na stavovém řádku</string>
+    <string name="lockscreen_default">Výchozí</string>
+    <string name="lockscreen_hidden">Žádná</string>
+    <string name="custom_hint">Spustit přejetím prstu od ikony</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="quick_settings_caffeine_label">Kofein</string>
+    <string name="accessibility_quick_settings_caffeine_off">Kofein vyp.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Kofein zap.</string>
+    <string name="quick_settings_ambient_display_label">Ambientní displej</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Ambientní displej vyp.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Ambientní displej zap.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Ambientní displej je vypnutý.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Ambientní displej je zapnutý.</string>
+    <string name="quick_settings_usb_tether_label">USB tethering</string>
+    <string name="quick_settings_sync_label">Synchronizace</string>
+    <string name="accessibility_quick_settings_sync_off">Synch. vyp.</string>
+    <string name="accessibility_quick_settings_sync_on">Synch. zap.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Synchronizace vypnuta</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Synchronizace zapnuta</string>
+    <string name="quick_settings_location_secondary_battery_saving">Úspora baterie</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Hlášení polohy: úspora baterie.</string>
+    <string name="quick_settings_location_secondary_gps_only">Pouze GPS</string>
+    <string name="accessibility_quick_settings_location_gps_only">Hlášení polohy: pouze GPS.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Vysoká přesnost</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Hlášení polohy: vysoká přesnost.</string>
+    <string name="global_action_restart_advanced">Pokročilé</string>
+    <string name="global_action_restart_recovery">Recovery</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">SystemUI</string>
+    <string name="quick_settings_sound_label">Zvuk</string>
+    <string name="quick_settings_sound_ring">Vyzvánění</string>
+    <string name="quick_settings_sound_vibrate">Vibrace</string>
+    <string name="quick_settings_sound_dnd">Nerušit</string>
+    <string name="quick_settings_screenshot_label">Snímek obrazovky</string>
+    <string name="quick_settings_region_screenshot_label">Částečný snímek obrazovky</string>
+    <string name="quick_settings_heads_up_label">Plovoucí oznámení</string>
+    <string name="accessibility_quick_settings_heads_up_off">Plovoucí oznámení vyp.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Plovoucí oznámení zap.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Plovoucí oznámení byla vypnuta.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Plovoucí oznámení byla zapnuta.</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Plovoucí oznámení jsou odložena na dobu 1 minuty.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%1$s </xliff:g> - Plovoucí oznámení jsou odložena na dobu <xliff:g id="number">%1$d </xliff:g> minut.</string>
+    <string name="accessibility_quick_settings_running_services">Otevřít obrazovku spuštěných služeb.</string>
+    <string name="force_stop_dlg_title">Vynutit ukončení?</string>
+    <string name="force_stop_dlg_text">Vynucené ukončení může způsobit nepředvídatelné chování aplikace.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="guts_force_close_app">Zavřít aplikaci</string>
+    <string name="systemui_tuner_navbar_title">Rozložení</string>
+    <string name="navigation_bar_format_title">Formát navigačního panelu</string>
+    <string name="navigation_bar_inverse_title">Prohodit tlačítka</string>
+    <string name="navigation_bar_inverse_summary">Prohodit pořadí tlačítek „Nedávné“ a „Zpět“</string>
+    <string name="navigation_bar_accessibility_dpad_left">Kurzor doleva</string>
+    <string name="navigation_bar_accessibility_dpad_right">Kurzor doprava</string>
+    <string name="system_theme_style_title">Motiv</string>
+    <string name="quick_settings_theme_tile_title">Odstín</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Vyberte odstín</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Vyberte motiv</string>
+    <string name="quick_settings_fpsinfo_label">Informace o FPS</string>
+    <string name="accessibility_quick_settings_fpsinfo_off">Informace o FPS vypnuty</string>
+    <string name="accessibility_quick_settings_fpsinfo_on">Informace o FPS zapnuty</string>
+    <string name="quick_settings_volume_panel_label">Panel hlasitosti</string>
+    <string name="quick_settings_vpn_label">VPN</string>
+    <string name="quick_settings_vpn_connect_dialog_title">Připojit k\u2026</string>
+    <string name="vpn_credentials_hint">Zadejte prosím přihlašovací údaje pro připojení k <xliff:g id="name">%s</xliff:g></string>
+    <string name="vpn_credentials_username">Uživ. jméno</string>
+    <string name="vpn_credentials_password">Heslo</string>
+    <string name="vpn_credentials_dialog_connect">Připojit</string>
+    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD vyp.\nSpořič baterie</string>
+    <string name="qs_data_switch_label">Přepnout SIM pro data</string>
+    <string name="qs_data_switch_changed_1">Mobilní data jsou používána na SIM 1</string>
+    <string name="qs_data_switch_changed_2">Mobilní data jsou používána na SIM 2</string>
+    <string name="quick_settings_cpuinfo_label">Informace o CPU</string>
+    <string name="accessibility_quick_settings_cpuinfo_off">Informace o CPU vyp.</string>
+    <string name="accessibility_quick_settings_cpuinfo_on">Informace o CPU zap.</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_off">Informace o CPU byly vypnuty</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_on">Informace o CPU byly zapnuty</string>
+    <string name="quick_settings_poweroff_label">Vypnout</string>
+    <string name="quick_settings_reboot_label">Restartovat</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+    <string name="quick_settings_monotoggle_tile">Režim zvuku</string>
+    <string name="quick_settings_monotoggle_tile_mono">Mono</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Stereo</string>
+    <string name="quick_settings_sound_search">Zvukové vyhledávání</string>
+    <string name="quick_settings_sound_search_no_app">Je nám to líto, ale toto nefunguje, pokud nemáte aplikaci Zvukové vyhledávání.</string>
+    <string name="quick_settings_music_label">Hudba</string>
+    <string name="quick_settings_music_play">Přehrát</string>
+    <string name="quick_settings_music_pause">Pozastavit</string>
+    <string name="quick_settings_compass_label">Kompas</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Spouštění\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Kompas vyp.</string>
+    <string name="accessibility_quick_settings_compass_on">Kompas zap.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Kompas je vypnutý</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Kompas je zapnutý</string>
+    <string name="quick_settings_compass_N">S</string>
+    <string name="quick_settings_compass_NE">SV</string>
+    <string name="quick_settings_compass_E">V</string>
+    <string name="quick_settings_compass_SE">JV</string>
+    <string name="quick_settings_compass_S">J</string>
+    <string name="quick_settings_compass_SW">JZ</string>
+    <string name="quick_settings_compass_W">Z</string>
+    <string name="quick_settings_compass_NW">SZ</string>
+    <string name="keyguard_indication_dash_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • DASH nabíjení (zbývá <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
+    <string name="keyguard_plugged_in_dash_charging">DASH nabíjení</string>
+    <string name="keyguard_indication_warp_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • Warp nabíjení (zbývá <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> do plného nabití)</string>
+    <string name="keyguard_plugged_in_warp_charging">Warp nabíjení</string>
+    <string name="keyguard_indication_vooc_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • VOOC nabíjení (zbývá <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%1$s</xliff:g> do plného nabití)</string>
+    <string name="keyguard_plugged_in_vooc_charging">VOOC nabíjení</string>
+    <string name="quick_settings_smart_pixels">Smart Pixels</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Automaticky povolit Smart Pixels</string>
+    <string name="gaming_mode_not_enabled">Herní režim je vypnutý v Nastavení</string>
+    <string name="quick_settings_gaming_mode_label">Herní režim</string>
+    <string name="accessibility_quick_settings_gaming_mode_disabled">Herní režim je vypnutý.</string>
+    <string name="accessibility_quick_settings_gaming_mode_enabled">Herní režim je zapnutý.</string>
+    <string name="task_helper_app_killed">%1$s aplikace ukončena</string>
+    <string name="empty_app_killed">Aplikace</string>
+    <string name="biometric_dialog_button_use_face">Použít obličej</string>
+    <string name="scrollss">Rolování</string>
+    <string name="applock_unlock">Odemknout aplikaci</string>
+    <string name="status_bar_ims">VoLTE/VoWiFi</string>
+    <string name="quick_settings_anti_flicker">Eliminace blikání</string>
+    <string name="screenrecord_stopdot_label">Zobrazit tečku pro zastavení nahrávání\Dlouhým stiskem ji přesunete</string>
+    <string name="screenrecord_lowquality_label">Nižší kvalita pro zajištění menší velikosti souboru</string>
+</resources>

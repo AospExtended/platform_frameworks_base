@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2015-2018 AospExtended
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="aerr_copy">複製當機記錄連結</string>
+    <string name="url_copy_success">已成功複製連結</string>
+    <string name="url_copy_failed">上傳當機記錄至 Dogbin 時發生錯誤</string>
+    <string name="reboot_title">重新啟動</string>
+    <string name="reboot_message">正在重新啟動系統</string>
+    <string name="notification_channel_gaming">遊戲模式</string>
+    <string name="gaming_mode_notification_title">遊戲模式已啟用</string>
+    <string name="gaming_mode_notification_content">點擊以關閉遊戲模式</string>
+    <string name="gaming_mode_enabled_toast">遊戲模式已開啟</string>
+    <string name="gaming_mode_disabled_toast">遊戲模式已關閉</string>
+    <string name="permlab_fakePackageSignature">模擬套件簽名</string>
+    <string name="permdesc_fakePackageSignature">允許應用程式偽裝成不同的應用程式。有害的應用程式可能可以使用這個功能來存取私人的應用程式資料。授予此權限時請小心！</string>
+    <string name="permgrouplab_fake_package_signature">模擬套件簽名</string>
+    <string name="permgroupdesc_fake_package_signature">允許使用假冒的應用程式簽名</string>
+    <string name="permgrouprequest_fake_package_signature">允許
+        &lt;b&gt;<xliff:g id="app_name" example="Gmail">%1$s</xliff:g>&lt;/b&gt; 偽造應用程式簽章？</string>
+    <string name="pocket_lock_message_long_press">長按電源鍵以互動</string>
+    <string name="live_display_auto">自動</string>
+    <string name="live_display_auto_summary">以日落和日出的時間來自動調節螢幕色溫</string>
+    <string name="live_display_off">關閉</string>
+    <string name="live_display_off_summary">停用所有調整</string>
+    <string name="live_display_day">日間</string>
+    <string name="live_display_day_summary">僅限使用日間設定</string>
+    <string name="live_display_night">夜間</string>
+    <string name="live_display_night_summary">僅限使用夜間設定</string>
+    <string name="live_display_outdoor">戶外 (陽光)</string>
+    <string name="live_display_outdoor_summary">僅限使用戶外設定</string>
+    <string name="live_display_hint">LiveDisplay 可以幫助減少眼睛疲勞及睡前使用造成的不適。按一下此處來試試！</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay 關閉。</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay：自動模式</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay：日間模式</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay：夜間模式</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay：戶外模式</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay 已關閉</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay 已變更為自動模式</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay 已變更為日間模式</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay 已變更為夜間模式</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay 已變更為戶外模式</string>
+    <string name="pocket_view_title">口袋防誤觸模式已開啟</string>
+    <string name="pocket_view_title_cancel">要啟用您的手機：</string>
+    <string name="pocket_view_top_tag_cancel">請勿覆蓋手機的藍色區域，並清除所有污垢或灰塵。</string>
+    <string name="pocket_view_top_tag_cancel2">長按電源鍵以強制退出口袋防誤觸模式</string>
+    <string name="pocket_view_top_tag_number1">1.\u0020</string>
+    <string name="pocket_view_top_tag_number2">2.\u0020</string>
+</resources>

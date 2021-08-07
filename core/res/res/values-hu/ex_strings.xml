@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2015-2018 AospExtended
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="aerr_copy">Az összeomlási napló URL-jének másolása</string>
+    <string name="url_copy_success">Az URL sikeresen másolva</string>
+    <string name="url_copy_failed">Hiba történt a napló dogbin-re való feltöltése során</string>
+    <string name="reboot_title">Újraindítás</string>
+    <string name="reboot_message">A rendszer újraindítása</string>
+    <string name="notification_channel_gaming">Játékmód</string>
+    <string name="gaming_mode_notification_title">A Játékmód engedélyezve</string>
+    <string name="gaming_mode_notification_content">Érintse meg a Játékmódból való kilépéshez</string>
+    <string name="gaming_mode_enabled_toast">A Játékmód bekapcsolva</string>
+    <string name="gaming_mode_disabled_toast">A Játékmód kikapcsolva</string>
+    <string name="permlab_fakePackageSignature">Hamis csomagaláírás</string>
+    <string name="permdesc_fakePackageSignature">Engedélyezi egy alkalmazás számára, hogy az más alkalmazásnak álcázza magát. A kártékony alkalmazások ezt felhasználhatják személyes adatok elérésére. Jogos például, ha egy emulátor, úgy tesz, mintha az lenne, amit emulál. Kellő elővigyázatossággal adja meg ezt az engedélyt!</string>
+    <string name="permgrouplab_fake_package_signature">Hamis csomagaláírás</string>
+    <string name="permgroupdesc_fake_package_signature">hamis csomagaláírás engedélyezése</string>
+    <string name="permgrouprequest_fake_package_signature">Engedélyezi a hamis csomagaláírást a következőnek: &lt;b&gt;<xliff:g id="app_name" example="Gmail">%1$s</xliff:g>&lt;/b&gt; ?</string>
+    <string name="pocket_lock_message_long_press">A hatás eléréséhez nyomja hosszan a bekapcsoló-gombot</string>
+    <string name="live_display_auto">Automatikus</string>
+    <string name="live_display_auto_summary">Automatikusan beállítja a képernyő színhőmérsékletét naplemente és napkelte után</string>
+    <string name="live_display_off">Ki</string>
+    <string name="live_display_off_summary">Az összes beállítás kikapcsolása</string>
+    <string name="live_display_day">Nappal</string>
+    <string name="live_display_day_summary">Csak a nappali beállítások használata</string>
+    <string name="live_display_night">Éjszaka</string>
+    <string name="live_display_night_summary">Csak éjszakai beállítások használata</string>
+    <string name="live_display_outdoor">Kültéri (erős napfény)</string>
+    <string name="live_display_outdoor_summary">Csak a kültéri beállítások használata</string>
+    <string name="live_display_hint">A LiveDisplay segíthet a szemek terhelésének csökkentésében és a jobb éjszakai alvásban. Kattintson ide, hogy kipróbálja!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay ki.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: automatikus mód.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: nappali mód.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: éjszakai mód.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: kültéri mód.</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">A LiveDisplay kikapcsolva.</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">A LiveDisplay automatikus módra változtatva.</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">A LiveDisplay nappali módra változtatva.</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">A LiveDisplay éjszakai módra változtatva.</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">A LiveDisplay kültéri módra változtatva.</string>
+    <string name="pocket_view_title">Zsebmód bekapcsolva</string>
+    <string name="pocket_view_title_cancel">Hogy telefonját feloldhassa:</string>
+    <string name="pocket_view_top_tag_cancel">Ne takarja le az érzékelőt, tartsa tisztán, por és koszmentesen.</string>
+    <string name="pocket_view_top_tag_cancel2">A Bekapcsológomb hosszan nyomása azonnal kikapcsolja a zsebmódot</string>
+    <string name="pocket_view_top_tag_number1">1.\u0020</string>
+    <string name="pocket_view_top_tag_number2">2.\u0020</string>
+</resources>

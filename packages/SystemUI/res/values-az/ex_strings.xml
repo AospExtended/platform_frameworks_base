@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2019, AospExtended ROM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="statusbar_items_title">Vəziyyət sətri nişanı</string>
+    <string name="lockscreen_default">İlkin</string>
+    <string name="lockscreen_hidden">Yoxdur</string>
+    <string name="custom_hint">Başlatmaq üçün nişandan sürüşdürün</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="quick_settings_caffeine_label">Kofein</string>
+    <string name="accessibility_quick_settings_caffeine_off">Kofein bağlıdır</string>
+    <string name="accessibility_quick_settings_caffeine_on">Kofein açıqdır</string>
+    <string name="quick_settings_ambient_display_label">Ekran mühiti</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Ekran mühiti bağlıdır.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Ekran mühiti açıqdır.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Ekran mühiti söndürüldü.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Ekran mühiti işə salındı.</string>
+    <string name="quick_settings_usb_tether_label">USB İnternet Paylaşma</string>
+    <string name="quick_settings_sync_label">Eyniləşdirmə</string>
+    <string name="accessibility_quick_settings_sync_off">Eyniləşdirmə bağlıdır</string>
+    <string name="accessibility_quick_settings_sync_on">Eyniləşdirmə açıqdır</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Eyniləşdirmə söndürüldü</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Eyniləşdirmə işə salındı</string>
+    <string name="quick_settings_location_secondary_battery_saving">Batareya qənaəti</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Yerləşmə hesabatı: batareya qənaəti rejimi.</string>
+    <string name="quick_settings_location_secondary_gps_only">Yalnız sensorlar</string>
+    <string name="accessibility_quick_settings_location_gps_only">Yerləşmə hesabatı: yalnız sensorlar rejimi.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Yüksək dəqiqlik</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Məkan bildirişi: yüksək dəqiqlik rejimi.</string>
+    <string name="global_action_restart_advanced">Qabaqcıl</string>
+    <string name="global_action_restart_recovery">Bərpa</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">Sistem interfeysi</string>
+    <string name="quick_settings_sound_label">Səs</string>
+    <string name="quick_settings_sound_ring">Zəng səsi</string>
+    <string name="quick_settings_sound_vibrate">Titrəmə</string>
+    <string name="quick_settings_sound_dnd">Narahat etməyin</string>
+    <string name="quick_settings_screenshot_label">Ekran şəkli</string>
+    <string name="quick_settings_region_screenshot_label">Qismən ekran şəkli</string>
+    <string name="quick_settings_heads_up_label">Açılan başlıqlar</string>
+    <string name="accessibility_quick_settings_heads_up_off">Açılan başlıqlar bağlıdır.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Açılan başlıqlar açıqdır.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Açılan başlıqlar söndürüldü.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Açılan başlıqlar işə salındı.</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 1 dəqiqəlik ertələnir.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%1$s</xliff:g> - <xliff:g id="number">%1$d</xliff:g> dəqiqəlik ertələnir.</string>
+    <string name="accessibility_quick_settings_running_services">İşləyən Xidmətlər ekranını aç.</string>
+    <string name="force_stop_dlg_title">Məcburi dayandırılsın?</string>
+    <string name="force_stop_dlg_text">Tətbiqi məcburi dayandırsanız, xətalı davrana bilər.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="guts_force_close_app">Tətbiqi bağla</string>
+    <string name="systemui_tuner_navbar_title">Düzülüş</string>
+    <string name="navigation_bar_format_title">Hərəkət sətri formatı</string>
+    <string name="navigation_bar_inverse_title">Düymələri dəyişdir</string>
+    <string name="navigation_bar_inverse_summary">Ən son tətbiqlər və geri düymələrinin yerini dəyişdir</string>
+    <string name="navigation_bar_accessibility_dpad_left">Sol kursor</string>
+    <string name="navigation_bar_accessibility_dpad_right">Sağ kursor</string>
+    <string name="system_theme_style_title">Tema</string>
+    <string name="quick_settings_theme_tile_title">Vurğu</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Vurğunu seç</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Temanı seç</string>
+    <string name="quick_settings_fpsinfo_label">FPS məlumatı</string>
+    <string name="accessibility_quick_settings_fpsinfo_off">FPS məlumatı bağlıdır</string>
+    <string name="accessibility_quick_settings_fpsinfo_on">FPS məlumatı açıqdır</string>
+    <string name="quick_settings_volume_panel_label">Səs paneli</string>
+    <string name="quick_settings_vpn_label">VPN</string>
+    <string name="quick_settings_vpn_connect_dialog_title">Bağlantı qur\u2026</string>
+    <string name="vpn_credentials_hint"><xliff:g id="name">%s</xliff:g> ilə bağlantı qurmaq üçün kimlik məlumatlarınızı daxil edin</string>
+    <string name="vpn_credentials_username">İstifadəçi adı</string>
+    <string name="vpn_credentials_password">Şifrə</string>
+    <string name="vpn_credentials_dialog_connect">Bağlantı qur</string>
+    <string name="quick_settings_aod_label">Always On Display</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD bağlıdır\nBatareya qənaəti</string>
+    <string name="qs_data_switch_label">Verilənlər kartını dəyişdir</string>
+    <string name="qs_data_switch_changed_1">Mobil verilənlər üçün SIM 1 istifadə olunur</string>
+    <string name="qs_data_switch_changed_2">Mobil verilənlər üçün SIM 2 istifadə olunur</string>
+    <string name="quick_settings_cpuinfo_label">CPU məlumatı</string>
+    <string name="accessibility_quick_settings_cpuinfo_off">CPU məlumatı bağlıdır</string>
+    <string name="accessibility_quick_settings_cpuinfo_on">CPU məlumatı açıqdır</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_off">CPU məlumatı bağlandı</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_on">CPU məlumatı açıldı</string>
+    <string name="quick_settings_poweroff_label">Söndür</string>
+    <string name="quick_settings_reboot_label">Yenidən başlat</string>
+    <string name="quick_settings_reboot_recovery_label">Bərpa</string>
+    <string name="quick_settings_monotoggle_tile">Səs rejimi</string>
+    <string name="quick_settings_monotoggle_tile_mono">Mono səs</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Stereo səs</string>
+    <string name="quick_settings_sound_search">Səsli axtarış</string>
+    <string name="quick_settings_sound_search_no_app">Təəssüf ki, bir Səsli axtarış tətbiqiniz yoxdursa bu işləmir.</string>
+    <string name="quick_settings_music_label">Musiqi</string>
+    <string name="quick_settings_music_play">Oynat</string>
+    <string name="quick_settings_music_pause">Fasilə</string>
+    <string name="quick_settings_compass_label">Kompas</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Başladılır\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Kompas bağlıdır</string>
+    <string name="accessibility_quick_settings_compass_on">Kompas açıqdır</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Kompas bağlanıldı</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Kompas açıldı</string>
+    <string name="quick_settings_compass_N">Şi</string>
+    <string name="quick_settings_compass_NE">ŞmŞ</string>
+    <string name="quick_settings_compass_E">Ş</string>
+    <string name="quick_settings_compass_SE">CŞ</string>
+    <string name="quick_settings_compass_S">C</string>
+    <string name="quick_settings_compass_SW">CQ</string>
+    <string name="quick_settings_compass_W">Q</string>
+    <string name="quick_settings_compass_NW">ŞmQ</string>
+    <string name="keyguard_indication_dash_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • Dash enerji yığır (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
+    <string name="keyguard_plugged_in_dash_charging">Dash enerji yığır</string>
+    <string name="keyguard_indication_warp_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • Warp enerji yığır (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
+    <string name="keyguard_plugged_in_warp_charging">Warp enerji yığır</string>
+    <string name="keyguard_indication_vooc_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • VOOC enerji yığır(<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%1$s</xliff:g> until full)</string>
+    <string name="keyguard_plugged_in_vooc_charging">VOOC enerji yığır</string>
+    <string name="quick_settings_smart_pixels">Ağıllı piksellər</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Ağıllı pikselləri avtomatik faəllaşdır</string>
+    <string name="gaming_mode_not_enabled">Oyun rejimi tənzimləmələrdə sıradan çıxarıldı</string>
+    <string name="quick_settings_gaming_mode_label">Oyun rejimi</string>
+    <string name="accessibility_quick_settings_gaming_mode_disabled">Oyun rejimi söndürüldü.</string>
+    <string name="accessibility_quick_settings_gaming_mode_enabled">Oyun rejimi işə salındı.</string>
+    <string name="task_helper_app_killed">%1$s çətin bitdi</string>
+    <string name="empty_app_killed">Tətbiq</string>
+    <string name="biometric_dialog_button_use_face">Üz istifadə et</string>
+    <string name="scrollss">Sürüşdür</string>
+    <string name="applock_unlock">Tətbiq kilidini aç</string>
+    <string name="status_bar_ims">VoLTE/VoWiFi</string>
+    <string name="quick_settings_anti_flicker">Titrəməyə qarşı</string>
+    <string name="screenrecord_stopdot_label">Dayanma nöqtəsini göstər\nHərəkət etdirmək üçün uzun toxun</string>
+    <string name="screenrecord_lowquality_label">Kiçik fayl həcmi üçün aşağı keyfiyyət</string>
+</resources>

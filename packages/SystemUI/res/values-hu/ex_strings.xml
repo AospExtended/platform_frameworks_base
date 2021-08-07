@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2019, AospExtended ROM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="statusbar_items_title">Állapotsor-ikon</string>
+    <string name="lockscreen_default">Alapértelmezett</string>
+    <string name="lockscreen_hidden">Nincs</string>
+    <string name="custom_hint">Csúsztasson az ikonról az indításhoz</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="quick_settings_caffeine_label">Caffeine</string>
+    <string name="accessibility_quick_settings_caffeine_off">Caffeine ki</string>
+    <string name="accessibility_quick_settings_caffeine_on">Caffeine be</string>
+    <string name="quick_settings_ambient_display_label">Környezeti kijelző</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Környezeti kijelző ki.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Környezeti kijelző be.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">A Környezeti kijelző kikapcsolva.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">A Környezeti kijelző bekapcsolva.</string>
+    <string name="quick_settings_usb_tether_label">USB-megosztás</string>
+    <string name="quick_settings_sync_label">Szinkronizálás</string>
+    <string name="accessibility_quick_settings_sync_off">Szinkronizálás ki</string>
+    <string name="accessibility_quick_settings_sync_on">Szinkronizálás be</string>
+    <string name="accessibility_quick_settings_sync_changed_off">A szinkronizálás kikapcsolva</string>
+    <string name="accessibility_quick_settings_sync_changed_on">A szinkronizálás bekapcsolva</string>
+    <string name="quick_settings_location_secondary_battery_saving">Akkumulátorkímélő</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Helymeghatározás: akkumulátorkímélő mód.</string>
+    <string name="quick_settings_location_secondary_gps_only">Csak a GPS használata a helymeghatározáshoz</string>
+    <string name="accessibility_quick_settings_location_gps_only">Helymeghatározás: csak GPS.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Nagy pontosságú</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Helymeghatározás: nagy pontosságú mód.</string>
+    <string name="global_action_restart_advanced">Haladó</string>
+    <string name="global_action_restart_recovery">Recovery</string>
+    <string name="global_action_restart_bootloader">Bootloader (Fastboot mód)</string>
+    <string name="global_action_restart_ui">Felhasználói felület</string>
+    <string name="quick_settings_sound_label">Hang</string>
+    <string name="quick_settings_sound_ring">Csengés</string>
+    <string name="quick_settings_sound_vibrate">Rezgés</string>
+    <string name="quick_settings_sound_dnd">Ne zavarjanak (DND)</string>
+    <string name="quick_settings_screenshot_label">Képernyőmentés</string>
+    <string name="quick_settings_region_screenshot_label">Részleges képernyőmentés</string>
+    <string name="quick_settings_heads_up_label">Lebegő értesítések</string>
+    <string name="accessibility_quick_settings_heads_up_off">Lebegő értesítések ki.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Lebegő értesítések be.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">A Lebegő értesítések kikapcsolva.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">A Lebegő értesítések bekapcsolva.</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - lebegő értesítései 1 percig elhalasztásra kerülnek.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%1$s</xliff:g> - lebegő értesítései <xliff:g id="number">%1$d</xliff:g> percig elhalasztásra kerülnek.</string>
+    <string name="accessibility_quick_settings_running_services">Futó szolgálatások képernyőjének megnyitása.</string>
+    <string name="force_stop_dlg_title">Kényszeríti a leállítást?</string>
+    <string name="force_stop_dlg_text">Ha egy alkalmazást leállásra kényszerít, az hibásan működhet.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="guts_force_close_app">Alkalmazás-bezárás</string>
+    <string name="systemui_tuner_navbar_title">Elrendezés</string>
+    <string name="navigation_bar_format_title">Navigációssáv-típus</string>
+    <string name="navigation_bar_inverse_title">Gombfelcserélő</string>
+    <string name="navigation_bar_inverse_summary">Felcseréli az Előzmények és a Visszagomb sorrendjét</string>
+    <string name="navigation_bar_accessibility_dpad_left">Kurzor balra</string>
+    <string name="navigation_bar_accessibility_dpad_right">Kurzor jobbra</string>
+    <string name="system_theme_style_title">Téma</string>
+    <string name="quick_settings_theme_tile_title">Kiemelés</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Kiemelőszín-választás</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Témaválasztás</string>
+    <string name="quick_settings_fpsinfo_label">FPS-adatok</string>
+    <string name="accessibility_quick_settings_fpsinfo_off">FPS-adatok ki</string>
+    <string name="accessibility_quick_settings_fpsinfo_on">FPS-adatok be</string>
+    <string name="quick_settings_volume_panel_label">Hangerőszabályzó</string>
+    <string name="quick_settings_vpn_label">VPN</string>
+    <string name="quick_settings_vpn_connect_dialog_title">Felcsatlakozás\u2026</string>
+    <string name="vpn_credentials_hint">Kérjük, adja meg a hitelesítőadatait, hogy csatlakozhasson a következőhöz: <xliff:g id="name">%s</xliff:g></string>
+    <string name="vpn_credentials_username">Felhasználónév</string>
+    <string name="vpn_credentials_password">Jelszó</string>
+    <string name="vpn_credentials_dialog_connect">Csatlakozás</string>
+    <string name="quick_settings_aod_label">Mindig bekapcsolva (AOD)</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD ki\nAkkukímélő</string>
+    <string name="qs_data_switch_label">SIM-kártyaváltás</string>
+    <string name="qs_data_switch_changed_1">A SIM1 használata mobiladat-forgalomhoz</string>
+    <string name="qs_data_switch_changed_2">A SIM2 használata mobiladat-forgalomhoz</string>
+    <string name="quick_settings_cpuinfo_label">CPU-adatok</string>
+    <string name="accessibility_quick_settings_cpuinfo_off">CPU-adatok ki</string>
+    <string name="accessibility_quick_settings_cpuinfo_on">CPU-adatok be</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_off">A CPU-adatok kikapcsolva</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_on">A CPU-adatok bekapcsolva</string>
+    <string name="quick_settings_poweroff_label">Kikapcsolás</string>
+    <string name="quick_settings_reboot_label">Újraindítás</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+    <string name="quick_settings_monotoggle_tile">Hangmód</string>
+    <string name="quick_settings_monotoggle_tile_mono">Monó hang</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Sztereó hang</string>
+    <string name="quick_settings_sound_search">Hangalapú keresés</string>
+    <string name="quick_settings_sound_search_no_app">Sajnáljuk, de ez nem működhet, ha nincs alkalmazás telepítve a hangalapú kereséshez.</string>
+    <string name="quick_settings_music_label">Zene</string>
+    <string name="quick_settings_music_play">Lejátszás</string>
+    <string name="quick_settings_music_pause">Szüneteltetés</string>
+    <string name="quick_settings_compass_label">Iránytű</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Előkészítés\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Iránytű ki</string>
+    <string name="accessibility_quick_settings_compass_on">Iránytű be</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Az Iránytű kikapcsolva</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Az Iránytű bekapcsolva</string>
+    <string name="quick_settings_compass_N">É</string>
+    <string name="quick_settings_compass_NE">ÉK</string>
+    <string name="quick_settings_compass_E">K</string>
+    <string name="quick_settings_compass_SE">DK</string>
+    <string name="quick_settings_compass_S">D</string>
+    <string name="quick_settings_compass_SW">DNy</string>
+    <string name="quick_settings_compass_W">Ny</string>
+    <string name="quick_settings_compass_NW">ÉNy</string>
+    <string name="keyguard_indication_dash_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • Dash Töltés (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> a teljes feltöltésig)</string>
+    <string name="keyguard_plugged_in_dash_charging">Dash-töltés</string>
+    <string name="keyguard_indication_warp_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> Warp Töltes(<xliff:g id="charging_time_left" example="4 óra és 2 perc">%s</xliff:g> a teljes töltöttségig)</string>
+    <string name="keyguard_plugged_in_warp_charging">Warp-töltés</string>
+    <string name="keyguard_indication_vooc_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • VOOC Töltés (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%1$s</xliff:g> a teljes feltöltésig)</string>
+    <string name="keyguard_plugged_in_vooc_charging">VOOC-töltés</string>
+    <string name="quick_settings_smart_pixels">Intelligens pixelek</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Az Intelligens pixelek automatikus engedélyezése</string>
+    <string name="gaming_mode_not_enabled">A Játékmód a beállításokban le van tiltva</string>
+    <string name="quick_settings_gaming_mode_label">Játékmód</string>
+    <string name="accessibility_quick_settings_gaming_mode_disabled">A Játékmód kikapcsolva.</string>
+    <string name="accessibility_quick_settings_gaming_mode_enabled">A Játékmód bekapcsolva.</string>
+    <string name="task_helper_app_killed">%1$s alkalmazás kilőve</string>
+    <string name="empty_app_killed">Alkalmazás</string>
+    <string name="biometric_dialog_button_use_face">Arcalapú feloldás</string>
+    <string name="scrollss">Görgetés</string>
+    <string name="applock_unlock">Alkalmazás-feloldás</string>
+    <string name="status_bar_ims">VoLTE/VoWiFi</string>
+    <string name="quick_settings_anti_flicker">Vibrálásmentesítés</string>
+    <string name="screenrecord_stopdot_label">Látható megállítógomb\nHosszan nyomva áthelyezhető</string>
+    <string name="screenrecord_lowquality_label">Gyengébb minőség, a kisebb fájlokért</string>
+</resources>

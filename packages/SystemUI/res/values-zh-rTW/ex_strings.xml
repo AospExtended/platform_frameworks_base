@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2019, AospExtended ROM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="statusbar_items_title">狀態列項目</string>
+    <string name="lockscreen_default">預設</string>
+    <string name="lockscreen_hidden">無</string>
+    <string name="custom_hint">滑動圖示以啟動</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="quick_settings_caffeine_label">暫停休眠</string>
+    <string name="accessibility_quick_settings_caffeine_off">關閉暫停休眠</string>
+    <string name="accessibility_quick_settings_caffeine_on">開啟暫停休眠</string>
+    <string name="quick_settings_ambient_display_label">環境顯示</string>
+    <string name="accessibility_quick_settings_ambient_display_off">環境顯示關閉</string>
+    <string name="accessibility_quick_settings_ambient_display_on">環境顯示開啟</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">環境顯示已關閉</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">環境顯示已開啟</string>
+    <string name="quick_settings_usb_tether_label">USB 網路共用</string>
+    <string name="quick_settings_sync_label">同步處理</string>
+    <string name="accessibility_quick_settings_sync_off">同步處理關閉</string>
+    <string name="accessibility_quick_settings_sync_on">同步處理開啟</string>
+    <string name="accessibility_quick_settings_sync_changed_off">同步處理已關閉</string>
+    <string name="accessibility_quick_settings_sync_changed_on">同步處理已開啟</string>
+    <string name="quick_settings_location_secondary_battery_saving">省電模式</string>
+    <string name="accessibility_quick_settings_location_battery_saving">位置回報：節約耗電量</string>
+    <string name="quick_settings_location_secondary_gps_only">僅用 GPS</string>
+    <string name="accessibility_quick_settings_location_gps_only">位置回報：僅用 GPS。</string>
+    <string name="quick_settings_location_secondary_high_accuracy">高精確度</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">位置回報：高精確度</string>
+    <string name="global_action_restart_advanced">進階重啟</string>
+    <string name="global_action_restart_recovery">Recovery 模式</string>
+    <string name="global_action_restart_bootloader">Bootloader 模式</string>
+    <string name="global_action_restart_ui">系統使用者介面</string>
+    <string name="quick_settings_sound_label">音效</string>
+    <string name="quick_settings_sound_ring">音效通知</string>
+    <string name="quick_settings_sound_vibrate">震動</string>
+    <string name="quick_settings_sound_dnd">請勿打擾</string>
+    <string name="quick_settings_screenshot_label">螢幕截圖</string>
+    <string name="quick_settings_region_screenshot_label">部分螢幕截圖</string>
+    <string name="quick_settings_heads_up_label">浮動通知</string>
+    <string name="accessibility_quick_settings_heads_up_off">浮動通知關閉</string>
+    <string name="accessibility_quick_settings_heads_up_on">浮動通知開啟</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">浮動通知已關閉。</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">浮動通知已開啟。</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 顯示預覽通知會暫停 1 分鐘。</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%1$s</xliff:g> - 顯示預覽通知會暫停 <xliff:g id="number">%1$d</xliff:g> 分鐘.</string>
+    <string name="accessibility_quick_settings_running_services">開啟「正在運作的服務」</string>
+    <string name="force_stop_dlg_title">強制停止？</string>
+    <string name="force_stop_dlg_text">如果您強制停止應用程式，應用程式可能無法正常運作。</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="guts_force_close_app">關閉應用程式</string>
+    <string name="systemui_tuner_navbar_title">配置</string>
+    <string name="navigation_bar_format_title">導航列格式</string>
+    <string name="navigation_bar_inverse_title">交換按鍵</string>
+    <string name="navigation_bar_inverse_summary">交換最近使用鍵和返回鍵的位置</string>
+    <string name="navigation_bar_accessibility_dpad_left">游標左移</string>
+    <string name="navigation_bar_accessibility_dpad_right">游標右移</string>
+    <string name="system_theme_style_title">主題</string>
+    <string name="quick_settings_theme_tile_title">色調</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">選擇色調</string>
+    <string name="quick_settings_theme_tile_style_detail_title">選擇主題</string>
+    <string name="quick_settings_fpsinfo_label">FPS 資訊</string>
+    <string name="accessibility_quick_settings_fpsinfo_off">FPS 資訊關閉</string>
+    <string name="accessibility_quick_settings_fpsinfo_on">FPS 資訊開啟</string>
+    <string name="quick_settings_volume_panel_label">音量面板</string>
+    <string name="quick_settings_vpn_label">VPN</string>
+    <string name="quick_settings_vpn_connect_dialog_title">連線到\u2026</string>
+    <string name="vpn_credentials_hint">請輸入您的身份驗證資訊以連接到<xliff:g id="name">%s</xliff:g></string>
+    <string name="vpn_credentials_username">使用者名稱</string>
+    <string name="vpn_credentials_password">密碼</string>
+    <string name="vpn_credentials_dialog_connect">連線</string>
+    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD 關閉\n省電模式</string>
+    <string name="qs_data_switch_label">切換使用行動數據的 SIM 卡</string>
+    <string name="qs_data_switch_changed_1">使用 SIM 1 的行動數據</string>
+    <string name="qs_data_switch_changed_2">使用 SIM 2 的行動數據</string>
+    <string name="quick_settings_cpuinfo_label">CPU 資訊</string>
+    <string name="accessibility_quick_settings_cpuinfo_off">關閉CPU資訊</string>
+    <string name="accessibility_quick_settings_cpuinfo_on">開啟CPU資訊</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_off">CPU資訊已關閉</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_on">CPU資訊已開啟</string>
+    <string name="quick_settings_poweroff_label">關機</string>
+    <string name="quick_settings_reboot_label">重新啟動</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery 模式</string>
+    <string name="quick_settings_monotoggle_tile">音訊模式</string>
+    <string name="quick_settings_monotoggle_tile_mono">單聲道音訊</string>
+    <string name="quick_settings_monotoggle_tile_stereo">立體聲音訊</string>
+    <string name="quick_settings_sound_search">聲音辨識搜尋</string>
+    <string name="quick_settings_sound_search_no_app">抱歉，若您未安裝任何聲音辨識搜尋應用程式這不會有作用。</string>
+    <string name="quick_settings_music_label">音樂</string>
+    <string name="quick_settings_music_play">播放</string>
+    <string name="quick_settings_music_pause">暫停</string>
+    <string name="quick_settings_compass_label">指南針</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0<xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">初始化中\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">指南針關閉</string>
+    <string name="accessibility_quick_settings_compass_on">指南針開啟</string>
+    <string name="accessibility_quick_settings_compass_changed_off">指南針已關閉</string>
+    <string name="accessibility_quick_settings_compass_changed_on">指南針已開啟</string>
+    <string name="quick_settings_compass_N">北</string>
+    <string name="quick_settings_compass_NE">東北</string>
+    <string name="quick_settings_compass_E">東</string>
+    <string name="quick_settings_compass_SE">東南</string>
+    <string name="quick_settings_compass_S">南</string>
+    <string name="quick_settings_compass_SW">西南</string>
+    <string name="quick_settings_compass_W">西</string>
+    <string name="quick_settings_compass_NW">西北</string>
+    <string name="keyguard_indication_dash_charging_time" formatted="false"><xliff:g id="Percentage">%2$s</xliff:g> • 快速充電中 (<xliff:g id="Charging_TIME_LEFT">%s</xliff:g>後充飽)</string>
+    <string name="keyguard_plugged_in_dash_charging">快速充電中</string>
+    <string name="keyguard_indication_warp_charging_time" formatted="false"><xliff:g id="Percentage">%2$s</xliff:g> • 超快速充電中 (<xliff:g id="Charging_TIME_LEFT">%s</xliff:g>後充飽)</string>
+    <string name="keyguard_plugged_in_warp_charging">超快速充電中</string>
+    <string name="keyguard_indication_vooc_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • VOOC快速充電中 (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%1$s</xliff:g> 後充滿)</string>
+    <string name="keyguard_plugged_in_vooc_charging">VOOC 快速充電</string>
+    <string name="quick_settings_smart_pixels">智慧 Pixels</string>
+    <string name="quick_settings_smart_pixels_on_power_save">自動啟用智慧 Pixels</string>
+    <string name="gaming_mode_not_enabled">遊戲模式已在設定中被停用</string>
+    <string name="quick_settings_gaming_mode_label">遊戲模式</string>
+    <string name="accessibility_quick_settings_gaming_mode_disabled">遊戲模式已關閉</string>
+    <string name="accessibility_quick_settings_gaming_mode_enabled">遊戲模式已開啟</string>
+    <string name="task_helper_app_killed">%1$s 已被終結</string>
+    <string name="empty_app_killed">應用程式</string>
+    <string name="biometric_dialog_button_use_face">使用臉部辨識</string>
+    <string name="scrollss">捲動</string>
+    <string name="applock_unlock">解鎖應用程式</string>
+    <string name="status_bar_ims">VoLTE/VoWiFi</string>
+    <string name="quick_settings_anti_flicker">防閃爍</string>
+    <string name="screenrecord_stopdot_label">顯示停止按鈕\n長按移動</string>
+    <string name="screenrecord_lowquality_label">降低畫質以取得更小的檔案</string>
+</resources>

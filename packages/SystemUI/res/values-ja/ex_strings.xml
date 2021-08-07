@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2019, AospExtended ROM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="statusbar_items_title">ステータスバーのアイコン</string>
+    <string name="lockscreen_default">既定</string>
+    <string name="lockscreen_hidden">なし</string>
+    <string name="custom_hint">アイコンをスワイプして起動</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="quick_settings_caffeine_label">カフェイン</string>
+    <string name="accessibility_quick_settings_caffeine_off">カフェイン OFF</string>
+    <string name="accessibility_quick_settings_caffeine_on">カフェイン ON</string>
+    <string name="quick_settings_ambient_display_label">アンビエント\n表示</string>
+    <string name="accessibility_quick_settings_ambient_display_off">アンビエント表示 OFF</string>
+    <string name="accessibility_quick_settings_ambient_display_on">アンビエント表示 ON</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">アンビエント表示を OFF にしました</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">アンビエント表示を ON にしました</string>
+    <string name="quick_settings_usb_tether_label">USB\nテザリング</string>
+    <string name="quick_settings_sync_label">同期</string>
+    <string name="accessibility_quick_settings_sync_off">同期 OFF</string>
+    <string name="accessibility_quick_settings_sync_on">同期 ON</string>
+    <string name="accessibility_quick_settings_sync_changed_off">同期を OFF にしました</string>
+    <string name="accessibility_quick_settings_sync_changed_on">同期を ON にしました</string>
+    <string name="quick_settings_location_secondary_battery_saving">バッテリー節約</string>
+    <string name="accessibility_quick_settings_location_battery_saving">位置情報レポート: バッテリー節約モード</string>
+    <string name="quick_settings_location_secondary_gps_only">端末のみ</string>
+    <string name="accessibility_quick_settings_location_gps_only">位置情報レポート: 端末のみモード</string>
+    <string name="quick_settings_location_secondary_high_accuracy">高精度</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">位置情報レポート: 高精度モード</string>
+    <string name="global_action_restart_advanced">高度な再起動</string>
+    <string name="global_action_restart_recovery">リカバリー</string>
+    <string name="global_action_restart_bootloader">ブートローダー</string>
+    <string name="global_action_restart_ui">システム UI</string>
+    <string name="quick_settings_sound_label">音声</string>
+    <string name="quick_settings_sound_ring">着信</string>
+    <string name="quick_settings_sound_vibrate">振動</string>
+    <string name="quick_settings_sound_dnd">Do Not Disturb</string>
+    <string name="quick_settings_screenshot_label">スクリーン\nショット</string>
+    <string name="quick_settings_region_screenshot_label">範囲選択</string>
+    <string name="quick_settings_heads_up_label">Heads Up</string>
+    <string name="accessibility_quick_settings_heads_up_off">Heads Up OFF</string>
+    <string name="accessibility_quick_settings_heads_up_on">Heads Up ON</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Heads Up を OFF にしました</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Heads Up を ON にしました</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 通知の表示は1分間停止します</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%1$s</xliff:g> - 通知の表示は<xliff:g id="number">%1$d</xliff:g>分間停止します</string>
+    <string name="accessibility_quick_settings_running_services">実行中のサービスを開く</string>
+    <string name="force_stop_dlg_title">強制停止しますか?</string>
+    <string name="force_stop_dlg_text">アプリを強制停止するとアプリが正常に機能しないことがあります</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="guts_force_close_app">アプリを終了</string>
+    <string name="systemui_tuner_navbar_title">レイアウト</string>
+    <string name="navigation_bar_format_title">ナビゲーションバーのレイアウト</string>
+    <string name="navigation_bar_inverse_title">ボタンの入れ替え</string>
+    <string name="navigation_bar_inverse_summary">アプリ履歴ボタンと戻るボタンの位置を入れ替える</string>
+    <string name="navigation_bar_accessibility_dpad_left">カーソルを左</string>
+    <string name="navigation_bar_accessibility_dpad_right">カーソルを右</string>
+    <string name="system_theme_style_title">テーマ</string>
+    <string name="quick_settings_theme_tile_title">アクセント</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">アクセントの選択</string>
+    <string name="quick_settings_theme_tile_style_detail_title">テーマの選択</string>
+    <string name="quick_settings_fpsinfo_label">FPS 情報</string>
+    <string name="accessibility_quick_settings_fpsinfo_off">FPS 情報 OFF</string>
+    <string name="accessibility_quick_settings_fpsinfo_on">FPS 情報 ON</string>
+    <string name="quick_settings_volume_panel_label">音量パネル</string>
+    <string name="quick_settings_vpn_label">VPN</string>
+    <string name="quick_settings_vpn_connect_dialog_title">接続先\u2026</string>
+    <string name="vpn_credentials_hint"><xliff:g id="name">%s</xliff:g> への接続の認証情報を入力して下さい</string>
+    <string name="vpn_credentials_username">ユーザー名</string>
+    <string name="vpn_credentials_password">パスワード</string>
+    <string name="vpn_credentials_dialog_connect">接続</string>
+    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD OFF\nバッテリー節約</string>
+    <string name="qs_data_switch_label">データ SIM の変更</string>
+    <string name="qs_data_switch_changed_1">SIM 1をデータ通信に使用</string>
+    <string name="qs_data_switch_changed_2">SIM 2をデータ通信に使用</string>
+    <string name="quick_settings_cpuinfo_label">CPU 情報</string>
+    <string name="accessibility_quick_settings_cpuinfo_off">CPU 情報 OFF</string>
+    <string name="accessibility_quick_settings_cpuinfo_on">CPU 情報 ON</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_off">CPU 情報を OFF にしました</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_on">CPU 情報を ON にしました</string>
+    <string name="quick_settings_poweroff_label">電源を切る</string>
+    <string name="quick_settings_reboot_label">再起動</string>
+    <string name="quick_settings_reboot_recovery_label">リカバリー</string>
+    <string name="quick_settings_monotoggle_tile">音楽モード</string>
+    <string name="quick_settings_monotoggle_tile_mono">モノラル</string>
+    <string name="quick_settings_monotoggle_tile_stereo">ステレオ</string>
+    <string name="quick_settings_sound_search">音声検索</string>
+    <string name="quick_settings_sound_search_no_app">申し訳ありませんが、音声検索アプリをお持ちでない場合は動作しません。</string>
+    <string name="quick_settings_music_label">音楽</string>
+    <string name="quick_settings_music_play">再生</string>
+    <string name="quick_settings_music_pause">一時停止</string>
+    <string name="quick_settings_compass_label">コンパス</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">初期化中\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">コンパス OFF</string>
+    <string name="accessibility_quick_settings_compass_on">コンパス ON</string>
+    <string name="accessibility_quick_settings_compass_changed_off">コンパスを OFF にしました</string>
+    <string name="accessibility_quick_settings_compass_changed_on">コンパスを ON にしました</string>
+    <string name="quick_settings_compass_N">北</string>
+    <string name="quick_settings_compass_NE">北東</string>
+    <string name="quick_settings_compass_E">東</string>
+    <string name="quick_settings_compass_SE">南東</string>
+    <string name="quick_settings_compass_S">南</string>
+    <string name="quick_settings_compass_SW">南西</string>
+    <string name="quick_settings_compass_W">西</string>
+    <string name="quick_settings_compass_NW">北西</string>
+    <string name="keyguard_indication_dash_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • Dash Charging
+ (充電完了まで残り<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
+    <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
+    <string name="keyguard_indication_warp_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • Warp Charging (充電完了まで残り<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
+    <string name="keyguard_plugged_in_warp_charging">Warp Charging</string>
+    <string name="keyguard_indication_vooc_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • VOOC Charging (充電完了まで残り<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%1$s</xliff:g>)</string>
+    <string name="keyguard_plugged_in_vooc_charging">VOOC Charging</string>
+    <string name="quick_settings_smart_pixels">スマートピクセル</string>
+    <string name="quick_settings_smart_pixels_on_power_save">自動有効</string>
+    <string name="gaming_mode_not_enabled">ゲームモードが設定で無効になっています</string>
+    <string name="quick_settings_gaming_mode_label">ゲームモード</string>
+    <string name="accessibility_quick_settings_gaming_mode_disabled">ゲームモードを OFF にしました</string>
+    <string name="accessibility_quick_settings_gaming_mode_enabled">ゲームモードを ON にしました</string>
+    <string name="task_helper_app_killed">%1$s を強制終了しました</string>
+    <string name="empty_app_killed">アプリ</string>
+    <string name="biometric_dialog_button_use_face">顔を使用</string>
+    <string name="scrollss">スクロール</string>
+    <string name="applock_unlock">アプリのロック解除</string>
+    <string name="status_bar_ims">VoLTE/VoWiFi</string>
+    <string name="quick_settings_anti_flicker">アンチフリッカー</string>
+    <string name="screenrecord_stopdot_label">停止ドット\n長押しして移動</string>
+    <string name="screenrecord_lowquality_label">低品質にしてファイルサイズ縮小</string>
+</resources>
