@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59251050_c1693fe3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-08-08T08:30:03Z",
+      "side": 1,
+      "message": "Doesnt work as intended in miatoll and we dont have any other official device with side fp",
+      "revId": "6f34194db0ea1e27e9d4dac21b072a9929e57582",
+      "serverId": "692a3d4a-6cfc-41d4-b12b-cb9542eed61e"
+    }
+  ]
+}
