@@ -32,4 +32,5 @@
         android:lineSpacingExtra="@dimen/smart_reply_button_line_spacing_extra"
         android:textColor="@color/smart_reply_button_text"
         android:textStyle="normal"
+        android:textAllCaps="false"
         android:ellipsize="none"/>
