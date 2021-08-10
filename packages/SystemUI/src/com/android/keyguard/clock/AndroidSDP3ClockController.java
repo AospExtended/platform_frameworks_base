@@ -115,6 +115,11 @@ public class AndroidSDP3ClockController implements ClockPlugin {
     private final ViewPreviewer mRenderer = new ViewPreviewer();
 
     /**
+     * Helper to extract colors from wallpaper palette for clock face.
+     */
+    private final ClockPalette mPalette = new ClockPalette();
+
+    /**
      * Root view of clock.
      */
     private ClockLayout mView;
@@ -214,6 +219,11 @@ public class AndroidSDP3ClockController implements ClockPlugin {
         TextClock previewClock = mView.findViewById(R.id.clock);
         previewClock.setFormat12Hour("hh\nmm");
         previewClock.setFormat24Hour("kk\nmm");
+        onTimeTick();
+        previewClock.setTextColor(Color.WHITE);
+        ColorExtractor.GradientColors colors = mColorExtractor.getColors(
+                WallpaperManager.FLAG_LOCK);
+        setColorPalette(colors.supportsDarkText(), colors.getColorPalette());
 
         return mRenderer.createPreview(previewView, width, height);
     }
@@ -241,11 +251,14 @@ public class AndroidSDP3ClockController implements ClockPlugin {
 
     @Override
     public void setTextColor(int color) {
-        mClock.setTextColor(color);
+        updateTextColors();
     }
 
     @Override
-    public void setColorPalette(boolean supportsDarkText, int[] colorPalette) {}
+    public void setColorPalette(boolean supportsDarkText, int[] colorPalette) {
+        mPalette.setColorPalette(supportsDarkText, colorPalette);
+        updateTextColors();
+    }
 
     @Override
     public void setSlice(Slice slice) {
@@ -399,6 +412,7 @@ public class AndroidSDP3ClockController implements ClockPlugin {
 
     private void updateTextColors() {
         final int blendedColor = getTextColor();
+        final int secondary = mPalette.getSecondaryColor();
         mTitle.setTextColor(blendedColor);
         int childCount = mRow.getChildCount();
         for (int i = 0; i < childCount; i++) {
@@ -407,6 +421,7 @@ public class AndroidSDP3ClockController implements ClockPlugin {
                 ((TextView) v).setTextColor(blendedColor);
             }
         }
+        mClock.setTextColor(secondary);
     }
 
     int getTextColor() {
