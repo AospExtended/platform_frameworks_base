@@ -40,7 +40,6 @@
             android:textSize="48dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:theme="@style/TextAppearance.Keyguard"
         />
         <TextView
             android:id="@+id/title"
@@ -59,7 +58,6 @@
             app:layout_constraintBottom_toTopOf="@id/row"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:theme="@style/TextAppearance.Keyguard"
         />
         <view class="com.android.keyguard.KeyguardSliceView$Row"
             android:id="@+id/row"
