@@ -107,7 +107,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
     protected final Context mContext;
     protected final ArrayList<TileRecord> mRecords = new ArrayList<>();
-    private final BroadcastDispatcher mBroadcastDispatcher;
+    protected final BroadcastDispatcher mBroadcastDispatcher;
     protected final MediaHost mMediaHost;
 
     /**
@@ -120,7 +120,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     protected View mBrightnessView;
     protected ImageButton mAutoBrightnessIcon;
     @Nullable
-    private BrightnessController mBrightnessController;
+    protected BrightnessController mBrightnessController;
 
     private final H mHandler = new H();
     private final MetricsLogger mMetricsLogger = Dependency.get(MetricsLogger.class);
@@ -130,8 +130,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     private int mVisualMarginStart;
     private int mVisualMarginEnd;
 
-    private ImageButton mMaxBrightness;
-    private ImageButton mMinBrightness;
+    protected ImageButton mMaxBrightness;
+    protected ImageButton mMinBrightness;
 
     protected boolean mExpanded;
     protected boolean mListening;
@@ -157,17 +157,17 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     private int mVisualTilePadding;
     private boolean mUsingHorizontalLayout;
 
-    private boolean mShowAutoBrightnessButton = false;
-    private boolean mShowBrightnessSideButtons = false;
+    protected boolean mShowAutoBrightnessButton = false;
+    protected boolean mShowBrightnessSideButtons = false;
 
     private QSCustomizer mCustomizePanel;
     private Record mDetailRecord;
 
-    private BrightnessMirrorController mBrightnessMirrorController;
+    protected BrightnessMirrorController mBrightnessMirrorController;
     private LinearLayout mHorizontalLinearLayout;
     private LinearLayout mHorizontalContentContainer;
 
-    private final Vibrator mVibrator;
+    protected final Vibrator mVibrator;
 
     // Only used with media
     private QSTileLayout mHorizontalTileLayout;
