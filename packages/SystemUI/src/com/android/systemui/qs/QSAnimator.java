@@ -282,17 +282,15 @@ public class QSAnimator implements Callback, PageListener, Listener, OnLayoutCha
 
         if (mAllowFancy) {
             // Make brightness appear static position and alpha in through second half.
-            /*View brightness = mQsPanel.getBrightnessView();
-            if (brightness != null) {
-                firstPageBuilder.addFloat(brightness, "translationY", heightDiff, 0);
+            View qsBrightness = mQuickQsPanel.getBrightnessView();
+            if (qsBrightness != null) {
                 mBrightnessAnimator = new TouchAnimator.Builder()
-                        .addFloat(brightness, "alpha", 0, 1)
-                        .setStartDelay(.5f)
+                        .addFloat(qsBrightness, "alpha", 1, 0)
+                        .setEndDelay(.5f)
                         .build();
-                mAllViews.add(brightness);
             } else {
                 mBrightnessAnimator = null;
-            }*/
+            }
             mFirstPageAnimator = firstPageBuilder
                     .setListener(this)
                     .build();
@@ -393,14 +391,14 @@ public class QSAnimator implements Callback, PageListener, Listener, OnLayoutCha
             mFirstPageDelayedAnimator.setPosition(position);
             mTranslationXAnimator.setPosition(position);
             mTranslationYAnimator.setPosition(position);
-            /*if (mBrightnessAnimator != null) {
-                mBrightnessAnimator.setPosition(position);
-            }*/
         } else {
             mNonfirstPageAnimator.setPosition(position);
             mNonfirstPageDelayedAnimator.setPosition(position);
         }
         if (mAllowFancy) {
+            if (mBrightnessAnimator != null) {
+                mBrightnessAnimator.setPosition(position);
+            }
             mAllPagesDelayedAnimator.setPosition(position);
         }
     }
