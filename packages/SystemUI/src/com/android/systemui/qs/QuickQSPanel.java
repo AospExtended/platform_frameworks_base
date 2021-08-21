@@ -19,6 +19,7 @@ package com.android.systemui.qs;
 import static com.android.systemui.util.InjectionInflationController.VIEW_CONTEXT;
 
 import android.content.Context;
+import android.content.ContentResolver;
 import android.content.res.Configuration;
 import android.graphics.Rect;
 import android.util.AttributeSet;
@@ -38,6 +39,8 @@ import com.android.systemui.plugins.qs.QSTile.SignalState;
 import com.android.systemui.plugins.qs.QSTile.State;
 import com.android.systemui.qs.customize.QSCustomizer;
 import com.android.systemui.qs.logging.QSLogger;
+import com.android.systemui.settings.ToggleSliderView;
+import com.android.systemui.statusbar.policy.BrightnessMirrorController;
 import com.android.systemui.tuner.TunerService;
 import com.android.systemui.tuner.TunerService.Tunable;
 
@@ -53,6 +56,7 @@ import javax.inject.Named;
 public class QuickQSPanel extends QSPanel {
 
     public static final String NUM_QUICK_TILES = "sysui_qqs_count";
+    public static final String QQS_BRIGHTNESS_SLIDER = "sysui_qqs_brightness_slider";
     private static final String TAG = "QuickQSPanel";
     // Start it at 6 so a non-zero value can be obtained statically.
     private static int sDefaultMaxTiles = 6;
@@ -91,7 +95,11 @@ public class QuickQSPanel extends QSPanel {
 
     @Override
     protected void addViewsAboveTiles() {
-        // Nothing to add above the tiles
+        super.addViewsAboveTiles();
+        mBrightnessView = super.getBrightnessView();
+        if (mBrightnessView != null) {
+            addView(mBrightnessView);
+        }
     }
 
     @Override
@@ -130,13 +138,57 @@ public class QuickQSPanel extends QSPanel {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
+        if (mBrightnessMirrorController != null) {
+            mBrightnessMirrorController.addCallback(this);
+        }
+	    mBrightnessController.registerCallbacks();
         Dependency.get(TunerService.class).addTunable(mNumTiles, NUM_QUICK_TILES);
+        Dependency.get(TunerService.class).addTunable(this, QQS_BRIGHTNESS_SLIDER);
     }
 
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
+        if (mBrightnessMirrorController != null) {
+            mBrightnessMirrorController.removeCallback(this);
+        }
+		mBrightnessController.unregisterCallbacks();
         Dependency.get(TunerService.class).removeTunable(mNumTiles);
+    }
+
+    @Override
+    public void setListening(boolean listening, boolean expanded) {
+        if (mBrightnessController == null) {
+            return;
+        }
+        if (listening) {
+            mBrightnessController.registerCallbacks();
+        } else {
+            mBrightnessController.unregisterCallbacks();
+        }
+    }
+
+    @Override
+    public void setBrightnessMirror(BrightnessMirrorController c) {
+        if (mBrightnessMirrorController != null) {
+            mBrightnessMirrorController.removeCallback(this);
+        }
+        mBrightnessMirrorController = c;
+        if (mBrightnessMirrorController != null) {
+            mBrightnessMirrorController.addCallback(this);
+        }
+        updateBrightnessMirror();
+    }
+
+    @Override
+    public void updateBrightnessMirror() {
+        if (mBrightnessMirrorController != null) {
+            ToggleSliderView brightnessSlider = findViewById(R.id.brightness_slider);
+            ToggleSliderView mirrorSlider = mBrightnessMirrorController.getMirror()
+                    .findViewById(R.id.brightness_slider);
+            brightnessSlider.setMirror(mirrorSlider);
+            brightnessSlider.setMirrorController(mBrightnessMirrorController);
+        }
     }
 
     @Override
@@ -181,9 +233,39 @@ public class QuickQSPanel extends QSPanel {
 
     @Override
     public void onTuningChanged(String key, String newValue) {
-        if (QS_SHOW_BRIGHTNESS.equals(key)) {
-            // No Brightness or Tooltip for you!
-            super.onTuningChanged(key, "0");
+        try {
+            if ((QQS_BRIGHTNESS_SLIDER.equals(key) || QS_SHOW_BRIGHTNESS.equals(key)) && mBrightnessView != null) {
+                String mQQsSlider = Dependency.get(TunerService.class).getValue(QQS_BRIGHTNESS_SLIDER);
+                String mQsSlider = Dependency.get(TunerService.class).getValue(QS_SHOW_BRIGHTNESS);
+                boolean visible = false;
+                if (mQQsSlider != null && mQsSlider != null) {
+                    visible = Integer.parseInt(mQQsSlider) != 0 &&
+                            Integer.parseInt(mQsSlider) != 0;
+                }
+                mBrightnessView.setVisibility(visible ? VISIBLE : GONE);
+            }
+        } catch (Exception e){
+            // Do nothing
+        }
+        if (QS_BRIGHTNESS_POSITION_BOTTOM.equals(key) && mBrightnessView != null) {
+            if (newValue == null || Integer.parseInt(newValue) == 0) {
+                removeView(mBrightnessView);
+                addView(mBrightnessView, 0);
+            } else {
+                removeView(mBrightnessView);
+                addView(mBrightnessView, 2);
+            }
+        }
+        if (QS_SHOW_AUTO_BRIGHTNESS_BUTTON.equals(key) && mAutoBrightnessIcon != null) {
+            mShowAutoBrightnessButton = (newValue == null || Integer.parseInt(newValue) == 0)
+                    ? false : true;
+            mAutoBrightnessIcon.setVisibility(mShowAutoBrightnessButton ? View.VISIBLE : View.GONE);
+        }
+        if (QS_SHOW_BRIGHTNESS_SIDE_BUTTONS.equals(key) && mMaxBrightness != null && mMinBrightness != null) {
+            mShowBrightnessSideButtons = (newValue == null || Integer.parseInt(newValue) == 0)
+                    ? false : true;
+            mMaxBrightness.setVisibility(mShowBrightnessSideButtons ? View.VISIBLE : View.GONE);
+            mMinBrightness.setVisibility(mShowBrightnessSideButtons ? View.VISIBLE : View.GONE);
         }
     }
 
