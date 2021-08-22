@@ -137,7 +137,7 @@ public class QSTileBaseView extends com.android.systemui.plugins.qs.QSTileView {
         mColorDisabled = Utils.getDisabled(context,
                 Utils.getColorAttrDefaultColor(context, android.R.attr.textColorTertiary));
         if (mQsTileStyle == 2) {
-            mColorActive = ColorUtils.setAlphaComponent(mColorActive, 50);
+            mColorActive = ColorUtils.setAlphaComponent(mColorActive, 100);
             final boolean nightmode = (context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_YES) != 0;
             mColorDisabled = nightmode ? adjustColor(Utils.getColorAttrDefaultColor(context, android.R.attr.colorPrimary))
                      : context.getResources().getColor(R.color.qs_tile_background_color_disabled);
