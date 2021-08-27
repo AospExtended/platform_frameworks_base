@@ -153,7 +153,7 @@ public class FPSInfoService extends Service {
         private String parseMeasuredFps(String data) {
             String result = "err";
             try {
-                float fps = Float.parseFloat(data.trim().split("\\s+")[1]);
+                float fps = Float.parseFloat(data.contains(": ") ? data.trim().split("\\s+")[1] : data.trim());
                 result = String.valueOf(Math.round(fps));
             } catch (NumberFormatException e) {
                 Log.e(TAG, "NumberFormatException occured at parsing FPS data");
