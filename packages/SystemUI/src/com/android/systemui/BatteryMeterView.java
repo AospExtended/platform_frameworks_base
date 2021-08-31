@@ -271,16 +271,13 @@ public class BatteryMeterView extends LinearLayout implements
     private void updateSettings() {
         updateSbBatteryStyle();
         updateSbShowBatteryPercent();
-        updateQsBatteryEstimate();        
+        updateQsBatteryEstimate();
     }
 
     private void updateQsBatteryEstimate() {
-        mShowBatteryEstimate = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.QS_SHOW_BATTERY_ESTIMATE, 1,
-                UserHandle.USER_CURRENT) == 1;
         updatePercentView();
     }
-    
+
     private void updateSbBatteryStyle() {
         mBatteryStyle = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT);
@@ -382,6 +379,10 @@ public class BatteryMeterView extends LinearLayout implements
         }
 
         if (mBatteryPercentView != null) {
+            mShowBatteryEstimate =
+                    Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.QS_SHOW_BATTERY_ESTIMATE, 1,
+                    UserHandle.USER_CURRENT) == 1;
             if (mShowPercentMode == MODE_ESTIMATE && !mCharging && mShowBatteryEstimate) {
                 mBatteryController.getEstimatedTimeRemainingString((String estimate) -> {
                     if (estimate != null) {
