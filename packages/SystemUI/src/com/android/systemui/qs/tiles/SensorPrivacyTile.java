@@ -35,8 +35,6 @@ import javax.inject.Inject;
 public class SensorPrivacyTile extends QSTileImpl<BooleanState> implements
         SensorPrivacyManager.OnSensorPrivacyChangedListener {
     private static final String TAG = "SensorPrivacy";
-    private final Icon mIcon =
-            ResourceIcon.get(R.drawable.ic_signal_sensors);
     private final SensorPrivacyManager mSensorPrivacyManager;
     private final ActivityStarter mActivityStarter;
 
@@ -76,7 +74,7 @@ public class SensorPrivacyTile extends QSTileImpl<BooleanState> implements
 
     @Override
     public CharSequence getTileLabel() {
-        return mContext.getString(R.string.sensor_privacy_mode);
+        return mContext.getString(R.string.sensor_privacy_mode_tile);
     }
 
     @Override
@@ -89,9 +87,15 @@ public class SensorPrivacyTile extends QSTileImpl<BooleanState> implements
         final boolean enabled = arg instanceof Boolean ? (Boolean) arg
                 : mSensorPrivacyManager.isSensorPrivacyEnabled();
         state.value = enabled;
-        state.label = mContext.getString(R.string.sensor_privacy_mode);
-        state.icon = mIcon;
+        state.label = mContext.getString(R.string.sensor_privacy_mode_tile);
         state.state = enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE;
+        if (state.value) {
+            state.secondaryLabel = mContext.getString(R.string.quick_settings_off);
+            state.icon = ResourceIcon.get(R.drawable.ic_signal_sensors);
+        } else {
+            state.secondaryLabel = mContext.getString(R.string.quick_settings_on);
+            state.icon = ResourceIcon.get(R.drawable.ic_sensors_on);
+        }
         state.contentDescription = state.label;
         state.expandedAccessibilityClassName = Switch.class.getName();
     }
