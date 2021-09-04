@@ -253,4 +253,9 @@
 
     <!-- Sleep Mode -->
     <string name="quick_settings_sleep_mode_label">Sleep Mode</string>
+
+    <!-- Text for the quick setting tile for sensor privacy [CHAR LIMIT=30] -->
+    <string name="sensor_privacy_mode_tile">Sensors</string>
+    <string name="quick_settings_on">On</string>
+    <string name="quick_settings_off">Off</string>
 </resources>
