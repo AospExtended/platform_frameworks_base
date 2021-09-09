@@ -264,6 +264,10 @@ public class MediaControlPanel {
         TextView titleText = mViewHolder.getTitleText();
         titleText.setText(safeCharSequence(data.getSong()));
 
+        // App title
+        TextView appName = mViewHolder.getAppName();
+        appName.setText(data.getApp());
+
         // Artist name
         TextView artistText = mViewHolder.getArtistText();
         artistText.setText(safeCharSequence(data.getArtist()));
