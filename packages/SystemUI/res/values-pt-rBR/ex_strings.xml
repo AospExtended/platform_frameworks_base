@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2019, AospExtended ROM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="statusbar_items_title">Ícone da barra de status</string>
+    <string name="lockscreen_default">Padrão</string>
+    <string name="lockscreen_hidden">Nenhum</string>
+    <string name="custom_hint">Deslize a partir do ícone para iniciar</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="quick_settings_caffeine_label">Cafeína</string>
+    <string name="accessibility_quick_settings_caffeine_off">Cafeína desligada</string>
+    <string name="accessibility_quick_settings_caffeine_on">Cafeína ligada</string>
+    <string name="quick_settings_ambient_display_label">Tela Ambiente</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Tela Ambiente desligada.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Tela Ambiente ligada.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Tela ambiente foi desligada.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Tela ambiente foi ativada.</string>
+    <string name="quick_settings_usb_tether_label">Compartilhamento USB</string>
+    <string name="quick_settings_sync_label">Sincronização</string>
+    <string name="accessibility_quick_settings_sync_off">Sincronização desativada</string>
+    <string name="accessibility_quick_settings_sync_on">Sincronização ativada</string>
+    <string name="accessibility_quick_settings_sync_changed_off">A sincronização foi desativada</string>
+    <string name="accessibility_quick_settings_sync_changed_on">A sincronização foi ativada</string>
+    <string name="quick_settings_location_secondary_battery_saving">Economia de bateria</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Modo de localização: economia de bateria.</string>
+    <string name="quick_settings_location_secondary_gps_only">Somente sensores</string>
+    <string name="accessibility_quick_settings_location_gps_only">Modo de localização: somente sensores.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Alta precisão</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Modo de localização: alta precisão.</string>
+    <string name="global_action_restart_advanced">Avançado</string>
+    <string name="global_action_restart_recovery">Recuperação</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">Interface do Sistema</string>
+    <string name="quick_settings_sound_label">Som</string>
+    <string name="quick_settings_sound_ring">Toque</string>
+    <string name="quick_settings_sound_vibrate">Vibração</string>
+    <string name="quick_settings_sound_dnd">Não perturbe</string>
+    <string name="quick_settings_screenshot_label">Captura de tela</string>
+    <string name="quick_settings_region_screenshot_label">Captura de tela parcial</string>
+    <string name="quick_settings_heads_up_label">Notificações pop-up</string>
+    <string name="accessibility_quick_settings_heads_up_off">Notificações pop-up desativadas.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Notificações pop-up ativadas.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">As notificações pop-up foram desativadas.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">As notificações pop-up foram ativadas.</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s </xliff:g> • As notificações flutuantes foram silenciadas por 1 minuto.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%1$s</xliff:g> • As notificações estão silenciadas por <xliff:g id="number">%1$d</xliff:g> minutos.</string>
+    <string name="accessibility_quick_settings_running_services">Abra a tela de serviços em execução</string>
+    <string name="force_stop_dlg_title">Forçar parada?</string>
+    <string name="force_stop_dlg_text">Se você forçar o fechamento de um aplicativo, ele pode apresentar mau funcionamento.</string>
+    <string name="dlg_ok">@android:fragmento/certo</string>
+    <string name="dlg_cancel">@android:fragmento/cancelado</string>
+    <string name="guts_force_close_app">Fechar aplicativo</string>
+    <string name="systemui_tuner_navbar_title">Design da barra de navegação</string>
+    <string name="navigation_bar_format_title">Formato da barra de navegação</string>
+    <string name="navigation_bar_inverse_title">Inverter botões da barra de navegação</string>
+    <string name="navigation_bar_inverse_summary">Troque a ordem dos botões recentes e voltar</string>
+    <string name="navigation_bar_accessibility_dpad_left">Cursor para a esquerda</string>
+    <string name="navigation_bar_accessibility_dpad_right">Cursor para a direita</string>
+    <string name="system_theme_style_title">Tema</string>
+    <string name="quick_settings_theme_tile_title">Sotaque</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Selecione o sotaque</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Selecione o tema</string>
+    <string name="quick_settings_fpsinfo_label">Informações de FPS</string>
+    <string name="accessibility_quick_settings_fpsinfo_off">Desligar informações de FPS</string>
+    <string name="accessibility_quick_settings_fpsinfo_on">Ligar informações de FPS</string>
+    <string name="quick_settings_volume_panel_label">Painel de volume</string>
+    <string name="quick_settings_vpn_label">VPN</string>
+    <string name="quick_settings_vpn_connect_dialog_title">Conectado em</string>
+    <string name="vpn_credentials_hint">Por favor insira suas credenciais para se conectar a</string>
+    <string name="vpn_credentials_username">Nome de usuário</string>
+    <string name="vpn_credentials_password">Senha</string>
+    <string name="vpn_credentials_dialog_connect">Conectado</string>
+    <string name="quick_settings_aod_label">sempre em exibição</string>
+    <string name="quick_settings_aod_off_powersave_label">Desligar sempre em exibição para economizar bateria</string>
+    <string name="qs_data_switch_label">Trocar chip de dados</string>
+    <string name="qs_data_switch_changed_1">Usando SIM 1 para dados móveis</string>
+    <string name="qs_data_switch_changed_2">Usando SIM 2 para dados móveis</string>
+    <string name="quick_settings_cpuinfo_label">Informações de CPU</string>
+    <string name="accessibility_quick_settings_cpuinfo_off">Desligar informações de CPU</string>
+    <string name="accessibility_quick_settings_cpuinfo_on">Ligar informações de CPU</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_off">Informações da CPU desligadas</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_on">Informações da CPU ligadas</string>
+    <string name="quick_settings_poweroff_label">Desligar</string>
+    <string name="quick_settings_reboot_label">Reiniciar</string>
+    <string name="quick_settings_reboot_recovery_label">Recuperação</string>
+    <string name="quick_settings_monotoggle_tile">Modo de áudio</string>
+    <string name="quick_settings_monotoggle_tile_mono">Áudio mono</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Áudio estéreo</string>
+    <string name="quick_settings_sound_search">Busca de som</string>
+    <string name="quick_settings_sound_search_no_app">Desculpe, mas isso não funciona se você não tiver um aplicativo de pesquisa de som</string>
+    <string name="quick_settings_music_label">Música</string>
+    <string name="quick_settings_music_play">Tocar</string>
+    <string name="quick_settings_music_pause">Pausar</string>
+    <string name="quick_settings_compass_label">Bússola</string>
+    <string name="quick_settings_compass_value"><xliff:g id="graus">%1$.0f</xliff:g>\u00b0 <xliff:g id="direção">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Inicializando</string>
+    <string name="accessibility_quick_settings_compass_off">Desligar bússola</string>
+    <string name="accessibility_quick_settings_compass_on">Ligar bússola</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Bússola desligada</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Bússola ligada</string>
+    <string name="quick_settings_compass_N">Norte</string>
+    <string name="quick_settings_compass_NE">Nordeste</string>
+    <string name="quick_settings_compass_E">Vento</string>
+    <string name="quick_settings_compass_SE">Sudeste</string>
+    <string name="quick_settings_compass_S">Sul</string>
+    <string name="quick_settings_compass_SW">Sudoeste</string>
+    <string name="quick_settings_compass_W">Oeste</string>
+    <string name="quick_settings_compass_NW">Noroeste</string>
+    <string name="keyguard_indication_dash_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • Carregamento Rápido(<xliff:g id="charging_time_left" example="4 horas e 2 minutos">%s</xliff:g> até estar cheio)</string>
+    <string name="keyguard_plugged_in_dash_charging">Carregamento rápido</string>
+    <string name="keyguard_indication_warp_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • Carregamento rápido (<xliff:g id="charging_time_left" example="4 horas e 2 minutos">%s</xliff:g> até completar a carga)</string>
+    <string name="keyguard_plugged_in_warp_charging">Carregamento ultrarrápido</string>
+    <string name="keyguard_indication_vooc_charging_time" formatted="false"><xliff:g id="porcentagem">%2$s</xliff:g> • Carregamento rápido (<xliff:g id="charging_time_left" example="4 horas e 2 minutos">%1$s</xliff:g> até completar a carga)</string>
+    <string name="keyguard_plugged_in_vooc_charging">Carregamento VOOC</string>
+    <string name="quick_settings_smart_pixels">Pixels Inteligentes</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Ativação automática dos pixels inteligentes</string>
+    <string name="gaming_mode_not_enabled">O modo de jogo está desativado nas configurações</string>
+    <string name="quick_settings_gaming_mode_label">Modo de jogo</string>
+    <string name="accessibility_quick_settings_gaming_mode_disabled">Modo de jogo desativado</string>
+    <string name="accessibility_quick_settings_gaming_mode_enabled">Modo de jogo ativado</string>
+    <string name="task_helper_app_killed">Veado</string>
+    <string name="empty_app_killed">Aplicativo</string>
+    <string name="biometric_dialog_button_use_face">Usar face</string>
+    <string name="scrollss">Rolagem</string>
+    <string name="applock_unlock">Desbloquear aplicativo</string>
+    <string name="status_bar_ims">VoLTE/VoWiFi</string>
+    <string name="quick_settings_anti_flicker">Anti tremor</string>
+    <string name="screenrecord_stopdot_label">Mostrar ponto de parada\nPressione para movê-lo</string>
+    <string name="screenrecord_lowquality_label">Qualidade inferior para arquivos de tamanho menor</string>
+    <string name="daily_data_usage_title">Uso de hoje</string>
+    <string name="quick_settings_reading_mode">Modo de leitura</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Modo de leitura ativado</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Modo de leitura desativado</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Modo de leitura está ativado</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Modo de leitura está desativado</string>
+</resources>

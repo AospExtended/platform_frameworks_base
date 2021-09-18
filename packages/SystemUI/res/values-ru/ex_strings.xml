@@ -39,11 +39,13 @@
     <string name="quick_settings_location_secondary_battery_saving">Энергосбережение</string>
     <string name="accessibility_quick_settings_location_battery_saving">Определение местоположения: режим экономии батареи.</string>
     <string name="quick_settings_location_secondary_gps_only">Только датчики</string>
+    <string name="accessibility_quick_settings_location_gps_only">Местоположение: только GPS.</string>
     <string name="quick_settings_location_secondary_high_accuracy">Высокая точность</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Местоположение: режим высокой точности.</string>
     <string name="global_action_restart_advanced">Дополнительно</string>
     <string name="global_action_restart_recovery">Режим восстановления</string>
     <string name="global_action_restart_bootloader">Загрузчик</string>
-    <string name="global_action_restart_ui">Системный интерфейс</string>
+    <string name="global_action_restart_ui">SystemUI</string>
     <string name="quick_settings_sound_label">Звук</string>
     <string name="quick_settings_sound_ring">Звонок</string>
     <string name="quick_settings_sound_vibrate">Вибрация</string>
@@ -55,16 +57,39 @@
     <string name="accessibility_quick_settings_heads_up_on">Всплывающие уведомления вкл.</string>
     <string name="accessibility_quick_settings_heads_up_changed_off">Всплывающие уведомления отключены.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Всплывающие уведомления включены.</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Всплывающие уведомления выключены на 1 минуту.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%1$s</xliff:g> - Всплывающие уведомления выключены на <xliff:g id="number">%1$d</xliff:g> минут/ы.</string>
     <string name="accessibility_quick_settings_running_services">Открыть окно запущенных служб.</string>
     <string name="force_stop_dlg_title">Остановить принудительно?</string>
     <string name="force_stop_dlg_text">Принудительное закрытие приложения может отразиться на его функциональности.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
     <string name="guts_force_close_app">Закрыть приложение</string>
+    <string name="systemui_tuner_navbar_title">Панель навигации</string>
+    <string name="navigation_bar_format_title">Формат панели навигации</string>
+    <string name="navigation_bar_inverse_title">Поменять местами кнопки</string>
+    <string name="navigation_bar_inverse_summary">Поменять местами кнопки Последние и Назад</string>
+    <string name="navigation_bar_accessibility_dpad_left">Курсор влево</string>
+    <string name="navigation_bar_accessibility_dpad_right">Курсор вправо</string>
     <string name="system_theme_style_title">Тема</string>
+    <string name="quick_settings_theme_tile_title">Акцент</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Выбрать акцент</string>
     <string name="quick_settings_theme_tile_style_detail_title">Выбрать тему</string>
+    <string name="quick_settings_fpsinfo_label">FPS инфо</string>
+    <string name="accessibility_quick_settings_fpsinfo_off">FPS информация выкл.</string>
+    <string name="accessibility_quick_settings_fpsinfo_on">FPS информация вкл.</string>
+    <string name="quick_settings_volume_panel_label">Панель громкости</string>
+    <string name="quick_settings_vpn_label">VPN</string>
     <string name="quick_settings_vpn_connect_dialog_title">Подключить к\u2026</string>
+    <string name="vpn_credentials_hint">Пожалуйста, введите ваши учётные данные для подключения к <xliff:g id="name">%s</xliff:g></string>
     <string name="vpn_credentials_username">Имя пользователя</string>
     <string name="vpn_credentials_password">Пароль</string>
     <string name="vpn_credentials_dialog_connect">Подключиться</string>
+    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD выкл.\nЭкономия батареи</string>
+    <string name="qs_data_switch_label">Переключить сим-карту</string>
+    <string name="qs_data_switch_changed_1">Использовать SIM 1 для передачи данных</string>
+    <string name="qs_data_switch_changed_2">Использовать SIM 2 для передачи данных</string>
     <string name="quick_settings_cpuinfo_label">Информация о ЦП</string>
     <string name="accessibility_quick_settings_cpuinfo_off">Информация о ЦП выключена</string>
     <string name="accessibility_quick_settings_cpuinfo_on">Информация о ЦП включена</string>
@@ -73,12 +98,21 @@
     <string name="quick_settings_poweroff_label">Отключение питания</string>
     <string name="quick_settings_reboot_label">Перезагрузка</string>
     <string name="quick_settings_reboot_recovery_label">Восстановление</string>
+    <string name="quick_settings_monotoggle_tile">Аудио режим</string>
+    <string name="quick_settings_monotoggle_tile_mono">Моно</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Стерео</string>
+    <string name="quick_settings_sound_search">Голосовой поиск</string>
+    <string name="quick_settings_sound_search_no_app">Извините, но это не работает без приложения для поиска музыки.</string>
     <string name="quick_settings_music_label">Музыка</string>
     <string name="quick_settings_music_play">Воспроизвести</string>
     <string name="quick_settings_music_pause">Пауза</string>
     <string name="quick_settings_compass_label">Компас</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Инициализация\u2026</string>
     <string name="accessibility_quick_settings_compass_off">Компас выкл.</string>
     <string name="accessibility_quick_settings_compass_on">Компас вкл</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Компас выключен</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Компас включен</string>
     <string name="quick_settings_compass_N">С</string>
     <string name="quick_settings_compass_NE">СВ</string>
     <string name="quick_settings_compass_E">В</string>
@@ -87,17 +121,31 @@
     <string name="quick_settings_compass_SW">ЮЗ</string>
     <string name="quick_settings_compass_W">З</string>
     <string name="quick_settings_compass_NW">СЗ</string>
+    <string name="keyguard_indication_dash_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • Dash зарядка (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> до полной зарядки)</string>
+    <string name="keyguard_plugged_in_dash_charging">Dash зарядка</string>
+    <string name="keyguard_indication_warp_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • Warp зарядка (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> до полного заряда)</string>
+    <string name="keyguard_plugged_in_warp_charging">Warp зарядка</string>
+    <string name="keyguard_indication_vooc_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • VOOC зарядка (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%1$s</xliff:g> до полного заряда)</string>
+    <string name="keyguard_plugged_in_vooc_charging">VOOC Зарядка</string>
     <string name="quick_settings_smart_pixels">Умные пиксели</string>
     <string name="quick_settings_smart_pixels_on_power_save">Автоматическое включение Умных пикселей</string>
     <string name="gaming_mode_not_enabled">Игровой режим отключен в настройках</string>
     <string name="quick_settings_gaming_mode_label">Игровой режим</string>
     <string name="accessibility_quick_settings_gaming_mode_disabled">Игровой режим выключен.</string>
     <string name="accessibility_quick_settings_gaming_mode_enabled">Игровой режим включен.</string>
+    <string name="task_helper_app_killed">%1$s принудительная остановка</string>
     <string name="empty_app_killed">Приложение</string>
     <string name="biometric_dialog_button_use_face">Использовать лицо</string>
     <string name="scrollss">Прокрутка</string>
     <string name="applock_unlock">Разблокировать приложение</string>
     <string name="status_bar_ims">VoLTE/VoWiFi</string>
     <string name="quick_settings_anti_flicker">Защита от мерцания</string>
+    <string name="screenrecord_stopdot_label">Показывать кнопку остановки\nУдерживайте для перемещения</string>
     <string name="screenrecord_lowquality_label">Низкое качество для меньшего размера файла</string>
+    <string name="daily_data_usage_title">Использовано сегодня</string>
+    <string name="quick_settings_reading_mode">Режим чтения</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Режим чтения вкл.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Режим чтения выкл.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Режим чтения включен.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Режим чтения выключен.</string>
 </resources>

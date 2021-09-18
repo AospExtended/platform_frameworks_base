@@ -35,4 +35,10 @@
     <string name="accessibility_quick_settings_sync_off">Συγχρονισμός ανενεργός</string>
     <string name="accessibility_quick_settings_sync_on">Συγχρονισμός ενεργός</string>
     <string name="accessibility_quick_settings_sync_changed_off">Ο συγχρονισμός απενεργοποιήθηκε</string>
+    <string name="daily_data_usage_title">Σημερινή χρήση</string>
+    <string name="quick_settings_reading_mode">Λειτουργία ανάγνωσης</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Λειτουργία ανάγνωσης ενεργή.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Λειτουργία ανάγνωσης ανενεργή.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Η λειτουργία ανάγνωσης ενεργοποιήθηκε.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Η λειτουργία ανάγνωσης απενεργοποιήθηκε.</string>
 </resources>

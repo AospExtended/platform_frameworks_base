@@ -142,4 +142,10 @@
     <string name="quick_settings_anti_flicker">防闪烁</string>
     <string name="screenrecord_stopdot_label">显示触摸圆点\n长按来移动它</string>
     <string name="screenrecord_lowquality_label">较低画质以求更小的文件大小</string>
+    <string name="daily_data_usage_title">今日使用情况</string>
+    <string name="quick_settings_reading_mode">阅读模式</string>
+    <string name="accessibility_quick_settings_reading_mode_on">开启阅读模式</string>
+    <string name="accessibility_quick_settings_reading_mode_off">关闭阅读模式</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">阅读模式已开启</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">阅读模式已关闭</string>
 </resources>

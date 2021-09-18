@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2019, AospExtended ROM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="statusbar_items_title">Statusbalk icoon</string>
+    <string name="lockscreen_default">Standaard</string>
+    <string name="lockscreen_hidden">Geen</string>
+    <string name="custom_hint">Sleep vanaf icoon om te starten</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="quick_settings_caffeine_label">Cafeïne</string>
+    <string name="accessibility_quick_settings_caffeine_off">Cafeïne uit</string>
+    <string name="accessibility_quick_settings_caffeine_on">Cafeïne aan</string>
+    <string name="quick_settings_ambient_display_label">Omgevingsscherm</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Omgevingsdisplay uit.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Omgevingsscherm aan.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Omgevingsscherm uitgeschakeld.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Omgevingsscherm ingeschakeld.</string>
+    <string name="quick_settings_usb_tether_label">USB-tethering</string>
+    <string name="quick_settings_sync_label">Synchroniseer</string>
+    <string name="accessibility_quick_settings_sync_off">Synchronisatie uit</string>
+    <string name="accessibility_quick_settings_sync_on">Synchronisatie aan</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Synchronisatie uitgeschakeld</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Synchronisatie ingeschakeld</string>
+    <string name="quick_settings_location_secondary_battery_saving">Batterijbesparing</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Locatiebepaling: batterijbesparende modus.</string>
+    <string name="quick_settings_location_secondary_gps_only">Alleen sensoren</string>
+    <string name="accessibility_quick_settings_location_gps_only">Locatiebepaling: alleen sensoren.</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Hoge nauwkeurigheid</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Locatiebepaling: hoge nauwkeurigheid.</string>
+    <string name="global_action_restart_advanced">Geavanceerd</string>
+    <string name="global_action_restart_recovery">Recovery</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">SysteemUI</string>
+    <string name="quick_settings_sound_label">Geluid</string>
+    <string name="quick_settings_sound_ring">Beltoon</string>
+    <string name="quick_settings_sound_vibrate">Trillen</string>
+    <string name="quick_settings_sound_dnd">Niet storen</string>
+    <string name="quick_settings_screenshot_label">Schermafbeelding</string>
+    <string name="quick_settings_region_screenshot_label">Gedeeltelijke schermafbeelding</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Pop-up meldingen zijn gesluimerd voor 1 minuut.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%1$s </xliff:g> - Pop-up meldingen zijn gedempt voor <xliff:g id="number">%1$d </xliff:g> minuten.</string>
+    <string name="accessibility_quick_settings_running_services">Open het scherm met actieve achtergrondprocessen.</string>
+    <string name="force_stop_dlg_title">Gedwongen stoppen?</string>
+    <string name="force_stop_dlg_text">Als je een app gedwongen stopt, kan deze onverwacht gedrag vertonen.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">\@android: string/annuleren</string>
+    <string name="guts_force_close_app">App sluiten</string>
+    <string name="systemui_tuner_navbar_title">Opmaak</string>
+    <string name="navigation_bar_format_title">Navbar formaat</string>
+    <string name="navigation_bar_inverse_title">Wissel knoppen</string>
+    <string name="navigation_bar_inverse_summary">Recente apps- en terugknop omwisselen</string>
+    <string name="navigation_bar_accessibility_dpad_left">Cursor links</string>
+    <string name="navigation_bar_accessibility_dpad_right">Cursor rechts</string>
+    <string name="system_theme_style_title">Thema</string>
+    <string name="quick_settings_theme_tile_title">Accent</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Selecteer accent</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Selecteer thema</string>
+    <string name="quick_settings_fpsinfo_label">FPS Info</string>
+    <string name="accessibility_quick_settings_fpsinfo_off">FPS Info uitgeschakeld</string>
+    <string name="accessibility_quick_settings_fpsinfo_on">FPS Info ingeschakeld</string>
+    <string name="quick_settings_volume_panel_label">Volumepaneel</string>
+    <string name="quick_settings_vpn_label">VPN</string>
+    <string name="quick_settings_vpn_connect_dialog_title">Verbinden met\u2026</string>
+    <string name="vpn_credentials_hint">Voer uw inloggegevens in om verbinding te maken met <xliff:g id="name">%s</xliff:g></string>
+    <string name="vpn_credentials_username">Gebruikersnaam</string>
+    <string name="vpn_credentials_password">Wachtwoord</string>
+    <string name="vpn_credentials_dialog_connect">Verbind</string>
+    <string name="quick_settings_aod_label">Altijd Aan Display</string>
+    <string name="quick_settings_aod_off_powersave_label">Altijd Aan Display uit\nBatterijbesparing</string>
+    <string name="qs_data_switch_label">Wissel gegevenskaart</string>
+    <string name="qs_data_switch_changed_1">Gebruikt simkaart 1 voor mobiele data</string>
+    <string name="qs_data_switch_changed_2">Gebruikt simkaart 2 voor mobiele data</string>
+    <string name="quick_settings_cpuinfo_label">CPU-info</string>
+    <string name="accessibility_quick_settings_cpuinfo_on">CPU Info ingeschakeld</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_off">CPU-info uitgeschakeld</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_on">CPU-info ingeschakeld</string>
+    <string name="quick_settings_poweroff_label">Uitschakelen</string>
+    <string name="quick_settings_reboot_label">Herstarten</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+    <string name="quick_settings_monotoggle_tile">Audio modus</string>
+    <string name="quick_settings_monotoggle_tile_mono">Monogeluid</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Stereo geluid</string>
+    <string name="quick_settings_sound_search">Geluid zoeken</string>
+    <string name="quick_settings_sound_search_no_app">Sorry, dit werkt niet als je geen app hebt om geluid te zoeken.</string>
+    <string name="quick_settings_music_label">Muziek</string>
+    <string name="quick_settings_music_play">Afspelen</string>
+    <string name="quick_settings_music_pause">Pauzeren</string>
+</resources>

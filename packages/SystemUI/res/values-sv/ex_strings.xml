@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2019, AospExtended ROM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="lockscreen_default">Standard</string>
+    <string name="lockscreen_hidden">Ingen</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="quick_settings_caffeine_label">Koffein</string>
+    <string name="accessibility_quick_settings_caffeine_off">Koffein av</string>
+    <string name="accessibility_quick_settings_caffeine_on">Koffein på</string>
+    <string name="quick_settings_ambient_display_label">Omgivningsskärm</string>
+    <string name="quick_settings_sync_label">Synk</string>
+    <string name="accessibility_quick_settings_sync_off">Synk av</string>
+    <string name="accessibility_quick_settings_sync_on">Synk på</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Synk avstängt</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Synk påslagen</string>
+    <string name="quick_settings_location_secondary_battery_saving">Batterisparande</string>
+    <string name="quick_settings_location_secondary_gps_only">Endast sensorer</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Hög precision</string>
+    <string name="global_action_restart_advanced">Avancerad</string>
+    <string name="global_action_restart_recovery">Återställning</string>
+    <string name="global_action_restart_bootloader">Uppstartsladdare</string>
+    <string name="global_action_restart_ui">SystemUI</string>
+    <string name="quick_settings_sound_label">Ljud</string>
+    <string name="quick_settings_sound_ring">Ring</string>
+    <string name="quick_settings_sound_vibrate">Vibrera</string>
+    <string name="quick_settings_sound_dnd">Stör inte</string>
+    <string name="quick_settings_screenshot_label">Skärmdump</string>
+    <string name="quick_settings_region_screenshot_label">Delvis skärmdump</string>
+    <string name="guts_force_close_app">Stäng ner app</string>
+    <string name="system_theme_style_title">Tema</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Välj tema</string>
+    <string name="quick_settings_fpsinfo_label">FPS-info</string>
+    <string name="accessibility_quick_settings_fpsinfo_off">FPS-info av</string>
+    <string name="accessibility_quick_settings_fpsinfo_on">FPS-info på</string>
+    <string name="quick_settings_volume_panel_label">Volympanel</string>
+    <string name="quick_settings_vpn_label">VPN</string>
+    <string name="quick_settings_vpn_connect_dialog_title">Anslut till\u2026</string>
+    <string name="vpn_credentials_username">Användarnamn</string>
+    <string name="vpn_credentials_password">Lösenord</string>
+    <string name="vpn_credentials_dialog_connect">Anslut</string>
+    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_cpuinfo_label">Info om CPU</string>
+    <string name="accessibility_quick_settings_cpuinfo_off">Info om CPU av</string>
+    <string name="accessibility_quick_settings_cpuinfo_on">Info om CPU på</string>
+    <string name="quick_settings_poweroff_label">Stäng av</string>
+    <string name="quick_settings_reboot_label">Starta om</string>
+    <string name="quick_settings_reboot_recovery_label">Återställning</string>
+    <string name="quick_settings_monotoggle_tile">Ljudläge</string>
+    <string name="quick_settings_monotoggle_tile_mono">Monoljud</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Stereoljud</string>
+    <string name="quick_settings_sound_search_no_app">Ledsen, men det här fungerar inte om du inte har en app för ljudsökning.</string>
+    <string name="quick_settings_music_label">Musik</string>
+    <string name="quick_settings_music_play">Spela</string>
+    <string name="quick_settings_music_pause">Pausa</string>
+    <string name="quick_settings_compass_label">Kompass</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Initierar\u2026</string>
+    <string name="quick_settings_compass_N">N</string>
+    <string name="quick_settings_compass_NE">NÖ</string>
+    <string name="quick_settings_compass_E">Ö</string>
+    <string name="quick_settings_compass_SE">SÖ</string>
+    <string name="quick_settings_compass_S">S</string>
+    <string name="quick_settings_compass_SW">SV</string>
+    <string name="quick_settings_compass_W">V</string>
+    <string name="quick_settings_compass_NW">NV</string>
+    <string name="quick_settings_smart_pixels">Smarta pixlar</string>
+    <string name="quick_settings_gaming_mode_label">Spelläge</string>
+    <string name="empty_app_killed">App</string>
+    <string name="biometric_dialog_button_use_face">Använd ansikte</string>
+    <string name="scrollss">Skrolla</string>
+    <string name="applock_unlock">Lås upp app</string>
+    <string name="status_bar_ims">VoLTE/VoWiFi</string>
+    <string name="quick_settings_anti_flicker">Anti-flimmer</string>
+    <string name="daily_data_usage_title">Dagens användning</string>
+    <string name="quick_settings_reading_mode">Läs-läge</string>
+</resources>

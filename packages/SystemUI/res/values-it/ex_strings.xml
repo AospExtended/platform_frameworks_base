@@ -142,4 +142,10 @@
     <string name="quick_settings_anti_flicker">Anti-sfarfallio</string>
     <string name="screenrecord_stopdot_label">Mostra punto per terminare\nPremi a lungo per spostarlo</string>
     <string name="screenrecord_lowquality_label">Qualità inferiore per un file più piccolo</string>
+    <string name="daily_data_usage_title">Utilizzo odierno</string>
+    <string name="quick_settings_reading_mode">Modalità lettura</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Modalità lettura accesa.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Modalità lettura spenta.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Modalità lettura attivata.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Modalità lettura disattivata.</string>
 </resources>

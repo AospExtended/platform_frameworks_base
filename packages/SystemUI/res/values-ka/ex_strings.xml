@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2019, AospExtended ROM
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="lockscreen_default">ნაგულისხმევი</string>
+    <string name="lockscreen_hidden">არცერთი</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="quick_settings_sync_label">სინქრონიზაცია</string>
+    <string name="accessibility_quick_settings_sync_off">სინქრონიზაციის გათიშვა</string>
+    <string name="accessibility_quick_settings_sync_on">სინქრონიზაციის ჩართვა</string>
+    <string name="accessibility_quick_settings_sync_changed_off">სინქრონიზაცია გამორთულია.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">სინქრონიზაცია ჩართულია.</string>
+    <string name="quick_settings_location_secondary_battery_saving">ბატარეის დამზოგი</string>
+    <string name="quick_settings_location_secondary_high_accuracy">მაღალი სიზუსტე</string>
+    <string name="quick_settings_sound_label">ხმა</string>
+    <string name="quick_settings_sound_ring">ზარი</string>
+    <string name="quick_settings_sound_vibrate">ვიბრაცია</string>
+    <string name="quick_settings_sound_dnd">არ შემაწუხოთ</string>
+    <string name="quick_settings_screenshot_label">ეკრანის სურათი</string>
+    <string name="quick_settings_region_screenshot_label">ნაწილობრივი სურათი</string>
+    <string name="accessibility_quick_settings_running_services">გახსენი გაშვებული სერვისების ეკრანი.</string>
+    <string name="guts_force_close_app">აპის დახურვა</string>
+    <string name="systemui_tuner_navbar_title">განლაგება</string>
+</resources>

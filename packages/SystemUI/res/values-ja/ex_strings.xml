@@ -143,4 +143,10 @@
     <string name="quick_settings_anti_flicker">アンチフリッカー</string>
     <string name="screenrecord_stopdot_label">停止ドット\n長押しして移動</string>
     <string name="screenrecord_lowquality_label">低品質にしてファイルサイズ縮小</string>
+    <string name="daily_data_usage_title">今日の使用量</string>
+    <string name="quick_settings_reading_mode">読書モード</string>
+    <string name="accessibility_quick_settings_reading_mode_on">読書モード ON</string>
+    <string name="accessibility_quick_settings_reading_mode_off">読書モード OFF</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">読書モードを ON にしました</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">読書モードを OFF にしました</string>
 </resources>

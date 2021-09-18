@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2015-2018 AospExtended
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="aerr_copy">Copie o URL do registro de falhas</string>
+    <string name="url_copy_success">URL copiado com sucesso</string>
+    <string name="reboot_title">Reiniciar</string>
+    <string name="reboot_message">Reiniciando o sistema</string>
+    <string name="notification_channel_gaming">Gaming mode</string>
+    <string name="gaming_mode_notification_title">Modo gamer ativado</string>
+    <string name="gaming_mode_notification_content">Toque para desativar o Modo gamer</string>
+    <string name="gaming_mode_enabled_toast">O modo gamer foi ativado</string>
+    <string name="gaming_mode_disabled_toast">Modo gamer foi desativado</string>
+    <string name="permlab_fakePackageSignature">Falsificação de assinatura</string>
+    <string name="permdesc_fakePackageSignature">Permite que o aplicativo finja ser um aplicativo diferente. Aplicativos maliciosos podem usar isso para acessar dados privados de outros aplicativos. Usos legítimos incluem um emulador fingindo ser o que ele emula. Conceda esta permissão com cuidado!</string>
+    <string name="permgrouplab_fake_package_signature">Falsificação de assinatura</string>
+    <string name="permgroupdesc_fake_package_signature">permitir falsificação de assinatura de pacote</string>
+    <string name="permgrouprequest_fake_package_signature">Permitir        &lt;b&gt;<xliff:g id="app_name" example="Gmail">%1$s</xliff:g>&lt;/b&gt; falsificar assinatura do pacote?</string>
+    <string name="pocket_lock_message_long_press">Pressione e segure o botão power para interagir</string>
+    <string name="live_display_auto">Automático</string>
+    <string name="live_display_auto_summary">Ajusta automaticamente a cor da temperatura da tela depois do pôr e nascer do sol</string>
+    <string name="live_display_off">Off</string>
+    <string name="live_display_off_summary">Desativar todos os ajustes</string>
+    <string name="live_display_day">Dia</string>
+    <string name="live_display_day_summary">Usar apenas configurações diurnas</string>
+    <string name="live_display_night">Noite</string>
+    <string name="live_display_night_summary">Usar apenas configurações noturnas</string>
+    <string name="live_display_outdoor">Externo (sol intenso)</string>
+    <string name="live_display_outdoor_summary">Usar apenas configurações de modo externo</string>
+    <string name="live_display_hint">LiveDisplay pode te ajudar a reduzir cansaço dos olhos e ajudar você a dormir durante a noite. Clique aqui para testar!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay desligado.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: modo automatico.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: modo dia.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: modo noite.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: modo externo.</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay foi desligado.</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay alterado para modo automático.</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay alterado para o modo dia.</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay alterado para modo noite.</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay alterado para o modo externo.</string>
+    <string name="pocket_view_title">Modo bolso está ativado</string>
+    <string name="pocket_view_title_cancel">Para ativar o seu telefone:</string>
+    <string name="pocket_view_top_tag_cancel">Não cubra a área azul do seu telefone, limpe qualquer terra ou poeira.</string>
+    <string name="pocket_view_top_tag_cancel2">Pressionar e segurar o botão liga/desliga para forçar a saída do modo bolso</string>
+    <string name="pocket_view_top_tag_number1">\u0020</string>
+    <string name="pocket_view_top_tag_number2">\u0020</string>
+</resources>

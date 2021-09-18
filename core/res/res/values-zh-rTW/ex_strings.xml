@@ -22,7 +22,7 @@
     <string name="reboot_message">正在重新啟動系統</string>
     <string name="notification_channel_gaming">遊戲模式</string>
     <string name="gaming_mode_notification_title">遊戲模式已啟用</string>
-    <string name="gaming_mode_notification_content">點擊以關閉遊戲模式</string>
+    <string name="gaming_mode_notification_content">點此即可關閉遊戲模式</string>
     <string name="gaming_mode_enabled_toast">遊戲模式已開啟</string>
     <string name="gaming_mode_disabled_toast">遊戲模式已關閉</string>
     <string name="permlab_fakePackageSignature">模擬套件簽名</string>

@@ -142,4 +142,10 @@
     <string name="quick_settings_anti_flicker">Eliminace blikání</string>
     <string name="screenrecord_stopdot_label">Zobrazit tečku pro zastavení nahrávání\Dlouhým stiskem ji přesunete</string>
     <string name="screenrecord_lowquality_label">Nižší kvalita pro zajištění menší velikosti souboru</string>
+    <string name="daily_data_usage_title">Dnešní využití</string>
+    <string name="quick_settings_reading_mode">Režim čtení</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Režim čtení zap.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Režim čtení vyp.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Režim čtení je zapnutý.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Režim čtení je vypnutý.</string>
 </resources>
