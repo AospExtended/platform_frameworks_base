@@ -137,6 +137,7 @@ public class KeyguardIndicationController implements StateListener,
     private long mChargingTimeRemaining;
     private float mDisclosureMaxAlpha;
     private int mChargingCurrent;
+    private int mBatteryCurrentDivider;
     private double mChargingVoltage;
     private float mTemperature;
     private String mMessageToShowOnScreenOn;
@@ -315,6 +316,8 @@ public class KeyguardIndicationController implements StateListener,
 
     public void setVisible(boolean visible) {
         mVisible = visible;
+        mBatteryCurrentDivider = mContext.getResources()
+                .getInteger(R.integer.config_battCurrentDivider);
         mIndicationArea.setVisibility(visible ? View.VISIBLE : View.GONE);
         if (visible) {
             // If this is called after an error message was already shown, we should not clear it.
@@ -680,8 +683,7 @@ public class KeyguardIndicationController implements StateListener,
             Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT) == 1;
         if (showbatteryInfo) {
             if (mChargingCurrent > 0) {
-                current = (mChargingCurrent < 5 ? (mChargingCurrent * 1000)
-                        : (mChargingCurrent < 4000 ? mChargingCurrent : (mChargingCurrent / 1000)));
+                current = (mChargingCurrent / mBatteryCurrentDivider);
                 batteryInfo = batteryInfo + current + "mA";
             }
             if (mChargingVoltage > 0 && mChargingCurrent > 0) {
