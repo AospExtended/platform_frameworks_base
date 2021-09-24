@@ -58,6 +58,7 @@ import com.airbnb.lottie.LottieAnimationView;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.app.IBatteryStats;
+import com.android.internal.util.aospextended.fod.FodUtils;
 import com.android.internal.widget.ViewClippingUtil;
 import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.keyguard.KeyguardUpdateMonitorCallback;
@@ -631,8 +632,7 @@ public class KeyguardIndicationController implements StateListener,
     }
 
     private boolean hasActiveInDisplayFp() {
-        String FOD_DISABLED_BY_PROP = "ro.fingerprint.inscreen_disabled";
-        boolean hasInDisplayFingerprint = !SystemProperties.getBoolean(FOD_DISABLED_BY_PROP, false);
+        boolean hasInDisplayFingerprint = FodUtils.hasFodSupport(mContext);
         int userId = KeyguardUpdateMonitor.getCurrentUser();
         FingerprintManager fpm = (FingerprintManager) mContext.getSystemService(Context.FINGERPRINT_SERVICE);
         return hasInDisplayFingerprint && fpm.getEnrolledFingerprints(userId).size() > 0;
