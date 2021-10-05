@@ -38,7 +38,7 @@ public final class WidgetFlags {
     /**
      * Default value for the flag {@link #ENABLE_CURSOR_DRAG_FROM_ANYWHERE}.
      */
-    public static final boolean ENABLE_CURSOR_DRAG_FROM_ANYWHERE_DEFAULT = true;
+    public static final boolean ENABLE_CURSOR_DRAG_FROM_ANYWHERE_DEFAULT = false;
 
     /**
      * Threshold for the direction of a swipe gesture in order for it to be handled as a cursor drag
