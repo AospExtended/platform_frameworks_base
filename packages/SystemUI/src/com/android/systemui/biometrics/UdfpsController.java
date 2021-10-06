@@ -60,6 +60,7 @@ import android.view.accessibility.AccessibilityManager;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.systemui.R;
+import com.android.systemui.biometrics.UdfpsHbmTypes.HbmType;
 import com.android.systemui.dagger.SysUISingleton;
 import com.android.systemui.dagger.qualifiers.Main;
 import com.android.systemui.doze.DozeReceiver;
@@ -100,7 +101,7 @@ import kotlin.Unit;
  */
 @SuppressWarnings("deprecation")
 @SysUISingleton
-public class UdfpsController implements DozeReceiver {
+public class UdfpsController implements DozeReceiver, UdfpsHbmProvider {
     private static final String TAG = "UdfpsController";
     private static final long AOD_INTERRUPT_TIMEOUT_MILLIS = 1000;
     private static final long DEFAULT_VIBRATION_DURATION = 1000; // milliseconds
@@ -122,6 +123,7 @@ public class UdfpsController implements DozeReceiver {
     @NonNull private final SystemUIDialogManager mDialogManager;
     @NonNull private final KeyguardUpdateMonitor mKeyguardUpdateMonitor;
     @Nullable private final Vibrator mVibrator;
+    @NonNull private final Handler mMainHandler;
     @NonNull private final FalsingManager mFalsingManager;
     @NonNull private final PowerManager mPowerManager;
     @NonNull private final AccessibilityManager mAccessibilityManager;
@@ -581,6 +583,7 @@ public class UdfpsController implements DozeReceiver {
         mScreenOn = screenLifecycle.getScreenState() == ScreenLifecycle.SCREEN_ON;
         mKeyguardBypassController = keyguardBypassController;
         mConfigurationController = configurationController;
+        mMainHandler = mainHandler;
         mSystemClock = systemClock;
         mUnlockedScreenOffAnimationController = unlockedScreenOffAnimationController;
 
@@ -776,7 +779,7 @@ public class UdfpsController implements DozeReceiver {
                 mView = (UdfpsView) mInflater.inflate(R.layout.udfps_view, null, false);
                 mOnFingerDown = false;
                 mView.setSensorProperties(mSensorProps);
-                mView.setHbmProvider(mHbmProvider);
+                mView.setHbmProvider(this);
                 UdfpsAnimationViewController<?> animation = inflateUdfpsAnimation(reason);
                 mAttemptedToDismissKeyguard = false;
                 if (animation != null) {
@@ -1050,5 +1053,22 @@ public class UdfpsController implements DozeReceiver {
          * Called onFingerDown events.
          */
         void onFingerDown();
+    }
+
+    @Override
+    public void enableHbm(@HbmType int hbmType, @Nullable Surface surface,
+            @Nullable Runnable onHbmEnabled) {
+        // TO-DO send call to lineage biometric hal and/or add dummy jni that device could override
+        if (onHbmEnabled != null) {
+            mMainHandler.post(onHbmEnabled);
+        }
+    }
+
+    @Override
+    public void disableHbm(@Nullable Runnable onHbmDisabled) {
+        // TO-DO send call to lineage biometric hal and/or add dummy jni that device could override
+        if (onHbmDisabled != null) {
+            mMainHandler.post(onHbmDisabled);
+        }
     }
 }
