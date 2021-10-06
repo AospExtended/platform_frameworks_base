@@ -95,6 +95,8 @@ android_library {
         "dagger2",
         "jsr330",
         "lottie",
+        "colorkt",
+        "themelib",
         "tensorflowlite_java",
     ],
     manifest: "AndroidManifest.xml",
