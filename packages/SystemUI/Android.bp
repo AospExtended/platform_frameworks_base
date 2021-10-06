@@ -121,6 +121,8 @@ android_library {
         "dagger2",
         "jsr330",
         "lottie",
+        "colorkt",
+        "themelib",
         "backgesture-google",
         "smartspace-google",
     ],
