@@ -3379,9 +3379,9 @@ public class NotificationPanelViewController extends PanelViewController {
     }
 
     private void updateKeyguardStatusBarForHeadsUp() {
-        boolean
-                showingKeyguardHeadsUp =
-                mKeyguardShowing && mHeadsUpAppearanceController.shouldBeVisible();
+        boolean showingKeyguardHeadsUp = mKeyguardShowing
+                && mHeadsUpAppearanceController != null
+                && mHeadsUpAppearanceController.shouldBeVisible();
         if (mShowingKeyguardHeadsUp != showingKeyguardHeadsUp) {
             mShowingKeyguardHeadsUp = showingKeyguardHeadsUp;
             if (mKeyguardShowing) {
