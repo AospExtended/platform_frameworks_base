@@ -268,8 +268,6 @@ public class KeyguardStatusBarViewController extends ViewController<KeyguardStat
 
         Resources r = getResources();
         mBlockedIcons = Collections.unmodifiableList(Arrays.asList(
-                r.getString(com.android.internal.R.string.status_bar_volume),
-                r.getString(com.android.internal.R.string.status_bar_alarm_clock),
                 r.getString(com.android.internal.R.string.status_bar_call_strength)));
         mNotificationsHeaderCollideDistance = r.getDimensionPixelSize(
                 R.dimen.header_notifications_collide_distance);
