@@ -151,13 +151,6 @@ public class TunerServiceImpl extends TunerService {
         if (oldVersion < 2) {
             setTunerEnabled(false);
         }
-        // 3 Removed because of a revert.
-        if (oldVersion < 4) {
-            // Delay this so that we can wait for everything to be registered first.
-            final int user = mCurrentUser;
-            mainHandler.postDelayed(
-                    () -> clearAllFromUser(user), 5000);
-        }
         setValue(TUNER_VERSION, newVersion);
     }
 
@@ -251,6 +244,8 @@ public class TunerServiceImpl extends TunerService {
 
     private void reloadAll() {
         for (String key : mTunableLookup.keySet()) {
+           if (ArrayUtils.contains(RESET_EXCEPTION_LIST, key))
+                continue;
             String value = Settings.Secure.getStringForUser(mContentResolver, key,
                     mCurrentUser);
             for (Tunable tunable : mTunableLookup.get(key)) {
@@ -273,9 +268,6 @@ public class TunerServiceImpl extends TunerService {
 
         // A couple special cases.
         for (String key : mTunableLookup.keySet()) {
-            if (ArrayUtils.contains(RESET_EXCEPTION_LIST, key)) {
-                continue;
-            }
             Settings.Secure.putStringForUser(mContentResolver, key, null, user);
         }
     }
