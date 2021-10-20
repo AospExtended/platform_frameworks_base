@@ -24,11 +24,23 @@ import com.android.systemui.qs.QSHost;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
 import com.android.systemui.R;
 
+import android.os.Handler;
+import android.os.Looper;
+import com.android.internal.logging.MetricsLogger;
+import com.android.systemui.dagger.qualifiers.Background;
+import com.android.systemui.dagger.qualifiers.Main;
+import com.android.systemui.plugins.ActivityStarter;
+import com.android.systemui.plugins.statusbar.StatusBarStateController;
+import com.android.systemui.plugins.FalsingManager;
+import com.android.systemui.qs.logging.QSLogger;
+import android.view.View;
+
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
 import com.android.internal.custom.hardware.LineageHardwareManager;
 
 import javax.inject.Inject;
+import androidx.annotation.Nullable;
 
 public class ReadingModeTile extends QSTileImpl<BooleanState> {
 
@@ -40,8 +52,18 @@ public class ReadingModeTile extends QSTileImpl<BooleanState> {
     private LineageHardwareManager mHardware;
 
     @Inject
-    public ReadingModeTile(QSHost host) {
-        super(host);
+    public ReadingModeTile(QSHost host,
+            @Background Looper backgroundLooper,
+            @Main Handler mainHandler,
+            FalsingManager falsingManager,
+            MetricsLogger metricsLogger,
+            StatusBarStateController statusBarStateController,
+            ActivityStarter activityStarter,
+            QSLogger qsLogger
+    ) {
+        super(host, backgroundLooper, mainHandler, falsingManager, metricsLogger, statusBarStateController,
+                activityStarter, qsLogger);
+
         mHardware = LineageHardwareManager.getInstance(mContext);
     }
 
@@ -51,7 +73,7 @@ public class ReadingModeTile extends QSTileImpl<BooleanState> {
     }
 
     @Override
-    protected void handleClick() {
+    protected void handleClick(@Nullable View view) {
         boolean newStatus = !isReadingModeEnabled();
         mHardware.set(LineageHardwareManager.FEATURE_READING_ENHANCEMENT, newStatus);
         refreshState();
