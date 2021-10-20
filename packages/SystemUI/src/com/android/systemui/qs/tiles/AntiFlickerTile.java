@@ -18,15 +18,25 @@ package com.android.systemui.qs.tiles;
 
 import static com.android.internal.custom.hardware.LiveDisplayManager.FEATURE_ANTI_FLICKER;
 
+import com.android.internal.logging.MetricsLogger;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
+import android.view.View;
 
+import com.android.systemui.dagger.qualifiers.Background;
+import com.android.systemui.dagger.qualifiers.Main;
+import com.android.systemui.plugins.ActivityStarter;
+import com.android.systemui.plugins.FalsingManager;
 import com.android.systemui.plugins.qs.QSTile.BooleanState;
+import com.android.systemui.plugins.statusbar.StatusBarStateController;
 import com.android.systemui.qs.QSHost;
+import com.android.systemui.qs.logging.QSLogger;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
 import com.android.systemui.R;
 
@@ -35,6 +45,7 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.custom.hardware.LiveDisplayManager;
 
 import javax.inject.Inject;
+import androidx.annotation.Nullable;
 
 public class AntiFlickerTile extends QSTileImpl<BooleanState> {
     private boolean mAntiFlickerEnabled = true;
@@ -47,8 +58,18 @@ public class AntiFlickerTile extends QSTileImpl<BooleanState> {
     private final LiveDisplayManager mLiveDisplay;
 
     @Inject
-    public AntiFlickerTile(QSHost host) {
-        super(host);
+    public AntiFlickerTile(QSHost host,
+            @Background Looper backgroundLooper,
+            @Main Handler mainHandler,
+            FalsingManager falsingManager,
+            MetricsLogger metricsLogger,
+            StatusBarStateController statusBarStateController,
+            ActivityStarter activityStarter,
+            QSLogger qsLogger
+    ) {
+        super(host, backgroundLooper, mainHandler, falsingManager, metricsLogger, statusBarStateController,
+                activityStarter, qsLogger);
+
         mLiveDisplay = LiveDisplayManager.getInstance(mContext);
         if (!updateConfig()) {
             mContext.registerReceiver(mReceiver,
@@ -87,7 +108,7 @@ public class AntiFlickerTile extends QSTileImpl<BooleanState> {
     }
 
     @Override
-    protected void handleClick() {
+    protected void handleClick(@Nullable View view) {
         setEnabled(!mLiveDisplay.isAntiFlickerEnabled());
         refreshState();
     }

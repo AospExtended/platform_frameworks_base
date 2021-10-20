@@ -28,6 +28,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Handler;
+import android.os.Looper;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.database.ContentObserver;
@@ -37,16 +39,26 @@ import android.os.Handler;
 import android.os.UserHandle;
 import android.service.quicksettings.Tile;
 
+import com.android.systemui.dagger.qualifiers.Background;
+import com.android.systemui.dagger.qualifiers.Main;
+import com.android.systemui.plugins.ActivityStarter;
+import com.android.systemui.plugins.statusbar.StatusBarStateController;
+
 import com.android.internal.util.ArrayUtils;
 import com.android.systemui.plugins.qs.QSTile.LiveDisplayState;
+import com.android.systemui.plugins.FalsingManager;
 import com.android.systemui.qs.QSHost;
+import com.android.systemui.qs.logging.QSLogger;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
 
 import com.android.internal.R;
 
+import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.custom.hardware.LiveDisplayManager;
 
+import androidx.annotation.Nullable;
+import android.view.View;
 
 import javax.inject.Inject;
 
@@ -77,8 +89,18 @@ public class LiveDisplayTile extends QSTileImpl<LiveDisplayState> {
     private static final int OFF_TEMPERATURE = 6500;
 
     @Inject
-    public LiveDisplayTile(QSHost host) {
-        super(host);
+    public LiveDisplayTile(QSHost host,
+            @Background Looper backgroundLooper,
+            @Main Handler mainHandler,
+            MetricsLogger metricsLogger,
+            FalsingManager falsingManager,
+            StatusBarStateController statusBarStateController,
+            ActivityStarter activityStarter,
+            QSLogger qsLogger
+    ) {
+        super(host, backgroundLooper, mainHandler, falsingManager, metricsLogger, statusBarStateController,
+                activityStarter, qsLogger);
+
         mNightDisplayAvailable = ColorDisplayManager.isNightDisplayAvailable(mContext);
 
         Resources res = mContext.getResources();
@@ -155,7 +177,7 @@ public class LiveDisplayTile extends QSTileImpl<LiveDisplayState> {
     }
 
     @Override
-    protected void handleClick() {
+    protected void handleClick(@Nullable View view) {
         changeToNextMode();
     }
 
