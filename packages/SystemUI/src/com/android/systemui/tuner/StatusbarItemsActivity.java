@@ -23,10 +23,13 @@ import android.view.MenuItem;
 import com.android.systemui.Dependency;
 import com.android.systemui.SystemUIFactory;
 import com.android.systemui.fragments.FragmentService;
+import com.android.systemui.R;
+
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
 import javax.inject.Inject;
 
-public class StatusbarItemsActivity extends Activity {
+public class StatusbarItemsActivity extends CollapsingToolbarBaseActivity {
 
     @Inject
     StatusbarItemsActivity() {
@@ -35,7 +38,7 @@ public class StatusbarItemsActivity extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction().replace(android.R.id.content, new StatusbarItems())
+        getFragmentManager().beginTransaction().replace(R.id.content_frame, new StatusbarItems())
                 .commit();
     }
 
