@@ -35,6 +35,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -188,10 +189,8 @@ public class SystemUIToast implements ToastPlugin.Toast {
                     + " user=" + mUserId);
         }
 
-        if (appInfo != null && appInfo.targetSdkVersion < Build.VERSION_CODES.S) {
-            // no two-line limit
-            textView.setMaxLines(Integer.MAX_VALUE);
-
+        if (Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.TOAST_ICON, 0) == 0) {
             // no app icon
             toastView.findViewById(com.android.systemui.R.id.icon).setVisibility(View.GONE);
         } else {
@@ -272,8 +271,7 @@ public class SystemUIToast implements ToastPlugin.Toast {
 
         final PackageManager packageManager = userContext.getPackageManager();
         final AppEntry appEntry = appState.getEntry(packageName, userId);
-        if (appEntry == null || appEntry.info == null
-                || !showApplicationIcon(appEntry.info, packageManager)) {
+        if (appEntry == null) {
             return null;
         }
 
