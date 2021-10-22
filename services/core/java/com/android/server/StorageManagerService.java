@@ -171,6 +171,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
 import java.security.spec.KeySpec;
 import java.util.ArrayList;
@@ -2168,7 +2169,8 @@ class StorageManagerService extends IStorageManager.Stub
         try {
             fos = mSettingsFile.startWrite();
 
-            TypedXmlSerializer out = Xml.resolveSerializer(fos);
+            TypedXmlSerializer out = Xml.newFastSerializer();
+            out.setOutput(fos, StandardCharsets.UTF_8.name());
             out.startDocument(null, true);
             out.startTag(null, TAG_VOLUMES);
             out.attributeInt(null, ATTR_VERSION, VERSION_FIX_PRIMARY);
