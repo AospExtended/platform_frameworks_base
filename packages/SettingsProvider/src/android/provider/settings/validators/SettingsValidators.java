@@ -74,6 +74,33 @@ public class SettingsValidators {
         }
     };
 
+    public static final Validator ANY_FLOAT_VALIDATOR = new Validator() {
+        @Override
+        public boolean validate(@Nullable String value) {
+            if (value == null) {
+                return true;
+            }
+            try {
+                Float.parseFloat(value);
+                return true;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        }
+    };
+
+    public static final Validator HEX_COLOR_VALIDATOR = new Validator() {
+        @Override
+        public boolean validate(@Nullable String value) {
+            if (value == null || value.isEmpty()) {
+                return true;
+            } else if (value.startsWith("#") && value.length() == 7) {
+                return true;
+            }
+            return false;
+        }
+    };
+
     public static final Validator URI_VALIDATOR = new Validator() {
         @Override
         public boolean validate(@Nullable String value) {
