@@ -45,8 +45,6 @@ public class DateView extends TextView {
     private String mDatePattern;
     private final BroadcastDispatcher mBroadcastDispatcher;
 
-    private boolean mScreenOn = true;
-
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -57,12 +55,6 @@ public class DateView extends TextView {
             if (handler == null) return;
 
             final String action = intent.getAction();
-            if (action.equals(Intent.ACTION_SCREEN_ON)) {
-                mScreenOn = true;
-            } else if (action.equals(Intent.ACTION_SCREEN_OFF)) {
-                mScreenOn = false;
-            }
-
             if (Intent.ACTION_TIME_TICK.equals(action)
                     || Intent.ACTION_TIME_CHANGED.equals(action)
                     || Intent.ACTION_TIMEZONE_CHANGED.equals(action)
@@ -72,9 +64,7 @@ public class DateView extends TextView {
                     // need to get a fresh date format
                     handler.post(() -> mDateFormat = null);
                 }
-                if (mScreenOn) {
-                    handler.post(() -> updateClock());
-                }
+                handler.post(() -> updateClock());
             }
         }
     };
@@ -102,8 +92,6 @@ public class DateView extends TextView {
         super.onAttachedToWindow();
 
         IntentFilter filter = new IntentFilter();
-        filter.addAction(Intent.ACTION_SCREEN_ON);
-        filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction(Intent.ACTION_TIME_TICK);
         filter.addAction(Intent.ACTION_TIME_CHANGED);
         filter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
