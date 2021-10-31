@@ -53,6 +53,8 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
     private static final String USE_OLD_MOBILETYPE =
             "system:" + Settings.System.USE_OLD_MOBILETYPE;
 
+    private static final String HIDE_QS_CALL_STRENGTH = "hide_qs_call_strength";
+
     private final String mSlotAirplane;
     private final String mSlotMobile;
     private final String mSlotWifi;
@@ -117,7 +119,8 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
                 mContext.getString(com.android.internal.R.string.status_bar_call_strength);
         mActivityEnabled = mContext.getResources().getBoolean(R.bool.config_showActivity);
 
-        tunerService.addTunable(this, StatusBarIconController.ICON_HIDE_LIST, USE_OLD_MOBILETYPE);
+        tunerService.addTunable(this, StatusBarIconController.ICON_HIDE_LIST,
+                USE_OLD_MOBILETYPE, HIDE_QS_CALL_STRENGTH);
         mNetworkController.addCallback(this);
         mSecurityController.addCallback(this);
     }
@@ -155,7 +158,7 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
 
     @Override
     public void onTuningChanged(String key, String newValue) {
-        if (USE_OLD_MOBILETYPE.equals(key)) {
+        if (USE_OLD_MOBILETYPE.equals(key) || HIDE_QS_CALL_STRENGTH.equals(key)) {
             mNetworkController.removeCallback(this);
             mNetworkController.addCallback(this);
         }
@@ -251,14 +254,19 @@ public class StatusBarSignalPolicy implements NetworkControllerImpl.SignalCallba
             state.callStrengthResId = statusIcon.icon;
             state.callStrengthDescription = statusIcon.contentDescription;
         }
-        if (mCarrierConfigTracker.getCallStrengthConfig(subId)) {
+        boolean hideCallStrength = mTunerService.getValue(HIDE_QS_CALL_STRENGTH, 0) == 1;
+        if (mCarrierConfigTracker.getCallStrengthConfig(subId) && !hideCallStrength) {
             mIconController.setCallStrengthIcons(mSlotCallStrength,
                     CallIndicatorIconState.copyStates(mCallIndicatorStates));
         } else {
             mIconController.removeIcon(mSlotCallStrength, subId);
         }
-        mIconController.setNoCallingIcons(mSlotNoCalling,
+        if (!hideCallStrength) {
+            mIconController.setNoCallingIcons(mSlotNoCalling,
                 CallIndicatorIconState.copyStates(mCallIndicatorStates));
+        } else {
+            mIconController.removeIcon(mSlotNoCalling, subId);
+        }
     }
 
     @Override
