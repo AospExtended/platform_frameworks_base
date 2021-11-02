@@ -805,6 +805,9 @@ public class KeyguardIndicationController {
             return mContext.getResources().getString(R.string.keyguard_charged);
         }
 
+        final boolean hasSuperDartCharger = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_hasSuperDartCharger);
+
         final boolean hasChargingTime = mChargingTimeRemaining > 0;
         if (mPowerPluggedInWired) {
             switch (mChargingSpeed) {
@@ -825,8 +828,12 @@ public class KeyguardIndicationController {
                     break;
                 case BatteryStatus.CHARGING_VOOC:
                     chargingId = hasChargingTime
-                            ? R.string.keyguard_indication_vooc_charging_time
-                            : R.string.keyguard_plugged_in_vooc_charging;
+                            ? (hasSuperDartCharger
+                                    ? R.string.keyguard_indication_superdart_charging_time
+                                    : R.string.keyguard_indication_vooc_charging_time)
+                            : (hasSuperDartCharger
+                                    ? R.string.keyguard_plugged_in_superdart_charging
+                                    : R.string.keyguard_plugged_in_vooc_charging);
                     break;
                 case BatteryStatus.CHARGING_SLOWLY:
                     chargingId = hasChargingTime
