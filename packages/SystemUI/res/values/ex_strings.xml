@@ -185,5 +185,9 @@
     <!-- Indication on the keyguard that is shown when the device is charging with a VOOC charger. Should match keyguard_plugged_in_vooc_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_vooc_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • VOOC Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%1$s</xliff:g> until full)</string>
     <string name="keyguard_plugged_in_vooc_charging">VOOC Charging</string>
+
+    <!-- Indication on the keyguard that is shown when the device is charging with a SuperDart charger. Should match keyguard_plugged_in_superdart_charging [CHAR LIMIT=40]-->
+    <string name="keyguard_indication_superdart_charging_time" formatted="false"><xliff:g id="percentage">%2$s</xliff:g> • SuperDart Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%1$s</xliff:g> until full)</string>
+    <string name="keyguard_plugged_in_superdart_charging">SuperDart Charging</string>
 </resources>
 

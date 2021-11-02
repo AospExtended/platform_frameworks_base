@@ -82,4 +82,7 @@
 
     <!-- Whether device has VOOC charging support -->
     <java-symbol type="bool" name="config_hasVoocCharger" />
+
+    <!-- Whether device has SuperDart charging support -->
+    <java-symbol type="bool" name="config_hasSuperDartCharger" />
 </resources>
