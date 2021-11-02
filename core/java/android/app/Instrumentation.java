@@ -1179,7 +1179,11 @@ public class Instrumentation {
                 .instantiateApplication(cl, className);
         app.attach(context);
         String packageName = app.getPackageName();
-        PixelPropsUtils.setProps(packageName);
+        String processName = app.getProcessName();
+        if (packageName.equals(PixelPropsUtils.PACKAGE_GMS) &&
+                processName.equals(PixelPropsUtils.PROCESS_UNSTABLE)) {
+            PixelPropsUtils.setProps(packageName);
+        }
         return app;
     }
     
@@ -1198,7 +1202,11 @@ public class Instrumentation {
         Application app = (Application)clazz.newInstance();
         app.attach(context);
         String packageName = app.getPackageName();
-        PixelPropsUtils.setProps(packageName);
+        String processName = app.getProcessName();
+        if (packageName.equals(PixelPropsUtils.PACKAGE_GMS) &&
+                processName.equals(PixelPropsUtils.PROCESS_UNSTABLE)) {
+            PixelPropsUtils.setProps(packageName);
+        }
         return app;
     }
 

@@ -28,6 +28,7 @@ import java.util.Map;
 public class PixelPropsUtils {
 
     public static final String PACKAGE_GMS = "com.google.android.gms";
+    public static final String PROCESS_UNSTABLE = "com.google.android.gms.unstable";
     private static final String TAG = PixelPropsUtils.class.getSimpleName();
     private static final boolean DEBUG = false;
 
@@ -87,10 +88,12 @@ public class PixelPropsUtils {
         if (packageName == null){
             return;
         }
+
         if (packageName.equals(PACKAGE_GMS)) {
             sIsGms = true;
             setPropValue("TYPE", "userdebug");
         }
+
         if (packageName.startsWith("com.google.") || Arrays.asList(extraPackagesToChange).contains(packageName)) {
             Map<String, Object> propsToChange = propsToChangePixel6;
 
