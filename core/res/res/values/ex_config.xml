@@ -107,4 +107,7 @@
 
     <!-- Whether device has VOOC charging support -->
     <bool name="config_hasVoocCharger">false</bool>
+
+    <!-- Whether device has SuperDart charging support -->
+    <bool name="config_hasSuperDartCharger">false</bool>
 </resources>
