@@ -241,7 +241,10 @@ public final class BatteryService extends SystemService {
         mHasWarpCharger = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_hasWarpCharger);
         mHasVoocCharger = mContext.getResources().getBoolean(
-                com.android.internal.R.bool.config_hasVoocCharger);
+                com.android.internal.R.bool.config_hasVoocCharger)
+                        || mContext.getResources().getBoolean(
+                        com.android.internal.R.bool.config_hasSuperDartCharger);
+
 
         mCriticalBatteryLevel = mContext.getResources().getInteger(
                 com.android.internal.R.integer.config_criticalBatteryWarningLevel);
