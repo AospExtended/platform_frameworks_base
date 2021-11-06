@@ -47,6 +47,7 @@ import android.os.SystemClock;
 import android.os.Trace;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -619,7 +620,9 @@ public class UdfpsController implements DozeReceiver, UdfpsHbmProvider {
      */
     @VisibleForTesting
     public void playStartHaptic() {
-        if (mVibrator != null) {
+        boolean vibrate = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.UDFPS_HAPTIC_FEEDBACK, 1) == 1;
+        if (mVibrator != null && vibrate) {
             mVibrator.vibrate(
                     Process.myUid(),
                     mContext.getOpPackageName(),
