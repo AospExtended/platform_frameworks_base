@@ -196,5 +196,6 @@ public class SecureSettings {
         Settings.Secure.LOCKSCREEN_USE_DOUBLE_LINE_CLOCK,
         Settings.Secure.GESTURE_NAVBAR_LENGTH_MODE,
         Settings.Secure.DISABLE_SECURE_TILES_ON_LOCKSCREEN,
+        Settings.Secure.SHOW_COMBINED_STATUS_BAR_SIGNAL_ICONS,
     };
 }
