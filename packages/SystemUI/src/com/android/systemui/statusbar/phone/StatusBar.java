@@ -671,7 +671,6 @@ public class StatusBar extends SystemUI implements DemoMode,
     private int mLastCameraLaunchSource;
     protected PowerManager.WakeLock mGestureWakeLock;
     private Vibrator mVibrator;
-    private VibrationEffect mCameraLaunchGestureVibrationEffect;
 
     private final int[] mTmpInt2 = new int[2];
 
@@ -1454,8 +1453,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         mGestureWakeLock = mPowerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK,
                 "GestureWakeLock");
         mVibrator = mContext.getSystemService(Vibrator.class);
-        mCameraLaunchGestureVibrationEffect = getCameraGestureVibrationEffect(
-                mVibrator, context.getResources());
 
         // receive broadcasts
         registerBroadcastReceiver();
@@ -4513,32 +4510,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     private void vibrateForCameraGesture() {
         // Make sure to pass -1 for repeat so VibratorService doesn't stop us when going to sleep.
-        mVibrator.vibrate(mCameraLaunchGestureVibrationEffect, VIBRATION_ATTRIBUTES);
-    }
-
-    private static VibrationEffect getCameraGestureVibrationEffect(Vibrator vibrator,
-            Resources resources) {
-        if (vibrator.areAllPrimitivesSupported(
-                VibrationEffect.Composition.PRIMITIVE_QUICK_RISE,
-                VibrationEffect.Composition.PRIMITIVE_CLICK)) {
-            return VibrationEffect.startComposition()
-                    .addPrimitive(VibrationEffect.Composition.PRIMITIVE_QUICK_RISE)
-                    .addPrimitive(VibrationEffect.Composition.PRIMITIVE_CLICK, 1, 50)
-                    .compose();
-        }
-        if (vibrator.hasAmplitudeControl()) {
-            return VibrationEffect.createWaveform(
-                    CAMERA_LAUNCH_GESTURE_VIBRATION_TIMINGS,
-                    CAMERA_LAUNCH_GESTURE_VIBRATION_AMPLITUDES,
-                    /* repeat= */ -1);
-        }
-
-        int[] pattern = resources.getIntArray(R.array.config_cameraLaunchGestureVibePattern);
-        long[] timings = new long[pattern.length];
-        for (int i = 0; i < pattern.length; i++) {
-            timings[i] = pattern[i];
-        }
-        return VibrationEffect.createWaveform(timings, /* repeat= */ -1);
+        mVibrator.vibrate(VibrationEffect.get(VibrationEffect.EFFECT_DOUBLE_CLICK));
     }
 
     /**
