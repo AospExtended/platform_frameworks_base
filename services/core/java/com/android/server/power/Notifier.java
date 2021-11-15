@@ -98,21 +98,6 @@ public class Notifier {
     private static final int MSG_WIRED_CHARGING_STARTED = 6;
     private static final int MSG_SCREEN_POLICY = 7;
 
-    private static final long[] CHARGING_VIBRATION_TIME = {
-            40, 40, 40, 40, 40, 40, 40, 40, 40, // ramp-up sampling rate = 40ms
-            40, 40, 40, 40, 40, 40, 40 // ramp-down sampling rate = 40ms
-    };
-    private static final int[] CHARGING_VIBRATION_AMPLITUDE = {
-            1, 4, 11, 25, 44, 67, 91, 114, 123, // ramp-up amplitude (from 0 to 50%)
-            103, 79, 55, 34, 17, 7, 2 // ramp-up amplitude
-    };
-    private static final VibrationEffect CHARGING_VIBRATION_EFFECT =
-            VibrationEffect.createWaveform(CHARGING_VIBRATION_TIME, CHARGING_VIBRATION_AMPLITUDE,
-                    -1);
-    private static final AudioAttributes VIBRATION_ATTRIBUTES = new AudioAttributes.Builder()
-            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-            .build();
-
     private final Object mLock = new Object();
 
     private final Context mContext;
@@ -799,7 +784,7 @@ public class Notifier {
         final boolean vibrate = Settings.Secure.getIntForUser(mContext.getContentResolver(),
                 Settings.Secure.CHARGING_VIBRATION_ENABLED, 1, userId) != 0;
         if (vibrate) {
-            mVibrator.vibrate(CHARGING_VIBRATION_EFFECT, VIBRATION_ATTRIBUTES);
+            mVibrator.vibrate(VibrationEffect.get(VibrationEffect.EFFECT_DOUBLE_CLICK));
         }
 
         // play sound
