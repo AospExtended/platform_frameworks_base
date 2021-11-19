@@ -233,7 +233,7 @@ void JankTracker::finishFrame(FrameInfo& frame, std::unique_ptr<FrameMetricsRepo
         }
 
         // Log daveys since they are weird and we don't know what they are (b/70339576)
-        if (totalDuration >= 700_ms) {
+        /* if (totalDuration >= 700_ms) {
             static int sDaveyCount = 0;
             std::stringstream ss;
             ss << "Davey! duration=" << ns2ms(totalDuration) << "ms; ";
@@ -243,7 +243,7 @@ void JankTracker::finishFrame(FrameInfo& frame, std::unique_ptr<FrameMetricsRepo
             ALOGI("%s", ss.str().c_str());
             // Just so we have something that counts up, the value is largely irrelevant
             ATRACE_INT(ss.str().c_str(), ++sDaveyCount);
-        }
+        } */
     }
 
     int64_t totalGPUDrawTime = frame.gpuDrawTime();
