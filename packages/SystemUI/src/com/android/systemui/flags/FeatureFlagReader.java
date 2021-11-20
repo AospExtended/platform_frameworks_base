@@ -17,6 +17,7 @@
 package com.android.systemui.flags;
 
 import android.content.res.Resources;
+import android.provider.Settings;
 import android.util.SparseArray;
 
 import androidx.annotation.BoolRes;
@@ -27,6 +28,7 @@ import com.android.systemui.dagger.SysUISingleton;
 import com.android.systemui.dagger.qualifiers.Main;
 import com.android.systemui.statusbar.FeatureFlags;
 import com.android.systemui.util.wrapper.BuildInfo;
+import com.android.systemui.util.settings.SystemSettings;
 
 import javax.inject.Inject;
 /**
@@ -58,15 +60,19 @@ public class FeatureFlagReader {
     private final SystemPropertiesHelper mSystemPropertiesHelper;
     private final SparseArray<CachedFlag> mCachedFlags = new SparseArray<>();
 
+    private final SystemSettings mSystemSettings;
+
     @Inject
     public FeatureFlagReader(
             @Main Resources resources,
             BuildInfo build,
-            SystemPropertiesHelper systemPropertiesHelper) {
+            SystemPropertiesHelper systemPropertiesHelper,
+            SystemSettings systemSettings) {
         mResources = resources;
         mSystemPropertiesHelper = systemPropertiesHelper;
         mAreFlagsOverrideable =
                 mResources.getBoolean(R.bool.are_flags_overrideable);
+        mSystemSettings = systemSettings;
     }
 
     /**
@@ -82,14 +88,15 @@ public class FeatureFlagReader {
             if (cachedFlag == null) {
                 String name = resourceIdToFlagName(resId);
                 boolean value = mResources.getBoolean(resId);
-                if (mAreFlagsOverrideable) {
+                String settingsValue = mSystemSettings.getString(name);
+                if (settingsValue != null) {
+                    value = Integer.parseInt(settingsValue) == 1;
+                } else if (mAreFlagsOverrideable) {
                     value = mSystemPropertiesHelper.getBoolean(flagNameToStorageKey(name), value);
                 }
-
                 cachedFlag = new CachedFlag(name, value);
                 mCachedFlags.put(resId, cachedFlag);
             }
-
             return cachedFlag.value;
         }
     }
