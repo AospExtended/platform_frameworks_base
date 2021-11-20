@@ -145,7 +145,7 @@
                     <ImageView
                         android:layout_width="@dimen/screenrecord_logo_size"
                         android:layout_height="@dimen/screenrecord_logo_size"
-                        android:src="@drawable/ic_sr_quality"
+                        android:src="@drawable/ic_storage"
                         android:tint="?android:attr/textColorSecondary"
                         android:layout_gravity="center"
                         android:layout_marginRight="@dimen/screenrecord_option_padding"/>
