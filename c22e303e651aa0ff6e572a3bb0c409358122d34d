@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c26a0fe_7e1ba946",
+        "filename": "core/java/com/android/internal/util/custom/PixelPropsUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-11-22T15:03:43Z",
+      "side": 1,
+      "message": "A12 Build FP on A11? Better add back redfin fp",
+      "revId": "c22e303e651aa0ff6e572a3bb0c409358122d34d",
+      "serverId": "692a3d4a-6cfc-41d4-b12b-cb9542eed61e"
+    }
+  ]
+}
