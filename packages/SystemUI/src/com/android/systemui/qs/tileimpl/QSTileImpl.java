@@ -39,8 +39,9 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.UserHandle;
-import android.os.Vibrator;
 import android.provider.Settings;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.text.format.DateUtils;
 import android.util.ArraySet;
 import android.util.Log;
@@ -314,7 +315,7 @@ public abstract class QSTileImpl<TState extends State> implements QSTile, Lifecy
         if (!mFalsingManager.isFalseTap(FalsingManager.LOW_PENALTY)) {
             mHandler.obtainMessage(H.CLICK, view).sendToTarget();
         }
-        vibrateTile(45);
+	mVibrator.vibrate(VibrationEffect.get(VibrationEffect.EFFECT_CLICK));
     }
 
     public void secondaryClick(@Nullable View view) {
