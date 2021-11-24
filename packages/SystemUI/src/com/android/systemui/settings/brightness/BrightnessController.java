@@ -16,10 +16,6 @@
 
 package com.android.systemui.settings.brightness;
 
-import static com.android.settingslib.display.BrightnessUtils.GAMMA_SPACE_MAX;
-import static com.android.settingslib.display.BrightnessUtils.convertGammaToLinearFloat;
-import static com.android.settingslib.display.BrightnessUtils.convertLinearToGammaFloat;
-
 import android.animation.ValueAnimator;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -297,7 +293,7 @@ public class BrightnessController implements ToggleSlider.Listener {
         mContext = context;
         mIcon = icon;
         mControl = control;
-        mControl.setMax(GAMMA_SPACE_MAX);
+        mControl.setMax(255);
         mBackgroundHandler = new Handler((Looper) Dependency.get(Dependency.BG_LOOPER));
         mUserTracker = new CurrentUserTracker(broadcastDispatcher) {
             @Override
@@ -384,14 +380,16 @@ public class BrightnessController implements ToggleSlider.Listener {
             maxBacklight = mBrightnessMax;
         }
         final float valFloat = MathUtils.min(
-                convertGammaToLinearFloat(value, minBacklight, maxBacklight),
-                maxBacklight);
+                MathUtils.constrain(BrightnessSynchronizer.brightnessIntToFloat(value),
+                         minBacklight, maxBacklight),
+                         maxBacklight);
         if (stopTracking) {
             // TODO(brightnessfloat): change to use float value instead.
             MetricsLogger.action(mContext, metric,
                     BrightnessSynchronizer.brightnessFloatToInt(valFloat));
 
         }
+android.util.Slog.d("sagar", "val=" + value + ", valFloat=" + valFloat);
         setBrightness(valFloat);
         if (!tracking) {
             AsyncTask.execute(new Runnable() {
@@ -447,15 +445,16 @@ public class BrightnessController implements ToggleSlider.Listener {
             min = mBrightnessMin;
             max = mBrightnessMax;
         }
-        // convertGammaToLinearFloat returns 0-1
         if (BrightnessSynchronizer.floatEquals(brightnessValue,
-                convertGammaToLinearFloat(mControl.getValue(), min, max))) {
+                    MathUtils.constrain(BrightnessSynchronizer.brightnessIntToFloat(mControl.getValue()),
+                            min, max))) {
             // If the value in the slider is equal to the value on the current brightness
             // then the slider does not need to animate, since the brightness will not change.
             return;
         }
         // Returns GAMMA_SPACE_MIN - GAMMA_SPACE_MAX
-        final int sliderVal = convertLinearToGammaFloat(brightnessValue, min, max);
+        final int sliderVal = BrightnessSynchronizer.brightnessFloatToInt(
+                MathUtils.constrain(brightnessValue, min, max));
         animateSliderTo(sliderVal);
     }
 
@@ -475,7 +474,7 @@ public class BrightnessController implements ToggleSlider.Listener {
             mExternalChange = false;
         });
         final long animationDuration = SLIDER_ANIMATION_DURATION * Math.abs(
-                mControl.getValue() - target) / GAMMA_SPACE_MAX;
+                mControl.getValue() - target) / 255;
         mSliderAnimator.setDuration(animationDuration);
         mSliderAnimator.start();
     }
