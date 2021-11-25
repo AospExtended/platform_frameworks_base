@@ -85,5 +85,6 @@ public class SystemSettings {
         Settings.System.ALARM_ALERT,
         Settings.System.NOTIFICATION_LIGHT_PULSE,
         Settings.System.SMART_SPACE,
+        Settings.System.FULLSCREEN_GESTURES,
     };
 }
