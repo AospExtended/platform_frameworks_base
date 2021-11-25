@@ -40,12 +40,11 @@ import com.android.systemui.qs.SecureSetting;
 import com.android.systemui.qs.logging.QSLogger;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
 import com.android.systemui.statusbar.policy.BatteryController;
-import com.android.systemui.statusbar.policy.KeyguardStateController;
 import com.android.systemui.util.settings.SecureSettings;
 
 import javax.inject.Inject;
 
-public class BatterySaverTile extends SecureQSTile<BooleanState> implements
+public class BatterySaverTile extends QSTileImpl<BooleanState> implements
         BatteryController.BatteryStateChangeCallback {
 
     private final BatteryController mBatteryController;
@@ -70,11 +69,10 @@ public class BatterySaverTile extends SecureQSTile<BooleanState> implements
             ActivityStarter activityStarter,
             QSLogger qsLogger,
             BatteryController batteryController,
-            SecureSettings secureSettings,
-            KeyguardStateController keyguardStateController
+            SecureSettings secureSettings
     ) {
         super(host, backgroundLooper, mainHandler, falsingManager, metricsLogger,
-                statusBarStateController, activityStarter, qsLogger, keyguardStateController);
+                statusBarStateController, activityStarter, qsLogger);
         mBatteryController = batteryController;
         mBatteryController.observe(getLifecycle(), this);
         int currentUser = host.getUserContext().getUserId();
@@ -125,11 +123,7 @@ public class BatterySaverTile extends SecureQSTile<BooleanState> implements
     }
 
     @Override
-    protected void handleClick(@Nullable View view, boolean keyguardShowing) {
-        if (checkKeyguard(view, keyguardShowing)) {
-            return;
-        }
-
+    protected void handleClick(@Nullable View view) {
         if (getState().state == Tile.STATE_UNAVAILABLE) {
             return;
         }
