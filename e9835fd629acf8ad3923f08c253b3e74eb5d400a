@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe4a7bbd_f41d107b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-11-27T16:52:26Z",
+      "side": 1,
+      "message": "works fine on miatoll",
+      "revId": "e9835fd629acf8ad3923f08c253b3e74eb5d400a",
+      "serverId": "692a3d4a-6cfc-41d4-b12b-cb9542eed61e"
+    }
+  ]
+}
