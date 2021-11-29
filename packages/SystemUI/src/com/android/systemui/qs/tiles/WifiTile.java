@@ -66,7 +66,7 @@ import javax.inject.Inject;
 
 /** Quick settings tile: Wifi **/
 public class WifiTile extends SecureQSTile<SignalState> {
-    private static final Intent WIFI_SETTINGS = new Intent(Settings.ACTION_WIFI_SETTINGS);
+    private static final Intent WIFI_SETTINGS = new Intent(Settings.Panel.ACTION_WIFI);
 
     protected final NetworkController mController;
     private final AccessPointController mWifiController;
