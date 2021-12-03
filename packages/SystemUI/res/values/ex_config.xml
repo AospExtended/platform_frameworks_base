@@ -54,4 +54,8 @@
 
     <!-- Allow devices override audio panel location to the left side -->
     <bool name="config_audioPanelOnLeftSide">true</bool>
+
+    <!-- Whether to pulse onFingerDown actions while in AOD. -->
+    <bool name="config_pulseOnFingerDownInAod">false</bool>
+
 </resources>
