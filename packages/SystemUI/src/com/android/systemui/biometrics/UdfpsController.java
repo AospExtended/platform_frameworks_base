@@ -47,6 +47,7 @@ import android.os.Trace;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
+import android.os.UserHandle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -103,6 +104,7 @@ import kotlin.Unit;
 @SysUISingleton
 public class UdfpsController implements DozeReceiver, UdfpsHbmProvider {
     private static final String TAG = "UdfpsController";
+    private static final String PULSE_ACTION = "com.android.systemui.doze.pulse";
     private static final long AOD_INTERRUPT_TIMEOUT_MILLIS = 1000;
 
     // Minimum required delay between consecutive touch logs in milliseconds.
@@ -323,8 +325,13 @@ public class UdfpsController implements DozeReceiver, UdfpsHbmProvider {
             mFgExecutor.execute(() -> {
                 if (acquiredInfo == 6 && (mStatusBarStateController.isDozing() || !mScreenOn)) {
                     if (vendorCode == mUdfpsVendorCode) {
-                        mPowerManager.wakeUp(mSystemClock.uptimeMillis(),
-                                PowerManager.WAKE_REASON_GESTURE, TAG);
+                        if (mContext.getResources().getBoolean(R.bool.config_pulseOnFingerDownInAod)) {
+                            mContext.sendBroadcastAsUser(new Intent(PULSE_ACTION),
+                                    new UserHandle(UserHandle.USER_CURRENT));
+                        } else {
+                            mPowerManager.wakeUp(mSystemClock.uptimeMillis(),
+                                    PowerManager.WAKE_REASON_GESTURE, TAG);
+                        }
                         onAodInterrupt(0, 0, 0, 0); // To-Do pass proper values
                     }
                 }
