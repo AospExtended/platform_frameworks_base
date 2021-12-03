@@ -119,4 +119,7 @@
 
     <!-- Whether to cancel fingerprint operation if not idle -->
     <java-symbol type="bool" name="config_fpCancelIfNotIdle" />
+
+    <!-- NightLight FOD -->
+    <java-symbol type="bool" name="disable_fod_night_light"/>
 </resources>

@@ -142,4 +142,7 @@
 
     <!-- Whether to cancel fingerprint operation if not idle -->
     <bool name="config_fpCancelIfNotIdle">false</bool>
+
+    <!-- NightLight FOD -->
+    <bool name="disable_fod_night_light">false</bool>
 </resources>
