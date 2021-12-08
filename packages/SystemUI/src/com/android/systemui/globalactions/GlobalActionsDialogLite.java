@@ -88,6 +88,7 @@ import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityManager;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
@@ -112,6 +113,7 @@ import com.android.internal.statusbar.IStatusBarService;
 import com.android.internal.util.EmergencyAffordanceManager;
 import com.android.internal.util.ScreenshotHelper;
 import com.android.internal.widget.LockPatternUtils;
+import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.systemui.MultiListLayout;
 import com.android.systemui.MultiListLayout.MultiListAdapter;
 import com.android.systemui.animation.Interpolators;
@@ -173,6 +175,11 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
     private static final String GLOBAL_ACTION_KEY_LOGOUT = "logout";
     static final String GLOBAL_ACTION_KEY_EMERGENCY = "emergency";
     static final String GLOBAL_ACTION_KEY_SCREENSHOT = "screenshot";
+
+    // See NotificationManagerService#scheduleDurationReachedLocked
+    private static final long TOAST_FADE_TIME = 333;
+    // See NotificationManagerService.LONG_DELAY
+    private static final int TOAST_VISIBLE_TIME = 3500;
 
     private static final String GLOBAL_ACTION_KEY_ADVANCED_RESTART = "advanced";
     private static final String GLOBAL_ACTION_KEY_TORCH = "torch";
@@ -242,6 +249,7 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
     protected Handler mMainHandler;
     private int mSmallestScreenWidthDp;
     private final StatusBar mStatusBar;
+    private final KeyguardUpdateMonitor mKeyguardUpdateMonitor;
     private boolean mTorchEnabled = false;
 
     @VisibleForTesting
@@ -350,7 +358,8 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
             SysUiState sysUiState,
             @Main Handler handler,
             PackageManager packageManager,
-            StatusBar statusBar) {
+            StatusBar statusBar,
+            KeyguardUpdateMonitor keyguardUpdateMonitor) {
         mContext = context;
         mWindowManagerFuncs = windowManagerFuncs;
         mAudioManager = audioManager;
@@ -381,6 +390,7 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
         mMainHandler = handler;
         mSmallestScreenWidthDp = resources.getConfiguration().smallestScreenWidthDp;
         mStatusBar = statusBar;
+        mKeyguardUpdateMonitor = keyguardUpdateMonitor;
 
         // receive broadcasts
         IntentFilter filter = new IntentFilter();
@@ -432,6 +442,10 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
 
     protected StatusBar getStatusBar() {
         return mStatusBar;
+    }
+
+    protected KeyguardUpdateMonitor getKeyguardUpdateMonitor() {
+        return mKeyguardUpdateMonitor;
     }
 
     /**
@@ -733,7 +747,7 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
                 mAdapter, mOverflowAdapter, mSysuiColorExtractor,
                 mStatusBarService, mNotificationShadeWindowController,
                 mSysUiState, this::onRotate, mKeyguardShowing, mPowerAdapter, mUiEventLogger,
-                mInfoProvider, mStatusBar);
+                mInfoProvider, mStatusBar, mKeyguardUpdateMonitor, mLockPatternUtils);
 
         dialog.setOnDismissListener(this);
         dialog.setOnShowListener(this);
@@ -2317,6 +2331,8 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
         private GlobalActionsInfoProvider mInfoProvider;
         private GestureDetector mGestureDetector;
         private StatusBar mStatusBar;
+        private KeyguardUpdateMonitor mKeyguardUpdateMonitor;
+        private LockPatternUtils mLockPatternUtils;
 
         protected ViewGroup mContainer;
 
@@ -2368,7 +2384,8 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
                 NotificationShadeWindowController notificationShadeWindowController,
                 SysUiState sysuiState, Runnable onRotateCallback, boolean keyguardShowing,
                 MyPowerOptionsAdapter powerAdapter, UiEventLogger uiEventLogger,
-                @Nullable GlobalActionsInfoProvider infoProvider, StatusBar statusBar) {
+                @Nullable GlobalActionsInfoProvider infoProvider, StatusBar statusBar,
+                KeyguardUpdateMonitor keyguardUpdateMonitor, LockPatternUtils lockPatternUtils) {
             super(context, themeRes);
             mContext = context;
             mAdapter = adapter;
@@ -2383,6 +2400,8 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
             mUiEventLogger = uiEventLogger;
             mInfoProvider = infoProvider;
             mStatusBar = statusBar;
+            mKeyguardUpdateMonitor = keyguardUpdateMonitor;
+            mLockPatternUtils = lockPatternUtils;
 
             mGestureDetector = new GestureDetector(mContext, mGestureListener);
 
@@ -2503,6 +2522,14 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
             if (mInfoProvider != null && mInfoProvider.shouldShowMessage()) {
                 mInfoProvider.addPanel(mContext, mContainer, mAdapter.getCount(), () -> dismiss());
             }
+
+            // If user entered from the lock screen and smart lock was enabled, disable it
+            int user = KeyguardUpdateMonitor.getCurrentUser();
+            boolean userHasTrust = mKeyguardUpdateMonitor.getUserHasTrust(user);
+            if (mKeyguardShowing && userHasTrust) {
+                mLockPatternUtils.requireCredentialEntry(KeyguardUpdateMonitor.getCurrentUser());
+                showSmartLockDisabledMessage();
+            }
         }
 
         protected void fixNavBarClipping() {
@@ -2512,6 +2539,37 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
             ViewGroup contentParent = (ViewGroup) content.getParent();
             contentParent.setClipChildren(false);
             contentParent.setClipToPadding(false);
+        }
+
+        private void showSmartLockDisabledMessage() {
+            // Since power menu is the top window, make a Toast-like view that will show up
+            View message = LayoutInflater.from(mContext)
+                    .inflate(com.android.systemui.R.layout.global_actions_toast, mContainer, false);
+
+            // Set up animation
+            AccessibilityManager mAccessibilityManager =
+                    (AccessibilityManager) getContext().getSystemService(
+                            Context.ACCESSIBILITY_SERVICE);
+            final int visibleTime = mAccessibilityManager.getRecommendedTimeoutMillis(
+                    TOAST_VISIBLE_TIME, AccessibilityManager.FLAG_CONTENT_TEXT);
+            message.setVisibility(View.VISIBLE);
+            message.setAlpha(0f);
+            mContainer.addView(message);
+
+            // Fade in
+            message.animate()
+                    .alpha(1f)
+                    .setDuration(TOAST_FADE_TIME)
+                    .setListener(new AnimatorListenerAdapter() {
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            // Then fade out
+                            message.animate()
+                                    .alpha(0f)
+                                    .setDuration(TOAST_FADE_TIME)
+                                    .setStartDelay(visibleTime);
+                        }
+                    });
         }
 
         @Override

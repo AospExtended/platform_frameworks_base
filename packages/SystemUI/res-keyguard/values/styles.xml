@@ -138,4 +138,8 @@
         <item name="android:maxLines">1</item>
         <item name="android:textColor">?attr/wallpaperTextColor</item>
     </style>
+
+    <style name="TextAppearance.Keyguard.BottomArea.Button">
+        <item name="android:shadowRadius">0</item>
+    </style>
 </resources>
