@@ -52,6 +52,7 @@ import android.graphics.Rect;
 import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 import android.hardware.biometrics.BiometricSourceType;
+import android.hardware.fingerprint.FingerprintSensorPropertiesInternal;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -638,6 +639,8 @@ public class NotificationPanelViewController extends PanelViewController {
      */
     private float mKeyguardOnlyContentAlpha = 1.0f;
 
+    private float mUdfpsMaxYBurnInOffset;
+
     /**
      * Are we currently in gesture navigation
      */
@@ -652,6 +655,7 @@ public class NotificationPanelViewController extends PanelViewController {
     private int mQsClipBottom;
     private boolean mQsVisible;
     private final ContentResolver mContentResolver;
+    private float mMinFraction;
 
     private final Executor mUiExecutor;
     private final SecureSettings mSecureSettings;
@@ -881,13 +885,13 @@ public class NotificationPanelViewController extends PanelViewController {
         mKeyguardStatusBar = mView.findViewById(R.id.keyguard_header);
         mBigClockContainer = mView.findViewById(R.id.big_clock_container);
 
-        UserAvatarView userAvatarView = null;
+        FrameLayout userAvatarContainer = null;
         KeyguardUserSwitcherView keyguardUserSwitcherView = null;
 
         if (mKeyguardUserSwitcherEnabled && mUserManager.isUserSwitcherEnabled()) {
             if (mKeyguardQsUserSwitchEnabled) {
                 ViewStub stub = mView.findViewById(R.id.keyguard_qs_user_switch_stub);
-                userAvatarView = (UserAvatarView) stub.inflate();
+                userAvatarContainer = (FrameLayout) stub.inflate();
             } else {
                 ViewStub stub = mView.findViewById(R.id.keyguard_user_switcher_stub);
                 keyguardUserSwitcherView = (KeyguardUserSwitcherView) stub.inflate();
@@ -896,7 +900,7 @@ public class NotificationPanelViewController extends PanelViewController {
 
         updateViewControllers(
                 mView.findViewById(R.id.keyguard_status_view),
-                userAvatarView,
+                userAvatarContainer,
                 mKeyguardStatusBar,
                 keyguardUserSwitcherView);
         mNotificationContainerParent = mView.findViewById(R.id.notification_container_parent);
@@ -987,10 +991,11 @@ public class NotificationPanelViewController extends PanelViewController {
                 R.dimen.notification_side_paddings);
         mStatusBarHeaderHeight = mResources.getDimensionPixelSize(
                 R.dimen.status_bar_height);
+        mUdfpsMaxYBurnInOffset = mResources.getDimensionPixelSize(R.dimen.udfps_burn_in_offset_y);
     }
 
     private void updateViewControllers(KeyguardStatusView keyguardStatusView,
-            UserAvatarView userAvatarView,
+            FrameLayout userAvatarView,
             KeyguardStatusBarView keyguardStatusBarView,
             KeyguardUserSwitcherView keyguardUserSwitcherView) {
         // Re-associate the KeyguardStatusViewController
@@ -1142,7 +1147,7 @@ public class NotificationPanelViewController extends PanelViewController {
                 !mKeyguardQsUserSwitchEnabled
                         && mKeyguardUserSwitcherEnabled
                         && isUserSwitcherEnabled;
-        UserAvatarView userAvatarView = (UserAvatarView) reInflateStub(
+        FrameLayout userAvatarView = (FrameLayout) reInflateStub(
                 R.id.keyguard_qs_user_switch_view /* viewId */,
                 R.id.keyguard_qs_user_switch_stub /* stubId */,
                 R.layout.keyguard_qs_user_switch /* layoutId */,
@@ -1331,7 +1336,16 @@ public class NotificationPanelViewController extends PanelViewController {
         float darkamount =
                 mUnlockedScreenOffAnimationController.isScreenOffAnimationPlaying()
                         ? 1.0f : mInterpolatedDarkAmount;
-        mClockPositionAlgorithm.setup(mStatusBarHeaderHeightKeyguard,
+
+        float udfpsAodTopLocation = -1f;
+        if (mUpdateMonitor.isUdfpsEnrolled() && mAuthController.getUdfpsProps().size() > 0) {
+            FingerprintSensorPropertiesInternal props = mAuthController.getUdfpsProps().get(0);
+            udfpsAodTopLocation = props.sensorLocationY - props.sensorRadius
+                    - mUdfpsMaxYBurnInOffset;
+        }
+
+        mClockPositionAlgorithm.setup(
+                mStatusBarHeaderHeightKeyguard,
                 totalHeight - bottomPadding,
                 mNotificationStackScrollLayoutController.getIntrinsicContentHeight(),
                 expandedFraction,
@@ -1343,7 +1357,10 @@ public class NotificationPanelViewController extends PanelViewController {
                 bypassEnabled, getUnlockedStackScrollerPadding(),
                 computeQsExpansionFraction(),
                 mDisplayTopInset,
-                mShouldUseSplitNotificationShade);
+                mShouldUseSplitNotificationShade,
+                udfpsAodTopLocation,
+                mKeyguardStatusViewController.getClockBottom(mStatusBarHeaderHeightKeyguard),
+                mKeyguardStatusViewController.isClockTopAligned());
         mClockPositionAlgorithm.run(mClockPositionResult);
         boolean animate = mNotificationStackScrollLayoutController.isAddOrRemoveAnimationPending();
         boolean animateClock = animate || mAnimateNextPositionUpdate;
@@ -1824,6 +1841,15 @@ public class NotificationPanelViewController extends PanelViewController {
             return mFalsingManager.isFalseTouch(interactionType);
         }
         return !mQsTouchAboveFalsingThreshold;
+    }
+
+    /**
+     * Percentage of panel expansion offset, caused by pulling down on a heads-up.
+     */
+    @Override
+    public void setMinFraction(float minFraction) {
+        mMinFraction = minFraction;
+        mDepthController.setPanelPullDownMinFraction(mMinFraction);
     }
 
     private float computeQsExpansionFraction() {
@@ -2364,6 +2390,12 @@ public class NotificationPanelViewController extends PanelViewController {
                 }
             }
             top += mOverStretchAmount;
+            // Correction for instant expansion caused by HUN pull down/
+            if (mMinFraction > 0f && mMinFraction < 1f) {
+                float realFraction =
+                        (getExpandedFraction() - mMinFraction) / (1f - mMinFraction);
+                top *= MathUtils.saturate(realFraction / mMinFraction);
+            }
             bottom = getView().getBottom();
             // notification bounds should take full screen width regardless of insets
             left = 0;
@@ -3494,7 +3526,7 @@ public class NotificationPanelViewController extends PanelViewController {
     }
 
     public void setPanelScrimMinFraction(float minFraction) {
-        mBar.panelScrimMinFractionChanged(minFraction);
+        mBar.onPanelMinFractionChanged(minFraction);
     }
 
     public void clearNotificationEffects() {
