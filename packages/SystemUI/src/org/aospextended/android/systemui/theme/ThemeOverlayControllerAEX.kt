@@ -22,6 +22,7 @@ import android.app.WallpaperManager
 import android.content.Context
 import android.content.om.FabricatedOverlay
 import android.os.Handler
+import android.os.SystemProperties
 import android.os.UserManager
 import android.provider.Settings
 import android.util.Log
@@ -89,6 +90,7 @@ class ThemeOverlayControllerAEX @Inject constructor(
 ), Tunable {
     private lateinit var cond: Zcam.ViewingConditions
     private lateinit var targets: MaterialYouTargets
+    private lateinit var colorScheme: DynamicColorScheme
 
     private var colorOverride: Int = 0
     private var chromaFactor: Double = Double.MIN_VALUE
@@ -148,7 +150,7 @@ class ThemeOverlayControllerAEX @Inject constructor(
         )
 
         // Generate color scheme
-        val colorScheme = DynamicColorScheme(
+        colorScheme = DynamicColorScheme(
             targets = targets,
             seedColor = if (customColor) Srgb(colorOverride) else Srgb(primaryColor),
             chromaFactor = chromaFactor,
@@ -161,6 +163,8 @@ class ThemeOverlayControllerAEX @Inject constructor(
             NEUTRAL -> "neutral" to colorScheme.neutralColors
             else -> error("Unknown type $type")
         }
+
+        setBootAnimColors()
 
         return FabricatedOverlay.Builder(context.packageName, groupKey, "android").run {
             colorsList.withIndex().forEach { listEntry ->
@@ -187,6 +191,31 @@ class ThemeOverlayControllerAEX @Inject constructor(
 
             build()
         }
+    }
+
+    private fun setBootAnimColors() {
+        try {
+            val bootColors: List<Color> = getBootColors()
+
+            for(i in 0..bootColors.size - 1) {
+                val color: Int = bootColors[i].convert<Srgb>().toRgb8()
+                SystemProperties.set("persist.bootanim.color${i + 1}", color.toString())
+                Log.d("ThemeOverlayControllerAEX", "Writing boot animation colors $i: $color")
+            }
+        } catch(e: RuntimeException) {
+            Log.w("ThemeOverlayControllerAEX", "Cannot set sysprop. Look for 'init' and 'dmesg' logs for more info.")
+        }
+    }
+
+    private fun getBootColors(): List<Color> {
+         // The four colors here are chosen based on a figma spec of AospExtended bootanim
+         // If you plan on having your own custom animation you potentially want to change these colors
+         return listOf(
+             colorScheme.accent3[100]!!,
+             colorScheme.accent1[300]!!,
+             colorScheme.accent2[500]!!,
+             colorScheme.accent1[100]!!,
+         )
     }
 
     companion object {
