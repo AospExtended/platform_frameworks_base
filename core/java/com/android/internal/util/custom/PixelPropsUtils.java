@@ -16,6 +16,7 @@
 package com.android.internal.util.custom;
 
 import android.os.Build;
+import android.os.SystemProperties;
 import android.util.Log;
 
 import java.util.Arrays;
@@ -30,6 +31,7 @@ public class PixelPropsUtils {
     public static final String PACKAGE_GMS = "com.google.android.gms";
     private static final String TAG = PixelPropsUtils.class.getSimpleName();
     private static final boolean DEBUG = false;
+    private static final String DEVICE = "ro.aex.device";
 
     private static final Map<String, Object> propsToChangePixel6;
 
@@ -50,6 +52,22 @@ public class PixelPropsUtils {
         "com.android.chrome",
         "com.android.vending",
         "com.breel.wallpapers20"
+    };
+
+    // Codenames for currently supported Pixels by Google
+    private static final String[] pixelCodenames = {
+        "oriole",
+        "raven",
+        "redfin",
+        "barbet",
+        "bramble",
+        "sunfish",
+        "coral",
+        "flame",
+        "bonito",
+        "sargo",
+        "crosshatch",
+        "blueline"
     };
 
     private static ArrayList<String> allProps = new ArrayList<>(Arrays.asList("BRAND", "MANUFACTURER", "DEVICE", "PRODUCT", "MODEL", "FINGERPRINT"));
@@ -87,6 +105,7 @@ public class PixelPropsUtils {
         if (packageName == null){
             return;
         }
+        if (Arrays.asList(pixelCodenames).contains(SystemProperties.get(DEVICE).replace("aosp_", ""))) return;
         if (packageName.equals(PACKAGE_GMS)) {
             sIsGms = true;
             setPropValue("TYPE", "userdebug");
