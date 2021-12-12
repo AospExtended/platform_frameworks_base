@@ -142,6 +142,7 @@ public class QuickStatusBarHeader extends FrameLayout implements
         mDateView = findViewById(R.id.date);
         mDateView.setOnClickListener(this);
         mClockDateView = findViewById(R.id.date_clock);
+        mClockDateView.setVisibility(View.GONE);
         mSecurityHeaderView = findViewById(R.id.header_text_container);
         mClockIconsSeparator = findViewById(R.id.separator);
         mRightLayout = findViewById(R.id.rightLayout);
@@ -337,9 +338,9 @@ public class QuickStatusBarHeader extends FrameLayout implements
                 mClockView.getPaddingBottom()
         );
 
-        MarginLayoutParams lp = (MarginLayoutParams) mClockDateView.getLayoutParams();
-        lp.setMarginStart(endPadding);
-        mClockDateView.setLayoutParams(lp);
+//        MarginLayoutParams lp = (MarginLayoutParams) mClockDateView.getLayoutParams();
+//        lp.setMarginStart(endPadding);
+//        mClockDateView.setLayoutParams(lp);
     }
 
     private void updateAnimators() {
@@ -358,8 +359,9 @@ public class QuickStatusBarHeader extends FrameLayout implements
         TouchAnimator.Builder builder = new TouchAnimator.Builder()
                 .addFloat(mSecurityHeaderView, "alpha", 0, 1)
                 // These views appear on expanding down
-                .addFloat(mDateView, "alpha", 0, 0, 1)
-                .addFloat(mClockDateView, "alpha", 1, 0, 0)
+//                .addFloat(mDateView, "alpha", 0, 0, 1)
+//                .addFloat(mClockDateView, "alpha", 1, 0, 0)
+                .addFloat(mClockView, "alpha", 0, 1)
                 .addFloat(mQSCarriers, "alpha", 0, 1)
                 .setListener(new TouchAnimator.ListenerAdapter() {
                     @Override
@@ -374,8 +376,8 @@ public class QuickStatusBarHeader extends FrameLayout implements
 
                     @Override
                     public void onAnimationStarted() {
-                        mClockDateView.setVisibility(View.VISIBLE);
-                        mClockDateView.setFreezeSwitching(true);
+//                        mClockDateView.setVisibility(View.VISIBLE);
+//                        mClockDateView.setFreezeSwitching(true);
                         setSeparatorVisibility(false);
                         if (!mIsSingleCarrier) {
                             mIconContainer.addIgnoredSlots(mRssiIgnoredSlots);
@@ -385,8 +387,8 @@ public class QuickStatusBarHeader extends FrameLayout implements
                     @Override
                     public void onAnimationAtStart() {
                         super.onAnimationAtStart();
-                        mClockDateView.setFreezeSwitching(false);
-                        mClockDateView.setVisibility(View.VISIBLE);
+//                        mClockDateView.setFreezeSwitching(false);
+//                        mClockDateView.setVisibility(View.VISIBLE);
                         setSeparatorVisibility(mShowClockIconsSeparator);
                         // In QQS we never ignore RSSI.
                         mIconContainer.removeIgnoredSlots(mRssiIgnoredSlots);
