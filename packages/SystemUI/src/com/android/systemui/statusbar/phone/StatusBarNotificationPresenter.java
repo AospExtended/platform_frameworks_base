@@ -338,14 +338,17 @@ public class StatusBarNotificationPresenter implements NotificationPresenter,
     private boolean isPackageInStoplist(String packageName) {
         return mStoplist.contains(packageName);
     }
-     private boolean isPackageBlacklisted(String packageName) {
+
+    private boolean isPackageBlacklisted(String packageName) {
         return mBlacklist.contains(packageName);
     }
-     private boolean isDialerApp(String packageName) {
+
+    private boolean isDialerApp(String packageName) {
         return packageName.equals("com.android.dialer")
             || packageName.equals("com.google.android.dialer");
     }
-     private void splitAndAddToArrayList(ArrayList<String> arrayList,
+
+    private void splitAndAddToArrayList(ArrayList<String> arrayList,
             String baseString, String separator) {
         // clear first
         arrayList.clear();
