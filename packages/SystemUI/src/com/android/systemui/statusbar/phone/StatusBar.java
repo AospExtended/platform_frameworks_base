@@ -1045,11 +1045,11 @@ public class StatusBar extends SystemUI implements
             Log.v(TAG, "start(): no wallpaper service ");
         }
 
-        mSbSettingsObserver.observe();
-        mSbSettingsObserver.update();
-
         // Set up the initial notification state. This needs to happen before CommandQueue.disable()
         setUpPresenter();
+
+        mSbSettingsObserver.observe();
+        mSbSettingsObserver.update();
 
         if (containsType(result.mTransientBarTypes, ITYPE_STATUS_BAR)) {
             showTransientUnchecked();
@@ -4142,8 +4142,13 @@ public class StatusBar extends SystemUI implements
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.QS_FOOTER_WARNINGS))) {
                 setQsPanelOptions();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_STOPLIST_VALUES))) {
+                setHeadsUpStoplist();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_BLACKLIST_VALUES))) {
+                setHeadsUpBlacklist();
             }
-            update();
         }
 
         public void update() {
