@@ -224,13 +224,10 @@ public class QuickStatusBarHeader extends FrameLayout implements
 
     @Override
     public void onClick(View v) {
-        // Clock view is still there when the panel is not expanded
-        // Making sure we get the date action when the user clicks on it
-        // but actually is seeing the date
-        if (mExpanded && v == mClockView) {
+        if (v == mClockView) {
             mActivityStarter.postStartActivityDismissingKeyguard(new Intent(
                     AlarmClock.ACTION_SHOW_ALARMS), 0);
-        } else if (v == mDateView || (v == mClockView && !mExpanded)) {
+        } else if (v == mDateView) {
             Uri.Builder builder = CalendarContract.CONTENT_URI.buildUpon();
             builder.appendPath("time");
             builder.appendPath(Long.toString(System.currentTimeMillis()));
