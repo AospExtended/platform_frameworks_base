@@ -7,6 +7,7 @@ import com.android.systemui.dagger.SystemUIBinder;
 import com.android.systemui.dagger.SysUIComponent;
 import com.android.systemui.dagger.SystemUIModule;
 
+import org.aospextended.android.systemui.columbus.ColumbusModule;
 import org.aospextended.android.systemui.keyguard.KeyguardSliceProviderAEX;
 import org.aospextended.android.systemui.smartspace.KeyguardSmartspaceController;
 
@@ -14,9 +15,10 @@ import dagger.Subcomponent;
 
 @SysUISingleton
 @Subcomponent(modules = {
+        ColumbusModule.class,
         DefaultComponentBinder.class,
         DependencyProvider.class,
-        SystemUIBinder.class,
+        AEXSystemUIBinder.class,
         SystemUIModule.class,
         SystemUIAEXModule.class})
 public interface SysUIComponentAEX extends SysUIComponent {
