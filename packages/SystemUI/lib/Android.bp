@@ -9,3 +9,9 @@ java_import {
     jars: ["smartspace.jar"],
     sdk_version: "current",
 }
+
+java_import {
+    name: "gamedashboard-sysui-google",
+    jars: ["gamedashboard.jar"],
+    sdk_version: "current",
+}
