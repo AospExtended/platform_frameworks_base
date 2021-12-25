@@ -329,6 +329,8 @@
     <protected-broadcast android:name="com.google.android.systemui.smartspace.ENABLE_UPDATE"/>
     <protected-broadcast android:name="com.google.android.systemui.smartspace.EXPIRE_EVENT"/>
 
+    <uses-permission android:name="android.permission.MANAGE_GAME_MODE" android:protectionLevel="signature"/>
+
     <application
         android:name=".SystemUIApplication"
         android:persistent="true"
@@ -999,6 +1001,27 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <!-- Game Dashboard -->
+        <activity
+            android:theme="@style/GameMenuTheme"
+            android:name="com.google.android.systemui.gamedashboard.GameMenuActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="behind"
+            android:finishOnCloseSystemDialogs="true"
+            android:showForAllUsers="true"/>
+
+        <activity
+            android:theme="@style/GameMenuTheme"
+            android:name="com.google.android.systemui.gamedashboard.GameDndConfigActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="behind"
+            android:finishOnCloseSystemDialogs="true"
+            android:showForAllUsers="true"/>
 
     </application>
 </manifest>
