@@ -61,6 +61,7 @@ android_library {
         "res-product",
         "res-keyguard",
         "res-smartspace",
+        "res-gamedashboard",
         "res",
         "res-hwkeys",
     ],
@@ -104,6 +105,7 @@ android_library {
         "smartspace-google",
         "tensorflowlite_java",
         "faceunlock_framework",
+        "gamedashboard-sysui-google",
     ],
     manifest: "AndroidManifest.xml",
 
