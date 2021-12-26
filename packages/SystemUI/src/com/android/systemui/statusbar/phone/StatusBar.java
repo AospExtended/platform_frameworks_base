@@ -4142,6 +4142,10 @@ public class StatusBar extends SystemUI implements
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.HEADS_UP_BLACKLIST_VALUES))) {
                 setHeadsUpBlacklist();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL)) ||
+                uri.equals(Settings.System.getUriFor(Settings.System.SCREEN_BRIGHTNESS_MODE))) {
+                setScreenBrightnessMode();
             }
         }
 
