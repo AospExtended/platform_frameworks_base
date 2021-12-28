@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a482f79a_c41d234c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-12-28T17:27:01Z",
+      "side": 1,
+      "message": "Doesn\u0027t make sense having same category name for different targets, we want to enable one overlay per target",
+      "revId": "56110b0e9ce7f54e8fe13fdfe69550e8a6ec6b13",
+      "serverId": "692a3d4a-6cfc-41d4-b12b-cb9542eed61e"
+    }
+  ]
+}
