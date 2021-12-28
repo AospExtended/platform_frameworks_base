@@ -59,3 +59,5 @@
 -keep class com.android.systemui.dagger.Dagger** { *; }
 -keep class com.android.systemui.tv.Dagger** { *; }
 
+# Custom rules
+-keep class org.aospextended.** { *; }
