@@ -180,6 +180,9 @@ class ThemeOverlayControllerAEX @Inject constructor(
 
                 // surface highlight dark = neutral1 650 (L* 35)
                 colorsList[0][650]?.let { setColor("surface_highlight_dark", it) }
+
+                // surface_header_dark_sysui = neutral1 950 (L* 5)
+                colorsList[0][950]?.let { setColor("surface_header_dark_sysui", it) }
             }
 
             build()
