@@ -78,6 +78,7 @@ public class BrightnessMirrorController
         mVisibilityCallback = visibilityCallback;
         mIcon = (ImageView) mBrightnessMirror.findViewById(R.id.brightness_icon);
         mIcon.setVisibility(View.VISIBLE);
+        updateResources();
     }
 
     public void showMirror() {
@@ -158,6 +159,7 @@ public class BrightnessMirrorController
     }
 
     private void reinflate() {
+        updateResources();
         int index = mStatusBarWindow.indexOfChild(mBrightnessMirror);
         mStatusBarWindow.removeView(mBrightnessMirror);
         mBrightnessMirror = (FrameLayout) LayoutInflater.from(mStatusBarWindow.getContext())
