@@ -7,6 +7,8 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -274,6 +276,11 @@ public class KeyguardClockSwitch extends RelativeLayout {
      * @return true if desired clock appeared and false if it was already visible
      */
     boolean switchToClock(@ClockSize int clockSize) {
+        final boolean forceSmallClock = Settings.System.getIntForUser(
+                getContext().getContentResolver(),
+                Settings.System.LOCKSCREEN_SMALL_CLOCK, 0,
+                UserHandle.USER_CURRENT) == 1;
+        if (forceSmallClock) clockSize = SMALL;
         if (mDisplayedClockSize != null && clockSize == mDisplayedClockSize) {
             return false;
         }
