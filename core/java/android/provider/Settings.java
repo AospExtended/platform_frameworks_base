@@ -6124,6 +6124,12 @@ public final class Settings {
         };     
 
         /**
+         * Whether to force small clock on keyguard
+         * @hide
+         */
+        public static final String LOCKSCREEN_SMALL_CLOCK = "lockscreen_small_clock";
+
+        /**
          * These are all public system settings
          *
          * @hide

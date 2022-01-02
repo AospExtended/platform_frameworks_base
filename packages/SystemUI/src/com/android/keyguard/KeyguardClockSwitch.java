@@ -7,6 +7,8 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -272,7 +274,11 @@ public class KeyguardClockSwitch extends RelativeLayout {
                 && hasVisibleNotifications == mHasVisibleNotifications) {
             return false;
         }
-        boolean useLargeClock = !hasVisibleNotifications;
+        final boolean forceSmallClock = Settings.System.getIntForUser(
+                getContext().getContentResolver(),
+                Settings.System.LOCKSCREEN_SMALL_CLOCK, 0,
+                UserHandle.USER_CURRENT) == 1;
+        final boolean useLargeClock = !hasVisibleNotifications && !forceSmallClock;
         animateClockChange(useLargeClock);
 
         mHasVisibleNotifications = hasVisibleNotifications;
