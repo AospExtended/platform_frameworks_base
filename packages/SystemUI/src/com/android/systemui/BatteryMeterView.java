@@ -514,6 +514,10 @@ public class BatteryMeterView extends LinearLayout implements
      * Looks up the scale factor for status bar icons and scales the battery view by that amount.
      */
     private void scaleBatteryMeterViews() {
+        if (mBatteryIconView == null) {
+            return;
+        }
+
         Resources res = getContext().getResources();
         TypedValue typedValue = new TypedValue();
 
