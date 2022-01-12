@@ -99,13 +99,13 @@ class CustomThemeOverlayController @Inject constructor(
 
     override fun start() {
         tunerService.addTunable(this, PREF_COLOR_OVERRIDE, PREF_WHITE_LUMINANCE,
-                PREF_CHROMA_FACTOR, PREF_ACCURATE_SHADES, PREF_LINEAR_LIGHTNESS, PREF_CUSTOM_COLOR)
+                PREF_CHROMA_FACTOR, PREF_ACCURATE_SHADES,
+                PREF_LINEAR_LIGHTNESS, PREF_CUSTOM_COLOR, SYSTEM_BLACK_THEME)
         super.start()
     }
 
     override fun onTuningChanged(key: String?, newValue: String?) {
         key?.let {
-            if (it.contains(PREF_PREFIX)) {
                 customColor = Settings.Secure.getInt(mContext.contentResolver, PREF_CUSTOM_COLOR, 0) == 1
                 colorOverride = Settings.Secure.getInt(mContext.contentResolver,
                         PREF_COLOR_OVERRIDE, -1)
@@ -119,7 +119,6 @@ class CustomThemeOverlayController @Inject constructor(
                 linearLightness = Settings.Secure.getInt(mContext.contentResolver,
                         PREF_LINEAR_LIGHTNESS, 0) != 0
                 reevaluateSystemTheme(true /* forceReload */)
-            }
         }
     }
 
