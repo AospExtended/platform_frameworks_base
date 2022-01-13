@@ -225,13 +225,12 @@ public class BiometricSchedulerOperation {
         Slog.v(TAG, "Aborted: " + this);
     }
 
-    /** Flags this operation as canceled, if possible, but does not cancel it until started. */
-    public boolean markCanceling() {
+    /** Flags this operation as canceled, but does not cancel it until started. */
+    public void markCanceling() {
         if (mState == STATE_WAITING_IN_QUEUE && isInterruptable()) {
             mState = STATE_WAITING_IN_QUEUE_CANCELING;
-            return true;
+            Slog.v(TAG, "Marked cancelling: " + this);
         }
-        return false;
     }
 
     /**
@@ -281,7 +280,6 @@ public class BiometricSchedulerOperation {
             @Override
             public void onClientFinished(@NonNull BaseClientMonitor clientMonitor,
                     boolean success) {
-                Slog.d(TAG, "[Finished / destroy]: " + clientMonitor);
                 mClientMonitor.destroy();
                 mState = STATE_FINISHED;
             }

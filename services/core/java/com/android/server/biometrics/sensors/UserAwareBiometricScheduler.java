@@ -102,11 +102,12 @@ public class UserAwareBiometricScheduler extends BiometricScheduler {
     }
 
     public UserAwareBiometricScheduler(@NonNull String tag,
+            @NonNull Handler handler,
             @SensorType int sensorType,
             @Nullable GestureAvailabilityDispatcher gestureAvailabilityDispatcher,
             @NonNull CurrentUserRetriever currentUserRetriever,
             @NonNull UserSwitchCallback userSwitchCallback) {
-        this(tag, new Handler(Looper.getMainLooper()), sensorType, gestureAvailabilityDispatcher,
+        this(tag, handler, sensorType, gestureAvailabilityDispatcher,
                 IBiometricService.Stub.asInterface(
                         ServiceManager.getService(Context.BIOMETRIC_SERVICE)),
                 currentUserRetriever, userSwitchCallback, CoexCoordinator.getInstance());
