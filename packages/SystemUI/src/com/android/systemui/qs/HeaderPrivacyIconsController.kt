@@ -113,6 +113,6 @@ class HeaderPrivacyIconsController @Inject constructor(
         }
 
         privacyChip.visibility = if (visible && getChipEnabled()) View.VISIBLE else View.GONE
-        chipVisibilityListener?.onChipVisibilityRefreshed(visible)
+        chipVisibilityListener?.onChipVisibilityRefreshed(visible && getChipEnabled())
     }
 }
