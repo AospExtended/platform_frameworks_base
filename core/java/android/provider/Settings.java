@@ -5451,6 +5451,12 @@ public final class Settings {
         public static final String LOCK_POWER_MENU_DISABLED = "lockscreen_power_menu_disabled";
 
         /**
+         * Force full screen for devices with cutout
+         * @hide
+         */
+        public static final String FORCE_FULLSCREEN_CUTOUT_APPS = "force_full_screen_cutout_apps";
+
+        /**
          * Toast icon
          * @hide
          */
@@ -6156,6 +6162,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(POCKET_JUDGE);
             PRIVATE_SETTINGS.add(BACK_GESTURE_HAPTIC);
             PRIVATE_SETTINGS.add(VOLUME_PANEL_ON_LEFT);
+            PRIVATE_SETTINGS.add(FORCE_FULLSCREEN_CUTOUT_APPS);
         }
 
         /**
