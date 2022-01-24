@@ -21,8 +21,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.UserInfo
+import android.database.ContentObserver
+import android.os.Handler
 import android.os.UserHandle
 import android.provider.DeviceConfig
+import android.provider.Settings
+
 import com.android.internal.annotations.VisibleForTesting
 import com.android.internal.config.sysui.SystemUiDeviceConfigFlags
 import com.android.systemui.Dumpable
@@ -36,11 +40,14 @@ import com.android.systemui.privacy.logging.PrivacyLogger
 import com.android.systemui.settings.UserTracker
 import com.android.systemui.util.DeviceConfigProxy
 import com.android.systemui.util.concurrency.DelayableExecutor
+import com.android.systemui.util.settings.SecureSettings
 import com.android.systemui.util.time.SystemClock
+
 import java.io.FileDescriptor
 import java.io.PrintWriter
 import java.lang.ref.WeakReference
 import java.util.concurrent.Executor
+
 import javax.inject.Inject
 
 @SysUISingleton
@@ -52,7 +59,9 @@ class PrivacyItemController @Inject constructor(
     private val userTracker: UserTracker,
     private val logger: PrivacyLogger,
     private val systemClock: SystemClock,
-    dumpManager: DumpManager
+    dumpManager: DumpManager,
+    private val secureSettings: SecureSettings,
+    @Main handler: Handler,
 ) : Dumpable {
 
     @VisibleForTesting
@@ -71,9 +80,7 @@ class PrivacyItemController @Inject constructor(
         }
         const val TAG = "PrivacyItemController"
         private const val MIC_CAMERA = SystemUiDeviceConfigFlags.PROPERTY_MIC_CAMERA_ENABLED
-        private const val LOCATION = SystemUiDeviceConfigFlags.PROPERTY_LOCATION_INDICATORS_ENABLED
         private const val DEFAULT_MIC_CAMERA = true
-        private const val DEFAULT_LOCATION = true
         @VisibleForTesting const val TIME_TO_HOLD_INDICATORS = 5000L
     }
 
@@ -88,8 +95,8 @@ class PrivacyItemController @Inject constructor(
     }
 
     private fun isLocationEnabled(): Boolean {
-        return deviceConfigProxy.getBoolean(DeviceConfig.NAMESPACE_PRIVACY,
-                LOCATION, DEFAULT_LOCATION)
+        return secureSettings.getIntForUser(Settings.Secure.ENABLE_LOCATION_PRIVACY_INDICATOR,
+            0, UserHandle.USER_CURRENT) == 1
     }
 
     private var currentUserIds = emptyList<Int>()
@@ -119,21 +126,28 @@ class PrivacyItemController @Inject constructor(
             object : DeviceConfig.OnPropertiesChangedListener {
         override fun onPropertiesChanged(properties: DeviceConfig.Properties) {
             if (DeviceConfig.NAMESPACE_PRIVACY.equals(properties.getNamespace()) &&
-                    (properties.keyset.contains(MIC_CAMERA) ||
-                            properties.keyset.contains(LOCATION))) {
+                    (properties.keyset.contains(MIC_CAMERA))) {
 
                 // Running on the ui executor so can iterate on callbacks
                 if (properties.keyset.contains(MIC_CAMERA)) {
                     micCameraAvailable = properties.getBoolean(MIC_CAMERA, DEFAULT_MIC_CAMERA)
                     allIndicatorsAvailable = micCameraAvailable && locationAvailable
                     callbacks.forEach { it.get()?.onFlagMicCameraChanged(micCameraAvailable) }
+                    update(false)
                 }
+                internalUiExecutor.updateListeningState()
+            }
+        }
+    }
 
-                if (properties.keyset.contains(LOCATION)) {
-                    locationAvailable = properties.getBoolean(LOCATION, DEFAULT_LOCATION)
-                    allIndicatorsAvailable = micCameraAvailable && locationAvailable
-                    callbacks.forEach { it.get()?.onFlagLocationChanged(locationAvailable) }
-                }
+    private val settingsObserver = object : ContentObserver(handler) {
+        override fun onChange(selfChange: Boolean) {
+            val enabled = isLocationEnabled()
+            if (locationAvailable != enabled) {
+                locationAvailable = enabled
+                allIndicatorsAvailable = micCameraAvailable && locationAvailable
+                callbacks.forEach { it.get()?.onFlagLocationChanged(locationAvailable) }
+                update(false)
                 internalUiExecutor.updateListeningState()
             }
         }
@@ -177,6 +191,10 @@ class PrivacyItemController @Inject constructor(
                 uiExecutor,
                 devicePropertiesChangedListener)
         dumpManager.registerDumpable(TAG, this)
+        secureSettings.registerContentObserverForUser(
+            Settings.Secure.ENABLE_LOCATION_PRIVACY_INDICATOR,
+            settingsObserver, UserHandle.USER_CURRENT
+        )
     }
 
     private fun unregisterListener() {
