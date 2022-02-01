@@ -128,6 +128,7 @@ import com.android.internal.widget.LockSettingsInternal;
 import com.android.internal.widget.LockscreenCredential;
 import com.android.internal.widget.RebootEscrowListener;
 import com.android.internal.widget.VerifyCredentialResponse;
+import com.android.server.app.AppLockManagerServiceInternal;
 import com.android.server.LocalServices;
 import com.android.server.ServiceThread;
 import com.android.server.SystemService;
@@ -2413,6 +2414,7 @@ public class LockSettingsService extends ILockSettings.Stub {
         mHandler.post(() -> {
             mInjector.getDevicePolicyManager().reportPasswordChanged(userId);
             LocalServices.getService(WindowManagerInternal.class).reportPasswordChanged(userId);
+            LocalServices.getService(AppLockManagerServiceInternal.class).reportPasswordChanged(userId);
         });
     }
 

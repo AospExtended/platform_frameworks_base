@@ -683,7 +683,8 @@ public class NotificationRemoteInputManager implements Dumpable {
                 newNotification,
                 sbn.getUser(),
                 sbn.getOverrideGroupKey(),
-                sbn.getPostTime());
+                sbn.getPostTime(),
+                sbn.getIsContentSecure());
     }
 
     @Override

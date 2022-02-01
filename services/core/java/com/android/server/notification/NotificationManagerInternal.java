@@ -36,4 +36,6 @@ public interface NotificationManagerInternal {
     void removeForegroundServiceFlagFromNotification(String pkg, int notificationId, int userId);
 
     void onConversationRemoved(String pkg, int uid, Set<String> shortcuts);
+
+    void updateSecureNotifications(String pkg, boolean isContentSecure, int userId);
 }
