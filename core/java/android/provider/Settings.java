@@ -5887,11 +5887,6 @@ public final class Settings {
         public static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
 
         /**
-         * @hide
-         */
-        public static final String USE_TILES_ON_SECURE_KEYGUARD = "use_tiles_on_secure_keyguard";
-
-        /**
          * Whether to play haptic feedback when touching udfps icon
          * @hide
          */
@@ -11213,6 +11208,13 @@ public final class Settings {
          */
         @Readable
         public static final String MONET_ENGINE_WHITE_LUMINANCE = "monet_engine_white_luminance_user";
+
+        /**
+         * Whether to disable secure qs tiles on lockscreen.
+         * Default 1
+         * @hide
+         */
+        public static final String DISABLE_SECURE_TILES_ON_LOCKSCREEN = "disable_secure_tiles_on_lockscreen";
 
         /**
          * These entries are considered common between the personal and the managed profile,
