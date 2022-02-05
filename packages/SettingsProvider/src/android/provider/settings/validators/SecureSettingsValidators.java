@@ -18,11 +18,13 @@ package android.provider.settings.validators;
 
 import static android.provider.settings.validators.SettingsValidators.ACCESSIBILITY_SHORTCUT_TARGET_LIST_VALIDATOR;
 import static android.provider.settings.validators.SettingsValidators.ANY_INTEGER_VALIDATOR;
+import static android.provider.settings.validators.SettingsValidators.ANY_FLOAT_VALIDATOR;
 import static android.provider.settings.validators.SettingsValidators.BOOLEAN_VALIDATOR;
 import static android.provider.settings.validators.SettingsValidators.COLON_SEPARATED_COMPONENT_LIST_VALIDATOR;
 import static android.provider.settings.validators.SettingsValidators.COLON_SEPARATED_PACKAGE_LIST_VALIDATOR;
 import static android.provider.settings.validators.SettingsValidators.COMMA_SEPARATED_COMPONENT_LIST_VALIDATOR;
 import static android.provider.settings.validators.SettingsValidators.COMPONENT_NAME_VALIDATOR;
+import static android.provider.settings.validators.SettingsValidators.HEX_COLOR_VALIDATOR;
 import static android.provider.settings.validators.SettingsValidators.JSON_OBJECT_VALIDATOR;
 import static android.provider.settings.validators.SettingsValidators.LOCALE_VALIDATOR;
 import static android.provider.settings.validators.SettingsValidators.NONE_NEGATIVE_LONG_VALIDATOR;
@@ -294,5 +296,11 @@ public class SecureSettingsValidators {
         VALIDATORS.put(Secure.VOLUME_LINK_NOTIFICATION, BOOLEAN_VALIDATOR);
         VALIDATORS.put(Secure.GESTURE_NAVBAR_LENGTH_MODE, new InclusiveIntegerRangeValidator(0, 2));
         VALIDATORS.put(Secure.ENABLE_LOCATION_PRIVACY_INDICATOR, BOOLEAN_VALIDATOR);
+        VALIDATORS.put(Secure.MONET_ENGINE_ACCURATE_SHADES, new InclusiveIntegerRangeValidator(0, 1));
+        VALIDATORS.put(Secure.MONET_ENGINE_COLOR_OVERRIDE, HEX_COLOR_VALIDATOR);
+        VALIDATORS.put(Secure.MONET_ENGINE_CUSTOM_COLOR, HEX_COLOR_VALIDATOR);
+        VALIDATORS.put(Secure.MONET_ENGINE_CHROMA_FACTOR, ANY_FLOAT_VALIDATOR);
+        VALIDATORS.put(Secure.MONET_ENGINE_LINEAR_LIGHTNESS, new InclusiveIntegerRangeValidator(0, 1));
+        VALIDATORS.put(Secure.MONET_ENGINE_WHITE_LUMINANCE, new InclusiveIntegerRangeValidator(0, 1000));
     }
 }
