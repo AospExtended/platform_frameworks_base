@@ -320,8 +320,6 @@
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
 
-    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
-
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
     <permission android:name="com.android.systemui.permission.SEND_ALERT_BROADCASTS" android:protectionLevel="preinstalled|signature"/>
     <uses-permission android:name="com.google.android.deskclock.permission.RECEIVE_ALERT_BROADCASTS"/>
@@ -957,50 +955,6 @@
         <!-- FPS Info -->
         <service android:name=".FPSInfoService"
                 android:exported="false" />
-
-        <activity
-            android:name="com.android.systemui.statusbar.phone.LeftBackSwipeCustomApp"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
-            android:label="@string/app_picker_dialog_title"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.android.systemui.statusbar.phone.LeftBackSwipeCustomApp" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.android.systemui.statusbar.phone.RightBackSwipeCustomApp"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
-            android:label="@string/app_picker_dialog_title"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.android.systemui.statusbar.phone.RightBackSwipeCustomApp" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.android.systemui.statusbar.phone.LeftBackVerticalSwipeCustomApp"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
-            android:label="@string/app_picker_dialog_title"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.android.systemui.statusbar.phone.LeftBackVerticalSwipeCustomApp" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.android.systemui.statusbar.phone.RightBackVerticalSwipeCustomApp"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
-            android:label="@string/app_picker_dialog_title"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="com.android.systemui.statusbar.phone.RightBackVerticalSwipeCustomApp" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
 
         <!-- Game Dashboard -->
         <activity
