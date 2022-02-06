@@ -595,15 +595,6 @@ public class StatusBarCommandQueueCallbacks implements CommandQueue.Callbacks {
     }
 
     @Override
-    public void toggleSettingsPanel() {
-        if (mPanelExpanded) {
-            mShadeController.animateCollapsePanels();
-        } else {
-            animateExpandSettingsPanel(null);
-        }
-    }
-
-    @Override
     public void toggleSplitScreen() {
         mStatusBar.toggleSplitScreenMode(-1 /* metricsDockAction */, -1 /* metricsUndockAction */);
     }

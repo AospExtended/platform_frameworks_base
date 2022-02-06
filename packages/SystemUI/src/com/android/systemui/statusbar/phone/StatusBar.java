@@ -254,7 +254,6 @@ import com.android.systemui.statusbar.policy.DeviceProvisionedController.DeviceP
 import com.android.systemui.statusbar.policy.ExtensionController;
 import com.android.systemui.statusbar.policy.FlashlightController;
 import com.android.systemui.statusbar.policy.KeyguardStateController;
-import com.android.systemui.statusbar.policy.TaskHelper;
 import com.android.systemui.statusbar.policy.UserInfoControllerImpl;
 import com.android.systemui.statusbar.policy.UserSwitcherController;
 import com.android.systemui.statusbar.window.StatusBarWindowController;
@@ -541,8 +540,6 @@ public class StatusBar extends SystemUI implements
     private final StatusBarLocationPublisher mStatusBarLocationPublisher;
     private final StatusBarIconController mStatusBarIconController;
     private final StatusBarHideIconsForBouncerManager mStatusBarHideIconsForBouncerManager;
-
-    protected TaskHelper mTaskHelper;
 
     // expanded notifications
     // the sliding/resizing panel within the notification window
@@ -848,8 +845,7 @@ public class StatusBar extends SystemUI implements
             Optional<StartingSurface> startingSurfaceOptional,
             TunerService tunerService,
             DumpManager dumpManager,
-            ActivityLaunchAnimator activityLaunchAnimator,
-            TaskHelper taskHelper) {
+            ActivityLaunchAnimator activityLaunchAnimator) {
         super(context);
         mNotificationsController = notificationsController;
         mFragmentService = fragmentService;
@@ -951,8 +947,6 @@ public class StatusBar extends SystemUI implements
         lockscreenShadeTransitionController.setStatusbar(this);
 
         mPanelExpansionStateManager.addExpansionListener(this::onPanelExpansionChanged);
-
-        mTaskHelper = taskHelper;
 
         mBubbleExpandListener =
                 (isExpanding, key) -> mContext.getMainExecutor().execute(() -> {
