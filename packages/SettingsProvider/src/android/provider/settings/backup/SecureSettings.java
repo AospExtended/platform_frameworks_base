@@ -196,5 +196,11 @@ public class SecureSettings {
         Settings.Secure.GESTURE_NAVBAR_LENGTH_MODE,
         Settings.Secure.ENABLE_LOCATION_PRIVACY_INDICATOR,
         Settings.Secure.DISABLE_SECURE_TILES_ON_LOCKSCREEN,
+        Settings.Secure.MONET_ENGINE_ACCURATE_SHADES,
+        Settings.Secure.MONET_ENGINE_COLOR_OVERRIDE,
+        Settings.Secure.MONET_ENGINE_CUSTOM_COLOR,
+        Settings.Secure.MONET_ENGINE_CHROMA_FACTOR,
+        Settings.Secure.MONET_ENGINE_LINEAR_LIGHTNESS,
+        Settings.Secure.MONET_ENGINE_WHITE_LUMINANCE,
     };
 }
