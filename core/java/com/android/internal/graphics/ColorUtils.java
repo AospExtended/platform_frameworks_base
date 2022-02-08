@@ -21,6 +21,7 @@ import android.annotation.FloatRange;
 import android.annotation.IntRange;
 import android.annotation.NonNull;
 import android.graphics.Color;
+import android.util.MathUtils;
 
 import com.android.internal.graphics.cam.Cam;
 
@@ -637,7 +638,7 @@ public final class ColorUtils {
     }
 
     private static int srgbTransferToInt(float c) {
-        return Math.round(srgbTransfer(c) * 255.0f) & 0xff;
+        return MathUtils.constrain(Math.round(srgbTransfer(c) * 255.0f), 0, 255);
     }
 
     private static float rgbToOklabLp(float r, float g, float b) {
