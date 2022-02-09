@@ -93,4 +93,7 @@
 
     <!-- Volume panel -->
     <dimen name="volume_dialog_panel_transparent_padding_left">8dp</dimen>
+
+    <!-- Dialog margin -->
+    <dimen name="rdnt_margin_dialog">12dp</dimen>
 </resources>
