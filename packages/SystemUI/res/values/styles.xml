@@ -916,6 +916,11 @@
         <item name="android:background">?android:attr/colorBackgroundFloating</item>
     </style>
 
+    <style name="Widget.SliceView.Panel.NoBg">
+        <item name="titleSize">16sp</item>
+        <item name="rowStyle">@style/SliceRow</item>
+    </style>
+
     <style name="SliceRow">
         <!-- 2dp start padding for the start icon -->
         <item name="titleItemStartPadding">2dp</item>

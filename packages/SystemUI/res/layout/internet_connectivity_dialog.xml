@@ -27,7 +27,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.SliceView.Panel"
+        style="@style/Widget.SliceView.Panel.NoBg"
         android:gravity="center_vertical|center_horizontal"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="@dimen/internet_dialog_network_layout_margin"
