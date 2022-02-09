@@ -131,6 +131,7 @@ public class InternetDialog extends SystemUIDialog implements
     private FrameLayout mDoneLayout;
     private Drawable mBackgroundOn;
     private int mListMaxHeight;
+    private int mDialogMarginVertical;
     private int mDefaultDataSubId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
     private boolean mCanConfigMobileData;
 
@@ -152,8 +153,11 @@ public class InternetDialog extends SystemUIDialog implements
     private final ViewTreeObserver.OnGlobalLayoutListener mInternetListLayoutListener = () -> {
         // Set max height for list
         if (mInternetDialogLayout.getHeight() > mListMaxHeight) {
-            ViewGroup.LayoutParams params = mInternetDialogLayout.getLayoutParams();
-            params.height = mListMaxHeight;
+            ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mInternetDialogLayout.getLayoutParams();
+            params.height = mListMaxHeight; 
+            params.leftMargin = mDialogMarginVertical; 
+            params.rightMargin = mDialogMarginVertical;
+
             mInternetDialogLayout.setLayoutParams(params);
         }
     };
@@ -186,6 +190,8 @@ public class InternetDialog extends SystemUIDialog implements
         };
         mListMaxHeight = context.getResources().getDimensionPixelSize(
                 R.dimen.internet_dialog_list_max_height);
+        mDialogMarginVertical = context.getResources().getDimensionPixelSize(
+                R.dimen.rdnt_margin_dialog);
         mUiEventLogger = uiEventLogger;
         mAdapter = new InternetAdapter(mInternetDialogController);
         if (!aboveStatusBar) {
@@ -204,7 +210,7 @@ public class InternetDialog extends SystemUIDialog implements
                 null);
         final Window window = getWindow();
         final WindowManager.LayoutParams layoutParams = window.getAttributes();
-        layoutParams.gravity = Gravity.BOTTOM;
+        layoutParams.gravity = Gravity.CENTER;
         // Move down the dialog to overlay the navigation bar.
         layoutParams.setFitInsetsTypes(
                 layoutParams.getFitInsetsTypes() & ~WindowInsets.Type.navigationBars());
@@ -248,6 +254,12 @@ public class InternetDialog extends SystemUIDialog implements
                 mInternetListLayoutListener);
         mInternetDialogTitle.setText(getDialogTitleText());
         mInternetDialogTitle.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
+
+        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mInternetDialogLayout.getLayoutParams();
+        params.leftMargin = mDialogMarginVertical; 
+        params.rightMargin = mDialogMarginVertical;
+
+        mInternetDialogLayout.setLayoutParams(params);
 
         setOnClickListener();
         mTurnWifiOnLayout.setBackground(null);
