@@ -105,6 +105,7 @@ android_library {
         "smartspace-google",
         "tensorflowlite_java",
         "gamedashboard-sysui-google",
+        "faceunlock_framework",
     ],
     manifest: "AndroidManifest.xml",
 
