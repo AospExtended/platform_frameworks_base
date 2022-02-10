@@ -126,6 +126,7 @@ android_library {
         "backgesture-google",
         "smartspace-google",
         "tensorflowlite_java",
+        "faceunlock_framework",
     ],
     manifest: "AndroidManifest.xml",
 
