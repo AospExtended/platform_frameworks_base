@@ -136,6 +136,8 @@ public class UdfpsDialogMeasureAdapter {
             }
         }
 
+        totalHeight += mView.getContext().getResources().getDimensionPixelSize(R.dimen.config_udfpsDialogExtraPadding);
+
         return new AuthDialog.LayoutParams(width, totalHeight);
     }
 
@@ -210,6 +212,8 @@ public class UdfpsDialogMeasureAdapter {
                 remeasuredHeight += child.getMeasuredHeight();
             }
         }
+
+        remeasuredHeight += mView.getContext().getResources().getDimensionPixelSize(R.dimen.config_udfpsDialogExtraPaddingLandscape);
 
         return new AuthDialog.LayoutParams(remeasuredWidth, remeasuredHeight);
     }

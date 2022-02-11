@@ -90,4 +90,8 @@
     <dimen name="right_tri_state_up_bottom_right_radius">0.0dip</dimen>
     <dimen name="right_tri_state_up_top_left_radius">24.0dip</dimen>
     <dimen name="right_tri_state_up_top_right_radius">24.0dip</dimen>
+
+    <!-- UDFPS dialog extra padding to align with sensor -->
+    <dimen name="config_udfpsDialogExtraPadding">0dp</dimen>
+    <dimen name="config_udfpsDialogExtraPaddingLandscape">0dp</dimen>
 </resources>
