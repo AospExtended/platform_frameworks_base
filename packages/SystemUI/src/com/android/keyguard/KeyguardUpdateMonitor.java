@@ -2433,6 +2433,12 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener, Dumpab
             if (mFaceAuthOnlyOnSecurityView){
                 updateFaceListeningState();
             }
+            for (int i = 0; i < mCallbacks.size(); i++) {
+                KeyguardUpdateMonitorCallback cb = mCallbacks.get(i).get();
+                if (cb != null) {
+                    cb.onKeyguardBouncerFullyShown(mBouncerFullyShown);
+                }
+            }
         }
     }
 
