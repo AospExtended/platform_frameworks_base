@@ -18,6 +18,7 @@ package com.android.systemui.media.dialog;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
@@ -36,6 +37,9 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.animation.ValueAnimator;
+import com.android.systemui.animation.Interpolators;
+import androidx.cardview.widget.CardView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,6 +49,7 @@ import com.android.settingslib.media.MediaDevice;
 import com.android.settingslib.utils.ThreadUtils;
 import com.android.systemui.R;
 import com.android.systemui.animation.Interpolators;
+import android.widget.FrameLayout;
 
 /**
  * Base adapter for media output dialog.
@@ -114,31 +119,23 @@ public abstract class MediaOutputBaseAdapter extends
 
         final LinearLayout mContainerLayout;
         final TextView mTitleText;
-        final TextView mTwoLineTitleText;
-        final TextView mSubTitleText;
         final ImageView mTitleIcon;
-        final ImageView mAddIcon;
         final ProgressBar mProgressBar;
         final SeekBar mSeekBar;
-        final RelativeLayout mTwoLineLayout;
-        final View mDivider;
-        final View mBottomDivider;
         final CheckBox mCheckBox;
         private String mDeviceId;
+        public final ImageView mStatusIcon;
+        public final CardView mItemLayout;
 
         MediaDeviceBaseViewHolder(View view) {
             super(view);
             mContainerLayout = view.requireViewById(R.id.device_container);
             mTitleText = view.requireViewById(R.id.title);
-            mSubTitleText = view.requireViewById(R.id.subtitle);
-            mTwoLineLayout = view.requireViewById(R.id.two_line_layout);
-            mTwoLineTitleText = view.requireViewById(R.id.two_line_title);
+            mItemLayout = view.requireViewById(R.id.card_rdnt);
             mTitleIcon = view.requireViewById(R.id.title_icon);
             mProgressBar = view.requireViewById(R.id.volume_indeterminate_progress);
             mSeekBar = view.requireViewById(R.id.volume_seekbar);
-            mDivider = view.requireViewById(R.id.end_divider);
-            mBottomDivider = view.requireViewById(R.id.bottom_divider);
-            mAddIcon = view.requireViewById(R.id.add_icon);
+            mStatusIcon = view.requireViewById(R.id.media_output_item_status);
             mCheckBox = view.requireViewById(R.id.check_box);
         }
 
@@ -163,60 +160,33 @@ public abstract class MediaOutputBaseAdapter extends
         private void setMargin(boolean topMargin, boolean bottomMargin) {
             ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mContainerLayout
                     .getLayoutParams();
-            params.topMargin = topMargin ? mMargin : 0;
-            params.bottomMargin = bottomMargin ? mMargin : 0;
+            params.topMargin = 0;
+            params.bottomMargin = 0;
             mContainerLayout.setLayoutParams(params);
         }
 
-        void setSingleLineLayout(CharSequence title, boolean bFocused) {
-            mTwoLineLayout.setVisibility(View.GONE);
-            mProgressBar.setVisibility(View.GONE);
-            mTitleText.setVisibility(View.VISIBLE);
-            mTitleText.setTranslationY(0);
-            mTitleText.setText(title);
-            if (bFocused) {
-                mTitleText.setTypeface(Typeface.create(mContext.getString(
-                        com.android.internal.R.string.config_headlineFontFamilyMedium),
-                        Typeface.NORMAL));
+        public void setSingleLineLayout(CharSequence title, boolean bFocused) {
+            setSingleLineLayout(title, bFocused, false, false, false);
+        }
+
+        public void setSingleLineLayout(CharSequence title, boolean bFocused, boolean showSeekBar, boolean showProgressBar, boolean showSubtitle) {
+            Drawable drawable;
+            if (showSeekBar || showProgressBar) {
+                mItemLayout.setRadius(mContext.getResources().getDimensionPixelSize(R.dimen.notification_corner_radius));
             } else {
-                mTitleText.setTypeface(Typeface.create(mContext.getString(
-                        com.android.internal.R.string.config_headlineFontFamily), Typeface.NORMAL));
+                mItemLayout.setRadius(mContext.getResources().getDimensionPixelSize(R.dimen.navigation_edge_action_drag_threshold));
             }
-        }
-
-        void setTwoLineLayout(MediaDevice device, boolean bFocused, boolean showSeekBar,
-                boolean showProgressBar, boolean showSubtitle) {
-            setTwoLineLayout(device, null, bFocused, showSeekBar, showProgressBar, showSubtitle);
-        }
-
-        void setTwoLineLayout(CharSequence title, boolean bFocused, boolean showSeekBar,
-                boolean showProgressBar, boolean showSubtitle) {
-            setTwoLineLayout(null, title, bFocused, showSeekBar, showProgressBar, showSubtitle);
-        }
-
-        private void setTwoLineLayout(MediaDevice device, CharSequence title, boolean bFocused,
-                boolean showSeekBar, boolean showProgressBar, boolean showSubtitle) {
-            mTitleText.setVisibility(View.GONE);
-            mTwoLineLayout.setVisibility(View.VISIBLE);
-            mSeekBar.setAlpha(1);
-            mSeekBar.setVisibility(showSeekBar ? View.VISIBLE : View.GONE);
+            int i = 8;
             mProgressBar.setVisibility(showProgressBar ? View.VISIBLE : View.GONE);
-            mSubTitleText.setVisibility(showSubtitle ? View.VISIBLE : View.GONE);
-            mTwoLineTitleText.setTranslationY(0);
-            if (device == null) {
-                mTwoLineTitleText.setText(title);
-            } else {
-                mTwoLineTitleText.setText(getItemTitle(device));
+            mSeekBar.setAlpha(1.0f);
+            mSeekBar.setVisibility(showSeekBar ? View.VISIBLE : View.GONE);
+            ImageView imageView = mStatusIcon;
+            if (showSubtitle) {
+                i = 0;
             }
-
-            if (bFocused) {
-                mTwoLineTitleText.setTypeface(Typeface.create(mContext.getString(
-                        com.android.internal.R.string.config_headlineFontFamilyMedium),
-                        Typeface.NORMAL));
-            } else {
-                mTwoLineTitleText.setTypeface(Typeface.create(mContext.getString(
-                        com.android.internal.R.string.config_headlineFontFamily), Typeface.NORMAL));
-            }
+            imageView.setVisibility(i);
+            mTitleText.setText(title);
+            mTitleText.setVisibility(0);
         }
 
         void initSeekbar(MediaDevice device) {
@@ -280,55 +250,61 @@ public abstract class MediaOutputBaseAdapter extends
         }
 
         void playSwitchingAnim(@NonNull View from, @NonNull View to) {
-            final float delta = (float) (mContext.getResources().getDimensionPixelSize(
-                    R.dimen.media_output_dialog_title_anim_y_delta));
             final SeekBar fromSeekBar = from.requireViewById(R.id.volume_seekbar);
+            final SeekBar toSeekBar = to.requireViewById(R.id.volume_seekbar);
             final TextView toTitleText = to.requireViewById(R.id.title);
+            final CardView fromItemLayout = from.requireViewById(R.id.card_rdnt);
+            final CardView toItemLayout = to.requireViewById(R.id.card_rdnt);
             if (fromSeekBar.getVisibility() != View.VISIBLE || toTitleText.getVisibility()
                     != View.VISIBLE) {
                 return;
             }
             mIsAnimating = true;
-            // Animation for title text
-            toTitleText.setTypeface(Typeface.create(mContext.getString(
-                    com.android.internal.R.string.config_headlineFontFamilyMedium),
-                    Typeface.NORMAL));
-            toTitleText.animate()
-                    .setDuration(ANIM_DURATION)
-                    .translationY(-delta)
-                    .setInterpolator(Interpolators.FAST_OUT_SLOW_IN)
-                    .setListener(new AnimatorListenerAdapter() {
-                        @Override
-                        public void onAnimationEnd(Animator animation) {
-                            to.requireViewById(R.id.volume_indeterminate_progress).setVisibility(
-                                    View.VISIBLE);
-                        }
-                    });
-            // Animation for seek bar
-            fromSeekBar.animate()
-                    .alpha(0)
-                    .setDuration(ANIM_DURATION)
-                    .setListener(new AnimatorListenerAdapter() {
-                        @Override
-                        public void onAnimationEnd(Animator animation) {
-                            final TextView fromTitleText = from.requireViewById(
-                                    R.id.two_line_title);
-                            fromTitleText.setTypeface(Typeface.create(mContext.getString(
-                                    com.android.internal.R.string.config_headlineFontFamily),
-                                    Typeface.NORMAL));
-                            fromTitleText.animate()
-                                    .setDuration(ANIM_DURATION)
-                                    .translationY(delta)
-                                    .setInterpolator(Interpolators.FAST_OUT_SLOW_IN)
-                                    .setListener(new AnimatorListenerAdapter() {
-                                        @Override
-                                        public void onAnimationEnd(Animator animation) {
-                                            mIsAnimating = false;
-                                            notifyDataSetChanged();
-                                        }
-                                    });
-                        }
-                    });
+
+            Float mLarge = mContext.getResources().getDimension(R.dimen.notification_corner_radius);
+            Float mSmall = mContext.getResources().getDimension(R.dimen.navigation_edge_action_drag_threshold);
+
+            AnimatorSet mMediaAnims = new AnimatorSet();
+            mMediaAnims.playTogether(valueCardAnim(mLarge, mSmall, fromItemLayout),
+                    valueAlphaAnim(1.0f, 0.0f, fromSeekBar, false),
+                    valueCardAnim(mSmall, mLarge, toItemLayout),
+                    valueAlphaAnim(0.0f, 1.0f, toSeekBar, true));
+            mMediaAnims.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    mIsAnimating = false;
+                    notifyDataSetChanged();
+                }
+            });
+            mMediaAnims.start();
+        }
+
+        ValueAnimator valueCardAnim(Float initial, Float end, CardView mView){
+            ValueAnimator mAnimator = ValueAnimator.ofFloat(initial, end);
+            mAnimator.setDuration(250);
+            mAnimator.setInterpolator(Interpolators.LINEAR);
+            mAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    public void onAnimationUpdate(ValueAnimator anim) {
+                        mView.setRadius((float) anim.getAnimatedValue());
+                    }
+            });
+            return mAnimator;
+        }
+
+        ValueAnimator valueAlphaAnim(Float initial, Float end, View mView, boolean changeVis){
+            if (changeVis){
+                mView.setAlpha(initial);
+                mView.setVisibility(View.VISIBLE);
+            }
+            ValueAnimator mAnimator = ValueAnimator.ofFloat(initial, end);
+            mAnimator.setDuration(250);
+            mAnimator.setInterpolator(Interpolators.LINEAR);
+            mAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    public void onAnimationUpdate(ValueAnimator anim) {
+                        mView.setAlpha((float) anim.getAnimatedValue());
+                    }
+            });
+            return mAnimator;
         }
 
         Drawable getSpeakerDrawable() {
