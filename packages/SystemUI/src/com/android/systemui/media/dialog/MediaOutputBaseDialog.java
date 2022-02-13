@@ -36,6 +36,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.graphics.drawable.Drawable;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.core.graphics.drawable.IconCompat;
@@ -69,7 +70,9 @@ public abstract class MediaOutputBaseDialog extends SystemUIDialog implements
     private Button mDoneButton;
     private Button mStopButton;
     private int mListMaxHeight;
-
+    private int mDialogMarginVertical;
+    public ImageView mAppResourceIcon;
+    
     MediaOutputBaseAdapter mAdapter;
 
     private final ViewTreeObserver.OnGlobalLayoutListener mDeviceListLayoutListener = () -> {
@@ -97,9 +100,9 @@ public abstract class MediaOutputBaseDialog extends SystemUIDialog implements
         mDialogView = LayoutInflater.from(mContext).inflate(R.layout.media_output_dialog, null);
         final Window window = getWindow();
         final WindowManager.LayoutParams lp = window.getAttributes();
-        lp.gravity = Gravity.BOTTOM;
+        lp.gravity = Gravity.CENTER;
         // Config insets to make sure the layout is above the navigation bar
-        lp.setFitInsetsTypes(statusBars() | navigationBars());
+        lp.setFitInsetsTypes(lp.getFitInsetsTypes() & ~WindowInsets.Type.navigationBars());
         lp.setFitInsetsSides(WindowInsets.Side.all());
         lp.setFitInsetsIgnoringVisibility(true);
         window.setAttributes(lp);
@@ -114,6 +117,7 @@ public abstract class MediaOutputBaseDialog extends SystemUIDialog implements
         mDeviceListLayout = mDialogView.requireViewById(R.id.device_list);
         mDoneButton = mDialogView.requireViewById(R.id.done);
         mStopButton = mDialogView.requireViewById(R.id.stop);
+        mAppResourceIcon = mDialogView.requireViewById(R.id.app_source_icon);
 
         mDeviceListLayout.getViewTreeObserver().addOnGlobalLayoutListener(
                 mDeviceListLayoutListener);
@@ -147,6 +151,14 @@ public abstract class MediaOutputBaseDialog extends SystemUIDialog implements
         // Update header icon
         final int iconRes = getHeaderIconRes();
         final IconCompat iconCompat = getHeaderIcon();
+
+        Drawable appSourceIcon = getAppSourceIcon();
+        if (appSourceIcon != null) {
+            mAppResourceIcon.setImageDrawable(appSourceIcon);
+        } else {
+            mAppResourceIcon.setVisibility(View.GONE);
+        }
+
         if (iconRes != 0) {
             mHeaderIcon.setVisibility(View.VISIBLE);
             mHeaderIcon.setImageResource(iconRes);
@@ -186,6 +198,8 @@ public abstract class MediaOutputBaseDialog extends SystemUIDialog implements
     }
 
     abstract int getHeaderIconRes();
+
+    abstract Drawable getAppSourceIcon();
 
     abstract IconCompat getHeaderIcon();
 
