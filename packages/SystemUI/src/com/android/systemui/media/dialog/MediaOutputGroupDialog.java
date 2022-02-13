@@ -20,6 +20,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.graphics.drawable.Drawable;
 
 import androidx.core.graphics.drawable.IconCompat;
 
@@ -65,6 +66,11 @@ public class MediaOutputGroupDialog extends MediaOutputBaseDialog {
     @Override
     CharSequence getHeaderText() {
         return mContext.getString(R.string.media_output_dialog_add_output);
+    }
+
+    @Override
+    public Drawable getAppSourceIcon() {
+        return mMediaOutputController.getAppSourceIcon();
     }
 
     @Override
