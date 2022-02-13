@@ -127,60 +127,68 @@ public class MediaOutputAdapter extends MediaOutputBaseAdapter {
             if (currentlyConnected) {
                 mConnectedItem = mContainerLayout;
             }
-            mBottomDivider.setVisibility(View.GONE);
             mCheckBox.setVisibility(View.GONE);
-            if (currentlyConnected && mController.isActiveRemoteDevice(device)
-                    && mController.getSelectableMediaDevice().size() > 0) {
-                // Init active device layout
-                mDivider.setVisibility(View.VISIBLE);
-                mDivider.setTransitionAlpha(1);
-                mAddIcon.setVisibility(View.VISIBLE);
-                mAddIcon.setTransitionAlpha(1);
-                mAddIcon.setOnClickListener(v -> onEndItemClick());
-            } else {
-                // Init non-active device layout
-                mDivider.setVisibility(View.GONE);
-                mAddIcon.setVisibility(View.GONE);
-            }
+            mStatusIcon.setVisibility(View.GONE);
+            mTitleText.setTextColor(Utils.getColorStateListDefaultColor(mContext, R.color.media_dialog_inactive_item_main_content));
             if (mCurrentActivePosition == position) {
                 mCurrentActivePosition = -1;
             }
-            if (mController.isTransferring()) {
-                if (device.getState() == MediaDeviceState.STATE_CONNECTING
-                        && !mController.hasAdjustVolumeUserRestriction()) {
-                    setTwoLineLayout(device, true /* bFocused */, false /* showSeekBar*/,
-                            true /* showProgressBar */, false /* showSubtitle */);
-                } else {
-                    setSingleLineLayout(getItemTitle(device), false /* bFocused */);
-                }
+            if (device.getDeviceType() != 4 || device.isConnected()) {
+                mTitleText.setAlpha(1.0f);
+                mTitleIcon.setAlpha(1.0f);
             } else {
-                // Set different layout for each device
-                if (device.getState() == MediaDeviceState.STATE_CONNECTING_FAILED) {
-                    setTwoLineLayout(device, false /* bFocused */,
-                            false /* showSeekBar */, false /* showProgressBar */,
-                            true /* showSubtitle */);
-                    mSubTitleText.setText(R.string.media_output_dialog_connect_failed);
-                    mContainerLayout.setOnClickListener(v -> onItemClick(v, device));
-                } else if (!mController.hasAdjustVolumeUserRestriction() && currentlyConnected) {
-                    setTwoLineLayout(device, true /* bFocused */, true /* showSeekBar */,
-                            false /* showProgressBar */, false /* showSubtitle */);
-                    initSeekbar(device);
-                    mCurrentActivePosition = position;
+                mTitleText.setAlpha(0.5f);
+                mTitleIcon.setAlpha(0.5f);
+            }
+            if (mController.isTransferring()) {
+                if (device.getState() != 1 || mController.hasAdjustVolumeUserRestriction()) {
+                    setSingleLineLayout(getItemTitle(device), false);
                 } else {
-                    setSingleLineLayout(getItemTitle(device), false /* bFocused */);
-                    mContainerLayout.setOnClickListener(v -> onItemClick(v, device));
+                    setSingleLineLayout(getItemTitle(device), true, false, true, false);
+                }
+            } else if (device.getState() == MediaDeviceState.STATE_CONNECTING_FAILED) {
+                mTitleText.setAlpha(1.0f);
+                mTitleIcon.setAlpha(1.0f);
+                mContainerLayout.setOnClickListener(v -> onItemClick(v, device));
+                setSingleLineLayout(getItemTitle(device), false, false, false, true);
+            } else if (mController.getSelectedMediaDevice().size() > 1 && isDeviceIncluded(mController.getSelectedMediaDevice(), device)) {
+                mTitleText.setTextColor(Utils.getColorStateListDefaultColor(mContext, R.color.media_dialog_item_status));
+                setSingleLineLayout(getItemTitle(device), true, true, false, false);
+                mCheckBox.setVisibility(0);
+                mCheckBox.setChecked(true);
+                initSessionSeekbar();
+            } else if (!mController.hasAdjustVolumeUserRestriction() && currentlyConnected) {
+                mStatusIcon.setImageDrawable(mContext.getDrawable(R.drawable.media_output_status_check));
+                mTitleText.setTextColor(Utils.getColorStateListDefaultColor(mContext, R.color.media_dialog_item_status));
+                setSingleLineLayout(getItemTitle(device), true, true, false, true);
+                initSeekbar(device);
+                mCurrentActivePosition = position;
+            } else if (isDeviceIncluded(mController.getSelectableMediaDevice(), device)) {
+                mCheckBox.setVisibility(0);
+                mCheckBox.setChecked(false);
+                mContainerLayout.setOnClickListener(v -> onItemClick(v, device));
+                setSingleLineLayout(getItemTitle(device), false, false, false, false);
+            } else {
+                mContainerLayout.setOnClickListener(v -> onItemClick(v, device));
+                setSingleLineLayout(getItemTitle(device), false);
+            }
+        }
+
+        private boolean isDeviceIncluded(List<MediaDevice> deviceList, MediaDevice targetDevice) {
+            for (MediaDevice device : deviceList) {
+                if (TextUtils.equals(device.getId(), targetDevice.getId())) {
+                    return true;
                 }
             }
+            return false;
         }
 
         @Override
         void onBind(int customizedItem, boolean topMargin, boolean bottomMargin) {
             super.onBind(customizedItem, topMargin, bottomMargin);
             if (customizedItem == CUSTOMIZED_ITEM_PAIR_NEW) {
+                mTitleText.setTextColor(Utils.getColorStateListDefaultColor(mContext, R.color.media_dialog_inactive_item_main_content));
                 mCheckBox.setVisibility(View.GONE);
-                mDivider.setVisibility(View.GONE);
-                mAddIcon.setVisibility(View.GONE);
-                mBottomDivider.setVisibility(View.GONE);
                 setSingleLineLayout(mContext.getText(R.string.media_output_dialog_pairing_new),
                         false /* bFocused */);
                 final Drawable d = mContext.getDrawable(R.drawable.ic_add);
@@ -188,27 +196,6 @@ public class MediaOutputAdapter extends MediaOutputBaseAdapter {
                         Utils.getColorAccentDefaultColor(mContext), PorterDuff.Mode.SRC_IN));
                 mTitleIcon.setImageDrawable(d);
                 mContainerLayout.setOnClickListener(v -> onItemClick(CUSTOMIZED_ITEM_PAIR_NEW));
-            } else if (customizedItem == CUSTOMIZED_ITEM_DYNAMIC_GROUP) {
-                mConnectedItem = mContainerLayout;
-                mBottomDivider.setVisibility(View.GONE);
-                mCheckBox.setVisibility(View.GONE);
-                if (mController.getSelectableMediaDevice().size() > 0) {
-                    mDivider.setVisibility(View.VISIBLE);
-                    mDivider.setTransitionAlpha(1);
-                    mAddIcon.setVisibility(View.VISIBLE);
-                    mAddIcon.setTransitionAlpha(1);
-                    mAddIcon.setOnClickListener(v -> onEndItemClick());
-                } else {
-                    mDivider.setVisibility(View.GONE);
-                    mAddIcon.setVisibility(View.GONE);
-                }
-                mTitleIcon.setImageDrawable(getSpeakerDrawable());
-                final CharSequence sessionName = mController.getSessionName();
-                final CharSequence title = TextUtils.isEmpty(sessionName)
-                        ? mContext.getString(R.string.media_output_dialog_group) : sessionName;
-                setTwoLineLayout(title, true /* bFocused */, true /* showSeekBar */,
-                        false /* showProgressBar */, false /* showSubtitle */);
-                initSessionSeekbar();
             }
         }
 

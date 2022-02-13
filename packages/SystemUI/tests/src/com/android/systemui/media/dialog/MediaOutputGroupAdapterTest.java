@@ -97,15 +97,9 @@ public class MediaOutputGroupAdapterTest extends SysuiTestCase {
 
         assertThat(mGroupViewHolder.mTitleText.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mCheckBox.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mSubTitleText.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mProgressBar.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mDivider.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mAddIcon.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mBottomDivider.getVisibility()).isEqualTo(View.VISIBLE);
         assertThat(mGroupViewHolder.mSeekBar.getVisibility()).isEqualTo(View.VISIBLE);
-        assertThat(mGroupViewHolder.mTwoLineTitleText.getVisibility()).isEqualTo(View.VISIBLE);
-        assertThat(mGroupViewHolder.mTwoLineTitleText.getText()).isEqualTo(mContext.getText(
-                R.string.media_output_dialog_group));
     }
 
     @Test
@@ -115,12 +109,7 @@ public class MediaOutputGroupAdapterTest extends SysuiTestCase {
         assertThat(mGroupViewHolder.mTitleText.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mProgressBar.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mDivider.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mAddIcon.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mBottomDivider.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mSubTitleText.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mSeekBar.getVisibility()).isEqualTo(View.VISIBLE);
-        assertThat(mGroupViewHolder.mTwoLineTitleText.getVisibility()).isEqualTo(View.VISIBLE);
-        assertThat(mGroupViewHolder.mTwoLineTitleText.getText()).isEqualTo(TEST_DEVICE_NAME_1);
         assertThat(mGroupViewHolder.mCheckBox.getVisibility()).isEqualTo(View.VISIBLE);
         assertThat(mGroupViewHolder.mCheckBox.isChecked()).isTrue();
         // Disabled checkBox
@@ -142,12 +131,7 @@ public class MediaOutputGroupAdapterTest extends SysuiTestCase {
         assertThat(mGroupViewHolder.mTitleText.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mProgressBar.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mDivider.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mAddIcon.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mBottomDivider.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mSubTitleText.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mSeekBar.getVisibility()).isEqualTo(View.VISIBLE);
-        assertThat(mGroupViewHolder.mTwoLineTitleText.getVisibility()).isEqualTo(View.VISIBLE);
-        assertThat(mGroupViewHolder.mTwoLineTitleText.getText()).isEqualTo(TEST_DEVICE_NAME_1);
         assertThat(mGroupViewHolder.mCheckBox.getVisibility()).isEqualTo(View.VISIBLE);
         assertThat(mGroupViewHolder.mCheckBox.isChecked()).isTrue();
         // Enabled checkBox
@@ -168,12 +152,7 @@ public class MediaOutputGroupAdapterTest extends SysuiTestCase {
         assertThat(mGroupViewHolder.mTitleText.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mProgressBar.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mDivider.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mAddIcon.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mBottomDivider.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mSubTitleText.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mSeekBar.getVisibility()).isEqualTo(View.VISIBLE);
-        assertThat(mGroupViewHolder.mTwoLineTitleText.getVisibility()).isEqualTo(View.VISIBLE);
-        assertThat(mGroupViewHolder.mTwoLineTitleText.getText()).isEqualTo(TEST_DEVICE_NAME_2);
         assertThat(mGroupViewHolder.mCheckBox.getVisibility()).isEqualTo(View.VISIBLE);
         assertThat(mGroupViewHolder.mCheckBox.isChecked()).isTrue();
         // Disabled checkBox
@@ -187,12 +166,7 @@ public class MediaOutputGroupAdapterTest extends SysuiTestCase {
         assertThat(mGroupViewHolder.mTitleText.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mProgressBar.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mDivider.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mAddIcon.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mBottomDivider.getVisibility()).isEqualTo(View.GONE);
-        assertThat(mGroupViewHolder.mSubTitleText.getVisibility()).isEqualTo(View.GONE);
         assertThat(mGroupViewHolder.mSeekBar.getVisibility()).isEqualTo(View.VISIBLE);
-        assertThat(mGroupViewHolder.mTwoLineTitleText.getVisibility()).isEqualTo(View.VISIBLE);
-        assertThat(mGroupViewHolder.mTwoLineTitleText.getText()).isEqualTo(TEST_DEVICE_NAME_2);
         assertThat(mGroupViewHolder.mCheckBox.getVisibility()).isEqualTo(View.VISIBLE);
         assertThat(mGroupViewHolder.mCheckBox.isChecked()).isFalse();
         // Enabled checkBox

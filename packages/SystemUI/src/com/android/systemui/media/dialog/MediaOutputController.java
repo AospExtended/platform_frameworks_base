@@ -32,6 +32,7 @@ import android.os.UserHandle;
 import android.os.UserManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.content.pm.PackageManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
@@ -172,6 +173,17 @@ public class MediaOutputController implements LocalMediaManager.DeviceCallback {
     public void onRequestFailed(int reason) {
         mCallback.onRouteChanged();
         mMetricLogger.logOutputFailure(mMediaDevices, reason);
+    }
+
+    public Drawable getAppSourceIcon() {
+        if (mPackageName.isEmpty()) {
+            return null;
+        }
+        try {
+            return mContext.getPackageManager().getApplicationIcon(mPackageName);
+        } catch (PackageManager.NameNotFoundException unused) {
+            return null;
+        }
     }
 
     CharSequence getHeaderTitle() {
