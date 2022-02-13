@@ -437,7 +437,7 @@
     </style>
 
     <style name="Theme.SystemUI.Dialog.MediaOutput">
-        <item name="android:windowBackground">@drawable/media_output_dialog_background</item>
+        <item name="android:colorBackground">@color/media_dialog_background</item>
     </style>
 
     <style name="QSBorderlessButton">
