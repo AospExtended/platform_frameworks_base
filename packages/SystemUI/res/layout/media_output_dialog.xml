@@ -18,54 +18,61 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/media_output_dialog"
-    android:layout_width="match_parent"
+    android:layout_width="@dimen/internet_dialog_list_max_width"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="94dp"
-        android:gravity="start|center_vertical"
-        android:paddingStart="16dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical" 
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp"
         android:orientation="horizontal">
         <ImageView
             android:id="@+id/header_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingEnd="@dimen/media_output_dialog_header_icon_padding"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
             android:importantForAccessibility="no"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="12dp"
             android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/app_source_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:gravity="center_vertical"
+                android:importantForAccessibility="no" />
+
             <TextView
                 android:id="@+id/header_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
+                android:gravity="center_vertical"
                 android:textColor="?android:attr/textColorPrimary"
                 android:fontFamily="@*android:string/config_headlineFontFamilyMedium"
-                android:textSize="20sp"/>
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/header_subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:textColor="?android:attr/textColorSecondary"
                 android:maxLines="1"
                 android:fontFamily="roboto-regular"
                 android:textSize="14sp"/>
 
         </LinearLayout>
     </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"/>
 
     <LinearLayout
         android:id="@+id/device_list"
@@ -81,21 +88,19 @@
             android:overScrollMode="never"/>
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dialog_side_padding"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="@dimen/dialog_bottom_padding"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/stop"
-            style="@*android:style/Widget.DeviceDefault.Button.Borderless.Colored"
+            style="@style/DialogBorderButton"
             android:layout_width="wrap_content"
-            android:layout_height="64dp"
+            android:layout_height="wrap_content"
             android:text="@string/keyboard_key_media_stop"
             android:visibility="gone"/>
 
@@ -106,10 +111,9 @@
 
         <Button
             android:id="@+id/done"
-            style="@*android:style/Widget.DeviceDefault.Button.Borderless.Colored"
+            style="@style/DialogButton"
             android:layout_width="wrap_content"
-            android:layout_height="64dp"
-            android:layout_marginEnd="0dp"
+            android:layout_height="wrap_content"
             android:text="@string/inline_done_button"/>
     </LinearLayout>
 </LinearLayout>
