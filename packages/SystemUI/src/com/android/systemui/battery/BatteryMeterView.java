@@ -72,20 +72,20 @@ public class BatteryMeterView extends LinearLayout implements DarkReceiver {
     public static final int MODE_OFF = 2;
     public static final int MODE_ESTIMATE = 3;
 
-    private static final int BATTERY_STYLE_PORTRAIT = 0;
-    private static final int BATTERY_STYLE_CIRCLE = 1;
-    private static final int BATTERY_STYLE_DOTTED_CIRCLE = 2;
-    private static final int BATTERY_STYLE_FULL_CIRCLE = 3;
-    private static final int BATTERY_STYLE_TEXT = 4; /*hidden icon*/
-    private static final int BATTERY_STYLE_HIDDEN = 5;
-    private static final int BATTERY_STYLE_BIG_CIRCLE = 6;
-    private static final int BATTERY_STYLE_BIG_DOTTED_CIRCLE = 7;
-    private static final int BATTERY_STYLE_RLANDSCAPE = 8;
-    private static final int BATTERY_STYLE_LANDSCAPE = 9;
+    public static final int BATTERY_STYLE_PORTRAIT = 0;
+    public static final int BATTERY_STYLE_CIRCLE = 1;
+    public static final int BATTERY_STYLE_DOTTED_CIRCLE = 2;
+    public static final int BATTERY_STYLE_FULL_CIRCLE = 3;
+    public static final int BATTERY_STYLE_TEXT = 4; /*hidden icon*/
+    public static final int BATTERY_STYLE_HIDDEN = 5;
+    public static final int BATTERY_STYLE_BIG_CIRCLE = 6;
+    public static final int BATTERY_STYLE_BIG_DOTTED_CIRCLE = 7;
+    public static final int BATTERY_STYLE_RLANDSCAPE = 8;
+    public static final int BATTERY_STYLE_LANDSCAPE = 9;
 
-    private static final int BATTERY_PERCENT_HIDDEN = 0;
-    private static final int BATTERY_PERCENT_SHOW_INSIDE = 1;
-    private static final int BATTERY_PERCENT_SHOW_OUTSIDE = 2;
+    public static final int BATTERY_PERCENT_HIDDEN = 0;
+    public static final int BATTERY_PERCENT_SHOW_INSIDE = 1;
+    public static final int BATTERY_PERCENT_SHOW_OUTSIDE = 2;
 
     private final CircleBatteryDrawable mCircleDrawable;
     private final FullCircleBatteryDrawable mFullCircleDrawable;
@@ -522,6 +522,10 @@ public class BatteryMeterView extends LinearLayout implements DarkReceiver {
         if (mUnknownStateDrawable != null) {
             mUnknownStateDrawable.setTint(singleToneColor);
         }
+    }
+
+    public int getBatteryStyle() {
+        return mBatteryStyle;
     }
 
     public void dump(FileDescriptor fd, PrintWriter pw, String[] args) {
