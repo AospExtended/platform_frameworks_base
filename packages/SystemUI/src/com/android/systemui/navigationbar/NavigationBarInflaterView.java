@@ -45,6 +45,7 @@ import com.android.systemui.navigationbar.buttons.ReverseLinearLayout;
 import com.android.systemui.navigationbar.buttons.ReverseLinearLayout.ReverseRelativeLayout;
 import com.android.systemui.recents.OverviewProxyService;
 import com.android.systemui.shared.system.QuickStepContract;
+import com.android.systemui.statusbar.policy.ConfigurationController.ConfigurationListener;
 import com.android.systemui.tuner.TunerService;
 import com.android.systemui.tuner.TunerService.Tunable;
 
@@ -52,7 +53,8 @@ import java.io.PrintWriter;
 import java.util.Objects;
 
 public class NavigationBarInflaterView extends FrameLayout
-        implements NavigationModeController.ModeChangedListener, Tunable {
+        implements NavigationModeController.ModeChangedListener, Tunable,
+        ConfigurationListener {
 
     private static final String TAG = "NavBarInflater";
 
@@ -212,6 +214,11 @@ public class NavigationBarInflaterView extends FrameLayout
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         updateLayoutInversion();
+    }
+
+    @Override
+    public void onOverlayChanged() {
+        onLikelyDefaultLayoutChange();
     }
 
     public void setNavigationBarLayout(String layoutValue) {
