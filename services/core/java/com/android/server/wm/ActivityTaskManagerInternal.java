@@ -621,4 +621,6 @@ public abstract class ActivityTaskManagerInternal {
      */
     public abstract boolean hasSystemAlertWindowPermission(int callingUid, int callingPid,
             String callingPackage);
+
+    public abstract boolean isVisibleActivity(IBinder activityToken);
 }
