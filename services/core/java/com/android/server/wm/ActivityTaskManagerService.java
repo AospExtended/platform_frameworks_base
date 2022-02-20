@@ -6552,6 +6552,14 @@ public class ActivityTaskManagerService extends IActivityTaskManager.Stub {
             return ActivityTaskManagerService.this.hasSystemAlertWindowPermission(callingUid,
                     callingPid, callingPackage);
         }
+
+        @Override
+        public boolean isVisibleActivity(IBinder activityToken) {
+            synchronized (mGlobalLock) {
+                final ActivityRecord r = ActivityRecord.isInRootTaskLocked(activityToken);
+                return r != null && r.isInterestingToUserLocked();
+            }
+        }
     }
 
     final class PackageConfigurationUpdaterImpl implements
