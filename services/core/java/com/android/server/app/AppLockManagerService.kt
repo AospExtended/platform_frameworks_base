@@ -50,8 +50,6 @@ import com.android.server.notification.NotificationManagerInternal
 import com.android.server.SystemService
 import com.android.server.wm.ActivityTaskManagerInternal
 
-import kotlin.random.Random
-
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -106,19 +104,10 @@ class AppLockManagerService(private val context: Context) :
     private val alarmsMutex = Mutex()
 
     @GuardedBy("alarmsMutex")
-    private val scheduledAlarms = ArrayMap<String, Pair<Int, PendingIntent>>()
+    private val scheduledAlarms = ArrayMap<String, PendingIntent>()
 
-    // Using same request code for multiple pending intents will
-    // cause in timeout alarms to report wrong package, so we use
-    // randomized request codes and keep a set of used ones to
-    // prevent collisions. This set is cleared one by one when each
-    // alarm is received.
-    @GuardedBy("alarmsMutex")
-    private var usedAlarmRequestCodes = ArraySet<Int>()
-
-    private val whiteListedSystemApps: Array<String> by lazy {
-        context.resources.getStringArray(R.array.config_appLockAllowedSystemApps)
-    }
+    private val whiteListedSystemApps = context.resources.getStringArray(
+        R.array.config_appLockAllowedSystemApps)
 
     // Sometimes onTaskStackChanged is called multiple times
     // during app switches and [unlockInternal] might be called
@@ -159,8 +148,7 @@ class AppLockManagerService(private val context: Context) :
                 logD("Package $packageName uninstalled, cleaning up")
                 alarmsMutex.withLock {
                     scheduledAlarms.remove(packageName)?.let {
-                        alarmManager.cancel(it.second)
-                        usedAlarmRequestCodes.remove(it.first)
+                        alarmManager.cancel(it)
                     }
                 }
                 mutex.withLock {
@@ -198,11 +186,9 @@ class AppLockManagerService(private val context: Context) :
                 }
                 alarmsMutex.withLock {
                     currentTopPackages.forEach { pkg ->
-                        if (!scheduledAlarms.containsKey(pkg)) return@forEach
-                        logD("Cancelling timeout alarm for $pkg")
                         scheduledAlarms.remove(pkg)?.let {
-                            alarmManager.cancel(it.second)
-                            usedAlarmRequestCodes.remove(it.first)
+                            logD("Cancelling timeout alarm for $pkg")
+                            alarmManager.cancel(it)
                         }
                     }
                 }
@@ -235,9 +221,7 @@ class AppLockManagerService(private val context: Context) :
                         packageName, true, ActivityManager.getCurrentUser())
                 }
                 alarmsMutex.withLock {
-                    scheduledAlarms.remove(packageName)?.let {
-                        usedAlarmRequestCodes.remove(it.first)
-                    }
+                    scheduledAlarms.remove(packageName)
                 }
             }
         }
@@ -300,13 +284,9 @@ class AppLockManagerService(private val context: Context) :
                 Slog.e(TAG, "Failed to retrieve user config for $currentUserId")
                 return@launch
             }
-            val requestCode = alarmsMutex.withLock {
-                getRequestCodeLocked()
-            }
-            logD("requestCode = $requestCode, usedCodes = $usedAlarmRequestCodes")
             val pendingIntent = PendingIntent.getBroadcast(
                 context,
-                requestCode,
+                pkg.hashCode(),
                 Intent(ACTION_APP_LOCK_TIMEOUT).apply {
                     putExtra(EXTRA_PACKAGE, pkg)
                 },
@@ -318,18 +298,9 @@ class AppLockManagerService(private val context: Context) :
                 pendingIntent
             )
             alarmsMutex.withLock {
-                scheduledAlarms[pkg] = Pair(requestCode, pendingIntent)
+                scheduledAlarms[pkg] = pendingIntent
             }
         }
-    }
-
-    private fun getRequestCodeLocked(): Int {
-        var code = 0
-        while (usedAlarmRequestCodes.contains(code)) {
-            code = Random.nextInt(0, 1000)
-        }
-        usedAlarmRequestCodes.add(code)
-        return code
     }
 
     private fun getActualUserId(userId: Int, tag: String): Int {
@@ -681,13 +652,10 @@ class AppLockManagerService(private val context: Context) :
                         Slog.e(TAG, "requireUnlock queried by unknown user id $actualUserId")
                         return@withLock false
                     }
-                    if (config.appLockPackages.contains(packageName)) {
-                        val requireUnlock = !unlockedPackages.contains(packageName)
-                        logD("requireUnlock = $requireUnlock")
-                        requireUnlock
-                    } else {
-                        false
-                    }
+                    val requireUnlock = config.appLockPackages.contains(packageName) &&
+                        !unlockedPackages.contains(packageName)
+                    logD("requireUnlock = $requireUnlock")
+                    return@withLock requireUnlock
                 }
             }
         }
