@@ -121,11 +121,11 @@ internal class AppLockConfig(dataDir: File) {
         } catch(e: JSONException) {
             Slog.wtf(AppLockManagerService.TAG, "Failed to parse config file", e)
         }
-        if (AppLockManagerService.DEBUG) {
-            Slog.d(AppLockManagerService.TAG, "readConfig: packages = $appLockPackages")
-            Slog.d(AppLockManagerService.TAG, "readConfig: packageNotificationMap = $packageNotificationMap")
-            Slog.d(AppLockManagerService.TAG, "readConfig: timeout = $appLockTimeout")
-        }
+        AppLockManagerService.logD(
+            "readConfig: packages = $appLockPackages",
+            "readConfig: packageNotificationMap = $packageNotificationMap",
+            "readConfig: timeout = $appLockTimeout",
+        )
     }
 
     private fun reset() {
