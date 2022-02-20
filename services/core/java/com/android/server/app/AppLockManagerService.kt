@@ -36,6 +36,7 @@ import android.os.Environment
 import android.os.RemoteException
 import android.os.SystemClock
 import android.os.UserHandle
+import android.os.UserManager
 import android.util.ArrayMap
 import android.util.ArraySet
 import android.util.Log
@@ -99,6 +100,9 @@ class AppLockManagerService(private val context: Context) :
     }
     private val alarmManager: AlarmManager by lazy {
         context.getSystemService(AlarmManager::class.java)
+    }
+    private val userManager: UserManager by lazy {
+        context.getSystemService(UserManager::class.java)
     }
 
     private val alarmsMutex = Mutex()
@@ -635,13 +639,25 @@ class AppLockManagerService(private val context: Context) :
                 logD("Ignoring requireUnlock call for special user $userId")
                 return false
             }
+            val callingUserId = UserHandle.getCallingUserId()
+            val ident = Binder.clearCallingIdentity()
+            try {
+                val isManagedProfile = userManager.getUserInfo(callingUserId).isManagedProfile()
+                logD("isManagedProfile = $isManagedProfile")
+                if (isManagedProfile) {
+                    logD("User id $callingUserId belongs to a work profile, ignoring requireUnlock")
+                    return false
+                }
+                // If device is locked then there is no point in proceeding.
+                if (!ignoreLockState && keyguardManager.isDeviceLocked()) {
+                    logD("Device is locked, app does not require unlock")
+                    return false
+                }
+            } finally {
+                Binder.restoreCallingIdentity(ident)
+            }
             if (!isDeviceSecure) {
                 logD("Device is not secure, app does not require unlock")
-                return false
-            }
-            // If device is locked then there is no point in proceeding.
-            if (!ignoreLockState && keyguardManager.isDeviceLocked()) {
-                logD("Device is locked, app does not require unlock")
                 return false
             }
             logD("requireUnlock: packageName = $packageName")
@@ -670,9 +686,21 @@ class AppLockManagerService(private val context: Context) :
                 logD("Ignoring unlock call for special user $userId")
                 return
             }
+            val callingUserId = UserHandle.getCallingUserId()
+            val ident = Binder.clearCallingIdentity()
+            try {
+                val isManagedProfile = userManager.getUserInfo(callingUserId).isManagedProfile()
+                logD("isManagedProfile = $isManagedProfile")
+                if (isManagedProfile) {
+                    Slog.w(TAG, "User id $callingUserId belongs to a work profile, should not " +
+                        "be calling unlock()")
+                    return
+                }
+            } finally {
+                Binder.restoreCallingIdentity(ident)
+            }
             if (!isDeviceSecure) {
-                Slog.w(TAG, "Device is not secure, should not be " +
-                    "calling unlock()")
+                Slog.w(TAG, "Device is not secure, should not be calling unlock()")
                 return
             }
             logD("unlock: packageName = $packageName")
@@ -680,8 +708,7 @@ class AppLockManagerService(private val context: Context) :
             serviceScope.launch {
                 mutex.withLock {
                     val config = userConfigMap[actualUserId] ?: run {
-                        Slog.e(TAG, "Unlock requested by unknown user id " +
-                            "$actualUserId")
+                        Slog.e(TAG, "Unlock requested by unknown user id $actualUserId")
                         return@withLock
                     }
                     if (!config.appLockPackages.contains(packageName)) {
@@ -718,10 +745,6 @@ class AppLockManagerService(private val context: Context) :
         }
 
         override fun reportPasswordChanged(userId: Int) {
-            if (userId < 0) {
-                logD("Ignoring reportPasswordChanged call for special user $userId")
-                return
-            }
             logD("reportPasswordChanged: userId = $userId")
             if (userId != currentUserId) {
                 logD("Ignoring password change event for user $userId")
@@ -738,6 +761,19 @@ class AppLockManagerService(private val context: Context) :
             if (userId < 0) {
                 logD("Ignoring isNotificationSecured call for special user $userId")
                 return false
+            }
+            val callingUserId = UserHandle.getCallingUserId()
+            val ident = Binder.clearCallingIdentity()
+            try {
+                val isManagedProfile = userManager.getUserInfo(callingUserId).isManagedProfile()
+                logD("isManagedProfile = $isManagedProfile")
+                if (isManagedProfile) {
+                    logD("User id $callingUserId belongs to a work profile, " +
+                        "ignoring isNotificationSecured")
+                    return false
+                }
+            } finally {
+                Binder.restoreCallingIdentity(ident)
             }
             logD("isNotificationSecured: " +
                     "packageName = $packageName, " +
