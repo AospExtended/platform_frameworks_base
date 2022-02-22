@@ -18,20 +18,19 @@ package android.app;
 
 import android.Manifest;
 import android.annotation.NonNull;
-import android.annotation.Nullable;
 import android.annotation.SystemService;
 import android.annotation.RequiresPermission;
 import android.annotation.UserHandleAware;
 import android.content.Context;
 import android.os.RemoteException;
 
-import java.util.concurrent.TimeUnit;
 import java.util.List;
 
 @SystemService(Context.APP_LOCK_SERVICE)
 public final class AppLockManager {
 
-    public static final long APP_LOCK_TIMEOUT_DEFAULT = 10 * 1000;
+    public static final long DEFAULT_TIMEOUT = 10 * 1000;
+    public static final boolean DEFAULT_BIOMETRICS_ALLOWED = true;
 
     private final Context mContext;
     private final IAppLockManagerService mService;
@@ -127,11 +126,13 @@ public final class AppLockManager {
 
     /**
      * Set whether notification content should be hidden for a package.
+     * Caller must hold {@link android.permission.MANAGE_APP_LOCK}.
      *
      * @param packageName the package name.
      * @param secure true to hide notification content.
      */
     @UserHandleAware
+    @RequiresPermission(Manifest.permission.MANAGE_APP_LOCK)
     public void setSecureNotification(@NonNull String packageName, boolean secure) {
         try {
             mService.setSecureNotification(packageName, secure, mContext.getUserId());
@@ -152,6 +153,36 @@ public final class AppLockManager {
     public List<String> getPackagesWithSecureNotifications() {
         try {
             return mService.getPackagesWithSecureNotifications(mContext.getUserId());
+        } catch (RemoteException e) {
+            throw e.rethrowFromSystemServer();
+        }
+    }
+
+    /**
+     * Set whether to allow unlocking with biometrics.
+     * Caller must hold {@link android.permission.MANAGE_APP_LOCK}.
+     *
+     * @param biometricsAllowed whether to use biometrics.
+     */
+    @UserHandleAware
+    @RequiresPermission(Manifest.permission.MANAGE_APP_LOCK)
+    public void setBiometricsAllowed(boolean biometricsAllowed) {
+        try {
+            mService.setBiometricsAllowed(biometricsAllowed, mContext.getUserId());
+        } catch (RemoteException e) {
+            throw e.rethrowFromSystemServer();
+        }
+    }
+
+    /**
+     * Check whether biometrics is allowed for unlocking.
+     *
+     * @return true if biometrics will be used for unlocking, false otheriwse.
+     */
+    @UserHandleAware
+    public boolean isBiometricsAllowed() {
+        try {
+            return mService.isBiometricsAllowed(mContext.getUserId());
         } catch (RemoteException e) {
             throw e.rethrowFromSystemServer();
         }

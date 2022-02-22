@@ -21,6 +21,7 @@ import android.annotation.RequiresPermission
 import android.app.ActivityManager
 import android.app.ActivityTaskManager
 import android.app.AlarmManager
+import android.app.AppLockManager
 import android.app.IActivityTaskManager
 import android.app.IAppLockManagerService
 import android.app.KeyguardManager
@@ -433,7 +434,6 @@ class AppLockManagerService(private val context: Context) :
      * @return the timeout in milliseconds if configuration for
      *     current user exists, -1 otherwise.
      */
-    @RequiresPermission(Manifest.permission.MANAGE_APP_LOCK)
     override fun getTimeout(userId: Int): Long {
         logD("getTimeout: userId = $userId")
         val actualUserId = getActualUserId(userId, "getTimeout")
@@ -507,6 +507,7 @@ class AppLockManagerService(private val context: Context) :
      * @throws [SecurityException] if caller does not have permission
      *     [Manifest.permissions.MANAGE_APP_LOCK].
      */
+    @RequiresPermission(Manifest.permission.MANAGE_APP_LOCK)
     override fun setSecureNotification(
         packageName: String,
         secure: Boolean,
@@ -535,13 +536,13 @@ class AppLockManagerService(private val context: Context) :
 
     /**
      * Get the list of packages whose notifications contents are secure.
-     * Caller must hold {@link android.permission.MANAGE_APP_LOCK}.
      *
      * @param userId the user id of the caller.
      * @return a list of package names with secure notifications.
      * @throws [SecurityException] if caller does not have permission
      *     [Manifest.permissions.MANAGE_APP_LOCK].
      */
+    @RequiresPermission(Manifest.permission.MANAGE_APP_LOCK)
     override fun getPackagesWithSecureNotifications(userId: Int): List<String> {
         logD("getPackagesWithSecureNotifications: userId = $userId")
         enforceCallingPermission("getPackagesWithSecureNotifications")
@@ -559,6 +560,49 @@ class AppLockManagerService(private val context: Context) :
             }.map {
                 it.key
             }.toList()
+        }
+    }
+
+    /**
+     * Set whether to allow unlocking with biometrics.
+     *
+     * @param biometricsAllowed whether to use biometrics.
+     * @throws [SecurityException] if caller does not have permission
+     *     [Manifest.permissions.MANAGE_APP_LOCK].
+     */
+    @RequiresPermission(Manifest.permission.MANAGE_APP_LOCK)
+    override fun setBiometricsAllowed(biometricsAllowed: Boolean, userId: Int) {
+        logD("setBiometricsAllowed: biometricsAllowed = $biometricsAllowed, userId = $userId")
+        enforceCallingPermission("setBiometricsAllowed")
+        val actualUserId = getActualUserId(userId, "setBiometricsAllowed")
+        serviceScope.launch {
+            mutex.withLock {
+                userConfigMap[actualUserId]?.let {
+                    if (it.biometricsAllowed != biometricsAllowed) {
+                        it.biometricsAllowed = biometricsAllowed
+                        biometricUnlocker.biometricsAllowed = biometricsAllowed
+                        it.write()
+                    }
+                } ?: Slog.e(TAG, "setBiometricsAllowed requested by unknown user id $actualUserId")
+            }
+        }
+    }
+
+    /**
+     * Check whether biometrics is allowed for unlocking.
+     *
+     * @return true if biometrics will be used for unlocking, false otheriwse.
+     */
+    override fun isBiometricsAllowed(userId: Int): Boolean {
+        logD("isBiometricsAllowed: userId = $userId")
+        val actualUserId = getActualUserId(userId, "isBiometricsAllowed")
+        return runBlocking {
+            mutex.withLock {
+                userConfigMap[actualUserId]?.let { it.biometricsAllowed } ?: run {
+                    Slog.e(TAG, "isBiometricsAllowed requested by unknown user id $actualUserId")
+                    AppLockManager.DEFAULT_BIOMETRICS_ALLOWED
+                }
+            }
         }
     }
 
@@ -599,8 +643,12 @@ class AppLockManagerService(private val context: Context) :
             mutex.withLock {
                 if (!userConfigMap.containsKey(userId)) {
                     withContext(Dispatchers.IO) {
-                        userConfigMap[userId] = AppLockConfig(
-                            Environment.getDataSystemDeDirectory(userId)).also { it.read() }
+                        val config = AppLockConfig(
+                            Environment.getDataSystemDeDirectory(userId))
+                        userConfigMap[userId] = config
+                        config.read()
+                        biometricUnlocker.biometricsAllowed =
+                            config.biometricsAllowed
                     }
                 }
             }
