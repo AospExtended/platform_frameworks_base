@@ -6266,7 +6266,7 @@ public class NotificationManagerService extends SystemService {
         mUsageStats.registerEnqueuedByApp(pkg);
 
         final boolean isContentSecure = mAppLockManagerService != null &&
-            mAppLockManagerService.isNotificationSecured(pkg, incomingUserId);
+            mAppLockManagerService.isNotificationSecured(pkg, userId);
         final StatusBarNotification n = new StatusBarNotification(
                 pkg, opPkg, id, tag, notificationUid, callingPid, notification,
                 user, null, System.currentTimeMillis(), isContentSecure);
