@@ -37,6 +37,9 @@ internal class BiometricUnlocker(private val context: Context) {
 
     private val biometricManager = context.getSystemService(BiometricManager::class.java)
 
+    // Set operation must be externally synchronized
+    var biometricsAllowed = false
+
     /**
      * Determine whether biometrics or device credentials can be used for
      * unlocking operation.
@@ -84,13 +87,19 @@ internal class BiometricUnlocker(private val context: Context) {
         title: String,
         callback: AuthenticationCallback,
     ) {
-        BiometricPrompt.Builder(context)
+        var authenticators = Authenticators.DEVICE_CREDENTIAL
+        if (biometricsAllowed) {
+            authenticators = authenticators or Authenticators.BIOMETRIC_STRONG
+        }
+        val prompt = BiometricPrompt.Builder(context)
             .setTitle(title)
-            .setAllowedAuthenticators(
-                Authenticators.BIOMETRIC_STRONG or
-                    Authenticators.DEVICE_CREDENTIAL
-            )
+            .setAllowedAuthenticators(authenticators)
             .build()
-            .authenticate(CancellationSignal(), context.mainExecutor, callback)
+        prompt.authenticateUser(
+            CancellationSignal(),
+            context.mainExecutor,
+            callback,
+            context.userId,
+        )
     }
 }
