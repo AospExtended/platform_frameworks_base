@@ -46,11 +46,13 @@ internal class AppLockConfig(dataDir: File) {
     val appLockPackages: Set<String>
         get() = _appLockPackages.toSet()
 
-    var appLockTimeout: Long = AppLockManager.APP_LOCK_TIMEOUT_DEFAULT
+    var appLockTimeout: Long = AppLockManager.DEFAULT_TIMEOUT
 
     private val _packageNotificationMap = ArrayMap<String, Boolean>()
     val packageNotificationMap: Map<String, Boolean>
         get() = _packageNotificationMap.toMap()
+
+    var biometricsAllowed = AppLockManager.DEFAULT_BIOMETRICS_ALLOWED
 
     init {
         appLockDir.mkdirs()
@@ -108,7 +110,9 @@ internal class AppLockConfig(dataDir: File) {
         try {
             appLockConfigFile.inputStream().bufferedReader().use {
                 val rootObject = JSONObject(it.readText())
-                appLockTimeout = rootObject.optLong(KEY_TIMEOUT, AppLockManager.APP_LOCK_TIMEOUT_DEFAULT)
+                appLockTimeout = rootObject.optLong(KEY_TIMEOUT, AppLockManager.DEFAULT_TIMEOUT)
+                biometricsAllowed = rootObject.optBoolean(KEY_BIOMETRICS_ALLOWED,
+                    AppLockManager.DEFAULT_BIOMETRICS_ALLOWED)
                 val packageObject = rootObject.optJSONObject(KEY_PACKAGES) ?: return@use
                 packageObject.keys().forEach { pkg ->
                     _appLockPackages.add(pkg)
@@ -130,8 +134,9 @@ internal class AppLockConfig(dataDir: File) {
 
     private fun reset() {
         _appLockPackages.clear()
-        appLockTimeout = AppLockManager.APP_LOCK_TIMEOUT_DEFAULT
+        appLockTimeout = AppLockManager.DEFAULT_TIMEOUT
         _packageNotificationMap.clear()
+        biometricsAllowed = AppLockManager.DEFAULT_BIOMETRICS_ALLOWED
     }
 
     /**
@@ -141,6 +146,7 @@ internal class AppLockConfig(dataDir: File) {
         val rootObject = JSONObject()
         try {
             rootObject.put(KEY_TIMEOUT, appLockTimeout)
+            rootObject.put(KEY_BIOMETRICS_ALLOWED, biometricsAllowed)
             val packageObject = JSONObject()
             appLockPackages.forEach {
                 val packageConfigObject = JSONObject().apply {
@@ -171,5 +177,6 @@ internal class AppLockConfig(dataDir: File) {
         private const val KEY_TIMEOUT = "timeout"
         private const val KEY_PACKAGES = "packages"
         private const val KEY_SECURE_NOTIFICATION = "secure_notification"
+        private const val KEY_BIOMETRICS_ALLOWED = "biometrics_allowed"
     }
 }

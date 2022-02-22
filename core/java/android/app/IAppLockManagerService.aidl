@@ -35,4 +35,8 @@ interface IAppLockManagerService {
     void setSecureNotification(in String packageName, in boolean secure, in int userId);
 
     List<String> getPackagesWithSecureNotifications(in int userId);
+
+    void setBiometricsAllowed(in boolean biometricsAllowed, in int userId);
+
+    boolean isBiometricsAllowed(in int userId);
 }
