@@ -23,7 +23,6 @@ import android.app.ActivityManagerInternal
 import android.app.ActivityTaskManager
 import android.app.AlarmManager
 import android.app.AppLockManager
-import android.app.IActivityTaskManager
 import android.app.IAppLockManagerService
 import android.app.KeyguardManager
 import android.app.PendingIntent
@@ -38,7 +37,6 @@ import android.os.Environment
 import android.os.RemoteException
 import android.os.SystemClock
 import android.os.UserHandle
-import android.os.UserManager
 import android.util.ArrayMap
 import android.util.ArraySet
 import android.util.Log
@@ -50,6 +48,7 @@ import com.android.server.app.AppLockManagerServiceInternal.CancelCallback
 import com.android.server.app.AppLockManagerServiceInternal.UnlockCallback
 import com.android.server.LocalServices
 import com.android.server.notification.NotificationManagerInternal
+import com.android.server.pm.UserManagerInternal
 import com.android.server.SystemService
 import com.android.server.wm.ActivityTaskManagerInternal
 
@@ -70,8 +69,10 @@ import kotlinx.coroutines.withContext
 class AppLockManagerService(private val context: Context) :
     IAppLockManagerService.Stub() {
 
-    private val alsInternal = LocalService()
-    private val serviceScope = CoroutineScope(Dispatchers.Default)
+    private val localService = LocalService()
+    private val serviceScope: CoroutineScope by lazy {
+        CoroutineScope(Dispatchers.Default)
+    }
 
     private val currentUserId: Int
         get() = activityManagerInternal.currentUserId
@@ -89,10 +90,8 @@ class AppLockManagerService(private val context: Context) :
     @GuardedBy("mutex")
     private val unlockedPackages = ArraySet<String>()
 
-    private val biometricUnlocker = BiometricUnlocker(context)
-
-    private val activityTaskManager: IActivityTaskManager by lazy {
-        ActivityTaskManager.getService()
+    private val biometricUnlocker: BiometricUnlocker by lazy {
+        BiometricUnlocker(context)
     }
 
     private val atmInternal: ActivityTaskManagerInternal by lazy {
@@ -111,8 +110,8 @@ class AppLockManagerService(private val context: Context) :
         context.getSystemService(AlarmManager::class.java)
     }
 
-    private val userManager: UserManager by lazy {
-        context.getSystemService(UserManager::class.java)
+    private val userManagerInternal: UserManagerInternal by lazy {
+        LocalServices.getService(UserManagerInternal::class.java)
     }
 
     private val activityManagerInternal: ActivityManagerInternal by lazy {
@@ -183,24 +182,28 @@ class AppLockManagerService(private val context: Context) :
         override fun onTaskStackChanged() {
             logD("onTaskStackChanged")
             serviceScope.launch {
-                val currentTopPackages = ArraySet<String>()
-                atmInternal.getTopVisibleActivities().map {
+                val currentTopPackages = atmInternal.topVisibleActivities.map {
                     it.activityToken
                 }.filter {
                     atmInternal.isVisibleActivity(it)
                 }.map {
                     atmInternal.getActivityName(it)?.packageName
-                }.filterNotNull().toCollection(currentTopPackages)
+                }.filterNotNull().toSet()
                 logD("topPackages = $topPackages",
                     "currentTopPackages = $currentTopPackages")
-                mutex.withLock {
-                    topPackages.filter {
+                // We should return early if current top packages
+                // are empty to avoid doing anything absurd.
+                if (currentTopPackages.isEmpty()) return@launch
+                val packagesToLock = mutex.withLock {
+                    val packages = topPackages.filter {
                         !currentTopPackages.contains(it) && unlockedPackages.contains(it)
-                    }.forEach {
-                        scheduleLockAlarm(it)
-                    }
+                    }.toSet()
                     topPackages.clear()
                     topPackages.addAll(currentTopPackages)
+                    return@withLock packages
+                }
+                packagesToLock.forEach {
+                    scheduleLockAlarm(it)
                 }
                 alarmsMutex.withLock {
                     currentTopPackages.forEach { pkg ->
@@ -235,9 +238,9 @@ class AppLockManagerService(private val context: Context) :
                         return@withLock
                     }
                     unlockedPackages.remove(packageName)
-                    notificationManagerInternal.updateSecureNotifications(
-                        packageName, true, currentUserId)
                 }
+                notificationManagerInternal.updateSecureNotifications(
+                    packageName, true, currentUserId)
                 alarmsMutex.withLock {
                     scheduledAlarms.remove(packageName)
                 }
@@ -381,19 +384,20 @@ class AppLockManagerService(private val context: Context) :
         val actualUserId = getActualUserId(userId, "addPackage")
         serviceScope.launch {
             mutex.withLock {
-                userConfigMap[actualUserId]?.let {
-                    if (it.addPackage(packageName)) {
-                        // Collapse any active notifications or bubbles for the app.
-                        if (!unlockedPackages.contains(packageName) &&
-                                !topPackages.contains(packageName)) {
-                            notificationManagerInternal.updateSecureNotifications(
-                                packageName, true, actualUserId)
-                        }
-                        withContext(Dispatchers.IO) {
-                            it.write()
-                        }
-                    }
-                } ?: Slog.e(TAG, "addPackage requested by unknown user id $actualUserId")
+                val config = userConfigMap[actualUserId] ?: run {
+                    Slog.e(TAG, "addPackage requested by unknown user id $actualUserId")
+                    return@withLock
+                }
+                if (!config.addPackage(packageName)) return@withLock
+                // Collapse any active notifications or bubbles for the app.
+                if (!unlockedPackages.contains(packageName) &&
+                        !topPackages.contains(packageName)) {
+                    notificationManagerInternal.updateSecureNotifications(
+                        packageName, true, actualUserId)
+                }
+                withContext(Dispatchers.IO) {
+                    config.write()
+                }
             }
         }
     }
@@ -425,17 +429,18 @@ class AppLockManagerService(private val context: Context) :
         val actualUserId = getActualUserId(userId, "removePackage")
         serviceScope.launch {
             mutex.withLock {
-                userConfigMap[actualUserId]?.let {
-                    if (it.removePackage(packageName)) {
-                        // Let active notifications be expanded since the app
-                        // is no longer protected.
-                        notificationManagerInternal.updateSecureNotifications(
-                            packageName, false, actualUserId)
-                        withContext(Dispatchers.IO) {
-                            it.write()
-                        }
-                    }
-                } ?: Slog.e(TAG, "removePackage requested by unknown user id $actualUserId")
+                val config = userConfigMap[actualUserId] ?: run {
+                    Slog.e(TAG, "removePackage requested by unknown user id $actualUserId")
+                    return@withLock
+                }
+                if (!config.removePackage(packageName)) return@withLock
+                // Let active notifications be expanded since the app
+                // is no longer protected.
+                notificationManagerInternal.updateSecureNotifications(
+                    packageName, false, actualUserId)
+                withContext(Dispatchers.IO) {
+                    config.write()
+                }
             }
         }
     }
@@ -478,12 +483,15 @@ class AppLockManagerService(private val context: Context) :
         val actualUserId = getActualUserId(userId, "setTimeout")
         serviceScope.launch {
             mutex.withLock {
-                userConfigMap[actualUserId]?.let {
-                    if (it.appLockTimeout != timeout) {
-                        it.appLockTimeout = timeout
-                        it.write()
-                    }
-                } ?: Slog.e(TAG, "setTimeout requested by unknown user id $actualUserId")
+                val config = userConfigMap[actualUserId] ?: run {
+                    Slog.e(TAG, "setTimeout requested by unknown user id $actualUserId")
+                    return@withLock
+                }
+                if (config.appLockTimeout == timeout) return@withLock
+                config.appLockTimeout = timeout
+                withContext(Dispatchers.IO) {
+                    config.write()
+                }
             }
         }
     }
@@ -536,12 +544,11 @@ class AppLockManagerService(private val context: Context) :
                         "user id $actualUserId")
                     return@withLock
                 }
-                if (config.setSecureNotification(packageName, secure)) {
-                    notificationManagerInternal.updateSecureNotifications(
-                        packageName, secure, actualUserId)
-                    withContext(Dispatchers.IO) {
-                        config.write()
-                    }
+                if (!config.setSecureNotification(packageName, secure)) return@withLock
+                notificationManagerInternal.updateSecureNotifications(
+                    packageName, secure, actualUserId)
+                withContext(Dispatchers.IO) {
+                    config.write()
                 }
             }
         }
@@ -590,13 +597,16 @@ class AppLockManagerService(private val context: Context) :
         val actualUserId = getActualUserId(userId, "setBiometricsAllowed")
         serviceScope.launch {
             mutex.withLock {
-                userConfigMap[actualUserId]?.let {
-                    if (it.biometricsAllowed != biometricsAllowed) {
-                        it.biometricsAllowed = biometricsAllowed
-                        biometricUnlocker.biometricsAllowed = biometricsAllowed
-                        it.write()
-                    }
-                } ?: Slog.e(TAG, "setBiometricsAllowed requested by unknown user id $actualUserId")
+                val config = userConfigMap[actualUserId] ?: run {
+                    Slog.e(TAG, "setBiometricsAllowed requested by unknown user id $actualUserId")
+                    return@withLock
+                }
+                if (config.biometricsAllowed == biometricsAllowed) return@withLock
+                config.biometricsAllowed = biometricsAllowed
+                biometricUnlocker.biometricsAllowed = biometricsAllowed
+                withContext(Dispatchers.IO) {
+                    config.write()
+                }
             }
         }
     }
@@ -624,7 +634,7 @@ class AppLockManagerService(private val context: Context) :
     }
 
     private fun onStart() {
-        LocalServices.addService(AppLockManagerServiceInternal::class.java, alsInternal)
+        LocalServices.addService(AppLockManagerServiceInternal::class.java, localService)
     }
 
     private fun onBootCompleted() {
@@ -644,7 +654,7 @@ class AppLockManagerService(private val context: Context) :
             null /* scheduler */,
         )
 
-        activityTaskManager.registerTaskStackListener(taskStackListener)
+        ActivityTaskManager.getService().registerTaskStackListener(taskStackListener)
     }
 
     private fun onUserStarting(userId: Int) {
@@ -709,9 +719,7 @@ class AppLockManagerService(private val context: Context) :
                 return false
             }
             clearAndExecute {
-                val isManagedProfile = userManager.getUserInfo(userId).isManagedProfile()
-                logD("isManagedProfile = $isManagedProfile")
-                if (isManagedProfile) {
+                if (userManagerInternal.isUserManaged(userId)) {
                     logD("User id $userId belongs to a work profile, ignoring requireUnlock")
                     return false
                 }
@@ -751,11 +759,8 @@ class AppLockManagerService(private val context: Context) :
                 Slog.w(TAG, "Device is not secure, should not be calling unlock()")
                 return
             }
-            val ident = Binder.clearCallingIdentity()
             clearAndExecute {
-                val isManagedProfile = userManager.getUserInfo(userId).isManagedProfile()
-                logD("isManagedProfile = $isManagedProfile")
-                if (isManagedProfile) {
+                if (userManagerInternal.isUserManaged(userId)) {
                     Slog.w(TAG, "User id $userId belongs to a work profile, should not " +
                         "be calling unlock()")
                     return
@@ -775,30 +780,30 @@ class AppLockManagerService(private val context: Context) :
                         return@withLock
                     }
                     unlockScheduledPackage = packageName
-                    unlockInternal(packageName, actualUserId,
-                        onSuccess = {
-                            logD("Unlock successfull")
-                            serviceScope.launch {
-                                mutex.withLock {
-                                    unlockedPackages.add(packageName)
-                                    unlockScheduledPackage = null
-                                }
-                                unlockCallback?.onUnlocked(packageName)
-                                notificationManagerInternal.updateSecureNotifications(
-                                    packageName, false, actualUserId)
-                            }
-                        },
-                        onCancel = {
-                            logD("Unlock cancelled")
-                            serviceScope.launch {
-                                mutex.withLock {
-                                    unlockScheduledPackage = null
-                                }
-                                cancelCallback?.onCancelled(packageName)
-                            }
-                        }
-                    )
                 }
+                unlockInternal(packageName, actualUserId,
+                    onSuccess = {
+                        logD("Unlock successfull")
+                        serviceScope.launch {
+                            mutex.withLock {
+                                unlockedPackages.add(packageName)
+                                unlockScheduledPackage = null
+                            }
+                            unlockCallback?.onUnlocked(packageName)
+                            notificationManagerInternal.updateSecureNotifications(
+                                packageName, false, actualUserId)
+                        }
+                    },
+                    onCancel = {
+                        logD("Unlock cancelled")
+                        serviceScope.launch {
+                            mutex.withLock {
+                                unlockScheduledPackage = null
+                            }
+                            cancelCallback?.onCancelled(packageName)
+                        }
+                    }
+                )
             }
         }
 
@@ -821,9 +826,7 @@ class AppLockManagerService(private val context: Context) :
                 return false
             }
             clearAndExecute {
-                val isManagedProfile = userManager.getUserInfo(userId).isManagedProfile()
-                logD("isManagedProfile = $isManagedProfile")
-                if (isManagedProfile) {
+                if (userManagerInternal.isUserManaged(userId)) {
                     logD("User id $userId belongs to a work profile, " +
                         "ignoring isNotificationSecured")
                     return false
