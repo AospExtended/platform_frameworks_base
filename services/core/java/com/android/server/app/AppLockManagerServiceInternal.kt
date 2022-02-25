@@ -64,6 +64,11 @@ abstract class AppLockManagerServiceInternal {
      */
     abstract fun isNotificationSecured(packageName: String, userId: Int): Boolean
 
+    /**
+     * Notify that the device is locked for current user.
+     */
+    abstract fun notifyDeviceLocked(locked: Boolean, userId: Int)
+
     @FunctionalInterface
     interface UnlockCallback {
         /**
