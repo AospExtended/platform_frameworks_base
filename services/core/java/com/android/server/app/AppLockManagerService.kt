@@ -129,8 +129,13 @@ class AppLockManagerService(private val context: Context) :
     @GuardedBy("alarmsMutex")
     private val scheduledAlarms = ArrayMap<String, PendingIntent>()
 
-    private val whiteListedSystemApps = context.resources.getStringArray(
-        R.array.config_appLockAllowedSystemApps)
+    private val whiteListedSystemApps: List<String> by lazy {
+        val systemPackages = packageManager.getInstalledPackagesAsUser(
+            PackageManager.MATCH_SYSTEM_ONLY, currentUserId).map { it.packageName }
+        context.resources.getStringArray(R.array.config_appLockAllowedSystemApps).filter {
+            systemPackages.contains(it)
+        }
+    }
 
     private val packageChangeReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
@@ -648,7 +653,9 @@ class AppLockManagerService(private val context: Context) :
 
         context.registerReceiverForAllUsers(
             packageChangeReceiver,
-            IntentFilter(Intent.ACTION_PACKAGE_REMOVED),
+            IntentFilter(Intent.ACTION_PACKAGE_REMOVED).apply {
+                addDataScheme(IntentFilter.SCHEME_PACKAGE)
+            },
             null /* broadcastPermission */,
             null /* scheduler */,
         )
@@ -670,8 +677,30 @@ class AppLockManagerService(private val context: Context) :
                     config.read()
                     biometricUnlocker.biometricsAllowed =
                         config.biometricsAllowed
+                    verifyPackagesLocked(config)
                 }
             }
+        }
+    }
+
+    private fun verifyPackagesLocked(config: AppLockConfig) {
+        var size = config.appLockPackages.size
+        if (size == 0) return
+        val installedPackages = packageManager.getInstalledPackagesAsUser(
+            0, currentUserId).map { it.packageName }
+        var changed = false
+        logD("Current locked packages = ${config.appLockPackages}")
+        for (i in 0 until size) {
+            val pkg = config.appLockPackages.elementAt(i)
+            if (!installedPackages.contains(pkg)) {
+                config.removePackage(pkg)
+                size--
+                changed = true
+            }
+        }
+        logD("Filtered packages = ${config.appLockPackages}")
+        if (changed) {
+            config.write()
         }
     }
 
