@@ -1532,7 +1532,7 @@ public final class NotificationRecord {
         return mPendingLogUpdate;
     }
 
-    public void setIsBubbleUpSuppressedByAppLock(boolean suppressed) {
+    public void setBubbleUpSuppressedByAppLock(boolean suppressed) {
         mIsBubbleUpSuppressedByAppLock = suppressed;
     }
 

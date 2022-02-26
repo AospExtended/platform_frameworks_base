@@ -5768,7 +5768,7 @@ public class NotificationManagerService extends SystemService {
                 summaryRecord.setIsAppImportanceLocked(
                         notificationRecord.getIsAppImportanceLocked());
                 summaries.put(pkg, summarySbn.getKey());
-                summaryRecord.setIsBubbleUpSuppressedByAppLock(
+                summaryRecord.setBubbleUpSuppressedByAppLock(
                     mAppLockManagerService != null &&
                     mAppLockManagerService.requireUnlock(pkg, userId));
             }
@@ -6136,20 +6136,26 @@ public class NotificationManagerService extends SystemService {
         }
 
         @Override
-        public void updateSecureNotifications(String pkg, boolean isContentSecure, int userId) {
-            mHandler.post(() -> updateSecureNotificationsInternal(pkg, isContentSecure, userId));
+        public void updateSecureNotifications(String pkg, boolean isContentSecure,
+                boolean isBubbleUpSuppressed, int userId) {
+            mHandler.post(() -> updateSecureNotificationsInternal(pkg, isContentSecure,
+                isBubbleUpSuppressed, userId));
         }
 
-        private void updateSecureNotificationsInternal(String pkg, boolean isContentSecure, int userId) {
+        private void updateSecureNotificationsInternal(String pkg, boolean isContentSecure,
+                boolean isBubbleUpSuppressed, int userId) {
             synchronized (mNotificationLock) {
                 for (int i = 0; i < mNotificationList.size(); i++) {
                     final NotificationRecord nr = mNotificationList.get(i);
                     final StatusBarNotification sbn = nr.getSbn();
                     if (UserHandle.getUserId(sbn.getUid()) == userId
-                            && sbn.getPackageName().equals(pkg)
-                            && sbn.getIsContentSecure() != isContentSecure) {
-                        sbn.setIsContentSecure(isContentSecure);
-                        mListeners.notifyPostedLocked(nr, nr);
+                            && sbn.getPackageName().equals(pkg)) {
+                        if (sbn.getIsContentSecure() != isContentSecure ||
+                                nr.isBubbleUpSuppressedByAppLock() != isBubbleUpSuppressed) {
+                            sbn.setIsContentSecure(isContentSecure);
+                            nr.setBubbleUpSuppressedByAppLock(isBubbleUpSuppressed);
+                            mListeners.notifyPostedLocked(nr, nr);
+                        }
                     }
                 }
             }
@@ -6309,7 +6315,7 @@ public class NotificationManagerService extends SystemService {
         r.setPostSilently(postSilently);
         r.setFlagBubbleRemoved(false);
         r.setPkgAllowedAsConvo(mMsgPkgsAllowedAsConvos.contains(pkg));
-        r.setIsBubbleUpSuppressedByAppLock(mAppLockManagerService != null &&
+        r.setBubbleUpSuppressedByAppLock(mAppLockManagerService != null &&
             mAppLockManagerService.requireUnlock(pkg, userId));
 
         if ((notification.flags & Notification.FLAG_FOREGROUND_SERVICE) != 0) {

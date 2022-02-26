@@ -37,5 +37,6 @@ public interface NotificationManagerInternal {
 
     void onConversationRemoved(String pkg, int uid, Set<String> shortcuts);
 
-    void updateSecureNotifications(String pkg, boolean isContentSecure, int userId);
+    void updateSecureNotifications(String pkg, boolean isContentSecure,
+        boolean isBubbleUpSuppressed, int userId);
 }
