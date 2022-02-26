@@ -700,15 +700,10 @@ class AppLockManagerService(private val context: Context) :
     }
 
     private inner class LocalService : AppLockManagerServiceInternal() {
-        override fun requireUnlock(packageName: String, userId: Int): Boolean {
-            return requireUnlockInternal(packageName, userId, false)
-        }
-
-        private fun requireUnlockInternal(
-            packageName: String,
-            userId: Int,
-            ignoreLockState: Boolean,
-        ): Boolean {
+        /**
+         * Check whether user is valid and device is secure
+         */
+        private fun checkUserAndDeviceStatus(userId: Int): Boolean {
             if (userId < 0) {
                 logD("Ignoring requireUnlock call for special user $userId")
                 return false
@@ -722,6 +717,21 @@ class AppLockManagerService(private val context: Context) :
                     logD("User id $userId belongs to a work profile, ignoring requireUnlock")
                     return false
                 }
+            }
+            return true
+        }
+
+        override fun requireUnlock(packageName: String, userId: Int): Boolean {
+            return requireUnlockInternal(packageName, userId, false /* ignoreLockState */)
+        }
+
+        private fun requireUnlockInternal(
+            packageName: String,
+            userId: Int,
+            ignoreLockState: Boolean,
+        ): Boolean {
+            if (!checkUserAndDeviceStatus(userId)) return false
+            clearAndExecute {
                 // If device is locked then there is no point in proceeding.
                 if (!ignoreLockState && keyguardManager.isDeviceLocked()) {
                     logD("Device is locked, app does not require unlock")
@@ -750,21 +760,7 @@ class AppLockManagerService(private val context: Context) :
             cancelCallback: CancelCallback?,
             userId: Int
         ) {
-            if (userId < 0) {
-                logD("Ignoring unlock call for special user $userId")
-                return
-            }
-            if (!isDeviceSecure) {
-                Slog.w(TAG, "Device is not secure, should not be calling unlock()")
-                return
-            }
-            clearAndExecute {
-                if (userManagerInternal.isUserManaged(userId)) {
-                    Slog.w(TAG, "User id $userId belongs to a work profile, should not " +
-                        "be calling unlock()")
-                    return
-                }
-            }
+            if (!checkUserAndDeviceStatus(userId)) return
             logD("unlock: packageName = $packageName")
             val actualUserId = getActualUserId(userId, "unlock")
             serviceScope.launch {
@@ -815,17 +811,7 @@ class AppLockManagerService(private val context: Context) :
             packageName: String,
             userId: Int,
         ): Boolean {
-            if (userId < 0) {
-                logD("Ignoring isNotificationSecured call for special user $userId")
-                return false
-            }
-            clearAndExecute {
-                if (userManagerInternal.isUserManaged(userId)) {
-                    logD("User id $userId belongs to a work profile, " +
-                        "ignoring isNotificationSecured")
-                    return false
-                }
-            }
+            if (!checkUserAndDeviceStatus(userId)) return false
             logD("isNotificationSecured: " +
                     "packageName = $packageName, " +
                     "userId = $userId")
