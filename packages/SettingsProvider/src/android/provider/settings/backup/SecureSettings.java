@@ -198,5 +198,6 @@ public class SecureSettings {
         Settings.Secure.DISABLE_SECURE_TILES_ON_LOCKSCREEN,
         Settings.Secure.SHOW_COMBINED_STATUS_BAR_SIGNAL_ICONS,
         Settings.Secure.ENABLE_LOCATION_PRIVACY_INDICATOR,
+        Settings.Secure.IGNORE_AUTH_CONFIRMATION,
     };
 }
