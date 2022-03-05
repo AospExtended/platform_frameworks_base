@@ -11,7 +11,7 @@
         <clip>
             <shape>
                 <size android:height="64.0dip" />
-                <solid android:color="@android:color/system_accent1_200" />
+                <solid android:color="@color/media_seekbar_active" />
             </shape>
         </clip>
     </item>
