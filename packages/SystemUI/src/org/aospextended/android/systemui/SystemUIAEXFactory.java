@@ -2,7 +2,6 @@ package org.aospextended.android.systemui;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.os.Handler;
 
 import com.google.android.systemui.gesture.BackGestureTfClassifierProviderGoogle;
 
