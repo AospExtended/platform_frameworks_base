@@ -71,6 +71,9 @@ class PrivacyItemController @Inject constructor(
             "com.android.networkstack.tethering",
             "com.android.systemui",
         )
+        val CAMERA_WHITELIST_PKG = arrayOf(
+            "org.pixelexperience.faceunlock",
+        )
         val OPS_MIC_CAMERA = intArrayOf(AppOpsManager.OP_CAMERA,
                 AppOpsManager.OP_PHONE_CALL_CAMERA, AppOpsManager.OP_RECORD_AUDIO,
                 AppOpsManager.OP_PHONE_CALL_MICROPHONE)
@@ -159,6 +162,10 @@ class PrivacyItemController @Inject constructor(
             }
             if (code in OPS_LOCATION && !locationAvailable
                     || packageName in LOCATION_WHITELIST_PKG) {
+                return
+            }
+            if (code in OPS_MIC_CAMERA && !micCameraAvailable
+                    || packageName in CAMERA_WHITELIST_PKG) {
                 return
             }
             val userId = UserHandle.getUserId(uid)
@@ -342,6 +349,10 @@ class PrivacyItemController @Inject constructor(
         }
         if (type == PrivacyType.TYPE_LOCATION && !locationAvailable
                 || appOpItem.packageName in LOCATION_WHITELIST_PKG) {
+            return null
+        }
+        if (type == PrivacyType.TYPE_CAMERA && !micCameraAvailable
+                || appOpItem.packageName in CAMERA_WHITELIST_PKG) {
             return null
         }
         val app = PrivacyApplication(appOpItem.packageName, appOpItem.uid)
