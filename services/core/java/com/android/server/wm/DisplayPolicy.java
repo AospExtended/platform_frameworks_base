@@ -1145,6 +1145,9 @@ public class DisplayPolicy {
         switch (attrs.type) {
             case TYPE_NOTIFICATION_SHADE:
                 mNotificationShade = win;
+                if (mDisplayContent.isDefaultDisplay) {
+                    mService.mPolicy.setKeyguardCandidateLw(win);
+                }
                 break;
             case TYPE_STATUS_BAR:
                 mStatusBar = win;
@@ -1340,6 +1343,9 @@ public class DisplayPolicy {
             mDisplayContent.setInsetProvider(ITYPE_NAVIGATION_BAR, null, null);
         } else if (mNotificationShade == win) {
             mNotificationShade = null;
+            if (mDisplayContent.isDefaultDisplay) {
+                mService.mPolicy.setKeyguardCandidateLw(null);
+            }
         } else if (mClimateBarAlt == win) {
             mClimateBarAlt = null;
             mDisplayContent.setInsetProvider(ITYPE_CLIMATE_BAR, null, null);
