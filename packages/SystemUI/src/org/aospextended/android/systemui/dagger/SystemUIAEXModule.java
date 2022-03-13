@@ -208,22 +208,27 @@ public abstract class SystemUIAEXModule {
     // Google
     @Provides
     @SysUISingleton
-    static SmartSpaceController provideSmartSpaceController(Context context, KeyguardUpdateMonitor updateMonitor, Handler handler, AlarmManager am, DumpManager dm) {
+    static SmartSpaceController provideSmartSpaceController(Context context, KeyguardUpdateMonitor updateMonitor,
+            Handler handler, AlarmManager am, DumpManager dm) {
         return new SmartSpaceController(context, updateMonitor, handler, am, dm);
     }
 
     @Provides
     @SysUISingleton
     static KeyguardSmartspaceController provideKeyguardSmartspaceController(Context context, FeatureFlags featureFlags,
-            KeyguardZenAlarmViewController keyguardZenAlarmViewController, KeyguardMediaViewController keyguardMediaViewController) {
-        return new KeyguardSmartspaceController(context, featureFlags, keyguardZenAlarmViewController, keyguardMediaViewController);
+            KeyguardZenAlarmViewController keyguardZenAlarmViewController,
+            KeyguardMediaViewController keyguardMediaViewController) {
+        return new KeyguardSmartspaceController(context, featureFlags, keyguardZenAlarmViewController,
+                keyguardMediaViewController);
     }
 
     @Provides
     @SysUISingleton
-    static KeyguardZenAlarmViewController provideKeyguardZenAlarmViewController(Context context, BcSmartspaceDataPlugin bcSmartspaceDataPlugin, ZenModeController zenModeController,
+    static KeyguardZenAlarmViewController provideKeyguardZenAlarmViewController(Context context,
+            BcSmartspaceDataPlugin bcSmartspaceDataPlugin, ZenModeController zenModeController,
             AlarmManager alarmManager, NextAlarmController nextAlarmController, Handler handler) {
-        return new KeyguardZenAlarmViewController(context, bcSmartspaceDataPlugin, zenModeController, alarmManager, nextAlarmController, handler);
+        return new KeyguardZenAlarmViewController(context, bcSmartspaceDataPlugin, zenModeController, alarmManager,
+                nextAlarmController, handler);
     }
 
     @Provides
