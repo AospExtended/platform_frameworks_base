@@ -125,6 +125,7 @@ android_library {
         "themelib",
         "backgesture-google",
         "smartspace-google",
+        "tensorflowlite_java",
     ],
     manifest: "AndroidManifest.xml",
 
