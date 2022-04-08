@@ -263,6 +263,8 @@ public class ScreenshotController {
     private final LongScreenshotData mLongScreenshotHolder;
     private final boolean mIsLowRamDevice;
 
+    private final FullScreenshotRunnable mFullScreenshotRunnable = new FullScreenshotRunnable();
+
     private ScreenshotView mScreenshotView;
     private Bitmap mScreenBitmap;
     private SaveImageInBackgroundTask mSaveInBgTask;
@@ -398,6 +400,20 @@ public class ScreenshotController {
     }
 
     void takeScreenshotFullscreen(ComponentName topComponent, Consumer<Uri> finisher,
+            RequestCallback requestCallback) {
+        mScreenshotHandler.removeCallbacks(mFullScreenshotRunnable);
+        /**
+         * Do not let it run the finish callback, it'll reset the service
+         * connection and break the next screenshot.
+         */
+        mCurrentRequestCallback = null;
+        dismissScreenshot(true);
+        mFullScreenshotRunnable.setArgs(topComponent, finisher, requestCallback);
+        // Wait 50ms to make sure we are on new frame.
+        mScreenshotHandler.postDelayed(mFullScreenshotRunnable, 50);
+    }
+
+    void takeScreenshotFullscreenInternal(ComponentName topComponent, Consumer<Uri> finisher,
             RequestCallback requestCallback) {
         mCurrentRequestCallback = requestCallback;
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -1120,6 +1136,24 @@ public class ScreenshotController {
                 public void onFinish() {
                 }
             };
+        }
+    }
+
+    private class FullScreenshotRunnable implements Runnable {
+        ComponentName mTopComponent;
+        Consumer<Uri> mFinisher;
+        RequestCallback mRequestCallback;
+
+        public void setArgs(ComponentName topComponent, Consumer<Uri> finisher,
+                RequestCallback requestCallback) {
+            mTopComponent = topComponent;
+            mFinisher = finisher;
+            mRequestCallback = requestCallback;
+        }
+
+        @Override
+        public void run() {
+            takeScreenshotFullscreenInternal(mTopComponent, mFinisher, mRequestCallback);
         }
     }
 }
