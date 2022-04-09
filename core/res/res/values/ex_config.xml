@@ -151,5 +151,15 @@
 
      <!-- List of system apps that are allowed to be locked with app lock.
           Use with extreme caution. -->
-     <string-array name="config_appLockAllowedSystemApps" translatable="false" />
+    <string-array name="config_appLockAllowedSystemApps" translatable="false">
+        <item>com.android.chrome</item>
+        <item>com.android.vending</item>
+        <item>com.google.android.apps.messaging</item>
+        <item>com.google.android.apps.nbu.files</item>
+        <item>com.google.android.apps.photos</item>
+        <item>com.google.android.apps.recorder</item>
+        <item>com.google.android.contacts</item>
+        <item>com.google.android.gm</item>
+        <item>com.google.android.youtube</item>
+    </string-array>
 </resources>
