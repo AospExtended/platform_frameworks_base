@@ -35,6 +35,7 @@ import com.android.systemui.dump.DumpManager
 import com.android.systemui.flags.FeatureFlags
 import com.android.systemui.keyguard.WakefulnessLifecycle
 import com.android.systemui.settings.UserTracker
+import com.android.systemui.statusbar.policy.ConfigurationController
 import com.android.systemui.statusbar.policy.DeviceProvisionedController
 import com.android.systemui.theme.ThemeOverlayApplier
 import com.android.systemui.theme.ThemeOverlayController
@@ -72,6 +73,7 @@ class ThemeOverlayControllerAEX @Inject constructor(
     featureFlags: FeatureFlags,
     wakefulnessLifecycle: WakefulnessLifecycle,
     private val tunerService: TunerService,
+    configurationController: ConfigurationController,
 ) : ThemeOverlayController(
     context,
     broadcastDispatcher,
@@ -87,6 +89,7 @@ class ThemeOverlayControllerAEX @Inject constructor(
     dumpManager,
     featureFlags,
     wakefulnessLifecycle,
+    configurationController,
 ), Tunable {
     private lateinit var cond: Zcam.ViewingConditions
     private lateinit var targets: MaterialYouTargets
@@ -101,13 +104,13 @@ class ThemeOverlayControllerAEX @Inject constructor(
 
     override fun start() {
         tunerService.addTunable(this, PREF_COLOR_OVERRIDE, PREF_WHITE_LUMINANCE,
-                PREF_CHROMA_FACTOR, PREF_ACCURATE_SHADES,
-                PREF_LINEAR_LIGHTNESS, PREF_CUSTOM_COLOR, SYSTEM_BLACK_THEME)
+                PREF_CHROMA_FACTOR, PREF_ACCURATE_SHADES, PREF_LINEAR_LIGHTNESS, PREF_CUSTOM_COLOR)
         super.start()
     }
 
     override fun onTuningChanged(key: String?, newValue: String?) {
         key?.let {
+            if (it.contains(PREF_PREFIX)) {
                 customColor = Settings.Secure.getInt(mContext.contentResolver, PREF_CUSTOM_COLOR, 0) == 1
                 colorOverride = Settings.Secure.getInt(mContext.contentResolver,
                         PREF_COLOR_OVERRIDE, -1)
@@ -121,6 +124,7 @@ class ThemeOverlayControllerAEX @Inject constructor(
                 linearLightness = Settings.Secure.getInt(mContext.contentResolver,
                         PREF_LINEAR_LIGHTNESS, 0) != 0
                 reevaluateSystemTheme(true /* forceReload */)
+            }
         }
     }
 
