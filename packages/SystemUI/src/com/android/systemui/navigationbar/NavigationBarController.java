@@ -21,8 +21,6 @@ import static android.provider.Settings.Secure.ACCESSIBILITY_BUTTON_MODE_GESTURE
 import static android.provider.Settings.Secure.ACCESSIBILITY_BUTTON_MODE_NAVIGATION_BAR;
 import static android.view.Display.DEFAULT_DISPLAY;
 
-import static com.android.systemui.shared.recents.utilities.Utilities.isTablet;
-
 import android.content.ContentResolver;
 import android.content.Context;
 import android.graphics.Rect;
@@ -89,7 +87,6 @@ public class NavigationBarController implements
     private final DisplayManager mDisplayManager;
     private final TaskbarDelegate mTaskbarDelegate;
     private int mNavMode;
-    @VisibleForTesting boolean mIsTablet;
     private boolean mTaskbarShowing;
 
     public class SystemUiVisibility {
@@ -138,7 +135,6 @@ public class NavigationBarController implements
         mTaskbarDelegate.setDependencies(commandQueue, overviewProxyService,
                 navBarHelper, navigationModeController, sysUiFlagsContainer,
                 dumpManager, autoHideController, lightBarController, pipOptional);
-        mIsTablet = isTablet(mContext);
         overviewProxyService.addCallback(this);
         dumpManager.registerDumpable(this);
     }
@@ -146,7 +142,6 @@ public class NavigationBarController implements
     @Override
     public void onConfigChanged(Configuration newConfig) {
         boolean isOldConfigTablet = shouldShowTaskbar();
-        mIsTablet = isTablet(mContext);
         boolean largeScreenChanged = shouldShowTaskbar() != isOldConfigTablet;
         // If we folded/unfolded while in 3 button, show navbar in folded state, hide in unfolded
         if (largeScreenChanged && updateNavbarForTaskbar()) {
@@ -260,7 +255,6 @@ public class NavigationBarController implements
 
     public void onDisplayReady(int displayId, SystemUiVisibility systemUiVisibility) {
         Display display = mDisplayManager.getDisplay(displayId);
-        mIsTablet = isTablet(mContext);
         createNavigationBar(display, null /* savedState */, null /* result */, systemUiVisibility);
     }
 
@@ -472,7 +466,7 @@ public class NavigationBarController implements
     }
 
     private boolean shouldShowTaskbar() {
-        return mIsTablet || mTaskbarShowing;
+        return mTaskbarShowing;
     }
 
     /** @return {@link NavigationBar} on the default display. */
