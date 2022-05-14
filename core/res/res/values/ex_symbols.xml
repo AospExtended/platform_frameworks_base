@@ -124,5 +124,5 @@
     <java-symbol type="bool" name="disable_fod_night_light"/>
 
     <!-- Enable face auth only when swiping security view -->
-    <bool name="config_faceAuthOnlyOnSecurityView">false</bool>
+    <java-symbol type="bool" name="config_faceAuthOnlyOnSecurityView" />
 </resources>
