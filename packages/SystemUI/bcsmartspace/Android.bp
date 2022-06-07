@@ -1,0 +1,14 @@
+android_library {
+    name: "bcsmartspace-res",
+
+    static_libs: [
+        "androidx.cardview_cardview",
+        "androidx-constraintlayout_constraintlayout",
+    ],
+
+    optimize: {
+        enabled: false,
+    },
+
+    resource_dirs: ["res"],
+}
