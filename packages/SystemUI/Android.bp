@@ -83,7 +83,6 @@ android_library {
     resource_dirs: [
         "res-product",
         "res-keyguard",
-        "res-smartspace",
         "res",
         "res-hwkeys",
     ],
@@ -125,6 +124,7 @@ android_library {
         "themelib",
         "backgesture-google",
         "smartspace-google",
+        "bcsmartspace-res",
         "tensorflowlite_java",
     ],
     manifest: "AndroidManifest.xml",
