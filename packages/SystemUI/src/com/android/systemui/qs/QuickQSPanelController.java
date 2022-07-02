@@ -34,6 +34,7 @@ import com.android.systemui.plugins.qs.QSTile;
 import com.android.systemui.qs.customize.QSCustomizerController;
 import com.android.systemui.qs.dagger.QSScope;
 import com.android.systemui.qs.logging.QSLogger;
+
 import com.android.systemui.settings.brightness.BrightnessMirrorHandler;
 import com.android.systemui.settings.brightness.BrightnessSliderController;
 import com.android.systemui.statusbar.policy.BrightnessMirrorController;
@@ -54,6 +55,9 @@ public class QuickQSPanelController extends QSPanelControllerBase<QuickQSPanel> 
 
     private BrightnessMirrorController mBrightnessMirrorController;
 
+    private final QuickQSBrightnessController mBrightnessController;
+    private final BrightnessMirrorHandler mBrightnessMirrorHandler;
+
     private final QSPanel.OnConfigurationChangedListener mOnConfigurationChangedListener =
             newConfig -> {
                 int newMaxTiles = getResources().getInteger(R.integer.quick_qs_panel_max_tiles);
@@ -63,9 +67,6 @@ public class QuickQSPanelController extends QSPanelControllerBase<QuickQSPanel> 
                 updateBrightnessMirror();
             };
 
-    // brightness is visible only in split shade
-    private final QuickQSBrightnessController mBrightnessController;
-    private final BrightnessMirrorHandler mBrightnessMirrorHandler;
     private final FooterActionsController mFooterActionsController;
 
     @Inject
@@ -104,6 +105,7 @@ public class QuickQSPanelController extends QSPanelControllerBase<QuickQSPanel> 
     @Override
     protected void onViewAttached() {
         super.onViewAttached();
+        mBrightnessMirrorHandler.onQsPanelAttached();
 
         mTunerService.addTunable(mView, QSPanel.QS_SHOW_BRIGHTNESS);
         mTunerService.addTunable(mView, QSPanel.QS_BRIGHTNESS_POSITION_BOTTOM);
@@ -125,16 +127,15 @@ public class QuickQSPanelController extends QSPanelControllerBase<QuickQSPanel> 
         });
 
         mView.addOnConfigurationChangedListener(mOnConfigurationChangedListener);
-        mBrightnessMirrorHandler.onQsPanelAttached();
     }
 
     @Override
     protected void onViewDetached() {
         super.onViewDetached();
         mTunerService.removeTunable(mView);
+        mBrightnessMirrorHandler.onQsPanelDettached();
         mView.setBrightnessRunnable(null);
         mView.removeOnConfigurationChangedListener(mOnConfigurationChangedListener);
-        mBrightnessMirrorHandler.onQsPanelDettached();
     }
 
     @Override
@@ -151,12 +152,6 @@ public class QuickQSPanelController extends QSPanelControllerBase<QuickQSPanel> 
     private void setMaxTiles(int parseNumTiles) {
         mView.setMaxTiles(parseNumTiles);
         setTiles();
-    }
-
-    @Override
-    public void refreshAllTiles() {
-        mBrightnessController.checkRestrictionAndSetEnabled();
-        super.refreshAllTiles();
     }
 
     @Override
