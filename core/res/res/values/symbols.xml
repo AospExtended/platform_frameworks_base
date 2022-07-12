@@ -4504,6 +4504,4 @@
 
   <!-- For dynamic default font styles -->
   <java-symbol type="string" name="config_bodyFontFamily" />
-
-  <java-symbol type="dimen" name="status_bar_height_default" />
 </resources>
