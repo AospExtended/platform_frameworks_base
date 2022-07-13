@@ -141,7 +141,6 @@ public class QuickQSPanelController extends QSPanelControllerBase<QuickQSPanel> 
     @Override
     void setListening(boolean listening) {
         super.setListening(listening);
-        mBrightnessController.setListening(listening);
         mFooterActionsController.setListening(listening);
     }
 

@@ -2891,12 +2891,83 @@ public class TelephonyRegistry extends ITelephonyRegistry.Stub {
             Binder.restoreCallingIdentity(ident);
         }
 
+        // Send the broadcast exactly once to all possible disjoint sets of apps.
+        // If the location master switch is on, broadcast the ServiceState 4 times:
+        // - Full ServiceState sent to apps with ACCESS_FINE_LOCATION and READ_PHONE_STATE
+        // - Full ServiceState sent to apps with ACCESS_FINE_LOCATION and
+        //   READ_PRIVILEGED_PHONE_STATE but not READ_PHONE_STATE
+        // - Sanitized ServiceState sent to apps with READ_PHONE_STATE but not ACCESS_FINE_LOCATION
+        // - Sanitized ServiceState sent to apps with READ_PRIVILEGED_PHONE_STATE but neither
+        //   READ_PHONE_STATE nor ACCESS_FINE_LOCATION
+        // If the location master switch is off, broadcast the ServiceState multiple times:
+        // - Full ServiceState sent to all apps permitted to bypass the location master switch if
+        //   they have either READ_PHONE_STATE or READ_PRIVILEGED_PHONE_STATE
+        // - Sanitized ServiceState sent to all other apps with READ_PHONE_STATE
+        // - Sanitized ServiceState sent to all other apps with READ_PRIVILEGED_PHONE_STATE but not
+        //   READ_PHONE_STATE
+        if (Binder.withCleanCallingIdentity(() ->
+                LocationAccessPolicy.isLocationModeEnabled(mContext, mContext.getUserId()))) {
+            Intent fullIntent = createServiceStateIntent(state, subId, phoneId, false);
+            mContext.createContextAsUser(UserHandle.ALL, 0).sendBroadcastMultiplePermissions(
+                    fullIntent,
+                    new String[]{Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.ACCESS_FINE_LOCATION});
+            mContext.createContextAsUser(UserHandle.ALL, 0).sendBroadcastMultiplePermissions(
+                    fullIntent,
+                    new String[]{Manifest.permission.READ_PRIVILEGED_PHONE_STATE,
+                            Manifest.permission.ACCESS_FINE_LOCATION},
+                    new String[]{Manifest.permission.READ_PHONE_STATE});
+
+            Intent sanitizedIntent = createServiceStateIntent(state, subId, phoneId, true);
+            mContext.createContextAsUser(UserHandle.ALL, 0).sendBroadcastMultiplePermissions(
+                    sanitizedIntent,
+                    new String[]{Manifest.permission.READ_PHONE_STATE},
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION});
+            mContext.createContextAsUser(UserHandle.ALL, 0).sendBroadcastMultiplePermissions(
+                    sanitizedIntent,
+                    new String[]{Manifest.permission.READ_PRIVILEGED_PHONE_STATE},
+                    new String[]{Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.ACCESS_FINE_LOCATION});
+        } else {
+            String[] locationBypassPackages = Binder.withCleanCallingIdentity(() ->
+                    LocationAccessPolicy.getLocationBypassPackages(mContext));
+            for (String locationBypassPackage : locationBypassPackages) {
+                Intent fullIntent = createServiceStateIntent(state, subId, phoneId, false);
+                fullIntent.setPackage(locationBypassPackage);
+                mContext.createContextAsUser(UserHandle.ALL, 0).sendBroadcastMultiplePermissions(
+                        fullIntent,
+                        new String[]{Manifest.permission.READ_PHONE_STATE});
+                mContext.createContextAsUser(UserHandle.ALL, 0).sendBroadcastMultiplePermissions(
+                        fullIntent,
+                        new String[]{Manifest.permission.READ_PRIVILEGED_PHONE_STATE},
+                        new String[]{Manifest.permission.READ_PHONE_STATE});
+            }
+
+            Intent sanitizedIntent = createServiceStateIntent(state, subId, phoneId, true);
+            mContext.createContextAsUser(UserHandle.ALL, 0).sendBroadcastMultiplePermissions(
+                    sanitizedIntent,
+                    new String[]{Manifest.permission.READ_PHONE_STATE},
+                    new String[]{/* no excluded permissions */},
+                    locationBypassPackages);
+            mContext.createContextAsUser(UserHandle.ALL, 0).sendBroadcastMultiplePermissions(
+                    sanitizedIntent,
+                    new String[]{Manifest.permission.READ_PRIVILEGED_PHONE_STATE},
+                    new String[]{Manifest.permission.READ_PHONE_STATE},
+                    locationBypassPackages);
+        }
+    }
+
+    private Intent createServiceStateIntent(ServiceState state, int subId, int phoneId,
+            boolean sanitizeLocation) {
         Intent intent = new Intent(Intent.ACTION_SERVICE_STATE);
         intent.addFlags(Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND);
         Bundle data = new Bundle();
-        state.fillInNotifierBundle(data);
+        if (sanitizeLocation) {
+            state.createLocationInfoSanitizedCopy(true).fillInNotifierBundle(data);
+        } else {
+            state.fillInNotifierBundle(data);
+        }
         intent.putExtras(data);
-        // Pass the subscription along with the intent.
         intent.putExtra(PHONE_CONSTANTS_SUBSCRIPTION_KEY, subId);
         intent.putExtra(SubscriptionManager.EXTRA_SUBSCRIPTION_INDEX, subId);
         intent.putExtra(PHONE_CONSTANTS_SLOT_KEY, phoneId);
