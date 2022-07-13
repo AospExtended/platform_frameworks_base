@@ -324,6 +324,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         return mBlockedIcons;
     }
 
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
