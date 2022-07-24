@@ -16061,7 +16061,7 @@ public class PackageManagerService extends IPackageManager.Stub
             final BroadcastOptions bOptions = getTemporaryAppAllowlistBroadcastOptions(
                     REASON_LOCKED_BOOT_COMPLETED);
             am.broadcastIntentWithFeature(null, null, lockedBcIntent, null, null, 0, null, null,
-                    requiredPermissions, null, android.app.AppOpsManager.OP_NONE,
+                    requiredPermissions, null, null, android.app.AppOpsManager.OP_NONE,
                     bOptions.toBundle(), false, false, userId);
 
             // Deliver BOOT_COMPLETED only if user is unlocked
@@ -16072,7 +16072,7 @@ public class PackageManagerService extends IPackageManager.Stub
                     bcIntent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
                 }
                 am.broadcastIntentWithFeature(null, null, bcIntent, null, null, 0, null, null,
-                        requiredPermissions, null, android.app.AppOpsManager.OP_NONE,
+                        requiredPermissions, null, null, android.app.AppOpsManager.OP_NONE,
                         bOptions.toBundle(), false, false, userId);
             }
         } catch (RemoteException e) {
@@ -21750,6 +21750,16 @@ public class PackageManagerService extends IPackageManager.Stub
                 return PackageManager.DELETE_FAILED_INTERNAL_ERROR;
             }
 
+            if (isSystemApp(uninstalledPs)) {
+                UserInfo userInfo = mUserManager.getUserInfo(userId);
+                if (userInfo == null || !userInfo.isAdmin()) {
+                    Slog.w(TAG, "Not removing package " + packageName
+                            + " as only admin user may downgrade system apps");
+                    EventLog.writeEvent(0x534e4554, "170646036", -1, packageName);
+                    return PackageManager.DELETE_FAILED_USER_RESTRICTED;
+                }
+            }
+
             disabledSystemPs = mSettings.getDisabledSystemPkgLPr(packageName);
             // Static shared libs can be declared by any package, so let us not
             // allow removing a package if it provides a lib others depend on.
@@ -22998,7 +23008,7 @@ public class PackageManagerService extends IPackageManager.Stub
             intent.addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY_BEFORE_BOOT);
             try {
                 am.broadcastIntentWithFeature(null, null, intent, null, null,
-                        0, null, null, null, null, android.app.AppOpsManager.OP_NONE,
+                        0, null, null, null, null, null, android.app.AppOpsManager.OP_NONE,
                         null, false, false, userId);
             } catch (RemoteException e) {
             }
@@ -28879,8 +28889,8 @@ public class PackageManagerService extends IPackageManager.Stub
             };
             try {
                 am.broadcastIntentWithFeature(null, null, intent, null, null, 0, null, null,
-                        requiredPermissions, null, android.app.AppOpsManager.OP_NONE, null, false,
-                        false, UserHandle.USER_ALL);
+                        requiredPermissions, null, null, android.app.AppOpsManager.OP_NONE, null,
+                        false, false, UserHandle.USER_ALL);
             } catch (RemoteException e) {
                 throw e.rethrowFromSystemServer();
             }

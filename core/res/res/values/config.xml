@@ -4684,6 +4684,8 @@
         <item>0.75</item>
     </string-array>
 
+    <bool name="config_udfpsSupportsNewUi" translatable="false">false</bool>
+
     <!-- Messages that should not be shown to the user during face auth enrollment. This should be
          used to hide messages that may be too chatty or messages that the user can't do much about.
          Entries are defined in android.hardware.biometrics.face@1.0 types.hal -->
@@ -5338,4 +5340,12 @@
     </string>
 
     <integer name="config_chooser_max_targets_per_row">4</integer>
+
+    <!-- List of system components which are allowed to receive ServiceState entries in an
+         un-sanitized form, even if the location toggle is off. This is intended ONLY for system
+         components, such as the telephony stack, which require access to the full ServiceState for
+         tasks such as network registration. -->
+    <string-array name="config_serviceStateLocationAllowedPackages">
+        <item>"com.android.phone"</item>
+    </string-array>
 </resources>
