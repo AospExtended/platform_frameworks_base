@@ -84,9 +84,6 @@ public class KeyguardMessageArea extends TextView implements SecurityMessageDisp
     }
 
     void onConfigChanged(Configuration newConfig) {
-        if (mContainer == null) {
-            return;
-        }
         final int newTopMargin = SystemBarUtils.getStatusBarHeight(getContext());
         if (mContainerTopMargin != newTopMargin) {
             mContainerTopMargin = newTopMargin;

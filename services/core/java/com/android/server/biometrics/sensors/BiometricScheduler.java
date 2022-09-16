@@ -247,9 +247,6 @@ public class BiometricScheduler {
                 IBiometricService.Stub.asInterface(
                         ServiceManager.getService(Context.BIOMETRIC_SERVICE)),
                 LOG_NUM_RECENT_OPERATIONS, CoexCoordinator.getInstance());
-
-        mCancel = context.getResources().getBoolean(
-                com.android.internal.R.bool.config_fpCancelIfNotIdle);
     }
 
     @VisibleForTesting
